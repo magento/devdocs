@@ -751,31 +751,31 @@
 
 <p><strong>Example1</strong>: initialization on an element</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#init_element&#39;</span><span class="p">).</span><span class="nx">alert</span><span class="p">({</span>
-    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Warning&#39;</span><span class="p">,</span>
-    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;Warning content&#39;</span><span class="p">,</span>
-    <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#init_element'</span><span class="p">).</span><span class="nx">alert</span><span class="p">({</span>
+    <span class="na">title</span><span class="p">:</span> <span class="s1">'Warning'</span><span class="p">,</span>
+    <span class="na">content</span><span class="p">:</span> <span class="s1">'Warning content'</span><span class="p">,</span>
+    <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">always</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){}</span>
     <span class="p">}</span>
 <span class="p">});</span></code></pre></figure>
 
 <p><strong>Example2</strong>: standalone initialization</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span>
-    <span class="s1">&#39;Magento_Ui/js/modal/alert&#39;</span>
+    <span class="s1">'Magento_Ui/js/modal/alert'</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">alert</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Variable that represents the `alert` function</span>
  
     <span class="nx">alert</span><span class="p">({</span>
-        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Some title&#39;</span><span class="p">,</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;Some content&#39;</span><span class="p">,</span>
-        <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
+        <span class="na">title</span><span class="p">:</span> <span class="s1">'Some title'</span><span class="p">,</span>
+        <span class="na">content</span><span class="p">:</span> <span class="s1">'Some content'</span><span class="p">,</span>
+        <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">always</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){}</span>
         <span class="p">}</span>
     <span class="p">});</span>
  
 <span class="p">});</span></code></pre></figure>
 
-<p>For details about how to initialize a widget in a<code>.phtml</code> template, refer to the <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
+<p>For details about how to initialize a widget in a<code class="highlighter-rouge">.phtml</code> template, refer to the <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
 
 <h2 id="alert_options">Options</h2>
 <p>The alert widget has the following options:</p>
@@ -797,8 +797,8 @@
 
 <p><strong>Default value</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">always</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h3 id="alert_autoopen">autoOpen</h3>
@@ -806,14 +806,14 @@
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <h3 id="alert_clickableOverlay">clickableOverlay</h3>
 <p>Close the alert window when a user clicks on the overlay.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>true</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
 <h3 id="alert_content"><code>content</code></h3>
 
@@ -823,22 +823,22 @@
 
 <h3 id="alert_focus"><code>focus</code></h3>
 <p>The selector of the element to be in focus when the alert window opens.
-If <code>focus</code> is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set <code>focus</code> to <code>none</code>.</p>
+If <code class="highlighter-rouge">focus</code> is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set <code class="highlighter-rouge">focus</code> to <code class="highlighter-rouge">none</code>.</p>
 
 <p><strong>Type</strong>: String.</p>
 
-<p><strong>Default value</strong>: <code>''</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">''</code></p>
 
 <h3 id="alert_title"><code>title</code></h3>
 <p>The title of the alert window.</p>
 
 <p><strong>Type</strong>: String.</p>
 
-<p><strong>Default value</strong>: <code>''</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">''</code></p>
 
 <h2 id="alert_events">Events</h2>
 
-<p>The alert widget implements a single event: the <code>always</code> callback.</p>
+<p>The alert widget implements a single event: the <code class="highlighter-rouge">always</code> callback.</p>
 
 <h2 id="alert_key_navigation">Keyboard navigation</h2>
 <p>The keyboard navigation for the alert windows is similar to the <a href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>.</p>

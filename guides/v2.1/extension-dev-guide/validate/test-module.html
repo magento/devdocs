@@ -1142,11 +1142,11 @@ For more information see the <a href="/guides/v2.1/test/testing.html">Magento Te
 <h2 id="test-comm">Test using Community Edition</h2>
 <p>Test your component by deploying Magento Community Edition and adding the component to the project’s <code>composer.json</code>.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;magento/product-community-edition&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;yourvendorname/module-one&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span>
-<span class="p">}</span><span class="err">,</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"require"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"magento/magento-composer-installer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"magento/product-community-edition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"yourvendorname/module-one"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.1"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span></code></pre></figure>
 
 <p>Remember to <a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">register</a> your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.</p>
 
@@ -1158,12 +1158,13 @@ For more information see the <a href="/guides/v2.1/test/testing.html">Magento Te
 <ol>
   <li><a href="/guides/v2.1/extension-dev-guide/package/package_module.html">Package your component</a> in a GitHub repository that’s accessible by the machine on which you run the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</li>
   <li>
-    <p>On that machine, create a static route from <code>https://repo.magento.com</code> to your GitHub repository.</p>
+    <p>On that machine, create a static route from <code class="highlighter-rouge">https://repo.magento.com</code> to your GitHub repository.</p>
 
-    <p>To create a static route, add a line similar to the following to your <code>hosts</code> file:</p>
+    <p>To create a static route, add a line similar to the following to your <code class="highlighter-rouge">hosts</code> file:</p>
 
-    <pre><code>&lt;IP or host name of your GitHub repository&gt; https://repo.magento.com
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;IP or host name of your GitHub repository&gt; https://repo.magento.com
 </code></pre>
+    </div>
   </li>
   <li><a href="/guides/v2.1/comp-mgr/module-man/compman-main-pg.html#compman-access" target="_blank">Install your component</a> exactly like a merchant.</li>
   <li>Verify the component installed properly.</li>

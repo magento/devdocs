@@ -1015,8 +1015,8 @@
       <p>In a command prompt, enter any of the following commands:</p>
 
       <ul>
-        <li><code>composer --help</code></li>
-        <li><code>composer list --help</code></li>
+        <li><code class="highlighter-rouge">composer --help</code></li>
+        <li><code class="highlighter-rouge">composer list --help</code></li>
       </ul>
 
       <p>If command help displays, Composer is already installed.</p>
@@ -1032,39 +1032,40 @@
         <li>
           <p>Enter the following commands:</p>
 
-          <pre><code>curl -sS https://getcomposer.org/installer | php
+          <div class="highlighter-rouge"><pre class="highlight"><code>curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 </code></pre>
+          </div>
 
           <p>For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.</p>
         </li>
       </ol>
 
       <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
-      <p>This section discusses how to get current code by cloning the Magento GitHub’s develop branch. You can clone either a release branch or the <code>develop</code> branch:</p>
+      <p>This section discusses how to get current code by cloning the Magento GitHub’s develop branch. You can clone either a release branch or the <code class="highlighter-rouge">develop</code> branch:</p>
 
       <ul>
         <li>
-          <p>Release branches like <code>2.1.0</code> are more stable</p>
+          <p>Release branches like <code class="highlighter-rouge">2.1.0</code> are more stable</p>
 
           <p>You <em>must</em> use a released branch with the <a href="/guides/v2.0/migration/bk-migration-guide.html">Data Migration Tool</a>.</p>
         </li>
         <li>
-          <p><code>develop</code> is more recent</p>
+          <p><code class="highlighter-rouge">develop</code> is more recent</p>
         </li>
       </ul>
 
-      <p>Currently, the <code>develop</code> branch is the default but you can checkout a release branch like <code>2.1.0</code> after cloning.</p>
+      <p>Currently, the <code class="highlighter-rouge">develop</code> branch is the default but you can checkout a release branch like <code class="highlighter-rouge">2.1.0</code> after cloning.</p>
 
       <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
-      <p>The Magento 2 GitHub repository requires you to authenticate. The <code>composer install</code> commands fails if you do not. To authenticate, <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an <code>auth.json</code> file in the home directory of the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</p>
+      <p>The Magento 2 GitHub repository requires you to authenticate. The <code class="highlighter-rouge">composer install</code> commands fails if you do not. To authenticate, <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an <code class="highlighter-rouge">auth.json</code> file in the home directory of the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</p>
 
       <h4 id="generate-authentication-tokens">Generate authentication tokens</h4>
 
       <div>
 
         <h2 id="auth-overview">Overview of Magento authentication</h2>
-        <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.</p>
+        <p>The <code class="highlighter-rouge">repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.</p>
 
         <p>To get your authentication keys:</p>
 
@@ -1105,10 +1106,10 @@ mv composer.phar /usr/local/bin/composer
           <li>To delete keys: Click <strong>Delete</strong>.</li>
         </ul>
 
-        <p>You cannot delete or disable keys you created by signing in to <code>magento.com</code>. To manage those keys:</p>
+        <p>You cannot delete or disable keys you created by signing in to <code class="highlighter-rouge">magento.com</code>. To manage those keys:</p>
 
         <ol>
-          <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code>magento.com</code> account.</li>
+          <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code class="highlighter-rouge">magento.com</code> account.</li>
           <li>In the top navigation bar, click <strong>Connect</strong>.</li>
           <li>
             <p>In the left pane, click <strong>Secure keys</strong>.</p>
@@ -1118,33 +1119,34 @@ mv composer.phar /usr/local/bin/composer
           <li>Enable or disable the desired keys.</li>
         </ol>
 
-        <h4 id="create-authjson">Create <code>auth.json</code></h4>
+        <h4 id="create-authjson">Create <code class="highlighter-rouge">auth.json</code></h4>
 
         <div>
 
-          <p>To create <code>auth.json</code>:</p>
+          <p>To create <code class="highlighter-rouge">auth.json</code>:</p>
 
           <ol>
             <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
             <li>
-              <p>Edit or create <code>auth.json</code> in the user’s home directory.</p>
+              <p>Edit or create <code class="highlighter-rouge">auth.json</code> in the user’s home directory.</p>
 
-              <p>The following example shows how to add <code>repo.magento.com</code> authentication to an existing file:</p>
+              <p>The following example shows how to add <code class="highlighter-rouge">repo.magento.com</code> authentication to an existing file:</p>
 
-              <pre><code>{
-   "github-oauth": {
-     "github.com": "&lt;your github oauth id&gt;"
-   },
-   "http-basic": {
-      "repo.magento.com": {
-         "username": "&lt;public key&gt;",
-         "password": "&lt;private key&gt;"
-      }
-   }
-}
-</code></pre>
+              <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"github-oauth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nt">"github.com"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your github oauth id&gt;"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nt">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public key&gt;"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;private key&gt;"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+              </div>
 
-   	For example, if your user name is <code>magento_user</code>, create or edit <code>/home/magento_user/.composer/auth.json</code>
+   	For example, if your user name is <code class="highlighter-rouge">magento_user</code>, create or edit <code class="highlighter-rouge">/home/magento_user/.composer/auth.json</code>
             </li>
           </ol>
 
@@ -1183,17 +1185,18 @@ mv composer.phar /usr/local/bin/composer
             </li>
             <li>
               <p>Change to your web server’s docroot directory.
-Typically, for Ubuntu, it’s <code>/var/www</code> or <code>/var/www/html</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> or <code class="highlighter-rouge">/var/www/html</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
 
               <p>Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here.</a></p>
             </li>
             <li>
-              <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+              <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
 
               <p>An example follows:</p>
 
-              <pre><code>git clone git@github.com:magento/magento2.git
+              <div class="highlighter-rouge"><pre class="highlight"><code>git clone git@github.com:magento/magento2.git
 </code></pre>
+              </div>
             </li>
             <li>
               <p>Wait for the repository to clone on your server.</p>
@@ -1208,13 +1211,15 @@ fatal: The remote end hung up unexpectedly</pre>
             <li>
               <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:</p>
 
-              <pre><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
+              <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
 </code></pre>
+              </div>
 
-              <p>For example, to check out the 2.1.0 release tag in a new branch named <code>2.1.0</code>, enter</p>
+              <p>For example, to check out the 2.1.0 release tag in a new branch named <code class="highlighter-rouge">2.1.0</code>, enter</p>
 
-              <pre><code>git checkout tags/2.1.0 -b 2.1.0
+              <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/2.1.0 -b 2.1.0
 </code></pre>
+              </div>
             </li>
             <li>
               <p>Continue with <a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
@@ -1242,15 +1247,16 @@ fatal: The remote end hung up unexpectedly</pre>
             <li>
               <p>Change to your web server’s docroot directory.</p>
 
-              <p>Typically, for Ubuntu, it’s <code>/var/www</code> or <code>/var/www/html</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+              <p>Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> or <code class="highlighter-rouge">/var/www/html</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
             </li>
             <li>
-              <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+              <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
 
               <p>An example follows</p>
 
-              <pre><code>git clone https://github.com/magento/magento2.git
+              <div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/magento/magento2.git
 </code></pre>
+              </div>
             </li>
             <li>
               <p>Wait for the repository to clone on your server.</p>
@@ -1258,13 +1264,15 @@ fatal: The remote end hung up unexpectedly</pre>
             <li>
               <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:</p>
 
-              <pre><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
+              <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
 </code></pre>
+              </div>
 
-              <p>For example, to check out the 2.1.0 release tag in a branch named <code>2.1.0</code>, enter</p>
+              <p>For example, to check out the 2.1.0 release tag in a branch named <code class="highlighter-rouge">2.1.0</code>, enter</p>
 
-              <pre><code>git checkout tags/2.1.0 -b 2.1.0
+              <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/2.1.0 -b 2.1.0
 </code></pre>
+              </div>
             </li>
           </ol>
 

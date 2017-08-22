@@ -984,7 +984,7 @@
 
 <ol>
   <li>The FTF creates the list of all test cases in a test suite.</li>
-  <li>The FTF creates the required quantity of sessions corresponding to the quantity of threads defined in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code>.</li>
+  <li>The FTF creates the required quantity of sessions corresponding to the quantity of threads defined in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code>.</li>
   <li>The FTF distributes test cases between sessions. When a sessions is free, a new test case from the queue runs.</li>
 </ol>
 
@@ -1002,13 +1002,13 @@
 
 <h2 id="set-up-parallel-execution">Set up parallel execution</h2>
 
-<p>To set up a parallel execution flow, add Magento instances to <code>&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> in the following format:</p>
+<p>To set up a parallel execution flow, add Magento instances to <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> in the following format:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
     ...
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_instances&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;quantity of the Magento instances&gt;&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_&lt;index number of the Magento instance&gt;&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;frontend URL of the Magento instance&gt;&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_&lt;index number of Magento instance&gt;&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;backend URL of the Magento instance&gt;&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_instances"</span> <span class="na">value=</span><span class="s">"&lt;quantity of the Magento instances&gt;"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url_&lt;index number of the Magento instance&gt;"</span> <span class="na">value=</span><span class="s">"&lt;frontend URL of the Magento instance&gt;"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_&lt;index number of Magento instance&gt;"</span> <span class="na">value=</span><span class="s">"&lt;backend URL of the Magento instance&gt;"</span> <span class="nt">/&gt;</span>
     ...
 <span class="nt">&lt;/php&gt;</span></code></pre></figure>
 
@@ -1028,16 +1028,16 @@
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
     ...
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>            // The default frontend instance. Ignored by the FTF.
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>     // The default backend instance. Ignored by the FTF.
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>            // The default frontend instance. Ignored by the FTF.
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>     // The default backend instance. Ignored by the FTF.
 
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_instances&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_0&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_1&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_2&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_0&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_1&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_2&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_instances"</span> <span class="na">value=</span><span class="s">"3"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url_0"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url_1"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url_2"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_0"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_1"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_2"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
     ...
 <span class="nt">&lt;/php&gt;</span></code></pre></figure>
 
@@ -1047,16 +1047,16 @@
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
     ...
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>            // The default frontend instance. Ignored by the FTF.
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>     // The default backend instance. Ignored by the FTF.
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>            // The default frontend instance. Ignored by the FTF.
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>     // The default backend instance. Ignored by the FTF.
 
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_instances&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_0&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_1.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_1&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_2.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url_2&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_3.com/magento2/index.php/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_0&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_1.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_1&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_2.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url_2&quot;</span> <span class="na">value=</span><span class="s">&quot;http://example_3.com/magento2/index.php/backend/&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_instances"</span> <span class="na">value=</span><span class="s">"3"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url_0"</span> <span class="na">value=</span><span class="s">"http://example_1.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url_1"</span> <span class="na">value=</span><span class="s">"http://example_2.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url_2"</span> <span class="na">value=</span><span class="s">"http://example_3.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_0"</span> <span class="na">value=</span><span class="s">"http://example_1.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_1"</span> <span class="na">value=</span><span class="s">"http://example_2.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_2"</span> <span class="na">value=</span><span class="s">"http://example_3.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
     ...
 <span class="nt">&lt;/php&gt;</span></code></pre></figure>
 

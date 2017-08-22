@@ -466,7 +466,7 @@
 <p>Terminology frequently used in this guide:</p>
 
 <ul>
-  <li>Module: The PHP code that defines your application’s business logic. The module code must be in subdirectories of <code>&lt;your Magento install dir&gt;/app/code/&lt;ModuleName&gt;</code>.</li>
+  <li>Module: The PHP code that defines your application’s business logic. The module code must be in subdirectories of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/code/&lt;ModuleName&gt;</code>.</li>
   <li>Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> or extension) must agree to allow the integration to access those resources.</li>
   <li>Extension: A tested module that is marketed to other merchants on Magento Marketplace.</li>
 </ul>
@@ -494,7 +494,7 @@
     <p>Every interface should be versioned and numbered like V1, V2, and so on.</p>
   </li>
   <li>
-    <p>The <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> should use the version number as a suffix. (For example, <code>Magento\Customer\Service\V1</code>).</p>
+    <p>The <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> should use the version number as a suffix. (For example, <code class="highlighter-rouge">Magento\Customer\Service\V1</code>).</p>
   </li>
   <li>
     <p>You <em>cannot</em> use aliases in services interfaces or in service data objects because doing so causes WSDL generation to fail.</p>
@@ -509,17 +509,18 @@
 
 <ol>
   <li>
-    <p>Create a <code>&lt;your Magento install dir&gt;/app/code/&lt;ModuleName&gt;/etc/webapi.xml</code> that defines a route URL, HTTP methods supported, and the Magento resources the method must access.</p>
+    <p>Create a <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/code/&lt;ModuleName&gt;/etc/webapi.xml</code> that defines a route URL, HTTP methods supported, and the Magento resources the method must access.</p>
 
     <p>Sample:</p>
 
-    <pre><code class="language-php">&lt;route url="/V1/customerAccounts/isEmailAvailable" method="PUT"&gt;
-    &lt;service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="isEmailAvailable"/&gt;
-    &lt;resources&gt;
-        &lt;resource ref="Magento_Customer::manage"/&gt;
-    &lt;/resources&gt;
-&lt;/route&gt;
+    <div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customerAccounts/isEmailAvailable"</span> <span class="na">method=</span><span class="s">"PUT"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Service\V1\CustomerAccountServiceInterface"</span> <span class="na">method=</span><span class="s">"isEmailAvailable"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;resources&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Customer::manage"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/resources&gt;</span>
+<span class="nt">&lt;/route&gt;</span>
 </code></pre>
+    </div>
 
     <p>(<a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)</p>
   </li>
@@ -549,7 +550,7 @@
     <p>If data is set in client code, service data objects can be returned to the client to use the data or the data can be passed to the service to consume the data.</p>
   </li>
   <li>
-    <p>Located in a namespace that reflects the version of service data (same as the service itself). For example, <code>Magento\Customer\Service\V1\Data</code></p>
+    <p>Located in a namespace that reflects the version of service data (same as the service itself). For example, <code class="highlighter-rouge">Magento\Customer\Service\V1\Data</code></p>
   </li>
 </ul>
 
@@ -558,12 +559,12 @@
 <p>General rules for implementing a service data object:</p>
 
 <ul>
-  <li>The service data object class must reside in the <code>[module namespace]\Service\Data\V[xx]</code> namespace.</li>
+  <li>The service data object class must reside in the <code class="highlighter-rouge">[module namespace]\Service\Data\V[xx]</code> namespace.</li>
   <li>A service data object must have getters that clearly describe all data that the data object can contain.</li>
   <li>Annotations in the code must clearly describe the parameters and outputs of all methods.</li>
-  <li>Getters should rely on the <code>_get</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObject</code></a> class.</li>
-  <li>A service data object should extend <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> or any of its children.</li>
-  <li>Setters should rely on the <code>_set</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> class.</li>
+  <li>Getters should rely on the <code class="highlighter-rouge">_get</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\Service\Data\AbstractObject</code></a> class.</li>
+  <li>A service data object should extend <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> or any of its children.</li>
+  <li>Setters should rely on the <code class="highlighter-rouge">_set</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> class.</li>
 </ul>
 
 <h3 id="sample-service-data-object">Sample Service Data Object</h3>
@@ -585,7 +586,7 @@
     <p>A data object builder should be used to construct the service data object.</p>
   </li>
   <li>
-    <p>Setters should rely on the method <code>_set</code> provided for convenience in the <code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code> class.</p>
+    <p>Setters should rely on the method <code class="highlighter-rouge">_set</code> provided for convenience in the <code class="highlighter-rouge">\Magento\Framework\Service\Data\AbstractObjectBuilder</code> class.</p>
   </li>
 </ul>
 

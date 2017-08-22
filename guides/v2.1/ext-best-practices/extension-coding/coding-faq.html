@@ -758,16 +758,16 @@
 
 <h3 id="in-magento-2-how-can-my-extension-distinguish-between-the-community-edition-and-the-enterprise-edition">In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?</h3>
 
-<p>The correct edition can be obtained through <code>\Magento\Framework\App\ProductMetadataInterface::getEdition</code>.</p>
+<p>The correct edition can be obtained through <code class="highlighter-rouge">\Magento\Framework\App\ProductMetadataInterface::getEdition</code>.</p>
 
-<p>In Magento CE that interface maps to the concrete implementation <code>Magento\Framework\AppInterface\ProductMetadata</code>.
-However, in Magento EE, the Enterprise <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> will override that mapping and the interface will be implemented by <code>\Magento\Enterprise\Model\ProductMetadata</code>.</p>
+<p>In Magento CE that interface maps to the concrete implementation <code class="highlighter-rouge">Magento\Framework\AppInterface\ProductMetadata</code>.
+However, in Magento EE, the Enterprise <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> will override that mapping and the interface will be implemented by <code class="highlighter-rouge">\Magento\Enterprise\Model\ProductMetadata</code>.</p>
 
 <p>Just relying on the interface through <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> will get you the right class, and calling “getEdition” will return the right answer.</p>
 
 <h3 id="how-do-i-configure-my-module-so-that-it-appears-in-a-specific-place-on-the-admin">How do I configure my module so that it appears in a specific place on the Admin?</h3>
 
-<p>Use the <code>&lt;Module Directory&gt;/etc/adminhtml/menu.xml</code> file to configure from where on the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> is accessible.</p>
+<p>Use the <code class="highlighter-rouge">&lt;Module Directory&gt;/etc/adminhtml/menu.xml</code> file to configure from where on the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> is accessible.</p>
 
 		</div>
 		<!-- /.content-wrap -->

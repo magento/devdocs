@@ -934,7 +934,7 @@
     <p>Compatible with <i>MySQL 5.7</i>.</p>
   </li>
   <li>
-    <p><i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> that is currently available in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> interface. After you install this patch, you’ll be able to use the Sales API <code>ShipOrder</code> and <code>InvoiceOrder</code> methods to capture payment and ship product. See <a href="/guides/v2.1/mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the <code>ShipOrder</code> and <code>InvoiceOrder</code> interfaces.</p>
+    <p><i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> that is currently available in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> interface. After you install this patch, you’ll be able to use the Sales API <code class="highlighter-rouge">ShipOrder</code> and <code class="highlighter-rouge">InvoiceOrder</code> methods to capture payment and ship product. See <a href="/guides/v2.1/mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the <code class="highlighter-rouge">ShipOrder</code> and <code class="highlighter-rouge">InvoiceOrder</code> interfaces.</p>
   </li>
 </ul>
 
@@ -971,7 +971,7 @@
 
 <!--- 53971-->
 <ul>
-  <li>Fixed issue with running <code>cron</code> jobs less frequently than specified by the application <code>cron</code> setting.</li>
+  <li>Fixed issue with running <code class="highlighter-rouge">cron</code> jobs less frequently than specified by the application <code class="highlighter-rouge">cron</code> setting.</li>
 </ul>
 
 <!--- 57965-->
@@ -1043,7 +1043,7 @@
 <!--- 56429 -->
 <ul>
   <li>
-    <p>We’ve added the ability to change the status of a <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span> through the <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span>.  The new <code>ShipOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
+    <p>We’ve added the ability to change the status of a <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span> through the <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span>.  The new <code class="highlighter-rouge">ShipOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
 
     <ul>
       <li>
@@ -1065,7 +1065,7 @@
 <!--- 56428 -->
 <ul>
   <li>
-    <p>We’ve added the ability to change the status of an invoice through the web API.  The new <code>InvoiceOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
+    <p>We’ve added the ability to change the status of an invoice through the web API.  The new <code class="highlighter-rouge">InvoiceOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
 
     <ul>
       <li>
@@ -1141,7 +1141,7 @@
 
 <!--- 56952-->
 <ul>
-  <li>We’ve resolved an issue with the get active payment methods (<code>getActiveMethods</code>). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a></li>
+  <li>We’ve resolved an issue with the get active payment methods (<code class="highlighter-rouge">getActiveMethods</code>). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a></li>
 </ul>
 
 <!--- 58568-->
@@ -1177,7 +1177,7 @@
 <!--- 57291--></p>
   </li>
   <li>
-    <p><strong>Issue</strong>: The <code>catalogProductRepository</code> API (REST) returns an unexpected attribute type. Certain <code>attribute_code</code> values (for example,  <code>category_ids</code>) return an array instead of the expected string. <strong>Workaround</strong>: As needed, adjust your code so that it handles the response as an array.</p>
+    <p><strong>Issue</strong>: The <code class="highlighter-rouge">catalogProductRepository</code> API (REST) returns an unexpected attribute type. Certain <code class="highlighter-rouge">attribute_code</code> values (for example,  <code class="highlighter-rouge">category_ids</code>) return an array instead of the expected string. <strong>Workaround</strong>: As needed, adjust your code so that it handles the response as an array.</p>
   </li>
 </ul>
 
@@ -1209,17 +1209,19 @@
 
   <h3 id="install-rc-composer" class="no_toc">Get Magento EE using Composer</h3>
 
-  <p>Magento EE is available from <code>repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+  <p>Magento EE is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
 
-  <p>For example, to install 2.1.1 in the <code>magento2</code> directory:</p>
+  <p>For example, to install 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
 </code></pre>
+  </div>
 
   <h3 id="get-zip" class="no_toc">Get Magento EE using a compressed archive</h3>
 
@@ -1234,7 +1236,7 @@
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
     <p>To get the Magento EE archive:</p>
 
@@ -1247,8 +1249,8 @@
         <p>Follow the instructions on your screen to complete the Magento EE download:</p>
 
         <ul>
-          <li><code>Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
       </li>
       <li>Transfer the installation package to your development system.</li>

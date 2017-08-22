@@ -1579,9 +1579,9 @@
 <p>This topic discusses how Varnish caching works with Magento using:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample" target="_blank"><code>nginx.conf.sample</code></a> from the Magento 2 GitHub repository</li>
-  <li><code>.htaccess</code> distributed configuration file for Apache provided with Magento</li>
-  <li><code>default.vcl</code> configuration for Varnish generated using the <a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Magento Admin</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample" target="_blank"><code class="highlighter-rouge">nginx.conf.sample</code></a> from the Magento 2 GitHub repository</li>
+  <li><code class="highlighter-rouge">.htaccess</code> distributed configuration file for Apache provided with Magento</li>
+  <li><code class="highlighter-rouge">default.vcl</code> configuration for Varnish generated using the <a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Magento Admin</a></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1598,13 +1598,13 @@
 <p>This section uses a browser inspector to show how assets are delivered to the browser in the first request and afterward loaded from the browser’s local <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>.</p>
 
 <h3 id="config-varnish-cache-browser-first">First browser request</h3>
-<p><code>nginx.conf.sample</code> and <code>.htaccess</code> provide options for client caching. When the first request is made from a browser for a cacheable object, Varnish delivers it to the client.</p>
+<p><code class="highlighter-rouge">nginx.conf.sample</code> and <code class="highlighter-rouge">.htaccess</code> provide options for client caching. When the first request is made from a browser for a cacheable object, Varnish delivers it to the client.</p>
 
 <p>The following figure shows an example using a browser inspector.</p>
 
 <p><img src="/common/images/varnish_apache_first_visit.png" alt="The first time a request is made for a cacheable object, Varnish delivers it to the browser" /></p>
 
-<p>The preceding example shows a request for the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> main page (<code>m2_ce_my</code>). <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> and <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> assets are cached on the client browser.</p>
+<p>The preceding example shows a request for the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> main page (<code class="highlighter-rouge">m2_ce_my</code>). <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> and <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> assets are cached on the client browser.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.</p>
@@ -1621,7 +1621,7 @@
 <p>The following example shows response headers for a particular static asset.</p>
 
 <p><img src="/common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not" /></p>
-<p><code>calendar.css</code> has an ETag response header which means the CSS file on the client browser can be compared to the one on the server.</p>
+<p><code class="highlighter-rouge">calendar.css</code> has an ETag response header which means the CSS file on the client browser can be compared to the one on the server.</p>
 
 <p>In addition, static assets are returned with a 304 (Not Modified) HTTP status code, as the following figure shows.</p>
 

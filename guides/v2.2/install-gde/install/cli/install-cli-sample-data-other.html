@@ -809,7 +809,7 @@
 
   <ul>
     <li>
-      <p><a href="#inst-sample-remove">Remove sample data modules</a> from the Magento installation <code>composer.json</code></p>
+      <p><a href="#inst-sample-remove">Remove sample data modules</a> from the Magento installation <code class="highlighter-rouge">composer.json</code></p>
 
       <p>This option does <em>not</em> remove sample data from the database.</p>
     </li>
@@ -828,23 +828,26 @@
 
         <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-        <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+        </div>
 
         <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-        <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+        </div>
       </li>
       <li>
-        <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+        <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
         <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
         <p>bash shell example for CentOS:</p>
 
-        <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+        <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+        </div>
       </li>
     </ol>
 
@@ -859,8 +862,9 @@
     <h2 id="inst-sample-remove">Remove sample data modules</h2>
     <p>Enter the following command:</p>
 
-    <pre><code>magento sampledata:remove 
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento sampledata:remove 
 </code></pre>
+    </div>
 
     <!-- where `[module-list]` is an optional space-separated list of sample data modules to install. Omit this parameter to remove all sample data modules.
 
@@ -907,8 +911,9 @@ Magento EE only:
 
     <p>To prepare sample data for updating, enter the following command:</p>
 
-    <pre><code>magento sampledata:reset
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento sampledata:reset
 </code></pre>
+    </div>
 
     <p>After that, <a href="/guides/v2.2/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">update the Magento application</a>.</p>
   </div>

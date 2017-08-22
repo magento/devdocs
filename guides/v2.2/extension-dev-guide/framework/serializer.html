@@ -1251,17 +1251,17 @@
 
 <p>This <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.</p>
 
-<p>Magento’s Serialize library provides the <code>Magento\Framework\Serialize\SerializerInterface</code> and the Json and Serialize implementations for serializing data.</p>
+<p>Magento’s Serialize library provides the <code class="highlighter-rouge">Magento\Framework\Serialize\SerializerInterface</code> and the Json and Serialize implementations for serializing data.</p>
 
 <h2 id="serialization">Serialization</h2>
 
-<p>The main purpose of data serialization is to convert data into a string using <code>serialize()</code> to store in a database, a cache, or pass onto another layer in the application.</p>
+<p>The main purpose of data serialization is to convert data into a string using <code class="highlighter-rouge">serialize()</code> to store in a database, a cache, or pass onto another layer in the application.</p>
 
-<p>The other half of this process uses the <code>unserialize()</code> function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.</p>
+<p>The other half of this process uses the <code class="highlighter-rouge">unserialize()</code> function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.</p>
 
 <div class="bs-callout bs-callout-warning">
 
-  <p>For security reasons, <code>SerializerInterface</code> implementations, such as the Json and Serialize classes, should not serialize and unserialize objects.</p>
+  <p>For security reasons, <code class="highlighter-rouge">SerializerInterface</code> implementations, such as the Json and Serialize classes, should not serialize and unserialize objects.</p>
 
 </div>
 
@@ -1269,80 +1269,80 @@
 
 <h3 id="json-default">Json (default)</h3>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Serialize/Serializer/Json.php" target="_blank"><code>Magento\Framework\Serialize\Serializer\Json</code></a> class serializes and unserializes data using the <a href="http://www.json.org/" target="_blank">JSON</a> format.
+<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Serialize/Serializer/Json.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Serialize\Serializer\Json</code></a> class serializes and unserializes data using the <a href="http://www.json.org/" target="_blank">JSON</a> format.
 This class does not unserialize objects.</p>
 
 <h3 id="serialize">Serialize</h3>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php" target="_blank"><code>Magento\Framework\Serialize\Serializer\Serialize</code></a> class is less secure than the Json implementation but provides better performance on large arrays.
+<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Serialize\Serializer\Serialize</code></a> class is less secure than the Json implementation but provides better performance on large arrays.
 This class does not unserialize objects in <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 7.</p>
 
 <div class="bs-callout bs-callout-warning">
 
   <p>Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities.
-Always use the <code>SerializerInterface</code> for serializing and unserializing.</p>
+Always use the <code class="highlighter-rouge">SerializerInterface</code> for serializing and unserializing.</p>
 
 </div>
 
 <h2 id="usage">Usage</h2>
 
-<p>Declare <code>SerializerInterface</code> as a <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">constructor dependency</a> to get an instance of a serializer class.</p>
+<p>Declare <code class="highlighter-rouge">SerializerInterface</code> as a <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">constructor dependency</a> to get an instance of a serializer class.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Framework\Serialize\SerializerInterface</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">use Magento\Framework\Serialize\SerializerInterface;
 
-<span class="o">...</span>
+...
 
-<span class="sd">/**</span>
-<span class="sd"> * @var SerializerInterface</span>
-<span class="sd"> */</span>
-<span class="k">private</span> <span class="nv">$serializer</span><span class="p">;</span>
+/**
+ * @var SerializerInterface
+ */
+private $serializer;
 
-<span class="o">...</span>
+...
 
-<span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">SerializerInterface</span> <span class="nv">$serializer</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serializer</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+public function __construct(SerializerInterface $serializer) {
+  $this-&gt;serializer = $serializer;
+}</code></pre></figure>
 
 <p><br />
-The following example shows how to use a serializer’s <code>serialize()</code> and <code>unserialize()</code> functions to store and retrieve array data from a cache:</p>
+The following example shows how to use a serializer’s <code class="highlighter-rouge">serialize()</code> and <code class="highlighter-rouge">unserialize()</code> functions to store and retrieve array data from a cache:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">...
 
-<span class="sd">/**</span>
-<span class="sd"> * @var string</span>
-<span class="sd"> */</span>
-<span class="k">private</span> <span class="nv">$cacheId</span> <span class="o">=</span> <span class="s1">&#39;mySerializedData&#39;</span><span class="p">;</span>
+/**
+ * @var string
+ */
+private $cacheId = 'mySerializedData';
 
-<span class="o">...</span>
+...
 
-<span class="sd">/**</span>
-<span class="sd"> * Save data to cache</span>
-<span class="sd"> * @param array $data</span>
-<span class="sd"> *</span>
-<span class="sd"> * @return bool</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">saveDataToCache</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serializer</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span><span class="nv">$data</span><span class="p">),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cacheId</span><span class="p">);</span>
-<span class="p">}</span>
+/**
+ * Save data to cache
+ * @param array $data
+ *
+ * @return bool
+ */
+public function saveDataToCache($data)
+{
+  return $this-&gt;getCache()-&gt;save($this-&gt;serializer-&gt;serialize($data), $this-&gt;cacheId);
+}
 
-<span class="o">...</span>
+...
 
-<span class="sd">/**</span>
-<span class="sd"> * Load data from cache</span>
-<span class="sd"> *</span>
-<span class="sd"> * @return array</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">loadDataFromCache</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cacheId</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">false</span> <span class="o">!==</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serializer</span><span class="o">-&gt;</span><span class="na">unserialize</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
-<span class="p">}</span>
+/**
+ * Load data from cache
+ *
+ * @return array
+ */
+public function loadDataFromCache()
+{
+  $data = $this-&gt;getCache()-&gt;load($this-&gt;cacheId);
+  if (false !== $data) {
+    $data = $this-&gt;serializer-&gt;unserialize($data);
+  }
+  return $data;
+}
 
-<span class="o">...</span></code></pre></figure>
+...</code></pre></figure>
 
 
 		</div>

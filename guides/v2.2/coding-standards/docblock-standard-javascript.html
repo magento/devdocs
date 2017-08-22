@@ -645,8 +645,8 @@ This standard are a subset of <a href="https://google.github.io/styleguide/javas
 
 <ul>
   <li>A JSDoc comment should begin with a slash (/) and two asterisks (*).</li>
-  <li>Inline tags should be enclosed in braces: <code>{ @code this }</code>.</li>
-  <li><code>@desc</code> Block tags should always start on their own line.</li>
+  <li>Inline tags should be enclosed in braces: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">@code</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="p">}</span></code>.</li>
+  <li><code class="highlighter-rouge">@desc</code> Block tags should always start on their own line.</li>
 </ul>
 
 <p>Example:</p>
@@ -739,7 +739,7 @@ mynamespace.DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-extends">@extends</h4>
 
-<p>Used with <code>@constructor</code> to indicate that a class inherits from another class.</p>
+<p>Used with <code class="highlighter-rouge">@constructor</code> to indicate that a class inherits from another class.</p>
 
 <pre>/**
 &nbsp;*&nbsp;Immutable&nbsp;empty&nbsp;node&nbsp;list.
@@ -776,7 +776,7 @@ Polygon.prototype.getSides&nbsp;=&nbsp;function()&nbsp;{};
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-implements">@implements</h4>
 
-<p>Used with <code>@constructor</code> to indicate that a class implements an interface.</p>
+<p>Used with <code class="highlighter-rouge">@constructor</code> to indicate that a class implements an interface.</p>
 
 <pre>/**
 &nbsp;*&nbsp;A&nbsp;shape.
@@ -800,7 +800,7 @@ Square.prototype.draw&nbsp;=&nbsp;function()&nbsp;{
 
 <p>Indicates that the keys of an object literal should be treated as properties of some other object. This annotation should only appear on object literals.</p>
 
-<p>Please note that the name in braces is not a type name like in other annotations. It’s an object name. It names the object on which the properties are “lent”. For example, <code>@type {Foo}</code> means “an instance of Foo,” but <code>@lends {Foo}</code> means “the constructor Foo”.</p>
+<p>Please note that the name in braces is not a type name like in other annotations. It’s an object name. It names the object on which the properties are “lent”. For example, <code class="highlighter-rouge">@type {Foo}</code> means “an instance of Foo,” but <code class="highlighter-rouge">@lends {Foo}</code> means “the constructor Foo”.</p>
 
 <p>Please refer to <a href="https://code.google.com/p/jsdoc-toolkit/wiki/TagLends" target="_blank">JSDoc Toolkit</a> for more information about this annotation.</p>
 
@@ -845,7 +845,7 @@ project.SubClass.prototype.toString()&nbsp;{
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-return">@return</h4>
 
-<p>Used with method and function calls to document the return type. When writing descriptions for boolean parameters, prefer “Whether the component is visible” to “True if the component is visible, false otherwise”. If there is no return value, do not use an <code>@return</code> tag.</p>
+<p>Used with method and function calls to document the return type. When writing descriptions for boolean parameters, prefer “Whether the component is visible” to “True if the component is visible, false otherwise”. If there is no return value, do not use an <code class="highlighter-rouge">@return</code> tag.</p>
 
 <p>Type names must be enclosed in curly braces. If the type is omitted, the compiler will not type-check the return value.</p>
 

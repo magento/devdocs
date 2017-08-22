@@ -1211,11 +1211,11 @@
 <p>The main advantages of the new structure are described in the following sections.</p>
 
 <h2 id="readability">Readability</h2>
-<p>All components options are separate nodes, and a node’s purpose is defined by its name. The number of abstract-named nodes like <code>&lt;item&gt;</code> or <code>&lt;argument&gt;</code> is minimized.</p>
-<div class="collapsible"><b class="collapsible-title">Illustration </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;default_billing&quot;</span> <span class="na">formElement=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;source&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
+<p>All components options are separate nodes, and a node’s purpose is defined by its name. The number of abstract-named nodes like <code class="highlighter-rouge">&lt;item&gt;</code> or <code class="highlighter-rouge">&lt;argument&gt;</code> is minimized.</p>
+<div class="collapsible"><b class="collapsible-title">Illustration </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"default_billing"</span> <span class="na">formElement=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;settings&gt;</span>
@@ -1223,10 +1223,10 @@
         <span class="nt">&lt;visible&gt;</span>false<span class="nt">&lt;/visible&gt;</span>
     <span class="nt">&lt;/settings&gt;</span>
 <span class="nt">&lt;/field&gt;</span>
-<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;default_shipping&quot;</span> <span class="na">formElement=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;source&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"default_shipping"</span> <span class="na">formElement=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;settings&gt;</span>
@@ -1234,23 +1234,23 @@
         <span class="nt">&lt;visible&gt;</span>false<span class="nt">&lt;/visible&gt;</span>
     <span class="nt">&lt;/settings&gt;</span>
 <span class="nt">&lt;/field&gt;</span>
-<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;website_id&quot;</span> <span class="na">component=</span><span class="s">&quot;Magento_Ui/js/form/element/website&quot;</span> <span class="na">formElement=</span><span class="s">&quot;select&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;source&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"website_id"</span> <span class="na">component=</span><span class="s">"Magento_Ui/js/form/element/website"</span> <span class="na">formElement=</span><span class="s">"select"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;settings&gt;</span>
         <span class="nt">&lt;validation&gt;</span>
-            <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">&quot;required-entry&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/rule&gt;</span>
+            <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">"required-entry"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/rule&gt;</span>
         <span class="nt">&lt;/validation&gt;</span>
         <span class="nt">&lt;dataType&gt;</span>number<span class="nt">&lt;/dataType&gt;</span>
         <span class="nt">&lt;tooltip&gt;</span>
             <span class="nt">&lt;link&gt;</span>http://docs.magento.com/m2/ce/user_guide/configuration/scope.html<span class="nt">&lt;/link&gt;</span>
-            <span class="nt">&lt;description</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>If your Magento installation has multiple websites, you can edit the scope to associate the customer with a specific site.<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;description</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>If your Magento installation has multiple websites, you can edit the scope to associate the customer with a specific site.<span class="nt">&lt;/description&gt;</span>
         <span class="nt">&lt;/tooltip&gt;</span>
         <span class="nt">&lt;imports&gt;</span>
-            <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">&quot;customerId&quot;</span><span class="nt">&gt;</span>${ $.provider }:data.customer.entity_id<span class="nt">&lt;/link&gt;</span>
+            <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">"customerId"</span><span class="nt">&gt;</span>${ $.provider }:data.customer.entity_id<span class="nt">&lt;/link&gt;</span>
         <span class="nt">&lt;/imports&gt;</span>
     <span class="nt">&lt;/settings&gt;</span>
 <span class="nt">&lt;/field&gt;</span></code></pre></figure>

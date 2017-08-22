@@ -1127,27 +1127,30 @@
   <h3 id="batch-size">Set a value for DATA_CONVERTER_BATCH_SIZE</h3>
   <p>Magento 2.2 includes security enhancements that requires some data to be converted from serialized data format to JSON encoded format. This conversion occurs during the upgrade and it can take a long time, depending on how much data is in your Magento database.</p>
 
-  <p>One or more fields in the following tables are affected: <code>sales_order</code>, <code>sales_order_payment</code>, <code>quote</code>, <code>quote_payment</code>, <code>core_config_data</code>, <code>magento_reward_history</code>, <code>url_rewrite</code>, <code>salesrule</code>, and <code>catalogrule</code>. (This is not a complete list.)</p>
+  <p>One or more fields in the following tables are affected: <code class="highlighter-rouge">sales_order</code>, <code class="highlighter-rouge">sales_order_payment</code>, <code class="highlighter-rouge">quote</code>, <code class="highlighter-rouge">quote_payment</code>, <code class="highlighter-rouge">core_config_data</code>, <code class="highlighter-rouge">magento_reward_history</code>, <code class="highlighter-rouge">url_rewrite</code>, <code class="highlighter-rouge">salesrule</code>, and <code class="highlighter-rouge">catalogrule</code>. (This is not a complete list.)</p>
 
-  <p>If you have a large amount of data, you can improve performance by setting the value of an environment variable, <code>DATA_CONVERTER_BATCH_SIZE</code>. By default, it’s set to a value of 50,000.</p>
+  <p>If you have a large amount of data, you can improve performance by setting the value of an environment variable, <code class="highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code>. By default, it’s set to a value of 50,000.</p>
 
   <p>To set the variable, before the upgrade starts enter the following command as the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span> in a bash shell prompt:</p>
 
-  <pre><code>export DATA_CONVERTER_BATCH_SIZE &lt;value&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>export DATA_CONVERTER_BATCH_SIZE &lt;value&gt;
 </code></pre>
+  </div>
 
   <p>For example,</p>
 
-  <pre><code>export DATA_CONVERTER_BATCH_SIZE 100000
+  <div class="highlighter-rouge"><pre class="highlight"><code>export DATA_CONVERTER_BATCH_SIZE 100000
 </code></pre>
+  </div>
 
   <p>After your upgrade completes, you can unset the variable as follows:</p>
 
-  <pre><code>unset DATA_CONVERTER_BATCH_SIZE
+  <div class="highlighter-rouge"><pre class="highlight"><code>unset DATA_CONVERTER_BATCH_SIZE
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-info">
-    <p><code>DATA_CONVERTER_BATCH_SIZE</code> requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.</p>
+    <p><code class="highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code> requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.</p>
   </div>
 
   <h3 id="magento-owner-group">Magento file system owner and group</h3>
@@ -1158,15 +1161,17 @@
 
   <p>To verify your cron jobs are set up properly, enter the following command as the Magento file system owner:</p>
 
-  <pre><code>crontab -l
+  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -l
 </code></pre>
+  </div>
 
   <p>Results similar to the following should display:</p>
 
-  <pre><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+  <div class="highlighter-rouge"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log
 </code></pre>
+  </div>
 
   <p>Another symptom of cron not running is the following error in the Magento Admin:</p>
 
@@ -1185,10 +1190,11 @@
 
   <p>To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider’s file manager application.</p>
 
-  <p>For example, enter the following commands on a Linux system if the Magento application is installed in <code>/var/www/html/magento2</code>:</p>
+  <p>For example, enter the following commands on a Linux system if the Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
 
-  <pre><code>ls -al /var/www/html/magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>ls -al /var/www/html/magento2
 </code></pre>
+  </div>
 
   <p>A sample result follows:</p>
 
@@ -1225,14 +1231,15 @@ drwxrwx---.  7 magento_user apache   4096 Jun  7 07:53 update
 drwxrws---. 11 magento_user apache   4096 Jun 13 16:05 var
 drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor</code></pre></figure>
 
-  <p>In the preceding example, the Magento file system owner is <code>magento_user</code>. Directories in the Magento file system have <code>drwxrwx---</code> permissions (775) and files have <code>-rw-rw-rw-</code> permissions (664).</p>
+  <p>In the preceding example, the Magento file system owner is <code class="highlighter-rouge">magento_user</code>. Directories in the Magento file system have <code class="highlighter-rouge">drwxrwx---</code> permissions (775) and files have <code class="highlighter-rouge">-rw-rw-rw-</code> permissions (664).</p>
 
   <p>To get more detailed information, you can optionally enter the following command:</p>
 
-  <pre><code>ls -al /var/www/html/magento2/pub
+  <div class="highlighter-rouge"><pre class="highlight"><code>ls -al /var/www/html/magento2/pub
 </code></pre>
+  </div>
 
-  <p>Because Magento deploys static file assets to subdirectories of <code>pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
+  <p>Because Magento deploys static file assets to subdirectories of <code class="highlighter-rouge">pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
 
   <p>For more information, see <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">File system permissions and ownership</a>.</p>
 

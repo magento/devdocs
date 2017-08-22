@@ -703,7 +703,7 @@
     <tr>
       <td>400</td>
       <td>Bad Request</td>
-      <td>If service implementation throws either <code>Magento_Service_Exception</code> or its derivative, the framework returns a HTTP 400 with a error response including the service-specific error code and message. This error code could indicate a problem such as a missing required parameter or the supplied data didn’t pass validation.</td>
+      <td>If service implementation throws either <code class="highlighter-rouge">Magento_Service_Exception</code> or its derivative, the framework returns a HTTP 400 with a error response including the service-specific error code and message. This error code could indicate a problem such as a missing required parameter or the supplied data didn’t pass validation.</td>
     </tr>
     <tr>
       <td>401</td>
@@ -740,42 +740,42 @@
 
 <h3 id="response-payload">Response payload</h3>
 
-<p>POST, PUT, and GET web API calls return a response payload. This payload is a JSON- or XML-formatted response body. The <code>Accept: application/&lt;FORMAT&gt;</code> header in the request determines the format of the response body, where <code>FORMAT</code> is either <code>json</code> or <code>xml</code>.</p>
+<p>POST, PUT, and GET web API calls return a response payload. This payload is a JSON- or XML-formatted response body. The <code class="highlighter-rouge">Accept: application/&lt;FORMAT&gt;</code> header in the request determines the format of the response body, where <code class="highlighter-rouge">FORMAT</code> is either <code class="highlighter-rouge">json</code> or <code class="highlighter-rouge">xml</code>.</p>
 
-<p>A successful DELETE call returns <code>true</code>. An unsuccessful DELETE call returns a payload similar to the other calls.</p>
+<p>A successful DELETE call returns <code class="highlighter-rouge">true</code>. An unsuccessful DELETE call returns a payload similar to the other calls.</p>
 
 <p>The response payload depends on the call.
-For example, a <code>GET /V1/customers/:customerId</code> call returns the following payload:</p>
+For example, a <code class="highlighter-rouge">GET /V1/customers/:customerId</code> call returns the following payload:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;customers&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;customer&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;defaultShipping&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nt">&quot;defaultBilling&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;regionCode&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;regionId&quot;</span><span class="p">:</span> <span class="mi">12</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;90001&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Zoe Ave&quot;</span><span class="p">],</span>
-                <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;555-000-00-00&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;countryId&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"customers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"defaultShipping"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"defaultBilling"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"regionCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"regionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nt">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90001"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Zoe Ave"</span><span class="p">],</span><span class="w">
+                </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Los Angeles"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555-000-00-00"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"countryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<p>This JSON-formatted response body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this response body shows account information for the specified customer.</p>
+<p>This JSON-formatted response body includes a <code class="highlighter-rouge">customer</code> object with the customer email, first name, and last name, and customer address information. The information in this response body shows account information for the specified customer.</p>
 
 <h3 id="error-format">Error format</h3>
 <p>When an error occurs, the response body contains an error code, error message, and optional parameters.</p>
@@ -789,28 +789,28 @@ For example, a <code>GET /V1/customers/:customerId</code> call returns the follo
   </thead>
   <tbody>
     <tr>
-      <td><code>code</code></td>
+      <td><code class="highlighter-rouge">code</code></td>
       <td>The status code representing the error.</td>
     </tr>
     <tr>
-      <td><code>message</code></td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>The message explaining the error.</td>
     </tr>
     <tr>
-      <td><code>parameters</code></td>
+      <td><code class="highlighter-rouge">parameters</code></td>
       <td>Optional. An array of attributes used to generate a different and/or localized error message for the client.</td>
     </tr>
   </tbody>
 </table>
 
-<p>As an example, Magento returns a <code>code</code> of <code>400</code> and the following <code>message</code> when an invalid <code>sku</code> value is specified in the call <code>PUT V1/products/:sku</code>.</p>
+<p>As an example, Magento returns a <code class="highlighter-rouge">code</code> of <code class="highlighter-rouge">400</code> and the following <code class="highlighter-rouge">message</code> when an invalid <code class="highlighter-rouge">sku</code> value is specified in the call <code class="highlighter-rouge">PUT V1/products/:sku</code>.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Invalid product data: %1&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&quot;Invalid attribute set entity type&quot;</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid product data: %1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Invalid attribute set entity type"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 
 		</div>

@@ -811,23 +811,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -850,24 +853,25 @@
   <p>Magento detects maintenance mode as follows:</p>
 
   <ul>
-    <li>If <code>var/.maintenance.flag</code> does not exist, maintenance mode is off and Magento operates normally.</li>
+    <li>If <code class="highlighter-rouge">var/.maintenance.flag</code> does not exist, maintenance mode is off and Magento operates normally.</li>
     <li>
-      <p>Otherwise, maintenance mode is on unless <code>var/.maintenance.ip</code> exists:</p>
+      <p>Otherwise, maintenance mode is on unless <code class="highlighter-rouge">var/.maintenance.ip</code> exists:</p>
 
-      <p><code>var/.maintenance.ip</code> can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.</p>
+      <p><code class="highlighter-rouge">var/.maintenance.ip</code> can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.</p>
     </li>
   </ul>
 
   <p>Command usage:</p>
 
-  <pre><code>magento maintenance:enable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento maintenance:enable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
 magento maintenance:disable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
 magento maintenance:status
 </code></pre>
+  </div>
 
   <p>where</p>
 
-  <p><code>--ip=&lt;ip address&gt;</code> is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.</p>
+  <p><code class="highlighter-rouge">--ip=&lt;ip address&gt;</code> is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -875,29 +879,32 @@ magento maintenance:status
   	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=none</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</li></ul></span>
 </div>
 
-  <p><code>magento maintenance:status</code> displays the current status of maintenance mode.</p>
+  <p><code class="highlighter-rouge">magento maintenance:status</code> displays the current status of maintenance mode.</p>
 
   <p>For example, to enable maintenance mode with no IP address exemptions:</p>
 
-  <pre><code>magento maintenance:enable
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento maintenance:enable
 </code></pre>
+  </div>
 
   <p>To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:</p>
 
-  <pre><code>magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 </code></pre>
+  </div>
 
   <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
-  <p>To maintain the list of exempt IP addresses, you can either use the <code>[--ip=&lt;ip list&gt;]</code> option in the preceding commands or you can use the following:</p>
+  <p>To maintain the list of exempt IP addresses, you can either use the <code class="highlighter-rouge">[--ip=&lt;ip list&gt;]</code> option in the preceding commands or you can use the following:</p>
 
-  <pre><code>magento maintenance:allow-ips &lt;ip address&gt; .. &lt;ip address&gt; [--none]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento maintenance:allow-ips &lt;ip address&gt; .. &lt;ip address&gt; [--none]
 </code></pre>
+  </div>
 
   <p>where</p>
 
-  <p><code>&lt;ip address&gt; .. &lt;ip address&gt;</code> is an optional space-delimited list of IP addresses to exempt.</p>
+  <p><code class="highlighter-rouge">&lt;ip address&gt; .. &lt;ip address&gt;</code> is an optional space-delimited list of IP addresses to exempt.</p>
 
-  <p><code>--none</code> clears the list.</p>
+  <p><code class="highlighter-rouge">--none</code> clears the list.</p>
 
   <h4 id="related-topics">Related topics</h4>
 

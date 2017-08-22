@@ -1671,7 +1671,7 @@
 
 
 			<h2 id="config-files-overview">Overview of module configuration files</h2>
-<p>The responsibilities of the <code>config.xml</code> configuration file used in earlier versions of Magento is now divided between several files, located in various <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> directories. Magento’s multiple configuration files load on demand only when a module requests a specific configuration type.</p>
+<p>The responsibilities of the <code class="highlighter-rouge">config.xml</code> configuration file used in earlier versions of Magento is now divided between several files, located in various <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> directories. Magento’s multiple configuration files load on demand only when a module requests a specific configuration type.</p>
 
 <p>You can use these files—also referred to as <em>configuration types</em>—to customize specific aspects of your module’s behavior.</p>
 
@@ -1695,9 +1695,9 @@
 <p>Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):</p>
 
 <ul>
-  <li>Primary configuration (<code>app/etc/di.xml</code>). This file is used to bootstrap Magento.</li>
-  <li>Global configurations from modules (<code>&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/*.xml</code>). Collects certain configuration files from all modules and merges them together.</li>
-  <li>Area-specific configuration from modules (<code>&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/&lt;area&gt;/*.xml</code>). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.</li>
+  <li>Primary configuration (<code class="highlighter-rouge">app/etc/di.xml</code>). This file is used to bootstrap Magento.</li>
+  <li>Global configurations from modules (<code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/*.xml</code>). Collects certain configuration files from all modules and merges them together.</li>
+  <li>Area-specific configuration from modules (<code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/&lt;area&gt;/*.xml</code>). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.</li>
 </ul>
 
 <div>
@@ -1705,15 +1705,15 @@
   <p>where</p>
 
   <ul>
-    <li><code>&lt;your component base dir&gt;</code> is the base directory in which your component is located. Typical values are <code>app/code</code> or <code>vendor</code> relative to the Magento installation directory.</li>
-    <li><code>&lt;vendorname&gt;</code> is the component’s vendor name; for example, Magento’s vendor name is <code>magento</code>.</li>
+    <li><code class="highlighter-rouge">&lt;your component base dir&gt;</code> is the base directory in which your component is located. Typical values are <code class="highlighter-rouge">app/code</code> or <code class="highlighter-rouge">vendor</code> relative to the Magento installation directory.</li>
+    <li><code class="highlighter-rouge">&lt;vendorname&gt;</code> is the component’s vendor name; for example, Magento’s vendor name is <code class="highlighter-rouge">magento</code>.</li>
     <li>
-      <p><code>&lt;component-type&gt;</code> is one of the following:</p>
+      <p><code class="highlighter-rouge">&lt;component-type&gt;</code> is one of the following:</p>
 
       <ul>
-        <li><code>module-</code>: An extension or module.</li>
-        <li><code>theme-</code>: Theme.</li>
-        <li><code>language-</code>: Language package.</li>
+        <li><code class="highlighter-rouge">module-</code>: An extension or module.</li>
+        <li><code class="highlighter-rouge">theme-</code>: Theme.</li>
+        <li><code class="highlighter-rouge">language-</code>: Language package.</li>
       </ul>
 
       <div class="bs-callout bs-callout-info" id="info">
@@ -1721,11 +1721,11 @@
   		<p>Currently, themes are located under <code>&lt;your Magento install dir&gt;/app/design/frontend</code> or <code>&lt;your Magento install dir&gt;/app/design/adminhtml</code></p></span>
 </div>
     </li>
-    <li><code>&lt;component-name&gt;</code>: Name of your component as defined in <code>composer.json</code>.</li>
+    <li><code class="highlighter-rouge">&lt;component-name&gt;</code>: Name of your component as defined in <code class="highlighter-rouge">composer.json</code>.</li>
   </ul>
 
   <h3 id="config-files-load-merge-merge">Configuration file merge</h3>
-  <p>Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in <code>$idAttributes</code> array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.</p>
+  <p>Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in <code class="highlighter-rouge">$idAttributes</code> array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.</p>
 
   <p>Magento’s merge algorithm follows:</p>
 
@@ -1797,12 +1797,12 @@
   <h3 id="config-files-classes-int">Configuration interfaces</h3>
   <p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
 
-  <p><code>Magento\Framework\Config</code> provides the following interfaces:</p>
+  <p><code class="highlighter-rouge">Magento\Framework\Config</code> provides the following interfaces:</p>
 
   <ul>
     <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> into an in-memory array representation of the configurations.</li>
     <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.</li>
-    <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <code>\Magento\Framework\Config\ReaderInterface</code></li>
+    <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <code class="highlighter-rouge">\Magento\Framework\Config\ReaderInterface</code></li>
     <li>
       <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.</p>
 

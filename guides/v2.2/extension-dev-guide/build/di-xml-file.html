@@ -1249,36 +1249,36 @@
 
 			<h2 id="overview">Overview</h2>
 
-<p>The <code>di.xml</code> file configures which <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">dependencies</a> to inject by the <a href="/guides/v2.2/extension-dev-guide/object-manager.html">object manager</a>. You can also specify <a href="#ext-di-sens">sensitive configuration sensitive</a> using <code>di.xml</code>.</p>
+<p>The <code class="highlighter-rouge">di.xml</code> file configures which <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">dependencies</a> to inject by the <a href="/guides/v2.2/extension-dev-guide/object-manager.html">object manager</a>. You can also specify <a href="#ext-di-sens">sensitive configuration sensitive</a> using <code class="highlighter-rouge">di.xml</code>.</p>
 
 <h2 id="areas-and-application-entry-points">Areas and application entry points</h2>
 
-<p>Each <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> can have a global and area-specific <code>di.xml</code> file.
-Magento reads all the <code>di.xml</code> configuration files declared in the system and merges them all together by appending all nodes.</p>
+<p>Each <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> can have a global and area-specific <code class="highlighter-rouge">di.xml</code> file.
+Magento reads all the <code class="highlighter-rouge">di.xml</code> configuration files declared in the system and merges them all together by appending all nodes.</p>
 
-<p>As a general rule, the area specific <code>di.xml</code> files should configure dependencies for the presentation layer, and your module’s global <code>di.xml</code> file should configure the remaining dependencies.</p>
+<p>As a general rule, the area specific <code class="highlighter-rouge">di.xml</code> files should configure dependencies for the presentation layer, and your module’s global <code class="highlighter-rouge">di.xml</code> file should configure the remaining dependencies.</p>
 
 <p>Magento loads The configuration in the following stages:</p>
 
 <ol>
-  <li>Initial (<code>app/etc/di.xml</code>)</li>
-  <li>Global (<code>&lt;moduleDir&gt;/etc/di.xml</code>)</li>
-  <li>Area-specific (<code>&lt;moduleDir&gt;/etc/&lt;area&gt;/di.xml</code>)</li>
+  <li>Initial (<code class="highlighter-rouge">app/etc/di.xml</code>)</li>
+  <li>Global (<code class="highlighter-rouge">&lt;moduleDir&gt;/etc/di.xml</code>)</li>
+  <li>Area-specific (<code class="highlighter-rouge">&lt;moduleDir&gt;/etc/&lt;area&gt;/di.xml</code>)</li>
 </ol>
 
-<p>During <a href="/guides/v2.2/config-guide/bootstrap/magento-bootstrap.html">bootstrapping</a>, each application entry point loads the appropriate <code>di.xml</code> files for the requested <a href="/guides/v2.2/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a>.</p>
+<p>During <a href="/guides/v2.2/config-guide/bootstrap/magento-bootstrap.html">bootstrapping</a>, each application entry point loads the appropriate <code class="highlighter-rouge">di.xml</code> files for the requested <a href="/guides/v2.2/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a>.</p>
 
 <p><strong>Examples:</strong></p>
 
 <ul>
   <li>
-    <p>In <code>index.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Http.php#L130-L132" target="_blank"><code>\Magento\Framework\App\Http</code></a> class loads the area based on the front-name provided in <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">url</span>.</p>
+    <p>In <code class="highlighter-rouge">index.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Http.php#L130-L132" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\Http</code></a> class loads the area based on the front-name provided in <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">url</span>.</p>
   </li>
   <li>
-    <p>In <code>static.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104" target="_blank"><code>\Magento\Framework\App\StaticResource</code></a> class also loads the area based on the url in the request.</p>
+    <p>In <code class="highlighter-rouge">static.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\StaticResource</code></a> class also loads the area based on the url in the request.</p>
   </li>
   <li>
-    <p>In <code>cron.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Cron.php#L68-L70" target="_blank"><code>\Magento\Framework\App\Cron</code></a> class always loads the ‘crontab’ area.</p>
+    <p>In <code class="highlighter-rouge">cron.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Cron.php#L68-L70" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\Cron</code></a> class always loads the ‘crontab’ area.</p>
   </li>
 </ul>
 
@@ -1286,17 +1286,17 @@ Magento reads all the <code>di.xml</code> configuration files declared in the sy
 
 <p>Type configurations describe an object’s lifestyle and how to instantiate it.</p>
 
-<p>You can configure the type in your <code>di.xml</code> configuration node in the following ways:</p>
+<p>You can configure the type in your <code class="highlighter-rouge">di.xml</code> configuration node in the following ways:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;moduleConfig&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Core\Model\Config&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"moduleConfig"</span> <span class="na">type=</span><span class="s">"Magento\Core\Model\Config"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>system<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>system<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/virtualType&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\App&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Core\Model\App"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>moduleConfig<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>moduleConfig<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
@@ -1304,72 +1304,72 @@ Magento reads all the <code>di.xml</code> configuration files declared in the sy
 <p>The preceding example declares the following types:</p>
 
 <ul>
-  <li><code>moduleConfig</code>: A virtual type that extends the type <code>Magento\Core\Model\Config</code>.</li>
-  <li><code>Magento\Core\Model\App</code>: All instances of this type receive an instance of <code>moduleConfig</code> as a dependency.</li>
+  <li><code class="highlighter-rouge">moduleConfig</code>: A virtual type that extends the type <code class="highlighter-rouge">Magento\Core\Model\Config</code>.</li>
+  <li><code class="highlighter-rouge">Magento\Core\Model\App</code>: All instances of this type receive an instance of <code class="highlighter-rouge">moduleConfig</code> as a dependency.</li>
 </ul>
 
 <h3 id="virtual-types">Virtual types</h3>
 <p>A <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
 This allows you to use a customized class without affecting other classes that have a dependency on the original.</p>
 
-<p>The example creates a virtual type for <code>Magento\Core\Model\Config</code> and specifies <code>system</code> as the constructor argument for <code>type</code>.</p>
+<p>The example creates a virtual type for <code class="highlighter-rouge">Magento\Core\Model\Config</code> and specifies <code class="highlighter-rouge">system</code> as the constructor argument for <code class="highlighter-rouge">type</code>.</p>
 
 <h2 id="constructor-arguments">Constructor arguments</h2>
 
-<p>You can configure the class constructor arguments in your <code>di.xml</code> in the argument node.
+<p>You can configure the class constructor arguments in your <code class="highlighter-rouge">di.xml</code> in the argument node.
 The object manager injects these arguments into the class during creation.
 The name of the argument configured in the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file must correspond to the name of the parameter in the constructor in the configured class.</p>
 
-<p>The following example creates instances of <code>Magento\Core\Model\Session</code> with the class constructor argument <code>$sessionName</code> set to a value of <code>adminhtml</code>:</p>
+<p>The following example creates instances of <code class="highlighter-rouge">Magento\Core\Model\Session</code> with the class constructor argument <code class="highlighter-rouge">$sessionName</code> set to a value of <code class="highlighter-rouge">adminhtml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Core\Model\Session&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Core\Model\Session"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;sessionName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>adminhtml<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"sessionName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>adminhtml<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h3 id="argument-types">Argument types</h3>
 
-<p><code>object</code></p>
+<p><code class="highlighter-rouge">object</code></p>
 
 <dl>
   <dt>Node Formats:</dt>
   <dd>
-    <p><code>&lt;argument xsi:type="object"&gt;{typeName}&lt;/argument&gt;</code></p>
+    <p><code class="highlighter-rouge">&lt;argument xsi:type="object"&gt;{typeName}&lt;/argument&gt;</code></p>
   </dd>
-  <dd><code>&lt;argument xsi:type="object" shared="{shared}"&gt;{typeName}&lt;/argument&gt;</code></dd>
+  <dd><code class="highlighter-rouge">&lt;argument xsi:type="object" shared="{shared}"&gt;{typeName}&lt;/argument&gt;</code></dd>
 </dl>
 
-<p>Creates an instance of <code>typeName</code> type and passes it in as an argument.
-You can pass any class name, interface name, or virtual type as <code>typeName</code>.</p>
+<p>Creates an instance of <code class="highlighter-rouge">typeName</code> type and passes it in as an argument.
+You can pass any class name, interface name, or virtual type as <code class="highlighter-rouge">typeName</code>.</p>
 
-<p>Setting the <code>shared</code> property defines the lifestyle of a created instance.
+<p>Setting the <code class="highlighter-rouge">shared</code> property defines the lifestyle of a created instance.
 See <a href="#object-lifestyle-configuration">object lifestyle configuration</a>.</p>
 
 <hr />
 
-<p><code>string</code></p>
+<p><code class="highlighter-rouge">string</code></p>
 
 <dl>
   <dt>Node Formats:</dt>
   <dd>
-    <p><code>&lt;argument xsi:type="string"&gt;{strValue}&lt;/argument&gt;</code></p>
+    <p><code class="highlighter-rouge">&lt;argument xsi:type="string"&gt;{strValue}&lt;/argument&gt;</code></p>
   </dd>
-  <dd><code>&lt;argument xsi:type="string" translate="true"&gt;{strValue}&lt;/argument&gt;</code></dd>
+  <dd><code class="highlighter-rouge">&lt;argument xsi:type="string" translate="true"&gt;{strValue}&lt;/argument&gt;</code></dd>
 </dl>
 
 <p>Magento interprets any value for this argument node as a string.</p>
 
 <hr />
 
-<p><code>boolean</code></p>
+<p><code class="highlighter-rouge">boolean</code></p>
 
 <dl>
   <dt>Node Format:</dt>
   <dd>
-    <p><code>&lt;argument xsi:type="boolean"&gt;{boolValue}&lt;/argument&gt;</code></p>
+    <p><code class="highlighter-rouge">&lt;argument xsi:type="boolean"&gt;{boolValue}&lt;/argument&gt;</code></p>
   </dd>
 </dl>
 
@@ -1432,12 +1432,12 @@ See table below:</p>
 
 <hr />
 
-<p><code>number</code></p>
+<p><code class="highlighter-rouge">number</code></p>
 
 <dl>
   <dt>Node Format:</dt>
   <dd>
-    <p><code>&lt;argument xsi:type="number"&gt;{numericValue}&lt;/argument&gt;</code></p>
+    <p><code class="highlighter-rouge">&lt;argument xsi:type="number"&gt;{numericValue}&lt;/argument&gt;</code></p>
   </dd>
 </dl>
 
@@ -1445,38 +1445,38 @@ See table below:</p>
 
 <hr />
 
-<p><code>init_parameter</code></p>
+<p><code class="highlighter-rouge">init_parameter</code></p>
 
 <dl>
   <dt>Node Format:</dt>
   <dd>
-    <p><code>&lt;argument xsi:type="init_parameter"&gt;{Constant::NAME}&lt;/argument&gt;</code></p>
+    <p><code class="highlighter-rouge">&lt;argument xsi:type="init_parameter"&gt;{Constant::NAME}&lt;/argument&gt;</code></p>
   </dd>
 </dl>
 
-<p>This is the global application initialization argument represented by <code>Constant::NAME</code>.</p>
+<p>This is the global application initialization argument represented by <code class="highlighter-rouge">Constant::NAME</code>.</p>
 
 <hr />
 
-<p><code>const</code></p>
+<p><code class="highlighter-rouge">const</code></p>
 
 <dl>
   <dt>Node Format:</dt>
   <dd>
-    <p><code>&lt;argument xsi:type="const"&gt;{Constant::NAME}&lt;/argument&gt;</code></p>
+    <p><code class="highlighter-rouge">&lt;argument xsi:type="const"&gt;{Constant::NAME}&lt;/argument&gt;</code></p>
   </dd>
 </dl>
 
-<p>This is the constant value represented by <code>Constant::NAME</code>.</p>
+<p>This is the constant value represented by <code class="highlighter-rouge">Constant::NAME</code>.</p>
 
 <hr />
 
-<p><code>null</code></p>
+<p><code class="highlighter-rouge">null</code></p>
 
 <dl>
   <dt>Node Format:</dt>
   <dd>
-    <p><code>&lt;argument xsi:type="null"/&gt;</code></p>
+    <p><code class="highlighter-rouge">&lt;argument xsi:type="null"/&gt;</code></p>
   </dd>
 </dl>
 
@@ -1484,15 +1484,16 @@ See table below:</p>
 
 <hr />
 
-<p><code>array</code></p>
+<p><code class="highlighter-rouge">array</code></p>
 
 <dl>
   <dt>Node Format:</dt>
   <dd>
-    <pre><code>&lt;argument xsi:type="array"&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;argument xsi:type="array"&gt;
   &lt;item name="someKey" xsi:type="&lt;type&gt;"&gt;someVal&lt;/item&gt;
 &lt;/argument&gt;
 </code></pre>
+    </div>
   </dd>
 </dl>
 
@@ -1507,35 +1508,35 @@ The array can contain an infinite number of items, and each array item can be of
 
 <p><strong>Argument Examples:</strong></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Example\Type&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Example\Type"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="c">&lt;!-- Pass simple string --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;stringParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>someStringValue<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"stringParam"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>someStringValue<span class="nt">&lt;/argument&gt;</span>
             <span class="c">&lt;!-- Pass instance of Magento\Some\Type --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;instanceParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Some\Type<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"instanceParam"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Some\Type<span class="nt">&lt;/argument&gt;</span>
             <span class="c">&lt;!-- Pass true --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;boolParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"boolParam"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
             <span class="c">&lt;!-- Pass 1 --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;intParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"intParam"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
             <span class="c">&lt;!-- Pass application init argument, named by constant value --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;globalInitParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;init_parameter&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"globalInitParam"</span> <span class="na">xsi:type=</span><span class="s">"init_parameter"</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/argument&gt;</span>
             <span class="c">&lt;!-- Pass constant value --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;constantParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;const&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"constantParam"</span> <span class="na">xsi:type=</span><span class="s">"const"</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/argument&gt;</span>
             <span class="c">&lt;!-- Pass null value --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;optionalParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;null&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"optionalParam"</span> <span class="na">xsi:type=</span><span class="s">"null"</span><span class="nt">/&gt;</span>
             <span class="c">&lt;!-- Pass array --&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;arrayParam&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"arrayParam"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
                 <span class="c">&lt;!-- First element is value of constant --&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;firstElem&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;const&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"firstElem"</span> <span class="na">xsi:type=</span><span class="s">"const"</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/item&gt;</span>
                 <span class="c">&lt;!-- Second element is null --&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;secondElem&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;null&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"secondElem"</span> <span class="na">xsi:type=</span><span class="s">"null"</span><span class="nt">/&gt;</span>
                 <span class="c">&lt;!-- Third element is a subarray --&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;thirdElem&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"thirdElem"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
                     <span class="c">&lt;!-- Subarray contains scalar value --&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;scalarValue&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ScalarValue<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"scalarValue"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ScalarValue<span class="nt">&lt;/item&gt;</span>
                     <span class="c">&lt;!-- and application init argument --&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;globalArgument &quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;init_parameter&quot;</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"globalArgument "</span> <span class="na">xsi:type=</span><span class="s">"init_parameter"</span><span class="nt">&gt;</span>Magento\Some\Class::SOME_CONSTANT<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
@@ -1554,45 +1555,45 @@ If the argument type is the same, then the newer argument replaces the old one.<
 <p>The object managers uses the abstraction-implementation mappings when the constructor signature of a class requests an object by its interface.
 The object manager uses these mappings to determine what the default implementation is for that class for a particular scope.</p>
 
-<p>The <code>preference</code> node specifies the default implementation:</p>
+<p>The <code class="highlighter-rouge">preference</code> node specifies the default implementation:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!--  File: app/etc/di.xml --&gt;</span>
 <span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Core\Model\Url&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Core\Model\UrlInterface"</span> <span class="na">type=</span><span class="s">"Magento\Core\Model\Url"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>This mapping is in <code>app/etc/di.xml</code>, so the object manager injects the <code>Magento\Core\Model\Url</code> implementation class wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the global scope.</p>
+<p>This mapping is in <code class="highlighter-rouge">app/etc/di.xml</code>, so the object manager injects the <code class="highlighter-rouge">Magento\Core\Model\Url</code> implementation class wherever there is a request for the <code class="highlighter-rouge">Magento\Core\Model\UrlInterface</code> in the global scope.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml --&gt;</span>
 <span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Backend\Model\Url&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Core\Model\UrlInterface"</span> <span class="na">type=</span><span class="s">"Magento\Backend\Model\Url"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>This mapping is in <code>app/code/core/Magento/Backend/etc/adminhtml/di.xml</code>, so the object manager injects the <code>Magento\Backend\Model\Url</code> implementation class wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> area.</p>
+<p>This mapping is in <code class="highlighter-rouge">app/code/core/Magento/Backend/etc/adminhtml/di.xml</code>, so the object manager injects the <code class="highlighter-rouge">Magento\Backend\Model\Url</code> implementation class wherever there is a request for the <code class="highlighter-rouge">Magento\Core\Model\UrlInterface</code> in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> area.</p>
 
 <h3 id="parameter-configuration-inheritance">Parameter configuration inheritance</h3>
 
 <p>Parameters configured for a class type pass on its configuration to its descendant classes.
 Any descendant can override the parameters configured for its supertype; that is, the parent class or interface:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\View\Element\Context&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\View\Element\Context"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;urlBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Core\Model\Url<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"urlBuilder"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Core\Model\Url<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Backend\Block\Context&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Backend\Block\Context"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;urlBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Backend\Model\Url<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"urlBuilder"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Backend\Model\Url<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>In the preceding example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Block/Context.php" target="_blank"><code>Magento\Backend\Block\Context</code></a> is a descendant of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Context.php" target="_blank"><code>Magento\Framework\View\Element\Context</code></a>.</p>
+<p>In the preceding example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Block/Context.php" target="_blank"><code class="highlighter-rouge">Magento\Backend\Block\Context</code></a> is a descendant of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Context.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\View\Element\Context</code></a>.</p>
 
-<p>The first entry configures all instances of <code>Magento\Framework\View\Element\Context</code> as well as its children to pass in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Url.php" target="_blank"><code>Magento\Core\Model\Url</code></a> as <code>$urlBuilder</code> in their constructors.</p>
+<p>The first entry configures all instances of <code class="highlighter-rouge">Magento\Framework\View\Element\Context</code> as well as its children to pass in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Url.php" target="_blank"><code class="highlighter-rouge">Magento\Core\Model\Url</code></a> as <code class="highlighter-rouge">$urlBuilder</code> in their constructors.</p>
 
-<p>The second entry overrides this and configures all instances of <code>Magento\Backend\Block\Context</code> to use <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Model/Url.php" target="_blank"><code>Magento\Backend\Model\Url</code></a> as the <code>$urlBuilder</code> instead.</p>
+<p>The second entry overrides this and configures all instances of <code class="highlighter-rouge">Magento\Backend\Block\Context</code> to use <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Model/Url.php" target="_blank"><code class="highlighter-rouge">Magento\Backend\Model\Url</code></a> as the <code class="highlighter-rouge">$urlBuilder</code> instead.</p>
 
 <h2 id="object-lifestyle-configuration">Object lifestyle configuration</h2>
 
@@ -1607,18 +1608,18 @@ Disposing or ending the container registered to it releases the instance.</li>
   <li><strong>transient</strong> - The object manager creates a new instance of the class for every request.</li>
 </ul>
 
-<p>The <code>shared</code> property determines the lifestyle of both <code>argument</code> and <code>type</code> configurations.</p>
+<p>The <code class="highlighter-rouge">shared</code> property determines the lifestyle of both <code class="highlighter-rouge">argument</code> and <code class="highlighter-rouge">type</code> configurations.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Filesystem&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Filesystem"</span> <span class="na">shared=</span><span class="s">"false"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;adapter&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>Magento\Filesystem\Adapter\Local<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"adapter"</span> <span class="na">xsi:type=</span><span class="s">"object"</span> <span class="na">shared=</span><span class="s">"false"</span><span class="nt">&gt;</span>Magento\Filesystem\Adapter\Local<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>In this example <code>Magento\Filesystem</code> is not shared, so all clients will retrieve separate instances of <code>Magento\Filesystem</code>.
-Also, every instance of <code>Magento\Filesystem</code> will get separate instance of <code>$adapter</code>, because it too is non-shared.</p>
+<p>In this example <code class="highlighter-rouge">Magento\Filesystem</code> is not shared, so all clients will retrieve separate instances of <code class="highlighter-rouge">Magento\Filesystem</code>.
+Also, every instance of <code class="highlighter-rouge">Magento\Filesystem</code> will get separate instance of <code class="highlighter-rouge">$adapter</code>, because it too is non-shared.</p>
 
 <h2 id="ext-di-sens">Sensitive and system-specific configuration settings</h2>
 
@@ -1628,7 +1629,7 @@ Also, every instance of <code>Magento\Filesystem</code> will get separate instan
   <tbody>
     <tr>
       <td>shared</td>
-      <td>Settings that are shared between systems using <code>app/etc/config.php</code></td>
+      <td>Settings that are shared between systems using <code class="highlighter-rouge">app/etc/config.php</code></td>
     </tr>
     <tr>
       <td>sensitive</td>
@@ -1643,32 +1644,32 @@ Also, every instance of <code>Magento\Filesystem</code> will get separate instan
 
 <p>The following code sample is a template for specifying values as sensitive or system-specific:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">type</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Magento\Config\Model\Config</span><span class="se">\T</span><span class="s2">ypePool&quot;</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;VALUE_TYPE&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;CONFIG_PATH&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">ARGUMENT_VALUE</span><span class="o">&lt;/</span><span class="nx">item</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="nx">argument</span><span class="o">&gt;</span>
-   <span class="o">&lt;/</span><span class="nx">arguments</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="nx">type</span><span class="o">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Config\Model\Config\TypePool"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"VALUE_TYPE"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"CONFIG_PATH"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ARGUMENT_VALUE<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <table>
   <tbody>
     <tr>
-      <td><code>VALUE_TYPE</code></td>
-      <td>Specifies the type of value: either <code>sensitive</code> or <code>environment</code>.</td>
+      <td><code class="highlighter-rouge">VALUE_TYPE</code></td>
+      <td>Specifies the type of value: either <code class="highlighter-rouge">sensitive</code> or <code class="highlighter-rouge">environment</code>.</td>
     </tr>
     <tr>
-      <td><code>CONFIG_PATH</code></td>
-      <td>A unique, <code>/</code>-delimited string that identifies this configuration setting.</td>
+      <td><code class="highlighter-rouge">CONFIG_PATH</code></td>
+      <td>A unique, <code class="highlighter-rouge">/</code>-delimited string that identifies this configuration setting.</td>
     </tr>
     <tr>
-      <td><code>ARGUMENT_VALUE</code></td>
-      <td>A value of <code>1</code> indicates the <code>CONFIG_PATH</code> value is sensitive or system-specific. The default <code>0</code> value indicates it is neither sensitive nor system specific.</td>
+      <td><code class="highlighter-rouge">ARGUMENT_VALUE</code></td>
+      <td>A value of <code class="highlighter-rouge">1</code> indicates the <code class="highlighter-rouge">CONFIG_PATH</code> value is sensitive or system-specific. The default <code class="highlighter-rouge">0</code> value indicates it is neither sensitive nor system specific.</td>
     </tr>
   </tbody>
 </table>
 
-<p>Do not share sensitive or system-specific settings stored in <code>app/etc/env.php</code> between development and production systems.</p>
+<p>Do not share sensitive or system-specific settings stored in <code class="highlighter-rouge">app/etc/env.php</code> between development and production systems.</p>
 
 <p>See <a href="/guides/v2.2/extension-dev-guide/configuration/sensitive-and-environment-settings.html">sensitive and environment settings</a> for more information and examples.</p>
 

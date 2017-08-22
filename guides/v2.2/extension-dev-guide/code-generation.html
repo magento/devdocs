@@ -1250,13 +1250,14 @@
 			<h2 id="codegen-over">Overview of code generation</h2>
 <p>The Magento application generates code to create non-existent classes. As an example, look at the <a href="https://github.com/magento/magento2/blob/2.0//app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:</p>
 
-<pre><code>...
+<div class="highlighter-rouge"><pre class="highlight"><code>...
     public function __construct(
         \Magento\Customer\Model\AddressFactory $addressFactory,
 ...
 </code></pre>
+</div>
 
-<p>The first constructor parameter has a type of <code>Magento\Customer\Model\AddressFactory</code>. However, this class does not exist in <code>\Magento\Customer\Model</code> in the Magento 2 codebase. The Magento application <em>generates</em> this class because its name uses a recognized convention (in this case, because the name ends with <code>Factory</code>).</p>
+<p>The first constructor parameter has a type of <code class="highlighter-rouge">Magento\Customer\Model\AddressFactory</code>. However, this class does not exist in <code class="highlighter-rouge">\Magento\Customer\Model</code> in the Magento 2 codebase. The Magento application <em>generates</em> this class because its name uses a recognized convention (in this case, because the name ends with <code class="highlighter-rouge">Factory</code>).</p>
 
 <p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug the code.</p>
 
@@ -1300,7 +1301,7 @@
 <h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
 <p>When code changes as discussed in the preceding section, the Object Manager compiles it.</p>
 
-<p>The code compiler compiler creates <code>generated/metadata/global.ser</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code>di.xml</code> is the dependency injection configuration. There is a global <code>app/etc/di.xml</code> and there can one defined for every <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
+<p>The code compiler compiler creates <code class="highlighter-rouge">generated/metadata/global.ser</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code class="highlighter-rouge">di.xml</code> is the dependency injection configuration. There is a global <code class="highlighter-rouge">app/etc/di.xml</code> and there can one defined for every <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 		</div>
 		<!-- /.content-wrap -->

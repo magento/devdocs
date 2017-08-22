@@ -1105,23 +1105,25 @@
 			<h2 id="troubleshoot-upgrade-issues">Troubleshoot upgrade issues</h2>
 <p>This section discusses upgrade issues to Magento version 2.0.4. Symptoms include any of the following errors during the upgrade process:</p>
 
-<h3 id="strict-notice-exception"><code>Strict Notice</code> exception</h3>
+<h3 id="strict-notice-exception"><code class="highlighter-rouge">Strict Notice</code> exception</h3>
 <p>Error text follows:</p>
 
-<pre><code>[Exception]                                                                                                                                                
+<div class="highlighter-rouge"><pre class="highlight"><code>[Exception]                                                                                                                                                
 Strict Notice: Declaration of Magento\Store\Model\ResourceModel\Website\Interceptor::afterLoad() should be compatible with Magento\Framework\Model\ResourceModel\Db\AbstractDb::afterLoad(Magento\Framework\DataObject $object) in /var/www/html/magento2ce/var/generation/Magento/Store/Model/ResourceModel/Website/Interceptor.php on line 7   
 </code></pre>
+</div>
 
 <h3 id="php-fatal-error">PHP fatal error</h3>
 <p>A snippet from this error follows:</p>
 
-<pre><code>PHP Fatal error:  Cannot instantiate interface Magento\Framework\MessageQueue\ConfigInterface in /var/www/html/eddie/project-enterprise-edition/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73
+<div class="highlighter-rouge"><pre class="highlight"><code>PHP Fatal error:  Cannot instantiate interface Magento\Framework\MessageQueue\ConfigInterface in /var/www/html/eddie/project-enterprise-edition/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73
 PHP Stack trace:
 PHP   1. {main}() /var/www/html/eddie/project-enterprise-edition/bin/magento:0
 PHP   2. Magento\Framework\Console\Cli-&gt;__construct() /var/www/html/eddie/project-enterprise-edition/bin/magento:26
 PHP   3. Symfony\Component\Console\Application-&gt;__construct() /var/www/html/eddie/project-enterprise-edition/vendor/magento/framework/Console/Cli.php:94
 ... more ...
 </code></pre>
+</div>
 
 <h2 id="solution">Solution</h2>
 <p>To resolve these errors, perform the following tasks:</p>
@@ -1135,32 +1137,35 @@ PHP   3. Symfony\Component\Console\Application-&gt;__construct() /var/www/html/e
   <li>
     <p>Remove the following files so you can upgrade again:</p>
 
-    <pre><code>&lt;your Magento install dir&gt;/var/.maintenance.flag
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;your Magento install dir&gt;/var/.maintenance.flag
 &lt;your Magento install dir&gt;/var/.update_in_progress.flag
 &lt;your Magento install dir&gt;/var/cache/*
 &lt;your Magento install dir&gt;/var/page_cache/*
 &lt;your Magento install dir&gt;/var/generation/*
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Run your upgrade again, making sure to complete <em>all tasks</em> discussed in <a href="/guides/v2.2/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.</p>
   </li>
 </ol>
 
-<h3 id="compman-upgr-perms"><code>var/session</code> permissions failure</h3>
-<p>If your Magento application is set to write session data to the <code>&lt;your Magento install dir&gt;/var/session</code> directory, you must set permissions on that directory before you upgrade.</p>
+<h3 id="compman-upgr-perms"><code class="highlighter-rouge">var/session</code> permissions failure</h3>
+<p>If your Magento application is set to write session data to the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/session</code> directory, you must set permissions on that directory before you upgrade.</p>
 
 <p><a href="/guides/v2.2/config-guide/sessions.html">How to find where Magento stores session files</a>.</p>
 
-<p>To verify whether or not sessions are stored in <code>&lt;your Magento install dir&gt;/var/session</code>, log in to your Magento server, or switch to, <a href="/guides/v2.2/install-gde/prereq/apache-user.html">Magento file system owner</a> and enter the following command:</p>
+<p>To verify whether or not sessions are stored in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/session</code>, log in to your Magento server, or switch to, <a href="/guides/v2.2/install-gde/prereq/apache-user.html">Magento file system owner</a> and enter the following command:</p>
 
-<pre><code>ls &lt;your Magento file install dir&gt;/var/session
+<div class="highlighter-rouge"><pre class="highlight"><code>ls &lt;your Magento file install dir&gt;/var/session
 </code></pre>
+</div>
 
-<p>For example, if Magento is installed in <code>/var/www/magento2</code>, enter:</p>
+<p>For example, if Magento is installed in <code class="highlighter-rouge">/var/www/magento2</code>, enter:</p>
 
-<pre><code>ls /var/www/magento2/var/session
+<div class="highlighter-rouge"><pre class="highlight"><code>ls /var/www/magento2/var/session
 </code></pre>
+</div>
 
 <p>If there are files in that directory, you must set permissions; if there are no files in that directory, you can skip the remainder of this topic and continue with <a href="/guides/v2.2/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a>.</p>
 
@@ -1175,29 +1180,32 @@ PHP   3. Symfony\Component\Console\Application-&gt;__construct() /var/www/html/e
       <li>
         <p>One Magento user (typical of shared hosting):</p>
 
-        <pre><code>cd &lt;your Magento install dir&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 find var -type f -exec chmod u+w {} \;
 find var -type d -exec chmod u+w {} \;
 </code></pre>
+        </div>
 
         <p>If you don’t have access to a command line, use a file manager tool provided by your hosting provider to set permissions.</p>
       </li>
       <li>
         <p>Two Magento users:</p>
 
-        <pre><code>cd &lt;your Magento install dir&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 find var -type f -exec chmod g+w {} \;
 find var -type d -exec chmod g+ws {} \;
 chown -R :&lt;web server group&gt; .
 </code></pre>
+        </div>
 
-        <p>For example, on CentOS where the web server group is typically <code>apache</code>:</p>
+        <p>For example, on CentOS where the web server group is typically <code class="highlighter-rouge">apache</code>:</p>
 
-        <pre><code>cd /var/www/html/magento2
+        <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2
 find var -type f -exec chmod g+w {} \;
 find var -type d -exec chmod g+ws {} \;
 chown -R :apache .
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>

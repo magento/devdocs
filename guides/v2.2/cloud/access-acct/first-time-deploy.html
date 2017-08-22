@@ -1578,16 +1578,16 @@
 <p><a href="/guides/v2.2/cloud/before/before-setup-env-install.html">Install Magento</a></p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You only need to complete this step one time for a new project. As a best practice, you need to have the template Magento Commerce project (or <code>master</code> branch) fully deployed across all environments to ensure all future code pushes correctly deploy.</p>
+  <p>You only need to complete this step one time for a new project. As a best practice, you need to have the template Magento Commerce project (or <code class="highlighter-rouge">master</code> branch) fully deployed across all environments to ensure all future code pushes correctly deploy.</p>
 </div>
 
-<p>After fully setting up your local workspace, you should have the cloned Integration <code>master</code> branch on your local. To finish your initial setup, we <strong>strongly recommend fully deploying</strong> <code>master</code> branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.</p>
+<p>After fully setting up your local workspace, you should have the cloned Integration <code class="highlighter-rouge">master</code> branch on your local. To finish your initial setup, we <strong>strongly recommend fully deploying</strong> <code class="highlighter-rouge">master</code> branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.</p>
 
 <p>This initial push provides the following benefits:</p>
 
 <ul>
   <li>Fully installs Magento in each environment</li>
-  <li>Allows the build/deploy scripts to use the <code>setup:upgrade</code> command instead of <code>setup:install</code> (important for adding extensions)</li>
+  <li>Allows the build/deploy scripts to use the <code class="highlighter-rouge">setup:upgrade</code> command instead of <code class="highlighter-rouge">setup:install</code> (important for adding extensions)</li>
   <li>
     <p>Protects against errors and failures when installing with added modules and extensions</p>
 
@@ -1599,7 +1599,7 @@
 <p>To deploy, you need the following:</p>
 
 <ul>
-  <li>A project with an unmodified Magento Commerce template <code>master</code> branch (projects created using the import option may encounter issues)</li>
+  <li>A project with an unmodified Magento Commerce template <code class="highlighter-rouge">master</code> branch (projects created using the import option may encounter issues)</li>
   <li>Staging and Production environments provisioned</li>
   <li>SSH access to Staging and Production environments</li>
 </ul>
@@ -1610,29 +1610,29 @@
 <p>To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you do not have these environments provisioned, create any code in a branch but do not merge it to <code>master</code>. Only merge after you have fully deployed across the provisioned environments.</p>
+  <p>If you do not have these environments provisioned, create any code in a branch but do not merge it to <code class="highlighter-rouge">master</code>. Only merge after you have fully deployed across the provisioned environments.</p>
 </div>
 
 <p>To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.</p>
 
 <h2 id="deploy-to-staging-and-production">Deploy to Staging and Production</h2>
-<p>You can SSH into the Staging and Production environments to push the <code>master</code> branch. You’ll need the SSH and Git with your project ID. The formats are as follows:</p>
+<p>You can SSH into the Staging and Production environments to push the <code class="highlighter-rouge">master</code> branch. You’ll need the SSH and Git with your project ID. The formats are as follows:</p>
 
 <ul>
   <li>
     <p>Git URL format:</p>
 
     <ul>
-      <li>Staging: <code>git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
-      <li>Production: <code>git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
+      <li>Staging: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
+      <li>Production: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
     </ul>
   </li>
   <li>
     <p>SSH URL format:</p>
 
     <ul>
-      <li>Staging: <code>&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code>&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Staging: <code class="highlighter-rouge">&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code class="highlighter-rouge">&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
     </ul>
   </li>
 </ul>
@@ -1651,14 +1651,16 @@
 
 <p>Command syntax:</p>
 
-<pre><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
 </code></pre>
+</div>
 
 <p>For example,</p>
 
-<pre><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+<div class="highlighter-rouge"><pre class="highlight"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
 git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 </code></pre>
+</div>
 
 <h3 id="cloud-live-migrate-agent">Set up your SSH agent</h3>
 <p>You can use any SSH client you prefer or see our <a href="/guides/v2.2/cloud/before/before-workspace.html#recommended-tools">Recommendeds tools</a>. For these examples, we use the OpenSSH client.</p>
@@ -1672,19 +1674,20 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>ssh-add -l
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh-add -l
 </code></pre>
+    </div>
 
     <p>One of the following messages displays:</p>
 
     <ul>
       <li>
-        <p>Working SSH agent: <code>2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
+        <p>Working SSH agent: <code class="highlighter-rouge">2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
 
         <p>Skip the next step and continue with step 4.</p>
       </li>
       <li>
-        <p>SSH agent not started: <code>Could not open a connection to your authentication agent.</code></p>
+        <p>SSH agent not started: <code class="highlighter-rouge">Could not open a connection to your authentication agent.</code></p>
 
         <p>Continue with step 3.</p>
       </li>
@@ -1693,21 +1696,24 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
   <li>
     <p>To start the SSH agent, enter the following command:</p>
 
-    <pre><code>  eval $(ssh-agent -s)
+    <div class="highlighter-rouge"><pre class="highlight"><code>  eval $(ssh-agent -s)
 </code></pre>
+    </div>
 
     <p>The agent’s process ID (PID) displays.</p>
   </li>
   <li>
     <p>Add your SSH key to the agent:</p>
 
-    <pre><code>  ssh-add ~/.ssh/id_rsa
+    <div class="highlighter-rouge"><pre class="highlight"><code>  ssh-add ~/.ssh/id_rsa
 </code></pre>
+    </div>
 
     <p>A message similar to the following displays:</p>
 
-    <pre><code>  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+    <div class="highlighter-rouge"><pre class="highlight"><code>  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1720,15 +1726,16 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
     <p>Open an SSH connection to your Staging or Production environment:</p>
 
     <ul>
-      <li>Staging: <code>ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code>ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
     </ul>
   </li>
   <li>
-    <p>Pull the <code>master</code> branch to the server.</p>
+    <p>Pull the <code class="highlighter-rouge">master</code> branch to the server.</p>
 
-    <pre><code> git pull origin master
+    <div class="highlighter-rouge"><pre class="highlight"><code> git pull origin master
 </code></pre>
+    </div>
   </li>
 </ol>
 

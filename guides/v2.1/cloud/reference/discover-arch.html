@@ -1684,10 +1684,10 @@
 <ul>
   <li>Fastly for http caching and CDN</li>
   <li>Nginx web server speaking to PHP-FPM, one instance with multiple workers</li>
-  <li>GlusterFS file server for managing all static file deployments and syncs with four directoris mounted: <code>var</code>, <code>pub/media</code>, <code>pub/static</code>, and <code>app/etc</code></li>
+  <li>GlusterFS file server for managing all static file deployments and syncs with four directoris mounted: <code class="highlighter-rouge">var</code>, <code class="highlighter-rouge">pub/media</code>, <code class="highlighter-rouge">pub/static</code>, and <code class="highlighter-rouge">app/etc</code></li>
   <li>Redis server, one per VM with only one active and the other two as replicas</li>
   <li>Elasticsearch</li>
-  <li>Galara database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database</li>
+  <li>Galera database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database</li>
 </ul>
 
 <p>The following figure shows the technology used in the Production environment:</p>

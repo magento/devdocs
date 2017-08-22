@@ -761,76 +761,76 @@
 
 <p>Following sample is an example of the response handler implementation:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">VaultDetailsHandler</span> <span class="k">implements</span> <span class="nx">HandlerInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @inheritdoc</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="k">array</span> <span class="nv">$handlingSubject</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$response</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$paymentDO</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readPayment</span><span class="p">(</span><span class="nv">$handlingSubject</span><span class="p">);</span>
-        <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readTransaction</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
-        <span class="nv">$payment</span> <span class="o">=</span> <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getPayment</span><span class="p">();</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class VaultDetailsHandler implements HandlerInterface
+{
+    /**
+     * @inheritdoc
+     */
+    public function handle(array $handlingSubject, array $response)
+    {
+        $paymentDO = $this-&gt;subjectReader-&gt;readPayment($handlingSubject);
+        $transaction = $this-&gt;subjectReader-&gt;readTransaction($response);
+        $payment = $paymentDO-&gt;getPayment();
 
-        <span class="c1">// add vault payment token entity to extension attributes</span>
-        <span class="nv">$paymentToken</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getVaultPaymentToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="k">null</span> <span class="o">!==</span> <span class="nv">$paymentToken</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$extensionAttributes</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getExtensionAttributes</span><span class="p">(</span><span class="nv">$payment</span><span class="p">);</span>
-            <span class="nv">$extensionAttributes</span><span class="o">-&gt;</span><span class="na">setVaultPaymentToken</span><span class="p">(</span><span class="nv">$paymentToken</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+        // add vault payment token entity to extension attributes
+        $paymentToken = $this-&gt;getVaultPaymentToken($transaction);
+        if (null !== $paymentToken) {
+            $extensionAttributes = $this-&gt;getExtensionAttributes($payment);
+            $extensionAttributes-&gt;setVaultPaymentToken($paymentToken);
+        }
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * Get vault payment token entity</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param \Braintree\Transaction $transaction</span>
-<span class="sd">     * @return PaymentTokenInterface|null</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">getVaultPaymentToken</span><span class="p">(</span><span class="nx">Transaction</span> <span class="nv">$transaction</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Check token existing in gateway response</span>
-        <span class="nv">$token</span> <span class="o">=</span> <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">creditCardDetails</span><span class="o">-&gt;</span><span class="na">token</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$token</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
-        <span class="p">}</span>
+    /**
+     * Get vault payment token entity
+     *
+     * @param \Braintree\Transaction $transaction
+     * @return PaymentTokenInterface|null
+     */
+    private function getVaultPaymentToken(Transaction $transaction)
+    {
+        // Check token existing in gateway response
+        $token = $transaction-&gt;creditCardDetails-&gt;token;
+        if (empty($token)) {
+            return null;
+        }
 
-        <span class="sd">/** @var PaymentTokenInterface $paymentToken */</span>
-        <span class="nv">$paymentToken</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">paymentTokenFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
-        <span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">setGatewayToken</span><span class="p">(</span><span class="nv">$token</span><span class="p">);</span>
+        /** @var PaymentTokenInterface $paymentToken */
+        $paymentToken = $this-&gt;paymentTokenFactory-&gt;create();
+        $paymentToken-&gt;setGatewayToken($token);
 
-        <span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">setTokenDetails</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">convertDetailsToJSON</span><span class="p">([</span>
-            <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCreditCardType</span><span class="p">(</span><span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">creditCardDetails</span><span class="o">-&gt;</span><span class="na">cardType</span><span class="p">),</span>
-            <span class="s1">&#39;maskedCC&#39;</span> <span class="o">=&gt;</span> <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">creditCardDetails</span><span class="o">-&gt;</span><span class="na">last4</span><span class="p">,</span>
-            <span class="s1">&#39;expirationDate&#39;</span> <span class="o">=&gt;</span> <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">creditCardDetails</span><span class="o">-&gt;</span><span class="na">expirationDate</span>
-        <span class="p">]));</span>
+        $paymentToken-&gt;setTokenDetails($this-&gt;convertDetailsToJSON([
+            'type' =&gt; $this-&gt;getCreditCardType($transaction-&gt;creditCardDetails-&gt;cardType),
+            'maskedCC' =&gt; $transaction-&gt;creditCardDetails-&gt;last4,
+            'expirationDate' =&gt; $transaction-&gt;creditCardDetails-&gt;expirationDate
+        ]));
 
-        <span class="k">return</span> <span class="nv">$paymentToken</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+        return $paymentToken;
+    }
+}</code></pre></figure>
 
-<p>There are two types of <code>paymentTokenFactory</code>:</p>
+<p>There are two types of <code class="highlighter-rouge">paymentTokenFactory</code>:</p>
 
 <ul>
-  <li><code>CreditCardTokenFactory</code>: used for credit cards</li>
-  <li><code>AccountPaymentTokenFactory</code>: used for payment accounts, like PayPal</li>
+  <li><code class="highlighter-rouge">CreditCardTokenFactory</code>: used for credit cards</li>
+  <li><code class="highlighter-rouge">AccountPaymentTokenFactory</code>: used for payment accounts, like PayPal</li>
 </ul>
 
 <p>Depending on your payment integration, you need to specify one of them to create a payment token.</p>
 
-<p>Also, you can use <code>\Magento\Vault\Api\Data\PaymentTokenInterfaceFactory</code> in your code as common dependency. But in that case you must specify preference for this interface in <code>di.xml</code>, because <code>PaymentTokenInterfaceFactory</code> does not have default preference.</p>
+<p>Also, you can use <code class="highlighter-rouge">\Magento\Vault\Api\Data\PaymentTokenInterfaceFactory</code> in your code as common dependency. But in that case you must specify preference for this interface in <code class="highlighter-rouge">di.xml</code>, because <code class="highlighter-rouge">PaymentTokenInterfaceFactory</code> does not have default preference.</p>
 
-<p>The important thing is the <code>setGatewayToken()</code> method. This method gets the gateway token: a hashed value based on some credit card details. Different
+<p>The important thing is the <code class="highlighter-rouge">setGatewayToken()</code> method. This method gets the gateway token: a hashed value based on some credit card details. Different
 payment providers use different algorithms to create this hash. In most cases, exactly this token is used to perform place order actions.</p>
 
-<p>The created response handler must be added to the handler chain in the DI configuration file <code>di.xml</code>.</p>
+<p>The created response handler must be added to the handler chain in the DI configuration file <code class="highlighter-rouge">di.xml</code>.</p>
 
-<p>Example of the Braintriee <code>di.xml</code>:</p>
+<p>Example of the Braintriee <code class="highlighter-rouge">di.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeAuthorizationHandler&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Response\HandlerChain&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeAuthorizationHandler"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Response\HandlerChain"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;handlers&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"handlers"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
             ...
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;vault_details&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Response\VaultDetailsHandler<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"vault_details"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Response\VaultDetailsHandler<span class="nt">&lt;/item&gt;</span>
             ...
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>

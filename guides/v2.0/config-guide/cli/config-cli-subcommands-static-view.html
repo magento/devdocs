@@ -1585,7 +1585,7 @@
   <li>“View” refers to presentation layer (from MVC).</li>
 </ul>
 
-<p>Static view files are located in the <code>&lt;your Magento install dir&gt;/pub/static</code> directory, and some are cached in the <code>&lt;your Magento install dir&gt;/var/view_preprocessed</code> directory as well.</p>
+<p>Static view files are located in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory, and some are cached in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/view_preprocessed</code> directory as well.</p>
 
 <p>Static view files deployment is affected by Magento modes as follows:</p>
 
@@ -1613,23 +1613,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1648,9 +1651,9 @@
 
   <ol>
     <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
-    <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code>.</li>
+    <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code>.</li>
     <li>
-      <p>Run the static view files deployment tool <code>&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
+      <p>Run the static view files deployment tool <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
       <div class="bs-callout bs-callout-info" id="info">
@@ -1662,8 +1665,9 @@
 
   <p>Command options:</p>
 
-  <pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run] 
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run] 
 </code></pre>
+  </div>
 
   <p>The following table discusses the meanings of this command’s parameters and values.</p>
 
@@ -1688,14 +1692,15 @@
 	</tbody>
 </table>
 
-  <p>For example, to deploy static view files for the <code>pt_BR</code> language, enter</p>
+  <p>For example, to deploy static view files for the <code class="highlighter-rouge">pt_BR</code> language, enter</p>
 
-  <pre><code>magento --ansi setup:static-content:deploy pt_BR
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento --ansi setup:static-content:deploy pt_BR
 </code></pre>
+  </div>
 
   <p>Following are some sample messages that display to indicate successful deployment:</p>
 
-  <pre><code>Requested languages: pt_BR
+  <div class="highlighter-rouge"><pre class="highlight"><code>Requested languages: pt_BR
 === frontend -&gt; Magento/luma -&gt; pt_BR ===
 ... progress indicator ...
 Successful: 1613 files; errors: 0
@@ -1714,14 +1719,16 @@ Successful: 858 files modified
 ---
 New version of deployed files: 1430773903
 </code></pre>
+  </div>
 
   <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
   <p><a href="/guides/v2.0/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.</p>
 
   <p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
 
-  <pre><code>ERROR: You need to install the Magento application before running this utility.
+  <div class="highlighter-rouge"><pre class="highlight"><code>ERROR: You need to install the Magento application before running this utility.
 </code></pre>
+  </div>
 
   <p><strong>Solution</strong>:</p>
 
@@ -1737,7 +1744,7 @@ New version of deployed files: 1430773903
       </ul>
     </li>
     <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.</li>
-    <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
+    <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
     <li>
       <p><a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
@@ -1754,7 +1761,7 @@ New version of deployed files: 1430773903
 
   <p>One of the options for making it atomic, is writing to files stored in a temporary directory and copying or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see <a href="http://php.net/manual/en/function.fwrite.php">http://php.net/manual/en/function.fwrite.php</a>.</p>
 
-  <p>Please note, that the default Magento implementation of <code>\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile</code> uses non-atomic write to file.</p>
+  <p>Please note, that the default Magento implementation of <code class="highlighter-rouge">\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile</code> uses non-atomic write to file.</p>
 
   <h2 id="related-topics">Related topics</h2>
 

@@ -1075,15 +1075,16 @@
 <p>The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.</p>
 
 <h3 id="translate_terms">Terms used</h3>
-<p>A <em>translation dictionary</em> is a comma-separated value (.csv) file with at least two columns: the original phrase in the <code>en_US</code> locale and a translation of that phrase in an another locale. Sample translation from English (<code>en_US</code>) to German (<code>de_DE</code>):</p>
+<p>A <em>translation dictionary</em> is a comma-separated value (.csv) file with at least two columns: the original phrase in the <code class="highlighter-rouge">en_US</code> locale and a translation of that phrase in an another locale. Sample translation from English (<code class="highlighter-rouge">en_US</code>) to German (<code class="highlighter-rouge">de_DE</code>):</p>
 
-<pre><code>"Add to Cart","Zum Warenkorb hinzufügen"
+<div class="highlighter-rouge"><pre class="highlight"><code>"Add to Cart","Zum Warenkorb hinzufügen"
 "Add to Compare","Hinzufügen um zu vergleichen"
 "Add to Wishlist","Zum Wunschzettel hinzufügen"
 "Additional Product Info","Zusätzliche Angaben zum Produkt"
 "Address","Adresse"
 "Address %1 of %2","Adresse %1 von %2"
 </code></pre>
+</div>
 
 <p>A <em>language package</em> is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. <a href="#m2devgde-xlate-languagepack">More information about language packages</a>.</p>
 
@@ -1099,7 +1100,7 @@
     <p>Two types of language packages:</p>
 
     <ul>
-      <li>Module and theme packages. Included in the <code>i18n</code> directory of a module or theme, the Magento application auto-discovers these packages.</li>
+      <li>Module and theme packages. Included in the <code class="highlighter-rouge">i18n</code> directory of a module or theme, the Magento application auto-discovers these packages.</li>
       <li>
         <p>An entire dictionary in one directory.</p>
 
@@ -1118,7 +1119,7 @@
 <p>Changes made:</p>
 
 <ul>
-  <li>The <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span> (<code>i18n</code> directory) can now be moved and saved to any directory of your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>.</li>
+  <li>The <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span> (<code class="highlighter-rouge">i18n</code> directory) can now be moved and saved to any directory of your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>.</li>
   <li>The phrases for translations are enabled in the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.</li>
 </ul>
 
@@ -1166,13 +1167,14 @@
   <li>This language is configured by the store administrator to be used in specified scope (that is, storefront)</li>
 </ul>
 
-<p>The Magento application automatically assembles translation dictionaries located in modules’ <code>i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code>pt_BR</code>) translation dictionaries might be located in <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and theme directories similar to the following:</p>
+<p>The Magento application automatically assembles translation dictionaries located in modules’ <code class="highlighter-rouge">i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code class="highlighter-rouge">pt_BR</code>) translation dictionaries might be located in <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and theme directories similar to the following:</p>
 
-<pre><code>app/code/Magento/Checkout/i18n/pt_BR.csv
+<div class="highlighter-rouge"><pre class="highlight"><code>app/code/Magento/Checkout/i18n/pt_BR.csv
 app/design/frontend/Magento/demo/i18n/pt_BR.csv
 </code></pre>
+</div>
 
-<p>Assembling the preceding <code>pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
+<p>Assembling the preceding <code class="highlighter-rouge">pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
 
 <h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
 <p><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.</p>
@@ -1184,7 +1186,7 @@ app/design/frontend/Magento/demo/i18n/pt_BR.csv
   <li>
     <p>A set of .csv files for modules and themes. These packages files are intended to be deployed in modules. For example:</p>
 
-    <pre><code>__/app
+    <div class="highlighter-rouge"><pre class="highlight"><code>__/app
  |__/code
  | |__/Magento
  |   |__/Catalog
@@ -1203,6 +1205,7 @@ app/design/frontend/Magento/demo/i18n/pt_BR.csv
          |__/i18n
            |-- pt_BR.csv
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Language packages that contain a entire dictionary in one directory.</p>
@@ -1211,16 +1214,16 @@ app/design/frontend/Magento/demo/i18n/pt_BR.csv
   </li>
 </ul>
 
-<p>In addition to the <code>.csv</code> file that contains the language dictionary, the language package contains meta-information:</p>
+<p>In addition to the <code class="highlighter-rouge">.csv</code> file that contains the language dictionary, the language package contains meta-information:</p>
 
 <ul>
   <li>
-    <p><code>composer.json</code> that contains any dependencies for the language package and a mapping to its defined <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span></p>
+    <p><code class="highlighter-rouge">composer.json</code> that contains any dependencies for the language package and a mapping to its defined <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span></p>
 
     <p><a href="https://github.com/magento/magento2/blob/2.0/app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a></p>
   </li>
   <li>
-    <p><code>language.xml</code>, in which you declare a language package.</p>
+    <p><code class="highlighter-rouge">language.xml</code>, in which you declare a language package.</p>
 
     <p><a href="https://github.com/magento/magento2/blob/2.0/app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a></p>
   </li>

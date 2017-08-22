@@ -1582,12 +1582,12 @@
 
 <ul>
   <li>Add or delete an environment</li>
-  <li>Sync (<code>git pull</code>) from the environment’s parent</li>
-  <li>Merge (<code>git push</code>) to the environment’s parent</li>
+  <li>Sync (<code class="highlighter-rouge">git pull</code>) from the environment’s parent</li>
+  <li>Merge (<code class="highlighter-rouge">git push</code>) to the environment’s parent</li>
 </ul>
 
 <h2 id="project-branch-add">Add or delete an environment</h2>
-<p>To best manage your code development, work in branches created from the project master. Complete development of code and added extensions in a branch and, when complete, merge (<code>git push</code>) the branch with its parent or master. Select and use a branching strategy best for your development efforts. For example, you may create a branch for a specific feature (Feature ABC). Multiple developers could create branches from parent branch Feature ABC, merging their work into the parent when complete. This branch can then merge with the project master branch for deployment.</p>
+<p>To best manage your code development, work in branches created from the project master. Complete development of code and added extensions in a branch and, when complete, merge (<code class="highlighter-rouge">git push</code>) the branch with its parent or master. Select and use a branching strategy best for your development efforts. For example, you may create a branch for a specific feature (Feature ABC). Multiple developers could create branches from parent branch Feature ABC, merging their work into the parent when complete. This branch can then merge with the project master branch for deployment.</p>
 
 <p>Your account supports up to eight active branches with full environment access for testing and an unlimited number of inactive branches. You manage active and inactive branches by deleting a branch. When deleted, it is deactivated and available from the project branches list. You can either activate the branch later or you can <a href="/guides/v2.2/cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete">delete it entirely</a> using the CLI.</p>
 
@@ -1654,7 +1654,7 @@
 </ol>
 
 <h2 id="project-branch-sync">Sync from the environment’s parent</h2>
-<p>Syncing an environment (or branch) is the same as <code>git pull origin &lt;parent&gt;</code>. You sync to get updated code from a parent environment.</p>
+<p>Syncing an environment (or branch) is the same as <code class="highlighter-rouge">git pull origin &lt;parent&gt;</code>. You sync to get updated code from a parent environment.</p>
 
 <p>To sync an environment with its parent:</p>
 
@@ -1672,7 +1672,7 @@
 </ol>
 
 <h2 id="project-branch-merge">Merge with the environment’s parent</h2>
-<p>Merging an environment is the same as <code>git push origin</code>. You merge to push updated code from an environment to its parent environment (that is, a Git branch).</p>
+<p>Merging an environment is the same as <code class="highlighter-rouge">git push origin</code>. You merge to push updated code from an environment to its parent environment (that is, a Git branch).</p>
 
 <p>To merge an environment with its parent:</p>
 

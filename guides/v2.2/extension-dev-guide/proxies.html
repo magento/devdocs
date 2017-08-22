@@ -1253,60 +1253,60 @@
 
 <p>As an example, consider the following two classes:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SlowLoading</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="c1">// ... Do something resource intensive</span>
-    <span class="p">}</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class SlowLoading
+{
+    public function __construct()
+    {
+        // ... Do something resource intensive
+    }
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;SlowLoading value&#39;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    public function getValue()
+    {
+        return 'SlowLoading value';
+    }
+}
 
-<span class="k">class</span> <span class="nc">FastLoading</span>
-<span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$slowLoading</span><span class="p">;</span>
+class FastLoading
+{
+    protected $slowLoading;
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">SlowLoading</span> <span class="nv">$slowLoading</span>
-    <span class="p">){</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">slowLoading</span> <span class="o">=</span> <span class="nx">slowLoading</span><span class="p">;</span>
-    <span class="p">}</span>
+    public function __construct(
+        SlowLoading $slowLoading
+    ){
+        $this-&gt;slowLoading = slowLoading;
+    }
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFastValue</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;FastLoading value&#39;</span><span class="p">;</span>
-    <span class="p">}</span>
+    public function getFastValue()
+    {
+        return 'FastLoading value';
+    }
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getSlowValue</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">slowLoading</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    public function getSlowValue()
+    {
+        return $this-&gt;slowLoading-&gt;getValue();
+    }
+}</code></pre></figure>
 
-<p>Assume that class <code>SlowLoading</code> has a non-trivial performance impact when instantiated (perhaps due to a complex database query or a call to a third-party web API). Because of the dependency injection in the constructor of <code>FastLoading</code>, this impact is incurred if <code>FastLoading</code> is instantiated.  Note, however, that the <code>SlowLoading</code> instance is used only in the method <code>getSlowValue</code>, meaning that the resource cost is unnecessary if this method is never called on the <code>FastLoading</code> object.</p>
+<p>Assume that class <code class="highlighter-rouge">SlowLoading</code> has a non-trivial performance impact when instantiated (perhaps due to a complex database query or a call to a third-party web API). Because of the dependency injection in the constructor of <code class="highlighter-rouge">FastLoading</code>, this impact is incurred if <code class="highlighter-rouge">FastLoading</code> is instantiated.  Note, however, that the <code class="highlighter-rouge">SlowLoading</code> instance is used only in the method <code class="highlighter-rouge">getSlowValue</code>, meaning that the resource cost is unnecessary if this method is never called on the <code class="highlighter-rouge">FastLoading</code> object.</p>
 
 <h3 id="proxies-are-generated-code">Proxies are generated code</h3>
 <p>Magento has a solution for this situation: proxies. <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">Proxies</a> extend other classes to become lazy-loaded versions of them. That is, a real instance of the class a proxy extends created only after one of the class’s methods is actually called. A proxy implements the same interface as the original class and so can be used as a dependency anywhere the original class can.  Unlike its parent, a proxy has only once dependency: the object manager.</p>
 
-<p>Proxies are generated code and therefore do not need to be manually written.  (See <a href="/guides/v2.2/extension-dev-guide/code-generation.html">Code generation</a> for more information.) Simply reference a class in the form <code>\Original\Class\Name\Proxy</code>, and the class is generated if it does not exist.</p>
+<p>Proxies are generated code and therefore do not need to be manually written.  (See <a href="/guides/v2.2/extension-dev-guide/code-generation.html">Code generation</a> for more information.) Simply reference a class in the form <code class="highlighter-rouge">\Original\Class\Name\Proxy</code>, and the class is generated if it does not exist.</p>
 
 <p>Using the preceding example, a proxy can be passed into the constructor arguments instead of the original class, using DI configuration as follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;FastLoading&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"FastLoading"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;slowLoading&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>SlowLoading\Proxy<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"slowLoading"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>SlowLoading\Proxy<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
-<p>With the proxy used in place of <code>SlowLoading</code>, the <code>SlowLoading</code> class will not be instantiated—and therefore, the resource intensive constructor operations not performed—until the <code>SlowLoading</code> object is used (that is, if the <code>getSlowValue</code> method is called).</p>
+<p>With the proxy used in place of <code class="highlighter-rouge">SlowLoading</code>, the <code class="highlighter-rouge">SlowLoading</code> class will not be instantiated—and therefore, the resource intensive constructor operations not performed—until the <code class="highlighter-rouge">SlowLoading</code> object is used (that is, if the <code class="highlighter-rouge">getSlowValue</code> method is called).</p>
 
 <p>Because DI configuration is used to inject a proxy, proxies can be dropped in to replace their corresponding classes - or proxy replacements <em>removed</em> - without touching application code.</p>
 
-<p>As a practical example of a proxy, you can see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated <code>StoreManager</code> proxy class.</p>
+<p>As a practical example of a proxy, you can see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated <code class="highlighter-rouge">StoreManager</code> proxy class.</p>
 
 		</div>
 		<!-- /.content-wrap -->

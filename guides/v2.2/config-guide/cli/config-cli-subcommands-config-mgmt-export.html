@@ -1904,24 +1904,25 @@
 			<p>In the Magento 2.2 and later <a href="/guides/v2.2/config-guide/deployment/pipeline/">pipeline deployment model</a>, you can maintain a consistent configuration across systems.
 After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:</p>
 
-<pre><code>magento app:config:dump
+<div class="highlighter-rouge"><pre class="highlight"><code>magento app:config:dump
 </code></pre>
+</div>
 
 <p>As a result of the command execution, the following configuration files are updated:</p>
 
 <ul>
-  <li><a href="#app-etc-config-php"><code>app/etc/config.php</code></a></li>
-  <li><a href="#app-etc-env-php"><code>app/etc/env.php</code></a></li>
+  <li><a href="#app-etc-config-php"><code class="highlighter-rouge">app/etc/config.php</code></a></li>
+  <li><a href="#app-etc-env-php"><code class="highlighter-rouge">app/etc/env.php</code></a></li>
 </ul>
 
-<h2 id="app-etc-config-php"><code>app/etc/config.php</code></h2>
+<h2 id="app-etc-config-php"><code class="highlighter-rouge">app/etc/config.php</code></h2>
 
 <p>This is the shared configuration file for all your Magento instances.
 Include this in your source control so it can be shared between the development, build, and production systems.</p>
 
 <p>See: <a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a></p>
 
-<h2 id="app-etc-env-php"><code>app/etc/env.php</code></h2>
+<h2 id="app-etc-env-php"><code class="highlighter-rouge">app/etc/env.php</code></h2>
 
 <p>This is the environment-specific configuration file.
 It contains sensitive and system-specific settings for individual environments.</p>
@@ -1932,9 +1933,9 @@ It contains sensitive and system-specific settings for individual environments.<
 
 <h3 id="sensitive-or-system-specific-settings">Sensitive or system-specific settings</h3>
 
-<p>To set the sensitive settings written to <code>env.php</code>, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code>magento config:sensitive:set</code></a> command.</p>
+<p>To set the sensitive settings written to <code class="highlighter-rouge">env.php</code>, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:sensitive:set</code></a> command.</p>
 
-<p>Configuration values are specified as either sensitive or system-specific by referencing <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Config/Model/Config/TypePool.php" target="_blank"><code>Magento\Config\Model\Config\TypePool</code></a> in the module’s <a href="/guides/v2.2/extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific"><code>di.xml</code></a> file.</p>
+<p>Configuration values are specified as either sensitive or system-specific by referencing <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Config/Model/Config/TypePool.php" target="_blank"><code class="highlighter-rouge">Magento\Config\Model\Config\TypePool</code></a> in the module’s <a href="/guides/v2.2/extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific"><code class="highlighter-rouge">di.xml</code></a> file.</p>
 
 		</div>
 		<!-- /.content-wrap -->

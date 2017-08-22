@@ -1905,21 +1905,21 @@
 
   <p>This topic discusses how to derive an environment variable name knowing a configuration path. You can override Magento configuration settings using environment variables. For example, you can override the value of a payment processor’s live URL on your production system.</p>
 
-  <p>You can override the value of <em>any</em> configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, <code>config.php</code>, and the system-specific configuration file, <code>env.php</code>, as discussed in <a href="/guides/v2.2/config-guide/deployment/pipeline/">Deployment general overview</a>.</p>
+  <p>You can override the value of <em>any</em> configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, <code class="highlighter-rouge">config.php</code>, and the system-specific configuration file, <code class="highlighter-rouge">env.php</code>, as discussed in <a href="/guides/v2.2/config-guide/deployment/pipeline/">Deployment general overview</a>.</p>
 
   <p>A environment variable name consists of its scope followed by its configuration path in a particular format. The following sections discuss how to determine a variable name in more detail.</p>
 
   <p>You can use variables for any of the following:</p>
 
   <ul>
-    <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive values</a> must be set using either environment variables or the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config.html"><code>magento config:sensitive:set</code></a> command.</li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive values</a> must be set using either environment variables or the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config.html"><code class="highlighter-rouge">magento config:sensitive:set</code></a> command.</li>
     <li>
       <p>System-specific values must be set using:</p>
 
       <ul>
         <li>Environment variables</li>
-        <li>The <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config.html"><code>magento config:set</code></a> command</li>
-        <li>The Magento Admin followed by the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-export.html"><code>magento app:config:dump</code> command</a></li>
+        <li>The <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config.html"><code class="highlighter-rouge">magento config:set</code></a> command</li>
+        <li>The Magento Admin followed by the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-export.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a></li>
       </ul>
     </li>
   </ul>
@@ -1938,7 +1938,7 @@
 
   <pre class="no-copy">&lt;SCOPE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</pre>
 
-  <p><code>&lt;SCOPE&gt;</code> can be either:</p>
+  <p><code class="highlighter-rouge">&lt;SCOPE&gt;</code> can be either:</p>
 
   <ul>
     <li>
@@ -1965,12 +1965,12 @@
     </li>
   </ul>
 
-  <p><code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> is the configuration path with double underscore characters substituted for <code>/</code>. For more information, see <a href="#cloud-system-vars-sys">Step 2: Set system variables</a>.</p>
+  <p><code class="highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code> is the configuration path with double underscore characters substituted for <code class="highlighter-rouge">/</code>. For more information, see <a href="#cloud-system-vars-sys">Step 2: Set system variables</a>.</p>
 
   <h3 id="variable-format">Variable format</h3>
-  <p><code>&lt;SCOPE&gt;</code> is separated from <code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> by two underscore characters.</p>
+  <p><code class="highlighter-rouge">&lt;SCOPE&gt;</code> is separated from <code class="highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code> by two underscore characters.</p>
 
-  <p><code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> is derived from a configuration setting’s <em>configuration path</em>, which is a <code>/</code> delimited string that uniquely identifies a particular setting. Replace each <code>/</code> character in the configuration path with two underscore characters to create the system variable.</p>
+  <p><code class="highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code> is derived from a configuration setting’s <em>configuration path</em>, which is a <code class="highlighter-rouge">/</code> delimited string that uniquely identifies a particular setting. Replace each <code class="highlighter-rouge">/</code> character in the configuration path with two underscore characters to create the system variable.</p>
 
   <p>If a configuration path contains an underscore character, the underscore character remains in the variable.</p>
 
@@ -1986,11 +1986,11 @@
   <h2 id="deploy-system-vars-scopes">Step 1: Find the website or store view scope value</h2>
   <p>This section discusses how you can find and set system configuration values per <em>scope</em> (store view or website). To set global scope variables, see <a href="#cloud-system-vars-sys">Step 2:  Set global, website, or store view variables</a>.</p>
 
-  <p>Scope values come from the <code>store</code>, <code>store_group</code>, and <code>store_website</code> tables.</p>
+  <p>Scope values come from the <code class="highlighter-rouge">store</code>, <code class="highlighter-rouge">store_group</code>, and <code class="highlighter-rouge">store_website</code> tables.</p>
 
   <ul>
-    <li>The <code>store</code> table specifies store view names and codes</li>
-    <li>The <code>store_website</code> table specifies website names and codes</li>
+    <li>The <code class="highlighter-rouge">store</code> table specifies store view names and codes</li>
+    <li>The <code class="highlighter-rouge">store_website</code> table specifies website names and codes</li>
   </ul>
 
   <p>You can also find the code values using the Magento Admin.</p>
@@ -1999,20 +1999,20 @@
 
   <ul>
     <li>
-      <p><code>Path in Magento Admin</code> column</p>
+      <p><code class="highlighter-rouge">Path in Magento Admin</code> column</p>
 
       <p>Values before the comma are paths in the Admin navigation. Values after the comma are options in the right pane.</p>
     </li>
     <li>
-      <p><code>Variable name</code> column is the name of the corresponding environment variable.</p>
+      <p><code class="highlighter-rouge">Variable name</code> column is the name of the corresponding environment variable.</p>
 
       <p>You have the option of specifying system values for these configuration parameters as environment variables if you wish.</p>
 
       <ul>
         <li>The entire variable name is always ALL CAPS</li>
-        <li>Start a variable name with <code>CONFIG__</code> (note two underscore characters)</li>
-        <li>You can find the <code>&lt;STORE_VIEW_CODE&gt;</code> or <code>&lt;WEBSITE_CODE&gt;</code> portion of a variable name in either the Magento Admin or the Magento database, as indicated in the following sections.</li>
-        <li>You can find <code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> as discussed in <a href="#cloud-system-vars-sys">Step 2:  Set global, website, or store view variables</a>.</li>
+        <li>Start a variable name with <code class="highlighter-rouge">CONFIG__</code> (note two underscore characters)</li>
+        <li>You can find the <code class="highlighter-rouge">&lt;STORE_VIEW_CODE&gt;</code> or <code class="highlighter-rouge">&lt;WEBSITE_CODE&gt;</code> portion of a variable name in either the Magento Admin or the Magento database, as indicated in the following sections.</li>
+        <li>You can find <code class="highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code> as discussed in <a href="#cloud-system-vars-sys">Step 2:  Set global, website, or store view variables</a>.</li>
       </ul>
     </li>
   </ul>
@@ -2032,12 +2032,12 @@
       <tr>
         <td>Create, edit, delete store views</td>
         <td><strong>Stores</strong> &gt; <strong>All Stores</strong></td>
-        <td><code>CONFIG__STORES__&lt;STORE_VIEW_CODE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</code></td>
+        <td><code class="highlighter-rouge">CONFIG__STORES__&lt;STORE_VIEW_CODE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</code></td>
       </tr>
       <tr>
         <td>Create, edit, delete websites</td>
         <td><strong>Stores</strong> &gt; <strong>All Stores</strong></td>
-        <td><code>CONFIG__WEBSITE__&lt;WEBSITE_CODE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</code></td>
+        <td><code class="highlighter-rouge">CONFIG__WEBSITE__&lt;WEBSITE_CODE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</code></td>
       </tr>
     </tbody>
   </table>
@@ -2066,25 +2066,28 @@
     <li>
       <p>Enter the following command:</p>
 
-      <pre><code>mysql -u &lt;magento database user name&gt; -p
+      <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u &lt;magento database user name&gt; -p
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>At the <code>mysql&gt;</code> prompt, enter the following commands in the order shown:</p>
+      <p>At the <code class="highlighter-rouge">mysql&gt;</code> prompt, enter the following commands in the order shown:</p>
 
-      <pre><code>use &lt;magento database name&gt;;
+      <div class="highlighter-rouge"><pre class="highlight"><code>use &lt;magento database name&gt;;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Use the following SQL queries to find the relevant values:</p>
 
-      <pre><code>SELECT * FROM STORES;
+      <div class="highlighter-rouge"><pre class="highlight"><code>SELECT * FROM STORES;
 SELECT * FROM STORE_WEBSITE;
 </code></pre>
+      </div>
 
       <p>A sample follows:</p>
 
-      <pre><code>mysql&gt; SELECT * FROM STORE_WEBSITE;
+      <div class="highlighter-rouge"><pre class="highlight"><code>mysql&gt; SELECT * FROM STORE_WEBSITE;
 +------------+-------+--------------+------------+------------------+------------+
 | website_id | code  | name         | sort_order | default_group_id | is_default |
 +------------+-------+--------------+------------+------------------+------------+
@@ -2093,16 +2096,18 @@ SELECT * FROM STORE_WEBSITE;
 |          2 | test1 | Test Website |          0 |                3 |          0 |
 +------------+-------+--------------+------------+------------------+------------+
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>Use the value from the <code>code</code> column as the scope name, not the <code>name</code> value.</p>
+      <p>Use the value from the <code class="highlighter-rouge">code</code> column as the scope name, not the <code class="highlighter-rouge">name</code> value.</p>
 
       <p>For example, to set a configuration variable for Test Website, use the following format:</p>
 
-      <pre><code>CONFIG__WEBSITES__TEST1__&lt;SYSTEM__VARIABLE__NAME&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>CONFIG__WEBSITES__TEST1__&lt;SYSTEM__VARIABLE__NAME&gt;
 </code></pre>
+      </div>
 
-      <p>where <code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> comes from the next section.</p>
+      <p>where <code class="highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code> comes from the next section.</p>
     </li>
   </ol>
 
@@ -2114,14 +2119,14 @@ SELECT * FROM STORE_WEBSITE;
 
     <ul>
       <li>
-        <p>To set values for the global scope (that is, all websites, stores, and store views), start the variable name with <code>CONFIG__DEFAULT__</code>.</p>
+        <p>To set values for the global scope (that is, all websites, stores, and store views), start the variable name with <code class="highlighter-rouge">CONFIG__DEFAULT__</code>.</p>
       </li>
       <li>
         <p>To set a value for a particular store view or website, start the variable name as discussed in <a href="#cloud-system-vars-scopes">Step 1: Find the scope value</a>:</p>
 
         <ul>
-          <li><code>CONFIG__WEBSITES</code></li>
-          <li><code>CONFIG__STORES</code></li>
+          <li><code class="highlighter-rouge">CONFIG__WEBSITES</code></li>
+          <li><code class="highlighter-rouge">CONFIG__STORES</code></li>
         </ul>
       </li>
       <li>
@@ -2145,27 +2150,27 @@ SELECT * FROM STORE_WEBSITE;
         <tr>
           <td>Elasticsearch server hostname</td>
           <td>Catalog &gt; <strong>Catalog</strong>, <strong>Elasticsearch Server Hostname</strong></td>
-          <td><code>&lt;SCOPE&gt;__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code></td>
+          <td><code class="highlighter-rouge">&lt;SCOPE&gt;__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code></td>
         </tr>
         <tr>
           <td>Elasticsearch server port</td>
           <td>Catalog &gt; <strong>Catalog</strong>, <strong>Elasticsearch Server Port</strong></td>
-          <td><code>&lt;SCOPE&gt;__CATALOG__SEARCH__ELASTICSEARCH_SERVER_PORT</code></td>
+          <td><code class="highlighter-rouge">&lt;SCOPE&gt;__CATALOG__SEARCH__ELASTICSEARCH_SERVER_PORT</code></td>
         </tr>
         <tr>
           <td>Shipping country origin</td>
           <td>Sales &gt; <strong>Shipping Settings</strong></td>
-          <td><code>&lt;SCOPE&gt;SHIPPING__ORIGIN__COUNTRY_ID</code></td>
+          <td><code class="highlighter-rouge">&lt;SCOPE&gt;SHIPPING__ORIGIN__COUNTRY_ID</code></td>
         </tr>
         <tr>
           <td>Custom Admin URL</td>
           <td>Advanced &gt; <strong>Admin</strong></td>
-          <td><code>&lt;SCOPE&gt;__ADMIN__URL__CUSTOM</code></td>
+          <td><code class="highlighter-rouge">&lt;SCOPE&gt;__ADMIN__URL__CUSTOM</code></td>
         </tr>
         <tr>
           <td>Custom Admin Path</td>
           <td>Advanced &gt; <strong>Admin</strong></td>
-          <td><code>&lt;SCOPE&gt;__ADMIN__URL__CUSTOM_PATH</code></td>
+          <td><code class="highlighter-rouge">&lt;SCOPE&gt;__ADMIN__URL__CUSTOM_PATH</code></td>
         </tr>
       </tbody>
     </table>
@@ -2180,14 +2185,14 @@ SELECT * FROM STORE_WEBSITE;
       <li>
         <p>Determine the scope.</p>
 
-        <p>It’s the global scope so the variable name starts with <code>CONFIG__DEFAULT__</code></p>
+        <p>It’s the global scope so the variable name starts with <code class="highlighter-rouge">CONFIG__DEFAULT__</code></p>
       </li>
       <li>
-        <p>The rest of the variable name is <code>CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code>.</p>
+        <p>The rest of the variable name is <code class="highlighter-rouge">CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code>.</p>
       </li>
     </ol>
 
-    <p><strong>Result</strong>: The variable name is <code>CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code></p>
+    <p><strong>Result</strong>: The variable name is <code class="highlighter-rouge">CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code></p>
 
     <h3 id="shipping-country-origin">Shipping country origin</h3>
     <p>To find the variable name for the shipping country origin:</p>
@@ -2198,28 +2203,29 @@ SELECT * FROM STORE_WEBSITE;
 
         <p>Find the scope in the <a href="#cloud-system-vars-scopes">database</a> as discussed in Step 1: Find the website or store view scope value. (You can also find the value in the Admin as shown in the the <a href="#cloud-system-vars-sys">table in Step 2: Set global, website, or store view variables</a>.</p>
 
-        <p>For example, the scope might be <code>CONFIG__WEBSITE__DEFAULT</code>.</p>
+        <p>For example, the scope might be <code class="highlighter-rouge">CONFIG__WEBSITE__DEFAULT</code>.</p>
       </li>
       <li>
-        <p>The rest of the variable name is <code>SHIPPING__ORIGIN__COUNTRY_ID</code>.</p>
+        <p>The rest of the variable name is <code class="highlighter-rouge">SHIPPING__ORIGIN__COUNTRY_ID</code>.</p>
       </li>
     </ol>
 
-    <p><strong>Result</strong>: The variable name is <code>CONFIG__WEBSITE__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID</code></p>
+    <p><strong>Result</strong>: The variable name is <code class="highlighter-rouge">CONFIG__WEBSITE__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID</code></p>
 
     <h2 id="how-to-use-environment-variables">How to use environment variables</h2>
-    <p>Set configuration values as variables using PHP’s <a href="http://php.net/manual/en/reserved.variables.environment.php" target="_blank"><code>$_ENV</code></a> associate array. You can set the values in any PHP script that runs when Magento runs, such as <code>index.php</code>.</p>
+    <p>Set configuration values as variables using PHP’s <a href="http://php.net/manual/en/reserved.variables.environment.php" target="_blank"><code class="highlighter-rouge">$_ENV</code></a> associate array. You can set the values in any PHP script that runs when Magento runs, such as <code class="highlighter-rouge">index.php</code>.</p>
 
     <p>An example of setting two values follows:</p>
 
-    <pre><code>$_ENV['CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME'] = 'http://search.example.com';
+    <div class="highlighter-rouge"><pre class="highlight"><code>$_ENV['CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME'] = 'http://search.example.com';
 $_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '1234';
 </code></pre>
+    </div>
 
     <p>A step-by-step example is shown in <a href="/guides/v2.2/config-guide/deployment/pipeline/example/environment-variables.html">Set configuration values using environment variables</a>.</p>
 
     <div class="bs-callout bs-callout-warning">
-      <p>To use values you set in the <code>$_ENV</code> array, you must set <code>variables_order = "EGPCS"</code> in your <code>php.ini</code> file. For details, see <a href="http://us.php.net/manual/en/ini.core.php#ini.variables-order" target="_blank">PHP documentation</a>.</p>
+      <p>To use values you set in the <code class="highlighter-rouge">$_ENV</code> array, you must set <code class="highlighter-rouge">variables_order = "EGPCS"</code> in your <code class="highlighter-rouge">php.ini</code> file. For details, see <a href="http://us.php.net/manual/en/ini.core.php#ini.variables-order" target="_blank">PHP documentation</a>.</p>
     </div>
 
     <h4 id="related-information">Related information</h4>

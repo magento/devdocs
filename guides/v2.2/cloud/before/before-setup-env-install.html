@@ -1590,12 +1590,13 @@
 
 <p>Before you begin, list the environment variables.</p>
 
-<pre><code>magento-cloud variable:get -e &lt;environment ID&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:get -e &lt;environment ID&gt;
 </code></pre>
+</div>
 
 <p>The following results provides an example of variables:</p>
 
-<pre><code>+----------------+---------------+-----------+------+
+<div class="highlighter-rouge"><pre class="highlight"><code>+----------------+---------------+-----------+------+
 | ID             | Value         | Inherited | JSON |
 +----------------+---------------+-----------+------+
 | ADMIN_PASSWORD | admin_A456    | Yes       | No   |
@@ -1603,6 +1604,7 @@
 | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 +----------------+---------------+-----------+------+
 </code></pre>
+</div>
 
 <h2 id="set-the-docroot">Set the docroot</h2>
 <p>Set the docroot to the /magento directory until you complete all setup. If you change the DOCROOT to /magento/pub prior to completion, you will encounter issues running the Web Setup Wizard.</p>
@@ -1628,14 +1630,16 @@
   <li>
     <p>Switch to the user:</p>
 
-    <pre><code> sudo su - magento
+    <div class="highlighter-rouge"><pre class="highlight"><code> sudo su - magento
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Change directories for the installation:</p>
 
-    <pre><code> cd /app/bin
+    <div class="highlighter-rouge"><pre class="highlight"><code> cd /app/bin
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds">Installer help commands</a>.</p>
@@ -1667,18 +1671,20 @@
 
     <p>sudo su - magento</p>
   </li>
-  <li>Change directory to <code>app/bin</code>.</li>
+  <li>Change directory to <code class="highlighter-rouge">app/bin</code>.</li>
   <li>
     <p>Run the compile command:</p>
 
-    <pre><code> php magento setup:di:compile
+    <div class="highlighter-rouge"><pre class="highlight"><code> php magento setup:di:compile
 </code></pre>
+    </div>
   </li>
   <li>
     <p>When complete, Run the deploy command:</p>
 
-    <pre><code> php magento setup:static:deploy
+    <div class="highlighter-rouge"><pre class="highlight"><code> php magento setup:static:deploy
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1686,7 +1692,7 @@
 
 <ol>
   <li>Access the localdev root for the Vagrant box.</li>
-  <li>Enter the command <code>vagrant hostmanager</code> to update the hosts file.</li>
+  <li>Enter the command <code class="highlighter-rouge">vagrant hostmanager</code> to update the hosts file.</li>
 </ol>
 
 <h2 id="file-system-permissions">Set file system permissions and ownership</h2>
@@ -1697,26 +1703,29 @@
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 chown -R :&lt;web server group&gt; .
 chmod u+x bin/magento
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <div>
 
-  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code>/var/www/html/magento2</code> and the web server group name is <code>apache</code>:</p>
+  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
 
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
+  <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
 </code></pre>
+  </div>
 
-  <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code>root</code> privileges:</p>
+  <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
+  <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
 </code></pre>
+  </div>
 
   <h2 id="additional-software-and-services">Additional software and services</h2>
   <p>For Integration development, you may also want to install additional tools, software, and services.</p>
@@ -1731,8 +1740,9 @@ chmod u+x bin/magento
   <h2 id="verify-your-local-workspace">Verify your local workspace</h2>
   <p>To verify the local, access the store using the URL you passed in the install command. For this example, the local Magento store should load using http://magento.local/. The Admin panel should open using http://magento.local/admin. If you change the URI for the Admin panel, use this command to locate it:</p>
 
-  <pre><code>php bin/magento info:adminuri
+  <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento info:adminuri
 </code></pre>
+  </div>
 
   <p>To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.</p>
 
@@ -1750,7 +1760,7 @@ chmod u+x bin/magento
   </ul>
 
   <h2 id="next-steps">Next steps</h2>
-  <p>We strongly recommend fully deploying this base Magento template <code>master</code> branch without any code or configuration changes to Staging and Production.</p>
+  <p>We strongly recommend fully deploying this base Magento template <code class="highlighter-rouge">master</code> branch without any code or configuration changes to Staging and Production.</p>
 
   <h4 id="next-step">Next step:</h4>
   <p><a href="/guides/v2.2/cloud/access-acct/first-time-deploy.html">First time deployment</a></p>

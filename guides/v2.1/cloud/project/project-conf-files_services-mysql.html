@@ -1623,7 +1623,7 @@
 </section>
 
 
-			<p>The <code>mysql</code> service provides data storage. It’s based on <a href="https://mariadb.com/products/subscription-plans" target="_blank">MariaDB</a>, supporting the <a href="https://www.percona.com/software/mysql-database/percona-server/xtradb" target="_blank">XtraDB</a> storage
+			<p>The <code class="highlighter-rouge">mysql</code> service provides data storage. It’s based on <a href="https://mariadb.com/products/subscription-plans" target="_blank">MariaDB</a>, supporting the <a href="https://www.percona.com/software/mysql-database/percona-server/xtradb" target="_blank">XtraDB</a> storage
 engine (equivalent to MySQL with InnoDB).</p>
 
 <p>We support MariaDB version 10.0, which includes reimplemented features from MySQL 5.6 and 5.7.</p>
@@ -1631,94 +1631,95 @@ engine (equivalent to MySQL with InnoDB).</p>
 <p>To access the MariaDB database directly, <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">open an SSH tunnel</a> and use the
 following command:</p>
 
-<pre><code>mysql -h database.internal -u user
+<div class="highlighter-rouge"><pre class="highlight"><code>mysql -h database.internal -u user
 </code></pre>
+</div>
 
 <h2 id="cloud-appyaml-mysqlusers">Set up multiple database users</h2>
-<p>You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named <code>mysql</code> that has administrator access to all defined databases.</p>
+<p>You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named <code class="highlighter-rouge">mysql</code> that has administrator access to all defined databases.</p>
 
 <p>To set up multiple databases and users, you must specify multiple endpoints. An <em>endpoint</em> is a user who has privileges you specify.</p>
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <p>You can’t use multiple <em>databases</em> with Magento Enterprise Cloud Edition at this time. You can, however, create multiple endpoints to restrict access to the <code>main</code> database.</p>
+  <p>You can’t use multiple <em>databases</em> with Magento Enterprise Cloud Edition at this time. You can, however, create multiple endpoints to restrict access to the <code class="highlighter-rouge">main</code> database.</p>
 </div>
 
-<p>To specify user access, use the <code>endpoints</code> nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.</p>
+<p>To specify user access, use the <code class="highlighter-rouge">endpoints</code> nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.</p>
 
 <p>The valid permission levels are:</p>
 
 <ul>
-  <li><code>ro</code>: Only SELECT queries are allowed.</li>
-  <li><code>rw</code>: SELECT queries as well as INSERT/UPDATE/DELETE queries are allowed.</li>
-  <li><code>admin</code>: All queries are allowed, including DDL queries (CREATE TABLE, DROP TABLE, and so on).</li>
+  <li><code class="highlighter-rouge">ro</code>: Only SELECT queries are allowed.</li>
+  <li><code class="highlighter-rouge">rw</code>: SELECT queries as well as INSERT/UPDATE/DELETE queries are allowed.</li>
+  <li><code class="highlighter-rouge">admin</code>: All queries are allowed, including DDL queries (CREATE TABLE, DROP TABLE, and so on).</li>
 </ul>
 
-<p>If no endpoints are defined, a single endpoint named <code>mysql</code> has <code>admin</code> access to the <code>main</code> database.</p>
+<p>If no endpoints are defined, a single endpoint named <code class="highlighter-rouge">mysql</code> has <code class="highlighter-rouge">admin</code> access to the <code class="highlighter-rouge">main</code> database.</p>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysqldb</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql:10.0</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2048</span>
-    <span class="l-Scalar-Plain">configuration</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">schemas</span><span class="p-Indicator">:</span>
-            <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">main</span>
-        <span class="l-Scalar-Plain">endpoints</span><span class="p-Indicator">:</span>
-            <span class="l-Scalar-Plain">admin</span><span class="p-Indicator">:</span>
-                <span class="l-Scalar-Plain">default_schema</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">main</span>
-                <span class="l-Scalar-Plain">privileges</span><span class="p-Indicator">:</span>
-                    <span class="l-Scalar-Plain">main</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">admin</span>
-            <span class="l-Scalar-Plain">reporter</span><span class="p-Indicator">:</span>
-                <span class="l-Scalar-Plain">privileges</span><span class="p-Indicator">:</span>
-                    <span class="l-Scalar-Plain">main</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ro</span>
-            <span class="l-Scalar-Plain">importer</span><span class="p-Indicator">:</span>
-                <span class="l-Scalar-Plain">privileges</span><span class="p-Indicator">:</span>
-                    <span class="l-Scalar-Plain">main</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">rw</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysqldb</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
+    <span class="s">disk</span><span class="pi">:</span> <span class="s">2048</span>
+    <span class="s">configuration</span><span class="pi">:</span>
+        <span class="s">schemas</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">main</span>
+        <span class="s">endpoints</span><span class="pi">:</span>
+            <span class="s">admin</span><span class="pi">:</span>
+                <span class="s">default_schema</span><span class="pi">:</span> <span class="s">main</span>
+                <span class="s">privileges</span><span class="pi">:</span>
+                    <span class="s">main</span><span class="pi">:</span> <span class="s">admin</span>
+            <span class="s">reporter</span><span class="pi">:</span>
+                <span class="s">privileges</span><span class="pi">:</span>
+                    <span class="s">main</span><span class="pi">:</span> <span class="s">ro</span>
+            <span class="s">importer</span><span class="pi">:</span>
+                <span class="s">privileges</span><span class="pi">:</span>
+                    <span class="s">main</span><span class="pi">:</span> <span class="s">rw</span></code></pre></figure>
 
-<p>In the preceding example, the endpoint (that is, user) <code>reporter</code> has <code>ro</code> privileges to the <code>main</code> database and endpoint <code>importer</code> has <code>rw</code> access to the <code>main</code> database. This means that:</p>
+<p>In the preceding example, the endpoint (that is, user) <code class="highlighter-rouge">reporter</code> has <code class="highlighter-rouge">ro</code> privileges to the <code class="highlighter-rouge">main</code> database and endpoint <code class="highlighter-rouge">importer</code> has <code class="highlighter-rouge">rw</code> access to the <code class="highlighter-rouge">main</code> database. This means that:</p>
 
 <ul>
-  <li>The <code>admin</code> user has full control of the database.</li>
-  <li>The <code>repoter</code> user has SELECT privileges only.</li>
-  <li>The <code>importer</code> user has SELECT, INSERT, UPDATE, and DELETE privileges.</li>
+  <li>The <code class="highlighter-rouge">admin</code> user has full control of the database.</li>
+  <li>The <code class="highlighter-rouge">repoter</code> user has SELECT privileges only.</li>
+  <li>The <code class="highlighter-rouge">importer</code> user has SELECT, INSERT, UPDATE, and DELETE privileges.</li>
 </ul>
 
 <h2 id="relationship">Relationship</h2>
-<p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
+<p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-  <span class="s2">&quot;database&quot;</span>: <span class="o">[</span>
+  <span class="s2">"database"</span>: <span class="o">[</span>
     <span class="o">{</span>
-      <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;database.internal&quot;</span>,
-      <span class="s2">&quot;ip&quot;</span>: <span class="s2">&quot;192.0.2.150&quot;</span>,
-      <span class="s2">&quot;password&quot;</span>: <span class="s2">&quot;&quot;</span>,
-      <span class="s2">&quot;path&quot;</span>: <span class="s2">&quot;main&quot;</span>,
-      <span class="s2">&quot;port&quot;</span>: 3306,
-      <span class="s2">&quot;query&quot;</span>: <span class="o">{</span>
-          <span class="s2">&quot;is_master&quot;</span>: <span class="nb">true</span>
+      <span class="s2">"host"</span>: <span class="s2">"database.internal"</span>,
+      <span class="s2">"ip"</span>: <span class="s2">"192.0.2.150"</span>,
+      <span class="s2">"password"</span>: <span class="s2">""</span>,
+      <span class="s2">"path"</span>: <span class="s2">"main"</span>,
+      <span class="s2">"port"</span>: 3306,
+      <span class="s2">"query"</span>: <span class="o">{</span>
+          <span class="s2">"is_master"</span>: <span class="nb">true</span>
       <span class="o">}</span>,
-      <span class="s2">&quot;scheme&quot;</span>: <span class="s2">&quot;mysql&quot;</span>,
-      <span class="s2">&quot;username&quot;</span>: <span class="s2">&quot;user&quot;</span>
+      <span class="s2">"scheme"</span>: <span class="s2">"mysql"</span>,
+      <span class="s2">"username"</span>: <span class="s2">"user"</span>
     <span class="o">}</span>
   <span class="o">]</span>
 <span class="o">}</span></code></pre></figure>
 
 <h2 id="usage-example">Usage example</h2>
-<p>In your <code>.magento/services.yaml</code>:</p>
+<p>In your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysql</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql:10.0</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2048</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysql</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
+    <span class="s">disk</span><span class="pi">:</span> <span class="s">2048</span></code></pre></figure>
 
-<p>In your <code>.magento.app.yaml</code>:</p>
+<p>In your <code class="highlighter-rouge">.magento.app.yaml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">database</span><span class="p-Indicator">:</span> <span class="s">&quot;mydatabase:mysql&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
+    <span class="s">database</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mydatabase:mysql"</span></code></pre></figure>
 
 <div class="bs-callout bs-callout-info" id="info">
   <ul>
-    <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code>DEFINER</code></a> access control mechanism for stored procedures and views.</li>
-    <li>MySQL errors such as <code>PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code>.magento/services.yaml</code></a>.</li>
+    <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code class="highlighter-rouge">DEFINER</code></a> access control mechanism for stored procedures and views.</li>
+    <li>MySQL errors such as <code class="highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code class="highlighter-rouge">.magento/services.yaml</code></a>.</li>
   </ul>
 </div>
 

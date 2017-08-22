@@ -957,7 +957,7 @@
 <h3 id="trouble-samp-perms">Symptom (file system permissions)</h3>
 <p>Error in the console log during sample data installation using the Setup Wizard:</p>
 
-<pre><code>Module 'Magento_CatalogRuleSampleData':
+<div class="highlighter-rouge"><pre class="highlight"><code>Module 'Magento_CatalogRuleSampleData':
 [ERROR] exception 'Magento\Framework\Exception\LocalizedException' with message 'Can't create directory /var/www/html/magento2/var/generation/Magento/CatalogRule/Model/.' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Generator.php:103
 
 (more)
@@ -966,35 +966,39 @@ Next exception 'ReflectionException' with message 'Class Magento\CatalogRule\Mod
 
 (more)
 </code></pre>
+</div>
 
 <p>These exceptions result from file system permissions settings.</p>
 
 <h4 id="solution">Solution</h4>
-<p><a href="/guides/v2.0/install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system ownership and permissions again</a> as a user with <code>root</code> privileges.</p>
+<p><a href="/guides/v2.0/install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system ownership and permissions again</a> as a user with <code class="highlighter-rouge">root</code> privileges.</p>
 
 <h3 id="trouble-samp-prod">Symptom (production mode)</h3>
-<p>If you’re currently set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, sample data installation fails if you use the <a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-composer.html"><code>magento sampledata:deploy</code></a> command:</p>
+<p>If you’re currently set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, sample data installation fails if you use the <a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-composer.html"><code class="highlighter-rouge">magento sampledata:deploy</code></a> command:</p>
 
-<pre><code>PHP Fatal error: Uncaught TypeError: Argument 1 passed to Symfony\Component\Console\Input\ArrayInput::__construct() must be of the type array, object given, called in /&lt;path&gt;/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 97 and defined in /&lt;path&gt;/vendor/symfony/console/Symfony/Component/Console/Input/ArrayInput.php:37
+<div class="highlighter-rouge"><pre class="highlight"><code>PHP Fatal error: Uncaught TypeError: Argument 1 passed to Symfony\Component\Console\Input\ArrayInput::__construct() must be of the type array, object given, called in /&lt;path&gt;/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 97 and defined in /&lt;path&gt;/vendor/symfony/console/Symfony/Component/Console/Input/ArrayInput.php:37
 </code></pre>
+</div>
 
 <h4 id="solution-1">Solution</h4>
-<p>Don’t install sample data in production mode. Switch to developer mode and clear some <code>var</code> directories and try again.</p>
+<p>Don’t install sample data in production mode. Switch to developer mode and clear some <code class="highlighter-rouge">var</code> directories and try again.</p>
 
 <p>Enter the following commands in the order shown as the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>:</p>
 
-<pre><code>cd &lt;your Magento install dir&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 php bin/magento deploy:mode:set developer
 rm -rf var/generation/* var/di/*
 php bin/magento sampledata:deploy
 </code></pre>
+</div>
 
 <h3 id="trouble-samp-secy">Symptom (security)</h3>
 
 <p>During installation of optional sample data, a  message similar to the following displays:</p>
 
-<pre><code>PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
+<div class="highlighter-rouge"><pre class="highlight"><code>PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
 </code></pre>
+</div>
 
 <h4 id="solution-2">Solution</h4>
 
@@ -1008,27 +1012,30 @@ php bin/magento sampledata:deploy
 <h3 id="trouble-samp-dev">Symptom (develop branch)</h3>
 <p>Other errors display, such as:</p>
 
-<pre><code>[Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist
+<div class="highlighter-rouge"><pre class="highlight"><code>[Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist
 </code></pre>
+</div>
 
 <h4 id="solution-3">Solution</h4>
 
 <p>There are known issues with using sample data with the Magento 2 develop branch. Use the master branch instead. You can switch to the master branch as follows:</p>
 
-<pre><code>cd &lt;your Magento install dir&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 git checkout master
 git pull origin master
 </code></pre>
+</div>
 
 <h3 id="trouble-samp-max">Symptom (max_execution_time)</h3>
 
 <p>The installation stops before the sample data installation finishes. An example follows:</p>
 
-<pre><code>(more)
+<div class="highlighter-rouge"><pre class="highlight"><code>(more)
 
 Module 'Magento_CustomerSampleData':
 Installing data...
 </code></pre>
+</div>
 
 <p>Sample data installation does not finish.</p>
 
@@ -1036,14 +1043,15 @@ Installing data...
 
 <h4 id="solution-4">Solution</h4>
 
-<p>As a user with <code>root</code> privileges, modify <code>php.ini</code> to increase the value of <code>max_execution_time</code> to 600 or more. (600 seconds is 10 minutes. You can increase the value to whatever you want.) You should change <code>max_execution_time</code> back to its previous value after the installation is successful.</p>
+<p>As a user with <code class="highlighter-rouge">root</code> privileges, modify <code class="highlighter-rouge">php.ini</code> to increase the value of <code class="highlighter-rouge">max_execution_time</code> to 600 or more. (600 seconds is 10 minutes. You can increase the value to whatever you want.) You should change <code class="highlighter-rouge">max_execution_time</code> back to its previous value after the installation is successful.</p>
 
-<p>If you’re not sure where <code>php.ini</code> is located, enter the following command:</p>
+<p>If you’re not sure where <code class="highlighter-rouge">php.ini</code> is located, enter the following command:</p>
 
-<pre><code>php --ini
+<div class="highlighter-rouge"><pre class="highlight"><code>php --ini
 </code></pre>
+</div>
 
-<p>The value of <code>Loaded Configuration File</code> is the <code>php.ini</code> you must modify.</p>
+<p>The value of <code class="highlighter-rouge">Loaded Configuration File</code> is the <code class="highlighter-rouge">php.ini</code> you must modify.</p>
 
 		</div>
 		<!-- /.content-wrap -->

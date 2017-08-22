@@ -751,20 +751,20 @@
 </section>
 
 
-			<p>You need to configure the main parameters of the vault implementation in the <code>config.xml</code> file of your <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> module:</p>
+			<p>You need to configure the main parameters of the vault implementation in the <code class="highlighter-rouge">config.xml</code> file of your <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> module:</p>
 
 <ul>
-  <li><code>model</code> - instance of the vault payment implementation, <a href="/guides/v2.1/payments-integrations/vault/vault-di.html">configured in <code>di.xml</code></a>.</li>
-  <li><code>title</code> - vault payment method title; can be overwritten in the store configuration.</li>
+  <li><code class="highlighter-rouge">model</code> - instance of the vault payment implementation, <a href="/guides/v2.1/payments-integrations/vault/vault-di.html">configured in <code class="highlighter-rouge">di.xml</code></a>.</li>
+  <li><code class="highlighter-rouge">title</code> - vault payment method title; can be overwritten in the store configuration.</li>
 </ul>
 
 <p>These parameters are specified in the section defined by the unique vault implementation code. They are the minimum required to create cault payment. All other payment settings are inherited from the payment provider integration.</p>
 
 <p>Additional configuration might be required depending on your implementation.</p>
 
-<p>The following example is the <code>config.xml</code> file of the Braintree payment method:</p>
+<p>The following example is the <code class="highlighter-rouge">config.xml</code> file of the Braintree payment method:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Store:etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Store:etc/config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;default&gt;</span>
         <span class="nt">&lt;payment&gt;</span>
             <span class="nt">&lt;braintree&gt;</span>
@@ -779,7 +779,7 @@
     <span class="nt">&lt;/default&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>In this example <code>braintree_cc_vault</code> is the unique payment code of the vault implementation for Braintree.</p>
+<p>In this example <code class="highlighter-rouge">braintree_cc_vault</code> is the unique payment code of the vault implementation for Braintree.</p>
 
 <h2 id="whats-next">What’s next</h2>
 

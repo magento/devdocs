@@ -946,8 +946,9 @@
 			<h3 id="symptom">Symptom</h3>
 <p>When you attempt to roll back using the command line, the following error displays:</p>
 
-<pre><code>Segmentation fault
+<div class="highlighter-rouge"><pre class="highlight"><code>Segmentation fault
 </code></pre>
+</div>
 
 <p>As a result, the rollback does not complete.</p>
 
@@ -955,7 +956,7 @@
 <p>In some cases, a very long query string causes the user’s allocated memory space to run out of memory because of too many recursive calls. We’re aware of this issue and are working on a solution.</p>
 
 <h3 id="workaround">Workaround</h3>
-<p>Until a solution is available, we recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_blank"><code>ulimit</code></a> for the Magento file system user to a value of 65536 or more.</p>
+<p>Until a solution is available, we recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_blank"><code class="highlighter-rouge">ulimit</code></a> for the Magento file system user to a value of 65536 or more.</p>
 
 <p>You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.</p>
 
@@ -963,8 +964,9 @@
 
 <p>Command:</p>
 
-<pre><code>ulimit -s 65536
+<div class="highlighter-rouge"><pre class="highlight"><code>ulimit -s 65536
 </code></pre>
+</div>
 
 <p>You can change this to a larger value if needed.</p>
 
@@ -976,14 +978,15 @@
 
 <ol>
   <li>If you haven’t done so already, switch to the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-  <li>Open <code>/home/&lt;username&gt;/.bashrc</code> in a text editor.</li>
+  <li>Open <code class="highlighter-rouge">/home/&lt;username&gt;/.bashrc</code> in a text editor.</li>
   <li>
     <p>Add the following line:</p>
 
-    <pre><code>ulimit -s 65536
+    <div class="highlighter-rouge"><pre class="highlight"><code>ulimit -s 65536
 </code></pre>
+    </div>
   </li>
-  <li>Save your changes to <code>.bashrc</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">.bashrc</code> and exit the text editor.</li>
 </ol>
 
 <div class="bs-callout bs-callout-warning">

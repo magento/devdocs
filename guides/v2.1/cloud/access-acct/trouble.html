@@ -1625,7 +1625,7 @@
 
 			<p>This topic discusses how to recover if you deployed the Magento application with the incorrect <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>. For example, you might have used the keys for another account or you might have used Magento Community Edition (CE) keys instead of Magento Enterprise Edition (EE) keys.</p>
 
-<p>If you used the incorrect keys, deployment fails; to recover, you must clone the project, add the correct keys to <code>auth.json</code>, and push the change to the master branch. Before you begin, make sure you know your Magento EE <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
+<p>If you used the incorrect keys, deployment fails; to recover, you must clone the project, add the correct keys to <code class="highlighter-rouge">auth.json</code>, and push the change to the master branch. Before you begin, make sure you know your Magento EE <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>In this section, we assume that your project has a <code>master</code> branch only (<code>master</code> is the default branch when you first create a project). </p>
@@ -1638,33 +1638,37 @@
   <li>
     <p>Log in to the project:</p>
 
-    <pre><code>magento-cloud login
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+    </div>
   </li>
   <li>
     <p>List project IDs:</p>
 
-    <pre><code>magento-cloud project:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Clone the project:</p>
 
-    <pre><code>magento-cloud project:get &lt;project ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+    </div>
   </li>
   <li>Wait for the project to clone.</li>
   <li>Change to the project root directory.</li>
-  <li>Open <code>auth.json</code> in a text editor.</li>
+  <li>Open <code class="highlighter-rouge">auth.json</code> in a text editor.</li>
   <li>Add the correct authentication keys.</li>
   <li>Save your changes and exit the text editor.</li>
   <li>
     <p>Commit and merge your changes.</p>
 
-    <pre><code>git add -A
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
 git commit -m "&lt;description of change&gt;"
 git push origin master
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Wait for the deployment to complete.</p>

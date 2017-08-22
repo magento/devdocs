@@ -1920,23 +1920,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1953,15 +1956,16 @@
   <h2 id="config-cli-xml-run">Convert layout XML files</h2>
   <p>Command options:</p>
 
-  <pre><code>magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
 </code></pre>
+  </div>
 
   <p>where</p>
 
   <ul>
-    <li><code>{xml file}</code> is the full path and file name of a layout XML file to convert (required)</li>
-    <li><code>{xslt stylesheet}</code> is the full path and file name of an XSLT stylesheet file to use for <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span> (required)</li>
-    <li><code>-o|--overwrite</code> include this option to overwrite the existing XML file</li>
+    <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">xml</span><span class="w"> </span><span class="err">file</span><span class="p">}</span></code> is the full path and file name of a layout XML file to convert (required)</li>
+    <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">xslt</span><span class="w"> </span><span class="err">stylesheet</span><span class="p">}</span></code> is the full path and file name of an XSLT stylesheet file to use for <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span> (required)</li>
+    <li><code class="highlighter-rouge">-o|--overwrite</code> include this option to overwrite the existing XML file</li>
   </ul>
 
   <h4 id="related-topics">Related topics</h4>

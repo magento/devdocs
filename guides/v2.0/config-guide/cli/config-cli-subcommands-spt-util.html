@@ -1586,12 +1586,12 @@
   <li>You’re having an issue with your Magento store and you contact Magento Support.</li>
   <li>Support determines they need to see your code or database to reproduce the issue.</li>
   <li>
-    <p>You back up the code to a <code>.tar.gz</code> file.</p>
+    <p>You back up the code to a <code class="highlighter-rouge">.tar.gz</code> file.</p>
 
     <p>This backup <em>excludes</em> your media files to speed up the process and to result in a much smaller file.</p>
   </li>
   <li>
-    <p>You back up the database to a <code>.tar.gz</code> file.</p>
+    <p>You back up the database to a <code class="highlighter-rouge">.tar.gz</code> file.</p>
 
     <p>By default, <a href="#sens-data">sensitive data</a> is hashed when making the backup.</p>
   </li>
@@ -1610,23 +1610,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1641,7 +1644,7 @@
   <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
   <h2 id="config-cli-spt-utils-code">Create a code backup</h2>
-  <p>This command backs up code and compresses it in <code>tar.gz</code> format.</p>
+  <p>This command backs up code and compresses it in <code class="highlighter-rouge">tar.gz</code> format.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1650,26 +1653,28 @@
 
   <p>Command options:</p>
 
-  <pre><code>magento support:backup:code [--name=&lt;file name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento support:backup:code [--name=&lt;file name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs]
 </code></pre>
+  </div>
 
   <p>where</p>
 
   <ul>
-    <li><code>--name</code> specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.</li>
-    <li><code>-o|--output=&lt;path&gt;</code> is the absolute file system path to store the backup (required).</li>
-    <li><code>-l|--logs</code> includes log files (optional).</li>
+    <li><code class="highlighter-rouge">--name</code> specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.</li>
+    <li><code class="highlighter-rouge">-o|--output=&lt;path&gt;</code> is the absolute file system path to store the backup (required).</li>
+    <li><code class="highlighter-rouge">-l|--logs</code> includes log files (optional).</li>
   </ul>
 
-  <p>For example, to create a code backup named <code>/var/www/html/magento2/var/log/mycodebackup.tar.gz</code>, enter:</p>
+  <p>For example, to create a code backup named <code class="highlighter-rouge">/var/www/html/magento2/var/log/mycodebackup.tar.gz</code>, enter:</p>
 
-  <pre><code>magento magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
 </code></pre>
+  </div>
 
   <p>After the command completes, provide the code backup to Magento Support.</p>
 
   <h2 id="config-cli-spt-utils-db">Create a database backup</h2>
-  <p>This command backs up the Magento database and compresses it in <code>tar.gz</code> format.</p>
+  <p>This command backs up the Magento database and compresses it in <code class="highlighter-rouge">tar.gz</code> format.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1678,16 +1683,17 @@
 
   <p>Command options:</p>
 
-  <pre><code>magento support:backup:db [--name=&lt;name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs] [-i|--ignore-sanitize]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento support:backup:db [--name=&lt;name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs] [-i|--ignore-sanitize]
 </code></pre>
+  </div>
 
   <p>where</p>
 
   <ul>
-    <li><code>--name</code> specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.</li>
-    <li><code>-o|--output=&lt;path&gt;</code> is the absolute file system path to store the backup (required).</li>
-    <li><code>-l|--logs</code> includes log files (optional).</li>
-    <li><code>-i|--ignore-sanitize</code> means that data is preserved; omit the flag to hash <a href="#sens-data">sensitive data</a> stored in the database when creating the backup (optional).</li>
+    <li><code class="highlighter-rouge">--name</code> specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.</li>
+    <li><code class="highlighter-rouge">-o|--output=&lt;path&gt;</code> is the absolute file system path to store the backup (required).</li>
+    <li><code class="highlighter-rouge">-l|--logs</code> includes log files (optional).</li>
+    <li><code class="highlighter-rouge">-i|--ignore-sanitize</code> means that data is preserved; omit the flag to hash <a href="#sens-data">sensitive data</a> stored in the database when creating the backup (optional).</li>
   </ul>
 
   <p>After the command completes, provide the database backup to Magento Support.</p>
@@ -1715,8 +1721,9 @@
     <h2 id="config-cli-spt-utils-trouble">Troubleshooting: display utilities and paths</h2>
     <p>We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> or on the command line:</p>
 
-    <pre><code>Utility lsof not found
+    <div class="highlighter-rouge"><pre class="highlight"><code>Utility lsof not found
 </code></pre>
+    </div>
 
     <p>Run the following commands in the order shown to display the paths to the applications used by the support utilities and Data Collector:</p>
 
@@ -1724,20 +1731,20 @@
       <li>
         <p>Change to your Magento installation directory.</p>
 
-        <p>For example, <code>cd /var/www/magento2</code></p>
+        <p>For example, <code class="highlighter-rouge">cd /var/www/magento2</code></p>
 
         <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
   		<p>The commands run properly <em>only</em> from your Magento installation directory.</p></span>
 </div>
       </li>
-      <li><code>php bin/magento support:utility:paths</code> creates <code>&lt;your Magento install dir&gt;/var/support/Paths.php</code>, which lists the paths to all application used by the utility.</li>
-      <li><code>php bin/magento support:utility:check -u</code> displays the file system paths.</li>
+      <li><code class="highlighter-rouge">php bin/magento support:utility:paths</code> creates <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/support/Paths.php</code>, which lists the paths to all application used by the utility.</li>
+      <li><code class="highlighter-rouge">php bin/magento support:utility:check -u</code> displays the file system paths.</li>
     </ol>
 
     <p>A sample follows:</p>
 
-    <pre><code>gzip =&gt; /bin/gzip
+    <div class="highlighter-rouge"><pre class="highlight"><code>gzip =&gt; /bin/gzip
 lsof =&gt; /usr/sbin/lsof
 mysqldump =&gt; /usr/bin/mysqldump
 nice =&gt; /bin/nice
@@ -1747,8 +1754,9 @@ sed =&gt; /bin/sed
 bash =&gt; /bin/bash
 mysql =&gt; /usr/bin/mysql
 </code></pre>
+    </div>
 
-    <p>To resolve issues with running the tools, make sure these applications are installed and are in the web server user’s <code>$PATH</code> environment variable.</p>
+    <p>To resolve issues with running the tools, make sure these applications are installed and are in the web server user’s <code class="highlighter-rouge">$PATH</code> environment variable.</p>
 
     <h4 id="related-topics">Related topics</h4>
 

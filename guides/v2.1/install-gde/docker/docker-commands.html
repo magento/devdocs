@@ -696,20 +696,23 @@
 <h4 id="start-the-magento-cron-job-and-populate-the-cache">Start the Magento cron job and populate the cache</h4>
 <p>Use the following command to both start the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview">Magento cron job</a> and populate the cache and storefront:</p>
 
-<pre><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --magento-cron-run=1 --no-interaction
+<div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --magento-cron-run=1 --no-interaction
 </code></pre>
+</div>
 
 <h4 id="start-the-magento-cron-job-only">Start the Magento cron job only</h4>
 <p>Use the following command on a running system to only start the Magento cron job. This command might save resources and battery life on your laptop.</p>
 
-<pre><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-cron-run=1 --no-interaction
+<div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-cron-run=1 --no-interaction
 </code></pre>
+</div>
 
 <h4 id="populate-the-storefront-and-cache-only">Populate the storefront and cache only</h4>
 <p>Use the following command on a running system to only populate the storefront and cache but <em>not</em> run the Magento cron job.</p>
 
-<pre><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --no-interaction
+<div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --no-interaction
 </code></pre>
+</div>
 </div></div>
 
 <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Configure DevBox to always populate the storefront and cache and run cron </h3><div class="collapsible-content"><p>To populate the storefront and cache, and run cron to run every time Magento starts:</p>
@@ -718,41 +721,46 @@
   <li>
     <p>Stop all running containers.</p>
 
-    <pre><code>docker-compose stop
+    <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose stop
 </code></pre>
+    </div>
   </li>
-  <li>Open <code>&lt;project root dir&gt;/docker-compose.yml</code> in a text editor.</li>
+  <li>Open <code class="highlighter-rouge">&lt;project root dir&gt;/docker-compose.yml</code> in a text editor.</li>
   <li>
     <p>You have the following options:</p>
 
     <ul>
       <li>
-        <p>To enable cron to run only, set the value of the following parameter to <code>1</code>:</p>
+        <p>To enable cron to run only, set the value of the following parameter to <code class="highlighter-rouge">1</code>:</p>
 
-        <pre><code>MAGENTO_CRON_RUN=1
+        <div class="highlighter-rouge"><pre class="highlight"><code>MAGENTO_CRON_RUN=1
 </code></pre>
+        </div>
       </li>
       <li>
-        <p>To only populate the storefront and cache but <em>not</em> run the Magento cron job, set the value of the following parameter to <code>1</code>:</p>
+        <p>To only populate the storefront and cache but <em>not</em> run the Magento cron job, set the value of the following parameter to <code class="highlighter-rouge">1</code>:</p>
 
-        <pre><code>MAGENTO_WARM_UP_STOREFRONT=1
+        <div class="highlighter-rouge"><pre class="highlight"><code>MAGENTO_WARM_UP_STOREFRONT=1
 </code></pre>
+        </div>
       </li>
       <li>
-        <p>To both enable the Magento cron job and to always populate the storefront and cache, set the values of both of the following parameters to <code>1</code>:</p>
+        <p>To both enable the Magento cron job and to always populate the storefront and cache, set the values of both of the following parameters to <code class="highlighter-rouge">1</code>:</p>
 
-        <pre><code>MAGENTO_CRON_RUN=1
+        <div class="highlighter-rouge"><pre class="highlight"><code>MAGENTO_CRON_RUN=1
 MAGENTO_WARM_UP_STOREFRONT=1
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>
-  <li>Save your changes to <code>docker-compose.yml</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">docker-compose.yml</code> and exit the text editor.</li>
   <li>
     <p>Start all containers.</p>
 
-    <pre><code>docker-compose start
+    <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose start
 </code></pre>
+    </div>
   </li>
 </ol>
 </div></div>
@@ -765,11 +773,12 @@ MAGENTO_WARM_UP_STOREFRONT=1
 <h3 id="restart-the-containers-after-rebooting">Restart the containers after rebooting</h3>
 <p>After you restart your computer, we recommend you use the following command, which restarts all services and assigns them new ports:</p>
 
-<pre><code>m2devbox-reset[.bat|sh]
+<div class="highlighter-rouge"><pre class="highlight"><code>m2devbox-reset[.bat|sh]
 </code></pre>
+</div>
 
 <h3 id="find-currently-used-ports">Find currently used ports</h3>
-<p>If you’re not sure what ports on which DevBox services are running, use the <code>docker-compose ps</code> command as follows:</p>
+<p>If you’re not sure what ports on which DevBox services are running, use the <code class="highlighter-rouge">docker-compose ps</code> command as follows:</p>
 
 <div>
 
@@ -811,17 +820,19 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
   </div>
 
   <h3 id="start-stop-restart-services">Start, stop, restart services</h3>
-  <p>DevBox uses two service names: <code>web</code> and <code>db</code>. To start, stop, or restart them, use the following commands:</p>
+  <p>DevBox uses two service names: <code class="highlighter-rouge">web</code> and <code class="highlighter-rouge">db</code>. To start, stop, or restart them, use the following commands:</p>
 
-  <pre><code>docker-compose start &lt;service&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose start &lt;service&gt;
 docker-compose stop &lt;service&gt;
 docker-compose restart &lt;service&gt;
 </code></pre>
+  </div>
 
   <p>For example, to restart the web service:</p>
 
-  <pre><code>docker-compose restart web
+  <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose restart web
 </code></pre>
+  </div>
 </div>
 </div></div>
 
@@ -835,43 +846,43 @@ docker-compose restart &lt;service&gt;
   <tbody>
     <tr>
       <td>List all Magento containers, shows port mappings</td>
-      <td><code>docker-compose ps </code></td>
+      <td><code class="highlighter-rouge">docker-compose ps </code></td>
     </tr>
     <tr>
       <td>Start a container</td>
-      <td><code>docker-compose start &lt;service&gt;</code></td>
+      <td><code class="highlighter-rouge">docker-compose start &lt;service&gt;</code></td>
     </tr>
     <tr>
       <td>Stop a container</td>
-      <td><code>docker-compose stop &lt;service&gt;</code></td>
+      <td><code class="highlighter-rouge">docker-compose stop &lt;service&gt;</code></td>
     </tr>
     <tr>
       <td>Restart a container</td>
-      <td><code>docker-compose restart &lt;service&gt;</code></td>
+      <td><code class="highlighter-rouge">docker-compose restart &lt;service&gt;</code></td>
     </tr>
     <tr>
       <td>Restart all containers</td>
-      <td><code>docker-compose restart</code></td>
+      <td><code class="highlighter-rouge">docker-compose restart</code></td>
     </tr>
     <tr>
       <td>Start all Magento containers</td>
-      <td><code>docker-compose start</code></td>
+      <td><code class="highlighter-rouge">docker-compose start</code></td>
     </tr>
     <tr>
       <td>Stop all Magento containers</td>
-      <td><code>docker-compose stop</code></td>
+      <td><code class="highlighter-rouge">docker-compose stop</code></td>
     </tr>
     <tr>
       <td>Restart all Magento containers</td>
-      <td><code>docker-compose restart</code></td>
+      <td><code class="highlighter-rouge">docker-compose restart</code></td>
     </tr>
     <tr>
       <td>Remove all Magento containers</td>
-      <td><code>docker-compose kill</code></td>
+      <td><code class="highlighter-rouge">docker-compose kill</code></td>
     </tr>
     <tr>
       <td>Run a bash shell in a container</td>
-      <td><code>docker-compose exec --user=magento2 &lt;service&gt; /bin/bash</code></td>
+      <td><code class="highlighter-rouge">docker-compose exec --user=magento2 &lt;service&gt; /bin/bash</code></td>
     </tr>
   </tbody>
 </table>

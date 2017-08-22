@@ -1253,7 +1253,7 @@
 
 <p>Use the following guidelines to determine which settings to designate as sensitive, system-specific, or both.</p>
 
-<p>Magento stores these settings in <code>&lt;Magento root dir&gt;/app/etc/env.php</code>.
+<p>Magento stores these settings in <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/etc/env.php</code>.
 Do not include this file in source control.</p>
 
 <h3 id="sensitive-values">Sensitive values</h3>
@@ -1290,44 +1290,46 @@ Do not include this file in source control.</p>
 
 <h2 id="how-to-specify-values-as-sensitive-or-system-specific">How to specify values as sensitive or system-specific</h2>
 
-<p>Add a reference to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Config/Model/Config/TypePool.php" target="_blank"><code>Magento\Config\Model\Config\TypePool</code></a> to the <a href="/guides/v2.2/extension-dev-guide/build/di-xml-file.html"><code>di.xml</code></a> file to specify either a system-specific or sensitive configuration value.</p>
+<p>Add a reference to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Config/Model/Config/TypePool.php" target="_blank"><code class="highlighter-rouge">Magento\Config\Model\Config\TypePool</code></a> to the <a href="/guides/v2.2/extension-dev-guide/build/di-xml-file.html"><code class="highlighter-rouge">di.xml</code></a> file to specify either a system-specific or sensitive configuration value.</p>
 
 <h3 id="example-sensitive-settings">Example: Sensitive settings</h3>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">type</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Magento\Config\Model\Config</span><span class="se">\T</span><span class="s2">ypePool&quot;</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;sensitive&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;payment/test/password&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="nx">item</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="nx">argument</span><span class="o">&gt;</span>
-   <span class="o">&lt;/</span><span class="nx">arguments</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="nx">type</span><span class="o">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Config\Model\Config\TypePool"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"sensitive"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"payment/test/password"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <p>After specifying the sensitive setting, use the following commands to verify it:</p>
 
-<pre><code>php bin/magento cache:clean
+<div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cache:clean
 php bin/magento app:config:dump
 </code></pre>
+</div>
 
 <p>A message similar to the following is displayed:</p>
 
-<pre><code>The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
+<div class="highlighter-rouge"><pre class="highlight"><code>The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
 CONFIG__DEFAULT__PAYMENT__TEST__PASWORD for payment/test/password
 Done.
 </code></pre>
+</div>
 
 <h3 id="example-system-specific-settings">Example: System-specific settings</h3>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">type</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Magento\Config\Model\Config</span><span class="se">\T</span><span class="s2">ypePool&quot;</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;environment&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;catalog/search/searchengine/port&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="nx">item</span><span class="o">&gt;</span>
-      <span class="o">&lt;/</span><span class="nx">argument</span><span class="o">&gt;</span>
-   <span class="o">&lt;/</span><span class="nx">arguments</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="nx">type</span><span class="o">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Config\Model\Config\TypePool"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"environment"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"catalog/search/searchengine/port"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <h3 id="sensitive-system-specific-setting">Sensitive, system-specific setting</h3>
 
-<p>To set a configuration setting as both sensitive and system-specific, create two entries with the <code>name</code> property for <code>argument</code> set to <code>sensitive</code> for one entry and <code>environment</code> for the other.</p>
+<p>To set a configuration setting as both sensitive and system-specific, create two entries with the <code class="highlighter-rouge">name</code> property for <code class="highlighter-rouge">argument</code> set to <code class="highlighter-rouge">sensitive</code> for one entry and <code class="highlighter-rouge">environment</code> for the other.</p>
 
 <h4 id="related-topics">Related topics</h4>
 

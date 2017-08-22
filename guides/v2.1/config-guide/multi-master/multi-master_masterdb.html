@@ -1676,8 +1676,8 @@
 <p>This topic discusses how to get started with the split database solution by:</p>
 
 <ol>
-  <li>Installing Magento 2 EE with a single master database (named <code>magento</code>)</li>
-  <li>Creating two additional master databases for <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> and OMS (named <code>magento_quote</code> and <code>magento_sales</code>)</li>
+  <li>Installing Magento 2 EE with a single master database (named <code class="highlighter-rouge">magento</code>)</li>
+  <li>Creating two additional master databases for <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> and OMS (named <code class="highlighter-rouge">magento_quote</code> and <code class="highlighter-rouge">magento_sales</code>)</li>
   <li>Configuring EE to use the checkout and sales databases</li>
 </ol>
 
@@ -1699,37 +1699,41 @@
     <li>
       <p>Enter the following command to get to a MySQL command prompt:</p>
 
-      <pre><code>mysql -u root -p
+      <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u root -p
 </code></pre>
+      </div>
     </li>
-    <li>Enter the MySQL <code>root</code> user’s password when prompted.</li>
+    <li>Enter the MySQL <code class="highlighter-rouge">root</code> user’s password when prompted.</li>
     <li>
-      <p>Enter the following commands in the order shown to create database instances named <code>magento_quote</code> and <code>magento_sales</code> with the same user names and passwords:</p>
+      <p>Enter the following commands in the order shown to create database instances named <code class="highlighter-rouge">magento_quote</code> and <code class="highlighter-rouge">magento_sales</code> with the same user names and passwords:</p>
 
-      <pre><code>create database magento_quote;
+      <div class="highlighter-rouge"><pre class="highlight"><code>create database magento_quote;
 GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
 
 create database magento_sales;
 GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>Enter <code>exit</code> to quit the command prompt.</p>
+      <p>Enter <code class="highlighter-rouge">exit</code> to quit the command prompt.</p>
     </li>
     <li>
       <p>Verify the databases, one at a time:</p>
 
       <p>Checkout database:</p>
 
-      <pre><code>mysql -u magento_quote -p
+      <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u magento_quote -p
 exit
 </code></pre>
+      </div>
 
       <p>Order management database:</p>
 
-      <pre><code>mysql -u magento_sales -p
+      <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u magento_sales -p
 exit
 </code></pre>
+      </div>
 
       <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
     </li>
@@ -1748,23 +1752,26 @@ exit
 
         <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-        <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+        </div>
 
         <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-        <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+        </div>
       </li>
       <li>
-        <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+        <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
         <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
         <p>bash shell example for CentOS:</p>
 
-        <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+        <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+        </div>
       </li>
     </ol>
 
@@ -1779,34 +1786,40 @@ exit
     <h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
     <p>Command syntax:</p>
 
-    <pre><code>magento setup:db-schema:split-quote --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:db-schema:split-quote --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>magento setup:db-schema:split-quote --host="localhost" --dbname="magento_quote" --username="magento_quote" --password="magento_quote"
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:db-schema:split-quote --host="localhost" --dbname="magento_quote" --username="magento_quote" --password="magento_quote"
 </code></pre>
+    </div>
 
     <p>The following message displays to confirm a successful setup:</p>
 
-    <pre><code>Migration has been finished successfully!
+    <div class="highlighter-rouge"><pre class="highlight"><code>Migration has been finished successfully!
 </code></pre>
+    </div>
 
     <h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
     <p>Command syntax:</p>
 
-    <pre><code>magento setup:db-schema:split-sales --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:db-schema:split-sales --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>magento setup:db-schema:split-sales --host="localhost" --dbname="magento_sales" --username="magento_sales" --password="magento_sales"
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:db-schema:split-sales --host="localhost" --dbname="magento_sales" --username="magento_sales" --password="magento_sales"
 </code></pre>
+    </div>
 
     <p>The following message displays to confirm a successful setup:</p>
 
-    <pre><code>Migration has been finished successfully!
+    <div class="highlighter-rouge"><pre class="highlight"><code>Migration has been finished successfully!
 </code></pre>
+    </div>
 
     <h4 id="next-step">Next step</h4>
     <p><a href="/guides/v2.1/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>

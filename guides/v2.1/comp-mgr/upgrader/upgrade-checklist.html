@@ -1101,22 +1101,25 @@
   <h3 id="magento-cron">Cron jobs are running</h3>
   <p>Magento requires three cron jobs, all running as the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
 
-  <p>To verify your cron jobs are set up properly, enter the following command as a user with <code>root</code> privileges:</p>
+  <p>To verify your cron jobs are set up properly, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <pre><code>crontab -u &lt;magento file system owner&gt; -l
+  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u &lt;magento file system owner&gt; -l
 </code></pre>
+  </div>
 
-  <p>For example, if your Magento file system owner is named <code>magento_user</code>, enter:</p>
+  <p>For example, if your Magento file system owner is named <code class="highlighter-rouge">magento_user</code>, enter:</p>
 
-  <pre><code>crontab -u magento_user -l
+  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u magento_user -l
 </code></pre>
+  </div>
 
   <p>Results similar to the following should display:</p>
 
-  <pre><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+  <div class="highlighter-rouge"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log
 </code></pre>
+  </div>
 
   <p>Another symptom of cron not running is the following error in the Magento Admin:</p>
 
@@ -1135,10 +1138,11 @@
 
   <p>To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider’s file manager application.</p>
 
-  <p>For example, enter the following commands on a Linux system if the Magento application is installed in <code>/var/www/html/magento2</code>:</p>
+  <p>For example, enter the following commands on a Linux system if the Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
 
-  <pre><code>ls -al /var/www/html/magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>ls -al /var/www/html/magento2
 </code></pre>
+  </div>
 
   <p>A sample result follows:</p>
 
@@ -1175,14 +1179,15 @@ drwxrwx---.  7 magento_user apache   4096 Jun  7 07:53 update
 drwxrws---. 11 magento_user apache   4096 Jun 13 16:05 var
 drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor</code></pre></figure>
 
-  <p>In the preceding example, the Magento file system owner is <code>magento_user</code>. Directories in the Magento file system have <code>drwxrwx---</code> permissions (775) and files have <code>-rw-rw-rw-</code> permissions (664).</p>
+  <p>In the preceding example, the Magento file system owner is <code class="highlighter-rouge">magento_user</code>. Directories in the Magento file system have <code class="highlighter-rouge">drwxrwx---</code> permissions (775) and files have <code class="highlighter-rouge">-rw-rw-rw-</code> permissions (664).</p>
 
   <p>To get more detailed information, you can optionally enter the following command:</p>
 
-  <pre><code>ls -al /var/www/html/magento2/pub
+  <div class="highlighter-rouge"><pre class="highlight"><code>ls -al /var/www/html/magento2/pub
 </code></pre>
+  </div>
 
-  <p>Because Magento deploys static file assets to subdirectories of <code>pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
+  <p>Because Magento deploys static file assets to subdirectories of <code class="highlighter-rouge">pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
 
   <p>For more information, see <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">File system permissions and ownership</a>.</p>
 

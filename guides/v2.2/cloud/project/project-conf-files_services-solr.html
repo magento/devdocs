@@ -1585,55 +1585,55 @@ recovery, centralized configuration, and more.</p>
 <p>We support Solr version 4.10.</p>
 
 <h2 id="relationship">Relationship</h2>
-<p>The format exposed in the <a href="/guides/v2.2/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
+<p>The format exposed in the <a href="/guides/v2.2/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-    <span class="s2">&quot;solr&quot;</span>: <span class="o">[</span>
+    <span class="s2">"solr"</span>: <span class="o">[</span>
         <span class="o">{</span>
-            <span class="s2">&quot;path&quot;</span>: <span class="s2">&quot;solr&quot;</span>,
-            <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;192.0.2.55&quot;</span>,
-            <span class="s2">&quot;scheme&quot;</span>: <span class="s2">&quot;solr&quot;</span>,
-            <span class="s2">&quot;port&quot;</span>: 8080
+            <span class="s2">"path"</span>: <span class="s2">"solr"</span>,
+            <span class="s2">"host"</span>: <span class="s2">"192.0.2.55"</span>,
+            <span class="s2">"scheme"</span>: <span class="s2">"solr"</span>,
+            <span class="s2">"port"</span>: 8080
         <span class="o">}</span>
     <span class="o">]</span>
 <span class="o">}</span></code></pre></figure>
 
 <h2 id="usage-example">Usage example</h2>
-<p>In your <code>.magento/services.yaml</code>:</p>
+<p>In your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysearch</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">solr:4.10</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysearch</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">solr:4.10</span>
+    <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span></code></pre></figure>
 
-<p>In your <code>.magento.app.yaml</code>:</p>
+<p>In your <code class="highlighter-rouge">.magento.app.yaml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">solr</span><span class="p-Indicator">:</span> <span class="s">&quot;mysearch:solr&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
+    <span class="s">solr</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mysearch:solr"</span></code></pre></figure>
 
 <p>You can then use the service in a configuration file similar to the following:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">getenv</span><span class="p">(</span><span class="s2">&quot;MAGENTO_CLOUD_RELATIONSHIPS&quot;</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$relationships</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span><span class="p">;</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$relationships = getenv("MAGENTO_CLOUD_RELATIONSHIPS");
+if (!$relationships) {
+  return;
+}
 
-<span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$relationships</span><span class="p">),</span> <span class="k">TRUE</span><span class="p">);</span>
+$relationships = json_decode(base64_decode($relationships), TRUE);
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$relationships</span><span class="p">[</span><span class="s1">&#39;solr&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$endpoint</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;solr_host&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]);</span>
-  <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;solr_port&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]);</span>
-<span class="p">}</span></code></pre></figure>
+foreach ($relationships['solr'] as $endpoint) {
+  $container-&gt;setParameter('solr_host', $endpoint['host']);
+  $container-&gt;setParameter('solr_port', $endpoint['port']);
+}</code></pre></figure>
 
 <h2 id="configuration">Configuration</h2>
-<p>If you want to provide your own Solr configuration, you can add a <code>core_config</code> key in your <code>.magento/services.yaml</code>:</p>
+<p>If you want to provide your own Solr configuration, you can add a <code class="highlighter-rouge">core_config</code> key in your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysearch</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">solr:4.10</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span>
-    <span class="l-Scalar-Plain">configuration</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">core_config</span><span class="p-Indicator">:</span> <span class="kt">!archive</span> <span class="s">&quot;&lt;directory&gt;&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysearch</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">solr:4.10</span>
+    <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span>
+    <span class="s">configuration</span><span class="pi">:</span>
+        <span class="s">core_config</span><span class="pi">:</span> <span class="kt">!archive</span> <span class="s2">"</span><span class="s">&lt;directory&gt;"</span></code></pre></figure>
 
-<p>The <code>directory</code> parameter points to the Magento <code>vendor/magento/module-solr/conf</code> directory, relative to the <code>.magento</code> directory, in the Git repository. This directory contains the Magento schema.</p>
+<p>The <code class="highlighter-rouge">directory</code> parameter points to the Magento <code class="highlighter-rouge">vendor/magento/module-solr/conf</code> directory, relative to the <code class="highlighter-rouge">.magento</code> directory, in the Git repository. This directory contains the Magento schema.</p>
 
 		</div>
 		<!-- /.content-wrap -->

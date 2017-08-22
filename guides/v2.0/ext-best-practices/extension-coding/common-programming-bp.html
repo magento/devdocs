@@ -754,7 +754,7 @@ Writing replaceable code in your codebase makes this practice easier and more ef
 <h3 id="avoid-creating-helper-classes">Avoid creating helper classes</h3>
 <p>Helper or utility classes are classes filled with static methods that do not quite fit anywhere else.
 These classes are considered an antipattern and go against the principles of object oriented programming.
-If you have <code>ClassA</code> and a <code>ClassAHelper</code> with static functions that work on <code>ClassA</code>, you should consider refactoring those functions into <code>ClassA</code>.</p>
+If you have <code class="highlighter-rouge">ClassA</code> and a <code class="highlighter-rouge">ClassAHelper</code> with static functions that work on <code class="highlighter-rouge">ClassA</code>, you should consider refactoring those functions into <code class="highlighter-rouge">ClassA</code>.</p>
 
 <p>A helper class that functions as a catch-all for random methods breaks the single responsibility principle because it is an attempt to solve multiple problems in a single class.
 You should refactor your code and move those functions into the appropriate classes they work on.</p>

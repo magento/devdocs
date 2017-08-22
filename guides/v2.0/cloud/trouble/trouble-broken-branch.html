@@ -1497,8 +1497,9 @@
 <h2 id="patches">Issues with installing patches</h2>
 <p>When you push your code, the build and deploy phases begin. Patch and available hotfix installation is part of the process. If you receive errors indicating the patches could not be installed and the build failed, you can run the following command locally to identify any errors:</p>
 
-<pre><code>git apply &lt;path to patch&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>git apply &lt;path to patch&gt;
 </code></pre>
+</div>
 
 <p>Make note of the errors. These may help determine what fixes are required. We can also help further with those speified errors.</p>
 
@@ -1514,16 +1515,17 @@
   <li>
     <p>Enter the following CLI commands:</p>
 
-    <pre><code> bin/magento module:enable --all
+    <div class="highlighter-rouge"><pre class="highlight"><code> bin/magento module:enable --all
  bin/magento setup:di:compile
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <p>These commands enable all extensions and run the compile part of the build. Verify if you continue to encounter errors or issues.</p>
 
 <h2 id="cli-build">Broken build trying to force build using the Magento Cloud CLI</h2>
-<p>When we initially provision your project, you receive a cloned <code>master</code> branch. You should clone the <code>master</code> to your local workspace and create a branch from it to complete all of your development.</p>
+<p>When we initially provision your project, you receive a cloned <code class="highlighter-rouge">master</code> branch. You should clone the <code class="highlighter-rouge">master</code> to your local workspace and create a branch from it to complete all of your development.</p>
 
 <p>When you want to build and deploy the code to the Integration environment, you should not force the build using the Magento Cloud CLI commands to initiate a build command. This can cause the build to break. The command may check for specific variables and settings not in your local but in the remote environment. The automated build process also runs a specific series of scripts and commands when you push your code to your remote Git branch and environment.</p>
 
@@ -1533,28 +1535,31 @@
   <li>
     <p>If you have code commits for your branch, you should move those commits to a new branch. When <a href="https://git-scm.com/docs/git-reset" target="_blank">resetting your code</a> branch, you will lose any and all code commits.</p>
 
-    <p>We recommend using <a href="https://git-scm.com/docs/git-stash" target="_blank"><code>git stash</code></a> to save your current branch. You can pull code from the stash into your reset branch.</p>
+    <p>We recommend using <a href="https://git-scm.com/docs/git-stash" target="_blank"><code class="highlighter-rouge">git stash</code></a> to save your current branch. You can pull code from the stash into your reset branch.</p>
 
     <p>Or you can create a branch of the commits to add the work back after resetting the branch.</p>
   </li>
   <li>
     <p>You will need to locate a specific commit number to reset back to. If you do not include a <commit ID=""> SHA or ID, the reset will reference the latest commit.</commit></p>
 
-    <p>To get a log of commits, you can use the <a href="https://git-scm.com/docs/git-log" target="_blank"><code>git log</code></a> command for a verbose list of commits to copy an ID:</p>
+    <p>To get a log of commits, you can use the <a href="https://git-scm.com/docs/git-log" target="_blank"><code class="highlighter-rouge">git log</code></a> command for a verbose list of commits to copy an ID:</p>
 
-    <pre><code> git log
+    <div class="highlighter-rouge"><pre class="highlight"><code> git log
 </code></pre>
+    </div>
 
-    <p>Or use the <a href="https://git-scm.com/docs/git-reflog" target="_blank"><code>git reflog</code></a> command for a list of commit IDs with commit message:</p>
+    <p>Or use the <a href="https://git-scm.com/docs/git-reflog" target="_blank"><code class="highlighter-rouge">git reflog</code></a> command for a list of commit IDs with commit message:</p>
 
-    <pre><code> git reflog
+    <div class="highlighter-rouge"><pre class="highlight"><code> git reflog
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Force reset your code branch on your local. This will force return the code to the current remote branch.</p>
 
-    <pre><code> git reset --hard &lt;commit ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code> git reset --hard &lt;commit ID&gt;
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-warning">
       <p>You will lose committed code, if any. Make sure to backup, stash, or make a new branch to save your code.</p>

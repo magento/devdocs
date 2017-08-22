@@ -1078,25 +1078,25 @@
 <h2 id="theme-development-best-practice">Theme development best practice</h2>
 
 <ol>
-  <li>When <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">inheriting</a> from a default Magento theme, rather extend, than override the default styles: whenever possible, put your customizations in the <code>_extend.less</code> or <code>_theme.less</code> file, instead of overriding a <code>.less</code> file from a parent theme.</li>
+  <li>When <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">inheriting</a> from a default Magento theme, rather extend, than override the default styles: whenever possible, put your customizations in the <code class="highlighter-rouge">_extend.less</code> or <code class="highlighter-rouge">_theme.less</code> file, instead of overriding a <code class="highlighter-rouge">.less</code> file from a parent theme.</li>
   <li>
-    <p>Customize or create new <code>.xml</code> layout files instead of customizing and overriding <code>.phtml</code> templates. For example, if you need to create a new container, it is better to add an <code>.xml</code> file and create it there, than override a template. 
+    <p>Customize or create new <code class="highlighter-rouge">.xml</code> layout files instead of customizing and overriding <code class="highlighter-rouge">.phtml</code> templates. For example, if you need to create a new container, it is better to add an <code class="highlighter-rouge">.xml</code> file and create it there, than override a template. 
 Some other customizations that can be performed using layout instructions are the following:</p>
 
     <ul>
-      <li>change the position of a block or container using <code>&lt;move&gt;</code></li>
-      <li>remove a block or container using the <code>remove</code> or <code>display</code> attribute of the <code>&lt;referenceBlock&gt;/&lt;referenceContainer&gt;</code> instruction</li>
-      <li>reorder blocks and container using the <code>before/after</code>attributes of the <code>&lt;referenceBlock&gt;/&lt;referenceContainer&gt;</code> instruction</li>
-      <li>change the HTML tag or CSS class for the existing container using <code>&lt;referenceContainer&gt;</code> element</li>
+      <li>change the position of a block or container using <code class="highlighter-rouge">&lt;move&gt;</code></li>
+      <li>remove a block or container using the <code class="highlighter-rouge">remove</code> or <code class="highlighter-rouge">display</code> attribute of the <code class="highlighter-rouge">&lt;referenceBlock&gt;/&lt;referenceContainer&gt;</code> instruction</li>
+      <li>reorder blocks and container using the <code class="highlighter-rouge">before/after</code>attributes of the <code class="highlighter-rouge">&lt;referenceBlock&gt;/&lt;referenceContainer&gt;</code> instruction</li>
+      <li>change the HTML tag or CSS class for the existing container using <code class="highlighter-rouge">&lt;referenceContainer&gt;</code> element</li>
     </ul>
 
     <p>For details about working with layouts see the <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html">Layout chapter of this Guide</a>.</p>
   </li>
   <li>
-    <p>Reuse the markup and design patterns from the default Magento files by referencing the existing <code>.phtml</code> templates (<a href="/guides/v2.0//frontend-dev-guide/themes/debug-theme.html#debug-theme-templ">templates hints can help</a>) or copy-pasting HTML markup to your custom templates.</p>
+    <p>Reuse the markup and design patterns from the default Magento files by referencing the existing <code class="highlighter-rouge">.phtml</code> templates (<a href="/guides/v2.0//frontend-dev-guide/themes/debug-theme.html#debug-theme-templ">templates hints can help</a>) or copy-pasting HTML markup to your custom templates.</p>
   </li>
-  <li>Use <code>&lt;theme_dir&gt;/etc/view.xml</code> to change image types sizes or add your own types. See <a href="/guides/v2.0/frontend-dev-guide/themes/theme-images.html">Configure images properties</a> for details. Use this file also to <a href="/guides/v2.0//javascript-dev-guide/widgets/widget_gallery.html">customize product gallery widget</a></li>
-  <li>If you need to change the wording in user interface, <a href="/guides/v2.0/frontend-dev-guide/translations/theme_dictionary.html">add custom CSV dictionary files</a> instead of overriding <code>.phtml</code> templates.</li>
+  <li>Use <code class="highlighter-rouge">&lt;theme_dir&gt;/etc/view.xml</code> to change image types sizes or add your own types. See <a href="/guides/v2.0/frontend-dev-guide/themes/theme-images.html">Configure images properties</a> for details. Use this file also to <a href="/guides/v2.0//javascript-dev-guide/widgets/widget_gallery.html">customize product gallery widget</a></li>
+  <li>If you need to change the wording in user interface, <a href="/guides/v2.0/frontend-dev-guide/translations/theme_dictionary.html">add custom CSV dictionary files</a> instead of overriding <code class="highlighter-rouge">.phtml</code> templates.</li>
 </ol>
 
 <p>Keep in mind, that after Magento instances, updates or upgrades something can change in default templates, layouts, and styles. So it is recommended to check if the changes effected the files overridden in your theme and copy changes if any, to your templates, layouts, and styles.</p>

@@ -1671,7 +1671,7 @@
 
 
 			<h2 id="config-log-monolog">Monolog</h2>
-<p>Magento 2 complies with the PSR-3 standard. By default, Magento uses <a href="https://github.com/Seldaek/monolog" target="_blank">Monolog</a>. Monolog implemented as a preference for <code>Psr\Log\LoggerInterface</code> in the Magento application <a href="https://github.com/magento/magento2/blob/2.0/app/etc/di.xml#L9" target="_blank"><code>di.xml</code></a>.</p>
+<p>Magento 2 complies with the PSR-3 standard. By default, Magento uses <a href="https://github.com/Seldaek/monolog" target="_blank">Monolog</a>. Monolog implemented as a preference for <code class="highlighter-rouge">Psr\Log\LoggerInterface</code> in the Magento application <a href="https://github.com/magento/magento2/blob/2.0/app/etc/di.xml#L9" target="_blank"><code class="highlighter-rouge">di.xml</code></a>.</p>
 
 <p>Monolog is a popular <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> logging solution with a wide range of handlers that enable you to build advanced logging strategies. Following is a summary of how Monolog works.</p>
 
@@ -1692,30 +1692,30 @@
 <p>Other channels can have a different set of handlers and logic.</p>
 
 <h2 id="config-log-start">Get started with logging</h2>
-<p>To start working with a logger, you must get a <code>\Psr\Logger\LoggerInterface</code> instance. One way to do that is illustrated in our <a href="/guides/v2.1/config-guide/log/log-db.html">database logging example</a>.</p>
+<p>To start working with a logger, you must get a <code class="highlighter-rouge">\Psr\Logger\LoggerInterface</code> instance. One way to do that is illustrated in our <a href="/guides/v2.1/config-guide/log/log-db.html">database logging example</a>.</p>
 
 <p>Another way follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SomeModel</span>
- <span class="p">{</span>
-     <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class SomeModel
+ {
+     private $logger;
 
-     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Psr\Logger\LoggerInterface</span> <span class="nv">$logger</span><span class="p">)</span>
-     <span class="p">{</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
-     <span class="p">}</span>
+     public function __construct(\Psr\Logger\LoggerInterface $logger)
+     {
+         $this-&gt;logger = $logger;
+     }
 
-     <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">()</span>
-     <span class="p">{</span>
-         <span class="k">try</span> <span class="p">{</span>
-             <span class="c1">//do something</span>
-         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="s1">&#39;Error message&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;exception&#39;</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="p">]);</span>
-         <span class="p">}</span>
-     <span class="p">}</span>
- <span class="p">}</span></code></pre></figure>
+     public function doSomething()
+     {
+         try {
+             //do something
+         } catch (\Exception $e) {
+             $this-&gt;logger-&gt;critical('Error message', ['exception' =&gt; $e]);
+         }
+     }
+ }</code></pre></figure>
 
-<p>The preceding example shows that <code>SomeModel</code> receives a <code>\Psr\Logger\LoggerInterface</code> object using constructor injection. In a method <code>doSomething</code>, if some error occurred, it’s logged to a method <code>critical</code> (<code>$this-&gt;logger-&gt;critical($e);</code>).</p>
+<p>The preceding example shows that <code class="highlighter-rouge">SomeModel</code> receives a <code class="highlighter-rouge">\Psr\Logger\LoggerInterface</code> object using constructor injection. In a method <code class="highlighter-rouge">doSomething</code>, if some error occurred, it’s logged to a method <code class="highlighter-rouge">critical</code> (<code class="highlighter-rouge">$this-&gt;logger-&gt;critical($e);</code>).</p>
 
 <p><a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC 5424</a> defines eight log levels (debug, info, notice, warning, error, critical, alert, and emergency).</p>
 

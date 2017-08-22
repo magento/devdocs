@@ -949,7 +949,7 @@
 
 <ul>
   <li>
-    <p><strong>Removal of vulnerability with the Zend framework <code>Zend_Mail</code> library</strong>. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.</p>
+    <p><strong>Removal of vulnerability with the Zend framework <code class="highlighter-rouge">Zend_Mail</code> library</strong>. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.</p>
   </li>
   <li>
     <p><strong>Updates to the catalog, payment, and sales modules</strong></p>
@@ -958,7 +958,7 @@
 
 <h2 id="security-enhancement">Security enhancement</h2>
 
-<p>This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework <code>Zend_Mail</code> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
+<p>This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework <code class="highlighter-rouge">Zend_Mail</code> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
 
 <h2 id="functional-fixes-and-enhancements">Functional fixes and enhancements</h2>
 
@@ -980,19 +980,19 @@
 
 <!---60293 -->
 <ul>
-  <li>Magento now successfully estimates shipping costs. Previously, when you tried to estimate shipping costs, the load indicator would spin indefinitely, and Magento displayed this exception,<code>Object doesn't support this action</code>. <a href="https://github.com/magento/magento2/issues/5358" target="_blank">(GITHUB-5358)</a>, <a href="https://github.com/magento/magento2/issues/7051" target="_blank">(GITHUB-7051)</a></li>
+  <li>Magento now successfully estimates shipping costs. Previously, when you tried to estimate shipping costs, the load indicator would spin indefinitely, and Magento displayed this exception,<code class="highlighter-rouge">Object doesn't support this action</code>. <a href="https://github.com/magento/magento2/issues/5358" target="_blank">(GITHUB-5358)</a>, <a href="https://github.com/magento/magento2/issues/7051" target="_blank">(GITHUB-7051)</a></li>
 </ul>
 
 <h3 id="indexers">Indexers</h3>
 
 <!--- 58893-->
 <ul>
-  <li><code>IndexerHandlerFactory</code> no longer tries to cast the <code>$indexer</code> object to a String if an error occurs. Since <code>$indexer</code> is an object of type <code>IndexerInterface</code> and does not have a <code>__toString()</code> method, attempting to cast the <code>$indexer</code> object to a String previously resulted in an error. <a href="https://github.com/magento/magento2/issues/5155" target="_blank">(GITHUB-5155)</a></li>
+  <li><code class="highlighter-rouge">IndexerHandlerFactory</code> no longer tries to cast the <code class="highlighter-rouge">$indexer</code> object to a String if an error occurs. Since <code class="highlighter-rouge">$indexer</code> is an object of type <code class="highlighter-rouge">IndexerInterface</code> and does not have a <code class="highlighter-rouge">__toString()</code> method, attempting to cast the <code class="highlighter-rouge">$indexer</code> object to a String previously resulted in an error. <a href="https://github.com/magento/magento2/issues/5155" target="_blank">(GITHUB-5155)</a></li>
 </ul>
 
 <!--- 59853-->
 <ul>
-  <li>The Magento flat indexer now collects correct product data for <code>ROW_ID</code>.</li>
+  <li>The Magento flat indexer now collects correct product data for <code class="highlighter-rouge">ROW_ID</code>.</li>
 </ul>
 
 <!--- 58559-->
@@ -1004,7 +1004,7 @@
 
 <!--- 62400-->
 <ul>
-  <li>Third-party command line tools no longer fail when you run <code>setup:di:compile</code>.</li>
+  <li>Third-party command line tools no longer fail when you run <code class="highlighter-rouge">setup:di:compile</code>.</li>
 </ul>
 
 <!--- 62648-->
@@ -1085,15 +1085,15 @@
 
 <!--- 62388-->
 <ul>
-  <li>We’ve fixed a fatal issue that occurred if you executed the CatalogImportExport test before running a subsequent test. Previously, you’d receive this error: <code>Failed asserting that false is true</code>.</li>
+  <li>We’ve fixed a fatal issue that occurred if you executed the CatalogImportExport test before running a subsequent test. Previously, you’d receive this error: <code class="highlighter-rouge">Failed asserting that false is true</code>.</li>
 </ul>
 
 <!--- 59680-->
 <ul>
   <li>
-    <p>We’ve fixed a fatal issue that occurred if you ran Travis builds on <code>imagettfbbox 2.1.2</code>. Previously, you’d receive this error:</p>
+    <p>We’ve fixed a fatal issue that occurred if you ran Travis builds on <code class="highlighter-rouge">imagettfbbox 2.1.2</code>. Previously, you’d receive this error:</p>
 
-    <p><code>PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php</code></p>
+    <p><code class="highlighter-rouge">PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php</code></p>
   </li>
 </ul>
 
@@ -1153,16 +1153,17 @@
 <!---62083-->
 <ul>
   <li>
-    <p><strong>Issue</strong>: You receive the following fatal error while installing 2.1.3 from <code>repo.magento.com</code>.</p>
+    <p><strong>Issue</strong>: You receive the following fatal error while installing 2.1.3 from <code class="highlighter-rouge">repo.magento.com</code>.</p>
 
-    <pre><code>&gt; Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
+    <div class="highlighter-rouge"><pre class="highlight"><code>&gt; Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
 </code></pre>
+    </div>
 
     <p><strong>Workaround</strong>:  You can avoid this fatal error by taking one of these actions:</p>
 
     <ul>
       <li>
-        <p>If your Magento root directory is <code>&lt;Magento install dir&gt;/pub</code>,  then start the Web Setup Wizard from <code>http://&lt;Magento host or IP&gt;/setup</code> instead of from <code>http://&lt;Magento host or IP&gt;</code></p>
+        <p>If your Magento root directory is <code class="highlighter-rouge">&lt;Magento install dir&gt;/pub</code>,  then start the Web Setup Wizard from <code class="highlighter-rouge">http://&lt;Magento host or IP&gt;/setup</code> instead of from <code class="highlighter-rouge">http://&lt;Magento host or IP&gt;</code></p>
       </li>
       <li>
         <p>Install Magento using the <a href="/guides/v2.1/comp-mgr/cli/cli-upgrade.html">command line</a>.</p>
@@ -1193,7 +1194,7 @@
 
 <!---61349-->
 <ul>
-  <li><strong>Issue</strong>: When you upgrade your Magento installation from the command line, the <code>bin/magento</code> commands do not skip the <code>var/session</code> folder, as expected. (The <code>bin/magento</code> commands include <code>setup:cron:run</code>, <code>setup:upgrade</code>, and <code>setup:uninstall</code>.) <strong>Workaround</strong>: Make <code>var/session</code> writeable before you run the <code>bin/magento</code> commands.</li>
+  <li><strong>Issue</strong>: When you upgrade your Magento installation from the command line, the <code class="highlighter-rouge">bin/magento</code> commands do not skip the <code class="highlighter-rouge">var/session</code> folder, as expected. (The <code class="highlighter-rouge">bin/magento</code> commands include <code class="highlighter-rouge">setup:cron:run</code>, <code class="highlighter-rouge">setup:upgrade</code>, and <code class="highlighter-rouge">setup:uninstall</code>.) <strong>Workaround</strong>: Make <code class="highlighter-rouge">var/session</code> writeable before you run the <code class="highlighter-rouge">bin/magento</code> commands.</li>
 </ul>
 
 <!---60947-->
@@ -1204,9 +1205,9 @@
 <!---60902-->
 <ul>
   <li>
-    <p><strong>Issue</strong>: You cannot re-enable a previously disabled <code>Magento_AdminGws</code> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> without causing a range of <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> errors. Here is a sample error:</p>
+    <p><strong>Issue</strong>: You cannot re-enable a previously disabled <code class="highlighter-rouge">Magento_AdminGws</code> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> without causing a range of <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> errors. Here is a sample error:</p>
 
-    <p><code>[PDOException] 
+    <p><code class="highlighter-rouge">[PDOException] 
   SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist</code></p>
   </li>
 </ul>
@@ -1223,14 +1224,14 @@
 
     <ul>
       <li>
-        <p><code>pub/static</code> is in read-only mode</p>
+        <p><code class="highlighter-rouge">pub/static</code> is in read-only mode</p>
       </li>
       <li>
         <p>Magento is in production mode</p>
       </li>
     </ul>
 
-    <p>Requests to <code>pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-config.js</code>, and consequently the frontend code,  will fail under these conditions.</p>
+    <p>Requests to <code class="highlighter-rouge">pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-config.js</code>, and consequently the frontend code,  will fail under these conditions.</p>
   </li>
 </ul>
 
@@ -1256,17 +1257,19 @@
 
   <h3 id="install-rc-composer" class="no_toc">Get Magento EE using Composer</h3>
 
-  <p>Magento EE is available from <code>repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+  <p>Magento EE is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
 
-  <p>For example, to install 2.1.1 in the <code>magento2</code> directory:</p>
+  <p>For example, to install 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
 </code></pre>
+  </div>
 
   <h3 id="get-zip" class="no_toc">Get Magento EE using a compressed archive</h3>
 
@@ -1281,7 +1284,7 @@
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
     <p>To get the Magento EE archive:</p>
 
@@ -1294,8 +1297,8 @@
         <p>Follow the instructions on your screen to complete the Magento EE download:</p>
 
         <ul>
-          <li><code>Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
       </li>
       <li>Transfer the installation package to your development system.</li>

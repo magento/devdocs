@@ -1022,7 +1022,7 @@
 			<p>This bulletin informs you of the following issues:</p>
 
 <ul>
-  <li><a href="#gitignore">Issue: Upgrade fails because of missing <code>.gitignore</code> files</a></li>
+  <li><a href="#gitignore">Issue: Upgrade fails because of missing <code class="highlighter-rouge">.gitignore</code> files</a></li>
   <li><a href="#sorry">Error during upgrade: “We’re sorry, we can’t take that action right now”</a></li>
 </ul>
 
@@ -1030,19 +1030,20 @@
 <p>Magento Community Edition (CE) and Enterprise Edition (EE) upgrades failed in any of the following circumstances:</p>
 
 <ul>
-  <li>If you got the Magento software <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> (<code>.tar.gz</code>, <code>.zip</code>, or <code>.bz2</code>).</li>
+  <li>If you got the Magento software <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> (<code class="highlighter-rouge">.tar.gz</code>, <code class="highlighter-rouge">.zip</code>, or <code class="highlighter-rouge">.bz2</code>).</li>
   <li>If your server runs <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 7 and you installed the Magento software using <em>either</em> a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</li>
 </ul>
 
 <p>We addressed the following issues:</p>
 
 <ul>
-  <li>Missing <code>.gitignore</code> files that resulted in exceptions</li>
+  <li>Missing <code class="highlighter-rouge">.gitignore</code> files that resulted in exceptions</li>
   <li>
     <p>An error related to the updater application and PHP 7:</p>
 
-    <pre><code>PHP Warning: require_once(/public_html/magento2/update/vendor/autoload.php): failed to open stream: No such file or directory in /public_html/magento2/update/app/bootstrap.php
+    <div class="highlighter-rouge"><pre class="highlight"><code>PHP Warning: require_once(/public_html/magento2/update/vendor/autoload.php): failed to open stream: No such file or directory in /public_html/magento2/update/app/bootstrap.php
 </code></pre>
+    </div>
   </li>
 </ul>
 
@@ -1080,9 +1081,9 @@
 </table>
 
 <h4 id="detail">Detail</h4>
-<p>Our compressed archives for CE and EE were missing <code>.gitignore</code> files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the <code>magento/magento-composer-installer</code> component so it reports missing files instead of throwing an <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> with no details about what was wrong.</p>
+<p>Our compressed archives for CE and EE were missing <code class="highlighter-rouge">.gitignore</code> files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the <code class="highlighter-rouge">magento/magento-composer-installer</code> component so it reports missing files instead of throwing an <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> with no details about what was wrong.</p>
 
-<p>At the same time, we fixed a separate issue that prevented upgrading if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the <code>.gitignore</code> issue fix.)</p>
+<p>At the same time, we fixed a separate issue that prevented upgrading if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the <code class="highlighter-rouge">.gitignore</code> issue fix.)</p>
 
 <p>Use the following resolutions:</p>
 
@@ -1100,7 +1101,7 @@
 
 <ol>
   <li>
-    <p>Download one of the following patch archives. Patches are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+    <p>Download one of the following patch archives. Patches are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
     <table>
     <col width="30%" />
@@ -1176,14 +1177,14 @@
 </ol>
 
 <h4 id="resolution1">Resolution 1 (using version 2.0.0 or 2.0.1)</h4>
-<p>To resolve the missing <code>.gitignore</code> files issue using this method, all of the following must be true:</p>
+<p>To resolve the missing <code class="highlighter-rouge">.gitignore</code> files issue using this method, all of the following must be true:</p>
 
 <ul>
   <li>You must have command-line access to your Magento server</li>
   <li>
     <p>Your server must be running Magento 2 CE or EE version 2.0.0</p>
 
-    <p>To confirm the version, you can either look in the lower right corner of the Magento Admin or you can use the <code>php &lt;your Magento install dir&gt;/bin/magento --version</code> command.</p>
+    <p>To confirm the version, you can either look in the lower right corner of the Magento Admin or you can use the <code class="highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento --version</code> command.</p>
   </li>
 </ul>
 
@@ -1195,17 +1196,19 @@
   <li>
     <p>Run the following command:</p>
 
-    <pre><code>composer update magento/magento-composer-installer
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer update magento/magento-composer-installer
 </code></pre>
+    </div>
   </li>
   <li>If prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</li>
-  <li>Make sure <code>magento/magento-composer-installer</code> is version 0.1.6</li>
+  <li>Make sure <code class="highlighter-rouge">magento/magento-composer-installer</code> is version 0.1.6</li>
   <li>
     <p>Run the following commands in the order shown:</p>
 
-    <pre><code>composer require magento/product-community-edition 2.0.2 --no-update
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/product-community-edition 2.0.2 --no-update
 composer update
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>You can upgrade to either <code>magento/product-community-edition 2.0.2</code> or <code>magento/product-community-edition 2.0.1</code>; we recommend 2.0.2.</p>
@@ -1214,22 +1217,23 @@ composer update
   <li>
     <p>After the commands complete, enter the following command to update the <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data:</p>
 
-    <pre><code>php bin/magento setup:upgrade
+    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:upgrade
 </code></pre>
+    </div>
   </li>
   <li>Verify your server is running version 2.0.1 or 2.0.2 in any of the ways discussed earlier in this resolution.
 <!-- 7.	We recommend you <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. --></li>
 </ol>
 
 <h4 id="resolution2">Resolution 2 (upgrade to 2.0.1 or 2.0.2 has failed)</h4>
-<p>To resolve the missing <code>.gitignore</code> files issue using this method, all of the following must be true:</p>
+<p>To resolve the missing <code class="highlighter-rouge">.gitignore</code> files issue using this method, all of the following must be true:</p>
 
 <ul>
   <li>You must have command-line access to your Magento server</li>
   <li>You must have attempted to upgrade to either 2.0.1 or 2.0.2 and failed</li>
 </ul>
 
-<p>You must run <code>composer update</code> twice to update components and then delete two files: one that recorded the failed upgrade and another that tells Magento your store is in maintenance mode.</p>
+<p>You must run <code class="highlighter-rouge">composer update</code> twice to update components and then delete two files: one that recorded the failed upgrade and another that tells Magento your store is in maintenance mode.</p>
 
 <p>To resolve the issue:</p>
 
@@ -1240,44 +1244,48 @@ composer update
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>composer update
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer update
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Make sure <code>magento/magento-composer-installer</code> is version 0.1.6</p>
+    <p>Make sure <code class="highlighter-rouge">magento/magento-composer-installer</code> is version 0.1.6</p>
 
     <p>The following exception might display; it’s expected:</p>
 
-    <pre><code>[ErrorException]
+    <div class="highlighter-rouge"><pre class="highlight"><code>[ErrorException]
 Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration/.gitignore does not exist
 </code></pre>
+    </div>
   </li>
   <li>
     <p>After the command completes, enter the same command again:</p>
 
-    <pre><code>composer update
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer update
 </code></pre>
+    </div>
   </li>
   <li>Wait while the command completes.</li>
   <li>
     <p>After the command completes, enter the following command to update the database schema and data:</p>
 
-    <pre><code>php bin/magento setup:upgrade
+    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:upgrade
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Delete the following files from <code>&lt;your Magento install dir&gt;/var</code> directory:</p>
+    <p>Delete the following files from <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var</code> directory:</p>
 
     <ul>
-      <li><code>.update_error.flag</code></li>
-      <li><code>.maintenance.flag</code></li>
+      <li><code class="highlighter-rouge">.update_error.flag</code></li>
+      <li><code class="highlighter-rouge">.maintenance.flag</code></li>
     </ul>
   </li>
   <li>
     <p>Verify your Magento version is 2.0.1 or 2.0.2 in any of the following ways:</p>
 
     <ul>
-      <li>Using the <code>php &lt;your Magento install dir&gt;/bin/magento --version</code> command</li>
+      <li>Using the <code class="highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento --version</code> command</li>
       <li>Log in to the Magento Admin. The version displays in the lower right corner of the page.</li>
     </ul>
   </li>
@@ -1285,7 +1293,7 @@ Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration
 </ol>
 
 <h4 id="resolution3">Resolution 3 (does not require command line access)</h4>
-<p>To resolve the missing <code>.gitignore</code> files issue if you have no command-line access to your Magento server, <a href="/guides/v2.0/install-gde/bk-install-guide.html">install version 2.0.2</a> on a local machine and transfer the Magento codebase to your Magento server using FTP or a utility provided by your shared hosting service.</p>
+<p>To resolve the missing <code class="highlighter-rouge">.gitignore</code> files issue if you have no command-line access to your Magento server, <a href="/guides/v2.0/install-gde/bk-install-guide.html">install version 2.0.2</a> on a local machine and transfer the Magento codebase to your Magento server using FTP or a utility provided by your shared hosting service.</p>
 
 <h3 id="sorry">Error during upgrade: “We’re sorry, we can’t take that action right now”</h3>
 <p>If this message displays during your upgrade, it can mean any of the following:</p>

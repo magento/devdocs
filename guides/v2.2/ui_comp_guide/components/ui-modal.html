@@ -1213,20 +1213,20 @@
 <p>The modal UI component comprises the following files:</p>
 
 <ul>
-  <li>JS component: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/modal-component.js</code></li>
-  <li>Template: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-component.html</code></li>
+  <li>JS component: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/modal-component.js</code></li>
+  <li>Template: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-component.html</code></li>
 </ul>
 
 <h2 id="options">Options</h2>
 
-<p>Component’s options are set in the configuration <code>.xml</code> file as follows:</p>
+<p>Component’s options are set in the configuration <code class="highlighter-rouge">.xml</code> file as follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;modal</span> <span class="na">name=</span><span class="s">&quot;test_modal&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;modal</span> <span class="na">name=</span><span class="s">"test_modal"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
             <span class="c">&lt;!-- Configurable options are specified here --&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%option1%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;%type%&quot;</span><span class="nt">&gt;</span>%value%<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%option2%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;%type%&quot;</span><span class="nt">&gt;</span>%value%<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"%option1%"</span> <span class="na">xsi:type=</span><span class="s">"%type%"</span><span class="nt">&gt;</span>%value%<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"%option2%"</span> <span class="na">xsi:type=</span><span class="s">"%type%"</span><span class="nt">&gt;</span>%value%<span class="nt">&lt;/item&gt;</span>
             ...
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
@@ -1284,59 +1284,59 @@
 
 <p>The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (<strong>Cancel</strong>, <strong>Clear</strong>, <strong>Done</strong>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;modal</span> <span class="na">name=</span><span class="s">&quot;test_modal&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;onCancel&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>actionCancel<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;options&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;buttons&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;text&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>action-secondary<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>actionCancel<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;modal</span> <span class="na">name=</span><span class="s">"test_modal"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"onCancel"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>actionCancel<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"buttons"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"text"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>action-secondary<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"actions"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>actionCancel<span class="nt">&lt;/item&gt;</span>
                         <span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;1&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;text&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Clear<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>action-secondary<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;targetName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>${ $.name }.testField<span class="nt">&lt;/item&gt;</span>
-                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actionName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>clear<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"1"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"text"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Clear<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>action-secondary<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"actions"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"targetName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>${ $.name }.testField<span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"actionName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>clear<span class="nt">&lt;/item&gt;</span>
                             <span class="nt">&lt;/item&gt;</span>
                         <span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;2&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;text&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Done<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>action-primary<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>actionDone<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"2"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"text"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Done<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>action-primary<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"actions"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>actionDone<span class="nt">&lt;/item&gt;</span>
                         <span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;testField&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>test field<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"testField"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>test field<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"formElement"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"visible"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/field&gt;</span>
 <span class="nt">&lt;/modal&gt;</span>
 
-<span class="nt">&lt;button</span> <span class="na">name=</span><span class="s">&quot;modal_button&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Open modal<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;targetName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>${ $.parentName}.test_modal<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actionName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>openModal<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">name=</span><span class="s">"modal_button"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Open modal<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"actions"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"targetName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>${ $.parentName}.test_modal<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"actionName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>openModal<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
@@ -1346,14 +1346,14 @@
 <h2 id="public-api-js">Public API (JS)</h2>
 
 <ul>
-  <li><code>actionCancel()</code>: returns all modal’s child components to the state they had on modal open and closes the modal window.</li>
-  <li><code>actionDone()</code>: validates the changes in the modal’s child components and, if valid, closes the modal.</li>
-  <li><code>closeModal()</code>: closes the modal window.</li>
-  <li><code>openModal()</code>: opens the modal window.</li>
-  <li><code>setPrevValues(elem)</code>: returns all <code>elem</code>’s child components to the state they had on modal open.</li>
-  <li><code>setTitle()</code>: sets modal title.</li>
-  <li><code>setSubTitle()</code>: sets modal sub title.</li>
-  <li><code>toggleModal()</code>: toggles the modal window state (open/close).</li>
+  <li><code class="highlighter-rouge">actionCancel()</code>: returns all modal’s child components to the state they had on modal open and closes the modal window.</li>
+  <li><code class="highlighter-rouge">actionDone()</code>: validates the changes in the modal’s child components and, if valid, closes the modal.</li>
+  <li><code class="highlighter-rouge">closeModal()</code>: closes the modal window.</li>
+  <li><code class="highlighter-rouge">openModal()</code>: opens the modal window.</li>
+  <li><code class="highlighter-rouge">setPrevValues(elem)</code>: returns all <code class="highlighter-rouge">elem</code>’s child components to the state they had on modal open.</li>
+  <li><code class="highlighter-rouge">setTitle()</code>: sets modal title.</li>
+  <li><code class="highlighter-rouge">setSubTitle()</code>: sets modal sub title.</li>
+  <li><code class="highlighter-rouge">toggleModal()</code>: toggles the modal window state (open/close).</li>
 </ul>
 
 		</div>

@@ -1706,14 +1706,14 @@
 <p>In default or developer mode, the following directories must be writable by the user:</p>
 
 <ul>
-  <li><code>vendor</code></li>
-  <li><code>app/etc</code></li>
-  <li><code>pub/static</code></li>
-  <li><code>var</code></li>
+  <li><code class="highlighter-rouge">vendor</code></li>
+  <li><code class="highlighter-rouge">app/etc</code></li>
+  <li><code class="highlighter-rouge">pub/static</code></li>
+  <li><code class="highlighter-rouge">var</code></li>
   <li>Any other static resources</li>
-  <li><code>var/generation</code></li>
-  <li><code>var/di</code></li>
-  <li><code>var/view_preprocessed</code></li>
+  <li><code class="highlighter-rouge">var/generation</code></li>
+  <li><code class="highlighter-rouge">var/di</code></li>
+  <li><code class="highlighter-rouge">var/view_preprocessed</code></li>
 </ul>
 
 <p>You can set these permissions using either the command line or a file manager application provided by your shared hosting provider.</p>
@@ -1722,14 +1722,14 @@
 <p>When you’re ready to deploy your site to production, you should remove write access from files in the following directories for improved security:</p>
 
 <ul>
-  <li><code>vendor</code></li>
-  <li><code>app/code</code></li>
-  <li><code>app/etc</code></li>
-  <li><code>pub/static</code></li>
+  <li><code class="highlighter-rouge">vendor</code></li>
+  <li><code class="highlighter-rouge">app/code</code></li>
+  <li><code class="highlighter-rouge">app/etc</code></li>
+  <li><code class="highlighter-rouge">pub/static</code></li>
   <li>Any other static resources</li>
-  <li><code>var/generation</code></li>
-  <li><code>var/di</code></li>
-  <li><code>var/view_preprocessed</code></li>
+  <li><code class="highlighter-rouge">var/generation</code></li>
+  <li><code class="highlighter-rouge">var/di</code></li>
+  <li><code class="highlighter-rouge">var/view_preprocessed</code></li>
 </ul>
 
 <p>To update components, install new components, or to upgrade the Magento software, all of the preceding directories must be read-write.</p>
@@ -1743,14 +1743,16 @@
   <li>
     <p>Enter the following command to change to production mode:</p>
 
-    <pre><code>php bin/magento deploy:mode:set production
+    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento deploy:mode:set production
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php &amp;&amp; chmod u+x bin/magento
+    <div class="highlighter-rouge"><pre class="highlight"><code>find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php &amp;&amp; chmod u+x bin/magento
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1763,24 +1765,25 @@
   <li>
     <p>Enter the following commands:</p>
 
-    <pre><code>chmod -R u+w .
+    <div class="highlighter-rouge"><pre class="highlight"><code>chmod -R u+w .
 </code></pre>
+    </div>
   </li>
 </ol>
 
-<h3 id="optionally-set-magentoumask">Optionally set <code>magento_umask</code></h3>
+<h3 id="optionally-set-magentoumask">Optionally set <code class="highlighter-rouge">magento_umask</code></h3>
 
 <div>
 
   <p>The web server group must have write permissions to certain directories in the Magento file system; however, you might want tighter security, especially in production. We provide the flexibility for you to further restrict those permissions using a <a href="http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html" target="_blank">umask</a>.</p>
 
-  <p>Our solution is to enable you to optionally create a file named <code>magento_umask</code> in your Magento root directory that restricts permissions for the web server group and everyone else.</p>
+  <p>Our solution is to enable you to optionally create a file named <code class="highlighter-rouge">magento_umask</code> in your Magento root directory that restricts permissions for the web server group and everyone else.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
   <p>We recommend changing the umask on a one-user or shared hosting system only. If you have a private Magento server, the group must have write access to the Magento file system; the umask removes write access from the group.</p>
 </div>
 
-  <p>The default umask (with no <code>magento_umask</code> specified) is <code>002</code>, which means:</p>
+  <p>The default umask (with no <code class="highlighter-rouge">magento_umask</code> specified) is <code class="highlighter-rouge">002</code>, which means:</p>
 
   <ul>
     <li>
@@ -1791,30 +1794,30 @@
     </li>
   </ul>
 
-  <p>A common suggestion is to use a value of <code>022</code> in the <code>magento_umask</code> file, which means:</p>
+  <p>A common suggestion is to use a value of <code class="highlighter-rouge">022</code> in the <code class="highlighter-rouge">magento_umask</code> file, which means:</p>
 
   <ul>
     <li>755 for directories: full control for the user, and everyone else can traverse directories.</li>
     <li>644 for files: read-write permissions for the user, and read-only for everyone else.</li>
   </ul>
 
-  <p>To set <code>magento_umask</code>:</p>
+  <p>To set <code class="highlighter-rouge">magento_umask</code>:</p>
 
   <ol>
     <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
     <li>
-      <p>Set the value of <code>magento_umask</code>:</p>
+      <p>Set the value of <code class="highlighter-rouge">magento_umask</code>:</p>
 
       <ol>
-        <li>Use a text editor to create a new file <code>&lt;your Magento install dir&gt;/magento_umask</code></li>
+        <li>Use a text editor to create a new file <code class="highlighter-rouge">&lt;your Magento install dir&gt;/magento_umask</code></li>
         <li>
-          <p>Set <code>magento_umask</code> to the desired value.</p>
+          <p>Set <code class="highlighter-rouge">magento_umask</code> to the desired value.</p>
 
-          <p>For example, <code>022</code></p>
+          <p>For example, <code class="highlighter-rouge">022</code></p>
         </li>
       </ol>
     </li>
-    <li>Save your changes to <code>magento_umask</code> and exit the text editor.</li>
+    <li>Save your changes to <code class="highlighter-rouge">magento_umask</code> and exit the text editor.</li>
   </ol>
 </div>
 </div></div>
@@ -1852,32 +1855,33 @@
 <p>Files in the following directories must be writable by both users in developer and default mode:</p>
 
 <ul>
-  <li><code>var</code></li>
-  <li><code>pub/static</code></li>
-  <li><code>pub/media</code></li>
-  <li><code>app/etc</code></li>
+  <li><code class="highlighter-rouge">var</code></li>
+  <li><code class="highlighter-rouge">pub/static</code></li>
+  <li><code class="highlighter-rouge">pub/media</code></li>
+  <li><code class="highlighter-rouge">app/etc</code></li>
 </ul>
 
-<p>Set the <a href="http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/" target="_blank"><code>setgid</code></a> bit on directories so permissions always inherit from the parent directory.</p>
+<p>Set the <a href="http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/" target="_blank"><code class="highlighter-rouge">setgid</code></a> bit on directories so permissions always inherit from the parent directory.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p><code>setgid</code> applies to directories only, <em>not</em> to files.</p>
+  <p><code class="highlighter-rouge">setgid</code> applies to directories only, <em>not</em> to files.</p>
 </div>
 
 <p>In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.</p>
 
-<h4 id="set-permissions-and-setgid">Set permissions and <code>setgid</code></h4>
-<p>To set <code>setgid</code> and permissions for developer mode:</p>
+<h4 id="set-permissions-and-setgid">Set permissions and <code class="highlighter-rouge">setgid</code></h4>
+<p>To set <code class="highlighter-rouge">setgid</code> and permissions for developer mode:</p>
 
 <ol>
   <li>Log in to your Magento server as, or switch to, the Magento file system owner.</li>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 find var pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1885,15 +1889,15 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 <p>When you’re ready to deploy your site to production, you should remove write access from files in the following directories for improved security:</p>
 
 <ul>
-  <li><code>vendor</code></li>
-  <li><code>app/code</code></li>
-  <li><code>app/etc</code></li>
-  <li><code>lib</code></li>
-  <li><code>pub/static</code></li>
+  <li><code class="highlighter-rouge">vendor</code></li>
+  <li><code class="highlighter-rouge">app/code</code></li>
+  <li><code class="highlighter-rouge">app/etc</code></li>
+  <li><code class="highlighter-rouge">lib</code></li>
+  <li><code class="highlighter-rouge">pub/static</code></li>
   <li>Any other static resources</li>
-  <li><code>var/generation</code></li>
-  <li><code>var/di</code></li>
-  <li><code>var/view_preprocessed</code></li>
+  <li><code class="highlighter-rouge">var/generation</code></li>
+  <li><code class="highlighter-rouge">var/di</code></li>
+  <li><code class="highlighter-rouge">var/view_preprocessed</code></li>
 </ul>
 
 <h4 id="make-code-files-and-directories-read-only">Make code files and directories read-only</h4>
@@ -1905,14 +1909,16 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
   <li>
     <p>As the Magento file system owner, enter the following command to change to production mode:</p>
 
-    <pre><code>php bin/magento deploy:mode:set production
+    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento deploy:mode:set production
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Enter the following command as a user with <code>root</code> privileges:</p>
+    <p>Enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-    <pre><code>find app/code lib pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type d -or -type f \) -exec chmod g-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php
+    <div class="highlighter-rouge"><pre class="highlight"><code>find app/code lib pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type d -or -type f \) -exec chmod g-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1925,8 +1931,9 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>find app/code lib var pub/static pub/media vendor app/etc \( -type d -or -type f \) -exec chmod g+w {} \; &amp;&amp; chmod o+rwx app/etc/env.php
+    <div class="highlighter-rouge"><pre class="highlight"><code>find app/code lib var pub/static pub/media vendor app/etc \( -type d -or -type f \) -exec chmod g+w {} \; &amp;&amp; chmod o+rwx app/etc/env.php
 </code></pre>
+    </div>
   </li>
 </ol>
 </div></div>

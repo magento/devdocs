@@ -1132,34 +1132,34 @@
 </section>
 
 
-			<h2 id="what-is-uicollection">What is <code>uiCollection</code></h2>
+			<h2 id="what-is-uicollection">What is <code class="highlighter-rouge">uiCollection</code></h2>
 
-<p>The <code>uiCollection</code> library class should be used as a base class by any components that contain a collection of child UI components.  <code>uiCollection</code> inherits from the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement class</a>.</p>
+<p>The <code class="highlighter-rouge">uiCollection</code> library class should be used as a base class by any components that contain a collection of child UI components.  <code class="highlighter-rouge">uiCollection</code> inherits from the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement class</a>.</p>
 
-<p><code>uiCollection</code> source code is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/collection.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js">app/code/Magento/Ui/view/base/web/js/lib/core/collection.js</a>.</p>
+<p><code class="highlighter-rouge">uiCollection</code> source code is <code class="highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/collection.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js">app/code/Magento/Ui/view/base/web/js/lib/core/collection.js</a>.</p>
 
-<h2 id="commonly-used-uicollection-methods">Commonly used <code>uiCollection</code> methods</h2>
+<h2 id="commonly-used-uicollection-methods">Commonly used <code class="highlighter-rouge">uiCollection</code> methods</h2>
 
-<p>The <code>uiCollection</code> class implements the following methods:</p>
+<p>The <code class="highlighter-rouge">uiCollection</code> class implements the following methods:</p>
 
 <ul>
   <li>
-    <p>The <code>initElement()</code> method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The <code>initElement()</code> method gets the child <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> instance as a parameter.</p>
+    <p>The <code class="highlighter-rouge">initElement()</code> method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The <code class="highlighter-rouge">initElement()</code> method gets the child <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> instance as a parameter.</p>
 
     <p>Example:</p>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="nx">initElement</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">childInstance</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="nx">initElement</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">childInstance</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">childInstance</span><span class="p">.</span><span class="o">%</span><span class="nx">customProperty</span><span class="o">%</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
       <span class="k">this</span><span class="p">.</span><span class="o">%</span><span class="nx">currentComponentProperty</span><span class="o">%</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
   <span class="p">}</span>
   </code></pre></figure>
 
 <ul>
-  <li>The <code>destroy()</code> method removes the following for the child components and itself:
+  <li>The <code class="highlighter-rouge">destroy()</code> method removes the following for the child components and itself:
     <ul>
-      <li>link to the component in <code>uiRegistry</code></li>
+      <li>link to the component in <code class="highlighter-rouge">uiRegistry</code></li>
       <li>link to the component in the parent component</li>
       <li>event listeners</li>
     </ul>
@@ -1172,7 +1172,7 @@
 
 <ul>
   <li>
-    <p>The <code>getChild()</code> method returns an element from the collection of child UI components.</p>
+    <p>The <code class="highlighter-rouge">getChild()</code> method returns an element from the collection of child UI components.</p>
 
     <p>Example:</p>
   </li>
@@ -1180,13 +1180,13 @@
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="k">this</span><span class="p">.</span><span class="nx">getChild</span><span class="p">(</span><span class="nx">childIndex</span><span class="p">)</span></code></pre></figure>
 
-<p>where <code>childIndex</code> is the value of the child element’s <code>index</code> property.</p>
+<p>where <code class="highlighter-rouge">childIndex</code> is the value of the child element’s <code class="highlighter-rouge">index</code> property.</p>
 
-<h2 id="commonly-used-uicollection-properties">Commonly used <code>uiCollection</code> properties</h2>
+<h2 id="commonly-used-uicollection-properties">Commonly used <code class="highlighter-rouge">uiCollection</code> properties</h2>
 
 <ul>
   <li>
-    <p><code>elems</code> is the observable property that contains the collection of child UI components.</p>
+    <p><code class="highlighter-rouge">elems</code> is the observable property that contains the collection of child UI components.</p>
 
     <p>Example:</p>
   </li>
@@ -1202,22 +1202,22 @@
 <span class="c1">// ]</span></code></pre></figure>
 
 <ul>
-  <li><code>childDefaults</code> can be used to set the children defaults: properties from <code>childDefaults</code> are set into child elements’ <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties"><code>defaults</code> property</a>.</li>
+  <li><code class="highlighter-rouge">childDefaults</code> can be used to set the children defaults: properties from <code class="highlighter-rouge">childDefaults</code> are set into child elements’ <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties"><code class="highlighter-rouge">defaults</code> property</a>.</li>
 </ul>
 
 <h2 id="uicollection_template">uiCollection template</h2>
 
-<p>The <code>uiCollection</code> template is <code>&lt;UI_Module_dir&gt;/view/base/web/templates/collection.html</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/templates/collection.html"><code>app/code/Magento/Ui/view/base/web/templates/collection.html</code></a>.</p>
+<p>The <code class="highlighter-rouge">uiCollection</code> template is <code class="highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/templates/collection.html</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/templates/collection.html"><code class="highlighter-rouge">app/code/Magento/Ui/view/base/web/templates/collection.html</code></a>.</p>
 
 <p>This template performs only one task: renders child templates if they exist.</p>
 
 <p>It looks like following:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;each</span> <span class="na">args=</span><span class="s">&quot;data: elems, as: &#39;element&#39;&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;render</span> <span class="na">if=</span><span class="s">&quot;hasTemplate()&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;each</span> <span class="na">args=</span><span class="s">"data: elems, as: 'element'"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;render</span> <span class="na">if=</span><span class="s">"hasTemplate()"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/each&gt;</span></code></pre></figure>
 
-<p>Here <code>elems</code> is the collection of the child elements of <code>uiCollection</code>. As far as <code>elems</code> is the observable property, the templates of the components added to <code>elems</code> in the runtime, are also rendered.</p>
+<p>Here <code class="highlighter-rouge">elems</code> is the collection of the child elements of <code class="highlighter-rouge">uiCollection</code>. As far as <code class="highlighter-rouge">elems</code> is the observable property, the templates of the components added to <code class="highlighter-rouge">elems</code> in the runtime, are also rendered.</p>
 
 		</div>
 		<!-- /.content-wrap -->

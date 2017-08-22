@@ -993,13 +993,13 @@
 
 <ul>
   <li>
-    <p><strong>Magento Admin</strong> (<code>adminhtml</code>): entry point for this area is <code>index.php</code> or <code>pub/index.php</code>. The <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you’ll see while working in the Admin panel.</p>
+    <p><strong>Magento Admin</strong> (<code class="highlighter-rouge">adminhtml</code>): entry point for this area is <code class="highlighter-rouge">index.php</code> or <code class="highlighter-rouge">pub/index.php</code>. The <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you’ll see while working in the Admin panel.</p>
   </li>
   <li>
-    <p><strong>Storefront</strong> (<code>frontend</code>): entry point for this area is <code>index.php</code> or <code>pub/index.php</code>. The storefront (or <code>frontend</code>)  contains template and <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> files that define the appearance of your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
+    <p><strong>Storefront</strong> (<code class="highlighter-rouge">frontend</code>): entry point for this area is <code class="highlighter-rouge">index.php</code> or <code class="highlighter-rouge">pub/index.php</code>. The storefront (or <code class="highlighter-rouge">frontend</code>)  contains template and <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> files that define the appearance of your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
   </li>
   <li>
-    <p><strong>Basic</strong> (<code>base</code>): used as a fallback for files absent in <code>adminhtml</code> and <code>frontend</code> areas.</p>
+    <p><strong>Basic</strong> (<code class="highlighter-rouge">base</code>): used as a fallback for files absent in <code class="highlighter-rouge">adminhtml</code> and <code class="highlighter-rouge">frontend</code> areas.</p>
   </li>
 </ul>
 
@@ -1007,16 +1007,16 @@
 
 <ul>
   <li>
-    <p><strong>Web API REST</strong> (<code>webapi_rest</code>): entry point for this area is <code>index.php</code> or <code>pub/index.php</code>. The REST area has a front controller that understands how to do <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> lookups for REST-based URLs.</p>
+    <p><strong>Web API REST</strong> (<code class="highlighter-rouge">webapi_rest</code>): entry point for this area is <code class="highlighter-rouge">index.php</code> or <code class="highlighter-rouge">pub/index.php</code>. The REST area has a front controller that understands how to do <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> lookups for REST-based URLs.</p>
   </li>
   <li>
-    <p><strong>Web API SOAP</strong> (<code>webapi_soap</code>): entry point for this area is <code>index.php</code> or <code>pub/index.php</code>.</p>
+    <p><strong>Web API SOAP</strong> (<code class="highlighter-rouge">webapi_soap</code>): entry point for this area is <code class="highlighter-rouge">index.php</code> or <code class="highlighter-rouge">pub/index.php</code>.</p>
   </li>
 </ul>
 
 <h2 id="m2arch-module-using">How areas work with modules</h2>
 
-<p>Modules define which resources are visible and accessible in an area, as well as an area’s behavior. The same <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> can influence several areas. For instance, the RMA module is represented partly in the <code>adminhtml</code> area and partly in the <code>frontend</code> area.</p>
+<p>Modules define which resources are visible and accessible in an area, as well as an area’s behavior. The same <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> can influence several areas. For instance, the RMA module is represented partly in the <code class="highlighter-rouge">adminhtml</code> area and partly in the <code class="highlighter-rouge">frontend</code> area.</p>
 
 <p>If your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> works in several different areas, ensure it has separate behavior and view components for each area.</p>
 
@@ -1034,7 +1034,7 @@
     <p>Disabling an area does not result in disabling the modules related to it.</p>
   </li>
   <li>
-    <p>Areas are registered in the <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">Dependency Injection</span> framework <code>di.xml</code> file.</p>
+    <p>Areas are registered in the <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">Dependency Injection</span> framework <code class="highlighter-rouge">di.xml</code> file.</p>
   </li>
 </ul>
 
@@ -1042,7 +1042,7 @@
 
 <p>Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.</p>
 
-<p>After the area name, the URI segment specifies the <em>full front name</em>. When an HTTP request arrives, the handle is extracted from the URL. Magento uses the handle to identify which controller (a <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class) and action (a PHP method in the class) to execute. A common action to display a HTML page is <code>index</code>, which returns an HTML page.</p>
+<p>After the area name, the URI segment specifies the <em>full front name</em>. When an HTTP request arrives, the handle is extracted from the URL. Magento uses the handle to identify which controller (a <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class) and action (a PHP method in the class) to execute. A common action to display a HTML page is <code class="highlighter-rouge">index</code>, which returns an HTML page.</p>
 
 <h2 id="m2arch-module-related">Related topics</h2>
 

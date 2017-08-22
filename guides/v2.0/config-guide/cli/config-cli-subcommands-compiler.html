@@ -1595,23 +1595,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1628,13 +1631,15 @@
   <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
   <p>Run the command as follows (there are no options):</p>
 
-  <pre><code>magento setup:di:compile
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:di:compile
 </code></pre>
+  </div>
 
   <p>The following message displays to confirm success:</p>
 
-  <pre><code>Generated code and dependency injection configuration successfully.
+  <div class="highlighter-rouge"><pre class="highlight"><code>Generated code and dependency injection configuration successfully.
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-warning">
     <p>In Magento versions 2.0.5 and earlier, there is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler.</p>
@@ -1655,9 +1660,10 @@
 
   <p>Command options:</p>
 
-  <pre><code>magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and 
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and 
 filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&gt;"]
 </code></pre>
+  </div>
 
   <p>The following table discusses the meanings of this command’s parameters and values.</p>
 
@@ -1701,14 +1707,15 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 	</tbody>
 </table>
 
-  <p>For example, to run the compiler and specify the <code>igbinary</code> serializer:</p>
+  <p>For example, to run the compiler and specify the <code class="highlighter-rouge">igbinary</code> serializer:</p>
 
-  <pre><code>magento setup:di:compile-multi-tenant --serializer=igbinary
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:di:compile-multi-tenant --serializer=igbinary
 </code></pre>
+  </div>
 
   <p>Messages similar to the following display:</p>
 
-  <pre><code>Generated classes:
+  <div class="highlighter-rouge"><pre class="highlight"><code>Generated classes:
     Magento\Rss\Controller\Adminhtml\Feed\Interceptor
     Magento\Quote\Model\Quote\Config\Interceptor
     Magento\Checkout\Block\Cart\Shipping\Interceptor
@@ -1729,6 +1736,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
     For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user 
     (example command: "chown -R www-data:www-data &lt;MAGENTO_ROOT&gt;/var" where MAGENTO_ROOT is the Magento root directory).
 </code></pre>
+  </div>
 
   <h4 id="related-topics">Related topics</h4>
 

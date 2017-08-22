@@ -346,118 +346,119 @@ Attributes are a powerful way to solve many practical tasks related to a product
 
 <h2 id="step-1-create-a-new-module">Step 1: Create a new module</h2>
 
-<p>As Magento is modular based, we start the process by creating a new module called <code>Learning_ClothingMaterial</code>.</p>
+<p>As Magento is modular based, we start the process by creating a new module called <code class="highlighter-rouge">Learning_ClothingMaterial</code>.</p>
 
-<pre><code>$ cd &lt;magento2_root&gt;/app/code
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code
 $ mkdir Learning
 $ mkdir Learning/ClothingMaterial
 </code></pre>
+</div>
 
 <p>Now, create two files:</p>
 
-<p><code>etc/module.xml</code></p>
+<p><code class="highlighter-rouge">etc/module.xml</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Learning_ClothingMaterial&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;0.0.1&quot;</span><span class="nt">&gt;</span>
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Learning_ClothingMaterial"</span> <span class="na">setup_version=</span><span class="s">"0.0.1"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/module&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 </div></div>
 
 <p><br /></p>
 
-<p><code>registration.php</code></p>
+<p><code class="highlighter-rouge">registration.php</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
-<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
-<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
-    <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
-    <span class="s1">&#39;Learning_ClothingMaterial&#39;</span><span class="p">,</span>
-    <span class="nx">__DIR__</span>
-<span class="p">);</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+\Magento\Framework\Component\ComponentRegistrar::register(
+    \Magento\Framework\Component\ComponentRegistrar::MODULE,
+    'Learning_ClothingMaterial',
+    __DIR__
+);</code></pre></figure>
 </div></div>
 
 <h2 id="step-2-create-an-installdata-script">Step 2 Create an InstallData script</h2>
 
 <p>Next, we need to create the InstallData script.
-Because adding an attribute technically adds records into several tables, such as <code>eav_attribute</code> and <code>catalog_eav_attribute,</code> this is data manipulation, not a schema change.
+Because adding an attribute technically adds records into several tables, such as <code class="highlighter-rouge">eav_attribute</code> and <code class="highlighter-rouge">catalog_eav_attribute,</code> this is data manipulation, not a schema change.
 Therefore we use InstallData instead of InstallSchema.</p>
 
-<p>Create the file <code>app/code/Learning/ClothingMaterial/Setup/InstallData.php</code>:</p>
+<p>Create the file <code class="highlighter-rouge">app/code/Learning/ClothingMaterial/Setup/InstallData.php</code>:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
-<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
-<span class="k">namespace</span> <span class="nx">Learning\ClothingMaterial\Setup</span><span class="p">;</span>
+namespace Learning\ClothingMaterial\Setup;
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\InstallDataInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
+use Magento\Framework\Setup\InstallDataInterface;
+use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
 
-<span class="sd">/**</span>
-<span class="sd">* @codeCoverageIgnore</span>
-<span class="sd">*/</span>
-<span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">InstallDataInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Eav setup factory</span>
-<span class="sd">     * @var EavSetupFactory</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="nv">$eavSetupFactory</span><span class="p">;</span>
+/**
+* @codeCoverageIgnore
+*/
+class InstallData implements InstallDataInterface
+{
+    /**
+     * Eav setup factory
+     * @var EavSetupFactory
+     */
+    private $eavSetupFactory;
 
-    <span class="sd">/**</span>
-<span class="sd">     * Init</span>
-<span class="sd">     * @param CategorySetupFactory $categorySetupFactory</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Magento\Eav\Setup\EavSetupFactory</span> <span class="nv">$eavSetupFactory</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetupFactory</span> <span class="o">=</span> <span class="nv">$eavSetupFactory</span><span class="p">;</span>
-    <span class="p">}</span>
+    /**
+     * Init
+     * @param CategorySetupFactory $categorySetupFactory
+     */
+    public function __construct(\Magento\Eav\Setup\EavSetupFactory $eavSetupFactory)
+    {
+        $this-&gt;eavSetupFactory = $eavSetupFactory;
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * {@inheritdoc}</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.CyclomaticComplexity)</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.NPathComplexity)</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$eavSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetupFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
-        <span class="nv">$eavSetup</span><span class="o">-&gt;</span><span class="na">addAttribute</span><span class="p">(</span>
-            <span class="nx">\Magento\Catalog\Model\Product</span><span class="o">::</span><span class="na">ENTITY</span><span class="p">,</span>
-            <span class="s1">&#39;clothing_material&#39;</span><span class="p">,</span>
-            <span class="p">[</span>
-                <span class="s1">&#39;group&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;General&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;varchar&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Clothing Material&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;input&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;select&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;source&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Learning\ClothingMaterial\Model\Attribute\Source\Material&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Learning\ClothingMaterial\Model\Attribute\Frontend\Material&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;backend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Learning\ClothingMaterial\Model\Attribute\Backend\Material&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-                <span class="s1">&#39;sort_order&#39;</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
-                <span class="s1">&#39;global&#39;</span> <span class="o">=&gt;</span> <span class="nx">\Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface</span><span class="o">::</span><span class="na">SCOPE_GLOBAL</span><span class="p">,</span>
-                <span class="s1">&#39;is_used_in_grid&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-                <span class="s1">&#39;is_visible_in_grid&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-                <span class="s1">&#39;is_filterable_in_grid&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-                <span class="s1">&#39;visible&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-                <span class="s1">&#39;is_html_allowed_on_front&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-                <span class="s1">&#39;visible_on_front&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
-            <span class="p">]</span>
-        <span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    /**
+     * {@inheritdoc}
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        $eavSetup = $this-&gt;eavSetupFactory-&gt;create();
+        $eavSetup-&gt;addAttribute(
+            \Magento\Catalog\Model\Product::ENTITY,
+            'clothing_material',
+            [
+                'group' =&gt; 'General',
+                'type' =&gt; 'varchar',
+                'label' =&gt; 'Clothing Material',
+                'input' =&gt; 'select',
+                'source' =&gt; 'Learning\ClothingMaterial\Model\Attribute\Source\Material',
+                'frontend' =&gt; 'Learning\ClothingMaterial\Model\Attribute\Frontend\Material',
+                'backend' =&gt; 'Learning\ClothingMaterial\Model\Attribute\Backend\Material',
+                'required' =&gt; false,
+                'sort_order' =&gt; 50,
+                'global' =&gt; \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
+                'is_used_in_grid' =&gt; false,
+                'is_visible_in_grid' =&gt; false,
+                'is_filterable_in_grid' =&gt; false,
+                'visible' =&gt; true,
+                'is_html_allowed_on_front' =&gt; true,
+                'visible_on_front' =&gt; true
+            ]
+        );
+    }
+}</code></pre></figure>
 </div></div>
 
 <p><br /></p>
@@ -470,13 +471,13 @@ This holds true for any EAV entity in Magento 2 (category, product, customer, an
 
 <p>This is why we added eavSetupFactory in a constructor.</p>
 
-<p>For the <code>install()</code> method, all we have to do is call the <code>addAttribute()</code> method with 3 parameters: entity type, attribute code, and properties.</p>
+<p>For the <code class="highlighter-rouge">install()</code> method, all we have to do is call the <code class="highlighter-rouge">addAttribute()</code> method with 3 parameters: entity type, attribute code, and properties.</p>
 
 <p>Those properties define how an attribute behaves.
-A full list of properties can be seen in the <code>catalog_eav_attribute</code> and <code>eav_attribute</code> tables.
-Note that there is a mapping between the fields in those tables and the properties in the <code>addAttribute()</code> method.</p>
+A full list of properties can be seen in the <code class="highlighter-rouge">catalog_eav_attribute</code> and <code class="highlighter-rouge">eav_attribute</code> tables.
+Note that there is a mapping between the fields in those tables and the properties in the <code class="highlighter-rouge">addAttribute()</code> method.</p>
 
-<p>To see all the mappings, you should look at the <code>\Magento\Catalog\Model\ResourceModel\Setup\PropertyMapper</code> class.</p>
+<p>To see all the mappings, you should look at the <code class="highlighter-rouge">\Magento\Catalog\Model\ResourceModel\Setup\PropertyMapper</code> class.</p>
 
 <p>For now, we’ll just quickly go through most important ones:</p>
 
@@ -500,101 +501,101 @@ Note that there is a mapping between the fields in those tables and the properti
 
 <p>Next, we need to create the source model:</p>
 
-<p><code>app/code/Learning/ClothingMaterial/Model/Attribute/Source/Material.php</code></p>
+<p><code class="highlighter-rouge">app/code/Learning/ClothingMaterial/Model/Attribute/Source/Material.php</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
-<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
-<span class="k">namespace</span> <span class="nx">Learning\ClothingMaterial\Model\Attribute\Source</span><span class="p">;</span>
+namespace Learning\ClothingMaterial\Model\Attribute\Source;
 
-<span class="k">class</span> <span class="nc">Material</span> <span class="k">extends</span> <span class="nx">\Magento\Eav\Model\Entity\Attribute\Source\AbstractSource</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Get all options</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAllOptions</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_options</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_options</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="p">[</span><span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Cotton&#39;</span><span class="p">),</span> <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cotton&#39;</span><span class="p">],</span>
-                <span class="p">[</span><span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Leather&#39;</span><span class="p">),</span> <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;leather&#39;</span><span class="p">],</span>
-                <span class="p">[</span><span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Silk&#39;</span><span class="p">),</span> <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;silk&#39;</span><span class="p">],</span>
-                <span class="p">[</span><span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Denim&#39;</span><span class="p">),</span> <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;denim&#39;</span><span class="p">],</span>
-                <span class="p">[</span><span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Fur&#39;</span><span class="p">),</span> <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;fur&#39;</span><span class="p">],</span>
-                <span class="p">[</span><span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Wool&#39;</span><span class="p">),</span> <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;wool&#39;</span><span class="p">],</span>
-            <span class="p">];</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_options</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+class Material extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
+{
+    /**
+     * Get all options
+     * @return array
+     */
+    public function getAllOptions()
+    {
+        if (!$this-&gt;_options) {
+            $this-&gt;_options = [
+                ['label' =&gt; __('Cotton'), 'value' =&gt; 'cotton'],
+                ['label' =&gt; __('Leather'), 'value' =&gt; 'leather'],
+                ['label' =&gt; __('Silk'), 'value' =&gt; 'silk'],
+                ['label' =&gt; __('Denim'), 'value' =&gt; 'denim'],
+                ['label' =&gt; __('Fur'), 'value' =&gt; 'fur'],
+                ['label' =&gt; __('Wool'), 'value' =&gt; 'wool'],
+            ];
+        }
+        return $this-&gt;_options;
+    }
+}</code></pre></figure>
 </div></div>
 
 <p><br /></p>
 
-<p>As the name implies, the <code>getAllOptions</code> method provides a list of all available options.</p>
+<p>As the name implies, the <code class="highlighter-rouge">getAllOptions</code> method provides a list of all available options.</p>
 
 <h2 id="step-4-add-a-backend-model">Step 4: Add a backend model</h2>
 
 <p>Now we will create a backend model:</p>
 
-<p><code>app/code/Learning/ClothingMaterial/Model/Attribute/Backend/Material.php</code></p>
+<p><code class="highlighter-rouge">app/code/Learning/ClothingMaterial/Model/Attribute/Backend/Material.php</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
-<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
-<span class="k">namespace</span> <span class="nx">Learning\ClothingMaterial\Model\Attribute\Backend</span><span class="p">;</span>
+namespace Learning\ClothingMaterial\Model\Attribute\Backend;
 
-<span class="k">class</span> <span class="nc">Material</span> <span class="k">extends</span> <span class="nx">\Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Validate</span>
-<span class="sd">     * @param \Magento\Catalog\Model\Product $object</span>
-<span class="sd">     * @throws \Magento\Framework\Exception\LocalizedException</span>
-<span class="sd">     * @return bool</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span><span class="nv">$object</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$value</span> <span class="o">=</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAttribute</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getAttributeCode</span><span class="p">());</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nv">$object</span><span class="o">-&gt;</span><span class="na">getAttributeSetId</span><span class="p">()</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nv">$value</span> <span class="o">==</span> <span class="s1">&#39;wool&#39;</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Framework\Exception\LocalizedException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Bottom can not be wool.&#39;</span><span class="p">)</span>
-            <span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+class Material extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend
+{
+    /**
+     * Validate
+     * @param \Magento\Catalog\Model\Product $object
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @return bool
+     */
+    public function validate($object)
+    {
+        $value = $object-&gt;getData($this-&gt;getAttribute()-&gt;getAttributeCode());
+        if ( ($object-&gt;getAttributeSetId() == 10) <span class="err">&amp;&amp;</span> ($value == 'wool')) {
+            throw new \Magento\Framework\Exception\LocalizedException(
+                __('Bottom can not be wool.')
+            );
+        }
+        return true;
+    }
+}</code></pre></figure>
 </div></div>
 
 <p><br /></p>
 
-<p>In our example, we implement only the <code>validate()</code> method.</p>
+<p>In our example, we implement only the <code class="highlighter-rouge">validate()</code> method.</p>
 
-<p>The backend model may have <code>beforeSave</code>, <code>afterSave</code>, and <code>afterLoad</code> methods that allow the execution of some code at the moment an attribute is saved or loaded.
+<p>The backend model may have <code class="highlighter-rouge">beforeSave</code>, <code class="highlighter-rouge">afterSave</code>, and <code class="highlighter-rouge">afterLoad</code> methods that allow the execution of some code at the moment an attribute is saved or loaded.
 The backend model is what makes attribute management a really powerful method of customization.</p>
 
-<p>Note that we hardcoded <code>attributeSetId</code> here for the sake of time.
+<p>Note that we hardcoded <code class="highlighter-rouge">attributeSetId</code> here for the sake of time.
 In other cases, it could be different.
-Make sure to check the <code>eav_attribute_set</code> table for the right ID.</p>
+Make sure to check the <code class="highlighter-rouge">eav_attribute_set</code> table for the right ID.</p>
 
 <h2 id="step-5-add-a-frontend-model">Step 5: Add a frontend model</h2>
 
 <p>And finally, we create a frontend model to make our value bold:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Learning\ClothingMaterial\Model\Attribute\Frontend</span><span class="p">;</span>
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">namespace Learning\ClothingMaterial\Model\Attribute\Frontend;
 
-<span class="k">class</span> <span class="nc">Material</span> <span class="k">extends</span> <span class="nx">\Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">(</span><span class="nx">\Magento\Framework\DataObject</span> <span class="nv">$object</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$value</span> <span class="o">=</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAttribute</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getAttributeCode</span><span class="p">());</span>
-        <span class="k">return</span> <span class="s2">&quot;&lt;b&gt;</span><span class="si">$value</span><span class="s2">&lt;/b&gt;&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+class Material extends \Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend
+{
+    public function getValue(\Magento\Framework\DataObject $object)
+    {
+        $value = $object-&gt;getData($this-&gt;getAttribute()-&gt;getAttributeCode());
+        return "<span class="nt">&lt;b&gt;</span>$value<span class="nt">&lt;/b&gt;</span>";
+    }
+}</code></pre></figure>
 </div></div>
 
 <p><br /></p>
@@ -605,13 +606,14 @@ Make sure to check the <code>eav_attribute_set</code> table for the right ID.</p
 
 <p>Now we can run our code and check the results:</p>
 
-<pre><code>$ cd &lt;magento2_root&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ php bin/magento setup:upgrade
 </code></pre>
+</div>
 
 <p>After you run this, the new attribute should have been added to the database.
-You can check the <code>eav_attribute</code> and <code>catalog_eav_attribute</code> tables to verify that the attribute and its properties are there.
-We see ClothingMaterial down here, with the primary key of 155, and its corresponding entry in <code>catalog_eav_attribute,</code> with the primary key being 155.</p>
+You can check the <code class="highlighter-rouge">eav_attribute</code> and <code class="highlighter-rouge">catalog_eav_attribute</code> tables to verify that the attribute and its properties are there.
+We see ClothingMaterial down here, with the primary key of 155, and its corresponding entry in <code class="highlighter-rouge">catalog_eav_attribute,</code> with the primary key being 155.</p>
 
 <p>Now, let’s go to the backend, open any configurable product, and we should see that clothing material dropdown.
 We’ll set our filters to be a configurable product with the attribute set of “bottom”.</p>

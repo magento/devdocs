@@ -1029,11 +1029,11 @@
 <h2 id="compman-prereq">Prerequisites</h2>
 <p>Before continuing, complete all tasks discussed in <a href="/guides/v2.0/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.</p>
 
-<p>In addition, you might need to install the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> <a href="http://php.net/manual/en/book.bc.php" target="_blank"><code>bcmath</code></a> extension, which is required by EE. Examples follow:</p>
+<p>In addition, you might need to install the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> <a href="http://php.net/manual/en/book.bc.php" target="_blank"><code class="highlighter-rouge">bcmath</code></a> extension, which is required by EE. Examples follow:</p>
 
 <ul>
-  <li>CentOS (using the <code>webtatic</code> repository): <code>yum -y install php56w-bcmath</code></li>
-  <li>Ubuntu (using the <code>ppa:ondrej/php5-5.6</code> repository): <code>apt-get -y install php5-bcmath</code></li>
+  <li>CentOS (using the <code class="highlighter-rouge">webtatic</code> repository): <code class="highlighter-rouge">yum -y install php56w-bcmath</code></li>
+  <li>Ubuntu (using the <code class="highlighter-rouge">ppa:ondrej/php5-5.6</code> repository): <code class="highlighter-rouge">apt-get -y install php5-bcmath</code></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1064,8 +1064,9 @@ The following page displays.<br /><br />
 
 <p>After the upgrade completes, restart Varnish if you use it for page caching.</p>
 
-<pre><code>service varnish restart
+<div class="highlighter-rouge"><pre class="highlight"><code>service varnish restart
 </code></pre>
+</div>
 
 <h4 id="errors">Errors</h4>
 <ul>
@@ -1079,11 +1080,12 @@ The following page displays.<br /><br />
   <li>
     <p>The following error might display:</p>
 
-    <pre><code>[2016-01-19 23:33:24 UTC] An error occurred while executing job 
+    <div class="highlighter-rouge"><pre class="highlight"><code>[2016-01-19 23:33:24 UTC] An error occurred while executing job 
 "setup:upgrade {"command":"setup:upgrade"}": Could not complete 
 setup:upgrade {"command":"setup:upgrade"} successfully: Source 
 class "\Cybersource" for "CybersourceLogger" generation does not exist.
 </code></pre>
+    </div>
 
     <p>For more information, see <a href="/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a>.</p>
   </li>

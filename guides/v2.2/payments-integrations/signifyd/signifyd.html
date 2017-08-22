@@ -698,7 +698,7 @@
 
 <h3 id="provide-avscvv-response-codes">Provide AVS/CVV response codes</h3>
 
-<p>A custom <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> can implement the <code>\Magento\Payment\Api\PaymentVerificationInterface</code> to provide AVS/CVV mapping from specific codes to <a href="(http://www.emsecommerce.net/avs_cvv2_response_codes.htm)">EMS standard</a>, then register these mappings in the <code>config.xml</code> file of a custom payment module.</p>
+<p>A custom <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> can implement the <code class="highlighter-rouge">\Magento\Payment\Api\PaymentVerificationInterface</code> to provide AVS/CVV mapping from specific codes to <a href="(http://www.emsecommerce.net/avs_cvv2_response_codes.htm)">EMS standard</a>, then register these mappings in the <code class="highlighter-rouge">config.xml</code> file of a custom payment module.</p>
 
 <p>Below is an example of mapping registration:</p>
 
@@ -720,14 +720,15 @@
 
 <p>The Signifyd service can retrieve the payment method of a placed order. The <em>Magento_Signifyd</em> module allows to map Magento and Signifyd payment codes using the predefined <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> list, located in:</p>
 
-<pre><code>Magento\Signifyd\etc\signifyd_payment_mapping.xml
+<div class="highlighter-rouge"><pre class="highlight"><code>Magento\Signifyd\etc\signifyd_payment_mapping.xml
 </code></pre>
+</div>
 
 <p>To apply your mappings for the <a href="(https://www.signifyd.com/docs/api/#/reference/cases/create-a-case)">Signifyd payment codes</a>, follow these steps:</p>
 
 <ol>
   <li>
-    <p>Add <code>signifyd_payment_mapping.xml</code> to the custom payment method implementation</p>
+    <p>Add <code class="highlighter-rouge">signifyd_payment_mapping.xml</code> to the custom payment method implementation</p>
   </li>
   <li>
     <p>Specify the needed mapping</p>
@@ -736,8 +737,8 @@
 
 <p>For example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Signifyd:etc/signifyd_payment_mapping.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Signifyd:etc/signifyd_payment_mapping.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;payment_method_list&gt;</span>
         <span class="nt">&lt;payment_method&gt;</span>
             <span class="nt">&lt;magento_code&gt;</span>custom_payment_code<span class="nt">&lt;/magento_code&gt;</span>
@@ -750,10 +751,10 @@
 
 <ul>
   <li>
-    <p><code>magento_code</code> attribute value should be the code for a custom payment method (the same as in the payment’s <code>config.xml</code>).</p>
+    <p><code class="highlighter-rouge">magento_code</code> attribute value should be the code for a custom payment method (the same as in the payment’s <code class="highlighter-rouge">config.xml</code>).</p>
   </li>
   <li>
-    <p><code>signifyd_code</code> attribute value should be one of the available Signifyd payment method codes.</p>
+    <p><code class="highlighter-rouge">signifyd_code</code> attribute value should be one of the available Signifyd payment method codes.</p>
   </li>
 </ul>
 

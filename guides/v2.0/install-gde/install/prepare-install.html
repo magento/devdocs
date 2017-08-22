@@ -966,7 +966,7 @@
   <li><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Install the Composer software</a>.</li>
   <li><a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Create the Magento file system owner</a> so Composer writes files to the web server docroot as the correct user.</li>
   <li>
-    <p>Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, <code>/var/www/magento2/</code>).</p>
+    <p>Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, <code class="highlighter-rouge">/var/www/magento2/</code>).</p>
 
     <p>The Magento root directory is a subdirectory of your web server’s docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p>
 
@@ -985,27 +985,30 @@
 <ol>
   <li>Log in to your Magento server as the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span> or <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to that user</a>.</li>
   <li>
-    <p>Change to the Magento installation directory and run <code>composer install</code>. Examples:</p>
+    <p>Change to the Magento installation directory and run <code class="highlighter-rouge">composer install</code>. Examples:</p>
 
     <p>CentOS:</p>
 
-    <pre><code>cd /var/www/html/magento2 &amp;&amp; composer install
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; composer install
 </code></pre>
+    </div>
 
     <p>Ubuntu:</p>
 
-    <pre><code>cd /var/www/magento2 &amp;&amp; composer install
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/magento2 &amp;&amp; composer install
 </code></pre>
+    </div>
 
     <p>This command updates package dependencies and can take a few minutes to complete.</p>
 
     <p>The following error might display:</p>
 
-    <pre><code>[Composer\Downloader\TransportException]
+    <div class="highlighter-rouge"><pre class="highlight"><code>[Composer\Downloader\TransportException]
     The "https://repo.magento.com/archives/magento/composer/magento-composer-1.0.2.0.zip" file could not be downloaded (HTTP/1.1 404 Not Found)
 </code></pre>
+    </div>
 
-    <p>If so, create <a href="/guides/v2.0/install-gde/prereq/dev_install.html#instgde-prereq-compose-clone-auth"><code>auth.json</code></a> in the Magento file system owner’s <code>&lt;home&gt;/.composer</code> directory and run <code>composer install</code> again.</p>
+    <p>If so, create <a href="/guides/v2.0/install-gde/prereq/dev_install.html#instgde-prereq-compose-clone-auth"><code class="highlighter-rouge">auth.json</code></a> in the Magento file system owner’s <code class="highlighter-rouge">&lt;home&gt;/.composer</code> directory and run <code class="highlighter-rouge">composer install</code> again.</p>
   </li>
 </ol>
 
@@ -1031,26 +1034,28 @@
     <p>Use a file manager application provided by your shared hosting provider to verify write permissions are set on the following directories:</p>
 
     <ul>
-      <li><code>vendor</code> (Composer or compressed archive installation)</li>
-      <li><code>app/etc</code></li>
-      <li><code>pub/static</code></li>
-      <li><code>var</code></li>
+      <li><code class="highlighter-rouge">vendor</code> (Composer or compressed archive installation)</li>
+      <li><code class="highlighter-rouge">app/etc</code></li>
+      <li><code class="highlighter-rouge">pub/static</code></li>
+      <li><code class="highlighter-rouge">var</code></li>
       <li>Any other static resources</li>
     </ul>
   </li>
   <li>
     <p>If you have command-line access, enter the following commands in the order shown:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} \;
 chmod u+x bin/magento
 </code></pre>
+    </div>
 
-    <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code>/var/www/html/magento2</code>:</p>
+    <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
 
-    <pre><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} \; &amp;&amp; chmod u+x bin/magento
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} \; &amp;&amp; chmod u+x bin/magento
 </code></pre>
+    </div>
   </li>
   <li>
     <p>If you haven’t done so already, get the Magento software in one of the following ways:</p>
@@ -1103,15 +1108,17 @@ chmod u+x bin/magento
 <h3 id="mage-owner-create-user">Step 1: Create the Magento file system owner and give the user a strong password</h3>
 <p>This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the <em>command-line user</em>.)</p>
 
-<p>To create a user on CentOS or Ubuntu, enter the following command as a user with <code>root</code> privileges:</p>
+<p>To create a user on CentOS or Ubuntu, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-<pre><code>adduser &lt;username&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>adduser &lt;username&gt;
 </code></pre>
+</div>
 
-<p>To give the user a password, enter the following command as a user with <code>root</code> privileges:</p>
+<p>To give the user a password, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-<pre><code>passwd &lt;username&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>passwd &lt;username&gt;
 </code></pre>
+</div>
 
 <p>Follow the prompts on your screen to create a password for the user.</p>
 
@@ -1119,11 +1126,12 @@ chmod u+x bin/magento
     <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server group</a>.</p>
 </div>
 
-<p>For example, to create a user named <code>magento_user</code> and give the user a password, enter:</p>
+<p>For example, to create a user named <code class="highlighter-rouge">magento_user</code> and give the user a password, enter:</p>
 
-<pre><code>sudo adduser magento_user
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo adduser magento_user
 sudo passwd magento_user
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-warning">
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="&#95;blank">strong password</a>.</p>
@@ -1134,43 +1142,46 @@ sudo passwd magento_user
 
 <ul>
   <li>
-    <p>CentOS: <code>egrep -i '^user|^group' /etc/httpd/conf/httpd.conf</code></p>
+    <p>CentOS: <code class="highlighter-rouge">egrep -i '^user|^group' /etc/httpd/conf/httpd.conf</code></p>
 
-    <p>Typically, the user and group name are both <code>apache</code></p>
+    <p>Typically, the user and group name are both <code class="highlighter-rouge">apache</code></p>
   </li>
   <li>
-    <p>Ubuntu: <code>ps aux | grep apache</code> to find the apache user, then <code>groups &lt;apache user&gt;</code> to find the group</p>
+    <p>Ubuntu: <code class="highlighter-rouge">ps aux | grep apache</code> to find the apache user, then <code class="highlighter-rouge">groups &lt;apache user&gt;</code> to find the group</p>
 
-    <p>Typically, the user name and the group name are both <code>www-data</code></p>
+    <p>Typically, the user name and the group name are both <code class="highlighter-rouge">www-data</code></p>
   </li>
 </ul>
 
 <h3 id="install-update-depend-user-add2group">Step 3: Put the Magento file system owner in the web server’s group</h3>
-<p>To put the Magento file system owner in the web server’s group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
+<p>To put the Magento file system owner in the web server’s group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
 <ul>
-  <li>CentOS: <code>usermod -a -G apache &lt;username&gt;</code></li>
-  <li>Ubuntu: <code>usermod -a -G www-data &lt;username&gt;</code></li>
+  <li>CentOS: <code class="highlighter-rouge">usermod -a -G apache &lt;username&gt;</code></li>
+  <li>Ubuntu: <code class="highlighter-rouge">usermod -a -G www-data &lt;username&gt;</code></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>-a -G</code> options are important because they add <code>apache</code> or <code>www-data</code> as a <em>secondary</em> group to the user account, which preserves the user’s <em>primary</em> group. Adding a secondary group to a user account helps <a href="#perms-set-two-users">restrict file ownership and permissions</a> to ensure members of a shared group only have access to certain files.</p>
+  <p>The <code class="highlighter-rouge">-a -G</code> options are important because they add <code class="highlighter-rouge">apache</code> or <code class="highlighter-rouge">www-data</code> as a <em>secondary</em> group to the user account, which preserves the user’s <em>primary</em> group. Adding a secondary group to a user account helps <a href="#perms-set-two-users">restrict file ownership and permissions</a> to ensure members of a shared group only have access to certain files.</p>
 </div>
 
-<p>For example, to add <code>apache</code> as a secondary group to user <code>magento_user</code> on CentOS:</p>
+<p>For example, to add <code class="highlighter-rouge">apache</code> as a secondary group to user <code class="highlighter-rouge">magento_user</code> on CentOS:</p>
 
-<pre><code>sudo usermod -a -G apache magento_user
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo usermod -a -G apache magento_user
 </code></pre>
+</div>
 
 <p>To confirm your Magento user is a member of the web server group, enter the following command:</p>
 
-<pre><code>groups magento_user
+<div class="highlighter-rouge"><pre class="highlight"><code>groups magento_user
 </code></pre>
+</div>
 
-<p>The following sample result shows the user’s primary (<code>magento</code>) and secondary (<code>apache</code>) groups.</p>
+<p>The following sample result shows the user’s primary (<code class="highlighter-rouge">magento</code>) and secondary (<code class="highlighter-rouge">apache</code>) groups.</p>
 
-<pre><code>magento_user : magento_user apache
+<div class="highlighter-rouge"><pre class="highlight"><code>magento_user : magento_user apache
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Typically, the user name and primary group name are the same.</p>
@@ -1179,8 +1190,8 @@ sudo passwd magento_user
 <p>To complete the task, restart the web server:</p>
 
 <ul>
-  <li>Ubuntu: <code>service apache2 restart</code></li>
-  <li>CentOS: <code>service httpd restart</code></li>
+  <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+  <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
 </ul>
 
 <h3 id="perms-get-software">Step 4: Get the Magento software</h3>
@@ -1200,26 +1211,29 @@ sudo passwd magento_user
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 sudo chown -R :&lt;web server group&gt; .
 chmod u+x bin/magento
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <div>
 
-  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code>/var/www/html/magento2</code> and the web server group name is <code>apache</code>:</p>
+  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
 
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
+  <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
 </code></pre>
+  </div>
 
-  <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code>root</code> privileges:</p>
+  <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
+  <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
 </code></pre>
+  </div>
 
   <h3 id="next-step">Next step</h3>
   <p>After you have set file system ownership and permissions, continue with any of the following:</p>
@@ -1235,14 +1249,15 @@ chmod u+x bin/magento
   <p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
 
   <ul>
-    <li>Ubuntu: <code>su &lt;username&gt;</code></li>
-    <li>CentOS: <code>su - &lt;username&gt;</code></li>
+    <li>Ubuntu: <code class="highlighter-rouge">su &lt;username&gt;</code></li>
+    <li>CentOS: <code class="highlighter-rouge">su - &lt;username&gt;</code></li>
   </ul>
 
   <p>For example,</p>
 
-  <pre><code>su magento_user
+  <div class="highlighter-rouge"><pre class="highlight"><code>su magento_user
 </code></pre>
+  </div>
 
   <h4 id="next-step">Next step</h4>
   <p>Install the Magento software:</p>

@@ -772,15 +772,15 @@
 
 <p><strong>Service name</strong></p>
 
-<p><code>sharedCatalogSharedCatalogRepositoryV1</code></p>
+<p><code class="highlighter-rouge">sharedCatalogSharedCatalogRepositoryV1</code></p>
 
 <p><strong>REST Endpoints</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span> <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog</span>
-<span class="err">PUT</span>  <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id</span>
-<span class="err">GET</span>  <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:sharedCatalogId</span>
-<span class="err">DELETE</span>  <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:sharedCatalogId</span>
-<span class="err">GET</span>  <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog</span><span class="w">
+</span><span class="err">PUT</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id</span><span class="w">
+</span><span class="err">GET</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:sharedCatalogId</span><span class="w">
+</span><span class="err">DELETE</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:sharedCatalogId</span><span class="w">
+</span><span class="err">GET</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span></code></pre></figure>
 
 <p><strong>Shared catalog parameters</strong></p>
 
@@ -795,49 +795,49 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>id</code></td>
+      <td><code class="highlighter-rouge">id</code></td>
       <td>The system-generated shared catalog ID number</td>
       <td>integer</td>
       <td>Required to update a shared catalog. Not applicable for create operations.</td>
     </tr>
     <tr>
-      <td><code>name</code></td>
+      <td><code class="highlighter-rouge">name</code></td>
       <td>The display name of the shared catalog. Must be unique</td>
       <td>string</td>
       <td>Required to create or update a shared catalog.</td>
     </tr>
     <tr>
-      <td><code>description</code></td>
+      <td><code class="highlighter-rouge">description</code></td>
       <td>Describes the shared catalog</td>
       <td>string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>customer_group_id</code></td>
+      <td><code class="highlighter-rouge">customer_group_id</code></td>
       <td>A system-generated ID. It cannot be changed.</td>
       <td>integer</td>
       <td>0 - Not logged in; 1 - General; 2 - Wholesale; 3 - Retailer</td>
     </tr>
     <tr>
-      <td><code>type</code></td>
+      <td><code class="highlighter-rouge">type</code></td>
       <td>Indicates whether this is a custom or public shared catalog.</td>
       <td>integer</td>
       <td>Required to create or update a shared catalog. 0 - Custom; 1 - Public</td>
     </tr>
     <tr>
-      <td><code>created_by</code></td>
+      <td><code class="highlighter-rouge">created_by</code></td>
       <td>The user ID of the admin who created the shared catalog</td>
       <td>integer</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>store_id</code></td>
+      <td><code class="highlighter-rouge">store_id</code></td>
       <td>The store ID the shared catalog is assigned to</td>
       <td>integer</td>
       <td>Required to create or update a shared catalog.</td>
     </tr>
     <tr>
-      <td><code>tax_class_id</code></td>
+      <td><code class="highlighter-rouge">tax_class_id</code></td>
       <td> </td>
       <td>integer</td>
       <td>Required to create a shared catalog. 2 - Taxable goods; 3 - Retail Customer</td>
@@ -847,49 +847,49 @@
 
 <h3 id="create-a-custom-shared-catalog">Create a custom shared catalog</h3>
 
-<p>When B2B is enabled, the system creates a public shared catalog named <code>Default (General)</code>. Magento allows only one public shared catalog at a time. You can create an unlimited number of custom shared catalogs.</p>
+<p>When B2B is enabled, the system creates a public shared catalog named <code class="highlighter-rouge">Default (General)</code>. Magento allows only one public shared catalog at a time. You can create an unlimited number of custom shared catalogs.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>POST /V1/sharedCatalog</code></p>
+<p><code class="highlighter-rouge">POST /V1/sharedCatalog</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;sharedCatalog&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;tax_class_id&quot;</span><span class="p">:</span> <span class="mi">3</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"sharedCatalog"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tax_class_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<p>The shared catalog <code>id</code>, such as <code>2</code>.</p>
+<p>The shared catalog <code class="highlighter-rouge">id</code>, such as <code class="highlighter-rouge">2</code>.</p>
 
 <h3 id="update-a-characteristics-of-a-shared-catalog">Update a characteristics of a shared catalog</h3>
 
-<p>You cannot change the <code>type</code> from public (<code>1</code>) to custom (<code>0</code>). If you need to replace the public shared catalog, create a custom catalog and change its type to public.</p>
+<p>You cannot change the <code class="highlighter-rouge">type</code> from public (<code class="highlighter-rouge">1</code>) to custom (<code class="highlighter-rouge">0</code>). If you need to replace the public shared catalog, create a custom catalog and change its type to public.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>PUT  /V1/sharedCatalog/2</code></p>
+<p><code class="highlighter-rouge">PUT  /V1/sharedCatalog/2</code></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;sharedCatalog&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom shared catalog&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Just a sample custom shared catalog.&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;tax_class_id&quot;</span><span class="p">:</span> <span class="mi">3</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"sharedCatalog"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom shared catalog"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Just a sample custom shared catalog."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tax_class_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<p>The shared catalog <code>id</code>, such as <code>2</code>.</p>
+<p>The shared catalog <code class="highlighter-rouge">id</code>, such as <code class="highlighter-rouge">2</code>.</p>
 
 <h3 id="retrieve-general-information-about-a-shared-catalog">Retrieve general information about a shared catalog</h3>
 
@@ -897,7 +897,7 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>GET  /V1/sharedCatalog/2</code></p>
+<p><code class="highlighter-rouge">GET  /V1/sharedCatalog/2</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -905,17 +905,17 @@
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom shared catalog&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Just a sample custom shared catalog.&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;customer_group_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-21 15:39:40&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;created_by&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;tax_class_id&quot;</span><span class="p">:</span> <span class="mi">3</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom shared catalog"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Just a sample custom shared catalog."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"customer_group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-21 15:39:40"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tax_class_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h3 id="delete-a-shared-catalog">Delete a shared catalog</h3>
 
@@ -923,7 +923,7 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>DELETE  /V1/sharedCatalog/2</code></p>
+<p><code class="highlighter-rouge">DELETE  /V1/sharedCatalog/2</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -931,17 +931,17 @@
 
 <p><strong>Response</strong></p>
 
-<p><code>true</code>, indicating the request was successful</p>
+<p><code class="highlighter-rouge">true</code>, indicating the request was successful</p>
 
 <h3 id="search-for-a-shared-catalog">Search for a shared catalog</h3>
 
-<p>The following search returns all the custom shared catalogs (<code>type = 0</code>) in the system.</p>
+<p>The following search returns all the custom shared catalogs (<code class="highlighter-rouge">type = 0</code>) in the system.</p>
 
 <p>See <a href="/guides/v2.2/howdoi/webapi/search-criteria.html">Search using REST APIs</a> for information about constructing a search query.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>GET V1/sharedCatalog?searchCriteria[filter_groups][0][filters][0][field]=type&amp;searchCriteria[filter_groups][0][filters][0][value]=0&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=eq</code></p>
+<p><code class="highlighter-rouge">GET V1/sharedCatalog?searchCriteria[filter_groups][0][filters][0][field]=type&amp;searchCriteria[filter_groups][0][filters][0][value]=0&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=eq</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -949,35 +949,35 @@
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom shared catalog&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Just a sample custom shared catalog.&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;customer_group_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-21 15:39:40&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;created_by&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="nt">&quot;tax_class_id&quot;</span><span class="p">:</span> <span class="mi">3</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;search_criteria&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;filter_groups&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;condition_type&quot;</span><span class="p">:</span> <span class="s2">&quot;eq&quot;</span>
-                    <span class="p">}</span>
-                <span class="p">]</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;total_count&quot;</span><span class="p">:</span> <span class="mi">1</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom shared catalog"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Just a sample custom shared catalog."</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"customer_group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-21 15:39:40"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"tax_class_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"search_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"filter_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"condition_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eq"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h2 id="related-information">Related information</h2>
 

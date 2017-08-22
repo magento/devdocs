@@ -1001,17 +1001,17 @@
 
 <ol>
   <li>
-    <p>Name and declare the module in the <code>module.xml</code> file.</p>
+    <p>Name and declare the module in the <code class="highlighter-rouge">module.xml</code> file.</p>
   </li>
   <li>
-    <p>Declare any dependencies that the module has (whether on other modules or on a different component) in the module’s <code>composer.json</code> file.</p>
+    <p>Declare any dependencies that the module has (whether on other modules or on a different component) in the module’s <code class="highlighter-rouge">composer.json</code> file.</p>
   </li>
   <li>
-    <p>(<em>Optional</em>) Define the desired load order of config files and <code>.css</code> files in the <code>module.xml</code> file.</p>
+    <p>(<em>Optional</em>) Define the desired load order of config files and <code class="highlighter-rouge">.css</code> files in the <code class="highlighter-rouge">module.xml</code> file.</p>
   </li>
 </ol>
 
-<p>Example: Module A declares a dependency upon Module B. Thus, in Module A’s <code>module.xml</code> file, Module B is listed in the &lt;sequence&gt; list, so that B’s files are loaded before A’s. Additionally, you must declare a dependency upon Module B in A’s <code>composer.json</code> file. Furthermore, in the <a href="/guides/v2.0/config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.</p>
+<p>Example: Module A declares a dependency upon Module B. Thus, in Module A’s <code class="highlighter-rouge">module.xml</code> file, Module B is listed in the &lt;sequence&gt; list, so that B’s files are loaded before A’s. Additionally, you must declare a dependency upon Module B in A’s <code class="highlighter-rouge">composer.json</code> file. Furthermore, in the <a href="/guides/v2.0/config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.</p>
 
 <h2 id="m2arch-module-related">Related topics</h2>
 

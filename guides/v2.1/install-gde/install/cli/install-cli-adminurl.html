@@ -811,23 +811,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -849,20 +852,22 @@
 
   <p>Command options:</p>
 
-  <pre><code>magento info:adminuri
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento info:adminuri
 </code></pre>
+  </div>
 
   <p>A sample result follows:</p>
 
-  <pre><code>Admin Panel URI: /admin_1wgrah
+  <div class="highlighter-rouge"><pre class="highlight"><code>Admin Panel URI: /admin_1wgrah
 </code></pre>
+  </div>
 
-  <p>You can also view the Admin URI in <code>&lt;your Magento install dir&gt;/app/etc/env.php</code>. A snippet follows:</p>
+  <p>You can also view the Admin URI in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code>. A snippet follows:</p>
 
-  <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="s1">&#39;backend&#39;</span> <span class="o">=&gt;</span>
-  <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">&#39;frontName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin_1wgrah&#39;</span><span class="p">,</span>
-  <span class="p">),</span></code></pre></figure>
+  <figure class="highlight"><pre><code class="language-php" data-lang="php">  'backend' =&gt;
+  array (
+    'frontName' =&gt; 'admin_1wgrah',
+  ),</code></pre></figure>
 
   <h2 id="instgde-cli-changeurl">Change the Admin URL</h2>
   <p>To change the Admin URI, use the <a href="/guides/v2.1//install-gde/install/cli/install-cli-subcommands-deployment.html">magento setup:config:set</a> command.</p>

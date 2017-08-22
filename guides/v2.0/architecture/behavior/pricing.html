@@ -526,7 +526,7 @@
 
 <h3 id="m2devgde-pricelib-custom-price">Add a custom price type</h3>
 
-<p>To add a custom price type, create a corresponding class extending <code>AbstractPrice</code>.</p>
+<p>To add a custom price type, create a corresponding class extending <code class="highlighter-rouge">AbstractPrice</code>.</p>
 
 <h2 id="m2devgde-pricelib-di">Configure prices and adjustments</h2>
 
@@ -542,7 +542,7 @@
 
 <h2 id="m2devgde-pricelib-custom-price-render">Add price rendering to a layout</h2>
 
-<p><code>Magento\Framework\Pricing\Render</code> is the entry point of Pricing. That is, to add Pricing blocks to your pages, you need to add a <code>Magento\Framework\Pricing\Render</code> block in the layout files of your pages.</p>
+<p><code class="highlighter-rouge">Magento\Framework\Pricing\Render</code> is the entry point of Pricing. That is, to add Pricing blocks to your pages, you need to add a <code class="highlighter-rouge">Magento\Framework\Pricing\Render</code> block in the layout files of your pages.</p>
 
 <p>For example:</p>
 
@@ -554,11 +554,11 @@
 
 <p>To configure price blocks displaying in layouts, you need to create a separate layout handle for price rendering.</p>
 
-<p>The name of the layout handle is arbitrary. But if you want to use also default Magento layouts for pricing, name the handle (and so the layout file defining it) <code>catalog_product_prices.xml</code>.</p>
+<p>The name of the layout handle is arbitrary. But if you want to use also default Magento layouts for pricing, name the handle (and so the layout file defining it) <code class="highlighter-rouge">catalog_product_prices.xml</code>.</p>
 
 <p>To learn about locations of layouts in Magento application, see <a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.</p>
 
-<p>For example, the Catalog module’s <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular <span term-uuid="6e836354-0067-48ac-84ce-a4ab7c0c492e" class="glossary-term" data-toggle="popover">product types</span> in the <code>catalog_product_prices.xml</code> layout handle of the corresponding module.</p>
+<p>For example, the Catalog module’s <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular <span term-uuid="6e836354-0067-48ac-84ce-a4ab7c0c492e" class="glossary-term" data-toggle="popover">product types</span> in the <code class="highlighter-rouge">catalog_product_prices.xml</code> layout handle of the corresponding module.</p>
 
 <p>Class and template declarations in the pricing layout handles are based on the following fallback structures.</p>
 
@@ -583,26 +583,26 @@
 <p>Amount templates fallback:</p>
 
 <ol>
-  <li><code>$type . '/prices/' . $priceCode . '/amount_render_template'</code>,</li>
-  <li><code>$type . '/default_amount_render_template'</code>,</li>
-  <li><code>'default/prices/' . $priceCode . '/amount_render_template'</code>,</li>
-  <li><code>'default/default_amount_render_template'</code>.</li>
+  <li><code class="highlighter-rouge">$type . '/prices/' . $priceCode . '/amount_render_template'</code>,</li>
+  <li><code class="highlighter-rouge">$type . '/default_amount_render_template'</code>,</li>
+  <li><code class="highlighter-rouge">'default/prices/' . $priceCode . '/amount_render_template'</code>,</li>
+  <li><code class="highlighter-rouge">'default/default_amount_render_template'</code>.</li>
 </ol>
 
 <p>Adjustment classes templates:</p>
 
 <ol>
-  <li><code>"{$itemType}/adjustments/{$priceType}"</code>,</li>
-  <li><code>"{$itemType}/adjustments/default"</code>,</li>
-  <li><code>"default/adjustments/{$priceType}"</code>,</li>
-  <li><code>"default/adjustments/default"</code>.</li>
+  <li><code class="highlighter-rouge">"{$itemType}/adjustments/{$priceType}"</code>,</li>
+  <li><code class="highlighter-rouge">"{$itemType}/adjustments/default"</code>,</li>
+  <li><code class="highlighter-rouge">"default/adjustments/{$priceType}"</code>,</li>
+  <li><code class="highlighter-rouge">"default/adjustments/default"</code>.</li>
 </ol>
 
 <p>Where:</p>
 
 <ul>
-  <li><code>$type/$itemType</code> – is for type of a product.</li>
-  <li><code>$priceCode/$priceType</code> – is for a price type.</li>
+  <li><code class="highlighter-rouge">$type/$itemType</code> – is for type of a product.</li>
+  <li><code class="highlighter-rouge">$priceCode/$priceType</code> – is for a price type.</li>
 </ul>
 
 <h2 id="m2devgde-pricelib-ins">Insert price rendering into PHTML templates</h2>
@@ -620,13 +620,13 @@ $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
 
 <ul>
   <li>
-    <p><code>&lt;price type&gt;</code>: the code of the price type</p>
+    <p><code class="highlighter-rouge">&lt;price type&gt;</code>: the code of the price type</p>
   </li>
   <li>
-    <p><code>$product</code>: an instance of Saleable Item, for example <code>Magento\Catalog\Model\Product</code></p>
+    <p><code class="highlighter-rouge">$product</code>: an instance of Saleable Item, for example <code class="highlighter-rouge">Magento\Catalog\Model\Product</code></p>
   </li>
   <li>
-    <p><code>$arguments</code>: is the array of rendering arguments.</p>
+    <p><code class="highlighter-rouge">$arguments</code>: is the array of rendering arguments.</p>
   </li>
 </ul>
 

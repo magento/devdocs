@@ -1697,63 +1697,70 @@ In a future release, Solr compatibility will be removed.</p>
   <li>
     <p>As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:</p>
 
-    <pre><code>cd &lt;your Solr install dir&gt;/example/solr
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Solr install dir&gt;/example/solr
 cp -R collection1 magento2
 cd magento2
 cp -R &lt;your Magento EE install dir&gt;/vendor/magento/module-solr/conf/* ./conf/
 </code></pre>
+    </div>
 
     <p>For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:</p>
 
-    <pre><code>cd /opt/solr/solr/solr-4.10.4/example/solr
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /opt/solr/solr/solr-4.10.4/example/solr
 cp -R collection1 magento2
 cd magento2
 cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
  <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir&gt;/vendor/magento/module-solr/conf/* .</code></p>
 </div>
   </li>
   <li>
-    <p>After copying files, open the <code>&lt;your Solr install dir&gt;/example/solr/magento2/core.properties</code> file in a text editor and change:</p>
+    <p>After copying files, open the <code class="highlighter-rouge">&lt;your Solr install dir&gt;/example/solr/magento2/core.properties</code> file in a text editor and change:</p>
 
-    <pre><code>name=collection1
+    <div class="highlighter-rouge"><pre class="highlight"><code>name=collection1
 </code></pre>
+    </div>
 
     <p>to</p>
 
-    <pre><code>name=magento2
+    <div class="highlighter-rouge"><pre class="highlight"><code>name=magento2
 </code></pre>
+    </div>
 
     <p><a href="https://wiki.apache.org/solr/Core%20Discovery%20%284.4%20and%20beyond%29?action=show&amp;redirect=Core+Discovery+%284.3+and+beyond%29" target="_blank">More information about core.properties</a></p>
   </li>
   <li>
-    <p>Save your changes to <code>core.properties</code> and exit the text editor.</p>
+    <p>Save your changes to <code class="highlighter-rouge">core.properties</code> and exit the text editor.</p>
   </li>
   <li>
     <p><em>Task for Tomcat 6 with CentOS only</em></p>
 
-    <p>If you’re using Tomcat 6 on CentOS, you must modify <code>&lt;your Solr install dir&gt;/example/solr/conf/solrconfig.xml</code></p>
+    <p>If you’re using Tomcat 6 on CentOS, you must modify <code class="highlighter-rouge">&lt;your Solr install dir&gt;/example/solr/conf/solrconfig.xml</code></p>
 
     <p>Locate the following line:</p>
 
-    <pre><code>&lt;dataDir&gt;${solr.data.dir:./solr/data}&lt;/dataDir&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;dataDir&gt;${solr.data.dir:./solr/data}&lt;/dataDir&gt;
 </code></pre>
+    </div>
 
     <p>Change it to:</p>
 
-    <pre><code>&lt;dataDir&gt;${solr.data.dir:}&lt;/dataDir&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;dataDir&gt;${solr.data.dir:}&lt;/dataDir&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Start Solr.</p>
 
     <p>As a user with <code>root</code> privileges, enter the following command to start Solr:</p>
 
-    <pre><code>cd &lt;your Solr install dir&gt;/example
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Solr install dir&gt;/example
 java -jar start.jar
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-warning">
         <p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="/guides/v2.1/config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
@@ -1866,7 +1873,7 @@ java -jar start.jar
     <img src="/common/images/solr_refresh-cache.png" width="600px" /></li>
 </ol>
 
-<p>To clean the cache using the command line, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean</code></a> command.</p>
+<p>To clean the cache using the command line, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
 
 <p>To reindex using the command line:</p>
 
@@ -1875,13 +1882,15 @@ java -jar start.jar
   <li>
     <p>Enter the following command to reindex all indexers:</p>
 
-    <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
+    <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
 </code></pre>
+    </div>
 
     <p>Enter the following command to reindex the catalog search index only:</p>
 
-    <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
+    <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
 </code></pre>
+    </div>
   </li>
   <li>Wait while the indexers are reindexed.</li>
 </ol>
@@ -1899,8 +1908,9 @@ java -jar start.jar
 
 <p>The following excerpt from the Solr command window shows the same search:</p>
 
-<pre><code>497008 [qtp2032251042-13] INFO  org.apache.solr.core.SolrCore  – [magento2] webapp=/solr path=/select params={facet.field={!key%3Dcategory_bucket}category_ids&amp;json.nl=flat&amp;fl=id,score&amp;start=0&amp;fq=store_id:1&amp;rows=10000&amp;q=sku:((hello*+hello))+OR+fulltext_en:((hello*+hello))+OR+attr_color_en:((hello*+hello))+OR+attr_description_en:((hello*+hello))+OR+attr_manufacturer_en:((hello*+hello))+OR+attr_name_en:((hello*+hello))+OR+attr_short_description_en:((hello*+hello))+OR+attr_status_en:((hello*+hello))+OR+attr_tax_class_id_en:((hello*+hello))&amp;f.category_ids.facet.mincount=1&amp;omitHeader=true&amp;stats=true&amp;wt=json&amp;facet=true&amp;stats.field=price_0_1} hits=0 status=0 QTime=58
+<div class="highlighter-rouge"><pre class="highlight"><code>497008 [qtp2032251042-13] INFO  org.apache.solr.core.SolrCore  – [magento2] webapp=/solr path=/select params={facet.field={!key%3Dcategory_bucket}category_ids&amp;json.nl=flat&amp;fl=id,score&amp;start=0&amp;fq=store_id:1&amp;rows=10000&amp;q=sku:((hello*+hello))+OR+fulltext_en:((hello*+hello))+OR+attr_color_en:((hello*+hello))+OR+attr_description_en:((hello*+hello))+OR+attr_manufacturer_en:((hello*+hello))+OR+attr_name_en:((hello*+hello))+OR+attr_short_description_en:((hello*+hello))+OR+attr_status_en:((hello*+hello))+OR+attr_tax_class_id_en:((hello*+hello))&amp;f.category_ids.facet.mincount=1&amp;omitHeader=true&amp;stats=true&amp;wt=json&amp;facet=true&amp;stats.field=price_0_1} hits=0 status=0 QTime=58
 </code></pre>
+</div>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.1/config-guide/solr/solr-script.html">Prepare Solr for production</a></p>

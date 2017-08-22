@@ -1922,37 +1922,37 @@
 
 <ol>
   <li>Environment variables, if they exist, override all other values.</li>
-  <li>From the shared configuration files <code>env.php</code> and <code>config.php</code>.
-Values in <code>env.php</code> override values in <code>config.php</code>.</li>
+  <li>From the shared configuration files <code class="highlighter-rouge">env.php</code> and <code class="highlighter-rouge">config.php</code>.
+Values in <code class="highlighter-rouge">env.php</code> override values in <code class="highlighter-rouge">config.php</code>.</li>
   <li>From values stored in the database.</li>
   <li>If no value exists in any of those sources, we use either the default value or NULL.</li>
 </ol>
 
 <h3 id="manage-the-shared-configuration">Manage the shared configuration</h3>
-<p>The shared configuration is stored in <code>app/etc/config.php</code>, which should be in source control.</p>
+<p>The shared configuration is stored in <code class="highlighter-rouge">app/etc/config.php</code>, which should be in source control.</p>
 
-<p>Set the shared configuration in the Magento Admin in your development (or Magento Enterprise Cloud Edition <em>integration</em>) system and write the configuration to <code>config.php</code> using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code>magento app:config:dump</code> command</a>.</p>
+<p>Set the shared configuration in the Magento Admin in your development (or Magento Enterprise Cloud Edition <em>integration</em>) system and write the configuration to <code class="highlighter-rouge">config.php</code> using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a>.</p>
 
 <h3 id="manage-the-system-specific-configuration">Manage the system-specific configuration</h3>
-<p>The system-specific configuration is stored in <code>app/config/env.php</code>, which should <em>not</em> be in source control.</p>
+<p>The system-specific configuration is stored in <code class="highlighter-rouge">app/config/env.php</code>, which should <em>not</em> be in source control.</p>
 
-<p>Set the system-specific configuration in the Magento Admin in your development (or Cloud integration) system and write the configuration to <code>env.php</code> using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code>magento app:config:dump</code> command</a>.</p>
+<p>Set the system-specific configuration in the Magento Admin in your development (or Cloud integration) system and write the configuration to <code class="highlighter-rouge">env.php</code> using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a>.</p>
 
-<p>This command also writes sensitive settings to <code>env.php</code>.</p>
+<p>This command also writes sensitive settings to <code class="highlighter-rouge">env.php</code>.</p>
 
 <h3 id="manage-the-sensitive-configuration">Manage the sensitive configuration</h3>
-<p>The sensitive configuration is also stored in <code>app/etc/env.php</code>.</p>
+<p>The sensitive configuration is also stored in <code class="highlighter-rouge">app/etc/env.php</code>.</p>
 
 <p>You can manage the sensitive configuration in any of the following ways:</p>
 
 <ul>
   <li>Environment variables</li>
-  <li>Save the sensitive configuration in <code>env.php</code> on your production system using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code>magento config:set:sensitive</code> command</a></li>
+  <li>Save the sensitive configuration in <code class="highlighter-rouge">env.php</code> on your production system using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set:sensitive</code> command</a></li>
 </ul>
 
 <h3 id="configuration-settings-locked-in-the-magento-admin">Configuration settings locked in the Magento Admin</h3>
-<p>Any configuration settings in <code>config.php</code> or <code>env.php</code> are locked in the Magento Admin; that is, those settings cannot be changed in the Admin.
-Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento config:set --lock</code></a> command to change the settings in the <code>config.php</code> or <code>env.php</code> files.</p>
+<p>Any configuration settings in <code class="highlighter-rouge">config.php</code> or <code class="highlighter-rouge">env.php</code> are locked in the Magento Admin; that is, those settings cannot be changed in the Admin.
+Use the <a href="/guides/v2.2/"><code class="highlighter-rouge">magento config:set</code> or <code class="highlighter-rouge">magento config:set --lock</code></a> command to change the settings in the <code class="highlighter-rouge">config.php</code> or <code class="highlighter-rouge">env.php</code> files.</p>
 
 <h2 id="config-deploy-admin">Changes in the Magento Admin</h2>
 <p>We changed the following behavior in the Magento Admin in production mode:</p>
@@ -1969,7 +1969,7 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
       <li>Inline translations</li>
     </ul>
   </li>
-  <li>As discussed previously, any configuration setting in <code>config.php</code> or <code>env.php</code> is locked and cannot be edited in the Admin.</li>
+  <li>As discussed previously, any configuration setting in <code class="highlighter-rouge">config.php</code> or <code class="highlighter-rouge">env.php</code> is locked and cannot be edited in the Admin.</li>
   <li>
     <p>You can change the Admin locale only to languages used by deployed themes</p>
 
@@ -1984,9 +1984,9 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
 </ul>
 
 <h2 id="config-deploy-cron">cron installation and removal</h2>
-<p>In version 2.2 for the first time, we help you set up your Magento cron job by providing the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html"><code>magento cron:install</code> command</a>. This command sets up a Magento crontab as the user who runs the command.</p>
+<p>In version 2.2 for the first time, we help you set up your Magento cron job by providing the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html"><code class="highlighter-rouge">magento cron:install</code> command</a>. This command sets up a Magento crontab as the user who runs the command.</p>
 
-<p>We also enable you to remove the Magento crontab using the <code>magento cron:remove</code> command.</p>
+<p>We also enable you to remove the Magento crontab using the <code class="highlighter-rouge">magento cron:remove</code> command.</p>
 
 <h2 id="config-deploy-workflow">Recommended pipeline deployment workflow</h2>
 <p>The following diagram shows how we recommend you use pipeline deployment to manage the configuration.</p>
@@ -1994,7 +1994,7 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
 <p><img src="/common/images/config_split-deploy_workflow.png" alt="Recommended pipeline deployment workflow" width="700px" /></p>
 
 <h3 id="development-system">Development system</h3>
-<p>On your development system, you make configuration changes in the Magento Admin and generate the shared configuration, <code>app/etc/config.php</code> and the system-specific configuration, <code>app/etc/env.php</code>. Check Magento code and the shared configuration into source control and push it to the build server.</p>
+<p>On your development system, you make configuration changes in the Magento Admin and generate the shared configuration, <code class="highlighter-rouge">app/etc/config.php</code> and the system-specific configuration, <code class="highlighter-rouge">app/etc/env.php</code>. Check Magento code and the shared configuration into source control and push it to the build server.</p>
 
 <p>You should also install extensions and customize Magento code on the development system.</p>
 
@@ -2005,14 +2005,14 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
     <p>Set the configuration in the Magento Admin.</p>
   </li>
   <li>
-    <p>Use the <code>magento app:config:dump</code> command to write the configuration to the file system.</p>
+    <p>Use the <code class="highlighter-rouge">magento app:config:dump</code> command to write the configuration to the file system.</p>
 
     <ul>
       <li>
-        <p><code>app/etc/config.php</code> is the shared configuration, which contains all settings <em>except</em> sensitive and system-specific settings. This file should be in source control.</p>
+        <p><code class="highlighter-rouge">app/etc/config.php</code> is the shared configuration, which contains all settings <em>except</em> sensitive and system-specific settings. This file should be in source control.</p>
       </li>
       <li>
-        <p><code>app/etc/env.php</code> is the system-specific configuration, which contains settings that are unique to a particular system (for example, host names and port numbers). This file should <em>not</em> be in source control.</p>
+        <p><code class="highlighter-rouge">app/etc/env.php</code> is the system-specific configuration, which contains settings that are unique to a particular system (for example, host names and port numbers). This file should <em>not</em> be in source control.</p>
       </li>
     </ul>
   </li>
@@ -2028,8 +2028,8 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
 
 <ol>
   <li>Pull the shared configuration file from source control.</li>
-  <li>Use the <code>magento setup:di:compile</code> command to compile code.</li>
-  <li>Use the <code>magento setup:static-content:deploy -f</code> command to update static file view files.</li>
+  <li>Use the <code class="highlighter-rouge">magento setup:di:compile</code> command to compile code.</li>
+  <li>Use the <code class="highlighter-rouge">magento setup:static-content:deploy -f</code> command to update static file view files.</li>
   <li>Check the updates into source control.</li>
 </ol>
 
@@ -2042,10 +2042,10 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
   <li>Start maintenance mode.</li>
   <li>Pull code and configuration updates from source control.</li>
   <li>If you use Magento EE, stop queue workers.</li>
-  <li>Use the <code>magento app:config:import</code> command to import configuration changes in the production system.</li>
-  <li>If you installed components that changed the database schema, run <code>magento setup:upgrade --keep-generated</code> to update the database schema and data, preserving generated static files.</li>
-  <li>To set system-specific settings, use either the <code>magento config:set</code> command or environment variables.</li>
-  <li>To set sensitive settings, use either the <code>magento config:sensitive:set</code> command or environment variables.</li>
+  <li>Use the <code class="highlighter-rouge">magento app:config:import</code> command to import configuration changes in the production system.</li>
+  <li>If you installed components that changed the database schema, run <code class="highlighter-rouge">magento setup:upgrade --keep-generated</code> to update the database schema and data, preserving generated static files.</li>
+  <li>To set system-specific settings, use either the <code class="highlighter-rouge">magento config:set</code> command or environment variables.</li>
+  <li>To set sensitive settings, use either the <code class="highlighter-rouge">magento config:sensitive:set</code> command or environment variables.</li>
   <li>Clean (also referred to as <em>flush</em>) the Magento cache.</li>
   <li>End maintenance mode.</li>
 </ol>
@@ -2054,25 +2054,25 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
 <p>We provide the following commands to help you manage the configuration:</p>
 
 <ul>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code>magento app:config:dump</code></a> to write Magento Admin configuration settings to <code>config.php</code> and <code>env.php</code> (except for sensitive settings)</li>
+  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code></a> to write Magento Admin configuration settings to <code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> (except for sensitive settings)</li>
   <li>
-    <p><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code>magento config:set</code></a> to set the values of system-specific settings on the production system.</p>
+    <p><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set</code></a> to set the values of system-specific settings on the production system.</p>
 
-    <p>Use the optional <code>--lock</code> option to lock the option in the Magento Admin (that is, make the setting uneditable). If a setting is already locked, use the <code>--lock</code> option to change the setting.</p>
+    <p>Use the optional <code class="highlighter-rouge">--lock</code> option to lock the option in the Magento Admin (that is, make the setting uneditable). If a setting is already locked, use the <code class="highlighter-rouge">--lock</code> option to change the setting.</p>
   </li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code>magento config:sensitive:set</code></a> to set the values of sensitive settings on the production system.</li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html"><code>magento app:config:import</code></a> to import configuration changes from <code>config.php</code> and <code>env.php</code> to the production system.</li>
+  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:sensitive:set</code></a> to set the values of sensitive settings on the production system.</li>
+  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html"><code class="highlighter-rouge">magento app:config:import</code></a> to import configuration changes from <code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> to the production system.</li>
 </ul>
 
 <h2 id="configuration-management-examples">Configuration management examples</h2>
-<p>This section shows examples of managing the configuration so you can see how changes are made to <code>config.php</code> and <code>env.php</code>.</p>
+<p>This section shows examples of managing the configuration so you can see how changes are made to <code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code>.</p>
 
 <h3 id="change-the-default-locale">Change the default locale</h3>
-<p>This section shows the change made to <code>config.php</code> when you change the default weight unit using the Magento Admin (<strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong> &gt; <strong>Locale Options</strong>).</p>
+<p>This section shows the change made to <code class="highlighter-rouge">config.php</code> when you change the default weight unit using the Magento Admin (<strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong> &gt; <strong>Locale Options</strong>).</p>
 
-<p>After you make the change in the Admin, run <code>php bin/magento app:config:dump</code> to write the value to <code>config.php</code>. The value is written to the <code>general</code> array under <code>locale</code> as the following snippet from <code>config.php</code> shows:</p>
+<p>After you make the change in the Admin, run <code class="highlighter-rouge">php bin/magento app:config:dump</code> to write the value to <code class="highlighter-rouge">config.php</code>. The value is written to the <code class="highlighter-rouge">general</code> array under <code class="highlighter-rouge">locale</code> as the following snippet from <code class="highlighter-rouge">config.php</code> shows:</p>
 
-<pre><code class="language-php">      'general' =&gt;
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>      'general' =&gt;
       array (
         'locale' =&gt;
         array (
@@ -2081,6 +2081,7 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
           'weight_unit' =&gt; 'kgs',
         ),
 </code></pre>
+</div>
 
 <h3 id="change-several-configuration-settings">Change several configuration settings</h3>
 <p>This section discusses making the following configuration changes:</p>
@@ -2091,21 +2092,21 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
   <li>Setting the PayPal API Username and API password (<strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; Sales &gt; <strong>Payment Methods</strong> &gt; <strong>PayPal</strong> &gt; <strong>Required PayPal Settings</strong>)</li>
 </ul>
 
-<p>After you make the change in the Admin, run <code>php bin/magento app:config:dump</code> on your development system. This time, not all of your changes are written to <code>config.php</code>; in fact, only the website, store, and store view are written to that file as the following snippets show.</p>
+<p>After you make the change in the Admin, run <code class="highlighter-rouge">php bin/magento app:config:dump</code> on your development system. This time, not all of your changes are written to <code class="highlighter-rouge">config.php</code>; in fact, only the website, store, and store view are written to that file as the following snippets show.</p>
 
 <h4 id="configphp">config.php</h4>
-<p><code>config.php</code> contains:</p>
+<p><code class="highlighter-rouge">config.php</code> contains:</p>
 
 <ul>
   <li>Changes to the website, store, and store view.</li>
   <li>Non-system-specific Elasticsearch settings</li>
   <li>Non-sensitive PayPal settings</li>
-  <li>Comments that inform you of sensitive settings that were omitted from <code>config.php</code></li>
+  <li>Comments that inform you of sensitive settings that were omitted from <code class="highlighter-rouge">config.php</code></li>
 </ul>
 
-<div class="collapsible"><b class="collapsible-title">Show config.php snippets: </b><div class="collapsible-content"><p><code>websites</code> array:</p>
+<div class="collapsible"><b class="collapsible-title">Show config.php snippets: </b><div class="collapsible-content"><p><code class="highlighter-rouge">websites</code> array:</p>
 
-<pre><code class="language-php">      'new' =&gt;
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>      'new' =&gt;
       array (
         'website_id' =&gt; '2',
         'code' =&gt; 'new',
@@ -2115,10 +2116,11 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
         'is_default' =&gt; '0',
       ),
 </code></pre>
+</div>
 
-<p><code>groups</code> array:</p>
+<p><code class="highlighter-rouge">groups</code> array:</p>
 
-<pre><code class="language-php">      2 =&gt;
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>      2 =&gt;
       array (
         'group_id' =&gt; '2',
         'website_id' =&gt; '2',
@@ -2128,10 +2130,11 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
         'default_store_id' =&gt; '2',
       ),
 </code></pre>
+</div>
 
-<p><code>stores</code> array:</p>
+<p><code class="highlighter-rouge">stores</code> array:</p>
 
-<pre><code class="language-php">     'newview' =&gt;
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>     'newview' =&gt;
       array (
         'store_id' =&gt; '2',
         'code' =&gt; 'newview',
@@ -2142,10 +2145,11 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
         'is_active' =&gt; '1',
       ),
 </code></pre>
+</div>
 
-<p><code>payment</code> array:</p>
+<p><code class="highlighter-rouge">payment</code> array:</p>
 
-<pre><code class="language-php">      'payment' =&gt;
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>      'payment' =&gt;
       array (
         'paypal_express' =&gt;
         array (
@@ -2166,18 +2170,20 @@ Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento
           'skip_order_review_step' =&gt; '1',
         ),
 </code></pre>
+</div>
 </div></div>
 
 <p><br />
 <strong>env.php</strong></p>
 
-<p>The default email domain system-specific configuration setting is written to <code>app/etc/env.php</code>.</p>
+<p>The default email domain system-specific configuration setting is written to <code class="highlighter-rouge">app/etc/env.php</code>.</p>
 
-<p>The PayPal settings are written to neither file because the <code>magento app:config:dump</code> command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:</p>
+<p>The PayPal settings are written to neither file because the <code class="highlighter-rouge">magento app:config:dump</code> command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:</p>
 
-<pre><code>php bin/magento config:sensitive:set paypal/wpp/api_username &lt;username&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento config:sensitive:set paypal/wpp/api_username &lt;username&gt;
 php bin/magento config:sensitive:set paypal/wpp/api_password &lt;password&gt;
 </code></pre>
+</div>
 
 <h2 id="config-deploy-prereq">Prerequisite for your development, build, and production systems</h2>
 <p>File permissions and ownership must be consistent across development, build, and production systems. To make this work, you must either:</p>

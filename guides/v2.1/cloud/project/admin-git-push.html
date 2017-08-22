@@ -466,39 +466,42 @@
 </section>
 
 
-			<h1 id="step-by-step-walk-through-of-git-push-output">Step by step walk-through of <code>git push</code> output</h1>
+			<h1 id="step-by-step-walk-through-of-git-push-output">Step by step walk-through of <code class="highlighter-rouge">git push</code> output</h1>
 <p>To better grasp what is happening here, we will show you what the output
-of the <code>git push</code> command might look like with Magento Enterprise Cloud Edition.</p>
+of the <code class="highlighter-rouge">git push</code> command might look like with Magento Enterprise Cloud Edition.</p>
 
 <p>Magento Enterprise Cloud Edition is extremely versatile; for each project and  depending
 on the state of the project, the output can vary wildly.</p>
 
-<p>This topic discusses a sample <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> project with a lot of data backends; and that uses MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a <code>composer.json</code> file and it uses the Ruby library <code>sass</code> to compile the SCSS
+<p>This topic discusses a sample <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> project with a lot of data backends; and that uses MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a <code class="highlighter-rouge">composer.json</code> file and it uses the Ruby library <code class="highlighter-rouge">sass</code> to compile the SCSS
 during its build process.</p>
 
 <p>In this example, a developer wants to work on a new feature so they created a new environment by
-running <code>magento-cloud environment:branch maximal</code>, where <code>maximal</code> is the name of the 
+running <code class="highlighter-rouge">magento-cloud environment:branch maximal</code>, where <code class="highlighter-rouge">maximal</code> is the name of the 
 branch.</p>
 
 <p>After modifying some files, the developer pushed the changes using:</p>
 
-<pre><code>$ git push
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git push
 </code></pre>
+</div>
 
 <p>This is what the output looks like:</p>
 
-<pre><code>Counting objects: 4, done.
+<div class="highlighter-rouge"><pre class="highlight"><code>Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (4/4), done.
 Writing objects: 100% (4/4), 428 bytes | 0 bytes/s, done.
 Total 4 (delta 3), reused 0 (delta 0)
 </code></pre>
+</div>
 
 <p>This was the normal output you would expect from a git server. If there were a 
 conflict it would have errored out and asked you to resolve it.</p>
 
-<pre><code>Validating submodules
+<div class="highlighter-rouge"><pre class="highlight"><code>Validating submodules
 </code></pre>
+</div>
 
 <p>Magento Enterprise Cloud Edition supports git submodules and supports multiple applications. (You
 can have multiple applications, each in its own git repository, but have a 
@@ -508,64 +511,73 @@ single application and no git submodule.</p>
 <p>The output for each deployed application would have been similar to what you see
  below for a single application.</p>
 
-<pre><code>Validating configuration files.
+<div class="highlighter-rouge"><pre class="highlight"><code>Validating configuration files.
 </code></pre>
+</div>
 
 <p>Magento Enterprise Cloud Edition now checks that your configuration files make sense. Errors display if you used tabs instead of spaces in your yaml files. It
 does many other validations and tries to provide you with useful error
 messages.</p>
 
-<pre><code>Processing activity: **Shelly** pushed to **maximal**
+<div class="highlighter-rouge"><pre class="highlight"><code>Processing activity: **Shelly** pushed to **maximal**
     Found 1 new commit.
 </code></pre>
+</div>
 
 <p>Now, the deployment process starts building your application(s).</p>
 
-<pre><code>Building application 'myapp' (runtime type: php, tree: 551ee89)
+<div class="highlighter-rouge"><pre class="highlight"><code>Building application 'myapp' (runtime type: php, tree: 551ee89)
     Generating runtime configuration.
 </code></pre>
+</div>
 
-<p>Based on what you put in your <code>.magento.app.yaml</code>, it is going to build for each
+<p>Based on what you put in your <code class="highlighter-rouge">.magento.app.yaml</code>, it is going to build for each
 application a container with the correct configuration.</p>
 
-<pre><code>Installing build dependencies...
+<div class="highlighter-rouge"><pre class="highlight"><code>Installing build dependencies...
     Installing ruby build dependencies: sass
 </code></pre>
+</div>
 
-<p>In this case we have a dependency on the Ruby  <code>sass</code> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> so it has installed 
-it. (Again, this comes from <code>.magento.app.yaml</code>.)</p>
+<p>In this case we have a dependency on the Ruby  <code class="highlighter-rouge">sass</code> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> so it has installed 
+it. (Again, this comes from <code class="highlighter-rouge">.magento.app.yaml</code>.)</p>
 
-<pre><code>Found a `composer.json`, installing dependencies.
+<div class="highlighter-rouge"><pre class="highlight"><code>Found a `composer.json`, installing dependencies.
 </code></pre>
+</div>
 
-<p>Magento Enterprise Cloud Edition found <code>composer.json</code>, so it is going to automatically fetch
+<p>Magento Enterprise Cloud Edition found <code class="highlighter-rouge">composer.json</code>, so it is going to automatically fetch
 and install all the PHP dependencies.</p>
 
-<pre><code>Executing post-build hook...
+<div class="highlighter-rouge"><pre class="highlight"><code>Executing post-build hook...
     Building...
     Success!
 </code></pre>
+</div>
 
-<p>We supplied a build hook in <code>.magento.app.yaml</code> (here it is transforming SCSS
+<p>We supplied a build hook in <code class="highlighter-rouge">.magento.app.yaml</code> (here it is transforming SCSS
 files to CSS). It is a good time to run  anything that needs to change the main
 file system. (Because after the build hook, the file system becomes read-only.)</p>
 
-<pre><code>Executing pre-flight checks...
+<div class="highlighter-rouge"><pre class="highlight"><code>Executing pre-flight checks...
 </code></pre>
+</div>
 
 <p>Magento Enterprise Cloud Edition just ran some static security checks on the code. There are some 
 vulnerabilities it will refuse to deploy. (You can force it, but it’s not a good
 idea.)</p>
 
-<pre><code>Compressing application.
+<div class="highlighter-rouge"><pre class="highlight"><code>Compressing application.
 Beaming package to its final destination.
 </code></pre>
+</div>
 
 <p>Building is over. Magento Enterprise Cloud Edition creates an archive of the application and is going
 to send it to one of the hosts on the grid where it will be mounted.</p>
 
-<pre><code>Re-deploying environment mswy7hzcuhcjy-maximal.
+<div class="highlighter-rouge"><pre class="highlight"><code>Re-deploying environment mswy7hzcuhcjy-maximal.
 </code></pre>
+</div>
 
 <p>The environment with all its applications has been deployed (here there is just
 one) and Magento Enterprise Cloud Edition will now give you an overview of its configuration.</p>
@@ -574,32 +586,35 @@ one) and Magento Enterprise Cloud Edition will now give you an overview of its c
 the context of the deployed application. But you could ssh to the environment
 and inspect the log files.</p>
 
-<pre><code>Environment configuration:
+<div class="highlighter-rouge"><pre class="highlight"><code>Environment configuration:
     myapp (type: php, size: S, disk: 200)
     cache (type: redis, size: S)
     database (type: mysql, size: S, disk: 200)
     moarsearch (type: Elasticsearch, size: S, disk: 200)
 </code></pre>
+</div>
 
 <p>We can see the five different data backends were deployed (started, and initialized
 with the data from the parent environment). Magento Enterprise Cloud Edition also  configured the 
 network so your application container can access them.</p>
 
-<pre><code>Environment routes:
+<div class="highlighter-rouge"><pre class="highlight"><code>Environment routes:
     http://maximal-mswy7hzcuhcjy.example.magento.com/ is served by application `myapp`
     http://www---maximal-mswy7hzcuhcjy.example.magento.com/ redirects to http://maximal-mswy7hzcuhcjy.example.magento.com/
     https://maximal-mswy7hzcuhcjy.example.magento.com/ is served by application `myapp`
     https://www---maximal-mswy7hzcuhcjy.example.magento.com/ redirects to http://maximal-mswy7hzcuhcjy.example.magento.com/
 </code></pre>
+</div>
 
 <p>Finally, Magento Enterprise Cloud Edition gives you the different routes that are served by your 
 application. Here you can see the “mangled” routes on a non-live environment
-where the <code>www.</code> part was replaced by <code>www---</code> you can visit those in a
+where the <code class="highlighter-rouge">www.</code> part was replaced by <code class="highlighter-rouge">www---</code> you can visit those in a
 browser. The site is live.</p>
 
-<pre><code>To mswy7hzcuhcjy@git.example.magento.com:mswy7hzcuhcjy.git
+<div class="highlighter-rouge"><pre class="highlight"><code>To mswy7hzcuhcjy@git.example.magento.com:mswy7hzcuhcjy.git
     31ed214..f32e741  maximal -&gt; maximal
 </code></pre>
+</div>
 
 <p>and as a farewell we are back to some normal git output, where the server tells
 you at what commit level it is now.</p>

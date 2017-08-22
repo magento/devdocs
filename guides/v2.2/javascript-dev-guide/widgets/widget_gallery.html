@@ -776,7 +776,7 @@
 
 <p>The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.</p>
 
-<p>The important feature of the gallery widget implementation is the possibility to configure the widget options in the <code>view.xml</code> configuration file of a <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
+<p>The important feature of the gallery widget implementation is the possibility to configure the widget options in the <code class="highlighter-rouge">view.xml</code> configuration file of a <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
 
 <p>The gallery widget source code is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a></p>
 
@@ -790,119 +790,119 @@
 
 <p>Example of declarative initialization:</p>
 
-<p><code>&lt;Magento_Catalog_module_dir&gt;/view/frontend/templates/product/view/gallery.phtml</code></p>
+<p><code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/frontend/templates/product/view/gallery.phtml</code></p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/x-magento-init&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/x-magento-init"</span><span class="o">&gt;</span>
     <span class="p">{</span>
          <span class="p">{</span>
-        <span class="s2">&quot;&lt;element_selector&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;mage/gallery/gallery&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">[{</span>
-                    <span class="s2">&quot;thumb&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;img&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;full&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;caption&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;message&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;position&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;number&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;isMain&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;true/false&gt;&quot;</span>
+        <span class="s2">"&lt;element_selector&gt;"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"mage/gallery/gallery"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"data"</span><span class="p">:</span> <span class="p">[{</span>
+                    <span class="s2">"thumb"</span><span class="p">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
+                    <span class="s2">"img"</span><span class="p">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
+                    <span class="s2">"full"</span><span class="p">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
+                    <span class="s2">"caption"</span><span class="p">:</span> <span class="s2">"&lt;message&gt;"</span><span class="p">,</span>
+                    <span class="s2">"position"</span><span class="p">:</span> <span class="s2">"&lt;number&gt;"</span><span class="p">,</span>
+                    <span class="s2">"isMain"</span><span class="p">:</span> <span class="s2">"&lt;true/false&gt;"</span>
                 <span class="p">}],</span>
-                <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;nav&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;false/thumbs/dots&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;loop&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;keyboard&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;arrows&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;allowfullscreen&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;showCaption&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;width&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;thumbwidth&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;thumbheight&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;height&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;transitionduration&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;transition&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;slide/crossfade/dissolve&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;navarrows&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;navtype&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;slides/thumbs&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;navdir&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;horizontal/vertical&gt;&quot;</span>
+                <span class="s2">"options"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">"nav"</span><span class="p">:</span> <span class="s2">"&lt;false/thumbs/dots&gt;"</span><span class="p">,</span>
+                    <span class="s2">"loop"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"keyboard"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"arrows"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"allowfullscreen"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"showCaption"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"width"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"thumbwidth"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"thumbheight"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"height"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"transitionduration"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"transition"</span><span class="p">:</span> <span class="s2">"&lt;slide/crossfade/dissolve&gt;"</span><span class="p">,</span>
+                    <span class="s2">"navarrows"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"navtype"</span><span class="p">:</span> <span class="s2">"&lt;slides/thumbs&gt;"</span><span class="p">,</span>
+                    <span class="s2">"navdir"</span><span class="p">:</span> <span class="s2">"&lt;horizontal/vertical&gt;"</span>
                 <span class="p">},</span>
-                <span class="s2">&quot;fullscreen&quot;</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;nav&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;false/thumbs/dots&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;loop&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;navdir&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;horizontal/vertical&gt;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;arrows&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;showCaption&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;transitionduration&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-                    <span class="s2">&quot;transition&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;slide/crossfade/dissolve&gt;&quot;</span>
+                <span class="s2">"fullscreen"</span><span class="err">:</span> <span class="p">{</span>
+                    <span class="s2">"nav"</span><span class="err">:</span> <span class="s2">"&lt;false/thumbs/dots&gt;"</span><span class="p">,</span>
+                    <span class="s2">"loop"</span><span class="err">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"navdir"</span><span class="err">:</span> <span class="s2">"&lt;horizontal/vertical&gt;"</span><span class="p">,</span>
+                    <span class="s2">"arrows"</span><span class="err">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"showCaption"</span><span class="err">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"transitionduration"</span><span class="err">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="s2">"transition"</span><span class="err">:</span> <span class="s2">"&lt;slide/crossfade/dissolve&gt;"</span>
                 <span class="p">},</span>
-                <span class="s2">&quot;breakpoints&quot;</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;&lt;breakpoint_name&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;conditions&quot;</span><span class="o">:</span> <span class="p">{</span>
-                            <span class="s2">&quot;max-width&quot;</span><span class="o">:</span> <span class="s2">&quot;767px&quot;</span>
+                <span class="s2">"breakpoints"</span><span class="err">:</span> <span class="p">{</span>
+                    <span class="s2">"&lt;breakpoint_name&gt;"</span><span class="err">:</span> <span class="p">{</span>
+                        <span class="s2">"conditions"</span><span class="err">:</span> <span class="p">{</span>
+                            <span class="s2">"max-width"</span><span class="err">:</span> <span class="s2">"767px"</span>
                         <span class="p">}</span>
-                        <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{}</span>
+                        <span class="s2">"options"</span><span class="err">:</span> <span class="p">{}</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span></code></pre></figure>
+<span class="o">&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
 
 <h2 id="gallery_options">Options</h2>
 
 <p>The following option groups are available for the gallery widget:</p>
 
 <ul>
-  <li><a href="#data"><code>data</code></a></li>
-  <li><a href="#options"><code>options</code></a></li>
-  <li><a href="#fullscreen"><code>fullscreen</code></a></li>
-  <li><a href="#breakpoints"><code>breakpoints</code></a></li>
+  <li><a href="#data"><code class="highlighter-rouge">data</code></a></li>
+  <li><a href="#options"><code class="highlighter-rouge">options</code></a></li>
+  <li><a href="#fullscreen"><code class="highlighter-rouge">fullscreen</code></a></li>
+  <li><a href="#breakpoints"><code class="highlighter-rouge">breakpoints</code></a></li>
 </ul>
 
 <p>All options for each group are described further.</p>
 
-<h3 id="data"><code>data</code></h3>
+<h3 id="data"><code class="highlighter-rouge">data</code></h3>
 
 <p>Array of images to display.</p>
 
-<p>Where <code>image</code> is an object with keys:</p>
+<p>Where <code class="highlighter-rouge">image</code> is an object with keys:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-    <span class="s2">&quot;thumb&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;img&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;full&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;caption&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;message&gt;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;isMain&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;true/false&gt;&quot;</span>
+    <span class="s2">"thumb"</span><span class="err">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
+    <span class="s2">"img"</span><span class="err">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
+    <span class="s2">"full"</span><span class="err">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
+    <span class="s2">"caption"</span><span class="err">:</span> <span class="s2">"&lt;message&gt;"</span><span class="p">,</span>
+    <span class="s2">"isMain"</span><span class="err">:</span> <span class="s2">"&lt;true/false&gt;"</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>The <code>thumb</code>, <code>img</code>, and <code>full</code> are full paths to proper image files.</p>
+<p>The <code class="highlighter-rouge">thumb</code>, <code class="highlighter-rouge">img</code>, and <code class="highlighter-rouge">full</code> are full paths to proper image files.</p>
 
-<h4 id="data_caption"><code>data/caption</code></h4>
+<h4 id="data_caption"><code class="highlighter-rouge">data/caption</code></h4>
 
-<p>Set the caption for a specific image in the <code>data</code> field.
-Example of the runtime initialization with the <code>caption</code> option specified:</p>
+<p>Set the caption for a specific image in the <code class="highlighter-rouge">data</code> field.
+Example of the runtime initialization with the <code class="highlighter-rouge">caption</code> option specified:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">galleryInstance</span><span class="p">({</span> 
-    <span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="nx">img</span><span class="o">:</span> <span class="s1">&#39;preview_number_one.jpg&#39;</span><span class="p">,</span>
-            <span class="nx">thumb</span><span class="o">:</span> <span class="s1">&#39;preview_number_one.jpg&#39;</span><span class="p">,</span>
-            <span class="nx">caption</span><span class="o">:</span> <span class="s1">&#39;T-Shirt Women side&#39;</span>
+            <span class="na">img</span><span class="p">:</span> <span class="s1">'preview_number_one.jpg'</span><span class="p">,</span>
+            <span class="na">thumb</span><span class="p">:</span> <span class="s1">'preview_number_one.jpg'</span><span class="p">,</span>
+            <span class="na">caption</span><span class="p">:</span> <span class="s1">'T-Shirt Women side'</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">});</span></code></pre></figure>
 
-<h3 id="options"><code>options</code></h3>
+<h3 id="options"><code class="highlighter-rouge">options</code></h3>
 <p>Set of options available for the Preview region.</p>
 
-<h4 id="gallery_allowfullscreen"><code>options/allowfullscreen</code></h4>
+<h4 id="gallery_allowfullscreen"><code class="highlighter-rouge">options/allowfullscreen</code></h4>
 <p>Show the button that toggles full screen view of the gallery.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="gallery_arrows"><code>options/arrows</code></h4>
+<h4 id="gallery_arrows"><code class="highlighter-rouge">options/arrows</code></h4>
 
 <p>Display navigation arrows on the thumbnails sides.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="gallery_height"><code>options/height</code></h4>
+<h4 id="gallery_height"><code class="highlighter-rouge">options/height</code></h4>
 
 <p>Height of the preview block in pixels or percent.</p>
 
@@ -910,31 +910,31 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <p><strong>Default value</strong>: null</p>
 
-<h4 id="gallery_keyboard"><code>options/keyboard</code></h4>
+<h4 id="gallery_keyboard"><code class="highlighter-rouge">options/keyboard</code></h4>
 
 <p>Switch on/off the keyboard navigation.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<h4 id="gallery_loop"><code>options/loop</code></h4>
+<h4 id="gallery_loop"><code class="highlighter-rouge">options/loop</code></h4>
 
 <p>Define whether images are displayed in a loop.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<h4 id="gallery_maxheight"><code>options/maxheight</code></h4>
+<h4 id="gallery_maxheight"><code class="highlighter-rouge">options/maxheight</code></h4>
 
 <p>Maximum height of the preview block in pixels or percent.</p>
 
 <p><strong>Type</strong>: Number, String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h4 id="gallery_maxwidth"><code>options/maxwidth</code></h4>
+<h4 id="gallery_maxwidth"><code class="highlighter-rouge">options/maxwidth</code></h4>
 
 <p>Maximum width of the preview block in pixels or percent.</p>
 
@@ -942,296 +942,296 @@ Example of the runtime initialization with the <code>caption</code> option speci
 
 <p><strong>Default value</strong>: 100%</p>
 
-<h4 id="gallery_minheight"><code>options/minheight</code></h4>
+<h4 id="gallery_minheight"><code class="highlighter-rouge">options/minheight</code></h4>
 
 <p>Minimal height of the preview block in pixels or percent.</p>
 
 <p><strong>Type</strong>: Number, String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h4 id="gallery_minwidth"><code>options/minwidth</code></h4>
+<h4 id="gallery_minwidth"><code class="highlighter-rouge">options/minwidth</code></h4>
 
 <p>Minimal width of the preview block in pixels or percent.</p>
 
 <p><strong>Type</strong>: Number, String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h4 id="gallery_nav"><code>options/nav</code></h4>
+<h4 id="gallery_nav"><code class="highlighter-rouge">options/nav</code></h4>
 
 <p>Variation of thumbnails in navigation.</p>
 
 <p><strong>Possible values</strong>:</p>
 
 <ul>
-  <li><code>dots</code>: iPhone-style dots</li>
-  <li><code>thumbs</code>: thumbnails</li>
-  <li><code>false</code>: nothing</li>
+  <li><code class="highlighter-rouge">dots</code>: iPhone-style dots</li>
+  <li><code class="highlighter-rouge">thumbs</code>: thumbnails</li>
+  <li><code class="highlighter-rouge">false</code>: nothing</li>
 </ul>
 
-<p><strong>Default</strong>: <code>dots</code></p>
+<p><strong>Default</strong>: <code class="highlighter-rouge">dots</code></p>
 
-<h4 id="gallery_navdir"><code>options/navdir</code></h4>
+<h4 id="gallery_navdir"><code class="highlighter-rouge">options/navdir</code></h4>
 
 <p>Sliding direction of thumbnails.</p>
 
 <p><strong>Possible values</strong>:</p>
 
 <ul>
-  <li><code>vertical</code></li>
-  <li><code>horizontal</code></li>
+  <li><code class="highlighter-rouge">vertical</code></li>
+  <li><code class="highlighter-rouge">horizontal</code></li>
 </ul>
 
-<h4 id="gallery_navarrows"><code>options/navarrows</code></h4>
+<h4 id="gallery_navarrows"><code class="highlighter-rouge">options/navarrows</code></h4>
 
 <p>Display navigation arrows for thumbnails.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="gallery_navtype"><code>options/navtype</code></h4>
+<h4 id="gallery_navtype"><code class="highlighter-rouge">options/navtype</code></h4>
 
 <p>Sliding type of thumbnails.</p>
 
 <p><strong>Possible values</strong>:</p>
 
 <ul>
-  <li><code>slides</code>: on the arrow button click the thumbs ribbon shifts over several thumbs</li>
-  <li><code>thumb</code>: on the arrow button click the thumbs ribbon shifts over one thumb</li>
+  <li><code class="highlighter-rouge">slides</code>: on the arrow button click the thumbs ribbon shifts over several thumbs</li>
+  <li><code class="highlighter-rouge">thumb</code>: on the arrow button click the thumbs ribbon shifts over one thumb</li>
 </ul>
 
-<h4 id="gallery_ratio"><code>options/ratio</code></h4>
+<h4 id="gallery_ratio"><code class="highlighter-rouge">options/ratio</code></h4>
 
 <p>Width divided by height. Recommended if you set width in percents.</p>
 
 <p><strong>Type</strong>: Number, String</p>
 
-<p><strong>Default value</strong>: calculated from <code>width</code> and <code>height</code>.</p>
+<p><strong>Default value</strong>: calculated from <code class="highlighter-rouge">width</code> and <code class="highlighter-rouge">height</code>.</p>
 
-<h4 id="gallery_showcaption"><code>options/showCaption</code></h4>
+<h4 id="gallery_showcaption"><code class="highlighter-rouge">options/showCaption</code></h4>
 
 <p>Enable view of caption in preview. Can be for initialized for specific image. Can work globally.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="gallery_startindex"><code>options/startindex</code></h4>
+<h4 id="gallery_startindex"><code class="highlighter-rouge">options/startindex</code></h4>
 
 <p>The index number of the image that is displayed once the gallery is initialized.</p>
 
 <p><strong>Type</strong>: Number</p>
 
-<p><strong>Default value</strong>: <code>0</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">0</code></p>
 
-<h4 id="gallery_swipe"><code>options/swipe</code></h4>
+<h4 id="gallery_swipe"><code class="highlighter-rouge">options/swipe</code></h4>
 
 <p>Moving between preview images by swiping in left and right.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>true</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
-<h4 id="gallery_thumbwidth"><code>options/thumbwidth</code></h4>
+<h4 id="gallery_thumbwidth"><code class="highlighter-rouge">options/thumbwidth</code></h4>
 
 <p>Width of thumbnails.</p>
 
 <p><strong>Type</strong>: Number, String</p>
 
-<h4 id="gallery_thumbwidth"><code>options/thumbheight</code></h4>
+<h4 id="gallery_thumbwidth"><code class="highlighter-rouge">options/thumbheight</code></h4>
 
 <p>Height of thumbnails.</p>
 
 <p><strong>Type</strong>: Number, String</p>
 
-<h4 id="gallery_transitioneffect"><code>options/transition</code></h4>
+<h4 id="gallery_transitioneffect"><code class="highlighter-rouge">options/transition</code></h4>
 
 <p>Sets the transition effect for slides changing.</p>
 
 <p><strong>Possible values</strong>:</p>
 
 <ul>
-  <li><code>slide</code></li>
-  <li><code>crossfade</code></li>
-  <li><code>dissolve</code></li>
+  <li><code class="highlighter-rouge">slide</code></li>
+  <li><code class="highlighter-rouge">crossfade</code></li>
+  <li><code class="highlighter-rouge">dissolve</code></li>
 </ul>
 
-<h4 id="gallery_transitionduration"><code>options/transitionduration</code></h4>
+<h4 id="gallery_transitionduration"><code class="highlighter-rouge">options/transitionduration</code></h4>
 <p>Sets transition duration in milliseconds.</p>
 
 <p><strong>Type</strong>: Number</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="gallery_width"><code>options/width</code></h4>
+<h4 id="gallery_width"><code class="highlighter-rouge">options/width</code></h4>
 
 <p>Width of the preview in gallery in pixels or percents.</p>
 
 <p><strong>Type</strong>: Number, String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h3 id="fullscreen"><code>fullscreen</code></h3>
+<h3 id="fullscreen"><code class="highlighter-rouge">fullscreen</code></h3>
 
 <p>Set of options available for the fullscreen view.</p>
 
-<h4 id="full_arrows"><code>fullscreen/arrows</code></h4>
+<h4 id="full_arrows"><code class="highlighter-rouge">fullscreen/arrows</code></h4>
 
 <p>Display navigation arrows on the sides of previews in the fullscreen view.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="full_caption"><code>fullscreen/caption</code></h4>
+<h4 id="full_caption"><code class="highlighter-rouge">fullscreen/caption</code></h4>
 <p>Display <span term-uuid="9122e7d4-7db9-48b2-ad27-1af26bad1215" class="glossary-term" data-toggle="popover">alt text</span> as image title in the fullscreen view.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="fullscreen_keyboard"><code>fullscreen/keyboard</code></h4>
+<h4 id="fullscreen_keyboard"><code class="highlighter-rouge">fullscreen/keyboard</code></h4>
 
 <p>Switch on/off the keyboard navigation in the fullscreen mode.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="full_loop"><code>fullscreen/loop</code></h4>
+<h4 id="full_loop"><code class="highlighter-rouge">fullscreen/loop</code></h4>
 
 <p>Define whether images are displayed in a loop.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<h4 id="full_nav"><code>fullscreen/nav</code></h4>
+<h4 id="full_nav"><code class="highlighter-rouge">fullscreen/nav</code></h4>
 
 <p>Variation of thumbnails in navigation in the fullscreen view.</p>
 
 <p><strong>Possible values</strong>:</p>
 
 <ul>
-  <li><code>dots</code>: iPhone-style dots</li>
-  <li><code>thumbs</code>: thumbnails</li>
-  <li><code>false</code>: nothing</li>
+  <li><code class="highlighter-rouge">dots</code>: iPhone-style dots</li>
+  <li><code class="highlighter-rouge">thumbs</code>: thumbnails</li>
+  <li><code class="highlighter-rouge">false</code>: nothing</li>
 </ul>
 
-<h4 id="full_navdir"><code>fullscreen/navdir</code></h4>
+<h4 id="full_navdir"><code class="highlighter-rouge">fullscreen/navdir</code></h4>
 
 <p>Sliding direction of thumbnails in the fullscreen view.</p>
 
 <p><strong>Possible values</strong>:</p>
 
 <ul>
-  <li><code>vertical</code></li>
-  <li><code>horizontal</code></li>
+  <li><code class="highlighter-rouge">vertical</code></li>
+  <li><code class="highlighter-rouge">horizontal</code></li>
 </ul>
 
-<h4 id="full_carousel"><code>fullscreen/navigation_carousel</code></h4>
+<h4 id="full_carousel"><code class="highlighter-rouge">fullscreen/navigation_carousel</code></h4>
 
 <p>Display navigation thumbnails as carousel in the fullscreen view.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="full_showcaption"><code>fullscreen/showCaption</code></h4>
+<h4 id="full_showcaption"><code class="highlighter-rouge">fullscreen/showCaption</code></h4>
 
 <p>Enable view of caption in the fullscreen mode. Can be for initialized for specific image. Can work globally.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h4 id="full_thumbwidth"><code>fullscreen/thumbwidth</code></h4>
+<h4 id="full_thumbwidth"><code class="highlighter-rouge">fullscreen/thumbwidth</code></h4>
 
 <p>Width of thumbnails in the fullscreen view.</p>
 
 <p><strong>Type</strong>: Number, String</p>
 
-<h4 id="full_thumbheight"><code>fullscreen/thumbheight</code></h4>
+<h4 id="full_thumbheight"><code class="highlighter-rouge">fullscreen/thumbheight</code></h4>
 
 <p>Height of thumbnails in the fullscreen view.</p>
 
 <p><strong>Type</strong>: Number, String</p>
 
-<h4 id="fullscreen_transitioneffect"><code>fullscreen/transition</code></h4>
+<h4 id="fullscreen_transitioneffect"><code class="highlighter-rouge">fullscreen/transition</code></h4>
 
 <p>Sets the transition effect for slides changing in the fullscreen view.</p>
 
 <p><strong>Possible values</strong>:</p>
 
 <ul>
-  <li><code>slide</code></li>
-  <li><code>crossfade</code></li>
-  <li><code>dissolve</code></li>
+  <li><code class="highlighter-rouge">slide</code></li>
+  <li><code class="highlighter-rouge">crossfade</code></li>
+  <li><code class="highlighter-rouge">dissolve</code></li>
 </ul>
 
-<h4 id="fullscreen_transitionduration"><code>fullscreen/transitionduration</code></h4>
+<h4 id="fullscreen_transitionduration"><code class="highlighter-rouge">fullscreen/transitionduration</code></h4>
 <p>Sets transition duration in milliseconds in the fullscreen view.</p>
 
 <p><strong>Type</strong>: Number</p>
 
-<h3 id="breakpoints"><code>breakpoints</code></h3>
+<h3 id="breakpoints"><code class="highlighter-rouge">breakpoints</code></h3>
 <p>Set of options that could be dynamically set while page is resizing.</p>
 
 <p>Set as follows:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">&quot;breakpoints&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;%breakpoint_name%&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;conditions&quot;</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"breakpoints"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"%breakpoint_name%"</span><span class="err">:</span> <span class="p">{</span>
+        <span class="s2">"conditions"</span><span class="err">:</span> <span class="p">{</span>
             <span class="p">...</span>
         <span class="p">}</span>
-        <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{...}</span>
+        <span class="s2">"options"</span><span class="err">:</span> <span class="p">{...}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>Where the options are as follows:</p>
 
 <ul>
-  <li><code>conditions</code>: compiled in <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media query</a> through and operand. For example: <code>"max-width": "767px"</code></li>
-  <li><code>options</code> - object of options that are applied</li>
+  <li><code class="highlighter-rouge">conditions</code>: compiled in <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media query</a> through and operand. For example: <code class="highlighter-rouge">"max-width": "767px"</code></li>
+  <li><code class="highlighter-rouge">options</code> - object of options that are applied</li>
 </ul>
 
-<h2 id="configure-gallery-options-in-viewxml">Configure gallery options in <code>view.xml</code></h2>
+<h2 id="configure-gallery-options-in-viewxml">Configure gallery options in <code class="highlighter-rouge">view.xml</code></h2>
 
-<p>Gallery and magnifier options can be set in the <code>view.xml</code> configuration file of a theme. The file is conventionally located in <code>&lt;theme_dir&gt;/etc</code>.</p>
+<p>Gallery and magnifier options can be set in the <code class="highlighter-rouge">view.xml</code> configuration file of a theme. The file is conventionally located in <code class="highlighter-rouge">&lt;theme_dir&gt;/etc</code>.</p>
 
 <p>The general gallery options are set as follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;gallery&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%option1%&quot;</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%option2%&quot;</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"gallery"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
 ...
 <span class="nt">&lt;/var&gt;</span></code></pre></figure>
 
 <p>The fullscreen and breakpoints options are set in a similar way:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;fullscreen&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%fullscreen_option1%&quot;</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%fullscreen_option2%&quot;</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"fullscreen"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
 ...
 <span class="nt">&lt;/var&gt;</span>
-<span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;breakpoints&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%breakpoints_option1%&quot;</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;%breakpoints_option2%&quot;</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
+<span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"breakpoints"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
 ...
 <span class="nt">&lt;/var&gt;</span></code></pre></figure>
 
-<p>For illustration of setting gallery option in <code>view.xml</code>, you can reference to the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml#L184">view.xml of the Blank theme</a>.</p>
+<p>For illustration of setting gallery option in <code class="highlighter-rouge">view.xml</code>, you can reference to the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml#L184">view.xml of the Blank theme</a>.</p>
 
 <h2 id="gallery_api">Gallery API</h2>
 
-<p>Gallery methods are placed in data storage of the <code>gallery</code> object. To initialize the API, on the gallery object, call the <code>data</code> method with <code>gallery</code> as argument. The illustration follows:</p>
+<p>Gallery methods are placed in data storage of the <code class="highlighter-rouge">gallery</code> object. To initialize the API, on the gallery object, call the <code class="highlighter-rouge">data</code> method with <code class="highlighter-rouge">gallery</code> as argument. The illustration follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">var api = $(element).data(&#39;gallery&#39;);</span>
-<span class="x"> </span>
-<span class="x">//or</span>
-<span class="x"> </span>
-<span class="x">var api = $(&#39;[data-gallery-role=&quot;gallery&quot;]&#39;).data(&#39;gallery&#39;);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">var api = $(element).data('gallery');
+ 
+//or
+ 
+var api = $('[data-gallery-role="gallery"]').data('gallery');</code></pre></figure>
 
 <p>This method returns JS object that contains <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> functions.</p>
 
-<p>To ensure that the gallery is fully formed, wrap your code with <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> handler function and add it to the <code>gallery:loaded</code> event:</p>
+<p>To ensure that the gallery is fully formed, wrap your code with <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> handler function and add it to the <code class="highlighter-rouge">gallery:loaded</code> event:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">    $(element).on(&#39;gallery:loaded&#39;, function () {</span>
-<span class="x">        var api = $(element).data(&#39;gallery&#39;);</span>
-<span class="x">        /* api methods calls */</span>
-<span class="x">    });</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    $(element).on('gallery:loaded', function () {
+        var api = $(element).data('gallery');
+        /* api methods calls */
+    });</code></pre></figure>
 
 <p>Then to call a method, use the following notation:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">    api.%method_name%();</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    api.%method_name%();</code></pre></figure>
 
 <p>All available methods are listed in the following paragraph.</p>
 
@@ -1247,15 +1247,15 @@ Example of the runtime initialization with the <code>caption</code> option speci
   <li><a href="#gallery_updateData">updateOptions</a></li>
 </ul>
 
-<h4 id="gallery_first"><code>first()</code></h4>
+<h4 id="gallery_first"><code class="highlighter-rouge">first()</code></h4>
 
 <p>Displays the first preview image.</p>
 
-<h4 id="gallery_last"><code>last()</code></h4>
+<h4 id="gallery_last"><code class="highlighter-rouge">last()</code></h4>
 
 <p>Displays the last preview image.</p>
 
-<h4 id="gallery_next"><code>next()</code></h4>
+<h4 id="gallery_next"><code class="highlighter-rouge">next()</code></h4>
 
 <p>Image ID is passed as an argument. Displays the next preview image.</p>
 
@@ -1266,7 +1266,7 @@ Example of the runtime initialization with the <code>caption</code> option speci
   <li>if loop is disabled, does not change the displayed image.</li>
 </ul>
 
-<h4 id="gallery_prev"><code>prev()</code></h4>
+<h4 id="gallery_prev"><code class="highlighter-rouge">prev()</code></h4>
 
 <p>Displays the previous preview image.</p>
 
@@ -1277,41 +1277,41 @@ Example of the runtime initialization with the <code>caption</code> option speci
   <li>if loop is disabled, does not change the displayed image.</li>
 </ul>
 
-<h4 id="gallery_seek"><code>seek()</code></h4>
+<h4 id="gallery_seek"><code class="highlighter-rouge">seek()</code></h4>
 
-<p>Displays the image with the specified <code>index</code>.</p>
+<p>Displays the image with the specified <code class="highlighter-rouge">index</code>.</p>
 
 <p>Doesn’t update preview if the argument is not valid.</p>
 
 <p>Behavior:</p>
 
 <ul>
-  <li><code>seek(0)</code> does not display any preview</li>
-  <li><code>seek(1)</code> displays the first image.</li>
-  <li><code>seek(-1)</code> displays the last image.</li>
+  <li><code class="highlighter-rouge">seek(0)</code> does not display any preview</li>
+  <li><code class="highlighter-rouge">seek(1)</code> displays the first image.</li>
+  <li><code class="highlighter-rouge">seek(-1)</code> displays the last image.</li>
   <li>If the argument is a number bigger than the number of items, or less than “-(number of items)” the gallery shows the modulus of the following division: total images number divided by the argument number.</li>
 </ul>
 
-<h4 id="gallery_updateData"><code>updateData()</code></h4>
+<h4 id="gallery_updateData"><code class="highlighter-rouge">updateData()</code></h4>
 
 <p>Add new items to the gallery.</p>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.updateData([{</span>
-<span class="x">    img: &#39;image1.jpg&#39;,</span>
-<span class="x">    thumb: &#39;thumb1.jpg&#39;,</span>
-<span class="x">    caption: &#39;caption&#39;</span>
-<span class="x">}]);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">api.updateData([{
+    img: 'image1.jpg',
+    thumb: 'thumb1.jpg',
+    caption: 'caption'
+}]);</code></pre></figure>
 
-<h4 id="gallery_updateOptions"><code>updateOptions()</code></h4>
+<h4 id="gallery_updateOptions"><code class="highlighter-rouge">updateOptions()</code></h4>
 <p>Updates options of active breakpoint or default gallery options, if there is no active breakpoint.</p>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">api.updateOptions([{</span>
-<span class="x">    nav: &#39;dots&#39;</span>
-<span class="x">}]);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">api.updateOptions([{
+    nav: 'dots'
+}]);</code></pre></figure>
 
 
 		</div>

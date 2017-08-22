@@ -1004,12 +1004,12 @@
 
 <!--- 65324 -->
 <ul>
-  <li>Magento no longer locks the <code>category_product_entity</code> table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the <code>category_product_entity</code> table.</li>
+  <li>Magento no longer locks the <code class="highlighter-rouge">category_product_entity</code> table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the <code class="highlighter-rouge">category_product_entity</code> table.</li>
 </ul>
 
 <!--- 65251 -->
 <ul>
-  <li>The <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained <code>store_id</code>,  and during save operations, Magento resized images for images the default store only.</li>
+  <li>The <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained <code class="highlighter-rouge">store_id</code>,  and during save operations, Magento resized images for images the default store only.</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1018,7 +1018,7 @@
   <p><strong>Workaround</strong>: To correct problems with image loading, choose one of these two workarounds:</p>
 
   <ul>
-    <li>Run <code>php bin/magento catalog:images:resize</code></li>
+    <li>Run <code class="highlighter-rouge">php bin/magento catalog:images:resize</code></li>
   </ul>
 
   <p>or</p>
@@ -1030,19 +1030,19 @@
 
 <!--- 66366 -->
 <ul>
-  <li>The <code>\Magento\CatalogInventory\Model\Stock\Status\getStockId()</code> method now returns the correct values.</li>
+  <li>The <code class="highlighter-rouge">\Magento\CatalogInventory\Model\Stock\Status\getStockId()</code> method now returns the correct values.</li>
 </ul>
 
 <!--- 66366 -->
 <ul>
-  <li>The <code>\Magento\CatalogInventory\Model\Stock\Status\getStockId()</code> method now returns the correct values.</li>
+  <li>The <code class="highlighter-rouge">\Magento\CatalogInventory\Model\Stock\Status\getStockId()</code> method now returns the correct values.</li>
 </ul>
 
 <h3 id="configurable-products">Configurable products</h3>
 
 <!--- 65339 -->
 <ul>
-  <li>The check that Magento runs to confirm a configurable product’s readiness for sale is now faster.  (The <code>isSalable</code> method checks that a <span term-uuid="2fd4d100-28d2-45ca-bec1-128444ea98e6" class="glossary-term" data-toggle="popover">configurable product</span> can be sold (that is, is in a saleable state)).</li>
+  <li>The check that Magento runs to confirm a configurable product’s readiness for sale is now faster.  (The <code class="highlighter-rouge">isSalable</code> method checks that a <span term-uuid="2fd4d100-28d2-45ca-bec1-128444ea98e6" class="glossary-term" data-toggle="popover">configurable product</span> can be sold (that is, is in a saleable state)).</li>
 </ul>
 
 <!--- 65246 -->
@@ -1073,7 +1073,7 @@
 
 <!--- 65483 -->
 <ul>
-  <li>Magento no longer performs unnecessary file check operations (for example, <code>file_exists</code>, <code>is_file</code>), which improves the performance of the category and product pages.</li>
+  <li>Magento no longer performs unnecessary file check operations (for example, <code class="highlighter-rouge">file_exists</code>, <code class="highlighter-rouge">is_file</code>), which improves the performance of the category and product pages.</li>
 </ul>
 
 <!--- 65480 -->
@@ -1141,17 +1141,19 @@
 
   <h3 id="install-rc-composer" class="no_toc">Get the Magento CE software using Composer</h3>
 
-  <p>The CE software is available from <code>repo.magento.com</code>. Before getting the CE software, familiarize yourself with the Composer metapackage  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+  <p>The CE software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before getting the CE software, familiarize yourself with the Composer metapackage  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
 
-  <p>For example, to install Magento CE 2.1.1 in the <code>magento2</code> directory:</p>
+  <p>For example, to install Magento CE 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 </code></pre>
+  </div>
 
   <h3 id="install-archive" class="no_toc">Get a compressed archive</h3>
 
@@ -1166,7 +1168,7 @@
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
     <p>To get the Magento CE software archive:</p>
 
@@ -1176,11 +1178,11 @@
         <p>Choose either the software or the software and sample data:</p>
 
         <ul>
-          <li><code>Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
 
-        <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
+        <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
       </li>
     </ol>
 

@@ -970,7 +970,7 @@
 
 <h2 id="product-version-numbers-merchant-focus">Product version numbers (merchant focus)</h2>
 
-<p>All merchant projects depend on the CE <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>. (A <i>metapackage</i> consists of a <code>.zip</code> file that contains more than one <span term-uuid="b57038ca-7906-4fce-a00f-d614b81d5301" class="glossary-term" data-toggle="popover">Composer package</span>.) Projects can specify a dependency on a specific version number (such as 2.0.1) or use a pattern to pick up patches automatically (such as 2.0.*)</p>
+<p>All merchant projects depend on the CE <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>. (A <i>metapackage</i> consists of a <code class="highlighter-rouge">.zip</code> file that contains more than one <span term-uuid="b57038ca-7906-4fce-a00f-d614b81d5301" class="glossary-term" data-toggle="popover">Composer package</span>.) Projects can specify a dependency on a specific version number (such as 2.0.1) or use a pattern to pick up patches automatically (such as 2.0.*)</p>
 
 <p>Products are currently restricted to Magento Community Edition (CE) and Magento Enterprise Edition (EE). The version numbers of editions are designed for use in discussions with merchants. That is, major and minor increments to the version number will reflect the significance of changes to merchants. This may or may not reflect equally significant changes to developers.</p>
 
@@ -992,9 +992,9 @@
 
 <p>For information on the types of schema changes that affect a module’s schema version number, see section 2 of Introducing SchemaVer for semantic versioning of schemas.</p>
 
-<p>If you are developing an extension, specify the schema version of each module in its <code>module.xml</code> file. Magento stores this schema version of each module within the read-only <code>setup_module</code> table of the Magento database.</p>
+<p>If you are developing an extension, specify the schema version of each module in its <code class="highlighter-rouge">module.xml</code> file. Magento stores this schema version of each module within the read-only <code class="highlighter-rouge">setup_module</code> table of the Magento database.</p>
 
-<p>If you are installing or upgrading Magento from the command line, you have the option to upgrade in stages: first upgrade only schemas of tables and then upgrade data. During the upgrade process, Magento tracks these version changes in the setup_module table by automatically updating from the version value in <code>etc/module.xml</code> file.</p>
+<p>If you are installing or upgrading Magento from the command line, you have the option to upgrade in stages: first upgrade only schemas of tables and then upgrade data. During the upgrade process, Magento tracks these version changes in the setup_module table by automatically updating from the version value in <code class="highlighter-rouge">etc/module.xml</code> file.</p>
 
 <h2 id="composer-package-version-numbers">Composer package version numbers</h2>
 

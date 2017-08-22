@@ -811,7 +811,7 @@
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">Source fields are not mapped. Document: <span class="nt">&lt;EXTENSION_TABLE&gt;</span>. Fields: <span class="nt">&lt;EXTENSION_FIELD&gt;</span></code></pre></figure>
 
-<p>In rare cases, the message might mention <code>Destination documents</code> or <code>Destination fields</code> instead of source ones.</p>
+<p>In rare cases, the message might mention <code class="highlighter-rouge">Destination documents</code> or <code class="highlighter-rouge">Destination fields</code> instead of source ones.</p>
 
 <h4 id="explanation">Explanation</h4>
 
@@ -832,7 +832,7 @@
   </li>
 </ul>
 
-<p>To ignore database entities, add the <code>&lt;ignore&gt;</code> tag to an entity in the <code>map.xml</code> file, like this:</p>
+<p>To ignore database entities, add the <code class="highlighter-rouge">&lt;ignore&gt;</code> tag to an entity in the <code class="highlighter-rouge">map.xml</code> file, like this:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ignore&gt;</span>
    <span class="nt">&lt;field&gt;</span>sales_order_address_id<span class="nt">&lt;/field&gt;</span>
@@ -860,10 +860,10 @@
   <li>
     <p>Ignore the attribute that causes the issue</p>
 
-    <p>For this, add the attribute to the <code>ignore</code> group in the <code>eav-attribute-groups.xml.dist</code> file.</p>
+    <p>For this, add the attribute to the <code class="highlighter-rouge">ignore</code> group in the <code class="highlighter-rouge">eav-attribute-groups.xml.dist</code> file.</p>
   </li>
   <li>
-    <p>Add class mapping using the <code>class-map.xml.dist</code> file</p>
+    <p>Add class mapping using the <code class="highlighter-rouge">class-map.xml.dist</code> file</p>
   </li>
 </ul>
 
@@ -877,13 +877,13 @@ Orphan records id: <span class="nt">&lt;id_1&gt;</span>, <span class="nt">&lt;id
 
 <h4 id="explanation-2">Explanation</h4>
 
-<p>There are missing database records in the <code>parent_table</code> to which the <code>field_id</code> of the <code>child_table</code> is pointing to.</p>
+<p>There are missing database records in the <code class="highlighter-rouge">parent_table</code> to which the <code class="highlighter-rouge">field_id</code> of the <code class="highlighter-rouge">child_table</code> is pointing to.</p>
 
 <h4 id="possible-solution">Possible solution</h4>
 
-<p>Delete the records from the <code>child_table</code>, if you do not need them.</p>
+<p>Delete the records from the <code class="highlighter-rouge">child_table</code>, if you do not need them.</p>
 
-<p>To keep the records, disable the <code>Data Integrity Step</code> by modifying the Data Migration Tool’s <code>config.xml</code>.</p>
+<p>To keep the records, disable the <code class="highlighter-rouge">Data Integrity Step</code> by modifying the Data Migration Tool’s <code class="highlighter-rouge">config.xml</code>.</p>
 
 <h3 id="duplicates-in-url-rewrites">Duplicates in URL rewrites</h3>
 
@@ -893,11 +893,11 @@ Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12</co
 
 <h4 id="explanation-3">Explanation</h4>
 
-<p>The <code>Target path</code> in a URL rewrite must be specified by a unique pair of <code>Request path</code> + <code>Store ID</code>. This error reports two entries that use the same <code>Request path</code> + <code>Store ID</code> pair with two different <code>Target path</code> values.</p>
+<p>The <code class="highlighter-rouge">Target path</code> in a URL rewrite must be specified by a unique pair of <code class="highlighter-rouge">Request path</code> + <code class="highlighter-rouge">Store ID</code>. This error reports two entries that use the same <code class="highlighter-rouge">Request path</code> + <code class="highlighter-rouge">Store ID</code> pair with two different <code class="highlighter-rouge">Target path</code> values.</p>
 
 <h4 id="possible-solution-1">Possible solution</h4>
 
-<p>Enable the <code>auto_resolve_urlrewrite_duplicates</code> option in your <code>config.xml</code> file.</p>
+<p>Enable the <code class="highlighter-rouge">auto_resolve_urlrewrite_duplicates</code> option in your <code class="highlighter-rouge">config.xml</code> file.</p>
 
 <p>This configuration adds a hash-string to the conflicting records of <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> rewrites, and shows the resolution result in your command line interface.</p>
 
@@ -913,7 +913,7 @@ Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12</co
 
 <h4 id="solution">Solution</h4>
 
-<p>Run the Data Migration Tool in <code>Delta</code> mode to transfer incremental changes.</p>
+<p>Run the Data Migration Tool in <code class="highlighter-rouge">Delta</code> mode to transfer incremental changes.</p>
 
 		</div>
 		<!-- /.content-wrap -->

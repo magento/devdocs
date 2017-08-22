@@ -1587,17 +1587,18 @@
 
 <ul>
   <li>
-    <p>The <code>Magento_Developer</code> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must be enabled. You can enable it as follows:</p>
+    <p>The <code class="highlighter-rouge">Magento_Developer</code> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must be enabled. You can enable it as follows:</p>
 
-    <pre><code>magento module:enable [--force] Magento_Developer
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento module:enable [--force] Magento_Developer
 </code></pre>
+    </div>
 
-    <p>Use the <code>--force</code> option only if it’s necessary.</p>
+    <p>Use the <code class="highlighter-rouge">--force</code> option only if it’s necessary.</p>
   </li>
   <li>
     <p>Your system must be set up to run the desired tests.</p>
 
-    <p>For example, to run integration tests, you should copy <code>dev/tests/integration/etc/install-config-mysql.php.dist</code> to <code>dev/tests/integration/etc/install-config-mysql.php</code> and modify it to suit your environment.</p>
+    <p>For example, to run integration tests, you should copy <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php.dist</code> to <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php</code> and modify it to suit your environment.</p>
   </li>
 </ul>
 
@@ -1610,23 +1611,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1643,23 +1647,27 @@
   <h2 id="config-cli-subcommands-tests-run">Running tests</h2>
   <p>Command usage:</p>
 
-  <pre><code>magento dev:tests:run &lt;test&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:tests:run &lt;test&gt;
 </code></pre>
+  </div>
 
   <p>To list the available test types, enter</p>
 
-  <pre><code>magento dev:tests:run --help
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:tests:run --help
 </code></pre>
+  </div>
 
   <p>This gives you a list similar to the following:</p>
 
-  <pre><code>all, unit, integration, integration-all, static, static-all, integrity, legacy, default
+  <div class="highlighter-rouge"><pre class="highlight"><code>all, unit, integration, integration-all, static, static-all, integrity, legacy, default
 </code></pre>
+  </div>
 
   <p>For example, to run integration tests, enter</p>
 
-  <pre><code>magento dev:tests:run integration
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:tests:run integration
 </code></pre>
+  </div>
 
   <h4 id="related-topics">Related topics</h4>
 

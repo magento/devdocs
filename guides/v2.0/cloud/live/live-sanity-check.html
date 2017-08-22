@@ -1506,7 +1506,7 @@
 </div>
 
 <h2 id="composer">Update composer if you add extensions</h2>
-<p>If you modified your <a href="/guides/v2.0/cloud/cloud-composer.html">composer.json</a> to add modules, we recommend running the <code>composer update</code> command in a terminal. This command updates any dependencies in the <code>composer.lock</code>. During the build phase, we run <code>composer install</code> on a fresh clone of your Git branch of code to retrieve the latest dependencies.</p>
+<p>If you modified your <a href="/guides/v2.0/cloud/cloud-composer.html">composer.json</a> to add modules, we recommend running the <code class="highlighter-rouge">composer update</code> command in a terminal. This command updates any dependencies in the <code class="highlighter-rouge">composer.lock</code>. During the build phase, we run <code class="highlighter-rouge">composer install</code> on a fresh clone of your Git branch of code to retrieve the latest dependencies.</p>
 
 <h2 id="push">Push code to Git and Cloud</h2>
 <p>Before you continue, make sure you push all current code to the remote Cloud server so that, in <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> of issues, you can recover the state of the Magento application.</p>
@@ -1521,27 +1521,31 @@
     <li>
       <p>Enter the following command in a terminal to log in to your project:</p>
 
-      <pre><code>magento-cloud login
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+      </div>
     </li>
     <li>
       <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-      <pre><code>magento-cloud project:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+      </div>
     </li>
-    <li>Change to a project directory. For example, <code>cd /var/www/html/magento2</code></li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
     <li>
       <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-      <pre><code>magento-cloud environment:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
   		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
@@ -1550,28 +1554,32 @@
     <li>
       <p>Fetch origin branches to get the latest code:</p>
 
-      <pre><code>git fetch origin
+      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
+      </div>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
     </li>
     <li>
       <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Create a <a href="/guides/v2.0/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1582,9 +1590,10 @@
     <li>
       <p>Enter the following commands to complete code commits in a terminal:</p>
 
-      <pre><code>git add -A &amp;&amp; git commit -m "&lt;comment&gt;"
+      <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "&lt;comment&gt;"
 git push origin &lt;branch name&gt;
 </code></pre>
+      </div>
     </li>
     <li>The build and deploy phases begin. Wait for the deployment to complete.</li>
   </ol>
@@ -1601,7 +1610,7 @@ git push origin &lt;branch name&gt;
 
   <p>The build also checks for a <a href="/guides/v2.0/cloud/live/sens-data-over.html">configuration file</a>. If the file exists, the static file deployment is also completed during the build stage. If not, it’s completed in the deployment stage.</p>
 
-  <p>Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the <code>&lt;Magento root dir&gt;/m2-hotfixes</code> directory.</p>
+  <p>Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the <code class="highlighter-rouge">&lt;Magento root dir&gt;/m2-hotfixes</code> directory.</p>
 
   <p>To build your site:</p>
 
@@ -1611,12 +1620,13 @@ git push origin &lt;branch name&gt;
 
       <p>Enter the following command from the project root directory:</p>
 
-      <pre><code>php vendor/magento/magento-cloud-configuration/patch.php
+      <div class="highlighter-rouge"><pre class="highlight"><code>php vendor/magento/magento-cloud-configuration/patch.php
 </code></pre>
+      </div>
 
       <p>Output includes the following:</p>
 
-      <pre><code>[2016-11-30 15:05:15] Copying static.php to front-static.php
+      <div class="highlighter-rouge"><pre class="highlight"><code>[2016-11-30 15:05:15] Copying static.php to front-static.php
 [2016-11-30 15:05:15] Command:git apply /var/www/html/magento2/vendor/magento/magento-cloud-configuration/patches/000-MAGETWO-57719-2.1.2.patch
 [2016-11-30 15:05:15] Status:0
 [2016-11-30 15:05:15] Output:array (
@@ -1629,39 +1639,44 @@ git push origin &lt;branch name&gt;
 ... more ...
                     )
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Apply hot fixes and other patches provided to you:</p>
 
-      <pre><code>git apply &lt;path to patch&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git apply &lt;path to patch&gt;
 </code></pre>
+      </div>
 
       <p>For example, to apply hot fixes:</p>
 
-      <pre><code>git apply m2-hotfixes/&lt;patch file name&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git apply m2-hotfixes/&lt;patch file name&gt;
 </code></pre>
+      </div>
 
-      <p>If the <code>m2-hotfixes</code> directory is empty, skip this step.</p>
+      <p>If the <code class="highlighter-rouge">m2-hotfixes</code> directory is empty, skip this step.</p>
 
       <p>If patches are present, output from this command is similar to the patches command.</p>
     </li>
     <li>
       <p>Enable all modules:</p>
 
-      <pre><code>php bin/magento module:enable --all
+      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento module:enable --all
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Compile code and the dependency injection configuration:</p>
 
-      <pre><code>php bin/magento  setup:di:compile
+      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento  setup:di:compile
 </code></pre>
+      </div>
 
       <p>This command can take several minutes to complete.</p>
 
       <p>Messages similar to the following are displayed:</p>
 
-      <pre><code>Compilation was started.
+      <div class="highlighter-rouge"><pre class="highlight"><code>Compilation was started.
 0% 1 sec 54.0 MiB%message% 0/7 [&gt;---------------------------]
 0% 1 sec 54.0 MiBProxies code generation...
 0/7 [&gt;---------------------------]
@@ -1673,6 +1688,7 @@ Repositories code generation... 2/7 [========&gt;-------------------]  28% 30 se
 ... more ...
 Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1687,7 +1703,7 @@ Interception cache generation... 7/7 [============================] 100% 5 mins 
     <li>Install the Magento application if needed</li>
     <li>If the Magento application is installed, upgrade components</li>
     <li>Clear the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span></li>
-    <li>Set the Magento application for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production"><code>production</code></a> mode</li>
+    <li>Set the Magento application for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production"><code class="highlighter-rouge">production</code></a> mode</li>
   </ul>
 
   <p>To deploy your site:</p>
@@ -1698,22 +1714,25 @@ Interception cache generation... 7/7 [============================] 100% 5 mins 
     <li>
       <p>Enter the following command:</p>
 
-      <pre><code>php bin/magento setup:upgrade
+      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:upgrade
 </code></pre>
+      </div>
 
-      <p>We highly recommend having Magento already installed if you followed the <a href="/guides/v2.0/cloud/access-acct/first-time-deploy.html">First time deployment</a>. If you haven’t installed the Magento application yet, use the <a href="/guides/v2.0/install-gde/install/cli/install-cli.html"><code>magento setup:install</code></a> command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.</p>
+      <p>We highly recommend having Magento already installed if you followed the <a href="/guides/v2.0/cloud/access-acct/first-time-deploy.html">First time deployment</a>. If you haven’t installed the Magento application yet, use the <a href="/guides/v2.0/install-gde/install/cli/install-cli.html"><code class="highlighter-rouge">magento setup:install</code></a> command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.</p>
     </li>
     <li>
       <p>Clean the Magento cache:</p>
 
-      <pre><code>php bin/magento cache:clean
+      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cache:clean
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Set the Magento application for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>:</p>
 
-      <pre><code>php bin/magento deploy:mode:set production
+      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento deploy:mode:set production
 </code></pre>
+      </div>
     </li>
   </ol>
 

@@ -697,35 +697,35 @@ like this:</p>
     <tr>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Config</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class Config
+{
+    private $data;
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">init</span><span class="p">()</span> <span class="c1">// or load()</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;cache.xml&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
+    public function init() // or load()
+    {
+        $this-&gt;data = $this-&gt;fileReader-&gt;load('cache.xml');
+    }
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    public function getValue($key)
+    {
+        return $this-&gt;data[$key];
+    }
+}</code></pre></figure>
 
         </td>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Config</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class Config
+{
+    private $data;
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">===</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;cache.xml&#39;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    public function getValue($key)
+    {
+        if ($this-&gt;data === null) {
+            $this-&gt;data = $this-&gt;fileReader-&gt;load('cache.xml');
+        }
+    }
+}</code></pre></figure>
 
         </td>
     </tr>
@@ -737,29 +737,29 @@ like this:</p>
 
 <p>2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.</p>
 
-<div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Composite</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var RendererInterface[]</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="nv">$renderers</span><span class="p">;</span>
+<div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">class Composite
+{
+    /**
+     * @var RendererInterface[]
+     */
+    private $renderers;
 
-    <span class="sd">/**</span>
-<span class="sd">     * @param RendererInterface[] $renderers</span>
-<span class="sd">     * @throws InvalidArgumentException</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$renderers</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$renderers</span> <span class="k">as</span> <span class="nv">$renderer</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$renderer</span> <span class="nx">instanceof</span> <span class="nx">RendererInterface</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">throw</span> <span class="k">new</span> <span class="nx">InvalidArgumentException</span><span class="p">(</span>
-                    <span class="nb">sprintf</span><span class="p">(</span><span class="s1">&#39;Instance of the phrase renderer is expected, got %s instead.&#39;</span><span class="p">,</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$renderer</span><span class="p">))</span>
-                <span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">renderers</span> <span class="o">=</span> <span class="nv">$renderers</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    /**
+     * @param RendererInterface[] $renderers
+     * @throws InvalidArgumentException
+     */
+    public function __construct(array $renderers)
+    {
+        foreach ($renderers as $renderer) {
+            if (!$renderer instanceof RendererInterface) {
+                throw new InvalidArgumentException(
+                    sprintf('Instance of the phrase renderer is expected, got %s instead.', get_class($renderer))
+                );
+            }
+        }
+        $this-&gt;renderers = $renderers;
+    }
+}</code></pre></figure>
 </div></div>
 <hr />
 
@@ -773,41 +773,41 @@ like this:</p>
     <tr>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Config</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class Config
+{
+    private $data;
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$fileReader</span><span class="p">,</span> <span class="nv">$eventManager</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$fileReader</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">(</span><span class="s1">&#39;cache.xml&#39;</span><span class="p">);</span>
-        <span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">&#39;config_read_after&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    public function __construct($fileReader, $eventManager)
+    {
+        $this-&gt;data = $fileReader-&gt;read('cache.xml');
+        $eventManager-&gt;dispatch('config_read_after');
+    }
+}</code></pre></figure>
 
         </td>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Config</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="nv">$fileReader</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class Config
+{
+    private $fileReader;
 
-    <span class="k">private</span> <span class="nv">$eventManager</span><span class="p">;</span>
+    private $eventManager;
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$fileReader</span><span class="p">,</span> <span class="nv">$eventManager</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span> <span class="o">=</span> <span class="nv">$eventManager</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span> <span class="o">=</span> <span class="nv">$fileReader</span><span class="p">;</span>
-    <span class="p">}</span>
+    public function __construct($fileReader, $eventManager)
+    {
+        $this-&gt;eventManager = $eventManager;
+        $this-&gt;fileReader = $fileReader;
+    }
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getData</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">===</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">(</span><span class="s1">&#39;cache.xml&#39;</span><span class="p">);</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">&#39;config_read_after&#39;</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    public function getData($key)
+    {
+        if ($this-&gt;data === null) {
+            $this-&gt;data = $this-&gt;fileReader-&gt;read('cache.xml');
+            $this-&gt;eventManager-&gt;dispatch('config_read_after');
+        }
+        return $this-&gt;data[$key];
+    }
+}</code></pre></figure>
 
         </td>
     </tr>
@@ -824,9 +824,9 @@ like this:</p>
 
 <p>2.7. All non-public properties and methods SHOULD be private.</p>
 
-<p>2.8. Abstract classes MUST NOT be marked as public <code>@api</code>.</p>
+<p>2.8. Abstract classes MUST NOT be marked as public <code class="highlighter-rouge">@api</code>.</p>
 
-<p>2.9. Service classes (ones that provide behavior but not data, like <code>EventManager</code>) SHOULD NOT have a mutable state.</p>
+<p>2.9. Service classes (ones that provide behavior but not data, like <code class="highlighter-rouge">EventManager</code>) SHOULD NOT have a mutable state.</p>
 
 <p>2.10. Only data objects or entities (Product, Category, etc.) MAY have any observable state.</p>
 
@@ -848,7 +848,7 @@ like this:</p>
 
 <p>2.17.2. Composites SHOULD be used when there is a need to work with a tree as a single object.</p>
 
-<div class="collapsible"><b class="collapsible-title">For example: </b><div class="collapsible-content"><p>You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a <code>ConfigReaderInterface</code> with a composite implementation - <code>ConfigReaderComposite</code>, and configure particular readers as children of a composite reader.</p>
+<div class="collapsible"><b class="collapsible-title">For example: </b><div class="collapsible-content"><p>You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a <code class="highlighter-rouge">ConfigReaderInterface</code> with a composite implementation - <code class="highlighter-rouge">ConfigReaderComposite</code>, and configure particular readers as children of a composite reader.</p>
 </div></div>
 <hr />
 <p>2.17.3. Strategy SHOULD be used when there are multiple algorithms for performing an operation.</p>
@@ -857,11 +857,11 @@ like this:</p>
 
 <p>3.1. There SHOULD be no circular dependencies between objects.</p>
 
-<p>3.2. The <code>app/etc/di.xml</code> file MUST contain only framework-level <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">Dependency Injection</span> (DI) settings.</p>
+<p>3.2. The <code class="highlighter-rouge">app/etc/di.xml</code> file MUST contain only framework-level <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">Dependency Injection</span> (DI) settings.</p>
 
-<p>3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in <code>&lt;module_dir&gt;/etc/di.xml</code>.</p>
+<p>3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in <code class="highlighter-rouge">&lt;module_dir&gt;/etc/di.xml</code>.</p>
 
-<p>3.4. All modular Presentation layer DI settings SHOULD be stored in <code>&lt;module_dir&gt;/etc/&lt;area_code&gt;/di.xml</code>.</p>
+<p>3.4. All modular Presentation layer DI settings SHOULD be stored in <code class="highlighter-rouge">&lt;module_dir&gt;/etc/&lt;area_code&gt;/di.xml</code>.</p>
 
 <h2 id="interception">4. Interception</h2>
 
@@ -899,13 +899,13 @@ like this:</p>
 
 <p>5.6. The short name of an exception class MUST be clear, meaningful, and state the cause of exception.</p>
 
-<p>5.7. Thrown exceptions SHOULD be as specific as possible. The top generic <code>\Exception</code> SHOULD NOT be thrown anywhere.</p>
+<p>5.7. Thrown exceptions SHOULD be as specific as possible. The top generic <code class="highlighter-rouge">\Exception</code> SHOULD NOT be thrown anywhere.</p>
 
 <p>5.8. All direct communications with third-party libraries MUST be wrapped with a try/catch statement.</p>
 
-<p>5.9. <code>\Exception</code> SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>.</p>
+<p>5.9. <code class="highlighter-rouge">\Exception</code> SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>.</p>
 
-<p>5.10. <code>\Exception</code> SHOULD NOT be thrown in Front Controller and Action Controllers.</p>
+<p>5.10. <code class="highlighter-rouge">\Exception</code> SHOULD NOT be thrown in Front Controller and Action Controllers.</p>
 
 <p>5.11. A separate exceptions hierarchy SHOULD be defined on each application layer. It is allowed to throw exceptions that are only defined on the same layer.</p>
 
@@ -913,13 +913,13 @@ like this:</p>
 
 <p>5.13. It is not allowed to absorb exceptions with no logging or/and any workaround operation executed.</p>
 
-<p>5.14. Any exception SHOULD be logged only in the <code>catch</code> block where it is processed, and SHOULD NOT be re-thrown.</p>
+<p>5.14. Any exception SHOULD be logged only in the <code class="highlighter-rouge">catch</code> block where it is processed, and SHOULD NOT be re-thrown.</p>
 
-<p>5.15. Exceptions SHOULD NOT be caught in a loop. The loop SHOULD be wrapped with a <code>try/catch</code> construct instead.</p>
+<p>5.15. Exceptions SHOULD NOT be caught in a loop. The loop SHOULD be wrapped with a <code class="highlighter-rouge">try/catch</code> construct instead.</p>
 
-<p>5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a <code>try</code> block and the corresponding <code>finally</code> block. In the <code>finally</code> sections, all resources SHOULD be properly released.</p>
+<p>5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a <code class="highlighter-rouge">try</code> block and the corresponding <code class="highlighter-rouge">finally</code> block. In the <code class="highlighter-rouge">finally</code> sections, all resources SHOULD be properly released.</p>
 
-<p>5.17. <code>LocalizedException</code> SHOULD only be thrown in the Presentation layer (Controllers, Blocks).</p>
+<p>5.17. <code class="highlighter-rouge">LocalizedException</code> SHOULD only be thrown in the Presentation layer (Controllers, Blocks).</p>
 
 <h2 id="application-layers">6. Application layers</h2>
 
@@ -944,7 +944,7 @@ like this:</p>
 
 <p>6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.</p>
 
-<p>6.2.3. All actions MUST return the <code>ResultInterface</code> implementation.</p>
+<p>6.2.3. All actions MUST return the <code class="highlighter-rouge">ResultInterface</code> implementation.</p>
 
 <p>6.2.4. Actions MUST NOT reference blocks declared in layout.</p>
 
@@ -956,7 +956,7 @@ like this:</p>
 
 <p>6.3.3. Entities MUST NOT contain persistence-related logic.</p>
 
-<p>6.3.4. MySQL’s <code>strict_mode</code> variable SHOULD be aligned with the default <code>strict_mode</code> of the latest MySQL release.</p>
+<p>6.3.4. MySQL’s <code class="highlighter-rouge">strict_mode</code> variable SHOULD be aligned with the default <code class="highlighter-rouge">strict_mode</code> of the latest MySQL release.</p>
 
 <h3 id="service-contracts-application-layer">6.4. Service Contracts (Application) layer</h3>
 
@@ -1014,19 +1014,19 @@ like this:</p>
 
 <p>7.7. All XML configuration formats MUST be declarative. Imperative nodes are not allowed.</p>
 
-<p>7.8. All Configuration objects MUST use <code>Magento\Framework\Config</code>.</p>
+<p>7.8. All Configuration objects MUST use <code class="highlighter-rouge">Magento\Framework\Config</code>.</p>
 
 <h2 id="modularity">8. Modularity</h2>
 
-<p>8.1. The Application Framework (<code>Magento\Framework\*</code>) MUST NOT depend on application modules.</p>
+<p>8.1. The Application Framework (<code class="highlighter-rouge">Magento\Framework\*</code>) MUST NOT depend on application modules.</p>
 
-<p>8.2. All dependencies MUST be declared in the component’s <code>composer.json</code> file.</p>
+<p>8.2. All dependencies MUST be declared in the component’s <code class="highlighter-rouge">composer.json</code> file.</p>
 
-<p>8.3. If component A uses behavior of Component B, such Component B MUST be declared in the <code>require</code> section of Component A’s <code>composer.json</code> file, except for cases where Component B is used in the code that customizes the behavior of Component B.</p>
+<p>8.3. If component A uses behavior of Component B, such Component B MUST be declared in the <code class="highlighter-rouge">require</code> section of Component A’s <code class="highlighter-rouge">composer.json</code> file, except for cases where Component B is used in the code that customizes the behavior of Component B.</p>
 
-<p>8.4. If component A extends/customizes the behavior of component B through its customization points (layout handles, plugins, events, etc.), such Component B MUST be declared in the <code>suggest</code> section of Component A.</p>
+<p>8.4. If component A extends/customizes the behavior of component B through its customization points (layout handles, plugins, events, etc.), such Component B MUST be declared in the <code class="highlighter-rouge">suggest</code> section of Component A.</p>
 
-<p>8.5. Only the <code>@api</code> code of any module can be referenced by other modules.</p>
+<p>8.5. Only the <code class="highlighter-rouge">@api</code> code of any module can be referenced by other modules.</p>
 
 <p>8.6. A module MUST NOT contain references to <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> resources.</p>
 
@@ -1054,7 +1054,7 @@ like this:</p>
 
 <p>9.10. The Request, Session, and Cookie objects MUST NOT be injected in an object constructor. They MUST be passed only as method arguments.</p>
 
-<p>9.11. Operation scopes MUST always be explicitly requested by operations (<code>StoreManager</code> SHOULD NOT be used to retrieve the store ID).</p>
+<p>9.11. Operation scopes MUST always be explicitly requested by operations (<code class="highlighter-rouge">StoreManager</code> SHOULD NOT be used to retrieve the store ID).</p>
 
 <h2 id="javascript-js-application">10. JavaScript (JS) application</h2>
 
@@ -1062,7 +1062,7 @@ like this:</p>
 
 <p>10.2. Only private content SHOULD be rendered in browser.</p>
 
-<p>10.3. All module dependencies of a RequireJS module MUST be declared in the module’s definition header. No direct calls to <code>require</code> SHOULD be made unless the list of modules to be loaded is dynamic.</p>
+<p>10.3. All module dependencies of a RequireJS module MUST be declared in the module’s definition header. No direct calls to <code class="highlighter-rouge">require</code> SHOULD be made unless the list of modules to be loaded is dynamic.</p>
 
 <p>10.4. The <a href="https://w3c.github.io/webappsec-csp/">W3C Content Security Policy</a> MUST be followed.</p>
 
@@ -1070,7 +1070,7 @@ like this:</p>
 
 <p>10.5.1. ES5 SHOULD be used as a JS standard.</p>
 
-<p>10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no <code>_</code> (underscore) naming convention for private properties.</p>
+<p>10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no <code class="highlighter-rouge">_</code> (underscore) naming convention for private properties.</p>
 
 <p>10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.</p>
 
@@ -1092,9 +1092,9 @@ like this:</p>
 
 <p>11.2.1. All objects SHOULD be tested in isolation.</p>
 
-<p>11.2.2. <code>ObjectManager</code> MUST NOT be used in unit tests.</p>
+<p>11.2.2. <code class="highlighter-rouge">ObjectManager</code> MUST NOT be used in unit tests.</p>
 
-<p>11.2.3. <code>ObjectManagerHelper</code> MAY BE used to automatically mock all dependencies of the object under test.</p>
+<p>11.2.3. <code class="highlighter-rouge">ObjectManagerHelper</code> MAY BE used to automatically mock all dependencies of the object under test.</p>
 
 <h2 id="web-api">12. Web API</h2>
 
@@ -1116,30 +1116,30 @@ like this:</p>
 
 <p>14.1. All values (including objects) passed to an <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.</p>
 
-<div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SampleEventObserverThatModifiesInputs</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @param \Magento\Framework\Event\Observer $observer</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="sd">/** @var \Magento\Framework\App\DataObject $transport */</span>
-        <span class="nv">$transport</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;transport&#39;</span><span class="p">);</span>
+<div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">class SampleEventObserverThatModifiesInputs
+{
+    /**
+     * @param \Magento\Framework\Event\Observer $observer
+     */
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        /** @var \Magento\Framework\App\DataObject $transport */
+        $transport = $observer-&gt;getData('transport');
 
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$transport</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">&#39;some_value&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
-            <span class="sd">/**</span>
-<span class="sd">             * Expecting this value to go back to the original event dispatcher violates</span>
-<span class="sd">             * this rule. Other observers could change the data, or Magento could make</span>
-<span class="sd">             * architectural changes always sending immutable objects.</span>
-<span class="sd">             */</span>
-            <span class="nv">$transport</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="s1">&#39;output_return_value&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+        if ($transport-&gt;getData('some_value') === true) {
+            /**
+             * Expecting this value to go back to the original event dispatcher violates
+             * this rule. Other observers could change the data, or Magento could make
+             * architectural changes always sending immutable objects.
+             */
+            $transport-&gt;setData('output_return_value', true);
+        }
+    }
+}</code></pre></figure>
 </div></div>
 <hr />
 
-<p start="14.2">14.2. Events used SHOULD be observed as specifically as possible. A <code>global</code> subscription to an event SHOULD NOT be used when the area impacted is just <code>frontend</code>.</p>
+<p start="14.2">14.2. Events used SHOULD be observed as specifically as possible. A <code class="highlighter-rouge">global</code> subscription to an event SHOULD NOT be used when the area impacted is just <code class="highlighter-rouge">frontend</code>.</p>
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 

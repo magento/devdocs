@@ -1633,14 +1633,14 @@
 
 <ol>
   <li>Change the configuration in the Integration environment Admin panel.</li>
-  <li>Create <code>config.local.php</code> and transfer it to your local system.</li>
-  <li>Push <code>config.local.php</code> to the branch and Integration environment.</li>
-  <li>Verify your settings are not editable in the Admin panel. Any configurations exported to <code>config.local.php</code> make those fields in the Admin panel read-only and disabled for edits.</li>
+  <li>Create <code class="highlighter-rouge">config.local.php</code> and transfer it to your local system.</li>
+  <li>Push <code class="highlighter-rouge">config.local.php</code> to the branch and Integration environment.</li>
+  <li>Verify your settings are not editable in the Admin panel. Any configurations exported to <code class="highlighter-rouge">config.local.php</code> make those fields in the Admin panel read-only and disabled for edits.</li>
   <li>Change settings again.
     <ol>
-      <li>Delete <code>config.local.php</code> on the Integration environment.</li>
+      <li>Delete <code class="highlighter-rouge">config.local.php</code> on the Integration environment.</li>
       <li>Change configuration settings on the Integration environment.</li>
-      <li>Re-create and push the updated <code>config.local.php</code> to the Integration environment.</li>
+      <li>Re-create and push the updated <code class="highlighter-rouge">config.local.php</code> to the Integration environment.</li>
     </ol>
   </li>
 </ol>
@@ -1653,7 +1653,7 @@ This example shows how you can set and lock configuration values for everything 
 <p>To complete these configuration management tasks, you must have at a minimum a project reader role with <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-role-env">environment administrator</a> privileges.</p>
 
 <h2 id="cloud-clp-settings">Configuration settings you can change</h2>
-<p>The following table shows the configuration settings affected by the <code>bin/magento magento-cloud:scd-dump</code> command. These are the configuration settings that you can manage in Git.</p>
+<p>The following table shows the configuration settings affected by the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command. These are the configuration settings that you can manage in Git.</p>
 
 <table>
   <thead>
@@ -1699,35 +1699,39 @@ This example shows how you can set and lock configuration values for everything 
 
 <h3 id="synchronize-your-local-with-master">Synchronize your local with master</h3>
 
-<p>The following steps use Magento and Git CLI commands. To synchronize your local system with the <code>master</code> branch:</p>
+<p>The following steps use Magento and Git CLI commands. To synchronize your local system with the <code class="highlighter-rouge">master</code> branch:</p>
 
 <ol>
   <li>On your local system, switch to the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>
     <p>Log in to your Magento Enterprise Cloud Edition project.</p>
 
-    <pre><code>magento-cloud login
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+    </div>
   </li>
   <li>Switch to the project root directory.</li>
   <li>
     <p>List branches to locate the current branch. An astericks marks the checked out branch.</p>
 
-    <pre><code>git branch
+    <div class="highlighter-rouge"><pre class="highlight"><code>git branch
 </code></pre>
+    </div>
   </li>
-  <li>If necessary, <a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">merge changes in the current</a> branch with the <code>master</code> branch.</li>
+  <li>If necessary, <a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">merge changes in the current</a> branch with the <code class="highlighter-rouge">master</code> branch.</li>
   <li>
     <p>Switch to the master branch locally.</p>
 
-    <pre><code>magento-cloud environment:checkout master
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout master
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Pull updated code.</p>
 
-    <pre><code>git pull origin master
+    <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin master
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1739,9 +1743,10 @@ This example shows how you can set and lock configuration values for everything 
   <li>
     <p>Find the Integration environment URL and Admin credentials:</p>
 
-    <pre><code>magento-cloud environment:url
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:url
 magento-cloud variable:list
 </code></pre>
+    </div>
   </li>
   <li>Using the preceding information, log in to the Integration environment Admin panel.</li>
 </ol>
@@ -1783,11 +1788,11 @@ magento-cloud variable:list
 </ol>
 
 <h2 id="step-2-create-configlocalphp-and-transfer-it-to-your-local-system">Step 2: Create config.local.php and transfer it to your local system</h2>
-<p>This step creates the <code>config.local.php</code> configuration file on the Integration environment using a command you run on your local machine.</p>
+<p>This step creates the <code class="highlighter-rouge">config.local.php</code> configuration file on the Integration environment using a command you run on your local machine.</p>
 
-<p>This procedure corresponds to step B, 1–2 of our <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>. After you create <code>config.local.php</code>, transfer it to your local system so you can add it to Git.</p>
+<p>This procedure corresponds to step B, 1–2 of our <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>. After you create <code class="highlighter-rouge">config.local.php</code>, transfer it to your local system so you can add it to Git.</p>
 
-<p>To create <code>config.local.php</code> on the Integration environment:</p>
+<p>To create <code class="highlighter-rouge">config.local.php</code> on the Integration environment:</p>
 
 <div>
 
@@ -1795,19 +1800,22 @@ magento-cloud variable:list
     <li>
       <p>On your local system, find the integration server’s SSH URL.</p>
 
-      <pre><code>magento-cloud environment:ssh --pipe
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>Create <code>config.local.php</code> on the integration server.</p>
+      <p>Create <code class="highlighter-rouge">config.local.php</code> on the integration server.</p>
 
-      <pre><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
+      <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
 </code></pre>
+      </div>
 
       <p>For example,</p>
 
-      <pre><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+      <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 </code></pre>
+      </div>
 
       <!-- A message similar to the following displays if you have any sensitive settings configured in your system:
 
@@ -1817,14 +1825,15 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
     </li>
     <li>If you haven’t done so already, change to the project root directory.</li>
     <li>
-      <p>Transfer <code>config.local.php</code> to your local system.</p>
+      <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local system.</p>
 
-      <pre><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
+      <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
 </code></pre>
+      </div>
     </li>
   </ol>
 
-  <p>The following snippet from <code>config.local.php</code> shows an example of changing the default locale to <code>en_GB</code> and changing static file optimization settings:</p>
+  <p>The following snippet from <code class="highlighter-rouge">config.local.php</code> shows an example of changing the default locale to <code class="highlighter-rouge">en_GB</code> and changing static file optimization settings:</p>
 
   <pre class="no-copy">
  'general' =&gt;
@@ -1860,17 +1869,18 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
 </pre>
 
   <h2 id="step-3-push-configlocalphp-to-integration">Step 3: Push config.local.php to Integration</h2>
-  <p>Now that you’ve created <code>config.local.php</code> and transferred it to your local system, commit it to Git and push it to your integration server. This procedure corresponds to step B, 3—4 of our <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>.</p>
+  <p>Now that you’ve created <code class="highlighter-rouge">config.local.php</code> and transferred it to your local system, commit it to Git and push it to your integration server. This procedure corresponds to step B, 3—4 of our <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>.</p>
 
-  <pre><code>git add app/etc/config.local.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
+  <div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.local.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
 </code></pre>
+  </div>
 
   <p>Wait for deployment to complete.</p>
 
   <h2 id="cloud-set-verify">Step 4: Verify your configuration changes</h2>
-  <p>After you push <code>config.local.php</code> to your Integration environment, any values you changed should be unavailable in the Magento Admin.</p>
+  <p>After you push <code class="highlighter-rouge">config.local.php</code> to your Integration environment, any values you changed should be unavailable in the Magento Admin.</p>
 
-  <p>In this example, the modified default locale and static file optimization settings should not be editable in the Admin. These configuration settings are set in <code>config.local.php</code>.</p>
+  <p>In this example, the modified default locale and static file optimization settings should not be editable in the Admin. These configuration settings are set in <code class="highlighter-rouge">config.local.php</code>.</p>
 
   <p>To verify your configuration changes:</p>
 
@@ -1885,7 +1895,7 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
     <li>
       <p>In the right pane, expand <strong>Locale Options</strong>.</p>
 
-      <p>Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by <code>config.local.php</code>.</p>
+      <p>Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by <code class="highlighter-rouge">config.local.php</code>.</p>
 
       <p><img src="/common/images/cloud_var_not-editable.png" alt="Can't edit certain values in the Admin" width="550px" /></p>
     </li>
@@ -1893,7 +1903,7 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
     <li>
       <p>In the right pane, expand <strong>Template Settings</strong>, <strong>JavaScript Settings</strong>, and <strong>CSS Settings</strong>.</p>
 
-      <p>Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by <code>config.local.php</code>.</p>
+      <p>Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by <code class="highlighter-rouge">config.local.php</code>.</p>
 
       <p><img src="/common/images/cloud_var_not-editable2.png" alt="Can't edit certain values in the Admin " width="550px" /></p>
     </li>
@@ -1901,34 +1911,37 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
   </ol>
 
   <h2 id="step-5-change-system-specific-configuration-settings">Step 5: Change system-specific configuration settings</h2>
-  <p>This section discusses how to change system-specific settings. Our <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a> is to make the changes on the Integration environment and repeat the process of creating <code>config.local.php</code> and pushing it back to Integration.</p>
+  <p>This section discusses how to change system-specific settings. Our <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a> is to make the changes on the Integration environment and repeat the process of creating <code class="highlighter-rouge">config.local.php</code> and pushing it back to Integration.</p>
 
   <p>For this example, we’ll use static file optimization settings.</p>
 
   <h3 id="delete-configlocalphp-on-integration">Delete config.local.php on Integration</h3>
-  <p>Before you can change settings on the Integration environment, delete <code>app/etc/config.local.php</code>. With this file removed, all configuration settings are available to modify in the Admin. Any non-default setting in <code>config.local.php</code> is uneditable in the Admin.</p>
+  <p>Before you can change settings on the Integration environment, delete <code class="highlighter-rouge">app/etc/config.local.php</code>. With this file removed, all configuration settings are available to modify in the Admin. Any non-default setting in <code class="highlighter-rouge">config.local.php</code> is uneditable in the Admin.</p>
 
-  <p>To delete <code>config.local.php</code>:</p>
+  <p>To delete <code class="highlighter-rouge">config.local.php</code>:</p>
 
   <ol>
-    <li>On your local system, make sure you’re on the <code>master</code> branch.</li>
+    <li>On your local system, make sure you’re on the <code class="highlighter-rouge">master</code> branch.</li>
     <li>
       <p>SSH to the integration server:</p>
 
-      <pre><code>magento-cloud ssh
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud ssh
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>Delete <code>config.local.php</code>.</p>
+      <p>Delete <code class="highlighter-rouge">config.local.php</code>.</p>
 
-      <pre><code>rm app/etc/config.local.php
+      <div class="highlighter-rouge"><pre class="highlight"><code>rm app/etc/config.local.php
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Close the SSH tunnel.</p>
 
-      <pre><code>exit
+      <div class="highlighter-rouge"><pre class="highlight"><code>exit
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1967,19 +1980,22 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
       <li>
         <p>On your local system, find the integration server’s SSH URL.</p>
 
-        <pre><code>magento-cloud environment:ssh --pipe
+        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
 </code></pre>
+        </div>
       </li>
       <li>
-        <p>Create <code>config.local.php</code> on the integration server.</p>
+        <p>Create <code class="highlighter-rouge">config.local.php</code> on the integration server.</p>
 
-        <pre><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
+        <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
 </code></pre>
+        </div>
 
         <p>For example,</p>
 
-        <pre><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+        <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 </code></pre>
+        </div>
 
         <!-- A message similar to the following displays if you have any sensitive settings configured in your system:
 
@@ -1989,18 +2005,20 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
       </li>
       <li>If you haven’t done so already, change to the project root directory.</li>
       <li>
-        <p>Transfer <code>config.local.php</code> to your local system.</p>
+        <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local system.</p>
 
-        <pre><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
+        <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
 </code></pre>
+        </div>
       </li>
     </ol>
 
     <h3 id="push-the-changes-to-git">Push the changes to Git</h3>
     <p>To push your changes, enter the following command:</p>
 
-    <pre><code>git add app/etc/config.local.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.local.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
 </code></pre>
+    </div>
 
     <p>Wait for deployment to complete.</p>
 

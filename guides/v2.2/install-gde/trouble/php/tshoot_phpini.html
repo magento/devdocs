@@ -964,13 +964,14 @@
 
 <p>During or after installation, a  message similar to the following displays:</p>
 
-<pre><code>Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message 
+<div class="highlighter-rouge"><pre class="highlight"><code>Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message 
 'SQLSTATE[HY000] [2002] No such file or directory 
 </code></pre>
+</div>
 
 <h3 id="solution">Solution</h3>
 
-<p>This is commonly caused by a different instance of <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> being used by the PHP command line compared to the web server. In particular, <code>mysql.sock</code> might be misconfigured if this is the case.</p>
+<p>This is commonly caused by a different instance of <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> being used by the PHP command line compared to the web server. In particular, <code class="highlighter-rouge">mysql.sock</code> might be misconfigured if this is the case.</p>
 
 <p>To determine whether or not you’re using one instance of PHP:</p>
 
@@ -979,16 +980,17 @@
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>php -i | grep 'php.ini'
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -i | grep 'php.ini'
 </code></pre>
+    </div>
 
-    <p>This determines the settings used by the PHP command-line interface (CLI). Note where <code>php.ini</code> is located.</p>
+    <p>This determines the settings used by the PHP command-line interface (CLI). Note where <code class="highlighter-rouge">php.ini</code> is located.</p>
   </li>
   <li>If you haven’t already done so, set up a <a href="/guides/v2.2/install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> on your web server.</li>
   <li>
-    <p>Compare the value of <strong>Loaded Configuration File</strong> from <code>phpinfo.php</code> with the one from <code>php -i</code>.</p>
+    <p>Compare the value of <strong>Loaded Configuration File</strong> from <code class="highlighter-rouge">phpinfo.php</code> with the one from <code class="highlighter-rouge">php -i</code>.</p>
 
-    <p><code>phpinfo.php</code> shows the <code>php.ini</code> file used by your web server. If it’s different from what’s in PHP’s <code>php.ini</code>, you must make <em>all</em> PHP settings consistent for both the PHP CLI and the web server.</p>
+    <p><code class="highlighter-rouge">phpinfo.php</code> shows the <code class="highlighter-rouge">php.ini</code> file used by your web server. If it’s different from what’s in PHP’s <code class="highlighter-rouge">php.ini</code>, you must make <em>all</em> PHP settings consistent for both the PHP CLI and the web server.</p>
 
     <p>For additional details, consult the documentation provided with your web server.</p>
   </li>

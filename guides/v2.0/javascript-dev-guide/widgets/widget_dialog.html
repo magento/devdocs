@@ -749,7 +749,7 @@
 
 <h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
 
-<p>For information about how to initialize a widget in a JS component or <code>.phtml</code> template, see the <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.</p>
+<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.</p>
 
 <h2 id="dialog_options">Options</h2>
 
@@ -775,11 +775,11 @@
 <h3 id="d_autoPosition"><code>autoPosition</code></h3>
 <p>Specifies if the <a href="http://api.jqueryui.com/dialog/#option-position" target="_blank"><code>position</code></a> option is used for calculating the drop-down offset.</p>
 
-<p>If set to <code>false</code> (default value), then <code>position</code> rules are not used and the drop-down is positioned under the element for which the widget is initialized. Otherwise the drop-down offset is calculated using the <code>position</code> rules.</p>
+<p>If set to <code class="highlighter-rouge">false</code> (default value), then <code class="highlighter-rouge">position</code> rules are not used and the drop-down is positioned under the element for which the widget is initialized. Otherwise the drop-down offset is calculated using the <code class="highlighter-rouge">position</code> rules.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <h3 id="d_autoSize"><code>autoSize</code></h3>
 
@@ -787,63 +787,63 @@
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <h3 id="d_closeOnMouseLeave"><code>closeOnMouseLeave</code></h3>
 <p>Specifies if the drop-down is closed when mouse pointer is moved out.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>true</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
 <h3 id="d_closeOnClickOutside"><code>closeOnClickOutside</code></h3>
 <p>Specifies if the drop-down is closed on mouse click outside the drop-down.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>true</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
 <h3 id="d_createTitleBar"><code>createTitleBar</code></h3>
 <p>Defines if the <a href="http://api.jqueryui.com/dialog/#option-title" target="_blank">title</a> option is used for displaying the title bar.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <h3 id="d_defaultDialogClass"><code>defaultDialogClass</code></h3>
 <p>Class that is added to the drop-down, when it gets initialized.</p>
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>mage-dropdown-dialog</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">mage-dropdown-dialog</code></p>
 
 <h3 id="d_dialogContentClass"><code>dialogContentClass</code></h3>
 <p>Class that is added/removed on drop-down content when it gets opened/closed.</p>
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
 <h3 id="d_parentClass"><code>parentClass</code></h3>
 <p>Class that is added/removed for the dropdown parent, when the drop-down gets opened/closed.</p>
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
 <h3 id="d_triggerClass"><code>triggerClass</code></h3>
 <p>Class that is added/removed on the trigger element when the drop-down gets opened/closed.</p>
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
 <h3 id="d_triggerEvent"><code>triggerEvent</code></h3>
-<p>Name of the event that triggers the <code>open()</code> function for drop-down.</p>
+<p>Name of the event that triggers the <code class="highlighter-rouge">open()</code> function for drop-down.</p>
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>click</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">click</code></p>
 
 <h3 id="d_triggerTarget"><code>triggerTarget</code></h3>
 <p>Element that triggers the drop-down.</p>
@@ -855,7 +855,7 @@
   <li><span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span> object</li>
 </ul>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
 <h3 id="d_timeout"><code>timeout</code></h3>
 <p>The number of milliseconds until the dropdown is closed after mouse pointer moves out.</p>
@@ -874,7 +874,7 @@
 </ul>
 
 <h3 id="d_open"><code>open()</code></h3>
-<p>Beside default functionality, this method calls the <code>_mouseLeave()</code> and <code>_mouseEnter()</code> functions, adds classes on trigger and drop-down parent, and binds the close on mouse click outside drop-down to the <code>&lt;body&gt;</code> element.</p>
+<p>Beside default functionality, this method calls the <code class="highlighter-rouge">_mouseLeave()</code> and <code class="highlighter-rouge">_mouseEnter()</code> functions, adds classes on trigger and drop-down parent, and binds the close on mouse click outside drop-down to the <code class="highlighter-rouge">&lt;body&gt;</code> element.</p>
 
 <h3 id="d_close"><code>close()</code></h3>
 <p>Beside default functionality, this method removes the classes from trigger and drop-down parent.Also clears the timeout if the latter exists.</p>

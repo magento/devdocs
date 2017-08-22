@@ -979,51 +979,51 @@
 			<p>The Functional Testing Framework configuration settings are located in two <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> files:</p>
 
 <ul>
-  <li><code>phpunit.xml</code></li>
-  <li><code>config.xml</code></li>
+  <li><code class="highlighter-rouge">phpunit.xml</code></li>
+  <li><code class="highlighter-rouge">config.xml</code></li>
 </ul>
 
-<h2 id="phpunit_xml"><code>phpunit.xml</code></h2>
+<h2 id="phpunit_xml"><code class="highlighter-rouge">phpunit.xml</code></h2>
 
-<p>The <code>&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> contains PHPUnit configuration settings. Blocks of settings are described in <a href="https://phpunit.de/manual/current/en/appendixes.configuration.html">PHPUnit documentation</a>, except <code>&lt;php&gt;</code> that contains parameters described in the following table.</p>
+<p>The <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> contains PHPUnit configuration settings. Blocks of settings are described in <a href="https://phpunit.de/manual/current/en/appendixes.configuration.html">PHPUnit documentation</a>, except <code class="highlighter-rouge">&lt;php&gt;</code> that contains parameters described in the following table.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show/hide the default phpunit.xml code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © Magento, Inc. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;phpunit</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;http://schema.phpunit.de/4.1/phpunit.xsd&quot;</span>
-         <span class="na">colors=</span><span class="s">&quot;true&quot;</span>
-         <span class="na">bootstrap=</span><span class="s">&quot;bootstrap.php&quot;</span>
-         <span class="na">backupGlobals=</span><span class="s">&quot;false&quot;</span>
-         <span class="na">verbose=</span><span class="s">&quot;true&quot;</span>
+<div class="collapsible"><b class="collapsible-title">Show/hide the default phpunit.xml code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;phpunit</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"http://schema.phpunit.de/4.1/phpunit.xsd"</span>
+         <span class="na">colors=</span><span class="s">"true"</span>
+         <span class="na">bootstrap=</span><span class="s">"bootstrap.php"</span>
+         <span class="na">backupGlobals=</span><span class="s">"false"</span>
+         <span class="na">verbose=</span><span class="s">"true"</span>
 <span class="nt">&gt;</span>
     <span class="nt">&lt;testsuites&gt;</span>
-        <span class="nt">&lt;testsuite</span> <span class="na">name=</span><span class="s">&quot;All Tests&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;directory</span> <span class="na">suffix=</span><span class="s">&quot;Test.php&quot;</span><span class="nt">&gt;</span>tests<span class="nt">&lt;/directory&gt;</span>
+        <span class="nt">&lt;testsuite</span> <span class="na">name=</span><span class="s">"All Tests"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;directory</span> <span class="na">suffix=</span><span class="s">"Test.php"</span><span class="nt">&gt;</span>tests<span class="nt">&lt;/directory&gt;</span>
         <span class="nt">&lt;/testsuite&gt;</span>
     <span class="nt">&lt;/testsuites&gt;</span>
 
     <span class="nt">&lt;listeners&gt;</span>
-        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Browser\Listener&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Isolation\Listener&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Browser\Listener"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Isolation\Listener"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
-                <span class="nt">&lt;object</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Isolation\Driver\Base&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;object</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Isolation\Driver\Base"</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/listener&gt;</span>
-        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Event\StateListener&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">&quot;Yandex\Allure\Adapter\AllureAdapter&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Event\StateListener"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">"Yandex\Allure\Adapter\AllureAdapter"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
                 <span class="nt">&lt;string&gt;</span>var/allure-results<span class="nt">&lt;/string&gt;</span> <span class="c">&lt;!-- XML files output directory --&gt;</span>
                 <span class="nt">&lt;boolean&gt;</span>false<span class="nt">&lt;/boolean&gt;</span> <span class="c">&lt;!-- Whether to delete previous results on rerun --&gt;</span>
                 <span class="nt">&lt;array&gt;</span> <span class="c">&lt;!-- A list of custom annotations to ignore (optional) --&gt;</span>
-                    <span class="nt">&lt;element</span> <span class="na">key=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;element</span> <span class="na">key=</span><span class="s">"0"</span><span class="nt">&gt;</span>
                         <span class="nt">&lt;string&gt;</span>ZephyrId<span class="nt">&lt;/string&gt;</span>
                     <span class="nt">&lt;/element&gt;</span>
-                    <span class="nt">&lt;element</span> <span class="na">key=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;element</span> <span class="na">key=</span><span class="s">"1"</span><span class="nt">&gt;</span>
                         <span class="nt">&lt;string&gt;</span>Group<span class="nt">&lt;/string&gt;</span>
                     <span class="nt">&lt;/element&gt;</span>
                 <span class="nt">&lt;/array&gt;</span>
@@ -1032,17 +1032,17 @@
     <span class="nt">&lt;/listeners&gt;</span>
 
     <span class="nt">&lt;php&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_frontend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://127.0.0.1/&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;app_backend_url&quot;</span> <span class="na">value=</span><span class="s">&quot;http://127.0.0.1/backend/&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;testsuite_rule&quot;</span> <span class="na">value=</span><span class="s">&quot;basic&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;testsuite_rule_path&quot;</span> <span class="na">value=</span><span class="s">&quot;Magento/Mtf/TestSuite/InjectableTests&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;log_directory&quot;</span> <span class="na">value=</span><span class="s">&quot;var/log&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;events_preset&quot;</span> <span class="na">value=</span><span class="s">&quot;base&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;module_whitelist&quot;</span> <span class="na">value=</span><span class="s">&quot;Magento_Install,Magento_Setup&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;basedir&quot;</span> <span class="na">value=</span><span class="s">&quot;var/log&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;credentials_file_path&quot;</span> <span class="na">value=</span><span class="s">&quot;./credentials.xml.dist&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;mage_mode&quot;</span> <span class="na">value=</span><span class="s">&quot;developer&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;magento_timezone&quot;</span> <span class="na">value=</span><span class="s">&quot;America/Los_Angeles&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url"</span> <span class="na">value=</span><span class="s">"http://127.0.0.1/"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url"</span> <span class="na">value=</span><span class="s">"http://127.0.0.1/backend/"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"testsuite_rule"</span> <span class="na">value=</span><span class="s">"basic"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"testsuite_rule_path"</span> <span class="na">value=</span><span class="s">"Magento/Mtf/TestSuite/InjectableTests"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"log_directory"</span> <span class="na">value=</span><span class="s">"var/log"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"events_preset"</span> <span class="na">value=</span><span class="s">"base"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"module_whitelist"</span> <span class="na">value=</span><span class="s">"Magento_Install,Magento_Setup"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"basedir"</span> <span class="na">value=</span><span class="s">"var/log"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"credentials_file_path"</span> <span class="na">value=</span><span class="s">"./credentials.xml.dist"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"mage_mode"</span> <span class="na">value=</span><span class="s">"developer"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"magento_timezone"</span> <span class="na">value=</span><span class="s">"America/Los_Angeles"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/php&gt;</span>
 
 <span class="nt">&lt;/phpunit&gt;</span></code></pre></figure>
@@ -1133,20 +1133,20 @@
 </tbody>
 </table>
 
-<h2 id="config_xml"><code>config.xml</code></h2>
+<h2 id="config_xml"><code class="highlighter-rouge">config.xml</code></h2>
 
 <p>The <abbr title="Functional Testing Framework">FTF</abbr> configuration settings are declared and specified in two places:</p>
 
-<div class="collapsible"><b class="collapsible-title">in the Framework </b><div class="collapsible-content"><p>The file is located in <code>&lt;magento2_root_dir&gt;dev/tests/functional/vendor/magento/mtf/etc</code></p>
+<div class="collapsible"><b class="collapsible-title">in the Framework </b><div class="collapsible-content"><p>The file is located in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;dev/tests/functional/vendor/magento/mtf/etc</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2017 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2017 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;application&gt;</span>
         <span class="nt">&lt;reopenBrowser&gt;</span>testCase<span class="nt">&lt;/reopenBrowser&gt;</span>
         <span class="nt">&lt;backendLogin&gt;</span>admin<span class="nt">&lt;/backendLogin&gt;</span>
@@ -1160,33 +1160,33 @@
         <span class="nt">&lt;test&gt;</span>none<span class="nt">&lt;/test&gt;</span>
     <span class="nt">&lt;/isolation&gt;</span>
     <span class="nt">&lt;server&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selenium&quot;</span> <span class="na">type=</span><span class="s">&quot;default&quot;</span> <span class="na">browser=</span><span class="s">&quot;Mozilla Firefox&quot;</span> <span class="na">browserName=</span><span class="s">&quot;firefox&quot;</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">port=</span><span class="s">&quot;4444&quot;</span> <span class="na">seleniumServerRequestsTimeout=</span><span class="s">&quot;90&quot;</span> <span class="na">sessionStrategy=</span><span class="s">&quot;shared&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"selenium"</span> <span class="na">type=</span><span class="s">"default"</span> <span class="na">browser=</span><span class="s">"Mozilla Firefox"</span> <span class="na">browserName=</span><span class="s">"firefox"</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">port=</span><span class="s">"4444"</span> <span class="na">seleniumServerRequestsTimeout=</span><span class="s">"90"</span> <span class="na">sessionStrategy=</span><span class="s">"shared"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;desiredCapabilities&gt;</span>
                 <span class="nt">&lt;platform&gt;</span>ANY<span class="nt">&lt;/platform&gt;</span>
             <span class="nt">&lt;/desiredCapabilities&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/server&gt;</span>
     <span class="nt">&lt;handler&gt;</span>
-        <span class="nt">&lt;curl</span> <span class="na">priority=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;ui</span> <span class="na">priority=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;curl</span> <span class="na">priority=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;ui</span> <span class="na">priority=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/handler&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p><img src="/common/images/ftf/ftf_mtf-config-xsd-dia.svg" alt="image" /></p>
 
-<p>Figure 1. - XML Schema for the <code>&lt;magento2_root_dir&gt;dev/tests/functional/vendor/magento/mtf/etc/config.xml</code>.</p>
+<p>Figure 1. - XML Schema for the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;dev/tests/functional/vendor/magento/mtf/etc/config.xml</code>.</p>
 </div></div>
 
-<div class="collapsible"><b class="collapsible-title">in Magento functional tests </b><div class="collapsible-content"><p>The file is located in <code>&lt;magento2_root_dir&gt;dev/tests/functional/</code></p>
+<div class="collapsible"><b class="collapsible-title">in Magento functional tests </b><div class="collapsible-content"><p>The file is located in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;dev/tests/functional/</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © Magento, Inc. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;application&gt;</span>
         <span class="nt">&lt;reopenBrowser&gt;</span>testCase<span class="nt">&lt;/reopenBrowser&gt;</span>
         <span class="nt">&lt;backendLogin&gt;</span>admin<span class="nt">&lt;/backendLogin&gt;</span>
@@ -1209,37 +1209,37 @@
         <span class="nt">&lt;backendName&gt;</span>backend<span class="nt">&lt;/backendName&gt;</span>
     <span class="nt">&lt;/install&gt;</span>
     <span class="nt">&lt;handler&gt;</span>
-        <span class="nt">&lt;webapi</span> <span class="na">priority=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;webapi</span> <span class="na">priority=</span><span class="s">"0"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;token&gt;</span>integration_token<span class="nt">&lt;/token&gt;</span>
         <span class="nt">&lt;/webapi&gt;</span>
-        <span class="nt">&lt;curl</span> <span class="na">priority=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;ui</span> <span class="na">priority=</span><span class="s">&quot;2&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;curl</span> <span class="na">priority=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;ui</span> <span class="na">priority=</span><span class="s">"2"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/handler&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p><img src="/common/images/ftf/ftf_config-xsd-dia.svg" alt="image" /></p>
 
-<p>Figure 2. - XML Schema for the <code>&lt;magento2_root_dir&gt;dev/tests/functional/vendor/magento/mtf/etc/config.xml</code>.</p>
+<p>Figure 2. - XML Schema for the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;dev/tests/functional/vendor/magento/mtf/etc/config.xml</code>.</p>
 </div></div>
 
 <p>The <abbr title="Functional Testing Framework">FTF</abbr> merges settings from both files with the following priority:</p>
 
 <ul>
-  <li><code>config.xml</code> in Magento has higher priority then <code>config.xml</code> in the Framework</li>
-  <li><code>config.xml.dist</code> is omitted if <code>config.xml</code> exists</li>
+  <li><code class="highlighter-rouge">config.xml</code> in Magento has higher priority then <code class="highlighter-rouge">config.xml</code> in the Framework</li>
+  <li><code class="highlighter-rouge">config.xml.dist</code> is omitted if <code class="highlighter-rouge">config.xml</code> exists</li>
 </ul>
 
 <p>Settings are grouped into the following blocks:</p>
 
 <ul>
-  <li><a href="#application"><code>&lt;application&gt;</code></a></li>
-  <li><a href="#isolation"><code>&lt;isolation&gt;</code></a></li>
-  <li><a href="#server"><code>&lt;server&gt;</code></a></li>
-  <li><a href="#handler"><code>&lt;handler&gt;</code></a></li>
-  <li><a href="#install"><code>&lt;install&gt;</code></a> (set in Magento functional tests only)</li>
+  <li><a href="#application"><code class="highlighter-rouge">&lt;application&gt;</code></a></li>
+  <li><a href="#isolation"><code class="highlighter-rouge">&lt;isolation&gt;</code></a></li>
+  <li><a href="#server"><code class="highlighter-rouge">&lt;server&gt;</code></a></li>
+  <li><a href="#handler"><code class="highlighter-rouge">&lt;handler&gt;</code></a></li>
+  <li><a href="#install"><code class="highlighter-rouge">&lt;install&gt;</code></a> (set in Magento functional tests only)</li>
 </ul>
 
-<h3 id="application"><code>&lt;application&gt;</code></h3>
+<h3 id="application"><code class="highlighter-rouge">&lt;application&gt;</code></h3>
 
 <p><strong>Description:</strong> Application configuration settings.</p>
 
@@ -1252,29 +1252,29 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>&lt;reopenBrowser&gt;</code></td>
-      <td>Determines that a browser is to be restarted after each <code>test</code> or <code>testCase</code>.</td>
+      <td><code class="highlighter-rouge">&lt;reopenBrowser&gt;</code></td>
+      <td>Determines that a browser is to be restarted after each <code class="highlighter-rouge">test</code> or <code class="highlighter-rouge">testCase</code>.</td>
     </tr>
     <tr>
-      <td><code>&lt;backendLogin&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;backendLogin&gt;</code></td>
       <td>Magento Admin username that is used during functional testing.</td>
     </tr>
     <tr>
-      <td><code>&lt;backendPassword&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;backendPassword&gt;</code></td>
       <td>Magento Admin password that is used during functional testing.</td>
     </tr>
     <tr>
-      <td><code>&lt;appBackendUrl&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;appBackendUrl&gt;</code></td>
       <td>Base URL of the Magento Admin. Not applicable currently.</td>
     </tr>
     <tr>
-      <td><code>&lt;backendLoginUrl&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;backendLoginUrl&gt;</code></td>
       <td>Relative path to the Magento Admin login page.</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="isolation"><code>&lt;isolation&gt;</code></h3>
+<h3 id="isolation"><code class="highlighter-rouge">&lt;isolation&gt;</code></h3>
 
 <p><a href="/guides/v2.2/mtf/features/isolation.html">Learn about isolation management</a></p>
 
@@ -1290,24 +1290,24 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>&lt;resetUrlPath&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;resetUrlPath&gt;</code></td>
       <td>Relative path of a script to be run. The URL is opened as usual web page in a browser, so that corresponding permissions must be set to the file.</td>
-      <td><code>&lt;resetUrlPath&gt;dev/tests/mtf/isolation.php&lt;/resetUrlPath&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;resetUrlPath&gt;dev/tests/mtf/isolation.php&lt;/resetUrlPath&gt;</code></td>
     </tr>
     <tr>
-      <td><code>&lt;testSuite&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;testSuite&gt;</code></td>
       <td>When the script must be called relatively to <a href="/guides/v2.2/mtf/features/test_suite.html#configure">test suite</a> run.</td>
-      <td><code>none</code>, <code>before</code>, <code>after</code>, <code>both</code></td>
+      <td><code class="highlighter-rouge">none</code>, <code class="highlighter-rouge">before</code>, <code class="highlighter-rouge">after</code>, <code class="highlighter-rouge">both</code></td>
     </tr>
     <tr>
-      <td><code>&lt;testCase&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;testCase&gt;</code></td>
       <td>When the script must be called relatively to <a href="/guides/v2.2/mtf/mtf_entities/mtf_testcase.html">test case</a> run.</td>
-      <td><code>none</code>, <code>before</code>, <code>after</code>, <code>both</code></td>
+      <td><code class="highlighter-rouge">none</code>, <code class="highlighter-rouge">before</code>, <code class="highlighter-rouge">after</code>, <code class="highlighter-rouge">both</code></td>
     </tr>
     <tr>
-      <td><code>&lt;test&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;test&gt;</code></td>
       <td>When the script must be called relatively to test run.</td>
-      <td><code>none</code>, <code>before</code>, <code>after</code>, <code>both</code></td>
+      <td><code class="highlighter-rouge">none</code>, <code class="highlighter-rouge">before</code>, <code class="highlighter-rouge">after</code>, <code class="highlighter-rouge">both</code></td>
     </tr>
   </tbody>
 </table>
@@ -1315,13 +1315,13 @@
 <p>Values description:</p>
 
 <ul>
-  <li><code>none</code> - never run</li>
-  <li><code>before</code> - run before the entity to which it concerns</li>
-  <li><code>after</code> - run after the entity to which it concerns</li>
-  <li><code>both</code> - run before and after the entity to which it concerns</li>
+  <li><code class="highlighter-rouge">none</code> - never run</li>
+  <li><code class="highlighter-rouge">before</code> - run before the entity to which it concerns</li>
+  <li><code class="highlighter-rouge">after</code> - run after the entity to which it concerns</li>
+  <li><code class="highlighter-rouge">both</code> - run before and after the entity to which it concerns</li>
 </ul>
 
-<h3 id="server"><code>&lt;server&gt;</code></h3>
+<h3 id="server"><code class="highlighter-rouge">&lt;server&gt;</code></h3>
 
 <p><a href="https://github.com/giorgiosironi/phpunit-selenium/blob/master/PHPUnit/Extensions/Selenium2TestCase.php#L233-L238">Open settings declarations in Selenium repository</a></p>
 
@@ -1337,39 +1337,39 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>name</code></td>
+      <td><code class="highlighter-rouge">name</code></td>
       <td>Name of an item.</td>
-      <td><code>"selenium"</code></td>
+      <td><code class="highlighter-rouge">"selenium"</code></td>
     </tr>
     <tr>
-      <td><code>type</code></td>
+      <td><code class="highlighter-rouge">type</code></td>
       <td>Required Selenium setting. The <abbr title="Functional Testing Framework">FTF</abbr> doesn’t use it.</td>
-      <td><code>"default"</code></td>
+      <td><code class="highlighter-rouge">"default"</code></td>
     </tr>
     <tr>
-      <td><code>browser</code></td>
+      <td><code class="highlighter-rouge">browser</code></td>
       <td>A browser full name to be displayed where you needed it. The <abbr title="Functional Testing Framework">FTF</abbr> doesn’t use it.</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>browserName</code></td>
+      <td><code class="highlighter-rouge">browserName</code></td>
       <td>A browser that can be used for functional testing.</td>
-      <td><code>android</code>, <code>chrome</code>, <code>firefox</code>, <code>htmlunit</code>, <code>internet explorer</code>, <code>iPhone</code>, <code>iPad</code>, <code>opera</code>, <code>safari</code></td>
+      <td><code class="highlighter-rouge">android</code>, <code class="highlighter-rouge">chrome</code>, <code class="highlighter-rouge">firefox</code>, <code class="highlighter-rouge">htmlunit</code>, <code class="highlighter-rouge">internet explorer</code>, <code class="highlighter-rouge">iPhone</code>, <code class="highlighter-rouge">iPad</code>, <code class="highlighter-rouge">opera</code>, <code class="highlighter-rouge">safari</code></td>
     </tr>
     <tr>
-      <td><code>host</code> and <code>port</code></td>
+      <td><code class="highlighter-rouge">host</code> and <code class="highlighter-rouge">port</code></td>
       <td>Address of a Selenium Server.</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>seleniumServerRequestsTimeout</code></td>
+      <td><code class="highlighter-rouge">seleniumServerRequestsTimeout</code></td>
       <td>A specified period of time to process a request.</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>sessionStrategy</code></td>
-      <td>Standard Selenium Server parameter that sets a session strategy. Recommended to use <code>"shared"</code> only.</td>
-      <td><code>"shared"</code>, <code>"isolated"</code></td>
+      <td><code class="highlighter-rouge">sessionStrategy</code></td>
+      <td>Standard Selenium Server parameter that sets a session strategy. Recommended to use <code class="highlighter-rouge">"shared"</code> only.</td>
+      <td><code class="highlighter-rouge">"shared"</code>, <code class="highlighter-rouge">"isolated"</code></td>
     </tr>
   </tbody>
 </table>
@@ -1380,7 +1380,7 @@
 
 <h3 id="handler"><strong>&lt;handler&gt;</strong></h3>
 
-<p>Specifies priorities for different types of handlers. The lower the value, the higher the priority. The highest priority has value 0. <code>token</code> contains access token (used by WebAPI handlers only). <a href="/guides/v2.2/mtf/mtf_entities/mtf_handler.html">Learn more about handlers.</a></p>
+<p>Specifies priorities for different types of handlers. The lower the value, the higher the priority. The highest priority has value 0. <code class="highlighter-rouge">token</code> contains access token (used by WebAPI handlers only). <a href="/guides/v2.2/mtf/mtf_entities/mtf_handler.html">Learn more about handlers.</a></p>
 
 <table>
   <thead>
@@ -1392,18 +1392,18 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>&lt;webapi&gt;</code></td>
-      <td><code>priority</code> value of a WebAPI handler.</td>
+      <td><code class="highlighter-rouge">&lt;webapi&gt;</code></td>
+      <td><code class="highlighter-rouge">priority</code> value of a WebAPI handler.</td>
       <td>Integer</td>
     </tr>
     <tr>
-      <td><code>&lt;curl&gt;</code></td>
-      <td><code>priority</code> value of a curl handler priority.</td>
+      <td><code class="highlighter-rouge">&lt;curl&gt;</code></td>
+      <td><code class="highlighter-rouge">priority</code> value of a curl handler priority.</td>
       <td>Integer</td>
     </tr>
     <tr>
-      <td><code>&lt;ui&gt;</code></td>
-      <td><code>priority</code> value of a UI handler priority.</td>
+      <td><code class="highlighter-rouge">&lt;ui&gt;</code></td>
+      <td><code class="highlighter-rouge">priority</code> value of a UI handler priority.</td>
       <td>Integer</td>
     </tr>
   </tbody>
@@ -1422,27 +1422,27 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>&lt;host&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;host&gt;</code></td>
       <td>Magento database host name or IP address.</td>
     </tr>
     <tr>
-      <td><code>&lt;user&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;user&gt;</code></td>
       <td>Magento database user name.</td>
     </tr>
     <tr>
-      <td><code>&lt;password&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;password&gt;</code></td>
       <td>Magento database user password.</td>
     </tr>
     <tr>
-      <td><code>&lt;dbName&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;dbName&gt;</code></td>
       <td>Name of a database.</td>
     </tr>
     <tr>
-      <td><code>&lt;baseUrl&gt;</code></td>
-      <td>Magento application base URL, starting with the scheme (<code>http://</code> or <code>https://</code>) and ending with a slash character (<code>/</code>).</td>
+      <td><code class="highlighter-rouge">&lt;baseUrl&gt;</code></td>
+      <td>Magento application base URL, starting with the scheme (<code class="highlighter-rouge">http://</code> or <code class="highlighter-rouge">https://</code>) and ending with a slash character (<code class="highlighter-rouge">/</code>).</td>
     </tr>
     <tr>
-      <td><code>&lt;backendName&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;backendName&gt;</code></td>
       <td>Admin URI (following the base URL).</td>
     </tr>
   </tbody>

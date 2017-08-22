@@ -861,7 +861,7 @@
 
     <p>Still, if some jobs are required to run during migration, make sure they do not create new database entities or change the existing ones in the way that such entities cannot be processed by the Delta mode.</p>
 
-    <p>For example: the <code>enterprise_salesarchive_archive_orders</code> cron job moves old orders to archive. Running this job during migration is safe because the Delta mode takes the job into account and thus properly processes the archived orders.</p>
+    <p>For example: the <code class="highlighter-rouge">enterprise_salesarchive_archive_orders</code> cron job moves old orders to archive. Running this job during migration is safe because the Delta mode takes the job into account and thus properly processes the archived orders.</p>
   </li>
 </ol>
 
@@ -872,7 +872,7 @@
   <li>
     <p>Copy your Magento 1.x media files to Magento 2.x.</p>
 
-    <p>You must copy these files manually from the <code>magento1-root/media</code> directory to <code>magento2-root/pub/media</code>.</p>
+    <p>You must copy these files manually from the <code class="highlighter-rouge">magento1-root/media</code> directory to <code class="highlighter-rouge">magento2-root/pub/media</code>.</p>
   </li>
 </ol>
 
@@ -903,11 +903,11 @@
 <ul>
   <li>
     <p>Start the incremental migration; updates will run continually.
-You can stop transferring updates at any time by pressing <code>Ctrl+C</code></p>
+You can stop transferring updates at any time by pressing <code class="highlighter-rouge">Ctrl+C</code></p>
   </li>
   <li>
     <p>Test your Magento 2 site during this time to catch any issues as soon as possible.
-In case of such issues, press <code>Ctrl+C</code> to stop incremental migration and start it again after issues are resolved</p>
+In case of such issues, press <code class="highlighter-rouge">Ctrl+C</code> to stop incremental migration and start it again after issues are resolved</p>
   </li>
 </ul>
 

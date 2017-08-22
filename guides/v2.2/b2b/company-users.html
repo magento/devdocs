@@ -766,10 +766,10 @@
 </section>
 
 
-			<p>A company user is a customer that is assigned extended attributes that identify the company the user belongs to. Use the <code>POST /V1/customers</code> call, which is included with Magento CE and EE, and specify the <code>company_attributes</code> extended attributes to create a company user.</p>
+			<p>A company user is a customer that is assigned extended attributes that identify the company the user belongs to. Use the <code class="highlighter-rouge">POST /V1/customers</code> call, which is included with Magento CE and EE, and specify the <code class="highlighter-rouge">company_attributes</code> extended attributes to create a company user.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This topic discusses only the features of the <code>customerCustomerRepositoryV1</code> service that are specific to B2B. See <a href="/guides/v2.2/get-started/order-tutorial/order-create-customer.html">Create a customer</a> for an example of creating a standard customer.</p>
+  <p>This topic discusses only the features of the <code class="highlighter-rouge">customerCustomerRepositoryV1</code> service that are specific to B2B. See <a href="/guides/v2.2/get-started/order-tutorial/order-create-customer.html">Create a customer</a> for an example of creating a standard customer.</p>
 </div>
 
 <h2 id="manage-company-users">Manage company users</h2>
@@ -778,12 +778,12 @@
 
 <p><strong>Service Name</strong></p>
 
-<p><code>customerCustomerRepositoryV1</code></p>
+<p><code class="highlighter-rouge">customerCustomerRepositoryV1</code></p>
 
 <p><strong>REST Endpoints</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span> <span class="err">/V</span><span class="mi">1</span><span class="err">/customers/</span>
-<span class="err">PUT</span> <span class="err">/V</span><span class="mi">1</span><span class="err">/customers/:customerId</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/customers/</span><span class="w">
+</span><span class="err">PUT</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/customers/:customerId</span></code></pre></figure>
 
 <p><strong>Company user parameters</strong></p>
 
@@ -800,31 +800,31 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>customer_id</code></td>
+      <td><code class="highlighter-rouge">customer_id</code></td>
       <td>System-generated customer ID.</td>
       <td>integer</td>
       <td>Not applicable for create operations.</td>
     </tr>
     <tr>
-      <td><code>company_id</code></td>
+      <td><code class="highlighter-rouge">company_id</code></td>
       <td>System-generated company ID.</td>
       <td>integer</td>
       <td>Required to create or update a company user.</td>
     </tr>
     <tr>
-      <td><code>job_title</code></td>
+      <td><code class="highlighter-rouge">job_title</code></td>
       <td>A string that describes the company user’s responsibilities.</td>
       <td>Required to create or update a company.</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>status</code></td>
+      <td><code class="highlighter-rouge">status</code></td>
       <td>Indicates whether the company user is active or inactive</td>
       <td>integer</td>
-      <td><code>0</code> - inactive; <code>1</code> - active</td>
+      <td><code class="highlighter-rouge">0</code> - inactive; <code class="highlighter-rouge">1</code> - active</td>
     </tr>
     <tr>
-      <td><code>telephone</code></td>
+      <td><code class="highlighter-rouge">telephone</code></td>
       <td>Telephone number</td>
       <td>string</td>
       <td>Required to create a company user.</td>
@@ -834,121 +834,121 @@
 
 <h3 id="create-a-company-user">Create a company user</h3>
 
-<p>The <code>POST /V1/customers</code> call creates a Magento customer. B2B extends the <code>customerAccountManagementV1</code> service so that you can create a company user.</p>
+<p>The <code class="highlighter-rouge">POST /V1/customers</code> call creates a Magento customer. B2B extends the <code class="highlighter-rouge">customerAccountManagementV1</code> service so that you can create a company user.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>POST /V1/customers</code></p>
+<p><code class="highlighter-rouge">POST /V1/customers</code></p>
 
 <p><strong>Payload</strong></p>
 
-<p>Add the <code>company_attributes</code> code block to the payload required to create a standard customer</p>
+<p>Add the <code class="highlighter-rouge">company_attributes</code> code block to the payload required to create a standard customer</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;extension_attributes&quot;</span><span class="err">:</span> <span class="p">{</span>
-   <span class="nt">&quot;company_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;company_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-   <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-   <span class="nt">&quot;job_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Sales Rep&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;512-555-3322&quot;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"extension_attributes"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"company_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Rep"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512-555-3322"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p>Full example:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-	<span class="nt">&quot;customer&quot;</span><span class="p">:</span> <span class="p">{</span>
-		<span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mshaw@example.com&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Melanie&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Shaw&quot;</span><span class="p">,</span>
-		 <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-    		<span class="nt">&quot;company_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-    		<span class="nt">&quot;company_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    		<span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    		<span class="nt">&quot;job_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Sales Rep&quot;</span><span class="p">,</span>
-    		<span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;512-555-3322&quot;</span>
-    		<span class="p">}</span>
-		<span class="p">}</span>
-	<span class="p">},</span>
-  <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;Password1&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+	</span><span class="nt">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mshaw@example.com"</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Melanie"</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shaw"</span><span class="p">,</span><span class="w">
+		 </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    		</span><span class="nt">"company_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    		</span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    		</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    		</span><span class="nt">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Rep"</span><span class="p">,</span><span class="w">
+    		</span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512-555-3322"</span><span class="w">
+    		</span><span class="p">}</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password1"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-  <span class="nt">&quot;group_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-05-18 16:47:44&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-05-18 16:47:44&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;created_in&quot;</span><span class="p">:</span> <span class="s2">&quot;Default Store View&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mshaw@example.com&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Melanie&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Shaw&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="nt">&quot;disable_auto_group_change&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;company_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;customer_id&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-      <span class="nt">&quot;company_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&quot;job_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Sales Rep&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;512-555-3322&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-18 16:47:44"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-18 16:47:44"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default Store View"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mshaw@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Melanie"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shaw"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nt">"disable_auto_group_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"company_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales Rep"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512-555-3322"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h3 id="modify-a-company-user">Modify a company user</h3>
 
 <p>The following example changes the status of a company user to inactive.</p>
 
-<p>If you change the <code>status</code> to inactive, the account is locked. If the company user has child users, the system re-assigns the child users to the parent of the deactivated user.</p>
+<p>If you change the <code class="highlighter-rouge">status</code> to inactive, the account is locked. If the company user has child users, the system re-assigns the child users to the parent of the deactivated user.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>PUT /V1/customers/13</code></p>
+<p><code class="highlighter-rouge">PUT /V1/customers/13</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;customer&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mshaw@example.com&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Melanie&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Shaw&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;company_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;company_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">0</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mshaw@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Melanie"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shaw"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"company_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-  <span class="nt">&quot;group_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-05-18 16:47:44&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-05-18 18:50:58&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;created_in&quot;</span><span class="p">:</span> <span class="s2">&quot;Default Store View&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mshaw@example.com&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Melanie&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Shaw&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="nt">&quot;disable_auto_group_change&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;company_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;customer_id&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-      <span class="nt">&quot;company_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">0</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-18 16:47:44"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-18 18:50:58"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default Store View"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mshaw@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Melanie"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shaw"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nt">"disable_auto_group_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"company_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h3 id="delete-a-company-user">Delete a company user</h3>
 
@@ -958,7 +958,7 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>DELETE /V1/customers/13</code></p>
+<p><code class="highlighter-rouge">DELETE /V1/customers/13</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -966,7 +966,7 @@
 
 <p><strong>Response</strong></p>
 
-<p><code>true</code>, indicating the request was successful</p>
+<p><code class="highlighter-rouge">true</code>, indicating the request was successful</p>
 
 <h2 id="related-information">Related information</h2>
 

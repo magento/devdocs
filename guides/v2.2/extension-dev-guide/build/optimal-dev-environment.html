@@ -1262,7 +1262,7 @@ This article will guide you in setting up and optimizing your local development 
 Its configuration should be as close to a production server as possible.</p>
 
 <p>In your development machine, make sure you are running the Magento application in <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html">developer mode</a>.
-You can enable this mode with the command <code>bin/magento deploy:mode:set developer</code>.</p>
+You can enable this mode with the command <code class="highlighter-rouge">bin/magento deploy:mode:set developer</code>.</p>
 
 <h3 id="installation">Installation</h3>
 
@@ -1290,7 +1290,7 @@ Installing Magento 2 in a virtual environment allows you to run Magento 2 withou
   <li>Replace your MySQL database with <a href="https://www.percona.com/software/mysql-database/percona-server" target="_blank">Percona</a>.</li>
   <li>Make sure you install and enable <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a>.</li>
   <li>Xdebug is off by default. Enable this feature only when you need it because it requires a lot of memory and degrades performance.
-The <code>xdebug.max_nesting_level</code> configuration needs to be set to 200 or greater for Magento.
+The <code class="highlighter-rouge">xdebug.max_nesting_level</code> configuration needs to be set to 200 or greater for Magento.
 You can increase the memory available to PHP to get an increase in performance with Xdebug on.</li>
   <li>If you need sample data, you can install it using <a href="/guides/v2.2/install-gde/install/web/install-web-sample-data-composer.html">composer</a> or by <a href="/guides/v2.2/install-gde/install/web/install-web-sample-data-clone.html">cloning repositories</a>.</li>
   <li>To speed up front end development, <a href="http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html" target="_blank">turn off merging of CSS and JavaScript</a>.</li>

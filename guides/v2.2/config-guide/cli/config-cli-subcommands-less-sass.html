@@ -1910,23 +1910,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1945,8 +1948,9 @@
 
   <p>Command options:</p>
 
-  <pre><code>magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN] 
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN] 
 </code></pre>
+  </div>
 
   <p>The following table discusses the meanings of this command’s parameters and values.</p>
 
@@ -1990,22 +1994,25 @@
 	</tbody>
 </table>
 
-  <p>For example, to create LESS files for the frontend theme named <code>VendorName/themeName</code> in the <code>en_US</code> locale using a CSS file named <code>&lt;your Magento install dir&gt;/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css</code>, enter the following command:</p>
+  <p>For example, to create LESS files for the frontend theme named <code class="highlighter-rouge">VendorName/themeName</code> in the <code class="highlighter-rouge">en_US</code> locale using a CSS file named <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css</code>, enter the following command:</p>
 
-  <pre><code>magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme="VendorName/themeName" css/styles-l
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme="VendorName/themeName" css/styles-l
 </code></pre>
+  </div>
 
   <p>The following messages display to confirm success:</p>
 
-  <pre><code>Processed Area: frontend, Locale: en_US, Theme: VendorName/themeName, File type: less.
+  <div class="highlighter-rouge"><pre class="highlight"><code>Processed Area: frontend, Locale: en_US, Theme: VendorName/themeName, File type: less.
 -&gt; css/styles-l.less
 Successfully processed.
 </code></pre>
+  </div>
 
   <p>To create LESS files for the adminhtml, enter the following command:</p>
 
-  <pre><code>magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
 </code></pre>
+  </div>
 
   <h4 id="related-topics">Related topics</h4>
 

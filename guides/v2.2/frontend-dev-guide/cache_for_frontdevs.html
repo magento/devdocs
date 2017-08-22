@@ -1145,7 +1145,7 @@
   <h3 id="config-cache-over-cacheable">Cacheable and uncacheable pages</h3>
   <p><em>Cacheable</em> and <em>uncacheable</em> are terms we use to indicate whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> is designated as uncacheable, the entire page is uncacheable.</p>
 
-  <p>To create an uncacheable page, mark any block on that page as uncacheable in the layout using <code>cacheable="false"</code>.</p>
+  <p>To create an uncacheable page, mark any block on that page as uncacheable in the layout using <code class="highlighter-rouge">cacheable="false"</code>.</p>
 
   <p>Examples of uncacheable pages include the compare products, cart, <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> pages, and so on.</p>
 
@@ -1169,22 +1169,22 @@
     <tbody>
       <tr>
         <td>Layout</td>
-        <td><code>layout</code></td>
+        <td><code class="highlighter-rouge">layout</code></td>
         <td>Compiled page layouts (that is, the layout components from all components). Clean or flush this cache type after modifying layout files.</td>
       </tr>
       <tr>
         <td>Block HTML output</td>
-        <td><code>block_html</code></td>
+        <td><code class="highlighter-rouge">block_html</code></td>
         <td>HTML page fragments per block. Clean or flush this cache type after modifying the view layer.</td>
       </tr>
       <tr>
         <td>Page cache</td>
-        <td><code>full_page</code></td>
+        <td><code class="highlighter-rouge">full_page</code></td>
         <td>Generated HTML pages. If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.</td>
       </tr>
       <tr>
         <td>Translations</td>
-        <td><code>translate</code></td>
+        <td><code class="highlighter-rouge">translate</code></td>
         <td>Merged translations from all modules.</td>
       </tr>
     </tbody>
@@ -1200,19 +1200,21 @@ The full list of cache types can be found in the <a href="/guides/v2.2//config-g
 
   <p>To clean cache, run</p>
 
-  <pre><code>magento cache:clean &lt;type&gt; ... &lt;type&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento cache:clean &lt;type&gt; ... &lt;type&gt;
 </code></pre>
+  </div>
 
   <p>To view the status of the cache, run:</p>
 
-  <pre><code>`php bin/magento cache:status`
+  <div class="highlighter-rouge"><pre class="highlight"><code>`php bin/magento cache:status`
 </code></pre>
+  </div>
 
   <p>For more details about working with cache, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></p>
 
   <h2 id="clean_static">Clean static files</h2>
 
-  <p>Besides the cached files, inn theme development process developers also deal with other saved files - static view files that are preprocessed and published to the <code>var/view_preprocessed</code> and <code>pub/static</code> directories correspondingly. In most cases when working on a custom theme, for example, if you are only working on styles, you do not need to clean cache, but need to clean the previously preprocessed and published static view files. To clean them, run  <code>grunt clean &lt;theme&gt;</code> or manually clear the <code>pub/static</code> and <code>var/view_preprocessed</code> directories.</p>
+  <p>Besides the cached files, inn theme development process developers also deal with other saved files - static view files that are preprocessed and published to the <code class="highlighter-rouge">var/view_preprocessed</code> and <code class="highlighter-rouge">pub/static</code> directories correspondingly. In most cases when working on a custom theme, for example, if you are only working on styles, you do not need to clean cache, but need to clean the previously preprocessed and published static view files. To clean them, run  <code class="highlighter-rouge">grunt clean &lt;theme&gt;</code> or manually clear the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var/view_preprocessed</code> directories.</p>
 
 </div>
 

@@ -1506,7 +1506,7 @@
 
 <div class="collapsible"><b class="collapsible-title">To find the extension's Composer name </b><div class="collapsible-content"><div>
 
-  <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code>composer.json</code> file. Open <code>composer.json</code> in a text editor and write down the values of <code>"name"</code> and <code>"version"</code>.</p>
+  <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
 
   <p>To get the extension’s Composer name from Magento Marketplace:</p>
 
@@ -1530,15 +1530,16 @@
     <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
     <li>Open a text editor.</li>
     <li>Paste the extension name in the text editor.</li>
-    <li>Append a colon character (<code>:</code>) to the component name.</li>
+    <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
     <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
     <li>
       <p>Append the version number to the component name after the colon.</p>
 
       <p>A sample follows:</p>
 
-      <pre><code>pixlee/magento2:1.0.1
+      <div class="highlighter-rouge"><pre class="highlight"><code>pixlee/magento2:1.0.1
 </code></pre>
+      </div>
     </li>
   </ol>
 </div>
@@ -1554,27 +1555,31 @@
     <li>
       <p>Enter the following command in a terminal to log in to your project:</p>
 
-      <pre><code>magento-cloud login
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+      </div>
     </li>
     <li>
       <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-      <pre><code>magento-cloud project:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+      </div>
     </li>
-    <li>Change to a project directory. For example, <code>cd /var/www/html/magento2</code></li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
     <li>
       <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-      <pre><code>magento-cloud environment:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
   		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
@@ -1583,28 +1588,32 @@
     <li>
       <p>Fetch origin branches to get the latest code:</p>
 
-      <pre><code>git fetch origin
+      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
+      </div>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
     </li>
     <li>
       <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Create a <a href="/guides/v2.0/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
   </ol>
 </div>
@@ -1614,23 +1623,25 @@
 
 <div class="collapsible"><b class="collapsible-title">To update extensions: </b><div class="collapsible-content"><ol>
   <li>If you haven’t done so already, change to your environment root directory.</li>
-  <li>Open <code>composer.json</code> in a text editor.</li>
+  <li>Open <code class="highlighter-rouge">composer.json</code> in a text editor.</li>
   <li>Locate your extension.</li>
   <li>Update its version.</li>
-  <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">composer.json</code> and exit the text editor.</li>
   <li>
     <p>Update project dependencies:</p>
 
-    <pre><code>composer update
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer update
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Enter the following commands in the order shown to commit the changes and deploy the project, including <code>composer.lock</code>:</p>
+    <p>Enter the following commands in the order shown to commit the changes and deploy the project, including <code class="highlighter-rouge">composer.lock</code>:</p>
 
-    <pre><code>git add -A
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
 git commit -m "&lt;message&gt;"
 git push origin &lt;environment ID&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Wait for the project to deploy.</p>

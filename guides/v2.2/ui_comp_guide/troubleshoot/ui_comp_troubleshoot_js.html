@@ -1239,20 +1239,20 @@
 
 <p>To retrieve the context within markup, you can also use the instance of Knockout:</p>
 
-<p>At first we need to get a Knockout instance from the browser console. To do so, use the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">RequireJS ID</a> <code>knockout</code>.</p>
+<p>At first we need to get a Knockout instance from the browser console. To do so, use the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">RequireJS ID</a> <code class="highlighter-rouge">knockout</code>.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">ko</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;knockout&#39;</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">ko</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'knockout'</span><span class="p">);</span></code></pre></figure>
 
-<p>Now we have Knockout instance in the <code>ko</code> variable. We can use it to get a context of any DOM element.</p>
+<p>Now we have Knockout instance in the <code class="highlighter-rouge">ko</code> variable. We can use it to get a context of any DOM element.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">contextFor</span><span class="p">(</span><span class="nx">$0</span><span class="p">);</span></code></pre></figure>
 
-<p>, where <code>$0</code> is a <a href="https://developers.google.com/web/tools/chrome-devtools/debug/command-line/command-line-reference#section-1">special variable</a> in browser console. It contains a link to a DOM element that is last inspected.</p>
+<p>, where <code class="highlighter-rouge">$0</code> is a <a href="https://developers.google.com/web/tools/chrome-devtools/debug/command-line/command-line-reference#section-1">special variable</a> in browser console. It contains a link to a DOM element that is last inspected.</p>
 
 <p>For example:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Admin &gt; Products &gt; Catalog &gt; Add Product</span>
-<span class="c1">// Inspect &quot;Product Name&quot;</span>
+<span class="c1">// Inspect "Product Name"</span>
 <span class="kd">var</span> <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">contextFor</span><span class="p">(</span><span class="nx">$0</span><span class="p">).</span><span class="nx">$data</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fieldName</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// product_form.product_form.product-details.container_name.name</span></code></pre></figure>

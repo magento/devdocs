@@ -761,107 +761,107 @@
 
 
 			
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;xs:schema</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;xs:schema</span> <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema"</span> <span class="na">elementFormDefault=</span><span class="s">"qualified"</span><span class="nt">&gt;</span>
     <span class="c">&lt;!-- Include section --&gt;</span>
-    <span class="nt">&lt;xs:include</span> <span class="na">schemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_components.xsd&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:include</span> <span class="na">schemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_components.xsd"</span><span class="nt">/&gt;</span>
     <span class="c">&lt;!-- Definition the document element --&gt;</span>
-    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">&quot;components&quot;</span> <span class="na">type=</span><span class="s">&quot;definition&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"components"</span> <span class="na">type=</span><span class="s">"definition"</span><span class="nt">/&gt;</span>
     <span class="c">&lt;!-- Registering components in the system --&gt;</span>
-    <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">&quot;definition&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"definition"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;xs:annotation&gt;</span>
             <span class="nt">&lt;xs:appinfo&gt;</span>Registering components in the system and basic setup<span class="nt">&lt;/xs:appinfo&gt;</span>
             <span class="nt">&lt;xs:documentation&gt;</span>Registering components in the system and basic setup<span class="nt">&lt;/xs:documentation&gt;</span>
         <span class="nt">&lt;/xs:annotation&gt;</span>
         <span class="nt">&lt;xs:all&gt;</span>
             <span class="c">&lt;!-- Components list --&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;range&quot;</span> <span class="na">name=</span><span class="s">&quot;range&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;tab&quot;</span> <span class="na">name=</span><span class="s">&quot;tab&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataSource&quot;</span> <span class="na">name=</span><span class="s">&quot;dataSource&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;paging&quot;</span> <span class="na">name=</span><span class="s">&quot;paging&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;massaction&quot;</span> <span class="na">name=</span><span class="s">&quot;massaction&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;listingDefinition&quot;</span> <span class="na">name=</span><span class="s">&quot;listing&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;formDefinition&quot;</span> <span class="na">name=</span><span class="s">&quot;form&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;fieldset&quot;</span> <span class="na">name=</span><span class="s">&quot;fieldset&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;field&quot;</span> <span class="na">name=</span><span class="s">&quot;field&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;filters&quot;</span> <span class="na">name=</span><span class="s">&quot;filters&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;columns&quot;</span> <span class="na">name=</span><span class="s">&quot;columns&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;column&quot;</span> <span class="na">name=</span><span class="s">&quot;column&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;filterSelect&quot;</span> <span class="na">name=</span><span class="s">&quot;filterSelect&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;filterSearch&quot;</span> <span class="na">name=</span><span class="s">&quot;filterSearch&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;filterRange&quot;</span> <span class="na">name=</span><span class="s">&quot;filterRange&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;filterInput&quot;</span> <span class="na">name=</span><span class="s">&quot;filterInput&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;filterDate&quot;</span> <span class="na">name=</span><span class="s">&quot;filterDate&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;container&quot;</span> <span class="na">name=</span><span class="s">&quot;container&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;input&quot;</span> <span class="na">name=</span><span class="s">&quot;input&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;hidden&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;select&quot;</span> <span class="na">name=</span><span class="s">&quot;select&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;multiselect&quot;</span> <span class="na">name=</span><span class="s">&quot;multiselect&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;textarea&quot;</span> <span class="na">name=</span><span class="s">&quot;textarea&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;fileUploader&quot;</span> <span class="na">name=</span><span class="s">&quot;fileUploader&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;wysiwyg&quot;</span> <span class="na">name=</span><span class="s">&quot;wysiwyg&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;radioset&quot;</span> <span class="na">name=</span><span class="s">&quot;radioset&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;checkboxset&quot;</span> <span class="na">name=</span><span class="s">&quot;checkboxset&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;multiline&quot;</span> <span class="na">name=</span><span class="s">&quot;multiline&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataTypeText&quot;</span> <span class="na">name=</span><span class="s">&quot;text&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataTypeBoolean&quot;</span> <span class="na">name=</span><span class="s">&quot;boolean&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataTypeNumber&quot;</span> <span class="na">name=</span><span class="s">&quot;number&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataTypePrice&quot;</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataTypeMedia&quot;</span> <span class="na">name=</span><span class="s">&quot;image&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataTypeDate&quot;</span> <span class="na">name=</span><span class="s">&quot;date&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataTypeEmail&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataTypeMedia&quot;</span> <span class="na">name=</span><span class="s">&quot;file&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;nav&quot;</span> <span class="na">name=</span><span class="s">&quot;nav&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;actions&quot;</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;actionDelete&quot;</span> <span class="na">name=</span><span class="s">&quot;actionDelete&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;bookmark&quot;</span> <span class="na">name=</span><span class="s">&quot;bookmark&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;exportButton&quot;</span> <span class="na">name=</span><span class="s">&quot;exportButton&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;columnsControls&quot;</span> <span class="na">name=</span><span class="s">&quot;columnsControls&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;container&quot;</span> <span class="na">name=</span><span class="s">&quot;listingToolbar&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;action&quot;</span> <span class="na">name=</span><span class="s">&quot;action&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">type=</span><span class="s">&quot;component&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">&quot;actionsColumn&quot;</span> <span class="na">type=</span><span class="s">&quot;actionsColumn&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">&quot;selectionsColumn&quot;</span> <span class="na">type=</span><span class="s">&quot;selectionsColumn&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dynamicRows&quot;</span> <span class="na">name=</span><span class="s">&quot;dynamicRows&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">&quot;htmlContent&quot;</span> <span class="na">type=</span><span class="s">&quot;htmlContent&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;insertForm&quot;</span> <span class="na">name=</span><span class="s">&quot;insertForm&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;insertListing&quot;</span> <span class="na">name=</span><span class="s">&quot;insertListing&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;modal&quot;</span> <span class="na">name=</span><span class="s">&quot;modal&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">name=</span><span class="s">&quot;button&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"range"</span> <span class="na">name=</span><span class="s">"range"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"tab"</span> <span class="na">name=</span><span class="s">"tab"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataSource"</span> <span class="na">name=</span><span class="s">"dataSource"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"paging"</span> <span class="na">name=</span><span class="s">"paging"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"massaction"</span> <span class="na">name=</span><span class="s">"massaction"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"listingDefinition"</span> <span class="na">name=</span><span class="s">"listing"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"formDefinition"</span> <span class="na">name=</span><span class="s">"form"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"fieldset"</span> <span class="na">name=</span><span class="s">"fieldset"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"field"</span> <span class="na">name=</span><span class="s">"field"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"filters"</span> <span class="na">name=</span><span class="s">"filters"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"columns"</span> <span class="na">name=</span><span class="s">"columns"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"column"</span> <span class="na">name=</span><span class="s">"column"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"filterSelect"</span> <span class="na">name=</span><span class="s">"filterSelect"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"filterSearch"</span> <span class="na">name=</span><span class="s">"filterSearch"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"filterRange"</span> <span class="na">name=</span><span class="s">"filterRange"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"filterInput"</span> <span class="na">name=</span><span class="s">"filterInput"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"filterDate"</span> <span class="na">name=</span><span class="s">"filterDate"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"container"</span> <span class="na">name=</span><span class="s">"container"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">name=</span><span class="s">"input"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"hidden"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"checkbox"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"select"</span> <span class="na">name=</span><span class="s">"select"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"multiselect"</span> <span class="na">name=</span><span class="s">"multiselect"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"textarea"</span> <span class="na">name=</span><span class="s">"textarea"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"fileUploader"</span> <span class="na">name=</span><span class="s">"fileUploader"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"wysiwyg"</span> <span class="na">name=</span><span class="s">"wysiwyg"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"radioset"</span> <span class="na">name=</span><span class="s">"radioset"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"checkboxset"</span> <span class="na">name=</span><span class="s">"checkboxset"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"multiline"</span> <span class="na">name=</span><span class="s">"multiline"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataTypeText"</span> <span class="na">name=</span><span class="s">"text"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataTypeBoolean"</span> <span class="na">name=</span><span class="s">"boolean"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataTypeNumber"</span> <span class="na">name=</span><span class="s">"number"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataTypePrice"</span> <span class="na">name=</span><span class="s">"price"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataTypeMedia"</span> <span class="na">name=</span><span class="s">"image"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataTypeDate"</span> <span class="na">name=</span><span class="s">"date"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataTypeEmail"</span> <span class="na">name=</span><span class="s">"email"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataTypeMedia"</span> <span class="na">name=</span><span class="s">"file"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"nav"</span> <span class="na">name=</span><span class="s">"nav"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"actions"</span> <span class="na">name=</span><span class="s">"actions"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"actionDelete"</span> <span class="na">name=</span><span class="s">"actionDelete"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"bookmark"</span> <span class="na">name=</span><span class="s">"bookmark"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"exportButton"</span> <span class="na">name=</span><span class="s">"exportButton"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"columnsControls"</span> <span class="na">name=</span><span class="s">"columnsControls"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"container"</span> <span class="na">name=</span><span class="s">"listingToolbar"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"action"</span> <span class="na">name=</span><span class="s">"action"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">type=</span><span class="s">"component"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"actionsColumn"</span> <span class="na">type=</span><span class="s">"actionsColumn"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"selectionsColumn"</span> <span class="na">type=</span><span class="s">"selectionsColumn"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dynamicRows"</span> <span class="na">name=</span><span class="s">"dynamicRows"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"htmlContent"</span> <span class="na">type=</span><span class="s">"htmlContent"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"insertForm"</span> <span class="na">name=</span><span class="s">"insertForm"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"insertListing"</span> <span class="na">name=</span><span class="s">"insertListing"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"modal"</span> <span class="na">name=</span><span class="s">"modal"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">name=</span><span class="s">"button"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/xs:all&gt;</span>
     <span class="nt">&lt;/xs:complexType&gt;</span>
     <span class="c">&lt;!-- Custom configuration --&gt;</span>
-    <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">&quot;listingDefinition&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"listingDefinition"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;xs:complexContent&gt;</span>
-            <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">&quot;listing&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span> <span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;container&quot;</span> <span class="na">name=</span><span class="s">&quot;listingToolbar&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataSource&quot;</span> <span class="na">name=</span><span class="s">&quot;dataSource&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;paging&quot;</span> <span class="na">name=</span><span class="s">&quot;paging&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;massaction&quot;</span> <span class="na">name=</span><span class="s">&quot;massaction&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;columns&quot;</span> <span class="na">name=</span><span class="s">&quot;columns&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;filters&quot;</span> <span class="na">name=</span><span class="s">&quot;filters&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"listing"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"container"</span> <span class="na">name=</span><span class="s">"listingToolbar"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataSource"</span> <span class="na">name=</span><span class="s">"dataSource"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"paging"</span> <span class="na">name=</span><span class="s">"paging"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"massaction"</span> <span class="na">name=</span><span class="s">"massaction"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"columns"</span> <span class="na">name=</span><span class="s">"columns"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"filters"</span> <span class="na">name=</span><span class="s">"filters"</span><span class="nt">/&gt;</span>
                 <span class="nt">&lt;/xs:choice&gt;</span>
             <span class="nt">&lt;/xs:extension&gt;</span>
         <span class="nt">&lt;/xs:complexContent&gt;</span>
     <span class="nt">&lt;/xs:complexType&gt;</span>
-    <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">&quot;formDefinition&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"formDefinition"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;xs:complexContent&gt;</span>
-            <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span> <span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;fieldset&quot;</span> <span class="na">name=</span><span class="s">&quot;fieldset&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dataSource&quot;</span> <span class="na">name=</span><span class="s">&quot;dataSource&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;insertForm&quot;</span> <span class="na">name=</span><span class="s">&quot;insertForm&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;insertListing&quot;</span> <span class="na">name=</span><span class="s">&quot;insertListing&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;modal&quot;</span> <span class="na">name=</span><span class="s">&quot;modal&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">&quot;dynamicRows&quot;</span> <span class="na">name=</span><span class="s">&quot;dynamicRows&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xs:choice</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"fieldset"</span> <span class="na">name=</span><span class="s">"fieldset"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dataSource"</span> <span class="na">name=</span><span class="s">"dataSource"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"insertForm"</span> <span class="na">name=</span><span class="s">"insertForm"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"insertListing"</span> <span class="na">name=</span><span class="s">"insertListing"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"modal"</span> <span class="na">name=</span><span class="s">"modal"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;xs:element</span> <span class="na">type=</span><span class="s">"dynamicRows"</span> <span class="na">name=</span><span class="s">"dynamicRows"</span><span class="nt">/&gt;</span>
                 <span class="nt">&lt;/xs:choice&gt;</span>
             <span class="nt">&lt;/xs:extension&gt;</span>
         <span class="nt">&lt;/xs:complexContent&gt;</span>

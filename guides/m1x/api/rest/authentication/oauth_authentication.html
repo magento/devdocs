@@ -470,58 +470,58 @@ and a lot more</li>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Example of retrieving the products list using Admin account via Magento REST API. OAuth authorization is used</span>
-<span class="sd"> * Preconditions:</span>
-<span class="sd"> * 1. Install php oauth extension</span>
-<span class="sd"> * 2. If you were authorized as a Customer before this step, clear browser cookies for &#39;yourhost&#39;</span>
-<span class="sd"> * 3. Create at least one product in Magento</span>
-<span class="sd"> * 4. Configure resource permissions for Admin REST user for retrieving all product data for Admin</span>
-<span class="sd"> * 5. Create a Consumer</span>
-<span class="sd"> */</span>
-<span class="c1">// $callbackUrl is a path to your file with OAuth authentication example for the Admin user</span>
-<span class="nv">$callbackUrl</span> <span class="o">=</span> <span class="s2">&quot;http://yourhost/oauth_admin.php&quot;</span><span class="p">;</span>
-<span class="nv">$temporaryCredentialsRequestUrl</span> <span class="o">=</span> <span class="s2">&quot;http://yourhost/oauth/initiate?oauth_callback=&quot;</span> <span class="o">.</span> <span class="nb">urlencode</span><span class="p">(</span><span class="nv">$callbackUrl</span><span class="p">);</span>
-<span class="nv">$adminAuthorizationUrl</span> <span class="o">=</span> <span class="s1">&#39;http://yourhost/admin/oAuth_authorize&#39;</span><span class="p">;</span>
-<span class="nv">$accessTokenRequestUrl</span> <span class="o">=</span> <span class="s1">&#39;http://yourhost/oauth/token&#39;</span><span class="p">;</span>
-<span class="nv">$apiUrl</span> <span class="o">=</span> <span class="s1">&#39;http://yourhost/api/rest&#39;</span><span class="p">;</span>
-<span class="nv">$consumerKey</span> <span class="o">=</span> <span class="s1">&#39;yourconsumerkey&#39;</span><span class="p">;</span>
-<span class="nv">$consumerSecret</span> <span class="o">=</span> <span class="s1">&#39;yourconsumersecret&#39;</span><span class="p">;</span>
+<span class="sd">/**
+ * Example of retrieving the products list using Admin account via Magento REST API. OAuth authorization is used
+ * Preconditions:
+ * 1. Install php oauth extension
+ * 2. If you were authorized as a Customer before this step, clear browser cookies for 'yourhost'
+ * 3. Create at least one product in Magento
+ * 4. Configure resource permissions for Admin REST user for retrieving all product data for Admin
+ * 5. Create a Consumer
+ */</span>
+<span class="c1">// $callbackUrl is a path to your file with OAuth authentication example for the Admin user
+</span><span class="nv">$callbackUrl</span> <span class="o">=</span> <span class="s2">"http://yourhost/oauth_admin.php"</span><span class="p">;</span>
+<span class="nv">$temporaryCredentialsRequestUrl</span> <span class="o">=</span> <span class="s2">"http://yourhost/oauth/initiate?oauth_callback="</span> <span class="o">.</span> <span class="nb">urlencode</span><span class="p">(</span><span class="nv">$callbackUrl</span><span class="p">);</span>
+<span class="nv">$adminAuthorizationUrl</span> <span class="o">=</span> <span class="s1">'http://yourhost/admin/oAuth_authorize'</span><span class="p">;</span>
+<span class="nv">$accessTokenRequestUrl</span> <span class="o">=</span> <span class="s1">'http://yourhost/oauth/token'</span><span class="p">;</span>
+<span class="nv">$apiUrl</span> <span class="o">=</span> <span class="s1">'http://yourhost/api/rest'</span><span class="p">;</span>
+<span class="nv">$consumerKey</span> <span class="o">=</span> <span class="s1">'yourconsumerkey'</span><span class="p">;</span>
+<span class="nv">$consumerSecret</span> <span class="o">=</span> <span class="s1">'yourconsumersecret'</span><span class="p">;</span>
 
 <span class="nb">session_start</span><span class="p">();</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;oauth_token&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'oauth_token'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'state'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$authType</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">?</span> <span class="nx">OAUTH_AUTH_TYPE_AUTHORIZATION</span> <span class="o">:</span> <span class="nx">OAUTH_AUTH_TYPE_URI</span><span class="p">;</span>
+    <span class="nv">$authType</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">?</span> <span class="nx">OAUTH_AUTH_TYPE_AUTHORIZATION</span> <span class="o">:</span> <span class="nx">OAUTH_AUTH_TYPE_URI</span><span class="p">;</span>
     <span class="nv">$oauthClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OAuth</span><span class="p">(</span><span class="nv">$consumerKey</span><span class="p">,</span> <span class="nv">$consumerSecret</span><span class="p">,</span> <span class="nx">OAUTH_SIG_METHOD_HMACSHA1</span><span class="p">,</span> <span class="nv">$authType</span><span class="p">);</span>
     <span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">enableDebug</span><span class="p">();</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;oauth_token&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'oauth_token'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'state'</span><span class="p">])</span> <span class="p">{</span>
         <span class="nv">$requestToken</span> <span class="o">=</span> <span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">getRequestToken</span><span class="p">(</span><span class="nv">$temporaryCredentialsRequestUrl</span><span class="p">);</span>
-        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;secret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$requestToken</span><span class="p">[</span><span class="s1">&#39;oauth_token_secret&#39;</span><span class="p">];</span>
-        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: &#39;</span> <span class="o">.</span> <span class="nv">$adminAuthorizationUrl</span> <span class="o">.</span> <span class="s1">&#39;?oauth_token=&#39;</span> <span class="o">.</span> <span class="nv">$requestToken</span><span class="p">[</span><span class="s1">&#39;oauth_token&#39;</span><span class="p">]);</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'secret'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$requestToken</span><span class="p">[</span><span class="s1">'oauth_token_secret'</span><span class="p">];</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$adminAuthorizationUrl</span> <span class="o">.</span> <span class="s1">'?oauth_token='</span> <span class="o">.</span> <span class="nv">$requestToken</span><span class="p">[</span><span class="s1">'oauth_token'</span><span class="p">]);</span>
         <span class="k">exit</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">setToken</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;oauth_token&#39;</span><span class="p">],</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;secret&#39;</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">setToken</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'oauth_token'</span><span class="p">],</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'secret'</span><span class="p">]);</span>
         <span class="nv">$accessToken</span> <span class="o">=</span> <span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">getAccessToken</span><span class="p">(</span><span class="nv">$accessTokenRequestUrl</span><span class="p">);</span>
-        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$accessToken</span><span class="p">[</span><span class="s1">&#39;oauth_token&#39;</span><span class="p">];</span>
-        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;secret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$accessToken</span><span class="p">[</span><span class="s1">&#39;oauth_token_secret&#39;</span><span class="p">];</span>
-        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: &#39;</span> <span class="o">.</span> <span class="nv">$callbackUrl</span><span class="p">);</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'state'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'token'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$accessToken</span><span class="p">[</span><span class="s1">'oauth_token'</span><span class="p">];</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'secret'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$accessToken</span><span class="p">[</span><span class="s1">'oauth_token_secret'</span><span class="p">];</span>
+        <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$callbackUrl</span><span class="p">);</span>
         <span class="k">exit</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">setToken</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">],</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;secret&#39;</span><span class="p">]);</span>
+        <span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">setToken</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'token'</span><span class="p">],</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'secret'</span><span class="p">]);</span>
 
-        <span class="nv">$resourceUrl</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">$apiUrl</span><span class="s2">/products&quot;</span><span class="p">;</span>
-        <span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">fetch</span><span class="p">(</span><span class="nv">$resourceUrl</span><span class="p">,</span> <span class="k">array</span><span class="p">(),</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;application/json&#39;</span><span class="p">));</span>
+        <span class="nv">$resourceUrl</span> <span class="o">=</span> <span class="s2">"</span><span class="nv">$apiUrl</span><span class="s2">/products"</span><span class="p">;</span>
+        <span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">fetch</span><span class="p">(</span><span class="nv">$resourceUrl</span><span class="p">,</span> <span class="k">array</span><span class="p">(),</span> <span class="s1">'GET'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">));</span>
         <span class="nv">$productsList</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$oauthClient</span><span class="o">-&gt;</span><span class="na">getLastResponse</span><span class="p">());</span>
         <span class="nb">print_r</span><span class="p">(</span><span class="nv">$productsList</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">OAuthException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
-    <span class="k">echo</span> <span class="s2">&quot;&amp;lt;br/&amp;gt;&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&amp;lt;br/&amp;gt;"</span><span class="p">;</span>
     <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">lastResponse</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 

@@ -1134,10 +1134,10 @@
 
 <p>Large applications, such as the Magento application, use an object manager to avoid boilerplate code when composing objects during instantiation.</p>
 
-<p>In the Magento framework, the implementation of the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManagerInterface.php" target="_blank"><code>ObjectManagerInterface</code></a> performs the duties of an object manager.</p>
+<p>In the Magento framework, the implementation of the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManagerInterface.php" target="_blank"><code class="highlighter-rouge">ObjectManagerInterface</code></a> performs the duties of an object manager.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Magento prohibits the direct use of the <code>ObjectManager</code> in your code because it hides the real dependencies of a class.
+  <p>Magento prohibits the direct use of the <code class="highlighter-rouge">ObjectManager</code> in your code because it hides the real dependencies of a class.
 See <a href="#usage-rules">usage rules</a>.</p>
 </div>
 
@@ -1154,7 +1154,7 @@ See <a href="#usage-rules">usage rules</a>.</p>
 
 <h2 id="configuration">Configuration</h2>
 
-<p>The <a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html"><code>di.xml</code></a> file configures the object manager and tells it how to handle <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection</a>.</p>
+<p>The <a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html"><code class="highlighter-rouge">di.xml</code></a> file configures the object manager and tells it how to handle <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection</a>.</p>
 
 <p>This file specifies the preferred implementation class the object manager generates for the interface declared in a class constructor.</p>
 
@@ -1162,34 +1162,34 @@ See <a href="#usage-rules">usage rules</a>.</p>
 
 <h2 id="usage-rules">Usage rules</h2>
 
-<p>The Magento framework uses the <code>ObjectManager</code> to generate and inject the classes declared in your constructor.
-Classes should not ask for the <code>ObjectManager</code> itself as a constructor dependency.</p>
+<p>The Magento framework uses the <code class="highlighter-rouge">ObjectManager</code> to generate and inject the classes declared in your constructor.
+Classes should not ask for the <code class="highlighter-rouge">ObjectManager</code> itself as a constructor dependency.</p>
 
 <p>You do not call the object manager directly because the framework handles this automatically.
-Direct use of the <code>create</code> function prevents type validation and type hinting that a <a href="/guides/v2.1/extension-dev-guide/factories.html">factory</a> class provides.</p>
+Direct use of the <code class="highlighter-rouge">create</code> function prevents type validation and type hinting that a <a href="/guides/v2.1/extension-dev-guide/factories.html">factory</a> class provides.</p>
 
 <p>Object creation is also a separate responsibility that should be moved to a dedicated class such as a <a href="/guides/v2.1/extension-dev-guide/factories.html">factory</a> or <a href="/guides/v2.1/extension-dev-guide/proxies.html">proxy</a>.
 In most cases, the framework generates these classes automatically during code compilation.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>You may notice in the Magento 2 codebase that some core classes still call the <code>ObjectManager</code> directly.</p>
+  <p>You may notice in the Magento 2 codebase that some core classes still call the <code class="highlighter-rouge">ObjectManager</code> directly.</p>
 
   <p>This code needs porting or exist for backward compatibility purposes.</p>
 
-  <p>They are not tacit endorsements of using the <code>ObjectManager</code> directly.</p>
+  <p>They are not tacit endorsements of using the <code class="highlighter-rouge">ObjectManager</code> directly.</p>
 </div>
 
 <h3 id="exceptions">Exceptions</h3>
 
-<p>You can depend on and use the <code>ObjectManager</code> class in the following scenarios:</p>
+<p>You can depend on and use the <code class="highlighter-rouge">ObjectManager</code> class in the following scenarios:</p>
 
 <ul>
-  <li>You can use the object manager in static magic methods like <code>__wakeup()</code>, <code>__sleep()</code>, etc.
+  <li>You can use the object manager in static magic methods like <code class="highlighter-rouge">__wakeup()</code>, <code class="highlighter-rouge">__sleep()</code>, etc.
     <ul>
-      <li>An example can be found in the <code>__wakeup()</code> method in the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Eav/Model/Entity/Attribute/AbstractAttribute.php" target="_blank"><code>Magento/Eav/Model/Entity/Attribute/AbstractAttribute</code></a> class.</li>
+      <li>An example can be found in the <code class="highlighter-rouge">__wakeup()</code> method in the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Eav/Model/Entity/Attribute/AbstractAttribute.php" target="_blank"><code class="highlighter-rouge">Magento/Eav/Model/Entity/Attribute/AbstractAttribute</code></a> class.</li>
     </ul>
   </li>
-  <li>You can use the <code>ObjectManager</code> to maintain backward compatibility for a constructor.</li>
+  <li>You can use the <code class="highlighter-rouge">ObjectManager</code> to maintain backward compatibility for a constructor.</li>
   <li>In a global scope, like in fixtures of integration tests, you can use the object manager.</li>
   <li>The object manager can be a dependency in classes used for the creation of objects, e.g. factories or proxies.</li>
 </ul>
@@ -1197,7 +1197,7 @@ In most cases, the framework generates these classes automatically during code c
 <p><strong>Related topics</strong></p>
 
 <ul>
-  <li><a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html">The <code>di.xml</code> file</a></li>
+  <li><a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html">The <code class="highlighter-rouge">di.xml</code> file</a></li>
   <li><a href="/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
 </ul>
 

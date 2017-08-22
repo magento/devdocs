@@ -1907,22 +1907,23 @@
 
 <h2 id="configure-multiple-varnish-magento-purge">Configuration to purge multiple Varnish instances</h2>
 
-<p>Magento purges Varnish hosts after you configure Varnish hosts using the <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html"><code>magento setup:config:set</code></a> command.</p>
+<p>Magento purges Varnish hosts after you configure Varnish hosts using the <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html"><code class="highlighter-rouge">magento setup:config:set</code></a> command.</p>
 
-<p>You should use the <code>--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. (Do not separate hosts with a space character.)</p>
+<p>You should use the <code class="highlighter-rouge">--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. (Do not separate hosts with a space character.)</p>
 
-<p>The parameter format must be <code>&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code>&lt;listen port&gt;</code> if it’s port 80.</p>
+<p>The parameter format must be <code class="highlighter-rouge">&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code class="highlighter-rouge">&lt;listen port&gt;</code> if it’s port 80.</p>
 
 <p>For example,</p>
 
-<pre><code>magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
+<div class="highlighter-rouge"><pre class="highlight"><code>magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
 </code></pre>
+</div>
 
 <p>You can then purge all Varnish hosts when you refresh the Magento cache (also referred to as <em>cleaning</em> the cache) in the Magento Admin or using the command line.</p>
 
 <p>To refresh the cache using the Admin, click <strong>SYSTEM</strong> &gt; Tools &gt; <strong>Cache Management</strong>, then click <strong>Flush Magento Cache</strong> at the top of the page. (You can also refresh individual cache types.)</p>
 
-<p>To refresh the cache of multiple Varnish instances from cli use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean [type]</code></a> command as the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
+<p>To refresh the cache of multiple Varnish instances from cli use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean [type]</code></a> command as the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
 
 
 		</div>

@@ -1514,27 +1514,31 @@
     <li>
       <p>Enter the following command in a terminal to log in to your project:</p>
 
-      <pre><code>magento-cloud login
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+      </div>
     </li>
     <li>
       <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-      <pre><code>magento-cloud project:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+      </div>
     </li>
-    <li>Change to a project directory. For example, <code>cd /var/www/html/magento2</code></li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
     <li>
       <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-      <pre><code>magento-cloud environment:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
   		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
@@ -1543,28 +1547,32 @@
     <li>
       <p>Fetch origin branches to get the latest code:</p>
 
-      <pre><code>git fetch origin
+      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
+      </div>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
     </li>
     <li>
       <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Create a <a href="/guides/v2.0/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
   </ol>
 </div>
@@ -1577,22 +1585,25 @@
   <li>
     <p>In your local environment root directory, enter the following commands in the order shown:</p>
 
-    <pre><code>composer config repositories.fastly-magento2 git "https://github.com/fastly/fastly-magento2.git"
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer config repositories.fastly-magento2 git "https://github.com/fastly/fastly-magento2.git"
 composer require fastly/magento2
 </code></pre>
+    </div>
   </li>
   <li>Wait for dependencies to be updated.</li>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>php bin/magento setup:upgrade &amp;&amp; php bin/magento cache:clean
+    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:upgrade &amp;&amp; php bin/magento cache:clean
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Add, commit, and push the change:</p>
 
-    <pre><code>git add -A; git commit -m "Install Fastly"; git push origin &lt;branch name&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A; git commit -m "Install Fastly"; git push origin &lt;branch name&gt;
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1603,8 +1614,9 @@ composer require fastly/magento2
 
     <p>If you don’t remember your login information, enter the following command:</p>
 
-    <pre><code>magento-cloud var:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud var:list
 </code></pre>
+    </div>
   </li>
   <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>.</li>
   <li>
@@ -1706,7 +1718,7 @@ composer require fastly/magento2
     <p><img src="/common/images/cloud_upload-vcl-to-fastly.png" alt="Upload a Magento VCL to Fastly" /></p>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		If the <strong>Upload VCL to Fastly</strong> button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. For details, see <a href="/guides/v2.0/cloud/howtos/update-components.html">Update extensions</a>. Fastly’s Composer name is <code>fastly/magento2</code>.
+  		If the <strong>Upload VCL to Fastly</strong> button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. For details, see <a href="/guides/v2.0/cloud/howtos/update-components.html">Update extensions</a>. Fastly’s Composer name is <code class="highlighter-rouge">fastly/magento2</code>.
     </div>
   </li>
   <li>Follow the prompts on your screen to complete the task.</li>
@@ -1720,7 +1732,7 @@ composer require fastly/magento2
 <h2 id="cloud-fastly-merge">Merge your Fastly branch</h2>
 <p>When you’re done with development, <a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">merge your environment</a> with its parent environment.</p>
 
-<p>For Fastly to be used in production, you must merge with the <code>master</code> environment.</p>
+<p>For Fastly to be used in production, you must merge with the <code class="highlighter-rouge">master</code> environment.</p>
 
 <h2 id="custom-vcl">Custom VCLs</h2>
 <p>You’re free to customize your Fastly VCL however you want, provided you follow Fastly’s guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.</p>
@@ -1742,9 +1754,9 @@ composer require fastly/magento2
         <p>Configure your project:</p>
 
         <ul>
-          <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-          <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-          <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
+          <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+          <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
+          <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
         </ul>
       </li>
     </ul>

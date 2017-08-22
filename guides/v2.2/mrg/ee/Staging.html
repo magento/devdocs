@@ -1065,26 +1065,26 @@
 
 <h4 id="timelinegrid-view-ui-components">Timeline/Grid view UI components</h4>
 
-<p>You can manipulate the timeline view and the grid view of a dashboard in the <code>app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml</code> configuration file as a <a href="devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html">simple grid</a> with the following custom settings:</p>
+<p>You can manipulate the timeline view and the grid view of a dashboard in the <code class="highlighter-rouge">app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml</code> configuration file as a <a href="devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html">simple grid</a> with the following custom settings:</p>
 
 <ul>
-  <li>in <code>listingToolbar</code>
+  <li>in <code class="highlighter-rouge">listingToolbar</code>
     <ul>
-      <li><code>template</code> declares a legend for a timeline, which is an overloading template that provides a grid/timeline view switcher.</li>
-      <li><code>updateTypes</code> declares a path to a Status column, which provides data for a legend.</li>
+      <li><code class="highlighter-rouge">template</code> declares a legend for a timeline, which is an overloading template that provides a grid/timeline view switcher.</li>
+      <li><code class="highlighter-rouge">updateTypes</code> declares a path to a Status column, which provides data for a legend.</li>
     </ul>
   </li>
-  <li>in <code>columns</code>
+  <li>in <code class="highlighter-rouge">columns</code>
     <ul>
-      <li><code>component</code> declares a timeline component, which extends listing.</li>
-      <li><code>recordTmpl</code> declares an overloading template for timeline records.</li>
-      <li><code>detailsTmpl</code> declares a template for a tooltip component, which provides <a href="#campaign">campaign</a> details.</li>
+      <li><code class="highlighter-rouge">component</code> declares a timeline component, which extends listing.</li>
+      <li><code class="highlighter-rouge">recordTmpl</code> declares an overloading template for timeline records.</li>
+      <li><code class="highlighter-rouge">detailsTmpl</code> declares a template for a tooltip component, which provides <a href="#campaign">campaign</a> details.</li>
     </ul>
   </li>
-  <li>in <code>column name="status"</code>
+  <li>in <code class="highlighter-rouge">column name="status"</code>
     <ul>
-      <li><code>component</code> extends selection column, sets a CSS class specified in a value.</li>
-      <li><code>updateTypesMap</code> declares an array that contains bound classes and values that indicate which CSS class must be applied. Depending on the <code>value</code> (obtained from backend), a CSS class from the <code>className</code> is applied to a stripe with update.</li>
+      <li><code class="highlighter-rouge">component</code> extends selection column, sets a CSS class specified in a value.</li>
+      <li><code class="highlighter-rouge">updateTypesMap</code> declares an array that contains bound classes and values that indicate which CSS class must be applied. Depending on the <code class="highlighter-rouge">value</code> (obtained from backend), a CSS class from the <code class="highlighter-rouge">className</code> is applied to a stripe with update.</li>
     </ul>
   </li>
 </ul>
@@ -1259,7 +1259,7 @@ NOTE <strong>Product in Websites</strong> tab is inactive in the Schedule Update
 
 <h2 id="module-dependencies">Module dependencies</h2>
 
-<p>You can find the list of modules that have dependencies on the Magento_Staging module in the <code>require</code> section of the <code>composer.json</code> file. The file is located in the root directory of the module.</p>
+<p>You can find the list of modules that have dependencies on the Magento_Staging module in the <code class="highlighter-rouge">require</code> section of the <code class="highlighter-rouge">composer.json</code> file. The file is located in the root directory of the module.</p>
 
 <h2 id="extension-points">Extension points</h2>
 
@@ -1267,15 +1267,15 @@ NOTE <strong>Product in Websites</strong> tab is inactive in the Schedule Update
 
 <h3 id="public-api">Public API</h3>
 
-<p>You can use public API defined in the <code>Api</code> directory.</p>
+<p>You can use public API defined in the <code class="highlighter-rouge">Api</code> directory.</p>
 
 <h3 id="ui-components">UI components</h3>
 
-<p>You can extend the UI components in the <code>view/adminhtml/ui_component</code> directory. For more information, see <a href="http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html">UI Listing/Grid Component</a>.</p>
+<p>You can extend the UI components in the <code class="highlighter-rouge">view/adminhtml/ui_component</code> directory. For more information, see <a href="http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html">UI Listing/Grid Component</a>.</p>
 
 <h3 id="layouts">Layouts</h3>
 
-<p>You can extend and override layouts in the <code>view/adminhtml/layout</code> directory. For more information about layouts, see the <a href="http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html">Layout documentation</a>.</p>
+<p>You can extend and override layouts in the <code class="highlighter-rouge">view/adminhtml/layout</code> directory. For more information about layouts, see the <a href="http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html">Layout documentation</a>.</p>
 
 <h2 id="additional-information">Additional information</h2>
 
@@ -1283,17 +1283,17 @@ NOTE <strong>Product in Websites</strong> tab is inactive in the Schedule Update
 
 <h3 id="cron-options">cron options</h3>
 
-<p>cron group configuration is set in <code>etc/crontab.xml</code>.</p>
+<p>cron group configuration is set in <code class="highlighter-rouge">etc/crontab.xml</code>.</p>
 
 <ul>
   <li>
-    <p><code>staging_apply_version</code> – each period of time checks in a table of updates if any <a href="#campaign">campaign</a> has been started and if yes, it applies all <a href="#scheduled-update">scheduled updates</a> for the campaign.</p>
+    <p><code class="highlighter-rouge">staging_apply_version</code> – each period of time checks in a table of updates if any <a href="#campaign">campaign</a> has been started and if yes, it applies all <a href="#scheduled-update">scheduled updates</a> for the campaign.</p>
   </li>
   <li>
-    <p><code>staging_remove_updates</code> – each period of time checks if a campaign contains any update, and if it is empty, deletes the campaign.</p>
+    <p><code class="highlighter-rouge">staging_remove_updates</code> – each period of time checks if a campaign contains any update, and if it is empty, deletes the campaign.</p>
   </li>
   <li>
-    <p><code>staging_synchronize_entities_period</code> – each period of time checks if start or end dates of a campaign have been changed. If it finds any changes, it applies same changes to all updates dependent from the campaign.</p>
+    <p><code class="highlighter-rouge">staging_synchronize_entities_period</code> – each period of time checks if start or end dates of a campaign have been changed. If it finds any changes, it applies same changes to all updates dependent from the campaign.</p>
   </li>
 </ul>
 
@@ -1307,7 +1307,7 @@ NOTE <strong>Product in Websites</strong> tab is inactive in the Schedule Update
 
 <h3 id="data-migration">Data migration</h3>
 
-<p>The Magento_Staging module uses the <code>\Magento\Staging\Setup\BasicSetup</code> class during installation. This class changes <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and migrates data.</p>
+<p>The Magento_Staging module uses the <code class="highlighter-rouge">\Magento\Staging\Setup\BasicSetup</code> class during installation. This class changes <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and migrates data.</p>
 
 <h4 id="migration-of-attributes-with-range">Migration of attributes with range</h4>
 

@@ -347,380 +347,380 @@
 
 <h3 id="add-simple">Add a simple product to a cart</h3>
 
-<p>To add a <span term-uuid="f85f36ad-2942-446e-b711-39f2a16f6364" class="glossary-term" data-toggle="popover">simple product</span> to a cart, you must provide a <code>sku</code>, the quantity, and the <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span> ID, which was generated when the cart was created.</p>
+<p>To add a <span term-uuid="f85f36ad-2942-446e-b711-39f2a16f6364" class="glossary-term" data-toggle="popover">simple product</span> to a cart, you must provide a <code class="highlighter-rouge">sku</code>, the quantity, and the <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span> ID, which was generated when the cart was created.</p>
 
-<p>The following example adds an orange medium-sized  Radiant women’s t-shirt (<code>sku</code>: <code>WS12-M-Orange</code>) to the cart.</p>
+<p>The following example adds an orange medium-sized  Radiant women’s t-shirt (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">WS12-M-Orange</code>) to the cart.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/carts/mine/items</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/carts/mine/items</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
-<p><code>Authorization</code> <code>Bearer &lt;customer token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;customer token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;cartItem&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;WS12-M-Orange&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"cartItem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WS12-M-Orange"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-  <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;WS12-M-Orange&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Radiant Tee-M-Orange&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;product_type&quot;</span><span class="p">:</span> <span class="s2">&quot;simple&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WS12-M-Orange"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Radiant Tee-M-Orange"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"product_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h3 id="add-downloadable">Add a downloadable product to a cart</h3>
 
-<p>The requirements for adding a <span term-uuid="38fc3629-ee25-4de5-ac7a-72db8e8de6de" class="glossary-term" data-toggle="popover">downloadable product</span> to a cart are the same as a simple product. You must specify the <code>sku</code>, the quantity, and quote ID.</p>
+<p>The requirements for adding a <span term-uuid="38fc3629-ee25-4de5-ac7a-72db8e8de6de" class="glossary-term" data-toggle="popover">downloadable product</span> to a cart are the same as a simple product. You must specify the <code class="highlighter-rouge">sku</code>, the quantity, and quote ID.</p>
 
-<p>The following example adds the downloadable product Advanced Pilates &amp; Yoga (<code>sku</code>: 240-LV08)</p>
+<p>The following example adds the downloadable product Advanced Pilates &amp; Yoga (<code class="highlighter-rouge">sku</code>: 240-LV08)</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/carts/mine/items</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/carts/mine/items</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
-<p><code>Authorization</code> <code>Bearer &lt;customer token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;customer token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;cartItem&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV08&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"cartItem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV08"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
-  <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV08&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Advanced Pilates &amp; Yoga (Strength)&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-  <span class="nt">&quot;product_type&quot;</span><span class="p">:</span> <span class="s2">&quot;downloadable&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;product_option&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;downloadable_option&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;downloadable_links&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="mi">5</span>
-        <span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV08"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced Pilates &amp; Yoga (Strength)"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"product_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"downloadable"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"product_option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"downloadable_option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"downloadable_links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">5</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h3 id="add-configurable">Add a configurable product to a cart</h3>
 
-<p>To add a configurable product to a cart, you must specify the <code>sku</code> as well as the set of <code>option_id</code>/<code>option_value</code> pairs that make the product configurable.</p>
+<p>To add a configurable product to a cart, you must specify the <code class="highlighter-rouge">sku</code> as well as the set of <code class="highlighter-rouge">option_id</code>/<code class="highlighter-rouge">option_value</code> pairs that make the product configurable.</p>
 
-<p>In this example, we’ll add the Chaz Kangeroo Hoodie (<code>sku: MH01</code>) configurable product to the cart. This product comes in three colors (black, gray, and orange) and five sizes (XS, S, M, L, XL). In the sample data, the <code>option_id</code> values for Size and Color are <code>141</code> and <code>93</code>, respectively. You can use the <code>GET /V1/configurable-products/:sku/options/all</code> call to determine the <code>option_id</code> values for the given SKU.</p>
+<p>In this example, we’ll add the Chaz Kangeroo Hoodie (<code class="highlighter-rouge">sku: MH01</code>) configurable product to the cart. This product comes in three colors (black, gray, and orange) and five sizes (XS, S, M, L, XL). In the sample data, the <code class="highlighter-rouge">option_id</code> values for Size and Color are <code class="highlighter-rouge">141</code> and <code class="highlighter-rouge">93</code>, respectively. You can use the <code class="highlighter-rouge">GET /V1/configurable-products/:sku/options/all</code> call to determine the <code class="highlighter-rouge">option_id</code> values for the given SKU.</p>
 
-<p>The <code>GET /V1/configurable-products/:sku/children</code> call returns information about each combination of color and size, 15 in all for <code>MH01</code>. The following sample shows the returned values for <code>size</code> and <code>color</code> for a small gray Chaz Kangeroo Hoodie.</p>
+<p>The <code class="highlighter-rouge">GET /V1/configurable-products/:sku/children</code> call returns information about each combination of color and size, 15 in all for <code class="highlighter-rouge">MH01</code>. The following sample shows the returned values for <code class="highlighter-rouge">size</code> and <code class="highlighter-rouge">color</code> for a small gray Chaz Kangeroo Hoodie.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;168&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;52&quot;</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"custom_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"size"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"168"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"color"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"52"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<p>We now know the values for <code>option_value</code> for <code>size</code> and <code>color</code> are <code>168</code> and <code>52</code>, so we’re ready to add the product to the cart.</p>
+<p>We now know the values for <code class="highlighter-rouge">option_value</code> for <code class="highlighter-rouge">size</code> and <code class="highlighter-rouge">color</code> are <code class="highlighter-rouge">168</code> and <code class="highlighter-rouge">52</code>, so we’re ready to add the product to the cart.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/carts/mine/items</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/carts/mine/items</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
-<p><code>Authorization</code> <code>Bearer &lt;customer token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;customer token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;cartItem&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;MH01&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;product_option&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;configurable_item_options&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="p">{</span>
-            <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="s2">&quot;93&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;option_value&quot;</span><span class="p">:</span> <span class="mi">52</span>
-          <span class="p">},</span>
-          <span class="p">{</span>
-            <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="s2">&quot;141&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;option_value&quot;</span><span class="p">:</span> <span class="mi">168</span>
-          <span class="p">}</span>
-        <span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"cartItem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MH01"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"configurable_item_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"93"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"option_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"141"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"option_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">168</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;MH01-S-Gray&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Chaz Kangeroo Hoodie&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
-    <span class="nt">&quot;product_type&quot;</span><span class="p">:</span> <span class="s2">&quot;configurable&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;product_option&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;configurable_item_options&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="s2">&quot;93&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;option_value&quot;</span><span class="p">:</span> <span class="mi">52</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="s2">&quot;141&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;option_value&quot;</span><span class="p">:</span> <span class="mi">168</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MH01-S-Gray"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chaz Kangeroo Hoodie"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"configurable"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"configurable_item_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"93"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"option_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"141"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"option_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">168</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h3 id="add-bundle">Add a bundle product to a cart</h3>
 
-<p>The sample data provides one bundled product, the Sprite Yoga Companion Kit (<code>sku</code>: <code>24-WG080</code>). The kit contains the following items:</p>
+<p>The sample data provides one bundled product, the Sprite Yoga Companion Kit (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">24-WG080</code>). The kit contains the following items:</p>
 
 <ul>
-  <li>Sprite Statis Ball in sizes 55 cm (<code>sku</code>: <code>24-WG081-blue</code>), 65 cm (<code>sku</code>: <code>24-WG082-blue</code>), or 75 cm (<code>sku</code>: <code>24-WG083-blue</code>)</li>
-  <li>Sprite Foam Yoga brick (<code>sku</code>: <code>24-WG084</code>)</li>
-  <li>Sprite Yoga Strap in lengths 6 ft (<code>sku</code>: <code>24-WG085</code>), 8 ft (<code>sku</code>: <code>24-WG086</code>), or 10 ft (<code>sku</code>: <code>24-WG087</code>)</li>
-  <li>Sprite Foam Roller (<code>sku</code>: <code>24-WG088</code>)</li>
+  <li>Sprite Statis Ball in sizes 55 cm (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">24-WG081-blue</code>), 65 cm (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">24-WG082-blue</code>), or 75 cm (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">24-WG083-blue</code>)</li>
+  <li>Sprite Foam Yoga brick (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">24-WG084</code>)</li>
+  <li>Sprite Yoga Strap in lengths 6 ft (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">24-WG085</code>), 8 ft (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">24-WG086</code>), or 10 ft (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">24-WG087</code>)</li>
+  <li>Sprite Foam Roller (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">24-WG088</code>)</li>
 </ul>
 
-<p>To add a bundle product to a cart, you must specify the <code>sku</code> of the bundle product, but not the individual items. You add individual items to the bundle product by specifying the <code>id</code> defined in the item’s <code>product_links</code> object. The <code>product_links</code> object primarily describes the ordering and placement of options on the customization page, but it also links an item’s <code>sku</code> and <code>id</code> to the <code>sku</code> of the bundle product.</p>
+<p>To add a bundle product to a cart, you must specify the <code class="highlighter-rouge">sku</code> of the bundle product, but not the individual items. You add individual items to the bundle product by specifying the <code class="highlighter-rouge">id</code> defined in the item’s <code class="highlighter-rouge">product_links</code> object. The <code class="highlighter-rouge">product_links</code> object primarily describes the ordering and placement of options on the customization page, but it also links an item’s <code class="highlighter-rouge">sku</code> and <code class="highlighter-rouge">id</code> to the <code class="highlighter-rouge">sku</code> of the bundle product.</p>
 
-<p>The <code>GET http://&lt;host&gt;/rest/default/V1/bundle-products/24-WG080/options/all</code> call returns <code>id</code> values, as shown in the following simplified respose:</p>
+<p>The <code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/bundle-products/24-WG080/options/all</code> call returns <code class="highlighter-rouge">id</code> values, as shown in the following simplified respose:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Stasis Ball&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;radio&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;product_links&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG081-blue&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG082-blue&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG083-blue&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Foam Yoga Brick&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;radio&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;product_links&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG084&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Yoga Strap&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;radio&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;product_links&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG085&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG086&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG087&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Foam Roller&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;radio&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;product_links&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG088&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-      <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">]</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprite Stasis Ball"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG081-blue"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG082-blue"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG083-blue"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprite Foam Yoga Brick"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG084"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprite Yoga Strap"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG085"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG086"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG087"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprite Foam Roller"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG088"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span></code></pre></figure>
 </div></div>
 
 <p>For this example, we’ll configure the Sprite Yoga Companion Kit as follows:</p>
 
 <ul>
-  <li>65 cm Sprite Stasis Ball (<code>id</code>: <code>2</code>)</li>
-  <li>Sprite Foam Yoga Brick (<code>id</code>: <code>4</code>)</li>
-  <li>8 ft Sprite Yoga strap (<code>id</code>: <code>6</code>)</li>
-  <li>Sprite Foam Roller (<code>id</code>: <code>8</code>)</li>
+  <li>65 cm Sprite Stasis Ball (<code class="highlighter-rouge">id</code>: <code class="highlighter-rouge">2</code>)</li>
+  <li>Sprite Foam Yoga Brick (<code class="highlighter-rouge">id</code>: <code class="highlighter-rouge">4</code>)</li>
+  <li>8 ft Sprite Yoga strap (<code class="highlighter-rouge">id</code>: <code class="highlighter-rouge">6</code>)</li>
+  <li>Sprite Foam Roller (<code class="highlighter-rouge">id</code>: <code class="highlighter-rouge">8</code>)</li>
 </ul>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/carts/mine/items</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/carts/mine/items</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
-<p><code>Authorization</code> <code>Bearer &lt;customer token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;customer token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;cartItem&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;product_option&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;bundle_options&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                        <span class="nt">&quot;option_qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                        <span class="nt">&quot;option_selections&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                        <span class="nt">&quot;option_qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                        <span class="nt">&quot;option_selections&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-                        <span class="nt">&quot;option_qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                        <span class="nt">&quot;option_selections&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-                        <span class="nt">&quot;option_qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                        <span class="nt">&quot;option_selections&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
-                    <span class="p">}</span>
-                <span class="p">]</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"cartItem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"product_option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"bundle_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"option_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"option_selections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"option_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"option_selections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"option_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"option_selections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"option_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"option_selections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 </div></div>
 
 <p><strong>Response</strong></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
-  <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080-24-WG084-24-WG088-24-WG082-blue-24-WG086&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Yoga Companion Kit&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-  <span class="nt">&quot;product_type&quot;</span><span class="p">:</span> <span class="s2">&quot;bundle&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;product_option&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;bundle_options&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-          <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="nt">&quot;option_qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="nt">&quot;option_selections&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="mi">2</span>
-          <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-          <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="nt">&quot;option_qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="nt">&quot;option_selections&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="mi">4</span>
-          <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-          <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-          <span class="nt">&quot;option_qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="nt">&quot;option_selections&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="mi">6</span>
-          <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-          <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-          <span class="nt">&quot;option_qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="nt">&quot;option_selections&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="mi">8</span>
-          <span class="p">]</span>
-        <span class="p">}</span>
-      <span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080-24-WG084-24-WG088-24-WG082-blue-24-WG086"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprite Yoga Companion Kit"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"product_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bundle"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"product_option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"bundle_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"option_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"option_selections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">2</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"option_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"option_selections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">4</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"option_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"option_selections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">6</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"option_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"option_selections"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">8</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 </div></div>
 
 <h3 id="verify-step">Verify this step</h3>

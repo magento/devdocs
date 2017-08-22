@@ -1652,8 +1652,8 @@
 <p>The Magento application root directory is located in different locations depending on the environment:</p>
 
 <ul>
-  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">Integration environment</a>: the Magento application is located in the <code>/app</code> directory.</li>
-  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage">Staging environment</a>: the Magento application is located in the <code>/&lt;project code&gt;_stg</code> directory.</li>
+  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">Integration environment</a>: the Magento application is located in the <code class="highlighter-rouge">/app</code> directory.</li>
+  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage">Staging environment</a>: the Magento application is located in the <code class="highlighter-rouge">/&lt;project code&gt;_stg</code> directory.</li>
   <li><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod">production</a>: the Magento application is located in the ` /<project code="">` directory.</project></li>
 </ul>
 
@@ -1661,11 +1661,11 @@
 <p>In Integration, Staging, and Production, <em>only</em> the following directories are writable due to security reasons:</p>
 
 <ul>
-  <li><code>var</code></li>
-  <li><code>pub/static</code></li>
-  <li><code>pub/media</code></li>
-  <li><code>app/etc</code></li>
-  <li><code>/tmp</code></li>
+  <li><code class="highlighter-rouge">var</code></li>
+  <li><code class="highlighter-rouge">pub/static</code></li>
+  <li><code class="highlighter-rouge">pub/media</code></li>
+  <li><code class="highlighter-rouge">app/etc</code></li>
+  <li><code class="highlighter-rouge">/tmp</code></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1673,38 +1673,38 @@
 </div>
 
 <h3 id="logs">Logs</h3>
-<p>Logs for the integration, staging, and production environments are located under the <code>/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code>magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
+<p>Logs for the integration, staging, and production environments are located under the <code class="highlighter-rouge">/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code class="highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
 
-<p>In staging and production environments, the deployment log is located in <code>/var/log/platform/&lt;project ID&gt;</code>.</p>
+<p>In staging and production environments, the deployment log is located in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
 
-<p>Magento logs are located in the <code>&lt;magento root dir&gt;/var/log</code> directory.</p>
+<p>Magento logs are located in the <code class="highlighter-rouge">&lt;magento root dir&gt;/var/log</code> directory.</p>
 
 <h2 id="cloud-proj-start-summ">Command summary</h2>
-<p>The following commands can be run from any directory. However, it’s simpler to run them from a project directory. If so, you can omit the <code>-p &lt;project ID&gt;</code> parameter.</p>
+<p>The following commands can be run from any directory. However, it’s simpler to run them from a project directory. If so, you can omit the <code class="highlighter-rouge">-p &lt;project ID&gt;</code> parameter.</p>
 
-<p>All commands are shown with required options only. Get help for any <code>magento-cloud</code> command by appending <code>--help</code>. For more commands, see <a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a>.</p>
+<p>All commands are shown with required options only. Get help for any <code class="highlighter-rouge">magento-cloud</code> command by appending <code class="highlighter-rouge">--help</code>. For more commands, see <a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a>.</p>
 
 <dl>
-  <dt><code>git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code></dt>
+  <dt><code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code></dt>
   <dd>Push an empty commit to force a redeployment. Some actions, like adding a user for example, don’t result in deployment.</dd>
-  <dt><code>magento-cloud login</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud login</code></dt>
   <dd>Log in to the project</dd>
-  <dt><code>magento-cloud project:list</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud project:list</code></dt>
   <dd>List project IDs</dd>
-  <dt><code>magento-cloud environment:list -p &lt;project ID&gt;</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud environment:list -p &lt;project ID&gt;</code></dt>
   <dd>List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).</dd>
-  <dt><code>magento-cloud project:get &lt;project ID&gt; &lt;directory&gt; -e &lt;environment ID&gt;</code></dt>
-  <dd>Clone a project to a directory. To clone the <code>master</code> environment, omit <code>-e &lt;environment ID&gt;</code>.</dd>
-  <dt><code>magento-cloud project:info -p &lt;project ID&gt;</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud project:get &lt;project ID&gt; &lt;directory&gt; -e &lt;environment ID&gt;</code></dt>
+  <dd>Clone a project to a directory. To clone the <code class="highlighter-rouge">master</code> environment, omit <code class="highlighter-rouge">-e &lt;environment ID&gt;</code>.</dd>
+  <dt><code class="highlighter-rouge">magento-cloud project:info -p &lt;project ID&gt;</code></dt>
   <dd>List information about the project, including ID, name, region, URL, and Git <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>.</dd>
 </dl>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.1/cloud/env/environments-start.html">Get started with an environment</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
 </ul>
 
 		</div>

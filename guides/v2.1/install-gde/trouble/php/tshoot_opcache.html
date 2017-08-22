@@ -971,21 +971,22 @@
 
 			<p>In Magento 2.1 or later, when creating a new product in the Magento Admin, the following error might display:</p>
 
-<pre><code>Warning: Illegal string offset 'is_in_stock' in [...]/vendor/
+<div class="highlighter-rouge"><pre class="highlight"><code>Warning: Illegal string offset 'is_in_stock' in [...]/vendor/
 magento/module-catalog-inventory/Ui/DataProvider/Product/Form/
 Modifier/AdvancedInventory.php on line 87
 </code></pre>
+</div>
 
 <h3 id="detail">Detail</h3>
-<p>Magento 2.1 and later use PHP code comments in the <code>getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code>getExtensionAttributes</code></a> method in <code>Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
+<p>Magento 2.1 and later use PHP code comments in the <code class="highlighter-rouge">getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code class="highlighter-rouge">getExtensionAttributes</code></a> method in <code class="highlighter-rouge">Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
 
-<p>If you enabled the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> OPcache (which we recommend), this error displays because by default, the OPcache setting <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="_blank"><code>opcache.save_comments</code></a> is disabled.</p>
+<p>If you enabled the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> OPcache (which we recommend), this error displays because by default, the OPcache setting <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="_blank"><code class="highlighter-rouge">opcache.save_comments</code></a> is disabled.</p>
 
 <h3 id="workaround">Workaround</h3>
-<p>To solve the issue, locate your OPcache configuration settings and enable <code>opcache.save_comments</code> as follows:</p>
+<p>To solve the issue, locate your OPcache configuration settings and enable <code class="highlighter-rouge">opcache.save_comments</code> as follows:</p>
 
 <h4 id="step-1-locate-your-opcache-configuration">Step 1: Locate your OPcache configuration</h4>
-<div class="collapsible"><b class="collapsible-title">To find OPcache configuration settings: </b><div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code>php.ini</code> or <code>opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code>[opcache]</code> section or settings like <code>opcache.enable</code>.</p>
+<div class="collapsible"><b class="collapsible-title">To find OPcache configuration settings: </b><div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code class="highlighter-rouge">php.ini</code> or <code class="highlighter-rouge">opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code class="highlighter-rouge">[opcache]</code> section or settings like <code class="highlighter-rouge">opcache.enable</code>.</p>
 
 <p>Use the following guidelines to find it:</p>
 
@@ -993,43 +994,44 @@ Modifier/AdvancedInventory.php on line 87
   <li>
     <p>Apache web server:</p>
 
-    <p>For Ubuntu with Apache, OPcache settings are typically located in <code>php.ini</code>.</p>
+    <p>For Ubuntu with Apache, OPcache settings are typically located in <code class="highlighter-rouge">php.ini</code>.</p>
 
-    <p>For CentOS with Apache or nginx, OPcache settings are typically located in <code>/etc/php.d/opcache.ini</code></p>
+    <p>For CentOS with Apache or nginx, OPcache settings are typically located in <code class="highlighter-rouge">/etc/php.d/opcache.ini</code></p>
 
     <p>If not, use the following command to locate it:</p>
 
-    <pre><code>sudo find / -name 'opcache.ini'
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo find / -name 'opcache.ini'
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>nginx web server with PHP-FPM: <code>/etc/php5/fpm/php.ini</code></p>
+    <p>nginx web server with PHP-FPM: <code class="highlighter-rouge">/etc/php5/fpm/php.ini</code></p>
   </li>
 </ul>
 
-<p>If you have more than one <code>opcache.ini</code>, modify all of them.</p>
+<p>If you have more than one <code class="highlighter-rouge">opcache.ini</code>, modify all of them.</p>
 </div></div>
 
-<h4 id="step-2-enable-opcachesavecomments">Step 2: Enable <code>opcache.save_comments</code></h4>
+<h4 id="step-2-enable-opcachesavecomments">Step 2: Enable <code class="highlighter-rouge">opcache.save_comments</code></h4>
 <ol>
   <li>Open your OPcache configuration file in a text editor.</li>
-  <li>Locate <code>opcache.save_comments</code> and uncomment it if necessary.</li>
-  <li>Make sure its value is set to <code>1</code>.</li>
+  <li>Locate <code class="highlighter-rouge">opcache.save_comments</code> and uncomment it if necessary.</li>
+  <li>Make sure its value is set to <code class="highlighter-rouge">1</code>.</li>
   <li>Save your changes and exit the text editor.</li>
   <li>
     <p>Restart your web server:</p>
 
     <ul>
-      <li>Apache, Ubuntu: <code>service apache2 restart</code></li>
-      <li>Apache, CentOS: <code>service httpd restart</code></li>
-      <li>nginx, Ubuntu and CentOS: <code>service nginx restart</code></li>
+      <li>Apache, Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+      <li>Apache, CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
+      <li>nginx, Ubuntu and CentOS: <code class="highlighter-rouge">service nginx restart</code></li>
     </ul>
   </li>
   <li>
     <p>Regenerate DI configuration and all missing classes that can be auto-generated:</p>
 
     <ul>
-      <li><code>php bin/magento setup:di:compile</code></li>
+      <li><code class="highlighter-rouge">php bin/magento setup:di:compile</code></li>
     </ul>
   </li>
 </ol>

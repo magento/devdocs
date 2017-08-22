@@ -771,51 +771,51 @@ Permissions required to access particular resource are configured in the <code>w
 
 <h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;routes</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Webapi:etc/webapi.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;routes</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Webapi:etc/webapi.xsd"</span><span class="nt">&gt;</span>
     <span class="c">&lt;!-- Customer Group --&gt;</span>
-    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customerGroups/:id&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\GroupRepositoryInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;getById&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customerGroups/:id"</span> <span class="na">method=</span><span class="s">"GET"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Api\GroupRepositoryInterface"</span> <span class="na">method=</span><span class="s">"getById"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Customer::group&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Customer::group"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
     <span class="nt">&lt;/route&gt;</span>
 ............
 .......
 .....
     <span class="c">&lt;!-- Customer Account --&gt;</span>
-    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customers/:customerId&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\CustomerRepositoryInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;getById&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customers/:customerId"</span> <span class="na">method=</span><span class="s">"GET"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Api\CustomerRepositoryInterface"</span> <span class="na">method=</span><span class="s">"getById"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Customer::customer&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Customer::customer"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
     <span class="nt">&lt;/route&gt;</span>
-    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customers&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\AccountManagementInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;createAccount&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customers"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Api\AccountManagementInterface"</span> <span class="na">method=</span><span class="s">"createAccount"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;anonymous&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"anonymous"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
     <span class="nt">&lt;/route&gt;</span>
-    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customers/:id&quot;</span> <span class="na">method=</span><span class="s">&quot;PUT&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\CustomerRepositoryInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;save&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customers/:id"</span> <span class="na">method=</span><span class="s">"PUT"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Api\CustomerRepositoryInterface"</span> <span class="na">method=</span><span class="s">"save"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Customer::manage&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Customer::manage"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
     <span class="nt">&lt;/route&gt;</span>
-    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customers/me&quot;</span> <span class="na">method=</span><span class="s">&quot;PUT&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\CustomerRepositoryInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;save&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customers/me"</span> <span class="na">method=</span><span class="s">"PUT"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Api\CustomerRepositoryInterface"</span> <span class="na">method=</span><span class="s">"save"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;self&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"self"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
         <span class="nt">&lt;data&gt;</span>
-            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;customer.id&quot;</span> <span class="na">force=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>%customer_id%<span class="nt">&lt;/parameter&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">"customer.id"</span> <span class="na">force=</span><span class="s">"true"</span><span class="nt">&gt;</span>%customer_id%<span class="nt">&lt;/parameter&gt;</span>
         <span class="nt">&lt;/data&gt;</span>
     <span class="nt">&lt;/route&gt;</span>
 ..........
 .....
 ...</code></pre></figure>
 
-<p>For example, in the preceding <code>webapi.xml</code> for the customerGroups resource, only a user with <code>Magento_Customer::group</code> authorization can <code>GET /V1/customerGroups/:id</code>. On the other hand, you can create a customer using <code>POST /V1/customers</code> anonymously (or by a guest).</p>
+<p>For example, in the preceding <code class="highlighter-rouge">webapi.xml</code> for the customerGroups resource, only a user with <code class="highlighter-rouge">Magento_Customer::group</code> authorization can <code class="highlighter-rouge">GET /V1/customerGroups/:id</code>. On the other hand, you can create a customer using <code class="highlighter-rouge">POST /V1/customers</code> anonymously (or by a guest).</p>
 
 <p><span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">Authorization</span> is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.</p>
 

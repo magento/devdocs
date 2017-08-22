@@ -769,60 +769,60 @@
 <p>To enable Massaction Component for your Listing instance it should be declared as a child.</p>
 
 <p>Example:
-<code>&lt;Magento_Catalog_module_dir&gt;/view/adminhtml/ui_component/product_listing.xml</code></p>
+<code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/adminhtml/ui_component/product_listing.xml</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_listing.product_listing.product_columns.ids<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/tree-massactions<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;displayArea&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>bottom<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;indexField&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">"listing_massaction"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"selectProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>product_listing.product_listing.product_columns.ids<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/grid/tree-massactions<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"displayArea"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>bottom<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"indexField"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;delete&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;confirm&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete items<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;message&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete selected items?<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"delete"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"confirm"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Delete items<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"message"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Delete selected items?<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>delete<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;catalog/product/massDelete&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>delete<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"catalog/product/massDelete"</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
-    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;status&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>status<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Change status<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"status"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>status<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Change status<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>enable<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Enable<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;catalog/product/massStatus&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;status&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/param&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"actions"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>enable<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Enable<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"catalog/product/massStatus"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"status"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/param&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;1&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>disable<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Disable<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;catalog/product/massStatus&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;status&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/param&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"1"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>disable<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Disable<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"catalog/product/massStatus"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"status"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/param&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
-    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;attributes&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>attributes<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Update attributes<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;catalog/product_action_attribute/edit&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"attributes"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>attributes<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Update attributes<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"catalog/product_action_attribute/edit"</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
@@ -832,8 +832,8 @@
 <p>Component can be configured in two ways:</p>
 
 <ul>
-  <li>Globally: using any module’s <a href="/guides/v2.0/ui-library/ui-definition.html"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file are applied to all component’s instances</li>
-  <li>Locally: using concrete component instance configuration, such as <code>&lt;Magento_Catalog_module_dir&gt;/view/adminhtml/ui_component/product_listing.xml</code></li>
+  <li>Globally: using any module’s <a href="/guides/v2.0/ui-library/ui-definition.html"><code class="highlighter-rouge">view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file are applied to all component’s instances</li>
+  <li>Locally: using concrete component instance configuration, such as <code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/adminhtml/ui_component/product_listing.xml</code></li>
 </ul>
 
 <h4 id="treemassaction-js-component-structure">TreeMassAction JS Component Structure</h4>
@@ -843,9 +843,9 @@
 <p>The following are the component elements:</p>
 
 <ul>
-  <li>Constructor <code>app\code\Magento\Ui\view\base\web\js\grid\tree-massactions.js</code></li>
-  <li>Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\tree-massactions.html</code></li>
-  <li>Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\submenu.html</code></li>
+  <li>Constructor <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\grid\tree-massactions.js</code></li>
+  <li>Template: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\tree-massactions.html</code></li>
+  <li>Template: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\submenu.html</code></li>
 </ul>
 
 <h4 id="dependencies-on-other-components">Dependencies on Other Components</h4>
@@ -853,7 +853,7 @@
 <p>Dependency on the following component:</p>
 
 <ul>
-  <li>Collapsible: <code>app\code\Magento\Ui\view\base\web\js\grid\massactions.js</code></li>
+  <li>Collapsible: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\grid\massactions.js</code></li>
 </ul>
 
 <h4 id="component-options">Component Options</h4>
@@ -878,7 +878,7 @@
 
 <h4 id="how-to-configure-already-used-in-code-treemassaction-component">How to Configure Already Used in Code TreeMassAction Component</h4>
 
-<p><code>app\code\Magento\Catalog\view\adminhtml\ui_component\product_listing.xml</code></p>
+<p><code class="highlighter-rouge">app\code\Magento\Catalog\view\adminhtml\ui_component\product_listing.xml</code></p>
 
 <p>Example of configuration modifications:</p>
 
@@ -886,11 +886,11 @@
   <li>Redefining the link to the template</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">"listing_massaction"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         ...
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product/grid/columns/massactions<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>product/grid/columns/massactions<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
@@ -899,19 +899,19 @@
   <li>Specifying action with confirmation</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">"listing_massaction"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         ...
     <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;edit&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;confirm&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Edit items<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;message&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Are you sure you wan&#39;t to edit selected items?<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"edit"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"confirm"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Edit items<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"message"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Are you sure you wan't to edit selected items?<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>edit<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>edit<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
@@ -923,18 +923,18 @@
 
 <p>Callback is provided by another component.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">"listing_massaction"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         ...
     <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;edit&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>edit<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;callback&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_listing.inline_editing<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;target&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>startEdit<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"edit"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>edit<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"callback"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>product_listing.inline_editing<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"target"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>startEdit<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
@@ -945,10 +945,10 @@
 
 <p>Redefine link to constructor:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Products/js/grid/tree-massactions<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">"listing_massaction"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Products/js/grid/tree-massactions<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/massaction&gt;</span></code></pre></figure>

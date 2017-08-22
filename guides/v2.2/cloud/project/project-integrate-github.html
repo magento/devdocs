@@ -1633,27 +1633,31 @@
     <li>
       <p>Enter the following command in a terminal to log in to your project:</p>
 
-      <pre><code>magento-cloud login
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+      </div>
     </li>
     <li>
       <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-      <pre><code>magento-cloud project:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+      </div>
     </li>
-    <li>Change to a project directory. For example, <code>cd /var/www/html/magento2</code></li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
     <li>
       <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-      <pre><code>magento-cloud environment:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
   		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
@@ -1662,28 +1666,32 @@
     <li>
       <p>Fetch origin branches to get the latest code:</p>
 
-      <pre><code>git fetch origin
+      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
+      </div>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
     </li>
     <li>
       <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Create a <a href="/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1694,44 +1702,48 @@
     <li>
       <p>Enable the integration:</p>
 
-      <pre><code>magento-cloud integration:add --type=github --project=&lt;project ID&gt; --token=&lt;your GitHub token&gt; {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=&lt;project ID&gt; --token=&lt;your GitHub token&gt; {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
 </code></pre>
+      </div>
 
       <p>where</p>
 
-      <p><code>&lt;project ID&gt;</code> is your Magento Enterprise Cloud Edition project ID</p>
+      <p><code class="highlighter-rouge">&lt;project ID&gt;</code> is your Magento Enterprise Cloud Edition project ID</p>
 
-      <p><code>&lt;your GitHub token&gt;</code> is the token you got in the preceding section</p>
+      <p><code class="highlighter-rouge">&lt;your GitHub token&gt;</code> is the token you got in the preceding section</p>
 
-      <p><code>--repository=USER/REPOSITORY</code> is how you specify your personal, private GitHub repository</p>
+      <p><code class="highlighter-rouge">--repository=USER/REPOSITORY</code> is how you specify your personal, private GitHub repository</p>
 
-      <p><code>--repository=ORGANIZATION/REPOSITORY</code> is how you specify an organization repository</p>
+      <p><code class="highlighter-rouge">--repository=ORGANIZATION/REPOSITORY</code> is how you specify an organization repository</p>
 
-      <p><code>--build-pull-requests</code> is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (<code>true</code> by default)</p>
+      <p><code class="highlighter-rouge">--build-pull-requests</code> is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (<code class="highlighter-rouge">true</code> by default)</p>
 
-      <p><code>--fetch-branches</code> is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (<code>true</code> by default)</p>
+      <p><code class="highlighter-rouge">--fetch-branches</code> is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (<code class="highlighter-rouge">true</code> by default)</p>
 
       <p><strong>Example 1</strong>: Enable the GitHub integration for a personal, private repository:</p>
 
-      <pre><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=myUserName/myrepo
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=myUserName/myrepo
 </code></pre>
+      </div>
 
       <p><strong>Example 2</strong>: Enable the GitHub integration for an organization repository:</p>
 
-      <pre><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=Magento/teamrepo
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=Magento/teamrepo
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Enter the required information when prompted.</p>
 
       <p>Sample output:</p>
 
-      <pre><code>Created integration wp2f2thlmxwcg (type: github)
+      <div class="highlighter-rouge"><pre class="highlight"><code>Created integration wp2f2thlmxwcg (type: github)
 Repository: myUserName/myrepo
 Build PRs: yes
 Fetch branches: yes
 Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Copy the Payload <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> displayed by the command and continue with the next section.</p>
@@ -1782,7 +1794,7 @@ Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a
   <h4 id="related-topics">Related topics</h4>
   <ul>
     <li><a href="/guides/v2.2/cloud/project/project-start.html">Get started with a project</a></li>
-    <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
+    <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
   </ul>
 </div>
 

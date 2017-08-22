@@ -480,30 +480,32 @@
 
 <p>Full action names are mapped to the controller actions as follows:</p>
 
-<pre><code>&lt;ModuleName&gt;_[controller]_[action] -&gt; Vendor\Module\Controller*\Controller::actionAction()
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ModuleName&gt;_[controller]_[action] -&gt; Vendor\Module\Controller*\Controller::actionAction()
 </code></pre>
+</div>
 
 <p>where</p>
 
 <ul>
   <li>
-    <p><code>module</code> is the name of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span></p>
+    <p><code class="highlighter-rouge">module</code> is the name of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span></p>
   </li>
   <li>
-    <p><code>Controller</code> is the module’s <code>Controller</code> directory</p>
+    <p><code class="highlighter-rouge">Controller</code> is the module’s <code class="highlighter-rouge">Controller</code> directory</p>
   </li>
   <li>
-    <p><code>controller</code> is the controller class name</p>
+    <p><code class="highlighter-rouge">controller</code> is the controller class name</p>
   </li>
   <li>
-    <p><code>action</code> is the name of the action method</p>
+    <p><code class="highlighter-rouge">action</code> is the name of the action method</p>
   </li>
 </ul>
 
 <p>For example,</p>
 
-<pre><code>customer_account_forgotpassword -&gt; Magento\Customer\Controller\Account::forgotPasswordAction
+<div class="highlighter-rouge"><pre class="highlight"><code>customer_account_forgotpassword -&gt; Magento\Customer\Controller\Account::forgotPasswordAction
 </code></pre>
+</div>
 
 <h2 id="m2devgde-pagetype-handles">Page types and layout handles</h2>
 
@@ -515,24 +517,25 @@
 
 <h2 id="m2devgde-pagetype-declare">Page type declaration</h2>
 
-<p>Page types for each module are declared in <code>page_types.xml</code>. The declaration is area-specific, so <code>page_types.xml</code> should reside among the frontend-specific resources of a module.</p>
+<p>Page types for each module are declared in <code class="highlighter-rouge">page_types.xml</code>. The declaration is area-specific, so <code class="highlighter-rouge">page_types.xml</code> should reside among the frontend-specific resources of a module.</p>
 
-<p><code>page_types.xml</code> is typically located in:</p>
+<p><code class="highlighter-rouge">page_types.xml</code> is typically located in:</p>
 
-<pre><code>vendor/&lt;vendorname&gt;/module-&lt;name&gt;/etc/frontend
+<div class="highlighter-rouge"><pre class="highlight"><code>vendor/&lt;vendorname&gt;/module-&lt;name&gt;/etc/frontend
 </code></pre>
+</div>
 
 <p>For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/frontend/page_types.xml" target="_blank">Customer module page_types.xml</a>.</p>
 
 <p>You must declare the ID and label of each page type in the following format:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 	<span class="nt">&lt;page_types&gt;</span>
-		<span class="nt">&lt;type</span> <span class="na">id=</span><span class="s">&quot;module1_controller1_action1&quot;</span> <span class="na">label=</span><span class="s">&quot;Page1&quot;</span><span class="nt">/&gt;</span>
-		<span class="nt">&lt;type</span> <span class="na">id=</span><span class="s">&quot;module2_controller2_action2&quot;</span> <span class="na">label=</span><span class="s">&quot;Page2&quot;</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;type</span> <span class="na">id=</span><span class="s">"module1_controller1_action1"</span> <span class="na">label=</span><span class="s">"Page1"</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;type</span> <span class="na">id=</span><span class="s">"module2_controller2_action2"</span> <span class="na">label=</span><span class="s">"Page2"</span><span class="nt">/&gt;</span>
 	<span class="nt">&lt;/page_types&gt;</span></code></pre></figure>
 
-<p>An example is shown in the previously referenced Customer module <code>page_types.xml</code>.</p>
+<p>An example is shown in the previously referenced Customer module <code class="highlighter-rouge">page_types.xml</code>.</p>
 
 <h2 id="m2devge-pagetype-widget">Page types in widget creation</h2>
 

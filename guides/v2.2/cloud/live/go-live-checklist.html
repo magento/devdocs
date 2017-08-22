@@ -1574,7 +1574,7 @@
 </section>
 
 
-			<p>Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your <code>master</code> branch to the Production environment.</p>
+			<p>Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your <code class="highlighter-rouge">master</code> branch to the Production environment.</p>
 
 <h2 id="test">Completely test in Production</h2>
 <p>See <a href="/guides/v2.2/cloud/live/stage-prod-test.html">Test deployment</a> for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptence Tests (UAT), and performance testing.</p>
@@ -1604,7 +1604,7 @@
 
 <p>We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, changing this value from 3 days to 10 minutes. Be advised, this adds load to the web server.</p>
 
-<p>After you’ve checked with your registrar about where to change your DNS settings, add a CNAME record that references the Master environment’s host name: <code>&lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code>. If you use multiple host names for your site, you must add a CNAME record for each of them.</p>
+<p>After you’ve checked with your registrar about where to change your DNS settings, add a CNAME record that references the Master environment’s host name: <code class="highlighter-rouge">&lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code>. If you use multiple host names for your site, you must add a CNAME record for each of them.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>This will not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). In that case, you must use a DNS provider that supports forwarding DNS queries.</p>
@@ -1620,9 +1620,9 @@
   <li>ALIAS at <a href="https://pointhq.com" target="_blank">PointDNS</a></li>
 </ul>
 
-<p>Many other providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the <code>www</code> host on the domain and then use the DNS provider’s redirection service to redirect the apex over to the <code>www</code> version of the domain. Consult your DNS provider to see how they support this.</p>
+<p>Many other providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the <code class="highlighter-rouge">www</code> host on the domain and then use the DNS provider’s redirection service to redirect the apex over to the <code class="highlighter-rouge">www</code> version of the domain. Consult your DNS provider to see how they support this.</p>
 
-<p>For the format, we support <code>www.domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code>. We don’t support a domain without www: <code>domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code>.</p>
+<p>For the format, we support <code class="highlighter-rouge">www.domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code>. We don’t support a domain without www: <code class="highlighter-rouge">domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code>.</p>
 
 <h2 id="verify-production-configurations">Verify Production configurations</h2>
 <p>Make a final pass for any Production configurations in the store(s). If you need to make changes to configurations, you can modify in Production. If settings are read-only, you may need to SSH and CLI commands to modify, or make configuration changes in your local and deploy across.</p>

@@ -795,7 +795,7 @@
     <p>Log in to Magento server as <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">the file system owner</a>.</p>
   </li>
   <li>
-    <p>Change to the Magento <code>/bin</code> directory or make sure it is added to your system PATH.</p>
+    <p>Change to the Magento <code class="highlighter-rouge">/bin</code> directory or make sure it is added to your system PATH.</p>
   </li>
 </ol>
 
@@ -805,17 +805,18 @@
 
 <p>To start migrating incremental changes, run:</p>
 
-<pre><code>bin/magento migrate:delta [-r|--reset] {&lt;path to config.xml&gt;}
+<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento migrate:delta [-r|--reset] {&lt;path to config.xml&gt;}
 </code></pre>
+</div>
 
 <p>where;</p>
 
 <ul>
   <li>
-    <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
+    <p><code class="highlighter-rouge">[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
   </li>
   <li>
-    <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
+    <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">&lt;path</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">config.xml&gt;</span><span class="p">}</span></code> is the absolute file system path to <code class="highlighter-rouge">config.xml</code>; this argument is required.</p>
   </li>
 </ul>
 
@@ -826,19 +827,19 @@
 
 <h2 id="migrate-delta-external-extensions">Migrate data created by 3rd party extensions</h2>
 
-<p>In the <code>Delta</code> mode, the Data Migration Tool migrates data created only by Magento’s own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created data in the storefront database and the merchant wants to have this data in Magento 2 — config files of the Data Migration Tool should be created and modified accordingly.</p>
+<p>In the <code class="highlighter-rouge">Delta</code> mode, the Data Migration Tool migrates data created only by Magento’s own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created data in the storefront database and the merchant wants to have this data in Magento 2 — config files of the Data Migration Tool should be created and modified accordingly.</p>
 
 <p>If an <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> has its own tables, and you need to track their changes for delta migration, follow these steps:</p>
 
 <ol>
   <li>
-    <p>Add the tables to be tracked to the <code>deltalog.xml</code> file</p>
+    <p>Add the tables to be tracked to the <code class="highlighter-rouge">deltalog.xml</code> file</p>
   </li>
   <li>
-    <p>Create an additional delta class which extends the <code>Migration\App\Step\AbstractDelta</code></p>
+    <p>Create an additional delta class which extends the <code class="highlighter-rouge">Migration\App\Step\AbstractDelta</code></p>
   </li>
   <li>
-    <p>Add the name of the newly created class to the delta mode section of <code>config.xml</code></p>
+    <p>Add the name of the newly created class to the delta mode section of <code class="highlighter-rouge">config.xml</code></p>
   </li>
 </ol>
 

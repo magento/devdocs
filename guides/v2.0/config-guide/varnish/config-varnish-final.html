@@ -1575,24 +1575,26 @@
 </section>
 
 
-			<p>Now that you’re using the <code>default.vcl</code> generated for you by Magento, you can perform some final verifications to make sure Varnish is working.</p>
+			<p>Now that you’re using the <code class="highlighter-rouge">default.vcl</code> generated for you by Magento, you can perform some final verifications to make sure Varnish is working.</p>
 
 <h3 id="config-varnish-final-verify-headers">Verify HTTP response headers</h3>
-<p>Use <code>curl</code> or another utility to view HTTP response headers when you visit any Magento page in a web browser.</p>
+<p>Use <code class="highlighter-rouge">curl</code> or another utility to view HTTP response headers when you visit any Magento page in a web browser.</p>
 
 <p>First, make sure you are using Magento’s <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html##config-mode-change">developer mode</a>; otherwise, you won’t see the headers.</p>
 
 <p>For example,</p>
 
-<pre><code>curl -I -v --location-trusted 'http://192.0.2.55/magento2'
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -I -v --location-trusted 'http://192.0.2.55/magento2'
 </code></pre>
+</div>
 
 <p>Important headers:</p>
 
-<pre><code>X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
+<div class="highlighter-rouge"><pre class="highlight"><code>X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
 Age: 0
 X-Magento-Cache-Debug: MISS
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>This value is also acceptable: <code>X-Magento-Cache-Debug: HIT</code></p>
@@ -1614,7 +1616,7 @@ X-Magento-Cache-Debug: MISS
   <li>
     <p>Scroll to the top of the inspector pane so you can see the <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> of the page you are viewing.</p>
 
-    <p>The following figure shows an example of loading the <code>magento2</code> index page.<br /><br />
+    <p>The following figure shows an example of loading the <code class="highlighter-rouge">magento2</code> index page.<br /><br />
 <img src="/common/images/config_varnish_inspector.png" alt="Click the page you're viewing" /></p>
 
     <p>The page load time displays next to the page URL. In this case, the load time is 5 ms. This helps confirm that Varnish cached the page.</p>
@@ -1627,23 +1629,24 @@ X-Magento-Cache-Debug: MISS
 </ol>
 
 <h3 id="config-varnish-final-verify-cache">Verify the Magento cache</h3>
-<p>Make sure the <code>&lt;your Magento install dir&gt;/var/page_cache</code> directory is empty:</p>
+<p>Make sure the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/page_cache</code> directory is empty:</p>
 
 <ol>
   <li>Log in to your Magento server, or switch to, the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>rm -rf &lt;your Magento install dir&gt;/var/page_cache/*
+    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/var/page_cache/*
 </code></pre>
+    </div>
   </li>
   <li>Access one or more cacheable Magento pages.</li>
   <li>
-    <p>Check the <code>var/page_cache/</code> directory.</p>
+    <p>Check the <code class="highlighter-rouge">var/page_cache/</code> directory.</p>
 
     <p>If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!</p>
   </li>
-  <li>If you cleared the <code>var/page_cache/</code> directory, restart Varnish.</li>
+  <li>If you cleared the <code class="highlighter-rouge">var/page_cache/</code> directory, restart Varnish.</li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">

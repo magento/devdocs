@@ -1690,23 +1690,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1723,9 +1726,9 @@
   <h2 id="config-cli-perf-prof">About profiles</h2>
   <p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
 
-  <p>Profiles are located in <code>&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
+  <p>Profiles are located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
 
-  <p>For example, <code>/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
+  <p>For example, <code class="highlighter-rouge">/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
 
   <table>
     <tbody>
@@ -1847,19 +1850,21 @@
 
   <p>Command options:</p>
 
-  <pre><code>magento setup:perf:generate-fixtures {path to profile}
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:perf:generate-fixtures {path to profile}
 </code></pre>
+  </div>
 
-  <p>Where <code>&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
+  <p>Where <code class="highlighter-rouge">&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
 
   <p>For example,</p>
 
-  <pre><code>magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
 </code></pre>
+  </div>
 
   <p>Sample output for the small profile:</p>
 
-  <pre><code>Generating profile with following params:
+  <div class="highlighter-rouge"><pre class="highlight"><code>Generating profile with following params:
  |- Websites: 1
  |- Store Groups: 1
  |- Store Views: 1
@@ -1876,6 +1881,7 @@ Generating simple products...  done in &lt;time&gt;
 Generating configurable EAV variations...  done in &lt;time&gt;
 ... more ...
 </code></pre>
+  </div>
 
   <h4 id="related-topics">Related topics</h4>
   <ul>

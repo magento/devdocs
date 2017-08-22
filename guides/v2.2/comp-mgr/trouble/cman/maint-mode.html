@@ -1122,8 +1122,8 @@
 <p>To create a maintenance page and redirect to it, first create a maintenance page named:</p>
 
 <ul>
-  <li>Apache: <code>&lt;web server docroot&gt;/maintenance.html</code></li>
-  <li>nginx: <code>&lt;your Magento install dir&gt;/maintenance.html</code></li>
+  <li>Apache: <code class="highlighter-rouge">&lt;web server docroot&gt;/maintenance.html</code></li>
+  <li>nginx: <code class="highlighter-rouge">&lt;your Magento install dir&gt;/maintenance.html</code></li>
 </ul>
 
 <p>Add to it the following contents:</p>
@@ -1132,19 +1132,19 @@
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;title&gt;</span>Temporarily Offline<span class="nt">&lt;/title&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=UTF-8"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;style&gt;</span>
 <span class="nt">h1</span>
-<span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">{</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
 
 <span class="nt">body</span>
-<span class="p">{</span> <span class="k">text-align</span><span class="o">:</span><span class="k">center</span><span class="p">;</span> <span class="k">font</span><span class="o">:</span> <span class="m">20px</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span> <span class="k">color</span><span class="o">:</span> <span class="m">#333</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">{</span> <span class="nl">text-align</span><span class="p">:</span><span class="nb">center</span><span class="p">;</span> <span class="nl">font</span><span class="p">:</span> <span class="m">20px</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#333</span><span class="p">;</span> <span class="p">}</span>
 
 <span class="nt">&lt;/style&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
 <span class="nt">&lt;h1&gt;</span>Temporarily offline<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;p&gt;</span>We&#39;re down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
@@ -1154,8 +1154,8 @@
 <p>The example in this section shows how to modify the following files, which is one way to set up your maintenance page:</p>
 
 <ul>
-  <li>Apache 2.4: <code>/etc/apache2/sites-available/000-default.conf</code></li>
-  <li>Apache 2.2: <code>/etc/apache2/sites-available/default</code> (Ubuntu), <code>/etc/httpd/conf/httpd.conf</code> (CentOS)</li>
+  <li>Apache 2.4: <code class="highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code></li>
+  <li>Apache 2.2: <code class="highlighter-rouge">/etc/apache2/sites-available/default</code> (Ubuntu), <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> (CentOS)</li>
 </ul>
 
 <p>To redirect traffic to a custom maintenance page:</p>
@@ -1173,7 +1173,7 @@
 
     <p>Add the following at the end of your Apache configuration file:</p>
 
-    <pre><code>RewriteEngine On
+    <div class="highlighter-rouge"><pre class="highlight"><code>RewriteEngine On
 RewriteCond %{REMOTE_ADDR} !^192\.0\.2\.110
 RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
 RewriteCond %{DOCUMENT_ROOT}/maintenance.enable -f
@@ -1182,24 +1182,26 @@ RewriteRule ^.*$ /maintenance.html [R=503,L]
 ErrorDocument 503 /maintenance.html
 Header Set Cache-Control "max-age=0, no-store"
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Restart Apache:</p>
 
     <ul>
-      <li>CentOS: <code>service httpd restart</code></li>
-      <li>Ubuntu: <code>service apache2 restart</code></li>
+      <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
+      <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
     </ul>
   </li>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code> touch &lt;web server docroot&gt;/maintenance.enable
+    <div class="highlighter-rouge"><pre class="highlight"><code> touch &lt;web server docroot&gt;/maintenance.enable
 </code></pre>
+    </div>
   </li>
   <li><a href="/guides/v2.2/comp-mgr/upgrader/upgrade-start.html">Upgrade your system</a>.</li>
   <li>Test your site to make sure it functions correctly.</li>
-  <li>After the upgrade is done, delete <code>maintenance.enable</code>.</li>
+  <li>After the upgrade is done, delete <code class="highlighter-rouge">maintenance.enable</code>.</li>
 </ol>
 
 <h2 id="compman-trouble-maint-nginx">Custom maintenance page for nginx</h2>
@@ -1210,11 +1212,11 @@ Header Set Cache-Control "max-age=0, no-store"
 <ol>
   <li>Use a text editor to open the <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span> configuration file that contains your server block.</li>
   <li>
-    <p>Add the following to the server block (<code>server</code> is shown for clarity only; don’t add a second server block).</p>
+    <p>Add the following to the server block (<code class="highlighter-rouge">server</code> is shown for clarity only; don’t add a second server block).</p>
 
-    <p>The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in <code>/var/www/html/magento2</code>:</p>
+    <p>The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
 
-    <pre><code>server {
+    <div class="highlighter-rouge"><pre class="highlight"><code>server {
 listen 80;
 set $MAGE_ROOT /var/www/html/magento2;
 
@@ -1244,27 +1246,31 @@ rewrite ^(.*)$ /maintenance.html break;
 include /var/www/html/magento2/nginx.conf;
 }
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code> touch &lt;your Magento install dir&gt;/maintenance.enable
+    <div class="highlighter-rouge"><pre class="highlight"><code> touch &lt;your Magento install dir&gt;/maintenance.enable
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Reload the nginx configuration:</p>
 
-    <pre><code> service nginx reload
+    <div class="highlighter-rouge"><pre class="highlight"><code> service nginx reload
 </code></pre>
+    </div>
   </li>
   <li><a href="/guides/v2.2/comp-mgr/upgrader/upgrade-start.html">Upgrade your system</a>.</li>
   <li>Test your site to make sure it functions correctly.</li>
-  <li>After the upgrade is done, delete or rename <code>maintenance.enable</code></li>
+  <li>After the upgrade is done, delete or rename <code class="highlighter-rouge">maintenance.enable</code></li>
   <li>
     <p>Reload the nginx configuration:</p>
 
-    <pre><code>service nginx reload
+    <div class="highlighter-rouge"><pre class="highlight"><code>service nginx reload
 </code></pre>
+    </div>
   </li>
 </ol>
 

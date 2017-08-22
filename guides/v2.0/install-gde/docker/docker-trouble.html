@@ -662,96 +662,107 @@
 <h3 id="directory-not-empty">Directory not empty</h3>
 <p>The following error message might be displayed:</p>
 
-<pre><code>Project directory ./ is not empty
+<div class="highlighter-rouge"><pre class="highlight"><code>Project directory ./ is not empty
 </code></pre>
+</div>
 
-<p>The preceding error means that the directory into which you’re trying to install the Magento software isn’t empty. To verify which directory is the cause of the error, open <code>docker-compose.yml</code>. The directory name is specified as follows:</p>
+<p>The preceding error means that the directory into which you’re trying to install the Magento software isn’t empty. To verify which directory is the cause of the error, open <code class="highlighter-rouge">docker-compose.yml</code>. The directory name is specified as follows:</p>
 
-<pre><code>volumes:
+<div class="highlighter-rouge"><pre class="highlight"><code>volumes:
    - "Users/me/somepath:/home/magento2/magento2"
 </code></pre>
+</div>
 
-<p>In this case, delete everything from <code>Users/me/somepath</code></p>
+<p>In this case, delete everything from <code class="highlighter-rouge">Users/me/somepath</code></p>
 
 <p><em>Solution</em>: Make sure all files, including all hidden files, are removed from that directory and try again.</p>
 
 <h3 id="sqlstatehy000-2002-connection-refused">SQLSTATE[HY000] [2002] Connection refused</h3>
 <p>The following error message might be displayed:</p>
 
-<pre><code>Executing shell command:
+<div class="highlighter-rouge"><pre class="highlight"><code>Executing shell command:
 cd /var/www/magento2 &amp;&amp; php bin/magento setup:install --base-url=http://127.0.0.1:32774/ --db-host=db --db-name=magento2 --db-user=root --db-password=root --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --backend-frontname=admin
 SQLSTATE[HY000] [2002] Connection refused
 </code></pre>
+</div>
 
  	  [InvalidArgumentException] <br />
-<pre><code>  Parameter validation failed
+<div class="highlighter-rouge"><pre class="highlight"><code>  Parameter validation failed
 </code></pre>
+</div>
 
-<p><em>Solution</em>: Run the Terminal (Mac OS) as <code>root</code> or run DOS Command Prompt (Windows) as Administrator.</p>
+<p><em>Solution</em>: Run the Terminal (Mac OS) as <code class="highlighter-rouge">root</code> or run DOS Command Prompt (Windows) as Administrator.</p>
 </div></div>
 
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Error displays in the Magento Admin </h2><div class="collapsible-content"><p>After you log in to the Magento Admin, the following notification error might display:</p>
 
-<pre><code>Your web server is set up incorrectly and allows unauthorized access to sensitive files. Please contact your hosting provider.
+<div class="highlighter-rouge"><pre class="highlight"><code>Your web server is set up incorrectly and allows unauthorized access to sensitive files. Please contact your hosting provider.
 </code></pre>
+</div>
 
 <p>This error results from the fact that the Magento application is running in developer mode. The message doesn’t indicate any issues. You can ignore it and develop as normal.</p>
 </div></div>
 
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: 404 error accessing the Magento Admin, storefront is accessible </h2><div class="collapsible-content"><p>When you access the Magento Admin, the following error displays in the browser:</p>
 
-<pre><code>The requested URL /admin was not found on this server.
+<div class="highlighter-rouge"><pre class="highlight"><code>The requested URL /admin was not found on this server.
 </code></pre>
+</div>
 
 <p>However, you can access the Magento storefront.</p>
 
-<p><em>Solution</em>: The most likely cause of this error is missing <code>.htaccess</code> files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see <a href="/guides/v2.0/install-gde/docker/docker-over.html#devbox-download">How to download Magento code</a></p>
+<p><em>Solution</em>: The most likely cause of this error is missing <code class="highlighter-rouge">.htaccess</code> files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see <a href="/guides/v2.0/install-gde/docker/docker-over.html#devbox-download">How to download Magento code</a></p>
 </div></div>
 
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Cannot access the Magento storefront or Admin </h2><div class="collapsible-content"><p>If you are having trouble accessing your Magento storefront and Magento Admin, connect to the web container and run some additional commands.</p>
 
 <ol>
   <li>
-    <p>Locate the running web container by running the command: <code>docker-compose ps</code></p>
+    <p>Locate the running web container by running the command: <code class="highlighter-rouge">docker-compose ps</code></p>
 
-    <p>The web container has a name like <code>magento2devbox_web_1</code></p>
+    <p>The web container has a name like <code class="highlighter-rouge">magento2devbox_web_1</code></p>
   </li>
   <li>
     <p>Connect to the web container using the following command:</p>
 
-    <pre><code>docker-compose exec --user=magento2 &lt;service&gt; /bin/bash
+    <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 &lt;service&gt; /bin/bash
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Navigate to the Magento installation and call the compiler by running the following command:</p>
 
-    <pre><code>cd /var/www/magento2/ &amp;&amp; php bin/magento setup:di:compile
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/magento2/ &amp;&amp; php bin/magento setup:di:compile
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Optional: After the compiler finishes, run the following command to speed up page loads:</p>
 
-    <pre><code>php bin/magento setup:static-content:deploy
+    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:static-content:deploy
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>When you’re finished, enter <code>exit</code>.</p>
+    <p>When you’re finished, enter <code class="highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
 </div></div>
 
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Errors display on Windows </h2><div class="collapsible-content"><p>During installation, errors similar to the following display in your primary command window:</p>
 
-<pre><code>ERROR: for db  Cannot create container for service db: C: drive is not shared. Please share it in Docker for Windows Settings
+<div class="highlighter-rouge"><pre class="highlight"><code>ERROR: for db  Cannot create container for service db: C: drive is not shared. Please share it in Docker for Windows Settings
 ERROR: Encountered errors while bringing up the project.
 </code></pre>
+</div>
 
 <p>Other errors might display in a secondary command window:</p>
 
-<pre><code>Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
+<div class="highlighter-rouge"><pre class="highlight"><code>Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 </code></pre>
+</div>
 
 <p><em>Solution</em>: <a href="/guides/v2.0/install-gde/docker/docker-ref.html#devbox-docker-file-share">Set up file sharing</a>.</p>
 </div></div>
@@ -767,15 +778,17 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
   <li>
     <p>Check the total number of active Docker networks:</p>
 
-    <pre><code>docker network ls
+    <div class="highlighter-rouge"><pre class="highlight"><code>docker network ls
 </code></pre>
+    </div>
 
     <p>If there are more than 32 networks, delete the networks you’re not using and try again. (Docker has a limit of 32 active network connections.)</p>
 
     <p>The following command deletes <em>all</em> Docker networks; use it with caution:</p>
 
-    <pre><code>docker network rm $(docker network ls -q)
+    <div class="highlighter-rouge"><pre class="highlight"><code>docker network rm $(docker network ls -q)
 </code></pre>
+    </div>
   </li>
 </ul>
 
@@ -788,14 +801,16 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
   <li>
     <p>List all Magento Docker containers.</p>
 
-    <pre><code>docker-compose ps
+    <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose ps
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Kill the Magento Docker containers.</p>
 
-    <pre><code>docker rm -fv &lt;service&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>docker rm -fv &lt;service&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Run one of the following commands:</p>
@@ -804,14 +819,16 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
       <li>
         <p>Mac OS</p>
 
-        <pre><code>./m2devbox-init.sh
+        <div class="highlighter-rouge"><pre class="highlight"><code>./m2devbox-init.sh
 </code></pre>
+        </div>
       </li>
       <li>
         <p>Windows</p>
 
-        <pre><code>m2devbox-init.bat
+        <div class="highlighter-rouge"><pre class="highlight"><code>m2devbox-init.bat
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>

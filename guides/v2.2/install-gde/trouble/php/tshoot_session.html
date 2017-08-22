@@ -962,10 +962,10 @@
 
 			<p><strong>Symptom</strong>: At the last step of installing Magento 2, the following <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> displays:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x"> </span>
-<span class="x">exception &#39;Exception&#39; with message &#39;Warning: SessionHandler::read():</span>
-<span class="x">open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74&#39; </span>
-<span class="x">in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> 
+exception 'Exception' with message 'Warning: SessionHandler::read():
+open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74' 
+in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67</code></pre></figure>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -976,7 +976,7 @@
 
 <h3 id="solution">Solution:</h3>
 
-<p>This happens when your <code>session.save_handler</code> PHP parameter is set to some another session storage than <code>files</code> (for example, <code>redis</code>, <code>memcached</code>, and so on). This is a known issue we’re working to resolve.</p>
+<p>This happens when your <code class="highlighter-rouge">session.save_handler</code> PHP parameter is set to some another session storage than <code class="highlighter-rouge">files</code> (for example, <code class="highlighter-rouge">redis</code>, <code class="highlighter-rouge">memcached</code>, and so on). This is a known issue we’re working to resolve.</p>
 
 <p>Solutions:</p>
 
@@ -985,23 +985,24 @@
   <li>Use the following workaround with existing code.</li>
 </ul>
 
-<h3 id="locate-phpini">Locate <code>php.ini</code></h3>
-<p>Locate <code>php.ini</code> by entering the following command:</p>
+<h3 id="locate-phpini">Locate <code class="highlighter-rouge">php.ini</code></h3>
+<p>Locate <code class="highlighter-rouge">php.ini</code> by entering the following command:</p>
 
-<pre><code>php -i | grep "Loaded Configuration File"
+<div class="highlighter-rouge"><pre class="highlight"><code>php -i | grep "Loaded Configuration File"
 </code></pre>
+</div>
 
 <p>Typical locations follow:</p>
 
 <ul>
-  <li>Ubuntu: <code>/etc/php5/cli/php.ini</code></li>
-  <li>CentOS: <code>/etc/php.ini</code></li>
+  <li>Ubuntu: <code class="highlighter-rouge">/etc/php5/cli/php.ini</code></li>
+  <li>CentOS: <code class="highlighter-rouge">/etc/php.ini</code></li>
 </ul>
 
 <h3 id="workaround">Workaround</h3>
 <ol>
-  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
-  <li>Locate <code>session.save_handler</code></li>
+  <li>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
+  <li>Locate <code class="highlighter-rouge">session.save_handler</code></li>
   <li>
     <p>Set it in any of the following ways:</p>
 
@@ -1009,14 +1010,16 @@
       <li>
         <p>To comment it out:</p>
 
-        <pre><code>;session.save_path = &lt;path&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>;session.save_path = &lt;path&gt;
 </code></pre>
+        </div>
       </li>
       <li>
         <p>To set it to a file system path:</p>
 
-        <pre><code>session.save_handler = files
+        <div class="highlighter-rouge"><pre class="highlight"><code>session.save_handler = files
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>

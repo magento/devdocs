@@ -1910,23 +1910,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1943,12 +1946,13 @@
   <h2 id="config-cli-subcommands-index-info">View the list of indexers</h2>
   <p>To view the list of indexers to use in the commands discussed in this topic, enter</p>
 
-  <pre><code>magento indexer:info
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:info
 </code></pre>
+  </div>
 
   <p>The list displays as follows:</p>
 
-  <pre><code>catalog_category_product                 Category Products
+  <div class="highlighter-rouge"><pre class="highlight"><code>catalog_category_product                 Category Products
 catalog_product_category                 Product Categories
 catalog_product_price                    Product Price
 catalog_product_attribute                Product EAV
@@ -1957,30 +1961,34 @@ catalogrule_rule                         Catalog Rule Product
 catalogrule_product                      Catalog Product Rule
 catalogsearch_fulltext                   Catalog Search
 </code></pre>
+  </div>
 
   <h2 id="config-cli-subcommands-index-status">View indexer status</h2>
   <p>This command enables you to view the status of all or selected indexers (for example, shows whether indexers need to be reindexed).</p>
 
   <p>Command options:</p>
 
-  <pre><code>magento indexer:status [indexer]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:status [indexer]
 </code></pre>
+  </div>
 
-  <p>where <code>[indexer]</code> is a space-separated list of indexers. Omit <code>[indexer]</code> to view status of all indexers.</p>
+  <p>where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to view status of all indexers.</p>
 
   <p>To view the list of indexers, enter</p>
 
-  <pre><code>magento indexer:info
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:info
 </code></pre>
+  </div>
 
   <p>A sample follows:</p>
 
-  <pre><code>magento indexer:status
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:status
 </code></pre>
+  </div>
 
   <p>Sample result:</p>
 
-  <pre><code>Category Products:                                 Reindex required
+  <div class="highlighter-rouge"><pre class="highlight"><code>Category Products:                                 Reindex required
 Product Categories:                                Reindex required
 Product Price:                                     Reindex required
 Product EAV:                                       Reindex required
@@ -1989,6 +1997,7 @@ Catalog Rule Product:                              Reindex required
 Catalog Product Rule:                              Reindex required
 Catalog Search:                                    Reindex required
 </code></pre>
+  </div>
 
   <p>Reindexing is discussed in the next section.</p>
 
@@ -2002,24 +2011,27 @@ Catalog Search:                                    Reindex required
 
   <p>Command options:</p>
 
-  <pre><code>magento indexer:reindex [indexer]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:reindex [indexer]
 </code></pre>
+  </div>
 
-  <p>where <code>[indexer]</code> is a space-separated list of indexers. Omit <code>[indexer]</code> to reindex all indexers.</p>
+  <p>where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to reindex all indexers.</p>
 
   <p>To view the list of indexers, enter</p>
 
-  <pre><code>magento indexer:info
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:info
 </code></pre>
+  </div>
 
   <p>A sample follows:</p>
 
-  <pre><code>magento indexer:reindex
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:reindex
 </code></pre>
+  </div>
 
   <p>Sample result:</p>
 
-  <pre><code>Category Products index has been rebuilt successfully in &lt;time&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>Category Products index has been rebuilt successfully in &lt;time&gt;
 Product Categories index has been rebuilt successfully in &lt;time&gt;
 Product Price index has been rebuilt successfully in &lt;time&gt;
 Product EAV index has been rebuilt successfully in &lt;time&gt;
@@ -2028,6 +2040,7 @@ Catalog Rule Product index has been rebuilt successfully in &lt;time&gt;
 Catalog Product Rule index has been rebuilt successfully in &lt;time&gt;
 Catalog Search index has been rebuilt successfully in &lt;time&gt;
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -2038,8 +2051,8 @@ Catalog Search index has been rebuilt successfully in &lt;time&gt;
   <p>This command enables you to set the following indexer options:</p>
 
   <ul>
-    <li>Update on save (<code>realtime</code>): Indexed data is updated as soon as a change is made in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>. (For example, the <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> products index is reindex after products are added to a category in the Admin.) This is the default.</li>
-    <li>Update by schedule (<code>schedule</code>): Data is indexed according to the schedule set by your Magento cron job.</li>
+    <li>Update on save (<code class="highlighter-rouge">realtime</code>): Indexed data is updated as soon as a change is made in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>. (For example, the <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> products index is reindex after products are added to a category in the Admin.) This is the default.</li>
+    <li>Update by schedule (<code class="highlighter-rouge">schedule</code>): Data is indexed according to the schedule set by your Magento cron job.</li>
   </ul>
 
   <p><a href="/guides/v2.2/extension-dev-guide/indexing.html">More information about indexing</a></p>
@@ -2047,19 +2060,21 @@ Catalog Search index has been rebuilt successfully in &lt;time&gt;
   <h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
   <p>To view the current indexer configuration, enter</p>
 
-  <pre><code>magento indexer:show-mode [indexer]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:show-mode [indexer]
 </code></pre>
+  </div>
 
-  <p>where <code>[indexer]</code> is a space-separated list of indexers or omit <code>[indexer]</code> to show all indexers’ modes.</p>
+  <p>where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers or omit <code class="highlighter-rouge">[indexer]</code> to show all indexers’ modes.</p>
 
   <p>For example, to show the mode of all indexers:</p>
 
-  <pre><code>magento indexer:show-mode 
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:show-mode 
 </code></pre>
+  </div>
 
   <p>Sample result:</p>
 
-  <pre><code>Category Products:                                 Update on Save
+  <div class="highlighter-rouge"><pre class="highlight"><code>Category Products:                                 Update on Save
 Product Categories:                                Update on Save
 Product Price:                                     Update on Save
 Product EAV:                                       Update on Save
@@ -2068,34 +2083,39 @@ Catalog Rule Product:                              Update on Save
 Catalog Product Rule:                              Update on Save
 Catalog Search:                                    Update on Save
 </code></pre>
+  </div>
 
   <h3 id="config-cli-subcommands-index-conf-set">Configure indexers</h3>
   <p>To specify the indexer configuration, enter</p>
 
-  <pre><code>magento indexer:set-mode {realtime|schedule} [indexer]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:set-mode {realtime|schedule} [indexer]
 </code></pre>
+  </div>
 
   <p>where</p>
 
-  <p><code>realtime</code> sets the selected indexers to update on save.
-<code>schedule</code> sets the specified indexers to save according to the cron schedule.
-<code>indexer</code> is a space-separated list of indexers or omit <code>indexer</code> to configure all indexers the same way.</p>
+  <p><code class="highlighter-rouge">realtime</code> sets the selected indexers to update on save.
+<code class="highlighter-rouge">schedule</code> sets the specified indexers to save according to the cron schedule.
+<code class="highlighter-rouge">indexer</code> is a space-separated list of indexers or omit <code class="highlighter-rouge">indexer</code> to configure all indexers the same way.</p>
 
   <p>To view the list of indexers, enter</p>
 
-  <pre><code>magento indexer:info
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:info
 </code></pre>
+  </div>
 
   <p>For example, to change only the category products and product categories indexers to update on schedule, enter</p>
 
-  <pre><code>magento indexer:set-mode schedule catalog_category_product catalog_product_category
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento indexer:set-mode schedule catalog_category_product catalog_product_category
 </code></pre>
+  </div>
 
   <p>Sample result:</p>
 
-  <pre><code>Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
+  <div class="highlighter-rouge"><pre class="highlight"><code>Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
 </code></pre>
+  </div>
 
   <h4 id="related-topics">Related topics</h4>
 

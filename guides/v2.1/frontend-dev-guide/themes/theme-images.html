@@ -1099,29 +1099,30 @@
 
 			<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>The properties of product images used on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> are stored in the <code>view.xml</code> configuration file. This topic provides all details about what properties are available and how to configure them.</p>
+<p>The properties of product images used on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> are stored in the <code class="highlighter-rouge">view.xml</code> configuration file. This topic provides all details about what properties are available and how to configure them.</p>
 
-<p>The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> <code>view.xml</code> as well. For more details, view the <a href="/guides/v2.1/javascript-dev-guide/widgets/widget_gallery.html">Gallery widget</a> topic.</p>
+<p>The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> <code class="highlighter-rouge">view.xml</code> as well. For more details, view the <a href="/guides/v2.1/javascript-dev-guide/widgets/widget_gallery.html">Gallery widget</a> topic.</p>
 
 <h2 id="view_xml_structure">Configure image properties in view.xml</h2>
 
-<p>The conventional location of <code>view.xml</code> for a theme is:</p>
+<p>The conventional location of <code class="highlighter-rouge">view.xml</code> for a theme is:</p>
 
-<pre><code>&lt;theme_dir&gt;/etc/view.xml
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;theme_dir&gt;/etc/view.xml
 </code></pre>
+</div>
 
-<p>For example, here is the <code>view.xml</code> of the Magento Blank theme: <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.</p>
+<p>For example, here is the <code class="highlighter-rouge">view.xml</code> of the Magento Blank theme: <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.</p>
 
-<p>In <code>view.xml</code>, image properties are configured in the scope of <code>&lt;images module="Magento_Catalog"&gt;</code> element:</p>
+<p>In <code class="highlighter-rouge">view.xml</code>, image properties are configured in the scope of <code class="highlighter-rouge">&lt;images module="Magento_Catalog"&gt;</code> element:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
 ...
 <span class="nt">&lt;images/&gt;</span></code></pre></figure>
 
-<p>Image properties are configured for each image type defined by the <code>id</code> and <code>type</code> attributes of the <code>&lt;image&gt;</code> element:</p>
+<p>Image properties are configured for each image type defined by the <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">type</code> attributes of the <code class="highlighter-rouge">&lt;image&gt;</code> element:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">&quot;unique_image_id&quot;</span> <span class="na">type=</span><span class="s">&quot;image_type&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">"unique_image_id"</span> <span class="na">type=</span><span class="s">"image_type"</span><span class="nt">&gt;</span>
 	...
 	<span class="nt">&lt;/image&gt;</span>
 <span class="nt">&lt;images/&gt;</span></code></pre></figure>
@@ -1178,8 +1179,8 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 
 <p>Image properties are defined by the corresponding elements, for example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">&quot;unique_image_id&quot;</span> <span class="na">type=</span><span class="s">&quot;image&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">"unique_image_id"</span> <span class="na">type=</span><span class="s">"image"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;width&gt;</span>100<span class="nt">&lt;/width&gt;</span> <span class="c">&lt;!-- Image width in px --&gt;</span> 
         <span class="nt">&lt;height&gt;</span>100<span class="nt">&lt;/height&gt;</span> <span class="c">&lt;!-- Image height in px --&gt;</span>
     <span class="nt">&lt;/image&gt;</span>
@@ -1319,22 +1320,22 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 </table>
 
 <h4 id="resize-catalog-images">Resize catalog images</h4>
-<p>Generally, product images are cached while saving the product. However, the <code>magento catalog:images:resize</code> command enables you to resize all images for display on your storefront. Situations where this could be necessary might be:</p>
+<p>Generally, product images are cached while saving the product. However, the <code class="highlighter-rouge">magento catalog:images:resize</code> command enables you to resize all images for display on your storefront. Situations where this could be necessary might be:</p>
 
 <ul>
   <li>After you import products, which might have images of various sizes</li>
   <li>If images were resized or deleted manually from <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span></li>
 </ul>
 
-<p>Each image assigned to a product must be resized in accordance with image <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> defined in a module’s <a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images"><code>view.xml</code></a> configuration file. After resizing an image, its resized copy is stored in the cache (<code>/pub/media/catalog/product/cache</code> directory). Magento serves storefront images from cache.</p>
+<p>Each image assigned to a product must be resized in accordance with image <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> defined in a module’s <a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images"><code class="highlighter-rouge">view.xml</code></a> configuration file. After resizing an image, its resized copy is stored in the cache (<code class="highlighter-rouge">/pub/media/catalog/product/cache</code> directory). Magento serves storefront images from cache.</p>
 
 <p>Command usage:</p>
 
-<p><code>php &lt;magento install dir&gt;/bin/magento catalog:images:resize</code></p>
+<p><code class="highlighter-rouge">php &lt;magento install dir&gt;/bin/magento catalog:images:resize</code></p>
 
 <p>This command has no arguments or options. A progress indicator displays while the command runs.</p>
 
-<p>The message <code>Product images resized successfully</code> displays to confirm the command succeeded.</p>
+<p>The message <code class="highlighter-rouge">Product images resized successfully</code> displays to confirm the command succeeded.</p>
 
 		</div>
 		<!-- /.content-wrap -->

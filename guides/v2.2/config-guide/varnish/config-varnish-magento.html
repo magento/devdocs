@@ -1948,8 +1948,9 @@
 <div class="bs-callout bs-callout-tip">
   <p>You can also activate Varnish from the command line–instead of logging in to the Magento Admin–using the Magento command-line interface tool:</p>
 
-  <pre><code>bin/magento config:set --scope=default --scope-code=0 system/full_page_cache/caching_application 2
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:set --scope=default --scope-code=0 system/full_page_cache/caching_application 2
 </code></pre>
+  </div>
 </div>
 
 <h2 id="export-a-varnish-configuration-file">Export a Varnish configuration file</h2>
@@ -1958,30 +1959,33 @@
 <p>To export a Varnish configuration file from the Admin panel:
 7.	Click one of the export buttons to create a <code>varnish.vcl</code> you can use with Varnish.</p>
 
-<pre><code>For example, if you have Varnish 4, click **Export VCL for Varnish 4**
+<div class="highlighter-rouge"><pre class="highlight"><code>For example, if you have Varnish 4, click **Export VCL for Varnish 4**
 
 The following figure shows an example.&lt;br&gt;&lt;br&gt;
 &lt;img src="/common/images/config_varnish_admin_22.png" alt="Configure Magento to use Varnish in the Admin"&gt;
 </code></pre>
+</div>
 
 <ol>
   <li>
     <p>Back up your existing <code>default.vcl</code>. Then rename the <code>varnish.vcl</code> file you just exported to <code>default.vcl</code>. Then copy the file to the <code>/etc/varnish/</code>. directory.</p>
 
-    <pre><code>cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak2
+    <div class="highlighter-rouge"><pre class="highlight"><code>cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak2
 mv &lt;download_directory&gt;/varnish.vcl default.vcl
 cp &lt;download_directory&gt;/default.vcl /etc/varnish/default.vcl
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>We recommend you open <code>default.vcl</code> and change the value of <code>acl purge</code> to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)</p>
+    <p>We recommend you open <code class="highlighter-rouge">default.vcl</code> and change the value of <code class="highlighter-rouge">acl purge</code> to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)</p>
 
     <p>For example,</p>
 
-    <pre><code>acl purge {
+    <div class="highlighter-rouge"><pre class="highlight"><code>acl purge {
    "localhost";
 }
 </code></pre>
+    </div>
   </li>
   <li>
     <p>If you want to customize the Vagrant health checks or grace mode or saint mode configuration, see <a href="/guides/v2.2/config-guide/varnish/config-varnish-advanced.html">Advanced Varnish configuration</a>.</p>
@@ -1989,17 +1993,18 @@ cp &lt;download_directory&gt;/default.vcl /etc/varnish/default.vcl
   <li>
     <p>Restart Varnish and your web server:</p>
 
-    <pre><code>service varnish restart
+    <div class="highlighter-rouge"><pre class="highlight"><code>service varnish restart
 service httpd restart
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <h2 id="cache-static-files">Cache Static Files</h2>
 
-<p>Static files should not be cached by default, but if you want to cache them, you can edit the section <code>Static files caching</code> in the VCL to have the following content:</p>
+<p>Static files should not be cached by default, but if you want to cache them, you can edit the section <code class="highlighter-rouge">Static files caching</code> in the VCL to have the following content:</p>
 
-<pre><code># Static files should not be cached by default
+<div class="highlighter-rouge"><pre class="highlight"><code># Static files should not be cached by default
   return (pass);
 
 # But if you use a few locales and don't use CDN you can enable caching static files by commenting previous line (#return (pass);) and uncommenting next 3 lines
@@ -2007,6 +2012,7 @@ service httpd restart
   #unset req.http./*  */;
   #unset req.http.Cookie;
 </code></pre>
+</div>
 
 <p>You need to make these changes before you configure Magento to use Varnish.</p>
 

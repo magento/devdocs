@@ -1025,13 +1025,14 @@
   </ul>
 
   <h2 id="centos-verify-php">Verify PHP is installed</h2>
-  <p>To verify if PHP is installed already, enter <code>php -v</code>. If <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> is installed, a message similar to the following displays:</p>
+  <p>To verify if PHP is installed already, enter <code class="highlighter-rouge">php -v</code>. If <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> is installed, a message similar to the following displays:</p>
 
-  <pre><code>PHP 7.0.20 (cli) (built: Jun  8 2017 09:31:38) ( NTS )
+  <div class="highlighter-rouge"><pre class="highlight"><code>PHP 7.0.20 (cli) (built: Jun  8 2017 09:31:38) ( NTS )
 Copyright (c) 1997-2017 The PHP Group
 Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
   with Zend OPcache v7.0.20, Copyright (c) 1999-2017, by Zend Technologies
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
     <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
@@ -1077,46 +1078,51 @@ Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
-    <pre><code>yum -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y update
 yum -y install epel-release
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 wget https://centos6.iuscommunity.org/ius-release.rpm
 rpm -Uvh ius-release*.rpm
 yum -y update
 </code></pre>
+    </div>
   </li>
   <li>
     <p><em>CentOS 7</em>. Enter the following commands:</p>
 
-    <pre><code>yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
 yum -y update
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Install all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a>:</p>
 
-    <pre><code>yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
 </div>
   </li>
   <li>
-    <p>Restart Apache: <code>service httpd restart</code></p>
+    <p>Restart Apache: <code class="highlighter-rouge">service httpd restart</code></p>
   </li>
   <li>
     <p>Verify that PHP 7.0 is installed properly:</p>
 
-    <pre><code>php -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -v
 </code></pre>
+    </div>
 
     <p>The following response indicates that PHP 7.0.3 is installed:</p>
 
-    <pre><code>PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
+    <div class="highlighter-rouge"><pre class="highlight"><code>PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
       <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the  <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
@@ -1125,8 +1131,9 @@ Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache 
   <li>
     <p>Verify that all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a> were installed:</p>
 
-    <pre><code>php -me
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -me
 </code></pre>
+    </div>
 
     <p>You should see output similar to the following:</p>
     <pre>
@@ -1194,46 +1201,51 @@ Zend OPcache
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
-    <pre><code>yum -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y update
 yum -y install epel-release
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 wget https://centos6.iuscommunity.org/ius-release.rpm
 rpm -Uvh ius-release*.rpm
 yum -y update
 </code></pre>
+    </div>
   </li>
   <li>
     <p><em>CentOS 7</em>. Enter the following commands:</p>
 
-    <pre><code>yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
 yum -y update
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Install all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a>:</p>
 
-    <pre><code>yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
 </div>
   </li>
   <li>
-    <p>Restart Apache: <code>service httpd restart</code></p>
+    <p>Restart Apache: <code class="highlighter-rouge">service httpd restart</code></p>
   </li>
   <li>
     <p>Verify that PHP 7.1 is installed properly:</p>
 
-    <pre><code>php -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -v
 </code></pre>
+    </div>
 
     <p>The following response indicates that PHP 7.1.6 is installed:</p>
 
-    <pre><code>PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
+    <div class="highlighter-rouge"><pre class="highlight"><code>PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
 Copyright (c) 1997-2017 The PHP Group
 Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2017, by Zend Technologies
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
       <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the  <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
@@ -1242,8 +1254,9 @@ Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache 
   <li>
     <p>Verify that all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a> were installed:</p>
 
-    <pre><code>php -me
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -me
 </code></pre>
+    </div>
 
     <p>You should see output similar to the following:</p>
     <pre>

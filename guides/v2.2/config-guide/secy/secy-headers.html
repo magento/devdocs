@@ -1920,22 +1920,22 @@
 <p>The issue results if <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:</p>
 
 <ul>
-  <li><code>X-Rewrite-Url</code></li>
-  <li><code>X-Original-Url</code></li>
-  <li><code>IIS-wasurlrewritten</code></li>
-  <li><code>Unencoded-URL</code></li>
-  <li><code>Orig-path-info</code></li>
+  <li><code class="highlighter-rouge">X-Rewrite-Url</code></li>
+  <li><code class="highlighter-rouge">X-Original-Url</code></li>
+  <li><code class="highlighter-rouge">IIS-wasurlrewritten</code></li>
+  <li><code class="highlighter-rouge">Unencoded-URL</code></li>
+  <li><code class="highlighter-rouge">Orig-path-info</code></li>
 </ul>
 
 <p>If these headers are changed, the resulting URL and content are cached, resulting in potential vulnerabilities.</p>
 
 <h3 id="solution">Solution</h3>
-<p>We provide the option to remove the values of all of the preceding headers based on the IIS server setting for <code>Enable_IIS_Rewrites</code>.</p>
+<p>We provide the option to remove the values of all of the preceding headers based on the IIS server setting for <code class="highlighter-rouge">Enable_IIS_Rewrites</code>.</p>
 
 <ul>
-  <li>If <code>Enable_IIS_Rewrites</code> is set to <code>0</code>,  the values of the headers are removed.</li>
+  <li>If <code class="highlighter-rouge">Enable_IIS_Rewrites</code> is set to <code class="highlighter-rouge">0</code>,  the values of the headers are removed.</li>
   <li>
-    <p>If <code>Enable_IIS_Rewrites</code> is set to <code>1</code>, the values of the headers are left intact.</p>
+    <p>If <code class="highlighter-rouge">Enable_IIS_Rewrites</code> is set to <code class="highlighter-rouge">1</code>, the values of the headers are left intact.</p>
 
     <div class="bs-callout bs-callout-warning">
 	<p>If you set <code>Enable_IIS_Rewrites</code> to <code>1</code>, you must not allow the values of the preceding headers to be altered before the request reaches the IIS web server.</p>

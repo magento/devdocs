@@ -1579,10 +1579,10 @@
   <p>The message queue topology can only be configured after Magento Community Edition has been installed and before Magento Enterprise Editions has been installed. </p>
 </div>
 
-<p>Each module that is to be a <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span> must be configured as such. If you want a module to use the MQF, create a <code>&lt;module&gt;/etc/queue.xml</code> file and define the publisher, consumers, exchanges and bindings.</p>
+<p>Each module that is to be a <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span> must be configured as such. If you want a module to use the MQF, create a <code class="highlighter-rouge">&lt;module&gt;/etc/queue.xml</code> file and define the publisher, consumers, exchanges and bindings.</p>
 
 <h2>Edit the <code>queue.xml</code> file</h2>
-<p>The <code>queue.xml</code> file can contain the following elements:</p>
+<p>The <code class="highlighter-rouge">queue.xml</code> file can contain the following elements:</p>
 
 <ul>
   <li>publisher</li>
@@ -1593,18 +1593,18 @@
 
 <h3>Required elements</h3>
 
-<p>Each <code>queue.xml</code> file must contain the following lines:</p>
+<p>Each <code class="highlighter-rouge">queue.xml</code> file must contain the following lines:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework-message-queue:etc/queue.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/queue.xsd"</span><span class="nt">&gt;</span>
 .
 .
 .
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h3>publisher element</h3>
-<p>The <code>publisher</code> element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.</p>
+<p>The <code class="highlighter-rouge">publisher</code> element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.</p>
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -1624,7 +1624,7 @@
 </table>
 
 <h3>topic element</h3>
-<p>Configuring the <code>topic</code> element defines the interface that processes the message and assigns a publisher.</p>
+<p>Configuring the <code class="highlighter-rouge">topic</code> element defines the interface that processes the message and assigns a publisher.</p>
 <table>
 <tr>
 <th><p>Parameter</p></th><th><p>Description</p></th>
@@ -1649,7 +1649,7 @@
 </table>
 
 <h3>consumer element</h3>
-<p>Each <code>consumer</code> elements maps the receiver of a message to a specific queue. The <code>class</code> and <code>method</code> parameters indicate what receives and processes the message.</p>
+<p>Each <code class="highlighter-rouge">consumer</code> elements maps the receiver of a message to a specific queue. The <code class="highlighter-rouge">class</code> and <code class="highlighter-rouge">method</code> parameters indicate what receives and processes the message.</p>
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -1681,7 +1681,7 @@
 </table>
 
 <h3>bind element</h3>
-<p>The <code>bind</code> elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.</p>
+<p>The <code class="highlighter-rouge">bind</code> elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.</p>
 
 <table>
 <tr>
@@ -1703,15 +1703,15 @@
 
 <h2>Sample `queue.xml` file</h2>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework-message-queue:etc/queue.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">&quot;test-publisher-1&quot;</span> <span class="na">connection=</span><span class="s">&quot;rabbitmq&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">&quot;test-publisher-2&quot;</span> <span class="na">connection=</span><span class="s">&quot;db&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">&quot;customer.created&quot;</span> <span class="na">schema=</span><span class="s">&quot;Magento\Customer\Api\Data\CustomerInterface&quot;</span> <span class="na">publisher=</span><span class="s">&quot;test-publisher-1&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">&quot;customer.deleted&quot;</span> <span class="na">schema=</span><span class="s">&quot;Magento\Customer\Api\Data\CustomerInterface&quot;</span> <span class="na">publisher=</span><span class="s">&quot;test-publisher-2&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">&quot;customerCreatedListener&quot;</span> <span class="na">queue=</span><span class="s">&quot;test-queue-1&quot;</span> <span class="na">connection=</span><span class="s">&quot;rabbitmq&quot;</span> <span class="na">class=</span><span class="s">&quot;Data\Type&quot;</span> <span class="na">method=</span><span class="s">&quot;processMessage&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">&quot;customerDeletedListener&quot;</span> <span class="na">queue=</span><span class="s">&quot;test-queue-2&quot;</span> <span class="na">connection=</span><span class="s">&quot;db&quot;</span> <span class="na">class=</span><span class="s">&quot;Other\Type&quot;</span> <span class="na">method=</span><span class="s">&quot;processMessage2&quot;</span> <span class="na">max_messages=</span><span class="s">&quot;98765&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;bind</span> <span class="na">queue=</span><span class="s">&quot;test-queue-1&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span> <span class="na">topic=</span><span class="s">&quot;customer.created&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;bind</span> <span class="na">queue=</span><span class="s">&quot;test-queue-2&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span> <span class="na">topic=</span><span class="s">&quot;customer.deleted&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/queue.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">"test-publisher-1"</span> <span class="na">connection=</span><span class="s">"rabbitmq"</span> <span class="na">exchange=</span><span class="s">"magento"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">"test-publisher-2"</span> <span class="na">connection=</span><span class="s">"db"</span> <span class="na">exchange=</span><span class="s">"magento"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">"customer.created"</span> <span class="na">schema=</span><span class="s">"Magento\Customer\Api\Data\CustomerInterface"</span> <span class="na">publisher=</span><span class="s">"test-publisher-1"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">"customer.deleted"</span> <span class="na">schema=</span><span class="s">"Magento\Customer\Api\Data\CustomerInterface"</span> <span class="na">publisher=</span><span class="s">"test-publisher-2"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">"customerCreatedListener"</span> <span class="na">queue=</span><span class="s">"test-queue-1"</span> <span class="na">connection=</span><span class="s">"rabbitmq"</span> <span class="na">class=</span><span class="s">"Data\Type"</span> <span class="na">method=</span><span class="s">"processMessage"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">"customerDeletedListener"</span> <span class="na">queue=</span><span class="s">"test-queue-2"</span> <span class="na">connection=</span><span class="s">"db"</span> <span class="na">class=</span><span class="s">"Other\Type"</span> <span class="na">method=</span><span class="s">"processMessage2"</span> <span class="na">max_messages=</span><span class="s">"98765"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;bind</span> <span class="na">queue=</span><span class="s">"test-queue-1"</span> <span class="na">exchange=</span><span class="s">"magento"</span> <span class="na">topic=</span><span class="s">"customer.created"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;bind</span> <span class="na">queue=</span><span class="s">"test-queue-2"</span> <span class="na">exchange=</span><span class="s">"magento"</span> <span class="na">topic=</span><span class="s">"customer.deleted"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h4 id="related-topics">Related Topics</h4>

@@ -1678,45 +1678,47 @@
 <p>To change the Apache 2.2 listen port:</p>
 
 <ol>
-  <li>Open <code>/etc/httpd/conf/httpd.conf</code> (or <code>/etc/apache2/ports.conf</code> on Debian and Ubuntu) in a text editor.</li>
-  <li>Locate the <code>Listen</code> directive.</li>
-  <li>Change the value of the listen port to <code>8080</code>. (You can use any available listen port.)</li>
-  <li>Save your changes to <code>httpd.conf</code> and exit the text editor.</li>
+  <li>Open <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> (or <code class="highlighter-rouge">/etc/apache2/ports.conf</code> on Debian and Ubuntu) in a text editor.</li>
+  <li>Locate the <code class="highlighter-rouge">Listen</code> directive.</li>
+  <li>Change the value of the listen port to <code class="highlighter-rouge">8080</code>. (You can use any available listen port.)</li>
+  <li>Save your changes to <code class="highlighter-rouge">httpd.conf</code> and exit the text editor.</li>
 </ol>
 
 <p>on Debian and Ubuntu
-1.	Open <code>/etc/apache2/ports.conf</code> in a text editor.
-2.	Locate the <code>Listen</code> directive.
-3.	Change the value of the listen port to <code>8080</code>. (You can use any available listen port.)
-4.	Save your changes to <code>ports.conf</code> and exit the text editor.
-5. 	Open <code>/etc/apache2/sites-enabled/000-default.conf</code> in a text editor.
+1.	Open <code class="highlighter-rouge">/etc/apache2/ports.conf</code> in a text editor.
+2.	Locate the <code class="highlighter-rouge">Listen</code> directive.
+3.	Change the value of the listen port to <code class="highlighter-rouge">8080</code>. (You can use any available listen port.)
+4.	Save your changes to <code class="highlighter-rouge">ports.conf</code> and exit the text editor.
+5. 	Open <code class="highlighter-rouge">/etc/apache2/sites-enabled/000-default.conf</code> in a text editor.
 6.	change &lt;VirtualHost *:80&gt; to &lt;VirtualHost *:8080&gt;
-7.	Save your changes to <code>000-default.conf</code> and exit the text editor.</p>
+7.	Save your changes to <code class="highlighter-rouge">000-default.conf</code> and exit the text editor.</p>
 
 <h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
 <p>To modify the Varnish system configuration:</p>
 
 <ol>
   <li>
-    <p>Open <code>/etc/sysconfig/varnish</code> (or <code>/etc/default/varnish</code> on Debian and Ubuntu) in a text editor.</p>
+    <p>Open <code class="highlighter-rouge">/etc/sysconfig/varnish</code> (or <code class="highlighter-rouge">/etc/default/varnish</code> on Debian and Ubuntu) in a text editor.</p>
   </li>
   <li>
     <p>Set the Varnish listen port to 80:</p>
 
-    <pre><code>VARNISH_LISTEN_PORT=80
+    <div class="highlighter-rouge"><pre class="highlight"><code>VARNISH_LISTEN_PORT=80
 </code></pre>
+    </div>
 
-    <p>For Varnish 4.*, make sure that DAEMON_OPTS contains the correct listening port for the <code>-a</code> parameter (even if VARNISH_LISTEN_PORT is set to the correct value):</p>
+    <p>For Varnish 4.*, make sure that DAEMON_OPTS contains the correct listening port for the <code class="highlighter-rouge">-a</code> parameter (even if VARNISH_LISTEN_PORT is set to the correct value):</p>
 
-    <pre><code>DAEMON_OPTS="-a :80 \
+    <div class="highlighter-rouge"><pre class="highlight"><code>DAEMON_OPTS="-a :80 \
    -T localhost:6082 \
    -f /etc/varnish/default.vcl \
    -S /etc/varnish/secret \
    -s malloc,256m"		
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Save your changes to <code>/etc/sysconfig/varnish</code> (or <code>/etc/default/varnish</code> on Debian and Ubuntu) and exit the text editor.</p>
+    <p>Save your changes to <code class="highlighter-rouge">/etc/sysconfig/varnish</code> (or <code class="highlighter-rouge">/etc/default/varnish</code> on Debian and Ubuntu) and exit the text editor.</p>
   </li>
 </ol>
 
@@ -1727,58 +1729,63 @@
 
 <ol>
   <li>
-    <p>Back up <code>default.vcl</code>:</p>
+    <p>Back up <code class="highlighter-rouge">default.vcl</code>:</p>
 
-    <pre><code>cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak
+    <div class="highlighter-rouge"><pre class="highlight"><code>cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak
 </code></pre>
+    </div>
   </li>
-  <li>Open <code>/etc/varnish/default.vcl</code> in a text editor.</li>
+  <li>Open <code class="highlighter-rouge">/etc/varnish/default.vcl</code> in a text editor.</li>
   <li>
     <p>Locate the following stanza:</p>
 
-    <pre><code>backend default {
+    <div class="highlighter-rouge"><pre class="highlight"><code>backend default {
   .host = "127.0.0.1";
   .port = "80";
 }
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Replace the value of <code>.host</code> with the fully qualified host name or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate.</p>
+    <p>Replace the value of <code class="highlighter-rouge">.host</code> with the fully qualified host name or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate.</p>
 
     <p>Typically, this is your web server.</p>
 
     <p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a></p>
   </li>
   <li>
-    <p>Replace the value of <code>.port</code> with the web server’s listen port (8080 in this example).</p>
+    <p>Replace the value of <code class="highlighter-rouge">.port</code> with the web server’s listen port (8080 in this example).</p>
 
     <p>Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:</p>
 
-    <pre><code>backend default {
+    <div class="highlighter-rouge"><pre class="highlight"><code>backend default {
   .host = "192.0.2.55";
   .port = "8080";
 }
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
     <p>If Varnish and Apache are running on the same host, we recommend you use an IP address or host name and not <code>localhost</code>.</p>
 </div>
   </li>
   <li>
-    <p>Save your changes to <code>default.vcl</code> and exit the text editor.</p>
+    <p>Save your changes to <code class="highlighter-rouge">default.vcl</code> and exit the text editor.</p>
   </li>
   <li>
     <p>Restart Varnish:</p>
 
-    <pre><code>service varnish restart
+    <div class="highlighter-rouge"><pre class="highlight"><code>service varnish restart
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <p>If Varnish fails to start, try running it from the command line as follows:</p>
 
-<pre><code>varnishd -d -f /etc/varnish/default.vcl
+<div class="highlighter-rouge"><pre class="highlight"><code>varnishd -d -f /etc/varnish/default.vcl
 </code></pre>
+</div>
 
 <p>This should display error messages.</p>
 
@@ -1800,7 +1807,7 @@
 </ul>
 
 <h3 id="config-varnish-verify-start">Start Varnish</h3>
-<p>Enter <code>service varnish start</code></p>
+<p>Enter <code class="highlighter-rouge">service varnish start</code></p>
 
 <p>If Varnish fails to start as a service, start it from the command line as follows:</p>
 
@@ -1808,42 +1815,46 @@
   <li>
     <p>Start the Varnish CLI:</p>
 
-    <pre><code> varnishd -d -f /etc/varnish/default.vcl
+    <div class="highlighter-rouge"><pre class="highlight"><code> varnishd -d -f /etc/varnish/default.vcl
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Start the Varnish child process:</p>
 
-    <p>When prompted, enter <code>start</code></p>
+    <p>When prompted, enter <code class="highlighter-rouge">start</code></p>
 
     <p>The following messages display to confirm a successful start:</p>
 
-    <pre><code>child (29805) Started
+    <div class="highlighter-rouge"><pre class="highlight"><code>child (29805) Started
 200 0
 
 Child (29805) said
 Child (29805) said Child starts
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <h3 id="config-varnish-verify-netstat">netstat</h3>
 <p>Log in to the Varnish server and enter the following command:</p>
 
-<pre><code>netstat -tulpn
+<div class="highlighter-rouge"><pre class="highlight"><code>netstat -tulpn
 </code></pre>
+</div>
 
 <p>Look for the following output in particular:</p>
 
-<pre><code>tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      32614/varnishd
+<div class="highlighter-rouge"><pre class="highlight"><code>tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      32614/varnishd
 tcp        0      0 127.0.0.1:58484             0.0.0.0:*                   LISTEN      32604/varnishd
 tcp        0      0 :::8080                     :::*                        LISTEN      26822/httpd
 tcp        0      0 ::1:48509                   :::*                        LISTEN      32604/varnishd
 </code></pre>
+</div>
 
 <p>The preceding shows Varnish running on port 80 and Apache running on port 8080.</p>
 
-<p>If you don’t see output for <code>varnishd</code>, make sure Varnish is running.</p>
+<p>If you don’t see output for <code class="highlighter-rouge">varnishd</code>, make sure Varnish is running.</p>
 
 <p><a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html" target="_blank">More information about netstat options</a></p>
 
@@ -1852,40 +1863,43 @@ tcp        0      0 ::1:48509                   :::*                        LIST
 
 <p>Possible error installing Magento:</p>
 
-<pre><code>Error 503 Service Unavailable
+<div class="highlighter-rouge"><pre class="highlight"><code>Error 503 Service Unavailable
 Service Unavailable
 XID: 303394517
 Varnish cache server
 </code></pre>
+</div>
 
-<p>If you experience this error, edit <code>default.vcl</code> and add a timeout to the <code>backend</code> stanza as follows:</p>
+<p>If you experience this error, edit <code class="highlighter-rouge">default.vcl</code> and add a timeout to the <code class="highlighter-rouge">backend</code> stanza as follows:</p>
 
-<pre><code>backend default {
+<div class="highlighter-rouge"><pre class="highlight"><code>backend default {
      .host = "127.0.0.1";
      .port = "8080";
      .first_byte_timeout = 600s;
 }
 </code></pre>
+</div>
 
 <h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
 <p>Now you can verify that Varnish is serving pages by looking at <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> response headers returned from any Magento page.</p>
 
-<p>Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify <code>.htaccess</code> in the Magento 2 root. You can also use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set</code></a> command.</p>
+<p>Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify <code class="highlighter-rouge">.htaccess</code> in the Magento 2 root. You can also use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html"><code class="highlighter-rouge">magento deploy:mode:set</code></a> command.</p>
 
 <h4 id="set-magento-for-developer-mode">Set Magento for developer mode</h4>
-<p>To set Magento for developer mode, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change"><code>magento deploy:mode:set</code></a> command.</p>
+<p>To set Magento for developer mode, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change"><code class="highlighter-rouge">magento deploy:mode:set</code></a> command.</p>
 
 <h4 id="look-at-the-varnish-log">Look at the Varnish log</h4>
 <p>Make sure Varnish is running then enter the following command on the Varnish server:</p>
 
-<pre><code>varnishlog
+<div class="highlighter-rouge"><pre class="highlight"><code>varnishlog
 </code></pre>
+</div>
 
 <p>In a web browser, go to any Magento 2 page.</p>
 
 <p>A long list of response headers display in your command prompt window. Look for headers like the following:</p>
 
-<pre><code>-   BereqHeader    X-Varnish: 3
+<div class="highlighter-rouge"><pre class="highlight"><code>-   BereqHeader    X-Varnish: 3
 -   VCL_call       BACKEND_FETCH
 -   VCL_return     fetch
 -   BackendOpen    17 default(10.249.151.10,,8080) 10.249.151.10 60914
@@ -1898,30 +1912,34 @@ Varnish cache server
 -   ReqHeader      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
 -   ReqHeader      Origin: http://10.249.151.10
 </code></pre>
+</div>
 
-<p>If headers like these do <em>not</em> display, stop Varnish, check your <code>default.vcl</code>, and try again.</p>
+<p>If headers like these do <em>not</em> display, stop Varnish, check your <code class="highlighter-rouge">default.vcl</code>, and try again.</p>
 
 <h4 id="look-at-html-response-headers">Look at HTML response headers</h4>
 <p>There are several ways to look at response headers, including using a browser <span term-uuid="9fceecbe-31be-4e49-aac7-11d155a85382" class="glossary-term" data-toggle="popover">plug-in</span> like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.</p>
 
-<p>The following example uses <code>curl</code>. You can enter this command from any machine that can access the Magento server using HTTP.</p>
+<p>The following example uses <code class="highlighter-rouge">curl</code>. You can enter this command from any machine that can access the Magento server using HTTP.</p>
 
-<pre><code>curl -I -v --location-trusted '&lt;your Magento base URL&gt;'
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -I -v --location-trusted '&lt;your Magento base URL&gt;'
 </code></pre>
+</div>
 
 <p>For example,</p>
 
-<pre><code>curl -I -v --location-trusted 'http://192.0.2.55/magento2'
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -I -v --location-trusted 'http://192.0.2.55/magento2'
 </code></pre>
+</div>
 
 <p>Look for headers like the following:</p>
 
-<pre><code>Content-Type: text/html; charset=iso-8859-1
+<div class="highlighter-rouge"><pre class="highlight"><code>Content-Type: text/html; charset=iso-8859-1
 X-Varnish: 15
 Age: 0
 Via: 1.1 varnish-v4
 X-Magento-Cache-Debug: HIT
 </code></pre>
+</div>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.1/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></p>

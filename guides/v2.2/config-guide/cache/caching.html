@@ -1908,25 +1908,25 @@
 	<p>By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under <code>&lt;your Magento install dir&gt;/var</code>.</p>
 </div>
 
-<p>To change the cache configuration, edit <code>&lt;your Magento install dir&gt;/app/etc/env.php</code>.</p>
+<p>To change the cache configuration, edit <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code>.</p>
 
 <p>The cache configuration is an associative array similar to the following:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;cache_types&#39;</span> <span class="o">=&gt;</span>
-	<span class="k">array</span> <span class="p">(</span>
-		<span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;layout&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;block_html&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;collections&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;db_ddl&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;eav&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;full_page&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;translate&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;config_integration&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;config_webservice&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">&#39;config_integration_api&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-	<span class="p">),</span>
-<span class="p">);</span> </code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">'cache_types' =&gt;
+	array (
+		'config' =&gt; 1,
+		'layout' =&gt; 1,
+		'block_html' =&gt; 1,
+		'collections' =&gt; 1,
+		'db_ddl' =&gt; 1,
+		'eav' =&gt; 1,
+		'full_page' =&gt; 1,
+		'translate' =&gt; 1,
+		'config_integration' =&gt; 1,
+		'config_webservice' =&gt; 1,
+		'config_integration_api' =&gt; 1,
+	),
+); </code></pre></figure>
 
 <p>The preceding lists all cache types and shows they are all enabled.</p>
 

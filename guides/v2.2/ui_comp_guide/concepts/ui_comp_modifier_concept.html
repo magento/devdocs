@@ -1204,7 +1204,7 @@
 
 <h2 id="general-implementation-overview">General implementation overview</h2>
 
-<p><code>DataProvider()</code> is a PHP part of a UI component, a class responsible for the component’s data and metadata preparation. The pool of modifiers (virtual type) is injected to this data provider using the <code>__construct()</code> method. The pool’s preference is defined in <code>di.xml</code>.</p>
+<p><code class="highlighter-rouge">DataProvider()</code> is a PHP part of a UI component, a class responsible for the component’s data and metadata preparation. The pool of modifiers (virtual type) is injected to this data provider using the <code class="highlighter-rouge">__construct()</code> method. The pool’s preference is defined in <code class="highlighter-rouge">di.xml</code>.</p>
 
 <p>So in runtime, the component structure set in the modifier is merged with the configuration that comes from the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> configuration.</p>
 
@@ -1214,11 +1214,11 @@
 
 <p><strong>Step 1</strong></p>
 
-<p>In your custom module, add a class that implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php"><code>\Magento\Ui\DataProvider\Modifier\ModifierInterface</code></a> with the following methods:</p>
+<p>In your custom module, add a class that implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php"><code class="highlighter-rouge">\Magento\Ui\DataProvider\Modifier\ModifierInterface</code></a> with the following methods:</p>
 
 <ul>
-  <li><code>modifyData()</code>: for modifying UI component’s data (for example, the list of options for a select element)</li>
-  <li><code>modifyMeta()</code>: for modifying UI component’s <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> (for example, name, label, description, type)</li>
+  <li><code class="highlighter-rouge">modifyData()</code>: for modifying UI component’s data (for example, the list of options for a select element)</li>
+  <li><code class="highlighter-rouge">modifyMeta()</code>: for modifying UI component’s <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> (for example, name, label, description, type)</li>
 </ul>
 
 <p>Sample modifier:</p>
@@ -1231,31 +1231,31 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyMeta</span><span class="p">(</span><span class="k">array</span> <span class="nv">$meta</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$meta</span><span class="p">[</span><span class="s1">&#39;test_fieldset_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">&#39;arguments&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                    <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Label For Fieldset&#39;</span><span class="p">),</span>
-                        <span class="s1">&#39;sortOrder&#39;</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
-                        <span class="s1">&#39;collapsible&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
+        <span class="nv">$meta</span><span class="p">[</span><span class="s1">'test_fieldset_name'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">'arguments'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">'config'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                        <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Label For Fieldset'</span><span class="p">),</span>
+                        <span class="s1">'sortOrder'</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
+                        <span class="s1">'collapsible'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
                     <span class="p">]</span>
                 <span class="p">]</span>
             <span class="p">],</span>
-            <span class="s1">&#39;children&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="s1">&#39;test_field_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                    <span class="s1">&#39;arguments&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                        <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                            <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                                <span class="s1">&#39;formElement&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;select&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;componentType&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;field&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_1&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 1&#39;</span><span class="p">],</span>
-                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_2&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 2&#39;</span><span class="p">],</span>
-                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_3&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 3&#39;</span><span class="p">],</span>
+            <span class="s1">'children'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'test_field_name'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">'arguments'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                        <span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                            <span class="s1">'config'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                                <span class="s1">'formElement'</span> <span class="o">=&gt;</span> <span class="s1">'select'</span><span class="p">,</span>
+                                <span class="s1">'componentType'</span> <span class="o">=&gt;</span> <span class="s1">'field'</span><span class="p">,</span>
+                                <span class="s1">'options'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                                    <span class="p">[</span><span class="s1">'value'</span> <span class="o">=&gt;</span> <span class="s1">'test_value_1'</span><span class="p">,</span> <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="s1">'Test Value 1'</span><span class="p">],</span>
+                                    <span class="p">[</span><span class="s1">'value'</span> <span class="o">=&gt;</span> <span class="s1">'test_value_2'</span><span class="p">,</span> <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="s1">'Test Value 2'</span><span class="p">],</span>
+                                    <span class="p">[</span><span class="s1">'value'</span> <span class="o">=&gt;</span> <span class="s1">'test_value_3'</span><span class="p">,</span> <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="s1">'Test Value 3'</span><span class="p">],</span>
                                 <span class="p">],</span>
-                                <span class="s1">&#39;visible&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-                                <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-                                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Label For Element&#39;</span><span class="p">)</span>
+                                <span class="s1">'visible'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                                <span class="s1">'required'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                                <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Label For Element'</span><span class="p">)</span>
                             <span class="p">]</span>
                         <span class="p">]</span>
                     <span class="p">]</span>
@@ -1266,9 +1266,9 @@
  <span class="k">return</span> <span class="nv">$meta</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * {@inheritdoc}</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyData</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
@@ -1277,26 +1277,26 @@
 
 <p><strong>Step 2</strong></p>
 
-<p>Declare your modifier in your module Di configuration <code>&lt;Your_Module_dir&gt;/etc/adminhtml/di.xml</code>. This declaration looks like the following:</p>
+<p>Declare your modifier in your module Di configuration <code class="highlighter-rouge">&lt;Your_Module_dir&gt;/etc/adminhtml/di.xml</code>. This declaration looks like the following:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;%YourNamespace\YourModule\DataProvider\Modifier\Pool%&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Ui\DataProvider\Modifier\Pool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"%YourNamespace\YourModule\DataProvider\Modifier\Pool%"</span> <span class="na">type=</span><span class="s">"Magento\Ui\DataProvider\Modifier\Pool"</span><span class="nt">&gt;</span>
      <span class="nt">&lt;arguments&gt;</span>
-         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;modifiers&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;modifier_name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%YourNamespce\YourModule\Modifier\YourModifierClass%<span class="nt">&lt;/item&gt;</span>
-                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/item&gt;</span>
+         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"modifiers"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"modifier_name"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%YourNamespce\YourModule\Modifier\YourModifierClass%<span class="nt">&lt;/item&gt;</span>
+                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sortOrder"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>10<span class="nt">&lt;/item&gt;</span>
              <span class="nt">&lt;/item&gt;</span>
          <span class="nt">&lt;/argument&gt;</span>
      <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>, where <code>YourNamespace\YourModule\DataProvider\Modifier\Pool</code> is a <a href="/guides/v2.2/extension-dev-guide/depend-inj.html#configuring-a-type">virtual class</a>.</p>
+<p>, where <code class="highlighter-rouge">YourNamespace\YourModule\DataProvider\Modifier\Pool</code> is a <a href="/guides/v2.2/extension-dev-guide/depend-inj.html#configuring-a-type">virtual class</a>.</p>
 
-<p>(If you want to use this sample in your <code>di.xml</code>, replace the sample values with with the real names of your entities.)</p>
+<p>(If you want to use this sample in your <code class="highlighter-rouge">di.xml</code>, replace the sample values with with the real names of your entities.)</p>
 
 <p><strong>Step 3</strong></p>
 
-<p>To use your modifier, add a dependency on <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php"><code>\Magento\Ui\DataProvider\Modifier\PoolInterface</code></a> to your UI component data provider. For illustration see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php"><code>\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider</code></a></p>
+<p>To use your modifier, add a dependency on <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php"><code class="highlighter-rouge">\Magento\Ui\DataProvider\Modifier\PoolInterface</code></a> to your UI component data provider. For illustration see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php"><code class="highlighter-rouge">\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider</code></a></p>
 
 <h2 id="related-reading">Related reading</h2>
 

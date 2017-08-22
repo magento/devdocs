@@ -1205,15 +1205,15 @@
 <h2 id="structure">Structure</h2>
 
 <ul>
-  <li>Constructor: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/form/element/file-uploader.js</code></li>
-  <li>JQuery file upload plugin: <code>jquery/fileUploader/jquery.fileupload-fp</code></li>
-  <li>Default template: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/uploader.html</code></li>
-  <li>Preview template: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/preview.html</code></li>
+  <li>Constructor: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/form/element/file-uploader.js</code></li>
+  <li>JQuery file upload plugin: <code class="highlighter-rouge">jquery/fileUploader/jquery.fileupload-fp</code></li>
+  <li>Default template: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/uploader.html</code></li>
+  <li>Preview template: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/preview.html</code></li>
 </ul>
 
 <h2 id="configuration-settings">Configuration settings</h2>
 
-<p>Extends all <code>abstract</code> configuration.</p>
+<p>Extends all <code class="highlighter-rouge">abstract</code> configuration.</p>
 
 <p>Fileuploader-specific configuration:</p>
 
@@ -1405,23 +1405,23 @@
 
 <p>Here is an example of how File Uploader component integrates with <a href="/guides/v2.2/ui-components/ui-form.html">Form</a> component:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="nt">&gt;</span>
     ...
-    <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;foo&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"foo"</span><span class="nt">&gt;</span>
         ...
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;bar&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Sound Check<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>fileUploader<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;uploaderConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;path/to/controller&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"bar"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Sound Check<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"visible"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"formElement"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>fileUploader<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"uploaderConfig"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"path/to/controller"</span><span class="nt">/&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>

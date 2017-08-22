@@ -354,94 +354,94 @@
 <p>Creating a customer account requires <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> permissions.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the <code>password</code> parameter. By default if the call is successful, Magento sends a “Welcome” email to the customer that includes a request to set the password. You could also initiate a password reset email by calling <code>PUT /V1/customers/password</code>.</p>
+  <p>This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the <code class="highlighter-rouge">password</code> parameter. By default if the call is successful, Magento sends a “Welcome” email to the customer that includes a request to set the password. You could also initiate a password reset email by calling <code class="highlighter-rouge">PUT /V1/customers/password</code>.</p>
 </div>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/customers</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/customers</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
-<p><code>Authorization</code> <code>Bearer &lt;admin token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;admin token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
-<p>It is recommended that you substitute the value of the <code>email</code> parameter with a real email address so that you receive all notifications.</p>
+<p>It is recommended that you substitute the value of the <code class="highlighter-rouge">email</code> parameter with a real email address so that you receive all notifications.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-	<span class="nt">&quot;customer&quot;</span><span class="p">:</span> <span class="p">{</span>
-		<span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jdoe@example.com&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-		<span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[{</span>
-			<span class="nt">&quot;defaultShipping&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-			<span class="nt">&quot;defaultBilling&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-			<span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
-			<span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-			<span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="p">{</span>
-				<span class="nt">&quot;regionCode&quot;</span><span class="p">:</span> <span class="s2">&quot;NY&quot;</span><span class="p">,</span>
-				<span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;regionId&quot;</span><span class="p">:</span><span class="mi">43</span>
-			<span class="p">},</span>
-			<span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;10755&quot;</span><span class="p">,</span>
-			<span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;123 Oak Ave&quot;</span><span class="p">],</span>
-			<span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Purchase&quot;</span><span class="p">,</span>
-			<span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;512-555-1111&quot;</span><span class="p">,</span>
-			<span class="nt">&quot;countryId&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span>
-		<span class="p">}]</span>
-	<span class="p">},</span>
-  <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;Password1&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+	</span><span class="nt">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+			</span><span class="nt">"defaultShipping"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+			</span><span class="nt">"defaultBilling"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+			</span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+			</span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+			</span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+				</span><span class="nt">"regionCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+				</span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"regionId"</span><span class="p">:</span><span class="mi">43</span><span class="w">
+			</span><span class="p">},</span><span class="w">
+			</span><span class="nt">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10755"</span><span class="p">,</span><span class="w">
+			</span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123 Oak Ave"</span><span class="p">],</span><span class="w">
+			</span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purchase"</span><span class="p">,</span><span class="w">
+			</span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512-555-1111"</span><span class="p">,</span><span class="w">
+			</span><span class="nt">"countryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+		</span><span class="p">}]</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password1"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 </div></div>
 
 <p><strong>Response</strong></p>
 
-<p>Magento assigned this user <code>id</code> value of <code>2</code>.</p>
+<p>Magento assigned this user <code class="highlighter-rouge">id</code> value of <code class="highlighter-rouge">2</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="nt">&quot;group_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;default_billing&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;default_shipping&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-01-31 01:18:13&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-01-31 01:18:13&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;created_in&quot;</span><span class="p">:</span> <span class="s2">&quot;Default Store View&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jdoe@example.com&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&quot;customer_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;region_code&quot;</span><span class="p">:</span> <span class="s2">&quot;NY&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;region_id&quot;</span><span class="p">:</span> <span class="mi">43</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;region_id&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
-      <span class="nt">&quot;country_id&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;123 Oak Ave&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;512-555-1111&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;10755&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Purchase&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;default_shipping&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nt">&quot;default_billing&quot;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="nt">&quot;disable_auto_group_change&quot;</span><span class="p">:</span> <span class="mi">0</span>
-<span class="p">}</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"default_billing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"default_shipping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-31 01:18:13"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-31 01:18:13"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default Store View"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"123 Oak Ave"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512-555-1111"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10755"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purchase"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"default_shipping"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"default_billing"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"disable_auto_group_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 </div></div>
 
-<p>You can log in to the Luma store using the user name <code>jdoe@example.com</code> and password <code>Password1</code>.</p>
+<p>You can log in to the Luma store using the user name <code class="highlighter-rouge">jdoe@example.com</code> and password <code class="highlighter-rouge">Password1</code>.</p>
 
 <h3 id="get-token">Get the customer’s access token</h3>
 
@@ -451,29 +451,29 @@
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/integration/customer/token</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/integration/customer/token</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-<span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;jdoe@example.com&quot;</span><span class="p">,</span>
-<span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;Password1&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+</span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password1"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
 <p>Magento returns the customer’s access token. This token must be specified in the authorization header of every call the customer makes on his or her own behalf.</p>
 
-<p><code>q0u66k8h42yaevtchv09uyy3y9gaj2ap</code></p>
+<p><code class="highlighter-rouge">q0u66k8h42yaevtchv09uyy3y9gaj2ap</code></p>
 
 <h3 id="verify-step">Verify this step</h3>
 
 <ol>
-  <li>Log in to the Luma <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> using the email <code>jdoe@example.com</code> and password <code>Password1</code>.</li>
+  <li>Log in to the Luma <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> using the email <code class="highlighter-rouge">jdoe@example.com</code> and password <code class="highlighter-rouge">Password1</code>.</li>
   <li>Click the account name (Jane) in the upper right corner and select <strong>My Account</strong>.</li>
   <li>Click <strong>Address Book</strong> to view the default billing and shipping addresses.</li>
 </ol>

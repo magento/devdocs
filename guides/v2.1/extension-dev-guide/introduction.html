@@ -470,13 +470,14 @@
 
 <h2 id="magento-is-made-up-of-the-following-types-of-components">Magento is made up of the following types of components:</h2>
 
-<pre><code>*	Modules (extend Magento capabilities)
+<div class="highlighter-rouge"><pre class="highlight"><code>*	Modules (extend Magento capabilities)
 *	Themes (change the look and feel of your storefront and Admin)
 *	Language packages (localize the storefront and Admin)
 *	Libraries (common code)
 </code></pre>
+</div>
 
-<p>A Magento <em>module</em> is a discrete chunk of code that accomplishes a particular business function or handles a Magento feature. A <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is typically a collection <code>.php</code> and <code>.xml</code> files, and the bulk of your work in modules will be in these files.  Modules interact with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
+<p>A Magento <em>module</em> is a discrete chunk of code that accomplishes a particular business function or handles a Magento feature. A <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is typically a collection <code class="highlighter-rouge">.php</code> and <code class="highlighter-rouge">.xml</code> files, and the bulk of your work in modules will be in these files.  Modules interact with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
 
 <p>Themes can be applied to the module to change its appearance. So when you are building a module, you might also touch themes and language packages.</p>
 
@@ -493,11 +494,11 @@
 </div>
 
 <h2 id="magento-module-example">Magento module example</h2>
-<p>Modules are declared in the <code>module.xml</code> file. Here is a minimal example:</p>
+<p>Modules are declared in the <code class="highlighter-rouge">module.xml</code> file. Here is a minimal example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-        <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Magento_SampleMinimal&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;2.0.0&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version="1.0"?&gt;</span>
+        <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_SampleMinimal"</span> <span class="na">setup_version=</span><span class="s">"2.0.0"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;/module&gt;</span>
     <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 

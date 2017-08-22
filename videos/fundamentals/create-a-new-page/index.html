@@ -351,91 +351,93 @@
 <p>Let’s go through each step.</p>
 
 <h2 id="create-a-new-module">Create a new module</h2>
-<p>We will create a new module called <code>Learning_HelloPage</code></p>
+<p>We will create a new module called <code class="highlighter-rouge">Learning_HelloPage</code></p>
 
-<pre><code>$ cd &lt;magento2_root&gt;/app/code
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code
 $ mkdir Learning
 $ mkdir Learning/HelloPage
 </code></pre>
+</div>
 
 <p>Now create two files:</p>
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">Learning/HelloPage/registration.php</span>
-<span class="go">Learning/HelloPage/etc/module.xml</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-console" data-lang="console">Learning/HelloPage/registration.php
+Learning/HelloPage/etc/module.xml</code></pre></figure>
 
 <h4 id="registrationphp">registration.php</h4>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="sd">/**</span>
-<span class="sd">* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.</span>
-<span class="sd">*/</span>
-<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span> <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span> <span class="s1">&#39;Learning_HelloPage&#39;</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="sd">/**
+* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
+*/</span>
+<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span> <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span> <span class="s1">'Learning_HelloPage'</span><span class="p">,</span>
 <span class="nx">__DIR__</span>
 <span class="p">);</span></code></pre></figure>
 
 <h4 id="modulexml">module.xml</h4>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c">* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.</span>
-<span class="c">*/</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Learning_HelloPage&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;0.0.1&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="c">&lt;!--
+/**
+* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
+*/
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Learning_HelloPage"</span> <span class="na">setup_version=</span><span class="s">"0.0.1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/module&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h2 id="add-a-routesxml-file">Add a routes.xml file</h2>
-<p>Before we create the file, let’s take a brief look at how routing works in Magento 2. Each area (in our case, frontend and adminhtml) has a corresponding merged <code>routes.xml</code> file, which is merged from the <code>etc/&amp;lt;area&amp;gt;/routes.xml</code> file from every module. That <code>routes.xml</code> file contains information about all registered routes and frontNames. Recall that a frontName is the first part of a route.</p>
+<p>Before we create the file, let’s take a brief look at how routing works in Magento 2. Each area (in our case, frontend and adminhtml) has a corresponding merged <code class="highlighter-rouge">routes.xml</code> file, which is merged from the <code class="highlighter-rouge">etc/&amp;lt;area&amp;gt;/routes.xml</code> file from every module. That <code class="highlighter-rouge">routes.xml</code> file contains information about all registered routes and frontNames. Recall that a frontName is the first part of a route.</p>
 
-<p>So, we should register it in the <code>routes.xml</code> file and associate it with a module. It is possible to have multiple modules associated with one route, so we can create pages under the catalog <code>frontName</code>.</p>
+<p>So, we should register it in the <code class="highlighter-rouge">routes.xml</code> file and associate it with a module. It is possible to have multiple modules associated with one route, so we can create pages under the catalog <code class="highlighter-rouge">frontName</code>.</p>
 
-<p>Now, since we’re working in the frontend area, we’ll add the <code>etc/frontend/routes.xml</code> file for our <code>Learning_HelloPage</code> module:</p>
+<p>Now, since we’re working in the frontend area, we’ll add the <code class="highlighter-rouge">etc/frontend/routes.xml</code> file for our <code class="highlighter-rouge">Learning_HelloPage</code> module:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c">* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.</span>
-<span class="c">*/</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:App/etc/routes.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">&quot;standard&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">&quot;learning&quot;</span> <span class="na">frontName=</span><span class="s">&quot;test&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Learning_HelloPage&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="c">&lt;!--
+/**
+* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
+*/
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/etc/routes.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">"standard"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">"learning"</span> <span class="na">frontName=</span><span class="s">"test"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Learning_HelloPage"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/route&gt;</span>
     <span class="nt">&lt;/router&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>We added a new route here called “learning” (note it does not have to match the module name) and a new <code>frontName</code>. Often the route and <code>frontName</code> are the same – for example, “catalog” – but it is not required.
-When Magento 2 sees a URL like <code>test/chunk2/chunk3</code>, it will check whether our module <code>Learning_HelloPage</code> has a folder, <code>Controller/Chunk2</code>, and an action file, <code>Chunk3.php</code>.</p>
+<p>We added a new route here called “learning” (note it does not have to match the module name) and a new <code class="highlighter-rouge">frontName</code>. Often the route and <code class="highlighter-rouge">frontName</code> are the same – for example, “catalog” – but it is not required.
+When Magento 2 sees a URL like <code class="highlighter-rouge">test/chunk2/chunk3</code>, it will check whether our module <code class="highlighter-rouge">Learning_HelloPage</code> has a folder, <code class="highlighter-rouge">Controller/Chunk2</code>, and an action file, <code class="highlighter-rouge">Chunk3.php</code>.</p>
 
-<p>Our route will be <code>test/page/view</code>.</p>
+<p>Our route will be <code class="highlighter-rouge">test/page/view</code>.</p>
 
 <h2 id="add-a-controller-action-file">Add a controller (action) file</h2>
 <p>Let’s add the controller now.</p>
 
-<pre><code>$ cd &lt;magento2_root&gt;/app/code/Learning/HelloPage
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code/Learning/HelloPage
 $ mkdir Controller
 $ mkdir Controller/Page
 </code></pre>
+</div>
 
-<p>Let’s create an action file <code>Controller/Page/View.php</code>:</p>
+<p>Let’s create an action file <code class="highlighter-rouge">Controller/Page/View.php</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="sd">/**</span>
-<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="sd">/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 <span class="k">namespace</span> <span class="nx">Learning\HelloPage\Controller\Page</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\App\Action\Action</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var \Magento\Framework\Controller\Result\JsonFactory</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var \Magento\Framework\Controller\Result\JsonFactory
+     */</span>
     <span class="k">protected</span> <span class="nv">$resultJsonFactory</span><span class="p">;</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @param \Magento\Framework\App\Action\Context $context</span>
-<span class="sd">     * @param \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @param \Magento\Framework\App\Action\Context $context
+     * @param \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
        <span class="nx">\Magento\Framework\App\Action\Context</span> <span class="nv">$context</span><span class="p">,</span>
        <span class="nx">\Magento\Framework\Controller\Result\JsonFactory</span> <span class="nv">$resultJsonFactory</span><span class="p">)</span>
@@ -443,31 +445,33 @@ $ mkdir Controller/Page
        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resultJsonFactory</span> <span class="o">=</span> <span class="nv">$resultJsonFactory</span><span class="p">;</span>
        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
 <span class="p">}</span>
-    <span class="sd">/**</span>
-<span class="sd">     * View  page action</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return \Magento\Framework\Controller\ResultInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * View  page action
+     *
+     * @return \Magento\Framework\Controller\ResultInterface
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
     <span class="p">{</span>
        <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resultJsonFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
-       <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Hello world!&#39;</span><span class="p">];</span>
+       <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'Hello world!'</span><span class="p">];</span>
 
 <span class="k">return</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 <span class="p">}</span> <span class="p">}</span></code></pre></figure>
 
 <p>Note we created a JSON-type page. This can be seen in the results factory that we specify in our constructor. In order to activate our module and our page we should run the Magento setup upgrade:</p>
 
-<pre><code>$ cd &lt;magento2_root&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ php bin/magento setup:upgrade
 </code></pre>
+</div>
 
-<p>Now we need to verify that <code>Learning_HelloPage</code> is present in the output. If you examine the <code>/test/page/view</code> page, you should see the message:</p>
+<p>Now we need to verify that <code class="highlighter-rouge">Learning_HelloPage</code> is present in the output. If you examine the <code class="highlighter-rouge">/test/page/view</code> page, you should see the message:</p>
 
-<pre><code>{"message":"Hello world!"}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Hello world!"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-<p>This is because we returned a <code>ResultJson</code> object. Magento 2 has different result objects for different cases – ResultPage for a regular page, Forward result, and so on.</p>
+<p>This is because we returned a <code class="highlighter-rouge">ResultJson</code> object. Magento 2 has different result objects for different cases – ResultPage for a regular page, Forward result, and so on.</p>
 
 <p>We used a JSON result here because the goal was to illustrate how to create a new page, not to dig into the view layer, which would require activation to use the Page result object.</p>
 

@@ -1952,7 +1952,7 @@
 
         <p>Shared settings are settings you want to be consistent on development and production systems. Set the shared configuration in the Magento Admin in your development (or Magento Enterprise Cloud Edition <em>integration</em>) system.</p>
 
-        <p>The shared configuration file, <code>app/etc/config.php</code>, should be included in source control so it can be shared between development, build, and production systems.</p>
+        <p>The shared configuration file, <code class="highlighter-rouge">app/etc/config.php</code>, should be included in source control so it can be shared between development, build, and production systems.</p>
       </li>
       <li>
         <p><em>System-specific</em> configuration, which is all settings that vary by system; for example, search engine host names and ports.</p>
@@ -1960,7 +1960,7 @@
       <li>
         <p><em>Sensitive</em> configuration, which is all settings that should not be in source control because they expose personally-identifiable information (PII) or settings such as API keys or passwords.</p>
 
-        <p>The system-specific configuration file, <code>app/etc/env.php</code>, should <em>not</em> be included in source control or otherwise shared between systems. Instead, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code>magento config:set</code> and <code>magento:sensitive:set</code> commands</a> to provide values for those settings in your production system.</p>
+        <p>The system-specific configuration file, <code class="highlighter-rouge">app/etc/env.php</code>, should <em>not</em> be included in source control or otherwise shared between systems. Instead, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set</code> and <code class="highlighter-rouge">magento:sensitive:set</code> commands</a> to provide values for those settings in your production system.</p>
       </li>
     </ul>
 
@@ -1968,7 +1968,7 @@
       <p>These new methods to manage your configuration are optional. You don’t have to use them, although we strongly recommend you do.</p>
     </div>
 
-    <p>Most of the time, the configuration options you set in the shared, system-specific, or sensitive configuration cannot be edited in the Magento Admin. This helps keep your settings consistent across all systems. (You can optionally use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code>magento config:set</code> command</a> without the <code>--lock</code> option to configure settings that are editable in the Admin.)</p>
+    <p>Most of the time, the configuration options you set in the shared, system-specific, or sensitive configuration cannot be edited in the Magento Admin. This helps keep your settings consistent across all systems. (You can optionally use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set</code> command</a> without the <code class="highlighter-rouge">--lock</code> option to configure settings that are editable in the Admin.)</p>
 
     <p>Each Magento configuration option has a unique <em>configuration path</em>. To set a value for a configuration option, you can use either a CLI command or an environment variable to set the value for that configuration path on a specific system.</p>
 

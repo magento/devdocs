@@ -1277,13 +1277,13 @@
 </p>
 <h2 id="service-interface-requirements">Service Interface Requirements</h2>
 
-<p>After a service class is configured using the <code>webapi.xml</code> file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.</p>
+<p>After a service class is configured using the <code class="highlighter-rouge">webapi.xml</code> file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.</p>
 
 <p>This makes sense when you consider that while a service class possibly expects objects of a specific class type (such a save method) and possibly returns a result that is a class or array of classes, neither SOAP nor REST are guaranteed to have that class defined on the client end or even to have a concept similar to a <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class. Because of this, Magento uses reflection to automatically create these classes and sets data that you have submitted in JSON or HTTP array syntax onto an instance of the expected PHP class when calling the service method.</p>
 
 <p>Conversely, if an object is returned from one of these methods, Magento automatically converts that PHP object into a JSON or SOAP object before sending it over the web API.</p>
 
-<p>To do this conversion, the Magento application must know information about both the parameters the service method is expecting and the return type of the result the service method delivers. PHP 5.x does not allow for type-hinting for scalar parameters or for return types so in order to convert the array or JSON object to or from the appropriate class type, PHP relies on the PHP doc block. Specifically, the lines containing <code>@param</code> and <code>@return</code> must follow certain rules for Magento to be able to correctly convert between types.</p>
+<p>To do this conversion, the Magento application must know information about both the parameters the service method is expecting and the return type of the result the service method delivers. PHP 5.x does not allow for type-hinting for scalar parameters or for return types so in order to convert the array or JSON object to or from the appropriate class type, PHP relies on the PHP doc block. Specifically, the lines containing <code class="highlighter-rouge">@param</code> and <code class="highlighter-rouge">@return</code> must follow certain rules for Magento to be able to correctly convert between types.</p>
 
 <p>For SOAP and REST to work correctly, the following rules must be followed by the service interface’s doc block:</p>
 
@@ -1293,18 +1293,20 @@
   <li>
     <p>Parameters must be defined in the doc block as</p>
 
-    <pre><code>* @param type $paramName
+    <div class="highlighter-rouge"><pre class="highlight"><code>* @param type $paramName
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Return type must be defined in the doc block as</p>
 
-    <pre><code>* @return type
+    <div class="highlighter-rouge"><pre class="highlight"><code>* @return type
 </code></pre>
+    </div>
   </li>
-  <li>Valid scalar types include: <code>mixed</code> (or <code>anyType</code>), <code>bool</code> (or <code>boolean</code>), <code>str</code> (or <code>string</code>), <code>integer</code> (or <code>int</code>), <code>float</code>, and <code>double</code>.</li>
+  <li>Valid scalar types include: <code class="highlighter-rouge">mixed</code> (or <code class="highlighter-rouge">anyType</code>), <code class="highlighter-rouge">bool</code> (or <code class="highlighter-rouge">boolean</code>), <code class="highlighter-rouge">str</code> (or <code class="highlighter-rouge">string</code>), <code class="highlighter-rouge">integer</code> (or <code class="highlighter-rouge">int</code>), <code class="highlighter-rouge">float</code>, and <code class="highlighter-rouge">double</code>.</li>
   <li>Valid object types include a fully qualified class name or a fully qualified interface name.</li>
-  <li>Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets <code>[]</code></li>
+  <li>Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets <code class="highlighter-rouge">[]</code></li>
 </ul>
 
 <p>Following are some examples of various types and what they would look like in the doc block:</p>
@@ -1313,28 +1315,32 @@
   <li>
     <p>A parameter $types which can be an array of strings:</p>
 
-    <pre><code>* @param string[] $types
+    <div class="highlighter-rouge"><pre class="highlight"><code>* @param string[] $types
 </code></pre>
+    </div>
   </li>
   <li>
     <p>A parameter $id which can be an integer:</p>
 
-    <pre><code>* @param int $id
+    <div class="highlighter-rouge"><pre class="highlight"><code>* @param int $id
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>A parameter $customer which is an object of class <code>\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
+    <p>A parameter $customer which is an object of class <code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
 
-    <pre><code>* @param \Magento\Customer\Api\Data\CustomerInterface $customer
+    <div class="highlighter-rouge"><pre class="highlight"><code>* @param \Magento\Customer\Api\Data\CustomerInterface $customer
 </code></pre>
+    </div>
 
-    <p>Note that even if the class <code>\Magento\Customer\Api\Data\CustomerInterface</code> is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.</p>
+    <p>Note that even if the class <code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code> is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.</p>
   </li>
   <li>
-    <p>A return which is an array of objects of type <code>\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
+    <p>A return which is an array of objects of type <code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
 
-    <pre><code>* @return \Magento\Customer\Api\Data\CustomerInterface[]
+    <div class="highlighter-rouge"><pre class="highlight"><code>* @return \Magento\Customer\Api\Data\CustomerInterface[]
 </code></pre>
+    </div>
   </li>
 </ul>
 

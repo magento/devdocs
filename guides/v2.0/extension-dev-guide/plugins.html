@@ -1070,22 +1070,22 @@
 			<h3 id="overview">Overview</h3>
 <p>A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to <em>substitute</em> or <em>extend</em> the behavior of original, public methods for any class or <em>interface</em>.</p>
 
-<p>Extensions that wish to intercept and change the behavior of a <em>public method</em> can create a <code>Plugin</code> class which are referred to as plugins.</p>
+<p>Extensions that wish to intercept and change the behavior of a <em>public method</em> can create a <code class="highlighter-rouge">Plugin</code> class which are referred to as plugins.</p>
 
-<p>This <span term-uuid="deea5a5a-e9e5-4591-b141-b849458feb1a" class="glossary-term" data-toggle="popover">interception</span> approach reduces conflicts among extensions that change the behavior of the same class or method. Your <code>Plugin</code> class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.</p>
+<p>This <span term-uuid="deea5a5a-e9e5-4591-b141-b849458feb1a" class="glossary-term" data-toggle="popover">interception</span> approach reduces conflicts among extensions that change the behavior of the same class or method. Your <code class="highlighter-rouge">Plugin</code> class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.</p>
 
 <h4 id="limitations">Limitations</h4>
 
 <p>Plugins cannot be used with any of the following:</p>
 
 <ul>
-  <li>Objects that are instantiated before <code>Magento\Framework\Interception</code> is bootstrapped</li>
+  <li>Objects that are instantiated before <code class="highlighter-rouge">Magento\Framework\Interception</code> is bootstrapped</li>
   <li>Final methods</li>
   <li>Final classes</li>
   <li>Any class that contains at least one final public method</li>
   <li>Non-public methods</li>
   <li>Static methods</li>
-  <li><code>__construct</code></li>
+  <li><code class="highlighter-rouge">__construct</code></li>
   <li>Virtual types</li>
 </ul>
 
@@ -1095,26 +1095,26 @@
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"> 
 <span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;{ObservedType}&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">&quot;{pluginName}&quot;</span> <span class="na">type=</span><span class="s">&quot;{PluginClassName}&quot;</span> <span class="na">sortOrder=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"{ObservedType}"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">"{pluginName}"</span> <span class="na">type=</span><span class="s">"{PluginClassName}"</span> <span class="na">sortOrder=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>You must specify these elements:</p>
 
 <ul>
-  <li><code>type name</code>: A class or interface which the plugin observes.</li>
-  <li><code>plugin name</code>: An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
-  <li><code>plugin type</code>: The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code>\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
+  <li><code class="highlighter-rouge">type name</code>: A class or interface which the plugin observes.</li>
+  <li><code class="highlighter-rouge">plugin name</code>: An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
+  <li><code class="highlighter-rouge">plugin type</code>: The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code class="highlighter-rouge">\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
 </ul>
 
 <p>The following elements are optional:</p>
 
 <ul>
-  <li><code>plugin sortOrder</code>: The order in which plugins that call the same method are run.</li>
-  <li><code>plugin disabled</code>: To disable a plugin, set this element to <code>true</code>. The default value is <code>false</code>.
+  <li><code class="highlighter-rouge">plugin sortOrder</code>: The order in which plugins that call the same method are run.</li>
+  <li><code class="highlighter-rouge">plugin disabled</code>: To disable a plugin, set this element to <code class="highlighter-rouge">true</code>. The default value is <code class="highlighter-rouge">false</code>.
     <ul>
-      <li>Use this property to disable core or third-party plugins in your <code>di.xml</code> file.</li>
+      <li>Use this property to disable core or third-party plugins in your <code class="highlighter-rouge">di.xml</code> file.</li>
     </ul>
   </li>
 </ul>
@@ -1127,9 +1127,9 @@
 <h4 id="before-methods">Before methods</h4>
 <p>Before methods run prior to an observed method. These methods must have the same name as the observed method with ‘before’ as the prefix.</p>
 
-<p>You can use before methods to change the arguments of an observed method by returning a modified argument. If there are multiple arguments, the method should return an array of those arguments. Returning <code>null</code> will indicate that the arguments for the observed method should not be modified.</p>
+<p>You can use before methods to change the arguments of an observed method by returning a modified argument. If there are multiple arguments, the method should return an array of those arguments. Returning <code class="highlighter-rouge">null</code> will indicate that the arguments for the observed method should not be modified.</p>
 
-<p>Below is an example of a before method modifying the <code>$name</code> argument before passing it on to the observed <code>setName</code> method.</p>
+<p>Below is an example of a before method modifying the <code class="highlighter-rouge">$name</code> argument before passing it on to the observed <code class="highlighter-rouge">setName</code> method.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -1139,17 +1139,17 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;(&#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'('</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">')'</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 <h4 id="after-methods">After methods</h4>
 <p>After methods run following the completion of the observed method. These methods must have the same name as the observed method with ‘after’ as the prefix.</p>
 
 <p>These methods can be used to modify the results of an observed method and are required to have a return value.</p>
 
-<p>Below is an example of an after method modifying the return value <code>$result</code> of an observed methods call.</p>
+<p>Below is an example of an after method modifying the return value <code class="highlighter-rouge">$result</code> of an observed methods call.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -1159,15 +1159,15 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;|&#39;</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">&#39;|&#39;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="s1">'|'</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">'|'</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 <h4 id="around-methods">Around methods</h4>
 <p>Around methods are defined such that their code is run both before and after the observed method. This allows you to completely override a method. Around methods must have the same name as the observed method with ‘around’ as the prefix.</p>
 
-<p>Before the list of the original method’s arguments, around methods receive a <code>callable</code> that will allow a call to the next method in the chain. When the <code>callable</code> is called, the next plugin or the observed function is called.</p>
+<p>Before the list of the original method’s arguments, around methods receive a <code class="highlighter-rouge">callable</code> that will allow a call to the next method in the chain. When the <code class="highlighter-rouge">callable</code> is called, the next plugin or the observed function is called.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
@@ -1191,7 +1191,7 @@
         <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 <p>When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints.</p>
 
@@ -1203,10 +1203,10 @@
 
 <span class="k">class</span> <span class="nc">MyUtility</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">SomeType</span> <span class="nv">$obj</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">SomeType</span> <span class="nv">$obj</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//do something</span>
-    <span class="p">}</span>
+        <span class="c1">//do something
+</span>    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>If you wrapped this method with a plugin like below:</p>
@@ -1219,8 +1219,8 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="nx">SomeType</span> <span class="nv">$obj</span><span class="p">)</span>
     <span class="p">{</span>
-      <span class="c1">//do something</span>
-    <span class="p">}</span>
+      <span class="c1">//do something
+</span>    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> would throw a fatal error as your plugin does not accept <code>null</code>.</p>
@@ -1235,20 +1235,20 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="o">...</span><span class="nv">$args</span><span class="p">)</span>
     <span class="p">{</span>
-      <span class="c1">//do something</span>
-      <span class="nv">$proceed</span><span class="p">(</span><span class="o">...</span><span class="nv">$args</span><span class="p">);</span>
+      <span class="c1">//do something
+</span>      <span class="nv">$proceed</span><span class="p">(</span><span class="o">...</span><span class="nv">$args</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h3 id="prioritizing-plugins">Prioritizing plugins</h3>
 
-<p>The <code>sortOrder</code> property for plugins determine when their before, after, or around methods get called when several plugins are observing the same method.</p>
+<p>The <code class="highlighter-rouge">sortOrder</code> property for plugins determine when their before, after, or around methods get called when several plugins are observing the same method.</p>
 
 <p>The prioritization rules for ordering plugins:</p>
 
 <ul>
   <li>
-    <p>Prior to execution of the observed method, plugins will be executed from lowest to greatest <code>sortOrder</code>.</p>
+    <p>Prior to execution of the observed method, plugins will be executed from lowest to greatest <code class="highlighter-rouge">sortOrder</code>.</p>
 
     <ul>
       <li>During each plugin execution, the current plugin’s before method is executed first.</li>
@@ -1256,7 +1256,7 @@
     </ul>
   </li>
   <li>
-    <p>Following the execution of the observed method, plugins will be executed from greatest to lowest <code>sortOrder</code>.</p>
+    <p>Following the execution of the observed method, plugins will be executed from greatest to lowest <code class="highlighter-rouge">sortOrder</code>.</p>
 
     <ul>
       <li>During each plugin execution, the current plugin will first finish executing its around method.</li>
@@ -1309,36 +1309,36 @@
 <p>The execution flow will be as follows:</p>
 
 <ul>
-  <li><code>PluginA::beforeDispatch()</code></li>
-  <li><code>PluginB::beforeDispatch()</code></li>
+  <li><code class="highlighter-rouge">PluginA::beforeDispatch()</code></li>
+  <li><code class="highlighter-rouge">PluginB::beforeDispatch()</code></li>
   <li>
-    <p><code>PluginB::aroundDispatch()</code> (Only the first half until <code>callable</code> is called)</p>
+    <p><code class="highlighter-rouge">PluginB::aroundDispatch()</code> (Only the first half until <code class="highlighter-rouge">callable</code> is called)</p>
 
     <ul>
-      <li><code>PluginC::beforeDispatch()</code></li>
+      <li><code class="highlighter-rouge">PluginC::beforeDispatch()</code></li>
       <li>
-        <p><code>PluginC::aroundDispatch()</code> (Only the first half until <code>callable</code> is called)</p>
+        <p><code class="highlighter-rouge">PluginC::aroundDispatch()</code> (Only the first half until <code class="highlighter-rouge">callable</code> is called)</p>
 
         <ul>
-          <li><code>Action::dispatch()</code></li>
+          <li><code class="highlighter-rouge">Action::dispatch()</code></li>
         </ul>
       </li>
-      <li><code>PluginC::aroundDispatch()</code> (Only the second half after <code>callable</code> is called)</li>
-      <li><code>PluginC::afterDispatch()</code></li>
+      <li><code class="highlighter-rouge">PluginC::aroundDispatch()</code> (Only the second half after <code class="highlighter-rouge">callable</code> is called)</li>
+      <li><code class="highlighter-rouge">PluginC::afterDispatch()</code></li>
     </ul>
   </li>
-  <li><code>PluginB::aroundDispatch()</code> (Only the second half after <code>callable</code> is called)</li>
-  <li><code>PluginB::afterDispatch()</code></li>
-  <li><code>PluginA::afterDispatch()</code></li>
+  <li><code class="highlighter-rouge">PluginB::aroundDispatch()</code> (Only the second half after <code class="highlighter-rouge">callable</code> is called)</li>
+  <li><code class="highlighter-rouge">PluginB::afterDispatch()</code></li>
+  <li><code class="highlighter-rouge">PluginA::afterDispatch()</code></li>
 </ul>
 
 <h3 id="configuration-inheritance">Configuration inheritance</h3>
 
 <p>All plugins added for interfaces and inherited classes will be added to classes that implement or inherit those classes and interfaces.</p>
 
-<p>Plugins defined in the global scope will be applied when the system is in a specific area (i.e. frontend, backend, etc). These global plugin configuration can also be extended or overridden via an area’s <code>di.xml</code>.</p>
+<p>Plugins defined in the global scope will be applied when the system is in a specific area (i.e. frontend, backend, etc). These global plugin configuration can also be extended or overridden via an area’s <code class="highlighter-rouge">di.xml</code>.</p>
 
-<p>For example, the developer can disable a global plugin in the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> area by disabling it in the specific <code>di.xml</code> file for the backend area.</p>
+<p>For example, the developer can disable a global plugin in the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> area by disabling it in the specific <code class="highlighter-rouge">di.xml</code> file for the backend area.</p>
 
 <h3 id="related-topics">Related topics</h3>
 

@@ -794,7 +794,7 @@
 
 			<h2 id="overview">Overview</h2>
 
-<p>The <code>Settings</code> mode migrates stores, websites, and system configuration like shipping, payment, tax settings, etc.
+<p>The <code class="highlighter-rouge">Settings</code> mode migrates stores, websites, and system configuration like shipping, payment, tax settings, etc.
 According to our data migration <a href="/guides/v2.2/migration/migration-migrate.html#migration_order">order</a>, you should migrate settings first.</p>
 
 <h2 id="before-you-start-routine-preparations">Before you start: routine preparations</h2>
@@ -804,7 +804,7 @@ According to our data migration <a href="/guides/v2.2/migration/migration-migrat
     <p>Log in to Magento server as <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">the file system owner</a>.</p>
   </li>
   <li>
-    <p>Change to the Magento <code>/bin</code> directory or make sure it is added to your system PATH.</p>
+    <p>Change to the Magento <code class="highlighter-rouge">/bin</code> directory or make sure it is added to your system PATH.</p>
   </li>
 </ol>
 
@@ -814,17 +814,18 @@ According to our data migration <a href="/guides/v2.2/migration/migration-migrat
 
 <p>To start migrating settings, run:</p>
 
-<pre><code>bin/magento migrate:settings [-r|--reset] {&lt;path to config.xml&gt;}
+<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento migrate:settings [-r|--reset] {&lt;path to config.xml&gt;}
 </code></pre>
+</div>
 
 <p>where:</p>
 
 <ul>
   <li>
-    <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration</p>
+    <p><code class="highlighter-rouge">[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration</p>
   </li>
   <li>
-    <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
+    <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">&lt;path</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">config.xml&gt;</span><span class="p">}</span></code> is the absolute file system path to <code class="highlighter-rouge">config.xml</code>; this argument is required.</p>
   </li>
 </ul>
 
@@ -833,11 +834,11 @@ According to our data migration <a href="/guides/v2.2/migration/migration-migrat
   <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> before proceeding.</p></span>
 </div>
 
-<p>The <code>Migration completed</code> message is displayed after the settings are transferred successfully.</p>
+<p>The <code class="highlighter-rouge">Migration completed</code> message is displayed after the settings are transferred successfully.</p>
 
 <h2 id="configure-custom-migration-rules">Configure custom migration rules</h2>
 
-<p>You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the <code>settings.xml</code> file.</p>
+<p>You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the <code class="highlighter-rouge">settings.xml</code> file.</p>
 
 <ol>
   <li>
@@ -846,27 +847,30 @@ According to our data migration <a href="/guides/v2.2/migration/migration-migrat
   <li>
     <p>Change to the following directory:</p>
 
-    <pre><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;edition-to-edition&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;edition-to-edition&gt;
 </code></pre>
+    </div>
 
-    <p>For example, if Magento 2 is installed in <code>/var/www/html</code>, you’ll find <code>settings.xml.dist</code> in one of the following directories:</p>
+    <p>For example, if Magento 2 is installed in <code class="highlighter-rouge">/var/www/html</code>, you’ll find <code class="highlighter-rouge">settings.xml.dist</code> in one of the following directories:</p>
 
-    <pre><code>/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
+    <div class="highlighter-rouge"><pre class="highlight"><code>/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
 /var/www/html/vendor/magento/data-migration-tool/etc/ee-to-ee
 /var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ce
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>To create a <code>settings.xml</code> file from the provided sample, run:</p>
+    <p>To create a <code class="highlighter-rouge">settings.xml</code> file from the provided sample, run:</p>
 
-    <pre><code> cp settings.xml.dist settings.xml
+    <div class="highlighter-rouge"><pre class="highlight"><code> cp settings.xml.dist settings.xml
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Make your changes in <code>settings.xml</code>.</p>
+    <p>Make your changes in <code class="highlighter-rouge">settings.xml</code>.</p>
   </li>
   <li>
-    <p>Specify the new name of the settings file for mapping. To do that, change the <code>&lt;settings_map_file&gt;</code> tag in the <code>&lt;ce or ee version&gt;/config.xml</code> file.</p>
+    <p>Specify the new name of the settings file for mapping. To do that, change the <code class="highlighter-rouge">&lt;settings_map_file&gt;</code> tag in the <code class="highlighter-rouge">&lt;ce or ee version&gt;/config.xml</code> file.</p>
   </li>
 </ol>
 

@@ -1123,7 +1123,7 @@ To add a permanent theme-independent logo:</p>
   <li>To see your changes applied, reload the store front pages.</li>
 </ol>
 
-<p>The logo you add here is stored in the <code>/pub/media/logo/default/</code> directory.</p>
+<p>The logo you add here is stored in the <code class="highlighter-rouge">/pub/media/logo/default/</code> directory.</p>
 
 <div class="bs-callout bs-callout-warning" id="warning">
   <p>To delete the permanent logo, go to the same location, select the check box next to the logo image, and click <b>Delete</b>.</p>
@@ -1145,10 +1145,10 @@ To add a permanent theme-independent logo:</p>
 
 <ul>
   <li>
-    <p>Delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessed</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
+    <p>Delete all files in the <code class="highlighter-rouge">pub/static/frontend</code> and <code class="highlighter-rouge">var/view_preprocessed</code> directories, then reload the pages. You can delete the files manually or run the <code class="highlighter-rouge">grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
   </li>
   <li>
-    <p>In your Magento database, in the <code>theme</code> table, check if the <code>type</code> value for your custom theme is “0”. If it is “1” or “2”, change it to “0”. You can use a database tool such as <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> or do it manually from the command line.</p>
+    <p>In your Magento database, in the <code class="highlighter-rouge">theme</code> table, check if the <code class="highlighter-rouge">type</code> value for your custom theme is “0”. If it is “1” or “2”, change it to “0”. You can use a database tool such as <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> or do it manually from the command line.</p>
   </li>
 </ul>
 

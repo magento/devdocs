@@ -698,34 +698,38 @@ Consult your PhpStorm documentation for details.</p>
     <li>
       <p>Enter the following command to run a Bash shell in the web container.</p>
 
-      <pre><code>docker-compose exec --user=magento2 web /bin/bash
+      <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web /bin/bash
 </code></pre>
+      </div>
     </li>
     <li>
       <p>In the Bash shell, change to the directory containing the objects to test.</p>
 
       <p>For example, to run tests for the Admin notification module, change to the following directory:</p>
 
-      <pre><code>cd /var/www/magento2/vendor/magento/module-admin-notification/Test/Unit
+      <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/magento2/vendor/magento/module-admin-notification/Test/Unit
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Run PHPUnit as follows:</p>
 
-      <pre><code>&lt;path to phpunit&gt; -c &lt;path to phpunit.xml&gt; .
+      <div class="highlighter-rouge"><pre class="highlight"><code>&lt;path to phpunit&gt; -c &lt;path to phpunit.xml&gt; .
 </code></pre>
+      </div>
 
       <p>For example,</p>
 
-      <pre><code>/var/www/magento2/vendor/bin/phpunit -c /var/www/magento2/dev/tests/unit/phpunit.xml .
+      <div class="highlighter-rouge"><pre class="highlight"><code>/var/www/magento2/vendor/bin/phpunit -c /var/www/magento2/dev/tests/unit/phpunit.xml .
 </code></pre>
+      </div>
 
       <p>Notes:</p>
 
       <ul>
-        <li>To run a single test, replace <code>.</code> with the name of the PHP file that defines the tests to run.</li>
-        <li>If there is no <code>phpunit.xml</code>, use <code>phpunit.xml.dist</code> instead.</li>
-        <li>Use <code>Ctrl</code>+<code>p</code>+<code>Ctrl</code>+<code>q</code> to exit or detach from a container and leave it running.</li>
+        <li>To run a single test, replace <code class="highlighter-rouge">.</code> with the name of the PHP file that defines the tests to run.</li>
+        <li>If there is no <code class="highlighter-rouge">phpunit.xml</code>, use <code class="highlighter-rouge">phpunit.xml.dist</code> instead.</li>
+        <li>Use <code class="highlighter-rouge">Ctrl</code>+<code class="highlighter-rouge">p</code>+<code class="highlighter-rouge">Ctrl</code>+<code class="highlighter-rouge">q</code> to exit or detach from a container and leave it running.</li>
       </ul>
     </li>
   </ol>
@@ -737,20 +741,23 @@ Consult your PhpStorm documentation for details.</p>
     <li>
       <p>Enter the following command to run a Bash shell in the web container.</p>
 
-      <pre><code>docker-compose exec --user=magento2 web /bin/bash
+      <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web /bin/bash
 </code></pre>
+      </div>
     </li>
     <li>
       <p>In the Bash shell, change to the following directory:</p>
 
-      <pre><code>cd /var/www/magento2/dev/tests/integration 
+      <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/magento2/dev/tests/integration 
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Following is a sample command to run a test suite:</p>
 
-      <pre><code>/var/www/magento2/vendor/bin/phpunit /var/www/magento2/dev/tests/integration/testsuite/Magento/Integration/Model/Config/Integration
+      <div class="highlighter-rouge"><pre class="highlight"><code>/var/www/magento2/vendor/bin/phpunit /var/www/magento2/dev/tests/integration/testsuite/Magento/Integration/Model/Config/Integration
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -766,7 +773,7 @@ For more information about defining tests, consult the PhpStorm documentation.</
     <li>
       <p>Expand the files in the left pane until you locate a test to run.</p>
 
-      <p>Tests are located in <code>&lt;DevBox root folder&gt;/vendor/&lt;module vendor&gt;/&lt;module name&gt;/Test/Unit</code></p>
+      <p>Tests are located in <code class="highlighter-rouge">&lt;DevBox root folder&gt;/vendor/&lt;module vendor&gt;/&lt;module name&gt;/Test/Unit</code></p>
     </li>
     <li>Right-click the name of the test.</li>
     <li>
@@ -784,12 +791,13 @@ If errors display, see the next section.</p>
   <h3 id="troubleshoot-unit-tests">Troubleshoot unit tests</h3>
   <p>If your remote CLI interpreter or Xdebug options aren’t set up properly, the following messages are displayed:</p>
 
-  <pre><code>ssh://magento2@127.0.0.1:32795/usr/local/bin/php -dxdebug.remote_host=127.0.0.1 /home/magento2/.PhpStorm_helpers/phpunit.php --no-configuration Magento\\AdvancedSearch\\Test\\Unit\\Block\\SearchDataTest /var/www/magento2/vendor/magento/module-advanced-search/Test/Unit/Block/SearchDataTest.php
+  <div class="highlighter-rouge"><pre class="highlight"><code>ssh://magento2@127.0.0.1:32795/usr/local/bin/php -dxdebug.remote_host=127.0.0.1 /home/magento2/.PhpStorm_helpers/phpunit.php --no-configuration Magento\\AdvancedSearch\\Test\\Unit\\Block\\SearchDataTest /var/www/magento2/vendor/magento/module-advanced-search/Test/Unit/Block/SearchDataTest.php
 Testing started at 6:13 PM ...
 
 Process finished with exit code 1
 Cannot find PHPUnit in include path (.:/usr/local/lib/php)
 </code></pre>
+  </div>
 
   <p>To resolve this issue, make sure you set up your remote CLI interpreter as discussed in <a href="/guides/v2.0/install-gde/docker/docker-phpstorm-project.html#devbox-phpunit-setup">Set up PHPUnit</a>.</p>
 

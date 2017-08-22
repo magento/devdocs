@@ -749,31 +749,31 @@
 
 <h2 id="step-1">Step 1: Define your attributes</h2>
 
-<p>The following code defines a simple <a href="/guides/v2.1/extension-dev-guide/attributes.html">extension attribute</a> named <code>demo</code> for the Cart and Order objects.</p>
+<p>The following code defines a simple <a href="/guides/v2.1/extension-dev-guide/attributes.html">extension attribute</a> named <code class="highlighter-rouge">demo</code> for the Cart and Order objects.</p>
 
 <p><strong>extension_attributes.xml</strong></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Quote\Api\Data\CartInterface&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;demo&quot;</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"Api/etc/extension_attributes.xsd"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">"Magento\Quote\Api\Data\CartInterface"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">"demo"</span> <span class="na">type=</span><span class="s">"string"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/extension_attributes&gt;</span>
-  <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Sales\Api\Data\OrderInterface&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;demo&quot;</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">"Magento\Sales\Api\Data\OrderInterface"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">"demo"</span> <span class="na">type=</span><span class="s">"string"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/extension_attributes&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h2 id="step-2">Step 2: Configure the fieldset</h2>
 
-<p>The following code adds the <code>demo</code> field to the <code>sales_convert_quote</code> fieldset with the <code>to_order</code> aspect.
+<p>The following code adds the <code class="highlighter-rouge">demo</code> field to the <code class="highlighter-rouge">sales_convert_quote</code> fieldset with the <code class="highlighter-rouge">to_order</code> aspect.
 The code snippet in the next step uses the name of the fieldset and aspect to specify which fields to copy.</p>
 
 <p><strong>fieldset.xml</strong></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;DataObject/etc/fieldset.xsd&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;scope</span> <span class="na">id=</span><span class="s">&quot;global&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;fieldset</span> <span class="na">id=</span><span class="s">&quot;sales_convert_quote&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;demo&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;aspect</span> <span class="na">name=</span><span class="s">&quot;to_order&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"DataObject/etc/fieldset.xsd"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;scope</span> <span class="na">id=</span><span class="s">"global"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset</span> <span class="na">id=</span><span class="s">"sales_convert_quote"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"demo"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;aspect</span> <span class="na">name=</span><span class="s">"to_order"</span> <span class="nt">/&gt;</span>
       <span class="nt">&lt;/field&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
   <span class="nt">&lt;/scope&gt;</span>
@@ -781,46 +781,46 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 
 <h2 id="step-3">Step 3: Copy the fieldset</h2>
 
-<p>The following code snippets highlight the code pieces needed to copy a fieldset using the <code>\Magento\Framework\DataObject\Copy</code> class.</p>
+<p>The following code snippets highlight the code pieces needed to copy a fieldset using the <code class="highlighter-rouge">\Magento\Framework\DataObject\Copy</code> class.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">...
 
-<span class="sd">/**</span>
-<span class="sd"> * @var \Magento\Framework\DataObject\Copy</span>
-<span class="sd"> */</span>
-<span class="k">protected</span> <span class="nv">$objectCopyService</span><span class="p">;</span>
+/**
+ * @var \Magento\Framework\DataObject\Copy
+ */
+protected $objectCopyService;
 
-<span class="o">...</span>
+...
 
-<span class="sd">/**</span>
-<span class="sd"> * @param \Magento\Framework\DataObject\Copy $objectCopyService</span>
-<span class="sd">  ...</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-  <span class="nx">\Magento\Framework\DataObject\Copy</span> <span class="nv">$objectCopyService</span><span class="p">,</span>
-  <span class="o">...</span>
-<span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectCopyService</span> <span class="o">=</span> <span class="nv">$objectCopyService</span><span class="p">;</span>
-    <span class="o">...</span>
-  <span class="p">}</span>
+/**
+ * @param \Magento\Framework\DataObject\Copy $objectCopyService
+  ...
+ */
+public function __construct(
+  \Magento\Framework\DataObject\Copy $objectCopyService,
+  ...
+) {
+    $this-&gt;objectCopyService = $objectCopyService;
+    ...
+  }
 
-<span class="o">...</span>
+...
 
-<span class="sd">/**</span>
-<span class="sd"> * @param $quote \Magento\Quote\Api\Data\CartInterface</span>
-<span class="sd"> * @param $order Magento\Sales\Api\Data\Order</span>
-<span class="sd"> */</span>
-<span class="k">private</span> <span class="k">function</span> <span class="nf">copyQuoteToOrder</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span><span class="nv">$order</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="o">...</span>
-  <span class="nv">$copy</span><span class="o">-&gt;</span><span class="na">copyFieldsetToTarget</span><span class="p">(</span><span class="s1">&#39;sales_convert_quote&#39;</span><span class="p">,</span> <span class="s1">&#39;to_order&#39;</span><span class="p">,</span> <span class="nv">$quote</span><span class="p">,</span> <span class="nv">$order</span><span class="p">);</span>
-  <span class="o">...</span>
-<span class="p">}</span>
+/**
+ * @param $quote \Magento\Quote\Api\Data\CartInterface
+ * @param $order Magento\Sales\Api\Data\Order
+ */
+private function copyQuoteToOrder($quote,$order)
+{
+  ...
+  $copy-&gt;copyFieldsetToTarget('sales_convert_quote', 'to_order', $quote, $order);
+  ...
+}
 
-<span class="o">...</span></code></pre></figure>
+...</code></pre></figure>
 
-<p>In the code, an instance of the <code>Copy</code> class is obtained from the constructor using <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection</a>.
-The <code>copyFieldsetToTarget</code> function call with the <code>$quote</code> and <code>$order</code> parameters copies the fieldset for the two objects..</p>
+<p>In the code, an instance of the <code class="highlighter-rouge">Copy</code> class is obtained from the constructor using <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection</a>.
+The <code class="highlighter-rouge">copyFieldsetToTarget</code> function call with the <code class="highlighter-rouge">$quote</code> and <code class="highlighter-rouge">$order</code> parameters copies the fieldset for the two objects..</p>
 
 
 		</div>

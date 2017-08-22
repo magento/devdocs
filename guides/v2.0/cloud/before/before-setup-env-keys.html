@@ -1518,19 +1518,20 @@
     <p><img src="/common/images/cloud_project-vars1.png" alt="Add a project variable" width="400px" /></p>
   </li>
   <li>Click <strong>Add Variable</strong>.</li>
-  <li>In the <strong>Name</strong> field, enter <code>env:COMPOSER_AUTH</code>.</li>
+  <li>In the <strong>Name</strong> field, enter <code class="highlighter-rouge">env:COMPOSER_AUTH</code>.</li>
   <li>
     <p>In the <strong>Value</strong> field, enter the following, replacing the sample values with your authentication keys.</p>
 
-    <pre><code>{
-   "http-basic": {
-      "repo.magento.com": {
-         "username": "&lt;public key&gt;",
-         "password": "&lt;private key&gt;"
-       }
-    }
-}
-</code></pre>
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public key&gt;"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;private key&gt;"</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+    </div>
   </li>
   <li>
     <p>Select the <strong>Visible during build</strong> check box. Clear the other check boxes.</p>
@@ -1541,19 +1542,21 @@
   </li>
   <li>Click <strong>Add Variable</strong>.</li>
   <li>
-    <p>Remove <code>auth.json</code> from the Git repository from every environment currently configured for the project.</p>
+    <p>Remove <code class="highlighter-rouge">auth.json</code> from the Git repository from every environment currently configured for the project.</p>
 
     <p>Use the following command to list currently configured environments:</p>
 
-    <pre><code>magento-cloud environment:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+    </div>
 
-    <p>For every environment ID, check out the environment and delete <code>auth.json</code> as follows:</p>
+    <p>For every environment ID, check out the environment and delete <code class="highlighter-rouge">auth.json</code> as follows:</p>
 
-    <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 git rm auth.json
 git add -A &amp;&amp; git commit -m "Remove auth.json" &amp;&amp; git push origin &lt;branch name&gt;
 </code></pre>
+    </div>
   </li>
   <li>Wait for the project to build and deploy.</li>
 </ol>

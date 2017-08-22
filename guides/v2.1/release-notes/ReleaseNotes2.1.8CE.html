@@ -1011,7 +1011,7 @@
 
 <!--- 61797 -->
 <ul>
-  <li>When you delete an image in Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: <code>Cannot gather stats! Warning!stat(): stat failed for</code>).</li>
+  <li>When you delete an image in Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: <code class="highlighter-rouge">Cannot gather stats! Warning!stat(): stat failed for</code>).</li>
 </ul>
 
 <!--- 61729 -->
@@ -1021,12 +1021,12 @@
 
 <!--- 69386 -->
 <ul>
-  <li>Magento previously displayed a 404 error message instead of a product image when the <code>product_image_white_borders</code> parameter wasn’t enabled. The product image is now displayed correctly.</li>
+  <li>Magento previously displayed a 404 error message instead of a product image when the <code class="highlighter-rouge">product_image_white_borders</code> parameter wasn’t enabled. The product image is now displayed correctly.</li>
 </ul>
 
 <!--- 63656 -->
 <ul>
-  <li>The product attribute <code>category_ids</code> can have only <strong>Global</strong> scope. Previously, you could change the scope value of <code>category_ids</code> to <strong>Store</strong>.</li>
+  <li>The product attribute <code class="highlighter-rouge">category_ids</code> can have only <strong>Global</strong> scope. Previously, you could change the scope value of <code class="highlighter-rouge">category_ids</code> to <strong>Store</strong>.</li>
 </ul>
 
 <!--- 63587 -->
@@ -1077,7 +1077,7 @@
 
 <!--- 69665 -->
 <ul>
-  <li>The value of <code>item_zone</code> on the product detail page now remains set correctly when you change products via the related/upsell products list. <a href="https://github.com/magento/magento2/issues/9562">GitHub-9562</a>, <a href="https://github.com/magento/magento2/issues/6746">GitHub-6746</a>   <em>Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@Pieter Hoste</a>.</em></li>
+  <li>The value of <code class="highlighter-rouge">item_zone</code> on the product detail page now remains set correctly when you change products via the related/upsell products list. <a href="https://github.com/magento/magento2/issues/9562">GitHub-9562</a>, <a href="https://github.com/magento/magento2/issues/6746">GitHub-6746</a>   <em>Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@Pieter Hoste</a>.</em></li>
 </ul>
 
 <h3 id="checkout">Checkout</h3>
@@ -1139,7 +1139,7 @@
 
 <!--- 57615 -->
 <ul>
-  <li>Visual Merchandiser <code>Match products by rule</code> now works as expected.</li>
+  <li>Visual Merchandiser <code class="highlighter-rouge">Match products by rule</code> now works as expected.</li>
 </ul>
 
 <!--- 60542 -->
@@ -1279,7 +1279,7 @@
 
 <!--- 67522 -->
 <ul>
-  <li>You can now upload <code>.apng</code> and <code>.ico</code> images as fav icons without error. <em>Fix submitted by community member <a href="https://github.com/WaPoNe" target="_blank">Michele Fantetti</a> in pull request <a href="https://github.com/magento/magento2/pull/8880" target="_blank">8880</a>.</em></li>
+  <li>You can now upload <code class="highlighter-rouge">.apng</code> and <code class="highlighter-rouge">.ico</code> images as fav icons without error. <em>Fix submitted by community member <a href="https://github.com/WaPoNe" target="_blank">Michele Fantetti</a> in pull request <a href="https://github.com/magento/magento2/pull/8880" target="_blank">8880</a>.</em></li>
 </ul>
 
 <!--- 67620 -->
@@ -1316,7 +1316,7 @@
 
 <!--- 60548 -->
 <ul>
-  <li>We’ve improved the import speed of advanced pricing data. Previously, the import process for this information frequently stopped after the import of approximately 300 rows of data, and Magento displayed this message: <code>Please Wait</code>.</li>
+  <li>We’ve improved the import speed of advanced pricing data. Previously, the import process for this information frequently stopped after the import of approximately 300 rows of data, and Magento displayed this message: <code class="highlighter-rouge">Please Wait</code>.</li>
 </ul>
 
 <!--- 63589 -->
@@ -1331,19 +1331,19 @@
 
 <!--- 58760 -->
 <ul>
-  <li>Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: <code>Invalid data for insert</code>. <a href="https://github.com/magento/magento2/issues/4291">GitHub-4291</a>, <a href="https://github.com/magento/magento2/issues/9469">GitHub-9469</a></li>
+  <li>Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: <code class="highlighter-rouge">Invalid data for insert</code>. <a href="https://github.com/magento/magento2/issues/4291">GitHub-4291</a>, <a href="https://github.com/magento/magento2/issues/9469">GitHub-9469</a></li>
 </ul>
 
 <!--- 69228 -->
 <ul>
-  <li>Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the <code>getRemoteAddress</code> method gets one via the <code>alternativeHeaders</code> variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) <em>Fix submitted by community member <a href="https://github.com/kassner" target="_blank">Rafael Kassner</a>.</em></li>
+  <li>Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the <code class="highlighter-rouge">getRemoteAddress</code> method gets one via the <code class="highlighter-rouge">alternativeHeaders</code> variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) <em>Fix submitted by community member <a href="https://github.com/kassner" target="_blank">Rafael Kassner</a>.</em></li>
 </ul>
 
 <h3 id="installation-and-deployment">Installation and deployment</h3>
 
 <!--- 63020 -->
 <ul>
-  <li>Static content deployment (SCD) now works when multiple languages are specified. Previously, Magento displayed an error if you tried to deploy static content in more than one language (for example, <code>bin/magento setup:static-content:deploy en_CA fr_CA de_DE</code>).</li>
+  <li>Static content deployment (SCD) now works when multiple languages are specified. Previously, Magento displayed an error if you tried to deploy static content in more than one language (for example, <code class="highlighter-rouge">bin/magento setup:static-content:deploy en_CA fr_CA de_DE</code>).</li>
 </ul>
 
 <!--- 59775 -->
@@ -1353,17 +1353,17 @@
 
 <!--- 63650 -->
 <ul>
-  <li>Magento now moves the <code>sequence_*</code> table to the correct database after implementing a split database.</li>
+  <li>Magento now moves the <code class="highlighter-rouge">sequence_*</code> table to the correct database after implementing a split database.</li>
 </ul>
 
 <!--- 59622, 70177 -->
 <ul>
-  <li>You can now upgrade Magento 2.0 to version 2.1.x when the <code>auto_increment</code> setting in the database is greater than 1. Previously, when the <code>auto_increment</code> value exceeded 1, upgrade failed with this error: “The page URL key contains capital letters or disallowed symbols.</li>
+  <li>You can now upgrade Magento 2.0 to version 2.1.x when the <code class="highlighter-rouge">auto_increment</code> setting in the database is greater than 1. Previously, when the <code class="highlighter-rouge">auto_increment</code> value exceeded 1, upgrade failed with this error: “The page URL key contains capital letters or disallowed symbols.</li>
 </ul>
 
 <!--- 69235 -->
 <ul>
-  <li>The <code>setup:di:compile</code> command no longer fails under these circumstances: 1) <code>magento/data-migration-tool</code> is a regular dependency; 2) you have not installed the <code>dev</code> dependencies with Composer (<code>--no-dev</code>).</li>
+  <li>The <code class="highlighter-rouge">setup:di:compile</code> command no longer fails under these circumstances: 1) <code class="highlighter-rouge">magento/data-migration-tool</code> is a regular dependency; 2) you have not installed the <code class="highlighter-rouge">dev</code> dependencies with Composer (<code class="highlighter-rouge">--no-dev</code>).</li>
 </ul>
 
 <!--- 60723 -->
@@ -1373,7 +1373,7 @@
 
 <!--- 69840 -->
 <ul>
-  <li>Configuration values no longer return NULL when Redis reaches the limit set in the <code>max_memory</code> setting. Previously, when Redis met the limit specified in this setting, <code>ScopeConfig</code> returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).</li>
+  <li>Configuration values no longer return NULL when Redis reaches the limit set in the <code class="highlighter-rouge">max_memory</code> setting. Previously, when Redis met the limit specified in this setting, <code class="highlighter-rouge">ScopeConfig</code> returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).</li>
 </ul>
 
 <h3 id="order-management">Order management</h3>
@@ -1422,7 +1422,7 @@
 
 <!--- 63702, 64730 -->
 <ul>
-  <li>PayPal Express payments no longer fail when there is adequate product inventory to cover your order. Previously, you’d receive this error message: <code>We can't place the order</code>. <a href="https://github.com/magento/magento2/issues/6296">GitHub-6296</a></li>
+  <li>PayPal Express payments no longer fail when there is adequate product inventory to cover your order. Previously, you’d receive this error message: <code class="highlighter-rouge">We can't place the order</code>. <a href="https://github.com/magento/magento2/issues/6296">GitHub-6296</a></li>
 </ul>
 
 <h3 id="performance">Performance</h3>
@@ -1463,21 +1463,21 @@
 
 <!--- 67523 -->
 <ul>
-  <li>We’ve changed the severity of some errors from critical to info in <code>var/log/system.log</code>.  <a href="https://github.com/magento/magento2/issues/5627">GitHub-5627</a>  <em>Fix submitted by community member <a href="https://github.com/malachy-mcconnnell" target="_blank">@malachy-mcconnnell</a>.</em></li>
+  <li>We’ve changed the severity of some errors from critical to info in <code class="highlighter-rouge">var/log/system.log</code>.  <a href="https://github.com/magento/magento2/issues/5627">GitHub-5627</a>  <em>Fix submitted by community member <a href="https://github.com/malachy-mcconnnell" target="_blank">@malachy-mcconnnell</a>.</em></li>
 </ul>
 
 <h3 id="sample-data">Sample data</h3>
 
 <!--- 64499 -->
 <ul>
-  <li>You can now successfully install Magento with sample data when   <strong>auto_increment_increment</strong> is set to <strong>3</strong>  in the <code>options</code> file. Previously, installation completed successfully, but Magento displayed this error: <code>Something went wrong while installing sample data. Please check var/log/system.log for details. You can retry installing the data now or just start using Magento.</code></li>
+  <li>You can now successfully install Magento with sample data when   <strong>auto_increment_increment</strong> is set to <strong>3</strong>  in the <code class="highlighter-rouge">options</code> file. Previously, installation completed successfully, but Magento displayed this error: <code class="highlighter-rouge">Something went wrong while installing sample data. Please check var/log/system.log for details. You can retry installing the data now or just start using Magento.</code></li>
 </ul>
 
 <h3 id="search">Search</h3>
 
 <!--- 65249 -->
 <ul>
-  <li>Segmentation faults no longer occur when doing a <code>catalogsearch_fulltext</code> re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the <code>catalogsearch_fulltext</code> (MySQL) re-index failed with a <code>Segmentation fault</code> message. <a href="https://github.com/magento/magento2/issues/7963">GitHub-7963</a></li>
+  <li>Segmentation faults no longer occur when doing a <code class="highlighter-rouge">catalogsearch_fulltext</code> re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the <code class="highlighter-rouge">catalogsearch_fulltext</code> (MySQL) re-index failed with a <code class="highlighter-rouge">Segmentation fault</code> message. <a href="https://github.com/magento/magento2/issues/7963">GitHub-7963</a></li>
 </ul>
 
 <!--- 53675 -->
@@ -1492,7 +1492,7 @@
 
 <!--- 67628 -->
 <ul>
-  <li>You can render the <code>tax_class_id</code> attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.</li>
+  <li>You can render the <code class="highlighter-rouge">tax_class_id</code> attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.</li>
 </ul>
 
 <h3 id="shipping-methods">Shipping methods</h3>
@@ -1739,17 +1739,19 @@
 
   <h3 id="install-rc-composer" class="no_toc">Get the Magento CE software using Composer</h3>
 
-  <p>The CE software is available from <code>repo.magento.com</code>. Before getting the CE software, familiarize yourself with the Composer metapackage  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+  <p>The CE software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before getting the CE software, familiarize yourself with the Composer metapackage  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
 
-  <p>For example, to install Magento CE 2.1.1 in the <code>magento2</code> directory:</p>
+  <p>For example, to install Magento CE 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 </code></pre>
+  </div>
 
   <h3 id="install-archive" class="no_toc">Get a compressed archive</h3>
 
@@ -1764,7 +1766,7 @@
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
     <p>To get the Magento CE software archive:</p>
 
@@ -1774,11 +1776,11 @@
         <p>Choose either the software or the software and sample data:</p>
 
         <ul>
-          <li><code>Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
 
-        <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
+        <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
       </li>
     </ol>
 

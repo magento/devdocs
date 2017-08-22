@@ -1623,27 +1623,27 @@
 </section>
 
 
-			<h2 id="cloud-yaml-services-over"><code>services.yaml</code> overview</h2>
+			<h2 id="cloud-yaml-services-over"><code class="highlighter-rouge">services.yaml</code> overview</h2>
 <p>Magento Enterprise Cloud Edition provides <a href="#cloud-yaml-services-type"><em>services</em></a> such as MySQL, PHP, Redis, Solr, and so on. You don’t need to subscribe to external service providers.</p>
 
-<p>This file is located at <code>.magento/services.yaml</code> in your project.</p>
+<p>This file is located at <code class="highlighter-rouge">.magento/services.yaml</code> in your project.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
 </div>
 
-<p><a href="https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml" target="_blank">Sample <code>services.yaml</code> file</a></p>
+<p><a href="https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml" target="_blank">Sample <code class="highlighter-rouge">services.yaml</code> file</a></p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Changes you make using <code>.yaml</code> files affect your <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support issue</a>.</p>
 </div>
 
-<p>The following sections discuss properties in <code>services.yaml</code>.</p>
+<p>The following sections discuss properties in <code class="highlighter-rouge">services.yaml</code>.</p>
 
 <h2 id="cloud-yaml-services-default">Defaults</h2>
-<p>If you do not provide a <code>services.yaml</code> file, the following defaults are used:</p>
+<p>If you do not provide a <code class="highlighter-rouge">services.yaml</code> file, the following defaults are used:</p>
 
-<pre><code>mysql:
+<div class="highlighter-rouge"><pre class="highlight"><code>mysql:
    type: mysql:10.0
    disk: 2048
 
@@ -1654,48 +1654,49 @@ solr:
    type: solr:4.10
    disk: 1024
 </code></pre>
+</div>
 
-<h2 id="cloud-yaml-services-name"><code>name</code></h2>
-<p><code>name</code> identifies the service in the project. <code>name</code> can consist only of lower case alphanumeric characters; that is, <code>a</code>–<code>z</code> and <code>0</code>–<code>9</code>.</p>
+<h2 id="cloud-yaml-services-name"><code class="highlighter-rouge">name</code></h2>
+<p><code class="highlighter-rouge">name</code> identifies the service in the project. <code class="highlighter-rouge">name</code> can consist only of lower case alphanumeric characters; that is, <code class="highlighter-rouge">a</code>–<code class="highlighter-rouge">z</code> and <code class="highlighter-rouge">0</code>–<code class="highlighter-rouge">9</code>.</p>
 
-<p>Usually you will see in our examples that we simply call the mysql: <code>mysql</code>. Note that you can have multiple instances of each service.</p>
+<p>Usually you will see in our examples that we simply call the mysql: <code class="highlighter-rouge">mysql</code>. Note that you can have multiple instances of each service.</p>
 
 <div class="bs-callout bs-callout-warning">
     <p>Because we support multiple services of the same type (for example, multiple databases), changing the name of a service in <code>services.yaml</code> causes the existing service to be <em>permanently removed</em> before creating a new service with the new name you specify. <em>Renaming a service results in the loss of all of that service's data</em>. We strongly recommend you <a href="/guides/v2.1/cloud/admin/admin-snap.html">snapshot your environment</a> before you change the name of an existing service.</p>
 </div>
 
-<h3 id="cloud-yaml-services-type"><code>type</code></h3>
-<p>The <code>type</code> of your service in the format <code>type:version</code></p>
+<h3 id="cloud-yaml-services-type"><code class="highlighter-rouge">type</code></h3>
+<p>The <code class="highlighter-rouge">type</code> of your service in the format <code class="highlighter-rouge">type:version</code></p>
 
 <p>We support and deploy the following services for you:</p>
 
 <ul>
-  <li><code>mysql</code> version <code>10.0</code></li>
-  <li><code>redis</code> versions <code>2.8</code> and <code>3.0</code></li>
-  <li><code>solr</code> version <code>4.0</code></li>
-  <li><code>elasticsearch</code> version <code>1.7</code></li>
-  <li><code>rabbitmq</code> version <code>3.5</code></li>
+  <li><code class="highlighter-rouge">mysql</code> version <code class="highlighter-rouge">10.0</code></li>
+  <li><code class="highlighter-rouge">redis</code> versions <code class="highlighter-rouge">2.8</code> and <code class="highlighter-rouge">3.0</code></li>
+  <li><code class="highlighter-rouge">solr</code> version <code class="highlighter-rouge">4.0</code></li>
+  <li><code class="highlighter-rouge">elasticsearch</code> version <code class="highlighter-rouge">1.7</code></li>
+  <li><code class="highlighter-rouge">rabbitmq</code> version <code class="highlighter-rouge">3.5</code></li>
 </ul>
 
-<h3 id="cloud-yaml-services-disk"><code>disk</code></h3>
+<h3 id="cloud-yaml-services-disk"><code class="highlighter-rouge">disk</code></h3>
 
-<p><code>disk</code> specifies the size of the persistent disk storage (in MB) allocated to the service.</p>
+<p><code class="highlighter-rouge">disk</code> specifies the size of the persistent disk storage (in MB) allocated to the service.</p>
 
-<p>For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. (See <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a>.)</p>
+<p>For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. (See <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>.)</p>
 
 <h2 id="using-the-services">Using the services</h2>
-<p>For services to be available to an application in your project, you must specify <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel"><em>relationships</em></a> between applications and services in <code>.magento.app.yaml</code>.</p>
+<p>For services to be available to an application in your project, you must specify <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel"><em>relationships</em></a> between applications and services in <code class="highlighter-rouge">.magento.app.yaml</code>.</p>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the mysql service</a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up the redis service</a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up the elasticsearch service</a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up the rabbitmq service</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
 </ul>
 
 		</div>

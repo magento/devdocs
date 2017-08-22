@@ -1633,15 +1633,17 @@
 <h2 id="mage-owner-create-user">Create the Magento file system owner</h2>
 <p>Create the Magento file system owner with a strong password. Magento file system owner is another term for the <em>command-line user</em>.</p>
 
-<p>To create the Magento file system owner, enter the following command as a user with <code>root</code> privileges:</p>
+<p>To create the Magento file system owner, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-<pre><code>adduser &lt;username&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>adduser &lt;username&gt;
 </code></pre>
+</div>
 
-<p>To give the user a password, enter the following command as a user with <code>root</code> privileges:</p>
+<p>To give the user a password, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-<pre><code>passwd &lt;username&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>passwd &lt;username&gt;
 </code></pre>
+</div>
 
 <p>Follow the prompts on your screen to create a password for the user.</p>
 
@@ -1649,11 +1651,12 @@
     <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-group">Put the Magento file system owner in the web server group</a>.</p>
 </div>
 
-<p>For example, to create a user named <code>magento_user</code> and give the user a password, enter:</p>
+<p>For example, to create a user named <code class="highlighter-rouge">magento_user</code> and give the user a password, enter:</p>
 
-<pre><code>sudo adduser magento_user
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo adduser magento_user
 sudo passwd magento_user
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-warning">
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
@@ -1665,46 +1668,49 @@ sudo passwd magento_user
 
 <ul>
   <li>
-    <p>CentOS: <code>egrep -i '^user|^group' /etc/httpd/conf/httpd.conf</code></p>
+    <p>CentOS: <code class="highlighter-rouge">egrep -i '^user|^group' /etc/httpd/conf/httpd.conf</code></p>
 
-    <p>Typically, the user and group name are both <code>apache</code></p>
+    <p>Typically, the user and group name are both <code class="highlighter-rouge">apache</code></p>
   </li>
   <li>
-    <p>Ubuntu: <code>ps aux | grep apache</code> to find the apache user, then <code>groups &lt;apache user&gt;</code> to find the group</p>
+    <p>Ubuntu: <code class="highlighter-rouge">ps aux | grep apache</code> to find the apache user, then <code class="highlighter-rouge">groups &lt;apache user&gt;</code> to find the group</p>
 
-    <p>Typically, the user name and the group name are both <code>www-data</code></p>
+    <p>Typically, the user name and the group name are both <code class="highlighter-rouge">www-data</code></p>
   </li>
 </ul>
 
 <h2 id="install-update-depend-user-add2group">Put the Magento file system owner in the web server’s primary group</h2>
 
-<p>Assuming the typical Apache group name for CentOS and Ubuntu, enter the following command as a user with <code>root</code> privileges:</p>
+<p>Assuming the typical Apache group name for CentOS and Ubuntu, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
 <ul>
-  <li>CentOS: <code>usermod -g apache &lt;username&gt;</code></li>
-  <li>Ubuntu: <code>usermod -g www-data &lt;username&gt;</code></li>
+  <li>CentOS: <code class="highlighter-rouge">usermod -g apache &lt;username&gt;</code></li>
+  <li>Ubuntu: <code class="highlighter-rouge">usermod -g www-data &lt;username&gt;</code></li>
 </ul>
 
-<p>For example, to add the user <code>magento_user</code> to the <code>apache</code> primary group on CentOS:</p>
+<p>For example, to add the user <code class="highlighter-rouge">magento_user</code> to the <code class="highlighter-rouge">apache</code> primary group on CentOS:</p>
 
-<pre><code>usermod -g apache magento_user
+<div class="highlighter-rouge"><pre class="highlight"><code>usermod -g apache magento_user
 </code></pre>
+</div>
 
 <p>To confirm your Magento user is a member of the web server group, enter the following command:</p>
 
-<pre><code>groups &lt;user name&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>groups &lt;user name&gt;
 </code></pre>
+</div>
 
 <p>A sample result follows:</p>
 
-<pre><code>magento_user : apache
+<div class="highlighter-rouge"><pre class="highlight"><code>magento_user : apache
 </code></pre>
+</div>
 
 <p>To complete the task, restart the web server:</p>
 
 <ul>
-  <li>Ubuntu: <code>service apache2 restart</code></li>
-  <li>CentOS: <code>service httpd restart</code></li>
+  <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+  <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
 </ul>
 
 <h4 id="next-step">Next step:</h4>

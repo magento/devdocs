@@ -1107,37 +1107,38 @@
 
 <ol>
   <li>
-    <p>In the root of theme directory, create an empty <code>package.json</code> and copy-paste the following code:</p>
+    <p>In the root of theme directory, create an empty <code class="highlighter-rouge">package.json</code> and copy-paste the following code:</p>
 
-    <pre><code class="language-json"> {
-   "author": "Magento Commerce Inc.",
-   "description": "Magento node modules dependencies for local development",
-   "version": "1.0.0",
-   "main": "gulpfile.js",
-   "dependencies": {
-     "path": "^0.12.7"
-   },
-   "devDependencies": {
-     "gulp": "^3.9.1",
-     "gulp-notify": "^3.0.0",
-     "gulp-plumber": "^1.1.0",
-     "gulp-sass": "^3.1.0"
-   },
-   "scripts": {
-     "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
-   }
- }
-</code></pre>
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento Commerce Inc."</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento node modules dependencies for local development"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gulpfile.js"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.12.7"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nt">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nt">"gulp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.9.1"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"gulp-notify"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.0.0"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"gulp-plumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.1.0"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"gulp-sass"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.1.0"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+    </div>
   </li>
   <li>
     <p>Install Gulp by running the following command in a command prompt:</p>
 
-    <p><code>npm install --save gulp-install</code></p>
+    <p><code class="highlighter-rouge">npm install --save gulp-install</code></p>
   </li>
   <li>
     <p>Add Gulp Sass preprocessor by running the following command:</p>
 
-    <p><code>npm install gulp-sass</code></p>
+    <p><code class="highlighter-rouge">npm install gulp-sass</code></p>
   </li>
 </ol>
 
@@ -1148,70 +1149,73 @@
     <p>Create a theme as described in <a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a>.</p>
   </li>
   <li>
-    <p>Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (<code>app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code>). You can use the following code sample (no changes needed, create an empty <code>app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;/gulp.js</code> and copy-paste this code): 
- <code>package.json</code>:</p>
+    <p>Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (<code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code>). You can use the following code sample (no changes needed, create an empty <code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;/gulp.js</code> and copy-paste this code): 
+ <code class="highlighter-rouge">package.json</code>:</p>
 
-    <pre><code class="language-js">
- var gulp         = require('gulp'),
-     sass         = require('gulp-sass'),
-     plumber      = require('gulp-plumber'),
-     notify       = require('gulp-notify');
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code>
+ <span class="kd">var</span> <span class="nx">gulp</span>         <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">),</span>
+     <span class="nx">sass</span>         <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-sass'</span><span class="p">),</span>
+     <span class="nx">plumber</span>      <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-plumber'</span><span class="p">),</span>
+     <span class="nx">notify</span>       <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-notify'</span><span class="p">);</span>
 
- var config = {
-     src           : './web/css/*.scss',
-     dest          : './web/css/'
- };
+ <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">src</span>           <span class="p">:</span> <span class="s1">'./web/css/*.scss'</span><span class="p">,</span>
+     <span class="na">dest</span>          <span class="p">:</span> <span class="s1">'./web/css/'</span>
+ <span class="p">};</span>
 
- // Error message
- var onError = function (err) {
-     notify.onError({
-         title   : 'Gulp',
-         subtitle: 'Failure!',
-         message : 'Error: &lt;%= error.message %&gt;',
-         sound   : 'Beep'
-     })(err);
+ <span class="c1">// Error message</span>
+ <span class="kd">var</span> <span class="nx">onError</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">notify</span><span class="p">.</span><span class="nx">onError</span><span class="p">({</span>
+         <span class="na">title</span>   <span class="p">:</span> <span class="s1">'Gulp'</span><span class="p">,</span>
+         <span class="na">subtitle</span><span class="p">:</span> <span class="s1">'Failure!'</span><span class="p">,</span>
+         <span class="na">message</span> <span class="p">:</span> <span class="s1">'Error: &lt;%= error.message %&gt;'</span><span class="p">,</span>
+         <span class="na">sound</span>   <span class="p">:</span> <span class="s1">'Beep'</span>
+     <span class="p">})(</span><span class="nx">err</span><span class="p">);</span>
 
-     this.emit('end');
- };
+     <span class="k">this</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">'end'</span><span class="p">);</span>
+ <span class="p">};</span>
 
- // Compile CSS
- gulp.task('styles', function () {
- 	var stream = gulp
- 	    .src([config.src])
- 	    .pipe(plumber({errorHandler: onError}))
- 	    .pipe(sass().on('error', sass.logError));
+ <span class="c1">// Compile CSS</span>
+ <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'styles'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+ 	<span class="kd">var</span> <span class="nx">stream</span> <span class="o">=</span> <span class="nx">gulp</span>
+ 	    <span class="p">.</span><span class="nx">src</span><span class="p">([</span><span class="nx">config</span><span class="p">.</span><span class="nx">src</span><span class="p">])</span>
+ 	    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">plumber</span><span class="p">({</span><span class="na">errorHandler</span><span class="p">:</span> <span class="nx">onError</span><span class="p">}))</span>
+ 	    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">sass</span><span class="p">.</span><span class="nx">logError</span><span class="p">));</span>
 
- 	return stream
- 	    .pipe(gulp.dest('./web/css/'));
- }); 
+ 	<span class="k">return</span> <span class="nx">stream</span>
+ 	    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./web/css/'</span><span class="p">));</span>
+ <span class="p">});</span> 
 </code></pre>
-    <p>This task uses <code>styles.scss</code> stored in <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/</code> as source of SASS. And it stores the generated CSS in <code>styles.css</code> in the <code>app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory.</p>
+    </div>
+    <p>This task uses <code class="highlighter-rouge">styles.scss</code> stored in <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/</code> as source of SASS. And it stores the generated CSS in <code class="highlighter-rouge">styles.css</code> in the <code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory.</p>
   </li>
   <li>
-    <p>Put the source <code>styles.scss</code> file to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/</code> directory.</p>
+    <p>Put the source <code class="highlighter-rouge">styles.scss</code> file to the <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/</code> directory.</p>
   </li>
   <li>
-    <p>For your theme to start using the generated CSS, declare the resulting CSS file in the <code>default_head_blocks.xml</code> in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme/Magento_Theme/layout/</code> directory. You can create an empty <code>default_head_blocks.xml</code> file and copy the following code:</p>
+    <p>For your theme to start using the generated CSS, declare the resulting CSS file in the <code class="highlighter-rouge">default_head_blocks.xml</code> in the <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme/Magento_Theme/layout/</code> directory. You can create an empty <code class="highlighter-rouge">default_head_blocks.xml</code> file and copy the following code:</p>
 
-    <pre><code class="language-xml"> &lt;page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"&gt;
- 	&lt;head&gt;
- 	    &lt;css src="css/styles.css"/&gt;
- 	&lt;/head&gt;
- &lt;/page&gt;
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+ 	<span class="nt">&lt;head&gt;</span>
+ 	    <span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">"css/styles.css"</span><span class="nt">/&gt;</span>
+ 	<span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;/page&gt;</span>
 </code></pre>
+    </div>
   </li>
   <li>
     <p>To generate CSS, run
- <code>gulp styles</code></p>
+ <code class="highlighter-rouge">gulp styles</code></p>
   </li>
 </ol>
 
 <h2 id="using-the-import-directive-in-sass">Using the @import directive in Sass</h2>
 
-<p>In the source .<code>scss</code> files you can use the <code>@import</code> directive, to import other <code>.scss</code> files. You can put the module-related stylesheets in the module directories in the theme, and then include them in the main <code>.scss</code> file. For example, if you create a <code>_catalogstls.scss</code> file for styles of the <code>Magento_Catalog</code> module and put it in <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Catalog/styles </code>, you can import it using the following notation:</p>
+<p>In the source .<code class="highlighter-rouge">scss</code> files you can use the <code class="highlighter-rouge">@import</code> directive, to import other <code class="highlighter-rouge">.scss</code> files. You can put the module-related stylesheets in the module directories in the theme, and then include them in the main <code class="highlighter-rouge">.scss</code> file. For example, if you create a <code class="highlighter-rouge">_catalogstls.scss</code> file for styles of the <code class="highlighter-rouge">Magento_Catalog</code> module and put it in <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Catalog/styles </code>, you can import it using the following notation:</p>
 
-<pre><code>@import '../Magento_Theme/styles/module
+<div class="highlighter-rouge"><pre class="highlight"><code>@import '../Magento_Theme/styles/module
 </code></pre>
+</div>
 
 
 		</div>

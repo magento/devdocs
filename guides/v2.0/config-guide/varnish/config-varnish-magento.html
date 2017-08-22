@@ -1617,10 +1617,11 @@
 <div class="bs-callout bs-callout-tip">
   <p>You can also activate Varnish from the command line–instead of logging in to the Magento Admin–using MySQL statement syntax:</p>
 
-  <pre><code>mysql -u root -p -D magento -e "INSERT INTO core_config_data ( scope, scope_id, path, value ) VALUES ( 'default', '0', 'system/full_page_cache/caching_application', '2') ON DUPLICATE KEY UPDATE value = 2;"
+  <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u root -p -D magento -e "INSERT INTO core_config_data ( scope, scope_id, path, value ) VALUES ( 'default', '0', 'system/full_page_cache/caching_application', '2') ON DUPLICATE KEY UPDATE value = 2;"
 </code></pre>
+  </div>
 
-  <p>Where <code>magento</code> is the name of your database.</p>
+  <p>Where <code class="highlighter-rouge">magento</code> is the name of your database.</p>
 </div>
 
 <h2 id="export-a-varnish-configuration-file">Export a Varnish configuration file</h2>
@@ -1639,21 +1640,23 @@
   </li>
   <li>Replace your existing <code>default.vcl</code> with the one you just exported.</li>
   <li>
-    <p>We recommend you open <code>default.vcl</code> and change the value of <code>acl purge</code> to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)</p>
+    <p>We recommend you open <code class="highlighter-rouge">default.vcl</code> and change the value of <code class="highlighter-rouge">acl purge</code> to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)</p>
 
     <p>For example,</p>
 
-    <pre><code>acl purge {
+    <div class="highlighter-rouge"><pre class="highlight"><code>acl purge {
    "localhost";
 }
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Restart Varnish and your web server:</p>
 
-    <pre><code>service varnish restart
+    <div class="highlighter-rouge"><pre class="highlight"><code>service varnish restart
 service httpd restart
 </code></pre>
+    </div>
   </li>
 </ol>
 

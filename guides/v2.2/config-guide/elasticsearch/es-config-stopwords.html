@@ -1916,7 +1916,7 @@
 
 <p>Although we have more storage today, performance is still important. Elasticsearch, like other search engines, still use stopwords to improve performance.</p>
 
-<p>You must manage your Elasticsearch stopwords using <code>.csv</code> files located in the <code>&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory or the <code>&lt;your Magento install dir&gt;/app/code/Magento/Elasticsearch/etc/stopwords/</code> directory, depending on how you installed the Magento software.</p>
+<p>You must manage your Elasticsearch stopwords using <code class="highlighter-rouge">.csv</code> files located in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory or the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/code/Magento/Elasticsearch/etc/stopwords/</code> directory, depending on how you installed the Magento software.</p>
 
 <p>For more information about how Elasticsearch uses stopwords, see the following resources:</p>
 
@@ -1928,7 +1928,7 @@
 </ul>
 
 <h2 id="config-stopwords">Configure stopwords</h2>
-<p>Elasticsearch stopwords are located in the <code>&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory. Magento ships with one <code>.csv</code> file containing stopwords for our default locales and an additional file, <code>stopwords.csv</code>, which has stopwords for any locale that is not represented by another <code>.csv</code> file.</p>
+<p>Elasticsearch stopwords are located in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory. Magento ships with one <code class="highlighter-rouge">.csv</code> file containing stopwords for our default locales and an additional file, <code class="highlighter-rouge">stopwords.csv</code>, which has stopwords for any locale that is not represented by another <code class="highlighter-rouge">.csv</code> file.</p>
 
 <p>The default lifetime for stopwords file <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> is 15 minutes.</p>
 
@@ -1945,9 +1945,9 @@
 <ol>
   <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.2/install-gde/prereq/apache-user.html#install-update-depend-user-switch">Magento file system owner</a>.</li>
   <li>
-    <p>Use a text editor to open a stopword file in the <code>&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory.</p>
+    <p>Use a text editor to open a stopword file in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory.</p>
 
-    <p><code>.csv</code> files use the naming convention <code>stopwords_&lt;locale_code&gt;.csv</code>. For example, the German stopword file is named <code>stopwords_de_DE.csv</code>.</p>
+    <p><code class="highlighter-rouge">.csv</code> files use the naming convention <code class="highlighter-rouge">stopwords_&lt;locale_code&gt;.csv</code>. For example, the German stopword file is named <code class="highlighter-rouge">stopwords_de_DE.csv</code>.</p>
   </li>
   <li>
     <p>Add words, remove words, or change words in the file.</p>
@@ -1965,8 +1965,9 @@
       <li>
         <p>Command line: As the Magento file system owner, enter the following command:</p>
 
-        <pre><code>php &lt;your Magento install dir&gt;/bin/magento magento cache:clean config
+        <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento magento cache:clean config
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>
@@ -1979,25 +1980,27 @@
 <ol>
   <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.2/install-gde/prereq/apache-user.html#install-update-depend-user-switch">Magento file system owner</a>.</li>
   <li>
-    <p>Use a text editor to create a stopword file named <code>stopwords_&lt;locale_code&gt;.csv</code> in the <code>&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory.</p>
+    <p>Use a text editor to create a stopword file named <code class="highlighter-rouge">stopwords_&lt;locale_code&gt;.csv</code> in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory.</p>
 
-    <p>For example, to create stopwords for the Italian locale, name the file <code>stopwords_it_IT.csv</code>.</p>
+    <p>For example, to create stopwords for the Italian locale, name the file <code class="highlighter-rouge">stopwords_it_IT.csv</code>.</p>
   </li>
   <li>In your stopword file, make sure each stopword is on a separate line.</li>
   <li>Save your changes and exit the text editor.</li>
-  <li>In the same directory, open <code>esconfig.xml</code> in a text editor.</li>
+  <li>In the same directory, open <code class="highlighter-rouge">esconfig.xml</code> in a text editor.</li>
   <li>
-    <p>Add a line to <code>esconfig.xml</code> as follows:</p>
+    <p>Add a line to <code class="highlighter-rouge">esconfig.xml</code> as follows:</p>
 
-    <pre><code>&lt;LOCALE_CODE&gt;stopwords_LOCALE_CODE.csv&lt;/LOCALE_CODE&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;LOCALE_CODE&gt;stopwords_LOCALE_CODE.csv&lt;/LOCALE_CODE&gt;
 </code></pre>
+    </div>
 
     <p>For example, to add an Italian stopword file, add the following line:</p>
 
-    <pre><code>&lt;it_IT&gt;stopwords_it_IT.csv&lt;/it_IT&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;it_IT&gt;stopwords_it_IT.csv&lt;/it_IT&gt;
 </code></pre>
+    </div>
   </li>
-  <li>Save the changes to <code>esconfig.xml</code> and exit the text editor.</li>
+  <li>Save the changes to <code class="highlighter-rouge">esconfig.xml</code> and exit the text editor.</li>
   <li>
     <p>Clean the Magento configuration cache.</p>
 
@@ -2008,8 +2011,9 @@
       <li>
         <p>Command line: As the Magento file system owner, enter the following command:</p>
 
-        <pre><code>php &lt;your Magento install dir&gt;/bin/magento magento cache:clean config
+        <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento magento cache:clean config
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>
@@ -2020,34 +2024,34 @@
 <p>This section discusses how to optionally change the default stopword directory from one of the following:</p>
 
 <ul>
-  <li><code>&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code></li>
-  <li><code>&lt;your Magento install dir&gt;/app/code/Magento/Elasticsearch/etc/stopwords/</code></li>
+  <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code></li>
+  <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/code/Magento/Elasticsearch/etc/stopwords/</code></li>
 </ul>
 
-<p>The location depends on how you installed the Magento software. If you cloned the Magento 2 GitHub repository, the path is under <code>app/code</code>. If you installed a compressed archive or a metapackage, the path is under <code>vendor</code>.</p>
+<p>The location depends on how you installed the Magento software. If you cloned the Magento 2 GitHub repository, the path is under <code class="highlighter-rouge">app/code</code>. If you installed a compressed archive or a metapackage, the path is under <code class="highlighter-rouge">vendor</code>.</p>
 
 <p>To change the directory:</p>
 
 <ol>
   <li>
-    <p>As the Magento file system owner, open the Elasticsearch <code>di.xml</code> in a text editor.</p>
+    <p>As the Magento file system owner, open the Elasticsearch <code class="highlighter-rouge">di.xml</code> in a text editor.</p>
 
-    <p>If you cloned the repository, it’s located at <code>app/code/Magento/Elasticsearch/etc/di.xml</code></p>
+    <p>If you cloned the repository, it’s located at <code class="highlighter-rouge">app/code/Magento/Elasticsearch/etc/di.xml</code></p>
 
-    <p>If you got an archive or the metapackage, it’s located at <code>vendor/magento/module-elasticsearch/etc/di.xml</code></p>
+    <p>If you got an archive or the metapackage, it’s located at <code class="highlighter-rouge">vendor/magento/module-elasticsearch/etc/di.xml</code></p>
   </li>
   <li>
-    <p>Change the value of <code>fileDir</code> to the desired directory:</p>
+    <p>Change the value of <code class="highlighter-rouge">fileDir</code> to the desired directory:</p>
   </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;fileDir&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>app/code/Magento/Elasticsearch/etc/stopwords<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"fileDir"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>app/code/Magento/Elasticsearch/etc/stopwords<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
-<p>Save your changes to <code>di.xml</code> and exit the text editor.</p>
+<p>Save your changes to <code class="highlighter-rouge">di.xml</code> and exit the text editor.</p>
 
 		</div>
 		<!-- /.content-wrap -->

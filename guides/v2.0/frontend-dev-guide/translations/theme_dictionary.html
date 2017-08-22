@@ -1080,14 +1080,14 @@
 <p>When the <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> is changed for a store, Magento searches for translations in the corresponding dictionaries in the following locations:</p>
 
 <ol>
-  <li>Module translations: <code>&lt;module_dir&gt;/i18n/</code></li>
+  <li>Module translations: <code class="highlighter-rouge">&lt;module_dir&gt;/i18n/</code></li>
   <li>Theme translations:
     <ol>
-      <li><code>&lt;parent_theme_dir&gt;/i18n/</code> (iterated through all ancestor themes)</li>
-      <li><code>&lt;current_theme_dir&gt;/i18n/</code></li>
+      <li><code class="highlighter-rouge">&lt;parent_theme_dir&gt;/i18n/</code> (iterated through all ancestor themes)</li>
+      <li><code class="highlighter-rouge">&lt;current_theme_dir&gt;/i18n/</code></li>
     </ol>
   </li>
-  <li>Translation package: <code>app/i18n/</code></li>
+  <li>Translation package: <code class="highlighter-rouge">app/i18n/</code></li>
   <li>Magento database</li>
 </ol>
 
@@ -1095,18 +1095,19 @@
 
 <h2>Creating a theme dictionary to override parent strings for default locale</h2>
 
-<p>The translations priority described earlier is applied for the default en_US locale as well. So you can use the <code>en_US.csv</code> dictionary to customize the strings used in the default locale.</p>
+<p>The translations priority described earlier is applied for the default en_US locale as well. So you can use the <code class="highlighter-rouge">en_US.csv</code> dictionary to customize the strings used in the default locale.</p>
 
 <p><span id="luma_example">For example, this approach is used in the Magento Luma theme. It has the 
 <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/luma/i18n/en_US.csv"><code>&lt;Magento_Luma_theme_dir&gt;/i18n/en_US.csv</code></a> file, where the left column contains the default values (keys), and the right columns contains the values to be used instead when the Luma theme is applied:
 </span></p>
 
-<pre><code>"Add to Wish List",	"Wish List"
+<div class="highlighter-rouge"><pre class="highlight"><code>"Add to Wish List",	"Wish List"
 "Add to Compare",	"Compare"
 "Your Checkout Progress",	"Checkout Progress"
 "Card Verification Number",	"CVV"
 ...
 </code></pre>
+</div>
 
 <p>It is important to remember that if you generate a dictionary for your theme using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n tool</a> with the conventional names and locations for the dictionary, the existing dictionary gets overwritten.</p>
 
@@ -1120,16 +1121,17 @@
 <p>See the <a href="/guides/v2.0/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic for the practical illustration of the  procedure.</p>
 
 <h3>Custom strings and dictionaries for not default locales</h3>
-<p>Even if your theme uses <code>en_US.csv</code> to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones.</p>
+<p>Even if your theme uses <code class="highlighter-rouge">en_US.csv</code> to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones.</p>
 
-<p>Continuing the <a href="#luma_example">previous example</a> with the Luma theme, if the <code>de_DE.csv</code> dictionary will be added for the Luma theme, it will look like following:</p>
+<p>Continuing the <a href="#luma_example">previous example</a> with the Luma theme, if the <code class="highlighter-rouge">de_DE.csv</code> dictionary will be added for the Luma theme, it will look like following:</p>
 
-<pre><code>"Add to Wish List",	&lt;translation&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>"Add to Wish List",	&lt;translation&gt;
 "Add to Compare",	&lt;translation&gt;
 "Your Checkout Progress",	&lt;translation&gt;
 "Card Verification Number",	&lt;translation&gt;
 ...
 </code></pre>
+</div>
 
 <p>The default values (keys) are used in the left column.</p>
 

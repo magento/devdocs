@@ -774,12 +774,12 @@
 
 <p>To enable the sticky header functionality for a certain grid, declare it as a child element in the grid configuration file using the following notation:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;sticky&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/sticky/sticky<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;toolbarProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;listingProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"sticky"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/grid/sticky/sticky<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"toolbarProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"listingProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/container&gt;</span></code></pre></figure>
@@ -787,24 +787,24 @@
 <p>Where the following should be specified:</p>
 
 <ul>
-  <li><code>toolbarProvider</code>: full name of the toolbar component on this page.</li>
-  <li><code>listingProvider</code>: full name of the listing (grid) component on this page; the one for which the sticky header is enabled.</li>
+  <li><code class="highlighter-rouge">toolbarProvider</code>: full name of the toolbar component on this page.</li>
+  <li><code class="highlighter-rouge">listingProvider</code>: full name of the listing (grid) component on this page; the one for which the sticky header is enabled.</li>
 </ul>
 
 <p><strong>Example</strong></p>
 
-<p>Enabling a sticky header for the CMS pages grid, configured in <code>&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
+<p>Enabling a sticky header for the CMS pages grid, configured in <code class="highlighter-rouge">&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;listing_top&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"listing_top"</span><span class="nt">&gt;</span>
          ..
         <span class="nt">&lt;/container&gt;</span>
-        <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;sticky&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/sticky/sticky<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;toolbarProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.listing_top<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;listingProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.cms_page_columns<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"sticky"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/grid/sticky/sticky<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"toolbarProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.listing_top<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"listingProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.cms_page_columns<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/container&gt;</span>
@@ -812,35 +812,35 @@
 
 <h2 id="sticky_config">Sticky header configuration</h2>
 
-<p>Any component of a sticky header can use a particular, not default template. This template is set in the <code>stickyTmpl</code> option. If the sticky template is not set, the default component’s template is used for displaying in a sticky header.</p>
+<p>Any component of a sticky header can use a particular, not default template. This template is set in the <code class="highlighter-rouge">stickyTmpl</code> option. If the sticky template is not set, the default component’s template is used for displaying in a sticky header.</p>
 
 <p><strong>Example</strong>
-The toolbar component should use the <code>ui/grid/sticky/toolbar</code> template for the sticky header.
-<code>&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
+The toolbar component should use the <code class="highlighter-rouge">ui/grid/sticky/toolbar</code> template for the sticky header.
+<code class="highlighter-rouge">&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;listing_top&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/toolbar<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;stickyTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/sticky/toolbar<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"listing_top"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/grid/toolbar<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"stickyTmpl"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/grid/sticky/toolbar<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
             ..
-        <span class="err">&lt;</span>/container name=&quot;listing_top&quot;&gt;
+        <span class="err">&lt;</span>/container name="listing_top"&gt;
     <span class="nt">&lt;/listing&gt;</span></code></pre></figure>
 
 <h2 id="sticky_elements">Component elements</h2>
 <p>The sticky header component consists of the following elements:</p>
 
 <ul>
-  <li>Constructor: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/sticky/sticky.js</code></a></li>
-  <li>Main template: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/sticky/sticky.html</code></a></li>
+  <li>Constructor: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/sticky/sticky.js</code></a></li>
+  <li>Main template: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/sticky/sticky.html</code></a></li>
   <li>Elements’ templates:
     <ul>
-      <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/sticky/listing.html</code></a></li>
-      <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/sticky/filters.html</code></a></li>
-      <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/sticky/sticky.html</code></a></li>
+      <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/sticky/listing.html</code></a></li>
+      <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/sticky/filters.html</code></a></li>
+      <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/sticky/sticky.html</code></a></li>
     </ul>
   </li>
 </ul>

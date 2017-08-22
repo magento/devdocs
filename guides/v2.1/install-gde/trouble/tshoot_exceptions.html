@@ -971,7 +971,7 @@
 
 			<h3 id="symptom-exceptions-display-during-installation-users-have-reported-a-variety-of-exceptions-including-the-following">Symptom: Exceptions display during installation. Users have reported a variety of exceptions, including the following:</h3>
 
-<pre><code>Module 'Magento_Indexer':
+<div class="highlighter-rouge"><pre class="highlight"><code>Module 'Magento_Indexer':
 Running recurring..
 [ERROR] exception 'Exception' with message 'Recoverable Error: Argument 1 passed to Magento\Indexer\Model\Config\Data::__construct() must be an instance of Magento\Framework\Indexer\Config\Reader, instance of Magento\Indexer\Model\Config\Reader given, called in /home/magento2_dev/
 public_html/var/generation/Magento/Indexer/Model/Config/Data/Interceptor.php on line 14 and defined in /home/magento2_dev/public_html/
@@ -986,12 +986,14 @@ Object(Magento\Indexer\Model\Resource\Indexer\State\Collection), 'indexer_config
 
 ... more ...
 </code></pre>
+</div>
 
 <h4 id="solution">Solution</h4>
-<p>Clear the <code>&lt;your Magento install dir&gt;/var/generation</code> and other directories under <code>var</code> as follows:</p>
+<p>Clear the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/generation</code> and other directories under <code class="highlighter-rouge">var</code> as follows:</p>
 
-<pre><code>rm -rf &lt;your Magento install dir&gt;/var/generation/* &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/cache/* 
+<div class="highlighter-rouge"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/var/generation/* &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/cache/* 
 </code></pre>
+</div>
 
 <p>After clearing the directories, try the installation again.</p>
 

@@ -778,34 +778,34 @@
 
 <p><strong>Example1</strong>: initialization on an element</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#prompt_init&#39;</span><span class="p">).</span><span class="nx">prompt</span><span class="p">({</span>
-    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Prompt title&#39;</span><span class="p">,</span>
-    <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on &#39;Ok&#39; button click</span>
-        <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on &#39;Cancel&#39; button click</span>
-        <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#prompt_init'</span><span class="p">).</span><span class="nx">prompt</span><span class="p">({</span>
+    <span class="na">title</span><span class="p">:</span> <span class="s1">'Prompt title'</span><span class="p">,</span>
+    <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">confirm</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on 'Ok' button click</span>
+        <span class="na">cancel</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on 'Cancel' button click</span>
+        <span class="na">always</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){}</span>
     <span class="p">}</span>
 <span class="p">});</span></code></pre></figure>
 
 <p><strong>Example2</strong>: standalone initialization</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span>
-    <span class="s1">&#39;Magento_Ui/js/modal/prompt&#39;</span>
+    <span class="s1">'Magento_Ui/js/modal/prompt'</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">prompt</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Variable that represents the `prompt` function</span>
  
     <span class="nx">prompt</span><span class="p">({</span>
-        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Some title&#39;</span><span class="p">,</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;Some content&#39;</span><span class="p">,</span>
-        <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
-            <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
-            <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
+        <span class="na">title</span><span class="p">:</span> <span class="s1">'Some title'</span><span class="p">,</span>
+        <span class="na">content</span><span class="p">:</span> <span class="s1">'Some content'</span><span class="p">,</span>
+        <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">confirm</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+            <span class="na">cancel</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+            <span class="na">always</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){}</span>
         <span class="p">}</span>
     <span class="p">});</span>
  
 <span class="p">});</span> </code></pre></figure>
 
-<p>For details about how to initialize a widget in a <code>.phtml</code> template, refer to the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
+<p>For details about how to initialize a widget in a <code class="highlighter-rouge">.phtml</code> template, refer to the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
 
 <h2 id="prompt_options">Options</h2>
 
@@ -825,10 +825,10 @@
 
 <p><strong>Default value</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
-    <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
-    <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">confirm</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+    <span class="nx">cancel</span><span class="err">:</span> <span class="kd">function</span><span class="p">(){},</span>
+    <span class="nx">always</span><span class="err">:</span> <span class="kd">function</span><span class="p">(){}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h3 id="prompt_autoopen">autoOpen</h3>
@@ -836,14 +836,14 @@
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <h3 id="prompt_clickableOverlay">clickableOverlay</h3>
 <p>Close the prompt window when a user clicks on the overlay.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>true</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
 <h3 id="prompt_content"><code>content</code></h3>
 
@@ -853,27 +853,27 @@
 
 <h3 id="prompt_focus"><code>focus</code></h3>
 <p>The selector of the element to be in focus when the prompt window opens.
-If <code>focus</code> is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set <code>focus</code> to <code>none</code>.</p>
+If <code class="highlighter-rouge">focus</code> is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set <code class="highlighter-rouge">focus</code> to <code class="highlighter-rouge">none</code>.</p>
 
 <p><strong>Type</strong>: String.</p>
 
-<p><strong>Default value</strong>: <code>''</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">''</code></p>
 
 <h3 id="prompt_content"><code>title</code></h3>
 <p>The title of the prompt window.</p>
 
 <p><strong>Type</strong>: String.</p>
 
-<p><strong>Default value</strong>: <code>''</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">''</code></p>
 
 <h2 id="prompt_events">Events</h2>
 
 <p>The prompt widget implements the following events:</p>
 
 <ul>
-  <li><code>confirm</code> callback: called when the confirmation button is clicked. The first argument is the value of the input field.</li>
-  <li><code>cancel</code> callback: called when the cancel button is clicked.</li>
-  <li><code>always</code> callback.</li>
+  <li><code class="highlighter-rouge">confirm</code> callback: called when the confirmation button is clicked. The first argument is the value of the input field.</li>
+  <li><code class="highlighter-rouge">cancel</code> callback: called when the cancel button is clicked.</li>
+  <li><code class="highlighter-rouge">always</code> callback.</li>
 </ul>
 
 <h2 id="prompt_key_navigation">Keyboard navigation</h2>

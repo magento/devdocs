@@ -1677,7 +1677,7 @@
 
 <p><img src="/common/images/config_urn_before.png" width="750px" /></p>
 
-<p>The <code>magento dev:urn-catalog:generate</code> command enables your IDE (currently, only PHPStorm) to recognize and highlight URNs like the following:</p>
+<p>The <code class="highlighter-rouge">magento dev:urn-catalog:generate</code> command enables your IDE (currently, only PHPStorm) to recognize and highlight URNs like the following:</p>
 
 <p><img src="/common/images/config_urn_after.png" width="750px" /></p>
 
@@ -1694,23 +1694,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1727,10 +1730,11 @@
 
   <p>Command syntax:</p>
 
-  <pre><code>magento dev:urn-catalog:generate &lt;path&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:urn-catalog:generate &lt;path&gt;
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;path&gt;</code> is the path to your PHPStorm <code>misc.xml</code> file, which is located relative to your project root. Typically, <code>&lt;path&gt;</code> is <code>.idea/misc.xml</code></p>
+  <p>where <code class="highlighter-rouge">&lt;path&gt;</code> is the path to your PHPStorm <code class="highlighter-rouge">misc.xml</code> file, which is located relative to your project root. Typically, <code class="highlighter-rouge">&lt;path&gt;</code> is <code class="highlighter-rouge">.idea/misc.xml</code></p>
 
   <h4 id="related-topics">Related topics</h4>
 

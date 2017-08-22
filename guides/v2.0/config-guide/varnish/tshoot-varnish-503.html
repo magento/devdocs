@@ -1577,11 +1577,12 @@
 
 			<p>If the length of <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> tags used by Magento exceed Varnish’s default of 8192 bytes, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:</p>
 
-<pre><code>Error 503 Backend fetch failed
+<div class="highlighter-rouge"><pre class="highlight"><code>Error 503 Backend fetch failed
 Backend fetch failed
 </code></pre>
+</div>
 
-<p>To resolve this issue, increase the default value of the <code>http_resp_hdr_len</code> parameter in your Varnish configuration file. The <code>http_resp_hdr_len</code> parameter specifies the max header length <em>within</em> the total default response size of 32768 bytes.</p>
+<p>To resolve this issue, increase the default value of the <code class="highlighter-rouge">http_resp_hdr_len</code> parameter in your Varnish configuration file. The <code class="highlighter-rouge">http_resp_hdr_len</code> parameter specifies the max header length <em>within</em> the total default response size of 32768 bytes.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 	If the <code>http_resp_hdr_len</code> value exceeds 32768 bytes, you must also increase the default response size using the <code>http_resp_size</code> parameter.
@@ -1589,35 +1590,37 @@ Backend fetch failed
 
 <ol>
   <li>
-    <p>As a user with <code>root</code> privileges, open your Vanish configuration file in a text editor:</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open your Vanish configuration file in a text editor:</p>
 
     <ul>
-      <li>CentOS 6: <code>/etc/sysconfig/varnish</code></li>
-      <li>CentOS 7: <code>/etc/varnish/varnish.params</code></li>
-      <li>Ubuntu: <code>/etc/default/varnish</code></li>
+      <li>CentOS 6: <code class="highlighter-rouge">/etc/sysconfig/varnish</code></li>
+      <li>CentOS 7: <code class="highlighter-rouge">/etc/varnish/varnish.params</code></li>
+      <li>Ubuntu: <code class="highlighter-rouge">/etc/default/varnish</code></li>
     </ul>
   </li>
-  <li>Search for the <code>http_resp_hdr_len</code> parameter.</li>
-  <li>If the parameter doesn’t exist, add it after <code>thread_pool_max</code>.</li>
+  <li>Search for the <code class="highlighter-rouge">http_resp_hdr_len</code> parameter.</li>
+  <li>If the parameter doesn’t exist, add it after <code class="highlighter-rouge">thread_pool_max</code>.</li>
   <li>
-    <p>Set <code>http_resp_hdr_len</code> to a value equal to the product count of your largest <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> multiplied by 21. (Each product tag is about 21 characters in length.)</p>
+    <p>Set <code class="highlighter-rouge">http_resp_hdr_len</code> to a value equal to the product count of your largest <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> multiplied by 21. (Each product tag is about 21 characters in length.)</p>
 
     <p>For example, setting the value to 65536 bytes should work if your largest category has 3,000 products:</p>
 
-    <pre><code>-p http_resp_hdr_len=65536 \
+    <div class="highlighter-rouge"><pre class="highlight"><code>-p http_resp_hdr_len=65536 \
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Set the <code>http_resp_size</code> to a value that accommodates the increased response header length.</p>
+    <p>Set the <code class="highlighter-rouge">http_resp_size</code> to a value that accommodates the increased response header length.</p>
 
     <p>For example, using the sum of the increased header length and default response size is a good starting point (e.g., 65536 + 32768 = 98304):</p>
 
-    <pre><code>-p http_resp_size=98304 \
+    <div class="highlighter-rouge"><pre class="highlight"><code>-p http_resp_size=98304 \
 </code></pre>
+    </div>
 
     <p>A snippet follows:</p>
 
-    <pre><code># DAEMON_OPTS is used by the init script.
+    <div class="highlighter-rouge"><pre class="highlight"><code># DAEMON_OPTS is used by the init script.
 DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
      -f ${VARNISH_VCL_CONF} \
      -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
@@ -1628,6 +1631,7 @@ DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
      -S ${VARNISH_SECRET_FILE} \
      -s ${VARNISH_STORAGE}"
 </code></pre>
+    </div>
   </li>
 </ol>
 

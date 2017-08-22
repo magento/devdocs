@@ -1027,7 +1027,7 @@
 
 <ul>
   <li>
-    <p><strong>Removal of vulnerability with the Zend framework <code>Zend_Mail</code> library</strong>. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.</p>
+    <p><strong>Removal of vulnerability with the Zend framework <code class="highlighter-rouge">Zend_Mail</code> library</strong>. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.</p>
   </li>
   <li>
     <p><strong>Updates to the catalog, payment, and sales modules</strong></p>
@@ -1036,7 +1036,7 @@
 
 <h2 id="security-enhancement">Security enhancement</h2>
 
-<p>This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework <code>Zend_Mail</code> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
+<p>This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework <code class="highlighter-rouge">Zend_Mail</code> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
 
 <h2 id="functional-fixes">Functional fixes</h2>
 
@@ -1056,7 +1056,7 @@
 
 <!--- 62647 -->
 <ul>
-  <li>Magento now successfully saves a product even when you include an empty Custom Options row (<strong>Products &gt; <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">Catalog</span> &gt; Custom Options</strong>). Previously, under these conditions, Magento displayed the <code>Invalid option value</code> error message, and did not save the product.</li>
+  <li>Magento now successfully saves a product even when you include an empty Custom Options row (<strong>Products &gt; <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">Catalog</span> &gt; Custom Options</strong>). Previously, under these conditions, Magento displayed the <code class="highlighter-rouge">Invalid option value</code> error message, and did not save the product.</li>
 </ul>
 
 <h3 id="checkout">Checkout</h3>
@@ -1080,7 +1080,7 @@
 
 <!--- 61264 -->
 <ul>
-  <li>Magento can now import <code>additional_images</code> that are tagged with labels that contain a comma separator.</li>
+  <li>Magento can now import <code class="highlighter-rouge">additional_images</code> that are tagged with labels that contain a comma separator.</li>
 </ul>
 
 <!--- 61075 -->
@@ -1097,7 +1097,7 @@
 
 <!--- 60724 -->
 <ul>
-  <li>Magento now redirects you to the Setup page as expected when you specify a particular port when installing the application using <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">Nginx</span>. Previously, Magento did not <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> you to the Setup page, and instead displayed this message in <code>var/report</code>: <code>You cannot install Magento using the Setup Wizard because the Magento setup directory cannot be accessed</code>.</li>
+  <li>Magento now redirects you to the Setup page as expected when you specify a particular port when installing the application using <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">Nginx</span>. Previously, Magento did not <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> you to the Setup page, and instead displayed this message in <code class="highlighter-rouge">var/report</code>: <code class="highlighter-rouge">You cannot install Magento using the Setup Wizard because the Magento setup directory cannot be accessed</code>.</li>
 </ul>
 
 <!--- 57519 -->
@@ -1118,12 +1118,13 @@
 <!--- 61188 -->
 <ul>
   <li>
-    <p>You can now use Composer to install Magento 2.0.x with sample data, and use <code>deploy:mode:set production</code>, without incurring an error. Previously, Magento displayed this error when you tried to use <code>deploy:mode:set production</code> under these conditions:</p>
+    <p>You can now use Composer to install Magento 2.0.x with sample data, and use <code class="highlighter-rouge">deploy:mode:set production</code>, without incurring an error. Previously, Magento displayed this error when you tried to use <code class="highlighter-rouge">deploy:mode:set production</code> under these conditions:</p>
 
-    <pre><code>  Start compilation
+    <div class="highlighter-rouge"><pre class="highlight"><code>  Start compilation
   Command returned non-zero exit code:
   `php -f /var/www/html/20ce/bin/magento setup:di:compile-multi-tenant 2&gt;&amp;1`
 </code></pre>
+    </div>
   </li>
 </ul>
 
@@ -1160,7 +1161,7 @@
 
 <!--- 62455 -->
 <ul>
-  <li>We’ve fixed a fatal issue that occurred if you ran Travis builds on <code>imagettfbbox 2.1.2</code>. Previously, you’d receive this error: <code>PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php</code>.</li>
+  <li>We’ve fixed a fatal issue that occurred if you ran Travis builds on <code class="highlighter-rouge">imagettfbbox 2.1.2</code>. Previously, you’d receive this error: <code class="highlighter-rouge">PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php</code>.</li>
 </ul>
 
 <!--- NOT A BUG -->
@@ -1235,7 +1236,7 @@
 
 <!--- 61241 -->
 <ul>
-  <li><strong>Issue</strong>: You encounter an error when you try to install Magento with the <code>magento/module-cms-sample-data 100.0.5</code> sample data set: <strong>Error in update!</strong></li>
+  <li><strong>Issue</strong>: You encounter an error when you try to install Magento with the <code class="highlighter-rouge">magento/module-cms-sample-data 100.0.5</code> sample data set: <strong>Error in update!</strong></li>
 </ul>
 
 <!--- 62049 -->
@@ -1250,7 +1251,7 @@
 
 <!--- 61238 -->
 <ul>
-  <li><strong>Issue</strong>: Magento experiences a fatal error when you try to get a refund on an <span term-uuid="631b9627-a367-4a56-b3b1-0f6ca8fe6e02" class="glossary-term" data-toggle="popover">invoice</span>. (Specifically, a fatal error occurs when calling <code>LocalizedException</code> in <code>CreditmemoService</code>.)</li>
+  <li><strong>Issue</strong>: Magento experiences a fatal error when you try to get a refund on an <span term-uuid="631b9627-a367-4a56-b3b1-0f6ca8fe6e02" class="glossary-term" data-toggle="popover">invoice</span>. (Specifically, a fatal error occurs when calling <code class="highlighter-rouge">LocalizedException</code> in <code class="highlighter-rouge">CreditmemoService</code>.)</li>
 </ul>
 
 <!--- 62131 -->
@@ -1285,17 +1286,19 @@
 
   <h3 id="install-ce-composer" class="no_toc">Get the Magento CE software using Composer</h3>
 
-  <p>This software is available from <code>repo.magento.com</code>. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+  <p>This software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.10</code>)</p>
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> matches the version you want (for example, <code class="highlighter-rouge">2.0.10</code>)</p>
 
-  <p>For example, to install Magento CE 2.0.10 in the <code>magento2</code> directory:</p>
+  <p>For example, to install Magento CE 2.0.10 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
 </code></pre>
+  </div>
 
   <h3 id="get-zip" class="no_toc">Get Magento CE using a compressed archive</h3>
 
@@ -1310,7 +1313,7 @@
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
     <p>To get the Magento CE software archive:</p>
 
@@ -1320,11 +1323,11 @@
         <p>Choose either the software or the software and sample data:</p>
 
         <ul>
-          <li><code>Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
 
-        <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
+        <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
       </li>
     </ol>
 

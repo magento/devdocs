@@ -538,7 +538,7 @@
 
   <ul>
     <li>Downloaded a compressed archive</li>
-    <li>Used <code>composer create-project</code></li>
+    <li>Used <code class="highlighter-rouge">composer create-project</code></li>
   </ul>
 
   <p>You can use this method of getting sample data if you used Magento Community Edition (CE) or Enterprise Edition (EE). You can use it either before or after you install the Magento software; however, there might be <a href="/guides/v2.1/install-gde/install/sample-data.html">additional tasks</a> for installing sample data after you install the Magento software.</p>
@@ -551,14 +551,16 @@
 
   <p>To install sample data using the command line, enter the following command as the Magento file system owner:</p>
 
-  <pre><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy
+  <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-warning">
     <p>If you’re installing sample data <em>after</em> installing Magento, you must also run the following command to update the database and schema:</p>
 
-    <pre><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
+    <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
 </code></pre>
+    </div>
   </div>
 
   <p>You are required to <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.</p>
@@ -567,12 +569,13 @@
 
   <p>The following error might display:</p>
 
-  <pre><code>[Composer\Downloader\TransportException]
+  <div class="highlighter-rouge"><pre class="highlight"><code>[Composer\Downloader\TransportException]
 The 'https://repo.magento.com/packages.json' URL required authentication.
 You must be using the interactive console to authenticate
 </code></pre>
+  </div>
 
-  <p>If the error displays, change to your Magento installation directory and run <code>composer update</code>, which will prompt you for your <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
+  <p>If the error displays, change to your Magento installation directory and run <code class="highlighter-rouge">composer update</code>, which will prompt you for your <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
 
   <!-- ABBREVIATIONS -->
 

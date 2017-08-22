@@ -632,7 +632,7 @@
     <li>
       <p>PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.</p>
 
-      <p>You can find the command-line configuration using the command <code>php --ini</code>.</p>
+      <p>You can find the command-line configuration using the command <code class="highlighter-rouge">php --ini</code>.</p>
     </li>
     <li>
       <p>Web server PHP plug-in configuration: Two other cron jobs are used by the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>.</p>
@@ -656,25 +656,29 @@ For more information, see <a href="/guides/v2.0/install-gde/prereq/php-settings.
   <h4 id="find-the-php-binary-and-phpini-path">Find the PHP binary and php.ini path</h4>
   <p>To display the path to your PHP binary, enter</p>
 
-  <pre><code>which php
+  <div class="highlighter-rouge"><pre class="highlight"><code>which php
 </code></pre>
+  </div>
 
   <p>A sample result follows:</p>
 
-  <pre><code>/usr/bin/php
+  <div class="highlighter-rouge"><pre class="highlight"><code>/usr/bin/php
 </code></pre>
+  </div>
 
   <h4 id="create-the-cron-job">Create the cron job</h4>
 
-  <p>To create a cron job for the Magento file system owner, enter the following command as a user with <code>root</code> privileges:</p>
+  <p>To create a cron job for the Magento file system owner, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <pre><code>crontab -u &lt;Magento file system owner user name&gt; -e
+  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u &lt;Magento file system owner user name&gt; -e
 </code></pre>
+  </div>
 
   <p>For example,</p>
 
-  <pre><code>crontab -u magento_user -e
+  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u magento_user -e
 </code></pre>
+  </div>
 
   <p>A text editor displays. (You might need to choose a text editor first.)</p>
 
@@ -685,12 +689,12 @@ For more information, see <a href="/guides/v2.0/install-gde/prereq/php-settings.
   <p>where</p>
 
   <ul>
-    <li><code>&lt;path to php binary&gt;</code> is the absolute file system path to your PHP binary</li>
-    <li><code>&lt;magento install dir&gt;</code> is the directory in which you installed the Magento software; for example, <code>/var/www</code></li>
-    <li><code>| grep -v "Ran jobs by schedule"</code> filters this message from the log, making any errors easier to spot</li>
+    <li><code class="highlighter-rouge">&lt;path to php binary&gt;</code> is the absolute file system path to your PHP binary</li>
+    <li><code class="highlighter-rouge">&lt;magento install dir&gt;</code> is the directory in which you installed the Magento software; for example, <code class="highlighter-rouge">/var/www</code></li>
+    <li><code class="highlighter-rouge">| grep -v "Ran jobs by schedule"</code> filters this message from the log, making any errors easier to spot</li>
   </ul>
 
-  <p>The first command (<code>magento cron:run</code>) reindexes indexers, sends automated e-mails, generates the sitemap, and so on. Usually it’s associated with the PHP command line <code>.ini</code> file. The other two commands are used by the Component Manager and System Upgrade.</p>
+  <p>The first command (<code class="highlighter-rouge">magento cron:run</code>) reindexes indexers, sends automated e-mails, generates the sitemap, and so on. Usually it’s associated with the PHP command line <code class="highlighter-rouge">.ini</code> file. The other two commands are used by the Component Manager and System Upgrade.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
   <p>If you're a contributing developer (that is, you <a href="/guides/v2.0/install-gde/prereq/dev_install.html">cloned the Magento 2 GitHub repository</a>), only the first line applies to you. See the examples that follow for details.</p>
@@ -698,21 +702,23 @@ For more information, see <a href="/guides/v2.0/install-gde/prereq/php-settings.
 
   <p><strong>Example 1:</strong> Everyone except contributing developers</p>
 
-  <p>For example, if the PHP binary is located in <code>/usr/bin</code>, you installed Magento in <code>/var/www/magento2</code>, enter</p>
+  <p>For example, if the PHP binary is located in <code class="highlighter-rouge">/usr/bin</code>, you installed Magento in <code class="highlighter-rouge">/var/www/magento2</code>, enter</p>
 
   <p>Example:</p>
 
-  <pre><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+  <div class="highlighter-rouge"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log
 </code></pre>
+  </div>
 
   <p><strong>Example 2:</strong> Contributing developers only (that is, you cloned the Magento 2 GitHub repository):</p>
 
-  <pre><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+  <div class="highlighter-rouge"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
 </code></pre>
+  </div>
 
-  <p>The preceding works for contributing developers because if you cloned the GitHub repository you don’t have an <code>update</code> directory and errors result if you run <code>magento setup:cron:run</code>. These cron jobs work in the Web Setup Wizard, which contributing developers cannot use for installing or updating the Magento application or components.</p>
+  <p>The preceding works for contributing developers because if you cloned the GitHub repository you don’t have an <code class="highlighter-rouge">update</code> directory and errors result if you run <code class="highlighter-rouge">magento setup:cron:run</code>. These cron jobs work in the Web Setup Wizard, which contributing developers cannot use for installing or updating the Magento application or components.</p>
 
   <p>Save your changes to the crontab and exit the editor.</p>
 
@@ -723,8 +729,8 @@ For more information, see <a href="/guides/v2.0/install-gde/prereq/php-settings.
 
   <ul>
     <li>Make sure your file ownership and permissions are set properly</li>
-    <li>We strongly recommend <a href="/guides/v2.0/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from <code>admin</code> to something else</li>
-    <li>Make sure the <a href="/guides/v2.0/config-guide/secy/secy-xframe.html"><code>X-Frame-Option</code> HTTP header</a> is set properly.</li>
+    <li>We strongly recommend <a href="/guides/v2.0/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from <code class="highlighter-rouge">admin</code> to something else</li>
+    <li>Make sure the <a href="/guides/v2.0/config-guide/secy/secy-xframe.html"><code class="highlighter-rouge">X-Frame-Option</code> HTTP header</a> is set properly.</li>
     <li>Take precautions against cross-site scripting (XSS) by <a href="/guides/v2.0/frontend-dev-guide/templates/template-security.html">securing your templates</a>
 <!-- Set up roles and restricted users (Admin) --></li>
   </ul>
@@ -744,7 +750,7 @@ For more information, see <a href="/guides/v2.0/install-gde/prereq/php-settings.
 
   <h4 id="log-rotation">Log rotation</h4>
 
-  <p>The UNIX <code>logrotate</code> utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.</p>
+  <p>The UNIX <code class="highlighter-rouge">logrotate</code> utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.</p>
 
   <p>For more information, see one of the following:</p>
 

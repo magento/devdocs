@@ -1033,22 +1033,23 @@
       <p>Locate the block that starts with:</p>
 
       <ul>
-        <li>Ubuntu 12: <code>&lt;Directory /var/www/&gt;</code></li>
-        <li>Ubuntu 14 or CentOS: <code>&lt;Directory /var/www/html&gt;</code></li>
+        <li>Ubuntu 12: <code class="highlighter-rouge">&lt;Directory /var/www/&gt;</code></li>
+        <li>Ubuntu 14 or CentOS: <code class="highlighter-rouge">&lt;Directory /var/www/html&gt;</code></li>
       </ul>
     </li>
     <li>
-      <p>Change the value of <code>AllowOverride</code> to <code>&lt;value from Apache site&gt;</code>.</p>
+      <p>Change the value of <code class="highlighter-rouge">AllowOverride</code> to <code class="highlighter-rouge">&lt;value from Apache site&gt;</code>.</p>
 
       <p>An example for Ubuntu 12 follows.</p>
 
-      <pre><code>&lt;Directory /var/www/&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>&lt;Directory /var/www/&gt;
 Options Indexes FollowSymLinks MultiViews
 AllowOverride &lt;value from Apache site&gt;
 Order allow,deny
 Allow from all
 &lt;Directory&gt;
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
@@ -1057,17 +1058,19 @@ Allow from all
     </li>
     <li>Save the file and exit the text editor.</li>
     <li>
-      <p><em>Ubuntu only</em>. Configure Apache to use the <code>mod_rewrite</code> module.</p>
+      <p><em>Ubuntu only</em>. Configure Apache to use the <code class="highlighter-rouge">mod_rewrite</code> module.</p>
 
-      <pre><code>    cd /etc/apache2/mods-enabled
+      <div class="highlighter-rouge"><pre class="highlight"><code>    cd /etc/apache2/mods-enabled
     ln -s ../mods-available/rewrite.load
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If you changed Apache settings, restart Apache.</p>
 
-      <pre><code>service apache2 restart
+      <div class="highlighter-rouge"><pre class="highlight"><code>service apache2 restart
 </code></pre>
+      </div>
     </li>
   </ol>
 </div>
@@ -1081,14 +1084,16 @@ Allow from all
 <h2 id="install-prereq-apache-verify">Verify the Apache version</h2>
 <p>To verify the Apache version you’re currently running, enter:</p>
 
-<pre><code>apache2 -v
+<div class="highlighter-rouge"><pre class="highlight"><code>apache2 -v
 </code></pre>
+</div>
 
 <p>The result displays similar to the following:</p>
 
-<pre><code>Server version: Apache/2.2.22 (Ubuntu)
+<div class="highlighter-rouge"><pre class="highlight"><code>Server version: Apache/2.2.22 (Ubuntu)
 Server built:   Jul 22 2014 14:35:32
 </code></pre>
+</div>
 
 <ul>
   <li>If Apache is <em>not</em> installed, see:
@@ -1115,23 +1120,26 @@ Server built:   Jul 22 2014 14:35:32
   <li>
     <p>Install Apache</p>
 
-    <pre><code>apt-get -y install apache2
+    <div class="highlighter-rouge"><pre class="highlight"><code>apt-get -y install apache2
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Verify the installation.</p>
 
-    <pre><code>apache2 -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>apache2 -v
 </code></pre>
+    </div>
 
     <p>The result displays similar to the following:</p>
 
-    <pre><code>Server version: Apache/2.4.18 (Ubuntu)
+    <div class="highlighter-rouge"><pre class="highlight"><code>Server version: Apache/2.4.18 (Ubuntu)
 Server built:   2016-04-15T18:00:57
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Enable rewrites and <code>.htaccess</code> as discussed in the following sections.</p>
+    <p>Enable rewrites and <code class="highlighter-rouge">.htaccess</code> as discussed in the following sections.</p>
   </li>
 </ol>
 
@@ -1192,22 +1200,23 @@ Server built:   2016-04-15T18:00:57
         <p>Locate the block that starts with:</p>
 
         <ul>
-          <li>Ubuntu 12: <code>&lt;Directory /var/www/&gt;</code></li>
-          <li>Ubuntu 14 or CentOS: <code>&lt;Directory /var/www/html&gt;</code></li>
+          <li>Ubuntu 12: <code class="highlighter-rouge">&lt;Directory /var/www/&gt;</code></li>
+          <li>Ubuntu 14 or CentOS: <code class="highlighter-rouge">&lt;Directory /var/www/html&gt;</code></li>
         </ul>
       </li>
       <li>
-        <p>Change the value of <code>AllowOverride</code> to <code>&lt;value from Apache site&gt;</code>.</p>
+        <p>Change the value of <code class="highlighter-rouge">AllowOverride</code> to <code class="highlighter-rouge">&lt;value from Apache site&gt;</code>.</p>
 
         <p>An example for Ubuntu 12 follows.</p>
 
-        <pre><code>&lt;Directory /var/www/&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>&lt;Directory /var/www/&gt;
 Options Indexes FollowSymLinks MultiViews
 AllowOverride &lt;value from Apache site&gt;
 Order allow,deny
 Allow from all
 &lt;Directory&gt;
 </code></pre>
+        </div>
 
         <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
@@ -1216,17 +1225,19 @@ Allow from all
       </li>
       <li>Save the file and exit the text editor.</li>
       <li>
-        <p><em>Ubuntu only</em>. Configure Apache to use the <code>mod_rewrite</code> module.</p>
+        <p><em>Ubuntu only</em>. Configure Apache to use the <code class="highlighter-rouge">mod_rewrite</code> module.</p>
 
-        <pre><code>    cd /etc/apache2/mods-enabled
+        <div class="highlighter-rouge"><pre class="highlight"><code>    cd /etc/apache2/mods-enabled
     ln -s ../mods-available/rewrite.load
 </code></pre>
+        </div>
       </li>
       <li>
         <p>If you changed Apache settings, restart Apache.</p>
 
-        <pre><code>service apache2 restart
+        <div class="highlighter-rouge"><pre class="highlight"><code>service apache2 restart
 </code></pre>
+        </div>
       </li>
     </ol>
 
@@ -1247,18 +1258,20 @@ Allow from all
 
 <ol>
   <li>
-    <p>Add the <code>ppa:ondrej</code> repository, which has Apache 2.4:</p>
+    <p>Add the <code class="highlighter-rouge">ppa:ondrej</code> repository, which has Apache 2.4:</p>
 
-    <pre><code>apt-get -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>apt-get -y update
 apt-add-repository ppa:ondrej/apache2
 apt-get -y update
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Install Apache 2.4:</p>
 
-    <pre><code>apt-get install -y apache2
+    <div class="highlighter-rouge"><pre class="highlight"><code>apt-get install -y apache2
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1268,14 +1281,16 @@ apt-get -y update
   <li>
     <p>Verify the installation.</p>
 
-    <pre><code>apache2 -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>apache2 -v
 </code></pre>
+    </div>
 
     <p>Messages similar to the following should display:</p>
 
-    <pre><code>Server version: Apache/2.4.10 (Ubuntu)
+    <div class="highlighter-rouge"><pre class="highlight"><code>Server version: Apache/2.4.10 (Ubuntu)
 Server built:   Jul 22 2014 22:46:25
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Continue with the next section.</p>
@@ -1334,20 +1349,23 @@ Server built:   Jul 22 2014 22:46:25
   <li>
     <p>Install Apache 2 if you haven’t already done so.</p>
 
-    <pre><code>yum -y install httpd
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y install httpd
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Verify the installation:</p>
 
-    <pre><code>httpd -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>httpd -v
 </code></pre>
+    </div>
 
     <p>Messages similar to the following display to confirm the installation was successful:</p>
 
-    <pre><code>Server version: Apache/2.2.15 (Unix)
+    <div class="highlighter-rouge"><pre class="highlight"><code>Server version: Apache/2.2.15 (Unix)
 Server built:   Oct 16 2014 14:48:21
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Continue with the next section.</p>
@@ -1384,22 +1402,23 @@ Server built:   Oct 16 2014 14:48:21
       <p>Locate the block that starts with:</p>
 
       <ul>
-        <li>Ubuntu 12: <code>&lt;Directory /var/www/&gt;</code></li>
-        <li>Ubuntu 14 or CentOS: <code>&lt;Directory /var/www/html&gt;</code></li>
+        <li>Ubuntu 12: <code class="highlighter-rouge">&lt;Directory /var/www/&gt;</code></li>
+        <li>Ubuntu 14 or CentOS: <code class="highlighter-rouge">&lt;Directory /var/www/html&gt;</code></li>
       </ul>
     </li>
     <li>
-      <p>Change the value of <code>AllowOverride</code> to <code>&lt;value from Apache site&gt;</code>.</p>
+      <p>Change the value of <code class="highlighter-rouge">AllowOverride</code> to <code class="highlighter-rouge">&lt;value from Apache site&gt;</code>.</p>
 
       <p>An example for Ubuntu 12 follows.</p>
 
-      <pre><code>&lt;Directory /var/www/&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>&lt;Directory /var/www/&gt;
 Options Indexes FollowSymLinks MultiViews
 AllowOverride &lt;value from Apache site&gt;
 Order allow,deny
 Allow from all
 &lt;Directory&gt;
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
@@ -1408,17 +1427,19 @@ Allow from all
     </li>
     <li>Save the file and exit the text editor.</li>
     <li>
-      <p><em>Ubuntu only</em>. Configure Apache to use the <code>mod_rewrite</code> module.</p>
+      <p><em>Ubuntu only</em>. Configure Apache to use the <code class="highlighter-rouge">mod_rewrite</code> module.</p>
 
-      <pre><code>    cd /etc/apache2/mods-enabled
+      <div class="highlighter-rouge"><pre class="highlight"><code>    cd /etc/apache2/mods-enabled
     ln -s ../mods-available/rewrite.load
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If you changed Apache settings, restart Apache.</p>
 
-      <pre><code>service apache2 restart
+      <div class="highlighter-rouge"><pre class="highlight"><code>service apache2 restart
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1445,13 +1466,14 @@ Allow from all
 
 <p>For example:</p>
 
-<pre><code>&lt;Directory /var/www/&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;Directory /var/www/&gt;
 	Options Indexes FollowSymLinks MultiViews
 	AllowOverride &lt;value from Apache site&gt;
 	Order allow,deny
 	Require all granted
 &lt;/Directory&gt;
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -1463,13 +1485,14 @@ Allow from all
 
 <p>For example:</p>
 
-<pre><code>&lt;Directory /var/www/&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;Directory /var/www/&gt;
 	Options Indexes FollowSymLinks MultiViews
 	AllowOverride &lt;value from Apache site&gt;
 	Order allow,deny
 	Allow from all
 &lt;/Directory&gt;
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">

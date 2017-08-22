@@ -946,9 +946,10 @@
 			<h3 id="symptom">Symptom</h3>
 <p>During download, the following error displays:</p>
 
-<pre><code>[ErrorException]
+<div class="highlighter-rouge"><pre class="highlight"><code>[ErrorException]
   	file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
 </code></pre>
+</div>
 
 <h3 id="description">Description</h3>
 <p>This happens because of changes in certain versions of <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>.</p>
@@ -957,13 +958,15 @@
 
 <p>Any version of Composer dated between November 21 and November 26, 2015 has this issue. To confirm this issue is related to the Composer version, enter the following command:</p>
 
-<pre><code>composer -v
+<div class="highlighter-rouge"><pre class="highlight"><code>composer -v
 </code></pre>
+</div>
 
 <p>The version displays similar to the following:</p>
 
-<pre><code>Composer version 1.0-dev (2b14f0a047dd4f3545ec82381f65c36ea93a4c81) 2015-11-25 17:13:09
+<div class="highlighter-rouge"><pre class="highlight"><code>Composer version 1.0-dev (2b14f0a047dd4f3545ec82381f65c36ea93a4c81) 2015-11-25 17:13:09
 </code></pre>
+</div>
 
 <p>Note the date is 2015-11-25, which indicates Composer has this issue.</p>
 
@@ -977,24 +980,27 @@
       <li>
         <p>Downgrade Composer using the following command:</p>
 
-        <pre><code>composer self-update 1.0.0-alpha11
+        <div class="highlighter-rouge"><pre class="highlight"><code>composer self-update 1.0.0-alpha11
 </code></pre>
+        </div>
       </li>
       <li>
         <p>Upgrade Composer to a version later than November 26, 2015:</p>
 
-        <pre><code>composer self-update
+        <div class="highlighter-rouge"><pre class="highlight"><code>composer self-update
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>
   <li>Delete your Magento 2 directory and subdirectories.</li>
-  <li>Try the download again using either <a href="/guides/v2.0/install-gde/prereq/integrator_install.html"><code>composer create-project</code></a> or <a href="/guides/v2.0/install-gde/prereq/dev_install.html"><code>git clone</code></a>.</li>
+  <li>Try the download again using either <a href="/guides/v2.0/install-gde/prereq/integrator_install.html"><code class="highlighter-rouge">composer create-project</code></a> or <a href="/guides/v2.0/install-gde/prereq/dev_install.html"><code class="highlighter-rouge">git clone</code></a>.</li>
   <li>
     <p>After successfully downloading the Magento software, update Composer:</p>
 
-    <pre><code>composer self-update
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer self-update
 </code></pre>
+    </div>
   </li>
 </ol>
 

@@ -969,21 +969,21 @@
 
 <h2 id="theme-location">Theme location</h2>
 
-<p>The location of a theme in your Magento installation depends upon how you installed your theme. Magento knows to look in both <code>vendor</code> and  <code>app/design</code> for themes. In Magento 2.0, each module and theme contain a <code>registration.php</code> file, which defines location information.</p>
+<p>The location of a theme in your Magento installation depends upon how you installed your theme. Magento knows to look in both <code class="highlighter-rouge">vendor</code> and  <code class="highlighter-rouge">app/design</code> for themes. In Magento 2.0, each module and theme contain a <code class="highlighter-rouge">registration.php</code> file, which defines location information.</p>
 
-<p><em>Areas</em> also determine a theme’s location. Themes that affect the storefront are placed in the <code>frontend</code> area, while themes that affect the Admin panel are placed in <code>adminhtml</code> directory.</p>
+<p><em>Areas</em> also determine a theme’s location. Themes that affect the storefront are placed in the <code class="highlighter-rouge">frontend</code> area, while themes that affect the Admin panel are placed in <code class="highlighter-rouge">adminhtml</code> directory.</p>
 
 <h3 id="location-of-themes-in-github-repository">Location of themes in GitHub repository</h3>
 
-<p>In the Magento repository on GitHub, themes exist under <code>app/design/frontend</code>. For example, you can find the Magento Blank theme at https://github.com/magento/magento2/tree/develop/app/design/frontend/Magento/blank.</p>
+<p>In the Magento repository on GitHub, themes exist under <code class="highlighter-rouge">app/design/frontend</code>. For example, you can find the Magento Blank theme at https://github.com/magento/magento2/tree/develop/app/design/frontend/Magento/blank.</p>
 
 <h3 id="location-of-themes-when-installing-with-composer">Location of themes when installing with Composer</h3>
 
-<p>We recommend using <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> to install your Magento application and components such as modules or themes. Composer places the theme you are installing under  <code>/vendor</code>. For example, <code>vendor/Magento/theme-frontend-blank</code> is the root directory of the <span term-uuid="b57038ca-7906-4fce-a00f-d614b81d5301" class="glossary-term" data-toggle="popover">Composer package</span> holding the Blank theme.</p>
+<p>We recommend using <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> to install your Magento application and components such as modules or themes. Composer places the theme you are installing under  <code class="highlighter-rouge">/vendor</code>. For example, <code class="highlighter-rouge">vendor/Magento/theme-frontend-blank</code> is the root directory of the <span term-uuid="b57038ca-7906-4fce-a00f-d614b81d5301" class="glossary-term" data-toggle="popover">Composer package</span> holding the Blank theme.</p>
 
 <h3 id="location-of-custom-themes">Location of custom themes</h3>
 
-<p>While developing a theme, place it under <code>app/design</code>.  If you’ve defined the theme for a local project (that is, you intend to install it in one project only),  place it under <code>app/design</code>. However, if you decide to sell the theme on Magento Marketplace, follow the instructions given there for uploading. When users download your theme from Magento Marketplace, they will use Composer to install the theme package, and Composer will automatically place it in <code>vendor</code>. (Essentially, <code>/vendor</code> holds all code that you have not written.)</p>
+<p>While developing a theme, place it under <code class="highlighter-rouge">app/design</code>.  If you’ve defined the theme for a local project (that is, you intend to install it in one project only),  place it under <code class="highlighter-rouge">app/design</code>. However, if you decide to sell the theme on Magento Marketplace, follow the instructions given there for uploading. When users download your theme from Magento Marketplace, they will use Composer to install the theme package, and Composer will automatically place it in <code class="highlighter-rouge">vendor</code>. (Essentially, <code class="highlighter-rouge">/vendor</code> holds all code that you have not written.)</p>
 
 <h2 id="default-magento-themes">Default Magento themes</h2>
 

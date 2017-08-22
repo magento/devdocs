@@ -1056,7 +1056,7 @@
 
 <p><b>Issue:</b> Enabling Varnish causes the <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> menu to switch from http to https<a href="https://github.com/magento/magento2/issues/4540" target="_blank"> (GITHUB-4540)</a></p>
 
-<p><b>Work-around:</b> To use Varnish caching with an HTTP site, add rewrite rules such as the following in Magento’s root <code>.htaccess</code>:</p>
+<p><b>Work-around:</b> To use Varnish caching with an HTTP site, add rewrite rules such as the following in Magento’s root <code class="highlighter-rouge">.htaccess</code>:</p>
 
 <pre>RewriteCond %{HTTPS} on
 RewriteCond %{REQUEST_URI} /yellow-fruit.html
@@ -1117,7 +1117,7 @@ RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
 <!--- 48175 -->
 <ul>
-  <li>An error message that users typically received during upgrade has been improved. The message now clearly states when a user must login first to <code>magento.com</code> before continuing the upgrade process. <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a></li>
+  <li>An error message that users typically received during upgrade has been improved. The message now clearly states when a user must login first to <code class="highlighter-rouge">magento.com</code> before continuing the upgrade process. <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a></li>
 </ul>
 
 <!--- 47440 -->
@@ -1127,7 +1127,7 @@ RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
 <!--- 47439 -->
 <ul>
-  <li>The <code>i18n:collect-phrases -m</code> command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank">(GITHUB-2630)</a></li>
+  <li>The <code class="highlighter-rouge">i18n:collect-phrases -m</code> command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank">(GITHUB-2630)</a></li>
 </ul>
 
 <!--- 47009 -->
@@ -1142,7 +1142,7 @@ RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
 <!--- 47639 -->
 <ul>
-  <li>The <code>setup:di:compile</code> script now compiles all files as expected. <a href="https://github.com/magento/magento2/issues/2888" target="_blank">(GITHUB-2888)</a></li>
+  <li>The <code class="highlighter-rouge">setup:di:compile</code> script now compiles all files as expected. <a href="https://github.com/magento/magento2/issues/2888" target="_blank">(GITHUB-2888)</a></li>
 </ul>
 
 <!--- 46044 -->
@@ -1182,15 +1182,16 @@ This Release Candidate is for test purposes only. Do not install it in a product
 <h3 id="install-rc-gh">Install from GitHub</h3>
 <p>Before proceeding, please familiarize yourself with these prerequisites, then run</p>
 
-<p><code>git clone git@github.com:magento/magento2.git</code></p>
+<p><code class="highlighter-rouge">git clone git@github.com:magento/magento2.git</code></p>
 
-<p><code>git checkout tags/2.1.0-rc1 [-b 2.1.0-rc1]</code></p>
+<p><code class="highlighter-rouge">git checkout tags/2.1.0-rc1 [-b 2.1.0-rc1]</code></p>
 
 <h3 id="install-using-composer">Install using Composer</h3>
-<p>This Release Candidate is available from <code>repo.magento.com</code>. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+<p>This Release Candidate is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
-<pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 &lt;installation directory name&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 &lt;installation directory name&gt;
 </code></pre>
+</div>
 
 <h2 id="upgrade-rc-nosamp">Upgrade existing installations</h2>
 <p>This section discusses how to upgrade to a Release Candidate.</p>

@@ -497,24 +497,27 @@ For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.
 
   <p>To create the Magento crontab, use the following command:</p>
 
-  <pre><code>php bin/magento cron:install [--force]
+  <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cron:install [--force]
 </code></pre>
+  </div>
 
-  <p>Use <code>--force</code> to rewrite an existing Magento crontab. (Any existing crontab is not affected.)</p>
+  <p>Use <code class="highlighter-rouge">--force</code> to rewrite an existing Magento crontab. (Any existing crontab is not affected.)</p>
 
   <p>To view the crontab, switch to the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and enter the following command:</p>
 
-  <pre><code>crontab -l
+  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -l
 </code></pre>
+  </div>
 
   <p>A sample follows:</p>
 
-  <pre><code>#~ MAGENTO START
+  <div class="highlighter-rouge"><pre class="highlight"><code>#~ MAGENTO START
 * * * * * /usr/bin/php /var/www/html/magento2ce/bin/magento cron:run 2&gt;&amp;1 | grep -v Ran jobs by schedule &gt;&gt; /var/www/html/magento2ce/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2ce/update/cron.php &gt;&gt; /var/www/html/magento2ce/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2ce/bin/magento setup:cron:run &gt;&gt; /var/www/html/magento2ce/var/log/setup.cron.log
 #~ MAGENTO END
 </code></pre>
+  </div>
 
   <h4 id="related-topic">Related topic</h4>
   <p>To remove the Magento crontab, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html#config-cron-remove"></a>.</p>
@@ -524,8 +527,8 @@ For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.
 
   <ul>
     <li>Make sure your file ownership and permissions are set properly</li>
-    <li>We strongly recommend <a href="/guides/v2.2/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from <code>admin</code> to something else</li>
-    <li>Make sure the <a href="/guides/v2.2/config-guide/secy/secy-xframe.html"><code>X-Frame-Option</code> HTTP header</a> is set properly.</li>
+    <li>We strongly recommend <a href="/guides/v2.2/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from <code class="highlighter-rouge">admin</code> to something else</li>
+    <li>Make sure the <a href="/guides/v2.2/config-guide/secy/secy-xframe.html"><code class="highlighter-rouge">X-Frame-Option</code> HTTP header</a> is set properly.</li>
     <li>Take precautions against cross-site scripting (XSS) by <a href="/guides/v2.2/frontend-dev-guide/templates/template-security.html">securing your templates</a>
 <!-- Set up roles and restricted users (Admin) --></li>
   </ul>
@@ -545,7 +548,7 @@ For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.
 
   <h4 id="log-rotation">Log rotation</h4>
 
-  <p>The UNIX <code>logrotate</code> utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.</p>
+  <p>The UNIX <code class="highlighter-rouge">logrotate</code> utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.</p>
 
   <p>For more information, see one of the following:</p>
 

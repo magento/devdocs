@@ -607,35 +607,35 @@ The following prerequisites are required:</p>
 Here are example SQL commands to create a test database and a dedicated test user account.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">magento_integration_tests</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">ON</span> <span class="n">magento_integration_tests</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;magento2_test_user&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;ftYx4pm6^x9.&amp;^hB&#39;</span><span class="p">;</span></code></pre></figure>
+<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">ON</span> <span class="n">magento_integration_tests</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'magento2_test_user'</span><span class="o">@</span><span class="s1">'localhost'</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">'ftYx4pm6^x9.&amp;^hB'</span><span class="p">;</span></code></pre></figure>
 
 <p>Replace the example database and user name and the example password with something that matches your requirements and conventions.</p>
 
 <h3 id="configuring-the-framework-to-use-the-test-database">Configuring the framework to use the test database</h3>
 
 <p>The Magento 2 integration test framework comes with a configuration file template located at<br />
-<code>mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist</code>.</p>
+<code class="highlighter-rouge">mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist</code>.</p>
 
 <p>Copy this file to<br />
-<code>mage2ce/dev/tests/integration/etc/install-config-mysql.php</code><br />
-(without the <code>.dist</code> suffix) and add your test database access credentials.</p>
+<code class="highlighter-rouge">mage2ce/dev/tests/integration/etc/install-config-mysql.php</code><br />
+(without the <code class="highlighter-rouge">.dist</code> suffix) and add your test database access credentials.</p>
 
 <p>The contents will look something like the following. Use the DB access credentials for your test database instead of the example values below.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">return</span> <span class="p">[</span>
-    <span class="s1">&#39;db-host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;db-user&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento2_test_user&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;db-password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ftYx4pm6^x9.&amp;^hB&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;db-name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_integration_tests&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;db-prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;backend-frontname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;backend&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;admin-user&#39;</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_NAME</span><span class="p">,</span>
-    <span class="s1">&#39;admin-password&#39;</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_PASSWORD</span><span class="p">,</span>
-    <span class="s1">&#39;admin-email&#39;</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_EMAIL</span><span class="p">,</span>
-    <span class="s1">&#39;admin-firstname&#39;</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_FIRSTNAME</span><span class="p">,</span>
-    <span class="s1">&#39;admin-lastname&#39;</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_LASTNAME</span><span class="p">,</span>
+    <span class="s1">'db-host'</span> <span class="o">=&gt;</span> <span class="s1">'localhost'</span><span class="p">,</span>
+    <span class="s1">'db-user'</span> <span class="o">=&gt;</span> <span class="s1">'magento2_test_user'</span><span class="p">,</span>
+    <span class="s1">'db-password'</span> <span class="o">=&gt;</span> <span class="s1">'ftYx4pm6^x9.&amp;^hB'</span><span class="p">,</span>
+    <span class="s1">'db-name'</span> <span class="o">=&gt;</span> <span class="s1">'magento_integration_tests'</span><span class="p">,</span>
+    <span class="s1">'db-prefix'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+    <span class="s1">'backend-frontname'</span> <span class="o">=&gt;</span> <span class="s1">'backend'</span><span class="p">,</span>
+    <span class="s1">'admin-user'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_NAME</span><span class="p">,</span>
+    <span class="s1">'admin-password'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_PASSWORD</span><span class="p">,</span>
+    <span class="s1">'admin-email'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_EMAIL</span><span class="p">,</span>
+    <span class="s1">'admin-firstname'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_FIRSTNAME</span><span class="p">,</span>
+    <span class="s1">'admin-lastname'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_LASTNAME</span><span class="p">,</span>
 <span class="p">];</span></code></pre></figure>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -644,11 +644,11 @@ Here are example SQL commands to create a test database and a dedicated test use
 
 <h3 id="adjusting-the-phpunit-configuration-file">Adjusting the PHPUnit configuration file</h3>
 
-<p>The default integration test configuration can be found at <code>dev/tests/integration/phpunit.xml.dist</code>.</p>
+<p>The default integration test configuration can be found at <code class="highlighter-rouge">dev/tests/integration/phpunit.xml.dist</code>.</p>
 
 <p>Without adjustments it will run all core integration tests, which is useful for example on a continuous integration server.</p>
 
-<p>When making adjustments to the configuration, copy the default file to <code>dev/tests/integration/phpunit.xml</code> (again, without the <code>.dist</code> suffix) and make your changes there. That way your changes will not be overwritten during Magento upgrades.</p>
+<p>When making adjustments to the configuration, copy the default file to <code class="highlighter-rouge">dev/tests/integration/phpunit.xml</code> (again, without the <code class="highlighter-rouge">.dist</code> suffix) and make your changes there. That way your changes will not be overwritten during Magento upgrades.</p>
 
 <p>There are many settings in the file.<br />
 This guide will only describes three common adjustments.<br />
@@ -658,59 +658,59 @@ Please refer to the <a href="https://phpunit.de/manual/4.1/en/appendixes.configu
 
 <p>Default value:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;const</span> <span class="na">name=</span><span class="s">&quot;TESTS_CLEANUP&quot;</span> <span class="na">value=</span><span class="s">&quot;enabled&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;const</span> <span class="na">name=</span><span class="s">"TESTS_CLEANUP"</span> <span class="na">value=</span><span class="s">"enabled"</span><span class="nt">/&gt;</span></code></pre></figure>
 
-<p>If this constant is set to <code>enabled</code>, the integration test framework will clean the test database and re-install Magento on every test run.<br />
+<p>If this constant is set to <code class="highlighter-rouge">enabled</code>, the integration test framework will clean the test database and re-install Magento on every test run.<br />
 That way any new modules will be automatically picked up, and any cruft that might have been left over from previous test runs will be removed.<br />
 It also causes the test framework to flush the test Magento configuration, the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and the code generation before executing any tests.</p>
 
-<p>The downside of setting <code>TEST_CLEANUP</code> to <code>enabled</code> is that the re-installation of Magento takes time (the exact time depends on the host you are using to run the integration tests and the Magento version.)</p>
+<p>The downside of setting <code class="highlighter-rouge">TEST_CLEANUP</code> to <code class="highlighter-rouge">enabled</code> is that the re-installation of Magento takes time (the exact time depends on the host you are using to run the integration tests and the Magento version.)</p>
 
 <p>During the development of new integration tests, where only a subset of the tests is executed repeatedly, that overhead of setting up a fresh execution environment for each run quickly becomes a burden.</p>
 
-<p>In that case the <code>TEST_CLEANUP</code> constant can be set to <code>disabled</code>.<br />
+<p>In that case the <code class="highlighter-rouge">TEST_CLEANUP</code> constant can be set to <code class="highlighter-rouge">disabled</code>.<br />
 The test execution will start much quicker, but as a consequence the developer has to flush the cache and the database when needed manually.</p>
 
 <p>The integration test framework creates the temporary test files beneath the directory<br />
-<code>dev/tests/integration/tmp/sandbox-*</code> (followed by a long hash ID).</p>
+<code class="highlighter-rouge">dev/tests/integration/tmp/sandbox-*</code> (followed by a long hash ID).</p>
 
 <p>To force the test framework to regenerate the cache and the other files, it is enough to remove the directory.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rm -r dev/tests/integration/tmp/sandbox-*</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>rm -r dev/tests/integration/tmp/sandbox-<span class="k">*</span></code></pre></figure>
 
 <h4 id="the-php-memorylimit">The PHP memory_limit</h4>
 
-<p>The default <code>phpunit.xml.dist</code> file does not contain any PHP <code>memory_limit</code> settings.<br />
+<p>The default <code class="highlighter-rouge">phpunit.xml.dist</code> file does not contain any PHP <code class="highlighter-rouge">memory_limit</code> settings.<br />
 However, sometimes the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> configuration restricts the amount of memory PHP may consume.<br />
 This can make it impossible to run the integration tests.</p>
 
-<p>The PHP memory limit can be turned off by adding the following configuration to the <code>&lt;php&gt;</code> section of the integration test <code>phpunit.xml</code> file:</p>
+<p>The PHP memory limit can be turned off by adding the following configuration to the <code class="highlighter-rouge">&lt;php&gt;</code> section of the integration test <code class="highlighter-rouge">phpunit.xml</code> file:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ini</span> <span class="na">name=</span><span class="s">&quot;memory_limit&quot;</span> <span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ini</span> <span class="na">name=</span><span class="s">"memory_limit"</span> <span class="na">value=</span><span class="s">"-1"</span><span class="nt">/&gt;</span></code></pre></figure>
 
 <h4 id="executing-third-party-integration-tests">Executing third party integration tests</h4>
 
-<p>The Magento code integration tests reside in the directory <code>dev/tests/integration/testsuite</code>.<br />
+<p>The Magento code integration tests reside in the directory <code class="highlighter-rouge">dev/tests/integration/testsuite</code>.<br />
 For core tests it makes sense that the integration tests do not reside within individual modules, because most integration test execute code from many different modules.</p>
 
-<p>Shop implementation specific integration tests could also be placed within a different subdirectory of <code>dev/tests/integration/testsuite</code> and then would be executed together with the core tests.</p>
+<p>Shop implementation specific integration tests could also be placed within a different subdirectory of <code class="highlighter-rouge">dev/tests/integration/testsuite</code> and then would be executed together with the core tests.</p>
 
 <p>However, third party Magento extensions are contained within a single directory, and might supply custom integration tests, too.<br />
-These tests usually are placed in the subdirectory <code>Test/Integration/</code> within the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> folder.</p>
+These tests usually are placed in the subdirectory <code class="highlighter-rouge">Test/Integration/</code> within the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> folder.</p>
 
 <p>These third party integration tests are not picked up by the default integration test configuration.<br />
-A testsuite configuration like the following can be added to the <code>&lt;testsuites&gt;</code> section of the <code>phpunit.xml</code> file so they are included during test execution.</p>
+A testsuite configuration like the following can be added to the <code class="highlighter-rouge">&lt;testsuites&gt;</code> section of the <code class="highlighter-rouge">phpunit.xml</code> file so they are included during test execution.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;testsuite</span> <span class="na">name=</span><span class="s">&quot;Third Party Integration Tests&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;testsuite</span> <span class="na">name=</span><span class="s">"Third Party Integration Tests"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;directory&gt;</span>../../../app/code/*/*/Test/Integration<span class="nt">&lt;/directory&gt;</span>
     <span class="nt">&lt;directory&gt;</span>../../../vendor/*/module-*/Test/Integration<span class="nt">&lt;/directory&gt;</span>
     <span class="nt">&lt;exclude&gt;</span>../../../app/code/Magento<span class="nt">&lt;/exclude&gt;</span>
     <span class="nt">&lt;exclude&gt;</span>../../../vendor/magento<span class="nt">&lt;/exclude&gt;</span>
 <span class="nt">&lt;/testsuite&gt;</span></code></pre></figure>
 
-<p>Such a test suite configuration can then be executed using the <code>--testsuite &lt;name&gt;</code> command option, for example if you are in the <code>dev/tests/integration</code> directory:</p>
+<p>Such a test suite configuration can then be executed using the <code class="highlighter-rouge">--testsuite &lt;name&gt;</code> command option, for example if you are in the <code class="highlighter-rouge">dev/tests/integration</code> directory:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>php ../../../vendor/bin/phpunit --testsuite <span class="s2">&quot;Third Party Integration Tests&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>php ../../../vendor/bin/phpunit --testsuite <span class="s2">"Third Party Integration Tests"</span></code></pre></figure>
 
 
 		</div>

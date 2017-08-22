@@ -1902,13 +1902,13 @@
 
 
 			<h2 id="mage-cache-db-over">Overview of database caching</h2>
-<p>This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the <code>cache</code> and <code>cache_tag</code> Magento 2 database tables. Nothing is stored <code>var/cache</code> or <code>var/page_cache</code>.</p>
+<p>This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the <code class="highlighter-rouge">cache</code> and <code class="highlighter-rouge">cache_tag</code> Magento 2 database tables. Nothing is stored <code class="highlighter-rouge">var/cache</code> or <code class="highlighter-rouge">var/page_cache</code>.</p>
 
 <p>This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:</p>
 
 <ul>
-  <li>Using the <code>default</code> cache frontend, in which case you modify <code>di.xml</code> only.</li>
-  <li>Using a custom <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> frontend, in which case you modify <code>env.php</code> only.</li>
+  <li>Using the <code class="highlighter-rouge">default</code> cache frontend, in which case you modify <code class="highlighter-rouge">di.xml</code> only.</li>
+  <li>Using a custom <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> frontend, in which case you modify <code class="highlighter-rouge">env.php</code> only.</li>
 </ul>
 
 <div class="bs-callout bs-callout-warning">
@@ -1917,28 +1917,29 @@
 </div>
 
 <h2 id="mage-cache-db-prereq">Prerequisites</h2>
-<p>Before you continue, if you’re using your own frontend cache, make sure you <a href="/guides/v2.2/config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you’re using the <code>default</code> <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> cache, you don’t have to do that.</p>
+<p>Before you continue, if you’re using your own frontend cache, make sure you <a href="/guides/v2.2/config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you’re using the <code class="highlighter-rouge">default</code> <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> cache, you don’t have to do that.</p>
 
 <p>We provide <a href="#mage-cache-db-config">sample configurations</a> at the end of this topic.</p>
 
 <h2 id="mage-cache-db-di">Database caching using the <code>default</code> cache frontend</h2>
-<p>To enable database caching using the <code>default</code> frontend, you must modify <code>&lt;your Magento install dir&gt;/app/etc/di.xml</code>, which is the global deployment injection configuration for the Magento application.</p>
+<p>To enable database caching using the <code class="highlighter-rouge">default</code> frontend, you must modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/di.xml</code>, which is the global deployment injection configuration for the Magento application.</p>
 
-<p>To modify <code>di.xml</code>:</p>
+<p>To modify <code class="highlighter-rouge">di.xml</code>:</p>
 
 <ol>
   <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>
-    <p>Enter the following commands to make a copy of <code>di.xml</code>:</p>
+    <p>Enter the following commands to make a copy of <code class="highlighter-rouge">di.xml</code>:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;/app/etc
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/app/etc
 cp di.xml di.xml.bak
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Open <code>di.xml</code> in a text editor and locate the following block:</p>
+    <p>Open <code class="highlighter-rouge">di.xml</code> in a text editor and locate the following block:</p>
 
-    <pre><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
    &lt;arguments&gt;
       &lt;argument name="frontendSettings" xsi:type="array"&gt;
           &lt;item name="page_cache" xsi:type="array"&gt;
@@ -1957,15 +1958,16 @@ cp di.xml di.xml.bak
    &lt;/arguments&gt;
 &lt;/type&gt;
 </code></pre>
+    </div>
 
-    <p>The <code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;</code> node configures options for the in-memory pool of all frontend cache instances.</p>
+    <p>The <code class="highlighter-rouge">&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;</code> node configures options for the in-memory pool of all frontend cache instances.</p>
 
-    <p>The <code>&lt;type name="Magento\Framework\App\Cache\Type\FrontendPool"&gt;</code> node configures cache frontend options specific to each cache type.</p>
+    <p>The <code class="highlighter-rouge">&lt;type name="Magento\Framework\App\Cache\Type\FrontendPool"&gt;</code> node configures cache frontend options specific to each cache type.</p>
   </li>
   <li>
     <p>Replace the entire block with the following:</p>
 
-    <pre><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
 	&lt;arguments&gt;
     	&lt;argument name="frontendSettings" xsi:type="array"&gt;
     	    &lt;item name="page_cache" xsi:type="array"&gt;
@@ -1985,11 +1987,12 @@ cp di.xml di.xml.bak
 	&lt;/arguments&gt;
 &lt;/type&gt;
 </code></pre>
+    </div>
 
-    <p>where <code>&lt;your cache id&gt;</code> is your unique cache identifier.</p>
+    <p>where <code class="highlighter-rouge">&lt;your cache id&gt;</code> is your unique cache identifier.</p>
   </li>
   <li>
-    <p>Save your changes to <code>di.xml</code> and exit the text editor.</p>
+    <p>Save your changes to <code class="highlighter-rouge">di.xml</code> and exit the text editor.</p>
   </li>
   <li>Continue with <a href="#mage-cache-db-verify">Verify database caching is working</a>.</li>
 </ol>
@@ -2002,21 +2005,22 @@ cp di.xml di.xml.bak
   <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p></span>
 </div>
 
-<p>To enable database caching using a custom cache frontend, you must modify <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> as follows:</p>
+<p>To enable database caching using a custom cache frontend, you must modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> as follows:</p>
 
 <ol>
   <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>
-    <p>Enter the following commands to make a copy of <code>env.php</code>:</p>
+    <p>Enter the following commands to make a copy of <code class="highlighter-rouge">env.php</code>:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;/app/etc
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/app/etc
 cp env.php env.php.bak
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Open <code>env.php</code> in a text editor and add the following anywhere, such as before <code>'cache_types' =&gt;</code>:</p>
+    <p>Open <code class="highlighter-rouge">env.php</code> in a text editor and add the following anywhere, such as before <code class="highlighter-rouge">'cache_types' =&gt;</code>:</p>
 
-    <pre><code>'cache' =&gt; [
+    <div class="highlighter-rouge"><pre class="highlight"><code>'cache' =&gt; [
     'frontend' =&gt; [
         '&lt;unique frontend id&gt;' =&gt; [
              &lt;cache options&gt;
@@ -2034,10 +2038,11 @@ cp env.php env.php.bak
     ],
 ],
 </code></pre>
+    </div>
 
     <p>An example is shown in <a href="#mage-cache-db-config">Configuration examples</a>.</p>
   </li>
-  <li>Save your changes to <code>env.php</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">env.php</code> and exit the text editor.</li>
   <li>Continue with the next section.</li>
 </ol>
 
@@ -2051,20 +2056,22 @@ cp env.php env.php.bak
   <li>
     <p>Clear the current cache directories:</p>
 
-    <pre><code>rm -rf &lt;your Magento install dir&gt;/var/cache/* &lt;your Magento install dir&gt;/var/page_cache/* &lt;your Magento install dir&gt;/generated/metadata/* &lt;your Magento install dir&gt;/generated/code/*
+    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/var/cache/* &lt;your Magento install dir&gt;/var/page_cache/* &lt;your Magento install dir&gt;/generated/metadata/* &lt;your Magento install dir&gt;/generated/code/*
 </code></pre>
+    </div>
   </li>
   <li>
     <p>In a web browser, go to any cacheable page (such as the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> front door page).</p>
 
-    <p>If exceptions display, verify <code>di.xml</code> syntax and try again. (To see exceptions in the browser, you must <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html#config-mode">enable developer mode</a>.)</p>
+    <p>If exceptions display, verify <code class="highlighter-rouge">di.xml</code> syntax and try again. (To see exceptions in the browser, you must <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html#config-mode">enable developer mode</a>.)</p>
   </li>
   <li>
     <p>Enter the following commands:</p>
 
-    <pre><code>ls &lt;your Magento install dir&gt;/var/cache/*
+    <div class="highlighter-rouge"><pre class="highlight"><code>ls &lt;your Magento install dir&gt;/var/cache/*
 ls &lt;your Magento install dir&gt;/var/page_cache/*
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   <span class="glyphicon-class">
@@ -2072,17 +2079,17 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
   <p>If you use the <code>default</code> cache frontend, you don't have this issue.</p></span>
 </div>
   </li>
-  <li>Verify both directories are empty; if not, edit <code>di.xml</code> again and correct any issues.</li>
+  <li>Verify both directories are empty; if not, edit <code class="highlighter-rouge">di.xml</code> again and correct any issues.</li>
   <li>
-    <p>Use a database tool such as <a href="/guides/v2.2/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the <code>cache</code> and <code>cache_tag</code> tables.</p>
+    <p>Use a database tool such as <a href="/guides/v2.2/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the <code class="highlighter-rouge">cache</code> and <code class="highlighter-rouge">cache_tag</code> tables.</p>
 
     <p>The following figures show examples. The important thing is that there are rows in the tables. <em>The data in your tables will be different than the following</em>.</p>
 
-    <p><code>cache</code> table example.</p>
+    <p><code class="highlighter-rouge">cache</code> table example.</p>
 
     <p><img src="/common/images/config-db_cache-table.png" alt="Sample contents of the cache table with database caching enabled" /></p>
 
-    <p><code>cache_tag</code> table example.</p>
+    <p><code class="highlighter-rouge">cache_tag</code> table example.</p>
 
     <p><img src="/common/images/config-db_cache-tag-table.png" alt="Sample contents of the cache tag table with database caching enabled" /></p>
   </li>
@@ -2092,79 +2099,79 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
 <p>This section contains code sample snippets to refer to when configuring database caching.</p>
 
 <h3 id="mage-cache-db-config-default">Sample <code>di.xml</code> for the default cache frontend</h3>
-<p><code>di.xml</code> snippet:</p>
+<p><code class="highlighter-rouge">di.xml</code> snippet:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\App\Cache\Frontend\Pool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\App\Cache\Frontend\Pool"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;frontendSettings&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;page_cache&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;backend&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"frontendSettings"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"page_cache"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"backend"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
-                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;default&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;backend&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
+                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"default"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"backend"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
                   <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\App\Cache\Type\FrontendPool&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\App\Cache\Type\FrontendPool"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;typeFrontendMap&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;backend&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"typeFrontendMap"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"backend"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
  <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
-<p><code>env.php</code> snippet that enables all cache types with a custom frontend named <code>magento_cache</code>:</p>
+<p><code class="highlighter-rouge">env.php</code> snippet that enables all cache types with a custom frontend named <code class="highlighter-rouge">magento_cache</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-     <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;magento_cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-             <span class="s1">&#39;backend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database&#39;</span>
-         <span class="p">],</span>
-      <span class="p">],</span>
-      <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-         <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;layout&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;block_html&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;view_files_fallback&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;view_files_preprocessing&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;collections&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;db_ddl&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;eav&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;full_page&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;translate&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;config_integration&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;config_integration_api&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-         <span class="s1">&#39;config_webservice&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_cache&#39;</span>
-          <span class="p">],</span>
-      <span class="p">],</span>
-  <span class="p">],</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> 'cache' =&gt; [
+     'frontend' =&gt; [
+        'magento_cache' =&gt; [
+             'backend' =&gt; 'database'
+         ],
+      ],
+      'type' =&gt; [
+         'config' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'layout' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'block_html' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'view_files_fallback' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'view_files_preprocessing' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'collections' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'db_ddl' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'eav' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'full_page' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'translate' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'config_integration' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'config_integration_api' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+         'config_webservice' =&gt; [
+            'frontend' =&gt; 'magento_cache'
+          ],
+      ],
+  ],</code></pre></figure>
 
 
 		</div>

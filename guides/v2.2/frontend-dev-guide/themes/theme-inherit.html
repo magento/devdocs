@@ -1132,12 +1132,12 @@ subsequent chapters in this guide.</p>
 
 <h2 id="set-a-parent-theme">Set a parent theme</h2>
 
-<p>A parent theme is specified in the child theme <code>theme.xml</code> declaration file.</p>
+<p>A parent theme is specified in the child theme <code class="highlighter-rouge">theme.xml</code> declaration file.</p>
 
 <p>Example:
-the Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in <code>app/design/frontend/OrangeCo/orange/theme.xml</code> as follows:</p>
+the Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/theme.xml</code> as follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Config/etc/theme.xsd"</span><span class="nt">&gt;</span>
      <span class="nt">&lt;title&gt;</span>Orange<span class="nt">&lt;/title&gt;</span>
      <span class="nt">&lt;parent&gt;</span>Magento/blank<span class="nt">&lt;/parent&gt;</span>
      <span class="nt">&lt;media&gt;</span>
@@ -1151,57 +1151,57 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 
 <h2 id="override-viewxml-file">Override view.xml file</h2>
 
-<p>If your theme does not contain a <code>view.xml</code> configuration file, it will be inherited from the parent theme. If you add the <code>&lt;theme_dir&gt;/etc/view.xml</code> file in your theme, it overrides the parent’s file.</p>
+<p>If your theme does not contain a <code class="highlighter-rouge">view.xml</code> configuration file, it will be inherited from the parent theme. If you add the <code class="highlighter-rouge">&lt;theme_dir&gt;/etc/view.xml</code> file in your theme, it overrides the parent’s file.</p>
 
 <h2 id="theme-inherit-static">Override static assets</h2>
 
 <p>Static assets, or static view files, are styles, JavaScript, images, and fonts.</p>
 
-<p>To customize static view files defined in the parent theme, module view, or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further. This also refers to the <code>.less</code> files, which technically are not static assets.</p>
+<p>To customize static view files defined in the parent theme, module view, or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further. This also refers to the <code class="highlighter-rouge">.less</code> files, which technically are not static assets.</p>
 
 <p>The particular directories, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.</p>
 
 <p>If module context is not defined for a file:</p>
 
 <ol>
-  <li>Current theme <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> for a specific locale (the locale set for the storefront): <code>&lt;theme_dir&gt;/web/i18n/&lt;locale&gt;</code></li>
-  <li>Current theme static files: <code>&lt;theme_dir&gt;/web/</code></li>
+  <li>Current theme <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> for a specific locale (the locale set for the storefront): <code class="highlighter-rouge">&lt;theme_dir&gt;/web/i18n/&lt;locale&gt;</code></li>
+  <li>Current theme static files: <code class="highlighter-rouge">&lt;theme_dir&gt;/web/</code></li>
   <li>Ancestor’s static files, recursively, until a theme with no parent is reached:
     <ul>
-      <li><code>&lt;parent_theme_dir&gt;/web/i18n/&lt;locale&gt;</code></li>
-      <li><code>&lt;parent_theme_dir&gt;/web/</code></li>
+      <li><code class="highlighter-rouge">&lt;parent_theme_dir&gt;/web/i18n/&lt;locale&gt;</code></li>
+      <li><code class="highlighter-rouge">&lt;parent_theme_dir&gt;/web/</code></li>
     </ul>
   </li>
-  <li>Library static view files: <code>lib/web/</code></li>
+  <li>Library static view files: <code class="highlighter-rouge">lib/web/</code></li>
 </ol>
 
 <p>If module context is defined for a file:</p>
 
 <ol>
-  <li>Current theme and current locale module static files:<code>&lt;theme_dir&gt;/web/i18n/&lt;locale&gt;/&lt;Namespace&gt;_&lt;Module&gt;</code></li>
-  <li>Current theme module static files <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code>. Example: <code>app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/</code></li>
+  <li>Current theme and current locale module static files:<code class="highlighter-rouge">&lt;theme_dir&gt;/web/i18n/&lt;locale&gt;/&lt;Namespace&gt;_&lt;Module&gt;</code></li>
+  <li>Current theme module static files <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code>. Example: <code class="highlighter-rouge">app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/</code></li>
   <li>Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
     <ul>
-      <li><code>&lt;parent_theme_dir&gt;/web/i18n/&lt;locale&gt;/&lt;Namespace&gt;_&lt;Module&gt;</code></li>
-      <li><code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code></li>
+      <li><code class="highlighter-rouge">&lt;parent_theme_dir&gt;/web/i18n/&lt;locale&gt;/&lt;Namespace&gt;_&lt;Module&gt;</code></li>
+      <li><code class="highlighter-rouge">&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code></li>
     </ul>
   </li>
-  <li>Module static view files for the <code>frontend</code> area: <code>&lt;module_dir&gt;/view/frontend/web/</code></li>
-  <li>Module static view files for the <code>base</code> area: <code>&lt;module_dir&gt;/view/base/web/</code></li>
+  <li>Module static view files for the <code class="highlighter-rouge">frontend</code> area: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/web/</code></li>
+  <li>Module static view files for the <code class="highlighter-rouge">base</code> area: <code class="highlighter-rouge">&lt;module_dir&gt;/view/base/web/</code></li>
 </ol>
 
 <p><u>Example</u></p>
 
-<p>A company named OrangeCo created a theme named Orange. The theme files are located in <code>app/design/frontend/OrangeCo/orange</code>.
+<p>A company named OrangeCo created a theme named Orange. The theme files are located in <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange</code>.
 Orange inherits from the Magento Blank theme.</p>
 
-<p>Let’s imagine OrangeCo needs to add some winter holidays decor. So it creates a new <code>orange_winter</code> theme, which inherits from Orange. The theme is located in <code>app/design/frontend/OrangeCo/orange_winter</code>.</p>
+<p>Let’s imagine OrangeCo needs to add some winter holidays decor. So it creates a new <code class="highlighter-rouge">orange_winter</code> theme, which inherits from Orange. The theme is located in <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange_winter</code>.</p>
 
-<p>In the Orange theme there is a footer background image located at <code>app/design/frontend/OrangeCo/orange/web/images/background.jpg</code>.</p>
+<p>In the Orange theme there is a footer background image located at <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/web/images/background.jpg</code>.</p>
 
 <p><img src="/common/images/inh-background1.jpg" /></p>
 
-<p>OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> in <code>app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg</code></p>
+<p>OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> in <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg</code></p>
 
 <p>Once the Orange Winter theme is <a href="/guides/v2.2/frontend-dev-guide/themes/theme-apply.html">applied</a>, the new holiday image overrides the one from Orange, so on <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> the holiday background is visible.</p>
 
@@ -1212,24 +1212,24 @@ Orange inherits from the Magento Blank theme.</p>
 <p>The fallback scheme for templates is the following (module context is always known for them):</p>
 
 <ol>
-  <li>Current theme templates: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/templates</code></li>
-  <li>Ancestors themes templates, recursively, until a theme with no ancestor is reached: <code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/templates</code></li>
-  <li>Module templates: <code>&lt;module_dir&gt;/view/frontend/templates</code></li>
+  <li>Current theme templates: <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/templates</code></li>
+  <li>Ancestors themes templates, recursively, until a theme with no ancestor is reached: <code class="highlighter-rouge">&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/templates</code></li>
+  <li>Module templates: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/templates</code></li>
 </ol>
 
-<p>So if you need to customize a certain template, you need to create an overriding one with the same name in the <code>../templates/&lt;path_to_template&gt;</code> directory in the theme module files. Where <code>&lt;path_to_template&gt;</code> is the path to the original template.</p>
+<p>So if you need to customize a certain template, you need to create an overriding one with the same name in the <code class="highlighter-rouge">../templates/&lt;path_to_template&gt;</code> directory in the theme module files. Where <code class="highlighter-rouge">&lt;path_to_template&gt;</code> is the path to the original template.</p>
 
-<p>For example, if you must override the <code>&lt;Magento_Catalog_module_dir&gt;/view/frontend/templates/category/widget/link/link_block.phtml</code> template, the <code>&lt;path_to_template&gt;</code> is <code>category/widget/link/</code></p>
+<p>For example, if you must override the <code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/frontend/templates/category/widget/link/link_block.phtml</code> template, the <code class="highlighter-rouge">&lt;path_to_template&gt;</code> is <code class="highlighter-rouge">category/widget/link/</code></p>
 
 <p><u>Example</u>
 By default, according to the module template, in the mini <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span> products are listed under the Go to <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">Checkout</span> button:</p>
 <p><img src="/common/images/inherit_mini1.png" alt="In the minishopping cart products are listed under the Go to Checkout button " /></p>
 
-<p>The order is defined in the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/templates/cart/minicart.phtml</code> module template. The Blank theme does not override this template.
+<p>The order is defined in the <code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/view/frontend/templates/cart/minicart.phtml</code> module template. The Blank theme does not override this template.
 OrangeCo decided they want the product list to be displayed before the Go to Checkout button.
 To do this, they need to add an overriding template for the corresponding module in the Orange theme folder:
-<code>app/design/frontend/OrangeCo/orange/Magento_Checkout/templates/cart/minicart.phtml</code>
-Note, that the path to the template inside the <code>templates</code> directory in the theme corresponds to that in the module.
+<code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Checkout/templates/cart/minicart.phtml</code>
+Note, that the path to the template inside the <code class="highlighter-rouge">templates</code> directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:</p>
 <p><img src="/common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button " /></p>
 <p>You can find out what exactly code changes are required to perform this and other tasks in the <a href="/guides/v2.2/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.</p>
@@ -1239,10 +1239,10 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 <p>The layouts processing mechanism does not involve fallback. The system collects <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> files in the following order:</p>
 
 <ol>
-  <li>Current theme layouts: <code>&lt;theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/</code></li>
-  <li>Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: <code>&lt;parent_theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/</code></li>
-  <li>Module layouts for the <code>frontend</code> area: <code>&lt;module_dir&gt;/view/frontend/layout/</code></li>
-  <li>Module layouts for the <code>base</code> area: <code>&lt;module_dir&gt;/view/base/layout/</code></li>
+  <li>Current theme layouts: <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/</code></li>
+  <li>Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: <code class="highlighter-rouge">&lt;parent_theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/</code></li>
+  <li>Module layouts for the <code class="highlighter-rouge">frontend</code> area: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/layout/</code></li>
+  <li>Module layouts for the <code class="highlighter-rouge">base</code> area: <code class="highlighter-rouge">&lt;module_dir&gt;/view/base/layout/</code></li>
 </ol>
 
 <p>Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.</p>
@@ -1250,17 +1250,17 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 <p>To add an extending layout file:</p>
 
 <ul>
-  <li>Put your custom layout file in the <code>&lt;theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/</code> directory.</li>
+  <li>Put your custom layout file in the <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/</code> directory.</li>
 </ul>
 
 <p><u>Example</u></p>
 
-<p>OrangeCo decided they should remove the “Report bugs” link from the footer, defined in <code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>
-To do this, they added an extending layout in <code>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml</code> :</p>
+<p>OrangeCo decided they should remove the “Report bugs” link from the footer, defined in <code class="highlighter-rouge">&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>
+To do this, they added an extending layout in <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml</code> :</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&#39;report.bugs&#39;</span> <span class="na">remove=</span><span class="s">&#39;true&#39;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">'report.bugs'</span> <span class="na">remove=</span><span class="s">'true'</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
@@ -1272,13 +1272,13 @@ To do this, they added an extending layout in <code>app/design/frontend/OrangeCo
 To override the instructions from an ancestor theme layout file:</p>
 
 <ul>
-  <li>Create a layout file with the same name in the <code>&lt;theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/theme/&lt;Vendor&gt;/&lt;ancestor_theme&gt;</code> directory.</li>
+  <li>Create a layout file with the same name in the <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/theme/&lt;Vendor&gt;/&lt;ancestor_theme&gt;</code> directory.</li>
 </ul>
 
 <p>To override module <span term-uuid="bcbc9bf8-3251-4b3c-a802-07417770af3b" class="glossary-term" data-toggle="popover">layout instructions</span> (base layout):</p>
 
 <ul>
-  <li>Create a layout file with the same name in the <code>&lt;theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/base</code> directory.</li>
+  <li>Create a layout file with the same name in the <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/base</code> directory.</li>
 </ul>
 
 

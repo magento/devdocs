@@ -1005,22 +1005,24 @@
   <p>Don't know what any of this means? Check out our <a href="/guides/v2.1/install-gde/bk-install-guide.html">installation overview page</a>.</p></span>
 </div>
 
-<p>Enter the following commands as a user with <code>root</code> privileges:</p>
+<p>Enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
 <ul>
   <li>
     <p>Ubuntu</p>
 
-    <pre><code>apt-get update
+    <div class="highlighter-rouge"><pre class="highlight"><code>apt-get update
 apt-get upgrade
 </code></pre>
+    </div>
   </li>
   <li>
     <p>CentOS</p>
 
-    <pre><code>yum -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y update
 yum -y upgrade
 </code></pre>
+    </div>
   </li>
 </ul>
 
@@ -1030,30 +1032,33 @@ yum -y upgrade
 
 <h3 id="apache">Apache</h3>
 
-<p>CentOS: <code>httpd -v</code></p>
+<p>CentOS: <code class="highlighter-rouge">httpd -v</code></p>
 
-<p>Ubuntu: <code>apache2 -v</code></p>
+<p>Ubuntu: <code class="highlighter-rouge">apache2 -v</code></p>
 
 <p>You must run Apache version 2.2 or 2.4 as the following result indicates:</p>
 
-<pre><code>Server version: Apache/2.2.15 (Unix)
+<div class="highlighter-rouge"><pre class="highlight"><code>Server version: Apache/2.2.15 (Unix)
 Server built:   Jul 23 2014 14:17:29
 </code></pre>
+</div>
 
 <p>To install or upgrade Apache, see <a href="/guides/v2.1/install-gde/prereq/apache.html">Apache</a>.</p>
 
 <h3 id="php">PHP</h3>
 
-<pre><code>php -v
+<div class="highlighter-rouge"><pre class="highlight"><code>php -v
 </code></pre>
+</div>
 
 <p>You must run <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> version 5.6 or 7.0.x as the following result indicates:</p>
 
-<pre><code>PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
+<div class="highlighter-rouge"><pre class="highlight"><code>PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
   with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre>
+</div>
 
 <p>To install PHP, see:</p>
 
@@ -1064,17 +1069,19 @@ Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
 
 <h3 id="mysql">MySQL</h3>
 
-<pre><code>mysql -u &lt;database root user or database owner name&gt; -p
+<div class="highlighter-rouge"><pre class="highlight"><code>mysql -u &lt;database root user or database owner name&gt; -p
 </code></pre>
+</div>
 
 <p>For example:</p>
 
-<pre><code>mysql -u magento -p
+<div class="highlighter-rouge"><pre class="highlight"><code>mysql -u magento -p
 </code></pre>
+</div>
 
 <p>You must run MySQL version 5.6 or later as the following result indicates:</p>
 
-<pre><code>	Welcome to the MySQL monitor.  Commands end with ; or \g.
+<div class="highlighter-rouge"><pre class="highlight"><code>	Welcome to the MySQL monitor.  Commands end with ; or \g.
 	Your MySQL connection id is 871
 	Server version: 5.6.21 MySQL Community Server (GPL)
 
@@ -1086,8 +1093,9 @@ Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
 
 	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 </code></pre>
+</div>
 
-<p>Enter <code>exit</code> at the <code>mysql&gt;</code> prompt to exit.</p>
+<p>Enter <code class="highlighter-rouge">exit</code> at the <code class="highlighter-rouge">mysql&gt;</code> prompt to exit.</p>
 
 <p>To install or upgrade MySQL, see <a href="/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a>.</p>
 

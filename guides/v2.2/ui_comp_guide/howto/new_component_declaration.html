@@ -1204,35 +1204,35 @@
 
 <h2 id="xml-elements-used-for-declaring-the-custom-component">XML elements used for declaring the custom component</h2>
 
-<p>A custom UI component can be declared using one of the following elements: <code>&lt;component&gt;</code> or <code>&lt;container&gt;</code>.</p>
+<p>A custom UI component can be declared using one of the following elements: <code class="highlighter-rouge">&lt;component&gt;</code> or <code class="highlighter-rouge">&lt;container&gt;</code>.</p>
 
-<p>The <code>&lt;component&gt;</code> element is typically used for declaring simple custom components that do not have other nested components. <code>&lt;component&gt;</code> uses the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement</a> constructor by default.</p>
+<p>The <code class="highlighter-rouge">&lt;component&gt;</code> element is typically used for declaring simple custom components that do not have other nested components. <code class="highlighter-rouge">&lt;component&gt;</code> uses the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement</a> constructor by default.</p>
 
-<p>The <code>&lt;container&gt;</code> element is typically used for declaring custom components that are collections, or in other words, can have nested components. <code>&lt;container&gt;</code> uses the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">uiCollection</a> constructor by default.</p>
+<p>The <code class="highlighter-rouge">&lt;container&gt;</code> element is typically used for declaring custom components that are collections, or in other words, can have nested components. <code class="highlighter-rouge">&lt;container&gt;</code> uses the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">uiCollection</a> constructor by default.</p>
 
 <h3 id="attributes-you-can-use">Attributes you can use</h3>
-<p>The <code>&lt;container&gt;</code> and <code>&lt;component&gt;</code> elements have no mandatory attributes. The following optional attributes are available for both these elements:</p>
+<p>The <code class="highlighter-rouge">&lt;container&gt;</code> and <code class="highlighter-rouge">&lt;component&gt;</code> elements have no mandatory attributes. The following optional attributes are available for both these elements:</p>
 
 <ul>
-  <li><code>component</code>: link to the component’s <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> constructor.</li>
-  <li><code>class</code>: link to the component’s <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class.</li>
-  <li><code>template</code>: link to component’s <code>.html</code> template.</li>
-  <li><code>provider</code>: link to component’s data provider.</li>
-  <li><code>sortOrder</code>: component’s sort order</li>
-  <li><code>displayArea</code>: the placeholder which defines the area for rendering the component in the <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> file.</li>
+  <li><code class="highlighter-rouge">component</code>: link to the component’s <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> constructor.</li>
+  <li><code class="highlighter-rouge">class</code>: link to the component’s <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class.</li>
+  <li><code class="highlighter-rouge">template</code>: link to component’s <code class="highlighter-rouge">.html</code> template.</li>
+  <li><code class="highlighter-rouge">provider</code>: link to component’s data provider.</li>
+  <li><code class="highlighter-rouge">sortOrder</code>: component’s sort order</li>
+  <li><code class="highlighter-rouge">displayArea</code>: the placeholder which defines the area for rendering the component in the <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> file.</li>
 </ul>
 
 <div class="bs-callout bs-callout-warning">
 
-  <p>If the following elements are used inside <code>&lt;container&gt;</code> or <code>&lt;component&gt;</code>, they should be specified strictly in the following order:</p>
+  <p>If the following elements are used inside <code class="highlighter-rouge">&lt;container&gt;</code> or <code class="highlighter-rouge">&lt;component&gt;</code>, they should be specified strictly in the following order:</p>
 
   <ol>
-    <li><code>&lt;argument&gt;</code></li>
-    <li><code>&lt;settings&gt;</code></li>
-    <li><code>&lt;childComponent&gt;</code></li>
+    <li><code class="highlighter-rouge">&lt;argument&gt;</code></li>
+    <li><code class="highlighter-rouge">&lt;settings&gt;</code></li>
+    <li><code class="highlighter-rouge">&lt;childComponent&gt;</code></li>
   </ol>
 
-  <p>For the component configuration inside <code>&lt;container&gt;</code> and <code>&lt;component&gt;</code>, <a href="/guides/v2.2/ui_comp_guide/best-practices/semantic_config.html#info_structure_except">use the “arbitrary” structure</a>.</p>
+  <p>For the component configuration inside <code class="highlighter-rouge">&lt;container&gt;</code> and <code class="highlighter-rouge">&lt;component&gt;</code>, <a href="/guides/v2.2/ui_comp_guide/best-practices/semantic_config.html#info_structure_except">use the “arbitrary” structure</a>.</p>
 </div>
 
 <h2 id="declare-a-custom-basic-component">Declare a custom basic component</h2>
@@ -1241,39 +1241,39 @@
 
 <ol>
   <li>Specify the XML file with its configuration it in the page layout file in your module, as described in the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#about-the-layout-configuration-file-and-ui-component-declaration">About XML сonfiguration of UI сomponents</a> topic.</li>
-  <li>Declare the component in a separate <code>.xml</code> file using the <code>&lt;container&gt;</code> or <code>&lt;component&gt;</code> as parent node.</li>
+  <li>Declare the component in a separate <code class="highlighter-rouge">.xml</code> file using the <code class="highlighter-rouge">&lt;container&gt;</code> or <code class="highlighter-rouge">&lt;component&gt;</code> as parent node.</li>
 </ol>
 
 <h2 id="declare-a-custom-secondary-component">Declare a custom secondary component</h2>
 
-<p>If the custom component you create is secondary (not a basic one), it is declared using  <code>&lt;container&gt;</code> or <code>&lt;component&gt;</code> in the XML configuration file of the basic component.</p>
+<p>If the custom component you create is secondary (not a basic one), it is declared using  <code class="highlighter-rouge">&lt;container&gt;</code> or <code class="highlighter-rouge">&lt;component&gt;</code> in the XML configuration file of the basic component.</p>
 
 <h2 id="example-creating-a-custom-secondary-not-basic-component">Example: Creating a custom secondary (not basic) component</h2>
 <p>Task: In the Customer form, replace the select field with a custom UI component. The custom component extends the Select component by adding a custom option that enables custom functionality.</p>
 
-<p>The Customer form configuration is defined in <code>&lt;Magento_Customer_module_dir&gt;/view/base/ui_component/customer_form.xml</code>. The default configuration of the select field we will extend is following:</p>
+<p>The Customer form configuration is defined in <code class="highlighter-rouge">&lt;Magento_Customer_module_dir&gt;/view/base/ui_component/customer_form.xml</code>. The default configuration of the select field we will extend is following:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;customer&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"customer"</span><span class="nt">&gt;</span>
 ...
-            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;sendemail_store_id&quot;</span> <span class="na">formElement=</span><span class="s">&quot;select&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;source&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"sendemail_store_id"</span> <span class="na">formElement=</span><span class="s">"select"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
                         <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/argument&gt;</span>
                 <span class="nt">&lt;settings&gt;</span>
                     <span class="nt">&lt;dataType&gt;</span>number<span class="nt">&lt;/dataType&gt;</span>
-                    <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Send Welcome Email From<span class="nt">&lt;/label&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Send Welcome Email From<span class="nt">&lt;/label&gt;</span>
                     <span class="nt">&lt;imports&gt;</span>
-                        <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span><span class="nt">&gt;</span>${ $.provider }:data.customer.store_id<span class="nt">&lt;/link&gt;</span>
+                        <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>${ $.provider }:data.customer.store_id<span class="nt">&lt;/link&gt;</span>
                     <span class="nt">&lt;/imports&gt;</span>
                 <span class="nt">&lt;/settings&gt;</span>
                 <span class="nt">&lt;formElements&gt;</span>
                     <span class="nt">&lt;select&gt;</span>
                        <span class="nt">&lt;settings&gt;</span>
-                           <span class="nt">&lt;options</span> <span class="na">class=</span><span class="s">&quot;Magento\Store\Model\System\Store&quot;</span><span class="nt">/&gt;</span>
+                           <span class="nt">&lt;options</span> <span class="na">class=</span><span class="s">"Magento\Store\Model\System\Store"</span><span class="nt">/&gt;</span>
                        <span class="nt">&lt;/settings&gt;</span>
                     <span class="nt">&lt;/select&gt;</span>
                 <span class="nt">&lt;/formElements&gt;</span>
@@ -1283,35 +1283,35 @@
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<p>The custom component we create extends Select, and is also a simple component (does not have child components), so we use the <code>&lt;component&gt;</code> element for its declaration. To add the declaration, we need to create the <code>customer_form.xml</code> file in the custom module, and put it in the same location relative to the module directory as the original <code>customer_form.xml</code> resides. So the custom form configuration file will be: <code>&lt;YourVendor_YourModule_dir&gt;/view/base/ui_component/customer_form.xml</code>.</p>
+<p>The custom component we create extends Select, and is also a simple component (does not have child components), so we use the <code class="highlighter-rouge">&lt;component&gt;</code> element for its declaration. To add the declaration, we need to create the <code class="highlighter-rouge">customer_form.xml</code> file in the custom module, and put it in the same location relative to the module directory as the original <code class="highlighter-rouge">customer_form.xml</code> resides. So the custom form configuration file will be: <code class="highlighter-rouge">&lt;YourVendor_YourModule_dir&gt;/view/base/ui_component/customer_form.xml</code>.</p>
 
-<p>We copy the <code>&lt;field&gt;</code> configuration, remove the <code>&lt;select&gt;</code> node and its configuration, and replace it with <code>&lt;component&gt;</code> and its configuration:</p>
+<p>We copy the <code class="highlighter-rouge">&lt;field&gt;</code> configuration, remove the <code class="highlighter-rouge">&lt;select&gt;</code> node and its configuration, and replace it with <code class="highlighter-rouge">&lt;component&gt;</code> and its configuration:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;customer&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"customer"</span><span class="nt">&gt;</span>
             ...
-            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;sendemail_store_id&quot;</span> <span class="na">formElement=</span><span class="s">&quot;my_select&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;source&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"sendemail_store_id"</span> <span class="na">formElement=</span><span class="s">"my_select"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/argument&gt;</span>
                 <span class="nt">&lt;settings&gt;</span>
                     <span class="nt">&lt;dataType&gt;</span>number<span class="nt">&lt;/dataType&gt;</span>
-                    <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Send Welcome Email From<span class="nt">&lt;/label&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Send Welcome Email From<span class="nt">&lt;/label&gt;</span>
                     <span class="nt">&lt;imports&gt;</span>
-                        <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span><span class="nt">&gt;</span>${ $.provider }:data.customer.store_id<span class="nt">&lt;/link&gt;</span>
+                        <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>${ $.provider }:data.customer.store_id<span class="nt">&lt;/link&gt;</span>
                     <span class="nt">&lt;/imports&gt;</span>
                 <span class="nt">&lt;/settings&gt;</span>
                 <span class="nt">&lt;formElements&gt;</span>
-                    <span class="nt">&lt;component</span> <span class="na">name=</span><span class="s">&quot;my_select&quot;</span>
-	                    	   <span class="na">component=</span><span class="s">&quot;path/to/the/custom/JS_component&quot;</span> 
-                        	   <span class="na">template=</span><span class="s">&quot;path/to/the/custom/html_template&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;arguments</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;options&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Magento\Store            \Model\System\Store<span class="nt">&lt;/item&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;customPropertyName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customPropertyValue<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;component</span> <span class="na">name=</span><span class="s">"my_select"</span>
+	                    	   <span class="na">component=</span><span class="s">"path/to/the/custom/JS_component"</span> 
+                        	   <span class="na">template=</span><span class="s">"path/to/the/custom/html_template"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;arguments</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">xsi:type=</span><span class="s">""</span><span class="nt">&gt;</span>Magento\Store            \Model\System\Store<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"customPropertyName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customPropertyValue<span class="nt">&lt;/item&gt;</span>
                             <span class="nt">&lt;/item&gt;</span>
                         <span class="nt">&lt;/arguments&gt;</span>
                     <span class="nt">&lt;/component&gt;</span>

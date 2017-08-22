@@ -1909,7 +1909,7 @@
   <li>Change a configuration option that is locked in the Magento Admin</li>
 </ul>
 
-<p>You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a <em>configuration path</em>, which is a <code>/</code>-delimited string that uniquely identifies that configuration option. You can find configuration paths in the following references:</p>
+<p>You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a <em>configuration path</em>, which is a <code class="highlighter-rouge">/</code>-delimited string that uniquely identifies that configuration option. You can find configuration paths in the following references:</p>
 
 <ul>
   <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
@@ -1934,9 +1934,9 @@
 <p>Use the following commands:</p>
 
 <ul>
-  <li><code>config:set</code> sets any non-sensitive configuration value by its configuration path</li>
-  <li><code>config:sensitive:set</code> sets any sensitive configuration value by its configuration path</li>
-  <li><code>config:show</code> shows saved configuration values; values of encrypted settings are displayed as asterisks</li>
+  <li><code class="highlighter-rouge">config:set</code> sets any non-sensitive configuration value by its configuration path</li>
+  <li><code class="highlighter-rouge">config:sensitive:set</code> sets any sensitive configuration value by its configuration path</li>
+  <li><code class="highlighter-rouge">config:show</code> shows saved configuration values; values of encrypted settings are displayed as asterisks</li>
 </ul>
 
 <h2 id="first">First steps</h2>
@@ -1948,23 +1948,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -2021,7 +2024,7 @@
 
   <h4 id="find-the-scope-code-in-the-database">Find the scope code in the database</h4>
 
-  <div class="collapsible"><b class="collapsible-title">To find the scope code in the database: </b><div class="collapsible-content"><p>Scope codes for websites and store views are stored in the Magento database in the <code>store_website</code> and <code>store</code> tables, respectively.</p>
+  <div class="collapsible"><b class="collapsible-title">To find the scope code in the database: </b><div class="collapsible-content"><p>Scope codes for websites and store views are stored in the Magento database in the <code class="highlighter-rouge">store_website</code> and <code class="highlighter-rouge">store</code> tables, respectively.</p>
 
 <p>To find the values in the database:</p>
 
@@ -2029,20 +2032,22 @@
   <li>
     <p>Connect to the Magento database.</p>
 
-    <pre><code>mysql -u &lt;magento database user name&gt; -p
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u &lt;magento database user name&gt; -p
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Enter the following commands:</p>
 
-    <pre><code>use &lt;magento database name&gt;;
+    <div class="highlighter-rouge"><pre class="highlight"><code>use &lt;magento database name&gt;;
 SELECT * FROM store;
 SELECT * FROM store_website;
 </code></pre>
+    </div>
 
     <p>A sample result follows:</p>
 
-    <pre><code>[mysql]&gt; SELECT * FROM store_website;
+    <div class="highlighter-rouge"><pre class="highlight"><code>[mysql]&gt; SELECT * FROM store_website;
 +------------+-------+--------------+------------+------------------+------------+
 | website_id | code  | name         | sort_order | default_group_id | is_default |
 +------------+-------+--------------+------------+------------------+------------+
@@ -2051,8 +2056,9 @@ SELECT * FROM store_website;
 |          2 | test1 | Test Website |          0 |                3 |          0 |
 +------------+-------+--------------+------------+------------------+------------+
 </code></pre>
+    </div>
 
-    <p>Use the value in the <code>code</code> column.</p>
+    <p>Use the value in the <code class="highlighter-rouge">code</code> column.</p>
   </li>
   <li>
     <p>Continue with the next section.</p>
@@ -2063,30 +2069,32 @@ SELECT * FROM store_website;
   <h2 id="config-cli-config-set">Set configuration values</h2>
   <p>To set system-specific configuration values, use:</p>
 
-  <pre><code>magento config:set [--scope="..."] [--scope-code="..."] [-l|--lock] path value
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento config:set [--scope="..."] [--scope-code="..."] [-l|--lock] path value
 </code></pre>
+  </div>
 
   <p>where</p>
 
   <ul>
-    <li><code>--scope</code> is the scope of configuration (<code>default</code>, <code>website</code>, or <code>store</code>). The default value is <code>default</code>.</li>
-    <li><code>--scope-code</code> is the scope code of configuration (website code or store view code)</li>
+    <li><code class="highlighter-rouge">--scope</code> is the scope of configuration (<code class="highlighter-rouge">default</code>, <code class="highlighter-rouge">website</code>, or <code class="highlighter-rouge">store</code>). The default value is <code class="highlighter-rouge">default</code>.</li>
+    <li><code class="highlighter-rouge">--scope-code</code> is the scope code of configuration (website code or store view code)</li>
     <li>
-      <p><code>-l|--lock</code> enables you to:</p>
+      <p><code class="highlighter-rouge">-l|--lock</code> enables you to:</p>
 
       <ul>
         <li>Lock the value so it cannot be edited in the Magento Admin</li>
         <li>Change a setting that is already locked in the Magento Admin</li>
       </ul>
     </li>
-    <li><code>path</code> is configuration path <em>(required)</em></li>
-    <li><code>value</code> is value of configuration <em>(required)</em></li>
+    <li><code class="highlighter-rouge">path</code> is configuration path <em>(required)</em></li>
+    <li><code class="highlighter-rouge">value</code> is value of configuration <em>(required)</em></li>
   </ul>
 
   <p>To set sensitive configuration values, use:</p>
 
-  <pre><code>magento config:sensitive:set [--scope="..."] [--scope-code="..."] path value
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento config:sensitive:set [--scope="..."] [--scope-code="..."] path value
 </code></pre>
+  </div>
 
   <p>See one of the following sections for more information:</p>
 
@@ -2096,76 +2104,83 @@ SELECT * FROM store_website;
   </ul>
 
   <h3 id="config-cli-config-set-edit">Set configuration values that can be edited in the Magento Admin</h3>
-  <p>Use <code>magento config:set</code> <em>without</em> <code>-l|-lock</code> to write the value to the database. Values you set this way can be edited in the Magento Admin.</p>
+  <p>Use <code class="highlighter-rouge">magento config:set</code> <em>without</em> <code class="highlighter-rouge">-l|-lock</code> to write the value to the database. Values you set this way can be edited in the Magento Admin.</p>
 
   <p>Some examples for setting a store base <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> follow:</p>
 
   <p>Example to set the base URL for the default scope:</p>
 
-  <pre><code>bin/magento config:set web/unsecure/base_url http://example.com/
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:set web/unsecure/base_url http://example.com/
 </code></pre>
+  </div>
 
-  <p>Example to set the base URL for the <code>base</code> website:</p>
+  <p>Example to set the base URL for the <code class="highlighter-rouge">base</code> website:</p>
 
-  <pre><code>bin/magento config:set --scope=websites --scope-code=base web/unsecure/base_url http://example2.com/
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:set --scope=websites --scope-code=base web/unsecure/base_url http://example2.com/
 </code></pre>
+  </div>
 
-  <p>Example to set the base URL for the <code>test</code> store view:</p>
+  <p>Example to set the base URL for the <code class="highlighter-rouge">test</code> store view:</p>
 
-  <pre><code>bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com/
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com/
 </code></pre>
+  </div>
 
   <h3 id="config-cli-config-file">Set configuration values that cannot be edited in the Magento Admin</h3>
-  <p>If you use the <code>-l|--lock</code> option as follows, the configuration value is saved in <code>env.php</code> and the field for editing this value in Admin page is disabled.</p>
+  <p>If you use the <code class="highlighter-rouge">-l|--lock</code> option as follows, the configuration value is saved in <code class="highlighter-rouge">env.php</code> and the field for editing this value in Admin page is disabled.</p>
 
-  <pre><code>bin/magento config:set --lock --scope=stores --scope-code=default web/unsecure/base_url http://example3.com
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:set --lock --scope=stores --scope-code=default web/unsecure/base_url http://example3.com
 </code></pre>
+  </div>
 
-  <p>If you use the <code>-l|--lock</code> option:</p>
+  <p>If you use the <code class="highlighter-rouge">-l|--lock</code> option:</p>
 
   <ul>
     <li>
-      <p>Configuration values are saved in <code>&lt;Magento base dir&gt;/app/etc/env.php</code></p>
+      <p>Configuration values are saved in <code class="highlighter-rouge">&lt;Magento base dir&gt;/app/etc/env.php</code></p>
 
-      <p>Transfer <code>env.php</code> to another system to use the same configuration values there. For example, if you have a testing system, using the same <code>env.php</code> means you don’t have to set the same configuration values again.</p>
+      <p>Transfer <code class="highlighter-rouge">env.php</code> to another system to use the same configuration values there. For example, if you have a testing system, using the same <code class="highlighter-rouge">env.php</code> means you don’t have to set the same configuration values again.</p>
     </li>
     <li>Configuration values <em>cannot</em> be edited in the Admin.</li>
-    <li>You can use <code>-l|-lock</code> to set configuration values if Magento is not installed. However, you can set values only for the default scope.</li>
+    <li>You can use <code class="highlighter-rouge">-l|-lock</code> to set configuration values if Magento is not installed. However, you can set values only for the default scope.</li>
   </ul>
 
   <p>If you enter an incorrect configuration path, this command returns an error</p>
 
-  <pre><code>The "wrong/config/path" does not exist
+  <div class="highlighter-rouge"><pre class="highlight"><code>The "wrong/config/path" does not exist
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
-    <p>If you use the <code>--lock</code> option to set or change a value, you must use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html"><code>magento app:config:import</code> command</a> to import the setting before you access the Admin or storefront.</p>
+    <p>If you use the <code class="highlighter-rouge">--lock</code> option to set or change a value, you must use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html"><code class="highlighter-rouge">magento app:config:import</code> command</a> to import the setting before you access the Admin or storefront.</p>
   </div>
 
   <h2 id="config-cli-config-show">Display the value of configuration settings</h2>
   <p>Command options:</p>
 
-  <pre><code>magento config:show [--scope[="..."]] [--scope-code[="..."]] path
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento config:show [--scope[="..."]] [--scope-code[="..."]] path
 </code></pre>
+  </div>
 
   <p>where</p>
 
   <ul>
-    <li><code>--scope</code> is the scope of configuration (default, website, store). The default value is <code>default</code></li>
-    <li><code>--scope-code</code> is the scope code of configuration (website code or store view code)</li>
-    <li><code>path</code> is the configuration path in format first_part/second_part/third_part/etc <em>(required)</em></li>
+    <li><code class="highlighter-rouge">--scope</code> is the scope of configuration (default, website, store). The default value is <code class="highlighter-rouge">default</code></li>
+    <li><code class="highlighter-rouge">--scope-code</code> is the scope code of configuration (website code or store view code)</li>
+    <li><code class="highlighter-rouge">path</code> is the configuration path in format first_part/second_part/third_part/etc <em>(required)</em></li>
   </ul>
 
   <div class="bs-callout bs-callout-info" id="info">
-    <p>The <code>config:show</code> command displays the values of any <a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">encrypted values</a> as a series of asterisks: <code>******</code>.</p>
+    <p>The <code class="highlighter-rouge">config:show</code> command displays the values of any <a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">encrypted values</a> as a series of asterisks: <code class="highlighter-rouge">******</code>.</p>
   </div>
 
   <h3 id="examples">Examples</h3>
 
   <p><strong>Show all saved configurations</strong>:</p>
 
-  <pre><code>bin/magento config:show
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show
 </code></pre>
+  </div>
 
   <p>Result:</p>
 
@@ -2175,10 +2190,11 @@ general/region/state_required - AT,BR,CA,CH,EE,ES,FI,LT,LV,RO,US
 catalog/category/root_id - 2
 analytics/subscription/enabled - 1</pre>
 
-  <p><strong>Show all saved configurations for the <code>base</code> website</strong>:</p>
+  <p><strong>Show all saved configurations for the <code class="highlighter-rouge">base</code> website</strong>:</p>
 
-  <pre><code>bin/magento config:show --scope=websites --scope-code=base
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show --scope=websites --scope-code=base
 </code></pre>
+  </div>
 
   <p>Result:</p>
 
@@ -2187,26 +2203,29 @@ general/region/state_required - AT,BR,CA</pre>
 
   <p><strong>Show the base URL for the default scope</strong>:</p>
 
-  <pre><code>bin/magento config:show web/unsecure/base_url
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show web/unsecure/base_url
 </code></pre>
+  </div>
 
   <p>Result:</p>
 
   <pre class="no-copy">web/unsecure/base_url - http://example.com/</pre>
 
-  <p><strong>Show the base URL for the <code>base</code> website</strong>:</p>
+  <p><strong>Show the base URL for the <code class="highlighter-rouge">base</code> website</strong>:</p>
 
-  <pre><code>bin/magento config:show --scope=websites --scope-code=base web/unsecure/base_url
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show --scope=websites --scope-code=base web/unsecure/base_url
 </code></pre>
+  </div>
 
   <p>Result:</p>
 
   <pre class="no-copy">web/unsecure/base_url - http://example-for-website.com/</pre>
 
-  <p><strong>Show the base URL for the <code>default</code> store</strong>:</p>
+  <p><strong>Show the base URL for the <code class="highlighter-rouge">default</code> store</strong>:</p>
 
-  <pre><code>bin/magento config:show --scope=stores --scope-code=default web/unsecure/base_url
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show --scope=stores --scope-code=default web/unsecure/base_url
 </code></pre>
+  </div>
 
   <p>Result:</p>
 

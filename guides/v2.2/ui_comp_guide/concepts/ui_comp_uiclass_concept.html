@@ -1198,75 +1198,75 @@
 </section>
 
 
-			<h2 id="what-is-uiclass">What is <code>uiClass</code>?</h2>
+			<h2 id="what-is-uiclass">What is <code class="highlighter-rouge">uiClass</code>?</h2>
 
-<p>The <code>uiClass</code> is an abstract class from which all components are extended. The <code>uiClass</code> is a low-level class and is rarely used as direct parent for UI components’ classes.</p>
+<p>The <code class="highlighter-rouge">uiClass</code> is an abstract class from which all components are extended. The <code class="highlighter-rouge">uiClass</code> is a low-level class and is rarely used as direct parent for UI components’ classes.</p>
 
-<p><code>uiClass</code> source code is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/class.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/class.js">app/code/Magento/Ui/view/base/web/js/lib/core/class.js</a></p>
+<p><code class="highlighter-rouge">uiClass</code> source code is <code class="highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/class.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/class.js">app/code/Magento/Ui/view/base/web/js/lib/core/class.js</a></p>
 
 <h2 id="commonly-used-uiclass-methods">Commonly used uiClass methods</h2>
 <p>The uiClass class introduces the architecture of UI components through the following methods:</p>
 
 <ul>
   <li>
-    <p>The <code>extend()</code> method implements inheritance of UI components. The <code>extend()</code> returns new class. The <code>extend()</code> method gets a <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> object as a parameter, and then extends the base object with the properties and methods of the argument’s object. The properties of the argument’s object have higher priority than base object’s properties.
+    <p>The <code class="highlighter-rouge">extend()</code> method implements inheritance of UI components. The <code class="highlighter-rouge">extend()</code> returns new class. The <code class="highlighter-rouge">extend()</code> method gets a <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> object as a parameter, and then extends the base object with the properties and methods of the argument’s object. The properties of the argument’s object have higher priority than base object’s properties.
 As an example:
  %componentName%.extend(%JavaScript_extender_object%);</p>
   </li>
   <li>
-    <p>The <code>initConfig()</code> method processes the UI component’s configurations. The <code>initConfig()</code> method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the <code>initConfig()</code> method) and in the parent <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>. This resulting configuration is then set as first level properties in the current UI component instance.</p>
+    <p>The <code class="highlighter-rouge">initConfig()</code> method processes the UI component’s configurations. The <code class="highlighter-rouge">initConfig()</code> method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the <code class="highlighter-rouge">initConfig()</code> method) and in the parent <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>. This resulting configuration is then set as first level properties in the current UI component instance.</p>
 
     <p>As an example:</p>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
-		<span class="nx">myFirstProperty</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-		<span class="nx">mySecondProperty</span><span class="o">:</span> <span class="mi">1</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="err">:</span> <span class="p">{</span>
+		<span class="nl">myFirstProperty</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+		<span class="nx">mySecondProperty</span><span class="err">:</span> <span class="mi">1</span>
 	<span class="p">}</span>
 
-	<span class="nx">Before</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="o">:</span>
+	<span class="nx">Before</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="err">:</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">myFirstProperty</span><span class="p">)</span> <span class="c1">// Undefined</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mySecondProperty</span><span class="p">)</span> <span class="c1">// Undefined</span>
 
-	<span class="nx">After</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="o">:</span>
+	<span class="nx">After</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="err">:</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">myFirstProperty</span><span class="p">)</span> <span class="c1">// 0</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mySecondProperty</span><span class="p">)</span> <span class="c1">// 1</span></code></pre></figure>
 
 <ul>
-  <li>The <code>initialize()</code> method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.</li>
+  <li>The <code class="highlighter-rouge">initialize()</code> method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.</li>
 </ul>
 
 <p>As an example:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 		<span class="o">%</span><span class="nx">yourMethodName</span><span class="o">%</span><span class="p">();</span>
 
 		<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
 	<span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>The <code>_super()</code> method calls the parent UI component method with the same name as the <code>_super()</code> method’s caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
+  <li>The <code class="highlighter-rouge">_super()</code> method calls the parent UI component method with the same name as the <code class="highlighter-rouge">_super()</code> method’s caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
 As an example:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span> <span class="c1">//_super will call parent&#39;s `initialize` method here</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span> <span class="c1">//_super will call parent's `initialize` method here</span>
 
 		<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
 	<span class="p">}</span></code></pre></figure>
 
 <h3 id="uiclass_properties">Commonly used uiClass properties</h3>
 
-<p>The <code>defaults</code> property declares the list of properties of a UI component’s instance. Also it declares communications between components if needed.</p>
+<p>The <code class="highlighter-rouge">defaults</code> property declares the list of properties of a UI component’s instance. Also it declares communications between components if needed.</p>
 
 <p>As an example:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
-		<span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-		<span class="nx">imports</span><span class="o">:</span> <span class="p">{</span>
-            <span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%:</span> <span class="s1">&#39;%anotherComponentLink%&#39;</span><span class="p">,</span>
-            <span class="nx">disabled</span><span class="o">:</span> <span class="s1">&#39;checked&#39;</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="err">:</span> <span class="p">{</span>
+		<span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%</span><span class="err">:</span> <span class="s1">''</span><span class="p">,</span>
+		<span class="nx">imports</span><span class="err">:</span> <span class="p">{</span>
+            <span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%</span><span class="err">:</span> <span class="s1">'%anotherComponentLink%'</span><span class="p">,</span>
+            <span class="nx">disabled</span><span class="err">:</span> <span class="s1">'checked'</span>
         <span class="p">},</span>
 	<span class="p">}</span></code></pre></figure>
 

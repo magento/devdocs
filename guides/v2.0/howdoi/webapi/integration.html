@@ -1078,9 +1078,9 @@
 
 <ol>
   <li>
-    <p><strong>Create the module file structure.</strong> The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is <code>&lt;magento_base_dir&gt;/vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;</code>.</p>
+    <p><strong>Create the module file structure.</strong> The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is <code class="highlighter-rouge">&lt;magento_base_dir&gt;/vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;</code>.</p>
 
-    <p>Also create  <code>etc</code>, <code>etc/integration</code>, and <code>Setup</code> subdirectories under <code>module-&lt;module_name&gt;</code>, as shown in the following example:</p>
+    <p>Also create  <code class="highlighter-rouge">etc</code>, <code class="highlighter-rouge">etc/integration</code>, and <code class="highlighter-rouge">Setup</code> subdirectories under <code class="highlighter-rouge">module-&lt;module_name&gt;</code>, as shown in the following example:</p>
 
     <pre>
  cd &lt;magento_base_dir&gt;
@@ -1090,7 +1090,7 @@
     <p>For more detailed information, see <a href="/guides/v2.0/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a>.</p>
   </li>
   <li>
-    <p><strong>Define your module configuration file.</strong> The <code>etc/module.xml</code> file provides basic information about the module. Change directories to the <code>etc</code> directory and create the <code>module.xml</code> file. You must specify values for the following attributes:</p>
+    <p><strong>Define your module configuration file.</strong> The <code class="highlighter-rouge">etc/module.xml</code> file provides basic information about the module. Change directories to the <code class="highlighter-rouge">etc</code> directory and create the <code class="highlighter-rouge">module.xml</code> file. You must specify values for the following attributes:</p>
 
     <table>
 <tr>
@@ -1105,7 +1105,7 @@
 <td>The version of Magento the component uses</td>
 </tr>
 </table>
-    <p>The following example shows an example <code>etc/module.xml</code> file.</p>
+    <p>The following example shows an example <code class="highlighter-rouge">etc/module.xml</code> file.</p>
 
     <pre>
 &lt;?xml version="1.0"?&gt;
@@ -1124,12 +1124,12 @@
      &lt;/config&gt;
 </pre>
 
-    <p>Module <code>Magento_Integration</code> is added to “sequence” to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.</p>
+    <p>Module <code class="highlighter-rouge">Magento_Integration</code> is added to “sequence” to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.</p>
   </li>
   <li>
-    <p><strong>Add your module’s <code>composer.json</code> file.</strong> Composer is a dependency manager for PHP. You must create a <code>composer.json</code> file for your module so that Composer can install and update the libraries your module relies on. Place the <code>composer.json</code> file in the <code>module-&lt;module_name&gt;</code> directory.</p>
+    <p><strong>Add your module’s <code class="highlighter-rouge">composer.json</code> file.</strong> Composer is a dependency manager for PHP. You must create a <code class="highlighter-rouge">composer.json</code> file for your module so that Composer can install and update the libraries your module relies on. Place the <code class="highlighter-rouge">composer.json</code> file in the <code class="highlighter-rouge">module-&lt;module_name&gt;</code> directory.</p>
 
-    <p>The following example demonstrates a minimal <code>composer.json</code> file.</p>
+    <p>The following example demonstrates a minimal <code class="highlighter-rouge">composer.json</code> file.</p>
 
     <pre>
    {
@@ -1154,7 +1154,7 @@
     <p>For more information, see <a href="/guides/v2.0/extension-dev-guide/build/create_component.html">Create a component</a>.</p>
   </li>
   <li>
-    <p><strong>Create a <code>registration.php</code> file</strong> The <code>registration.php</code> registers the module with the Magento system. It must be placed in the module’s root directory.</p>
+    <p><strong>Create a <code class="highlighter-rouge">registration.php</code> file</strong> The <code class="highlighter-rouge">registration.php</code> registers the module with the Magento system. It must be placed in the module’s root directory.</p>
 
     <pre>
    &lt;?php
@@ -1172,7 +1172,7 @@
   </li>
   <li>
     <p><strong>Create an install class.</strong>
-Change directories to your <code>Setup</code> directory. Create a <code>InstallData.php</code> file that installs the integration configuration data into the Magento integration table.</p>
+Change directories to your <code class="highlighter-rouge">Setup</code> directory. Create a <code class="highlighter-rouge">InstallData.php</code> file that installs the integration configuration data into the Magento integration table.</p>
 
     <p>The following sample is boilerplate and requires minor changes to make your integration work.</p>
 
@@ -1216,11 +1216,11 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
 
     <p>In the following line</p>
 
-    <p><code>$this-&gt;integrationManager-&gt;processIntegrationConfig(['testIntegration']);</code></p>
+    <p><code class="highlighter-rouge">$this-&gt;integrationManager-&gt;processIntegrationConfig(['testIntegration']);</code></p>
 
-    <p><code>testIntegration</code> must refer to your <code>etc/integrations/config.xml</code> file, and the integration name value must be the same.</p>
+    <p><code class="highlighter-rouge">testIntegration</code> must refer to your <code class="highlighter-rouge">etc/integrations/config.xml</code> file, and the integration name value must be the same.</p>
 
-    <p>Also, be sure to change the path after <code>namespace</code> for your vendor and module names.</p>
+    <p>Also, be sure to change the path after <code class="highlighter-rouge">namespace</code> for your vendor and module names.</p>
   </li>
 </ol>
 
@@ -1243,31 +1243,31 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
 </ul>
 
 <h3 id="resources">Define the required resources</h3>
-<p>The <code>etc/integration/api.xml</code> file defines which <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> resources the integration has access to.</p>
+<p>The <code class="highlighter-rouge">etc/integration/api.xml</code> file defines which <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> resources the integration has access to.</p>
 
-<p>To determine which resources an integration needs access to, review the permissions defined in each module’s <code>etc/acl.xml</code> file.</p>
+<p>To determine which resources an integration needs access to, review the permissions defined in each module’s <code class="highlighter-rouge">etc/acl.xml</code> file.</p>
 
 <p>In the following example, the test integration requires access to the following resources in the Sales module:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
-    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;testIntegration&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">"testIntegration"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
             <span class="c">&lt;!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well--&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Customer::customer&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Log::online&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Customer::customer"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Log::online"</span> <span class="nt">/&gt;</span>
             <span class="c">&lt;!-- To grant permission to Magento_Sales::reorder, all its parent resources need to be declared--&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales_operation&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales_order&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::actions&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::reorder&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::sales"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::sales_operation"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::sales_order"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::actions"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::reorder"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
     <span class="nt">&lt;/integration&gt;</span>
 <span class="nt">&lt;/integrations&gt;</span></code></pre></figure>
 
 <h3 id="preconfig">Pre-configure the integration</h3>
 
-<p>Your module can optionally provide a configuration file <code>config.xml</code> so that the integration can be automatically pre-configured with default values. To enable this feature, create the <code>config.xml</code> file in the <code>etc/integration</code> directory.</p>
+<p>Your module can optionally provide a configuration file <code class="highlighter-rouge">config.xml</code> so that the integration can be automatically pre-configured with default values. To enable this feature, create the <code class="highlighter-rouge">config.xml</code> file in the <code class="highlighter-rouge">etc/integration</code> directory.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you pre-configure the integration, the values cannot be edited from the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> panel.</p>
@@ -1276,7 +1276,7 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
 <p>The  file defines which API resources the integration has access to.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
-   <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;TestIntegration&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">"TestIntegration"</span><span class="nt">&gt;</span>
        <span class="nt">&lt;email&gt;&lt;/email&gt;</span>
        <span class="nt">&lt;endpoint_url&gt;&lt;/endpoint_url&gt;</span>
        <span class="nt">&lt;identity_link_url&gt;&lt;/identity_link_url&gt;</span>
@@ -1335,46 +1335,46 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
 
 <ul>
   <li>
-    <p>The location specified in the <code>identity_link_url</code> parameter must point to a page that can handle login requests.</p>
+    <p>The location specified in the <code class="highlighter-rouge">identity_link_url</code> parameter must point to a page that can handle login requests.</p>
   </li>
   <li>
-    <p>The location specified in the <code>endpoint_url</code> parameter (<strong>Callback URL</strong> in Admin) must be able to process OAuth token exchanges.</p>
+    <p>The location specified in the <code class="highlighter-rouge">endpoint_url</code> parameter (<strong>Callback URL</strong> in Admin) must be able to process OAuth token exchanges.</p>
   </li>
 </ul>
 
 <h3 id="login">Login page</h3>
 
-<p>When a merchant clicks the <strong>Activate</strong> button in Admin, a pop-up login page for the third-party application displays. Magento sends values for <code>oauth_consumer_key</code> and <code>success_call_back</code> parameters. The application must store the value for<code>oauth_consumer_key</code> tie it to the login ID. Use the <code>success_call_back</code> parameter to return control back to Magento.</p>
+<p>When a merchant clicks the <strong>Activate</strong> button in Admin, a pop-up login page for the third-party application displays. Magento sends values for <code class="highlighter-rouge">oauth_consumer_key</code> and <code class="highlighter-rouge">success_call_back</code> parameters. The application must store the value for<code class="highlighter-rouge">oauth_consumer_key</code> tie it to the login ID. Use the <code class="highlighter-rouge">success_call_back</code> parameter to return control back to Magento.</p>
 
 <h3 id="callback">Callback page</h3>
 <p>The callback page must be able to perform the following tasks:</p>
 
 <ul>
   <li>
-    <p>Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an <code>oauth_verifier</code>, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.</p>
+    <p>Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an <code class="highlighter-rouge">oauth_verifier</code>, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.</p>
   </li>
   <li>
     <p>Ask for a request token. A request token is a temporary token that the user exchanges for an access token. Use the following API to get a request token from Magento:</p>
 
-    <p><code>POST /oauth/token/request</code></p>
+    <p><code class="highlighter-rouge">POST /oauth/token/request</code></p>
 
     <p>See <a href="/guides/v2.0//get-started/authentication/gs-authentication-oauth.html#pre-auth-token">Get a request token</a> for more details about this call.</p>
   </li>
   <li>
-    <p>Parse the request token response. The response contains an <code>oauth_token</code> and <code>oauth_token_secret</code>.</p>
+    <p>Parse the request token response. The response contains an <code class="highlighter-rouge">oauth_token</code> and <code class="highlighter-rouge">oauth_token_secret</code>.</p>
   </li>
   <li>
     <p>Ask for a access token. The request token must be exchanged for an access token. Use the following API to get a request token from Magento:</p>
 
-    <p><code>POST /oauth/token/access</code></p>
+    <p><code class="highlighter-rouge">POST /oauth/token/access</code></p>
 
     <p>See <a href="/guides/v2.0//get-started/authentication/gs-authentication-oauth.html#get-access-token">Get an access token</a> for more details about this call.</p>
   </li>
   <li>
-    <p>Parse the access token response. The response contains an <code>oauth_token</code> and <code>oauth_token_secret</code>. These values will be different than those provided in the request token response.</p>
+    <p>Parse the access token response. The response contains an <code class="highlighter-rouge">oauth_token</code> and <code class="highlighter-rouge">oauth_token_secret</code>. These values will be different than those provided in the request token response.</p>
   </li>
   <li>
-    <p>Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the <code>Authorization</code> header in each call to Magento.</p>
+    <p>Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the <code class="highlighter-rouge">Authorization</code> header in each call to Magento.</p>
   </li>
 </ul>
 

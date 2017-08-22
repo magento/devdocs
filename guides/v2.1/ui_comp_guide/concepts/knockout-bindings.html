@@ -1138,7 +1138,7 @@
 
 <h3 id="aliases">Aliases</h3>
 
-<p>The standard way to reference a knockout.js binding is using the <code>data-bind</code> attribute: <code>[data-bind="%binding_name%: %value%"]</code>. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as attributes (<code>[%binding_alias%="%value%"]</code>) or nodes (<code>%binding_alias% args="%value%"&gt;</code>).</p>
+<p>The standard way to reference a knockout.js binding is using the <code class="highlighter-rouge">data-bind</code> attribute: <code class="highlighter-rouge">[data-bind="%binding_name%: %value%"]</code>. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as attributes (<code class="highlighter-rouge">[%binding_alias%="%value%"]</code>) or nodes (<code class="highlighter-rouge">%binding_alias% args="%value%"&gt;</code>).</p>
 
 <h3 id="binding-values">Binding values</h3>
 
@@ -1146,64 +1146,64 @@
 
 <h2 id="custom-magento-bindings">Custom Magento bindings</h2>
 
-<h3 id="afterrender"><code>afterRender</code></h3>
+<h3 id="afterrender"><code class="highlighter-rouge">afterRender</code></h3>
 
-<p>The <code>afterRender</code> binding notifies its subscriber when an associated element is inserted into the DOM.</p>
+<p>The <code class="highlighter-rouge">afterRender</code> binding notifies its subscriber when an associated element is inserted into the DOM.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/after-render.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/after-render.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/after-render.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/after-render.js">See on Github</a>.</p>
 
-<p><strong>Value type</strong>: <code>(element: Element, viewModel: Object) =&gt; void</code>.
+<p><strong>Value type</strong>: <code class="highlighter-rouge">(element: Element, viewModel: Object) =&gt; void</code>.
 Function that is invoked after the element is rendered.</p>
 
-<p><strong>Aliases</strong>: <code>[afterRender]</code></p>
+<p><strong>Aliases</strong>: <code class="highlighter-rouge">[afterRender]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">afterRender</span><span class="o">=</span><span class="s2">&quot;function (target, viewModel) {</span>
-<span class="s2">    console.log(&#39;Rendered element:&#39;, target);</span>
-<span class="s2">    console.log(&#39;Associated view model:&#39; viewModel);</span>
-<span class="s2">    console.log(this === viewModel);</span>
-<span class="s2">}&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">afterRender</span><span class="o">=</span><span class="s2">"function (target, viewModel) {
+    console.log('Rendered element:', target);
+    console.log('Associated view model:' viewModel);
+    console.log(this === viewModel);
+}"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
 
-<h3 id="autoselect"><code>autoselect</code></h3>
-<p>The <code>autoselect</code> binding automatically highlights the text in an input element, when it gets focus.</p>
+<h3 id="autoselect"><code class="highlighter-rouge">autoselect</code></h3>
+<p>The <code class="highlighter-rouge">autoselect</code> binding automatically highlights the text in an input element, when it gets focus.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/autoselect.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/autoselect.js">See on Github</a>.
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/autoselect.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/autoselect.js">See on Github</a>.
 <strong>Value type</strong>: Boolean</p>
 
-<p>Defines whether the binding is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
+<p>Defines whether the binding is enabled (<code class="highlighter-rouge">true</code>) or disabled (<code class="highlighter-rouge">false</code>).</p>
 
-<p><strong>Aliases</strong>: <code>[autoselect]</code></p>
+<p><strong>Aliases</strong>: <code class="highlighter-rouge">[autoselect]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c">&lt;!--</span> <span class="nx">as</span> <span class="nx">an</span> <span class="nx">attribute</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">autoselect</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">autoselect</span><span class="o">/&gt;</span>
 
 <span class="c">&lt;!--</span> <span class="k">in</span> <span class="nx">a</span> <span class="nx">standard</span> <span class="nx">KO</span> <span class="nx">form</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;autoselect: true&quot;</span><span class="o">/&gt;</span></code></pre></figure>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"autoselect: true"</span><span class="o">/&gt;</span></code></pre></figure>
 
-<h3 id="bindhtml"><code>bindHtml</code></h3>
-<p>The <code>bindHtml</code> binding renders the provided string, as a collection of HTML elements, inside of the associated node.</p>
+<h3 id="bindhtml"><code class="highlighter-rouge">bindHtml</code></h3>
+<p>The <code class="highlighter-rouge">bindHtml</code> binding renders the provided string, as a collection of HTML elements, inside of the associated node.</p>
 
 <p>It also instantiates all bindings defined for the rendered elements in the scope of the current <a href="http://knockoutjs.com/documentation/observables.html">view model</a>.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/bind-html.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/bind-html.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/bind-html.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/bind-html.js">See on Github</a>.</p>
 
 <p><strong>Value type</strong>: String</p>
 
-<p><strong>Aliases</strong>: <code>[bindHtml]</code></p>
+<p><strong>Aliases</strong>: <code class="highlighter-rouge">[bindHtml]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">bindHtml</span><span class="o">=</span><span class="s2">&quot;</span>
-<span class="s2">    &lt;div data-bind=&#39;text: \&#39;String from the text binding\&#39;&#39;&gt;&lt;/div&gt;</span>
-<span class="s2">&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">bindHtml</span><span class="o">=</span><span class="s2">"
+    &lt;div data-bind='text: \'String from the text binding\''&gt;&lt;/div&gt;
+"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
 
-<h3 id="collapsible"><code>collapsible</code></h3>
-<p>The <code>collapsible</code> binding provides methods and properties required for implementing collapsible panels. It can automatically collapse panel when clicking outside of the associated node, toggle optional CSS class when node changes its visibility. It has additional helper bindings: <code>toggleCollapsible</code>, <code>openCollapsible</code> and <code>closeCollapsible</code>.</p>
+<h3 id="collapsible"><code class="highlighter-rouge">collapsible</code></h3>
+<p>The <code class="highlighter-rouge">collapsible</code> binding provides methods and properties required for implementing collapsible panels. It can automatically collapse panel when clicking outside of the associated node, toggle optional CSS class when node changes its visibility. It has additional helper bindings: <code class="highlighter-rouge">toggleCollapsible</code>, <code class="highlighter-rouge">openCollapsible</code> and <code class="highlighter-rouge">closeCollapsible</code>.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/collapsible.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/collapsible.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/collapsible.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/collapsible.js">See on Github</a>.</p>
 
 <p><strong>Value type</strong>: Object</p>
 
@@ -1286,17 +1286,17 @@ Function that is invoked after the element is rendered.</p>
   </tr>
 </table>
 
-<p><strong>Aliases</strong>: <code>[collapsible]</code></p>
+<p><strong>Aliases</strong>: <code class="highlighter-rouge">[collapsible]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">collapsible</span><span class="o">=</span><span class="s2">&quot;openClass: false, closeOnOuter: false&quot;</span><span class="o">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">collapsible</span><span class="o">=</span><span class="s2">"openClass: false, closeOnOuter: false"</span><span class="o">&gt;</span></code></pre></figure>
 
-<h3 id="datepicker"><code>datepicker</code></h3>
+<h3 id="datepicker"><code class="highlighter-rouge">datepicker</code></h3>
 
-<p>The <code>datepicker</code> binding is an adapter for the <a href="/guides/v2.1/javascript-dev-guide/widgets/widget_calendar.html">mage/calendar.js</a> widget.</p>
+<p>The <code class="highlighter-rouge">datepicker</code> binding is an adapter for the <a href="/guides/v2.1/javascript-dev-guide/widgets/widget_calendar.html">mage/calendar.js</a> widget.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/datepicker.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/datepicker.js">See on Github</a></p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/datepicker.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/datepicker.js">See on Github</a></p>
 
 <p><strong>Value type</strong>: String|Object</p>
 
@@ -1304,223 +1304,223 @@ Function that is invoked after the element is rendered.</p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;datepicker: value&quot;</span><span class="o">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"datepicker: value"</span><span class="o">/&gt;</span></code></pre></figure>
 
-<h3 id="fadevisible"><code>fadeVisible</code></h3>
-<p>The <code>fadeVisible</code> binding performs the gradual change of the element’s visibility  (with an animation effect).</p>
+<h3 id="fadevisible"><code class="highlighter-rouge">fadeVisible</code></h3>
+<p>The <code class="highlighter-rouge">fadeVisible</code> binding performs the gradual change of the element’s visibility  (with an animation effect).</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/fadeVisible.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/fadeVisible.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/fadeVisible.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/fadeVisible.js">See on Github</a>.</p>
 
 <p><strong>Value type</strong>: Boolean</p>
 
-<p>Defines whether the element is visible (<code>true</code>) or hidden (<code>false</code>).</p>
+<p>Defines whether the element is visible (<code class="highlighter-rouge">true</code>) or hidden (<code class="highlighter-rouge">false</code>).</p>
 
 <p><strong>Aliases</strong>: -</p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;fadeVisible: isVisible&quot;</span><span class="o">&gt;</span><span class="nx">Foo</span> <span class="nx">Bar</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
-<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">click</span><span class="o">=</span><span class="s2">&quot;function () { isVisible(!isVisible()); }&quot;</span><span class="o">&gt;</span><span class="nx">Toggle</span><span class="o">&lt;</span><span class="err">/button&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"fadeVisible: isVisible"</span><span class="o">&gt;</span><span class="nx">Foo</span> <span class="nx">Bar</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">click</span><span class="o">=</span><span class="s2">"function () { isVisible(!isVisible()); }"</span><span class="o">&gt;</span><span class="nx">Toggle</span><span class="o">&lt;</span><span class="sr">/button&gt;</span></code></pre></figure>
 
-<h3 id="i18n"><code>i18n</code></h3>
+<h3 id="i18n"><code class="highlighter-rouge">i18n</code></h3>
 
-<p>The <code>i18n</code> binding is used to translate a string according to the currently enabled locale. Additionally, it creates the necessary elements for the TranslateInline jQuery widget, if it’s enabled on the page.</p>
+<p>The <code class="highlighter-rouge">i18n</code> binding is used to translate a string according to the currently enabled locale. Additionally, it creates the necessary elements for the TranslateInline jQuery widget, if it’s enabled on the page.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/i18n.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/i18n.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/i18n.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/i18n.js">See on Github</a>.</p>
 
-<p><strong>Value type</strong>: <code>string</code></p>
+<p><strong>Value type</strong>: <code class="highlighter-rouge">string</code></p>
 
-<p><strong>Aliases</strong>: <code>[translate]</code>, <code>&lt;translate&gt;</code></p>
+<p><strong>Aliases</strong>: <code class="highlighter-rouge">[translate]</code>, <code class="highlighter-rouge">&lt;translate&gt;</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;i18n: &#39;Translate as a standard knockout binding&#39;&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
-
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">translate</span><span class="o">=</span><span class="s2">&quot;&#39;Translate using the attribute&#39;&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
-
-<span class="o">&lt;</span><span class="nx">translate</span> <span class="nx">args</span><span class="o">=</span><span class="s2">&quot;&#39;Translate using the tag&#39;&quot;</span><span class="o">&gt;&lt;</span><span class="err">/translate&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"i18n: 'Translate as a standard knockout binding'"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">translate</span><span class="o">=</span><span class="s2">"'Translate using the attribute'"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">translate</span> <span class="nx">args</span><span class="o">=</span><span class="s2">"'Translate using the tag'"</span><span class="o">&gt;&lt;</span><span class="sr">/translate&gt;</span></code></pre></figure>
 
 <h3 id="keyboard">keyboard</h3>
 
-<p>The keyboard binding allows setting up listeners for the <code>keypress</code> event of a specific key.</p>
+<p>The keyboard binding allows setting up listeners for the <code class="highlighter-rouge">keypress</code> event of a specific key.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/keyboard.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/keyboard.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js">See on Github</a>.</p>
 
-<p><strong>Value type</strong>:<code> [name: number]: (e: KeyboardEvent) =&gt; void</code></p>
+<p><strong>Value type</strong>:<code class="highlighter-rouge"> [name: number]: (e: KeyboardEvent) =&gt; void</code></p>
 
 <p>A collection in which keys represent keyboard keys codes and values are callback functions invoked when the associated key is pressed.</p>
 
-<p><strong>Aliases</strong>: <code>[keyboard]</code></p>
+<p><strong>Aliases</strong>: <code class="highlighter-rouge">[keyboard]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">keyboard</span><span class="o">=</span><span class="s2">&quot;{</span>
-<span class="s2">    13: function (e) {</span>
-<span class="s2">        console.log(&#39;Enter key has been pressed!&#39;);</span>
-<span class="s2">    }</span>
-<span class="s2">}&quot;</span><span class="o">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">keyboard</span><span class="o">=</span><span class="s2">"{
+    13: function (e) {
+        console.log('Enter key has been pressed!');
+    }
+}"</span><span class="o">/&gt;</span></code></pre></figure>
 
 <h3 id="mageinit">mageInit</h3>
-<p>The <code>mageInit</code> binding is an adapter for the <code>[data-mage-init]</code> attribute that is used to initialize jQuery widgets on the associated element.</p>
+<p>The <code class="highlighter-rouge">mageInit</code> binding is an adapter for the <code class="highlighter-rouge">[data-mage-init]</code> attribute that is used to initialize jQuery widgets on the associated element.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/mage-init.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/mage-init.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/mage-init.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/mage-init.js">See on Github</a>.</p>
 
-<p><strong>Value type</strong>: <code>[path: string]:</code> Object</p>
+<p><strong>Value type</strong>: <code class="highlighter-rouge">[path: string]:</code> Object</p>
 
 <p><strong>Aliases</strong>: -</p>
 
 <p><strong>Usage example</strong>: creating modal window</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">mageInit</span><span class="o">=</span><span class="s2">&quot;{</span>
-<span class="s2">    &#39;Magento_Ui/js/modal/modal&#39;: {</span>
-<span class="s2">        autoOpen: true,</span>
-<span class="s2">        buttons: false,</span>
-<span class="s2">        modalClass: &#39;modal-system-messages&#39;,</span>
-<span class="s2">        title: &#39;Hello world!&#39;</span>
-<span class="s2">    }</span>
-<span class="s2">}&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">mageInit</span><span class="o">=</span><span class="s2">"{
+    'Magento_Ui/js/modal/modal': {
+        autoOpen: true,
+        buttons: false,
+        modalClass: 'modal-system-messages',
+        title: 'Hello world!'
+    }
+}"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
 
 <h3 id="optgroup">optgroup</h3>
-<p>The <code>optgroup</code> binding is a decorator for the standard Knockout’s options binding which adds the support of nested options, and renders them as the <code>&lt;optgroup&gt;</code> element.</p>
+<p>The <code class="highlighter-rouge">optgroup</code> binding is a decorator for the standard Knockout’s options binding which adds the support of nested options, and renders them as the <code class="highlighter-rouge">&lt;optgroup&gt;</code> element.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/optgroup.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/optgroup.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/optgroup.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/optgroup.js">See on Github</a>.</p>
 
-<p><strong>Value type</strong>: <code>Array&lt;string&gt;</code> | <code>Array&lt;Object&gt;</code></p>
+<p><strong>Value type</strong>: <code class="highlighter-rouge">Array&lt;string&gt;</code> | <code class="highlighter-rouge">Array&lt;Object&gt;</code></p>
 
 <p><strong>Aliases</strong>: -</p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">select</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;</span>
-<span class="s2">    optionsValue: &#39;value&#39;,</span>
-<span class="s2">    optionsText: &#39;label&#39;,</span>
-<span class="s2">    optgroup: [{</span>
-<span class="s2">        label: &#39;Swedish Cars&#39;,</span>
-<span class="s2">        value: [{</span>
-<span class="s2">            label: &#39;Volvo&#39;,</span>
-<span class="s2">            value: &#39;volvo&#39;</span>
-<span class="s2">        }, {</span>
-<span class="s2">            label: &#39;Saab&#39;,</span>
-<span class="s2">            value: &#39;saab&#39;      </span>
-<span class="s2">        }]</span>
-<span class="s2">    }, {</span>
-<span class="s2">        label: &#39;German Cars&#39;,</span>
-<span class="s2">        value: [{</span>
-<span class="s2">            label: &#39;Mercedes&#39;,</span>
-<span class="s2">            value: &#39;mercedes&#39;</span>
-<span class="s2">        }]</span>
-<span class="s2">    }]&quot;</span><span class="o">&gt;&lt;</span><span class="err">/select&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">select</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"
+    optionsValue: 'value',
+    optionsText: 'label',
+    optgroup: [{
+        label: 'Swedish Cars',
+        value: [{
+            label: 'Volvo',
+            value: 'volvo'
+        }, {
+            label: 'Saab',
+            value: 'saab'      
+        }]
+    }, {
+        label: 'German Cars',
+        value: [{
+            label: 'Mercedes',
+            value: 'mercedes'
+        }]
+    }]"</span><span class="o">&gt;&lt;</span><span class="sr">/select&gt;</span></code></pre></figure>
 
 <h3 id="outerclick">outerClick</h3>
-<p>The <code>outerClick</code> binding allows to subscribe for the “click” event that happens outside of the boundaries of the associated element.</p>
+<p>The <code class="highlighter-rouge">outerClick</code> binding allows to subscribe for the “click” event that happens outside of the boundaries of the associated element.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/outer_click.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/outer_click.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/outer_click.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/outer_click.js">See on Github</a>.</p>
 
 <p><strong>Value type</strong>: Function.</p>
 
 <p>Callback that is invoked when user clicks outside of the element.</p>
 
-<p><strong>Aliases</strong>: <code>[outerClick]</code></p>
+<p><strong>Aliases</strong>: <code class="highlighter-rouge">[outerClick]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;target&quot;</span> <span class="nx">outerClick</span><span class="o">=</span><span class="s2">&quot;function () {</span>
-<span class="s2">    console.log(&#39;Clicked outside of the &quot;</span><span class="nx">target</span><span class="s2">&quot; node.&#39;);</span>
-<span class="s2">}&quot;</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="err">/div&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"target"</span> <span class="nx">outerClick</span><span class="o">=</span><span class="s2">"function () {
+    console.log('Clicked outside of the "</span><span class="nx">target</span><span class="s2">" node.');
+}"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
 
 <h3 id="range">range</h3>
-<p>The <code>range</code> binding is an adapter for the <a href="https://jqueryui.com/slider/">jQuery UI Slider widget</a>. It also implements necessary handlers to work with mobile devices.</p>
+<p>The <code class="highlighter-rouge">range</code> binding is an adapter for the <a href="https://jqueryui.com/slider/">jQuery UI Slider widget</a>. It also implements necessary handlers to work with mobile devices.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/range.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/range.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/range.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/range.js">See on Github</a>.</p>
 
 <p><strong>Value type</strong>: Object.</p>
 
 <p>Configuration that is passed to the Slider widget.</p>
 
-<p><strong>Aliases</strong>: <code>[range]</code></p>
+<p><strong>Aliases</strong>: <code class="highlighter-rouge">[range]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span>
-    <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;data-slider&quot;</span>
-    <span class="nx">range</span><span class="o">=</span><span class="s2">&quot;{</span>
-<span class="s2">        value: scale,</span>
-<span class="s2">        min: 1,</span>
-<span class="s2">        max: 200,</span>
-<span class="s2">        step: 1</span>
-<span class="s2">}&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span></code></pre></figure>
+    <span class="kr">class</span><span class="o">=</span><span class="s2">"data-slider"</span>
+    <span class="nx">range</span><span class="o">=</span><span class="s2">"{
+        value: scale,
+        min: 1,
+        max: 200,
+        step: 1
+}"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
 
 <h3 id="resizable">resizable</h3>
 
-<p>The <code>resizable</code> binding is an adapter for the <a href="http://api.jqueryui.com/resizable/">jQuery UI Resizable</a> widget.</p>
+<p>The <code class="highlighter-rouge">resizable</code> binding is an adapter for the <a href="http://api.jqueryui.com/resizable/">jQuery UI Resizable</a> widget.</p>
 
-<p><strong>Source:</strong> <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/resizable.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/resizable.js">See on Github</a>.</p>
+<p><strong>Source:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/resizable.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/resizable.js">See on Github</a>.</p>
 
 <p><strong>Value type:</strong> Object.</p>
 
 <p>Configuration for the Resizable widget.</p>
 
-<p><strong>Aliases:</strong> <code>[resizable]</code></p>
+<p><strong>Aliases:</strong> <code class="highlighter-rouge">[resizable]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;resizable: {maxHeight: 200}&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"resizable: {maxHeight: 200}"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
 
-<h3 id="scope"><code>scope</code></h3>
+<h3 id="scope"><code class="highlighter-rouge">scope</code></h3>
 <p>A binding that allows evaluating descendant nodes in the scope of an object found in the UiRegistry by provided string.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/scope.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/scope.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/scope.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/scope.js">See on Github</a>.</p>
 
 <p><strong>Value type</strong>: String.</p>
 
 <p>Component’s name by which to perform a lookup in the registry.</p>
 
-<p><strong>Aliases</strong>: <code>[ko-scope]</code>, <code>&lt;scope&gt;</code></p>
+<p><strong>Aliases</strong>: <code class="highlighter-rouge">[ko-scope]</code>, <code class="highlighter-rouge">&lt;scope&gt;</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c">&lt;!--</span> <span class="nx">as</span> <span class="nx">an</span> <span class="nx">attribute</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">ko</span><span class="o">-</span><span class="nx">scope</span><span class="o">=</span><span class="s2">&quot;&#39;name.of.component&#39;&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
-
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">ko</span><span class="o">-</span><span class="nx">scope</span><span class="o">=</span><span class="s2">"'name.of.component'"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
 <span class="c">&lt;!--</span> <span class="k">in</span> <span class="nx">a</span> <span class="nx">standard</span> <span class="nx">KO</span> <span class="nx">form</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;scope: &#39;name.of.component&#39;&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
-
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"scope: 'name.of.component'"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
 <span class="c">&lt;!--</span> <span class="nx">without</span> <span class="nx">an</span> <span class="nx">extra</span> <span class="nx">container</span> <span class="nx">node</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">scope</span> <span class="nx">args</span><span class="o">=</span><span class="s2">&quot;&#39;name.of.component&#39;&quot;</span><span class="o">&gt;&lt;</span><span class="err">/scope&gt;</span></code></pre></figure>
+<span class="o">&lt;</span><span class="nx">scope</span> <span class="nx">args</span><span class="o">=</span><span class="s2">"'name.of.component'"</span><span class="o">&gt;&lt;</span><span class="sr">/scope&gt;</span></code></pre></figure>
 
 <h3 id="staticchecked">staticChecked</h3>
 
-<p>The <code>staticChecked</code> binding implements the behavior similar to the standard <a href="http://knockoutjs.com/documentation/checked-binding.html"><code>checked</code></a> binding. The difference is that <code>staticChecked</code> doesn’t change the array of the already selected elements if the value of the associated DOM element changes.</p>
+<p>The <code class="highlighter-rouge">staticChecked</code> binding implements the behavior similar to the standard <a href="http://knockoutjs.com/documentation/checked-binding.html"><code class="highlighter-rouge">checked</code></a> binding. The difference is that <code class="highlighter-rouge">staticChecked</code> doesn’t change the array of the already selected elements if the value of the associated DOM element changes.</p>
 
-<p><strong>Source</strong>: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/staticChecked.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/staticChecked.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/staticChecked.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/staticChecked.js">See on Github</a>.</p>
 
 <p><strong>Value type:</strong> Boolean | String | Number | Array&lt;String|Number|Number&gt;</p>
 
-<p><strong>Aliases:</strong> <code>[staticChecked]</code></p>
+<p><strong>Aliases:</strong> <code class="highlighter-rouge">[staticChecked]</code></p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;staticChecked: observable&quot;</span><span class="o">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"checkbox"</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"staticChecked: observable"</span><span class="o">/&gt;</span></code></pre></figure>
 
 <h3 id="template">template</h3>
-<p>Magento <code>template</code> binding is a customization of the existing Knockout <a href="http://knockoutjs.com/documentation/template-binding.html"><code>template</code> binding</a>. It is used to render a template inside of the associated element. The original Knockout’s  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.</p>
+<p>Magento <code class="highlighter-rouge">template</code> binding is a customization of the existing Knockout <a href="http://knockoutjs.com/documentation/template-binding.html"><code class="highlighter-rouge">template</code> binding</a>. It is used to render a template inside of the associated element. The original Knockout’s  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.</p>
 
-<p><strong>Source:</strong> <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/template/engine.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js">See on Github</a>.</p>
+<p><strong>Source:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/template/engine.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js">See on Github</a>.</p>
 
 <p><strong>Value type:</strong> String | Object</p>
 
-<p>Сonfiguration for the <code>template</code> binding. If the provided value is a string, it is processed as a path to <code>.html</code> file.</p>
+<p>Сonfiguration for the <code class="highlighter-rouge">template</code> binding. If the provided value is a string, it is processed as a path to <code class="highlighter-rouge">.html</code> file.</p>
 
-<p><strong>Aliases:</strong> <code>[render]</code>, <code>&lt;render&gt;</code></p>
+<p><strong>Aliases:</strong> <code class="highlighter-rouge">[render]</code>, <code class="highlighter-rouge">&lt;render&gt;</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;template: &#39;path/to/the/template&#39;&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"template: 'path/to/the/template'"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
 
 <h3 id="tooltip">tooltip</h3>
 
 <p>Magento custom knockout binding for displaying a tooltip.</p>
 
-<p><strong>Source:</strong> <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/tooltip.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/tooltip.js">See on Github</a>.</p>
+<p><strong>Source:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/tooltip.js</code>. <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/tooltip.js">See on Github</a>.</p>
 
 <p><strong>Value type:</strong> Object</p>
 
@@ -1577,35 +1577,35 @@ Function that is invoked after the element is rendered.</p>
   </tr>
 </table>
 
-<p><strong>Aliases:</strong> <code>[tooltip]</code></p>
+<p><strong>Aliases:</strong> <code class="highlighter-rouge">[tooltip]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
 <p>Adding the tooltip binding as an attribute:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">tooltip</span><span class="o">=</span><span class="s2">&quot;</span>
-<span class="s2">     trigger: &#39;[data-tooltip-trigger=trigger]&#39;,</span>
-<span class="s2">     action: &#39;click&#39;,</span>
-<span class="s2">     delay: 300,</span>
-<span class="s2">     track: true,</span>
-<span class="s2">     position: &#39;top&#39;</span>
-<span class="s2"> &quot;</span><span class="o">&gt;</span> <span class="nx">Tooltip</span> <span class="nx">data</span> <span class="o">&lt;</span><span class="err">/div&gt;</span>
-
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">tooltip</span><span class="o">-</span><span class="nx">trigger</span><span class="o">=</span><span class="s2">&quot;trigger&quot;</span><span class="o">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">tooltip</span><span class="o">=</span><span class="s2">"
+     trigger: '[data-tooltip-trigger=trigger]',
+     action: 'click',
+     delay: 300,
+     track: true,
+     position: 'top'
+ "</span><span class="o">&gt;</span> <span class="nx">Tooltip</span> <span class="nx">data</span> <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">tooltip</span><span class="o">-</span><span class="nx">trigger</span><span class="o">=</span><span class="s2">"trigger"</span><span class="o">/&gt;</span></code></pre></figure>
 
 <p>Adding the tooltip binding as a node:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;</span>
-<span class="s2">    tooltip: {</span>
-<span class="s2">        trigger: &#39;[data-tooltip-trigger=trigger]&#39;,</span>
-<span class="s2">        action: &#39;click&#39;,</span>
-<span class="s2">        delay: 300,</span>
-<span class="s2">        track: true,</span>
-<span class="s2">        position: &#39;top&#39;</span>
-<span class="s2">    }  </span>
-<span class="s2">&quot;</span><span class="o">&gt;</span> <span class="nx">Tooltip</span> <span class="nx">data</span> <span class="o">&lt;</span><span class="err">/div&gt;</span>
-
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">tooltip</span><span class="o">-</span><span class="nx">trigger</span><span class="o">=</span><span class="s2">&quot;trigger&quot;</span><span class="o">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"
+    tooltip: {
+        trigger: '[data-tooltip-trigger=trigger]',
+        action: 'click',
+        delay: 300,
+        track: true,
+        position: 'top'
+    }  
+"</span><span class="o">&gt;</span> <span class="nx">Tooltip</span> <span class="nx">data</span> <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">tooltip</span><span class="o">-</span><span class="nx">trigger</span><span class="o">=</span><span class="s2">"trigger"</span><span class="o">/&gt;</span></code></pre></figure>
 
 
 		</div>

@@ -463,11 +463,11 @@
 
 <h2 id="m2devgde-pricecalc-gen">Price calculation: general flow</h2>
 
-<p>To use the Pricing library for a product (<code>SaleableItem</code>), the product model should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>.</p>
+<p>To use the Pricing library for a product (<code class="highlighter-rouge">SaleableItem</code>), the product model should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>.</p>
 
-<p>The implementation of <code>SaleableItemInterface</code> gives access to the <code>PriceInfo</code> object of a product, which in turn provides all available <code>Price</code> objects or <code>Adjustments</code> specific to the product.</p>
+<p>The implementation of <code class="highlighter-rouge">SaleableItemInterface</code> gives access to the <code class="highlighter-rouge">PriceInfo</code> object of a product, which in turn provides all available <code class="highlighter-rouge">Price</code> objects or <code class="highlighter-rouge">Adjustments</code> specific to the product.</p>
 
-<p>The <code>Price</code> object provides the Amount calculated by applying or excluding <code>Adjustments</code>. And finally, calling the <code>getValue()</code> method of the <code>Amount</code> object returns a float price (number).</p>
+<p>The <code class="highlighter-rouge">Price</code> object provides the Amount calculated by applying or excluding <code class="highlighter-rouge">Adjustments</code>. And finally, calling the <code class="highlighter-rouge">getValue()</code> method of the <code class="highlighter-rouge">Amount</code> object returns a float price (number).</p>
 
 <p>The flow can be illustrated as follows:</p>
 <p><img src="/common/images/price_usage1.png" alt="The diagram SaleableItem to PriceInfoFactory to PriceInfoInterface, from here to Price and to Adjustment, from Price to Adjustment Calculator, from here to Adjustment and to Amount, from Amount to Value" /></p>
@@ -486,7 +486,7 @@
 
 <h3 id="m2devgde-pricecalc-api_adj">AdjustmentInterface</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a> contains the business logic responsible for applying adjustment to the <code>SaleableItem</code> final price.</p>
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a> contains the business logic responsible for applying adjustment to the <code class="highlighter-rouge">SaleableItem</code> final price.</p>
 
 <table>
   <tbody>
@@ -590,7 +590,7 @@
 
 <h3 id="m2devgde-pricecalc-calcint">CalculatorInterface</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Adjustment/CalculatorInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\CalculatorInterface</a> prepares <code>Amount</code> (applies and extracts adjustments) according to the saleable item (product) configuration.</p>
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Adjustment/CalculatorInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\CalculatorInterface</a> prepares <code class="highlighter-rouge">Amount</code> (applies and extracts adjustments) according to the saleable item (product) configuration.</p>
 
 <table>
   <tbody>

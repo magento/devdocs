@@ -1673,11 +1673,11 @@
 			<h2 id="config-files-extend-create">Extend configuration types</h2>
 <p>To extend an existing configuration type, you need only create a configuration file in your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
-<p>For example, to add an event observer, you create <code>app/etc/events.xml</code> and declare a new observer.</p>
+<p>For example, to add an event observer, you create <code class="highlighter-rouge">app/etc/events.xml</code> and declare a new observer.</p>
 
-<p>Because the event configuration type already exists in Magento, the loader and the <code>events.xsd</code> validating schema are already present and functional.</p>
+<p>Because the event configuration type already exists in Magento, the loader and the <code class="highlighter-rouge">events.xsd</code> validating schema are already present and functional.</p>
 
-<p>Your new <code>events.xml</code> is automatically collected from your module and merged with other <code>events.xml</code> files for other modules.</p>
+<p>Your new <code class="highlighter-rouge">events.xml</code> is automatically collected from your module and merged with other <code class="highlighter-rouge">events.xml</code> files for other modules.</p>
 
 <h2 id="config-files-extend-create-create">Create configuration types</h2>
 <p>To create new configuration type, you must add at minimum:</p>
@@ -1695,39 +1695,40 @@
   <li>An XSD schema.</li>
   <li>Any other classes required for your new type to work.</li>
   <li>
-    <p>An appropriately named configuration file. For example, <code>search.xml</code>. This file is read and validated against your schema.</p>
+    <p>An appropriately named configuration file. For example, <code class="highlighter-rouge">search.xml</code>. This file is read and validated against your schema.</p>
 
-    <p>If other modules have a <code>search.xml</code> file, they are merged with your file when it loads.</p>
+    <p>If other modules have a <code class="highlighter-rouge">search.xml</code> file, they are merged with your file when it loads.</p>
   </li>
 </ul>
 
-<p>To create a new configuration type, extend the <code>\Magento\Framework\Config\ReaderInterface</code>, which is <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/Reader/Filesystem.php" target="_blank">Magento\Framework\Config\Reader\Filesystem</a> to provide the following parameters:</p>
+<p>To create a new configuration type, extend the <code class="highlighter-rouge">\Magento\Framework\Config\ReaderInterface</code>, which is <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/Reader/Filesystem.php" target="_blank">Magento\Framework\Config\Reader\Filesystem</a> to provide the following parameters:</p>
 
 <ul>
-  <li><code>$fileResolver</code>. Implements <code>\Magento\Framework\Config\FileResolverInterface</code>. This parameter lists the files containing the configurations of your custom type.</li>
-  <li><code>$converter</code>. Implements <code>\Magento\Framework\Config\ConverterInterface</code>. This parameter converts the XML into the internal array representation of the configurations.</li>
-  <li><code>$schemaLocator</code>. Implements <code>\Magento\Framework\Config/SchemaLocatorInterface</code>. This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.&lt;/p&gt;</li>
-  <li><code>$validationState</code>. Implements <code>\Magento\Framework\Config\ValidationStateInterface</code>. This parameter defines whether a configuration file should be validated.</li>
-  <li><code>$fileName</code>. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules’ <code>etc</code> directories.</li>
+  <li><code class="highlighter-rouge">$fileResolver</code>. Implements <code class="highlighter-rouge">\Magento\Framework\Config\FileResolverInterface</code>. This parameter lists the files containing the configurations of your custom type.</li>
+  <li><code class="highlighter-rouge">$converter</code>. Implements <code class="highlighter-rouge">\Magento\Framework\Config\ConverterInterface</code>. This parameter converts the XML into the internal array representation of the configurations.</li>
+  <li><code class="highlighter-rouge">$schemaLocator</code>. Implements <code class="highlighter-rouge">\Magento\Framework\Config/SchemaLocatorInterface</code>. This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.&lt;/p&gt;</li>
+  <li><code class="highlighter-rouge">$validationState</code>. Implements <code class="highlighter-rouge">\Magento\Framework\Config\ValidationStateInterface</code>. This parameter defines whether a configuration file should be validated.</li>
+  <li><code class="highlighter-rouge">$fileName</code>. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules’ <code class="highlighter-rouge">etc</code> directories.</li>
   <li>
-    <p><code>$idAttributes</code>. Array of node attribute IDs.</p>
+    <p><code class="highlighter-rouge">$idAttributes</code>. Array of node attribute IDs.</p>
 
     <p>For example, to merge the XML files:</p>
 
-    <pre><code>array(
+    <div class="highlighter-rouge"><pre class="highlight"><code>array(
   '&lt;/path/to/node&gt;' =&gt; '&lt;identifierAttributeName&gt;',
   '&lt;/path/to/other/node&gt;' =&gt; '&lt;identifierAttributeName&gt;',
 }
 </code></pre>
+    </div>
   </li>
-  <li><code>$defaultScope</code>. Defines the configuration scope to be read by default. The default value for this parameter is global scope.</li>
+  <li><code class="highlighter-rouge">$defaultScope</code>. Defines the configuration scope to be read by default. The default value for this parameter is global scope.</li>
 </ul>
 
-<p>After you customize <code>ReaderInterface</code>, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.</p>
+<p>After you customize <code class="highlighter-rouge">ReaderInterface</code>, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.</p>
 
 <h2 id="config-files-validate">Validate a configuration type</h2>
 
-<p>Each configuration file is validated against a schema specific to its configuration type. Example: events, which, in earlier Magento versions, were configured in <code>config.xml</code>, are now configured in <code>events.xml</code>.</p>
+<p>Each configuration file is validated against a schema specific to its configuration type. Example: events, which, in earlier Magento versions, were configured in <code class="highlighter-rouge">config.xml</code>, are now configured in <code class="highlighter-rouge">events.xml</code>.</p>
 
 <p>Configuration files can be validated both before (optional) and after any merge of multiple files affecting the same configuration type. Unless the validation rules for the individual and merged files are identical, you should provide two schemas for validating the configuration files:</p>
 
@@ -1740,13 +1741,14 @@
 
 <p>If you must use two XSD files for a single XML file, the names of the schemas should be recognizable and associated with the XML file.</p>
 
-<p>If you have an <code>events.xml</code> file and a first <code>events.xsd</code> file, the XSD files for the merged <code>events.xml</code> file could be named <code>events_merged.xsd</code>.</p>
+<p>If you have an <code class="highlighter-rouge">events.xml</code> file and a first <code class="highlighter-rouge">events.xsd</code> file, the XSD files for the merged <code class="highlighter-rouge">events.xml</code> file could be named <code class="highlighter-rouge">events_merged.xsd</code>.</p>
 
 <p>To ensure validation of an XML file by appropriate XSD file, you must the Uniform Resource Name (URN) to the XSD file in the XML file. For example:</p>
 
-<pre><code>&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager:etc/config.xsd"&gt;
 </code></pre>
+</div>
 
 <p>Your IDE can validate your configuration files at both runtime and during development.</p>
 

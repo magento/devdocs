@@ -964,22 +964,23 @@
 
 <p>During the installation, a  message similar to the following displays:</p>
 
-<pre><code>[ERROR] exception 'LogicException' with message 'Unknown module in the requested list: 'Magento_BundleSampleData'' 
+<div class="highlighter-rouge"><pre class="highlight"><code>[ERROR] exception 'LogicException' with message 'Unknown module in the requested list: 'Magento_BundleSampleData'' 
 </code></pre>
+</div>
 
 <h3 id="solution">Solution</h3>
 <p>Try each of the following one at a time, then try your installation again.</p>
 
 <ol>
   <li>
-    <p>As a user with <code>root</code> privileges, restart your web server and MySQL.</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, restart your web server and MySQL.</p>
 
     <ul>
-      <li>nginx: <code>service nginx restart</code></li>
-      <li>Apache (Ubuntu): <code>service apache2 restart</code></li>
-      <li>Apache (CentOS): <code>service httpd restart</code></li>
-      <li>MySQL (Ubuntu): <code>service mysql restart</code></li>
-      <li>MySQL (CentOS): <code>service mysqld restart</code></li>
+      <li>nginx: <code class="highlighter-rouge">service nginx restart</code></li>
+      <li>Apache (Ubuntu): <code class="highlighter-rouge">service apache2 restart</code></li>
+      <li>Apache (CentOS): <code class="highlighter-rouge">service httpd restart</code></li>
+      <li>MySQL (Ubuntu): <code class="highlighter-rouge">service mysql restart</code></li>
+      <li>MySQL (CentOS): <code class="highlighter-rouge">service mysqld restart</code></li>
     </ul>
   </li>
   <li>

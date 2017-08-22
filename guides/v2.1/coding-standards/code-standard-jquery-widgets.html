@@ -652,7 +652,7 @@ Some parts of Magento code might not comply with the standard, but we are workin
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">&#39;mage.accordion&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">accordion</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">'mage.accordion'</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">accordion</span><span class="p">,</span> <span class="p">{</span>
         <span class="c1">// ... My custom code ...</span>
     <span class="p">});</span>
   </code></pre></figure>
@@ -663,9 +663,9 @@ Some parts of Magento code might not comply with the standard, but we are workin
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Declaration of the frontend.advancedEventTrigger widget</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+    <span class="s2">"use strict"</span><span class="p">;</span>
 
-    <span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">&#39;mage.advancedEventTrigger&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">button</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">'mage.advancedEventTrigger'</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">button</span><span class="p">,</span> <span class="p">{</span>
         <span class="c1">// ... My custom code ...</span>
     <span class="p">});</span>
 <span class="p">})</span> <span class="p">(</span><span class="nx">jQuery</span><span class="p">);</span>
@@ -674,31 +674,31 @@ Some parts of Magento code might not comply with the standard, but we are workin
 <h2 id="instantiation-and-resources">Instantiation and resources</h2>
 
 <ul>
-  <li>Additional <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> files used as a resources must be dynamically loaded using the <code>$.mage.components()</code> method and must not be included in the <code>&lt;head&gt;</code> block.</li>
-  <li>Use the <code>$.mage.components()</code> method to load additional JavaScript resource files not included in the <code>&lt;head&gt;</code> block.</li>
-  <li>You must use <code>$.mage.extend()</code> to extend an existing set of widget resources.</li>
+  <li>Additional <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> files used as a resources must be dynamically loaded using the <code class="highlighter-rouge">$.mage.components()</code> method and must not be included in the <code class="highlighter-rouge">&lt;head&gt;</code> block.</li>
+  <li>Use the <code class="highlighter-rouge">$.mage.components()</code> method to load additional JavaScript resource files not included in the <code class="highlighter-rouge">&lt;head&gt;</code> block.</li>
+  <li>You must use <code class="highlighter-rouge">$.mage.extend()</code> to extend an existing set of widget resources.</li>
   <li>
-    <p>You must instantiate widgets using the <code>data-mage-init</code> attribute.
-You can use the <code>.mage()</code> <span term-uuid="9fceecbe-31be-4e49-aac7-11d155a85382" class="glossary-term" data-toggle="popover">plug-in</span> to instantiate widgets that use callback methods.</p>
+    <p>You must instantiate widgets using the <code class="highlighter-rouge">data-mage-init</code> attribute.
+You can use the <code class="highlighter-rouge">.mage()</code> <span term-uuid="9fceecbe-31be-4e49-aac7-11d155a85382" class="glossary-term" data-toggle="popover">plug-in</span> to instantiate widgets that use callback methods.</p>
 
     <p>Benefits:</p>
 
     <ul>
-      <li>You leverage the benefits of <code>$.mage.extend()</code> and <code>$.mage.components()</code>.</li>
-      <li>Using <code>data-mage-init</code> minimizes the inline JavaScript code footprint.</li>
+      <li>You leverage the benefits of <code class="highlighter-rouge">$.mage.extend()</code> and <code class="highlighter-rouge">$.mage.components()</code>.</li>
+      <li>Using <code class="highlighter-rouge">data-mage-init</code> minimizes the inline JavaScript code footprint.</li>
       <li>You can modify widget initialization parameters.</li>
     </ul>
   </li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Widget initialization using the data-mage-init attribute</span>
-<span class="o">&lt;</span><span class="nx">form</span> <span class="nx">data</span><span class="o">-</span><span class="nx">mage</span><span class="o">-</span><span class="nx">init</span><span class="o">=</span><span class="s2">&quot;{form:[], validation:{ignore:&#39;:hidden&#39;}}&quot;</span><span class="o">&gt;&lt;</span><span class="err">/form&gt;</span>
-
+<span class="o">&lt;</span><span class="nx">form</span> <span class="nx">data</span><span class="o">-</span><span class="nx">mage</span><span class="o">-</span><span class="nx">init</span><span class="o">=</span><span class="s2">"{form:[], validation:{ignore:':hidden'}}"</span><span class="o">&gt;&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>
 <span class="c1">// Widget initialization using the mage plug-in</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;selector&#39;</span><span class="p">).</span><span class="nx">mage</span><span class="p">(</span><span class="s1">&#39;dialog&#39;</span><span class="p">,</span> <span class="p">{</span>
-        <span class="nx">close</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">dialog</span><span class="p">(</span><span class="s1">&#39;destroy&#39;</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'selector'</span><span class="p">).</span><span class="nx">mage</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">close</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">dialog</span><span class="p">(</span><span class="s1">'destroy'</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
@@ -709,20 +709,20 @@ You can use the <code>.mage()</code> <span term-uuid="9fceecbe-31be-4e49-aac7-11
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Widget initialization and configuration</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;selector&#39;</span><span class="p">).</span><span class="nx">mage</span><span class="p">(</span><span class="s1">&#39;dialog&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">close</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">dialog</span><span class="p">(</span><span class="s1">&#39;destroy&#39;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'selector'</span><span class="p">).</span><span class="nx">mage</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">close</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">dialog</span><span class="p">(</span><span class="s1">'destroy'</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">});</span>
 
 <span class="c1">// Widget initialization and binding event handlers</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;selector&#39;</span><span class="p">).</span><span class="nx">mage</span><span class="p">(</span><span class="s1">&#39;dialog&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;dialogclose&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">dialog</span><span class="p">(</span><span class="s1">&#39;destroy&#39;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'selector'</span><span class="p">).</span><span class="nx">mage</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dialogclose'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">dialog</span><span class="p">(</span><span class="s1">'destroy'</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// Extension for widget in a JavaScript file</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">&#39;mage.dialog&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">dialog</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">close</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">'mage.dialog'</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">dialog</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">close</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">});</span>
@@ -730,8 +730,8 @@ You can use the <code>.mage()</code> <span term-uuid="9fceecbe-31be-4e49-aac7-11
 <span class="c1">// Extension of widget resources</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span>
-        <span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s1">&#39;dialog&#39;</span><span class="p">,</span> <span class="s1">&#39;dialog&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;&lt;?php echo $this-&gt;getViewFileUrl(&#39;</span><span class="nx">Enterprise_</span><span class="err">\</span><span class="o">*</span><span class="nx">Module</span><span class="err">\</span><span class="o">*::</span><span class="nx">page</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">js</span><span class="s1">&#39;) ?&gt;&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span> <span class="s1">'dialog'</span><span class="p">,</span>
+            <span class="s1">'&lt;?php echo $this-&gt;getViewFileUrl('</span><span class="nx">Enterprise_</span><span class="err">\</span><span class="o">*</span><span class="nx">Module</span><span class="err">\</span><span class="o">*</span><span class="p">::</span><span class="nx">page</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">dialog</span><span class="p">.</span><span class="nx">js</span><span class="s1">') ?&gt;'</span><span class="p">)</span>
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
   </code></pre></figure>
 
@@ -745,22 +745,22 @@ You can use the <code>.mage()</code> <span term-uuid="9fceecbe-31be-4e49-aac7-11
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Widget &quot;dialog&quot; that is responsible</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Widget "dialog" that is responsible</span>
 <span class="c1">// only for opening content in an interactive overlay.</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">&#39;mage.dialog&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">'mage.dialog'</span><span class="p">,</span> <span class="p">{</span>
     <span class="c1">// Code logic</span>
 <span class="p">});</span>
 
-<span class="c1">// Widget &quot;validation&quot; that is responsible</span>
+<span class="c1">// Widget "validation" that is responsible</span>
 <span class="c1">// only for validating the form fields.</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">&#39;mage.validation&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">sortable</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">'mage.validation'</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">sortable</span><span class="p">,</span> <span class="p">{</span>
     <span class="c1">// Code logic</span>
 <span class="p">});</span>
 
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;selector&#39;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">mage</span><span class="p">(</span><span class="s1">&#39;dialog&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">mage</span><span class="p">(</span><span class="s1">&#39;validation&#39;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'selector'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">mage</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'form'</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">mage</span><span class="p">(</span><span class="s1">'validation'</span><span class="p">);</span>
   </code></pre></figure>
 
 <ul>
@@ -768,19 +768,19 @@ You can use the <code>.mage()</code> <span term-uuid="9fceecbe-31be-4e49-aac7-11
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//Declaration of the backend.dialog widget</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">&#39;mage.dialog&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">modal</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">autoOpen</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">'mage.dialog'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">modal</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">autoOpen</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="c1">// Additional widget options</span>
     <span class="p">},</span>
     <span class="c1">// Additional widget properties</span>
 <span class="p">});</span>
 
 <span class="c1">// Initializing</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;selector&#39;</span><span class="p">).</span><span class="nx">mage</span><span class="p">(</span><span class="s1">&#39;dialog&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">modal</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">autoOpen</span><span class="o">:</span> <span class="kc">false</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'selector'</span><span class="p">).</span><span class="nx">mage</span><span class="p">(</span><span class="s1">'dialog'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">modal</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">autoOpen</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">});</span>
   </code></pre></figure>
 
@@ -790,9 +790,9 @@ You can use the <code>.mage()</code> <span term-uuid="9fceecbe-31be-4e49-aac7-11
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;body&gt;</span>
   ...
-  <span class="nt">&lt;button</span> <span class="na">data-mage-init=</span><span class="s">&quot;{button: {event: &#39;save&#39;, target:&#39;[data-role=edit-form]&#39;}}&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">data-mage-init=</span><span class="s">"{button: {event: 'save', target:'[data-role=edit-form]'}}"</span> <span class="nt">/&gt;</span>
   ...
-  <span class="nt">&lt;form</span> <span class="na">data-role=</span><span class="s">&quot;edit-form&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;form</span> <span class="na">data-role=</span><span class="s">"edit-form"</span><span class="nt">&gt;</span>
         ...
   <span class="nt">&lt;/form&gt;</span>
   ...
@@ -801,19 +801,19 @@ You can use the <code>.mage()</code> <span term-uuid="9fceecbe-31be-4e49-aac7-11
   </code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Declaration of the mage.form widget</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s2">&quot;mage.form,&quot;</span> <span class="p">{</span>
-    <span class="nx">_create</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s2">"mage.form,"</span> <span class="p">{</span>
+    <span class="nl">_create</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_bind</span><span class="p">();</span>
     <span class="p">},</span>
-    <span class="nx">_bind</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">_bind</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_on</span><span class="p">({</span>
-            <span class="nx">save</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_submit</span>
+            <span class="na">save</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_submit</span>
         <span class="p">})</span>
     <span class="p">},</span>
-    <span class="nx">_submit</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">_submit</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_rollback</span><span class="p">();</span>
         <span class="k">if</span> <span class="p">(</span><span class="kc">false</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">_beforeSubmit</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span> <span class="nx">data</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'submit'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span>
@@ -831,27 +831,28 @@ Do not instantiate a widget or call a widget’s methods inside another widget.<
   <li>
     <p>Make widgets abstract enough so that they can be used anywhere in Magento.</p>
 
-    <p>For example, the <code>mage.dropdown</code> widget is applicable in many other scenarios, unlike <code>mage.topShoppingCart</code>.</p>
+    <p>For example, the <code class="highlighter-rouge">mage.dropdown</code> widget is applicable in many other scenarios, unlike <code class="highlighter-rouge">mage.topShoppingCart</code>.</p>
   </li>
   <li>
-    <p>Place abstract, share-able widgets under the <code>&lt;install dir&gt;/pub/lib/&lt;your company&gt;</code> directory so non-Magento applications can access them.</p>
+    <p>Place abstract, share-able widgets under the <code class="highlighter-rouge">&lt;install dir&gt;/pub/lib/&lt;your company&gt;</code> directory so non-Magento applications can access them.</p>
 
     <p>For example:</p>
 
-    <pre><code>/pub
+    <div class="highlighter-rouge"><pre class="highlight"><code>/pub
 /lib
 /magento
   dropdown.js
   validation.js
   dialog.js 
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Place Magento-specific widgets under the <code>&lt;install dir&gt;/app/code/&lt;namespace&gt;/&lt;module-name&gt;/view/&lt;area-name&gt;/js</code> directory.</p>
+    <p>Place Magento-specific widgets under the <code class="highlighter-rouge">&lt;install dir&gt;/app/code/&lt;namespace&gt;/&lt;module-name&gt;/view/&lt;area-name&gt;/js</code> directory.</p>
 
     <p>For example:</p>
 
-    <pre><code>/app
+    <div class="highlighter-rouge"><pre class="highlight"><code>/app
 /code
   /Mage
     /DesignEditor
@@ -861,6 +862,7 @@ Do not instantiate a widget or call a widget’s methods inside another widget.<
             vde-block.js
             vde-container.js
 </code></pre>
+    </div>
   </li>
 </ul>
 
@@ -875,8 +877,8 @@ Do not instantiate a widget or call a widget’s methods inside another widget.<
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Declaration of the backend.accordion widget</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">&#39;mage.accordion&#39;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">_create</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">'mage.accordion'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">_create</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">header</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">header</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">icon</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">icon</span><span class="p">).</span><span class="nx">prependTo</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">header</span><span class="p">);</span>
       <span class="p">}</span>
@@ -884,32 +886,32 @@ Do not instantiate a widget or call a widget’s methods inside another widget.<
     </code></pre></figure>
 
 <ul>
-  <li>Start a widget’s element selection with <code>this.element</code></li>
+  <li>Start a widget’s element selection with <code class="highlighter-rouge">this.element</code></li>
   <li>
-    <p>Widgets must not interact with DOM elements selected using <code>this.element.parent()</code>, <code>this.element('selector')</code>, or <code>this.element.closest('selector')</code>.</p>
+    <p>Widgets must not interact with DOM elements selected using <code class="highlighter-rouge">this.element.parent()</code>, <code class="highlighter-rouge">this.element('selector')</code>, or <code class="highlighter-rouge">this.element.closest('selector')</code>.</p>
 
     <p>This reduces the number of widget conflicts because widgets interact only with their child elements.</p>
   </li>
   <li>Widget options should have default values.
-Use a <code>null</code> value if there is no default value for an option.</li>
+Use a <code class="highlighter-rouge">null</code> value if there is no default value for an option.</li>
   <li>Pass as widget options all DOM selectors used by that widget.</li>
-  <li>Use the <code>_setOption</code> method to process required, immediate state changes.</li>
+  <li>Use the <code class="highlighter-rouge">_setOption</code> method to process required, immediate state changes.</li>
   <li>Use the public widget API to call widget methods to allow chaining widget methods.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Call the &#39;open&#39; method on the menu widget using the public widgets API</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;selector&#39;</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">menu</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;ui-state-active&#39;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Call the 'open' method on the menu widget using the public widgets API</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'selector'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">menu</span><span class="p">(</span><span class="s1">'open'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'ui-state-active'</span><span class="p">);</span>
   </code></pre></figure>
 
 <ul>
   <li>
     <p>Handle widget initialization if there is a logical action to perform on successive calls to the widget with no arguments.</p>
 
-    <p>The widget factory automatically fires the <code>_create()</code> and <code>_init()</code> methods during initialization, in that order and prevents multiple instantiations of the same element.</p>
+    <p>The widget factory automatically fires the <code class="highlighter-rouge">_create()</code> and <code class="highlighter-rouge">_init()</code> methods during initialization, in that order and prevents multiple instantiations of the same element.</p>
 
-    <p>The <code>_create()</code> method is called only once for each widget instance and <code>_init()</code> is called each time the widget is called without arguments.</p>
+    <p>The <code class="highlighter-rouge">_create()</code> method is called only once for each widget instance and <code class="highlighter-rouge">_init()</code> is called each time the widget is called without arguments.</p>
   </li>
   <li>
     <p>When a widget is destroyed, the attached element should be left exactly like it was before attachment.</p>
@@ -922,16 +924,16 @@ Use a <code>null</code> value if there is no default value for an option.</li>
       <li>Destroying any widgets that the widget applied to other elements.</li>
     </ul>
   </li>
-  <li>Bind <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> handlers using the <code>_bind()</code> method to make it easy to find what events the widget reacts on.</li>
+  <li>Bind <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> handlers using the <code class="highlighter-rouge">_bind()</code> method to make it easy to find what events the widget reacts on.</li>
   <li>
-    <p>Bind events using the <code>on()</code> method.</p>
+    <p>Bind events using the <code class="highlighter-rouge">on()</code> method.</p>
 
     <p>Benefits:</p>
 
     <ul>
       <li>Delegation is supported using selectors in the event names.
-For example: <code>click.foo</code>.</li>
-      <li>Maintains proper <code>this</code> context inside the handlers, so it is not necessary to use the <code>$.proxy()</code> method.</li>
+For example: <code class="highlighter-rouge">click.foo</code>.</li>
+      <li>Maintains proper <code class="highlighter-rouge">this</code> context inside the handlers, so it is not necessary to use the <code class="highlighter-rouge">$.proxy()</code> method.</li>
       <li>Event handlers are automatically namespaced and cleaned up on destruction.</li>
     </ul>
   </li>

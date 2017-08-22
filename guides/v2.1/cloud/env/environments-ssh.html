@@ -1633,32 +1633,36 @@
 
 <p>Following are methods to SSH into your integration system.</p>
 
-<p>To SSH to an environment using the <code>magento-cloud</code> command line:</p>
+<p>To SSH to an environment using the <code class="highlighter-rouge">magento-cloud</code> command line:</p>
 
 <ol>
   <li>
     <p>Log in to the project:</p>
 
-    <pre><code>magento-cloud login
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+    </div>
   </li>
   <li>
     <p>List the project IDs:</p>
 
-    <pre><code>magento-cloud project:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+    </div>
   </li>
   <li>
     <p>List the environments in that project:</p>
 
-    <pre><code>magento-cloud environment:list -p &lt;project ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project ID&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>SSH to the environment:</p>
 
-    <pre><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1675,20 +1679,20 @@
 </ol>
 
 <h2 id="cloud-ssh-stage">Staging and production systems</h2>
-<p>You can’t use the <code>magento-cloud</code> command line to SSH into staging and production systems. To SSH into staging and production systems, first create a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">support ticket</a> requesting for your public key to be added to the system. The user and  <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> will have been supplied when the system was provisioned.</p>
+<p>You can’t use the <code class="highlighter-rouge">magento-cloud</code> command line to SSH into staging and production systems. To SSH into staging and production systems, first create a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">support ticket</a> requesting for your public key to be added to the system. The user and  <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> will have been supplied when the system was provisioned.</p>
 
 <p>With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.</p>
 
 <p>The URL format follows:</p>
 
 <ul>
-  <li>Staging: <code>http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+  <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
   <li>
     <p>Production:</p>
 
     <ul>
-      <li>Load balancer URL: <code>http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Direct access to one of the three redundant servers: <code>http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
     </ul>
   </li>
 </ul>

@@ -1231,7 +1231,7 @@
 
 <h2 id="component-options">Component options</h2>
 
-<p>Form configuration extends the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html"><code>uiCollection</code></a> configuration.</p>
+<p>Form configuration extends the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html"><code class="highlighter-rouge">uiCollection</code></a> configuration.</p>
 
 <p>Form-specific configuration:</p>
 
@@ -1415,22 +1415,22 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 <p>To create an instance of the Form component, you need to do the following:</p>
 
 <ol>
-  <li>In you custom module, add a configuration file for the instance, for example: <code>customer_form.xml</code>.</li>
+  <li>In you custom module, add a configuration file for the instance, for example: <code class="highlighter-rouge">customer_form.xml</code>.</li>
   <li>Add a set of fields (the Fieldset component with the component of the Field) for <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> or     to implement the upload of meta info in the DataProvider.</li>
   <li>Create the DataProvider class for the entity that implements DataProviderInterface
     <ul>
-      <li>Add a component in Magento <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> as a node: <code>&lt;uiComponent name="customer_form"/&gt;</code></li>
+      <li>Add a component in Magento <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> as a node: <code class="highlighter-rouge">&lt;uiComponent name="customer_form"/&gt;</code></li>
     </ul>
   </li>
 </ol>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;</span>
             ...
-            <span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">&quot;customer_form&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">"customer_form"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/referenceContainer&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
@@ -1440,24 +1440,24 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 <p>Component could be configured in two ways:</p>
 
 <ul>
-  <li>globally: using any module’s <code>view/ui_component/etc/definition.xml</code> file. All settings declared in     this file will be applied to all component’s instances</li>
-  <li>locally: using concrete component instance configuration, such as <code>&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form</code></li>
+  <li>globally: using any module’s <code class="highlighter-rouge">view/ui_component/etc/definition.xml</code> file. All settings declared in     this file will be applied to all component’s instances</li>
+  <li>locally: using concrete component instance configuration, such as <code class="highlighter-rouge">&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form</code></li>
 </ul>
 
-<p>Create configuration file: <code>&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form.xml</code></p>
+<p>Create configuration file: <code class="highlighter-rouge">&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form.xml</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_form.customer_form_data_source<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_form.customer_form_data_source<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;deps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_form.customer_form_data_source<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"deps"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_form.customer_form_data_source<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Customer Information<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;layout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>tabs<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;navContainerName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>left<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Customer Information<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"layout"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>tabs<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"navContainerName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>left<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
 ...</code></pre></figure>
 
@@ -1478,19 +1478,19 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 <p>Add a description of the fields in the form using components and Field Fieldset:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
-<span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;customer&quot;</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-       <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Account Information<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"customer"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Account Information<span class="nt">&lt;/item&gt;</span>
        <span class="nt">&lt;/item&gt;</span>
    <span class="nt">&lt;/argument&gt;</span>
-   <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;entity_id&quot;</span><span class="nt">&gt;</span>
-       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataType&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;source&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
+   <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"entity_id"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"visible"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
+               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"dataType"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
+               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"formElement"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
            <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/field&gt;</span>
@@ -1498,23 +1498,23 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 
 <p>To group components you can use the component container as in example below:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;container_group&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>group<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/components/group<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"container_group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>group<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/components/group<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Group<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;required&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataScope&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>20<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Group<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"required"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"dataScope"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sortOrder"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>20<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;group_id&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"group_id"</span><span class="nt">&gt;</span>
     ...
     <span class="nt">&lt;/field&gt;</span>
-    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;disable_auto_group_change&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"disable_auto_group_change"</span><span class="nt">&gt;</span>
     ...
     <span class="nt">&lt;/field&gt;</span>
 <span class="nt">&lt;/container&gt;</span></code></pre></figure>
@@ -1522,45 +1522,45 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 <h2 id="creating-datasource">Creating DataSource</h2>
 <p>You need to configure component’s DataSource in order to provide data and meta information for your Form component.</p>
 
-<p>DataSource aggregates an object of class implements the interface <code>\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code></p>
+<p>DataSource aggregates an object of class implements the interface <code class="highlighter-rouge">\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code></p>
 
 <p>An example of the configuration of the DataSource object:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         ...
     <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;dataSource</span> <span class="na">name=</span><span class="s">&quot;customer_form_data_source&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;dataProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;configurableObject&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Customer\Model\Customer\DataProvider<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;primaryFieldName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;requestFieldName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>id<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;meta&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;customer&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Account Information<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;dataSource</span> <span class="na">name=</span><span class="s">"customer_form_data_source"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"dataProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Customer\Model\Customer\DataProvider<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"primaryFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>id<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"meta"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"customer"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Account Information<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;address&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;is_collection&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Addresses<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"address"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"is_collection"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Addresses<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/provider<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/grid/provider<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;submit_url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer/index/save<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validate_url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer/index/validate<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"submit_url"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer/index/save<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"validate_url"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer/index/validate<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/provider<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/provider<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/dataSource&gt;</span>
@@ -1589,14 +1589,14 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 
 <h4 id="global-replacement">Global replacement</h4>
 
-<p>To replace all instances of a UI Form with a custom implementation redefine link to a constructor in <code>definition.xml</code>.</p>
+<p>To replace all instances of a UI Form with a custom implementation redefine link to a constructor in <code class="highlighter-rouge">definition.xml</code>.</p>
 
-<p><code>app/code/Magento/Ui/view/base/ui_component/etc/definition.xml</code></p>
+<p><code class="highlighter-rouge">app/code/Magento/Ui/view/base/ui_component/etc/definition.xml</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/customFormConstructor<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"Magento\Ui\Component\Form"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/customFormConstructor<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
@@ -1605,12 +1605,12 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 
 <p>To replace one instance of a UI Form Component redefine link to a constructor in your module’s form configuration file:</p>
 
-<p><code>app/code/Magento/Customer/view/base/ui_component/customer_form.xml</code></p>
+<p><code class="highlighter-rouge">app/code/Magento/Customer/view/base/ui_component/customer_form.xml</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Ui/etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Customer/js/form/customFormConstructor<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Ui/etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Customer/js/form/customFormConstructor<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>

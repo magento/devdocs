@@ -945,7 +945,7 @@
 
 			<h3 id="symptom">Symptom</h3>
 
-<p>The Setup Wizard does not create <code>install.log</code> during the installation; as a result, the installation fails.</p>
+<p>The Setup Wizard does not create <code class="highlighter-rouge">install.log</code> during the installation; as a result, the installation fails.</p>
 
 <h3 id="details">Details</h3>
 
@@ -953,9 +953,9 @@
 
 <h3 id="solution">Solution</h3>
 
-<p>Review your setting for <code>open_basedir</code> in <code>php.ini</code>. The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php" target="_blank">sys_get_temp_dir ( void )</a> PHP call to get the value of the temporary directory. If <a href="http://php.net/manual/en/ini.core.php#ini.open-basedir" target="_blank">open_basedir</a> is set to refuse connections to a directory specified by <code>sys_get_temp_dir</code>, the installation fails.</p>
+<p>Review your setting for <code class="highlighter-rouge">open_basedir</code> in <code class="highlighter-rouge">php.ini</code>. The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php" target="_blank">sys_get_temp_dir ( void )</a> PHP call to get the value of the temporary directory. If <a href="http://php.net/manual/en/ini.core.php#ini.open-basedir" target="_blank">open_basedir</a> is set to refuse connections to a directory specified by <code class="highlighter-rouge">sys_get_temp_dir</code>, the installation fails.</p>
 
-<p>To resolve the issue, change the value of <code>open_basedir</code> and restart the web server.</p>
+<p>To resolve the issue, change the value of <code class="highlighter-rouge">open_basedir</code> and restart the web server.</p>
 
 <p>If you’re not sure how to change this value, use the following steps:</p>
 
@@ -967,13 +967,13 @@
     <p><code>http://&lt;your web server IP or host name&gt;/&lt;path to docroot&gt;/phpinfo.php</code></p>
   </li>
   <li>
-    <p>Look for the location of <code>php.ini</code>.</p>
+    <p>Look for the location of <code class="highlighter-rouge">php.ini</code>.</p>
 
-    <p><code>php.ini</code> is typically specified as <strong>Loaded Configuration File</strong> in the displayed results.</p>
+    <p><code class="highlighter-rouge">php.ini</code> is typically specified as <strong>Loaded Configuration File</strong> in the displayed results.</p>
   </li>
-  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
-  <li>Locate the value of <code>open_basedir</code> and change it.</li>
-  <li>Save your changes to <code>php.ini</code>.</li>
+  <li>As a user with <code>root</code> privileges, open <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
+  <li>Locate the value of <code class="highlighter-rouge">open_basedir</code> and change it.</li>
+  <li>Save your changes to <code class="highlighter-rouge">php.ini</code>.</li>
   <li>Restart the web server.</li>
 </ol>
 

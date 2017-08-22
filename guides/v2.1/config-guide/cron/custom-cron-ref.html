@@ -1693,7 +1693,7 @@
     <li>All Magento e-mails (including order confirmation and transactional)</li>
   </ul>
 
-  <p>We recommend you run cron as the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>. Do <em>not</em> run cron as <code>root</code>; we also recommend against running cron as the web server user.</p>
+  <p>We recommend you run cron as the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>. Do <em>not</em> run cron as <code class="highlighter-rouge">root</code>; we also recommend against running cron as the web server user.</p>
 
   <div class="bs-callout bs-callout-warning">
     <p>You can no longer run <code>dev/tools/cron.sh</code> because the script has been removed.</p>
@@ -1708,18 +1708,18 @@
   <h2 id="config-cli-cron-group-conf">Configure cron groups</h2>
   <p>This section discusses how to optionally create a cron group for a custom module. If you don’t need to do this, continue with the next section.</p>
 
-  <p>A <em>cron group</em> is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the <code>default</code> cron group; some modules use the <code>index</code> group.</p>
+  <p>A <em>cron group</em> is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the <code class="highlighter-rouge">default</code> cron group; some modules use the <code class="highlighter-rouge">index</code> group.</p>
 
-  <p>If you’re implementing cron for a custom module, it’s your choice of whether or not to use the <code>default</code> group or a different group.</p>
+  <p>If you’re implementing cron for a custom module, it’s your choice of whether or not to use the <code class="highlighter-rouge">default</code> group or a different group.</p>
 
-  <p>To configure a cron group for your module, create a <code>crontab.xml</code> file in your module directory:
-<code>&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/crontab.xml</code></p>
+  <p>To configure a cron group for your module, create a <code class="highlighter-rouge">crontab.xml</code> file in your module directory:
+<code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/crontab.xml</code></p>
 
   <p>For one group, the file should have the following contents:</p>
 
   <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;&lt;group_name&gt;&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method&gt;&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"&lt;group_name&gt;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"&lt;job_name&gt;"</span> <span class="na">instance=</span><span class="s">"&lt;classpath&gt;"</span> <span class="na">method=</span><span class="s">"&lt;method&gt;"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;schedule&gt;&lt;time&gt;&lt;/schedule&gt;</span>
         <span class="nt">&lt;/job&gt;</span>
     <span class="nt">&lt;/group&gt;</span>
@@ -1736,44 +1736,44 @@
     </thead>
     <tbody>
       <tr>
-        <td><code>group_name</code></td>
+        <td><code class="highlighter-rouge">group_name</code></td>
         <td>Name of the cron group. The group name doesn’t have to be unique. You can run cron for one group at a time.</td>
       </tr>
       <tr>
-        <td><code>job_name</code></td>
+        <td><code class="highlighter-rouge">job_name</code></td>
         <td>Unique ID for this cron job.</td>
       </tr>
       <tr>
-        <td><code>classpath</code></td>
+        <td><code class="highlighter-rouge">classpath</code></td>
         <td>Class to be instantiated (classpath).</td>
       </tr>
       <tr>
-        <td><code>method</code></td>
-        <td>Method in <code>classpath</code> to call.</td>
+        <td><code class="highlighter-rouge">method</code></td>
+        <td>Method in <code class="highlighter-rouge">classpath</code> to call.</td>
       </tr>
       <tr>
-        <td><code>time</code></td>
+        <td><code class="highlighter-rouge">time</code></td>
         <td>Schedule in <a href="http://www.nncron.ru/help/EN/working/cron-format.htm" target="_blank">cron format</a>. Omit this parameter if the schedule is defined in the Magento database or other storage.</td>
       </tr>
     </tbody>
   </table>
 
-  <p>The resulting <code>crontab.xml</code> with two groups may look like this:</p>
+  <p>The resulting <code class="highlighter-rouge">crontab.xml</code> with two groups may look like this:</p>
 
   <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_1_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"default"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"&lt;job_1_name&gt;"</span> <span class="na">instance=</span><span class="s">"&lt;classpath&gt;"</span> <span class="na">method=</span><span class="s">"&lt;method_name&gt;"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
         <span class="nt">&lt;/job&gt;</span>
-        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_2_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"&lt;job_2_name&gt;"</span> <span class="na">instance=</span><span class="s">"&lt;classpath&gt;"</span> <span class="na">method=</span><span class="s">"&lt;method_name&gt;"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
         <span class="nt">&lt;/job&gt;</span>
     <span class="nt">&lt;/group&gt;</span>
-    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;index&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_3_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"index"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"&lt;job_3_name&gt;"</span> <span class="na">instance=</span><span class="s">"&lt;classpath&gt;"</span> <span class="na">method=</span><span class="s">"&lt;method_name&gt;"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
         <span class="nt">&lt;/job&gt;</span>
-        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;&lt;job_4_name&gt;&quot;</span> <span class="na">instance=</span><span class="s">&quot;&lt;classpath&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;&lt;method_name&gt;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"&lt;job_4_name&gt;"</span> <span class="na">instance=</span><span class="s">"&lt;classpath&gt;"</span> <span class="na">method=</span><span class="s">"&lt;method_name&gt;"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
         <span class="nt">&lt;/job&gt;</span>
     <span class="nt">&lt;/group&gt;</span>
@@ -1783,14 +1783,14 @@
 
   <h4 id="specify-cron-group-options">Specifying Cron group options</h4>
 
-  <p>You may declare a new group and specify its configuration options (all of which run in <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> scope) via the <code>cron_groups.xml</code> file, located in:</p>
+  <p>You may declare a new group and specify its configuration options (all of which run in <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> scope) via the <code class="highlighter-rouge">cron_groups.xml</code> file, located in:</p>
 
-  <p><code>&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/cron_groups.xml</code></p>
+  <p><code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/cron_groups.xml</code></p>
 
-  <p>Below is an example of the <code>cron_groups.xml</code> file:</p>
+  <p>Below is an example of the <code class="highlighter-rouge">cron_groups.xml</code> file:</p>
 
   <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;&lt;group_name&gt;&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"&lt;group_name&gt;"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;schedule_generate_every&gt;</span>1<span class="nt">&lt;/schedule_generate_every&gt;</span>
         <span class="nt">&lt;schedule_ahead_for&gt;</span>4<span class="nt">&lt;/schedule_ahead_for&gt;</span>
         <span class="nt">&lt;schedule_lifetime&gt;</span>2<span class="nt">&lt;/schedule_lifetime&gt;</span>
@@ -1812,31 +1812,31 @@
     </thead>
     <tbody>
       <tr>
-        <td><code>schedule_generate_every</code></td>
-        <td>Frequency (in minutes) that schedules are written to the <code>cron_schedule</code> table.</td>
+        <td><code class="highlighter-rouge">schedule_generate_every</code></td>
+        <td>Frequency (in minutes) that schedules are written to the <code class="highlighter-rouge">cron_schedule</code> table.</td>
       </tr>
       <tr>
-        <td><code>schedule_ahead_for</code></td>
-        <td>Time (in minutes) in advance that schedules are written to the <code>cron_schedule</code> table.</td>
+        <td><code class="highlighter-rouge">schedule_ahead_for</code></td>
+        <td>Time (in minutes) in advance that schedules are written to the <code class="highlighter-rouge">cron_schedule</code> table.</td>
       </tr>
       <tr>
-        <td><code>schedule_lifetime</code></td>
+        <td><code class="highlighter-rouge">schedule_lifetime</code></td>
         <td>Schedule lifetime in minutes.</td>
       </tr>
       <tr>
-        <td><code>history_cleanup_every</code></td>
+        <td><code class="highlighter-rouge">history_cleanup_every</code></td>
         <td>Time (in minutes) that cron history is kept in the database.</td>
       </tr>
       <tr>
-        <td><code>history_success_lifetime</code></td>
+        <td><code class="highlighter-rouge">history_success_lifetime</code></td>
         <td>Time (in minutes) that the record of successfully completed cron jobs are kept in the database.</td>
       </tr>
       <tr>
-        <td><code>history_failure_lifetime</code></td>
+        <td><code class="highlighter-rouge">history_failure_lifetime</code></td>
         <td>Time (in minutes) that the record of failed cron jobs are kept in the database.</td>
       </tr>
       <tr>
-        <td><code>use_separate_process</code></td>
+        <td><code class="highlighter-rouge">use_separate_process</code></td>
         <td>This feature is available only for Magento 2.1 and later.</td>
       </tr>
     </tbody>

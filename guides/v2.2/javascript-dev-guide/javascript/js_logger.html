@@ -764,288 +764,288 @@
 
 			<h2 id="logger-overview">Logger overview</h2>
 
-<p>The <code>Logger</code> class provides logging functionality for an application. It can be used to  display errors, warnings and debug messages.</p>
+<p>The <code class="highlighter-rouge">Logger</code> class provides logging functionality for an application. It can be used to  display errors, warnings and debug messages.</p>
 
-<p><strong>Constructor:</strong> <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/logger.js</code>. <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/logger.js">See on GitHub</a></p>
+<p><strong>Constructor:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/logger.js</code>. <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/logger.js">See on GitHub</a></p>
 
 <h2 id="logger-api">Logger API</h2>
 
-<h3 id="new-loggeroutputhandler-entryfactory"><code>new Logger(outputHandler, entryFactory)</code></h3>
+<h3 id="new-loggeroutputhandler-entryfactory"><code class="highlighter-rouge">new Logger(outputHandler, entryFactory)</code></h3>
 
 <p><strong>Parameters</strong></p>
 
 <ul>
-  <li><code>outputHandler: LogOutputHandler</code>: An instance of <code>LogOutputHandler</code> used to display log entries.</li>
-  <li><code>entryFactory: LogEntryFactory</code>: A factory of the <code>LogEntry</code> instances.</li>
+  <li><code class="highlighter-rouge">outputHandler: LogOutputHandler</code>: An instance of <code class="highlighter-rouge">LogOutputHandler</code> used to display log entries.</li>
+  <li><code class="highlighter-rouge">entryFactory: LogEntryFactory</code>: A factory of the <code class="highlighter-rouge">LogEntry</code> instances.</li>
 </ul>
 
-<h3 id="setdisplaylevellevel"><code>setDisplayLevel(level)</code></h3>
+<h3 id="setdisplaylevellevel"><code class="highlighter-rouge">setDisplayLevel(level)</code></h3>
 <p>Sets the boundary entry level. The entries whose level is lower, than the specified one, are not passed to the output.</p>
 
 <p><strong>Parameters</strong><br />
-<code>level: number</code>: Minimum display level for an entry.</p>
+<code class="highlighter-rouge">level: number</code>: Minimum display level for an entry.</p>
 
-<h3 id="adddisplaycriteriacriteria"><code>addDisplayCriteria(criteria)</code></h3>
+<h3 id="adddisplaycriteriacriteria"><code class="highlighter-rouge">addDisplayCriteria(criteria)</code></h3>
 <p>Adds a function that is used to define whether newly created entries should be passed to the output.</p>
 
 <p><strong>Parameters</strong><br />
-<code>criteria: Function</code>: A function that accepts instance of the <code>LogEntry</code> and returns a Boolean value.</p>
+<code class="highlighter-rouge">criteria: Function</code>: A function that accepts instance of the <code class="highlighter-rouge">LogEntry</code> and returns a Boolean value.</p>
 
 <h3 id="removedisplaycriteriacriteria">removeDisplayCriteria(criteria)</h3>
 <p>Removes the previously added display criteria.</p>
 
 <p><strong>Parameters</strong><br />
-<code>criteria: Function</code>: The display criteria to be removed.</p>
+<code class="highlighter-rouge">criteria: Function</code>: The display criteria to be removed.</p>
 
-<h3 id="errormessage-messagedata"><code>error(message, [messageData])</code></h3>
-<p>Creates a <code>LogEntry</code> with the <code>ERROR</code> level and passes it to the output, if it matches all current display criteria.</p>
-
-<p><strong>Parameters</strong><br />
-<code>message: string</code>: Entry’s message.</p>
-
-<p><code>messageData?: Object</code>: Optional data associated with the message.</p>
-
-<p><strong>Returns:</strong> <code>LogEntry</code></p>
-
-<h3 id="warnmessage-messagedata"><code>warn(message, [messageData])</code></h3>
-<p>Creates a <code>LogEntry</code> with the <code>WARN</code> level and passes it to the output, if it matches all current display criteria.</p>
+<h3 id="errormessage-messagedata"><code class="highlighter-rouge">error(message, [messageData])</code></h3>
+<p>Creates a <code class="highlighter-rouge">LogEntry</code> with the <code class="highlighter-rouge">ERROR</code> level and passes it to the output, if it matches all current display criteria.</p>
 
 <p><strong>Parameters</strong><br />
-<code>message: string</code>: Entry’s message.</p>
+<code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
 
-<p><code>messageData?: Object</code>: Optional data associated with the message.</p>
+<p><code class="highlighter-rouge">messageData?: Object</code>: Optional data associated with the message.</p>
 
-<p><strong>Returns:</strong> <code>LogEntry</code></p>
+<p><strong>Returns:</strong> <code class="highlighter-rouge">LogEntry</code></p>
 
-<h3 id="infomessage-messagedata"><code>info(message, [messageData])</code></h3>
-<p>Creates a <code>LogEntry</code> with the <code>INFO</code> level and passes it to the output if it matches all current display criteria.</p>
-
-<p><strong>Parameters</strong><br />
-<code>message: string</code>: Entry’s message.</p>
-
-<p><code>messageData?: Object</code>: Optional data associated with the message.</p>
-
-<p><strong>Returns:</strong> <code>LogEntry</code></p>
-
-<h3 id="debugmessage-messagedata"><code>debug(message, [messageData])</code></h3>
-<p>Creates a <code>LogEntry</code> with the <code>DEBUG</code> level and passes it to the output, if it matches all current display criteria.</p>
+<h3 id="warnmessage-messagedata"><code class="highlighter-rouge">warn(message, [messageData])</code></h3>
+<p>Creates a <code class="highlighter-rouge">LogEntry</code> with the <code class="highlighter-rouge">WARN</code> level and passes it to the output, if it matches all current display criteria.</p>
 
 <p><strong>Parameters</strong><br />
-<code>message: string</code>: Entry’s message.</p>
+<code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
 
-<p><code>messageData?: Object</code>: Optional data associated with the message.</p>
+<p><code class="highlighter-rouge">messageData?: Object</code>: Optional data associated with the message.</p>
 
-<p><strong>Returns:</strong> <code>LogEntry</code></p>
+<p><strong>Returns:</strong> <code class="highlighter-rouge">LogEntry</code></p>
 
-<h3 id="getentriescriteria"><code>getEntries([criteria])</code></h3>
+<h3 id="infomessage-messagedata"><code class="highlighter-rouge">info(message, [messageData])</code></h3>
+<p>Creates a <code class="highlighter-rouge">LogEntry</code> with the <code class="highlighter-rouge">INFO</code> level and passes it to the output if it matches all current display criteria.</p>
+
+<p><strong>Parameters</strong><br />
+<code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
+
+<p><code class="highlighter-rouge">messageData?: Object</code>: Optional data associated with the message.</p>
+
+<p><strong>Returns:</strong> <code class="highlighter-rouge">LogEntry</code></p>
+
+<h3 id="debugmessage-messagedata"><code class="highlighter-rouge">debug(message, [messageData])</code></h3>
+<p>Creates a <code class="highlighter-rouge">LogEntry</code> with the <code class="highlighter-rouge">DEBUG</code> level and passes it to the output, if it matches all current display criteria.</p>
+
+<p><strong>Parameters</strong><br />
+<code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
+
+<p><code class="highlighter-rouge">messageData?: Object</code>: Optional data associated with the message.</p>
+
+<p><strong>Returns:</strong> <code class="highlighter-rouge">LogEntry</code></p>
+
+<h3 id="getentriescriteria"><code class="highlighter-rouge">getEntries([criteria])</code></h3>
 <p>Returns all available log entries. It can additionally filter out the entries that don’t match the provided criteria.</p>
 
 <p><strong>Parameters</strong><br />
-<code>criteria?: Function</code>: Optional function that accepts an instance of <code>LogEntry</code> and implements the filter criteria by which the entries are added to the resulting array.</p>
+<code class="highlighter-rouge">criteria?: Function</code>: Optional function that accepts an instance of <code class="highlighter-rouge">LogEntry</code> and implements the filter criteria by which the entries are added to the resulting array.</p>
 
-<p><strong>Returns:</strong> <code>Array&lt;LogEntry&gt;</code>: An array of <code>LogEntry</code>.</p>
+<p><strong>Returns:</strong> <code class="highlighter-rouge">Array&lt;LogEntry&gt;</code>: An array of <code class="highlighter-rouge">LogEntry</code>.</p>
 
-<h3 id="dumpcriteria"><code>dump(criteria)</code></h3>
+<h3 id="dumpcriteria"><code class="highlighter-rouge">dump(criteria)</code></h3>
 
 <p><strong>Parameters</strong><br />
-<code>criteria?: Function</code>: Optional function that accepts an instance of <code>LogEntry</code> and implements the filter criteria by which entries are passed to the output handler.</p>
+<code class="highlighter-rouge">criteria?: Function</code>: Optional function that accepts an instance of <code class="highlighter-rouge">LogEntry</code> and implements the filter criteria by which entries are passed to the output handler.</p>
 
-<h2 id="logentry"><code>LogEntry</code></h2>
-<p><code>LogEntry</code> is a class that holds the data of log operations, like <code>error</code>, <code>warn</code>,  <code>info</code> and so on.</p>
+<h2 id="logentry"><code class="highlighter-rouge">LogEntry</code></h2>
+<p><code class="highlighter-rouge">LogEntry</code> is a class that holds the data of log operations, like <code class="highlighter-rouge">error</code>, <code class="highlighter-rouge">warn</code>,  <code class="highlighter-rouge">info</code> and so on.</p>
 
-<p><strong>Constructor:</strong> <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/entry.js</code>. <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js">See on Github</a></p>
+<p><strong>Constructor:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/entry.js</code>. <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js">See on Github</a></p>
 
 <h3 id="new-logentrymessage-level-data">new LogEntry(message, level, [data])</h3>
 
 <p><strong>Parameters</strong></p>
 
 <ul>
-  <li><code>message: string</code>: Entry’s message.</li>
-  <li><code>level: number</code>: Entry’s level.</li>
-  <li><code>data?: Object</code>: Additional data associated with the entry.</li>
+  <li><code class="highlighter-rouge">message: string</code>: Entry’s message.</li>
+  <li><code class="highlighter-rouge">level: number</code>: Entry’s level.</li>
+  <li><code class="highlighter-rouge">data?: Object</code>: Additional data associated with the entry.</li>
 </ul>
 
 <h3 id="properties">Properties</h3>
 <ul>
   <li>
-    <p><code>message: string</code>: Entry’s message.</p>
+    <p><code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
   </li>
   <li>
-    <p><code>timestamp: number</code>: The time of entry creation.</p>
+    <p><code class="highlighter-rouge">timestamp: number</code>: The time of entry creation.</p>
   </li>
   <li>
-    <p><code>level: number</code>: Entry’s level.</p>
+    <p><code class="highlighter-rouge">level: number</code>: Entry’s level.</p>
   </li>
   <li>
-    <p><code>levelName: string</code>: Name of the entry’s level.</p>
+    <p><code class="highlighter-rouge">levelName: string</code>: Name of the entry’s level.</p>
   </li>
   <li>
-    <p><code>data?: Object</code>: Additional data associated with the entry.</p>
+    <p><code class="highlighter-rouge">data?: Object</code>: Additional data associated with the entry.</p>
   </li>
 </ul>
 
 <p class="q">"Parameters" and "Properties", shouldn't they be heading of one level? or not headings, but of the same level?</p>
 
-<h2 id="logoutputhandler"><code>LogOutputHandler</code></h2>
+<h2 id="logoutputhandler"><code class="highlighter-rouge">LogOutputHandler</code></h2>
 
-<p>The <code>LogOutputHandler</code> class responsible for the output of entries passed by <code>Logger</code>. Default implementation uses browser’s <code>console</code> object and invokes methods that correspond to the <code>level</code> of an entry. For instance, entry with the <code>INFO</code> level will be displayed using the console’s <code>info</code> method.</p>
+<p>The <code class="highlighter-rouge">LogOutputHandler</code> class responsible for the output of entries passed by <code class="highlighter-rouge">Logger</code>. Default implementation uses browser’s <code class="highlighter-rouge">console</code> object and invokes methods that correspond to the <code class="highlighter-rouge">level</code> of an entry. For instance, entry with the <code class="highlighter-rouge">INFO</code> level will be displayed using the console’s <code class="highlighter-rouge">info</code> method.</p>
 
-<p><strong>Constructor:</strong> <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/console-output-handler.js</code> (<a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js">See on Github</a>)</p>
+<p><strong>Constructor:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/console-output-handler.js</code> (<a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js">See on Github</a>)</p>
 
 <h3 id="new-logoutputhandlerformatter">new LogOutputHandler(formatter)</h3>
 
 <p><strong>Parameters</strong><br />
-<code>formatter: LogFormatter</code>: An instance of <code>LogFormatter</code> that will be used to create a display message for the  provided entries.</p>
+<code class="highlighter-rouge">formatter: LogFormatter</code>: An instance of <code class="highlighter-rouge">LogFormatter</code> that will be used to create a display message for the  provided entries.</p>
 
 <h3 id="showentry">show(entry)</h3>
 <p>Displays the provided entry.</p>
 
 <p><strong>Parameters</strong><br />
-<code>entry: LogEntry</code>: The entry to be displayed.</p>
+<code class="highlighter-rouge">entry: LogEntry</code>: The entry to be displayed.</p>
 
 <h3 id="dumpentries">dump(entries)</h3>
 <p>Displays multiple entries at once.</p>
 
 <p><strong>Parameters</strong><br />
-<code>entries: Array&lt;LogEntry&gt;</code>: An array of the <code>LogEntry</code> instances to be displayed.</p>
+<code class="highlighter-rouge">entries: Array&lt;LogEntry&gt;</code>: An array of the <code class="highlighter-rouge">LogEntry</code> instances to be displayed.</p>
 
 <h2 id="logformatter">LogFormatter</h2>
-<p>The <code>LogFormatter</code> class is responsible for processing the message of the provided entry and for preparing its string representation that will be displayed by <code>LogOutputHandler</code>. It also verifies if the entry’s message is set in the template:</p>
+<p>The <code class="highlighter-rouge">LogFormatter</code> class is responsible for processing the message of the provided entry and for preparing its string representation that will be displayed by <code class="highlighter-rouge">LogOutputHandler</code>. It also verifies if the entry’s message is set in the template:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="p">{</span>
-     <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Foo ${ $.property }&quot;</span><span class="p">,</span>
-     <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-         <span class="nx">property</span><span class="o">:</span> <span class="s2">&quot;Bar&quot;</span>
+     <span class="nl">message</span><span class="p">:</span> <span class="s2">"Foo ${ $.property }"</span><span class="p">,</span>
+     <span class="nx">data</span><span class="err">:</span> <span class="p">{</span>
+         <span class="nl">property</span><span class="p">:</span> <span class="s2">"Bar"</span>
     <span class="p">}</span>
-<span class="p">}</span> <span class="c1">// =&gt; &quot;Foo Bar&quot;</span></code></pre></figure>
+<span class="p">}</span> <span class="c1">// =&gt; "Foo Bar"</span></code></pre></figure>
 
-<p><strong>Constructor:</strong> <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/formatter.js</code> (<a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/formatter.js">See on Github</a>)</p>
+<p><strong>Constructor:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/formatter.js</code> (<a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/formatter.js">See on Github</a>)</p>
 
 <h3 id="new-logformatterdateformat-template">new LogFormatter([dateFormat], [template])</h3>
 
 <p><strong>Parameters</strong></p>
 
 <ul>
-  <li><code>dateFormat = "YYYY-MM-DD hh:mm:ss"</code>: Date format that is applied to display the entry creation time.</li>
-  <li><code>template = "[${ $.date }] [${ $.entry.levelName }] ${ $.message }</code>: Template used to create the resulting message of an entry.</li>
+  <li><code class="highlighter-rouge">dateFormat = "YYYY-MM-DD hh:mm:ss"</code>: Date format that is applied to display the entry creation time.</li>
+  <li><code class="highlighter-rouge">template = "[${ $.date }] [${ $.entry.levelName }] ${ $.message }</code>: Template used to create the resulting message of an entry.</li>
 </ul>
 
-<h3 id="processentry"><code>process(entry)</code></h3>
-<p>Creates a text representation of the provided entry. If default settings are used, the resulting string looks like following: <code>[2017-04-07 01:36:24] [DEBUG] Log message</code>.</p>
+<h3 id="processentry"><code class="highlighter-rouge">process(entry)</code></h3>
+<p>Creates a text representation of the provided entry. If default settings are used, the resulting string looks like following: <code class="highlighter-rouge">[2017-04-07 01:36:24] [DEBUG] Log message</code>.</p>
 
 <p><strong>Parameters</strong><br />
-<code>entry: LogEntry</code>: An instance of <code>LogEntry</code> to be processed.</p>
+<code class="highlighter-rouge">entry: LogEntry</code>: An instance of <code class="highlighter-rouge">LogEntry</code> to be processed.</p>
 
 <p><strong>Returns:</strong> String</p>
 
-<h2 id="levelspool"><code>levelsPool</code></h2>
-<p><code>levelsPool</code> is a module that provides log levels and utility methods to work with them.</p>
+<h2 id="levelspool"><code class="highlighter-rouge">levelsPool</code></h2>
+<p><code class="highlighter-rouge">levelsPool</code> is a module that provides log levels and utility methods to work with them.</p>
 
 <p>The following log levels are available (sorted by priority in the descending order):</p>
 
 <ul>
-  <li><code>NONE</code> (used to block all log entries from being passed to the output)</li>
-  <li><code>ERROR</code></li>
-  <li><code>WARN</code></li>
-  <li><code>INFO</code></li>
-  <li><code>DEBUG</code></li>
-  <li><code>ALL</code> (allows to display all log entries, unless any other display criteria is present)</li>
+  <li><code class="highlighter-rouge">NONE</code> (used to block all log entries from being passed to the output)</li>
+  <li><code class="highlighter-rouge">ERROR</code></li>
+  <li><code class="highlighter-rouge">WARN</code></li>
+  <li><code class="highlighter-rouge">INFO</code></li>
+  <li><code class="highlighter-rouge">DEBUG</code></li>
+  <li><code class="highlighter-rouge">ALL</code> (allows to display all log entries, unless any other display criteria is present)</li>
 </ul>
 
-<p><strong>Path:</strong> <code>Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/levels-pool.js</code> (<a href="https://github.com/magento/magento2/blob/develop/https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/levels-pool.js">See on Github</a>)</p>
+<p><strong>Path:</strong> <code class="highlighter-rouge">Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/levels-pool.js</code> (<a href="https://github.com/magento/magento2/blob/develop/https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/levels-pool.js">See on Github</a>)</p>
 
-<h3 id="getlevels"><code>getLevels()</code></h3>
+<h3 id="getlevels"><code class="highlighter-rouge">getLevels()</code></h3>
 <p>Returns a list of available log levels.</p>
 
-<p><strong>Returns:</strong> <code>{[name: string]: number}</code></p>
+<p><strong>Returns:</strong> <code class="highlighter-rouge"><span class="p">{</span><span class="err">[name:</span><span class="w"> </span><span class="err">string]:</span><span class="w"> </span><span class="err">number</span><span class="p">}</span></code></p>
 
-<h3 id="getnamebycodecode"><code>getNameByCode(code)</code></h3>
+<h3 id="getnamebycodecode"><code class="highlighter-rouge">getNameByCode(code)</code></h3>
 
 <p><strong>Parameters</strong><br />
-<code>code: string</code>: Level’s identifier.</p>
+<code class="highlighter-rouge">code: string</code>: Level’s identifier.</p>
 
 <p><strong>Returns:</strong> Number</p>
 
-<h2 id="messagepool"><code>messagePool</code></h2>
+<h2 id="messagepool"><code class="highlighter-rouge">messagePool</code></h2>
 
-<p>Implements a collection of predefined messages used by <code>consoleLogger</code>.</p>
+<p>Implements a collection of predefined messages used by <code class="highlighter-rouge">consoleLogger</code>.</p>
 
-<p><strong>Path:</strong> <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/message-pool.js</code> (<a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/message-pool.js">See on Github</a>)</p>
+<p><strong>Path:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/message-pool.js</code> (<a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/message-pool.js">See on Github</a>)</p>
 
-<h3 id="getmessagecode"><code>getMessage(code)</code></h3>
+<h3 id="getmessagecode"><code class="highlighter-rouge">getMessage(code)</code></h3>
 <p>Returns message that matches the provided code.</p>
 
 <p><strong>Parameters</strong><br />
-<code>code: string</code>: Message’s identifier.</p>
+<code class="highlighter-rouge">code: string</code>: Message’s identifier.</p>
 
 <p><strong>Returns:</strong> String</p>
 
-<h3 id="addmessagecode-message"><code>addMessage(code, message)</code></h3>
+<h3 id="addmessagecode-message"><code class="highlighter-rouge">addMessage(code, message)</code></h3>
 <p>Adds a new message to the pool.</p>
 
 <p><strong>Parameters</strong><br />
-<code>code: string</code>: Message’s identifier.</p>
+<code class="highlighter-rouge">code: string</code>: Message’s identifier.</p>
 
-<p><code>message: string</code>: Text of the message.</p>
+<p><code class="highlighter-rouge">message: string</code>: Text of the message.</p>
 
-<h3 id="hasmessagecode"><code>hasMessage(code)</code></h3>
+<h3 id="hasmessagecode"><code class="highlighter-rouge">hasMessage(code)</code></h3>
 <p>Checks whether a message with the provided code exists in the pool.</p>
 
 <p><strong>Parameters</strong><br />
-<code>code: string</code>: Message’s identifier.</p>
+<code class="highlighter-rouge">code: string</code>: Message’s identifier.</p>
 
 <p><strong>Returns:</strong> Boolean</p>
 
-<h2 id="consolelogger"><code>consoleLogger</code></h2>
-<p>An instance of the <code>Logger</code> class that is configured to display messages in the browser’s console with the default format. It also stores the last provided display level in <code>localStorage</code> and allows to work with a list of predefined messages instead of passing their text directly:</p>
+<h2 id="consolelogger"><code class="highlighter-rouge">consoleLogger</code></h2>
+<p>An instance of the <code class="highlighter-rouge">Logger</code> class that is configured to display messages in the browser’s console with the default format. It also stores the last provided display level in <code class="highlighter-rouge">localStorage</code> and allows to work with a list of predefined messages instead of passing their text directly:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">setDisplayLevel</span><span class="p">(</span><span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">levels</span><span class="p">.</span><span class="nx">ALL</span><span class="p">);</span>
-    <span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">addMessage</span><span class="p">(</span><span class="s1">&#39;VIRAL_MESSAGE&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">);</span>
-    <span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;VIRAL_MESSAGE&#39;</span><span class="p">);</span>
+    <span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">addMessage</span><span class="p">(</span><span class="s1">'VIRAL_MESSAGE'</span><span class="p">,</span> <span class="s1">'Hello World!'</span><span class="p">);</span>
+    <span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">'VIRAL_MESSAGE'</span><span class="p">);</span>
     <span class="c1">// console =&gt; [2017-04-07 01:36:24] [INFO] Hello World!</span></code></pre></figure>
 
-<p><strong>Path:</strong> <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/console-logger.js</code> (<a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/console-logger.js">See on Github</a>)</p>
+<p><strong>Path:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/console-logger.js</code> (<a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/lib/logger/console-logger.js">See on Github</a>)</p>
 
 <h3 id="properties-1">Properties</h3>
 <ul>
-  <li><code>levels: {[name: string]: number}</code>: Reference to the available log levels.</li>
-  <li><code>messages: messagePool</code>: Reference to <code>messagePool</code> that allows working with a list of predefined messages.</li>
+  <li><code class="highlighter-rouge">levels: {[name: string]: number}</code>: Reference to the available log levels.</li>
+  <li><code class="highlighter-rouge">messages: messagePool</code>: Reference to <code class="highlighter-rouge">messagePool</code> that allows working with a list of predefined messages.</li>
 </ul>
 
 <h3 id="usages-in-magento">Usages in Magento</h3>
-<p>By default, Magento uses <code>consoleLogger</code> to display logs in browser console.</p>
+<p>By default, Magento uses <code class="highlighter-rouge">consoleLogger</code> to display logs in browser console.</p>
 
 <p>Example:</p>
 
 <p><img src="/common/images/js/logger_error.png" alt="node declaration autocomplete" /></p>
 
-<p>The default level of logs that Magento displays in the console starts from the <code>WARN</code> level.</p>
+<p>The default level of logs that Magento displays in the console starts from the <code class="highlighter-rouge">WARN</code> level.</p>
 
 <h3 id="types-of-logged-information">Types of logged information</h3>
 
 <ul>
-  <li><code>Templates loading:</code>
+  <li><code class="highlighter-rouge">Templates loading:</code>
     <ul>
       <li>Logging when a template’s loading starts.</li>
       <li>Logging when a template is loaded. (from cache or from server)</li>
       <li>Logging error if a template’s loading failed.</li>
     </ul>
   </li>
-  <li><code>UI Components loading:</code>
+  <li><code class="highlighter-rouge">UI Components loading:</code>
     <ul>
       <li>Logging when a component’s loading starts.</li>
       <li>Logging when a component is loaded.</li>
       <li>Logging error if a component loading failed.</li>
     </ul>
   </li>
-  <li><code>Requests for UI Components dependencies:</code>
+  <li><code class="highlighter-rouge">Requests for UI Components dependencies:</code>
     <ul>
       <li>Logging when a component sends request for dependencies.</li>
       <li>Logging when a component’s dependencies are successfully received.</li>
       <li>Logging when a component’s receiving is failed.</li>
     </ul>
   </li>
-  <li><code>Requests for UI Components by scope binding:</code>
+  <li><code class="highlighter-rouge">Requests for UI Components by scope binding:</code>
     <ul>
       <li>Logging when a component sends request for dependencies.</li>
       <li>Logging when dependencies are successfully received.</li>

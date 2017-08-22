@@ -1580,11 +1580,11 @@
 
 <ul>
   <li><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Restore a snapshot</a> if you have one</li>
-  <li>Remove the component from your environment’s <code>composer.json</code> and redeploy the environment</li>
+  <li>Remove the component from your environment’s <code class="highlighter-rouge">composer.json</code> and redeploy the environment</li>
 </ul>
 
-<h3 id="remove-the-component-from-composerjson-and-redeploy">Remove the component from <code>composer.json</code> and redeploy</h3>
-<p>This section discusses how to remove the component from the root <code>composer.json</code> in your environment and redeploy the environment:</p>
+<h3 id="remove-the-component-from-composerjson-and-redeploy">Remove the component from <code class="highlighter-rouge">composer.json</code> and redeploy</h3>
+<p>This section discusses how to remove the component from the root <code class="highlighter-rouge">composer.json</code> in your environment and redeploy the environment:</p>
 
 <h4 id="get-started">Get started</h4>
 
@@ -1596,27 +1596,31 @@
     <li>
       <p>Enter the following command in a terminal to log in to your project:</p>
 
-      <pre><code>magento-cloud login
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+      </div>
     </li>
     <li>
       <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-      <pre><code>magento-cloud project:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+      </div>
     </li>
-    <li>Change to a project directory. For example, <code>cd /var/www/html/magento2</code></li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
     <li>
       <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-      <pre><code>magento-cloud environment:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
   		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
@@ -1625,28 +1629,32 @@
     <li>
       <p>Fetch origin branches to get the latest code:</p>
 
-      <pre><code>git fetch origin
+      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
+      </div>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
     </li>
     <li>
       <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Create a <a href="/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
   </ol>
 </div>
@@ -1656,7 +1664,7 @@
 
 <div class="collapsible"><b class="collapsible-title">Click to expand/collapse content </b><div class="collapsible-content"><div>
 
-  <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code>composer.json</code> file. Open <code>composer.json</code> in a text editor and write down the values of <code>"name"</code> and <code>"version"</code>.</p>
+  <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
 
   <p>To get the extension’s Composer name from Magento Marketplace:</p>
 
@@ -1680,35 +1688,38 @@
     <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
     <li>Open a text editor.</li>
     <li>Paste the extension name in the text editor.</li>
-    <li>Append a colon character (<code>:</code>) to the component name.</li>
+    <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
     <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
     <li>
       <p>Append the version number to the component name after the colon.</p>
 
       <p>A sample follows:</p>
 
-      <pre><code>pixlee/magento2:1.0.1
+      <div class="highlighter-rouge"><pre class="highlight"><code>pixlee/magento2:1.0.1
 </code></pre>
+      </div>
     </li>
   </ol>
 </div>
 </div></div>
 
-<h4 id="clear-var-directories">Clear <code>var</code> directories</h4>
-<p>To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento <code>var</code> directory.</p>
+<h4 id="clear-var-directories">Clear <code class="highlighter-rouge">var</code> directories</h4>
+<p>To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento <code class="highlighter-rouge">var</code> directory.</p>
 
 <ol>
   <li>
     <p>Enter the following command to SSH to the current environment:</p>
 
-    <pre><code>magento-cloud environment:ssh
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Clear the <code>var</code> directory:</p>
+    <p>Clear the <code class="highlighter-rouge">var</code> directory:</p>
 
-    <pre><code>rm -rf var/*
+    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf var/*
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1721,22 +1732,25 @@
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>composer remove &lt;component-name&gt;:&lt;version&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer remove &lt;component-name&gt;:&lt;version&gt;
 </code></pre>
+    </div>
 
     <p>If the following message displays, you don’t need to do anything further:</p>
 
-    <pre><code>Package "&lt;name&gt;:&lt;version&gt;" listed for update is not installed. Ignoring.
+    <div class="highlighter-rouge"><pre class="highlight"><code>Package "&lt;name&gt;:&lt;version&gt;" listed for update is not installed. Ignoring.
 </code></pre>
+    </div>
   </li>
   <li>Wait while dependencies are updated.</li>
   <li>
     <p>Enter the following commands in the order shown to commit the changes and deploy the project:</p>
 
-    <pre><code>git add -A
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
 git commit -m "&lt;message&gt;"
 git push origin &lt;environment ID&gt;
 </code></pre>
+    </div>
   </li>
 </ol>
 </div></div>

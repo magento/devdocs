@@ -1131,7 +1131,7 @@
 
 
 			<h2 id="overview-naming">Overview of naming a component</h2>
-<p>You give a name to your component in its <code>composer.json</code> and <code>module.xml</code> files. These files also contain other required configuration parameters, such as the module’s schema version.</p>
+<p>You give a name to your component in its <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">module.xml</code> files. These files also contain other required configuration parameters, such as the module’s schema version.</p>
 
 <h2 id="prereq">Prerequisites</h2>
 <p>Before you continue, make sure you have completed all of the following tasks:</p>
@@ -1142,77 +1142,78 @@
   <li><a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">Registered</a> your component</li>
 </ul>
 
-<h2 id="module-xml">Add the component’s <code>module.xml</code> file</h2>
-<p>Declare the component itself by adding a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.xml file in the <code>/etc</code> folder of your component.</p>
+<h2 id="module-xml">Add the component’s <code class="highlighter-rouge">module.xml</code> file</h2>
+<p>Declare the component itself by adding a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.xml file in the <code class="highlighter-rouge">/etc</code> folder of your component.</p>
 
-<p>A component declares itself (that is, defines its name and existence) in the <code>module.xml</code> file, located in the Magento install directory at <code>&lt;ComponentName&gt;/etc/</code>.</p>
+<p>A component declares itself (that is, defines its name and existence) in the <code class="highlighter-rouge">module.xml</code> file, located in the Magento install directory at <code class="highlighter-rouge">&lt;ComponentName&gt;/etc/</code>.</p>
 
 <p>The smallest working module.xml file would look something like this:</p>
 
-<pre><code>&lt;?xml version="1.0"?&gt;
-&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd"&gt;
-		&lt;module name="Vendor_ComponentName" setup_version="2.0.0"/&gt;
-&lt;/config&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Vendor_ComponentName"</span> <span class="na">setup_version=</span><span class="s">"2.0.0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
 </code></pre>
+</div>
 
-<p>…where <code>name</code>  is the name of your component, and <code>setup_version</code> is your module’s <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> version. Both of these attributes are required.</p>
+<p>…where <code class="highlighter-rouge">name</code>  is the name of your component, and <code class="highlighter-rouge">setup_version</code> is your module’s <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> version. Both of these attributes are required.</p>
 
 <p>Do not use “Ui” for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
-<h2 id="add-composer-json">Add the components <code>composer.json</code> file</h2>
-<p><code>composer.json</code> provides a component name and also specifies component dependencies.</p>
+<h2 id="add-composer-json">Add the components <code class="highlighter-rouge">composer.json</code> file</h2>
+<p><code class="highlighter-rouge">composer.json</code> provides a component name and also specifies component dependencies.</p>
 
-<p>In addition, the <a href="/guides/v2.1/comp-mgr/compman-start.html">Component Manager</a> looks for a <code>composer.json</code> in a component’s root directory and can perform actions on the component and its dependencies.</p>
+<p>In addition, the <a href="/guides/v2.1/comp-mgr/compman-start.html">Component Manager</a> looks for a <code class="highlighter-rouge">composer.json</code> in a component’s root directory and can perform actions on the component and its dependencies.</p>
 
 <p>In particular:</p>
 
 <ul>
-  <li>If a component has <code>composer.json</code> <em>and</em> the component was installed using <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
-  <li>If the component has <code>composer.json</code> but was <em>not</em> installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.</li>
-  <li>We strongly recommend you include <code>composer.json</code> in your component’s root directory whether or not you intend to distribute it to other Magento merchants.</li>
+  <li>If a component has <code class="highlighter-rouge">composer.json</code> <em>and</em> the component was installed using <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
+  <li>If the component has <code class="highlighter-rouge">composer.json</code> but was <em>not</em> installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.</li>
+  <li>We strongly recommend you include <code class="highlighter-rouge">composer.json</code> in your component’s root directory whether or not you intend to distribute it to other Magento merchants.</li>
 </ul>
 
 <p>A sample follows:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json">	<span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;your-name/module-Acme&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Test component for Magento 2&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;~5.5.0|~5.6.0&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/module-store&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/module-catalog&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/module-catalog-inventory&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/module-ui&quot;</span><span class="p">:</span> <span class="s2">&quot;self.version&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;suggest&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;magento/module-webapi&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;OSL-3.0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;AFL-3.0&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;autoload&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;registration.php&quot;</span> <span class="p">],</span>
-        <span class="nt">&quot;psr-4&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;Magento\\CatalogImportExport\\&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">	</span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-name/module-Acme"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test component for Magento 2"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"magento/module-store"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"magento/module-catalog"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"magento/module-catalog-inventory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"magento/module-ui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self.version"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"magento/magento-composer-installer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"suggest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"magento/module-webapi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AFL-3.0"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"Magento\\CatalogImportExport\\"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span></code></pre></figure>
 
 <p>where:</p>
 
 <ul>
-  <li><code>name</code>—is the name of your component.</li>
-  <li><code>description</code>—is a concise explanation of your component’s purpose.</li>
-  <li><code>require</code>—lists any components your component depends on.</li>
-  <li><code>suggest</code>—lists soft dependencies. The component can operate without them, but if the components are active, this component might impact their functionality. <code>Suggest</code> does not affect component load order.</li>
-  <li><code>type</code>—determines what the <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span> type. Choose from <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
-  <li><code>version</code>—lists the version of the component.</li>
-  <li><code>license</code>—lists applicable licenses that apply to your component.</li>
-  <li><code>autoload</code>—instructs composer to load the specified files.</li>
+  <li><code class="highlighter-rouge">name</code>—is the name of your component.</li>
+  <li><code class="highlighter-rouge">description</code>—is a concise explanation of your component’s purpose.</li>
+  <li><code class="highlighter-rouge">require</code>—lists any components your component depends on.</li>
+  <li><code class="highlighter-rouge">suggest</code>—lists soft dependencies. The component can operate without them, but if the components are active, this component might impact their functionality. <code class="highlighter-rouge">Suggest</code> does not affect component load order.</li>
+  <li><code class="highlighter-rouge">type</code>—determines what the <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span> type. Choose from <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
+  <li><code class="highlighter-rouge">version</code>—lists the version of the component.</li>
+  <li><code class="highlighter-rouge">license</code>—lists applicable licenses that apply to your component.</li>
+  <li><code class="highlighter-rouge">autoload</code>—instructs composer to load the specified files.</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">

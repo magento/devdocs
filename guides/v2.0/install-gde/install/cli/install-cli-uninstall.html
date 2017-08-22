@@ -785,23 +785,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -823,7 +826,7 @@
 
   <ul>
     <li>If you installed the software from an archive or if you used ‘composer-create-project’, use the Component Manager or System Upgrade utilities.</li>
-    <li>If you are a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you used <code>git clone</code>), see <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
+    <li>If you are a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you used <code class="highlighter-rouge">git clone</code>), see <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
   </ul>
 
   <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
@@ -833,7 +836,7 @@
 
   <ul>
     <li>If you installed the software from an archive or if you used ‘composer-create-project’, see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.</li>
-    <li>If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you started using <code>composer clone</code>), see <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
+    <li>If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you started using <code class="highlighter-rouge">composer clone</code>), see <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
   </ul>
 
   <h3 id="instgde-install-magento-reinst-dev">Reinstall as a system integrator</h3>
@@ -844,10 +847,11 @@
     <li>
       <p>Enter the following commands in the order shown:</p>
 
-      <pre><code>cd &lt;your Magento install dir&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 git pull origin develop
 php bin/magento setup:uninstall
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
@@ -866,25 +870,28 @@ php bin/magento setup:uninstall
   </ol>
 
   <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
-  <p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code>var</code>.</p>
+  <p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code class="highlighter-rouge">var</code>.</p>
 
   <p>To uninstall the Magento software, enter the following command:</p>
 
-  <pre><code>magento setup:uninstall
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:uninstall
 </code></pre>
+  </div>
 
   <p>The following message displays to confirm a successful uninstallation:</p>
 
-  <pre><code>[SUCCESS]: Magento uninstallation complete.
+  <div class="highlighter-rouge"><pre class="highlight"><code>[SUCCESS]: Magento uninstallation complete.
 </code></pre>
+  </div>
 
   <h2 id="instgde-install-keep">Optionally keeping generated files</h2>
-  <p>By default, <code>magento setup:upgrade</code> clears compiled code and the cache. Typically, you use <code>magento setup:upgrade</code> to update components and each component can require different compiled classes.</p>
+  <p>By default, <code class="highlighter-rouge">magento setup:upgrade</code> clears compiled code and the cache. Typically, you use <code class="highlighter-rouge">magento setup:upgrade</code> to update components and each component can require different compiled classes.</p>
 
   <p>However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> is still cleared.) To update the Magento <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data <em>without</em> clearing compiled code, enter:</p>
 
-  <pre><code>magento setup:upgrade --keep-generated
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:upgrade --keep-generated
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-warning">
     <p>The optional <code>--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. <code>--keep-generated</code> should <em>never</em> be used in a development environment.</p>

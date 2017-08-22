@@ -1106,71 +1106,74 @@
 
 <ol>
   <li>Define a variable for the new breakpoint.</li>
-  <li>Override the <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> <code>_responsive.less</code> file, and add the new rule for the new breakpoint.</li>
+  <li>Override the <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> <code class="highlighter-rouge">_responsive.less</code> file, and add the new rule for the new breakpoint.</li>
   <li>Implement the screen changes for the new breakpoint.</li>
 </ol>
 
 <h2 id="add-a-new-breakpoint-variable">Add a new breakpoint variable</h2>
 
-<p>In your custom theme directory, add a <code>/web/css/source/variables.less</code> in one of the following ways:</p>
+<p>In your custom theme directory, add a <code class="highlighter-rouge">/web/css/source/variables.less</code> in one of the following ways:</p>
 
 <ul>
-  <li>if your theme <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from the other, then copy the parent’s <code>variables.less</code>.</li>
+  <li>if your theme <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from the other, then copy the parent’s <code class="highlighter-rouge">variables.less</code>.</li>
   <li>if your theme is a standalone one, add a new empty file.</li>
 </ul>
 
-<p>In <code>variable.less</code>, add the variable for your new breakpoint.</p>
+<p>In <code class="highlighter-rouge">variable.less</code>, add the variable for your new breakpoint.</p>
 
 <p>For example:</p>
 
-<pre><code>@your__breakpoint: 1280px;
+<div class="highlighter-rouge"><pre class="highlight"><code>@your__breakpoint: 1280px;
 </code></pre>
+</div>
 
 <p>For variables’ naming rules see <a href="http://devdocs.magento.com/guides/v2.0/coding-standards/code-standard-less.html#variables">Less coding standards</a>.</p>
 
-<h2 id="override-responsiveless-from-the-library">Override <code>_responsive.less</code> from the library</h2>
+<h2 id="override-responsiveless-from-the-library">Override <code class="highlighter-rouge">_responsive.less</code> from the library</h2>
 
-<p>According to the approach, implemented in the Magento UI library, the <code>.media-width()</code> mixin calls are defined in many places, but invoked in one place, in <code>lib/web/css/source/lib/_responsive.less</code>.</p>
+<p>According to the approach, implemented in the Magento UI library, the <code class="highlighter-rouge">.media-width()</code> mixin calls are defined in many places, but invoked in one place, in <code class="highlighter-rouge">lib/web/css/source/lib/_responsive.less</code>.</p>
 
-<p>To implement a new breakpoint, you need to edit the <code>.media-width()</code> mixin by adding the appropriate rule there. So you need to override the library <code>_responsive.less</code> in your theme, and add the customizations there.</p>
+<p>To implement a new breakpoint, you need to edit the <code class="highlighter-rouge">.media-width()</code> mixin by adding the appropriate rule there. So you need to override the library <code class="highlighter-rouge">_responsive.less</code> in your theme, and add the customizations there.</p>
 
 <p>To do this, take the following steps:</p>
 
 <ol>
-  <li>Copy the <code>_responsive.less</code> file to your <code>&lt;your_theme_dir&gt;/web/css/source/lib/</code> directory from one of the following locations:
+  <li>Copy the <code class="highlighter-rouge">_responsive.less</code> file to your <code class="highlighter-rouge">&lt;your_theme_dir&gt;/web/css/source/lib/</code> directory from one of the following locations:
     <ul>
-      <li><code>&lt;your_parent_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: overriding <code>_responsive.less</code> in the parent theme. If there’s no such file or no parent theme, use the other option.</li>
-      <li><code>&lt;your_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: the library file.</li>
+      <li><code class="highlighter-rouge">&lt;your_parent_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: overriding <code class="highlighter-rouge">_responsive.less</code> in the parent theme. If there’s no such file or no parent theme, use the other option.</li>
+      <li><code class="highlighter-rouge">&lt;your_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: the library file.</li>
     </ul>
   </li>
-  <li>In your <code>_responsive.less</code>, add the <code>.media-width</code> <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span> rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).</li>
+  <li>In your <code class="highlighter-rouge">_responsive.less</code>, add the <code class="highlighter-rouge">.media-width</code> <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span> rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).</li>
 </ol>
 
 <p>Example:</p>
 
-<pre><code>&amp; when (@media-target = 'desktop'), (@media-target = 'all') {
+<div class="highlighter-rouge"><pre class="highlight"><code>&amp; when (@media-target = 'desktop'), (@media-target = 'all') {
 …
     @media all and (min-width: @your__breakpoint) {
         .media-width('min', @your__breakpoint);
     }
 }
 </code></pre>
+</div>
 
-<h2 id="add-media-width-calls-for-the-new-breakpoint">Add <code>.media-width()</code> calls for the new breakpoint</h2>
+<h2 id="add-media-width-calls-for-the-new-breakpoint">Add <code class="highlighter-rouge">.media-width()</code> calls for the new breakpoint</h2>
 
-<p>Now you can add a new <code>.media-width()</code> mixin call where necessary in your theme <code>.less </code> files.</p>
+<p>Now you can add a new <code class="highlighter-rouge">.media-width()</code> mixin call where necessary in your theme <code class="highlighter-rouge">.less </code> files.</p>
 
 <p>Example:</p>
 
-<pre><code>.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
+<div class="highlighter-rouge"><pre class="highlight"><code>.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
     //  Customization for @your__breakpoint breakpoint
 }
 </code></pre>
+</div>
 
 <h2 id="related-reading">Related reading</h2>
 
 <ul>
-  <li>You can find information about the <code>_responsive.less</code> library file in the generated Magento UI library documentation. It is available in the following location in your Magento installation: <code>&lt;your_Magento_installation&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code>.</li>
+  <li>You can find information about the <code class="highlighter-rouge">_responsive.less</code> library file in the generated Magento UI library documentation. It is available in the following location in your Magento installation: <code class="highlighter-rouge">&lt;your_Magento_installation&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code>.</li>
   <li><a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to make your theme responsive and mobile</a>.</li>
 </ul>
 

@@ -1044,7 +1044,7 @@
   </li>
 </ul>
 
-<p>This Release Candidate is available from <code>repo.magento.com</code> if you have an Enterprise Edition license or GitHub  if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.</p>
+<p>This Release Candidate is available from <code class="highlighter-rouge">repo.magento.com</code> if you have an Enterprise Edition license or GitHub  if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.</p>
 
 <p>Backward-incompatible changes are documented in <a href="/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.</p>
 
@@ -1297,21 +1297,21 @@
 <!--- 54445-->
 <ul>
   <li>The process of uninstalling modules using command-line tools unexpectedly stalls. 
-<strong>Workaround:</strong> Ensure that your <code>&lt;magento root&gt;/var/composer_home/auth.json</code> file contains your authentication keys. You can create an <code>auth.json</code> file in one of two ways:</li>
+<strong>Workaround:</strong> Ensure that your <code class="highlighter-rouge">&lt;magento root&gt;/var/composer_home/auth.json</code> file contains your authentication keys. You can create an <code class="highlighter-rouge">auth.json</code> file in one of two ways:</li>
 </ul>
 
-<p><strong>Method 1:</strong> If you ran Composer commands from CLI before and specified your <code>repo.magento.com</code> credentials, you can copy the existing <code>auth.json</code> file from your home directory under <code>"~/.composer/"</code></p>
+<p><strong>Method 1:</strong> If you ran Composer commands from CLI before and specified your <code class="highlighter-rouge">repo.magento.com</code> credentials, you can copy the existing <code class="highlighter-rouge">auth.json</code> file from your home directory under <code class="highlighter-rouge">"~/.composer/"</code></p>
 
 <p><strong>Method 2:</strong> You can manually create the file using this format:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="p">{</span>
-    <span class="s2">&quot;http-basic&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;repo.magento.com&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;public key&gt;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;private key&gt;&quot;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">{
+    "http-basic": {
+        "repo.magento.com": {
+            "username": "<span class="nt">&lt;public</span> <span class="na">key</span><span class="nt">&gt;</span>",
+            "password": "<span class="nt">&lt;private</span> <span class="na">key</span><span class="nt">&gt;</span>"
+        }
+    }
+}</code></pre></figure>
 
 <!--- 54320-->
 <ul>
@@ -1350,17 +1350,19 @@
 
   <h3 id="install-rc-composer" class="no_toc">Get Magento EE using Composer</h3>
 
-  <p>Magento EE is available from <code>repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+  <p>Magento EE is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
 
-  <p>For example, to install 2.1.1 in the <code>magento2</code> directory:</p>
+  <p>For example, to install 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
 </code></pre>
+  </div>
 
   <h3 id="get-zip" class="no_toc">Get Magento EE using a compressed archive</h3>
 
@@ -1375,7 +1377,7 @@
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
     <p>To get the Magento EE archive:</p>
 
@@ -1388,8 +1390,8 @@
         <p>Follow the instructions on your screen to complete the Magento EE download:</p>
 
         <ul>
-          <li><code>Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
       </li>
       <li>Transfer the installation package to your development system.</li>

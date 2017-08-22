@@ -1099,19 +1099,20 @@
 <p>To uninstall a manually added theme:</p>
 
 <ol>
-  <li>Navigate to the vendor directory where the theme was installed. This directory should be: <code>&lt;Magento root dir&gt;/app/design/frontend/&lt;VendorName&gt;</code>.</li>
+  <li>Navigate to the vendor directory where the theme was installed. This directory should be: <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/design/frontend/&lt;VendorName&gt;</code>.</li>
   <li>Remove the theme directory.</li>
   <li>Remove the theme record from database. If you are using MySQL, run the following command to do this:</li>
 </ol>
 
-<pre><code>mysql -u &lt;user&gt; -p -e "delete from &lt;dbname&gt;.theme where theme_path ='&lt;Vendor&gt;/&lt;theme&gt;' AND area ='frontend' limit 1"
+<div class="highlighter-rouge"><pre class="highlight"><code>mysql -u &lt;user&gt; -p -e "delete from &lt;dbname&gt;.theme where theme_path ='&lt;Vendor&gt;/&lt;theme&gt;' AND area ='frontend' limit 1"
 </code></pre>
+</div>
 <p>Where:</p>
 
 <ul>
-  <li><code>&lt;user&gt;</code>: your Magento database user name</li>
-  <li><code>&lt;dbname&gt;</code>: your Magento database name</li>
-  <li><code>&lt;Vendor&gt;/&lt;theme&gt;</code>: relative path to the theme directory</li>
+  <li><code class="highlighter-rouge">&lt;user&gt;</code>: your Magento database user name</li>
+  <li><code class="highlighter-rouge">&lt;dbname&gt;</code>: your Magento database name</li>
+  <li><code class="highlighter-rouge">&lt;Vendor&gt;/&lt;theme&gt;</code>: relative path to the theme directory</li>
 </ul>
 
 <h2 id="uninstall-a-theme-package">Uninstall a theme package</h2>
@@ -1129,25 +1130,27 @@
 <p>Take the following steps:</p>
 
 <ol>
-  <li>Open the <code>&lt;Magento root dir&gt;/composer.json</code> file.</li>
+  <li>Open the <code class="highlighter-rouge">&lt;Magento root dir&gt;/composer.json</code> file.</li>
   <li>
     <p>Find a line with a reference to theme package and delete it. The reference would look like following:</p>
 
-    <pre><code>...
+    <div class="highlighter-rouge"><pre class="highlight"><code>...
 "require": {
  ...
     "&lt;vendor&gt;/&lt;theme-name&gt;": "&lt;version&gt;"
 },
 ...
 </code></pre>
+    </div>
   </li>
   <li>
     <p>To update the project dependencies, run:</p>
 
-    <pre><code> composer update
+    <div class="highlighter-rouge"><pre class="highlight"><code> composer update
 </code></pre>
+    </div>
   </li>
-  <li>Use the <code>magento theme:uninstall</code> CLI command as described in the <a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes Composer package</a> topic.</li>
+  <li>Use the <code class="highlighter-rouge">magento theme:uninstall</code> CLI command as described in the <a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes Composer package</a> topic.</li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">

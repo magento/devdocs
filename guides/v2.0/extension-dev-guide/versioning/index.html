@@ -1075,10 +1075,11 @@ This version change does not reflect the nature of the changes in the code base.
 <p>Magento Modules follow Magento’s Module Versioning Policy.
 The policy itself follows <a href="http://semver.org/" target="_blank">Semantic Versioning</a> standards.</p>
 
-<p>The <code>version</code> field in the module’s <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">composer.json</a> file specifies the module version and consists of three numbers in the following format:</p>
+<p>The <code class="highlighter-rouge">version</code> field in the module’s <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">composer.json</a> file specifies the module version and consists of three numbers in the following format:</p>
 
-<pre><code>MAJOR.MINOR.PATCH
+<div class="highlighter-rouge"><pre class="highlight"><code>MAJOR.MINOR.PATCH
 </code></pre>
+</div>
 
 <h2 id="public-vs-private-code-changes">Public vs private code changes</h2>
 
@@ -1121,7 +1122,7 @@ Use this table to set the appropriate version dependency on a module based on ho
   </thead>
   <tbody>
     <tr>
-      <td><strong>PHP Interface</strong> (marked with <code>@api</code>)</td>
+      <td><strong>PHP Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
       <td>Inject in a constructor and/or call methods</td>
       <td>MAJOR</td>
     </tr>
@@ -1132,7 +1133,7 @@ Use this table to set the appropriate version dependency on a module based on ho
     </tr>
     <tr>
       <td> </td>
-      <td>Re-define the interface preference in <code>di.xml</code></td>
+      <td>Re-define the interface preference in <code class="highlighter-rouge">di.xml</code></td>
       <td>MINOR</td>
     </tr>
     <tr>
@@ -1143,7 +1144,7 @@ Use this table to set the appropriate version dependency on a module based on ho
   </tbody>
   <tbody>
     <tr>
-      <td><strong>PHP Class</strong> (marked with <code>@api</code>)</td>
+      <td><strong>PHP Class</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
       <td>Inject in a constructor</td>
       <td>MAJOR</td>
     </tr>
@@ -1159,18 +1160,18 @@ Use this table to set the appropriate version dependency on a module based on ho
     </tr>
     <tr>
       <td> </td>
-      <td>Configure class preference in <code>di.xml</code></td>
+      <td>Configure class preference in <code class="highlighter-rouge">di.xml</code></td>
       <td>MAJOR</td>
     </tr>
     <tr>
       <td> </td>
-      <td>Configure constructor argument in <code>di.xml</code></td>
+      <td>Configure constructor argument in <code class="highlighter-rouge">di.xml</code></td>
       <td>MAJOR</td>
     </tr>
   </tbody>
   <tbody>
     <tr>
-      <td><strong>JavaScript Interface</strong> (marked with <code>@api</code>)</td>
+      <td><strong>JavaScript Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
       <td>Inject in a constructor and/or call methods</td>
       <td>MAJOR</td>
     </tr>
@@ -1182,7 +1183,7 @@ Use this table to set the appropriate version dependency on a module based on ho
   </tbody>
   <tbody>
     <tr>
-      <td><strong>Javascript class</strong> (marked with <code>@api</code>)</td>
+      <td><strong>Javascript class</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
       <td>Inject in a constructor</td>
       <td>MAJOR</td>
     </tr>
@@ -1205,7 +1206,7 @@ Use this table to set the appropriate version dependency on a module based on ho
   <tbody>
     <tr>
       <td><strong>Virtual Type</strong></td>
-      <td>Configure a virtual type in the <code>di.xml</code> file as a class dependency</td>
+      <td>Configure a virtual type in the <code class="highlighter-rouge">di.xml</code> file as a class dependency</td>
       <td>MAJOR</td>
     </tr>
   </tbody>
@@ -1329,7 +1330,7 @@ Use this table to understand what changes Magento can make and what version numb
   </thead>
   <tbody>
     <tr>
-      <td><strong>PHP Interface</strong> (marked with <code>@api</code>)</td>
+      <td><strong>PHP Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
       <td>New interface</td>
       <td>MINOR</td>
     </tr>
@@ -1366,7 +1367,7 @@ Use this table to understand what changes Magento can make and what version numb
   </tbody>
   <tbody>
     <tr>
-      <td><strong>PHP Class</strong> (marked with <code>@api</code>)</td>
+      <td><strong>PHP Class</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
       <td>New Class</td>
       <td>MINOR</td>
     </tr>
@@ -1423,7 +1424,7 @@ Use this table to understand what changes Magento can make and what version numb
   </tbody>
   <tbody>
     <tr>
-      <td><strong>JavaScript Interface</strong> (marked with <code>@api</code>)</td>
+      <td><strong>JavaScript Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
       <td>New interface</td>
       <td>MINOR</td>
     </tr>
@@ -1460,7 +1461,7 @@ Use this table to understand what changes Magento can make and what version numb
   </tbody>
   <tbody>
     <tr>
-      <td><strong>Javascript class</strong> (marked with <code>@api</code></td>
+      <td><strong>Javascript class</strong> (marked with <code class="highlighter-rouge">@api</code></td>
       <td>New class</td>
       <td>MINOR</td>
     </tr>
@@ -1764,7 +1765,7 @@ Use this table to understand what changes Magento can make and what version numb
 <p>To achieve this, all third-party modules must obey the following rules:</p>
 
 <ol>
-  <li>You must specify the dependency on all modules listed in the ‘require’ section of your module’s <code>composer.json</code> file.</li>
+  <li>You must specify the dependency on all modules listed in the ‘require’ section of your module’s <code class="highlighter-rouge">composer.json</code> file.</li>
   <li>Do not specify a dependency on meta packages (e.g. ‘product-community-edition’).</li>
   <li>Specify a module’s MAJOR and/or MINOR version number if you use any of that module’s customization points.</li>
   <li>Specify a module’s MAJOR, MINOR, and PATCH versions if you call or customize a module’s private code.</li>
@@ -1772,20 +1773,20 @@ Use this table to understand what changes Magento can make and what version numb
 
 <h2 id="deprecation">Deprecation</h2>
 
-<p>Marking public code with <code>@deprecated</code> on a MINOR release indicates that Magento plans to remove that code in a future MINOR release.</p>
+<p>Marking public code with <code class="highlighter-rouge">@deprecated</code> on a MINOR release indicates that Magento plans to remove that code in a future MINOR release.</p>
 
-<p>When Magento deprecates the API or customization point in favor of a new implementation, the <code>@see</code> annotation points to the new implementation.</p>
+<p>When Magento deprecates the API or customization point in favor of a new implementation, the <code class="highlighter-rouge">@see</code> annotation points to the new implementation.</p>
 
 <p><strong>Deprecated Code Example</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
-<span class="sd"> * @deprecated since 2.1.0</span>
-<span class="sd"> * @see \Magento\Framework\Model\ResourceModel\Db\AbstractDb::save()</span>
-<span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+ * @deprecated since 2.1.0
+ * @see \Magento\Framework\Model\ResourceModel\Db\AbstractDb::save()
+ */
+public function save()
+{
+    // ...
+}</code></pre></figure>
 
 
 		</div>

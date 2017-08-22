@@ -1606,33 +1606,36 @@ This process should be followed by technical users responsible for stores runnin
 
 <h3 id="server---composer-optimization">Server - Composer Optimization</h3>
 
-<p>After running <code>setup:di:compile</code> to generate classes, use composer to update the autoloader.</p>
+<p>After running <code class="highlighter-rouge">setup:di:compile</code> to generate classes, use composer to update the autoloader.</p>
 
 <p>Run the following <a href="https://getcomposer.org/doc/03-cli.md#dump-autoload">composer command</a> to generate an optimized composer class map that supports faster auto-loading.</p>
 
-<pre><code>composer dump-autoload -o
+<div class="highlighter-rouge"><pre class="highlight"><code>composer dump-autoload -o
 </code></pre>
+</div>
 
 <h3 id="server---php-configuration">Server - PHP Configuration</h3>
 
 <p>We recommend enabling and tuning PHP opcache for maximum performance.
-Edit your <code>opcache.ini</code> file to include the following:</p>
+Edit your <code class="highlighter-rouge">opcache.ini</code> file to include the following:</p>
 
-<pre><code>opcache.enable_cli=1
+<div class="highlighter-rouge"><pre class="highlight"><code>opcache.enable_cli=1
 opcache.memory_consumption=512
 opcache.max_accelerated_files=100000
 opcache.validate_timestamps=0
 opcache.consistency_checks=0
 </code></pre>
+</div>
 
 <p>When you fine tune the memory allocation for opcache, take into account the size of Magento’s code base and all your extensions.
 Magento’s performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.</p>
 
 <p>If you are on a low memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:</p>
 
-<pre><code>opcache.memory_consumption=64
+<div class="highlighter-rouge"><pre class="highlight"><code>opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 </code></pre>
+</div>
 
 <h3 id="server---redis-configuration--tuning">Server - Redis Configuration &amp; Tuning</h3>
 
@@ -1718,12 +1721,13 @@ opcache.max_accelerated_files=60000
 
 <p>Run the following commands to switch to production mode:</p>
 
-<pre><code>bin/magento setup:static-content:deploy
+<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento setup:static-content:deploy
 bin/magento setup:di:compile
 bin/magento deploy:mode:set -s production
 bin/magento index:reindex
 bin/magento cache:flush
 </code></pre>
+</div>
 
 
 		</div>

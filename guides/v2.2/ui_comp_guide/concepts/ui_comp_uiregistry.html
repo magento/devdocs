@@ -1198,34 +1198,34 @@
 </section>
 
 
-			<p><code>uiRegistry</code> is a in-memory storage, plain storage of entities by keys. Implements the <code>get()</code>, <code>set()</code>, and <code>has()</code> methods.</p>
+			<p><code class="highlighter-rouge">uiRegistry</code> is a in-memory storage, plain storage of entities by keys. Implements the <code class="highlighter-rouge">get()</code>, <code class="highlighter-rouge">set()</code>, and <code class="highlighter-rouge">has()</code> methods.</p>
 
 <h2 id="debug_uiregistry">JS debugging using uiRegistry</h2>
 
-<p>To debug the UI component JS, we first need to get a <code>uiRegistry</code> instance from the browser console. To do so, use the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">RequireJs ID</a> <code>uiRegistry</code>.</p>
+<p>To debug the UI component JS, we first need to get a <code class="highlighter-rouge">uiRegistry</code> instance from the browser console. To do so, use the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">RequireJs ID</a> <code class="highlighter-rouge">uiRegistry</code>.</p>
 
 <p>In the browser console enter the following:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">registry</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;uiRegistry&#39;</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">registry</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'uiRegistry'</span><span class="p">);</span></code></pre></figure>
 
-<p>Now we have <code>uiRegistry</code> instance in the <code>registry</code> variable. We can use it to get an instance of any component.</p>
+<p>Now we have <code class="highlighter-rouge">uiRegistry</code> instance in the <code class="highlighter-rouge">registry</code> variable. We can use it to get an instance of any component.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;%componentName%&#39;</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'%componentName%'</span><span class="p">);</span></code></pre></figure>
 
 <p>For example:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Admin &gt; Products &gt; Catalog &gt; Add Product</span>
-<span class="kd">var</span> <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;product_form.product_form.product-details.container_name.name&#39;</span><span class="p">);</span></code></pre></figure>
+<span class="kd">var</span> <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'product_form.product_form.product-details.container_name.name'</span><span class="p">);</span></code></pre></figure>
 
 <p>Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name and so on.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fieldName</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// product_form.product_form.product-details.container_name.name</span>
 
-<span class="nx">fieldName</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;validate&#39;</span><span class="p">);</span> <span class="c1">// will invoke validation</span>
+<span class="nx">fieldName</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'validate'</span><span class="p">);</span> <span class="c1">// will invoke validation</span>
 <span class="nx">fieldName</span><span class="p">.</span><span class="nx">visible</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// will hide field from page</span>
 <span class="nx">fieldName</span><span class="p">.</span><span class="nx">visible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>  <span class="c1">// will show field again</span>
 <span class="nx">fieldName</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span> <span class="c1">// will show current field value</span>
-<span class="nx">fieldName</span><span class="p">.</span><span class="nx">value</span><span class="p">(</span><span class="s1">&#39;New string value&#39;</span><span class="p">);</span> <span class="c1">// will change field value to string &#39;New string value&#39;</span></code></pre></figure>
+<span class="nx">fieldName</span><span class="p">.</span><span class="nx">value</span><span class="p">(</span><span class="s1">'New string value'</span><span class="p">);</span> <span class="c1">// will change field value to string 'New string value'</span></code></pre></figure>
 
 		</div>
 		<!-- /.content-wrap -->

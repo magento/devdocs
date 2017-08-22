@@ -1672,11 +1672,11 @@
 
 			<h3 id="migrate-from-magento-20-to-21">Migrate from Magento 2.0 to 2.1</h3>
 
-<p>The <code>communication.xml</code> file was not changed between Magento 2.0 and 2.1. Replace the <code>queue.xml</code> file for each <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that sends messages to the message queue.</p>
+<p>The <code class="highlighter-rouge">communication.xml</code> file was not changed between Magento 2.0 and 2.1. Replace the <code class="highlighter-rouge">queue.xml</code> file for each <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that sends messages to the message queue.</p>
 
-<h4 id="replace-the-queuexml-file">Replace the <code>queue.xml</code> file</h4>
+<h4 id="replace-the-queuexml-file">Replace the <code class="highlighter-rouge">queue.xml</code> file</h4>
 
-<p>The structure of the <code>queue.xml</code> file is substantially different in Magento. 2.1. Make a copy of your 2.0 <code>queue.xml</code> file and create a new one with the structure listed below.</p>
+<p>The structure of the <code class="highlighter-rouge">queue.xml</code> file is substantially different in Magento. 2.1. Make a copy of your 2.0 <code class="highlighter-rouge">queue.xml</code> file and create a new one with the structure listed below.</p>
 
 <table>
   <thead>
@@ -1687,36 +1687,36 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>&lt;broker&gt;/topic</code></td>
-      <td><code>&lt;bind&gt;/topic</code></td>
+      <td><code class="highlighter-rouge">&lt;broker&gt;/topic</code></td>
+      <td><code class="highlighter-rouge">&lt;bind&gt;/topic</code></td>
     </tr>
     <tr>
-      <td><code>&lt;broker&gt;/type</code></td>
-      <td><code>&lt;consumer&gt;/connection</code></td>
+      <td><code class="highlighter-rouge">&lt;broker&gt;/type</code></td>
+      <td><code class="highlighter-rouge">&lt;consumer&gt;/connection</code></td>
     </tr>
     <tr>
-      <td><code>&lt;broker&gt;/exchange</code></td>
-      <td><code>&lt;bind&gt;/exchange</code></td>
+      <td><code class="highlighter-rouge">&lt;broker&gt;/exchange</code></td>
+      <td><code class="highlighter-rouge">&lt;bind&gt;/exchange</code></td>
     </tr>
     <tr>
-      <td><code>&lt;broker&gt;/&lt;queue&gt;/name</code></td>
-      <td><code>&lt;consumer&gt;/queue</code></td>
+      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/name</code></td>
+      <td><code class="highlighter-rouge">&lt;consumer&gt;/queue</code></td>
     </tr>
     <tr>
-      <td><code>&lt;broker&gt;/&lt;queue&gt;/consumer</code></td>
-      <td><code>&lt;consumer&gt;/name</code></td>
+      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/consumer</code></td>
+      <td><code class="highlighter-rouge">&lt;consumer&gt;/name</code></td>
     </tr>
     <tr>
-      <td><code>&lt;broker&gt;/&lt;queue&gt;/consumerInstance</code></td>
-      <td><code>&lt;consumer&gt;/executor</code></td>
+      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/consumerInstance</code></td>
+      <td><code class="highlighter-rouge">&lt;consumer&gt;/executor</code></td>
     </tr>
     <tr>
-      <td><code>&lt;broker&gt;/&lt;queue&gt;/handler</code></td>
-      <td>Use the values from <code>&lt;consumer&gt;/class</code> and <code>&lt;consumer&gt;/method</code> in the format <code>&lt;Vendor&gt;\Module\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
+      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/handler</code></td>
+      <td>Use the values from <code class="highlighter-rouge">&lt;consumer&gt;/class</code> and <code class="highlighter-rouge">&lt;consumer&gt;/method</code> in the format <code class="highlighter-rouge">&lt;Vendor&gt;\Module\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
     </tr>
     <tr>
-      <td><code>&lt;broker&gt;/&lt;queue&gt;/maxMessages</code></td>
-      <td><code>&lt;consumer&gt;/max_messages</code></td>
+      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/maxMessages</code></td>
+      <td><code class="highlighter-rouge">&lt;consumer&gt;/max_messages</code></td>
     </tr>
   </tbody>
 </table>

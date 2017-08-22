@@ -680,72 +680,72 @@
 
 			<p>The payment information form rendering in <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> order creation is defined by the block class, its template and <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>.</p>
 
-<p><code>formBlockType</code> is one of the arguments you must <a href="/guides/v2.2/payments-integrations/base-integration/facade-configuration.html">configure for the payment method facade</a>.</p>
+<p><code class="highlighter-rouge">formBlockType</code> is one of the arguments you must <a href="/guides/v2.2/payments-integrations/base-integration/facade-configuration.html">configure for the payment method facade</a>.</p>
 
 <p>This block is used to display payment form on billing form in Admin panel. In
-most cases it is enough to use the <code>\Magento\Payment\Block\Form\Cc</code>. All payments details are displayed according to specified keys in <code>paymentInfoKeys</code> option in <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> configuration.</p>
+most cases it is enough to use the <code class="highlighter-rouge">\Magento\Payment\Block\Form\Cc</code>. All payments details are displayed according to specified keys in <code class="highlighter-rouge">paymentInfoKeys</code> option in <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> configuration.</p>
 
 <h2 id="example-of-custom-formblocktype-braintree-payment-method-implementation">Example of custom formBlockType: Braintree payment method implementation</h2>
 
-<p>In the integration with the Braintree payment provider, we use the <code>\Magento\Braintree\Block\Form</code> class as <code>formBlockType</code>. It allows displaying only card types available for configured countries:</p>
+<p>In the integration with the Braintree payment provider, we use the <code class="highlighter-rouge">\Magento\Braintree\Block\Form</code> class as <code class="highlighter-rouge">formBlockType</code>. It allows displaying only card types available for configured countries:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">Cc</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Get list of available card types of order billing address country</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCcAvailableTypes</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$configuredCardTypes</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getConfiguredCardTypes</span><span class="p">();</span>
-        <span class="nv">$countryId</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sessionQuote</span><span class="o">-&gt;</span><span class="na">getQuote</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getBillingAddress</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getCountryId</span><span class="p">();</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">filterCardTypesForCountry</span><span class="p">(</span><span class="nv">$configuredCardTypes</span><span class="p">,</span> <span class="nv">$countryId</span><span class="p">);</span>
-    <span class="p">}</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class Form extends Cc
+{
+    /**
+     * Get list of available card types of order billing address country
+     * @return array
+     */
+    public function getCcAvailableTypes()
+    {
+        $configuredCardTypes = $this-&gt;getConfiguredCardTypes();
+        $countryId = $this-&gt;sessionQuote-&gt;getQuote()-&gt;getBillingAddress()-&gt;getCountryId();
+        return $this-&gt;filterCardTypesForCountry($configuredCardTypes, $countryId);
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * Get card types available for Braintree</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">getConfiguredCardTypes</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$types</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ccType</span><span class="o">-&gt;</span><span class="na">getCcTypeLabelMap</span><span class="p">();</span>
-        <span class="nv">$configCardTypes</span> <span class="o">=</span> <span class="nb">array_fill_keys</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">gatewayConfig</span><span class="o">-&gt;</span><span class="na">getAvailableCardTypes</span><span class="p">(),</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+    /**
+     * Get card types available for Braintree
+     * @return array
+     */
+    private function getConfiguredCardTypes()
+    {
+        $types = $this-&gt;ccType-&gt;getCcTypeLabelMap();
+        $configCardTypes = array_fill_keys($this-&gt;gatewayConfig-&gt;getAvailableCardTypes(), '');
 
-        <span class="k">return</span> <span class="nb">array_intersect_key</span><span class="p">(</span><span class="nv">$types</span><span class="p">,</span> <span class="nv">$configCardTypes</span><span class="p">);</span>
-    <span class="p">}</span>
+        return array_intersect_key($types, $configCardTypes);
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * Filter card types for specific country</span>
-<span class="sd">     * @param array $configCardTypes</span>
-<span class="sd">     * @param string $countryId</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">filterCardTypesForCountry</span><span class="p">(</span><span class="k">array</span> <span class="nv">$configCardTypes</span><span class="p">,</span> <span class="nv">$countryId</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$filtered</span> <span class="o">=</span> <span class="nv">$configCardTypes</span><span class="p">;</span>
-        <span class="nv">$countryCardTypes</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">gatewayConfig</span><span class="o">-&gt;</span><span class="na">getCountryAvailableCardTypes</span><span class="p">(</span><span class="nv">$countryId</span><span class="p">);</span>
-        <span class="c1">// filter card types only if specific card types are set for country</span>
-        <span class="o">...</span>
+    /**
+     * Filter card types for specific country
+     * @param array $configCardTypes
+     * @param string $countryId
+     * @return array
+     */
+    private function filterCardTypesForCountry(array $configCardTypes, $countryId)
+    {
+        $filtered = $configCardTypes;
+        $countryCardTypes = $this-&gt;gatewayConfig-&gt;getCountryAvailableCardTypes($countryId);
+        // filter card types only if specific card types are set for country
+        ...
 
-        <span class="k">return</span> <span class="nv">$filtered</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+        return $filtered;
+    }
+}</code></pre></figure>
 
 <h2 id="template">Template</h2>
 
 <p>For creating a template for the payment information rendering class, you can use the default <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml">cc.phtml</a> as example.</p>
 
-<p>Then add the the template to the billing form layout <code>sales_order_create_index.xml</code>.</p>
+<p>Then add the the template to the billing form layout <code class="highlighter-rouge">sales_order_create_index.xml</code>.</p>
 
-<p>The following example adds the Braintree-specific template <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml"><code>app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml</code></a> to the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/adminhtml/layout/sales_order_create_index.xml">billing form layout in the Braintree module</a>.</p>
+<p>The following example adds the Braintree-specific template <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml"><code class="highlighter-rouge">app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml</code></a> to the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/adminhtml/layout/sales_order_create_index.xml">billing form layout in the Braintree module</a>.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;order_create_billing_form&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">&quot;setMethodFormTemplate&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"order_create_billing_form"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">"setMethodFormTemplate"</span><span class="nt">&gt;</span>
 				<span class="c">&lt;!-- your method code and template --&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;method&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>braintree<span class="nt">&lt;/argument&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Braintree::form/cc.phtml<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"method"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>braintree<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Braintree::form/cc.phtml<span class="nt">&lt;/argument&gt;</span>
             <span class="nt">&lt;/action&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>

@@ -1130,7 +1130,7 @@
 </section>
 
 
-			<p>Each Magento 2 <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> has its own set of configuration files, gathered into the module’s <code>etc</code> directory.</p>
+			<p>Each Magento 2 <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> has its own set of configuration files, gathered into the module’s <code class="highlighter-rouge">etc</code> directory.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -1145,19 +1145,19 @@
 
   <ul>
     <li>
-      <p><code>&lt;Magento install directory&gt;/app</code>: This is the <em>recommended</em> location for component development. You can easily set up this type of environment by <a href="/guides/v2.1/install-gde/prereq/dev_install.html">Cloning the Magento 2 GitHub repository</a>.</p>
+      <p><code class="highlighter-rouge">&lt;Magento install directory&gt;/app</code>: This is the <em>recommended</em> location for component development. You can easily set up this type of environment by <a href="/guides/v2.1/install-gde/prereq/dev_install.html">Cloning the Magento 2 GitHub repository</a>.</p>
 
       <ul>
-        <li>For modules, use <code>app/code</code>.</li>
-        <li>For storefront themes, use <code>app/design/frontend</code>.</li>
-        <li>For Admin themes, use <code>app/design/adminhtml</code>.</li>
-        <li>For language packages, use <code>app/i18n</code>.</li>
+        <li>For modules, use <code class="highlighter-rouge">app/code</code>.</li>
+        <li>For storefront themes, use <code class="highlighter-rouge">app/design/frontend</code>.</li>
+        <li>For Admin themes, use <code class="highlighter-rouge">app/design/adminhtml</code>.</li>
+        <li>For language packages, use <code class="highlighter-rouge">app/i18n</code>.</li>
       </ul>
     </li>
     <li>
-      <p><code>&lt;Magento install directory&gt;/vendor</code>: This location is found in the alternative setups where the <a href="/guides/v2.1/install-gde/prereq/integrator_install.html"><code>composer create-project</code></a> command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a <a href="/guides/v2.1/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a> was extracted in order to install Magento.</p>
+      <p><code class="highlighter-rouge">&lt;Magento install directory&gt;/vendor</code>: This location is found in the alternative setups where the <a href="/guides/v2.1/install-gde/prereq/integrator_install.html"><code class="highlighter-rouge">composer create-project</code></a> command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a <a href="/guides/v2.1/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a> was extracted in order to install Magento.</p>
 
-      <p>Any third party components (and the Magento application itself) are downloaded and stored under the <code>vendor</code> directory. If you are using Git to manage project, this directory is typically added to the <code>.gitignore</code> file. Therefore, we recommend you do your customization work in <code>app/code</code>, not <code>vendor</code>.</p>
+      <p>Any third party components (and the Magento application itself) are downloaded and stored under the <code class="highlighter-rouge">vendor</code> directory. If you are using Git to manage project, this directory is typically added to the <code class="highlighter-rouge">.gitignore</code> file. Therefore, we recommend you do your customization work in <code class="highlighter-rouge">app/code</code>, not <code class="highlighter-rouge">vendor</code>.</p>
     </li>
   </ul>
 
@@ -1165,20 +1165,20 @@
   <p>The following files are required for all components:</p>
 
   <ul>
-    <li><code>registration.php</code>: Among other things, this file specifies the directory in which the component is installed by vendors in production environments. By default, composer automatically installs components in the <code>&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">Component registration</a>.</li>
-    <li><code>composer.json</code>: Specifies component dependencies and other metadata. For more information, see <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
+    <li><code class="highlighter-rouge">registration.php</code>: Among other things, this file specifies the directory in which the component is installed by vendors in production environments. By default, composer automatically installs components in the <code class="highlighter-rouge">&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">Component registration</a>.</li>
+    <li><code class="highlighter-rouge">composer.json</code>: Specifies component dependencies and other metadata. For more information, see <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
   </ul>
 
   <h2 id="use-etc-for-your-configuration-files">Use /etc for your configuration files</h2>
 
-  <p>Magento 2 looks for configuration information for each module in that module’s <code>etc</code> directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module’s <code>etc</code> directory:</p>
+  <p>Magento 2 looks for configuration information for each module in that module’s <code class="highlighter-rouge">etc</code> directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module’s <code class="highlighter-rouge">etc</code> directory:</p>
 
   <ul>
-    <li><code>acl.xml</code></li>
-    <li><code>config.xml</code></li>
-    <li><code>di.xml</code></li>
-    <li><code>module.xml</code></li>
-    <li><code>webapi.xml</code></li>
+    <li><code class="highlighter-rouge">acl.xml</code></li>
+    <li><code class="highlighter-rouge">config.xml</code></li>
+    <li><code class="highlighter-rouge">di.xml</code></li>
+    <li><code class="highlighter-rouge">module.xml</code></li>
+    <li><code class="highlighter-rouge">webapi.xml</code></li>
   </ul>
 
   <div class="bs-callout bs-callout-info" id="info">
@@ -1187,45 +1187,45 @@
   </span>
  </div>
 
-  <p>In addition to those files, a Magento 2 module also has nested configuration directories in the <code>etc</code> directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a <code>config.xml</code> file to <code>etc/frontend</code>, the settings you make in that file overrides the settings in <code>etc/config.xml</code> for <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> functionality <em>only</em>.</p>
+  <p>In addition to those files, a Magento 2 module also has nested configuration directories in the <code class="highlighter-rouge">etc</code> directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a <code class="highlighter-rouge">config.xml</code> file to <code class="highlighter-rouge">etc/frontend</code>, the settings you make in that file overrides the settings in <code class="highlighter-rouge">etc/config.xml</code> for <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> functionality <em>only</em>.</p>
 
   <ul>
-    <li><code>&lt;your module root dir&gt;/etc/adminhtml/</code></li>
-    <li><code>&lt;your module root dir&gt;/etc/frontend/</code></li>
-    <li><code>&lt;your module root dir&gt;/etc/webapi_rest/</code></li>
-    <li><code>&lt;your module root dir&gt;/etc/webapi_soap/</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/adminhtml/</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/frontend/</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_rest/</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_soap/</code></li>
   </ul>
 
   <h3 id="configuration-files">Configuration files</h3>
   <ul>
-    <li>Configuration files that are in the top level of that module’s <code>etc</code> directory are global to that component.</li>
-    <li>Configuration files placed in subdirectories (<code>adminhtml</code>, <code>frontend</code>, <code>webapi_rest</code>, <code>webapi_soap</code>) apply only to those respective functional areas.</li>
+    <li>Configuration files that are in the top level of that module’s <code class="highlighter-rouge">etc</code> directory are global to that component.</li>
+    <li>Configuration files placed in subdirectories (<code class="highlighter-rouge">adminhtml</code>, <code class="highlighter-rouge">frontend</code>, <code class="highlighter-rouge">webapi_rest</code>, <code class="highlighter-rouge">webapi_soap</code>) apply only to those respective functional areas.</li>
   </ul>
 
   <h3 id="tailor-your-configuration-files-for-what-your-module-does">Tailor your configuration files for what your module does</h3>
 
-  <p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> panel, or as a <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code>etc/adminhtml/</code>, like:</p>
+  <p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> panel, or as a <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code class="highlighter-rouge">etc/adminhtml/</code>, like:</p>
 
   <ul>
-    <li><code>&lt;your module root dir&gt;/etc/adminhtml/di.xml</code></li>
-    <li><code>&lt;your module root dir&gt;/etc/adminhtml/routes.xml</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/adminhtml/di.xml</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/adminhtml/routes.xml</code></li>
   </ul>
 
-  <p>Similarly, if your module changes the UI, you should add the needed configuration files to <code>~/etc/frontend/</code>. For example:</p>
+  <p>Similarly, if your module changes the UI, you should add the needed configuration files to <code class="highlighter-rouge">~/etc/frontend/</code>. For example:</p>
 
   <ul>
-    <li><code>&lt;your module root dir&gt;/etc/frontend/.xml</code></li>
-    <li><code>&lt;your module root dir&gt;/etc/frontend/page_types.xml</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/frontend/.xml</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/frontend/page_types.xml</code></li>
   </ul>
 
   <p>If the module is a service that may call an API, or does some other work that is not manifested in the UI you should add any needed configuration files in the REST and/or SOAP webapi configuration directories, like this:</p>
 
   <ul>
-    <li><code>&lt;your module root dir&gt;/etc/webapi_rest/di.xml</code></li>
-    <li><code>&lt;your module root dir&gt;/etc/webapi_soap/di.xml</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_rest/di.xml</code></li>
+    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_soap/di.xml</code></li>
   </ul>
 
-  <p>Keep in mind that you might be able to handle your module’s configuration solely with configuration files at the top level of your module’s <code>etc</code> directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.</p>
+  <p>Keep in mind that you might be able to handle your module’s configuration solely with configuration files at the top level of your module’s <code class="highlighter-rouge">etc</code> directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.</p>
 
   <h4 id="next">Next</h4>
 

@@ -1082,16 +1082,16 @@ Bundling accomplishes this by merging multiple JavaScript files together into on
 
 <ol>
   <li>Log in to the Admin area</li>
-  <li>Navigate to <code>Stores -&gt; Configuration -&gt; Advanced -&gt; Developer -&gt; Javascript Settings</code></li>
-  <li>Set <code>Enable Javascript Bundling</code> to <code>Yes</code>.</li>
+  <li>Navigate to <code class="highlighter-rouge">Stores -&gt; Configuration -&gt; Advanced -&gt; Developer -&gt; Javascript Settings</code></li>
+  <li>Set <code class="highlighter-rouge">Enable Javascript Bundling</code> to <code class="highlighter-rouge">Yes</code>.</li>
 </ol>
 
-<p>To optimize bundling, set the following settings to <code>Yes</code>:</p>
+<p>To optimize bundling, set the following settings to <code class="highlighter-rouge">Yes</code>:</p>
 
 <ul>
-  <li><code>Javascript Settings -&gt; Merge JavaScript Files</code></li>
-  <li><code>Javascript Settings -&gt; Minify Javascript Files</code></li>
-  <li><code>Static Files Settings -&gt; Sign Static Files</code></li>
+  <li><code class="highlighter-rouge">Javascript Settings -&gt; Merge JavaScript Files</code></li>
+  <li><code class="highlighter-rouge">Javascript Settings -&gt; Minify Javascript Files</code></li>
+  <li><code class="highlighter-rouge">Static Files Settings -&gt; Sign Static Files</code></li>
 </ul>
 
 <h2 id="how-bundling-works-in-magento">How bundling works in Magento</h2>
@@ -1101,71 +1101,71 @@ This means that each bundle is loaded one after the other and causes delays for 
 
 <h3 id="excluding-files">Excluding files</h3>
 
-<p>The <code>&lt;exclude&gt;</code> entry in a theme’s <code>etc/view.xml</code> file tells Magento which files it should not bundle.
+<p>The <code class="highlighter-rouge">&lt;exclude&gt;</code> entry in a theme’s <code class="highlighter-rouge">etc/view.xml</code> file tells Magento which files it should not bundle.
 JavaScript files excluded from bundling are loaded asynchronously by RequireJS as needed.</p>
 
 <p>Do not bundle JavaScript files used for testing or development because these will get loaded on every page.</p>
 
 <p>The following code snippet from <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/luma/etc/view.xml" target="_blank">Magento’s Luma theme</a> shows the types of files you should exclude in your theme.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show example </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;vars</span> <span class="na">module=</span><span class="s">&quot;Js_Bundle&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;bundle_size&quot;</span><span class="nt">&gt;</span>1MB<span class="nt">&lt;/var&gt;</span>
+<div class="collapsible"><b class="collapsible-title">Show example </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;vars</span> <span class="na">module=</span><span class="s">"Js_Bundle"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"bundle_size"</span><span class="nt">&gt;</span>1MB<span class="nt">&lt;/var&gt;</span>
 <span class="nt">&lt;/vars&gt;</span>
 <span class="nt">&lt;exclude&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.min.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery-ui-1.9.2.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.ba-hashchange.min.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.details.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.details.min.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.hoverIntent.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/colorpicker/js/colorpicker.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::requirejs/require.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::requirejs/text.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::date-format-normalizer.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::legacy-build.min.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/captcha.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/dropdown_old.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/list.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/loader_old.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/webapi.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/zoom.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/translate-inline-vde.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/requirejs/mixins.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/requirejs/static.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Customer::js/zxcvbn.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Catalog::js/zoom.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/lib/step-wizard.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/element/ui-select.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/element/file-uploader.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/components/insert.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/components/insert-listing.js<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/timeline<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/grid<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/dynamic-rows<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::templates/timeline<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::templates/grid<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::templates/dynamic-rows<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Swagger::swagger-ui<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::modernizr<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::tiny_mce<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::varien<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::jquery/editableMultiselect<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::jquery/jstree<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::jquery/fileUploader<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::css<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::lib<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::extjs<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::prototype<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::scriptaculous<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::less<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::mage/adminhtml<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::mage/backend<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::jquery/jquery.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::jquery/jquery-ui-1.9.2.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::jquery/jquery.ba-hashchange.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::jquery/jquery.details.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::jquery/jquery.details.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::jquery/jquery.hoverIntent.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::jquery/colorpicker/js/colorpicker.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::requirejs/require.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::requirejs/text.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::date-format-normalizer.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::legacy-build.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::mage/captcha.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::mage/dropdown_old.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::mage/list.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::mage/loader_old.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::mage/webapi.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::mage/zoom.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::mage/translate-inline-vde.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::mage/requirejs/mixins.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Lib::mage/requirejs/static.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Magento_Customer::js/zxcvbn.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Magento_Catalog::js/zoom.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Magento_Ui::js/lib/step-wizard.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Magento_Ui::js/form/element/ui-select.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Magento_Ui::js/form/element/file-uploader.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Magento_Ui::js/form/components/insert.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>Magento_Ui::js/form/components/insert-listing.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Magento_Ui::js/timeline<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Magento_Ui::js/grid<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Magento_Ui::js/dynamic-rows<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Magento_Ui::templates/timeline<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Magento_Ui::templates/grid<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Magento_Ui::templates/dynamic-rows<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Magento_Swagger::swagger-ui<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::modernizr<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::tiny_mce<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::varien<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::jquery/editableMultiselect<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::jquery/jstree<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::jquery/fileUploader<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::css<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::lib<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::extjs<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::prototype<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::scriptaculous<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::less<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::mage/adminhtml<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::mage/backend<span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/exclude&gt;</span></code></pre></figure>
 </div></div>
 
 <h3 id="setting-bundle-file-size">Setting bundle file size</h3>
 
-<p>The <code>bundle_size</code> entry controls the file size of the generated bundles.
+<p>The <code class="highlighter-rouge">bundle_size</code> entry controls the file size of the generated bundles.
 Setting this to a large number will reduce the number of bundles generated, but the file sizes will be big.
 A small number will increase the number of bundles generated, but the file sizes will be smaller.</p>
 
@@ -1174,10 +1174,10 @@ A single connection should be around 100kb.</p>
 
 <h2 id="fine-tuning-your-theme">Fine tuning your theme</h2>
 
-<p>There are many ways to tune your theme’s <code>etc/view.xml</code> file.</p>
+<p>There are many ways to tune your theme’s <code class="highlighter-rouge">etc/view.xml</code> file.</p>
 
 <p>For example, Magento’s Luma theme is configured to work well for all pages, but 
-by adding or removing items inside <code>exclude</code>, you can maximize browser performance for home, catalog, or product pages.</p>
+by adding or removing items inside <code class="highlighter-rouge">exclude</code>, you can maximize browser performance for home, catalog, or product pages.</p>
 
 <p>Follow these steps to help you identify which JavaScript files to bundle for your theme:</p>
 

@@ -1008,7 +1008,7 @@
 
 <h3>Version formats</h3>
 
-<p>Stable release versions are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
+<p>Stable release versions are in the format <code class="highlighter-rouge">MAJOR.MINOR.PATCH</code>, where:</p>
 
 <ul>
   <li>
@@ -1022,14 +1022,14 @@
   </li>
 </ul>
 
-<p>The pre-release version format is: <code>MAJOR.MINOR.PATCH-&lt;alpha | beta | rc&gt;n</code>, where <code>alpha</code>, <code>beta</code> or <code>rc</code> are stability indications, as described in the <code>version_compare()</code> specification, and
-<code>n</code> is an increment number to distinguish releases of the non-stable versions.</p>
+<p>The pre-release version format is: <code class="highlighter-rouge">MAJOR.MINOR.PATCH-&lt;alpha | beta | rc&gt;n</code>, where <code class="highlighter-rouge">alpha</code>, <code class="highlighter-rouge">beta</code> or <code class="highlighter-rouge">rc</code> are stability indications, as described in the <code class="highlighter-rouge">version_compare()</code> specification, and
+<code class="highlighter-rouge">n</code> is an increment number to distinguish releases of the non-stable versions.</p>
 
 <h3>Public APIs</h3>
 
-<p>Source code is considered part of the public API only if it is explicitly marked as such using the <code>@api</code> docblock tag. This designation indicates that the code can be used or customized by other components, such as formal interfaces and dependency injection points. Note that if you mark private code with <code>@api</code>, any change in this private interface will trigger a version change.</p>
+<p>Source code is considered part of the public API only if it is explicitly marked as such using the <code class="highlighter-rouge">@api</code> docblock tag. This designation indicates that the code can be used or customized by other components, such as formal interfaces and dependency injection points. Note that if you mark private code with <code class="highlighter-rouge">@api</code>, any change in this private interface will trigger a version change.</p>
 
-<p>For <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code, compatibility of <code>@api</code> can be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on the file level (for example, the file has been deleted or renamed).</p>
+<p>For <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code, compatibility of <code class="highlighter-rouge">@api</code> can be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on the file level (for example, the file has been deleted or renamed).</p>
 
 <h3>Related topics</h3>
 <p><a href="/guides/v2.1/architecture/back-compatibility.html">Backward compatibility</a></p>

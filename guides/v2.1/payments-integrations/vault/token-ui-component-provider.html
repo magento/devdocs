@@ -759,73 +759,73 @@
 <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php">Vault TokensConfigProvider</a>. You just need to create a token component provider. It should implement the 
 <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php">TokenUiComponentProviderInterface</a> interface:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">interface</span> <span class="nx">TokenUiComponentProviderInterface</span>
-<span class="p">{</span>
-    <span class="k">const</span> <span class="no">COMPONENT_DETAILS</span> <span class="o">=</span> <span class="s1">&#39;details&#39;</span><span class="p">;</span>
-    <span class="k">const</span> <span class="no">COMPONENT_PUBLIC_HASH</span> <span class="o">=</span> <span class="s1">&#39;publicHash&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">interface TokenUiComponentProviderInterface
+{
+    const COMPONENT_DETAILS = 'details';
+    const COMPONENT_PUBLIC_HASH = 'publicHash';
 
-    <span class="sd">/**</span>
-<span class="sd">     * @param PaymentTokenInterface $paymentToken</span>
-<span class="sd">     * @return TokenUiComponentInterface</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getComponentForToken</span><span class="p">(</span><span class="nx">PaymentTokenInterface</span> <span class="nv">$paymentToken</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
+    /**
+     * @param PaymentTokenInterface $paymentToken
+     * @return TokenUiComponentInterface
+     */
+    public function getComponentForToken(PaymentTokenInterface $paymentToken);
+}</code></pre></figure>
 
 <p>The basic implementation of the token <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> provider can be like following:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">TokenUiComponentProvider</span> <span class="k">implements</span> <span class="nx">TokenUiComponentProviderInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Get UI component for token</span>
-<span class="sd">     * @param PaymentTokenInterface $paymentToken</span>
-<span class="sd">     * @return TokenUiComponentInterface</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getComponentForToken</span><span class="p">(</span><span class="nx">PaymentTokenInterface</span> <span class="nv">$paymentToken</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$jsonDetails</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()</span> <span class="o">?:</span> <span class="s1">&#39;{}&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-        <span class="nv">$component</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">componentFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
-            <span class="p">[</span>
-                <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                    <span class="s1">&#39;code&#39;</span> <span class="o">=&gt;</span> <span class="nx">ConfigProvider</span><span class="o">::</span><span class="na">CC_VAULT_CODE</span><span class="p">,</span>
-                    <span class="nx">TokenUiComponentProviderInterface</span><span class="o">::</span><span class="na">COMPONENT_DETAILS</span> <span class="o">=&gt;</span> <span class="nv">$jsonDetails</span><span class="p">,</span>
-                    <span class="nx">TokenUiComponentProviderInterface</span><span class="o">::</span><span class="na">COMPONENT_PUBLIC_HASH</span> <span class="o">=&gt;</span> <span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">getPublicHash</span><span class="p">()</span>
-                <span class="p">],</span>
-                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento_Braintree/js/view/payment/method-renderer/vault&#39;</span>
-            <span class="p">]</span>
-        <span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class TokenUiComponentProvider implements TokenUiComponentProviderInterface
+{
+    /**
+     * Get UI component for token
+     * @param PaymentTokenInterface $paymentToken
+     * @return TokenUiComponentInterface
+     */
+    public function getComponentForToken(PaymentTokenInterface $paymentToken)
+    {
+        $jsonDetails = json_decode($paymentToken-&gt;getTokenDetails() ?: '{}', true);
+        $component = $this-&gt;componentFactory-&gt;create(
+            [
+                'config' =&gt; [
+                    'code' =&gt; ConfigProvider::CC_VAULT_CODE,
+                    TokenUiComponentProviderInterface::COMPONENT_DETAILS =&gt; $jsonDetails,
+                    TokenUiComponentProviderInterface::COMPONENT_PUBLIC_HASH =&gt; $paymentToken-&gt;getPublicHash()
+                ],
+                'name' =&gt; 'Magento_Braintree/js/view/payment/method-renderer/vault'
+            ]
+        );
 
-        <span class="k">return</span> <span class="nv">$component</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+        return $component;
+    }
+}</code></pre></figure>
 
 <p>This implementation allows to retrieve all available payment token details and specify the JS component for <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
 
-<p>Having created the component provider, you need to add it to the list of available vault config providers in <code>di.xml</code> - the DI configuration file.</p>
+<p>Having created the component provider, you need to add it to the list of available vault config providers in <code class="highlighter-rouge">di.xml</code> - the DI configuration file.</p>
 
-<p>In the following example the <code>Magento\Braintree\Model\Ui\TokenUiComponentProvider</code> component provider is added to this list:</p>
+<p>In the following example the <code class="highlighter-rouge">Magento\Braintree\Model\Ui\TokenUiComponentProvider</code> component provider is added to this list:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Vault\Model\Ui\TokensConfigProvider&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Vault\Model\Ui\TokensConfigProvider"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;tokenUiComponentProviders&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;braintree&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Model\Ui\TokenUiComponentProvider<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"tokenUiComponentProviders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"braintree"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Model\Ui\TokenUiComponentProvider<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
 <h2 id="javascript-component-for-vault">JavaScript component for vault</h2>
 
-<p>In you custom module directory, create the component’s <code>.js</code> file. It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory.</p>
+<p>In you custom module directory, create the component’s <code class="highlighter-rouge">.js</code> file. It must be located under the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory.</p>
 
 <p>The component should extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js">vault.js</a>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
-    <span class="s1">&#39;Magento_Vault/js/view/payment/method-renderer/vault&#39;</span><span class="p">,</span>
+    <span class="s1">'Magento_Vault/js/view/payment/method-renderer/vault'</span><span class="p">,</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">VaultComponent</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+    <span class="s1">'use strict'</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nx">VaultComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-        <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;Magento_Vault/payment/form&#39;</span>
+        <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">template</span><span class="p">:</span> <span class="s1">'Magento_Vault/payment/form'</span>
         <span class="p">}</span>
         <span class="p">...</span>
     <span class="p">});</span>

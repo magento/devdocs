@@ -1053,13 +1053,14 @@
   </ul>
 
   <h2 id="centos-verify-php">Verify PHP is installed</h2>
-  <p>To verify if PHP is installed already, enter <code>php -v</code>. If <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> is installed, messages similar to the following display:</p>
+  <p>To verify if PHP is installed already, enter <code class="highlighter-rouge">php -v</code>. If <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> is installed, messages similar to the following display:</p>
 
-  <pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
+  <div class="highlighter-rouge"><pre class="highlight"><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1106,47 +1107,52 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
-    <pre><code>yum -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y update
 yum -y install epel-release
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 wget https://centos6.iuscommunity.org/ius-release.rpm
 rpm -Uvh ius-release*.rpm
 yum -y update
 </code></pre>
+    </div>
   </li>
   <li>
     <p><em>CentOS 7</em>. Enter the following commands:</p>
 
-    <pre><code>yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
 yum -y update
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
 </div>
   </li>
   <li>
-    <p>Restart Apache: <code>service httpd restart</code></p>
+    <p>Restart Apache: <code class="highlighter-rouge">service httpd restart</code></p>
   </li>
   <li>
     <p>Enter the following command to verify that PHP 7 is installed:</p>
 
-    <pre><code>php -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -v
 </code></pre>
+    </div>
 
     <p>The following response indicates that PHP 7 is installed properly:</p>
 
-    <pre><code>PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
+    <div class="highlighter-rouge"><pre class="highlight"><code>PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
 with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1166,7 +1172,7 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
-    <pre><code>yum -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y update
 yum -y install epel-release
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 wget https://centos6.iuscommunity.org/ius-release.rpm
@@ -1174,6 +1180,7 @@ rpm -Uvh ius-release*.rpm
 yum -y update
 yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-bcmath
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
@@ -1182,7 +1189,7 @@ yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-d
   <li>
     <p><em>CentOS 7</em>. Enter the following commands in the order shown:</p>
 
-    <pre><code>yum -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y update
 yum -y install epel-release
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 wget https://centos7.iuscommunity.org/ius-release.rpm
@@ -1190,27 +1197,30 @@ rpm -Uvh ius-release*.rpm
 yum -y update
 yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-bcmath
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
 </div>
   </li>
   <li>
-    <p>Restart Apache: <code>service httpd restart</code></p>
+    <p>Restart Apache: <code class="highlighter-rouge">service httpd restart</code></p>
   </li>
   <li>
     <p>Enter the following command to verify that PHP 5.6 is installed:</p>
 
-    <pre><code>php -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -v
 </code></pre>
+    </div>
 
     <p>The following response indicates that PHP 5.6 is installed properly:</p>
 
-    <pre><code>PHP 5.6.18 (cli) (built: Feb  4 2016 09:29:52)
+    <div class="highlighter-rouge"><pre class="highlight"><code>PHP 5.6.18 (cli) (built: Feb  4 2016 09:29:52)
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
 with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

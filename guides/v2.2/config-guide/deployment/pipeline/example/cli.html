@@ -1901,7 +1901,7 @@
 </section>
 
 
-			<p>This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, <code>config.php</code>, and Magento CLI commands.</p>
+			<p>This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, <code class="highlighter-rouge">config.php</code>, and Magento CLI commands.</p>
 
 <p>These configuration settings can be shared between the development and production systems:</p>
 
@@ -1933,8 +1933,8 @@
 
 <ul>
   <li>You use Git source control</li>
-  <li>The development system is available in a Git remote repository named <code>mconfig</code></li>
-  <li>Your Git working branch is named <code>m2.2_deploy</code></li>
+  <li>The development system is available in a Git remote repository named <code class="highlighter-rouge">mconfig</code></li>
+  <li>Your Git working branch is named <code class="highlighter-rouge">m2.2_deploy</code></li>
 </ul>
 
 <h2 id="deploy-sens-setconfig">Step 1: Set the configuration in the development system</h2>
@@ -1950,8 +1950,8 @@
   </li>
   <li>In the right pane, expand <strong>Store Information</strong>.</li>
   <li>If necessary, clear the <strong>Use Default</strong> check box next to the <strong>VAT Number</strong> and <strong>Store Name</strong> fields.</li>
-  <li>Enter a number in the field (for example, <code>12345</code>).</li>
-  <li>In the <strong>Store Name</strong> field, enter a value (like <code>My Store</code>).</li>
+  <li>Enter a number in the field (for example, <code class="highlighter-rouge">12345</code>).</li>
+  <li>In the <strong>Store Name</strong> field, enter a value (like <code class="highlighter-rouge">My Store</code>).</li>
   <li>Click <strong>Save Config</strong>.</li>
   <li>In the left navigation, under General, click <strong>Contacts</strong>.</li>
   <li>In the right pane, expand <strong>Email Options</strong>.</li>
@@ -1981,21 +1981,24 @@
     <li>
       <p>Enter the following commands in the order shown:</p>
 
-      <pre><code>cd &lt;Magento root dir&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;Magento root dir&gt;
 php bin/magento app:config:dump
 </code></pre>
+      </div>
 
-      <p>For example, if Magento is installed in <code>/var/www/html/magento2</code>, enter:</p>
+      <p>For example, if Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>, enter:</p>
 
-      <pre><code>cd /var/www/html/magento2
+      <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2
 php bin/magento app:config:dump
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>If you use Git, enter the following command to confirm that <code>app/etc/config.php</code> was updated:</p>
+      <p>If you use Git, enter the following command to confirm that <code class="highlighter-rouge">app/etc/config.php</code> was updated:</p>
 
-      <pre><code>git status
+      <div class="highlighter-rouge"><pre class="highlight"><code>git status
 </code></pre>
+      </div>
 
       <p>You should see output similar to the following:</p>
 
@@ -2008,20 +2011,21 @@ php bin/magento app:config:dump
 #</pre>
 
       <div class="bs-callout bs-callout-warning" id="warning">
-        <p><em>Do not</em> submit changes to the <code>generated</code>, <code>pub/media</code>, or <code>pub/static</code> directories to source control. You’ll generate those files on your build system. The production system likely has code, themes, and so on that aren’t ready to use on production.</p>
+        <p><em>Do not</em> submit changes to the <code class="highlighter-rouge">generated</code>, <code class="highlighter-rouge">pub/media</code>, or <code class="highlighter-rouge">pub/static</code> directories to source control. You’ll generate those files on your build system. The production system likely has code, themes, and so on that aren’t ready to use on production.</p>
       </div>
     </li>
     <li>
-      <p>Check in your changes to <code>app/etc/config.php</code> only to source control.</p>
+      <p>Check in your changes to <code class="highlighter-rouge">app/etc/config.php</code> only to source control.</p>
 
       <p>The Git command follows:</p>
 
-      <pre><code>git add app/etc/config.php &amp;&amp; git commit -m "Updated shared configuration" &amp;&amp; git push mconfig m2.2_deploy
+      <div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Updated shared configuration" &amp;&amp; git push mconfig m2.2_deploy
 </code></pre>
+      </div>
     </li>
   </ol>
 
-  <p>Note that even though <code>app/etc/env.php</code> (the system-specific configuration) was updated, don’t check it in to source control. You’ll create the same configuration settings on your production system later in this procedure.</p>
+  <p>Note that even though <code class="highlighter-rouge">app/etc/env.php</code> (the system-specific configuration) was updated, don’t check it in to source control. You’ll create the same configuration settings on your production system later in this procedure.</p>
 
   <h2 id="step-3-update-your-build-system-and-generate-files">Step 3: Update your build system and generate files</h2>
   <p>Now that you’ve committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system.</p>
@@ -2034,32 +2038,36 @@ php bin/magento app:config:dump
       <li>Log in to your build system as, or switch to, the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
       <li>Change to the build system’s Magento root directory.</li>
       <li>
-        <p>Pull the changes to <code>app/etc/config.php</code> from source control.</p>
+        <p>Pull the changes to <code class="highlighter-rouge">app/etc/config.php</code> from source control.</p>
 
         <p>The Git command follows:</p>
 
-        <pre><code>git pull mconfig m2.2_deploy
+        <div class="highlighter-rouge"><pre class="highlight"><code>git pull mconfig m2.2_deploy
 </code></pre>
+        </div>
       </li>
       <li>
         <p>Compile code:</p>
 
-        <pre><code>php bin/magento setup:di:compile
+        <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:di:compile
 </code></pre>
+        </div>
       </li>
       <li>
         <p>After code has been compiled, generate static view files:</p>
 
-        <pre><code>php bin/magento setup:static-content:deploy -f
+        <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:static-content:deploy -f
 </code></pre>
+        </div>
       </li>
       <li>
         <p>Check the changes into source control.</p>
 
         <p>The Git command follows:</p>
 
-        <pre><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
+        <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
 </code></pre>
+        </div>
       </li>
     </ol>
 
@@ -2097,11 +2105,11 @@ php bin/magento app:config:dump
           <tbody>
             <tr>
               <td>Send Emails To</td>
-              <td><code>contact/email/recipient_email</code></td>
+              <td><code class="highlighter-rouge">contact/email/recipient_email</code></td>
             </tr>
             <tr>
               <td>Default Email Domain</td>
-              <td><code>customer/create_account/email_domain</code></td>
+              <td><code class="highlighter-rouge">customer/create_account/email_domain</code></td>
             </tr>
           </tbody>
         </table>
@@ -2114,23 +2122,25 @@ php bin/magento app:config:dump
     <p>This section discusses how to the following commands to set system-specific and sensitive configuration settings:</p>
 
     <ul>
-      <li><code>magento config:set</code> for system-specific settings</li>
-      <li><code>magento config:sensitive:set</code> for sensitive settings</li>
+      <li><code class="highlighter-rouge">magento config:set</code> for system-specific settings</li>
+      <li><code class="highlighter-rouge">magento config:sensitive:set</code> for sensitive settings</li>
     </ul>
 
     <p>To set the system-specific setting Default Email Domain, which is in the default scope, the command to use is:</p>
 
-    <pre><code>php bin/magento config:set customer/create_account/email_domain &lt;email domain&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento config:set customer/create_account/email_domain &lt;email domain&gt;
 </code></pre>
+    </div>
 
     <p>You don’t need to use the scope in the command because it’s the default scope.</p>
 
-    <p>To set values for Send Emails To, however, you must know the scope type (<code>website</code>) and the scope code (which is likely different on every site).</p>
+    <p>To set values for Send Emails To, however, you must know the scope type (<code class="highlighter-rouge">website</code>) and the scope code (which is likely different on every site).</p>
 
     <p>An example follows:</p>
 
-    <pre><code>php bin/magento config:sensitive:set contact/email/recipient_email --scope=website --scope-code=&lt;website code&gt; &lt;email address&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento config:sensitive:set contact/email/recipient_email --scope=website --scope-code=&lt;website code&gt; &lt;email address&gt;
 </code></pre>
+    </div>
 
     <h3 id="config-split-verify-shared">Update the shared settings</h3>
     <p>This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).</p>
@@ -2144,11 +2154,12 @@ php bin/magento app:config:dump
         <li>
           <p>Start maintenance mode:</p>
 
-          <pre><code>cd &lt;Magento root dir&gt;
+          <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;Magento root dir&gt;
 php bin/magento maintenance:enable
 </code></pre>
+          </div>
 
-          <p>For additional options, such as the ability to set an IP address whitelist, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html"><code>magento maintenance:enable</code></a>.</p>
+          <p>For additional options, such as the ability to set an IP address whitelist, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html"><code class="highlighter-rouge">magento maintenance:enable</code></a>.</p>
         </li>
         <li>If you use Magento EE, stop queue workers. TBD</li>
         <li>
@@ -2156,26 +2167,30 @@ php bin/magento maintenance:enable
 
           <p>The Git command follows:</p>
 
-          <pre><code>git pull mconfig m2.2_deploy
+          <div class="highlighter-rouge"><pre class="highlight"><code>git pull mconfig m2.2_deploy
 </code></pre>
+          </div>
         </li>
         <li>
           <p>Update the configuration:</p>
 
-          <pre><code>php bin/magento app:config:import
+          <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento app:config:import
 </code></pre>
+          </div>
         </li>
         <li>
           <p>Clean the cache:</p>
 
-          <pre><code>php bin/magento cache:clean
+          <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cache:clean
 </code></pre>
+          </div>
         </li>
         <li>
           <p>End maintenance mode:</p>
 
-          <pre><code>php bin/magento maintenance:disable
+          <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento maintenance:disable
 </code></pre>
+          </div>
         </li>
       </ol>
 

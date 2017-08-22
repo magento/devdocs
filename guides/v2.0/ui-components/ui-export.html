@@ -764,22 +764,22 @@
 
 <p>To enable ExportButton Component add exportButton element with specified selectProvider item to listing configuration file.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">&quot;export_button&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>{select_provider_path}<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">"export_button"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"selectProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>{select_provider_path}<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/exportButton&gt;</span></code></pre></figure>
 
-<p>Example: <code>&lt;Magento_Sales_module_dir&gt;/view/adminhtml/ui_component/sales_order_grid.xml</code></p>
+<p>Example: <code class="highlighter-rouge">&lt;Magento_Sales_module_dir&gt;/view/adminhtml/ui_component/sales_order_grid.xml</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;listing_top&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">&quot;export_button&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sales_order_grid.sales_order_grid.sales_order_columns.ids<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"listing_top"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">"export_button"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"selectProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>sales_order_grid.sales_order_grid.sales_order_columns.ids<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/exportButton&gt;</span>
@@ -793,9 +793,9 @@
 <p>To add new export format:</p>
 
 <ul>
-  <li>Add configuration data to ExportButton definition <a href="/guides/v2.0/ui-library/ui-definition.html"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a></li>
-  <li>Add controller for new format processing <code>\Magento\Ui\Controller\Adminhtml\Export\GridToFoo</code></li>
-  <li>Add converter <code>\Magento\Ui\Model\Export\ConvertToFoo</code></li>
+  <li>Add configuration data to ExportButton definition <a href="/guides/v2.0/ui-library/ui-definition.html"><code class="highlighter-rouge">Magento/Ui/view/base/ui_component/etc/definition.xml</code></a></li>
+  <li>Add controller for new format processing <code class="highlighter-rouge">\Magento\Ui\Controller\Adminhtml\Export\GridToFoo</code></li>
+  <li>Add converter <code class="highlighter-rouge">\Magento\Ui\Model\Export\ConvertToFoo</code></li>
 </ul>
 
 		</div>

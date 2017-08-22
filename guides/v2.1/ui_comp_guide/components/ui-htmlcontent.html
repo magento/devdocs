@@ -1149,7 +1149,7 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 
 <h2 id="configuration-options">Configuration options</h2>
 
-<p>Extends all <code>uiComponent</code> configuration.</p>
+<p>Extends all <code class="highlighter-rouge">uiComponent</code> configuration.</p>
 
 <p>HtmlContent-specific options:</p>
 
@@ -1196,23 +1196,23 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 
 <h3 id="how-to-render-layout-in-scope-of-ui-configuration">How to render layout in scope of UI configuration</h3>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;htmlContent</span> <span class="na">name=</span><span class="s">&quot;customer_edit_tab_view&quot;</span><span class="nt">&gt;</span>
-       <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Block\Adminhtml\Edit\Tab\View&quot;</span> <span class="na">name=</span><span class="s">&quot;customer_edit_tab_view&quot;</span> <span class="na">template=</span><span class="s">&quot;Magento_Customer::tab/view.phtml&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;htmlContent</span> <span class="na">name=</span><span class="s">"customer_edit_tab_view"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Customer\Block\Adminhtml\Edit\Tab\View"</span> <span class="na">name=</span><span class="s">"customer_edit_tab_view"</span> <span class="na">template=</span><span class="s">"Magento_Customer::tab/view.phtml"</span><span class="nt">&gt;</span>
          <span class="nt">&lt;arguments&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;sort_order&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/argument&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;tab_label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Customer View<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"sort_order"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>10<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"tab_label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Customer View<span class="nt">&lt;/argument&gt;</span>
          <span class="nt">&lt;/arguments&gt;</span>
-         <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Block\Adminhtml\Edit\Tab\View\PersonalInfo&quot;</span> <span class="na">name=</span><span class="s">&quot;personal_info&quot;</span> <span class="na">template=</span><span class="s">&quot;Magento_Customer::tab/view/personal_info.phtml&quot;</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Customer\Block\Adminhtml\Edit\Tab\View\PersonalInfo"</span> <span class="na">name=</span><span class="s">"personal_info"</span> <span class="na">template=</span><span class="s">"Magento_Customer::tab/view/personal_info.phtml"</span><span class="nt">/&gt;</span>
        <span class="nt">&lt;/block&gt;</span>
     <span class="nt">&lt;/htmlContent&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
 <h2 id="how-to-render-simple-magento-block-in-scope-of-ui-configuration">How to render simple magento block in scope of UI configuration</h2>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;htmlContent</span> <span class="na">name=</span><span class="s">&quot;giftregistry&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry&quot;</span> <span class="na">name=</span><span class="s">&quot;giftregistry&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;htmlContent</span> <span class="na">name=</span><span class="s">"giftregistry"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry"</span> <span class="na">name=</span><span class="s">"giftregistry"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/htmlContent&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 

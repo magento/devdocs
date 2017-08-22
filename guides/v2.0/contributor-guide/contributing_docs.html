@@ -679,15 +679,16 @@ This contribution model means that contributors maintain their own copy of the f
 </ol>
 
 <h3 id="sync">Update the fork with the latest changes</h3>
-<p>As community and Magento writers’ changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message <code>This branch is &lt;number&gt; commits behind magento:2.0.</code> displays, it means your fork must be updated.</p>
+<p>As community and Magento writers’ changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message <code class="highlighter-rouge">This branch is &lt;number&gt; commits behind magento:2.0.</code> displays, it means your fork must be updated.</p>
 
 <p>There are two ways to update your fork. The typical way is discussed in <a href="https://help.github.com/articles/syncing-a-fork" target="_blank">GitHub documentation</a>. Make sure to update from the correct branch!</p>
 
 <p>There is also a possibility to use the GitHub interface to do that. This is referred to as a <em>reverse pull request</em>. This method has the downside of inserting unnecessary information into fork commit history. On your fork GitHub page, click <strong>New pull request</strong>. You should see the following message:</p>
 
-<pre><code>There isn’t anything to compare.
+<div class="highlighter-rouge"><pre class="highlight"><code>There isn’t anything to compare.
 magento:2.0 is up to date with all commits from &lt;your fork&gt;:2.0. Try switching the base for your comparison.
 </code></pre>
+</div>
 
 <p>Click the base link and then click <strong>Create pull request</strong>. Provide a descriptive name for your pull request in the provided field.</p>
 
@@ -734,7 +735,7 @@ magento:2.0 is up to date with all commits from &lt;your fork&gt;:2.0. Try switc
 <p>The .md (Markdown) file’s <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> is a set of key-value pairs (where the key is before the : and the value is after). The metadata section is located in the beginning of the file.</p>
 
 <h3 id="example">Example:</h3>
-<pre><code>---
+<div class="highlighter-rouge"><pre class="highlight"><code>---
 layout: default
 group: install2
 subgroup: Z_continue
@@ -746,6 +747,7 @@ version: 2.0
 github_link: install-gde/continue.md
 ---
 </code></pre>
+</div>
 
 <h3 id="definitions">Definitions</h3>
 <p>Refer to the following table for a description of each key value pair in the metadata section of the .md file.</p>

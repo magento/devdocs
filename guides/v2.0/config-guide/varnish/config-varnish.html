@@ -1602,7 +1602,7 @@
 
 <p>As the web server returns assets, cacheable assets are stored in Varnish. Any subsequent requests for those assets are fulfilled by Varnish (meaning, the requests don’t reach the web server). Varnish returns cached content extremely quickly. The results are faster response times to return the content to users and a reduced number of requests that must be fulfilled by Magento.</p>
 
-<p>Assets cached by Varnish expire at a configurable interval or are replaced by newer versions of the same assets. You can also clear the cache manually either using the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> or the <a href="/guides/v2.0//config-guide/cli/config-cli-subcommands-cache.html"><code>magento cache:clean</code></a> command.</p>
+<p>Assets cached by Varnish expire at a configurable interval or are replaced by newer versions of the same assets. You can also clear the cache manually either using the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> or the <a href="/guides/v2.0//config-guide/cli/config-cli-subcommands-cache.html"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
 
 <h2 id="config-varnish-process">Process overview</h2>
 <p>This topic discusses how to initially install Varnish with a minimal set of parameters and test that it works. Then you’ll export a Varnish configuration from the Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> and test it again.</p>
@@ -1616,7 +1616,7 @@
   <li>
     <p>Test everything again.</p>
 
-    <p>If there is nothing in your <code>&lt;your Magento install dir&gt;/var/page_cache</code> directory, you’ve successfully configured Varnish with Magento!</p>
+    <p>If there is nothing in your <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/page_cache</code> directory, you’ve successfully configured Varnish with Magento!</p>
   </li>
 </ol>
 
@@ -1635,25 +1635,27 @@
     <p>As an alternative, use SSL termination or an <a href="https://en.wikipedia.org/wiki/TLS_termination_proxy" target="_blank">SSL termination proxy</a>.</p>
   </li>
   <li>
-    <p>If you manually delete the contents of the <code>&lt;your Magento install dir&gt;/var/cache</code> directory, you must restart Varnish.</p>
+    <p>If you manually delete the contents of the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/cache</code> directory, you must restart Varnish.</p>
   </li>
   <li>
     <p>Possible error installing Magento:</p>
 
-    <pre><code>Error 503 Service Unavailable
+    <div class="highlighter-rouge"><pre class="highlight"><code>Error 503 Service Unavailable
 Service Unavailable
 XID: 303394517
 Varnish cache server
 </code></pre>
+    </div>
 
-    <p>If you experience this error, edit <code>default.vcl</code> and add a timeout to the <code>backend</code> stanza as follows:</p>
+    <p>If you experience this error, edit <code class="highlighter-rouge">default.vcl</code> and add a timeout to the <code class="highlighter-rouge">backend</code> stanza as follows:</p>
 
-    <pre><code>backend default {
+    <div class="highlighter-rouge"><pre class="highlight"><code>backend default {
   .host = "127.0.0.1";
   .port = "8080";
   .first_byte_timeout = 600s;
 }
 </code></pre>
+    </div>
   </li>
 </ul>
 

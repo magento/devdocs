@@ -1250,9 +1250,9 @@
 			<h3 id="overview">Overview</h3>
 <p>A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to <em>substitute</em> or <em>extend</em> the behavior of original, public methods for any class or <em>interface</em>.</p>
 
-<p>Extensions that wish to intercept and change the behavior of a <em>public method</em> can create a <code>Plugin</code> class.</p>
+<p>Extensions that wish to intercept and change the behavior of a <em>public method</em> can create a <code class="highlighter-rouge">Plugin</code> class.</p>
 
-<p>This <span term-uuid="deea5a5a-e9e5-4591-b141-b849458feb1a" class="glossary-term" data-toggle="popover">interception</span> approach reduces conflicts among extensions that change the behavior of the same class or method. Your <code>Plugin</code> class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.</p>
+<p>This <span term-uuid="deea5a5a-e9e5-4591-b141-b849458feb1a" class="glossary-term" data-toggle="popover">interception</span> approach reduces conflicts among extensions that change the behavior of the same class or method. Your <code class="highlighter-rouge">Plugin</code> class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.</p>
 
 <h4 id="limitations">Limitations</h4>
 
@@ -1264,7 +1264,7 @@
   <li>Any class that contains at least one final public method</li>
   <li>Non-public methods</li>
   <li>Class methods (such as static methods)</li>
-  <li><code>__construct</code></li>
+  <li><code class="highlighter-rouge">__construct</code></li>
   <li>Virtual types</li>
   <li>Objects that are instantiated before Interception infrastructure is bootstrapped</li>
 </ul>
@@ -1278,16 +1278,16 @@
 <p>You must specify these elements:</p>
 
 <ul>
-  <li><code>type name</code>. A class or interface which the plugin observes.</li>
-  <li><code>plugin name</code>. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
-  <li><code>plugin type</code>. The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code>\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
+  <li><code class="highlighter-rouge">type name</code>. A class or interface which the plugin observes.</li>
+  <li><code class="highlighter-rouge">plugin name</code>. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
+  <li><code class="highlighter-rouge">plugin type</code>. The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code class="highlighter-rouge">\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
 </ul>
 
 <p>The following elements are optional:</p>
 
 <ul>
-  <li><code>plugin sortOrder</code>. Plugins that call the same method run them using this order.</li>
-  <li><code>plugin disabled</code>. To disable a plugin, set this element to <code>true</code>. The default value is <code>false</code>.</li>
+  <li><code class="highlighter-rouge">plugin sortOrder</code>. Plugins that call the same method run them using this order.</li>
+  <li><code class="highlighter-rouge">plugin disabled</code>. To disable a plugin, set this element to <code class="highlighter-rouge">true</code>. The default value is <code class="highlighter-rouge">false</code>.</li>
 </ul>
 
 <h3 id="defining-a-plugin">Defining a plugin</h3>
@@ -1298,9 +1298,9 @@
 <h4 id="before-methods">Before methods</h4>
 <p>Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with ‘before’ as the prefix.</p>
 
-<p>You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return <code>null</code>.</p>
+<p>You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return <code class="highlighter-rouge">null</code>.</p>
 
-<p>Below is an example of a before method modifying the <code>$name</code> argument before passing it on to the observed <code>setName</code> method.</p>
+<p>Below is an example of a before method modifying the <code class="highlighter-rouge">$name</code> argument before passing it on to the observed <code class="highlighter-rouge">setName</code> method.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -1310,17 +1310,17 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;(&#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'('</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">')'</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 <h4 id="after-methods">After methods</h4>
 <p>Magento runs all after methods following the completion of the observed method. Magento requires these methods have a return value and they must have the same name as the observed method with ‘after’ as the prefix.</p>
 
 <p>You can use these methods to change the result of an observed method by modifying the original result and returning it at the end of the method.</p>
 
-<p>Below is an example of an after method modifying the return value <code>$result</code> of an observed methods call.</p>
+<p>Below is an example of an after method modifying the return value <code class="highlighter-rouge">$result</code> of an observed methods call.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -1330,14 +1330,14 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;|&#39;</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">&#39;|&#39;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="s1">'|'</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">'|'</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
-<p>After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (<code>@return void</code>), then it passes <code>null</code> to the next after method.</p>
+<p>After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (<code class="highlighter-rouge">@return void</code>), then it passes <code class="highlighter-rouge">null</code> to the next after method.</p>
 
-<p>Below is an example of an after method that accepts the <code>null</code> result and arguments from the observed <code>login</code> method for <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Backend/Model/Auth.php" target="_blank"><code>Magento\Backend\Model\Auth</code></a>:</p>
+<p>Below is an example of an after method that accepts the <code class="highlighter-rouge">null</code> result and arguments from the observed <code class="highlighter-rouge">login</code> method for <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Backend/Model/Auth.php" target="_blank"><code class="highlighter-rouge">Magento\Backend\Model\Auth</code></a>:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
@@ -1352,40 +1352,40 @@
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @param \Magento\Backend\Model\Auth $authModel</span>
-<span class="sd">     * @param null $result</span>
-<span class="sd">     * @param string $username</span>
-<span class="sd">     * @return void</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.UnusedFormalParameter)</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @param \Magento\Backend\Model\Auth $authModel
+     * @param null $result
+     * @param string $username
+     * @return void
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">afterLogin</span><span class="p">(</span><span class="nx">\Magento\Backend\Model\Auth</span> <span class="nv">$authModel</span><span class="p">,</span> <span class="nv">$result</span><span class="p">,</span> <span class="nv">$username</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">debug</span><span class="p">(</span><span class="s1">&#39;User &#39;</span> <span class="o">.</span> <span class="nv">$username</span> <span class="o">.</span> <span class="s1">&#39; signed in.&#39;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">debug</span><span class="p">(</span><span class="s1">'User '</span> <span class="o">.</span> <span class="nv">$username</span> <span class="o">.</span> <span class="s1">' signed in.'</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 <p>After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.</p>
 
-<p>The following example is a class with an after method for <a href="https://github.com/magento/magento2/blob/2.1/}app/code/Magento/Catalog/Model/Product/Action.php" target="_blank"><code>\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)</code></a>:</p>
+<p>The following example is a class with an after method for <a href="https://github.com/magento/magento2/blob/2.1/}app/code/Magento/Catalog/Model/Product/Action.php" target="_blank"><code class="highlighter-rouge">\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)</code></a>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">class MyPlugin</span>
-<span class="x">{</span>
-<span class="x">    private $logger</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class MyPlugin
+{
+    private $logger
 
-<span class="x">    public function __construct(\Psr\Log\LoggerInterface $logger)</span>
-<span class="x">    {</span>
-<span class="x">        $this-&gt;logger = $logger;</span>
-<span class="x">    }</span>
+    public function __construct(\Psr\Log\LoggerInterface $logger)
+    {
+        $this-&gt;logger = $logger;
+    }
 
-<span class="x">    public function afterUpdateWebsites(\Magento\Catalog\Model\Product\Action $subject, $result, $productIds, $websiteIds)</span>
-<span class="x">    {</span>
-<span class="x">        $this-&gt;logger-&gt;log(&#39;Updated websites: &#39; . implode(&#39;, &#39;,  $websiteIds));</span>
-<span class="x">    }</span>
-<span class="x">}</span></code></pre></figure>
+    public function afterUpdateWebsites(\Magento\Catalog\Model\Product\Action $subject, $result, $productIds, $websiteIds)
+    {
+        $this-&gt;logger-&gt;log('Updated websites: ' . implode(', ',  $websiteIds));
+    }
+}</code></pre></figure>
 
-<p>In the example, the <code>afterUpdateWebsites</code> function uses the variable <code>$websiteIds</code>, so it declares that variable as an argument. It also declares <code>$productIds</code> because it comes before <code>$websiteIds</code> in the parameter signature of the observed method. The after method did not list <code>$type</code> because it did not use it inside the method nor does it come before <code>$websiteIds</code>.</p>
+<p>In the example, the <code class="highlighter-rouge">afterUpdateWebsites</code> function uses the variable <code class="highlighter-rouge">$websiteIds</code>, so it declares that variable as an argument. It also declares <code class="highlighter-rouge">$productIds</code> because it comes before <code class="highlighter-rouge">$websiteIds</code> in the parameter signature of the observed method. The after method did not list <code class="highlighter-rouge">$type</code> because it did not use it inside the method nor does it come before <code class="highlighter-rouge">$websiteIds</code>.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>If an argument is optional in the observed method, then the after method should also declare it as optional.</p>
@@ -1394,7 +1394,7 @@
 <h4 id="around-methods">Around methods</h4>
 <p>Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with ‘around’ as the prefix.</p>
 
-<p>Before the list of the original method’s arguments, around methods receive a <code>callable</code> that will allow a call to the next method in the chain. When your code executes the <code>callable</code>, Magento calls the next plugin or the observed function.</p>
+<p>Before the list of the original method’s arguments, around methods receive a <code class="highlighter-rouge">callable</code> that will allow a call to the next method in the chain. When your code executes the <code class="highlighter-rouge">callable</code>, Magento calls the next plugin or the observed function.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
@@ -1418,7 +1418,7 @@
         <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 <p>When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method.</p>
 
@@ -1430,10 +1430,10 @@
 
 <span class="k">class</span> <span class="nc">MyUtility</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">SomeType</span> <span class="nv">$obj</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">SomeType</span> <span class="nv">$obj</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//do something</span>
-    <span class="p">}</span>
+        <span class="c1">//do something
+</span>    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>If you wrapped this method with a plugin like below:</p>
@@ -1446,8 +1446,8 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="nx">SomeType</span> <span class="nv">$obj</span><span class="p">)</span>
     <span class="p">{</span>
-      <span class="c1">//do something</span>
-    <span class="p">}</span>
+      <span class="c1">//do something
+</span>    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>Note the missing <code>= null</code>. Now, if Magento calls the original method with <code>null</code>, <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> would throw a fatal error as your plugin does not accept <code>null</code>.</p>
@@ -1462,20 +1462,20 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="o">...</span><span class="nv">$args</span><span class="p">)</span>
     <span class="p">{</span>
-      <span class="c1">//do something</span>
-      <span class="nv">$proceed</span><span class="p">(</span><span class="o">...</span><span class="nv">$args</span><span class="p">);</span>
+      <span class="c1">//do something
+</span>      <span class="nv">$proceed</span><span class="p">(</span><span class="o">...</span><span class="nv">$args</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h3 id="prioritizing-plugins">Prioritizing plugins</h3>
 
-<p>The <code>sortOrder</code> property for plugins determine when their before, after, or around methods get called when more than one plugins are observing the same method.</p>
+<p>The <code class="highlighter-rouge">sortOrder</code> property for plugins determine when their before, after, or around methods get called when more than one plugins are observing the same method.</p>
 
 <p>The prioritization rules for ordering plugins:</p>
 
 <ul>
   <li>
-    <p>Before the execution of the observed method, Magento will execute plugins from lowest to greatest <code>sortOrder</code>.</p>
+    <p>Before the execution of the observed method, Magento will execute plugins from lowest to greatest <code class="highlighter-rouge">sortOrder</code>.</p>
 
     <ul>
       <li>During each plugin execution, Magento executes the current plugin’s before method.</li>
@@ -1483,7 +1483,7 @@
     </ul>
   </li>
   <li>
-    <p>Following the execution of the observed method, Magento will execute plugins from greatest to lowest <code>sortOrder</code>.</p>
+    <p>Following the execution of the observed method, Magento will execute plugins from greatest to lowest <code class="highlighter-rouge">sortOrder</code>.</p>
 
     <ul>
       <li>During each plugin execution, the current plugin will first finish executing its around method.</li>
@@ -1536,36 +1536,36 @@
 <p>The execution flow will be as follows:</p>
 
 <ul>
-  <li><code>PluginA::beforeDispatch()</code></li>
-  <li><code>PluginB::beforeDispatch()</code></li>
+  <li><code class="highlighter-rouge">PluginA::beforeDispatch()</code></li>
+  <li><code class="highlighter-rouge">PluginB::beforeDispatch()</code></li>
   <li>
-    <p><code>PluginB::aroundDispatch()</code> (Magento calls the first half until <code>callable</code>)</p>
+    <p><code class="highlighter-rouge">PluginB::aroundDispatch()</code> (Magento calls the first half until <code class="highlighter-rouge">callable</code>)</p>
 
     <ul>
-      <li><code>PluginC::beforeDispatch()</code></li>
+      <li><code class="highlighter-rouge">PluginC::beforeDispatch()</code></li>
       <li>
-        <p><code>PluginC::aroundDispatch()</code> (Magento calls the first half until <code>callable</code>)</p>
+        <p><code class="highlighter-rouge">PluginC::aroundDispatch()</code> (Magento calls the first half until <code class="highlighter-rouge">callable</code>)</p>
 
         <ul>
-          <li><code>Action::dispatch()</code></li>
+          <li><code class="highlighter-rouge">Action::dispatch()</code></li>
         </ul>
       </li>
-      <li><code>PluginC::aroundDispatch()</code> (Magento calls the second half after <code>callable</code>)</li>
-      <li><code>PluginC::afterDispatch()</code></li>
+      <li><code class="highlighter-rouge">PluginC::aroundDispatch()</code> (Magento calls the second half after <code class="highlighter-rouge">callable</code>)</li>
+      <li><code class="highlighter-rouge">PluginC::afterDispatch()</code></li>
     </ul>
   </li>
-  <li><code>PluginB::aroundDispatch()</code> (Magento calls the second half after <code>callable</code>)</li>
-  <li><code>PluginB::afterDispatch()</code></li>
-  <li><code>PluginA::afterDispatch()</code></li>
+  <li><code class="highlighter-rouge">PluginB::aroundDispatch()</code> (Magento calls the second half after <code class="highlighter-rouge">callable</code>)</li>
+  <li><code class="highlighter-rouge">PluginB::afterDispatch()</code></li>
+  <li><code class="highlighter-rouge">PluginA::afterDispatch()</code></li>
 </ul>
 
 <h3 id="configuration-inheritance">Configuration inheritance</h3>
 
 <p>Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class.</p>
 
-<p>Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can also extend or override these global plugin configuration via an area’s <code>di.xml</code>.</p>
+<p>Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can also extend or override these global plugin configuration via an area’s <code class="highlighter-rouge">di.xml</code>.</p>
 
-<p>For example, the developer can disable a global plugin in the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> area by disabling it in the specific <code>di.xml</code> file for the backend area.</p>
+<p>For example, the developer can disable a global plugin in the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> area by disabling it in the specific <code class="highlighter-rouge">di.xml</code> file for the backend area.</p>
 
 <h3 id="related-topics">Related topics</h3>
 

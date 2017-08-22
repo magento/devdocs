@@ -976,24 +976,26 @@ You can download the Selenium Server from <a href="http://www.seleniumhq.org/dow
 
 <p>Enter in terminal:</p>
 
-<pre><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar
+<div class="highlighter-rouge"><pre class="highlight"><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar
 </code></pre>
+</div>
 
 <h2 id="mtf_quickstart_env_selenium-non-def">Run tests on non-default browser</h2>
 
 <p>If the Selenium Server does not work directly with your browser, find the corresponding <a href="http://docs.seleniumhq.org/about/platforms.jsp">web driver</a>.</p>
 
-<p>In <code>config.xml</code> <a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser">define the browser that the <abbr title="Functional Testing Framework">FTF</abbr> must use for tests</a>.</p>
+<p>In <code class="highlighter-rouge">config.xml</code> <a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser">define the browser that the <abbr title="Functional Testing Framework">FTF</abbr> must use for tests</a>.</p>
 
 <p>Run the Selenium Server with an additional argument.</p>
 
 <p>Example for Google Chrome with Selenium 2:</p>
 
-<pre><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar -Dwebdriver.chrome.driver=&lt;path_to_chrome_driver&gt;/chromedriver.exe
+<div class="highlighter-rouge"><pre class="highlight"><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar -Dwebdriver.chrome.driver=&lt;path_to_chrome_driver&gt;/chromedriver.exe
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-info">
-  <p>For Selenium 3 add the web driver to the directory where <code>selenium-server.jar</code> is located and run tests without additional argument: <code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar</code></p>
+  <p>For Selenium 3 add the web driver to the directory where <code class="highlighter-rouge">selenium-server.jar</code> is located and run tests without additional argument: <code class="highlighter-rouge">java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar</code></p>
 </div>
 
 <h2 id="mtf_quickstart_env_generator">Run generator</h2>
@@ -1002,9 +1004,10 @@ You can download the Selenium Server from <a href="http://www.seleniumhq.org/dow
 
 <p>Enter in terminal:</p>
 
-<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+<div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php generate.php
 </code></pre>
+</div>
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 

@@ -572,52 +572,52 @@
 
 <p>Please ensure you have <a href="/guides/v2.0/test/integration/integration_test_setup.html">prepared the integration test environment</a> before starting.</p>
 
-<p>The integration tests have to be executed with the current working directory being <code>dev/tests/integration</code>.<br />
-The test configuration resides in that directory and will be picked up by <code>phpunit</code> automatically, without the need to specify it as a command line option.</p>
+<p>The integration tests have to be executed with the current working directory being <code class="highlighter-rouge">dev/tests/integration</code>.<br />
+The test configuration resides in that directory and will be picked up by <code class="highlighter-rouge">phpunit</code> automatically, without the need to specify it as a command line option.</p>
 
 <h3 id="running-all-integration-tests">Running all integration tests</h3>
 
-<p>By default, if no additional arguments are specified, the test configuration executes all integration tests in the directory <code>dev/tests/integration/testsuite</code>.</p>
+<p>By default, if no additional arguments are specified, the test configuration executes all integration tests in the directory <code class="highlighter-rouge">dev/tests/integration/testsuite</code>.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">cd </span>dev/tests/integration
+<span class="gp">$ </span>../../../vendor/bin/phpunit
 PHPUnit 4.1.0 by Sebastian Bergmann.
 
 Configuration <span class="nb">read </span>from /var/www/magento2/dev/tests/integration/phpunit.xml
 
 ..........................</code></pre></figure>
 
-<p>Note the path to the <code>phpunit</code> executable installed by <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span> into the vendor directory is used.</p>
+<p>Note the path to the <code class="highlighter-rouge">phpunit</code> executable installed by <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span> into the vendor directory is used.</p>
 
 <h3 id="running-only-a-custom-testsuite">Running only a custom testsuite</h3>
 
 <p>PHPUnit offers several ways to only execute a subset of tests.<br />
-For example, it is common to only execute a single testsuite from the <code>phpunit.xml</code> configuration.</p>
+For example, it is common to only execute a single testsuite from the <code class="highlighter-rouge">phpunit.xml</code> configuration.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit --testsuite <span class="s2">&quot;Memory Usage Tests&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">cd </span>dev/tests/integration
+<span class="gp">$ </span>../../../vendor/bin/phpunit --testsuite <span class="s2">"Memory Usage Tests"</span></code></pre></figure>
 
 <h3 id="running-a-tests-from-a-specific-directory-tree">Running a tests from a specific directory tree</h3>
 
-<p>To execute only the tests within a specific directory (for example an extension), pass the path to that directory as an argument to <code>phpunit</code>.</p>
+<p>To execute only the tests within a specific directory (for example an extension), pass the path to that directory as an argument to <code class="highlighter-rouge">phpunit</code>.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">cd </span>dev/tests/integration
+<span class="gp">$ </span>../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration</code></pre></figure>
 
 <h3 id="running-a-single-test-class">Running a single test class</h3>
 
 <p>When developing a new integration test class, it is common to run only that single test many times.<br />
-Pass the path to the file containing the test class as an argument to <code>phpunit</code>.</p>
+Pass the path to the file containing the test class as an argument to <code class="highlighter-rouge">phpunit</code>.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">cd </span>dev/tests/integration
+<span class="gp">$ </span>../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php</code></pre></figure>
 
 <h3 id="running-a-single-test-within-a-test-class">Running a single test within a test class</h3>
 
-<p>Running only a single test within a test class can be done by specifying the test class together with the <code>--filter</code> argument and the name to select the test currently being developed.</p>
+<p>Running only a single test within a test class can be done by specifying the test class together with the <code class="highlighter-rouge">--filter</code> argument and the name to select the test currently being developed.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit --filter <span class="s1">&#39;testOnlyThisOneIsExecuted&#39;</span> ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">cd </span>dev/tests/integration
+<span class="gp">$ </span>../../../vendor/bin/phpunit --filter <span class="s1">'testOnlyThisOneIsExecuted'</span> ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php</code></pre></figure>
 
 <h3 id="common-mistakes">Common mistakes</h3>
 
@@ -625,10 +625,10 @@ Pass the path to the file containing the test class as an argument to <code>phpu
 
 <p>This happens if the integration tests are executed from a wrong directory.</p>
 
-<p><code>Could not read "dev/tests/integration/phpunit.xml".</code></p>
+<p><code class="highlighter-rouge">Could not read "dev/tests/integration/phpunit.xml".</code></p>
 
-<p>This error happens if the integration tests are executed from a different directory then <code>dev/tests/integration</code>.<br />
-To fix the issue, change into the directory <code>dev/tests/integration</code> and run the tests from there with any relative paths adjusted accordingly.</p>
+<p>This error happens if the integration tests are executed from a different directory then <code class="highlighter-rouge">dev/tests/integration</code>.<br />
+To fix the issue, change into the directory <code class="highlighter-rouge">dev/tests/integration</code> and run the tests from there with any relative paths adjusted accordingly.</p>
 
 <h4 id="unable-to-connect-to-mysql">Unable to connect to MySQL</h4>
 
@@ -638,8 +638,8 @@ If the tests then are executed using a PHP interpreter on the host system, the d
 
 <p>The error usually looks something like this.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>phpunit
-exception <span class="s1">&#39;PDOException&#39;</span> with message <span class="s1">&#39;SQLSTATE[HY000] [2002] No such file or directory&#39;</span> in /var/www/magento2/vendor/magento/zendframework1/library/Zend/Db/Adapter/Pdo/Abstract.php:129</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>phpunit
+exception <span class="s1">'PDOException'</span> with message <span class="s1">'SQLSTATE[HY000] [2002] No such file or directory'</span> <span class="k">in</span> /var/www/magento2/vendor/magento/zendframework1/library/Zend/Db/Adapter/Pdo/Abstract.php:129</code></pre></figure>
 
 <p>There are many ways this problem can be resolved, but the easiest is to run the tests in the virtual machine, too.</p>
 

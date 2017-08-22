@@ -1501,11 +1501,11 @@ connect to your database, for example).</li>
   <li>Custom environment variables you define.</li>
 </ul>
 
-<p>Environment variable names must use the characters <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, and <code>.</code>, <code>_</code>, <code>:</code>, <code>-</code> only and can be up to 256 characters in length.</p>
+<p>Environment variable names must use the characters <code class="highlighter-rouge">a-z</code>, <code class="highlighter-rouge">A-Z</code>, <code class="highlighter-rouge">0-9</code>, and <code class="highlighter-rouge">.</code>, <code class="highlighter-rouge">_</code>, <code class="highlighter-rouge">:</code>, <code class="highlighter-rouge">-</code> only and can be up to 256 characters in length.</p>
 
 <p>Platform variables that are expressed as base64-encoded JSON object can be up to 4KB in size.</p>
 
-<p>Environment variables have an <code>env</code> <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>.</p>
+<p>Environment variables have an <code class="highlighter-rouge">env</code> <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Variables are <em>hierarchical</em>, which means that if a variable is not overridden, it is inherited from the parent environment and is indicated as <code>inherited</code>.</p>
@@ -1516,40 +1516,45 @@ connect to your database, for example).</li>
 <p>To list current environment variables using SSH:</p>
 
 <ol>
-  <li>Log in to your project using the CLI. Enter the command <code>magento-cloud login</code> and provide your credentials.</li>
+  <li>Log in to your project using the CLI. Enter the command <code class="highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
   <li>
     <p>List the projects:</p>
 
-    <pre><code>magento-cloud project:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+    </div>
   </li>
   <li>
     <p>List environments in the selected project:</p>
 
-    <pre><code>magento-cloud environment:list -p &lt;project id&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project id&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>SSH to the environment:</p>
 
-    <pre><code>magento-cloud environment:ssh -p &lt;project id&gt; -e &lt;environment name&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh -p &lt;project id&gt; -e &lt;environment name&gt;
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>After you’re connected, enter <code>export</code>.</p>
+    <p>After you’re connected, enter <code class="highlighter-rouge">export</code>.</p>
 
     <p>Variables are base64-encoded JSON objects.</p>
   </li>
   <li>
     <p>To decode the value of a variable, enter</p>
 
-    <pre><code>echo $&lt;variable name&gt; | base64 --decode
+    <div class="highlighter-rouge"><pre class="highlight"><code>echo $&lt;variable name&gt; | base64 --decode
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
+    <div class="highlighter-rouge"><pre class="highlight"><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1557,18 +1562,18 @@ connect to your database, for example).</li>
 <p>To list environment variables using Magento Cloud CLI:</p>
 
 <ol>
-  <li>Login to the Magento Cloud CLI. Enter the command <code>magento-cloud login</code> and provide your credentials.</li>
-  <li>List all project variables with the command <code>magento-cloud project:variable:get</code> or <code>magento-cloud pvget</code>.</li>
-  <li>List all project variables with the command <code>magento-cloud variable:get</code> or <code>magento-cloud vget</code>.</li>
+  <li>Login to the Magento Cloud CLI. Enter the command <code class="highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
+  <li>List all project variables with the command <code class="highlighter-rouge">magento-cloud project:variable:get</code> or <code class="highlighter-rouge">magento-cloud pvget</code>.</li>
+  <li>List all project variables with the command <code class="highlighter-rouge">magento-cloud variable:get</code> or <code class="highlighter-rouge">magento-cloud vget</code>.</li>
 </ol>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Cloud environment variables</a></li>
   <li><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
 </ul>
 
 		</div>

@@ -1658,18 +1658,20 @@ persistent data from all running services (for example, your MySQL database, Red
   <li>
     <p>Use the following command to create the snapshot:</p>
 
-    <pre><code> magento-cloud snapshot:create
+    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud snapshot:create
 </code></pre>
+    </div>
 
     <p>The following modifiers further specify how to create the snapshot:</p>
 
-    <pre><code> -p, --project=PROJECT          The project ID
+    <div class="highlighter-rouge"><pre class="highlight"><code> -p, --project=PROJECT          The project ID
  -e, --environment=ENVIRONMENT  The environment ID
 </code></pre>
+    </div>
 
-    <p>For a full list of options, enter <code>magento-cloud snapshot:create --help</code>.</p>
+    <p>For a full list of options, enter <code class="highlighter-rouge">magento-cloud snapshot:create --help</code>.</p>
   </li>
-  <li>Use the <code>magento-cloud snapshots</code> command so see the most recent snapshots. For a full list, enter <code>magento-cloud snapshot:list</code>.</li>
+  <li>Use the <code class="highlighter-rouge">magento-cloud snapshots</code> command so see the most recent snapshots. For a full list, enter <code class="highlighter-rouge">magento-cloud snapshot:list</code>.</li>
 </ol>
 
 <h2 id="restore-snapshot">Restore a snapshot</h2>
@@ -1695,24 +1697,27 @@ persistent data from all running services (for example, your MySQL database, Red
   <li>
     <p>List all available snapshots to copy the ID using this command:</p>
 
-    <pre><code> magento-cloud snapshot:list
+    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud snapshot:list
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Use the following command to restore the snapshot using the ID you copied:</p>
 
-    <pre><code>     magento-cloud snapshot:restore &lt;id&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>     magento-cloud snapshot:restore &lt;id&gt;
 </code></pre>
+    </div>
 
-    <p>For example: <code>magento-cloud snapshot:restore 92c9a4b2aa75422efb3d</code></p>
+    <p>For example: <code class="highlighter-rouge">magento-cloud snapshot:restore 92c9a4b2aa75422efb3d</code></p>
 
     <p>The following modifiers further specify how to restore the snapshot:</p>
 
-    <pre><code> -p, --project=PROJECT          The project ID
+    <div class="highlighter-rouge"><pre class="highlight"><code> -p, --project=PROJECT          The project ID
  -e, --environment=ENVIRONMENT  The environment ID
 </code></pre>
+    </div>
 
-    <p>For a full list of options, enter <code>magento-cloud snapshot:restore --help</code>.</p>
+    <p>For a full list of options, enter <code class="highlighter-rouge">magento-cloud snapshot:restore --help</code>.</p>
   </li>
 </ol>
 

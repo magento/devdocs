@@ -1198,25 +1198,25 @@
 </section>
 
 
-			<h2 id="what-is-the-uielement-class">What is the <code>uiElement</code> class</h2>
+			<h2 id="what-is-the-uielement-class">What is the <code class="highlighter-rouge">uiElement</code> class</h2>
 
-<p>The <code>uiElement</code> class is a direct successor of the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>.
-When creating a new component, use the <code>uiElement</code> class as a direct parent, if your component will be the last in the components hierarchy chain.</p>
+<p>The <code class="highlighter-rouge">uiElement</code> class is a direct successor of the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>.
+When creating a new component, use the <code class="highlighter-rouge">uiElement</code> class as a direct parent, if your component will be the last in the components hierarchy chain.</p>
 
-<p><code>uiElement</code> source code is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js">app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js</a>.</p>
+<p><code class="highlighter-rouge">uiElement</code> source code is <code class="highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js">app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js</a>.</p>
 
-<h2 id="commonly-used-uielement-methods">Commonly used <code>uiElement</code> methods</h2>
+<h2 id="commonly-used-uielement-methods">Commonly used <code class="highlighter-rouge">uiElement</code> methods</h2>
 
 <ul>
   <li>
-    <p>The <code>initLinks()</code> method implements component communication by using <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code>links.js</code></a>.  <code>initLinks()</code> introduces processing of the <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui_components_js.html#comp_link"><code>exports</code>, <code>imports</code>, <code>links</code> and <code>listens</code> properties</a>.</p>
+    <p>The <code class="highlighter-rouge">initLinks()</code> method implements component communication by using <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code class="highlighter-rouge">links.js</code></a>.  <code class="highlighter-rouge">initLinks()</code> introduces processing of the <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui_components_js.html#comp_link"><code class="highlighter-rouge">exports</code>, <code class="highlighter-rouge">imports</code>, <code class="highlighter-rouge">links</code> and <code class="highlighter-rouge">listens</code> properties</a>.</p>
   </li>
   <li>
-    <p>The <code>initObservable()</code> method allows you to declare observable variables within the same instance.</p>
+    <p>The <code class="highlighter-rouge">initObservable()</code> method allows you to declare observable variables within the same instance.</p>
 
     <p>Example:</p>
 
-    <pre><code>initObservable: function () {
+    <div class="highlighter-rouge"><pre class="highlight"><code>initObservable: function () {
     this._super();
 
     this.track('childTemplate')
@@ -1228,28 +1228,29 @@ When creating a new component, use the <code>uiElement</code> class as a direct 
     return this;
 }
 </code></pre>
+    </div>
 
     <p>, where:</p>
 
     <ul>
       <li>
-        <p>the <code>observe()</code> method is a wrapper for the <code>ko.observable()</code> and <code>ko.observableArray()</code> methods. It converts the properties of the current method into the observable properties.
-<code>observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)</code>:</p>
+        <p>the <code class="highlighter-rouge">observe()</code> method is a wrapper for the <code class="highlighter-rouge">ko.observable()</code> and <code class="highlighter-rouge">ko.observableArray()</code> methods. It converts the properties of the current method into the observable properties.
+<code class="highlighter-rouge">observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)</code>:</p>
 
         <ul>
-          <li><code>isTracked</code> - <code>{Boolean}</code>, optional, - defines access usage: whether to use observable properties (<code>isTracked = false</code>) or property accessors (<code>isTracked = true</code>).</li>
-          <li><code>listOfProperties</code> - <code>{String}</code> is treated as space-separated list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
-          <li><code>listOfProperties</code> - <code>{Array}</code> a list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
-          <li><code>listOfProperties</code> - <code>{Object}</code> a list of properties’ names. Initial values will be used from this object.</li>
+          <li><code class="highlighter-rouge">isTracked</code> - <code class="highlighter-rouge"><span class="p">{</span><span class="err">Boolean</span><span class="p">}</span></code>, optional, - defines access usage: whether to use observable properties (<code class="highlighter-rouge">isTracked = false</code>) or property accessors (<code class="highlighter-rouge">isTracked = true</code>).</li>
+          <li><code class="highlighter-rouge">listOfProperties</code> - <code class="highlighter-rouge"><span class="p">{</span><span class="err">String</span><span class="p">}</span></code> is treated as space-separated list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
+          <li><code class="highlighter-rouge">listOfProperties</code> - <code class="highlighter-rouge"><span class="p">{</span><span class="err">Array</span><span class="p">}</span></code> a list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
+          <li><code class="highlighter-rouge">listOfProperties</code> - <code class="highlighter-rouge"><span class="p">{</span><span class="err">Object</span><span class="p">}</span></code> a list of properties’ names. Initial values will be used from this object.</li>
         </ul>
       </li>
       <li>
-        <p>the <code>track(listOfProperties)</code> method is equal to <code>observe(true, listOfProperties)</code>.
-The main difference between <code>observe()</code> and <code>track()</code> is that <code>observe()</code> is mainly used without first boolean argument. So it really converts properties to observable functions. It changes how property can be accessed. Otherwise <code>track()</code> uses property accessors. So property access remains the same.</p>
+        <p>the <code class="highlighter-rouge">track(listOfProperties)</code> method is equal to <code class="highlighter-rouge">observe(true, listOfProperties)</code>.
+The main difference between <code class="highlighter-rouge">observe()</code> and <code class="highlighter-rouge">track()</code> is that <code class="highlighter-rouge">observe()</code> is mainly used without first boolean argument. So it really converts properties to observable functions. It changes how property can be accessed. Otherwise <code class="highlighter-rouge">track()</code> uses property accessors. So property access remains the same.</p>
 
         <p>Example:</p>
 
-        <pre><code>this.observable = 1;
+        <div class="highlighter-rouge"><pre class="highlight"><code>this.observable = 1;
 this.observe('observable');
 
 this.observable(2); // setter
@@ -1262,27 +1263,29 @@ this.track('trackable');
 this.trackable = 2; // setter
 this.trackable;     // getter
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>
   <li>
-    <p>The <code>initModules()</code> method initializes external UI components’ instances and links them to local variables. This method works with the <code>modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code>modules</code> section is an object where each key is the variable’s name and each value is the instance’s name. A developer does not need to be concerned with the instantiation of the module (external instance), because the <code>initModules()</code> method will resolve the variable when the instance is instantiated.</p>
+    <p>The <code class="highlighter-rouge">initModules()</code> method initializes external UI components’ instances and links them to local variables. This method works with the <code class="highlighter-rouge">modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code class="highlighter-rouge">modules</code> section is an object where each key is the variable’s name and each value is the instance’s name. A developer does not need to be concerned with the instantiation of the module (external instance), because the <code class="highlighter-rouge">initModules()</code> method will resolve the variable when the instance is instantiated.</p>
 
     <p>Example:</p>
 
-    <pre><code>// Config, where the `modules` property is declared
+    <div class="highlighter-rouge"><pre class="highlight"><code>// Config, where the `modules` property is declared
 defaults: {
     modules: {
         '%myProperty%': '%linkToTheComponent%'
     }
 }
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>The <code>getTemplate()</code> method returns a file path to UI component’s template.</p>
+    <p>The <code class="highlighter-rouge">getTemplate()</code> method returns a file path to UI component’s template.</p>
   </li>
   <li>
-    <p>The <code>hasTemplate()</code> method verifies that the <code>template</code> property was specified in the instance configuration.</p>
+    <p>The <code class="highlighter-rouge">hasTemplate()</code> method verifies that the <code class="highlighter-rouge">template</code> property was specified in the instance configuration.</p>
   </li>
 </ul>
 

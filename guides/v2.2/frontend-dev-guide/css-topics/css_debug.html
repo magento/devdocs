@@ -1117,7 +1117,7 @@
 </section>
 
 
-			<p>The topic describes how to install, configure and use <a href="http://gruntjs.com/">Grunt JavaScript task runner</a> for compiling <code>.less</code> files in Magento 2.</p>
+			<p>The topic describes how to install, configure and use <a href="http://gruntjs.com/">Grunt JavaScript task runner</a> for compiling <code class="highlighter-rouge">.less</code> files in Magento 2.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -1128,28 +1128,28 @@
 
 <h2 id="add_theme">Adding themes to Grunt configuration</h2>
 
-<p>To be able to perform <code>.less</code> files compilation, you need to add your them to Grunt configuration. To do this, in the default <code>dev/tools/grunt/configs/themes.js</code> or in the <a href="/guides/v2.2/frontend-dev-guide/tools/using_grunt.html#grunt_config">custom configuration file</a>, add your theme to <code>module.exports</code> like following:</p>
+<p>To be able to perform <code class="highlighter-rouge">.less</code> files compilation, you need to add your them to Grunt configuration. To do this, in the default <code class="highlighter-rouge">dev/tools/grunt/configs/themes.js</code> or in the <a href="/guides/v2.2/frontend-dev-guide/tools/using_grunt.html#grunt_config">custom configuration file</a>, add your theme to <code class="highlighter-rouge">module.exports</code> like following:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
     <span class="p">...</span>
-    <span class="o">%</span><span class="nx">theme</span><span class="o">%:</span> <span class="p">{</span>
-        <span class="nx">area</span><span class="o">:</span> <span class="s1">&#39;frontend&#39;</span><span class="p">,</span>
-        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;%Vendor%/%theme%&#39;</span><span class="p">,</span>
-        <span class="nx">locale</span><span class="o">:</span> <span class="s1">&#39;%language%&#39;</span><span class="p">,</span>
-        <span class="nx">files</span><span class="o">:</span> <span class="p">[</span>
-            <span class="s1">&#39;%path_to_file1%&#39;</span><span class="p">,</span> <span class="c1">//path to root source file</span>
-            <span class="s1">&#39;%path_to_file2%&#39;</span>
+    <span class="o">%</span><span class="nx">theme</span><span class="o">%</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">area</span><span class="p">:</span> <span class="s1">'frontend'</span><span class="p">,</span>
+        <span class="na">name</span><span class="p">:</span> <span class="s1">'%Vendor%/%theme%'</span><span class="p">,</span>
+        <span class="na">locale</span><span class="p">:</span> <span class="s1">'%language%'</span><span class="p">,</span>
+        <span class="na">files</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">'%path_to_file1%'</span><span class="p">,</span> <span class="c1">//path to root source file</span>
+            <span class="s1">'%path_to_file2%'</span>
         <span class="p">],</span>
-        <span class="nx">dsl</span><span class="o">:</span> <span class="s1">&#39;less&#39;</span>
+        <span class="na">dsl</span><span class="p">:</span> <span class="s1">'less'</span>
     <span class="p">...</span>
     <span class="p">},</span></code></pre></figure>
 
 <p>where the following notation is used:</p>
 
 <ul>
-  <li><code>%theme%</code>: your <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> code, conventionally should correspond to the theme directory name.</li>
-  <li><code>%language%</code>: specified in the ‘code_subtag’ format, for example <code>en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code>%language%</code>.</li>
-  <li><code>%path_to_file%</code>: path to the root source file, relative to the <code>app/design/frontend/%Vendor%/%theme%/web</code> directory. You need to specify all <a href="/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms">root source files of the theme</a>. If your theme <a href="/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.</li>
+  <li><code class="highlighter-rouge">%theme%</code>: your <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> code, conventionally should correspond to the theme directory name.</li>
+  <li><code class="highlighter-rouge">%language%</code>: specified in the ‘code_subtag’ format, for example <code class="highlighter-rouge">en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code class="highlighter-rouge">%language%</code>.</li>
+  <li><code class="highlighter-rouge">%path_to_file%</code>: path to the root source file, relative to the <code class="highlighter-rouge">app/design/frontend/%Vendor%/%theme%/web</code> directory. You need to specify all <a href="/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms">root source files of the theme</a>. If your theme <a href="/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.</li>
 </ul>
 
 <h2 id="grunt_commands">Grunt commands</h2>
@@ -1236,15 +1236,15 @@ After you customize the content of any <code>.less</code> file, changes are appl
 
 <p>When using Grunt for styles preprocessing, you can enable the CSS source maps generation in your browser. It will make the theme styles debugging easier.</p>
 
-<p>For each theme, Magento compliles all theme <code>.less</code> files into two CSS files: <code>styles-m.css</code> and <code>styles-l.css</code>. So when you debug a theme, you browser only sees <code>styles-m.css</code> and it might be difficult to define which exactly <code>.css</code> or <code>.less</code> file requires corrections. For example:</p>
+<p>For each theme, Magento compliles all theme <code class="highlighter-rouge">.less</code> files into two CSS files: <code class="highlighter-rouge">styles-m.css</code> and <code class="highlighter-rouge">styles-l.css</code>. So when you debug a theme, you browser only sees <code class="highlighter-rouge">styles-m.css</code> and it might be difficult to define which exactly <code class="highlighter-rouge">.css</code> or <code class="highlighter-rouge">.less</code> file requires corrections. For example:</p>
 
 <p><img src="/common/images/fdg/no-map.png" alt="node declaration autocomplete" width="610px" /></p>
 
-<p>CSS source maps solve this issue. They help to find the <code>.less</code> file, where the style is specified. For example:</p>
+<p>CSS source maps solve this issue. They help to find the <code class="highlighter-rouge">.less</code> file, where the style is specified. For example:</p>
 
 <p><img src="/common/images/fdg/with-map.png" alt="node declaration autocomplete" width="610px" /></p>
 
-<p>CSS source maps are generated automatically when you compile CSS for your theme using the <code>grunt less: &lt;theme&gt;</code> command. To use them, you need to enable source maps displaying in your browser.</p>
+<p>CSS source maps are generated automatically when you compile CSS for your theme using the <code class="highlighter-rouge">grunt less: &lt;theme&gt;</code> command. To use them, you need to enable source maps displaying in your browser.</p>
 
 <p>The path to the CSS source maps configuration differs, depending on the browser.</p>
 

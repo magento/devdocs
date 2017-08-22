@@ -1583,18 +1583,19 @@ Magento Enterprise Cloud Edition projects.</p>
 <p>If the redirection methods discussed in this topic don’t work for you, you can use caching headers to do the same thing.</p>
 
 <h2 id="cloud-route-whole">Whole-route redirects</h2>
-<p>Using whole-route redirects, you can define very basic routes in <code>routes.yaml</code>. For example, you can redirect from a naked domain to a <code>www</code> subdomain as follows:</p>
+<p>Using whole-route redirects, you can define very basic routes in <code class="highlighter-rouge">routes.yaml</code>. For example, you can redirect from a naked domain to a <code class="highlighter-rouge">www</code> subdomain as follows:</p>
 
-<pre><code>http://{default}/:
+<div class="highlighter-rouge"><pre class="highlight"><code>http://{default}/:
     type: redirect
     to: http://www.{default}/
 </code></pre>
+</div>
 
 <h2 id="cloud-route-partial">Partial redirects</h2>
-<p>In the <a href="/guides/v2.2/cloud/project/project-conf-files_routes.html"><code>.magento/routes.yaml</code></a> file you can also add partial <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> rules
+<p>In the <a href="/guides/v2.2/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a> file you can also add partial <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> rules
 to existing routes:</p>
 
-<pre><code>http://{default}/:
+<div class="highlighter-rouge"><pre class="highlight"><code>http://{default}/:
   # [...]
   redirects:	
     expires: 1d
@@ -1602,17 +1603,18 @@ to existing routes:</p>
       "/from": { "to": "http://example.com/" }
       "/regexp/(.*)/matching": { "to": "http://example.com/$1", regexp: true }
 </code></pre>
+</div>
 
 <p>This format is more rich and works with any type of route, including routes served directly by the application.</p>
 
-<p>Two keys are available under <code>redirects</code>:</p>
+<p>Two keys are available under <code class="highlighter-rouge">redirects</code>:</p>
 
 <ul>
-  <li><code>expires</code>: optional, the duration the redirect is cached. Examples of valid values include <code>3600s</code>, <code>1d</code>, <code>2w</code>, <code>3m</code>.</li>
-  <li><code>paths</code>: the paths to which to apply redirections.</li>
+  <li><code class="highlighter-rouge">expires</code>: optional, the duration the redirect is cached. Examples of valid values include <code class="highlighter-rouge">3600s</code>, <code class="highlighter-rouge">1d</code>, <code class="highlighter-rouge">2w</code>, <code class="highlighter-rouge">3m</code>.</li>
+  <li><code class="highlighter-rouge">paths</code>: the paths to which to apply redirections.</li>
 </ul>
 
-<p>Each rule under <code>paths</code> is defined by:</p>
+<p>Each rule under <code class="highlighter-rouge">paths</code> is defined by:</p>
 
 <ul>
   <li>A key that describes the expression to match against the
@@ -1624,82 +1626,82 @@ detail on how to handle the redirection.</p>
     <p>The value object is defined with the following
 keys:</p>
   </li>
-  <li><a href="#cloud-route-partial-to"><code>to</code></a></li>
-  <li><a href="#cloud-route-partial-regexp"><code>regexp</code></a></li>
-  <li><a href="#cloud-route-partial-prefix"><code>prefix</code></a></li>
-  <li><a href="#cloud-route-partial-append"><code>append_suffix</code></a></li>
-  <li><a href="#cloud-route-partial-code"><code>code</code></a></li>
+  <li><a href="#cloud-route-partial-to"><code class="highlighter-rouge">to</code></a></li>
+  <li><a href="#cloud-route-partial-regexp"><code class="highlighter-rouge">regexp</code></a></li>
+  <li><a href="#cloud-route-partial-prefix"><code class="highlighter-rouge">prefix</code></a></li>
+  <li><a href="#cloud-route-partial-append"><code class="highlighter-rouge">append_suffix</code></a></li>
+  <li><a href="#cloud-route-partial-code"><code class="highlighter-rouge">code</code></a></li>
 </ul>
 
-<h3 id="cloud-route-partial-to"><code>to</code></h3>
-<p>Required, a partial (<code>"/destination"</code> or <code>"//destination"</code>) or full URL (<code>"http://example.com/"</code>).</p>
+<h3 id="cloud-route-partial-to"><code class="highlighter-rouge">to</code></h3>
+<p>Required, a partial (<code class="highlighter-rouge">"/destination"</code> or <code class="highlighter-rouge">"//destination"</code>) or full URL (<code class="highlighter-rouge">"http://example.com/"</code>).</p>
 
-<h3 id="cloud-route-partial-regexp"><code>regexp</code></h3>
-<p>Optional, defaults to <code>false</code>. Specifies whether the path key should be interpreted as
+<h3 id="cloud-route-partial-regexp"><code class="highlighter-rouge">regexp</code></h3>
+<p>Optional, defaults to <code class="highlighter-rouge">false</code>. Specifies whether the path key should be interpreted as
    a PCRE regular expression.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>In the following example, a request to <code>http://example.com/regexp/a/b/c/match</code> redirects to <code>http://example.com/a/b/c</code>:</p>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>In the following example, a request to <code class="highlighter-rouge">http://example.com/regexp/a/b/c/match</code> redirects to <code class="highlighter-rouge">http://example.com/a/b/c</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span> 
-    <span class="l-Scalar-Plain">redirects</span><span class="p-Indicator">:</span>
-       <span class="l-Scalar-Plain">paths</span><span class="p-Indicator">:</span>
-          <span class="s">&quot;/regexp/(.*)/match&quot;</span><span class="p-Indicator">:</span>  
-          <span class="l-Scalar-Plain">to</span><span class="p-Indicator">:</span> <span class="s">&quot;http://example.com/$1&quot;</span>
-          <span class="l-Scalar-Plain">regexp</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span> 
+    <span class="s">redirects</span><span class="pi">:</span>
+       <span class="s">paths</span><span class="pi">:</span>
+          <span class="s2">"</span><span class="s">/regexp/(.*)/match"</span><span class="pi">:</span>  
+          <span class="s">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://example.com/$1"</span>
+          <span class="s">regexp</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
 </div></div>
 
-<h3 id="cloud-route-partial-prefix"><code>prefix</code></h3>
-<p>Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to <code>true</code>, but is not supported if <code>regexp</code> is <code>true</code>.</p>
+<h3 id="cloud-route-partial-prefix"><code class="highlighter-rouge">prefix</code></h3>
+<p>Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to <code class="highlighter-rouge">true</code>, but is not supported if <code class="highlighter-rouge">regexp</code> is <code class="highlighter-rouge">true</code>.</p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>For example,</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
-       <span class="l-Scalar-Plain">redirects</span><span class="p-Indicator">:</span>
-       <span class="l-Scalar-Plain">paths</span><span class="p-Indicator">:</span>
-          <span class="s">&quot;/from&quot;</span><span class="p-Indicator">:</span>
-          <span class="l-Scalar-Plain">to</span><span class="p-Indicator">:</span> <span class="s">&quot;http://{default}/to&quot;</span>
-          <span class="l-Scalar-Plain">partial</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
+       <span class="s">redirects</span><span class="pi">:</span>
+       <span class="s">paths</span><span class="pi">:</span>
+          <span class="s2">"</span><span class="s">/from"</span><span class="pi">:</span>
+          <span class="s">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://{default}/to"</span>
+          <span class="s">partial</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
 
-<p>In the preceding example, if <code>partial</code> is set to <code>true</code>, <code>/from</code> redirects to <code>/to</code> and <code>/from/another/path</code> will redirect to <code>/to/another/path</code></p>
+<p>In the preceding example, if <code class="highlighter-rouge">partial</code> is set to <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">/from</code> redirects to <code class="highlighter-rouge">/to</code> and <code class="highlighter-rouge">/from/another/path</code> will redirect to <code class="highlighter-rouge">/to/another/path</code></p>
 
-<p>If <code>partial</code> is set to <code>false</code>, <code>/from</code> triggers a redirect, but <code>/from/another/path</code> does not.</p>
+<p>If <code class="highlighter-rouge">partial</code> is set to <code class="highlighter-rouge">false</code>, <code class="highlighter-rouge">/from</code> triggers a redirect, but <code class="highlighter-rouge">/from/another/path</code> does not.</p>
 </div></div>
 
-<h3 id="cloud-route-partial-append"><code>append_suffix</code></h3>
-<p>Determines if the suffix is carried over with the redirect. Defaults to <code>true</code>, but not supported if <code>regexp</code> is <code>true</code> <em>or</em> if <code>prefix</code> is <code>false</code>.</p>
+<h3 id="cloud-route-partial-append"><code class="highlighter-rouge">append_suffix</code></h3>
+<p>Determines if the suffix is carried over with the redirect. Defaults to <code class="highlighter-rouge">true</code>, but not supported if <code class="highlighter-rouge">regexp</code> is <code class="highlighter-rouge">true</code> <em>or</em> if <code class="highlighter-rouge">prefix</code> is <code class="highlighter-rouge">false</code>.</p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>For example,</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
-    <span class="l-Scalar-Plain">redirects</span><span class="p-Indicator">:</span>
-       <span class="l-Scalar-Plain">paths</span><span class="p-Indicator">:</span>
-          <span class="s">&quot;/from&quot;</span><span class="p-Indicator">:</span>
-          <span class="l-Scalar-Plain">to</span><span class="p-Indicator">:</span> <span class="s">&quot;http://{default}/to&quot;</span>
-          <span class="l-Scalar-Plain">append_suffix</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
+    <span class="s">redirects</span><span class="pi">:</span>
+       <span class="s">paths</span><span class="pi">:</span>
+          <span class="s2">"</span><span class="s">/from"</span><span class="pi">:</span>
+          <span class="s">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://{default}/to"</span>
+          <span class="s">append_suffix</span><span class="pi">:</span> <span class="s">false</span></code></pre></figure>
 
-<p>The preceding example results in <code>/from/path/suffix</code> redirecting to just <code>/to</code>.</p>
+<p>The preceding example results in <code class="highlighter-rouge">/from/path/suffix</code> redirecting to just <code class="highlighter-rouge">/to</code>.</p>
 
-<p>If <code>append_suffix</code> is set to its default value of <code>true</code>, <code>/from/path/suffix</code> redirects to <code>/to/path/suffix</code>.</p>
+<p>If <code class="highlighter-rouge">append_suffix</code> is set to its default value of <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">/from/path/suffix</code> redirects to <code class="highlighter-rouge">/to/path/suffix</code>.</p>
 </div></div>
 
-<h3 id="cloud-route-partial-code"><code>code</code></h3>
-<p>Specifies the HTTP status code. Valid status codes are <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2" target="_blank"><code>301</code> (Moved Permanently)</a>, <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3" target="_blank"><code>302</code></a>, <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8" target="_blank"><code>307</code></a>, and <a href="https://tools.ietf.org/html/rfc7238" target="_blank"><code>308</code></a>. Defaults to <code>302</code>.</p>
+<h3 id="cloud-route-partial-code"><code class="highlighter-rouge">code</code></h3>
+<p>Specifies the HTTP status code. Valid status codes are <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2" target="_blank"><code class="highlighter-rouge">301</code> (Moved Permanently)</a>, <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3" target="_blank"><code class="highlighter-rouge">302</code></a>, <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8" target="_blank"><code class="highlighter-rouge">307</code></a>, and <a href="https://tools.ietf.org/html/rfc7238" target="_blank"><code class="highlighter-rouge">308</code></a>. Defaults to <code class="highlighter-rouge">302</code>.</p>
 
-<h3 id="cloud-route-partial-expires"><code>expires</code></h3>
-<p>Optional, the duration the redirect will be cached. Defaults to the <code>expires</code> value defined directly under the <code>redirects</code> key, but at this level we can fine-tune the expiration of individual partial redirects:</p>
+<h3 id="cloud-route-partial-expires"><code class="highlighter-rouge">expires</code></h3>
+<p>Optional, the duration the redirect will be cached. Defaults to the <code class="highlighter-rouge">expires</code> value defined directly under the <code class="highlighter-rouge">redirects</code> key, but at this level we can fine-tune the expiration of individual partial redirects:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
-    <span class="l-Scalar-Plain">redirects</span><span class="p-Indicator">:</span>
-       <span class="l-Scalar-Plain">expires</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1d</span>
-       <span class="l-Scalar-Plain">paths</span><span class="p-Indicator">:</span>
-          <span class="s">&quot;/from&quot;</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="s">&quot;to&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;http://example.com/&quot;</span> <span class="p-Indicator">}</span>
-          <span class="s">&quot;/here&quot;</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="s">&quot;to&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;http://example.com/there&quot;</span><span class="p-Indicator">,</span> <span class="s">&quot;expires&quot;</span><span class="p-Indicator">:</span> <span class="s">&quot;2w&quot;</span> <span class="p-Indicator">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
+    <span class="s">redirects</span><span class="pi">:</span>
+       <span class="s">expires</span><span class="pi">:</span> <span class="s">1d</span>
+       <span class="s">paths</span><span class="pi">:</span>
+          <span class="s2">"</span><span class="s">/from"</span><span class="pi">:</span> <span class="pi">{</span> <span class="s2">"</span><span class="s">to"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://example.com/"</span> <span class="pi">}</span>
+          <span class="s2">"</span><span class="s">/here"</span><span class="pi">:</span> <span class="pi">{</span> <span class="s2">"</span><span class="s">to"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://example.com/there"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">expires"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2w"</span> <span class="pi">}</span></code></pre></figure>
 
-<p>In the preceding example, redirects from <code>/from</code> expire in one day, but redirects from <code>/here</code> expire in two weeks.</p>
+<p>In the preceding example, redirects from <code class="highlighter-rouge">/from</code> expire in one day, but redirects from <code class="highlighter-rouge">/here</code> expire in two weeks.</p>
 
 
 		</div>

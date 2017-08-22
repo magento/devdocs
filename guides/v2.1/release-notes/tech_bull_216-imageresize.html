@@ -930,32 +930,32 @@
     <p>all images on the product front end appear reduced in size, including the base image</p>
   </li>
   <li>
-    <p>images do not have uniform sizes – some are greatly reduced, while others appear as expected. (This particular anomaly occurs after you’ve run the <code>bin/magento catalog:images:resize</code> command.)</p>
+    <p>images do not have uniform sizes – some are greatly reduced, while others appear as expected. (This particular anomaly occurs after you’ve run the <code class="highlighter-rouge">bin/magento catalog:images:resize</code> command.)</p>
   </li>
 </ul>
 
-<p>You cannot change the size of the base image within the gallery by editing <code>etc &gt; view.xml</code>. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.</p>
+<p>You cannot change the size of the base image within the gallery by editing <code class="highlighter-rouge">etc &gt; view.xml</code>. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.</p>
 
 <h3 id="background">Background</h3>
 
-<p>Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The <code>frame</code> element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is <strong>true</strong>.</p>
+<p>Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The <code class="highlighter-rouge">frame</code> element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is <strong>true</strong>.</p>
 
-<p>If your custom theme doesn’t include the <code>frame</code> element, or a value has not been assigned to it, then Magento will rely upon the <code>product_image_white_borders</code> option in the Catalog module for the value of the <code>frame</code> option. The <code>product_image_white_borders</code> setting typically has a value of <strong>1</strong>,  but is overridden to <strong>0</strong> in the default Luma and Blank themes.</p>
+<p>If your custom theme doesn’t include the <code class="highlighter-rouge">frame</code> element, or a value has not been assigned to it, then Magento will rely upon the <code class="highlighter-rouge">product_image_white_borders</code> option in the Catalog module for the value of the <code class="highlighter-rouge">frame</code> option. The <code class="highlighter-rouge">product_image_white_borders</code> setting typically has a value of <strong>1</strong>,  but is overridden to <strong>0</strong> in the default Luma and Blank themes.</p>
 
 <h3 id="action">Action</h3>
 <p>We strongly recommend that you upgrade to  2.1.7 as soon as that release is available. Magento 2.1.7 will contain a fix for this issue as well as critically important security enhancements. We provide the hot fix described in this Technical Bulletin as a temporary fix only.</p>
 
 <h4 id="magento-21x-ce">Magento 2.1.x CE</h4>
-<p>You can fix this issue with image resizing by downloading  and installing the <code>CE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
+<p>You can fix this issue with image resizing by downloading  and installing the <code class="highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
 
 <p>To download this patch,</p>
 
 <p>1) On <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>, choose <strong>Downloads &gt; Magento Community Edition Patches &gt; 2.x</strong>.</p>
 
-<p>2) Select the <code>CE-MAGETWO-67805.patch</code> hot fix.</p>
+<p>2) Select the <code class="highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix.</p>
 
 <h4 id="magento-21x-ee">Magento 2.1.x EE</h4>
-<p>You can fix this issue with image resizing by downloading and installing the <code>EE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
+<p>You can fix this issue with image resizing by downloading and installing the <code class="highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
 
 <p>To download this patch,</p>
 
@@ -963,12 +963,12 @@
 
 <p>2) After logging in, navigate to MAGETWO-67805 on the Support Patches page (<strong>Downloads &gt; Magento Enterprise Edition 2.X &gt; Magento Enterprise Edition 2.x Release &gt; Support Patches &gt; MAGETWO-67805</strong>).</p>
 
-<p>3) Select and install the <code>EE-MAGETWO-67805.patch</code> hot fix.</p>
+<p>3) Select and install the <code class="highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix.</p>
 
 <h4 id="magento-enterprise-cloud-edition">Magento Enterprise Cloud Edition</h4>
-<p>General ECE patches are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your <code>composer.json</code>. We apply patches automatically during the build phase when a patch is available. <code>magento-cloud-configuration 101.6.2</code> contains the hot fix for this image resize issue.</p>
+<p>General ECE patches are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your <code class="highlighter-rouge">composer.json</code>. We apply patches automatically during the build phase when a patch is available. <code class="highlighter-rouge">magento-cloud-configuration 101.6.2</code> contains the hot fix for this image resize issue.</p>
 
-<p>See <a href="http://devdocs.magento.com/guides/v2.1/cloud/howtos/update-components.html" target="_blank">Update extensions</a> for more information on running <code>composer update</code> to upgrade your Cloud extension.</p>
+<p>See <a href="http://devdocs.magento.com/guides/v2.1/cloud/howtos/update-components.html" target="_blank">Update extensions</a> for more information on running <code class="highlighter-rouge">composer update</code> to upgrade your Cloud extension.</p>
 
 <h3 id="more-information">More information</h3>
 

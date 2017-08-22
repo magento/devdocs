@@ -766,11 +766,11 @@
 </section>
 
 
-			<p>Merchants and buyers can edit a negotiable quote at various times during the quote’s lifecycle. Both use the <code>PUT /V1/negotiableQuote/:quoteId</code> call to update the quote. This call is defined in the
-<code>quoteCartRepositoryV1</code> service and is functionally similar to the
-<code>PUT /V1/carts/mine</code> call.</p>
+			<p>Merchants and buyers can edit a negotiable quote at various times during the quote’s lifecycle. Both use the <code class="highlighter-rouge">PUT /V1/negotiableQuote/:quoteId</code> call to update the quote. This call is defined in the
+<code class="highlighter-rouge">quoteCartRepositoryV1</code> service and is functionally similar to the
+<code class="highlighter-rouge">PUT /V1/carts/mine</code> call.</p>
 
-<p>The <code>quote</code> object now contains a set of <code>negotiable_quote</code> extension attributes that can be used to update a quote.</p>
+<p>The <code class="highlighter-rouge">quote</code> object now contains a set of <code class="highlighter-rouge">negotiable_quote</code> extension attributes that can be used to update a quote.</p>
 
 <table>
   <thead>
@@ -783,133 +783,133 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>quote_id</code></td>
+      <td><code class="highlighter-rouge">quote_id</code></td>
       <td>Negotiable quote ID</td>
       <td>integer</td>
       <td>Required to create or update a negotiable quote</td>
     </tr>
     <tr>
-      <td><code>is_regular_quote</code></td>
+      <td><code class="highlighter-rouge">is_regular_quote</code></td>
       <td>Flag for the negotiable quote</td>
       <td>boolean</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>status</code></td>
-      <td>One of <code>created</code>, <code>submitted_by_customer</code>, <code>submitted_by_admin</code>, <code>processing_by_customer</code>, <code>processing_by_admin</code>, <code>ordered</code>, <code>expired</code>, <code>declined</code>, <code>closed</code></td>
+      <td><code class="highlighter-rouge">status</code></td>
+      <td>One of <code class="highlighter-rouge">created</code>, <code class="highlighter-rouge">submitted_by_customer</code>, <code class="highlighter-rouge">submitted_by_admin</code>, <code class="highlighter-rouge">processing_by_customer</code>, <code class="highlighter-rouge">processing_by_admin</code>, <code class="highlighter-rouge">ordered</code>, <code class="highlighter-rouge">expired</code>, <code class="highlighter-rouge">declined</code>, <code class="highlighter-rouge">closed</code></td>
       <td>string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>negotiated_price_type</code></td>
+      <td><code class="highlighter-rouge">negotiated_price_type</code></td>
       <td>1 - Percentage discount; 2 - Fixed price; 3 - proposed total</td>
       <td>integer</td>
       <td>Required to set a negotiated price</td>
     </tr>
     <tr>
-      <td><code>negotiated_price_value</code></td>
+      <td><code class="highlighter-rouge">negotiated_price_value</code></td>
       <td>Discount amount defined by the merchant</td>
       <td>number</td>
       <td>Required to set a negotiated price</td>
     </tr>
     <tr>
-      <td><code>shipping_price</code></td>
+      <td><code class="highlighter-rouge">shipping_price</code></td>
       <td>Custom price for shipping defined by the merchant</td>
       <td>number</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>quote_name</code></td>
+      <td><code class="highlighter-rouge">quote_name</code></td>
       <td>Name assigned to the negotiable quote</td>
       <td>string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>expiration_period</code></td>
-      <td>Expiration date for the quote. The format must be <code>YYYY-MM-DD</code>.</td>
+      <td><code class="highlighter-rouge">expiration_period</code></td>
+      <td>Expiration date for the quote. The format must be <code class="highlighter-rouge">YYYY-MM-DD</code>.</td>
       <td>string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>email_notification_status</code></td>
+      <td><code class="highlighter-rouge">email_notification_status</code></td>
       <td>Recent notifications that have been sent</td>
       <td>integer</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>has_unconfirmed_changes</code></td>
+      <td><code class="highlighter-rouge">has_unconfirmed_changes</code></td>
       <td>Indicates there are some changes that the Admin has not seen yet</td>
       <td>boolean</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>is_shipping_tax_changed</code></td>
+      <td><code class="highlighter-rouge">is_shipping_tax_changed</code></td>
       <td>Indicates whether shipping taxes have changed</td>
       <td>boolean</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>is_customer_price_changed</code></td>
+      <td><code class="highlighter-rouge">is_customer_price_changed</code></td>
       <td>Indicates whether the price for the product has changed</td>
       <td>boolean</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>notifications</code></td>
+      <td><code class="highlighter-rouge">notifications</code></td>
       <td>Binary mask where the current notifications are stored</td>
       <td>integer</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>applied_rule_ids</code></td>
+      <td><code class="highlighter-rouge">applied_rule_ids</code></td>
       <td>Applied shopping cart rules</td>
       <td>string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>is_address_draft</code></td>
+      <td><code class="highlighter-rouge">is_address_draft</code></td>
       <td>Drop the address if the checkout is not completed.</td>
       <td>boolean</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>deleted_sku</code></td>
+      <td><code class="highlighter-rouge">deleted_sku</code></td>
       <td>The SKUs of any deleted products</td>
       <td>string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>creator_id</code></td>
+      <td><code class="highlighter-rouge">creator_id</code></td>
       <td>Quote creator ID</td>
       <td>integer</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>creator_type</code></td>
+      <td><code class="highlighter-rouge">creator_type</code></td>
       <td>1 - Integration; 2 - Admin; 3 - Customer; 4 - Guest</td>
       <td>integer</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>original_total_price</code></td>
+      <td><code class="highlighter-rouge">original_total_price</code></td>
       <td>Original total price</td>
       <td>number</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>base_original_total_price</code></td>
+      <td><code class="highlighter-rouge">base_original_total_price</code></td>
       <td>Base original total price</td>
       <td>number</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>negotiated_total_price</code></td>
+      <td><code class="highlighter-rouge">negotiated_total_price</code></td>
       <td>Negotiated total price</td>
       <td>number</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code>base_negotiated_total_price</code></td>
+      <td><code class="highlighter-rouge">base_negotiated_total_price</code></td>
       <td>Base negotiated total price</td>
       <td>number</td>
       <td>Optional</td>
@@ -921,99 +921,99 @@
 
 <p>In every successful negotiate quote, the merchant must set the negotiated price.</p>
 
-<p>The <code>negotiated_price_value</code> can have one of the following values:</p>
+<p>The <code class="highlighter-rouge">negotiated_price_value</code> can have one of the following values:</p>
 
-<p><code>1</code> - Apply a percentage discount to the quote. The <code>negotiated_price_value</code>parameter indicates the percentage.
-<code>2</code> - Apply a fixed amount as a discount for the quote. The <code>negotiated_price_value</code>parameter specifies the amount of the discount.
-<code>3</code> - Set a proposed price for the entire quote. The <code>negotiated_price_value</code>parameter specifies the proposed price.</p>
+<p><code class="highlighter-rouge">1</code> - Apply a percentage discount to the quote. The <code class="highlighter-rouge">negotiated_price_value</code>parameter indicates the percentage.
+<code class="highlighter-rouge">2</code> - Apply a fixed amount as a discount for the quote. The <code class="highlighter-rouge">negotiated_price_value</code>parameter specifies the amount of the discount.
+<code class="highlighter-rouge">3</code> - Set a proposed price for the entire quote. The <code class="highlighter-rouge">negotiated_price_value</code>parameter specifies the proposed price.</p>
 
 <p><strong>Service Name</strong></p>
 
-<p><code>quoteCartRepositoryV1</code></p>
+<p><code class="highlighter-rouge">quoteCartRepositoryV1</code></p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>PUT /V1/negotiableQuote/6</code></p>
+<p><code class="highlighter-rouge">PUT /V1/negotiableQuote/6</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;quote&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-      <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;negotiable_quote&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;negotiated_price_type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="nt">&quot;negotiated_price_value&quot;</span><span class="p">:</span> <span class="mi">5</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"quote"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"negotiable_quote"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"negotiated_price_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"negotiated_price_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h3 id="add-a-new-quote-item-to-the-negotiable-quote">Add a new quote item to the negotiable quote</h3>
 
 <p>The buyer can add, update, or delete items from the quote under the following conditions:</p>
 
 <ul>
-  <li>The quote is in one of the following system states: <code>created</code>, <code>processing_by_admin</code>, or <code>submitted_by_customer</code>.</li>
+  <li>The quote is in one of the following system states: <code class="highlighter-rouge">created</code>, <code class="highlighter-rouge">processing_by_admin</code>, or <code class="highlighter-rouge">submitted_by_customer</code>.</li>
   <li>The quote doesn’t have a negotiated price.</li>
 </ul>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>POST /V1/carts/mine/items</code></p>
+<p><code class="highlighter-rouge">POST /V1/carts/mine/items</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;cartItem&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MB01&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;7&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"cartItem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MB01&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Joust Duffle Bag&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
-    <span class="nt">&quot;product_type&quot;</span><span class="p">:</span> <span class="s2">&quot;simple&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;negotiable_quote_item&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-            <span class="nt">&quot;original_price&quot;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
-            <span class="nt">&quot;original_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="nt">&quot;original_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joust Duffle Bag"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"quote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"negotiable_quote_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"original_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"original_tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"original_discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h3 id="change-the-quote-expiration-date">Change the quote expiration date</h3>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>PUT /V1/negotiableQuote/6</code></p>
+<p><code class="highlighter-rouge">PUT /V1/negotiableQuote/6</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;quote&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-      <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;negotiable_quote&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;expiration_period&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-30&quot;</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"quote"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"negotiable_quote"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"expiration_period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-30"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<p><code>[]</code></p>
+<p><code class="highlighter-rouge">[]</code></p>
 
 <h2 id="related-information">Related information</h2>
 

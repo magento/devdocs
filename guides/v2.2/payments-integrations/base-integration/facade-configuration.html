@@ -681,18 +681,18 @@
 			<p>Payment facade it is an instance of <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Model/Method/Adapter.php">Payment Adapter</a> configured with virtual types and allows to
 process payment actions between Magento Sales Management and payment processor.</p>
 
-<p>Add the <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">dependency injection (DI)</a> configuration for <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> facade in your <code>%Vendor_Module%/etc/di.xml</code>.</p>
+<p>Add the <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">dependency injection (DI)</a> configuration for <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> facade in your <code class="highlighter-rouge">%Vendor_Module%/etc/di.xml</code>.</p>
 
 <p>The following sample is an illustration of such configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L10">app/code/Magento/Braintree/etc/di.xml#L10</a>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeFacade&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Model\Method\Adapter&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeFacade"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Model\Method\Adapter"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;code&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;const&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Model\Ui\ConfigProvider::CODE<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;formBlockType&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Block\Form<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;infoBlockType&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Block\Info<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;valueHandlerPool&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeValueHandlerPool<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;validatorPool&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeValidatorPool<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;commandPool&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeCommandPool<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"code"</span> <span class="na">xsi:type=</span><span class="s">"const"</span><span class="nt">&gt;</span>Magento\Braintree\Model\Ui\ConfigProvider::CODE<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"formBlockType"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Block\Form<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"infoBlockType"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Block\Info<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"valueHandlerPool"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeValueHandlerPool<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"validatorPool"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeValidatorPool<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"commandPool"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeCommandPool<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
@@ -707,27 +707,27 @@ process payment actions between Magento Sales Management and payment processor.<
   </thead>
   <tbody>
     <tr>
-      <td><code>code</code></td>
+      <td><code class="highlighter-rouge">code</code></td>
       <td>Payment method’s code.</td>
     </tr>
     <tr>
-      <td><code>formBlockType</code></td>
+      <td><code class="highlighter-rouge">formBlockType</code></td>
       <td>Name of the block class responsible for payment provider gateway form rendering. This block is used in the Admin panel only, because on the storefront the form is rendered using knockout.js. See the <a href="/guides/v2.2/payments-integrations/base-integration/formblocktype.html">Admin integration</a> topic for details.</td>
     </tr>
     <tr>
-      <td><code>infoBlockType</code></td>
+      <td><code class="highlighter-rouge">infoBlockType</code></td>
       <td>Name of the block class responsible for Transaction/Payment Information details rendering in Order block in Admin panel or customer account on storefront. In most cases it will be enough to specify the default implementation of <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Block/ConfigurableInfo.php">Configurable Info</a>, but for customizations you can specify your own implementation.</td>
     </tr>
     <tr>
-      <td><code>valueHandlerPool</code></td>
+      <td><code class="highlighter-rouge">valueHandlerPool</code></td>
       <td>Pool of value handlers used for queries to configuration. For details see the <a href="#value_handlers_pool">following paragraph</a>.</td>
     </tr>
     <tr>
-      <td><code>validatorPool</code></td>
+      <td><code class="highlighter-rouge">validatorPool</code></td>
       <td><a href="#validators_pool">Pool of validators</a>.</td>
     </tr>
     <tr>
-      <td><code>commandPool</code></td>
+      <td><code class="highlighter-rouge">commandPool</code></td>
       <td><a href="/guides/v2.2/payments-integrations/payment-gateway/command-pool.html">Pool of gateway commands</a>.</td>
     </tr>
   </tbody>
@@ -736,34 +736,34 @@ process payment actions between Magento Sales Management and payment processor.<
 <h4 id="value_handlers_pool">Value handlers pool</h4>
 <p>Let’s look closer at the value handlers pool of a payment method. This pool enables you to set payment configuration that is based on certain conditions.</p>
 
-<p>For example, the <code>can_void</code> configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L296">app/code/Magento/Braintree/etc/di.xml#L296</a>):</p>
+<p>For example, the <code class="highlighter-rouge">can_void</code> configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L296">app/code/Magento/Braintree/etc/di.xml#L296</a>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeValueHandlerPool&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Config\ValueHandlerPool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeValueHandlerPool"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Config\ValueHandlerPool"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;handlers&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;default&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>BraintreeConfigValueHandler<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;can_void&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Config\CanVoidHandler<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;can_cancel&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Config\CanVoidHandler<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"handlers"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"default"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>BraintreeConfigValueHandler<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"can_void"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Config\CanVoidHandler<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"can_cancel"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Config\CanVoidHandler<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
 <p>Pay attention, that you must always specify the default handler. In the example it is config reader for Braintree:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeConfigValueHandler&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Config\ConfigValueHandler&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeConfigValueHandler"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Config\ConfigValueHandler"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;configInterface&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Config\Config<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"configInterface"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Config\Config<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>In your configuration you can use default <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Gateway/Config/Config.php">Magento\Payment\Gateway\Config\Config</a>. Or you can add a custom config interface. It must implement the <code>Magento\Payment\Gateway\ConfigInterface</code> interface.</p>
+<p>In your configuration you can use default <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Gateway/Config/Config.php">Magento\Payment\Gateway\Config\Config</a>. Or you can add a custom config interface. It must implement the <code class="highlighter-rouge">Magento\Payment\Gateway\ConfigInterface</code> interface.</p>
 
-<p><code>Magento\Payment\Gateway\Config\Config</code> can read configuration by payment method code, so is useful to use it or extend it for your own purposes.</p>
+<p><code class="highlighter-rouge">Magento\Payment\Gateway\Config\Config</code> can read configuration by payment method code, so is useful to use it or extend it for your own purposes.</p>
 
 <p>And <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/Gateway/Config/Config.php">Magento\Braintree\Gateway\Config\Config</a> reads
 configuration from database or payment config file.</p>
 
-<p>Other handlers contain some logic, for example, <code>can_cancel</code> option is the same as <code>can_void</code> and depends on whether the order has paid amount (invoiced).</p>
+<p>Other handlers contain some logic, for example, <code class="highlighter-rouge">can_cancel</code> option is the same as <code class="highlighter-rouge">can_void</code> and depends on whether the order has paid amount (invoiced).</p>
 
 <p>Your custom handlers must implement the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Gateway/Config/ValueHandlerInterface.php">Value Handler interface</a>.</p>
 
@@ -772,46 +772,46 @@ configuration from database or payment config file.</p>
 <p>You can configure the pool of validators, which allows processing various payment method validations. Below are the examples of such validators:</p>
 
 <ul>
-  <li><code>country</code> — checks if billing country is allowed for the payment method</li>
-  <li><code>currency</code> — checks if the selected currency is allowed for the payment method</li>
-  <li><code>availability</code> — checks if the payment method is available</li>
-  <li><code>global</code> — the validation that is called before placing an order</li>
+  <li><code class="highlighter-rouge">country</code> — checks if billing country is allowed for the payment method</li>
+  <li><code class="highlighter-rouge">currency</code> — checks if the selected currency is allowed for the payment method</li>
+  <li><code class="highlighter-rouge">availability</code> — checks if the payment method is available</li>
+  <li><code class="highlighter-rouge">global</code> — the validation that is called before placing an order</li>
 </ul>
 
-<p>A custom validator should implement the <code>\Magento\Payment\Gateway\Validator\ValidatorInterface</code>. In the most cases, it is enough
-to extend the <code>\Magento\Payment\Gateway\Validator\AbstractValidator</code> and create an implementation of the <code>validate</code> method:</p>
+<p>A custom validator should implement the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator\ValidatorInterface</code>. In the most cases, it is enough
+to extend the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator\AbstractValidator</code> and create an implementation of the <code class="highlighter-rouge">validate</code> method:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">CountryValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @inheritdoc</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span><span class="k">array</span> <span class="nv">$validationSubject</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$isValid</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
-        <span class="nv">$storeId</span> <span class="o">=</span> <span class="nv">$validationSubject</span><span class="p">[</span><span class="s1">&#39;storeId&#39;</span><span class="p">];</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class CountryValidator extends AbstractValidator
+{
+    /**
+     * @inheritdoc
+     */
+    public function validate(array $validationSubject)
+    {
+        $isValid = true;
+        $storeId = $validationSubject['storeId'];
 
-        <span class="k">if</span> <span class="p">((</span><span class="nx">int</span><span class="p">)</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">(</span><span class="s1">&#39;allowspecific&#39;</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$availableCountries</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span>
-                <span class="s1">&#39;,&#39;</span><span class="p">,</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">(</span><span class="s1">&#39;specificcountry&#39;</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span>
-            <span class="p">);</span>
+        if ((int)$this-&gt;config-&gt;getValue('allowspecific', $storeId) === 1) {
+            $availableCountries = explode(
+                ',',
+                $this-&gt;config-&gt;getValue('specificcountry', $storeId)
+            );
 
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$validationSubject</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">],</span> <span class="nv">$availableCountries</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nv">$isValid</span> <span class="o">=</span>  <span class="k">false</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
+            if (!in_array($validationSubject['country'], $availableCountries)) {
+                $isValid =  false;
+            }
+        }
 
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createResult</span><span class="p">(</span><span class="nv">$isValid</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+        return $this-&gt;createResult($isValid);
+    }
+}</code></pre></figure>
 
 <p>Then, the newly created validator needs to be added to the global pool of validators:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeValidatorPool&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Validator\ValidatorPool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeValidatorPool"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Validator\ValidatorPool"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;validators&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;country&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\CountryValidator<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"validators"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"country"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\CountryValidator<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>

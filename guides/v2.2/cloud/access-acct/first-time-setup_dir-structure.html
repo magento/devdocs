@@ -484,8 +484,8 @@
 <p>The Magento application root directory is located in different locations depending on the environment:</p>
 
 <ul>
-  <li><a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-int">Integration environment</a>: the Magento application is located in the <code>/app</code> directory.</li>
-  <li><a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-stage">Staging environment</a>: the Magento application is located in the <code>/&lt;project code&gt;_stg</code> directory.</li>
+  <li><a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-int">Integration environment</a>: the Magento application is located in the <code class="highlighter-rouge">/app</code> directory.</li>
+  <li><a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-stage">Staging environment</a>: the Magento application is located in the <code class="highlighter-rouge">/&lt;project code&gt;_stg</code> directory.</li>
   <li><a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-prod">production</a>: the Magento application is located in the ` /<project code="">` directory.</project></li>
 </ul>
 
@@ -493,11 +493,11 @@
 <p>In Integration, Staging, and Production, <em>only</em> the following directories are writable due to security reasons:</p>
 
 <ul>
-  <li><code>var</code></li>
-  <li><code>pub/static</code></li>
-  <li><code>pub/media</code></li>
-  <li><code>app/etc</code></li>
-  <li><code>/tmp</code></li>
+  <li><code class="highlighter-rouge">var</code></li>
+  <li><code class="highlighter-rouge">pub/static</code></li>
+  <li><code class="highlighter-rouge">pub/media</code></li>
+  <li><code class="highlighter-rouge">app/etc</code></li>
+  <li><code class="highlighter-rouge">/tmp</code></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -505,11 +505,11 @@
 </div>
 
 <h3 id="logs">Logs</h3>
-<p>Logs for the integration, staging, and production environments are located under the <code>/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code>magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
+<p>Logs for the integration, staging, and production environments are located under the <code class="highlighter-rouge">/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code class="highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
 
-<p>In staging and production environments, the deployment log is located in <code>/var/log/platform/&lt;project ID&gt;</code>.</p>
+<p>In staging and production environments, the deployment log is located in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
 
-<p>Magento logs are located in the <code>&lt;magento root dir&gt;/var/log</code> directory.</p>
+<p>Magento logs are located in the <code class="highlighter-rouge">&lt;magento root dir&gt;/var/log</code> directory.</p>
 
 <h4 id="for-more-information">For more information</h4>
 

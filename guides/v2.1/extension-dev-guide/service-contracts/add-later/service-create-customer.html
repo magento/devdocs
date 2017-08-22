@@ -478,14 +478,14 @@
   <li>
     <p>Models</p>
 
-    <p>Models interact with resources to do things like get objects, set passwords, and perform authentication. Customer service models have more than 70 public methods, including <code>public function loadByEmail($customerEmail)</code> in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Model/Customer.php" target="_blank">Customer</a>, which gets a customer record using their e-mail address.</p>
+    <p>Models interact with resources to do things like get objects, set passwords, and perform authentication. Customer service models have more than 70 public methods, including <code class="highlighter-rouge">public function loadByEmail($customerEmail)</code> in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Model/Customer.php" target="_blank">Customer</a>, which gets a customer record using their e-mail address.</p>
 
     <p>One advantage of using a service is your client code doesn’t interact directly with the model at all; the service does that for you.</p>
   </li>
   <li>
     <p>Interfaces</p>
 
-    <p>Clients interact with services using methods on their interfaces, as discussed in <a href="/guides/v2.1/service-contracts.html">Service contracts</a>. Customer service interfaces have more than 20 public methods, including public function <code>createCustomer()</code> in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>, which creates a customer record.</p>
+    <p>Clients interact with services using methods on their interfaces, as discussed in <a href="/guides/v2.1/service-contracts.html">Service contracts</a>. Customer service interfaces have more than 20 public methods, including public function <code class="highlighter-rouge">createCustomer()</code> in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>, which creates a customer record.</p>
   </li>
   <li>
     <p>Service data objects</p>
@@ -495,7 +495,7 @@
   <li>
     <p>Service data object builders</p>
 
-    <p>Builders have the setters you can use to set data values in the service data object before sending them to the service to be consumed. For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> has a <code>setFirstname</code> method you can use to set a customer’s first name. You can get the first name using the <code>getFirstname</code> method in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">Customer data object</a>.</p>
+    <p>Builders have the setters you can use to set data values in the service data object before sending them to the service to be consumed. For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> has a <code class="highlighter-rouge">setFirstname</code> method you can use to set a customer’s first name. You can get the first name using the <code class="highlighter-rouge">getFirstname</code> method in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">Customer data object</a>.</p>
   </li>
 </ul>
 
@@ -540,7 +540,7 @@
 <p>The preceding section showed how to:</p>
 
 <ul>
-  <li>Create a customer record. The <code>createCustomer</code> call also sets a default password for the customer.</li>
+  <li>Create a customer record. The <code class="highlighter-rouge">createCustomer</code> call also sets a default password for the customer.</li>
   <li>Create an address for the customer.</li>
   <li>Specified the address as the default shipping and billing address.</li>
 </ul>

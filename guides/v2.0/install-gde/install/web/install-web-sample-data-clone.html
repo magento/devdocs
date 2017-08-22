@@ -685,17 +685,18 @@
     <li>
       <p>Change to your web server’s docroot directory.</p>
 
-      <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+      <p>Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
 
       <p>Need <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">help locating the docroot?</a></p>
     </li>
     <li>
-      <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+      <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
 
       <p>An example follows:</p>
 
-      <pre><code>git clone git@github.com:magento/magento2-sample-data.git
+      <div class="highlighter-rouge"><pre class="highlight"><code>git clone git@github.com:magento/magento2-sample-data.git
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Wait for the repository to clone on your server.</p>
@@ -707,12 +708,13 @@ Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
 </div>
     </li>
-    <li>Change to the <code>&lt;your Magento sample data clone dir&gt;/dev/tools</code> directory.</li>
+    <li>Change to the <code class="highlighter-rouge">&lt;your Magento sample data clone dir&gt;/dev/tools</code> directory.</li>
     <li>
       <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
 
-      <pre><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
+      <div class="highlighter-rouge"><pre class="highlight"><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Wait for the command to complete.</p>
@@ -736,28 +738,31 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Change to your web server’s docroot directory.</p>
 
-      <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+      <p>Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
     </li>
     <li>
-      <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+      <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
 
       <p>An example follows:</p>
 
-      <pre><code>git clone https://github.com/magento/magento2-sample-data.git
+      <div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/magento/magento2-sample-data.git
 </code></pre>
+      </div>
     </li>
     <li>Wait for the repository to clone on your server.</li>
-    <li>Change to the <code>&lt;your Magento sample data clone dir&gt;/dev/tools</code> directory.</li>
+    <li>Change to the <code class="highlighter-rouge">&lt;your Magento sample data clone dir&gt;/dev/tools</code> directory.</li>
     <li>
       <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
 
-      <pre><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
+      <div class="highlighter-rouge"><pre class="highlight"><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
 </code></pre>
+      </div>
 
       <p>For example,</p>
 
-      <pre><code>php build-sample-data.php -- --ce-source="/var/www/magento2"
+      <div class="highlighter-rouge"><pre class="highlight"><code>php build-sample-data.php -- --ce-source="/var/www/magento2"
 </code></pre>
+      </div>
     </li>
     <li>Wait for the command to complete.</li>
     <li>See the next section.</li>
@@ -766,12 +771,13 @@ fatal: The remote end hung up unexpectedly</pre>
   <div class="bs-callout bs-callout-warning">
     <p>If you’re installing sample data <em>after</em> installing Magento, you must also run the following command to update the database and schema:</p>
 
-    <pre><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
+    <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
 </code></pre>
+    </div>
   </div>
 
   <h2 id="samp-data-perms">Set file system ownership and permissions</h2>
-  <p>Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.</p>
+  <p>Because the <code class="highlighter-rouge">php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.</p>
 
   <p>To set file system permissions and ownership on the sample data repository:</p>
 
@@ -780,27 +786,30 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Set ownership:</p>
 
-      <pre><code>chown -R :&lt;your web server group name&gt; .
+      <div class="highlighter-rouge"><pre class="highlight"><code>chown -R :&lt;your web server group name&gt; .
 </code></pre>
+      </div>
 
       <p>Typical examples:</p>
 
-      <p>CentOS: <code>chown -R :apache .</code></p>
+      <p>CentOS: <code class="highlighter-rouge">chown -R :apache .</code></p>
 
-      <p>Ubuntu: <code>chown -R :www-data .</code></p>
+      <p>Ubuntu: <code class="highlighter-rouge">chown -R :www-data .</code></p>
     </li>
     <li>
       <p>Set permissions:</p>
 
-      <pre><code>find . -type d -exec chmod g+ws {} \;
+      <div class="highlighter-rouge"><pre class="highlight"><code>find . -type d -exec chmod g+ws {} \;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Clear static files:</p>
 
-      <pre><code>cd &lt;your Magento CE install dir&gt;/var
+      <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento CE install dir&gt;/var
 rm -rf cache/* page_cache/* generation/*
 </code></pre>
+      </div>
     </li>
   </ol>
 

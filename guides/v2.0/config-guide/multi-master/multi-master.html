@@ -1588,7 +1588,7 @@
   <p>Magento Enterprise Cloud Edition does <em>not</em> support this feature at this time.</p>
 </div>
 
-<p>The <code>ResourceConnections</code> class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank">Command Query Responsibility Segregation (CQRS)</a> database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.</p>
+<p>The <code class="highlighter-rouge">ResourceConnections</code> class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank">Command Query Responsibility Segregation (CQRS)</a> database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.</p>
 
 <p>If you set up optional database replication, you get the following advantages:</p>
 
@@ -1659,9 +1659,9 @@
 <p>In this guide, the three master databases are named:</p>
 
 <ul>
-  <li><code>magento_quote</code></li>
-  <li><code>magento_sales</code></li>
-  <li><code>magento</code></li>
+  <li><code class="highlighter-rouge">magento_quote</code></li>
+  <li><code class="highlighter-rouge">magento_sales</code></li>
+  <li><code class="highlighter-rouge">magento</code></li>
 </ul>
 
 <p>(You can name your databases anything you wish.)</p>

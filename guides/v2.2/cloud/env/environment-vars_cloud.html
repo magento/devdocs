@@ -1574,15 +1574,15 @@
 </section>
 
 
-			<p>Environment variables that are specific to Magento Enterprise Cloud Edition are prefixed with <code>MAGENTO_CLOUD_*</code>.</p>
+			<p>Environment variables that are specific to Magento Enterprise Cloud Edition are prefixed with <code class="highlighter-rouge">MAGENTO_CLOUD_*</code>.</p>
 
 <ul>
   <li><strong>MAGENTO_CLOUD_APP_DIR</strong>: The absolute path to the application directory.</li>
   <li><strong>MAGENTO_CLOUD_APPLICATION</strong>: A base64-encoded JSON object that
 describes the application. It maps the content of the
-<code>.magento.app.yaml</code> that you have in Git and it has a few subkeys.</li>
+<code class="highlighter-rouge">.magento.app.yaml</code> that you have in Git and it has a few subkeys.</li>
   <li><strong>MAGENTO_CLOUD_APPLICATION_NAME</strong>: The name of the application, as configured
-in the <code>.magento.app.yaml</code> file.</li>
+in the <code class="highlighter-rouge">.magento.app.yaml</code> file.</li>
   <li><strong>MAGENTO_CLOUD_DOCUMENT_ROOT</strong>: The absolute path to the web document root, if
 applicable.</li>
   <li><strong>MAGENTO_CLOUD_ENVIRONMENT</strong>: The name of the environment (that is, the
@@ -1591,11 +1591,11 @@ name of the branch in Git).</li>
   <li><strong>MAGENTO_CLOUD_RELATIONSHIPS</strong>: A base64-encoded JSON object whose keys
 are the relationship name and the values are arrays of relationship
 endpoint definitions. Each relationship endpoint definition is a
-decomposed form of a URL. It has a <code>scheme</code>, a <code>host</code>, a <code>port</code>, and
-optionally a <code>username</code>, <code>password</code>, <code>path</code> and some additional
-information in <code>query</code>.</li>
+decomposed form of a URL. It has a <code class="highlighter-rouge">scheme</code>, a <code class="highlighter-rouge">host</code>, a <code class="highlighter-rouge">port</code>, and
+optionally a <code class="highlighter-rouge">username</code>, <code class="highlighter-rouge">password</code>, <code class="highlighter-rouge">path</code> and some additional
+information in <code class="highlighter-rouge">query</code>.</li>
   <li><strong>MAGENTO_CLOUD_ROUTES</strong>: Describe the routes that you defined in the
-environment. It maps the content of the <code>.magento/routes.yaml</code>
+environment. It maps the content of the <code class="highlighter-rouge">.magento/routes.yaml</code>
 file.</li>
   <li><strong>MAGENTO_CLOUD_TREE_ID</strong>: The ID of the tree the application was built
 from. It’s essentially the SHA of the tree in Git.</li>
@@ -1614,15 +1614,15 @@ variables names and values are variable values (a string).</li>
      */
     protected function getRelationships()
     {
-        return json_decode(base64_decode($_ENV[&quot;MAGENTO_CLOUD_RELATIONSHIPS&quot;]), true);
+        return json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]), true);
     }</code></pre></figure>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
 </ul>
 
 		</div>

@@ -1596,80 +1596,80 @@
 </div>
 
 <h2 id="relationship">Relationship</h2>
-<p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.2/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
+<p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.2/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
 
 <p>The following is the Elasticsearch information:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s2">&quot;elasticsearch&quot;</span> : <span class="o">[</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s2">"elasticsearch"</span> : <span class="o">[</span>
       <span class="o">{</span>
-         <span class="s2">&quot;host&quot;</span> : <span class="s2">&quot;elasticsearch.internal&quot;</span>,
-         <span class="s2">&quot;ip&quot;</span> : <span class="s2">&quot;250.0.97.96&quot;</span>,
-         <span class="s2">&quot;scheme&quot;</span> : <span class="s2">&quot;http&quot;</span>,
-         <span class="s2">&quot;port&quot;</span> : <span class="s2">&quot;9200&quot;</span>
+         <span class="s2">"host"</span> : <span class="s2">"elasticsearch.internal"</span>,
+         <span class="s2">"ip"</span> : <span class="s2">"250.0.97.96"</span>,
+         <span class="s2">"scheme"</span> : <span class="s2">"http"</span>,
+         <span class="s2">"port"</span> : <span class="s2">"9200"</span>
       <span class="o">}</span>
    <span class="o">]</span>,</code></pre></figure>
 
 <h2 id="configure">Configure service settings</h2>
-<p>Configure the Elasticsearch version and additional values in <code>.magento/services.yaml</code>. The following example is the default version setting for Elasticsearch.</p>
+<p>Configure the Elasticsearch version and additional values in <code class="highlighter-rouge">.magento/services.yaml</code>. The following example is the default version setting for Elasticsearch.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">elasticsearch</span><span class="p-Indicator">:</span>
-   <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">elasticsearch:1.7</span>
-   <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">elasticsearch</span><span class="pi">:</span>
+   <span class="s">type</span><span class="pi">:</span> <span class="s">elasticsearch:1.7</span>
+   <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span></code></pre></figure>
 
-<p>To configure the relationships for environment variable, set a relationship in your <code>.magento.app.yaml</code> in the Git branch. For example:</p>
+<p>To configure the relationships for environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">elasticsearch</span><span class="p-Indicator">:</span> <span class="s">&quot;elasticsearch:elasticsearch&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
+    <span class="s">elasticsearch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">elasticsearch:elasticsearch"</span></code></pre></figure>
 
 <p>Merge and deploy the code to set the configurations for Elasticsearch.</p>
 
 <h2 id="add-elasticsearch-to-your-site">Add Elasticsearch to your site</h2>
 <p>Add the service in a configuration file of your application. For example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">&lt;?php</span>
-<span class="l-Scalar-Plain">if (isset($_ENV[&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;])) {</span>
-  <span class="l-Scalar-Plain">$relationships = json_decode(base64_decode($_ENV[&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;]), TRUE);</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">&lt;?php</span>
+<span class="s">if (isset($_ENV['MAGENTO_CLOUD_RELATIONSHIPS'])) {</span>
+  <span class="s">$relationships = json_decode(base64_decode($_ENV['MAGENTO_CLOUD_RELATIONSHIPS']), TRUE);</span>
 
-  <span class="l-Scalar-Plain">foreach ($relationships[&#39;elasticsearch&#39;] as $endpoint) {</span>
-    <span class="l-Scalar-Plain">$container-&gt;setParameter(&#39;elasticsearch_host&#39;, $endpoint[&#39;host&#39;]);</span>
-    <span class="l-Scalar-Plain">$container-&gt;setParameter(&#39;elasticsearch_port&#39;, $endpoint[&#39;port&#39;]);</span>
-  <span class="l-Scalar-Plain">}</span>
-<span class="l-Scalar-Plain">}</span></code></pre></figure>
+  <span class="s">foreach ($relationships['elasticsearch'] as $endpoint) {</span>
+    <span class="s">$container-&gt;setParameter('elasticsearch_host', $endpoint['host']);</span>
+    <span class="s">$container-&gt;setParameter('elasticsearch_port', $endpoint['port']);</span>
+  <span class="s">}</span>
+<span class="err">}</span></code></pre></figure>
 
-<p>When you create an index on Elasticsearch, you should not specify <code>number_of_shards</code> and <code>number_of_replicas</code> settings in your Elasticsearch API call. These values will be set automatically based on available resources.</p>
+<p>When you create an index on Elasticsearch, you should not specify <code class="highlighter-rouge">number_of_shards</code> and <code class="highlighter-rouge">number_of_replicas</code> settings in your Elasticsearch API call. These values will be set automatically based on available resources.</p>
 
 <h2 id="plugins">Supported plugins</h2>
 <p>The following are supported Elasticsearch plugins for version 2.4:</p>
 
 <ul>
-  <li><code>analysis-icu</code>: ICU Analysis Plugin, Support ICU Unicode text analysis</li>
-  <li><code>analysis-kuromoji</code>: Japanese (kuromoji) Analysis Plugin, Japanese language support</li>
-  <li><code>analysis-phonetic</code>: Phonetic Analysis Plugin, Phonetic analysis</li>
-  <li><code>analysis-smartcn</code>: Smart Chinese Analysis Plugins</li>
-  <li><code>analysis-stempel</code>: Stempel Polish Analysis Plugin</li>
-  <li><code>cloud-aws</code>: AWS Cloud Plugin, allows storing indices on AWS S3</li>
-  <li><code>cloud-azure</code>: Azure Cloud Plugin</li>
-  <li><code>cloud-gce</code>: GCE Cloud Plugin</li>
-  <li><code>delete-by-query</code>: Support for deleting documents matching a given query</li>
-  <li><code>discovery-multicast</code>: Ability to form a cluster using TCP/IP multicast messages</li>
-  <li><code>lang-javascript</code>: Javascript language plugin, allows the use of Javascript in Elasticsearch scripts</li>
-  <li><code>lang-python</code>: Python language plugin, allows the use of Python in Elasticsearch scripts</li>
-  <li><code>mapper-attachments</code>: Mapper attachments plugin for indexing common file types</li>
-  <li><code>mapper-murmur3</code>: Murmur3 mapper plugin for computing hashes at index-time</li>
-  <li><code>mapper-size</code>: Size mapper plugin, enables the <code>_size</code> meta field</li>
+  <li><code class="highlighter-rouge">analysis-icu</code>: ICU Analysis Plugin, Support ICU Unicode text analysis</li>
+  <li><code class="highlighter-rouge">analysis-kuromoji</code>: Japanese (kuromoji) Analysis Plugin, Japanese language support</li>
+  <li><code class="highlighter-rouge">analysis-phonetic</code>: Phonetic Analysis Plugin, Phonetic analysis</li>
+  <li><code class="highlighter-rouge">analysis-smartcn</code>: Smart Chinese Analysis Plugins</li>
+  <li><code class="highlighter-rouge">analysis-stempel</code>: Stempel Polish Analysis Plugin</li>
+  <li><code class="highlighter-rouge">cloud-aws</code>: AWS Cloud Plugin, allows storing indices on AWS S3</li>
+  <li><code class="highlighter-rouge">cloud-azure</code>: Azure Cloud Plugin</li>
+  <li><code class="highlighter-rouge">cloud-gce</code>: GCE Cloud Plugin</li>
+  <li><code class="highlighter-rouge">delete-by-query</code>: Support for deleting documents matching a given query</li>
+  <li><code class="highlighter-rouge">discovery-multicast</code>: Ability to form a cluster using TCP/IP multicast messages</li>
+  <li><code class="highlighter-rouge">lang-javascript</code>: Javascript language plugin, allows the use of Javascript in Elasticsearch scripts</li>
+  <li><code class="highlighter-rouge">lang-python</code>: Python language plugin, allows the use of Python in Elasticsearch scripts</li>
+  <li><code class="highlighter-rouge">mapper-attachments</code>: Mapper attachments plugin for indexing common file types</li>
+  <li><code class="highlighter-rouge">mapper-murmur3</code>: Murmur3 mapper plugin for computing hashes at index-time</li>
+  <li><code class="highlighter-rouge">mapper-size</code>: Size mapper plugin, enables the <code class="highlighter-rouge">_size</code> meta field</li>
 </ul>
 
 <p>For full documentation on these plugins, see <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html" target="_blank">Elasticsearch plugin documentation</a>.</p>
 
-<p>You can add the plugins through the <code>.magento/services.yaml</code> file using the codes above. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:</p>
+<p>You can add the plugins through the <code class="highlighter-rouge">.magento/services.yaml</code> file using the codes above. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">elasticsearch</span><span class="p-Indicator">:</span>
-   <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">elasticsearch:1.7</span>
-   <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span>
-   <span class="l-Scalar-Plain">configuration</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">plugins</span><span class="p-Indicator">:</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">analysis-icu</span>
-      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">lang-python</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">elasticsearch</span><span class="pi">:</span>
+   <span class="s">type</span><span class="pi">:</span> <span class="s">elasticsearch:1.7</span>
+   <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span>
+   <span class="s">configuration</span><span class="pi">:</span>
+    <span class="s">plugins</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">analysis-icu</span>
+      <span class="pi">-</span> <span class="s">lang-python</span></code></pre></figure>
 
 
 		</div>

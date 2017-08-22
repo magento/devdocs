@@ -1635,27 +1635,31 @@
     <li>
       <p>Enter the following command in a terminal to log in to your project:</p>
 
-      <pre><code>magento-cloud login
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+      </div>
     </li>
     <li>
       <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-      <pre><code>magento-cloud project:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+      </div>
     </li>
-    <li>Change to a project directory. For example, <code>cd /var/www/html/magento2</code></li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
     <li>
       <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-      <pre><code>magento-cloud environment:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
   		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
@@ -1664,28 +1668,32 @@
     <li>
       <p>Fetch origin branches to get the latest code:</p>
 
-      <pre><code>git fetch origin
+      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
+      </div>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
     </li>
     <li>
       <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Create a <a href="/guides/v2.1/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
   </ol>
 </div>
@@ -1696,13 +1704,13 @@
 <div class="collapsible"><b class="collapsible-title">Click to expand/collapse content </b><div class="collapsible-content"><p>To set up Xdebug:</p>
 
 <ol>
-  <li>Open <code>.magento.app.yaml</code> in a text editor.</li>
+  <li>Open <code class="highlighter-rouge">.magento.app.yaml</code> in a text editor.</li>
   <li>
-    <p>In the <code>runtime</code> section, under <code>extensions</code>, add <code>xdebug</code>.</p>
+    <p>In the <code class="highlighter-rouge">runtime</code> section, under <code class="highlighter-rouge">extensions</code>, add <code class="highlighter-rouge">xdebug</code>.</p>
 
     <p>An example follows:</p>
 
-    <pre><code>runtime:
+    <div class="highlighter-rouge"><pre class="highlight"><code>runtime:
    extensions:
       - mcrypt
       - redis
@@ -1710,32 +1718,37 @@
       - json
       - xdebug
 </code></pre>
+    </div>
   </li>
-  <li>Save your changes to <code>.magento.app.yaml</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
   <li>
     <p>Add, commit, and push the changes to redeploy the environment:</p>
 
-    <pre><code>git add -A
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
 git commit -m "Add xdebug"
 git push origin &lt;environment ID&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Get the environment’s SSH URL:</p>
 
-    <pre><code>magento-cloud environment:ssh --pipe -e &lt;environment ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe -e &lt;environment ID&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>To use Xdebug, SSH to the environment as follows:</p>
 
-    <pre><code>ssh -R &lt;xdebug listen port&gt;:&lt;host&gt;:&lt;xdebug listen port&gt; &lt;SSH URL&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -R &lt;xdebug listen port&gt;:&lt;host&gt;:&lt;xdebug listen port&gt; &lt;SSH URL&gt;
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 </code></pre>
+    </div>
   </li>
 </ol>
 </div></div>

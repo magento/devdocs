@@ -1696,18 +1696,18 @@
 </ul>
 
 <h3 id="config-cache-priv-how-source">Step 1: Create a section source</h3>
-<p>The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the <code>Vendor/ModuleName/CustomerData</code> namespace. Your classes must implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php" target="_blank"><code>Magento\Customer\CustomerData\SectionSourceInterface</code></a> interface.</p>
+<p>The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the <code class="highlighter-rouge">Vendor/ModuleName/CustomerData</code> namespace. Your classes must implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Customer\CustomerData\SectionSourceInterface</code></a> interface.</p>
 
-<p>The public method <code>getSectionData</code> must return an array with data for private block.</p>
+<p>The public method <code class="highlighter-rouge">getSectionData</code> must return an array with data for private block.</p>
 
 <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/CustomerData/CompareProducts.php#L36-L45" target="_blank">Example</a></p>
 
-<p>Add the following to your component’s <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration (<code>di.xml</code>):</p>
+<p>Add the following to your component’s <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration (<code class="highlighter-rouge">di.xml</code>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Customer\CustomerData\SectionPoolInterface&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Customer\CustomerData\SectionPoolInterface"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;sectionSourceMap&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;compare-products&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Catalog\CustomerData\CompareProducts<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"sectionSourceMap"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"compare-products"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Catalog\CustomerData\CompareProducts<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
@@ -1719,18 +1719,18 @@
   <p>Do <em>not</em> use the <code>$_isScopePrivate</code> property in your blocks. This property is obsolete and won't work properly.</p>
 </div>
 
-<p>Replace private data in blocks with placeholders (using <a href="http://knockoutjs.com/documentation/introduction.html" target="_blank">Knockout</a> syntax). The init scope on the root element is <code>data-bind="scope: 'compareProducts'"</code>, where you define the scope name (<code>compareProducts</code> in this example) in your <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>.</p>
+<p>Replace private data in blocks with placeholders (using <a href="http://knockoutjs.com/documentation/introduction.html" target="_blank">Knockout</a> syntax). The init scope on the root element is <code class="highlighter-rouge">data-bind="scope: 'compareProducts'"</code>, where you define the scope name (<code class="highlighter-rouge">compareProducts</code> in this example) in your <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>.</p>
 
 <p>Initialize the component as follows:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/x-magento-init&quot;</span><span class="o">&gt;</span>
-    <span class="p">{</span><span class="s2">&quot;&lt;css-selector&gt;&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;Magento_Ui/js/core/app&quot;</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getJsLayout</span><span class="p">();</span><span class="o">?&gt;</span><span class="p">}}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/x-magento-init"</span><span class="o">&gt;</span>
+    <span class="p">{</span><span class="s2">"&lt;css-selector&gt;"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Magento_Ui/js/core/app"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getJsLayout</span><span class="p">();?</span><span class="o">&gt;</span><span class="p">}}</span>
+<span class="o">&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
 
 <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48" target="_blank">Example</a></p>
 
 <h3 id="config-cache-priv-how-ui">Step 3: Configure a UI component</h3>
-<p>The UI component renders block data on the Magento <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>. To initialize the UI component, you must call the initialization method <code>_super()</code>.</p>
+<p>The UI component renders block data on the Magento <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>. To initialize the UI component, you must call the initialization method <code class="highlighter-rouge">_super()</code>.</p>
 
 <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js" target="_blank">Example</a></p>
 
@@ -1739,31 +1739,31 @@
 <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L22" target="_blank">Example of defining a UI component in a layout</a></p>
 
 <h3 id="config-cache-priv-how-inval">Step 4: Invalidate private content</h3>
-<p>Specify actions that trigger cache invalidation for private content blocks in a <code>sections.xml</code> configuration file in the <code>Vendor/ModuleName/etc/frontend</code> directory. Cache is invalidated on a POST or PUT request, such as a customer adding items to a cart.</p>
+<p>Specify actions that trigger cache invalidation for private content blocks in a <code class="highlighter-rouge">sections.xml</code> configuration file in the <code class="highlighter-rouge">Vendor/ModuleName/etc/frontend</code> directory. Cache is invalidated on a POST or PUT request, such as a customer adding items to a cart.</p>
 
 <p>The following example adds comments to <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/frontend/sections.xml" target="_blank">app/code/Magento/Catalog/etc/frontend/sections.xml</a> to show you what happens.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Customer:etc/sections.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="c">&lt;!-- invalidates the &quot;compare-products&quot; section when a user </span>
-<span class="c">    adds a product to the comparison, resulting in a &quot;catalog/product_compare/add&quot; POST request --&gt;</span>
-    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;catalog/product_compare/add&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">&quot;compare-products&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Customer:etc/sections.xsd"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- invalidates the "compare-products" section when a user 
+    adds a product to the comparison, resulting in a "catalog/product_compare/add" POST request --&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"catalog/product_compare/add"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"compare-products"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
     <span class="c">&lt;!-- invalidates the section when a customer removes a product from the comparison --&gt;</span>
-    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;catalog/product_compare/remove&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">&quot;compare-products&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"catalog/product_compare/remove"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"compare-products"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
     <span class="c">&lt;!-- invalidates the section when a customer clears all products from the comparison --&gt;</span>
-    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;catalog/product_compare/clear&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">&quot;compare-products&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"catalog/product_compare/clear"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"compare-products"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 

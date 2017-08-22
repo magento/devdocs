@@ -1996,23 +1996,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -2029,14 +2032,15 @@
   <h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
   <p>To view the status of the cache, enter</p>
 
-  <pre><code>magento cache:status 
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento cache:status 
 </code></pre>
+  </div>
 
   <!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
   <p>A sample follows:</p>
 
-  <pre><code>                    config: 1
+  <div class="highlighter-rouge"><pre class="highlight"><code>                    config: 1
                     layout: 1
                 block_html: 1
                collections: 1
@@ -2048,46 +2052,51 @@
     config_integration_api: 1
          config_webservice: 1
 </code></pre>
+  </div>
 
   <h2 id="config-cli-subcommands-cache-en">Enable or disable cache types</h2>
   <p>This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse affect on performance.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
-    <p>Starting in version 2.2, you can enable or disable cache types <em>only</em> using the command line. Before doing so, you must manually make <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> writeable by the <a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Magento file system owner</a>.</p>
+    <p>Starting in version 2.2, you can enable or disable cache types <em>only</em> using the command line. Before doing so, you must manually make <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> writeable by the <a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Magento file system owner</a>.</p>
 
     <p>You can clean (also referred to as <em>flush</em> or <em>refresh</em>) cache types using either the command line or the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</p>
   </div>
 
   <p>Command options:</p>
 
-  <pre><code>magento cache:enable [type] ... [type]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento cache:enable [type] ... [type]
 magento cache:disable [type] ... [type] 
 </code></pre>
+  </div>
 
   <p>where</p>
 
-  <p>omitting <code>[type]</code> enables or disables all cache types at the same time.</p>
+  <p>omitting <code class="highlighter-rouge">[type]</code> enables or disables all cache types at the same time.</p>
 
-  <p><code>type</code> is a space-separated list of cache types.</p>
+  <p><code class="highlighter-rouge">type</code> is a space-separated list of cache types.</p>
 
   <!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
   <p>To list cache types and their status, enter</p>
 
-  <pre><code>magento cache:status
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento cache:status
 </code></pre>
+  </div>
 
   <p>For example, to disable the full page cache and the DDL cache, enter</p>
 
-  <pre><code>magento cache:disable db_ddl full_page
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento cache:disable db_ddl full_page
 </code></pre>
+  </div>
 
   <p>Sample result:</p>
 
-  <pre><code>Changed cache status:	
+  <div class="highlighter-rouge"><pre class="highlight"><code>Changed cache status:	
                     db_ddl: 1 -&gt; 0
                  full_page: 1 -&gt; 0
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
     <p>Enabling a <span term-uuid="65f9a5a1-79ee-4f27-aac7-29abe24db40d" class="glossary-term" data-toggle="popover">cache type</span> automatically clears that cache type.</p>
@@ -2111,22 +2120,24 @@ magento cache:disable [type] ... [type]
 
   <p>Command usage:</p>
 
-  <pre><code>magento cache:clean [type] ... [type]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento cache:clean [type] ... [type]
 magento cache:flush [type] ... [type]
 </code></pre>
+  </div>
 
   <p>where</p>
 
-  <p><code>[type]</code> is a space-separated list of cache types. Omitting <code>[type]</code> cleans or flushes all cache types at the same time.</p>
+  <p><code class="highlighter-rouge">[type]</code> is a space-separated list of cache types. Omitting <code class="highlighter-rouge">[type]</code> cleans or flushes all cache types at the same time.</p>
 
   <p>For example, to flush all cache types, enter</p>
 
-  <pre><code>magento cache:flush
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento cache:flush
 </code></pre>
+  </div>
 
   <p>Sample result:</p>
 
-  <pre><code>Flushed cache types:
+  <div class="highlighter-rouge"><pre class="highlight"><code>Flushed cache types:
 config
 layout
 block_html
@@ -2139,6 +2150,7 @@ config_integration
 config_integration_api
 config_webservice
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

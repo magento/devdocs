@@ -1022,11 +1022,12 @@
 			<h3 id="ce-ee">Problem: Error upgrading from CE to EE</h3>
 <p>Your upgrade from <strong>Magento Open Source</strong> (formerly Community Edition) to <strong>Magento Commerce</strong> (formerly Enterprise Edition) might fail with the following error:</p>
 
-<pre><code>[2016-01-19 23:33:24 UTC] An error occurred while executing job 
+<div class="highlighter-rouge"><pre class="highlight"><code>[2016-01-19 23:33:24 UTC] An error occurred while executing job 
 "setup:upgrade {"command":"setup:upgrade"}": Could not complete 
 setup:upgrade {"command":"setup:upgrade"} successfully: Source 
 class "\Cybersource" for "CybersourceLogger" generation does not exist.
 </code></pre>
+</div>
 
 <p>If this error displays, resolve it as follows:</p>
 
@@ -1035,14 +1036,16 @@ class "\Cybersource" for "CybersourceLogger" generation does not exist.
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
+    <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
 </code></pre>
+    </div>
   </li>
   <li>
     <p>After the command completes, verify your upgrade was successful:</p>
 
-    <pre><code>php bin/magento --version
+    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento --version
 </code></pre>
+    </div>
   </li>
 </ol>
 

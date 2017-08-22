@@ -1021,7 +1021,7 @@
 
 			<div>
 
-  <p>The Magento software and component repository, <code>repo.magento.com</code>, recently started requiring Transport Layer Security (TLS) 1.1 or later.</p>
+  <p>The Magento software and component repository, <code class="highlighter-rouge">repo.magento.com</code>, recently started requiring Transport Layer Security (TLS) 1.1 or later.</p>
 
   <p>The <a href="https://en.wikipedia.org/wiki/Payment_Card_Industry_Security_Standards_Council" target="_blank">PCI Security Standards Council</a> removed SSL/TLS 1.0 as an example of strong cryptography from the <a href="https://www.pcisecuritystandards.org/pci_security" target="_blank">PCI Data Security Standard (PCI DSS)</a> version 3.1, stating that it can no longer be used as a security control after June 30, 2016.</p>
 
@@ -1031,12 +1031,13 @@
   <p>If you have an earlier version of TLS, you’ll see the errors discussed in this section.</p>
 
   <h4 id="downloading-a-magento-metapackage">Downloading a Magento metapackage</h4>
-  <p>The following error displays if you attempt to run <code>composer create-project</code> to get a Magento metapackage:</p>
+  <p>The following error displays if you attempt to run <code class="highlighter-rouge">composer create-project</code> to get a Magento metapackage:</p>
 
-  <pre><code>[Composer\Downloader\TransportException]                                           
+  <div class="highlighter-rouge"><pre class="highlight"><code>[Composer\Downloader\TransportException]                                           
 The "https://repo.magento.com/packages.json" file could not be downloaded: Failed to enable crypto                                                                  
 failed to open stream: operation failed  
 </code></pre>
+  </div>
 
   <h3 id="using-the-web-setup-wizard">Using the Web Setup Wizard</h3>
   <p>Actions like saving your authentication credentials or synchronizing with Magento Marketplace fail with the following error:</p>
@@ -1053,24 +1054,26 @@ failed to open stream: operation failed
   </ul>
 
   <h4 id="solution-ubuntu">Ubuntu</h4>
-  <p>Make sure you’re using <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code>libcurl</code></a>. <code>libcurl</code> versions 7.34 or later; these versions use TLS 1.2 by default.</p>
+  <p>Make sure you’re using <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code class="highlighter-rouge">libcurl</code></a>. <code class="highlighter-rouge">libcurl</code> versions 7.34 or later; these versions use TLS 1.2 by default.</p>
 
-  <p>To determine your <code>libcurl</code> version, enter the following command:</p>
+  <p>To determine your <code class="highlighter-rouge">libcurl</code> version, enter the following command:</p>
 
-  <pre><code>curl --version
+  <div class="highlighter-rouge"><pre class="highlight"><code>curl --version
 </code></pre>
+  </div>
 
   <h4 id="solution-centos">CentOS</h4>
-  <p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code>libcurl</code></a> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.</p>
+  <p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code class="highlighter-rouge">libcurl</code></a> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.</p>
 
   <p>To determine the version of CentOS your server runs, enter the following command:</p>
 
-  <pre><code>cat /etc/*release*
+  <div class="highlighter-rouge"><pre class="highlight"><code>cat /etc/*release*
 </code></pre>
+  </div>
 
   <p>If you’re already running CentOS 6.8 or later, no action is necessary. According to the <a href="https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.8" target="_blank">CentOS 6.8 changelog</a>, “various applications now support TLS 1.2, i.e. OpenLDAP, yum, stunnel, vsftpd, git, postfix and others. Also TLS 1.2 has been enabled by default in various packages”.</p>
 
-  <p>(CentOS 7 has a newer version of <code>libcurl</code> that also defaults to TLS 1.2.)</p>
+  <p>(CentOS 7 has a newer version of <code class="highlighter-rouge">libcurl</code> that also defaults to TLS 1.2.)</p>
 
   <h4 id="solution-macos">Mac OS</h4>
   <p>Recent updates to the <a href="http://php-osx.liip.ch" target="_blank">OS X liip package</a> should resolve the issue.</p>

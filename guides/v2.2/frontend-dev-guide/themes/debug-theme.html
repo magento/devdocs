@@ -1144,7 +1144,7 @@
 <p>For example, here is how a storefront <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> page looks with enabled template hints:</p>
 <p><img src="/common/images/theme_debug2.png" alt="A storefront page with enabled template hints" /></p>
 
-<p>In this example mini <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span> page element is defined by the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/templates/cart/minicart.phtml</code> template:</p>
+<p>In this example mini <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span> page element is defined by the <code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/view/frontend/templates/cart/minicart.phtml</code> template:</p>
 
 <p><img src="/common/images/theme_debug3.png" alt="A hint with template name for minishopping cart" /></p>
 <p>(the template name is above the element)</p>
@@ -1153,10 +1153,10 @@
 <p><img src="/common/images/theme_debug5.png" alt="Admin page with enabled template hints" /></p>
 
 <p>Alternatively, you can perform a text search in the file system by using system generated titles, <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> class names, block titles, labels, or links text as search terms.
-For example, using a browser debug tool, you can define that the minicart block css class is <code>minicart-wrapper</code>.</p>
+For example, using a browser debug tool, you can define that the minicart block css class is <code class="highlighter-rouge">minicart-wrapper</code>.</p>
 <p><img src="/common/images/theme_debug4.png" alt="Firebug displaying html" /></p>
 
-<p>A search through the app directory for occurrences of “minicart-wrapper” in <code>.phtml</code> files returns the <code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code> template.</p>
+<p>A search through the app directory for occurrences of “minicart-wrapper” in <code class="highlighter-rouge">.phtml</code> files returns the <code class="highlighter-rouge">app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code> template.</p>
 
 <p>Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="/guides/v2.2/frontend-dev-guide/templates/template-walkthrough.html">Customizing Theme Template</a>.</p>
 
@@ -1166,10 +1166,10 @@ For example, using a browser debug tool, you can define that the minicart block 
 <p>After you have determined the module, you can search for the layout in the following locations:</p>
 
 <ol>
-  <li><code>&lt;current_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/</code></li>
-  <li><code>&lt;parent_theme(s)_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/</code></li>
-  <li><code>&lt;module_dir&gt;/view/frontend/layout/</code></li>
-  <li><code>&lt;module_dir&gt;/view/base/layout/</code></li>
+  <li><code class="highlighter-rouge">&lt;current_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/</code></li>
+  <li><code class="highlighter-rouge">&lt;parent_theme(s)_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/</code></li>
+  <li><code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/layout/</code></li>
+  <li><code class="highlighter-rouge">&lt;module_dir&gt;/view/base/layout/</code></li>
 </ol>
 
 <p>There is no straightforward algorithm how to define at once the exact layout file, but in most cases layout file names are self descriptive. Also you can search them for mentions of the corresponding templates.</p>
@@ -1178,42 +1178,42 @@ For example, using a browser debug tool, you can define that the minicart block 
 
 <p>Let’s say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>.</p>
 
-<p>Using the Template Hints we determine that the template is <code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code>, and in the path, we see that it belongs to the <code>Magento_Checkout</code> module.</p>
+<p>Using the Template Hints we determine that the template is <code class="highlighter-rouge">app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code>, and in the path, we see that it belongs to the <code class="highlighter-rouge">Magento_Checkout</code> module.</p>
 
 <p>Let’s search for the layout following the fallback scheme:</p>
 
 <ol>
-  <li>Check the <code>app/design/frontend/Magento/blank/Magento_Checkout/</code> layout. To locate the required layout, search this directory for occurrences of the template name, “ minicart.phtml “. No matching file is found, so we proceed to the next fallback level, which is the parent theme layouts.</li>
-  <li>We can find the info about parent theme in a theme configuration file <code>theme.xml</code>, the parent theme name is specified there in the <code>&lt;parent&gt;&lt;/parent&gt;</code> node. In the <code>app/design/frontend/Magento/blank/theme.xml</code> there’s no <code>&lt;parent&gt;</code> node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.</li>
-  <li>The Magento_Checkout layouts are located in <code>app/code/Magento/Checkout/view/frontend/layout/</code>. After searching this directory for occurrences of “<code>minicart.phtml</code>”, we define that the layout we are looking for is <code>app/code/Magento/Checkout/view/frontend/layout/default.xml</code>.</li>
+  <li>Check the <code class="highlighter-rouge">app/design/frontend/Magento/blank/Magento_Checkout/</code> layout. To locate the required layout, search this directory for occurrences of the template name, “ minicart.phtml “. No matching file is found, so we proceed to the next fallback level, which is the parent theme layouts.</li>
+  <li>We can find the info about parent theme in a theme configuration file <code class="highlighter-rouge">theme.xml</code>, the parent theme name is specified there in the <code class="highlighter-rouge">&lt;parent&gt;&lt;/parent&gt;</code> node. In the <code class="highlighter-rouge">app/design/frontend/Magento/blank/theme.xml</code> there’s no <code class="highlighter-rouge">&lt;parent&gt;</code> node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.</li>
+  <li>The Magento_Checkout layouts are located in <code class="highlighter-rouge">app/code/Magento/Checkout/view/frontend/layout/</code>. After searching this directory for occurrences of “<code class="highlighter-rouge">minicart.phtml</code>”, we define that the layout we are looking for is <code class="highlighter-rouge">app/code/Magento/Checkout/view/frontend/layout/default.xml</code>.</li>
 </ol>
 
 <p>After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html">Customizing Theme Layouts</a> for more details.</p>
 
 <h2 id="debug-theme-style">Locate styles</h2>
 <p>To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
-After you find the class name, use text search in the theme and module styles directories to locate the <code>.less</code> or <code>.css</code> file that defines the class. Perform the search according to the following fallback scheme:</p>
+After you find the class name, use text search in the theme and module styles directories to locate the <code class="highlighter-rouge">.less</code> or <code class="highlighter-rouge">.css</code> file that defines the class. Perform the search according to the following fallback scheme:</p>
 
 <ol>
-  <li>Theme styles <code>&lt;current_theme_dir&gt;/web/css/</code></li>
-  <li>Module theme styles <code>&lt;current_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/css/</code></li>
-  <li>Parent theme styles <code>&lt;parent_theme_dir&gt;/web/css/</code></li>
-  <li>Parent theme Module styles <code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/css/</code></li>
-  <li>Module styles for the <code>frontend</code> area <code>&lt;module_dir&gt;/view/frontend/web/css/</code></li>
-  <li>Module styles for the <code>base</code> area <code>&lt;module_dir&gt;/view/base/web/css/</code></li>
+  <li>Theme styles <code class="highlighter-rouge">&lt;current_theme_dir&gt;/web/css/</code></li>
+  <li>Module theme styles <code class="highlighter-rouge">&lt;current_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/css/</code></li>
+  <li>Parent theme styles <code class="highlighter-rouge">&lt;parent_theme_dir&gt;/web/css/</code></li>
+  <li>Parent theme Module styles <code class="highlighter-rouge">&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/css/</code></li>
+  <li>Module styles for the <code class="highlighter-rouge">frontend</code> area <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/web/css/</code></li>
+  <li>Module styles for the <code class="highlighter-rouge">base</code> area <code class="highlighter-rouge">&lt;module_dir&gt;/view/base/web/css/</code></li>
 </ol>
 
 <p>Example:</p>
 
 <p>Let’s find the file defining on the CSS classes used for displaying the mini shopping cart on the storefront, when the Blank theme by Magento is applied for the store view.</p>
 
-<p>In the mini shopping cart template <code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code> the top level element has <code>minicart-wrapper</code> class.</p>
+<p>In the mini shopping cart template <code class="highlighter-rouge">app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code> the top level element has <code class="highlighter-rouge">minicart-wrapper</code> class.</p>
 
-<p>So, let’s search for occurrences of “<code>minicart-wrapper</code>” in according to the fallback scheme:</p>
+<p>So, let’s search for occurrences of “<code class="highlighter-rouge">minicart-wrapper</code>” in according to the fallback scheme:</p>
 
 <ol>
-  <li>Search in <code>app/design/frontend/Magento/blank/web/css</code>, the search returns no results.</li>
-  <li>Search in <code>app/design/frontend/Magento/blank/Magento_Checkout/web/css</code>.The “<code>minicart-wrapper</code>” style is defined in <code>app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/module/_minicart.less</code></li>
+  <li>Search in <code class="highlighter-rouge">app/design/frontend/Magento/blank/web/css</code>, the search returns no results.</li>
+  <li>Search in <code class="highlighter-rouge">app/design/frontend/Magento/blank/Magento_Checkout/web/css</code>.The “<code class="highlighter-rouge">minicart-wrapper</code>” style is defined in <code class="highlighter-rouge">app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/module/_minicart.less</code></li>
 </ol>
 
 <p>After you determine which <code>.css</code> or <code>.less</code> file defines the class, you can override the default class definition in your custom <code>.css</code> or <code>.less</code> files.  For details, see <a href="/guides/v2.2/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>.</p>

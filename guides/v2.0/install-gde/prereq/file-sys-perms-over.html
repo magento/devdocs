@@ -1005,7 +1005,7 @@
 
           <p>The web server user and the command-line user might need write permissions to the Magento file system. (The users require write access in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">developer mode</a> but not in production mode.) You give permissions to both users by way of a shared group to which they both belong.</p>
 
-          <p>For private hosting, we recommend you use the default <code>002</code> <a href="#restrict">umask</a>; otherwise, the group won’t be able to write to the Magento file system.</p>
+          <p>For private hosting, we recommend you use the default <code class="highlighter-rouge">002</code> <a href="#restrict">umask</a>; otherwise, the group won’t be able to write to the Magento file system.</p>
         </li>
       </ul>
     </li>
@@ -1020,7 +1020,7 @@
     <p>File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.</p>
 </div>
 
-  <p>Magento uses a three-bit mask, by default <code>002</code>, that you subtract from the UNIX defaults of 666 for files and 777 for directories.</p>
+  <p>Magento uses a three-bit mask, by default <code class="highlighter-rouge">002</code>, that you subtract from the UNIX defaults of 666 for files and 777 for directories.</p>
 
   <p>Here’s what that means:</p>
 
@@ -1033,7 +1033,7 @@
     </li>
   </ul>
 
-  <p>For more information about <code>magento_umask</code>, see <a href="/guides/v2.0/install-gde/install/post-install-umask.html">Optionally set a umask</a>.</p>
+  <p>For more information about <code class="highlighter-rouge">magento_umask</code>, see <a href="/guides/v2.0/install-gde/install/post-install-umask.html">Optionally set a umask</a>.</p>
 
   <h2 id="permissions-ownership-and-magento-modes">Permissions, ownership, and Magento modes</h2>
   <p>We recommend different permissions and ownership for default mode, developer mode, and production mode.</p>

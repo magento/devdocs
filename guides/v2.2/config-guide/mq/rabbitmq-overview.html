@@ -1914,9 +1914,9 @@
     <p>A <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span> is a component that sends messages to an exchange. It knows which exchange to publish to and the format of the messages it sends.</p>
   </li>
   <li>
-    <p>An exchange receives messages from publishers and sends them to queues. Although RabbitMQ supports multiple types of exchanges, Magento uses topic exchanges only. A topic includes a routing key, which contains text strings separated by dots. The format for a topic name is <code><i>string1</i>.<i>string2</i></code>…, for example, <code>customer.created</code> or <code>customer.sent.email</code>.</p>
+    <p>An exchange receives messages from publishers and sends them to queues. Although RabbitMQ supports multiple types of exchanges, Magento uses topic exchanges only. A topic includes a routing key, which contains text strings separated by dots. The format for a topic name is <code><i>string1</i>.<i>string2</i></code>…, for example, <code class="highlighter-rouge">customer.created</code> or <code class="highlighter-rouge">customer.sent.email</code>.</p>
 
-    <p>The broker allows you to use wildcards when setting rules for forwarding messages.  You can use an asterisk (<code>*</code>) to replace <em>one</em> string or a pound sign (<code>#</code>) to replace 0 or more strings. For example, <code>customer.*</code> would filter on <code>customer.create</code> and <code>customer.delete</code>, but not <code>customer.sent.email</code>. However <code>customer.#</code> would filter on <code>customer.create</code>,  <code>customer.delete</code>, and<code>customer.sent.email</code>.</p>
+    <p>The broker allows you to use wildcards when setting rules for forwarding messages.  You can use an asterisk (<code class="highlighter-rouge">*</code>) to replace <em>one</em> string or a pound sign (<code class="highlighter-rouge">#</code>) to replace 0 or more strings. For example, <code class="highlighter-rouge">customer.*</code> would filter on <code class="highlighter-rouge">customer.create</code> and <code class="highlighter-rouge">customer.delete</code>, but not <code class="highlighter-rouge">customer.sent.email</code>. However <code class="highlighter-rouge">customer.#</code> would filter on <code class="highlighter-rouge">customer.create</code>,  <code class="highlighter-rouge">customer.delete</code>, and<code class="highlighter-rouge">customer.sent.email</code>.</p>
   </li>
   <li>
     <p>A queue is a buffer that stores messages.</p>
@@ -1926,7 +1926,7 @@
   </li>
 </ul>
 
-<p>A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span> stores messages in the database. Three database tables (<code>queue</code>, <code>queue_message</code>, and <code>queue_message_status</code>) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.</p>
+<p>A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span> stores messages in the database. Three database tables (<code class="highlighter-rouge">queue</code>, <code class="highlighter-rouge">queue_message</code>, and <code class="highlighter-rouge">queue_message_status</code>) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.</p>
 
 <p>See <a href="/guides/v2.2/config-guide/mq/config-mq.html">Configure message queues</a> for information about setting up the message queue system.</p>
 

@@ -993,11 +993,12 @@
 <h3 id="suggestion-for-installing-the-magento-software-with-apache">Suggestion for installing the Magento software with Apache</h3>
 <p>If you choose to enable SELinux, you might have issues running the installer unless you change the <em>security context</em> of some directories as follows:</p>
 
-<pre><code>chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/app/etc
+<div class="highlighter-rouge"><pre class="highlight"><code>chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/app/etc
 chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/var
 chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/pub/media
 chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/pub/static
 </code></pre>
+</div>
 
 <p>The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we don’t guarantee these commands work in all situations. For more information, see:</p>
 
@@ -1015,17 +1016,18 @@ chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/pub/stat
   <li>
     <p>To determine if SELinux is enabled, use the following command:</p>
 
-    <pre><code>getenforce
+    <div class="highlighter-rouge"><pre class="highlight"><code>getenforce
 </code></pre>
+    </div>
 
-    <p><code>Enforcing</code> displays to confirm that SELinux is running.</p>
+    <p><code class="highlighter-rouge">Enforcing</code> displays to confirm that SELinux is running.</p>
   </li>
   <li>
     <p>Enter one of the following commands:</p>
 
-    <p>CentOS: <code>setsebool -P httpd_can_network_connect=1</code></p>
+    <p>CentOS: <code class="highlighter-rouge">setsebool -P httpd_can_network_connect=1</code></p>
 
-    <p>Ubuntu: <code>setsebool -P apache2_can_network_connect=1</code></p>
+    <p>Ubuntu: <code class="highlighter-rouge">setsebool -P apache2_can_network_connect=1</code></p>
   </li>
 </ol>
 

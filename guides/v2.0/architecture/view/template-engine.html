@@ -595,7 +595,7 @@ _lib/Magento/View
 
 <h4 id="m2devgde-temp-eng-class-tef">Magento\Framework\View\TemplateEngineFactory</h4>
 
-<p>The <code>create()</code> method in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/TemplateEngineFactory.php" target="_blank">Magento\Framework\View\TemplateEngineFactory</a> receives the file extension, and constructs an instance of <code>Magento\Framework\View\TemplateEngineInterface</code> that implements the appropriate template engine.</p>
+<p>The <code class="highlighter-rouge">create()</code> method in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/TemplateEngineFactory.php" target="_blank">Magento\Framework\View\TemplateEngineFactory</a> receives the file extension, and constructs an instance of <code>Magento\Framework\View\TemplateEngineInterface</code> that implements the appropriate template engine.</p>
 
 <table>
 <tbody>
@@ -708,10 +708,10 @@ render(&nbsp;&nbsp;
 </ol>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Framework\View\TemplateEngineFactory&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;engines&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\View\TemplateEngineFactory"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"engines"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;array&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">key=</span><span class="s">&quot;{template_extension}&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">key=</span><span class="s">"{template_extension}"</span><span class="nt">&gt;</span>
                     <span class="nt">&lt;value&gt;</span>{engine_class}<span class="nt">&lt;/value&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/array&gt;</span>
@@ -723,7 +723,7 @@ render(&nbsp;&nbsp;
 
 <ul>
   <li>
-    <p><code>{template_extension}</code> is the type of template files, which are to be processed by the template engine. For example, <code>phtml</code></p>
+    <p><code>{template_extension}</code> is the type of template files, which are to be processed by the template engine. For example, <code class="highlighter-rouge">phtml</code></p>
   </li>
   <li>
     <p><code>{engine_class}</code> is the name of the class that implements a template engine</p>

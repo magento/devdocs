@@ -1026,13 +1026,13 @@
 
 <h3 id="apache">Apache</h3>
 
-<p>Copy <code>/dev/tests/functional/.htaccess.sample</code> to <code>/dev/tests/functional/.htaccess</code>.</p>
+<p>Copy <code class="highlighter-rouge">/dev/tests/functional/.htaccess.sample</code> to <code class="highlighter-rouge">/dev/tests/functional/.htaccess</code>.</p>
 
 <h3 id="nginx">NGINX</h3>
 
-<p>In <code>nginx.conf</code>, add declaration blocks for each command listed in <code>/dev/tests/functional/.htaccess.sample</code> using the following example:</p>
+<p>In <code class="highlighter-rouge">nginx.conf</code>, add declaration blocks for each command listed in <code class="highlighter-rouge">/dev/tests/functional/.htaccess.sample</code> using the following example:</p>
 
-<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">^/dev/tests/functional/utils(</span><span class="nv">$|/</span><span class="s">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">^/dev/tests/functional/utils(</span>$<span class="s">|/)</span> <span class="p">{</span>
     <span class="kn">root</span> <span class="nv">$MAGE_ROOT</span><span class="p">;</span>
     <span class="kn">location</span> <span class="p">~</span> <span class="sr">^/dev/tests/functional/utils/command.php</span> <span class="p">{</span>
         <span class="kn">fastcgi_pass</span>   <span class="s">fastcgi_backend</span><span class="p">;</span>
@@ -1041,7 +1041,7 @@
         <span class="kn">include</span>        <span class="s">fastcgi_params</span><span class="p">;</span>
     <span class="p">}</span>
 
-<span class="kn">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">^/dev/tests/functional/utils(</span><span class="nv">$|/</span><span class="s">)</span> <span class="p">{</span>
+<span class="kn">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">^/dev/tests/functional/utils(</span>$<span class="s">|/)</span> <span class="p">{</span>
     <span class="kn">root</span> <span class="nv">$MAGE_ROOT</span><span class="p">;</span>
     <span class="kn">location</span> <span class="p">~</span> <span class="sr">^/dev/tests/functional/utils/website.php</span> <span class="p">{</span>
         <span class="kn">fastcgi_pass</span>   <span class="s">fastcgi_backend</span><span class="p">;</span>

@@ -1150,9 +1150,9 @@
 <p>To create the view part of the new checkout step:</p>
 
 <ol>
-  <li>Add a module directory (not covered in this topic). See <a href="/guides/v2.2/extension-dev-guide/build/build.html">Build your module</a> for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the <code>Magento_Checkout</code> module. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</li>
-  <li>Create the <code>.js</code> file implementing the view model.</li>
-  <li>Create an <code>.html</code> template for the component.</li>
+  <li>Add a module directory (not covered in this topic). See <a href="/guides/v2.2/extension-dev-guide/build/build.html">Build your module</a> for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the <code class="highlighter-rouge">Magento_Checkout</code> module. Do not use <code class="highlighter-rouge">Ui</code> for your custom module name, because <code class="highlighter-rouge">%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</li>
+  <li>Create the <code class="highlighter-rouge">.js</code> file implementing the view model.</li>
+  <li>Create an <code class="highlighter-rouge">.html</code> template for the component.</li>
 </ol>
 
 <p>Each step is described in details in the following paragraphs.</p>
@@ -1161,20 +1161,20 @@
 
 <p>A new checkout step must be implemented as UI component. That is, its <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> implementation must be a JavaScript module.</p>
 
-<p>The file must be stored under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view</code> directory.</p>
+<p>The file must be stored under the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view</code> directory.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p><code>&lt;your_module_dir&gt;</code> notation stands for the path to your module directory from the root directory. Usually it will be one of the following: <code>app/code/&lt;YourVendor&gt;/&lt;YourModule&gt;</code> or <code>vendor/&lt;yourvendor&gt;/module-&lt;module&gt;-&lt;name&gt;</code>. For more details see <a href="/guides/v2.2/frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a></p>
 </div>
 
-<p>A sample <code>my-step-view.js</code> with comments follows:</p>
+<p>A sample <code class="highlighter-rouge">my-step-view.js</code> with comments follows:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="s1">&#39;ko&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;underscore&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;Magento_Checkout/js/model/step-navigator&#39;</span>
+        <span class="s1">'ko'</span><span class="p">,</span>
+        <span class="s1">'uiComponent'</span><span class="p">,</span>
+        <span class="s1">'underscore'</span><span class="p">,</span>
+        <span class="s1">'Magento_Checkout/js/model/step-navigator'</span>
     <span class="p">],</span>
     <span class="kd">function</span> <span class="p">(</span>
         <span class="nx">ko</span><span class="p">,</span>
@@ -1182,65 +1182,65 @@
         <span class="nx">_</span><span class="p">,</span>
         <span class="nx">stepNavigator</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-        <span class="cm">/**</span>
-<span class="cm">        *</span>
-<span class="cm">        * mystep - is the name of the component&#39;s .html template, </span>
-<span class="cm">        * &lt;Vendor&gt;_&lt;Module&gt;  - is the name of the your module directory.</span>
-<span class="cm">        * </span>
-<span class="cm">        */</span>
+        <span class="s1">'use strict'</span><span class="p">;</span>
+        <span class="cm">/**
+        *
+        * mystep - is the name of the component's .html template, 
+        * &lt;Vendor&gt;_&lt;Module&gt;  - is the name of the your module directory.
+        * 
+        */</span>
         <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-            <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;Vendor&gt;_&lt;Module&gt;/mystep&#39;</span>
+            <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">template</span><span class="p">:</span> <span class="s1">'&lt;Vendor&gt;_&lt;Module&gt;/mystep'</span>
             <span class="p">},</span>
  
             <span class="c1">//add here your logic to display step,</span>
-            <span class="nx">isVisible</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span>
+            <span class="na">isVisible</span><span class="p">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span>
  
-            <span class="cm">/**</span>
-<span class="cm">			*</span>
-<span class="cm">			* @returns {*}</span>
-<span class="cm">			*/</span>
-            <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="cm">/**
+			*
+			* @returns {*}
+			*/</span>
+            <span class="na">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
                 <span class="c1">// register your step</span>
                 <span class="nx">stepNavigator</span><span class="p">.</span><span class="nx">registerStep</span><span class="p">(</span>
                     <span class="c1">//step code will be used as step content id in the component template</span>
-                    <span class="s1">&#39;step_code&#39;</span><span class="p">,</span>
+                    <span class="s1">'step_code'</span><span class="p">,</span>
                     <span class="c1">//step alias</span>
                     <span class="kc">null</span><span class="p">,</span>
                     <span class="c1">//step title value</span>
-                    <span class="s1">&#39;Step Title&#39;</span><span class="p">,</span>
+                    <span class="s1">'Step Title'</span><span class="p">,</span>
                     <span class="c1">//observable property with logic when display step or hide step</span>
                     <span class="k">this</span><span class="p">.</span><span class="nx">isVisible</span><span class="p">,</span>
                      
                     <span class="nx">_</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">navigate</span><span class="p">,</span> <span class="k">this</span><span class="p">),</span>
  
-                    <span class="cm">/**</span>
-<span class="cm">					* sort order value</span>
-<span class="cm">					* &#39;sort order value&#39; &lt; 10: step displays before shipping step;</span>
-<span class="cm">					* 10 &lt; &#39;sort order value&#39; &lt; 20 : step displays between shipping and payment step</span>
-<span class="cm">					* &#39;sort order value&#39; &gt; 20 : step displays after payment step</span>
-<span class="cm">					*/</span>
+                    <span class="cm">/**
+					* sort order value
+					* 'sort order value' &lt; 10: step displays before shipping step;
+					* 10 &lt; 'sort order value' &lt; 20 : step displays between shipping and payment step
+					* 'sort order value' &gt; 20 : step displays after payment step
+					*/</span>
                     <span class="mi">15</span>
                 <span class="p">);</span>
  
                 <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
             <span class="p">},</span>
  
-            <span class="cm">/**</span>
-<span class="cm">			* The navigate() method is responsible for navigation between checkout step</span>
-<span class="cm">			* during checkout. You can add custom logic, for example some conditions</span>
-<span class="cm">			* for switching to your custom step </span>
-<span class="cm">			*/</span>
-            <span class="nx">navigate</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="cm">/**
+			* The navigate() method is responsible for navigation between checkout step
+			* during checkout. You can add custom logic, for example some conditions
+			* for switching to your custom step 
+			*/</span>
+            <span class="na">navigate</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
  
             <span class="p">},</span>
  
-            <span class="cm">/**</span>
-<span class="cm">			* @returns void</span>
-<span class="cm">			*/</span>
-            <span class="nx">navigateToNextStep</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="cm">/**
+			* @returns void
+			*/</span>
+            <span class="na">navigateToNextStep</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                 <span class="nx">stepNavigator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
             <span class="p">}</span>
         <span class="p">});</span>
@@ -1249,22 +1249,22 @@
 
 <h3 id="add-the-html-template">Add the .html template</h3>
 
-<p>In the module directory, add the <code>.html</code> template for the component. It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/template</code> directory.</p>
+<p>In the module directory, add the <code class="highlighter-rouge">.html</code> template for the component. It must be located under the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/template</code> directory.</p>
 
-<p>A sample <code>mystep.html</code> follows:</p>
+<p>A sample <code class="highlighter-rouge">mystep.html</code> follows:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--The &#39;step_code&#39; value from the .js file should be used--&gt;</span>
-<span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;step_code&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;fadeVisible: isVisible&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;step-title&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Step Title&#39;&quot;</span> <span class="na">data-role=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;checkout-step-title&quot;</span>
-         <span class="na">class=</span><span class="s">&quot;step-content&quot;</span>
-         <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--The 'step_code' value from the .js file should be used--&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"step_code"</span> <span class="na">data-bind=</span><span class="s">"fadeVisible: isVisible"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"step-title"</span> <span class="na">data-bind=</span><span class="s">"i18n: 'Step Title'"</span> <span class="na">data-role=</span><span class="s">"title"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"checkout-step-title"</span>
+         <span class="na">class=</span><span class="s">"step-content"</span>
+         <span class="na">data-role=</span><span class="s">"content"</span><span class="nt">&gt;</span>
  
-        <span class="nt">&lt;form</span> <span class="na">data-bind=</span><span class="s">&quot;submit: navigateToNextStep&quot;</span> <span class="na">novalidate=</span><span class="s">&quot;novalidate&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;actions-toolbar&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;primary&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;button</span> <span class="na">data-role=</span><span class="s">&quot;opc-continue&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;button action continue primary&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;span&gt;</span><span class="c">&lt;!-- ko i18n: &#39;Next&#39;--&gt;&lt;!-- /ko --&gt;</span><span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">data-bind=</span><span class="s">"submit: navigateToNextStep"</span> <span class="na">novalidate=</span><span class="s">"novalidate"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actions-toolbar"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"primary"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;button</span> <span class="na">data-role=</span><span class="s">"opc-continue"</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"button action continue primary"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;span&gt;</span><span class="c">&lt;!-- ko i18n: 'Next'--&gt;&lt;!-- /ko --&gt;</span><span class="nt">&lt;/span&gt;</span>
                     <span class="nt">&lt;/button&gt;</span>
                 <span class="nt">&lt;/div&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
@@ -1274,30 +1274,30 @@
 
 <h2 id="add-your-step-to-the-checkout-page-layout">Add your step to the Checkout page layout</h2>
 
-<p>For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in <code>checkout_index_index.xml</code>.</p>
+<p>For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in <code class="highlighter-rouge">checkout_index_index.xml</code>.</p>
 
-<p>So you need to add an <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-extend.html">extending</a> <code>checkout_index_index.xml</code> layout file in the following location: <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code></p>
+<p>So you need to add an <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-extend.html">extending</a> <code class="highlighter-rouge">checkout_index_index.xml</code> layout file in the following location: <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code></p>
 
-<p>A sample <code>checkout_index_index.xml</code> follows:</p>
+<p>A sample <code class="highlighter-rouge">checkout_index_index.xml</code> follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">layout=</span><span class="s">"1column"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"checkout.root"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;arguments&gt;</span>
-                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;jsLayout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;components&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;checkout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;steps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"jsLayout"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"components"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"checkout"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"steps"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
                                             <span class="c">&lt;!-- The new step you add --&gt;</span>
-                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;my-new-step&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%Vendor%_%Module%/js/view/my-step-view<span class="nt">&lt;/item&gt;</span>
-                                                    <span class="c">&lt;!--To display step content before shipping step &quot;sortOrder&quot; value should be &lt; 1--&gt;</span>
-                                                    <span class="c">&lt;!--To display step content between shipping step and payment step  1 &lt; &quot;sortOrder&quot; &lt; 2 --&gt;</span>
-                                                    <span class="c">&lt;!--To display step content after payment step &quot;sortOrder&quot; &gt; 2 --&gt;</span>
-                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/item&gt;</span>
-                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"my-new-step"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%Vendor%_%Module%/js/view/my-step-view<span class="nt">&lt;/item&gt;</span>
+                                                    <span class="c">&lt;!--To display step content before shipping step "sortOrder" value should be &lt; 1--&gt;</span>
+                                                    <span class="c">&lt;!--To display step content between shipping step and payment step  1 &lt; "sortOrder" &lt; 2 --&gt;</span>
+                                                    <span class="c">&lt;!--To display step content after payment step "sortOrder" &gt; 2 --&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sortOrder"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/item&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
                                                     <span class="c">&lt;!--add here child component declaration for your step--&gt;</span>
                                                 <span class="nt">&lt;/item&gt;</span>
                                             <span class="nt">&lt;/item&gt;</span>
@@ -1319,17 +1319,17 @@
 <p>Create a mixin as follows:</p>
 
 <ol>
-  <li>Create a <code>Vendor/Module/view/base/requirejs-config.js</code> file with these contents;</li>
+  <li>Create a <code class="highlighter-rouge">Vendor/Module/view/base/requirejs-config.js</code> file with these contents;</li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-<span class="s1">&#39;config&#39;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s1">&#39;mixins&#39;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s1">&#39;Magento_Checkout/js/view/shipping&#39;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s1">&#39;Vendor_Module/js/view/shipping-payment-mixin&#39;</span><span class="o">:</span> <span class="kc">true</span>
+<span class="s1">'config'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'mixins'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'Magento_Checkout/js/view/shipping'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Vendor_Module/js/view/shipping-payment-mixin'</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">},</span>
-        <span class="s1">&#39;Magento_Checkout/js/view/payment&#39;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s1">&#39;Vendor_Module/js/view/shipping-payment-mixin&#39;</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="s1">'Magento_Checkout/js/view/payment'</span><span class="err">:</span> <span class="p">{</span>
+            <span class="s1">'Vendor_Module/js/view/shipping-payment-mixin'</span><span class="err">:</span> <span class="kc">true</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
@@ -1340,13 +1340,13 @@
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="s1">&#39;ko&#39;</span>
+        <span class="s1">'ko'</span>
     <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ko</span><span class="p">)</span> <span class="p">{</span>
-        <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <span class="s1">'use strict'</span><span class="p">;</span>
 
         <span class="kd">var</span> <span class="nx">mixin</span> <span class="o">=</span> <span class="p">{</span>
 
-            <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="na">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// set visible to be initially false to have your step show first</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
 

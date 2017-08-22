@@ -755,24 +755,24 @@
 For each operation (authorization, capture and so on) of a certain payment provider - a separate gateway command is added.</p>
 
 <h2 id="interface">Interface</h2>
-<p>Basic interface for a gateway command is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/CommandInterface.php"><code>\Magento\Payment\Gateway\CommandInterface</code></a>. It implements the <a href="http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html">Command design pattern</a>.</p>
+<p>Basic interface for a gateway command is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/CommandInterface.php"><code class="highlighter-rouge">\Magento\Payment\Gateway\CommandInterface</code></a>. It implements the <a href="http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html">Command design pattern</a>.</p>
 
 <h2 id="basic-implementation">Basic implementation</h2>
 
-<p>The <code>\Magento\Payment\Gateway\Command\GatewayCommand</code> class is the default <code>CommandInterface</code> implementation. It allows performing most of the operations implemented in the <a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-intro.html#terms">Magento sales management</a>.</p>
+<p>The <code class="highlighter-rouge">\Magento\Payment\Gateway\Command\GatewayCommand</code> class is the default <code class="highlighter-rouge">CommandInterface</code> implementation. It allows performing most of the operations implemented in the <a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-intro.html#terms">Magento sales management</a>.</p>
 
 <h2 id="adding-gateway-commands">Adding gateway commands</h2>
 <p>For each particular integration with a payment provider, gateway commands are added using virtual types in <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection (DI)</a> configuration.</p>
 
-<p>In the following example the <code>BraintreeAuthorizeCommand</code> gateway command is added. The command implements the “authorize” operation for the Braintree payment provider (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L131"><code>app/code/Magento/Braintree/etc/di.xml#131</code></a>):</p>
+<p>In the following example the <code class="highlighter-rouge">BraintreeAuthorizeCommand</code> gateway command is added. The command implements the “authorize” operation for the Braintree payment provider (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L131"><code class="highlighter-rouge">app/code/Magento/Braintree/etc/di.xml#131</code></a>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeAuthorizeCommand&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\GatewayCommand&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeAuthorizeCommand"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Command\GatewayCommand"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;requestBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeAuthorizeRequest<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;transferFactory&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\TransferFactory<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;client&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\Client\TransactionSale<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;handler&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeAuthorizationHandler<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;validator&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\ResponseValidator<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestBuilder"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeAuthorizeRequest<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"transferFactory"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\TransferFactory<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"client"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\Client\TransactionSale<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"handler"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeAuthorizationHandler<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"validator"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\ResponseValidator<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
@@ -782,21 +782,21 @@ For each operation (authorization, capture and so on) of a certain payment provi
 
 <ul>
   <li>
-    <p><code>requestBuilder</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/request-builder.html">request builder</a>, builds an array of provider-specific arguments using the order information.</p>
+    <p><code class="highlighter-rouge">requestBuilder</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/request-builder.html">request builder</a>, builds an array of provider-specific arguments using the order information.</p>
   </li>
   <li>
-    <p><code>transferFactory</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-client.html#transfer_factory">transfer factory</a>, creates transfer object from request data, which will be used by Gateway Client to process requests. For details see <a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-client.html#transfer_factory">Gateway Client #Transfer Factory</a></p>
+    <p><code class="highlighter-rouge">transferFactory</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-client.html#transfer_factory">transfer factory</a>, creates transfer object from request data, which will be used by Gateway Client to process requests. For details see <a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-client.html#transfer_factory">Gateway Client #Transfer Factory</a></p>
   </li>
   <li>
-    <p><code>client</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-client.html">gateway client</a>, takes the provider-specific arguments and performs a low-level call to the provider.</p>
+    <p><code class="highlighter-rouge">client</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-client.html">gateway client</a>, takes the provider-specific arguments and performs a low-level call to the provider.</p>
   </li>
 </ul>
 
 <p>Optional arguments :</p>
 
 <ul>
-  <li><code>handler</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/response-handler.html">response handler</a>, changes the order and payment status depending on the payment provider response.</li>
-  <li><code>validator</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/response-validator.html">response validator</a>, validates the provider response.</li>
+  <li><code class="highlighter-rouge">handler</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/response-handler.html">response handler</a>, changes the order and payment status depending on the payment provider response.</li>
+  <li><code class="highlighter-rouge">validator</code>: <a href="/guides/v2.1/payments-integrations/payment-gateway/response-validator.html">response validator</a>, validates the provider response.</li>
 </ul>
 
 

@@ -960,7 +960,7 @@
 </section>
 
 
-			<p>If you use the optional <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> <code>xdebug</code>, you can encounter exceptions:</p>
+			<p>If you use the optional <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> <code class="highlighter-rouge">xdebug</code>, you can encounter exceptions:</p>
 
 <ul>
   <li>During installation</li>
@@ -969,21 +969,22 @@
 
 <p>Sample exception:</p>
 
-<pre><code>Fatal error: Maximum function nesting level of '100' reached, aborting!
+<div class="highlighter-rouge"><pre class="highlight"><code>Fatal error: Maximum function nesting level of '100' reached, aborting!
 </code></pre>
+</div>
 
 <p>To resolve this issue, you can:</p>
 
 <ul>
-  <li>Disable the <code>xdebug</code> extension.</li>
-  <li>Set the value of <code>xdebug.max_nesting_level</code> to a value of 200 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.</li>
+  <li>Disable the <code class="highlighter-rouge">xdebug</code> extension.</li>
+  <li>Set the value of <code class="highlighter-rouge">xdebug.max_nesting_level</code> to a value of 200 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.</li>
 </ul>
 
-<p>After you change the configuration of or disable <code>xdebug</code>, restart Apache:</p>
+<p>After you change the configuration of or disable <code class="highlighter-rouge">xdebug</code>, restart Apache:</p>
 
 <ul>
-  <li>CentOS: <code>sudo service httpd restart</code></li>
-  <li>Ubuntu: <code>sudo service apache2 restart</code></li>
+  <li>CentOS: <code class="highlighter-rouge">sudo service httpd restart</code></li>
+  <li>Ubuntu: <code class="highlighter-rouge">sudo service apache2 restart</code></li>
 </ul>
 
 		</div>

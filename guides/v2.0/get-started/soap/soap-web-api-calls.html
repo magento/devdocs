@@ -717,7 +717,7 @@
 
 <p>The WSDL URL follows the following pattern:</p>
 
-<p><code>http://&lt;magento.host&gt;/soap/&lt;optional_store_code&gt;?wsdl&amp;services=&lt;service_name_1&gt;,&lt;service_name_2&gt;</code></p>
+<p><code class="highlighter-rouge">http://&lt;magento.host&gt;/soap/&lt;optional_store_code&gt;?wsdl&amp;services=&lt;service_name_1&gt;,&lt;service_name_2&gt;</code></p>
 
 <p>You must specify each service version in the endpoint URL.</p>
 
@@ -728,10 +728,10 @@
 
 <ul>
   <li>CamelCase is used for service naming.</li>
-  <li>The string <code>Service</code> is omitted.</li>
-  <li>The <code>Magento</code> prefix is omitted.</li>
-  <li>The <code>Interface</code> suffix is omitted.</li>
-  <li>If the service name is the same as the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word <code>customer</code> will be used in the service name only once.</li>
+  <li>The string <code class="highlighter-rouge">Service</code> is omitted.</li>
+  <li>The <code class="highlighter-rouge">Magento</code> prefix is omitted.</li>
+  <li>The <code class="highlighter-rouge">Interface</code> suffix is omitted.</li>
+  <li>If the service name is the same as the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word <code class="highlighter-rouge">customer</code> will be used in the service name only once.</li>
 </ul>
 
 <table>
@@ -766,17 +766,17 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="nv">$opts</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-            <span class="s1">&#39;http&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
-                <span class="s1">&#39;header&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Authorization: Bearer 36849300bca4fbff758d93a3379f1b8e&#39;</span>
+            <span class="s1">'http'</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+                <span class="s1">'header'</span> <span class="o">=&gt;</span> <span class="s1">'Authorization: Bearer 36849300bca4fbff758d93a3379f1b8e'</span>
             <span class="p">)</span>
         <span class="p">);</span>
-<span class="nv">$wsdlUrl</span> <span class="o">=</span> <span class="s1">&#39;http://magento.ll/soap/default?wsdl=1&amp;services=testModule1AllSoapAndRestV1&#39;</span><span class="p">;</span>
-<span class="nv">$serviceArgs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">);</span>
+<span class="nv">$wsdlUrl</span> <span class="o">=</span> <span class="s1">'http://magento.ll/soap/default?wsdl=1&amp;services=testModule1AllSoapAndRestV1'</span><span class="p">;</span>
+<span class="nv">$serviceArgs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"id"</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="nv">$context</span> <span class="o">=</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$opts</span><span class="p">);</span>
-<span class="nv">$soapClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SoapClient</span><span class="p">(</span><span class="nv">$wsdlUrl</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;version&#39;</span> <span class="o">=&gt;</span> <span class="nx">SOAP_1_2</span><span class="p">,</span> <span class="s1">&#39;context&#39;</span> <span class="o">=&gt;</span> <span class="nv">$context</span><span class="p">]);</span>
+<span class="nv">$soapClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SoapClient</span><span class="p">(</span><span class="nv">$wsdlUrl</span><span class="p">,</span> <span class="p">[</span><span class="s1">'version'</span> <span class="o">=&gt;</span> <span class="nx">SOAP_1_2</span><span class="p">,</span> <span class="s1">'context'</span> <span class="o">=&gt;</span> <span class="nv">$context</span><span class="p">]);</span>
 
-<span class="nv">$soapResponse</span> <span class="o">=</span> <span class="nv">$soapClient</span><span class="o">-&gt;</span><span class="na">testModule1AllSoapAndRestV1Item</span><span class="p">(</span><span class="nv">$serviceArgs</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="nv">$soapResponse</span> <span class="o">=</span> <span class="nv">$soapClient</span><span class="o">-&gt;</span><span class="na">testModule1AllSoapAndRestV1Item</span><span class="p">(</span><span class="nv">$serviceArgs</span><span class="p">);</span> <span class="cp">?&gt;</span></code></pre></figure>
 
 <h2 id="related">Related topics</h2>
 <ul>

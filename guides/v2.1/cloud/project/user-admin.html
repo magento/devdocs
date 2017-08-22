@@ -1657,7 +1657,7 @@ code to this environment. This role can also branch the environment.</li>
 project administrator and decide which roles to give his team members.
 One team member can contribute to one environment, another member can
 administer a different environment, and the customer can be a reader of
-the <code>master</code> environment.</p>
+the <code class="highlighter-rouge">master</code> environment.</p>
 
 <p>For your users to be able to see everything but only
 commit to a specific branch, change their permission level on that
@@ -1677,29 +1677,29 @@ and integrate this with any other automated system.</p>
 <p>Available commands:</p>
 
 <ul>
-  <li><code>magento-cloud user:add</code>
+  <li><code class="highlighter-rouge">magento-cloud user:add</code>
     <ul>
       <li>Add a user to the project</li>
     </ul>
   </li>
-  <li><code>magento-cloud user:delete</code>
+  <li><code class="highlighter-rouge">magento-cloud user:delete</code>
     <ul>
       <li>Delete a user</li>
     </ul>
   </li>
-  <li><code>magento-cloud user:list [users]</code>
+  <li><code class="highlighter-rouge">magento-cloud user:list [users]</code>
     <ul>
       <li>List project users</li>
     </ul>
   </li>
-  <li><code>magento-cloud user:role</code>
+  <li><code class="highlighter-rouge">magento-cloud user:role</code>
     <ul>
       <li>View or change a user’s role</li>
     </ul>
   </li>
 </ul>
 
-<p>For example, the following command adds the project administrator (<code>admin</code>) role to <code>alice@example.com</code> and gives her <code>contributor</code> privileges to the <code>development</code> environment:</p>
+<p>For example, the following command adds the project administrator (<code class="highlighter-rouge">admin</code>) role to <code class="highlighter-rouge">alice@example.com</code> and gives her <code class="highlighter-rouge">contributor</code> privileges to the <code class="highlighter-rouge">development</code> environment:</p>
 
 <p>The following prompts are displayed:</p>
 
@@ -1720,12 +1720,13 @@ User alice@example.com created</pre>
 <p>After this has been done, the user will receive an e-mail asking her to confirm
 her details and register an account name and a password.</p>
 
-<p>To change Alice’s role on the environment <code>development</code> to <code>admin</code>, use the following command:</p>
+<p>To change Alice’s role on the environment <code class="highlighter-rouge">development</code> to <code class="highlighter-rouge">admin</code>, use the following command:</p>
 
-<pre><code>magento-cloud user:role alice@example.com --level environment --environment development --role admin
+<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud user:role alice@example.com --level environment --environment development --role admin
 </code></pre>
+</div>
 
-<p>Use <code>magento-cloud list</code> to get the full list of commands.</p>
+<p>Use <code class="highlighter-rouge">magento-cloud list</code> to get the full list of commands.</p>
 
 <h3 id="cloud-user-webinterface">Manage users with the Web Interface</h3>
 
@@ -1774,7 +1775,7 @@ her details and register an account name and a password.</p>
 <p>After a new user is added to an environment, the environment must be rebuilt. Rebuilds
 are triggered when you push a new commit to an environment.
 To be able to rebuild without new code changes, use the command
-<code>git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code>
+<code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code>
 to create an empty commit and “force” rebuilding the environment.</p>
 
 <p>When the environment rebuild is complete, allow a short time for the routes to

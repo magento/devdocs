@@ -1493,7 +1493,7 @@
 
   <p>This information details how to upgrade Magento Commerce (Cloud) from any version after 2.0.4. If you’re currently using version 2.0.4, see <a href="#cloud-upgrade-204">Upgrade from version 2.0.4</a>.</p>
 
-  <p>When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the <code>magento-cloud-metapackage</code>. Make sure you have <code>auth.json</code> in your project root folder if there isn’t one already.</p>
+  <p>When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the <code class="highlighter-rouge">magento-cloud-metapackage</code>. Make sure you have <code class="highlighter-rouge">auth.json</code> in your project root folder if there isn’t one already.</p>
 
   <p>For more information on Composer, see <a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer in Cloud</a>.</p>
 
@@ -1511,16 +1511,18 @@
     <li>
       <p>Enter the following command to make a local backup of the remote database:</p>
 
-      <pre><code>magento-cloud environment:mysql-dump
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:sql-dump
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Enter the following command to back up code and media:</p>
 
-      <pre><code>php bin/magento setup:backup --code [--media]
+      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:backup --code [--media]
 </code></pre>
+      </div>
 
-      <p>You can optionally omit <code>[--media]</code> if you have a large number of static files that are already in source control.</p>
+      <p>You can optionally omit <code class="highlighter-rouge">[--media]</code> if you have a large number of static files that are already in source control.</p>
     </li>
   </ol>
 
@@ -1531,14 +1533,16 @@
     <li>
       <p>Find the database login information:</p>
 
-      <pre><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+      <div class="highlighter-rouge"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Create a database dump:</p>
 
-      <pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
+      <div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1550,8 +1554,9 @@
     <li>
       <p>Enter the following command:</p>
 
-      <pre><code>git status
+      <div class="highlighter-rouge"><pre class="highlight"><code>git status
 </code></pre>
+      </div>
     </li>
     <li>If there are changes you do <em>not</em> want to submit to source control, branch or stash them now.</li>
   </ol>
@@ -1562,25 +1567,28 @@
     <li>
       <p>Change to your Magento base directory and enter the following command:</p>
 
-      <pre><code>composer require magento/magento-cloud-metapackage &lt;requiredversion&gt; --no-update
+      <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/magento-cloud-metapackage &lt;requiredversion&gt; --no-update
 composer update
 </code></pre>
+      </div>
 
       <p>For example, to upgrade to version 2.1.4:</p>
 
-      <pre><code>composer require magento/magento-cloud-metapackage 2.1.4 --no-update
+      <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/magento-cloud-metapackage 2.1.4 --no-update
 composer update
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Add, commit, and push your changes to initiate a deployment:</p>
 
-      <pre><code>git add -A
+      <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
 git commit -m "Upgrade"
 git push origin &lt;branch name&gt;
 </code></pre>
+      </div>
 
-      <p><code>git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages. Both <code>composer install</code> and <code>composer update</code> marshal files from the base package (that is, <code>magento/magento2-base</code> and <code>magento/magento2-ee-base</code>) into the package root.</p>
+      <p><code class="highlighter-rouge">git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages. Both <code class="highlighter-rouge">composer install</code> and <code class="highlighter-rouge">composer update</code> marshal files from the base package (that is, <code class="highlighter-rouge">magento/magento2-base</code> and <code class="highlighter-rouge">magento/magento2-ee-base</code>) into the package root.</p>
 
       <p>The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.</p>
     </li>
@@ -1596,59 +1604,61 @@ git push origin &lt;branch name&gt;
   <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Upgrade from version 2.0.4 </h2><div class="collapsible-content"><p>This section discusses steps to upgrade <em>only</em> if your current Magento Commerce version is 2.0.4.</p>
 
 <h3 id="create-an-authorization-file">Create an authorization file</h3>
-<p>To enable you to install and update the Magento software, you must have an <code>auth.json</code> file in your project’s root directory. <code>auth.json</code> contains your Magento Commerce <a href="http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a>.</p>
+<p>To enable you to install and update the Magento software, you must have an <code class="highlighter-rouge">auth.json</code> file in your project’s root directory. <code class="highlighter-rouge">auth.json</code> contains your Magento Commerce <a href="http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a>.</p>
 
-<p>In some cases, you might already have <code>auth.json</code> so check to see if it exists and has your authentication credentials before you create a new one.</p>
+<p>In some cases, you might already have <code class="highlighter-rouge">auth.json</code> so check to see if it exists and has your authentication credentials before you create a new one.</p>
 
-<p>To create a new <code>auth.json</code> in the event you don’t have one:</p>
+<p>To create a new <code class="highlighter-rouge">auth.json</code> in the event you don’t have one:</p>
 
 <div>
 
-  <p>Because the Composer repository that contains Magento Enterprise Cloud Edition requires authentication, you must add a file named <code>auth.json</code> to your project’s root directory. This file contains your authentication keys. Without <code>auth.json</code>, the Magento software won’t download.</p>
+  <p>Because the Composer repository that contains Magento Enterprise Cloud Edition requires authentication, you must add a file named <code class="highlighter-rouge">auth.json</code> to your project’s root directory. This file contains your authentication keys. Without <code class="highlighter-rouge">auth.json</code>, the Magento software won’t download.</p>
 
-  <p>Add <code>auth.json</code> in your Magento Enterprise Cloud Edition project root folder if there isn’t one already.</p>
+  <p>Add <code class="highlighter-rouge">auth.json</code> in your Magento Enterprise Cloud Edition project root folder if there isn’t one already.</p>
 
   <p>Replace the values in the following sample with your Magento Enterprise Cloud Edition public and private keys. You can get these keys from your account owner (that is, the person who created the Cloud account).</p>
 
-  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-   <span class="nt">&quot;http-basic&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;repo.magento.com&quot;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your public key&gt;&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your private key&gt;&quot;</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+   </span><span class="nt">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your public key&gt;"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your private key&gt;"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
   <h2 id="update-magentoappyaml-and-composerjson">Update .magento.app.yaml and composer.json</h2>
   <p>This section discusses how to update:</p>
 
   <ul>
-    <li><code>.magento.app.yaml</code>, the main project configuration file.</li>
-    <li><code>composer.json</code>, which specifies project dependencies.</li>
+    <li><code class="highlighter-rouge">.magento.app.yaml</code>, the main project configuration file.</li>
+    <li><code class="highlighter-rouge">composer.json</code>, which specifies project dependencies.</li>
   </ul>
 
   <p>Changes are discussed in the sections that follow.</p>
 
-  <h3 id="magentoappyaml"><code>.magento.app.yaml</code></h3>
-  <p>Open <code>.magento.app.yaml</code> in a text editor and update the <code>build</code> section (which is nested in the <code>deploy</code> section) and <code>crons</code> sections as follows:</p>
+  <h3 id="magentoappyaml"><code class="highlighter-rouge">.magento.app.yaml</code></h3>
+  <p>Open <code class="highlighter-rouge">.magento.app.yaml</code> in a text editor and update the <code class="highlighter-rouge">build</code> section (which is nested in the <code class="highlighter-rouge">deploy</code> section) and <code class="highlighter-rouge">crons</code> sections as follows:</p>
 
   <h4 id="deploy-section">deploy section</h4>
-  <pre><code>deploy: |
+  <div class="highlighter-rouge"><pre class="highlight"><code>deploy: |
     php ./vendor/magento/magento-cloud-configuration/pre-deploy.php
     php ./bin/magento magento-cloud:deploy
 </code></pre>
+  </div>
 
   <h4 id="crons-section">crons section</h4>
-  <pre><code>crons:
+  <div class="highlighter-rouge"><pre class="highlight"><code>crons:
         cronrun:
             spec: "*/5 * * * *"
             cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
 </code></pre>
+  </div>
 
-  <h3 id="composerjson"><code>composer.json</code></h3>
-  <p>Open <code>composer.json</code> and update the <code>"files"</code> directive in the <code>autoload</code> section as follows:</p>
+  <h3 id="composerjson"><code class="highlighter-rouge">composer.json</code></h3>
+  <p>Open <code class="highlighter-rouge">composer.json</code> and update the <code class="highlighter-rouge">"files"</code> directive in the <code class="highlighter-rouge">autoload</code> section as follows:</p>
 
-  <pre><code>"autoload": {
+  <div class="highlighter-rouge"><pre class="highlight"><code>"autoload": {
         "psr-4": {
             "Magento\\Framework\\": "lib/internal/Magento/Framework/",
             "Magento\\Setup\\": "setup/src/Magento/Setup/",
@@ -1662,19 +1672,20 @@ git push origin &lt;branch name&gt;
         ]
     }
 </code></pre>
+  </div>
 
-  <p>Move <code>app/NonComposerComponentRegistration.php</code> to <code>app/etc/NonComposerComponentRegistration.php</code>. Make sure the relative paths that point to locations in the <code>app</code> and <code>lib</code> directories reflect the  new location of the file.</p>
+  <p>Move <code class="highlighter-rouge">app/NonComposerComponentRegistration.php</code> to <code class="highlighter-rouge">app/etc/NonComposerComponentRegistration.php</code>. Make sure the relative paths that point to locations in the <code class="highlighter-rouge">app</code> and <code class="highlighter-rouge">lib</code> directories reflect the  new location of the file.</p>
 
-  <p>Update the <code>require</code> section as follows to:</p>
+  <p>Update the <code class="highlighter-rouge">require</code> section as follows to:</p>
 
   <ul>
-    <li>Replace <code>"magento/product-enterprise-edition": "&lt;current version&gt;",</code> with <code>"magento/magento-cloud-metapackage": "&lt;upgrade version&gt;",</code></li>
-    <li>Remove <code>"magento/magento-cloud-configuration": "1.0.*",</code></li>
+    <li>Replace <code class="highlighter-rouge">"magento/product-enterprise-edition": "&lt;current version&gt;",</code> with <code class="highlighter-rouge">"magento/magento-cloud-metapackage": "&lt;upgrade version&gt;",</code></li>
+    <li>Remove <code class="highlighter-rouge">"magento/magento-cloud-configuration": "1.0.*",</code></li>
   </ul>
 
-  <p>(In some cases, your <code>composer.json</code> might already be correct.)</p>
+  <p>(In some cases, your <code class="highlighter-rouge">composer.json</code> might already be correct.)</p>
 
-  <pre><code> },
+  <div class="highlighter-rouge"><pre class="highlight"><code> },
     "require": {
         "magento/magento-cloud-metapackage": "2.1.0",
         "composer/composer": "@alpha",
@@ -1683,14 +1694,15 @@ git push origin &lt;branch name&gt;
         "fastly/magento2": "^1.0"
     },
 </code></pre>
+  </div>
 
-  <p>Run <code>composer update</code>, and make sure the updated composer.lock and other changed files are
+  <p>Run <code class="highlighter-rouge">composer update</code>, and make sure the updated composer.lock and other changed files are
 checked in to git.</p>
 
   <h2 id="repository-structure">Repository structure</h2>
   <p>Here are the specific files for this example to work on Magento Commerce:</p>
 
-  <pre><code>.magento/
+  <div class="highlighter-rouge"><pre class="highlight"><code>.magento/
          /routes.yaml
          /services.yaml
 .magento.app.yaml
@@ -1699,12 +1711,13 @@ composer.json
 magento-vars.php
 php.ini
 </code></pre>
+  </div>
 
-  <p><code>.magento/routes.yaml</code> redirects <code>www</code> to the naked domain, and that the application that will be serving HTTP is named <code>php</code>.</p>
+  <p><code class="highlighter-rouge">.magento/routes.yaml</code> redirects <code class="highlighter-rouge">www</code> to the naked domain, and that the application that will be serving HTTP is named <code class="highlighter-rouge">php</code>.</p>
 
-  <p><code>.magento/services.yaml</code> sets up a MySQL instance, plus Redis and Solr.</p>
+  <p><code class="highlighter-rouge">.magento/services.yaml</code> sets up a MySQL instance, plus Redis and Solr.</p>
 
-  <p><code>composer.json</code> fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.</p>
+  <p><code class="highlighter-rouge">composer.json</code> fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.</p>
 
   <p>Verify your upgrade as discussed in the next section.</p>
 </div>
@@ -1720,32 +1733,36 @@ php.ini
     <li>
       <p>Enter the following command from your Magento root directory to verify the installed version:</p>
 
-      <pre><code>php bin/magento --version
+      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento --version
 </code></pre>
+      </div>
     </li>
   </ol>
 
   <h3 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h3>
   <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
 
-  <pre><code>There has been an error processing your request
+  <div class="highlighter-rouge"><pre class="highlight"><code>There has been an error processing your request
 Exception printing is disabled by default for security reasons.
   Error log record number: &lt;error number&gt;
 </code></pre>
+  </div>
 
   <h4 id="view-error-details-on-the-server">View error details on the server</h4>
   <p>To view the error in your integration system, <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a> and enter the following command:</p>
 
-  <pre><code>vi /app/var/report/&lt;error number&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
 </code></pre>
+  </div>
 
   <h4 id="resolve-the-error">Resolve the error</h4>
   <p>One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:</p>
 
-  <pre><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
+  <div class="highlighter-rouge"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
 The following modules are outdated:
 Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
 </code></pre>
+  </div>
 
   <p>To resolve the error:</p>
 
@@ -1757,8 +1774,9 @@ Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
 
       <p>For example, on a local branch, enter the following commands:</p>
 
-      <pre><code>git add -A &amp;&amp; git commit -m "fixed deployment failure" &amp;&amp; git push origin &lt;branch name&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "fixed deployment failure" &amp;&amp; git push origin &lt;branch name&gt;
 </code></pre>
+      </div>
     </li>
   </ol>
 

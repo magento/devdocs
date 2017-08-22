@@ -1580,7 +1580,7 @@
 <p>When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Make sure to complete all development and merging of your code to the <code>master</code> branch in the Integration environment. Only the <code>master</code> branch is deployed to Staging then Production.</p>
+  <p>Make sure to complete all development and merging of your code to the <code class="highlighter-rouge">master</code> branch in the Integration environment. Only the <code class="highlighter-rouge">master</code> branch is deployed to Staging then Production.</p>
 </div>
 
 <p>For <strong>first time setup</strong> to migrate your database and deploy code to Staging or Production, you will:</p>
@@ -1598,13 +1598,13 @@
 * Test in Staging
 * SSH into Production and use Git commands for pushing code, files, etc</p>
 
-<p>If you haven’t done so already, upload any <a href="/guides/v2.2/cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip">Fastly VCL snippets</a> in your Integration environment <code>master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
+<p>If you haven’t done so already, upload any <a href="/guides/v2.2/cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip">Fastly VCL snippets</a> in your Integration environment <code class="highlighter-rouge">master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
 
-<h2 id="cloud-live-migrate-yaml">Migrate deployment hooks in your <code>.magento.app.yaml</code> file</h2>
+<h2 id="cloud-live-migrate-yaml">Migrate deployment hooks in your <code class="highlighter-rouge">.magento.app.yaml</code> file</h2>
 
 <div>
 
-  <p>For technical reasons, Magento Commerce staging and production systems don’t implement any deployment hooks automatically. These hooks, defined in the <code>hooks</code> section of your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-hooks"><code>.magento.app.yaml</code> file</a>, must be manually migrated to staging or production.</p>
+  <p>For technical reasons, Magento Commerce staging and production systems don’t implement any deployment hooks automatically. These hooks, defined in the <code class="highlighter-rouge">hooks</code> section of your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-hooks"><code class="highlighter-rouge">.magento.app.yaml</code> file</a>, must be manually migrated to staging or production.</p>
 
   <p>Create a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">support ticket</a> to let us help you implement any deployment hooks you set up.</p>
 
@@ -1624,29 +1624,29 @@
       <p>Git <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> format:</p>
 
       <ul>
-        <li>Staging: <code>git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
-        <li>Production: <code>git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
+        <li>Staging: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
+        <li>Production: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
       </ul>
     </li>
     <li>
       <p>SSH URL format:</p>
 
       <ul>
-        <li>Staging: <code>&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>Production: <code>&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+        <li>Staging: <code class="highlighter-rouge">&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+        <li>Production: <code class="highlighter-rouge">&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
       </ul>
     </li>
     <li>
       <p>Web URL format:</p>
 
       <ul>
-        <li>Staging: <code>http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+        <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
         <li>
           <p>Production:</p>
 
           <ul>
-            <li>Load balancer URL: <code>http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-            <li>Direct access to one of the three redundant servers: <code>http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
+            <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+            <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
           </ul>
         </li>
       </ul>
@@ -1662,14 +1662,16 @@
 
   <p>The Git command syntax is:</p>
 
-  <pre><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
 </code></pre>
+  </div>
 
   <p>The following commands are examples for setting up remotes on Staging and Production:</p>
 
-  <pre><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+  <div class="highlighter-rouge"><pre class="highlight"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
 git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 </code></pre>
+  </div>
 
   <h2 id="cloud-live-migrate-agent">Set up your SSH agent and add the SSH key</h2>
   <p>You only need to set these up once. You can use any terminal client you prefer for SSH access, or see our <a href="/guides/v2.2/cloud/before/before-workspace.html#recommended-tools">Recommendeds tools</a>. For these examples, we use the OpenSSH client.</p>
@@ -1685,19 +1687,20 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
     <li>
       <p>Enter the following command to check if the SSH agent is running and list fingerprints of all identities currently represented by the agent:</p>
 
-      <pre><code>ssh-add -l
+      <div class="highlighter-rouge"><pre class="highlight"><code>ssh-add -l
 </code></pre>
+      </div>
 
       <p>One of the following messages displays:</p>
 
       <ul>
         <li>
-          <p>Displays a working and running SSH agent: <code>2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
+          <p>Displays a working and running SSH agent: <code class="highlighter-rouge">2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
 
           <p>Skip to step 4.</p>
         </li>
         <li>
-          <p>The SSH agent has not started: <code>Could not open a connection to your authentication agent.</code></p>
+          <p>The SSH agent has not started: <code class="highlighter-rouge">Could not open a connection to your authentication agent.</code></p>
 
           <p>Continue with step 3.</p>
         </li>
@@ -1706,21 +1709,24 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
     <li>
       <p>To start the SSH agent, enter the following command:</p>
 
-      <pre><code>eval $(ssh-agent -s)
+      <div class="highlighter-rouge"><pre class="highlight"><code>eval $(ssh-agent -s)
 </code></pre>
+      </div>
 
       <p>The agent starts and displays the process ID (PID).</p>
     </li>
     <li>
       <p>Add your public SSH key to the agent to SSH into environments and complete Git commands. This is the same SSH key you provided in a ticket for access to Staging and Production.</p>
 
-      <pre><code>ssh-add ~/.ssh/id_rsa
+      <div class="highlighter-rouge"><pre class="highlight"><code>ssh-add ~/.ssh/id_rsa
 </code></pre>
+      </div>
 
       <p>A message similar to the following displays:</p>
 
-      <pre><code>Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+      <div class="highlighter-rouge"><pre class="highlight"><code>Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
 </code></pre>
+      </div>
     </li>
   </ol>
 

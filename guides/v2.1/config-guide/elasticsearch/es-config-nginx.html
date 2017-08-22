@@ -1744,51 +1744,56 @@
   <p>See one of the following sections for more information:</p>
 
   <ul>
-    <li><a href="#es-ws-secure-nginx-conf">Step 1: Specify additional configuration files in your global <code>nginx.conf</code></a></li>
+    <li><a href="#es-ws-secure-nginx-conf">Step 1: Specify additional configuration files in your global <code class="highlighter-rouge">nginx.conf</code></a></li>
     <li><a href="#es-ws-secure-nginx-proxy">Step 2: Set up nginx as a proxy</a></li>
   </ul>
 
-  <h3 id="es-ws-secure-nginx-conf">Step 1: Specify additional configuration files in your global <code>nginx.conf</code></h3>
-  <p>Make sure your global <code>/etc/nginx/nginx.conf</code> contains the following line so it loads the other configuration files discussed in the following sections:</p>
+  <h3 id="es-ws-secure-nginx-conf">Step 1: Specify additional configuration files in your global <code class="highlighter-rouge">nginx.conf</code></h3>
+  <p>Make sure your global <code class="highlighter-rouge">/etc/nginx/nginx.conf</code> contains the following line so it loads the other configuration files discussed in the following sections:</p>
 
-  <pre><code>include /etc/nginx/conf.d/*.conf;
+  <div class="highlighter-rouge"><pre class="highlight"><code>include /etc/nginx/conf.d/*.conf;
 </code></pre>
+  </div>
 
   <h3 id="es-ws-secure-nginx-proxy">Step 2: Set up nginx as a proxy</h3>
   <p>This section discusses how to specify who can access the <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span> server.</p>
 
   <ol>
     <li>
-      <p>Use a text editor to create a new file <code>/etc/nginx/conf.d/magento_es_auth.conf</code> with the following contents:</p>
+      <p>Use a text editor to create a new file <code class="highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code> with the following contents:</p>
 
-      <pre><code>server {
+      <div class="highlighter-rouge"><pre class="highlight"><code>server {
     listen 8080;
     location / {
         proxy_pass http://localhost:9200;
     }
 }
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Restart nginx:</p>
 
-      <pre><code>service nginx restart
+      <div class="highlighter-rouge"><pre class="highlight"><code>service nginx restart
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Verify the proxy works by entering the following command:</p>
 
-      <pre><code>curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+      <div class="highlighter-rouge"><pre class="highlight"><code>curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
 </code></pre>
+      </div>
 
       <p>For example, if your proxy uses port 8080:</p>
 
-      <pre><code>curl -i http://localhost:8080/_cluster/health
+      <div class="highlighter-rouge"><pre class="highlight"><code>curl -i http://localhost:8080/_cluster/health
 </code></pre>
+      </div>
 
       <p>Messages similar to the following display to indicate success:</p>
 
-      <pre><code>HTTP/1.1 200 OK
+      <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
 Content-Type: application/json; charset=UTF-8
 Content-Length: 389
@@ -1796,6 +1801,7 @@ Connection: keep-alive
 
 {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Continue with the next section.</p>
@@ -1891,7 +1897,7 @@ Connection: keep-alive
     <img src="/common/images/solr_refresh-cache.png" width="600px" /></li>
     </ol>
 
-    <p>To clean the cache using the command line, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean</code></a> command.</p>
+    <p>To clean the cache using the command line, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
 
     <p>To reindex using the command line:</p>
 
@@ -1902,13 +1908,15 @@ Connection: keep-alive
 
         <p>Enter the following command to reindex the catalog search index only:</p>
 
-        <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
+        <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
 </code></pre>
+        </div>
 
         <p>Enter the following command to reindex all indexers:</p>
 
-        <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
+        <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
 </code></pre>
+        </div>
       </li>
       <li>Wait while the reindexing completes.</li>
     </ol>
@@ -1940,33 +1948,35 @@ Connection: keep-alive
     </ul>
 
     <h3 id="es-ws-secure-nginx-pwd">Step 1: Create a password</h3>
-    <p>We recommend you use the Apache <code>htpasswd</code> command to encode passwords for a user with access to Elasticsearch (named <code>magento_elasticsearch</code> in this example).</p>
+    <p>We recommend you use the Apache <code class="highlighter-rouge">htpasswd</code> command to encode passwords for a user with access to Elasticsearch (named <code class="highlighter-rouge">magento_elasticsearch</code> in this example).</p>
 
     <p>To create a password:</p>
 
     <ol>
       <li>
-        <p>Enter the following command to determine if <code>htpasswd</code> is already installed:</p>
+        <p>Enter the following command to determine if <code class="highlighter-rouge">htpasswd</code> is already installed:</p>
 
-        <pre><code>which htpasswd
+        <div class="highlighter-rouge"><pre class="highlight"><code>which htpasswd
 </code></pre>
+        </div>
 
-        <p>If a path displays, it is installed; if the command returns no output, <code>htpasswd</code> is not installed.</p>
+        <p>If a path displays, it is installed; if the command returns no output, <code class="highlighter-rouge">htpasswd</code> is not installed.</p>
       </li>
       <li>
-        <p>If necessary, install <code>htpasswd</code>:</p>
+        <p>If necessary, install <code class="highlighter-rouge">htpasswd</code>:</p>
 
         <ul>
-          <li>Ubuntu: <code>apt-get -y install apache2-utils</code></li>
-          <li>CentOS: <code>yum -y install httpd-tools</code></li>
+          <li>Ubuntu: <code class="highlighter-rouge">apt-get -y install apache2-utils</code></li>
+          <li>CentOS: <code class="highlighter-rouge">yum -y install httpd-tools</code></li>
         </ul>
       </li>
       <li>
-        <p>Create a <code>/etc/nginx/passwd</code> directory to store passwords:</p>
+        <p>Create a <code class="highlighter-rouge">/etc/nginx/passwd</code> directory to store passwords:</p>
 
-        <pre><code>mkdir -p /etc/nginx/passwd
+        <div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p /etc/nginx/passwd
 htpasswd -c /etc/nginx/passwd/.&lt;filename&gt; &lt;username&gt;
 </code></pre>
+        </div>
 
         <div class="bs-callout bs-callout-info" id="info">
     <p>For security reasons, <code>&lt;filename&gt;</code> should be hidden; that is, it must start with a period. An example follows. </p>
@@ -1974,20 +1984,22 @@ htpasswd -c /etc/nginx/passwd/.&lt;filename&gt; &lt;username&gt;
 
         <p>Example:</p>
 
-        <pre><code>mkdir -p /etc/nginx/passwd
+        <div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p /etc/nginx/passwd
 htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
 </code></pre>
+        </div>
 
         <p>Follow the prompts on your screen to create the user’s password.</p>
       </li>
       <li>
-        <p><em>(Optional).</em> To add another user to your password file, enter the same command without the <code>-c</code> (create) option:</p>
+        <p><em>(Optional).</em> To add another user to your password file, enter the same command without the <code class="highlighter-rouge">-c</code> (create) option:</p>
 
-        <pre><code>htpasswd /etc/nginx/passwd/.&lt;filename&gt; &lt;username&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>htpasswd /etc/nginx/passwd/.&lt;filename&gt; &lt;username&gt;
 </code></pre>
+        </div>
       </li>
       <li>
-        <p>Verify that the contents of <code>/etc/nginx/passwd</code> is correct.</p>
+        <p>Verify that the contents of <code class="highlighter-rouge">/etc/nginx/passwd</code> is correct.</p>
       </li>
     </ol>
 
@@ -1998,9 +2010,9 @@ htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
     <p>The example shown is for an <em>unsecure</em> proxy. To use a secure proxy, add the following contents (except the listen port) to your secure server block.</p>
 </div>
 
-    <p>Use a text editor to modify either <code>/etc/nginx/conf.d/magento_es_auth.conf</code> (unsecure) or your secure server block with the following contents:</p>
+    <p>Use a text editor to modify either <code class="highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code> (unsecure) or your secure server block with the following contents:</p>
 
-    <pre><code>server {
+    <div class="highlighter-rouge"><pre class="highlight"><code>server {
 	listen 8080;
 	server_name 127.0.0.1;
 
@@ -2027,6 +2039,7 @@ htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
 	include /etc/nginx/auth/*.conf;
 }
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
 	<p>The Elasticsearch listen port shown in the preceding example are examples only. For security reasons, we recommend you use a non-default listen port for Elasticsearch.</p>
@@ -2039,13 +2052,14 @@ htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
       <li>
         <p>Enter the following command to create a new directory to store the authentication configuration:</p>
 
-        <pre><code>mkdir /etc/nginx/auth/
+        <div class="highlighter-rouge"><pre class="highlight"><code>mkdir /etc/nginx/auth/
 </code></pre>
+        </div>
       </li>
       <li>
-        <p>Use a text editor to create a new file <code>/etc/nginx/auth/magento_elasticsearch.conf</code> with the following contents:</p>
+        <p>Use a text editor to create a new file <code class="highlighter-rouge">/etc/nginx/auth/magento_elasticsearch.conf</code> with the following contents:</p>
 
-        <pre><code>location /elasticsearch {
+        <div class="highlighter-rouge"><pre class="highlight"><code>location /elasticsearch {
 auth_basic "Restricted - elasticsearch";
 auth_basic_user_file /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
 	
@@ -2055,13 +2069,15 @@ proxy_set_header Host $host;
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 }
 </code></pre>
+        </div>
       </li>
-      <li>If you set up a secure proxy, delete <code>/etc/nginx/conf.d/magento_es_auth.conf</code>.</li>
+      <li>If you set up a secure proxy, delete <code class="highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code>.</li>
       <li>
         <p>Restart nginx and continue with the next section:</p>
 
-        <pre><code>service nginx restart
+        <div class="highlighter-rouge"><pre class="highlight"><code>service nginx restart
 </code></pre>
+        </div>
       </li>
     </ol>
 
@@ -2071,51 +2087,56 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
       <p>This section discusses two ways to verify that HTTP Basic authentication is working:</p>
 
       <ul>
-        <li>Using a <code>curl</code> command to verify you must enter a user name and password to get cluster status</li>
+        <li>Using a <code class="highlighter-rouge">curl</code> command to verify you must enter a user name and password to get cluster status</li>
         <li>Configuring HTTP Basic authentication in the Magento Admin</li>
       </ul>
 
-      <h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code>curl</code> command to verify cluster status</h3>
+      <h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="highlighter-rouge">curl</code> command to verify cluster status</h3>
       <p>Enter the following command:</p>
 
-      <pre><code>curl -i http://&lt;host name, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+      <div class="highlighter-rouge"><pre class="highlight"><code>curl -i http://&lt;host name, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
 </code></pre>
+      </div>
 
       <p>For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:</p>
 
-      <pre><code>curl -i http://localhost:8080/_cluster/health
+      <div class="highlighter-rouge"><pre class="highlight"><code>curl -i http://localhost:8080/_cluster/health
 </code></pre>
+      </div>
 
       <p>The following message displays to indicate authentication failed:</p>
 
-      <pre><code>HTTP/1.1 401 Unauthorized
+      <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 401 Unauthorized
 Date: Tue, 23 Feb 2016 20:35:29 GMT
 Content-Type: text/html
 Content-Length: 194
 Connection: keep-alive
 WWW-Authenticate: Basic realm="Restricted"
 
-&lt;html&gt;
-&lt;head&gt;&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt;
-&lt;body bgcolor="white"&gt;
-&lt;center&gt;&lt;h1&gt;401 Authorization Required&lt;/h1&gt;&lt;/center&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;&lt;title&gt;</span>401 Authorization Required<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+<span class="nt">&lt;body</span> <span class="na">bgcolor=</span><span class="s">"white"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;center&gt;&lt;h1&gt;</span>401 Authorization Required<span class="nt">&lt;/h1&gt;&lt;/center&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </code></pre>
+      </div>
 
       <p>Now try the following command:</p>
 
-      <pre><code>curl -i -u &lt;user name&gt;:&lt;password&gt; http://&lt;host name, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+      <div class="highlighter-rouge"><pre class="highlight"><code>curl -i -u &lt;user name&gt;:&lt;password&gt; http://&lt;host name, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
 </code></pre>
+      </div>
 
       <p>For example:</p>
 
-      <pre><code>curl -i -u magento_elasticsearch:mypassword http://localhost:8080/_cluster/health
+      <div class="highlighter-rouge"><pre class="highlight"><code>curl -i -u magento_elasticsearch:mypassword http://localhost:8080/_cluster/health
 </code></pre>
+      </div>
 
       <p>This time the command succeeds with a message similar to the following:</p>
 
-      <pre><code>HTTP/1.1 200 OK
+      <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
 Content-Type: application/json; charset=UTF-8
 Content-Length: 389
@@ -2123,6 +2144,7 @@ Connection: keep-alive
 
 {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
 </code></pre>
+      </div>
 
       <h3 id="configure-http-basic-authentication-in-the-magento-admin">Configure HTTP Basic authentication in the Magento Admin</h3>
       <p>Perform the same tasks as discussed in <a href="#elastic-m2-configure">Configure Magento to use Elasticsearch</a> <em>except</em> click <strong>Yes</strong> from the <strong>Enable Elasticsearch HTTP Auth</strong> list and enter your user name and password in the provided fields.</p>

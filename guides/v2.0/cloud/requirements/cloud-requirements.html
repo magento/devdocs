@@ -1500,8 +1500,8 @@
   <li>Familiar with <a href="/guides/v2.0/cloud/bk-cloud.html#magento2">Magento 2</a></li>
   <li>Familiar with <a href="https://www.google.com/search?q=Continuous+Integration+Best+Practices" target="_blank">Continuous Integration Best Practices</a></li>
   <li>Understand <a href="/guides/v2.0/cloud/reference/discover-arch.html">cloud architecture</a> for Magento Commerce</li>
-  <li>Set up a <a href="/guides/v2.0/cloud/before/before-workspace.html">local development environment</a>. Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project <code>master</code> Git branch cloned. Develop in branches to add modules, extensions, 3rd party integrations, and configurations.</li>
-  <li>Obtain <a href="/guides/v2.0/install-gde/prereq/connect-auth.html"><code>repo.magento.com</code> credentials</a> in your account</li>
+  <li>Set up a <a href="/guides/v2.0/cloud/before/before-workspace.html">local development environment</a>. Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project <code class="highlighter-rouge">master</code> Git branch cloned. Develop in branches to add modules, extensions, 3rd party integrations, and configurations.</li>
+  <li>Obtain <a href="/guides/v2.0/install-gde/prereq/connect-auth.html"><code class="highlighter-rouge">repo.magento.com</code> credentials</a> in your account</li>
   <li>Obtain an invite by the Account Owner or a super user to the project</li>
 </ul>
 
@@ -1533,11 +1533,11 @@
 <p>Before you test any custom code in your local Magento Commerce environment, you must do all of the following:</p>
 
 <ul>
-  <li>Set the database <a href="/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html#database"><code>auto_increment_increment</code> to 3</a></li>
+  <li>Set the database <a href="/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html#database"><code class="highlighter-rouge">auto_increment_increment</code> to 3</a></li>
   <li>
     <p>Test with the correct file permissions in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">PRODUCTION mode</a></p>
 
-    <p>Correct permissions only allow write access to <code>var</code>, <code>pub/static, pub/media</code>, and <code>app/etc</code></p>
+    <p>Correct permissions only allow write access to <code class="highlighter-rouge">var</code>, <code class="highlighter-rouge">pub/static, pub/media</code>, and <code class="highlighter-rouge">app/etc</code></p>
   </li>
   <li>Test with minification for HTML, JavaScript, and <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> enabled</li>
   <li>Test with <a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis enabled for page cache and session cache</a></li>
@@ -1555,7 +1555,7 @@
     <p>You can enable and test individual features, new extensions, and 3rd party integration on different environments prior to merging into a single environment.</p>
   </li>
   <li>
-    <p>Verify <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html"><code>magento setup:install</code></a> and <a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html"><code>magento setup:upgrade</code></a> commands work during the build and deploy process and that any extensions and customizations compile correctly in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">Production mode</a></p>
+    <p>Verify <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html"><code class="highlighter-rouge">magento setup:install</code></a> and <a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html"><code class="highlighter-rouge">magento setup:upgrade</code></a> commands work during the build and deploy process and that any extensions and customizations compile correctly in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">Production mode</a></p>
 
     <p>You can set an environment variable or enter a CLI command for this specific mode.</p>
   </li>

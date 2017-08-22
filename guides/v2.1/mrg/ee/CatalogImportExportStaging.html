@@ -808,13 +808,13 @@
 <p>The Magento_CatalogImportExportStaging module:</p>
 
 <ul>
-  <li>adds a plugin on <code>Magento\CatalogImportExport\Model\Import\Product::saveProductEntity</code> to add version and sequence information to the product <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span></li>
-  <li>listens to the <code>catalog_product_import_bunch_delete_commit_before</code> <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> to delete values from the sequence table when products are being deleted</li>
+  <li>adds a plugin on <code class="highlighter-rouge">Magento\CatalogImportExport\Model\Import\Product::saveProductEntity</code> to add version and sequence information to the product <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span></li>
+  <li>listens to the <code class="highlighter-rouge">catalog_product_import_bunch_delete_commit_before</code> <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> to delete values from the sequence table when products are being deleted</li>
 </ul>
 
 <h2 id="dependencies">Dependencies</h2>
 
-<p>You can find the list of modules that have dependencies on the Magento_CatalogImportExportStaging module in the <code>require</code> section of the <code>composer.json</code> file. The file is located in the root directory of the module.</p>
+<p>You can find the list of modules that have dependencies on the Magento_CatalogImportExportStaging module in the <code class="highlighter-rouge">require</code> section of the <code class="highlighter-rouge">composer.json</code> file. The file is located in the root directory of the module.</p>
 
 <h2 id="extension-points">Extension points</h2>
 

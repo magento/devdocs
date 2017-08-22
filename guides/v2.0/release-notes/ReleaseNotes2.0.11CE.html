@@ -1053,7 +1053,7 @@
       </li>
     </ul>
 
-    <p>REST integrators can use <code>POST /V1/invoice/{invoiceId}/refund</code> and <code>/V1/order/{orderId}/refund</code> to perform these actions. SOAP integrators can call <code>salesRefundInvoiceV1</code> and <code>salesRefundOrderV1</code>.</p>
+    <p>REST integrators can use <code class="highlighter-rouge">POST /V1/invoice/{invoiceId}/refund</code> and <code class="highlighter-rouge">/V1/order/{orderId}/refund</code> to perform these actions. SOAP integrators can call <code class="highlighter-rouge">salesRefundInvoiceV1</code> and <code class="highlighter-rouge">salesRefundOrderV1</code>.</p>
   </li>
 </ul>
 
@@ -1191,12 +1191,12 @@
 
 <!--- 57336-->
 <ul>
-  <li>Magento no longer displays a “Wrong request parameters” error when you try to assign products to a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> at the <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> level. Previously, you encountered a <code>levelWrong</code> request parameters error when you assigned products to a category.</li>
+  <li>Magento no longer displays a “Wrong request parameters” error when you try to assign products to a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> at the <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> level. Previously, you encountered a <code class="highlighter-rouge">levelWrong</code> request parameters error when you assigned products to a category.</li>
 </ul>
 
 <!--- 59461-->
 <ul>
-  <li>The Magento Framework now makes its dependencies explicit in the <code>composer.json</code> file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a></li>
+  <li>The Magento Framework now makes its dependencies explicit in the <code class="highlighter-rouge">composer.json</code> file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a></li>
 </ul>
 
 <!--- 59449-->
@@ -1241,7 +1241,7 @@
 
 <!--- 57326-->
 <ul>
-  <li>The Sales Order object can now contain more than one <code>extension_attribute</code>.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a></li>
+  <li>The Sales Order object can now contain more than one <code class="highlighter-rouge">extension_attribute</code>.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a></li>
 </ul>
 
 <!--- 57352-->
@@ -1266,7 +1266,7 @@
 
 <!--- 57036-->
 <ul>
-  <li>You can now upload changes to the <code>robots.txt</code> file from the Magento Admin.</li>
+  <li>You can now upload changes to the <code class="highlighter-rouge">robots.txt</code> file from the Magento Admin.</li>
 </ul>
 
 <!--- 62032-->
@@ -1283,7 +1283,7 @@
 
 <!--- 59829-->
 <ul>
-  <li>We’ve added a new way to import images: You can now successfully import images when you set  your document root to  <code>&lt;your Magento install dir&gt;/pub</code>. Previously, you needed to set document root to <code>/magento</code> to import images. Both ways of importing now work. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a></li>
+  <li>We’ve added a new way to import images: You can now successfully import images when you set  your document root to  <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub</code>. Previously, you needed to set document root to <code class="highlighter-rouge">/magento</code> to import images. Both ways of importing now work. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a></li>
 </ul>
 
 <!--- 56171-->
@@ -1337,7 +1337,7 @@
 
 <!--- 57130-->
 <ul>
-  <li>During upgrade, we now check directory permissions recursively except for the <code>var/session</code> directory. We skip that directory because the web server usually owns those files.</li>
+  <li>During upgrade, we now check directory permissions recursively except for the <code class="highlighter-rouge">var/session</code> directory. We skip that directory because the web server usually owns those files.</li>
 </ul>
 
 <!--- 57944-->
@@ -1347,7 +1347,7 @@
 
 <!--- 61178-->
 <ul>
-  <li>We’ve fixed an issue with how information in the <code>sales_order_item</code> attribute is handled after upgrade.</li>
+  <li>We’ve fixed an issue with how information in the <code class="highlighter-rouge">sales_order_item</code> attribute is handled after upgrade.</li>
 </ul>
 
 <h3 class="no_toc" id="orders">Orders</h3>
@@ -1465,7 +1465,7 @@
     <p><strong>Issue</strong>: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you purge the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and re-index. <strong>Workaround</strong>: Purge the Varnish cache using the Varnish admin CLI.</p>
   </li>
   <li>
-    <p><strong>Issue</strong>: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn’t, then Magento displays this error: <code>curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)</code>. <strong>Workaround</strong>: Upgrade CURL to a minimum version of 7.39.0.</p>
+    <p><strong>Issue</strong>: A Paypal SSL CURL communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is TLS 1.2. If your version doesn’t, then Magento displays this error: <code class="highlighter-rouge">curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)</code>. <strong>Workaround</strong>: Upgrade CURL to a minimum version of 7.39.0.</p>
   </li>
   <li>
     <p><strong>Issue</strong>: Mass actions can be slow and consume excessive memory unless you increase the default PHP settings for your installation. These default settings for your Magento installation typically support the processing of about 1,000 variables. If you try a mass action that involves 1000 or more variables, the mass action might fail. <strong>Workaround</strong>: You can reduce processing time and performance by increasing your default PHP memory settings to 1 GB.</p>
@@ -1477,7 +1477,7 @@
     <p><strong>Issue</strong>: The Add Products Manually link is not available after removing all variations. <strong>Workaround</strong>: Retain at least one variation or use the <strong>Choose a different product option</strong> option.</p>
   </li>
   <li>
-    <p><strong>Issue</strong>: When you log in to run a system upgrade, Magento displays this error: <code>Encountered end of file</code>.  <strong>Workaround</strong>: Upgrade your SSL protocol to a minimum of TLS 1.0.</p>
+    <p><strong>Issue</strong>: When you log in to run a system upgrade, Magento displays this error: <code class="highlighter-rouge">Encountered end of file</code>.  <strong>Workaround</strong>: Upgrade your SSL protocol to a minimum of TLS 1.0.</p>
   </li>
 </ul>
 
@@ -1510,17 +1510,19 @@
 
   <h3 id="install-ce-composer" class="no_toc">Get the Magento CE software using Composer</h3>
 
-  <p>This software is available from <code>repo.magento.com</code>. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+  <p>This software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.10</code>)</p>
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> matches the version you want (for example, <code class="highlighter-rouge">2.0.10</code>)</p>
 
-  <p>For example, to install Magento CE 2.0.10 in the <code>magento2</code> directory:</p>
+  <p>For example, to install Magento CE 2.0.10 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
 </code></pre>
+  </div>
 
   <h3 id="get-zip" class="no_toc">Get Magento CE using a compressed archive</h3>
 
@@ -1535,7 +1537,7 @@
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
     <p>To get the Magento CE software archive:</p>
 
@@ -1545,11 +1547,11 @@
         <p>Choose either the software or the software and sample data:</p>
 
         <ul>
-          <li><code>Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
 
-        <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
+        <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
       </li>
     </ol>
 

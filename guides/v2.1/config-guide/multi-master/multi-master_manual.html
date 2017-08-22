@@ -1697,14 +1697,14 @@
 <p>This topic uses the following naming conventions:</p>
 
 <ul>
-  <li>The main Magento database name is <code>magento</code> and its user name and password are both <code>magento</code></li>
+  <li>The main Magento database name is <code class="highlighter-rouge">magento</code> and its user name and password are both <code class="highlighter-rouge">magento</code></li>
   <li>
-    <p>The quote database name is <code>magento_quote</code> and its user name and password are both <code>magento_quote</code></p>
+    <p>The quote database name is <code class="highlighter-rouge">magento_quote</code> and its user name and password are both <code class="highlighter-rouge">magento_quote</code></p>
 
     <p>The quote database is also referred to as the <em>checkout</em> database.</p>
   </li>
   <li>
-    <p>The sales database name is <code>magento_sales</code> and its user name and password are both <code>magento_sales</code></p>
+    <p>The sales database name is <code class="highlighter-rouge">magento_sales</code> and its user name and password are both <code class="highlighter-rouge">magento_sales</code></p>
 
     <p>The sales database is also referred to as the order management system (<em>OMS</em>) database.</p>
   </li>
@@ -1725,8 +1725,9 @@
   <li>
     <p>Enter the following commands:</p>
 
-    <pre><code>magento setup:backup --code --media --db
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:backup --code --media --db
 </code></pre>
+    </div>
   </li>
   <li>Continue with the next section.</li>
 </ol>
@@ -1742,37 +1743,41 @@
   <li>
     <p>Enter the following command to get to a MySQL command prompt:</p>
 
-    <pre><code>mysql -u root -p
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u root -p
 </code></pre>
+    </div>
   </li>
-  <li>Enter the MySQL <code>root</code> user’s password when prompted.</li>
+  <li>Enter the MySQL <code class="highlighter-rouge">root</code> user’s password when prompted.</li>
   <li>
-    <p>Enter the following commands in the order shown to create database instances named <code>magento_quote</code> and <code>magento_sales</code> with the same user names and passwords:</p>
+    <p>Enter the following commands in the order shown to create database instances named <code class="highlighter-rouge">magento_quote</code> and <code class="highlighter-rouge">magento_sales</code> with the same user names and passwords:</p>
 
-    <pre><code>create database magento_quote;
+    <div class="highlighter-rouge"><pre class="highlight"><code>create database magento_quote;
 GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
 
 create database magento_sales;
 GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Enter <code>exit</code> to quit the command prompt.</p>
+    <p>Enter <code class="highlighter-rouge">exit</code> to quit the command prompt.</p>
   </li>
   <li>
     <p>Verify the databases, one at a time:</p>
 
     <p>quote database:</p>
 
-    <pre><code>mysql -u magento_quote -p
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u magento_quote -p
 exit
 </code></pre>
+    </div>
 
     <p>Order management database:</p>
 
-    <pre><code>mysql -u magento_sales -p
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u magento_sales -p
 exit
 </code></pre>
+    </div>
 
     <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
   </li>
@@ -1786,10 +1791,10 @@ exit
 <p>Sales database table names start with:</p>
 
 <ul>
-  <li><code>salesrule_</code></li>
-  <li><code>sales_</code></li>
-  <li><code>magento_sales_</code></li>
-  <li>The <code>magento_customercustomattributes_sales_flat_order</code> table is also affected</li>
+  <li><code class="highlighter-rouge">salesrule_</code></li>
+  <li><code class="highlighter-rouge">sales_</code></li>
+  <li><code class="highlighter-rouge">magento_sales_</code></li>
+  <li>The <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_order</code> table is also affected</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1805,12 +1810,12 @@ exit
 
 <h3 id="config-ee-multidb-sql-oms">Create sales database SQL scripts</h3>
 
-<div class="collapsible"><b class="collapsible-title">Click to create and run sales database SQL scripts </b><div class="collapsible-content"><p>Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as <code>root</code>, you can create the scripts in the <code>/root/sql-scripts</code> directory.</p>
+<div class="collapsible"><b class="collapsible-title">Click to create and run sales database SQL scripts </b><div class="collapsible-content"><p>Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as <code class="highlighter-rouge">root</code>, you can create the scripts in the <code class="highlighter-rouge">/root/sql-scripts</code> directory.</p>
 
 <h4 id="remove-foreign-keys">Remove foreign keys</h4>
 <p>This script removes foreign keys that refer to non-sales tables from the sales database.</p>
 
-<p>Create the following script and give it a name like <code>1_foreign-sales.sql</code>. Replace <code>&lt;your main Magento DB name&gt;</code> with the name of your Magento database.</p>
+<p>Create the following script and give it a name like <code class="highlighter-rouge">1_foreign-sales.sql</code>. Replace <code class="highlighter-rouge">&lt;your main Magento DB name&gt;</code> with the name of your Magento database.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">Magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_coupon_aggregated_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_COUPON_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
@@ -1864,24 +1869,27 @@ exit
 
 <ol>
   <li>
-    <p>Log in to your MySQL database as the <code>root</code> or administrative user:</p>
+    <p>Log in to your MySQL database as the <code class="highlighter-rouge">root</code> or administrative user:</p>
 
-    <pre><code>mysql -u root -p
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u root -p
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>At the <code>mysql&gt;</code> prompt, run the script as follows:</p>
+    <p>At the <code class="highlighter-rouge">mysql&gt;</code> prompt, run the script as follows:</p>
 
-    <pre><code>source &lt;path&gt;/&lt;script&gt;.sql
+    <div class="highlighter-rouge"><pre class="highlight"><code>source &lt;path&gt;/&lt;script&gt;.sql
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>source /root/sql-scripts/1_foreign-sales.sql
+    <div class="highlighter-rouge"><pre class="highlight"><code>source /root/sql-scripts/1_foreign-sales.sql
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>After the script run, enter <code>exit</code>.</p>
+    <p>After the script run, enter <code class="highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
 </div></div>
@@ -1889,15 +1897,15 @@ exit
 <h3 id="sales-backup">Back up sales data</h3>
 <p>This section discusses how to back up sales tables from the main Magento database so you can restore them in the separate sales database.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to back up and restore sales data </b><div class="collapsible-content"><p>If you’re currently at the <code>mysql&gt;</code> prompt, enter <code>exit</code> to return to the command shell.</p>
+<div class="collapsible"><b class="collapsible-title">Click to back up and restore sales data </b><div class="collapsible-content"><p>If you’re currently at the <code class="highlighter-rouge">mysql&gt;</code> prompt, enter <code class="highlighter-rouge">exit</code> to return to the command shell.</p>
 
-<p>Run the following <code>mysqldump</code> commands, one at a time, from the command shell. In each, substitute the following:</p>
+<p>Run the following <code class="highlighter-rouge">mysqldump</code> commands, one at a time, from the command shell. In each, substitute the following:</p>
 
 <ul>
-  <li><code>&lt;your database root user name&gt;</code> with the name of your database root user</li>
-  <li><code>&lt;your database root user password&gt;</code> with the user’s password</li>
-  <li><code>&lt;your main magento DB name&gt;</code> with the name of your Magento database</li>
-  <li><code>&lt;path&gt;</code> with a writable file system path</li>
+  <li><code class="highlighter-rouge">&lt;your database root user name&gt;</code> with the name of your database root user</li>
+  <li><code class="highlighter-rouge">&lt;your database root user password&gt;</code> with the user’s password</li>
+  <li><code class="highlighter-rouge">&lt;your main magento DB name&gt;</code> with the name of your Magento database</li>
+  <li><code class="highlighter-rouge">&lt;path&gt;</code> with a writable file system path</li>
 </ul>
 
 <p><strong>Script 1</strong></p>
@@ -1926,8 +1934,9 @@ exit
   <li>
     <p>Convert tables from InnoDb to NDB type in dump files:</p>
 
-    <pre><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
+    <div class="highlighter-rouge"><pre class="highlight"><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Remove rows with a FULLTEXT key from dumps because NDB tables don’t support FULLTEXT.</p>
@@ -1946,13 +1955,13 @@ exit
 
 <ul>
   <li>
-    <p><code>&lt;your sales DB name&gt;</code> with the name of your sales database.</p>
+    <p><code class="highlighter-rouge">&lt;your sales DB name&gt;</code> with the name of your sales database.</p>
 
-    <p>In this topic, the sample database name is <code>magento_sales</code>.</p>
+    <p>In this topic, the sample database name is <code class="highlighter-rouge">magento_sales</code>.</p>
   </li>
-  <li><code>&lt;root user name&gt;</code> with your MySQL root user name</li>
-  <li><code>&lt;root user password&gt;</code> with the user’s password</li>
-  <li>Verify the location of the backup files you created earlier (for example, <code>/var/sales.sql</code>)</li>
+  <li><code class="highlighter-rouge">&lt;root user name&gt;</code> with your MySQL root user name</li>
+  <li><code class="highlighter-rouge">&lt;root user password&gt;</code> with the user’s password</li>
+  <li>Verify the location of the backup files you created earlier (for example, <code class="highlighter-rouge">/var/sales.sql</code>)</li>
 </ul>
 </div></div>
 
@@ -1963,12 +1972,12 @@ exit
   <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
 </div>
 
-<p>Quote database table names start with <code>quote</code>. The <code>magento_customercustomattributes_sales_flat_quote</code> and <code>magento_customercustomattributes_sales_flat_quote_address</code> tables are also affected</p>
+<p>Quote database table names start with <code class="highlighter-rouge">quote</code>. The <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote</code> and <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote_address</code> tables are also affected</p>
 
 <h3 id="drop-foreign-keys-from-quote-tables">Drop foreign keys from quote tables</h3>
 <p>This script removes foreign keys that refer to non-quote tables from quote tables. Replace <your main="" magento="" DB="" name=""> with the name of your Magento database.</your></p>
 
-<div class="collapsible"><b class="collapsible-title">Click to drop foreign keys from quote tables </b><div class="collapsible-content"><p>Create the following script and give it a name like <code>2_foreign-key-quote.sql</code>:</p>
+<div class="collapsible"><b class="collapsible-title">Click to drop foreign keys from quote tables </b><div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">2_foreign-key-quote.sql</code>:</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
@@ -1981,20 +1990,22 @@ exit
   <li>
     <p>Log in to your MySQL database as the root or administrative user:</p>
 
-    <pre><code>mysql -u root -p
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u root -p
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>At the <code>mysql&gt;</code> prompt, run the script as follows:
+    <p>At the <code class="highlighter-rouge">mysql&gt;</code> prompt, run the script as follows:
 it`.
     source <path>/<script>.sql
 For example,</script></path></p>
 
-    <pre><code>source /root/sql-scripts/2_foreign-key-quote.sql
+    <div class="highlighter-rouge"><pre class="highlight"><code>source /root/sql-scripts/2_foreign-key-quote.sql
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>After the script runs, enter <code>exit</code>.</p>
+    <p>After the script runs, enter <code class="highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
 </div></div>
@@ -2004,8 +2015,9 @@ For example,</script></path></p>
 
 <div class="collapsible"><b class="collapsible-title">Click to back up and restore quote tables </b><div class="collapsible-content"><p>Run the following command from a command prompt:</p>
 
-<pre><code>mysqldump -u &lt;your database root user name&gt; -p &lt;your main Magento DB name&gt; magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask &gt; /&lt;path&gt;/quote.sql;
+<div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -u &lt;your database root user name&gt; -p &lt;your main Magento DB name&gt; magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask &gt; /&lt;path&gt;/quote.sql;
 </code></pre>
+</div>
 
 <h3 id="ndb-requirement">NDB requirement</h3>
 <p>If you are using a <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">Network Database (NDB)</a> cluster:</p>
@@ -2014,8 +2026,9 @@ For example,</script></path></p>
   <li>
     <p>Convert tables from InnoDb to NDB type in dump files:</p>
 
-    <pre><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
+    <div class="highlighter-rouge"><pre class="highlight"><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Remove rows with a FULLTEXT key from dumps because NDB tables don’t support FULLTEXT.</p>
@@ -2024,14 +2037,15 @@ For example,</script></path></p>
 
 <h3 id="restore-tables-to-the-quote-database">Restore tables to the quote database</h3>
 
-<pre><code>mysql -u root -p magento_quote &lt; /&lt;path&gt;/quote.sql
+<div class="highlighter-rouge"><pre class="highlight"><code>mysql -u root -p magento_quote &lt; /&lt;path&gt;/quote.sql
 </code></pre>
+</div>
 </div></div>
 
 <h2 id="config-ee-multidb-drop">Drop sales and quote tables from the Magento database</h2>
 <p>This script sales and quote tables from the Magento database. Replace <your main="" magento="" DB="" name=""> with the name of your Magento database.</your></p>
 
-<div class="collapsible"><b class="collapsible-title">Click to drop sales and quote tables </b><div class="collapsible-content"><p>Create the following script and give it a name like <code>3_drop-tables.sql</code>:</p>
+<div class="collapsible"><b class="collapsible-title">Click to drop sales and quote tables </b><div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">3_drop-tables.sql</code>:</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">SET</span> <span class="n">foreign_key_checks</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -2107,96 +2121,100 @@ For example,</script></path></p>
   <li>
     <p>Log in to your MySQL database as the root or administrative user:</p>
 
-    <pre><code>mysql -u root -p
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u root -p
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>At the <code>mysql&gt;</code> prompt, run the script as follows:</p>
+    <p>At the <code class="highlighter-rouge">mysql&gt;</code> prompt, run the script as follows:</p>
 
-    <pre><code>source &lt;path&gt;/&lt;script&gt;.sql
+    <div class="highlighter-rouge"><pre class="highlight"><code>source &lt;path&gt;/&lt;script&gt;.sql
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>source /root/sql-scripts/3_drop-tables.sql
+    <div class="highlighter-rouge"><pre class="highlight"><code>source /root/sql-scripts/3_drop-tables.sql
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>After the script runs, enter <code>exit</code>.</p>
+    <p>After the script runs, enter <code class="highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
 </div></div>
 
 <h2 id="config-ee-multidb-config">Update your deployment configuration</h2>
-<p>The final step in manually splitting databases is to add connection and resource information to Magento’s deployment configuration, <code>env.php</code>.</p>
+<p>The final step in manually splitting databases is to add connection and resource information to Magento’s deployment configuration, <code class="highlighter-rouge">env.php</code>.</p>
 
 <div class="collapsible"><b class="collapsible-title">Click to update the Magento deployment configuration </b><div class="collapsible-content"><ol>
   <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>
     <p>Back up your deployment configuration:</p>
 
-    <pre><code>cp &lt;your Magento install dir&gt;/app/etc/env.php &lt;your Magento install dir&gt;/app/etc/env.php.orig
+    <div class="highlighter-rouge"><pre class="highlight"><code>cp &lt;your Magento install dir&gt;/app/etc/env.php &lt;your Magento install dir&gt;/app/etc/env.php.orig
 </code></pre>
+    </div>
   </li>
-  <li>Open <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor and update it using the guidelines discussed in the following sections.</li>
+  <li>Open <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor and update it using the guidelines discussed in the following sections.</li>
 </ol>
 
 <h3 id="update-database-connections">Update database connections</h3>
 
-<p>Locate the block starting with <code>'default'</code> (under <code>'connection'</code>) and add <code>'checkout'</code> and <code>'sales'</code> sections. Replace sample values with values appropriate for your site.</p>
+<p>Locate the block starting with <code class="highlighter-rouge">'default'</code> (under <code class="highlighter-rouge">'connection'</code>) and add <code class="highlighter-rouge">'checkout'</code> and <code class="highlighter-rouge">'sales'</code> sections. Replace sample values with values appropriate for your site.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span> 
-      <span class="k">array</span> <span class="p">(</span>
-        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
-      <span class="p">),</span>
-      <span class="s1">&#39;checkout&#39;</span> <span class="o">=&gt;</span> 
-      <span class="k">array</span> <span class="p">(</span>
-        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_quote&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_quote&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_quote&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
-      <span class="p">),</span>
-      <span class="s1">&#39;sales&#39;</span> <span class="o">=&gt;</span> 
-      <span class="k">array</span> <span class="p">(</span>
-        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_sales&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_sales&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento_sales&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
-      <span class="p">),</span>
-    <span class="p">),</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> 'default' =&gt; 
+      array (
+        'host' =&gt; 'localhost',
+        'dbname' =&gt; 'magento',
+        'username' =&gt; 'magento',
+        'password' =&gt; 'magento',
+        'model' =&gt; 'mysql4',
+        'engine' =&gt; 'innodb',
+        'initStatements' =&gt; 'SET NAMES utf8;',
+        'active' =&gt; '1',
+      ),
+      'checkout' =&gt; 
+      array (
+        'host' =&gt; 'localhost',
+        'dbname' =&gt; 'magento_quote',
+        'username' =&gt; 'magento_quote',
+        'password' =&gt; 'magento_quote',
+        'model' =&gt; 'mysql4',
+        'engine' =&gt; 'innodb',
+        'initStatements' =&gt; 'SET NAMES utf8;',
+        'active' =&gt; '1',
+      ),
+      'sales' =&gt; 
+      array (
+        'host' =&gt; 'localhost',
+        'dbname' =&gt; 'magento_sales',
+        'username' =&gt; 'magento_sales',
+        'password' =&gt; 'magento_sales',
+        'model' =&gt; 'mysql4',
+        'engine' =&gt; 'innodb',
+        'initStatements' =&gt; 'SET NAMES utf8;',
+        'active' =&gt; '1',
+      ),
+    ),</code></pre></figure>
 
 <h3 id="update-resources">Update resources</h3>
-<p>Locate the block starting with <code>'resource'</code> and add <code>'checkout'</code> and <code>'sales'</code> sections to it as follows:</p>
+<p>Locate the block starting with <code class="highlighter-rouge">'resource'</code> and add <code class="highlighter-rouge">'checkout'</code> and <code class="highlighter-rouge">'sales'</code> sections to it as follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;resource&#39;</span> <span class="o">=&gt;</span> 
-  <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">&#39;default_setup&#39;</span> <span class="o">=&gt;</span> 
-    <span class="k">array</span> <span class="p">(</span>
-      <span class="s1">&#39;connection&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
-    <span class="p">),</span>
-    <span class="s1">&#39;checkout&#39;</span> <span class="o">=&gt;</span> 
-    <span class="k">array</span> <span class="p">(</span>
-      <span class="s1">&#39;connection&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;checkout&#39;</span><span class="p">,</span>
-    <span class="p">),</span>
-    <span class="s1">&#39;sales&#39;</span> <span class="o">=&gt;</span> 
-    <span class="k">array</span> <span class="p">(</span>
-      <span class="s1">&#39;connection&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sales&#39;</span><span class="p">,</span>
-    <span class="p">),</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">'resource' =&gt; 
+  array (
+    'default_setup' =&gt; 
+    array (
+      'connection' =&gt; 'default',
+    ),
+    'checkout' =&gt; 
+    array (
+      'connection' =&gt; 'checkout',
+    ),
+    'sales' =&gt; 
+    array (
+      'connection' =&gt; 'sales',
+    ),</code></pre></figure>
 </div></div>
 
 <h2 id="split-db-ref">Reference scripts</h2>
@@ -2205,17 +2223,17 @@ For example,</script></path></p>
 <div class="collapsible"><b class="collapsible-title">Click to view reference SQL scripts </b><div class="collapsible-content"><p>To use these scripts:</p>
 
 <ol>
-  <li>Create a <code>.sql</code> script with the contents of each script in this section.</li>
+  <li>Create a <code class="highlighter-rouge">.sql</code> script with the contents of each script in this section.</li>
   <li>
-    <p>In each script, replace <code>&lt;your main magento DB name&gt;</code> with the name of your Magento database.</p>
+    <p>In each script, replace <code class="highlighter-rouge">&lt;your main magento DB name&gt;</code> with the name of your Magento database.</p>
 
-    <p>In this topic, the sample database name is <code>magento</code>.</p>
+    <p>In this topic, the sample database name is <code class="highlighter-rouge">magento</code>.</p>
   </li>
-  <li>Run each script from the <code>mysql&gt;</code> prompt as <code>source &lt;script name&gt;</code></li>
+  <li>Run each script from the <code class="highlighter-rouge">mysql&gt;</code> prompt as <code class="highlighter-rouge">source &lt;script name&gt;</code></li>
   <li>Examine the output.</li>
-  <li>Copy the result of each script to another <code>.sql</code> script, removing the pipe characters (<code>|</code>).</li>
+  <li>Copy the result of each script to another <code class="highlighter-rouge">.sql</code> script, removing the pipe characters (<code class="highlighter-rouge">|</code>).</li>
   <li>
-    <p>Run each script from the <code>mysql&gt;</code> prompt as <code>source &lt;script name&gt;</code>.</p>
+    <p>Run each script from the <code class="highlighter-rouge">mysql&gt;</code> prompt as <code class="highlighter-rouge">source &lt;script name&gt;</code>.</p>
 
     <p>Running this second script performs the actions in your main Magento database.</p>
   </li>
@@ -2225,99 +2243,99 @@ For example,</script></path></p>
 <p>This script is the removes foreign keys that refer to non-sales tables from the sales database.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
-    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;;&#39;</span>
+    <span class="s1">'ALTER TABLE '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">' DROP FOREIGN KEY '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">';'</span>
     <span class="p">)</span>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
-<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span>  <span class="s1">&#39;&lt;your main magento DB name&gt;/|sales_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;|&#39;</span>
-    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">not</span> <span class="k">like</span>  <span class="s1">&#39;&lt;your main magento DB name&gt;/|sales_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;|&#39;</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span>  <span class="s1">'&lt;your main magento DB name&gt;/|sales_%'</span> <span class="k">escape</span> <span class="s1">'|'</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">not</span> <span class="k">like</span>  <span class="s1">'&lt;your main magento DB name&gt;/|sales_%'</span> <span class="k">escape</span> <span class="s1">'|'</span>
 <span class="k">union</span> <span class="k">all</span>
 <span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
-    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;;&#39;</span>
+    <span class="s1">'ALTER TABLE '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">' DROP FOREIGN KEY '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">';'</span>
     <span class="p">)</span>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
-<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span>  <span class="s1">&#39;&lt;your main magento DB name&gt;/|magento_sales|_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;|&#39;</span>
-    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">not</span> <span class="k">like</span>  <span class="s1">&#39;&lt;your main magento DB name&gt;/|sales|_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;|&#39;</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span>  <span class="s1">'&lt;your main magento DB name&gt;/|magento_sales|_%'</span> <span class="k">escape</span> <span class="s1">'|'</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">not</span> <span class="k">like</span>  <span class="s1">'&lt;your main magento DB name&gt;/|sales|_%'</span> <span class="k">escape</span> <span class="s1">'|'</span>
 <span class="p">;</span></code></pre></figure>
 
 <h3 id="remove-foreign-keys-quote-tables">Remove foreign keys (quote tables)</h3>
 <p>This script removes foreign keys that refer to non-quote tables from quote tables.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
-    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;;&#39;</span>
+    <span class="s1">'ALTER TABLE '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">' DROP FOREIGN KEY '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">';'</span>
     <span class="p">)</span>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
-<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/%&#39;</span>
-    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/sales\_%&#39;</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">'&lt;your main magento DB name&gt;/%'</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">'&lt;your main magento DB name&gt;/sales</span><span class="se">\_</span><span class="s1">%'</span>
 <span class="k">union</span> <span class="k">all</span>
 <span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
-    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;;&#39;</span>
+    <span class="s1">'ALTER TABLE '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">' DROP FOREIGN KEY '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">';'</span>
     <span class="p">)</span>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
-<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/%&#39;</span>
-    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/magento_sales\_%&#39;</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">'&lt;your main magento DB name&gt;/%'</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">'&lt;your main magento DB name&gt;/magento_sales</span><span class="se">\_</span><span class="s1">%'</span>
 <span class="k">union</span> <span class="k">all</span>
 <span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
-    <span class="s1">&#39;ALTER TABLE &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39; DROP FOREIGN KEY &#39;</span><span class="p">,</span>
-    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;;&#39;</span>
+    <span class="s1">'ALTER TABLE '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">' DROP FOREIGN KEY '</span><span class="p">,</span>
+    <span class="k">replace</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
+    <span class="s1">';'</span>
     <span class="p">)</span>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
-<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/%&#39;</span>
-    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">&#39;&lt;your main magento DB name&gt;/magento_customercustomattributes\_%&#39;</span>
+<span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">'&lt;your main magento DB name&gt;/%'</span>
+    <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">'&lt;your main magento DB name&gt;/magento_customercustomattributes</span><span class="se">\_</span><span class="s1">%'</span>
 <span class="p">;</span></code></pre></figure>
 
 <h3 id="drop-sales-tables">Drop sales tables</h3>
 <p>This script drops sales tables from the Magento database.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">select</span> <span class="s1">&#39; SET foreign_key_checks = 0;&#39;</span> <span class="k">as</span> <span class="n">querytext</span>
+<span class="k">select</span> <span class="s1">' SET foreign_key_checks = 0;'</span> <span class="k">as</span> <span class="n">querytext</span>
 <span class="k">union</span> <span class="k">all</span>
 <span class="k">select</span>
-    <span class="n">concat</span><span class="p">(</span><span class="s1">&#39;DROP TABLE IF EXISTS &#39;</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    <span class="n">concat</span><span class="p">(</span><span class="s1">'DROP TABLE IF EXISTS '</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">';'</span><span class="p">)</span>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span>
-<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;&lt;your main magento DB name&gt;&#39;</span>
-<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">&#39;sales/_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;/&#39;</span>
+<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">'&lt;your main magento DB name&gt;'</span>
+<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">'sales/_%'</span> <span class="k">escape</span> <span class="s1">'/'</span>
 <span class="k">union</span> <span class="k">all</span>
 <span class="k">select</span>
-    <span class="n">concat</span><span class="p">(</span><span class="s1">&#39;DROP TABLE IF EXISTS &#39;</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    <span class="n">concat</span><span class="p">(</span><span class="s1">'DROP TABLE IF EXISTS '</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">';'</span><span class="p">)</span>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span>
-<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;&lt;your main magento DB name&gt;&#39;</span>
-<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">&#39;magento_sales/_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;/&#39;</span>
+<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">'&lt;your main magento DB name&gt;'</span>
+<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">'magento_sales/_%'</span> <span class="k">escape</span> <span class="s1">'/'</span>
 <span class="k">union</span> <span class="k">all</span>
 <span class="k">select</span>
-    <span class="n">concat</span><span class="p">(</span><span class="s1">&#39;DROP TABLE IF EXISTS &#39;</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    <span class="n">concat</span><span class="p">(</span><span class="s1">'DROP TABLE IF EXISTS '</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">';'</span><span class="p">)</span>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span>
-<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;&lt;your main magento DB name&gt;&#39;</span>
-<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">&#39;magento_customercustomattributes_sales_flat_order%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;/&#39;</span>
+<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">'&lt;your main magento DB name&gt;'</span>
+<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">'magento_customercustomattributes_sales_flat_order%'</span> <span class="k">escape</span> <span class="s1">'/'</span>
 <span class="k">union</span> <span class="k">all</span>
 <span class="k">select</span>
-    <span class="n">concat</span><span class="p">(</span><span class="s1">&#39;DROP TABLE IF EXISTS &#39;</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    <span class="n">concat</span><span class="p">(</span><span class="s1">'DROP TABLE IF EXISTS '</span> <span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="s1">';'</span><span class="p">)</span>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span>
-<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;&lt;your main magento DB name&gt;&#39;</span>
-<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">&#39;sequence/_%&#39;</span> <span class="k">escape</span> <span class="s1">&#39;/&#39;</span>
+<span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">'&lt;your main magento DB name&gt;'</span>
+<span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">'sequence/_%'</span> <span class="k">escape</span> <span class="s1">'/'</span>
 <span class="k">union</span> <span class="k">all</span>
-<span class="k">select</span> <span class="s1">&#39;SET foreign_key_checks = 1;&#39;</span><span class="p">;</span></code></pre></figure>
+<span class="k">select</span> <span class="s1">'SET foreign_key_checks = 1;'</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="drop-quote-tables">Drop quote tables</h3>
-<p>Drop all tables that start with <code>quote_</code>.</p>
+<p>Drop all tables that start with <code class="highlighter-rouge">quote_</code>.</p>
 </div></div>
 
 <h4 id="next-step">Next step</h4>

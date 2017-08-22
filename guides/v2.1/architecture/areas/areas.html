@@ -983,7 +983,7 @@
 
 			<h2 id="m2devgde-area-intro">Overview</h2>
 
-<p>Magento uses <em>areas</em> to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the <code>storefront</code> (frontend), <code>Magento Admin</code> (adminhtml, the administration interface), and <code>web API REST</code> (webapi_rest).</p>
+<p>Magento uses <em>areas</em> to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the <code class="highlighter-rouge">storefront</code> (frontend), <code class="highlighter-rouge">Magento Admin</code> (adminhtml, the administration interface), and <code class="highlighter-rouge">web API REST</code> (webapi_rest).</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Although <code>frontend</code> and <code>adminhtml</code> are common in <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> paths, layouts are not used by web services. Currently, layouts are used only by <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> generated for the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> and administration interfaces.</p>
@@ -991,9 +991,9 @@
 
 <p>Magento processes a <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.</p>
 
-<p>After the area name, the part of the URI segment specifies the <em>full front name</em>. When an HTTP request arrives, the handle is extracted from the URL. The handle is used to identify the controller (a <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class) and action (a PHP method in the class) to execute. A common action to display a HTML page is <code>index</code>, which returns an HTML page.</p>
+<p>After the area name, the part of the URI segment specifies the <em>full front name</em>. When an HTTP request arrives, the handle is extracted from the URL. The handle is used to identify the controller (a <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class) and action (a PHP method in the class) to execute. A common action to display a HTML page is <code class="highlighter-rouge">index</code>, which returns an HTML page.</p>
 
-<p>The purpose of areas is efficiency. If you are invoking a REST web service call, for example, rather than load up all the code related to generating user HTML pages, there is a separate area (such as <code>/rest</code>) which loads code that knows only how to answer the REST call (and not generate HTML pages using layouts). Each area can have completely different code on how to process URLs and requests.</p>
+<p>The purpose of areas is efficiency. If you are invoking a REST web service call, for example, rather than load up all the code related to generating user HTML pages, there is a separate area (such as <code class="highlighter-rouge">/rest</code>) which loads code that knows only how to answer the REST call (and not generate HTML pages using layouts). Each area can have completely different code on how to process URLs and requests.</p>
 
 <p>Typically, an area has behavior and view components, which operate separately.</p>
 

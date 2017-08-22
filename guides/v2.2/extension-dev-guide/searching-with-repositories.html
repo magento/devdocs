@@ -1259,186 +1259,186 @@ This means that every method call should not rely on previous calls nor should i
 Any field contained in the repository class must also be stateless.</p>
 
 <p>If your repository needs to provide functionality that requires state, such as for caching,  use the registry pattern.
-A good example that uses this pattern is the <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code>CustomerRepository</code></a> class.</p>
+A good example that uses this pattern is the <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code class="highlighter-rouge">CustomerRepository</code></a> class.</p>
 
 <h3 id="m2devgde-search-criteria">Search Criteria</h3>
 
-<p>A Search Criteria is an implementation of the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteriaInterface.php" target="_blank"><code>SearchCriteriaInterface</code></a> class that allows you to build custom requests with different conditions.</p>
+<p>A Search Criteria is an implementation of the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteriaInterface.php" target="_blank"><code class="highlighter-rouge">SearchCriteriaInterface</code></a> class that allows you to build custom requests with different conditions.</p>
 
 <p>Repositories use this class to retrieve entities based on a matching criteria.</p>
 
 <h4 id="filter">Filter</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/Filter.php" target="_blank"><code>Filter</code></a> class is the smallest part of a Search Criteria.
+<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/Filter.php" target="_blank"><code class="highlighter-rouge">Filter</code></a> class is the smallest part of a Search Criteria.
 It allows you to add a custom field, value, and condition type to the criteria.</p>
 
 <p>Example of how to define a Filter:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$filter</span>
-    <span class="o">-&gt;</span><span class="na">setField</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="s2">&quot;%magento.com&quot;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setConditionType</span><span class="p">(</span><span class="s2">&quot;like&quot;</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$filter
+    -&gt;setField("url")
+    -&gt;setValue("%magento.com")
+    -&gt;setConditionType("like");</code></pre></figure>
 
 <p>This filter will find all urls with the suffix of “magento.com”.</p>
 
 <h4 id="filter-group">Filter Group</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/Search/FilterGroup.php" target="_blank"><code>FilterGroup</code></a> class acts like a collection of Filters that apply one or more criteria to a search.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/Search/FilterGroup.php" target="_blank"><code class="highlighter-rouge">FilterGroup</code></a> class acts like a collection of Filters that apply one or more criteria to a search.</p>
 
-<p>The boolean <code>OR</code> statement joins Filters inside a single <strong>Filter Group</strong>.</p>
+<p>The boolean <code class="highlighter-rouge">OR</code> statement joins Filters inside a single <strong>Filter Group</strong>.</p>
 
-<p>The boolean <code>AND</code> statement joins Filter Groups inside a <strong>Search Criteria</strong>.</p>
+<p>The boolean <code class="highlighter-rouge">AND</code> statement joins Filter Groups inside a <strong>Search Criteria</strong>.</p>
 
 <p>For example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$filter1</span>
-    <span class="o">-&gt;</span><span class="na">setField</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="s2">&quot;%magento.com&quot;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setConditionType</span><span class="p">(</span><span class="s2">&quot;like&quot;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$filter1
+    -&gt;setField("url")
+    -&gt;setValue("%magento.com")
+    -&gt;setConditionType("like");
 
-<span class="nv">$filter2</span>
-    <span class="o">-&gt;</span><span class="na">setField</span><span class="p">(</span><span class="s2">&quot;store_id&quot;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setConditionType</span><span class="p">(</span><span class="s2">&quot;eq&quot;</span><span class="p">);</span>
+$filter2
+    -&gt;setField("store_id")
+    -&gt;setValue("1")
+    -&gt;setConditionType("eq");
 
-<span class="nv">$filterGroup1</span><span class="o">-&gt;</span><span class="na">setFilters</span><span class="p">([</span><span class="nv">$filter1</span><span class="p">,</span> <span class="nv">$filter2</span><span class="p">]);</span>
+$filterGroup1-&gt;setFilters([$filter1, $filter2]);
 
-<span class="nv">$filter3</span>
-    <span class="o">-&gt;</span><span class="na">setField</span><span class="p">(</span><span class="s2">&quot;url_type&quot;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setConditionType</span><span class="p">(</span><span class="s2">&quot;eq&quot;</span><span class="p">);</span>
+$filter3
+    -&gt;setField("url_type")
+    -&gt;setValue(1)
+    -&gt;setConditionType("eq");
 
-<span class="nv">$filterGroup2</span><span class="o">-&gt;</span><span class="na">setFilters</span><span class="p">([</span><span class="nv">$filter3</span><span class="p">]);</span>
+$filterGroup2-&gt;setFilters([$filter3]);
 
-<span class="nv">$searchCriteria</span><span class="o">-&gt;</span><span class="na">setFilterGroups</span><span class="p">([</span><span class="nv">$filterGroup1</span><span class="p">,</span> <span class="nv">$filterGroup2</span><span class="p">]);</span></code></pre></figure>
+$searchCriteria-&gt;setFilterGroups([$filterGroup1, $filterGroup2]);</code></pre></figure>
 
 <p>The code above creates a Search Criteria with the Filters put together in the following way:<br />
-<code>(url like %magento.com OR store_id eq 1) AND (url_type eq 1)</code></p>
+<code class="highlighter-rouge">(url like %magento.com OR store_id eq 1) AND (url_type eq 1)</code></p>
 
 <h4 id="sorting">Sorting</h4>
 
-<p>To apply sorting to the Search Criteria, use the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SortOrder.php" target="_blank"><code>SortOrder</code></a> class.</p>
+<p>To apply sorting to the Search Criteria, use the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SortOrder.php" target="_blank"><code class="highlighter-rouge">SortOrder</code></a> class.</p>
 
 <p>Field and direction make up the two parameters that define a Sort Order object.
 The field is the name of the field to sort.
-The direction is the method of sorting whose value can be <code>ASC</code> or <code>DESC</code>.</p>
+The direction is the method of sorting whose value can be <code class="highlighter-rouge">ASC</code> or <code class="highlighter-rouge">DESC</code>.</p>
 
 <p>The example below defines a Sort Order object that will sort the customer email in ascending order:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$sortOrder</span>
-    <span class="o">-&gt;</span><span class="na">setField</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setDirection</span><span class="p">(</span><span class="s2">&quot;ASC&quot;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$sortOrder
+    -&gt;setField("email")
+    -&gt;setDirection("ASC");
 
-<span class="nv">$searchCriteria</span><span class="o">-&gt;</span><span class="na">setSortOrders</span><span class="p">([</span><span class="nv">$sortOrder</span><span class="p">]);</span></code></pre></figure>
+$searchCriteria-&gt;setSortOrders([$sortOrder]);</code></pre></figure>
 
 <h4 id="pagination">Pagination</h4>
 
-<p>The <code>setPageSize</code> function paginates the Search Criteria by limiting the amount of entities it retrieves:</p>
+<p>The <code class="highlighter-rouge">setPageSize</code> function paginates the Search Criteria by limiting the amount of entities it retrieves:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$searchCriteria</span><span class="o">-&gt;</span><span class="na">setPageSize</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span> <span class="c1">//retrieve 20 or less entities</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$searchCriteria-&gt;setPageSize(20); //retrieve 20 or less entities</code></pre></figure>
 
-<p>The <code>setCurrentPage</code> function sets the current page:</p>
+<p>The <code class="highlighter-rouge">setCurrentPage</code> function sets the current page:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$searchCriteria</span>
-    <span class="o">-&gt;</span><span class="na">setCurrentPage</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setCurrentPage</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span> <span class="c1">//will show entities from 15-th to 20-th</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$searchCriteria
+    -&gt;setCurrentPage(20)
+    -&gt;setCurrentPage(15); //will show entities from 15-th to 20-th</code></pre></figure>
 
 <h3 id="search-result">Search Result</h3>
 
-<p>The <code>getList(SearchCriteria $searchCriteria)</code> method defined in your repository should return a Search Result object.
-This object is an instance of a class that implements the interface <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchResultsInterface.php" target="_blank"><code>SearchResultInterface</code></a>.</p>
+<p>The <code class="highlighter-rouge">getList(SearchCriteria $searchCriteria)</code> method defined in your repository should return a Search Result object.
+This object is an instance of a class that implements the interface <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchResultsInterface.php" target="_blank"><code class="highlighter-rouge">SearchResultInterface</code></a>.</p>
 
 <p>Search Result objects hold the Search Criteria object and the retrieved entities along with information about the total count of found entities regardless of any limitations set in the criteria.</p>
 
 <h3 id="m2devgde-searchcriteria-unify-processing">Search Criteria Unify Processing</h3>
 
-<p>A Collection Processor is an implementation of the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessorInterface.php" target="_blank"><code>CollectionProcessorInterface</code></a> interface that unifies the application of custom filters, sorting, and paginating.
+<p>A Collection Processor is an implementation of the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessorInterface.php" target="_blank"><code class="highlighter-rouge">CollectionProcessorInterface</code></a> interface that unifies the application of custom filters, sorting, and paginating.
 It contains a one method process that applies a Search Criteria object to an abstract database collection.</p>
 
-<p>You can use <a href="/guides/v2.2/extension-detv-guide/depend-inj.html#configuring-a-type">virtual typing</a> in your <code>di.xml</code> file to specify the processors used in the Collection Processor.</p>
+<p>You can use <a href="/guides/v2.2/extension-detv-guide/depend-inj.html#configuring-a-type">virtual typing</a> in your <code class="highlighter-rouge">di.xml</code> file to specify the processors used in the Collection Processor.</p>
 
 <h4 id="filter-processor">Filter Processor</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor.php" target="_blank"><code>FilterProcessor</code></a> class applies Filter Groups and their filters to a collection.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor.php" target="_blank"><code class="highlighter-rouge">FilterProcessor</code></a> class applies Filter Groups and their filters to a collection.</p>
 
 <p>Below is the code that applies filters to a collection.
-The method applies custom filters for some fields, otherwise it applies <code>$collection-&gt;addFieldToFilter($fields, $conditions)</code>.</p>
+The method applies custom filters for some fields, otherwise it applies <code class="highlighter-rouge">$collection-&gt;addFieldToFilter($fields, $conditions)</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show Code for addFilterGroupToCollection </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="sd">/**</span>
-<span class="sd">     * Add FilterGroup to the collection</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param FilterGroup $filterGroup</span>
-<span class="sd">     * @param AbstractDb $collection</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">addFilterGroupToCollection</span><span class="p">(</span>
-        <span class="nx">FilterGroup</span> <span class="nv">$filterGroup</span><span class="p">,</span>
-        <span class="nx">AbstractDb</span> <span class="nv">$collection</span>
-    <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$fields</span> <span class="o">=</span> <span class="p">[];</span>
-        <span class="nv">$conditions</span> <span class="o">=</span> <span class="p">[];</span>
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$filterGroup</span><span class="o">-&gt;</span><span class="na">getFilters</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$filter</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$isApplied</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-            <span class="nv">$customFilter</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomFilterForField</span><span class="p">(</span><span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getField</span><span class="p">());</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nv">$customFilter</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$isApplied</span> <span class="o">=</span> <span class="nv">$customFilter</span><span class="o">-&gt;</span><span class="na">apply</span><span class="p">(</span><span class="nv">$filter</span><span class="p">,</span> <span class="nv">$collection</span><span class="p">);</span>
-            <span class="p">}</span>
+<div class="collapsible"><b class="collapsible-title">Show Code for addFilterGroupToCollection </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    /**
+     * Add FilterGroup to the collection
+     *
+     * @param FilterGroup $filterGroup
+     * @param AbstractDb $collection
+     */
+    private function addFilterGroupToCollection(
+        FilterGroup $filterGroup,
+        AbstractDb $collection
+    ) {
+        $fields = [];
+        $conditions = [];
+        foreach ($filterGroup-&gt;getFilters() as $filter) {
+            $isApplied = false;
+            $customFilter = $this-&gt;getCustomFilterForField($filter-&gt;getField());
+            if ($customFilter) {
+                $isApplied = $customFilter-&gt;apply($filter, $collection);
+            }
 
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$isApplied</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$condition</span> <span class="o">=</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getConditionType</span><span class="p">()</span> <span class="o">?</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getConditionType</span><span class="p">()</span> <span class="o">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">;</span>
-                <span class="nv">$fields</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getFieldMapping</span><span class="p">(</span><span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getField</span><span class="p">());</span>
-                <span class="nv">$conditions</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$condition</span> <span class="o">=&gt;</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">()];</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
+            if (!$isApplied) {
+                $condition = $filter-&gt;getConditionType() ? $filter-&gt;getConditionType() : 'eq';
+                $fields[] = $this-&gt;getFieldMapping($filter-&gt;getField());
+                $conditions[] = [$condition =&gt; $filter-&gt;getValue()];
+            }
+        }
 
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$fields</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">addFieldToFilter</span><span class="p">(</span><span class="nv">$fields</span><span class="p">,</span> <span class="nv">$conditions</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span></code></pre></figure>
+        if ($fields) {
+            $collection-&gt;addFieldToFilter($fields, $conditions);
+        }
+    }</code></pre></figure>
 </div></div>
 
-<p>You can configure this class to use a specific custom field mapping and custom filter in the <code>di.xml</code> file.
-The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> to create a <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> from a Filter Processor that applies the module-specific <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php" target="_blank"><code>ProductCategoryFilter</code></a> on a particular field mapping.</p>
+<p>You can configure this class to use a specific custom field mapping and custom filter in the <code class="highlighter-rouge">di.xml</code> file.
+The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> to create a <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> from a Filter Processor that applies the module-specific <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php" target="_blank"><code class="highlighter-rouge">ProductCategoryFilter</code></a> on a particular field mapping.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupFilterProcessor&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupFilterProcessor"</span> <span class="na">type=</span><span class="s">"Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;customFilters&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;category_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\ProductCategoryFilter<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"customFilters"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"category_id"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\ProductCategoryFilter<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;fieldMapping&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;code&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_group_code<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_group_id<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;tax_class_name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>class_name<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"fieldMapping"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"code"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_group_code<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_group_id<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tax_class_name"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>class_name<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<div class="collapsible"><b class="collapsible-title">Show code for ProductCategoryFilter </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor</span><span class="p">;</span>
+<div class="collapsible"><b class="collapsible-title">Show code for ProductCategoryFilter </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">namespace Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor;
 
-<span class="k">use</span> <span class="nx">Magento\Catalog\Model\ResourceModel\Product\Collection</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Api\Filter</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor\CustomFilterInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Data\Collection\AbstractDb</span><span class="p">;</span>
+use Magento\Catalog\Model\ResourceModel\Product\Collection;
+use Magento\Framework\Api\Filter;
+use Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor\CustomFilterInterface;
+use Magento\Framework\Data\Collection\AbstractDb;
 
-<span class="k">class</span> <span class="nc">ProductCategoryFilter</span> <span class="k">implements</span> <span class="nx">CustomFilterInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Apply category_id Filter to Product Collection</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param Filter $filter</span>
-<span class="sd">     * @param AbstractDb $collection</span>
-<span class="sd">     * @return bool Whether to apply the filter</span>
-<span class="sd">     **/</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">apply</span><span class="p">(</span><span class="nx">Filter</span> <span class="nv">$filter</span><span class="p">,</span> <span class="nx">AbstractDb</span> <span class="nv">$collection</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$conditionType</span> <span class="o">=</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getConditionType</span><span class="p">()</span> <span class="o">?</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getConditionType</span><span class="p">()</span> <span class="o">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">;</span>
-        <span class="nv">$categoryFilter</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$conditionType</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">()]];</span>
+class ProductCategoryFilter implements CustomFilterInterface
+{
+    /**
+     * Apply category_id Filter to Product Collection
+     *
+     * @param Filter $filter
+     * @param AbstractDb $collection
+     * @return bool Whether to apply the filter
+     **/
+    public function apply(Filter $filter, AbstractDb $collection)
+    {
+        $conditionType = $filter-&gt;getConditionType() ? $filter-&gt;getConditionType() : 'eq';
+        $categoryFilter = [$conditionType =&gt; [$filter-&gt;getValue()]];
 
-        <span class="sd">/** @var Collection $collection **/</span>
-        <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">addCategoriesFilter</span><span class="p">(</span><span class="nv">$categoryFilter</span><span class="p">);</span>
+        /** @var Collection $collection **/
+        $collection-&gt;addCategoriesFilter($categoryFilter);
 
-        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+        return true;
+    }
+}</code></pre></figure>
 </div></div>
 
 <table>
@@ -1450,11 +1450,11 @@ The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" cl
   </thead>
   <tbody>
     <tr>
-      <td><code>customFilters</code></td>
-      <td>An array of filters implementing the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor/CustomFilterInterface.php" target="_blank"><code>CustomFilterInterface</code></a>. These filters allow you to apply custom logic to a particular abstract database collection.</td>
+      <td><code class="highlighter-rouge">customFilters</code></td>
+      <td>An array of filters implementing the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor/CustomFilterInterface.php" target="_blank"><code class="highlighter-rouge">CustomFilterInterface</code></a>. These filters allow you to apply custom logic to a particular abstract database collection.</td>
     </tr>
     <tr>
-      <td><code>fieldMapping</code></td>
+      <td><code class="highlighter-rouge">fieldMapping</code></td>
       <td>Maps field names defined in the search Criteria to the names in an abstract database collection</td>
     </tr>
   </tbody>
@@ -1462,19 +1462,19 @@ The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" cl
 
 <h4 id="sorting-processor">Sorting Processor</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/SortingProcessor.php" target="_blank"><code>SortingProcessor</code></a> class applies the sorting order of a search criteria to an abstract database collection.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/SortingProcessor.php" target="_blank"><code class="highlighter-rouge">SortingProcessor</code></a> class applies the sorting order of a search criteria to an abstract database collection.</p>
 
-<p>Below is an example of how you can configure a Sorting Processor virtual type in the <code>di.xml</code> file to use a custom field mapping and default sorting orders.</p>
+<p>Below is an example of how you can configure a Sorting Processor virtual type in the <code class="highlighter-rouge">di.xml</code> file to use a custom field mapping and default sorting orders.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupSortingProcessor&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupSortingProcessor"</span> <span class="na">type=</span><span class="s">"Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;fieldMapping&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;code&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_group_code<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_group_id<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;tax_class_name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>class_name<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"fieldMapping"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"code"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_group_code<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_group_id<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tax_class_name"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>class_name<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;defaultOrders&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ASC<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"defaultOrders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ASC<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
@@ -1488,11 +1488,11 @@ The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" cl
   </thead>
   <tbody>
     <tr>
-      <td><code>fieldMapping</code></td>
+      <td><code class="highlighter-rouge">fieldMapping</code></td>
       <td>Maps field names defined in the search Criteria to the names in an abstract database collection</td>
     </tr>
     <tr>
-      <td><code>defaultOrders</code></td>
+      <td><code class="highlighter-rouge">defaultOrders</code></td>
       <td>The ordering applied when there are none defined in a search criteria.</td>
     </tr>
   </tbody>
@@ -1500,160 +1500,160 @@ The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" cl
 
 <h4 id="pagination-processor">Pagination Processor</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/PaginationProcessor.php" target="_blank"><code>PaginationProcessor</code></a> class applies the current page and page size of the search criteria to an abstract database collection.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/PaginationProcessor.php" target="_blank"><code class="highlighter-rouge">PaginationProcessor</code></a> class applies the current page and page size of the search criteria to an abstract database collection.</p>
 
 <h4 id="join-processor">Join Processor</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor.php" target="_blank"><code>JoinProcessor</code></a> class allows you to join fields from other tables into an abstract database collection.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor.php" target="_blank"><code class="highlighter-rouge">JoinProcessor</code></a> class allows you to join fields from other tables into an abstract database collection.</p>
 
-<p>Below is an example of creating a Join Processor virtual type in the <code>di.xml</code> file named <code>Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor</code>:</p>
+<p>Below is an example of creating a Join Processor virtual type in the <code class="highlighter-rouge">di.xml</code> file named <code class="highlighter-rouge">Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor"</span> <span class="na">type=</span><span class="s">"Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;arguments&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;customJoins&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;rate.tax_calculation_rate_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\Rate<span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;ctc.customer_tax_class_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CustomerTaxClass<span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;ptc.product_tax_class_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\ProductTaxClass<span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;cd.customer_tax_class_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CalculationData<span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;cd.product_tax_class_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CalculationData<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"customJoins"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"rate.tax_calculation_rate_id"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\Rate<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"ctc.customer_tax_class_id"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CustomerTaxClass<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"ptc.product_tax_class_id"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\ProductTaxClass<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"cd.customer_tax_class_id"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CalculationData<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"cd.product_tax_class_id"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CalculationData<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;fieldMapping&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>tax_calculation_rule_id<span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;tax_rate_ids&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>tax_calculation_rate_id<span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;customer_tax_class_ids&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cd.customer_tax_class_id<span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;product_tax_class_ids&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cd.product_tax_class_id<span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;tax_calculation_rate_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>rate.tax_calculation_rate_id<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"fieldMapping"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>tax_calculation_rule_id<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tax_rate_ids"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>tax_calculation_rate_id<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"customer_tax_class_ids"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cd.customer_tax_class_id<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"product_tax_class_ids"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cd.product_tax_class_id<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tax_calculation_rate_id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>rate.tax_calculation_rate_id<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
   <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>The Join Processor aggregates Custom Joins objects implementing the interface <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor/CustomJoinInterface.php" target="_blank"><code>CustomJoinInterface</code></a>.</p>
+<p>The Join Processor aggregates Custom Joins objects implementing the interface <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor/CustomJoinInterface.php" target="_blank"><code class="highlighter-rouge">CustomJoinInterface</code></a>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show Custom Join implementation example </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="k">namespace</span> <span class="nx">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor</span><span class="p">;</span>
+<div class="collapsible"><b class="collapsible-title">Show Custom Join implementation example </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    namespace Magento\Tax\Model\Api\SearchCriteria\JoinProcessor;
 
-    <span class="k">use</span> <span class="nx">Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor\CustomJoinInterface</span><span class="p">;</span>
-    <span class="k">use</span> <span class="nx">Magento\Framework\Data\Collection\AbstractDb</span><span class="p">;</span>
+    use Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor\CustomJoinInterface;
+    use Magento\Framework\Data\Collection\AbstractDb;
 
-    <span class="sd">/**</span>
-<span class="sd">     * Class Rate</span>
-<span class="sd">     * @package Magento\Tax\Model\Api\SearchCriteria\JoinProcessor</span>
-<span class="sd">     **/</span>
-    <span class="k">class</span> <span class="nc">Rate</span> <span class="k">implements</span> <span class="nx">CustomJoinInterface</span>
-    <span class="p">{</span>
-        <span class="sd">/**</span>
-<span class="sd">         * @param \Magento\Tax\Model\ResourceModel\Calculation\Rule\Collection $collection</span>
-<span class="sd">         * @return true</span>
-<span class="sd">         **/</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">apply</span><span class="p">(</span><span class="nx">AbstractDb</span> <span class="nv">$collection</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">joinCalculationData</span><span class="p">(</span><span class="s1">&#39;rate&#39;</span><span class="p">);</span>
-            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span></code></pre></figure>
+    /**
+     * Class Rate
+     * @package Magento\Tax\Model\Api\SearchCriteria\JoinProcessor
+     **/
+    class Rate implements CustomJoinInterface
+    {
+        /**
+         * @param \Magento\Tax\Model\ResourceModel\Calculation\Rule\Collection $collection
+         * @return true
+         **/
+        public function apply(AbstractDb $collection)
+        {
+            $collection-&gt;joinCalculationData('rate');
+            return true;
+        }
+    }</code></pre></figure>
 </div></div>
 
 <h3 id="using-collection-processors-in-repositories">Using Collection Processors in Repositories</h3>
 
-<p>Below is an example of how the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code>CustomerRepositoryInterface</code></a> repository class uses a Collection Processor.</p>
+<p>Below is an example of how the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code class="highlighter-rouge">CustomerRepositoryInterface</code></a> repository class uses a Collection Processor.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="k">namespace</span> <span class="nx">Magento\Customer\Model\ResourceModel</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    namespace Magento\Customer\Model\ResourceModel;
 
-    <span class="o">...</span>
+    ...
 
-    <span class="sd">/**</span>
-<span class="sd">     * Customer repository.</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.CouplingBetweenObjects)</span>
-<span class="sd">     **/</span>
-    <span class="k">class</span> <span class="nc">CustomerRepository</span> <span class="k">implements</span> <span class="nx">\Magento\Customer\Api\CustomerRepositoryInterface</span>
-    <span class="p">{</span>
-        <span class="o">...</span>
+    /**
+     * Customer repository.
+     * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+     **/
+    class CustomerRepository implements \Magento\Customer\Api\CustomerRepositoryInterface
+    {
+        ...
 
-        <span class="sd">/**</span>
-<span class="sd">         * @var \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface</span>
-<span class="sd">         **/</span>
-        <span class="k">private</span> <span class="nv">$collectionProcessor</span><span class="p">;</span>
+        /**
+         * @var \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface
+         **/
+        private $collectionProcessor;
 
-        <span class="o">...</span>
+        ...
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-            <span class="o">...</span>
-            <span class="nx">CollectionProcessorInterface</span> <span class="nv">$collectionProcessor</span> <span class="o">=</span> <span class="k">null</span>
-        <span class="p">)</span> <span class="p">{</span>
-            <span class="o">...</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">collectionProcessor</span> <span class="o">=</span> <span class="nv">$collectionProcessor</span> <span class="o">?:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollectionProcessor</span><span class="p">();</span>
-        <span class="p">}</span>
+        public function __construct(
+            ...
+            CollectionProcessorInterface $collectionProcessor = null
+        ) {
+            ...
+            $this-&gt;collectionProcessor = $collectionProcessor ?: $this-&gt;getCollectionProcessor();
+        }
 
-        <span class="o">...</span>
+        ...
 
-        <span class="sd">/**</span>
-<span class="sd">         * {@inheritdoc}</span>
-<span class="sd">         **/</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">getList</span><span class="p">(</span><span class="nx">SearchCriteriaInterface</span> <span class="nv">$searchCriteria</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="o">...</span>
+        /**
+         * {@inheritdoc}
+         **/
+        public function getList(SearchCriteriaInterface $searchCriteria)
+        {
+            ...
 
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollectionProcessor</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">process</span><span class="p">(</span><span class="nv">$searchCriteria</span><span class="p">,</span> <span class="nv">$collection</span><span class="p">);</span>
+            $this-&gt;getCollectionProcessor()-&gt;process($searchCriteria, $collection);
 
-            <span class="o">...</span>
-        <span class="p">}</span>
+            ...
+        }
 
-        <span class="o">...</span>
+        ...
 
-        <span class="sd">/**</span>
-<span class="sd">         * Retrieve collection processor</span>
-<span class="sd">         *</span>
-<span class="sd">         * @deprecated</span>
-<span class="sd">         * @return \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface</span>
-<span class="sd">         **/</span>
-        <span class="k">private</span> <span class="k">function</span> <span class="nf">getCollectionProcessor</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">collectionProcessor</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">collectionProcessor</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\ObjectManager</span><span class="o">::</span><span class="na">getInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span>
-                    <span class="s1">&#39;Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor&#39;</span>
-                <span class="p">);</span>
-            <span class="p">}</span>
-            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">collectionProcessor</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span></code></pre></figure>
+        /**
+         * Retrieve collection processor
+         *
+         * @deprecated
+         * @return \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface
+         **/
+        private function getCollectionProcessor()
+        {
+            if (!$this-&gt;collectionProcessor) {
+                $this-&gt;collectionProcessor = \Magento\Framework\App\ObjectManager::getInstance()-&gt;get(
+                    'Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor'
+                );
+            }
+            return $this-&gt;collectionProcessor;
+        }
+    }</code></pre></figure>
 
-<p>The <code>di.xml</code> configuration file excerpt below shows how you can create a virtual type for the Collection Processor by passing in a custom Filter Processor and a custom Sorting Processor.</p>
+<p>The <code class="highlighter-rouge">di.xml</code> configuration file excerpt below shows how you can create a virtual type for the Collection Processor by passing in a custom Filter Processor and a custom Sorting Processor.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerFilterProcessor&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerFilterProcessor"</span> <span class="na">type=</span><span class="s">"Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;customFilters&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;category_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\CustomerCategoryFilter<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"customFilters"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"category_id"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\CustomerCategoryFilter<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;fieldMapping&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;code&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_group_code<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_group_id<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;tax_class_name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>class_name<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"fieldMapping"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"code"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_group_code<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_group_id<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tax_class_name"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>class_name<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/virtualType&gt;</span>
-    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerSortingProcessor&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerSortingProcessor"</span> <span class="na">type=</span><span class="s">"Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;fieldMapping&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;code&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_group_code<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_group_id<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;tax_class_name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>class_name<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"fieldMapping"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"code"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_group_code<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer_group_id<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tax_class_name"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>class_name<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;defaultOrders&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ASC<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/virtualType&gt;</span>
-    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;Magento\Customer\Model\Api\SearchCriteria\CustomerCollectionProcessor&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;processors&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;filters&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerFilterProcessor<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sorting&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerSortingProcessor<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;pagination&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"defaultOrders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ASC<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/virtualType&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Customer\Model\ResourceModel\CustomerRepository&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Customer\Model\Api\SearchCriteria\CustomerCollectionProcessor"</span> <span class="na">type=</span><span class="s">"Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;collectionProcessor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Customer\Model\Api\SearchCriteria\CustomerCollectionProcessor<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"processors"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"filters"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerFilterProcessor<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sorting"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerSortingProcessor<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"pagination"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/virtualType&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Customer\Model\ResourceModel\CustomerRepository"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"collectionProcessor"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Customer\Model\Api\SearchCriteria\CustomerCollectionProcessor<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 

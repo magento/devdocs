@@ -1131,7 +1131,7 @@
 
 
 			<p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.
-To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code. Magento 2.0 uses <a href="http://semver.org/">Semantic Versioning 2.0.0</a> to indicate whether a change breaks backward compatibility. Version numbers are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
+To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code. Magento 2.0 uses <a href="http://semver.org/">Semantic Versioning 2.0.0</a> to indicate whether a change breaks backward compatibility. Version numbers are in the format <code class="highlighter-rouge">MAJOR.MINOR.PATCH</code>, where:</p>
 
 <ul>
   <li>MAJOR indicates incompatible <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> changes</li>
@@ -1139,12 +1139,12 @@ To help mitigate these concerns, this release introduces a backward compatibilit
   <li>PATCH indicates backward-compatible bug fixes</li>
 </ul>
 
-<p>The backward compatibility policy applies to PHP code annotated with <code>@api</code></p>
+<p>The backward compatibility policy applies to PHP code annotated with <code class="highlighter-rouge">@api</code></p>
 
-<p>We promise to be backward compatible for classes and methods annotated with <code>@api</code> within MINOR and PATCH updates to our components. As changes are introduced, we annotate methods with <code>@deprecated</code>. The methods are removed only with the next MAJOR component version. We will strive to make MAJOR changes for a component no more than once per year.</p>
+<p>We promise to be backward compatible for classes and methods annotated with <code class="highlighter-rouge">@api</code> within MINOR and PATCH updates to our components. As changes are introduced, we annotate methods with <code class="highlighter-rouge">@deprecated</code>. The methods are removed only with the next MAJOR component version. We will strive to make MAJOR changes for a component no more than once per year.</p>
 
 <h3>What code is affected?</h3>
-<p>The backward compatibility policy applies to PHP code annotated with <code>@api</code>. This includes the following:</p>
+<p>The backward compatibility policy applies to PHP code annotated with <code class="highlighter-rouge">@api</code>. This includes the following:</p>
 
 <ul>
   <li>Any interface used by third parties to enhance the system (payment providers, shipping providers, search providers).  We have sometimes called these SPIs.</li>
@@ -1154,7 +1154,7 @@ To help mitigate these concerns, this release introduces a backward compatibilit
   <li>Popular extension points, based on customer feedback</li>
 </ul>
 
-<p>The <code>@api</code> tag can be applied to a constant, a method, or to the entire class/interface.  If the <code>@api</code> tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.</p>
+<p>The <code class="highlighter-rouge">@api</code> tag can be applied to a constant, a method, or to the entire class/interface.  If the <code class="highlighter-rouge">@api</code> tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.</p>
 
 <h3>Service Provider Interfaces</h3>
 <p>A PHP Interface in Magento can be used several ways by the core product and extension developers.</p>
@@ -1176,30 +1176,30 @@ APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them 
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="err">...</span>
-    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;magento/customer&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="err">...</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"magento/customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="err">}</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="err">}</span></code></pre></figure>
 
 <ul>
   <li>If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
  <strong>SPI dependency example</strong></li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="err">...</span>
-    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;magento/customer&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0.0&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="err">...</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"magento/customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="err">}</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="err">}</span></code></pre></figure>
 
 <h3>Versions</h3>
 
-<p>To reduce complexities, for Magento 2.0 GA, all components share the same version. This does limit the value of our policy since a change in one module’s public API affects the version of the entire set. Additionally, we expect to extract the <code>@api</code> PHP interfaces into a separate package, allowing more stability to third parties. Magento expects to be able to further reduce coupling of components after the 2.0 release.</p>
+<p>To reduce complexities, for Magento 2.0 GA, all components share the same version. This does limit the value of our policy since a change in one module’s public API affects the version of the entire set. Additionally, we expect to extract the <code class="highlighter-rouge">@api</code> PHP interfaces into a separate package, allowing more stability to third parties. Magento expects to be able to further reduce coupling of components after the 2.0 release.</p>
 
 <h3>What other code changes can cause backward incompatibility?</h3>
 
@@ -1216,8 +1216,8 @@ APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them 
 
 <h3>How does the @api impact the version?</h3>
 <ul>
-  <li>Adding  <code>@api</code> - Leads to increasing minor version.</li>
-  <li>Removing <code>@api</code> - Leads to increasing major version and therefore breaking compatibility.</li>
+  <li>Adding  <code class="highlighter-rouge">@api</code> - Leads to increasing minor version.</li>
+  <li>Removing <code class="highlighter-rouge">@api</code> - Leads to increasing major version and therefore breaking compatibility.</li>
 </ul>
 
 		</div>

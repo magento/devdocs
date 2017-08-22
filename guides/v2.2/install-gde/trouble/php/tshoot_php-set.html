@@ -969,28 +969,29 @@
 
 <ol>
   <li>
-    <p>Locate your <code>php.ini</code> using a <a href="/guides/v2.2/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code></a> page.</p>
+    <p>Locate your <code class="highlighter-rouge">php.ini</code> using a <a href="/guides/v2.2/install-gde/prereq/optional.html#install-optional-phpinfo"><code class="highlighter-rouge">phpinfo.php</code></a> page.</p>
 
-    <p>(Sometimes you have a different <code>php.ini</code> for the PHP command line and the web server. The <code>php.ini</code> you must change displays as <strong>Loaded Configuration File</strong>)</p>
+    <p>(Sometimes you have a different <code class="highlighter-rouge">php.ini</code> for the PHP command line and the web server. The <code class="highlighter-rouge">php.ini</code> you must change displays as <strong>Loaded Configuration File</strong>)</p>
   </li>
-  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
+  <li>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
   <li>
     <p>Uncomment the following line:</p>
 
-    <pre><code>always_populate_raw_post_data = -1
+    <div class="highlighter-rouge"><pre class="highlight"><code>always_populate_raw_post_data = -1
 </code></pre>
+    </div>
   </li>
-  <li>Save your changes to <code>php.ini</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">php.ini</code> and exit the text editor.</li>
   <li>Wait for all steps in the readiness check to finish.</li>
   <li>Resolve any other issues displayed by the readiness check.</li>
   <li>
-    <p>As a user with <code>root</code> privileges, restart your web server.</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, restart your web server.</p>
 
     <p>Examples follow:</p>
 
     <ul>
-      <li>Ubuntu: <code>service apache2 restart</code></li>
-      <li>CentOS: <code>service httpd restart</code></li>
+      <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+      <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
     </ul>
   </li>
   <li>On the readiness check page, click <strong>Try Again</strong>.</li>
@@ -1004,24 +1005,25 @@
 <ol>
   <li>Log in to your Magento server.</li>
   <li>
-    <p>Locate your <code>php.ini</code> file using the following command:</p>
+    <p>Locate your <code class="highlighter-rouge">php.ini</code> file using the following command:</p>
 
-    <pre><code>php --ini
+    <div class="highlighter-rouge"><pre class="highlight"><code>php --ini
 </code></pre>
+    </div>
   </li>
-  <li>As a user with <code>root</code> privileges, use a text editor to open the <code>php.ini</code> specified by <code>Loaded Configuration File</code>.</li>
-  <li>Locate <code>memory_limit</code>.</li>
-  <li>Change it to a value of <code>1GB</code> for normal use or at least <code>2GB</code> for debugging.</li>
-  <li>Save your changes to <code>php.ini</code> and exit the text editor.</li>
+  <li>As a user with <code class="highlighter-rouge">root</code> privileges, use a text editor to open the <code class="highlighter-rouge">php.ini</code> specified by <code class="highlighter-rouge">Loaded Configuration File</code>.</li>
+  <li>Locate <code class="highlighter-rouge">memory_limit</code>.</li>
+  <li>Change it to a value of <code class="highlighter-rouge">1GB</code> for normal use or at least <code class="highlighter-rouge">2GB</code> for debugging.</li>
+  <li>Save your changes to <code class="highlighter-rouge">php.ini</code> and exit the text editor.</li>
   <li>
     <p>Restart your web server.</p>
 
     <p>Examples follow:</p>
 
     <ul>
-      <li>CentOS: <code>service httpd restart</code></li>
-      <li>Ubuntu: <code>service apache2 restart</code></li>
-      <li>nginx (both CentOS and Ubuntu): <code>service nginx restart</code></li>
+      <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
+      <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+      <li>nginx (both CentOS and Ubuntu): <code class="highlighter-rouge">service nginx restart</code></li>
     </ul>
   </li>
   <li>Try the installation again.</li>
@@ -1034,24 +1036,25 @@
 <h3 id="trouble-php-asptags">Errors display when you access a PHTML template</h3>
 <p>Error text is typically:</p>
 
-<pre><code>Parse error: syntax error, unexpected 'data' (T_STRING)
+<div class="highlighter-rouge"><pre class="highlight"><code>Parse error: syntax error, unexpected 'data' (T_STRING)
 </code></pre>
+</div>
 
 <h4 id="solution-set-codeasptags--offcode-in-codephpinicode">Solution: Set <code>asp_tags = off</code> in <code>php.ini</code></h4>
-<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code>&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:</p>
+<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code class="highlighter-rouge">&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x"> </span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> 
 <span class="cp">&lt;?php</span>
 <span class="o">&lt;</span><span class="nx">img</span>
-    <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;product-image&quot;</span>
-    <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.url %&gt;&quot;</span>
-    <span class="nx">data</span><span class="o">-</span><span class="nx">position</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.position %&gt;&quot;</span>
-    <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.label %&gt;&quot;</span> <span class="o">/&gt;</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+    <span class="k">class</span><span class="err">="</span><span class="nc">product</span><span class="o">-</span><span class="nx">image</span><span class="s2">"
+    src="</span><span class="o">&lt;%-</span> <span class="nx">data</span><span class="o">.</span><span class="nx">url</span> <span class="o">%&gt;</span><span class="s2">"
+    data-position="</span><span class="o">&lt;%-</span> <span class="nx">data</span><span class="o">.</span><span class="nx">position</span> <span class="o">%&gt;</span><span class="s2">"
+    alt="</span><span class="o">&lt;%-</span> <span class="nx">data</span><span class="o">.</span><span class="nx">label</span> <span class="o">%&gt;</span><span class="s2">" /&gt;
+?&gt;</span></code></pre></figure>
 
 <p>More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>.</p>
 
-<p>Edit <code>php.ini</code> and set <code>asp_tags = off</code>. For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
+<p>Edit <code class="highlighter-rouge">php.ini</code> and set <code class="highlighter-rouge">asp_tags = off</code>. For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 
 		</div>
 		<!-- /.content-wrap -->

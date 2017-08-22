@@ -1001,7 +1001,7 @@
 
 <h3 id="event-manger">Event manager</h3>
 
-<p>The event manager is defined in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/EventManager.php"><code>\Magento\Mtf\System\Event\EventManager</code></a> class that:</p>
+<p>The event manager is defined in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/EventManager.php"><code class="highlighter-rouge">\Magento\Mtf\System\Event\EventManager</code></a> class that:</p>
 
 <ul>
   <li>is an entry point to the event management system</li>
@@ -1010,67 +1010,67 @@
   <li>notifies selected observers according to an event tags array and configuration</li>
 </ul>
 
-<h2 id="configuration"><code>phpunit.xml</code> configuration</h2>
+<h2 id="configuration"><code class="highlighter-rouge">phpunit.xml</code> configuration</h2>
 
-<p>In <code>&lt;magento_2_root_dir&gt;/dev/tests/functional/phpunit.xml</code>, you can set a preset to use and a directory to store reports.</p>
+<p>In <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/phpunit.xml</code>, you can set a preset to use and a directory to store reports.</p>
 
 <h3 id="set-preset">Set a preset</h3>
 
 <p>Set a preset, which is a list of dispatched <a href="/guides/v2.1/extension-dev-guide/events-and-observers.html#events">events</a> and an <a href="#observers">observers</a> to handle them:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;events_preset&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;preset_name&gt;&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"events_preset"</span> <span class="na">value=</span><span class="s">"&lt;preset_name&gt;"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/php&gt;</span></code></pre></figure>
 
-<p>Replace <code>&lt;preset_name&gt;</code> with a name of preset that you want to use.</p>
+<p>Replace <code class="highlighter-rouge">&lt;preset_name&gt;</code> with a name of preset that you want to use.</p>
 
 <h3 id="report-directory">Set a reporting directory</h3>
 
-<p>Set the value of <code>&lt;env name="log_directory"&gt;</code> to the directory in which to store your reports.</p>
+<p>Set the value of <code class="highlighter-rouge">&lt;env name="log_directory"&gt;</code> to the directory in which to store your reports.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
-    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">&quot;log_directory&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;your_directory_path&gt;&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"log_directory"</span> <span class="na">value=</span><span class="s">"&lt;your_directory_path&gt;"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/php&gt;</span></code></pre></figure>
 
-<p>The default path is <code>&lt;magento_2_root_dir&gt;/dev/tests/functional/var/log</code>.</p>
+<p>The default path is <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/var/log</code>.</p>
 
-<h2 id="event-presets"><code>events.xml</code> configuration</h2>
+<h2 id="event-presets"><code class="highlighter-rouge">events.xml</code> configuration</h2>
 
-<p>An event preset specifies observers and dispatched events handled by them. <code>&lt;magento_2_root_dir&gt;/dev/tests/functional/etc/events.xml</code> contains a list of event presets.</p>
+<p>An event preset specifies observers and dispatched events handled by them. <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/etc/events.xml</code> contains a list of event presets.</p>
 
 <p><strong>Format of a preset</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\...&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;...&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;...&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\..."</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
-    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;other\observer\class\path\...&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;...&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"other\observer\class\path\..."</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
 <span class="nt">&lt;/preset&gt;</span></code></pre></figure>
 
 <p><strong>Example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">&quot;custom&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\SourceCode&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;exception&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;failure&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"custom"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\SourceCode"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"exception"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
-    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\Screenshot&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;exception&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;failure&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\Screenshot"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"exception"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
-    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\CurlResponse&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;curl_failed&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\CurlResponse"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"curl_failed"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
 <span class="nt">&lt;/preset&gt;</span></code></pre></figure>
 
 <p><strong>Explanation of the example</strong>:</p>
 
-<p>Each time the <code>"exception"</code> and <code>"failure"</code> events are <a href="#dispatch-event">dispatched</a>, HTML code and screen capture of the current web page are logged (see <a href="#observers">Observers</a> section for details). If the <code>"curl_failed"</code> event is dispatched, a corresponding cURL response is saved in an HTML file in the <code>magento/&lt;module&gt;/&lt;test_case&gt;/&lt;variation&gt;/curl-response</code> directory inside the <a href="#report-directory">report directory</a>.</p>
+<p>Each time the <code class="highlighter-rouge">"exception"</code> and <code class="highlighter-rouge">"failure"</code> events are <a href="#dispatch-event">dispatched</a>, HTML code and screen capture of the current web page are logged (see <a href="#observers">Observers</a> section for details). If the <code class="highlighter-rouge">"curl_failed"</code> event is dispatched, a corresponding cURL response is saved in an HTML file in the <code class="highlighter-rouge">magento/&lt;module&gt;/&lt;test_case&gt;/&lt;variation&gt;/curl-response</code> directory inside the <a href="#report-directory">report directory</a>.</p>
 
-<p>Initially, event presets are defined in the <abbr title="Functional Testing Framework">FTF</abbr> in <code>&lt;magento_2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/etc/events.xml</code> (<a href="https://github.com/magento/mtf/blob/develop/etc/events.xml">open the <code>events.xml</code> on GitHub repository</a>). It is not recommended to edit this file. You can extend the initial list or add new presets in <code>&lt;magento_2_root_dir&gt;/dev/tests/functional/etc/events.xml</code>. All changes are merged automatically.</p>
+<p>Initially, event presets are defined in the <abbr title="Functional Testing Framework">FTF</abbr> in <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/etc/events.xml</code> (<a href="https://github.com/magento/mtf/blob/develop/etc/events.xml">open the <code class="highlighter-rouge">events.xml</code> on GitHub repository</a>). It is not recommended to edit this file. You can extend the initial list or add new presets in <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/etc/events.xml</code>. All changes are merged automatically.</p>
 
 <h3 id="observers">Observers</h3>
 
@@ -1087,28 +1087,28 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/ClientError.php"><code>\Magento\Mtf\System\Observer\ClientError</code></a></td>
-      <td>Collects information about JavaScript errors on a web page under test. Uses an instance of the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/BrowserInterface.php"><code>BrowserInterface</code></a> to collect exceptions from a web page. Saves collected errors to <code>&lt;reporting_directory&gt;/magento/client-error.log</code>.</td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/ClientError.php"><code class="highlighter-rouge">\Magento\Mtf\System\Observer\ClientError</code></a></td>
+      <td>Collects information about JavaScript errors on a web page under test. Uses an instance of the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/BrowserInterface.php"><code class="highlighter-rouge">BrowserInterface</code></a> to collect exceptions from a web page. Saves collected errors to <code class="highlighter-rouge">&lt;reporting_directory&gt;/magento/client-error.log</code>.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/CurlResponse.php"><code>\Magento\Mtf\System\Observer\CurlResponse</code></a></td>
-      <td>Saves response into HTML file in <code>&lt;reporting_directory&gt;/magento/&lt;module&gt;/&lt;test_case&gt;/&lt;variation&gt;/curl-response</code> directory.</td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/CurlResponse.php"><code class="highlighter-rouge">\Magento\Mtf\System\Observer\CurlResponse</code></a></td>
+      <td>Saves response into HTML file in <code class="highlighter-rouge">&lt;reporting_directory&gt;/magento/&lt;module&gt;/&lt;test_case&gt;/&lt;variation&gt;/curl-response</code> directory.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/Log.php"><code>\Magento\Mtf\System\Observer\Log</code></a></td>
-      <td>Saves event message to the <code>&lt;reporting_directory&gt;/magento/logger.log</code>.</td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/Log.php"><code class="highlighter-rouge">\Magento\Mtf\System\Observer\Log</code></a></td>
+      <td>Saves event message to the <code class="highlighter-rouge">&lt;reporting_directory&gt;/magento/logger.log</code>.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/PageUrl.php"><code>\Magento\Mtf\System\Observer\PageUrl</code></a></td>
-      <td>Sets a page URL parameter to the instance of the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/State.php"><code>EventState</code></a> class.</td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/PageUrl.php"><code class="highlighter-rouge">\Magento\Mtf\System\Observer\PageUrl</code></a></td>
+      <td>Sets a page URL parameter to the instance of the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/State.php"><code class="highlighter-rouge">EventState</code></a> class.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/Screenshot.php"><code>\Magento\Mtf\System\Observer\Screenshot</code></a></td>
-      <td>Captures a screenshot of a web page. Saves a PNG image to the <code>&lt;reporting_directory&gt;/magento/&lt;module&gt;/&lt;test_case&gt;/&lt;variation&gt;/screenshots</code> directory.</td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/Screenshot.php"><code class="highlighter-rouge">\Magento\Mtf\System\Observer\Screenshot</code></a></td>
+      <td>Captures a screenshot of a web page. Saves a PNG image to the <code class="highlighter-rouge">&lt;reporting_directory&gt;/magento/&lt;module&gt;/&lt;test_case&gt;/&lt;variation&gt;/screenshots</code> directory.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/SourceCode.php"><code>\Magento\Mtf\System\Observer\SourceCode</code></a></td>
-      <td>Collects HTML code of a web page. Saves HTML code to the <code>&lt;reporting_directory&gt;/magento/&lt;module&gt;/&lt;test_case&gt;/&lt;variation&gt;/page-source</code>.</td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/SourceCode.php"><code class="highlighter-rouge">\Magento\Mtf\System\Observer\SourceCode</code></a></td>
+      <td>Collects HTML code of a web page. Saves HTML code to the <code class="highlighter-rouge">&lt;reporting_directory&gt;/magento/&lt;module&gt;/&lt;test_case&gt;/&lt;variation&gt;/page-source</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -1122,35 +1122,35 @@
   <li>Add a tag with name of the event to required observer in corresponding <a href="#event-presets">event preset</a>.</li>
 </ol>
 
-<p>In terms of XML, it is represented as an element <code>&lt;tag /&gt;</code> in <code>events.xml</code>. <code>&lt;tag /&gt;</code> is a child element of an <code>&lt;observer&gt;</code> element. See the following example:</p>
+<p>In terms of XML, it is represented as an element <code class="highlighter-rouge">&lt;tag /&gt;</code> in <code class="highlighter-rouge">events.xml</code>. <code class="highlighter-rouge">&lt;tag /&gt;</code> is a child element of an <code class="highlighter-rouge">&lt;observer&gt;</code> element. See the following example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\ClientError&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;page_changed&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;exception&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\ClientError"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"page_changed"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"exception"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/observer&gt;</span>
-<span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\Log&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;exception&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;failure&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\Log"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"exception"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/observer&gt;</span>
-<span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\SourceCode&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;exception&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;failure&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\SourceCode"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"exception"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/observer&gt;</span>
-<span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\Screenshot&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;exception&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;failure&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\Screenshot"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"exception"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/observer&gt;</span>
-<span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\CurlResponse&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;curl_failed&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\CurlResponse"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"curl_failed"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/observer&gt;</span></code></pre></figure>
 
-<p>As you can see, a tag contains one required attribute <code>name</code>, where a name of event must be assigned.</p>
+<p>As you can see, a tag contains one required attribute <code class="highlighter-rouge">name</code>, where a name of event must be assigned.</p>
 
 <h2 id="dispatch-event">Event dispatching</h2>
 
-<p>A method that is used to dispatch events is defined in <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/EventManagerInterface.php"><code>\Magento\Mtf\System\Event\EventManagerInterface</code></a>. The <abbr title="Functional Testing Framework">FTF</abbr> uses its default implementation <code>\Magento\Mtf\System\Event\EventManager::dispatchEvent()</code>.</p>
+<p>A method that is used to dispatch events is defined in <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/EventManagerInterface.php"><code class="highlighter-rouge">\Magento\Mtf\System\Event\EventManagerInterface</code></a>. The <abbr title="Functional Testing Framework">FTF</abbr> uses its default implementation <code class="highlighter-rouge">\Magento\Mtf\System\Event\EventManager::dispatchEvent()</code>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">&#39;your_event_tag&#39;</span><span class="p">],</span> <span class="p">[</span><span class="nv">$your_input_parameters</span><span class="p">]);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$this-&gt;eventManager-&gt;dispatchEvent(['your_event_tag'], [$your_input_parameters]);</code></pre></figure>
 
 <p>It has two arguments:</p>
 
@@ -1163,9 +1163,9 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">&#39;data-ui-id=&quot;messages-message-success&quot;&#39;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">&#39;curl_failed&#39;</span><span class="p">],</span> <span class="p">[</span><span class="nv">$response</span><span class="p">]);</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s1">&#39;Product creation by curl handler was not successful!&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">'data-ui-id="messages-message-success"'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">'curl_failed'</span><span class="p">],</span> <span class="p">[</span><span class="nv">$response</span><span class="p">]);</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s1">'Product creation by curl handler was not successful!'</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <h2 id="examples">Examples</h2>
@@ -1180,7 +1180,7 @@
 
 <h3 id="create-preset">Create a preset</h3>
 
-<p>The following example shows how to add a <code>custom</code> preset.</p>
+<p>The following example shows how to add a <code class="highlighter-rouge">custom</code> preset.</p>
 
 <p><strong>Task</strong>: Create a preset that logs only a web page <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> code and its screenshot when a test run is failed.</p>
 
@@ -1196,37 +1196,37 @@
 <ul>
   <li><a href="#observers">observers</a>:
     <ul>
-      <li><code>\Magento\Mtf\System\Observer\SourceCode</code></li>
-      <li><code>\Magento\Mtf\System\Observer\Screenshot</code></li>
+      <li><code class="highlighter-rouge">\Magento\Mtf\System\Observer\SourceCode</code></li>
+      <li><code class="highlighter-rouge">\Magento\Mtf\System\Observer\Screenshot</code></li>
     </ul>
   </li>
   <li><a href="/guides/v2.1/extension-dev-guide/events-and-observers.html#events">events</a>:
     <ul>
-      <li><code>failure</code></li>
+      <li><code class="highlighter-rouge">failure</code></li>
     </ul>
   </li>
 </ul>
 
 <p><strong>Solution</strong>:</p>
 
-<p>Step 1. <a href="#dispatch-event">Dispatch</a> the <code>failure</code> event in the test case. This event already exists and is added to the code where the <abbr title="Functional Testing Framework">FTF</abbr> processes the test failure.</p>
+<p>Step 1. <a href="#dispatch-event">Dispatch</a> the <code class="highlighter-rouge">failure</code> event in the test case. This event already exists and is added to the code where the <abbr title="Functional Testing Framework">FTF</abbr> processes the test failure.</p>
 
-<p>Step 2. Open <code>&lt;magento_2_root_dir&gt;/dev/tests/functional/etc/events.xml</code>.</p>
+<p>Step 2. Open <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/etc/events.xml</code>.</p>
 
 <p>Step 3. Add a preset with required observers and tags.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">&quot;custom&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\SourceCode&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;failure&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"custom"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\SourceCode"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
-    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\Screenshot&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;failure&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\Screenshot"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
 <span class="nt">&lt;/preset&gt;</span></code></pre></figure>
 
 <h3 id="edit-preset">Edit a preset</h3>
 
-<p>The following example shows how to edit the <code>base</code> preset.</p>
+<p>The following example shows how to edit the <code class="highlighter-rouge">base</code> preset.</p>
 
 <p><strong>Task</strong>: Take a screenshot before click, after click, and when a value is set.</p>
 
@@ -1241,19 +1241,19 @@
 <ul>
   <li><a href="#event-presets">preset</a>:
     <ul>
-      <li><code>base</code></li>
+      <li><code class="highlighter-rouge">base</code></li>
     </ul>
   </li>
   <li><a href="#observers">observers</a>:
     <ul>
-      <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/Screenshot.php"><code>\Magento\Mtf\System\Observer\Screenshot</code></a></li>
+      <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/Screenshot.php"><code class="highlighter-rouge">\Magento\Mtf\System\Observer\Screenshot</code></a></li>
     </ul>
   </li>
   <li><a href="/guides/v2.1/extension-dev-guide/events-and-observers.html#events">events</a>:
     <ul>
-      <li><code>click_before</code></li>
-      <li><code>click_after</code></li>
-      <li><code>set_value</code></li>
+      <li><code class="highlighter-rouge">click_before</code></li>
+      <li><code class="highlighter-rouge">click_after</code></li>
+      <li><code class="highlighter-rouge">set_value</code></li>
     </ul>
   </li>
 </ul>
@@ -1265,16 +1265,16 @@
 
 <p><strong>Solution</strong>:</p>
 
-<p>Step 1. <a href="#dispatch-event">Dispatch</a> the events <code>click_before</code>, <code>click_after</code> and <code>set_value</code> in your code where applicable.</p>
+<p>Step 1. <a href="#dispatch-event">Dispatch</a> the events <code class="highlighter-rouge">click_before</code>, <code class="highlighter-rouge">click_after</code> and <code class="highlighter-rouge">set_value</code> in your code where applicable.</p>
 
-<p>Step 2. In the <code>base</code> preset, add required observer and event tags.</p>
+<p>Step 2. In the <code class="highlighter-rouge">base</code> preset, add required observer and event tags.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">&quot;base&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"base"</span><span class="nt">&gt;</span>
     ...
-    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\Screenshot&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;click_before&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;click_after&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;set_value&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\Screenshot"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"click_before"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"click_after"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"set_value"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
     ...
 <span class="nt">&lt;/preset&gt;</span></code></pre></figure>
@@ -1286,11 +1286,11 @@
 <p>General implementation rules:</p>
 
 <ul>
-  <li>An observer must implement <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/ObserverInterface.php"><code>ObserverInterface</code></a>.</li>
-  <li>Put the class in <code>&lt;magento_2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/System/Observer</code>.</li>
+  <li>An observer must implement <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/ObserverInterface.php"><code class="highlighter-rouge">ObserverInterface</code></a>.</li>
+  <li>Put the class in <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/System/Observer</code>.</li>
 </ul>
 
-<p>The following example shows how to use a custom observer in the example with the <code>\Magento\Mtf\System\Observer\WebapiResponse</code> observer.</p>
+<p>The following example shows how to use a custom observer in the example with the <code class="highlighter-rouge">\Magento\Mtf\System\Observer\WebapiResponse</code> observer.</p>
 
 <p><strong>Task</strong>: Create observer that logs WebAPI responses containing exceptions. Use the observer when a fixture is saved.</p>
 
@@ -1305,83 +1305,83 @@
 <ul>
   <li><a href="#event-presets">preset</a>:
     <ul>
-      <li><code>base</code></li>
+      <li><code class="highlighter-rouge">base</code></li>
     </ul>
   </li>
   <li><a href="#observers">observer</a>:
     <ul>
-      <li><code>\Magento\Mtf\System\Observer\WebapiResponse</code></li>
+      <li><code class="highlighter-rouge">\Magento\Mtf\System\Observer\WebapiResponse</code></li>
     </ul>
   </li>
   <li><a href="/guides/v2.1/extension-dev-guide/events-and-observers.html#events">event</a>:
     <ul>
-      <li><code>webapi_failed</code></li>
+      <li><code class="highlighter-rouge">webapi_failed</code></li>
     </ul>
   </li>
 </ul>
 
 <p><strong>Solution</strong>:</p>
 
-<p>Step 1. Create an observer class <code>\Magento\Mtf\System\Observer\WebapiResponse</code> that stores incoming events in JSON files.</p>
+<p>Step 1. Create an observer class <code class="highlighter-rouge">\Magento\Mtf\System\Observer\WebapiResponse</code> that stores incoming events in JSON files.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Mtf\System\Observer</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Mtf\System\Event\Event</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Observer for obtaining response of web api handler.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Observer for obtaining response of web api handler.
+ */</span>
 <span class="k">class</span> <span class="nc">WebapiResponse</span> <span class="k">extends</span> <span class="nx">AbstractObserver</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * File name of response source.</span>
-<span class="sd">     */</span>
-    <span class="k">const</span> <span class="no">FILE_NAME</span> <span class="o">=</span> <span class="s1">&#39;webapi_response.log&#39;</span><span class="p">;</span>
+    <span class="sd">/**
+     * File name of response source.
+     */</span>
+    <span class="k">const</span> <span class="no">FILE_NAME</span> <span class="o">=</span> <span class="s1">'webapi_response.log'</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Collect response source artifact to storage.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param Event $event</span>
-<span class="sd">     * @return void</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Collect response source artifact to storage.
+     *
+     * @param Event $event
+     * @return void
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">process</span><span class="p">(</span><span class="nx">Event</span> <span class="nv">$event</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$directory</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createDestinationDirectory</span><span class="p">(</span><span class="s1">&#39;webapi-response&#39;</span><span class="p">);</span>
+        <span class="nv">$directory</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createDestinationDirectory</span><span class="p">(</span><span class="s1">'webapi-response'</span><span class="p">);</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">log</span><span class="p">(</span>
             <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getSubjects</span><span class="p">()[</span><span class="mi">0</span><span class="p">]),</span>
-            <span class="nv">$directory</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span> <span class="o">.</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getFileIdentifier</span><span class="p">()</span> <span class="o">.</span> <span class="s1">&#39;.json&#39;</span>
+            <span class="nv">$directory</span> <span class="o">.</span> <span class="s1">'/'</span> <span class="o">.</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getFileIdentifier</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'.json'</span>
         <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Step 2. <a href="#dispatch-event">Dispatch</a> an event <code>webapi_failed</code> in the <code>\Magento\Tax\Test\Handler\TaxRule\WebApi::persist()</code> <a href="/guides/v2.1/mtf/mtf_entities/mtf_handler.html">handler</a> for failed responses.</p>
+<p>Step 2. <a href="#dispatch-event">Dispatch</a> an event <code class="highlighter-rouge">webapi_failed</code> in the <code class="highlighter-rouge">\Magento\Tax\Test\Handler\TaxRule\WebApi::persist()</code> <a href="/guides/v2.1/mtf/mtf_entities/mtf_handler.html">handler</a> for failed responses.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$fixture</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Implementation of the method</span>
-    <span class="c1">// ...    </span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$response</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]))</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">&#39;webapi_failed&#39;</span><span class="p">],</span> <span class="p">[</span><span class="nv">$response</span><span class="p">]);</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s1">&#39;Tax rule creation by Web API handler was not successful!&#39;</span><span class="p">);</span>     
-     <span class="p">}</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">public function persist(FixtureInterface $fixture = null)
+{
+    // Implementation of the method
+    // ...    
+    if (empty($response['id'])) {
+        $this-&gt;eventManager-&gt;dispatchEvent(['webapi_failed'], [$response]);
+        throw new \Exception('Tax rule creation by Web API handler was not successful!');     
+     }
      
-    <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$response</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]];</span>
-<span class="p">}</span></code></pre></figure>
+    return ['id' =&gt; $response['id']];
+}</code></pre></figure>
 
-<p>Step 3. Add the observer and the tag to the <code>base</code> preset in <code>events.xml</code>.</p>
+<p>Step 3. Add the observer and the tag to the <code class="highlighter-rouge">base</code> preset in <code class="highlighter-rouge">events.xml</code>.</p>
 
-<p>In <code>&lt;magento_2_root_dir&gt;/dev/tests/functional/etc/events.xml</code>, add to a preset <code>&lt;preset name="base"&gt;</code> an observer <code>&lt;observer class="Magento\Mtf\System\Observer\WebapiResponse"&gt;</code> with a tag <code>&lt;tag name="webapi_failed" /&gt;</code>:</p>
+<p>In <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/etc/events.xml</code>, add to a preset <code class="highlighter-rouge">&lt;preset name="base"&gt;</code> an observer <code class="highlighter-rouge">&lt;observer class="Magento\Mtf\System\Observer\WebapiResponse"&gt;</code> with a tag <code class="highlighter-rouge">&lt;tag name="webapi_failed" /&gt;</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">&quot;base&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"base"</span><span class="nt">&gt;</span>
 ...
-    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Observer\WebapiResponse&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">&quot;webapi_failed&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\WebapiResponse"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"webapi_failed"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
 ...
 <span class="nt">&lt;preset</span> <span class="nt">/&gt;</span></code></pre></figure>

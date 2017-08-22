@@ -1492,52 +1492,52 @@
 			<p>Magento Enterprise Cloud Edition enables you to use caching in your environment. If you disable caching, Magento Enterprise Cloud Edition directly serves the files.</p>
 
 <h2 id="cloud-cache-setup">Set up caching</h2>
-<p>Enable caching in your Magento application’s <code>.magento/routes.yaml</code> as follows:</p>
+<p>Enable caching in your Magento application’s <code class="highlighter-rouge">.magento/routes.yaml</code> as follows:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
-    <span class="l-Scalar-Plain">upstream</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php:php</span>
-    <span class="l-Scalar-Plain">cache</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">enabled</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
-        <span class="l-Scalar-Plain">headers</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span> <span class="s">&quot;Accept&quot;</span><span class="p-Indicator">,</span> <span class="s">&quot;Accept-Language&quot;</span><span class="p-Indicator">,</span> <span class="s">&quot;X-Language-Locale&quot;</span> <span class="p-Indicator">]</span>
-        <span class="l-Scalar-Plain">cookies</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="s">&quot;*&quot;</span><span class="p-Indicator">]</span>
-        <span class="l-Scalar-Plain">default_ttl</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">60</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
+    <span class="s">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
+    <span class="s">cache</span><span class="pi">:</span>
+        <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
+        <span class="s">headers</span><span class="pi">:</span> <span class="pi">[</span> <span class="s2">"</span><span class="s">Accept"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Accept-Language"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">X-Language-Locale"</span> <span class="pi">]</span>
+        <span class="s">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">*"</span><span class="pi">]</span>
+        <span class="s">default_ttl</span><span class="pi">:</span> <span class="s">60</span></code></pre></figure>
 
 <h2 id="cloud-cache-route">Route-based caching</h2>
 <p>If you need fine-grained caching, you can set up caching rules for
 several routes separately as the following example shows:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">http://{default}/</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
-  <span class="l-Scalar-Plain">upstream</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php:php</span>
-  <span class="l-Scalar-Plain">cache</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">enabled</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
+  <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
+  <span class="s">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
+  <span class="s">cache</span><span class="pi">:</span>
+    <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
 
-<span class="l-Scalar-Plain">http://{default}/path/</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
-  <span class="l-Scalar-Plain">upstream</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php:php</span>
-  <span class="l-Scalar-Plain">cache</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">enabled</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="s">http://{default}/path/</span><span class="pi">:</span>
+  <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
+  <span class="s">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
+  <span class="s">cache</span><span class="pi">:</span>
+    <span class="s">enabled</span><span class="pi">:</span> <span class="s">false</span>
 
-<span class="l-Scalar-Plain">http://{default}/path/more/</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">upstream</span>
-  <span class="l-Scalar-Plain">upstream</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php:php</span>
-  <span class="l-Scalar-Plain">cache</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">enabled</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span></code></pre></figure>
+<span class="s">http://{default}/path/more/</span><span class="pi">:</span>
+  <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
+  <span class="s">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
+  <span class="s">cache</span><span class="pi">:</span>
+    <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
 
 <p>The preceding example caches the following routes:</p>
 
 <ul>
-  <li><code>http://{default}/</code></li>
-  <li><code>http://{default}/path/more/</code></li>
-  <li><code>http://{default}/path/more/etc/</code></li>
+  <li><code class="highlighter-rouge">http://{default}/</code></li>
+  <li><code class="highlighter-rouge">http://{default}/path/more/</code></li>
+  <li><code class="highlighter-rouge">http://{default}/path/more/etc/</code></li>
 </ul>
 
 <p>And the following routes are <strong>not</strong> cached:</p>
 
 <ul>
-  <li><code>http://{default}/path/</code></li>
-  <li><code>http://{default}/path/etc/</code></li>
+  <li><code class="highlighter-rouge">http://{default}/path/</code></li>
+  <li><code class="highlighter-rouge">http://{default}/path/etc/</code></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1545,65 +1545,65 @@ several routes separately as the following example shows:</p>
 </div>
 
 <h2 id="cloud-cache-ttl">Cache duration</h2>
-<p>The cache duration is determined by the <code>Cache-Control</code> response
-header value. If no <code>Cache-Control</code> header is in the response, we use the 
-<code>default_ttl</code> key.</p>
+<p>The cache duration is determined by the <code class="highlighter-rouge">Cache-Control</code> response
+header value. If no <code class="highlighter-rouge">Cache-Control</code> header is in the response, we use the 
+<code class="highlighter-rouge">default_ttl</code> key.</p>
 
 <h2 id="cloud-cache-key">Cache key</h2>
 <p>To decide how to <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> a response, Magento Enterprise Cloud Edition builds a cache key
 depending on several factors and store the response associated with this
 key. When a request comes with the same cache key, the response is
-reused. Its purpose is similar to the HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44" target="_blank"><code>Vary</code> header</a>.</p>
+reused. Its purpose is similar to the HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44" target="_blank"><code class="highlighter-rouge">Vary</code> header</a>.</p>
 
-<p>The parameters <code>headers</code> and
-<code>cookies</code> keys enable you to change this cache key.</p>
+<p>The parameters <code class="highlighter-rouge">headers</code> and
+<code class="highlighter-rouge">cookies</code> keys enable you to change this cache key.</p>
 
 <p>The default value for these keys follows:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">cache</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">enabled</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
-  <span class="l-Scalar-Plain">headers</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="s">&quot;Accept-Language&quot;</span><span class="p-Indicator">,</span> <span class="s">&quot;Accept&quot;</span><span class="p-Indicator">]</span>
-  <span class="l-Scalar-Plain">cookies</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="s">&quot;*&quot;</span><span class="p-Indicator">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">cache</span><span class="pi">:</span>
+  <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="s">headers</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Accept-Language"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Accept"</span><span class="pi">]</span>
+  <span class="s">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">*"</span><span class="pi">]</span></code></pre></figure>
 
 <h2 id="cloud-cache-attrib">Cache attributes</h2>
 <p>We support the following attributes:</p>
 
 <ul>
-  <li><a href="#cloud-cache-attrib-en"><code>enabled</code></a></li>
-  <li><a href="#cloud-cache-attrib-head"><code>headers</code></a></li>
-  <li><a href="#cloud-cache-attrib-cook"><code>cookies</code></a></li>
-  <li><a href="#cloud-cache-attrib-ttl"><code>default_ttl</code></a></li>
+  <li><a href="#cloud-cache-attrib-en"><code class="highlighter-rouge">enabled</code></a></li>
+  <li><a href="#cloud-cache-attrib-head"><code class="highlighter-rouge">headers</code></a></li>
+  <li><a href="#cloud-cache-attrib-cook"><code class="highlighter-rouge">cookies</code></a></li>
+  <li><a href="#cloud-cache-attrib-ttl"><code class="highlighter-rouge">default_ttl</code></a></li>
 </ul>
 
-<h3 id="cloud-cache-attrib-en"><code>enabled</code></h3>
-<p>When set to <code>true</code>, enable the cache for this route. When set to
-<code>false</code>, disable the cache for this route.</p>
+<h3 id="cloud-cache-attrib-en"><code class="highlighter-rouge">enabled</code></h3>
+<p>When set to <code class="highlighter-rouge">true</code>, enable the cache for this route. When set to
+<code class="highlighter-rouge">false</code>, disable the cache for this route.</p>
 
-<h3 id="cloud-cache-attrib-head"><code>headers</code></h3>
+<h3 id="cloud-cache-attrib-head"><code class="highlighter-rouge">headers</code></h3>
 <p>Defines on which values the cache key must depend.</p>
 
-<p>For example, if the <code>headers</code> key is the following:</p>
+<p>For example, if the <code class="highlighter-rouge">headers</code> key is the following:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">cache</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">enabled</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
-  <span class="l-Scalar-Plain">headers</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="s">&quot;Accept&quot;</span><span class="p-Indicator">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">cache</span><span class="pi">:</span>
+  <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="s">headers</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Accept"</span><span class="pi">]</span></code></pre></figure>
 
 <p>Then Magento Enterprise Cloud Edition will cache a different response for each value of the
-<code>Accept</code> HTTP header.</p>
+<code class="highlighter-rouge">Accept</code> HTTP header.</p>
 
-<h3 id="cloud-cache-attrib-cook"><code>cookies</code></h3>
-<p>The <code>cookies</code> key define on which values the cache key must depend.</p>
+<h3 id="cloud-cache-attrib-cook"><code class="highlighter-rouge">cookies</code></h3>
+<p>The <code class="highlighter-rouge">cookies</code> key define on which values the cache key must depend.</p>
 
 <p>For example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">cache</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">enabled</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
-  <span class="l-Scalar-Plain">cookies</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="s">&quot;value&quot;</span><span class="p-Indicator">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">cache</span><span class="pi">:</span>
+  <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="s">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">value"</span><span class="pi">]</span></code></pre></figure>
 
-<p>The cache key depends on the value of the <code>value</code> cookie in the
+<p>The cache key depends on the value of the <code class="highlighter-rouge">value</code> cookie in the
 request.</p>
 
-<p>A special case exists if the <code>cookies</code> key has the <code>["*"]</code> value. This value
+<p>A special case exists if the <code class="highlighter-rouge">cookies</code> key has the <code class="highlighter-rouge">["*"]</code> value. This value
 means that any request with a cookie will bypass the cache. This is the
 default value.</p>
 
@@ -1612,10 +1612,10 @@ default value.</p>
 </p>
 </div>
 
-<h3 id="cloud-cache-attrib-ttl"><code>default_ttl</code></h3>
-<p>If the response does not have a <code>Cache-Control</code> header, the
-<code>default_ttl</code> key is used to define the cache duration, in seconds. The
-default value is <code>0</code>, which means nothing is cached.</p>
+<h3 id="cloud-cache-attrib-ttl"><code class="highlighter-rouge">default_ttl</code></h3>
+<p>If the response does not have a <code class="highlighter-rouge">Cache-Control</code> header, the
+<code class="highlighter-rouge">default_ttl</code> key is used to define the cache duration, in seconds. The
+default value is <code class="highlighter-rouge">0</code>, which means nothing is cached.</p>
 
 		</div>
 		<!-- /.content-wrap -->

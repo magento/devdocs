@@ -1684,7 +1684,7 @@
 </ul>
 
 <div class="bs-callout bs-callout-warning">
-  <p>This guide does not apply if you used <code>git clone</code> to install Magento.
+  <p>This guide does not apply if you used <code class="highlighter-rouge">git clone</code> to install Magento.
 Contributing developers should use <a href="/guides/v2.1/install-gde/install/cli/dev_options.html">this guide</a> to update their Magento installation.</p>
 </div>
 
@@ -1697,28 +1697,31 @@ Contributing developers should use <a href="/guides/v2.1/install-gde/install/cli
   <li>
     <p>Change directory to the Magento base directory:</p>
 
-    <pre><code> cd &lt;Magento base directory&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code> cd &lt;Magento base directory&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Enable maintenance mode using the command:</p>
 
-    <pre><code> php bin/magento maintenance:enable
+    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento maintenance:enable
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Apply updates to Magento or its components using the following command pattern:</p>
 
-    <pre><code> composer require &lt;package&gt; &lt;version&gt; --no-update
+    <div class="highlighter-rouge"><pre class="highlight"><code> composer require &lt;package&gt; &lt;version&gt; --no-update
 </code></pre>
+    </div>
 
     <p><strong>package</strong>: The name of the package you want to update.</p>
 
     <p>For example:</p>
 
     <ul>
-      <li><code>magento/product-community-edition</code></li>
-      <li><code>magento/product-enterprise-edition</code></li>
+      <li><code class="highlighter-rouge">magento/product-community-edition</code></li>
+      <li><code class="highlighter-rouge">magento/product-enterprise-edition</code></li>
     </ul>
 
     <p><strong>version</strong>: The target version of the package you want to update.</p>
@@ -1726,32 +1729,37 @@ Contributing developers should use <a href="/guides/v2.1/install-gde/install/cli
   <li>
     <p>Update Magento’s components with Composer:</p>
 
-    <pre><code> composer update
+    <div class="highlighter-rouge"><pre class="highlight"><code> composer update
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Update the <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data:</p>
 
-    <pre><code> php bin/magento setup:upgrade
+    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento setup:upgrade
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Compile the code:</p>
 
-    <pre><code> php bin/magento setup:di:compile
+    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento setup:di:compile
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Deploy static content:</p>
 
-    <pre><code> php bin/magento setup:static-content:deploy
+    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento setup:static-content:deploy
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Exit maintenance mode:</p>
 
-    <pre><code> php bin/magento maintenance:disable
+    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento maintenance:disable
 </code></pre>
+    </div>
   </li>
 </ol>
 

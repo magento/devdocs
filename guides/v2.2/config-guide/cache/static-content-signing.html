@@ -1903,8 +1903,8 @@
 
 			<h3 id="static-content-cache">Static content cache</h3>
 
-<p>To improve performance, Magento sets the <code>Expires</code> headers for static resources such as images, JavaScript, and <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> files.
-Setting the <code>Expires</code> header on a static resource tells the browser to <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> the resource at that <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> and serve the cached version until it expires.
+<p>To improve performance, Magento sets the <code class="highlighter-rouge">Expires</code> headers for static resources such as images, JavaScript, and <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> files.
+Setting the <code class="highlighter-rouge">Expires</code> header on a static resource tells the browser to <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> the resource at that <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> and serve the cached version until it expires.
 This is a common <a href="https://developer.yahoo.com/performance/rules.html#expires=" target="_blank">best practice</a> for caching static resources.</p>
 
 <p>When the browser caches a static resource and that resource changes on the server, you need to clear the browser cache so it can download the new version.
@@ -1917,10 +1917,11 @@ Magento accomplishes this by adding a deployment version to the URL of <span ter
 
 <p>The following is an example of a URL signed with a version:</p>
 
-<pre><code>http://magento2.com/pub/static/version1475604434/frontend/Magento/luma/en_US/images/logo.svg
+<div class="highlighter-rouge"><pre class="highlight"><code>http://magento2.com/pub/static/version1475604434/frontend/Magento/luma/en_US/images/logo.svg
 </code></pre>
+</div>
 
-<p>When you run the command <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html"><code>setup:static-content:deploy</code></a> to deploy static content, Magento automatically changes the deployment version.
+<p>When you run the command <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html"><code class="highlighter-rouge">setup:static-content:deploy</code></a> to deploy static content, Magento automatically changes the deployment version.
 This changes the URL of the static files and forces the browser to load the new version of the files.</p>
 
 <p>Magento enables this feature by default, and we recommend keeping this feature enabled to prevent issues related to browsers serving up old static resources.</p>
@@ -1938,10 +1939,10 @@ This also forces the browser to resolve a relative URL to the correct signed sou
 
 <h3 id="usage-during-deployments">Usage during deployments</h3>
 
-<p>After upgrading or modifying static resources, you need to run the <code>setup:static-content:deploy</code> command to deploy the version and update the static contents.
+<p>After upgrading or modifying static resources, you need to run the <code class="highlighter-rouge">setup:static-content:deploy</code> command to deploy the version and update the static contents.
 This forces the browser to load the updated resources.</p>
 
-<p>If you deploy code on a separate server and move it to production using a code repository to reduce downtime, you also need to add the file <code>pub/static/deployed_version.txt</code> to the repository.
+<p>If you deploy code on a separate server and move it to production using a code repository to reduce downtime, you also need to add the file <code class="highlighter-rouge">pub/static/deployed_version.txt</code> to the repository.
 This file contains the new version for the deployed static content.</p>
 
 		</div>

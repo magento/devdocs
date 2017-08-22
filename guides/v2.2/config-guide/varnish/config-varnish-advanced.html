@@ -1901,7 +1901,7 @@
 </section>
 
 
-			<p>Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the <code>default.vcl</code> file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</p>
+			<p>Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the <code class="highlighter-rouge">default.vcl</code> file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</p>
 
 <p>See the <a href="https://www.varnish-cache.org/docs/4.1/reference/index.html">Varnish Reference Manual</a> for details about using the Varnish Configuration Language.</p>
 
@@ -1910,17 +1910,17 @@
 
 <p>Magento defines the following default health check:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">.probe</span> <span class="err">=</span> <span class="p">{</span>
-    <span class="err">.url</span> <span class="err">=</span> <span class="nt">&quot;/pub/health_check.php&quot;</span><span class="err">;</span>
-    <span class="err">.timeout</span> <span class="err">=</span> <span class="mi">2</span><span class="err">s;</span>
-    <span class="err">.interval</span> <span class="err">=</span> <span class="mi">5</span><span class="err">s;</span>
-    <span class="err">.window</span> <span class="err">=</span> <span class="mi">10</span><span class="err">;</span>
-    <span class="err">.threshold</span> <span class="err">=</span> <span class="mi">5</span><span class="err">;</span>
-    <span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">.probe</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">.url</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"/pub/health_check.php"</span><span class="err">;</span><span class="w">
+    </span><span class="err">.timeout</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">2s;</span><span class="w">
+    </span><span class="err">.interval</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">5s;</span><span class="w">
+    </span><span class="err">.window</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">10;</span><span class="w">
+    </span><span class="err">.threshold</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">5;</span><span class="w">
+    </span><span class="err">}</span></code></pre></figure>
 
-<p>Every 5 seconds, this health check calls the <code>pub/health_check.php</code> script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> is considered unhealthy.</p>
+<p>Every 5 seconds, this health check calls the <code class="highlighter-rouge">pub/health_check.php</code> script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> is considered unhealthy.</p>
 
-<p>The <code>health_check.php</code> script is located in the <code>pub</code> directory. If your Magento root directory is <code>pub</code>, then be sure to change the path in the <code>url</code> parameter from <code>/pub/health_check.php</code> to <code>health_check.php</code>.</p>
+<p>The <code class="highlighter-rouge">health_check.php</code> script is located in the <code class="highlighter-rouge">pub</code> directory. If your Magento root directory is <code class="highlighter-rouge">pub</code>, then be sure to change the path in the <code class="highlighter-rouge">url</code> parameter from <code class="highlighter-rouge">/pub/health_check.php</code> to <code class="highlighter-rouge">health_check.php</code>.</p>
 
 <p>For more information, see the <a href="https://www.varnish-cache.org/docs/4.1/usrs-guide/vcl-backends.html#health-checks" target="_blank">Varnish health checks</a> documentation.</p>
 
@@ -1933,7 +1933,7 @@
   <li>When the Magento backend is not healthy.</li>
 </ul>
 
-<p>The <code>vcl_hit</code> subroutine defines how Varnish responds to a request for objects that have been cached.</p>
+<p>The <code class="highlighter-rouge">vcl_hit</code> subroutine defines how Varnish responds to a request for objects that have been cached.</p>
 
 <h3 id="grace-healthy">When the Magento backend is healthy</h3>
 
@@ -1941,17 +1941,17 @@
 
 <p>The maximum amount of time that Varnish serves a stale object is the sum of the grace period (300 seconds by default) and the TTL value (86400 seconds by default).</p>
 
-<p>To change the default grace period from within the <code>default.vcl</code> file, edit the following line in the <code>vcl_hit</code> subroutine:</p>
+<p>To change the default grace period from within the <code class="highlighter-rouge">default.vcl</code> file, edit the following line in the <code class="highlighter-rouge">vcl_hit</code> subroutine:</p>
 
-<p><code>if (obj.ttl + 300s &gt; 0s) {</code></p>
+<p><code class="highlighter-rouge">if (obj.ttl + 300s &gt; 0s) {</code></p>
 
 <h3 id="grace-unhealthy">When the Magento backend is not healthy</h3>
 
-<p>If the Magento backend is not responsive, Varnish serves stale content from cache for three days (or as defined in <code>beresp.grace</code>) plus the remaining TTL (which by default is one day), unless the cached content is manually purged.</p>
+<p>If the Magento backend is not responsive, Varnish serves stale content from cache for three days (or as defined in <code class="highlighter-rouge">beresp.grace</code>) plus the remaining TTL (which by default is one day), unless the cached content is manually purged.</p>
 
 <h2 id="saint">Saint mode</h2>
 
-<p>Saint mode blacklists unhealthy backends for a configurable amount of time. As a result, unhealthy backends cannot serve traffic when using Varnish as a load balancer. Saint mode can be used in conjunction with grace mode to allow for complex handling of unhealthy backend servers. For example, if one backend server is unhealthy, retries can be routed to another server. If all other servers are down, then serve stale cached objects. The saint mode backend hosts and blackout periods are defined in the <code>default.vcl</code> file.</p>
+<p>Saint mode blacklists unhealthy backends for a configurable amount of time. As a result, unhealthy backends cannot serve traffic when using Varnish as a load balancer. Saint mode can be used in conjunction with grace mode to allow for complex handling of unhealthy backend servers. For example, if one backend server is unhealthy, retries can be routed to another server. If all other servers are down, then serve stale cached objects. The saint mode backend hosts and blackout periods are defined in the <code class="highlighter-rouge">default.vcl</code> file.</p>
 
 <p>Saint mode can also be used when Magento instances are individually taken offline to perform maintenance and upgrade tasks without affecting the availability of the Magento site.</p>
 
@@ -1964,7 +1964,7 @@
 
 <p>Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to <strong>System &gt; Cache Management</strong> and click <strong>Flush Magento Cache</strong>. You can also run the following command to clear the cache:</p>
 
-<p><code>bin/magento cache:flush</code></p>
+<p><code class="highlighter-rouge">bin/magento cache:flush</code></p>
 
 <h3 id="saint-install">Installation</h3>
 
@@ -1993,19 +1993,19 @@
 
 <p>See <a href="https://github.com/varnish/varnish-modules">Varnish module collection</a> for information about installing the Saint mode module.</p>
 
-<h3 id="saint-sample">Sample <code>vcl</code> file</h3>
+<h3 id="saint-sample">Sample <code class="highlighter-rouge">vcl</code> file</h3>
 
-<p>The following code example shows the code that must be added to your <code>.vcl</code> file to enable saint mode. Place the <code>import</code> statements and <code>backend</code> definitions at the top of the file.</p>
+<p>The following code example shows the code that must be added to your <code class="highlighter-rouge">.vcl</code> file to enable saint mode. Place the <code class="highlighter-rouge">import</code> statements and <code class="highlighter-rouge">backend</code> definitions at the top of the file.</p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">import</span> <span class="n">saintmode</span><span class="p">;</span>
 <span class="n">import</span> <span class="n">directors</span><span class="p">;</span>
 
 <span class="n">backend</span> <span class="n">default1</span> <span class="p">{</span>
-    <span class="p">.</span><span class="n">host</span> <span class="o">=</span> <span class="s">&quot;192.168.0.1&quot;</span><span class="p">;</span>
-    <span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="s">&quot;8080&quot;</span><span class="p">;</span>
+    <span class="p">.</span><span class="n">host</span> <span class="o">=</span> <span class="s">"192.168.0.1"</span><span class="p">;</span>
+    <span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="s">"8080"</span><span class="p">;</span>
     <span class="p">.</span><span class="n">first_byte_timeout</span> <span class="o">=</span> <span class="mi">600</span><span class="n">s</span><span class="p">;</span>
         <span class="p">.</span><span class="n">probe</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="p">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/pub/health_check.php&quot;</span><span class="p">;</span>
+            <span class="p">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">"/pub/health_check.php"</span><span class="p">;</span>
             <span class="p">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">2</span><span class="n">s</span><span class="p">;</span>
             <span class="p">.</span><span class="n">interval</span> <span class="o">=</span> <span class="mi">5</span><span class="n">s</span><span class="p">;</span>
             <span class="p">.</span><span class="n">window</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
@@ -2014,11 +2014,11 @@
 <span class="p">}</span>
 
 <span class="n">backend</span> <span class="n">default2</span> <span class="p">{</span>
-    <span class="p">.</span><span class="n">host</span> <span class="o">=</span> <span class="s">&quot;192.168.0.2&quot;</span><span class="p">;</span>
-    <span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="s">&quot;8080&quot;</span><span class="p">;</span>
+    <span class="p">.</span><span class="n">host</span> <span class="o">=</span> <span class="s">"192.168.0.2"</span><span class="p">;</span>
+    <span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="s">"8080"</span><span class="p">;</span>
     <span class="p">.</span><span class="n">first_byte_timeout</span> <span class="o">=</span> <span class="mi">600</span><span class="n">s</span><span class="p">;</span>
     <span class="p">.</span><span class="n">probe</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="p">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/pub/health_check.php&quot;</span><span class="p">;</span>
+        <span class="p">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">"/pub/health_check.php"</span><span class="p">;</span>
         <span class="p">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">2</span><span class="n">s</span><span class="p">;</span>
         <span class="p">.</span><span class="n">interval</span> <span class="o">=</span> <span class="mi">5</span><span class="n">s</span><span class="p">;</span>
         <span class="p">.</span><span class="n">window</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
@@ -2027,34 +2027,34 @@
 <span class="p">}</span>
 
 <span class="n">sub</span> <span class="n">vcl_init</span> <span class="p">{</span>
-    <span class="cp"># Instantiate sm1, sm2 for backends tile1, tile2</span>
-    <span class="cp"># with 10 blacklisted objects as the threshold for marking the</span>
-    <span class="cp"># whole backend sick.</span>
-    <span class="k">new</span> <span class="n">sm1</span> <span class="o">=</span> <span class="n">saintmode</span><span class="p">.</span><span class="n">saintmode</span><span class="p">(</span><span class="n">default1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="cp"># Instantiate sm1, sm2 for backends tile1, tile2
+</span>    <span class="cp"># with 10 blacklisted objects as the threshold for marking the
+</span>    <span class="cp"># whole backend sick.
+</span>    <span class="k">new</span> <span class="n">sm1</span> <span class="o">=</span> <span class="n">saintmode</span><span class="p">.</span><span class="n">saintmode</span><span class="p">(</span><span class="n">default1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
     <span class="k">new</span> <span class="n">sm2</span> <span class="o">=</span> <span class="n">saintmode</span><span class="p">.</span><span class="n">saintmode</span><span class="p">(</span><span class="n">default2</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 
-    <span class="cp"># Add both to a director. Use sm0, sm1 in place of tile1, tile2.</span>
-    <span class="cp"># Other director types can be used in place of random.</span>
-    <span class="k">new</span> <span class="n">magedirector</span> <span class="o">=</span> <span class="n">directors</span><span class="p">.</span><span class="n">random</span><span class="p">();</span>
+    <span class="cp"># Add both to a director. Use sm0, sm1 in place of tile1, tile2.
+</span>    <span class="cp"># Other director types can be used in place of random.
+</span>    <span class="k">new</span> <span class="n">magedirector</span> <span class="o">=</span> <span class="n">directors</span><span class="p">.</span><span class="n">random</span><span class="p">();</span>
     <span class="n">magedirector</span><span class="p">.</span><span class="n">add_backend</span><span class="p">(</span><span class="n">sm1</span><span class="p">.</span><span class="n">backend</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
     <span class="n">magedirector</span><span class="p">.</span><span class="n">add_backend</span><span class="p">(</span><span class="n">sm2</span><span class="p">.</span><span class="n">backend</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">sub</span> <span class="n">vcl_backend_fetch</span> <span class="p">{</span>
-    <span class="cp"># Get a backend from the director.</span>
-    <span class="cp"># When returning a backend, the director will only return backends</span>
-    <span class="cp"># saintmode says are healthy.</span>
-    <span class="n">set</span> <span class="n">bereq</span><span class="p">.</span><span class="n">backend</span> <span class="o">=</span> <span class="n">magedirector</span><span class="p">.</span><span class="n">backend</span><span class="p">();</span>
+    <span class="cp"># Get a backend from the director.
+</span>    <span class="cp"># When returning a backend, the director will only return backends
+</span>    <span class="cp"># saintmode says are healthy.
+</span>    <span class="n">set</span> <span class="n">bereq</span><span class="p">.</span><span class="n">backend</span> <span class="o">=</span> <span class="n">magedirector</span><span class="p">.</span><span class="n">backend</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="n">sub</span> <span class="n">vcl_backend_response</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">beresp</span><span class="p">.</span><span class="n">status</span> <span class="o">&gt;=</span> <span class="mi">500</span><span class="p">)</span> <span class="p">{</span>
-        <span class="cp"># This marks the backend as sick for this specific</span>
-        <span class="cp"># object for the next 20s.</span>
-        <span class="n">saintmode</span><span class="p">.</span><span class="n">blacklist</span><span class="p">(</span><span class="mi">20</span><span class="n">s</span><span class="p">);</span>
-        <span class="cp"># Retry the request. This will result in a different backend</span>
-        <span class="cp"># being used.</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">retry</span><span class="p">);</span>
+        <span class="cp"># This marks the backend as sick for this specific
+</span>        <span class="cp"># object for the next 20s.
+</span>        <span class="n">saintmode</span><span class="p">.</span><span class="n">blacklist</span><span class="p">(</span><span class="mi">20</span><span class="n">s</span><span class="p">);</span>
+        <span class="cp"># Retry the request. This will result in a different backend
+</span>        <span class="cp"># being used.
+</span>        <span class="k">return</span> <span class="p">(</span><span class="n">retry</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 </div></div>

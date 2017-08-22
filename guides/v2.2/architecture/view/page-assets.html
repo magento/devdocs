@@ -459,7 +459,7 @@
 
 			<h2 id="m2devgde-page-assets-intro">Overview</h2>
 
-<p>An <em>asset</em> is a reference to a certain resource linked to an <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> page; that is, references to scripts, stylesheets, RSS feeds, and so on using <code>&lt;head/&gt;</code>, <code>&lt;img/&gt;</code>, <code>&lt;object/&gt;</code> elements.</p>
+<p>An <em>asset</em> is a reference to a certain resource linked to an <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> page; that is, references to scripts, stylesheets, RSS feeds, and so on using <code class="highlighter-rouge">&lt;head/&gt;</code>, <code class="highlighter-rouge">&lt;img/&gt;</code>, <code class="highlighter-rouge">&lt;object/&gt;</code> elements.</p>
 
 <p>This topic discusses how to work with Magento page assets (particularly interfaces and classes). The article is mostly aimed at developers
 who have solid experience with <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and are familiar with <a href="/guides/v2.2/architecture/view/xml-schema-layout.html">Magento XML layouts</a>.</p>
@@ -522,7 +522,7 @@ who have solid experience with <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd4
 
 <p><img src="/common/images/view_asset-interface_no-local.png" alt="Assets with no remote or local information" /></p>
 
-<p>It accepts URL and <code>content-type</code> in the constructor and serves only as a value object.</p>
+<p>It accepts URL and <code class="highlighter-rouge">content-type</code> in the constructor and serves only as a value object.</p>
 
 <h3 id="m2devgde-page-assets-imp-local">Local assets</h3>
 
@@ -534,14 +534,14 @@ who have solid experience with <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd4
 
 <p><img src="/common/images/view_asset-interface_local.png" alt="Local asset interface" /></p>
 
-<p><code>File</code> specifics:</p>
+<p><code class="highlighter-rouge">File</code> specifics:</p>
 
 <ul>
   <li>
-    <p><code>File</code> accepts scalar data in the constructor and is immutable, but requires an instance of “source” for lazy loading of content or a source file.</p>
+    <p><code class="highlighter-rouge">File</code> accepts scalar data in the constructor and is immutable, but requires an instance of “source” for lazy loading of content or a source file.</p>
   </li>
   <li>
-    <p>The <code>$context</code> argument in the constructor is a value object necessary for generating URLs. It contains the base URL and the context path that needs to be put in the beginning of the file path. See the next section for more information about context.</p>
+    <p>The <code class="highlighter-rouge">$context</code> argument in the constructor is a value object necessary for generating URLs. It contains the base URL and the context path that needs to be put in the beginning of the file path. See the next section for more information about context.</p>
   </li>
 </ul>
 
@@ -677,8 +677,8 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
   <li>Add and remove assets</li>
   <li>Determine whether an asset is registered in a collection</li>
   <li>Get all assets</li>
-  <li>Get assets for a specified group (for collections implemented by <code>GroupedCollection</code>)</li>
-  <li>Get groups (for collections implemented by <code>GroupedCollection</code>)</li>
+  <li>Get assets for a specified group (for collections implemented by <code class="highlighter-rouge">GroupedCollection</code>)</li>
+  <li>Get groups (for collections implemented by <code class="highlighter-rouge">GroupedCollection</code>)</li>
 </ul>
 
 <p>To add an asset to a collection, use the following code:</p>

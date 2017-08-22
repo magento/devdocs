@@ -1674,41 +1674,41 @@
 <p>The Magento database profiler displays all queries executed on a page, including the time for each query and what parameters were executed.</p>
 
 <h2 id="step-1-modify-the-deployment-configuration">Step 1: Modify the deployment configuration</h2>
-<p>Modify <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> to add the following reference to the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DB/Profiler.php" target="_blank">database profiler class</a>:</p>
+<p>Modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> to add the following reference to the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DB/Profiler.php" target="_blank">database profiler class</a>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="s1">&#39;profiler&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\Magento\Framework\DB\Profiler&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-        <span class="p">],</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">        'profiler' =&gt; [
+            'class' =&gt; '\Magento\Framework\DB\Profiler',
+            'enabled' =&gt; true,
+        ],</code></pre></figure>
 
 <p>An example follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="s1">&#39;db&#39;</span> <span class="o">=&gt;</span>
-  <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">&#39;table_prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;connection&#39;</span> <span class="o">=&gt;</span>
-    <span class="k">array</span> <span class="p">(</span>
-      <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span>
-      <span class="k">array</span> <span class="p">(</span>
-        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;profiler&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\Magento\Framework\DB\Profiler&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-        <span class="p">],</span>
-      <span class="p">),</span>
-    <span class="p">),</span>
-  <span class="p">),</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> 'db' =&gt;
+  array (
+    'table_prefix' =&gt; '',
+    'connection' =&gt;
+    array (
+      'default' =&gt;
+      array (
+        'host' =&gt; 'localhost',
+        'dbname' =&gt; 'magento',
+        'username' =&gt; 'magento',
+        'password' =&gt; 'magento',
+        'model' =&gt; 'mysql4',
+        'engine' =&gt; 'innodb',
+        'initStatements' =&gt; 'SET NAMES utf8;',
+        'active' =&gt; '1',
+        'profiler' =&gt; [
+            'class' =&gt; '\Magento\Framework\DB\Profiler',
+            'enabled' =&gt; true,
+        ],
+      ),
+    ),
+  ),
   </code></pre></figure>
 
 <h2 id="step-2-configure-the-output">Step 2: Configure the output</h2>
-<p>Configure the output in your Magento application boostrap file; this might be <code>&lt;your Magento install dir&gt;/index.php</code> or it could be located in a web server virtual host configuration.</p>
+<p>Configure the output in your Magento application boostrap file; this might be <code class="highlighter-rouge">&lt;your Magento install dir&gt;/index.php</code> or it could be located in a web server virtual host configuration.</p>
 
 <p>The following example displays results in a three-column table:</p>
 
@@ -1718,27 +1718,27 @@
   <li>Query Params (displays the parameters for each SQL query)</li>
 </ul>
 
-<p>To configure the output, add the following after the <code>$bootstrap-&gt;run($app);</code> line in your bootstrap file:</p>
+<p>To configure the output, add the following after the <code class="highlighter-rouge">$bootstrap-&gt;run($app);</code> line in your bootstrap file:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var \Magento\Framework\App\ResourceConnection $res */</span>
-<span class="nv">$res</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\ObjectManager</span><span class="o">::</span><span class="na">getInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\ResourceConnection&#39;</span><span class="p">);</span>
-<span class="sd">/** @var Magento\Framework\DB\Profiler $profiler */</span>
-<span class="nv">$profiler</span> <span class="o">=</span> <span class="nv">$res</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">&#39;read&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getProfiler</span><span class="p">();</span>
-<span class="k">echo</span> <span class="s2">&quot;&lt;table cellpadding=&#39;0&#39; cellspacing=&#39;0&#39; border=&#39;1&#39;&gt;&quot;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="s2">&quot;&lt;th&gt;Time &lt;br/&gt;[Total Time: &quot;</span><span class="o">.</span><span class="nv">$profiler</span><span class="o">-&gt;</span><span class="na">getTotalElapsedSecs</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot; secs]&lt;/th&gt;&quot;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="s2">&quot;&lt;th&gt;SQL [Total: &quot;</span><span class="o">.</span><span class="nv">$profiler</span><span class="o">-&gt;</span><span class="na">getTotalNumQueries</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot; queries]&lt;/th&gt;&quot;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="s2">&quot;&lt;th&gt;Query Params&lt;/th&gt;&quot;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="s2">&quot;&lt;/tr&gt;&quot;</span><span class="p">;</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$profiler</span><span class="o">-&gt;</span><span class="na">getQueryProfiles</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
-    <span class="sd">/** @var Zend_Db_Profiler_Query $query*/</span>
-    <span class="k">echo</span> <span class="s1">&#39;&lt;tr&gt;&#39;</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s1">&#39;&lt;td&gt;&#39;</span><span class="p">,</span> <span class="nb">number_format</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getElapsedSecs</span><span class="p">(),</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;ms&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s1">&#39;&lt;td&gt;&#39;</span><span class="p">,</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(),</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s1">&#39;&lt;td&gt;&#39;</span><span class="p">,</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getQueryParams</span><span class="p">()),</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s1">&#39;&lt;/tr&gt;&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">echo</span> <span class="s2">&quot;&lt;/table&gt;&quot;</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">/** @var \Magento\Framework\App\ResourceConnection $res */
+$res = \Magento\Framework\App\ObjectManager::getInstance()-&gt;get('Magento\Framework\App\ResourceConnection');
+/** @var Magento\Framework\DB\Profiler $profiler */
+$profiler = $res-&gt;getConnection('read')-&gt;getProfiler();
+echo "<span class="nt">&lt;table</span> <span class="na">cellpadding=</span><span class="s">'0'</span> <span class="na">cellspacing=</span><span class="s">'0'</span> <span class="na">border=</span><span class="s">'1'</span><span class="nt">&gt;</span>";
+echo "<span class="nt">&lt;tr&gt;</span>";
+echo "<span class="nt">&lt;th&gt;</span>Time <span class="nt">&lt;br/&gt;</span>[Total Time: ".$profiler-&gt;getTotalElapsedSecs()." secs]<span class="nt">&lt;/th&gt;</span>";
+echo "<span class="nt">&lt;th&gt;</span>SQL [Total: ".$profiler-&gt;getTotalNumQueries()." queries]<span class="nt">&lt;/th&gt;</span>";
+echo "<span class="nt">&lt;th&gt;</span>Query Params<span class="nt">&lt;/th&gt;</span>";
+echo "<span class="nt">&lt;/tr&gt;</span>";
+foreach ($profiler-&gt;getQueryProfiles() as $query) {
+    /** @var Zend_Db_Profiler_Query $query*/
+    echo '<span class="nt">&lt;tr&gt;</span>';
+    echo '<span class="nt">&lt;td&gt;</span>', number_format(1000 * $query-&gt;getElapsedSecs(), 2), 'ms', '<span class="nt">&lt;/td&gt;</span>';
+    echo '<span class="nt">&lt;td&gt;</span>', $query-&gt;getQuery(), '<span class="nt">&lt;/td&gt;</span>';
+    echo '<span class="nt">&lt;td&gt;</span>', json_encode($query-&gt;getQueryParams()), '<span class="nt">&lt;/td&gt;</span>';
+    echo '<span class="nt">&lt;/tr&gt;</span>';
+}
+echo "<span class="nt">&lt;/table&gt;</span>";</code></pre></figure>
 
 <h2 id="step-3-view-the-results">Step 3: View the results</h2>
 <p>Go to any page in your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> or <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> to view the results. A sample follows:</p>

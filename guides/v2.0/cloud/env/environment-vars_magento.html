@@ -1564,11 +1564,11 @@
 <p>To create a variable using the command line:</p>
 
 <ol>
-  <li>Login to the Magento Cloud CLI. Enter the command <code>magento-cloud login</code> and provide your credentials.</li>
-  <li>To set a variable for the project, use the command <code>magento-cloud project:variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code>pvset</code>. For example, <code>magento-cloud pvset example 123</code> creates a variable example with a string value of 123 for the project.</li>
-  <li>After creating these variables, you can list all project variables with the command <code>magento-cloud project:variable:get</code> or <code>magento-cloud pvget</code>.</li>
-  <li>To set a variable for the branch, use the command <code>magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code>vset</code>. For example, <code>magento-cloud vset example2 abc</code> creates a variable example2 with a string value of abc for the branch.</li>
-  <li>After creating these variables, you can list all project variables with the command <code>magento-cloud variable:get</code> or <code>magento-cloud vget</code>.</li>
+  <li>Login to the Magento Cloud CLI. Enter the command <code class="highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
+  <li>To set a variable for the project, use the command <code class="highlighter-rouge">magento-cloud project:variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code class="highlighter-rouge">pvset</code>. For example, <code class="highlighter-rouge">magento-cloud pvset example 123</code> creates a variable example with a string value of 123 for the project.</li>
+  <li>After creating these variables, you can list all project variables with the command <code class="highlighter-rouge">magento-cloud project:variable:get</code> or <code class="highlighter-rouge">magento-cloud pvget</code>.</li>
+  <li>To set a variable for the branch, use the command <code class="highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code class="highlighter-rouge">vset</code>. For example, <code class="highlighter-rouge">magento-cloud vset example2 abc</code> creates a variable example2 with a string value of abc for the branch.</li>
+  <li>After creating these variables, you can list all project variables with the command <code class="highlighter-rouge">magento-cloud variable:get</code> or <code class="highlighter-rouge">magento-cloud vget</code>.</li>
 </ol>
 
 <h2 id="cloud-env-vars-tshoot">Troubleshooting</h2>
@@ -1579,9 +1579,10 @@
   <li>
     <p>Restore your snapshot:</p>
 
-    <pre><code>magento-cloud snapshot:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:list
 magento-cloud snapshot:restore &lt;snapshot&gt;
 </code></pre>
+    </div>
   </li>
 </ul>
 
@@ -1589,9 +1590,9 @@ magento-cloud snapshot:restore &lt;snapshot&gt;
 <ul>
   <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html">Tutorial—Set Magento environment variables</a></li>
   <li><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Cloud environment variables</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
 </ul>
 
 		</div>

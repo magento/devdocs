@@ -773,72 +773,72 @@ In Magento it is used by the <a href="/guides/v2.2/javascript-dev-guide/widgets/
 
 <p>When initializing the gallery Widget on an <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> element, magnifier initialization is also available. Following is the example of gallery initialization with magnifier:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/x-magento-init&quot;</span><span class="o">&gt;</span>
-<span class="s2">&quot;&lt;element_selector&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;mage/gallery/gallery&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">[{</span>
-                <span class="s2">&quot;thumb&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;img&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;full&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;small_image_url&gt;&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;caption&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;message&gt;&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;isMain&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;true/false&gt;&quot;</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/x-magento-init"</span><span class="o">&gt;</span>
+<span class="s2">"&lt;element_selector&gt;"</span><span class="err">:</span> <span class="p">{</span>
+        <span class="s2">"mage/gallery/gallery"</span><span class="err">:</span> <span class="p">{</span>
+            <span class="s2">"data"</span><span class="err">:</span> <span class="p">[{</span>
+                <span class="s2">"thumb"</span><span class="p">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
+                <span class="s2">"img"</span><span class="p">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
+                <span class="s2">"full"</span><span class="p">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
+                <span class="s2">"caption"</span><span class="p">:</span> <span class="s2">"&lt;message&gt;"</span><span class="p">,</span>
+                <span class="s2">"isMain"</span><span class="p">:</span> <span class="s2">"&lt;true/false&gt;"</span>
             <span class="p">}],</span>
-            <span class="s2">&quot;mixins&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;magnifier/magnify&quot;</span><span class="p">],</span>
-            <span class="s2">&quot;magnifierOpts&quot;</span><span class="o">:</span> <span class="p">{</span>
-               <span class="s2">&quot;enabled&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
-               <span class="s2">&quot;eventType&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;hover/click&gt;&quot;</span><span class="p">,</span>
-               <span class="s2">&quot;width&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-               <span class="s2">&quot;height&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-               <span class="s2">&quot;top&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-               <span class="s2">&quot;left&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-               <span class="s2">&quot;fullscreenzoom&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
+            <span class="s2">"mixins"</span><span class="err">:</span> <span class="p">[</span><span class="s2">"magnifier/magnify"</span><span class="p">],</span>
+            <span class="s2">"magnifierOpts"</span><span class="err">:</span> <span class="p">{</span>
+               <span class="s2">"enabled"</span><span class="err">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+               <span class="s2">"eventType"</span><span class="err">:</span> <span class="s2">"&lt;hover/click&gt;"</span><span class="p">,</span>
+               <span class="s2">"width"</span><span class="err">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+               <span class="s2">"height"</span><span class="err">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+               <span class="s2">"top"</span><span class="err">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+               <span class="s2">"left"</span><span class="err">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+               <span class="s2">"fullscreenzoom"</span><span class="err">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
             <span class="p">}</span>
         <span class="p">}</span>
    <span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span></code></pre></figure>
+<span class="o">&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
 
 <h2 id="magnifier_options">Options</h2>
 
-<h3 id="opt_enabled"><code>enabled</code></h3>
+<h3 id="opt_enabled"><code class="highlighter-rouge">enabled</code></h3>
 
 <p>Enable magnifier.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<h3 id="opt_height"><code>height</code></h3>
+<h3 id="opt_height"><code class="highlighter-rouge">height</code></h3>
 
 <p>Height of the magnifier block in pixels.</p>
 
-<h3 id="opt_hover"><code>hover</code></h3>
+<h3 id="opt_hover"><code class="highlighter-rouge">hover</code></h3>
 
 <p>Action that activates zoom.</p>
 
 <p>Possible values:</p>
 
 <ul>
-  <li><code>hover</code></li>
-  <li><code>click</code></li>
+  <li><code class="highlighter-rouge">hover</code></li>
+  <li><code class="highlighter-rouge">click</code></li>
 </ul>
 
-<h3 id="opt_fullscreenzoom"><code>fullscreenzoom</code></h3>
+<h3 id="opt_fullscreenzoom"><code class="highlighter-rouge">fullscreenzoom</code></h3>
 
 <p>Zoom step in percents for the fullscreen view.</p>
 
 <p>Type: Integer</p>
 
-<h3 id="opt_left"><code>left</code></h3>
+<h3 id="opt_left"><code class="highlighter-rouge">left</code></h3>
 
-<p>The value for the <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> <code>left</code> property for the magnifier block positioning.</p>
-
-<p><strong>Type</strong>: Integer</p>
-
-<h3 id="opt_top"><code>top</code></h3>
-
-<p>The value for the CSS <code>top</code> property for the magnifier block positioning.</p>
+<p>The value for the <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> <code class="highlighter-rouge">left</code> property for the magnifier block positioning.</p>
 
 <p><strong>Type</strong>: Integer</p>
 
-<h3 id="opt_width"><code>width</code></h3>
+<h3 id="opt_top"><code class="highlighter-rouge">top</code></h3>
+
+<p>The value for the CSS <code class="highlighter-rouge">top</code> property for the magnifier block positioning.</p>
+
+<p><strong>Type</strong>: Integer</p>
+
+<h3 id="opt_width"><code class="highlighter-rouge">width</code></h3>
 
 <p>Width of the magnifier block in pixels.</p>
 

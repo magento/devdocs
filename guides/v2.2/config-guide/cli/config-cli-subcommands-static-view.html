@@ -1910,7 +1910,7 @@
   <li>“View” refers to presentation layer (from MVC).</li>
 </ul>
 
-<p>Static view files are located in the <code>&lt;your Magento install dir&gt;/pub/static</code> directory, and some are cached in the <code>&lt;your Magento install dir&gt;/var/view_preprocessed</code> directory as well.</p>
+<p>Static view files are located in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory, and some are cached in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/view_preprocessed</code> directory as well.</p>
 
 <p>Static view files deployment is affected by Magento modes as follows:</p>
 
@@ -1938,23 +1938,26 @@ You can clean generated static view files in several ways, see the <a href="/gui
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1973,9 +1976,9 @@ You can clean generated static view files in several ways, see the <a href="/gui
 
   <ol>
     <li>Log in to the Magento server as, or <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
-    <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code>, except for the <code>.htaccess</code> file. Do not delete this file.</li>
+    <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code>, except for the <code class="highlighter-rouge">.htaccess</code> file. Do not delete this file.</li>
     <li>
-      <p>Run the static view files deployment tool <code>&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
+      <p>Run the static view files deployment tool <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
       <div class="bs-callout bs-callout-info" id="info">
@@ -1987,8 +1990,9 @@ You can clean generated static view files in several ways, see the <a href="/gui
 
   <p>Command options:</p>
 
-  <pre><code>magento setup:static-content:deploy [&lt;list of locales&gt;] [-t|--theme[="&lt;theme&gt;"]] [--exclude-theme[="&lt;theme&gt;"]] [-l|--language[="&lt;language&gt;"]] [--exclude-language[="&lt;language&gt;"]] [-a|--area[="&lt;area&gt;"]] [--exclude-area[="&lt;area&gt;"]] [-j|--jobs[="&lt;number&gt;"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:static-content:deploy [&lt;list of locales&gt;] [-t|--theme[="&lt;theme&gt;"]] [--exclude-theme[="&lt;theme&gt;"]] [-l|--language[="&lt;language&gt;"]] [--exclude-language[="&lt;language&gt;"]] [-a|--area[="&lt;area&gt;"]] [--exclude-area[="&lt;area&gt;"]] [-j|--jobs[="&lt;number&gt;"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
 </code></pre>
+  </div>
 
   <p>The following table discusses the meanings of this command’s parameters and values.</p>
 
@@ -2357,14 +2361,15 @@ You can clean generated static view files in several ways, see the <a href="/gui
   <p>Following are some example commands.</p>
 
   <h4 id="excluding-a-theme-and-html-minification">Excluding a theme and HTML minification</h4>
-  <p>The following command deploys <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> for the US English (<code>en_US</code>) language, excludes the Luma <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> provided with Magento, and does not minify <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> files.</p>
+  <p>The following command deploys <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> for the US English (<code class="highlighter-rouge">en_US</code>) language, excludes the Luma <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> provided with Magento, and does not minify <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> files.</p>
 
-  <pre><code>magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
 </code></pre>
+  </div>
 
   <p>Sample output:</p>
 
-  <pre><code>Requested languages: en_US
+  <div class="highlighter-rouge"><pre class="highlight"><code>Requested languages: en_US
 Requested areas: frontend, adminhtml
 Requested themes: Magento/blank, Magento/backend
 === frontend -&gt; Magento/blank -&gt; en_US ===
@@ -2379,16 +2384,18 @@ New version of deployed files: 1466710645
 Successful: 1993 files; errors: 0
 ---
 </code></pre>
+  </div>
 
   <h4 id="generating-static-view-files-for-one-theme-and-one-area">Generating static view files for one theme and one area</h4>
   <p>The following command generates static view files for all languages, the <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> area only, the Magento Luma theme only, without generating fonts:</p>
 
-  <pre><code>magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
 </code></pre>
+  </div>
 
   <p>Sample output:</p>
 
-  <pre><code>Requested languages: en_US
+  <div class="highlighter-rouge"><pre class="highlight"><code>Requested languages: en_US
 Requested areas: frontend
 Requested themes: Magento/luma
 === frontend -&gt; Magento/luma -&gt; en_US ===
@@ -2400,6 +2407,7 @@ Successful: 2092 files; errors: 0
 
 New version of deployed files: 1466711110
 </code></pre>
+  </div>
 
   <h3 id="deploy_without_db">Deploy static view files without installing Magento</h3>
   <p>You might want to run the deployment process in a separate, non-production, environment, to avoid any build processes on sensitive production machines.</p>
@@ -2407,9 +2415,9 @@ New version of deployed files: 1466711110
   <p>To do this, take the following steps:</p>
 
   <ol>
-    <li>Run <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code>magento app:config:dump</code></a> to export the configuration from your production system.</li>
+    <li>Run <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code></a> to export the configuration from your production system.</li>
     <li>Copy the exported files to the non-production code base.</li>
-    <li>Run <a href="#config-cli-subcommands-staticview"><code>magento setup:static-content:deploy</code></a>.</li>
+    <li>Run <a href="#config-cli-subcommands-staticview"><code class="highlighter-rouge">magento setup:static-content:deploy</code></a>.</li>
   </ol>
 
   <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
@@ -2417,8 +2425,9 @@ New version of deployed files: 1466711110
 
   <p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
 
-  <pre><code>ERROR: You need to install the Magento application before running this utility.
+  <div class="highlighter-rouge"><pre class="highlight"><code>ERROR: You need to install the Magento application before running this utility.
 </code></pre>
+  </div>
 
   <p><strong>Solution</strong>:</p>
 
@@ -2434,7 +2443,7 @@ New version of deployed files: 1466711110
       </ul>
     </li>
     <li>Log in to the Magento server as, or <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.</li>
-    <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code> directory, except for the <code>.htaccess</code> file. Do not delete this file.</li>
+    <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory, except for the <code class="highlighter-rouge">.htaccess</code> file. Do not delete this file.</li>
     <li>
       <p><a href="#config-cli-subcommands-staticview">Run the static view files deployment tool</a>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>

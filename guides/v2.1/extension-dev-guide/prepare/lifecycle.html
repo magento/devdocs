@@ -1143,7 +1143,7 @@
 <p>Magento will detect the classes you are using to hook into the different lifecycle stages when you follow these rules:</p>
 
 <ul>
-  <li>The class should be in the <code>Setup</code> directory in your module’s root directory with the appropriate file name. For the correct file name, please see the specific examples below.</li>
+  <li>The class should be in the <code class="highlighter-rouge">Setup</code> directory in your module’s root directory with the appropriate file name. For the correct file name, please see the specific examples below.</li>
   <li>The class must use the specific name for the phase in which it will be executed in. To determine the correct class name to use, please see the specific examples below.</li>
   <li>The class must implement the specific class interface for the phase in which it will be executed in. To determine the correct interface to use, please see the specific examples below.</li>
   <li>The version you use in your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> should follow our <a href="/guides/v2.1/architecture/versioning.html">versioning policy</a>.</li>
@@ -1157,13 +1157,13 @@
 
 <p>When your module is initially installed, the first thing your modules does is perform a schema installation by executing its installation class.</p>
 
-<p>If the <code>schema_version</code> of the module is found in the <code>setup_modules</code> table, then this stage will be skipped because it is assumed that the module schema has already been initialized in a previous installation.</p>
+<p>If the <code class="highlighter-rouge">schema_version</code> of the module is found in the <code class="highlighter-rouge">setup_modules</code> table, then this stage will be skipped because it is assumed that the module schema has already been initialized in a previous installation.</p>
 
 <p>For example, if you are installing version 2.0.0 of your module and there have been no previous installations of your module, then schema installation will proceed. Otherwise, schema installation will be skipped and your module will begin a <a href="#schema-upgrade">schema upgrade</a>.</p>
 
-<p>During a schema installation, the <code>install</code> function will be executed in the <code>InstallSchema</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php" target="_blank"><code>\Magento\Framework\Setup\InstallSchemaInterface</code></a>:</p>
+<p>During a schema installation, the <code class="highlighter-rouge">install</code> function will be executed in the <code class="highlighter-rouge">InstallSchema</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\Setup\InstallSchemaInterface</code></a>:</p>
 
-<pre><code>// File Location: &lt;module_root_directory&gt;/Setup/InstallSchema.php
+<div class="highlighter-rouge"><pre class="highlight"><code>// File Location: &lt;module_root_directory&gt;/Setup/InstallSchema.php
 
 class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 {
@@ -1177,6 +1177,7 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\InstallSchema implements \Magento\Fra
 }
 
 </code></pre>
+</div>
 
 <h4 id="schema-upgrade">Schema upgrade</h4>
 
@@ -1184,9 +1185,9 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\InstallSchema implements \Magento\Fra
 
 <p>For example, when a new 2.0.1 version of your module is installed over a previous 2.0.0 version, your module will perform a schema upgrade instead of a <a href="#schema-installation">schema installation</a>.</p>
 
-<p>During a schema upgrade, the <code>upgrade</code> function will be executed in the <code>UpgradeSchema</code> class implementing the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php" target="_blank"><code>Magento\Framework\Setup\UpgradeSchemaInterface</code></a>:</p>
+<p>During a schema upgrade, the <code class="highlighter-rouge">upgrade</code> function will be executed in the <code class="highlighter-rouge">UpgradeSchema</code> class implementing the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Setup\UpgradeSchemaInterface</code></a>:</p>
 
-<pre><code>// Location: &lt;module_root_directory&gt;/Setup/UpgradeSchema.php
+<div class="highlighter-rouge"><pre class="highlight"><code>// Location: &lt;module_root_directory&gt;/Setup/UpgradeSchema.php
 
 class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\UpgradeSchema implements \Magento\Framework\Setup\UpgradeSchemaInterface
 {
@@ -1199,14 +1200,15 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\UpgradeSchema implements \Magento\Fra
     }
 }
 </code></pre>
+</div>
 
 <h4 id="recurring-schema-event">Recurring schema event</h4>
 
 <p>You can create a class in your module that will be run every time after schema installation or upgrade. The purpose of running code in this final stage of schema initialization is usually to do final modifications to the database schema after it has been installed or updated.</p>
 
-<p>During this event, the <code>install</code> function will be executed in the <code>Recurring</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php" target="_blank"><code>\Magento\Framework\Setup\InstallSchemaInterface</code></a>:</p>
+<p>During this event, the <code class="highlighter-rouge">install</code> function will be executed in the <code class="highlighter-rouge">Recurring</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\Setup\InstallSchemaInterface</code></a>:</p>
 
-<pre><code>// Location: &lt;module_root_directory&gt;/Setup/Recurring.php
+<div class="highlighter-rouge"><pre class="highlight"><code>// Location: &lt;module_root_directory&gt;/Setup/Recurring.php
 
 class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\Recurring implements \Magento\Framework\Setup\InstallSchemaInterface
 {
@@ -1219,6 +1221,7 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\Recurring implements \Magento\Framewo
     }
 }
 </code></pre>
+</div>
 
 <h3 id="data-initialization">Data initialization</h3>
 
@@ -1228,9 +1231,9 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\Recurring implements \Magento\Framewo
 
 <p>Just like with <a href="#schema-installation">schema installation</a>, this stage will run only during the initial installation of your module. The purpose of data installation is usually to populate the database with initial data for your module.</p>
 
-<p>During data installation, the <code>install</code> function will be executed in the <code>InstallData</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php" target="_blank"><code>Magento\Framework\Setup\InstallDataInterface</code></a>:</p>
+<p>During data installation, the <code class="highlighter-rouge">install</code> function will be executed in the <code class="highlighter-rouge">InstallData</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Setup\InstallDataInterface</code></a>:</p>
 
-<pre><code>// Location: &lt;module_root_directory&gt;/Setup/InstallData.php
+<div class="highlighter-rouge"><pre class="highlight"><code>// Location: &lt;module_root_directory&gt;/Setup/InstallData.php
 
 class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\InstallData implements \Magento\Framework\Setup\InstallDataInterface
 {
@@ -1244,14 +1247,15 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\InstallData implements \Magento\Frame
 }
 
 </code></pre>
+</div>
 
 <h4 id="data-upgrade">Data upgrade</h4>
 
 <p>Just like the <a href="#schema-upgrade">schema-upgrade</a> stage, data upgrade only occurs when Magento detects a previous installation. The purpose of this stage is usually to fix data that has been corrupted or populate a new data field from a schema change.</p>
 
-<p>During a data upgrade, the <code>upgrade</code> function will be executed in the <code>UpgradeData</code> class implementing the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php" target="_blank"><code>Magento\Framework\Setup\UpgradeDataInterface</code></a>:</p>
+<p>During a data upgrade, the <code class="highlighter-rouge">upgrade</code> function will be executed in the <code class="highlighter-rouge">UpgradeData</code> class implementing the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Setup\UpgradeDataInterface</code></a>:</p>
 
-<pre><code>//&lt;module_root_directory&gt;/Setup/UpgradeData.php
+<div class="highlighter-rouge"><pre class="highlight"><code>//&lt;module_root_directory&gt;/Setup/UpgradeData.php
 
 class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 {
@@ -1264,14 +1268,15 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\UpgradeData implements \Magento\Frame
     }
 }
 </code></pre>
+</div>
 
 <h4 id="recurring-data-event">Recurring data event</h4>
 
 <p>You can create a class that will run after every data installation or upgrade. The purpose of the class is usually to do final modifications to the database store after data has been installed or updated.</p>
 
-<p>During this event, the <code>install</code> function will be executed in the <code>RecurringData</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php" target="_blank"><code>Magento\Framework\Setup\InstallDataInterface</code></a>:</p>
+<p>During this event, the <code class="highlighter-rouge">install</code> function will be executed in the <code class="highlighter-rouge">RecurringData</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Setup\InstallDataInterface</code></a>:</p>
 
-<pre><code>// Location: &lt;module_root_directory&gt;/Setup/RecurringData.php
+<div class="highlighter-rouge"><pre class="highlight"><code>// Location: &lt;module_root_directory&gt;/Setup/RecurringData.php
 
 class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\RecurringData implements \Magento\Framework\Setup\InstallDataInterface
 {
@@ -1284,12 +1289,13 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\RecurringData implements \Magento\Fra
     }
 }
 </code></pre>
+</div>
 
 <h3 id="setup-resource-models">Setup resource models</h3>
 
-<p>Magento provides <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php" target="_blank"><code>ModuleDataSetupInterface</code></a> and <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php" target="_blank"><code>ModuleContextInterface</code></a> to assist with database manipulations. However, if the installation/upgrade is too complex, more classes may be created to handle all the logic. In these cases, you can pass the <code>ModuleDataSetupInterface</code> resource to other classes that may require DB manipulations.</p>
+<p>Magento provides <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php" target="_blank"><code class="highlighter-rouge">ModuleDataSetupInterface</code></a> and <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php" target="_blank"><code class="highlighter-rouge">ModuleContextInterface</code></a> to assist with database manipulations. However, if the installation/upgrade is too complex, more classes may be created to handle all the logic. In these cases, you can pass the <code class="highlighter-rouge">ModuleDataSetupInterface</code> resource to other classes that may require DB manipulations.</p>
 
-<pre><code>class InstallData implements InstallDataInterface
+<div class="highlighter-rouge"><pre class="highlight"><code>class InstallData implements InstallDataInterface
 {
     /**
      * @var CustomerFactory
@@ -1318,12 +1324,13 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\RecurringData implements \Magento\Fra
     }
 }
 </code></pre>
+</div>
 
 <h3 id="module-context">Module context</h3>
 
-<p>To add more logic to your install/upgrade classes, you can use the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php" target="_blank"><code>ModuleContextInterface</code></a> provided by Magento. The context provides module information, such as current module version, to help add logic to your class.</p>
+<p>To add more logic to your install/upgrade classes, you can use the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php" target="_blank"><code class="highlighter-rouge">ModuleContextInterface</code></a> provided by Magento. The context provides module information, such as current module version, to help add logic to your class.</p>
 
-<pre><code>class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\UpgradeDataInterface
+<div class="highlighter-rouge"><pre class="highlight"><code>class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\UpgradeDataInterface
 {
    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
    {
@@ -1333,16 +1340,17 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\RecurringData implements \Magento\Fra
    }
 }
 </code></pre>
+</div>
 
 <h3 id="uninstall-event">Uninstall event</h3>
 
-<p>The uninstall <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> begins when you uninstall your module using the <a href="/guides/v2.1/comp-mgr/module-man/compman-uninst-final.html">Component Manager</a> or by running the command <code>bin/magento module:uninstall --remove-data &lt;module_name&gt;</code>.</p>
+<p>The uninstall <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> begins when you uninstall your module using the <a href="/guides/v2.1/comp-mgr/module-man/compman-uninst-final.html">Component Manager</a> or by running the command <code class="highlighter-rouge">bin/magento module:uninstall --remove-data &lt;module_name&gt;</code>.</p>
 
 <p>In this stage, your module should remove all traces of its existence in the database; e.g. dropping tables, deleting data, or restoring data.</p>
 
-<p>During this stage, the <code>uninstall</code> function will be executed in the <code>Uninstall</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank"><code>Magento\Framework\Setup\UninstallInterface</code></a>:</p>
+<p>During this stage, the <code class="highlighter-rouge">uninstall</code> function will be executed in the <code class="highlighter-rouge">Uninstall</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Setup\UninstallInterface</code></a>:</p>
 
-<pre><code>// Location: &lt;module_root_directory&gt;/Setup/Uninstall.php
+<div class="highlighter-rouge"><pre class="highlight"><code>// Location: &lt;module_root_directory&gt;/Setup/Uninstall.php
 
 class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\Uninstall implements \Magento\Framework\Setup\UninstallInterface
 {
@@ -1355,6 +1363,7 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\Uninstall implements \Magento\Framewo
     }
 }
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-warning" id="uninstall-disabled">
   <p>A disabled module's uninstall routine can still be invoked when it is uninstalled. This means that module specific configurations such as <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configurations and event/observer configurations will not be available and can cause problems. To avoid this, uninstall classes should not have dependencies on them.</p>

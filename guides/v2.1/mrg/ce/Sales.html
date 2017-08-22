@@ -861,17 +861,17 @@
       <td>Array of items with a format according to <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
       <td>
       
-<figure class="highlight"><pre><code class="language-json" data-lang="json">      <span class="p">[</span>
-          <span class="p">{</span>
-              <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-              <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">2</span>
-          <span class="p">},</span>
-          <span class="p">{</span>
-          <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mf">0.5</span>
-          <span class="p">}</span>
-          <span class="p">]</span>
-      </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">      </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+      </span></code></pre></figure>
 
       </td>
       <td>Optional (required, when invoice must contain particular order items.</td>
@@ -907,11 +907,11 @@
       <td>A format according to <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
       <td>
       
-<figure class="highlight"><pre><code class="language-json" data-lang="json">      <span class="p">{</span>
-          <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;The first Invoice&quot;</span><span class="p">,</span>
-          <span class="nt">&quot;is_visible_on_front&quot;</span><span class="p">:</span> <span class="kc">true</span>
-      <span class="p">}</span>
-      </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">      </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The first Invoice"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"is_visible_on_front"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span></code></pre></figure>
 
       </td>
       <td>Optional</td>
@@ -936,16 +936,16 @@
 
 <h4 id="post-endpoint">POST Endpoint</h4>
 
-<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/V1/&lt;orderId&gt;/invoice</code></p>
+<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/V1/&lt;orderId&gt;/invoice</code></p>
 
 <h4 id="rest-declaration">REST declaration</h4>
 
-<p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml"><code>etc/webapi.xml</code></a></p>
+<p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml"><code class="highlighter-rouge">etc/webapi.xml</code></a></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/order/:orderId/invoice&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Sales\Api\InvoiceOrderInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;execute&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/order/:orderId/invoice"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Sales\Api\InvoiceOrderInterface"</span> <span class="na">method=</span><span class="s">"execute"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;resources&gt;</span>
-        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Sales::sales&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Sales::sales"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/resources&gt;</span>
 <span class="nt">&lt;/route&gt;</span></code></pre></figure>
 
@@ -953,58 +953,58 @@
 
 <h4 id="soap-endpoint">SOAP Endpoint</h4>
 
-<p><code>http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=salesInvoiceOrderV1</code></p>
+<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=salesInvoiceOrderV1</code></p>
 
 <h3 id="php-interface">PHP interface</h3>
 
-<p><code>\Magento\Sales\Api\InvoiceOrderInterface</code></p>
+<p><code class="highlighter-rouge">\Magento\Sales\Api\InvoiceOrderInterface</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide a code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2013-2017 Magento, Inc. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Sales\Api</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Class InvoiceOrderInterface</span>
-<span class="sd"> *</span>
-<span class="sd"> * @api</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Class InvoiceOrderInterface
+ *
+ * @api
+ */</span>
 <span class="k">interface</span> <span class="nx">InvoiceOrderInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @param int $orderId</span>
-<span class="sd">     * @param bool|false $capture</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\InvoiceItemCreationInterface[] $items</span>
-<span class="sd">     * @param bool|false $notify</span>
-<span class="sd">     * @param bool|false $appendComment</span>
-<span class="sd">     * @param Data\InvoiceCommentCreationInterface|null $comment</span>
-<span class="sd">     * @param Data\InvoiceCreationArgumentsInterface|null $arguments</span>
-<span class="sd">     * @return int</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @param int $orderId
+     * @param bool|false $capture
+     * @param \Magento\Sales\Api\Data\InvoiceItemCreationInterface[] $items
+     * @param bool|false $notify
+     * @param bool|false $appendComment
+     * @param Data\InvoiceCommentCreationInterface|null $comment
+     * @param Data\InvoiceCreationArgumentsInterface|null $arguments
+     * @return int
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
         <span class="nv">$orderId</span><span class="p">,</span>
-        <span class="nv">$capture</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
+        <span class="nv">$capture</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nv">$notify</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 </div></div>
 
 <h3 id="php-implementation">PHP implementation</h3>
 
-<p><code>\Magento\Sales\Model\InvoiceOrder</code></p>
+<p><code class="highlighter-rouge">\Magento\Sales\Model\InvoiceOrder</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide included code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2013-2017 Magento, Inc. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Sales\Model</span><span class="p">;</span>
 
@@ -1025,79 +1025,79 @@
 <span class="k">use</span> <span class="nx">Psr\Log\LoggerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Framework\App\ObjectManager</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Class InvoiceOrder</span>
-<span class="sd"> * @SuppressWarnings(PHPMD.CouplingBetweenObjects)</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Class InvoiceOrder
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ */</span>
 <span class="k">class</span> <span class="nc">InvoiceOrder</span> <span class="k">implements</span> <span class="nx">InvoiceOrderInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var ResourceConnection</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var ResourceConnection
+     */</span>
     <span class="k">private</span> <span class="nv">$resourceConnection</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderRepositoryInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderRepositoryInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$orderRepository</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var InvoiceDocumentFactory</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var InvoiceDocumentFactory
+     */</span>
     <span class="k">private</span> <span class="nv">$invoiceDocumentFactory</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var PaymentAdapterInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var PaymentAdapterInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$paymentAdapter</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderStateResolverInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderStateResolverInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$orderStateResolver</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderConfig</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderConfig
+     */</span>
     <span class="k">private</span> <span class="nv">$config</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var InvoiceRepository</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var InvoiceRepository
+     */</span>
     <span class="k">private</span> <span class="nv">$invoiceRepository</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var InvoiceOrderValidator</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var InvoiceOrderValidator
+     */</span>
     <span class="k">private</span> <span class="nv">$invoiceOrderValidator</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var NotifierInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var NotifierInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$notifierInterface</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var LoggerInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var LoggerInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * InvoiceOrder constructor.</span>
-<span class="sd">     * @param ResourceConnection $resourceConnection</span>
-<span class="sd">     * @param OrderRepositoryInterface $orderRepository</span>
-<span class="sd">     * @param InvoiceDocumentFactory $invoiceDocumentFactory</span>
-<span class="sd">     * @param InvoiceValidatorInterface $invoiceValidator</span>
-<span class="sd">     * @param OrderValidatorInterface $orderValidator</span>
-<span class="sd">     * @param PaymentAdapterInterface $paymentAdapter</span>
-<span class="sd">     * @param OrderStateResolverInterface $orderStateResolver</span>
-<span class="sd">     * @param OrderConfig $config</span>
-<span class="sd">     * @param InvoiceRepository $invoiceRepository</span>
-<span class="sd">     * @param NotifierInterface $notifierInterface</span>
-<span class="sd">     * @param LoggerInterface $logger</span>
-<span class="sd">     * @param InvoiceOrderValidator|null $invoiceOrderValidator</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.ExcessiveParameterList)</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.UnusedFormalParameter)</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * InvoiceOrder constructor.
+     * @param ResourceConnection $resourceConnection
+     * @param OrderRepositoryInterface $orderRepository
+     * @param InvoiceDocumentFactory $invoiceDocumentFactory
+     * @param InvoiceValidatorInterface $invoiceValidator
+     * @param OrderValidatorInterface $orderValidator
+     * @param PaymentAdapterInterface $paymentAdapter
+     * @param OrderStateResolverInterface $orderStateResolver
+     * @param OrderConfig $config
+     * @param InvoiceRepository $invoiceRepository
+     * @param NotifierInterface $notifierInterface
+     * @param LoggerInterface $logger
+     * @param InvoiceOrderValidator|null $invoiceOrderValidator
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
         <span class="nx">ResourceConnection</span> <span class="nv">$resourceConnection</span><span class="p">,</span>
         <span class="nx">OrderRepositoryInterface</span> <span class="nv">$orderRepository</span><span class="p">,</span>
@@ -1110,7 +1110,7 @@
         <span class="nx">InvoiceRepository</span> <span class="nv">$invoiceRepository</span><span class="p">,</span>
         <span class="nx">NotifierInterface</span> <span class="nv">$notifierInterface</span><span class="p">,</span>
         <span class="nx">LoggerInterface</span> <span class="nv">$logger</span><span class="p">,</span>
-        <span class="nx">InvoiceOrderValidator</span> <span class="nv">$invoiceOrderValidator</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nx">InvoiceOrderValidator</span> <span class="nv">$invoiceOrderValidator</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">)</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span> <span class="o">=</span> <span class="nv">$resourceConnection</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span> <span class="o">=</span> <span class="nv">$orderRepository</span><span class="p">;</span>
@@ -1126,31 +1126,31 @@
         <span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @param int $orderId</span>
-<span class="sd">     * @param bool $capture</span>
-<span class="sd">     * @param array $items</span>
-<span class="sd">     * @param bool $notify</span>
-<span class="sd">     * @param bool $appendComment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\InvoiceCommentCreationInterface|null $comment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface|null $arguments</span>
-<span class="sd">     * @return int</span>
-<span class="sd">     * @throws \Magento\Sales\Api\Exception\DocumentValidationExceptionInterface</span>
-<span class="sd">     * @throws \Magento\Sales\Api\Exception\CouldNotInvoiceExceptionInterface</span>
-<span class="sd">     * @throws \Magento\Framework\Exception\InputException</span>
-<span class="sd">     * @throws \Magento\Framework\Exception\NoSuchEntityException</span>
-<span class="sd">     * @throws \DomainException</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @param int $orderId
+     * @param bool $capture
+     * @param array $items
+     * @param bool $notify
+     * @param bool $appendComment
+     * @param \Magento\Sales\Api\Data\InvoiceCommentCreationInterface|null $comment
+     * @param \Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface|null $arguments
+     * @return int
+     * @throws \Magento\Sales\Api\Exception\DocumentValidationExceptionInterface
+     * @throws \Magento\Sales\Api\Exception\CouldNotInvoiceExceptionInterface
+     * @throws \Magento\Framework\Exception\InputException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @throws \DomainException
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
         <span class="nv">$orderId</span><span class="p">,</span>
-        <span class="nv">$capture</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
+        <span class="nv">$capture</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nx">InvoiceCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
-        <span class="nx">InvoiceCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nv">$notify</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">InvoiceCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">InvoiceCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$connection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">&#39;sales&#39;</span><span class="p">);</span>
+        <span class="nv">$connection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">'sales'</span><span class="p">);</span>
         <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$orderId</span><span class="p">);</span>
         <span class="nv">$invoice</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceDocumentFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
             <span class="nv">$order</span><span class="p">,</span>
@@ -1171,7 +1171,7 @@
         <span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$errorMessages</span><span class="o">-&gt;</span><span class="na">hasMessages</span><span class="p">())</span> <span class="p">{</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\DocumentValidationException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s2">&quot;Invoice Document Validation Error(s):</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$errorMessages</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()))</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s2">"Invoice Document Validation Error(s):</span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$errorMessages</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()))</span>
             <span class="p">);</span>
         <span class="p">}</span>
         <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">beginTransaction</span><span class="p">();</span>
@@ -1189,12 +1189,12 @@
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
             <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">rollBack</span><span class="p">();</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\CouldNotInvoiceException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Could not save an invoice, see error log for details&#39;</span><span class="p">)</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s1">'Could not save an invoice, see error log for details'</span><span class="p">)</span>
             <span class="p">);</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$notify</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$appendComment</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+                <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
             <span class="p">}</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notifierInterface</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">(</span><span class="nv">$order</span><span class="p">,</span> <span class="nv">$invoice</span><span class="p">,</span> <span class="nv">$comment</span><span class="p">);</span>
         <span class="p">}</span>
@@ -1207,13 +1207,13 @@
 
 <p>In case of failure, it returns an error object. Example in REST:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Creditmemo Document Validation Error(s):\nWe can&#39;t create creditmemo for the order.\nThe most money available to refund is 0.&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h4 id="extension-points">Extension points</h4>
 
-<p>The service implementation contains <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> points marked with <code>@api</code> annotation. Extension developers can use APIs to extend service logic.</p>
+<p>The service implementation contains <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> points marked with <code class="highlighter-rouge">@api</code> annotation. Extension developers can use APIs to extend service logic.</p>
 
 <table>
   <thead>
@@ -1224,31 +1224,31 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code>\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Orders.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
       <td>An interface which provides a correct state of an Order according to performed operation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php" target="_blank"><code>\Magento\Sales\Api\InvoiceRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\InvoiceRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Shipments.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/InvoiceDocumentFactory.php" target="_blank"><code>\Magento\Sales\Model\Order\InvoiceDocumentFactory</code></a></td>
-      <td>A factory for creating an Invoice data object. The factory uses the <code>arguments</code> parameter to process the extension attributes of a new Invoice.</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/InvoiceDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\InvoiceDocumentFactory</code></a></td>
+      <td>A factory for creating an Invoice data object. The factory uses the <code class="highlighter-rouge">arguments</code> parameter to process the extension attributes of a new Invoice.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Invoice/NotifierInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\Invoice\NotifierInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Invoice/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Invoice\NotifierInterface</code></a></td>
       <td>An interface for sending notifications about new Invoice creation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface</code></a></td>
       <td>An interface for validating service parameters and Invoice data object.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\PaymentAdapterInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\PaymentAdapterInterface</code></a></td>
       <td>An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.</td>
     </tr>
   </tbody>
@@ -1330,17 +1330,17 @@
       </td>
       <td>
         
-<figure class="highlight"><pre><code class="language-json" data-lang="json">        <span class="p">[</span>
-            <span class="p">{</span>
-                 <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                 <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">2</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mf">0.5</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-        </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">        </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                 </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                 </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+        </span></code></pre></figure>
 
       </td>
       <td>
@@ -1434,11 +1434,11 @@
       </td>
       <td>
         
-<figure class="highlight"><pre><code class="language-json" data-lang="json">        <span class="p">{</span>
-            <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;The first Credit Memo&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;is_visible_on_front&quot;</span><span class="p">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-        </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The first Credit Memo"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"is_visible_on_front"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span></code></pre></figure>
 
       </td>
       <td>
@@ -1462,12 +1462,12 @@
       </td>
       <td>
         
-<figure class="highlight"><pre><code class="language-json" data-lang="json">        <span class="p">{</span>
-        <span class="nt">&quot;shipping_amount&quot;</span><span class="p">:</span> <span class="mf">10.00</span><span class="p">,</span>
-        <span class="nt">&quot;adjustment_positive&quot;</span><span class="p">:</span> <span class="mf">5.00</span><span class="p">,</span>
-        <span class="nt">&quot;adjustment_negative&quot;</span><span class="p">:</span> <span class="mf">5.00</span>
-        <span class="p">}</span>
-        </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">        </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"shipping_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.00</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"adjustment_positive"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.00</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"adjustment_negative"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.00</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span></code></pre></figure>
 
         A parameter <code>shipping_amount</code>
         behaves like at the Credit Memo creation page in the Admin
@@ -1494,16 +1494,16 @@
 
 <h4 id="post-endpoint-1">POST Endpoint</h4>
 
-<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/V1/&lt;invoiceId&gt;/refund</code></p>
+<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/V1/&lt;invoiceId&gt;/refund</code></p>
 
 <h4 id="rest-declaration-1">REST Declaration</h4>
 
-<p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml"><code>etc/webapi.xml</code></a></p>
+<p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml"><code class="highlighter-rouge">etc/webapi.xml</code></a></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/invoice/:invoiceId/refund&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Sales\Api\RefundInvoiceInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;execute&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/invoice/:invoiceId/refund"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Sales\Api\RefundInvoiceInterface"</span> <span class="na">method=</span><span class="s">"execute"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;resources&gt;</span>
-        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Sales::sales&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Sales::sales"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/resources&gt;</span>
 <span class="nt">&lt;/route&gt;</span></code></pre></figure>
 
@@ -1511,57 +1511,57 @@
 
 <h4 id="soap-endpoint-1">SOAP Endpoint</h4>
 
-<p><code>http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=salesRefundInvoiceV1</code></p>
+<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=salesRefundInvoiceV1</code></p>
 
 <h3 id="php-interface-1">PHP interface</h3>
 
-<p><code>\Magento\Sales\Api\RefundInvoiceInterface</code></p>
+<p><code class="highlighter-rouge">\Magento\Sales\Api\RefundInvoiceInterface</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide a code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2013-2017 Magento, Inc. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 <span class="k">namespace</span> <span class="nx">Magento\Sales\Api</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Interface RefundInvoiceInterface</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Interface RefundInvoiceInterface
+ */</span>
 <span class="k">interface</span> <span class="nx">RefundInvoiceInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Create refund for invoice</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param int $invoiceId</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\CreditmemoItemCreationInterface[] $items</span>
-<span class="sd">     * @param bool|null $isOnline</span>
-<span class="sd">     * @param bool|null $notify</span>
-<span class="sd">     * @param bool|null $appendComment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\CreditmemoCommentCreationInterface|null $comment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface|null $arguments</span>
-<span class="sd">     * @return int</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Create refund for invoice
+     *
+     * @param int $invoiceId
+     * @param \Magento\Sales\Api\Data\CreditmemoItemCreationInterface[] $items
+     * @param bool|null $isOnline
+     * @param bool|null $notify
+     * @param bool|null $appendComment
+     * @param \Magento\Sales\Api\Data\CreditmemoCommentCreationInterface|null $comment
+     * @param \Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface|null $arguments
+     * @return int
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
         <span class="nv">$invoiceId</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nv">$isOnline</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nv">$isOnline</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$notify</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 </div></div>
 
 <h3 id="php-implementation-1">PHP implementation</h3>
 
-<p><code>\Magento\Sales\Model\RefundInvoice</code></p>
+<p><code class="highlighter-rouge">\Magento\Sales\Model\RefundInvoice</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide a code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2013-2017 Magento, Inc. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 <span class="k">namespace</span> <span class="nx">Magento\Sales\Model</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Framework\App\ResourceConnection</span><span class="p">;</span>
@@ -1577,83 +1577,83 @@
 <span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\RefundAdapterInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Psr\Log\LoggerInterface</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Class RefundInvoice</span>
-<span class="sd"> * @SuppressWarnings(PHPMD.CouplingBetweenObjects)</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Class RefundInvoice
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ */</span>
 <span class="k">class</span> <span class="nc">RefundInvoice</span> <span class="k">implements</span> <span class="nx">RefundInvoiceInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var ResourceConnection</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var ResourceConnection
+     */</span>
     <span class="k">private</span> <span class="nv">$resourceConnection</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderStateResolverInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderStateResolverInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$orderStateResolver</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderRepositoryInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderRepositoryInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$orderRepository</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var InvoiceRepositoryInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var InvoiceRepositoryInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$invoiceRepository</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var CreditmemoRepositoryInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var CreditmemoRepositoryInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$creditmemoRepository</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var RefundAdapterInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var RefundAdapterInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$refundAdapter</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var CreditmemoDocumentFactory</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var CreditmemoDocumentFactory
+     */</span>
     <span class="k">private</span> <span class="nv">$creditmemoDocumentFactory</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var NotifierInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var NotifierInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$notifier</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderConfig</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderConfig
+     */</span>
     <span class="k">private</span> <span class="nv">$config</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var LoggerInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var LoggerInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var RefundInvoiceValidator</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var RefundInvoiceValidator
+     */</span>
     <span class="k">private</span> <span class="nv">$validator</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * RefundInvoice constructor.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param ResourceConnection $resourceConnection</span>
-<span class="sd">     * @param OrderStateResolverInterface $orderStateResolver</span>
-<span class="sd">     * @param OrderRepositoryInterface $orderRepository</span>
-<span class="sd">     * @param InvoiceRepositoryInterface $invoiceRepository</span>
-<span class="sd">     * @param RefundInvoiceValidator $validator</span>
-<span class="sd">     * @param CreditmemoRepositoryInterface $creditmemoRepository</span>
-<span class="sd">     * @param RefundAdapterInterface $refundAdapter</span>
-<span class="sd">     * @param CreditmemoDocumentFactory $creditmemoDocumentFactory</span>
-<span class="sd">     * @param NotifierInterface $notifier</span>
-<span class="sd">     * @param OrderConfig $config</span>
-<span class="sd">     * @param LoggerInterface $logger</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.ExcessiveParameterList)</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * RefundInvoice constructor.
+     *
+     * @param ResourceConnection $resourceConnection
+     * @param OrderStateResolverInterface $orderStateResolver
+     * @param OrderRepositoryInterface $orderRepository
+     * @param InvoiceRepositoryInterface $invoiceRepository
+     * @param RefundInvoiceValidator $validator
+     * @param CreditmemoRepositoryInterface $creditmemoRepository
+     * @param RefundAdapterInterface $refundAdapter
+     * @param CreditmemoDocumentFactory $creditmemoDocumentFactory
+     * @param NotifierInterface $notifier
+     * @param OrderConfig $config
+     * @param LoggerInterface $logger
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
         <span class="nx">ResourceConnection</span> <span class="nv">$resourceConnection</span><span class="p">,</span>
         <span class="nx">OrderStateResolverInterface</span> <span class="nv">$orderStateResolver</span><span class="p">,</span>
@@ -1680,19 +1680,19 @@
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @inheritdoc</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @inheritdoc
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
         <span class="nv">$invoiceId</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nv">$isOnline</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nv">$isOnline</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$notify</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$connection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">&#39;sales&#39;</span><span class="p">);</span>
+        <span class="nv">$connection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">'sales'</span><span class="p">);</span>
         <span class="nv">$invoice</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">invoiceRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$invoiceId</span><span class="p">);</span>
         <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$invoice</span><span class="o">-&gt;</span><span class="na">getOrderId</span><span class="p">());</span>
         <span class="nv">$creditmemo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">creditmemoDocumentFactory</span><span class="o">-&gt;</span><span class="na">createFromInvoice</span><span class="p">(</span>
@@ -1716,7 +1716,7 @@
         <span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$validationMessages</span><span class="o">-&gt;</span><span class="na">hasMessages</span><span class="p">())</span> <span class="p">{</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\DocumentValidationException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s2">&quot;Creditmemo Document Validation Error(s):</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$validationMessages</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()))</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s2">"Creditmemo Document Validation Error(s):</span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$validationMessages</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()))</span>
             <span class="p">);</span>
         <span class="p">}</span>
         <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">beginTransaction</span><span class="p">();</span>
@@ -1729,7 +1729,7 @@
             <span class="p">);</span>
             <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">setStatus</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getStateDefaultStatus</span><span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">getState</span><span class="p">()));</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$isOnline</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$invoice</span><span class="o">-&gt;</span><span class="na">setIsUsedForRefund</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+                <span class="nv">$invoice</span><span class="o">-&gt;</span><span class="na">setIsUsedForRefund</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
                 <span class="nv">$invoice</span><span class="o">-&gt;</span><span class="na">setBaseTotalRefunded</span><span class="p">(</span>
                     <span class="nv">$invoice</span><span class="o">-&gt;</span><span class="na">getBaseTotalRefunded</span><span class="p">()</span> <span class="o">+</span> <span class="nv">$creditmemo</span><span class="o">-&gt;</span><span class="na">getBaseGrandTotal</span><span class="p">()</span>
                 <span class="p">);</span>
@@ -1742,12 +1742,12 @@
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
             <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">rollBack</span><span class="p">();</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\CouldNotRefundException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Could not save a Creditmemo, see error log for details&#39;</span><span class="p">)</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s1">'Could not save a Creditmemo, see error log for details'</span><span class="p">)</span>
             <span class="p">);</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$notify</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$appendComment</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+                <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
             <span class="p">}</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notifier</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">(</span><span class="nv">$order</span><span class="p">,</span> <span class="nv">$creditmemo</span><span class="p">,</span> <span class="nv">$comment</span><span class="p">);</span>
         <span class="p">}</span>
@@ -1761,13 +1761,13 @@
 
 <p>In case of failure, it returns an error object. Example in REST:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Creditmemo Document Validation Error(s):\nWe can&#39;t create creditmemo for the order.\nThe most money available to refund is 0.&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h4 id="extension-points-1">Extension points</h4>
 
-<p>The service contains extension points marked with <code>@api</code> annotation. Extension developers can use APIs to extend service logic.</p>
+<p>The service contains extension points marked with <code class="highlighter-rouge">@api</code> annotation. Extension developers can use APIs to extend service logic.</p>
 
 <table>
   <thead>
@@ -1778,35 +1778,35 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code>\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Orders.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
       <td>An interface providing a correct state of an Order according to performed operation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php" target="_blank"><code>\Magento\Sales\Api\InvoiceRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\InvoiceRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Invoices.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php" target="_blank"><code>\Magento\Sales\Api\CreditmemoRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\CreditmemoRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Credit Memos.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php" target="_blank"><code>\Magento\Sales\Model\Order\CreditmemoDocumentFactory</code></a></td>
-      <td>A factory for creating an Credit Memo data object. The factory uses the <code>arguments</code> parameter to process the extension attributes of a new Credit Memo.</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\CreditmemoDocumentFactory</code></a></td>
+      <td>A factory for creating an Credit Memo data object. The factory uses the <code class="highlighter-rouge">arguments</code> parameter to process the extension attributes of a new Credit Memo.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\Creditmemo\NotifierInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Creditmemo\NotifierInterface</code></a></td>
       <td>An interface for sending notifications about new Credit Memo creation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Validation/RefundInvoiceInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\Validation\RefundInvoiceInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Validation/RefundInvoiceInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\RefundInvoiceInterface</code></a></td>
       <td>An interface for validating service parameters and Credit Memo data object.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\RefundAdapterInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\RefundAdapterInterface</code></a></td>
       <td>An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.</td>
     </tr>
   </tbody>
@@ -1884,17 +1884,17 @@
       </td>
       <td>
         
-<figure class="highlight"><pre><code class="language-json" data-lang="json">        <span class="p">[</span>
-            <span class="p">{</span>
-                 <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                 <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">2</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                 <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                 <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mf">0.5</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-        </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">        </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                 </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                 </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                 </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                 </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+        </span></code></pre></figure>
 
       </td>
       <td>
@@ -1963,11 +1963,11 @@
       </td>
       <td>
         
-<figure class="highlight"><pre><code class="language-json" data-lang="json">        <span class="p">{</span>
-            <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;The first Credit Memo&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;is_visible_on_front&quot;</span><span class="p">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-        </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The first Credit Memo"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"is_visible_on_front"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span></code></pre></figure>
 
       </td>
       <td>
@@ -1991,12 +1991,12 @@
       </td>
       <td>
         
-<figure class="highlight"><pre><code class="language-json" data-lang="json">        <span class="p">{</span>
-        <span class="nt">&quot;shipping_amount&quot;</span><span class="p">:</span> <span class="mf">10.00</span><span class="p">,</span>
-        <span class="nt">&quot;adjustment_positive&quot;</span><span class="p">:</span> <span class="mf">5.00</span><span class="p">,</span>
-        <span class="nt">&quot;adjustment_negative&quot;</span><span class="p">:</span> <span class="mf">5.00</span>
-        <span class="p">}</span>
-        </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">        </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"shipping_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.00</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"adjustment_positive"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.00</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"adjustment_negative"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.00</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span></code></pre></figure>
 
         A parameter <code>shipping_amount</code>
         behaves like at the Credit Memo creation page in the Admin
@@ -2023,16 +2023,16 @@
 
 <h4 id="post-endpoint-2">POST Endpoint</h4>
 
-<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/V1/&lt;orderId&gt;/refund</code></p>
+<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/V1/&lt;orderId&gt;/refund</code></p>
 
 <h4 id="rest-declaration-2">REST Declaration</h4>
 
-<p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml"><code>etc/webapi.xml</code></a></p>
+<p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml"><code class="highlighter-rouge">etc/webapi.xml</code></a></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/order/:orderId/refund&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Sales\Api\RefundOrderInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;execute&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/order/:orderId/refund"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Sales\Api\RefundOrderInterface"</span> <span class="na">method=</span><span class="s">"execute"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;resources&gt;</span>
-        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Sales::sales&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Sales::sales"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/resources&gt;</span>
 <span class="nt">&lt;/route&gt;</span></code></pre></figure>
 
@@ -2040,55 +2040,55 @@
 
 <h4 id="soap-endpoint-2">SOAP Endpoint</h4>
 
-<p><code>http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=salesRefundOrderV1</code></p>
+<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=salesRefundOrderV1</code></p>
 
 <h3 id="php-interface-2">PHP interface</h3>
 
-<p><code>\Magento\Sales\Api\RefundOrderInterface</code></p>
+<p><code class="highlighter-rouge">\Magento\Sales\Api\RefundOrderInterface</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide a code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2013-2017 Magento, Inc. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 <span class="k">namespace</span> <span class="nx">Magento\Sales\Api</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Interface RefundOrderInterface</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Interface RefundOrderInterface
+ */</span>
 <span class="k">interface</span> <span class="nx">RefundOrderInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Create offline refund for order</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param int $orderId</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\CreditmemoItemCreationInterface[] $items</span>
-<span class="sd">     * @param bool|null $notify</span>
-<span class="sd">     * @param bool|null $appendComment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\CreditmemoCommentCreationInterface|null $comment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface|null $arguments</span>
-<span class="sd">     * @return int</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Create offline refund for order
+     *
+     * @param int $orderId
+     * @param \Magento\Sales\Api\Data\CreditmemoItemCreationInterface[] $items
+     * @param bool|null $notify
+     * @param bool|null $appendComment
+     * @param \Magento\Sales\Api\Data\CreditmemoCommentCreationInterface|null $comment
+     * @param \Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface|null $arguments
+     * @return int
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
         <span class="nv">$orderId</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nv">$notify</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 </div></div>
 
 <h3 id="php-implementation-2">PHP implementation</h3>
 
-<p><code>\Magento\Sales\Model\RefundOrder</code></p>
+<p><code class="highlighter-rouge">\Magento\Sales\Model\RefundOrder</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide a code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2013-2017 Magento, Inc. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 <span class="k">namespace</span> <span class="nx">Magento\Sales\Model</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Framework\App\ResourceConnection</span><span class="p">;</span>
@@ -2103,77 +2103,77 @@
 <span class="k">use</span> <span class="nx">Magento\Sales\Model\Order\Validation\RefundOrderInterface</span> <span class="k">as</span> <span class="nx">RefundOrderValidator</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Psr\Log\LoggerInterface</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Class RefundOrder</span>
-<span class="sd"> * @SuppressWarnings(PHPMD.CouplingBetweenObjects)</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Class RefundOrder
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ */</span>
 <span class="k">class</span> <span class="nc">RefundOrder</span> <span class="k">implements</span> <span class="nx">RefundOrderInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var ResourceConnection</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var ResourceConnection
+     */</span>
     <span class="k">private</span> <span class="nv">$resourceConnection</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderStateResolverInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderStateResolverInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$orderStateResolver</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderRepositoryInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderRepositoryInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$orderRepository</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var CreditmemoRepositoryInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var CreditmemoRepositoryInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$creditmemoRepository</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var RefundAdapterInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var RefundAdapterInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$refundAdapter</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var CreditmemoDocumentFactory</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var CreditmemoDocumentFactory
+     */</span>
     <span class="k">private</span> <span class="nv">$creditmemoDocumentFactory</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var RefundOrderValidator</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var RefundOrderValidator
+     */</span>
     <span class="k">private</span> <span class="nv">$validator</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var NotifierInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var NotifierInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$notifier</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderConfig</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderConfig
+     */</span>
     <span class="k">private</span> <span class="nv">$config</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var LoggerInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var LoggerInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * RefundOrder constructor.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param ResourceConnection $resourceConnection</span>
-<span class="sd">     * @param OrderStateResolverInterface $orderStateResolver</span>
-<span class="sd">     * @param OrderRepositoryInterface $orderRepository</span>
-<span class="sd">     * @param CreditmemoRepositoryInterface $creditmemoRepository</span>
-<span class="sd">     * @param RefundAdapterInterface $refundAdapter</span>
-<span class="sd">     * @param CreditmemoDocumentFactory $creditmemoDocumentFactory</span>
-<span class="sd">     * @param RefundOrderValidator $validator</span>
-<span class="sd">     * @param NotifierInterface $notifier</span>
-<span class="sd">     * @param OrderConfig $config</span>
-<span class="sd">     * @param LoggerInterface $logger</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.ExcessiveParameterList)</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * RefundOrder constructor.
+     *
+     * @param ResourceConnection $resourceConnection
+     * @param OrderStateResolverInterface $orderStateResolver
+     * @param OrderRepositoryInterface $orderRepository
+     * @param CreditmemoRepositoryInterface $creditmemoRepository
+     * @param RefundAdapterInterface $refundAdapter
+     * @param CreditmemoDocumentFactory $creditmemoDocumentFactory
+     * @param RefundOrderValidator $validator
+     * @param NotifierInterface $notifier
+     * @param OrderConfig $config
+     * @param LoggerInterface $logger
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
         <span class="nx">ResourceConnection</span> <span class="nv">$resourceConnection</span><span class="p">,</span>
         <span class="nx">OrderStateResolverInterface</span> <span class="nv">$orderStateResolver</span><span class="p">,</span>
@@ -2198,18 +2198,18 @@
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @inheritdoc</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @inheritdoc
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
         <span class="nv">$orderId</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nv">$notify</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$connection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">&#39;sales&#39;</span><span class="p">);</span>
+        <span class="nv">$connection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">'sales'</span><span class="p">);</span>
         <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$orderId</span><span class="p">);</span>
         <span class="nv">$creditmemo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">creditmemoDocumentFactory</span><span class="o">-&gt;</span><span class="na">createFromOrder</span><span class="p">(</span>
             <span class="nv">$order</span><span class="p">,</span>
@@ -2229,7 +2229,7 @@
         <span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$validationMessages</span><span class="o">-&gt;</span><span class="na">hasMessages</span><span class="p">())</span> <span class="p">{</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\DocumentValidationException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s2">&quot;Creditmemo Document Validation Error(s):</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$validationMessages</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()))</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s2">"Creditmemo Document Validation Error(s):</span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$validationMessages</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()))</span>
             <span class="p">);</span>
         <span class="p">}</span>
         <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">beginTransaction</span><span class="p">();</span>
@@ -2249,12 +2249,12 @@
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
             <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">rollBack</span><span class="p">();</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\CouldNotRefundException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Could not save a Creditmemo, see error log for details&#39;</span><span class="p">)</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s1">'Could not save a Creditmemo, see error log for details'</span><span class="p">)</span>
             <span class="p">);</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$notify</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$appendComment</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+                <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
             <span class="p">}</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notifier</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">(</span><span class="nv">$order</span><span class="p">,</span> <span class="nv">$creditmemo</span><span class="p">,</span> <span class="nv">$comment</span><span class="p">);</span>
         <span class="p">}</span>
@@ -2268,13 +2268,13 @@
 
 <p>In case of failure, it returns an error object. Example in REST:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Creditmemo Document Validation Error(s):\nWe can&#39;t create creditmemo for the order.\nThe most money available to refund is 0.&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h4 id="extension-points-2">Extension points</h4>
 
-<p>The service contains extension points marked with <code>@api</code> annotation. Extension developers can use APIs to extend service logic.</p>
+<p>The service contains extension points marked with <code class="highlighter-rouge">@api</code> annotation. Extension developers can use APIs to extend service logic.</p>
 
 <table>
   <thead>
@@ -2285,31 +2285,31 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code>\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Orders.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
       <td>An interface providing a correct state of an Order according to performed operation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php" target="_blank"><code>\Magento\Sales\Api\CreditmemoRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\CreditmemoRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Credit Memos.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php" target="_blank"><code>\Magento\Sales\Model\Order\CreditmemoDocumentFactory</code></a></td>
-      <td>A factory for creating an Credit Memo data object. The factory uses the <code>arguments</code> parameter to process the extension attributes of a new Credit Memo.</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\CreditmemoDocumentFactory</code></a></td>
+      <td>A factory for creating an Credit Memo data object. The factory uses the <code class="highlighter-rouge">arguments</code> parameter to process the extension attributes of a new Credit Memo.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\Creditmemo\NotifierInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Creditmemo\NotifierInterface</code></a></td>
       <td>An interface for sending notifications about new Credit Memo creation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Validation/RefundOrderInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\Validation\RefundOrderInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Validation/RefundOrderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\RefundOrderInterface</code></a></td>
       <td>An interface for validating service parameters and Credit Memo data object.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\RefundAdapterInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\RefundAdapterInterface</code></a></td>
       <td>An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.</td>
     </tr>
   </tbody>
@@ -2354,17 +2354,17 @@
       <td>Array of items with a format according to <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
       <td>
         
-<figure class="highlight"><pre><code class="language-json" data-lang="json">        <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">2</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mf">0.5</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-        </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">        </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+        </span></code></pre></figure>
 
       </td>
       <td>Optional (required, when a shipment document must contain particular order items)</td>
@@ -2394,11 +2394,11 @@
         interface.</td>
       <td>
       
-<figure class="highlight"><pre><code class="language-json" data-lang="json">      <span class="p">{</span>   
-          <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;The first Invoice&quot;</span><span class="p">,</span>
-          <span class="nt">&quot;is_visible_on_front&quot;</span><span class="p">:</span> <span class="kc">true</span>
-      <span class="p">}</span>
-      </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">      </span><span class="p">{</span><span class="w">   
+          </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The first Invoice"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"is_visible_on_front"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span></code></pre></figure>
 
       </td>
       <td> Optional </td>
@@ -2411,14 +2411,14 @@
         <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface&gt;</code></a>. </td>
       <td>
       
-<figure class="highlight"><pre><code class="language-json" data-lang="json">      <span class="p">[</span>
-          <span class="p">{</span>
-              <span class="nt">&quot;track_number&quot;</span><span class="p">:</span> <span class="s2">&quot;132456789&quot;</span><span class="p">,</span>
-              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;United States Postal Service&quot;</span><span class="p">,</span>
-              <span class="nt">&quot;carrier_code&quot;</span><span class="p">:</span> <span class="s2">&quot;usps&quot;</span>
-          <span class="p">}</span>
-      <span class="p">]</span>
-      </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">      </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"track_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"132456789"</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States Postal Service"</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"carrier_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usps"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+      </span></code></pre></figure>
 
       </td>
       <td> Optional </td>
@@ -2431,20 +2431,20 @@
         <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
       <td>
       
-<figure class="highlight"><pre><code class="language-json" data-lang="json">      <span class="p">[</span>
-          <span class="p">{</span>
-              <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span>
-              <span class="p">{</span>
-                  <span class="nt">&quot;ups&quot;</span><span class="p">:</span>
-                      <span class="p">{</span>
-                          <span class="nt">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-                          <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
-                          <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">20</span>
-                      <span class="p">}</span>
-              <span class="p">}</span>
-           <span class="p">}</span>
-      <span class="p">]</span>
-      </code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">      </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                  </span><span class="nt">"ups"</span><span class="p">:</span><span class="w">
+                      </span><span class="p">{</span><span class="w">
+                          </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                          </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+                          </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+                      </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+      </span></code></pre></figure>
 
       </td>
       <td>Optional</td>
@@ -2472,16 +2472,16 @@
 
 <h4 id="post-endpoint-3">POST Endpoint</h4>
 
-<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/V1/&lt;orderId&gt;/ship</code></p>
+<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/V1/&lt;orderId&gt;/ship</code></p>
 
 <h4 id="rest-declaration-3">REST Declaration</h4>
 
-<p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml"><code>etc/webapi.xml</code></a></p>
+<p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml"><code class="highlighter-rouge">etc/webapi.xml</code></a></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/order/:orderId/ship&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Sales\Api\ShipOrderInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;execute&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/order/:orderId/ship"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Sales\Api\ShipOrderInterface"</span> <span class="na">method=</span><span class="s">"execute"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;resources&gt;</span>
-        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Sales::sales&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Sales::sales"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/resources&gt;</span>
 <span class="nt">&lt;/route&gt;</span></code></pre></figure>
 
@@ -2489,61 +2489,61 @@
 
 <h4 id="soap-endpoint-3">SOAP Endpoint</h4>
 
-<p><code>http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=salesShipOrderV1</code></p>
+<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=salesShipOrderV1</code></p>
 
 <h3 id="php-interface-3">PHP interface</h3>
 
-<p><code>\Magento\Sales\Api\ShipOrderInterface</code></p>
+<p><code class="highlighter-rouge">\Magento\Sales\Api\ShipOrderInterface</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide a code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2013-2017 Magento, Inc. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 <span class="k">namespace</span> <span class="nx">Magento\Sales\Api</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Class ShipOrderInterface</span>
-<span class="sd"> *</span>
-<span class="sd"> * @api</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Class ShipOrderInterface
+ *
+ * @api
+ */</span>
 <span class="k">interface</span> <span class="nx">ShipOrderInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Creates new Shipment for given Order.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param int $orderId</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentItemCreationInterface[] $items</span>
-<span class="sd">     * @param bool $notify</span>
-<span class="sd">     * @param bool $appendComment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentCommentCreationInterface|null $comment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentTrackCreationInterface[] $tracks</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentPackageCreationInterface[] $packages</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentCreationArgumentsInterface|null $arguments</span>
-<span class="sd">     * @return int Id of created Shipment.</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Creates new Shipment for given Order.
+     *
+     * @param int $orderId
+     * @param \Magento\Sales\Api\Data\ShipmentItemCreationInterface[] $items
+     * @param bool $notify
+     * @param bool $appendComment
+     * @param \Magento\Sales\Api\Data\ShipmentCommentCreationInterface|null $comment
+     * @param \Magento\Sales\Api\Data\ShipmentTrackCreationInterface[] $tracks
+     * @param \Magento\Sales\Api\Data\ShipmentPackageCreationInterface[] $packages
+     * @param \Magento\Sales\Api\Data\ShipmentCreationArgumentsInterface|null $arguments
+     * @return int Id of created Shipment.
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
         <span class="nv">$orderId</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\ShipmentCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
+        <span class="nv">$notify</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\ShipmentCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$tracks</span> <span class="o">=</span> <span class="p">[],</span>
         <span class="k">array</span> <span class="nv">$packages</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nx">\Magento\Sales\Api\Data\ShipmentCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nx">\Magento\Sales\Api\Data\ShipmentCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 </div></div>
 
 <h3 id="php-implementation-3">PHP implementation</h3>
 
-<p><code>\Magento\Sales\Model\ShipOrder</code></p>
+<p><code class="highlighter-rouge">\Magento\Sales\Model\ShipOrder</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide a code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2013-2017 Magento, Inc. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 <span class="k">namespace</span> <span class="nx">Magento\Sales\Model</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Framework\App\ResourceConnection</span><span class="p">;</span>
@@ -2561,78 +2561,78 @@
 <span class="k">use</span> <span class="nx">Psr\Log\LoggerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Framework\App\ObjectManager</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Class ShipOrder</span>
-<span class="sd"> * @SuppressWarnings(PHPMD.CouplingBetweenObjects)</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Class ShipOrder
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ */</span>
 <span class="k">class</span> <span class="nc">ShipOrder</span> <span class="k">implements</span> <span class="nx">ShipOrderInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var ResourceConnection</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var ResourceConnection
+     */</span>
     <span class="k">private</span> <span class="nv">$resourceConnection</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderRepositoryInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderRepositoryInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$orderRepository</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var ShipmentDocumentFactory</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var ShipmentDocumentFactory
+     */</span>
     <span class="k">private</span> <span class="nv">$shipmentDocumentFactory</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderStateResolverInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderStateResolverInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$orderStateResolver</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderConfig</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderConfig
+     */</span>
     <span class="k">private</span> <span class="nv">$config</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var ShipmentRepositoryInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var ShipmentRepositoryInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$shipmentRepository</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var ShipOrderValidator</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var ShipOrderValidator
+     */</span>
     <span class="k">private</span> <span class="nv">$shipOrderValidator</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var NotifierInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var NotifierInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$notifierInterface</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var LoggerInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var LoggerInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var OrderRegistrarInterface</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @var OrderRegistrarInterface
+     */</span>
     <span class="k">private</span> <span class="nv">$orderRegistrar</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @param ResourceConnection $resourceConnection</span>
-<span class="sd">     * @param OrderRepositoryInterface $orderRepository</span>
-<span class="sd">     * @param ShipmentDocumentFactory $shipmentDocumentFactory</span>
-<span class="sd">     * @param ShipmentValidatorInterface $shipmentValidator</span>
-<span class="sd">     * @param OrderValidatorInterface $orderValidator</span>
-<span class="sd">     * @param OrderStateResolverInterface $orderStateResolver</span>
-<span class="sd">     * @param OrderConfig $config</span>
-<span class="sd">     * @param ShipmentRepositoryInterface $shipmentRepository</span>
-<span class="sd">     * @param NotifierInterface $notifierInterface</span>
-<span class="sd">     * @param OrderRegistrarInterface $orderRegistrar</span>
-<span class="sd">     * @param LoggerInterface $logger</span>
-<span class="sd">     * @param ShipOrderValidator|null $shipOrderValidator</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.ExcessiveParameterList)</span>
-<span class="sd">     * @SuppressWarnings(PHPMD.UnusedFormalParameter)</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @param ResourceConnection $resourceConnection
+     * @param OrderRepositoryInterface $orderRepository
+     * @param ShipmentDocumentFactory $shipmentDocumentFactory
+     * @param ShipmentValidatorInterface $shipmentValidator
+     * @param OrderValidatorInterface $orderValidator
+     * @param OrderStateResolverInterface $orderStateResolver
+     * @param OrderConfig $config
+     * @param ShipmentRepositoryInterface $shipmentRepository
+     * @param NotifierInterface $notifierInterface
+     * @param OrderRegistrarInterface $orderRegistrar
+     * @param LoggerInterface $logger
+     * @param ShipOrderValidator|null $shipOrderValidator
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
         <span class="nx">ResourceConnection</span> <span class="nv">$resourceConnection</span><span class="p">,</span>
         <span class="nx">OrderRepositoryInterface</span> <span class="nv">$orderRepository</span><span class="p">,</span>
@@ -2645,7 +2645,7 @@
         <span class="nx">NotifierInterface</span> <span class="nv">$notifierInterface</span><span class="p">,</span>
         <span class="nx">OrderRegistrarInterface</span> <span class="nv">$orderRegistrar</span><span class="p">,</span>
         <span class="nx">LoggerInterface</span> <span class="nv">$logger</span><span class="p">,</span>
-        <span class="nx">ShipOrderValidator</span> <span class="nv">$shipOrderValidator</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nx">ShipOrderValidator</span> <span class="nv">$shipOrderValidator</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">)</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span> <span class="o">=</span> <span class="nv">$resourceConnection</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span> <span class="o">=</span> <span class="nv">$orderRepository</span><span class="p">;</span>
@@ -2661,33 +2661,33 @@
         <span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * @param int $orderId</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentItemCreationInterface[] $items</span>
-<span class="sd">     * @param bool $notify</span>
-<span class="sd">     * @param bool $appendComment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentCommentCreationInterface|null $comment</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentTrackCreationInterface[] $tracks</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentPackageCreationInterface[] $packages</span>
-<span class="sd">     * @param \Magento\Sales\Api\Data\ShipmentCreationArgumentsInterface|null $arguments</span>
-<span class="sd">     * @return int</span>
-<span class="sd">     * @throws \Magento\Sales\Api\Exception\DocumentValidationExceptionInterface</span>
-<span class="sd">     * @throws \Magento\Sales\Api\Exception\CouldNotShipExceptionInterface</span>
-<span class="sd">     * @throws \Magento\Framework\Exception\InputException</span>
-<span class="sd">     * @throws \Magento\Framework\Exception\NoSuchEntityException</span>
-<span class="sd">     * @throws \DomainException</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * @param int $orderId
+     * @param \Magento\Sales\Api\Data\ShipmentItemCreationInterface[] $items
+     * @param bool $notify
+     * @param bool $appendComment
+     * @param \Magento\Sales\Api\Data\ShipmentCommentCreationInterface|null $comment
+     * @param \Magento\Sales\Api\Data\ShipmentTrackCreationInterface[] $tracks
+     * @param \Magento\Sales\Api\Data\ShipmentPackageCreationInterface[] $packages
+     * @param \Magento\Sales\Api\Data\ShipmentCreationArgumentsInterface|null $arguments
+     * @return int
+     * @throws \Magento\Sales\Api\Exception\DocumentValidationExceptionInterface
+     * @throws \Magento\Sales\Api\Exception\CouldNotShipExceptionInterface
+     * @throws \Magento\Framework\Exception\InputException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @throws \DomainException
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
         <span class="nv">$orderId</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$items</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nv">$notify</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="k">false</span><span class="p">,</span>
-        <span class="nx">\Magento\Sales\Api\Data\ShipmentCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
+        <span class="nv">$notify</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nv">$appendComment</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">\Magento\Sales\Api\Data\ShipmentCommentCreationInterface</span> <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$tracks</span> <span class="o">=</span> <span class="p">[],</span>
         <span class="k">array</span> <span class="nv">$packages</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nx">\Magento\Sales\Api\Data\ShipmentCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span>
+        <span class="nx">\Magento\Sales\Api\Data\ShipmentCreationArgumentsInterface</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$connection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">&#39;sales&#39;</span><span class="p">);</span>
+        <span class="nv">$connection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resourceConnection</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">'sales'</span><span class="p">);</span>
         <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">orderRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$orderId</span><span class="p">);</span>
         <span class="nv">$shipment</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">shipmentDocumentFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
             <span class="nv">$order</span><span class="p">,</span>
@@ -2710,7 +2710,7 @@
         <span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$validationMessages</span><span class="o">-&gt;</span><span class="na">hasMessages</span><span class="p">())</span> <span class="p">{</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\DocumentValidationException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s2">&quot;Shipment Document Validation Error(s):</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$validationMessages</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()))</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s2">"Shipment Document Validation Error(s):</span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$validationMessages</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()))</span>
             <span class="p">);</span>
         <span class="p">}</span>
         <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">beginTransaction</span><span class="p">();</span>
@@ -2727,12 +2727,12 @@
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
             <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">rollBack</span><span class="p">();</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Sales\Exception\CouldNotShipException</span><span class="p">(</span>
-                <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Could not save a shipment, see error log for details&#39;</span><span class="p">)</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s1">'Could not save a shipment, see error log for details'</span><span class="p">)</span>
             <span class="p">);</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$notify</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$appendComment</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$comment</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+                <span class="nv">$comment</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
             <span class="p">}</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notifierInterface</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">(</span><span class="nv">$order</span><span class="p">,</span> <span class="nv">$shipment</span><span class="p">,</span> <span class="nv">$comment</span><span class="p">);</span>
         <span class="p">}</span>
@@ -2745,13 +2745,13 @@
 
 <p>In case of failure, it returns an error object. Example in REST:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Creditmemo Document Validation Error(s):\nWe can&#39;t create creditmemo for the order.\nThe most money available to refund is 0.&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h4 id="extension-points-3">Extension points</h4>
 
-<p>The service contains extension points marked with <code>@api</code> annotation. Extension developers can use APIs to extend service logic.</p>
+<p>The service contains extension points marked with <code class="highlighter-rouge">@api</code> annotation. Extension developers can use APIs to extend service logic.</p>
 
 <table>
   <thead>
@@ -2762,32 +2762,32 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code>\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Orders.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
       <td>An interface providing a correct state of an Order according to performed operation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/ShipmentRepositoryInterface.php" target="_blank"><code>\Magento\Sales\Api\ShipmentRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Api/ShipmentRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\ShipmentRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Shipments.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/ShipmentDocumentFactory.php" target="_blank"><code>\Magento\Sales\Model\Order\ShipmentDocumentFactory</code></a></td>
-      <td>A factory creating a Shipment data object. The factory uses the <code>arguments</code> parameter to process the extension attributes of a new shipment document.</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/ShipmentDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\ShipmentDocumentFactory</code></a></td>
+      <td>A factory creating a Shipment data object. The factory uses the <code class="highlighter-rouge">arguments</code> parameter to process the extension attributes of a new shipment document.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\Shipment\NotifierInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Shipment\NotifierInterface</code></a></td>
       <td>An interface for sending notifications about new Shipment creation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Validation/ShipOrderInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\Validation\ShipOrderInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Validation/ShipOrderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\ShipOrderInterface</code></a></td>
       <td>An interface for validating the service parameters and created Shipment data object.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Shipment/OrderRegistrarInterface.php" target="_blank"><code>\Magento\Sales\Model\Order\Shipment\OrderRegistrarInterface</code></a></td>
-      <td>An interface for registering a Shipment in Order to update amount of shipped items in a given Order according to Shipment. The <code>execute</code> method returns an updated Order.</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/Model/Order/Shipment/OrderRegistrarInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Shipment\OrderRegistrarInterface</code></a></td>
+      <td>An interface for registering a Shipment in Order to update amount of shipped items in a given Order according to Shipment. The <code class="highlighter-rouge">execute</code> method returns an updated Order.</td>
     </tr>
   </tbody>
 </table>

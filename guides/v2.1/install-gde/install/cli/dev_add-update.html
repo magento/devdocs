@@ -802,41 +802,44 @@
 </section>
 
 
-			<p>A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> updates components by specifying components and their versions in Magento’s <code>composer.json</code>.</p>
+			<p>A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> updates components by specifying components and their versions in Magento’s <code class="highlighter-rouge">composer.json</code>.</p>
 
 <p>To update components if you’re <em>not</em> a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, see <a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.</p>
 
-<p>You can either add a <code>require</code> section to <code>composer.json</code> or you can use the <code>composer require</code> command as follows:</p>
+<p>You can either add a <code class="highlighter-rouge">require</code> section to <code class="highlighter-rouge">composer.json</code> or you can use the <code class="highlighter-rouge">composer require</code> command as follows:</p>
 
 <ol>
   <li>Log in to the Magento server, or switch to, the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
   <li>
     <p>Change to the directory to which you cloned the Magento application. For example,</p>
 
-    <pre><code>cd /var/www/magento2
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/magento2
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <p>You have the following options:</p>
 
-<h3 id="use-the-composer-require-command">Use the <code>composer require</code> command</h3>
+<h3 id="use-the-composer-require-command">Use the <code class="highlighter-rouge">composer require</code> command</h3>
 <p>Command usage:</p>
 
-<pre><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
 </code></pre>
+</div>
 
 <p>For example,</p>
 
-<pre><code>composer require example/module:1.0.0
+<div class="highlighter-rouge"><pre class="highlight"><code>composer require example/module:1.0.0
 </code></pre>
+</div>
 
 <p>Wait while <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> updates dependencies and installs the component.</p>
 
-<h3 id="add-a-require-section-to-composerjson">Add a <code>require</code> section to <code>composer.json</code></h3>
-<p>Open <code>composer.json</code> in a text editor.</p>
+<h3 id="add-a-require-section-to-composerjson">Add a <code class="highlighter-rouge">require</code> section to <code class="highlighter-rouge">composer.json</code></h3>
+<p>Open <code class="highlighter-rouge">composer.json</code> in a text editor.</p>
 
-<p>Add a <code>require</code> section like the following:</p>
+<p>Add a <code class="highlighter-rouge">require</code> section like the following:</p>
 
 <pre><code class="language-JSON">	"require": {
 		"&lt;vendor&gt;/&lt;name&gt;": "&lt;version&gt;",
@@ -844,7 +847,7 @@
 	}
 </code></pre>
 
-<p>Save your changes to <code>composer.json</code>, exit the text editor, and enter <code>composer update</code></p>
+<p>Save your changes to <code class="highlighter-rouge">composer.json</code>, exit the text editor, and enter <code class="highlighter-rouge">composer update</code></p>
 
 <h3 id="for-more-information">For more information</h3>
 <p>If you have issues, see <a href="https://getcomposer.org/doc/articles/troubleshooting.md" target="_blank">Composer troubleshooting</a>.</p>

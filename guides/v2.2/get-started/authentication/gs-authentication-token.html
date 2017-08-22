@@ -728,18 +728,18 @@
   <tbody>
     <tr>
       <td>Get an admin token</td>
-      <td><code>POST /V1/integration/admin/token</code></td>
-      <td><code>integrationAdminTokenServiceV1</code></td>
+      <td><code class="highlighter-rouge">POST /V1/integration/admin/token</code></td>
+      <td><code class="highlighter-rouge">integrationAdminTokenServiceV1</code></td>
     </tr>
     <tr>
       <td>Get a customer token</td>
-      <td><code>POST /V1/integration/customer/token</code></td>
-      <td><code>integrationCustomerTokenServiceV1</code></td>
+      <td><code class="highlighter-rouge">POST /V1/integration/customer/token</code></td>
+      <td><code class="highlighter-rouge">integrationCustomerTokenServiceV1</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>For most <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> calls, you supply this token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting <strong>Stores &gt; Configuration &gt; Services &gt; OAuth &gt; Access Token Expiration</strong>.</p>
+<p>For most <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> calls, you supply this token in the <code class="highlighter-rouge">Authorization</code> request header with the <code class="highlighter-rouge">Bearer</code> HTTP <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting <strong>Stores &gt; Configuration &gt; Services &gt; OAuth &gt; Access Token Expiration</strong>.</p>
 
 <p>A cron job that runs hourly removes all expired tokens.</p>
 
@@ -784,46 +784,48 @@
 
 <p><img src="/guides/v2.2/get-started/authentication/gs_auth_token1.png" alt="REST client" /></p>
 
-<p>The following example uses the <code>curl</code> command to request a token for a customer account:</p>
+<p>The following example uses the <code class="highlighter-rouge">curl</code> command to request a token for a customer account:</p>
 
-<pre><code>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
      -d "{"username":"customer1@example.com", "password":"customer1pw"}"
 </code></pre>
+</div>
 
 <p>The following example makes the same request with <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> for a customer account token:</p>
 
-<pre><code>curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml"  \
      -d "&lt;login&gt;&lt;username&gt;customer1@example.com&lt;/username&gt;&lt;password&gt;customer1pw&lt;/password&gt;&lt;/login&gt;"
 </code></pre>
+</div>
 
-<p>For more information about the <code>curl</code> command, see <a href="/guides/v2.2/get-started/gs-curl.html">Use cURL to run the request</a></p>
+<p>For more information about the <code class="highlighter-rouge">curl</code> command, see <a href="/guides/v2.2/get-started/gs-curl.html">Use cURL to run the request</a></p>
 
 <h2 id="auth-response">Authentication token response</h2>
 
 <p>A successful request returns a response body with the token, as follows:</p>
 
-<p><code>asdf3hjklp5iuytre</code></p>
+<p><code class="highlighter-rouge">asdf3hjklp5iuytre</code></p>
 
 <h2 id="web-api-access">Use the token in a Web API request</h2>
 
 <p>Any web API call that accesses a resource that requires a permission level higher than anonymous must contain the authentication token in the header To do this, specify a HTTP header in the following format:</p>
 
-<p><code>Authorization: Bearer &lt;authentication token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization: Bearer &lt;authentication token&gt;</code></p>
 
 <h3 id="admin-access">Admin access</h3>
 <p>Admins can access any resources for which they are authorized.</p>
 
 <p>For example, to make a web API call with an admin token:</p>
 
-<p><code>curl -X GET "http://magento.ll/index.php/rest/V1/customers/2" -H "Authorization: Bearer vbnf3hjklp5iuytre"</code></p>
+<p><code class="highlighter-rouge">curl -X GET "http://magento.ll/index.php/rest/V1/customers/2" -H "Authorization: Bearer vbnf3hjklp5iuytre"</code></p>
 
 <h3 id="customer-access">Customer access</h3>
-<p>Customers can access only resources with <code>self</code> permissions.</p>
+<p>Customers can access only resources with <code class="highlighter-rouge">self</code> permissions.</p>
 
 <p>For example, to make a web API call with a customer token:
-<code>curl -X GET "http://magento.ll/index.php/rest/V1/customers/me" -H "Authorization: Bearer asdf3hjklp5iuytre"</code></p>
+<code class="highlighter-rouge">curl -X GET "http://magento.ll/index.php/rest/V1/customers/me" -H "Authorization: Bearer asdf3hjklp5iuytre"</code></p>
 
 <h2>Related topics</h2>
 <p><a href="/guides/v2.2//get-started/gs-web-api-request.html">Construct a request</a></p>

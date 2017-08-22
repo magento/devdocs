@@ -605,7 +605,7 @@
 <p>Look at the following sections in the order presented to locate your docroot.</p>
 
 <h2 id="contact-your-hosting-provider">Contact your hosting provider</h2>
-<p>If you use one, contact your hosting provider to locate the web server docroot. For example, <a href="http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder" target="_blank">cPanel</a> typically uses <code>public_html</code> as its docroot but don’t believe us! Contact your provider directly.</p>
+<p>If you use one, contact your hosting provider to locate the web server docroot. For example, <a href="http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder" target="_blank">cPanel</a> typically uses <code class="highlighter-rouge">public_html</code> as its docroot but don’t believe us! Contact your provider directly.</p>
 
 <h2 id="contact-your-network-administrator">Contact your network administrator</h2>
 <p>If you don’t use a hosting provider, you’re not technical, and you’re not that familiar with how things are set up, contact your network administrator.</p>
@@ -625,8 +625,8 @@
     <p>Find your web server version:</p>
 
     <ul>
-      <li>Ubuntu: <code>apache2 -v</code></li>
-      <li>CentOS: <code>httpd -v</code></li>
+      <li>Ubuntu: <code class="highlighter-rouge">apache2 -v</code></li>
+      <li>CentOS: <code class="highlighter-rouge">httpd -v</code></li>
     </ul>
   </li>
   <li>
@@ -651,32 +651,36 @@
       <li>
         <p>Ubuntu:</p>
 
-        <pre><code>/etc/apache2/sites-available/default
+        <div class="highlighter-rouge"><pre class="highlight"><code>/etc/apache2/sites-available/default
 </code></pre>
+        </div>
       </li>
       <li>
         <p>CentOS:</p>
 
-        <pre><code>/etc/httpd/httpd.conf
+        <div class="highlighter-rouge"><pre class="highlight"><code>/etc/httpd/httpd.conf
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>
   <li>
-    <p>Search the file for <code>DocumentRoot</code>. A typical result follows:</p>
+    <p>Search the file for <code class="highlighter-rouge">DocumentRoot</code>. A typical result follows:</p>
 
     <ul>
       <li>
         <p>Ubuntu:</p>
 
-        <pre><code>DocumentRoot /var/www
+        <div class="highlighter-rouge"><pre class="highlight"><code>DocumentRoot /var/www
 </code></pre>
+        </div>
       </li>
       <li>
         <p>CentOS:</p>
 
-        <pre><code>DocumentRoot /var/www/html
+        <div class="highlighter-rouge"><pre class="highlight"><code>DocumentRoot /var/www/html
 </code></pre>
+        </div>
       </li>
     </ul>
   </li>
@@ -692,14 +696,16 @@
   <li>
     <p>Open the following file in a text editor:</p>
 
-    <pre><code>/etc/apache2/sites-available/000-default.conf
+    <div class="highlighter-rouge"><pre class="highlight"><code>/etc/apache2/sites-available/000-default.conf
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Search the file for <code>DocumentRoot</code>. A typical result follows:</p>
+    <p>Search the file for <code class="highlighter-rouge">DocumentRoot</code>. A typical result follows:</p>
 
-    <pre><code>DocumentRoot /var/www/html
+    <div class="highlighter-rouge"><pre class="highlight"><code>DocumentRoot /var/www/html
 </code></pre>
+    </div>
   </li>
 </ol>
 

@@ -1988,7 +1988,7 @@
     <img src="/common/images/solr_refresh-cache.png" width="600px" /></li>
   </ol>
 
-  <p>To clean the cache using the command line, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean</code></a> command.</p>
+  <p>To clean the cache using the command line, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
 
   <p>To reindex using the command line:</p>
 
@@ -1999,13 +1999,15 @@
 
       <p>Enter the following command to reindex the catalog search index only:</p>
 
-      <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
+      <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
 </code></pre>
+      </div>
 
       <p>Enter the following command to reindex all indexers:</p>
 
-      <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
+      <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
 </code></pre>
+      </div>
     </li>
     <li>Wait while the reindexing completes.</li>
   </ol>

@@ -443,11 +443,11 @@
 			<h2 id="overview">Overview</h2>
 
 <p>An independent view layer domain, the View component was created to eliminate
-global dependencies on <code>Magento_Core</code>, <code>Magento_Backend</code>, <code>Magento_Adminhtml</code> and <code>Magento_Page</code> modules
+global dependencies on <code class="highlighter-rouge">Magento_Core</code>, <code class="highlighter-rouge">Magento_Backend</code>, <code class="highlighter-rouge">Magento_Adminhtml</code> and <code class="highlighter-rouge">Magento_Page</code> modules
 for <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> content rendering. All application modules perform rendering using the
 View component, and remain independent from each other.</p>
 
-<p>The View component is represented as <code>Magento\Framework\View</code> library: <code>/lib/internal/Magento/Framework/View</code>.</p>
+<p>The View component is represented as <code class="highlighter-rouge">Magento\Framework\View</code> library: <code class="highlighter-rouge">/lib/internal/Magento/Framework/View</code>.</p>
 
 <h2 id="usingmagentoframeworkviewlibrary">Using Magento\Framework\View library</h2>
 
@@ -455,7 +455,7 @@ View component, and remain independent from each other.</p>
 
 <h2 id="magentoview-librarycomponents">Magento\View Library components</h2>
 
-<p>The <code>Magento\Framework\View</code> library has the following components:</p>
+<p>The <code class="highlighter-rouge">Magento\Framework\View</code> library has the following components:</p>
 
 <ul>
   <li>
@@ -489,106 +489,106 @@ View component, and remain independent from each other.</p>
 
 <h2 id="magentoframeworkviewlibrarydependencies">Magento\Framework\View library dependencies</h2>
 
-<p>The <code>Magento\Framework\View</code> library closely interacts with other Magento libraries and modules, so it has multiple dependencies. </p>
+<p>The <code class="highlighter-rouge">Magento\Framework\View</code> library closely interacts with other Magento libraries and modules, so it has multiple dependencies. </p>
 
-<p><code>Magento\Framework\View</code> depends on the following Magento libraries:  </p>
+<p><code class="highlighter-rouge">Magento\Framework\View</code> depends on the following Magento libraries:  </p>
 
 <ul>
   <li>
-    <p><code>\Magento\Framework\App\Dir</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\App\Dir</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Autoload</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Autoload</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Code</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Code</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Config</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Config</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Data</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Data</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Event</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Event</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\File</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\File</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Filesystem</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Filesystem</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Filter</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Filter</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\HTTP</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\HTTP</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Image</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Image</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Json</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Json</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Message</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Message</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Module</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Module</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Object</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Object</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\ObjectManager</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\ObjectManager</code></p>
   </li>
   <li>
-    <p><code>\Magento\Framework\Profiler</code></p>
+    <p><code class="highlighter-rouge">\Magento\Framework\Profiler</code></p>
   </li>
 </ul>
 
-<p><code>Magento\Framework\View</code> depends on the following modules:</p>
+<p><code class="highlighter-rouge">Magento\Framework\View</code> depends on the following modules:</p>
 
 <ul>
-  <li><code>Magento_Core</code></li>
+  <li><code class="highlighter-rouge">Magento_Core</code></li>
 </ul>
 
 <p>Apart from obvious and reasonable dependencies,
-the <code>Magento\Framework\View</code> library has so-called artifact dependencies, which
+the <code class="highlighter-rouge">Magento\Framework\View</code> library has so-called artifact dependencies, which
 will be refactored in future releases.</p>
 
-<p>Basic Magento modules that interact with the<code> Magento\Framework\View</code> library
+<p>Basic Magento modules that interact with the<code class="highlighter-rouge"> Magento\Framework\View</code> library
 are:</p>
 
 <ul>
   <li>
-    <p><code>Magento_Core</code></p>
+    <p><code class="highlighter-rouge">Magento_Core</code></p>
   </li>
   <li>
-    <p><code>Magento_Theme</code></p>
+    <p><code class="highlighter-rouge">Magento_Theme</code></p>
   </li>
   <li>
-    <p><code>Magento_Backend</code></p>
+    <p><code class="highlighter-rouge">Magento_Backend</code></p>
   </li>
   <li>
-    <p><code>Magento_FullPageCache</code></p>
+    <p><code class="highlighter-rouge">Magento_FullPageCache</code></p>
   </li>
   <li>
-    <p><code>Magento_Widget</code></p>
+    <p><code class="highlighter-rouge">Magento_Widget</code></p>
   </li>
 </ul>
 
-<p>In addition, a few other modules also use the <code>Magento\Framework\View</code> library
+<p>In addition, a few other modules also use the <code class="highlighter-rouge">Magento\Framework\View</code> library
 in method calls, constructors of models, and helper classes.</p>
 
 <p>The majority of Magento module dependencies on
-the <code>Magento\Framework\View</code> library are induced on the level of Magento block
+the <code class="highlighter-rouge">Magento\Framework\View</code> library are induced on the level of Magento block
 classes implementation. These dependencies result from the unified process of block
 classes creation, which is implemented by means of
-the <code>Magento\Framework\View</code> library: two parent classes
-(<code>\Magento\Framework\View\Element\AbstractBlock</code> and<code>\Magento\Framework\View\Element\Template</code>)
+the <code class="highlighter-rouge">Magento\Framework\View</code> library: two parent classes
+(<code class="highlighter-rouge">\Magento\Framework\View\Element\AbstractBlock</code> and<code class="highlighter-rouge">\Magento\Framework\View\Element\Template</code>)
 are common ancestors for all block classes of Magento modules, and implement
-the <code>\Magento\Framework\View\Element\BlockInterface</code> interface.</p>
+the <code class="highlighter-rouge">\Magento\Framework\View\Element\BlockInterface</code> interface.</p>
 
 		</div>
 		<!-- /.content-wrap -->

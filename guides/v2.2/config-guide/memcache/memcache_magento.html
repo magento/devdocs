@@ -1904,39 +1904,42 @@
 			<p>To configure Magento to use memcache:</p>
 
 <ol>
-  <li>Open <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor.</li>
+  <li>Open <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor.</li>
   <li>
     <p>Locate the following:</p>
 
-    <pre><code>'session' =&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>'session' =&gt;
     array (
     'save' =&gt; 'files',
 ),
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Change it as follows:</p>
 
     <ul>
       <li>
-        <p>PHP <code>memcache</code> extension</p>
+        <p>PHP <code class="highlighter-rouge">memcache</code> extension</p>
 
-        <pre><code>'session' =&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>'session' =&gt;
    array (
       'save' =&gt; 'memcache',
       'save_path' =&gt; 'tcp://&lt;memcache ip or host&gt;:&lt;memcache port&gt;'
 ),
 </code></pre>
+        </div>
       </li>
       <li>
-        <p>PHP <code>memcached</code> extension</p>
+        <p>PHP <code class="highlighter-rouge">memcached</code> extension</p>
 
-        <pre><code>'session' =&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>'session' =&gt;
    array (
       'save' =&gt; 'memcached',
       'save_path' =&gt; '&lt;memcache ip or host&gt;:&lt;memcache port&gt;'
 ),
 </code></pre>
+        </div>
       </li>
     </ul>
 
@@ -1952,8 +1955,9 @@
   <li>
     <p>Delete the contents of the following directories under your Magento installation directory:</p>
 
-    <pre><code>rm -rf var/cache/* var/page_cache/* var/session/*
+    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf var/cache/* var/page_cache/* var/session/*
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Go to any page on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
@@ -1963,18 +1967,19 @@
 
     <p>If no errors display, congratulations! memcached is working! You can optionally look at memcached storage as discussed in the next step.</p>
 
-    <p>If errors display (such as an HTTP 500 (Internal Server Error)), enable developer mode and diagnose the issue. Make sure memcached is running, configured properly, and that <code>env.php</code> has no syntax errors.</p>
+    <p>If errors display (such as an HTTP 500 (Internal Server Error)), enable developer mode and diagnose the issue. Make sure memcached is running, configured properly, and that <code class="highlighter-rouge">env.php</code> has no syntax errors.</p>
   </li>
   <li>
     <p>(Optional.) Use Telnet to look at memcached storage.</p>
 
-    <pre><code>telnet &lt;memcached host or ip&gt; &lt;memcached port&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>telnet &lt;memcached host or ip&gt; &lt;memcached port&gt;
 stats items
 </code></pre>
+    </div>
 
     <p>The results display similar to the following:</p>
 
-    <pre><code>STAT items:3:number 1
+    <div class="highlighter-rouge"><pre class="highlight"><code>STAT items:3:number 1
 STAT items:3:age 7714
 STAT items:3:evicted 0
 STAT items:3:evicted_nonzero 0
@@ -1982,6 +1987,7 @@ STAT items:3:evicted_time 0
 STAT items:3:outofmemory 0
 STAT items:3:tailrepairs 0
 </code></pre>
+    </div>
 
     <p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Look at the keys in more detail</a></p>
   </li>

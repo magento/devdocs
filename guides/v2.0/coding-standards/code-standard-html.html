@@ -608,56 +608,56 @@
 <p><strong>Inappropriate</strong></p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;br&gt;</span>
-<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;image.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;image&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span><span class="nt">&gt;</span></code></pre></figure>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"image.png"</span> <span class="na">alt=</span><span class="s">"image"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"username"</span><span class="nt">&gt;</span></code></pre></figure>
 
 <p><strong>Recommended</strong></p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;image.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;image&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"image.png"</span> <span class="na">alt=</span><span class="s">"image"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <h2 id="line-length">Line length</h2>
 <p>Avoid code lines longer than 120 characters. When using an editor, it is inconvenient to scroll right and left to read the HTML code. Align tag attributes one under another to increase code readability.</p>
 
 <p><strong>Inappropriate</strong></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">data-bind=</span><span class="s">&quot;attr: { id: &#39;cart-item-&#39;+item_id+&#39;-qty&#39;, &#39;data-cart-item&#39;: item_id, &#39;data-item-qty&#39;: qty }, value: qty&quot;</span> <span class="na">type=</span><span class="s">&quot;number&quot;</span> <span class="na">size=</span><span class="s">&quot;4&quot;</span> <span class="na">class=</span><span class="s">&quot;item-qty cart-item-qty&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;12&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">data-bind=</span><span class="s">"attr: { id: 'cart-item-'+item_id+'-qty', 'data-cart-item': item_id, 'data-item-qty': qty }, value: qty"</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">size=</span><span class="s">"4"</span> <span class="na">class=</span><span class="s">"item-qty cart-item-qty"</span> <span class="na">maxlength=</span><span class="s">"12"</span><span class="nt">/&gt;</span></code></pre></figure>
 
 <p><strong>Recommended</strong></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">data-bind=</span><span class="s">&quot;attr: {</span>
-<span class="s">       id: &#39;cart-item-&#39;+item_id+&#39;-qty&#39;,</span>
-<span class="s">       &#39;data-cart-item&#39;: item_id,</span>
-<span class="s">       &#39;data-item-qty&#39;: qty</span>
-<span class="s">       }, value: qty&quot;</span>
-       <span class="na">type=</span><span class="s">&quot;number&quot;</span>
-       <span class="na">size=</span><span class="s">&quot;4&quot;</span>
-       <span class="na">class=</span><span class="s">&quot;item-qty cart-item-qty&quot;</span>
-       <span class="na">maxlength=</span><span class="s">&quot;12&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">data-bind=</span><span class="s">"attr: {
+       id: 'cart-item-'+item_id+'-qty',
+       'data-cart-item': item_id,
+       'data-item-qty': qty
+       }, value: qty"</span>
+       <span class="na">type=</span><span class="s">"number"</span>
+       <span class="na">size=</span><span class="s">"4"</span>
+       <span class="na">class=</span><span class="s">"item-qty cart-item-qty"</span>
+       <span class="na">maxlength=</span><span class="s">"12"</span><span class="nt">/&gt;</span></code></pre></figure>
 
 <h2 id="spaces-around-equals-sign-">Spaces around equals sign (“=”)</h2>
 <p>Spaces around equals sign (“=”) are acceptable, but not recommended. The code without spaces is easier to read.</p>
 
 <p><strong>Not recommended</strong></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel =</span><span class="err"> </span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href =</span><span class="err"> </span><span class="s">&quot;styles.css&quot;</span><span class="nt">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel =</span><span class="err"> </span><span class="s">"stylesheet"</span> <span class="na">href =</span><span class="err"> </span><span class="s">"styles.css"</span><span class="nt">&gt;</span></code></pre></figure>
 
 <p><strong>Recommended</strong></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;styles.css&quot;</span><span class="nt">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"styles.css"</span><span class="nt">&gt;</span></code></pre></figure>
 
 <h2 id="spaces-and-colon-in-attributes">Spaces and colon in attributes</h2>
 <p>Use no space before the colon and one space after the colon for the sake of readability.</p>
 
 <p><strong>Not recommended</strong></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n : &#39;Update&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n:&#39;Update&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">"i18n : 'Update'"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">"i18n:'Update'"</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></figure>
 
 <p><strong>Recommended</strong></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Update&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">"i18n: 'Update'"</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></figure>
 
 <h2 id="block-level-elements">Block-level elements</h2>
 <p>Use appropriate HTML5 elements for blocks. The following diagram shows how to define which HTML5 element to use for a block:</p>
@@ -669,11 +669,11 @@
 
 <p><strong>Inappropriate</strong></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;button-green&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"button-green"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span></code></pre></figure>
 
 <p><strong>Recommended</strong></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;action-primary&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"action-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span></code></pre></figure>
 
 <h2 id="accessibility">Accessibility</h2>
 <p>All pages should comply with the <a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a>.</p>

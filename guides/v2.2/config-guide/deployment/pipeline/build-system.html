@@ -1909,11 +1909,11 @@
     <p>Make sure all of the following are <em>included</em> in source control:</p>
 
     <ul>
-      <li><code>app/etc/config.php</code></li>
-      <li><code>generated</code> directory (and subdirectories)</li>
-      <li><code>pub/media</code> directory</li>
-      <li><code>pub/media/wysiwyg</code> directory (and subdirectories)</li>
-      <li><code>pub/static</code> directory (and subdirectories)</li>
+      <li><code class="highlighter-rouge">app/etc/config.php</code></li>
+      <li><code class="highlighter-rouge">generated</code> directory (and subdirectories)</li>
+      <li><code class="highlighter-rouge">pub/media</code> directory</li>
+      <li><code class="highlighter-rouge">pub/media/wysiwyg</code> directory (and subdirectories)</li>
+      <li><code class="highlighter-rouge">pub/static</code> directory (and subdirectories)</li>
     </ul>
   </li>
   <li>Must have a compatible PHP version installed</li>
@@ -1944,8 +1944,8 @@
   <p>In a command prompt, enter any of the following commands:</p>
 
   <ul>
-    <li><code>composer --help</code></li>
-    <li><code>composer list --help</code></li>
+    <li><code class="highlighter-rouge">composer --help</code></li>
+    <li><code class="highlighter-rouge">composer list --help</code></li>
   </ul>
 
   <p>If command help displays, Composer is already installed.</p>
@@ -1961,9 +1961,10 @@
     <li>
       <p>Enter the following commands:</p>
 
-      <pre><code>curl -sS https://getcomposer.org/installer | php
+      <div class="highlighter-rouge"><pre class="highlight"><code>curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 </code></pre>
+      </div>
 
       <p>For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.</p>
     </li>
@@ -1987,47 +1988,53 @@ mv composer.phar /usr/local/bin/composer
 
       <p>If you use Git, use the following command:</p>
 
-      <pre><code>git clone [-b &lt;branch name&gt;] &lt;repository URL&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git clone [-b &lt;branch name&gt;] &lt;repository URL&gt;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Change to the Magento root directory and enter:</p>
 
-      <pre><code>composer install
+      <div class="highlighter-rouge"><pre class="highlight"><code>composer install
 </code></pre>
+      </div>
     </li>
     <li>Wait for Magento dependencies to update.</li>
     <li>
       <p>Set ownership:</p>
 
-      <pre><code>chown -R &lt;magento file system owner name&gt;:&lt;web server user name&gt; .
+      <div class="highlighter-rouge"><pre class="highlight"><code>chown -R &lt;magento file system owner name&gt;:&lt;web server user name&gt; .
 </code></pre>
+      </div>
 
       <p>For example,</p>
 
-      <pre><code>chown -R magento_user:apache .
+      <div class="highlighter-rouge"><pre class="highlight"><code>chown -R magento_user:apache .
 </code></pre>
+      </div>
     </li>
-    <li>If you use Git, open <code>.gitignore</code> in a text editor.</li>
+    <li>If you use Git, open <code class="highlighter-rouge">.gitignore</code> in a text editor.</li>
     <li>
-      <p>Start each of the following lines with a <code>#</code> character to comment them out:</p>
+      <p>Start each of the following lines with a <code class="highlighter-rouge">#</code> character to comment them out:</p>
 
-      <pre><code># app/etc/config.php
+      <div class="highlighter-rouge"><pre class="highlight"><code># app/etc/config.php
 # pub/media/*
 # generated/*
 # pub/media/*.*
 # pub/media/wysiwyg/*
 # pub/static/*
 </code></pre>
+      </div>
     </li>
-    <li>Save your changes to <code>.gitignore</code> and exit the text editor.</li>
+    <li>Save your changes to <code class="highlighter-rouge">.gitignore</code> and exit the text editor.</li>
     <li>
       <p>If you use Git, use the following commands to commit the change:</p>
 
-      <pre><code>git add .gitignore &amp;&amp; git commit -m "Modify .gitignore for build and production"
+      <div class="highlighter-rouge"><pre class="highlight"><code>git add .gitignore &amp;&amp; git commit -m "Modify .gitignore for build and production"
 </code></pre>
+      </div>
 
-      <p>See the <a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html"><code>.gitignore</code> reference</a> for more information.</p>
+      <p>See the <a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html"><code class="highlighter-rouge">.gitignore</code> reference</a> for more information.</p>
     </li>
   </ol>
 

@@ -1001,7 +1001,7 @@
 
 <h2 id="version-formats">Version formats</h2>
 
-<p>Stable release versions are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
+<p>Stable release versions are in the format <code class="highlighter-rouge">MAJOR.MINOR.PATCH</code>, where:</p>
 
 <ul>
   <li>
@@ -1015,30 +1015,30 @@
   </li>
 </ul>
 
-<p>The pre-release version format is: <code>MAJOR.MINOR.PATCH-&lt;alpha | beta | rc&gt;n</code>, where <code>alpha</code>, <code>beta</code> or <code>rc</code> are stability indications, as described in the <code>version_compare()</code> specification, and
-<code>n</code> is an increment number to distinguish releases of the non-stable versions.</p>
+<p>The pre-release version format is: <code class="highlighter-rouge">MAJOR.MINOR.PATCH-&lt;alpha | beta | rc&gt;n</code>, where <code class="highlighter-rouge">alpha</code>, <code class="highlighter-rouge">beta</code> or <code class="highlighter-rouge">rc</code> are stability indications, as described in the <code class="highlighter-rouge">version_compare()</code> specification, and
+<code class="highlighter-rouge">n</code> is an increment number to distinguish releases of the non-stable versions.</p>
 
 <h2 id="public-apis">Public APIs</h2>
 
-<p>Source code is considered public API only if it is explicitly marked as such using the <code>@api</code> docblock tag. This designation indicates the code can be used or customized by other components, such as formal interfaces and <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> points.</p>
+<p>Source code is considered public API only if it is explicitly marked as such using the <code class="highlighter-rouge">@api</code> docblock tag. This designation indicates the code can be used or customized by other components, such as formal interfaces and <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> points.</p>
 
-<p>For <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code, compatibility of <code>@api</code> may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).</p>
+<p>For <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code, compatibility of <code class="highlighter-rouge">@api</code> may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).</p>
 
 <h2 id="where-versioning-is-used">Where versioning is used</h2>
 
-<p>The software version can be found in the source code of any <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span> or bundle, inside the <code>composer.json</code> file.</p>
+<p>The software version can be found in the source code of any <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span> or bundle, inside the <code class="highlighter-rouge">composer.json</code> file.</p>
 
 <p>It can be declared as the version of the component:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;name&quot;</span><span class="err">:</span> <span class="s2">&quot;acme/foo&quot;</span><span class="err">,</span>
-<span class="s2">&quot;version&quot;</span><span class="err">:</span> <span class="mf">1.2</span><span class="err">.</span><span class="mi">0</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"acme/foo"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"version"</span><span class="err">:</span><span class="w"> </span><span class="mf">1.2</span><span class="err">.</span><span class="mi">0</span></code></pre></figure>
 
 <p>Or it can be used to declare a dependency on a particular version of a component:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;acme/foo&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2.*&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;acme/bar&quot;</span><span class="p">:</span> <span class="s2">&quot;2.2.0&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"require"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"acme/foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2.*"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"acme/bar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.0"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <h2 id="release-types">Release types</h2>
 
@@ -1050,7 +1050,7 @@
 
 <p>In every development release (“pre-release” version), <strong>the same value of version number will be propagated in all Magento components and their dependencies</strong>.</p>
 
-<p>Magento may update the <code>x.y.z</code> version in way perscribed by Semantic Versioning, but also could release the same <code>x.y.z</code> with different stability and/or index numbers, For example, <code>0.1.0-alpha1 -&gt; 0.1.0-alpha2</code>, <code>0.1.0-alpha3</code> or <code>2.0.0-alpha3 -&gt; 2.1.0-beta1 -&gt; 2.1.0-beta2</code></p>
+<p>Magento may update the <code class="highlighter-rouge">x.y.z</code> version in way perscribed by Semantic Versioning, but also could release the same <code class="highlighter-rouge">x.y.z</code> with different stability and/or index numbers, For example, <code class="highlighter-rouge">0.1.0-alpha1 -&gt; 0.1.0-alpha2</code>, <code class="highlighter-rouge">0.1.0-alpha3</code> or <code class="highlighter-rouge">2.0.0-alpha3 -&gt; 2.1.0-beta1 -&gt; 2.1.0-beta2</code></p>
 
 <table>
 <tbody>
@@ -1084,7 +1084,7 @@
 
 <p>In every stable release, the same value of version number will be propagated in all components, but dependencies will have a wildcard (*) pattern.</p>
 
-<p>The <code>x.y.z</code> numbers will change according to Semantic Versioning policy provisions. For example, <code>1.0.0 -&gt; 1.0.1 -&gt; 1.1.0 -&gt; 1.5.0 -&gt; 1.5.1 -&gt; 2.0.0 -&gt; 2.1.0</code>. Also, Magento may decide to change the “minor” version instead of the “patch” version.</p>
+<p>The <code class="highlighter-rouge">x.y.z</code> numbers will change according to Semantic Versioning policy provisions. For example, <code class="highlighter-rouge">1.0.0 -&gt; 1.0.1 -&gt; 1.1.0 -&gt; 1.5.0 -&gt; 1.5.1 -&gt; 2.0.0 -&gt; 2.1.0</code>. Also, Magento may decide to change the “minor” version instead of the “patch” version.</p>
 
 <table>
 <tbody>
@@ -1127,15 +1127,15 @@
   This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
 
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 </li>
 
@@ -1144,16 +1144,16 @@
 <li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
 
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 </li>
 
@@ -1162,16 +1162,16 @@
 <li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
 
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 </li>
 
@@ -1183,16 +1183,16 @@
 <li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
 
    
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 </li>
 
@@ -1201,16 +1201,16 @@
 <li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
 
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 </li>
 

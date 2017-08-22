@@ -1003,47 +1003,47 @@
 
 <h3 id="public-api">Public API</h3>
 
-<p>The following interfaces (marked with the <code>@api</code> annotation) extend the Signifyd module:</p>
+<p>The following interfaces (marked with the <code class="highlighter-rouge">@api</code> annotation) extend the Signifyd module:</p>
 
-<p><code>Magento\Signifyd\Api\Data\CaseInterface</code> (common abstraction for the Signifyd case entity):</p>
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\Data\CaseInterface</code> (common abstraction for the Signifyd case entity):</p>
 
 <ul>
   <li>set or retrieve all case data fields</li>
 </ul>
 
-<p><code>Magento\Signifyd\Api\CaseManagementInterface</code>:</p>
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\CaseManagementInterface</code>:</p>
 
 <ul>
   <li>create a new case entity</li>
   <li>retrieve the existing case entity for a specified order</li>
 </ul>
 
-<p><code>Magento\Signifyd\Api\CaseCreationServiceInterface</code>:</p>
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\CaseCreationServiceInterface</code>:</p>
 
 <ul>
   <li>create a case entity for a specified order</li>
   <li>send a request through the Signifyd API to create a new case</li>
 </ul>
 
-<p><code>Magento\Signifyd\Api\CaseRepositoryInterface</code>:</p>
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\CaseRepositoryInterface</code>:</p>
 
 <ul>
   <li>describe methods to work with a case entity</li>
 </ul>
 
-<p><code>Magento\Signifyd\Api\GuaranteeCreationServiceInterface</code>:</p>
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\GuaranteeCreationServiceInterface</code>:</p>
 
 <ul>
   <li>send a request through the Signifyd API to create a new case guarantee</li>
 </ul>
 
-<p><code>Magento\Signifyd\Api\GuaranteeCancelingServiceInterface</code>:
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\GuaranteeCancelingServiceInterface</code>:
 - send a request through the Signifyd API to cancel the Signifyd case guarantee</p>
 
-<p><code>Magento\Signifyd\Api\Data\CaseSearchResultsInterface</code>:</p>
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\Data\CaseSearchResultsInterface</code>:</p>
 
 <ul>
-  <li>might be used by <code>Magento\Signifyd\Api\CaseRepositoryInterface</code> to retrieve a list of case entities by specific conditions</li>
+  <li>might be used by <code class="highlighter-rouge">Magento\Signifyd\Api\CaseRepositoryInterface</code> to retrieve a list of case entities by specific conditions</li>
 </ul>
 
 <p>For information about a public API in Magento 2, see <a href="http://devdocs.magento.com/guides/v2.1/extension-dev-guide/api-concepts.html">Public interfaces &amp; APIs</a>.</p>
@@ -1054,14 +1054,15 @@
 
 <p>To update the entity data for a case or guarantee, the Magento_Signifyd module uses the <a href="https://www.signifyd.com/docs/api/#/reference/webhooks">Signifyd Webhooks</a> mechanism.</p>
 
-<p>The newly created case entities have the <code>PENDING</code> status for a case and a guarantee. After receiving a Webhook, both statuses are changed to the appropriate Signifyd statuses.</p>
+<p>The newly created case entities have the <code class="highlighter-rouge">PENDING</code> status for a case and a guarantee. After receiving a Webhook, both statuses are changed to the appropriate Signifyd statuses.</p>
 
 <h3 id="debug-mode">Debug mode</h3>
 
 <p>The Debug Mode may be enabled in the module configuration. This logs the communication data between the Magento_Signifyd module and the Signifyd service in this file:</p>
 
-<pre><code>var/log/debug.log
+<div class="highlighter-rouge"><pre class="highlight"><code>var/log/debug.log
 </code></pre>
+</div>
 
 <h3 id="backward-incompatible-changes">Backward incompatible changes</h3>
 

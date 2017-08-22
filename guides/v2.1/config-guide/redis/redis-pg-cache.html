@@ -1674,11 +1674,11 @@
 <p>Before you continue, <a href="/guides/v2.1/config-guide/redis/config-redis.html#config-redis-install">install Redis</a>.</p>
 
 <h2 id="config-redis-config">Configure Magento to use Redis for default and page caching</h2>
-<p>Following is a sample configuration that causes Magento to use Redis for both the default cache (<code>default</code> array) and the full page cache (<code>page_cache</code> array). Magento’s caching is implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/CacheInterface.php" target="_blank"><code>Magento\Framework\App\CacheInterface</code></a>.</p>
+<p>Following is a sample configuration that causes Magento to use Redis for both the default cache (<code class="highlighter-rouge">default</code> array) and the full page cache (<code class="highlighter-rouge">page_cache</code> array). Magento’s caching is implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/CacheInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\App\CacheInterface</code></a>.</p>
 
-<p>Add a configuration similar to the following to <code>&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
+<p>Add a configuration similar to the following to <code class="highlighter-rouge">&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
 
-<pre><code>'cache' =&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>'cache' =&gt;
 array(
    'frontend' =&gt;
    array(
@@ -1706,6 +1706,7 @@ array(
   )
 ),
 </code></pre>
+</div>
 
 <p>where</p>
 
@@ -1753,15 +1754,16 @@ array(
   <h3 id="redis-monitor-command">Redis monitor command</h3>
   <p>In a command prompt on the server on which Redis is running, enter:</p>
 
-  <pre><code>redis-cli monitor
+  <div class="highlighter-rouge"><pre class="highlight"><code>redis-cli monitor
 </code></pre>
+  </div>
 
   <p>Refresh your storefront page and you’ll see output similar to the following.</p>
 
   <h4 id="session-storage">Session storage</h4>
   <p>If you use Redis for session storage, you’ll see output similar to the following:</p>
 
-  <pre><code>1476824834.187250 [0 127.0.0.1:52353] "select" "0"
+  <div class="highlighter-rouge"><pre class="highlight"><code>1476824834.187250 [0 127.0.0.1:52353] "select" "0"
 1476824834.187587 [0 127.0.0.1:52353] "hmget" "sess_sgmeh2k3t7obl2tsot3h2ss0p1" "data" "writes"
 1476824834.187939 [0 127.0.0.1:52353] "expire" "sess_sgmeh2k3t7obl2tsot3h2ss0p1" "1200"
 1476824834.257226 [0 127.0.0.1:52353] "select" "0"
@@ -1769,11 +1771,12 @@ array(
 
 ... more ...
 </code></pre>
+  </div>
 
   <h4 id="page-caching">Page caching</h4>
   <p>If you use Redis for page caching, you’ll see output similar to the following:</p>
 
-  <pre><code>1476826133.810090 [0 127.0.0.1:52366] "select" "1"
+  <div class="highlighter-rouge"><pre class="highlight"><code>1476826133.810090 [0 127.0.0.1:52366] "select" "1"
 1476826133.816293 [0 127.0.0.1:52367] "select" "0"
 1476826133.817461 [0 127.0.0.1:52367] "hget" "zc:k:ea6_GLOBAL__DICONFIG" "d"
 1476826133.829666 [0 127.0.0.1:52367] "hget" "zc:k:ea6_DICONFIG049005964B465901F774DB9751971818" "d"
@@ -1794,19 +1797,21 @@ array(
 
 ... more ...
 </code></pre>
+  </div>
 
   <h3 id="redis-ping-command">Redis ping command</h3>
   <p>Enter the following command:</p>
 
-  <pre><code>redis-cli ping
+  <div class="highlighter-rouge"><pre class="highlight"><code>redis-cli ping
 </code></pre>
+  </div>
 
-  <p><code>PONG</code> should be the response.</p>
+  <p><code class="highlighter-rouge">PONG</code> should be the response.</p>
 
   <p>If both commands succeeded, Redis is set up properly.</p>
 
   <h4 id="more-information">More information</h4>
-  <p><a href="http://redis.io/topics/rediscli" target="_blank"><code>redis-cli</code> command reference</a></p>
+  <p><a href="http://redis.io/topics/rediscli" target="_blank"><code class="highlighter-rouge">redis-cli</code> command reference</a></p>
 
   <h4 id="related-topics">Related topics</h4>
 

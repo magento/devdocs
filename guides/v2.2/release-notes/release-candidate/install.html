@@ -736,8 +736,9 @@
 <h3 id="get-the-composer-metapackage">Get the Composer metapackage</h3>
 <p>Before you begin, install Composer:</p>
 
-<pre><code>curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
 </code></pre>
+</div>
 
 <ol>
   <li>
@@ -753,52 +754,58 @@
       <li>
         <p>Enter the following command for Magento Open Source:</p>
 
-        <pre><code>composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;install-directory-name&gt; 2.2.0-rc21
+        <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;install-directory-name&gt; 2.2.0-rc21
 </code></pre>
+        </div>
       </li>
       <li>
         <p>Enter the following command for Magento Commerce:</p>
 
-        <pre><code>composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;install-directory-name&gt; 2.2.0-rc21
+        <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;install-directory-name&gt; 2.2.0-rc21
 </code></pre>
+        </div>
       </li>
     </ul>
 
     <p>When prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
 
-    <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code>&lt;installation-directory-name&gt;</code> if you provided the parameter or <code>project-enterprise-edition</code> if you did not.</p>
+    <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code class="highlighter-rouge">&lt;installation-directory-name&gt;</code> if you provided the parameter or <code class="highlighter-rouge">project-enterprise-edition</code> if you did not.</p>
   </li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The following error indicates your tokens are incorrect:</p>
 
-  <pre><code>Could not find package magento/project-enterprise-edition with version 2.2.0-rc21
+  <div class="highlighter-rouge"><pre class="highlight"><code>Could not find package magento/project-enterprise-edition with version 2.2.0-rc21
 </code></pre>
+  </div>
 
   <p>If the following error displays, see <a href="/guides/v2.2/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
 
-  <pre><code>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
+  <div class="highlighter-rouge"><pre class="highlight"><code>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
 </code></pre>
+  </div>
 </div>
 
 <h3 id="install-the-b2b-extension-optional">Install the B2B extension (optional)</h3>
-<p>Change to your installation directory and enter the following command to update your <code>composer.json</code> file and install the Magento Commerce for B2B extension:</p>
+<p>Change to your installation directory and enter the following command to update your <code class="highlighter-rouge">composer.json</code> file and install the Magento Commerce for B2B extension:</p>
 
-<pre><code>composer require magento/extension-b2b
+<div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/extension-b2b
 </code></pre>
+</div>
 
 <p>When prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
 
 <div class="bs-callout bs-callout-info">
   <p>If you installed EE prior to installing B2B, run the following commands after Composer finishes updating modules:</p>
 
-  <pre><code>bin/magento setup:upgrade
+  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento setup:upgrade
 
 bin/magento setup:di:compile
 
 bin/magento setup:static-content:deploy
 </code></pre>
+  </div>
 </div>
 
 <h3 id="complete-the-installation">Complete the installation</h3>
@@ -806,22 +813,23 @@ bin/magento setup:static-content:deploy
 
 <ol>
   <li>
-    <p>Set file permissions on the <code>&lt;install-directory-name&gt;</code>:</p>
+    <p>Set file permissions on the <code class="highlighter-rouge">&lt;install-directory-name&gt;</code>:</p>
 
-    <pre><code>cd /var/www/html/magento2
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 chown -R :&lt;web-server-group&gt; .
 chmod u+x bin/magento
 </code></pre>
+    </div>
     <p>Refer to <a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a> for more information.</p>
   </li>
   <li>
-    <p>Open a web browser and go to <code>http://&lt;Magento-host-or-IP&gt;/&lt;path-to-magento- root&gt;/setup</code> to launch the <a href="/guides/v2.2/install-gde/install/web/install-web.html">Web Setup Wizard</a>.</p>
+    <p>Open a web browser and go to <code class="highlighter-rouge">http://&lt;Magento-host-or-IP&gt;/&lt;path-to-magento- root&gt;/setup</code> to launch the <a href="/guides/v2.2/install-gde/install/web/install-web.html">Web Setup Wizard</a>.</p>
 
     <p>For example:</p>
 
-    <p><code>http://localhost/magento2ee/setup</code></p>
+    <p><code class="highlighter-rouge">http://localhost/magento2ee/setup</code></p>
   </li>
 </ol>
 
@@ -894,73 +902,81 @@ chmod u+x bin/magento
 
 <ol>
   <li>
-    <p>Clone the <code>magento2/</code> repository to your server’s <a href="http://devdocs.magento.com/guides/v2.2/install-gde/basics/basics_docroot.html">docroot</a>:</p>
+    <p>Clone the <code class="highlighter-rouge">magento2/</code> repository to your server’s <a href="http://devdocs.magento.com/guides/v2.2/install-gde/basics/basics_docroot.html">docroot</a>:</p>
 
-    <pre><code>cd /var/www/html
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html
 git clone -b 2.2.0-preview git@github.com:magento/magento2.git
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Clone the <code>magento2ee/</code> and <code>magento2b2b/</code> repositories inside the <code>magento2/</code> repository:</p>
+    <p>Clone the <code class="highlighter-rouge">magento2ee/</code> and <code class="highlighter-rouge">magento2b2b/</code> repositories inside the <code class="highlighter-rouge">magento2/</code> repository:</p>
 
-    <pre><code>cd /var/www/html/magento2
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2
 git clone -b 2.2.0-release-candidate git@github.com:magento/magento2ee.git
 git clone -b 1.0.0-release-candidate git@github.com:magento/magento2b2b.git
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <h3 id="prepare-files-for-installation">Prepare files for installation</h3>
-<p>Create symlinks to the <code>magento2ee/</code> and <code>magento2b2b/</code> directories from the <code>magento2/</code> directory. Symlinks preserve the git history for each repository so that you can make code contributions.</p>
+<p>Create symlinks to the <code class="highlighter-rouge">magento2ee/</code> and <code class="highlighter-rouge">magento2b2b/</code> directories from the <code class="highlighter-rouge">magento2/</code> directory. Symlinks preserve the git history for each repository so that you can make code contributions.</p>
 
 <ol>
   <li>
-    <p>Change to the <code>magento2/</code> directory:</p>
+    <p>Change to the <code class="highlighter-rouge">magento2/</code> directory:</p>
 
-    <pre><code>cd /var/www/html/magento2
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Create symlinks to the <code>magento2ee/</code> directory:</p>
+    <p>Create symlinks to the <code class="highlighter-rouge">magento2ee/</code> directory:</p>
 
-    <pre><code>php -f ./magento2ee/dev/tools/build-ee.php -- --command link --exclude true --ce-source . --ee-source ./magento2ee
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -f ./magento2ee/dev/tools/build-ee.php -- --command link --exclude true --ce-source . --ee-source ./magento2ee
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Create symlinks to the <code>magento2b2b/</code> directory:</p>
+    <p>Create symlinks to the <code class="highlighter-rouge">magento2b2b/</code> directory:</p>
 
-    <pre><code>php -f ./magento2ee/dev/tools/build-ee.php -- --command link --exclude true --ce-source . --ee-source ./magento2b2b
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -f ./magento2ee/dev/tools/build-ee.php -- --command link --exclude true --ce-source . --ee-source ./magento2b2b
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Run the following command to verify the links:</p>
 
-    <pre><code>ls -alh app/code/Magento/
+    <div class="highlighter-rouge"><pre class="highlight"><code>ls -alh app/code/Magento/
 </code></pre>
+    </div>
 
     <p>You should see output similar to the following:</p>
 
-    <pre><code>lrwxrwxrwx   1 root    root      57 Jun 22 22:43 B2b -&gt; /var/www/html/magento2/magento2b2b/app/code/Magento/B2b
+    <div class="highlighter-rouge"><pre class="highlight"><code>lrwxrwxrwx   1 root    root      57 Jun 22 22:43 B2b -&gt; /var/www/html/magento2/magento2b2b/app/code/Magento/B2b
 drwxrwxr-x  15 magento magento 4.0K Jun 22 22:26 Backend
 drwxrwxr-x  11 magento magento 4.0K Jun 22 22:26 Backup
 lrwxrwxrwx   1 root    root      59 Jun 22 22:42 Banner -&gt; /var/www/html/magento2/magento2ee/app/code/Magento/Banner
 lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /var/www/html/magento2/magento2ee/app/code/Magento/BannerCustomerSegment
 </code></pre>
+    </div>
   </li>
 </ol>
 <div class="bs-callout bs-callout-info">
-  <p>If you mistyped something when creating symlinks and need to remove them and try again, run the following command: <code>php -f ./magento2ee/dev/tools/build-ee.php -- --command unlink --ce-source .</code></p>
+  <p>If you mistyped something when creating symlinks and need to remove them and try again, run the following command: <code class="highlighter-rouge">php -f ./magento2ee/dev/tools/build-ee.php -- --command unlink --ce-source .</code></p>
 </div>
 
 <h3 id="update-installation-dependencies">Update installation dependencies</h3>
 <div class="bs-callout bs-callout-warning">
-  <p>If you’re installing Magento Commerce or Magento Commerce for B2B, you must replace the <code>composer.json</code> and <code>composer.lock </code> files in the <code>magento2/</code> directory with the <code>composer.json</code> and <code>composer.lock</code> files from inside the <code>magento2ee</code> directory before updating dependencies.</p>
+  <p>If you’re installing Magento Commerce or Magento Commerce for B2B, you must replace the <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock </code> files in the <code class="highlighter-rouge">magento2/</code> directory with the <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code> files from inside the <code class="highlighter-rouge">magento2ee</code> directory before updating dependencies.</p>
 </div>
 
-<p>From the <code>magento2/</code> directory, run Composer to update dependencies:</p>
+<p>From the <code class="highlighter-rouge">magento2/</code> directory, run Composer to update dependencies:</p>
 
-<pre><code>composer install
+<div class="highlighter-rouge"><pre class="highlight"><code>composer install
 </code></pre>
+</div>
 
 <p>Refer to <a href="http://devdocs.magento.com/guides/v2.2/install-gde/install/prepare-install.html">Update installation dependencies</a> for more information.</p>
 
@@ -969,22 +985,23 @@ lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /va
 
 <ol>
   <li>
-    <p>Set file permissions on the <code>magento2/</code> installation directory:</p>
+    <p>Set file permissions on the <code class="highlighter-rouge">magento2/</code> installation directory:</p>
 
-    <pre><code>cd /var/www/html/magento2
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2
 find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 chown -R :&lt;web-server-group&gt; .
 chmod u+x bin/magento
 </code></pre>
+    </div>
     <p>Refer to <a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a> for more information.</p>
   </li>
   <li>
-    <p>Open a web browser and go to <code>http://&lt;Magento host or IP&gt;/&lt;path to Magento root&gt;/setup</code> to launch the <a href="/guides/v2.2/install-gde/install/web/install-web.html">Web Setup Wizard</a>.</p>
+    <p>Open a web browser and go to <code class="highlighter-rouge">http://&lt;Magento host or IP&gt;/&lt;path to Magento root&gt;/setup</code> to launch the <a href="/guides/v2.2/install-gde/install/web/install-web.html">Web Setup Wizard</a>.</p>
 
     <p>For example:</p>
 
-    <p><code>http://localhost/magento2/setup</code></p>
+    <p><code class="highlighter-rouge">http://localhost/magento2/setup</code></p>
   </li>
 </ol>
 
@@ -1007,34 +1024,38 @@ chmod u+x bin/magento
   <li>
     <p>List the available message consumers:</p>
 
-    <pre><code>bin/magento queue:consumers:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento queue:consumers:list
 </code></pre>
+    </div>
 
     <p>You should see the following consumers:</p>
 
-    <pre><code>sharedCatalogUpdatePrice
+    <div class="highlighter-rouge"><pre class="highlight"><code>sharedCatalogUpdatePrice
 sharedCatalogUpdateCategoryPermissions
 quoteItemCleaner
 inventoryQtyCounter
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Start each service separately:</p>
 
-    <pre><code>bin/magento queue:consumers:start &lt;consumer_name&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento queue:consumers:start &lt;consumer_name&gt;
 </code></pre>
+    </div>
 
     <p>For example:</p>
 
-    <pre><code>bin/magento queue:consumers:start sharedCatalogUpdatePrice
+    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento queue:consumers:start sharedCatalogUpdatePrice
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <p>Refer to <a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a> for more information.</p>
 
 <h4 id="add-message-consumers-to-cron">Add message consumers to cron</h4>
-<p>You may also add these two message consumers to the cron job. For this, add these lines in your <code>crontab.xml</code>:</p>
+<p>You may also add these two message consumers to the cron job. For this, add these lines in your <code class="highlighter-rouge">crontab.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">* * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions <span class="err">&amp;</span>
 * * * * * ps ax | grep [s]haredCatalogUpdatePrice &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice <span class="err">&amp;</span></code></pre></figure>
@@ -1044,10 +1065,10 @@ inventoryQtyCounter
 
 <ul>
   <li>
-    <p><code>--max-messages</code>: manages the consumer’s lifetime and allows to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart the long-running processes to prevent possible memory leaks</p>
+    <p><code class="highlighter-rouge">--max-messages</code>: manages the consumer’s lifetime and allows to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart the long-running processes to prevent possible memory leaks</p>
   </li>
   <li>
-    <p><code>--batch-size</code>: allows to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing</p>
+    <p><code class="highlighter-rouge">--batch-size</code>: allows to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing</p>
   </li>
 </ul>
 

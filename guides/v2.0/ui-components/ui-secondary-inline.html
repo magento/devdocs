@@ -773,13 +773,13 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 
 <p>To enable Inline Edit component for the grid, it is declared as a plugin for Listing component:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editorConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.cms_page_columns.ids<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;enabled&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;indexField&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">"cms_page_columns"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"editorConfig"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"selectProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.cms_page_columns.ids<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"enabled"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"indexField"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
             ..
         <span class="nt">&lt;/item&gt;</span>
@@ -822,10 +822,10 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;clientConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;saveUrl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;cms/page/inlineEdit&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validateUrl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>/path/to<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validateBeforeSave&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"clientConfig"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"saveUrl"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"cms/page/inlineEdit"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"validateUrl"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>/path/to<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"validateBeforeSave"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/item&gt;</span>
     </code></pre></figure>
 
@@ -840,16 +840,16 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 
 <p>With configuration above, the Inline Edit will be enabled. But it also must start editing in response to some user action, for example when clicking somewhere on the row.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;childDefaults&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;fieldAction&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.cms_page_columns_editor<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;target&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>startEdit<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;params&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>${ $.$data.rowIndex }<span class="nt">&lt;/item&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;1&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">"cms_page_columns"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"childDefaults"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"fieldAction"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.cms_page_columns_editor<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"target"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>startEdit<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"params"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>${ $.$data.rowIndex }<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"1"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
                         <span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
@@ -863,13 +863,13 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 
 <p>With the above configuration, the Inline Edit will be enabled, but all row cells will be read-only during the Inline edit. To make specific column editable, next configuration can be used:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editorType&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validation&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;required-entry&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"editor"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"editorType"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"validation"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"required-entry"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
             ..
@@ -880,10 +880,10 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 
 <p>Or as a short alternative:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"editor"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
             ..
         <span class="nt">&lt;/item&gt;</span>
         ..
@@ -908,15 +908,15 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 <p>Additional examples:
  * - Example of the templates configuration (fieldTmpl for the edited cell, and rowTmpl for the whole edited row)</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editorConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">"cms_page_columns"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"editorConfig"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
                 ..
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;templates&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;record&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;fieldTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/editing/field<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;rowTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/editing/row<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"templates"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"record"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"fieldTmpl"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/grid/editing/field<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"rowTmpl"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/grid/editing/row<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
@@ -928,9 +928,9 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 
 <p>** - Example of the editor type configuraion - let’s add a colorpicker type, for example, as addition to the existed types (which extend form/element/abstract)</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/colorpicker<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/colorpicker<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"editor"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/colorpicker<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/form/element/colorpicker<span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/item&gt;</span></code></pre></figure>
 
 <h4 id="inline-edit-js-component-structure">Inline Edit JS Component Structure</h4>
@@ -938,13 +938,13 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
 <p>Component elements:</p>
 
 <ul>
-  <li>Editor Component: <code>app\code\Magento\Ui\view\base\web\js\grid\editing\editor.js</code></li>
-  <li>Client Component: <code>app\code\Magento\Ui\view\base\web\js\grid\editing\editor-view.js</code></li>
-  <li>View Component: <code>app\code\Magento\Ui\view\base\web\js\grid\editing\client.js</code></li>
-  <li>Record Component (used by Editor to create a record associated with a row data): <code>app\code\Magento\Ui\view\base\web\js\grid\editing\record.js</code></li>
-  <li>row Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\editing\row.html</code></li>
-  <li>row buttons Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\editing\row-buttons.html</code></li>
-  <li>header buttons Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\editing\header-buttons.html</code></li>
+  <li>Editor Component: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\grid\editing\editor.js</code></li>
+  <li>Client Component: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\grid\editing\editor-view.js</code></li>
+  <li>View Component: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\grid\editing\client.js</code></li>
+  <li>Record Component (used by Editor to create a record associated with a row data): <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\grid\editing\record.js</code></li>
+  <li>row Template: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\editing\row.html</code></li>
+  <li>row buttons Template: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\editing\row-buttons.html</code></li>
+  <li>header buttons Template: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\editing\header-buttons.html</code></li>
 </ul>
 
 <p>Dependencies on other components:</p>

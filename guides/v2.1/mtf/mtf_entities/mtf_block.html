@@ -1002,74 +1002,74 @@
 
 <h2 id="mtf_block_class">Example</h2>
 
-<p>A block <code>Magento\Ui\Test\Block\Messages</code> extends a basic block <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php"><code>Magento\Mtf\Block\Block</code></a> and implements methods to interact with messages.</p>
+<p>A block <code class="highlighter-rouge">Magento\Ui\Test\Block\Messages</code> extends a basic block <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php"><code class="highlighter-rouge">Magento\Mtf\Block\Block</code></a> and implements methods to interact with messages.</p>
 
 <div class="collapsible"><b class="collapsible-title">Show/hide the code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2013-2017 Magento, Inc. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Ui\Test\Block</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Mtf\Block\Block</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Mtf\Client\Locator</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Global messages block.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Global messages block.
+ */</span>
 <span class="k">class</span> <span class="nc">Messages</span> <span class="k">extends</span> <span class="nx">Block</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Success message selector.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @var string</span>
-<span class="sd">     */</span>
-    <span class="k">protected</span> <span class="nv">$successMessage</span> <span class="o">=</span> <span class="s1">&#39;[data-ui-id$=message-success]&#39;</span><span class="p">;</span>
+    <span class="sd">/**
+     * Success message selector.
+     *
+     * @var string
+     */</span>
+    <span class="k">protected</span> <span class="nv">$successMessage</span> <span class="o">=</span> <span class="s1">'[data-ui-id$=message-success]'</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Last success message selector.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @var string</span>
-<span class="sd">     */</span>
-    <span class="k">protected</span> <span class="nv">$lastSuccessMessage</span> <span class="o">=</span> <span class="s1">&#39;[data-ui-id$=message-success]:last-child&#39;</span><span class="p">;</span>
+    <span class="sd">/**
+     * Last success message selector.
+     *
+     * @var string
+     */</span>
+    <span class="k">protected</span> <span class="nv">$lastSuccessMessage</span> <span class="o">=</span> <span class="s1">'[data-ui-id$=message-success]:last-child'</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Error message selector.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @var string</span>
-<span class="sd">     */</span>
-    <span class="k">protected</span> <span class="nv">$errorMessage</span> <span class="o">=</span> <span class="s1">&#39;[data-ui-id$=message-error]&#39;</span><span class="p">;</span>
+    <span class="sd">/**
+     * Error message selector.
+     *
+     * @var string
+     */</span>
+    <span class="k">protected</span> <span class="nv">$errorMessage</span> <span class="o">=</span> <span class="s1">'[data-ui-id$=message-error]'</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Notice message selector.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @var string</span>
-<span class="sd">     */</span>
-    <span class="k">protected</span> <span class="nv">$noticeMessage</span> <span class="o">=</span> <span class="s1">&#39;[data-ui-id$=message-notice]&#39;</span><span class="p">;</span>
+    <span class="sd">/**
+     * Notice message selector.
+     *
+     * @var string
+     */</span>
+    <span class="k">protected</span> <span class="nv">$noticeMessage</span> <span class="o">=</span> <span class="s1">'[data-ui-id$=message-notice]'</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Warning message selector.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @var string</span>
-<span class="sd">     */</span>
-    <span class="k">protected</span> <span class="nv">$warningMessage</span> <span class="o">=</span> <span class="s1">&#39;[data-ui-id$=message-warning]&#39;</span><span class="p">;</span>
+    <span class="sd">/**
+     * Warning message selector.
+     *
+     * @var string
+     */</span>
+    <span class="k">protected</span> <span class="nv">$warningMessage</span> <span class="o">=</span> <span class="s1">'[data-ui-id$=message-warning]'</span><span class="p">;</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Wait for success message.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return bool</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Wait for success message.
+     *
+     * @return bool
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">waitSuccessMessage</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">waitForElementVisible</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">successMessage</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Get all success messages which are present on the page.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Get all success messages which are present on the page.
+     *
+     * @return array
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getSuccessMessages</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">waitForElementVisible</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">successMessage</span><span class="p">);</span>
@@ -1083,11 +1083,11 @@
         <span class="k">return</span> <span class="nv">$messages</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Get all notice messages which are present on the page.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Get all notice messages which are present on the page.
+     *
+     * @return array
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getNoticeMessages</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">waitForElementVisible</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">noticeMessage</span><span class="p">);</span>
@@ -1101,11 +1101,11 @@
         <span class="k">return</span> <span class="nv">$messages</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Get last success message which is present on the page.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Get last success message which is present on the page.
+     *
+     * @return string
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getSuccessMessage</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">waitForElementVisible</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">successMessage</span><span class="p">);</span>
@@ -1113,29 +1113,29 @@
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastSuccessMessage</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getText</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Wait for element is visible in the page.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param string $selector</span>
-<span class="sd">     * @param string $strategy</span>
-<span class="sd">     * @return bool|null</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Wait for element is visible in the page.
+     *
+     * @param string $selector
+     * @param string $strategy
+     * @return bool|null
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">waitForElementVisible</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span> <span class="o">=</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$browser</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">browser</span><span class="p">;</span>
         <span class="k">return</span> <span class="nv">$browser</span><span class="o">-&gt;</span><span class="na">waitUntil</span><span class="p">(</span>
             <span class="k">function</span> <span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$browser</span><span class="p">,</span> <span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nv">$message</span> <span class="o">=</span> <span class="nv">$browser</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span><span class="p">);</span>
-                <span class="k">return</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">isVisible</span><span class="p">()</span> <span class="o">?</span> <span class="k">true</span> <span class="o">:</span> <span class="k">null</span><span class="p">;</span>
+                <span class="k">return</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">isVisible</span><span class="p">()</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">null</span><span class="p">;</span>
             <span class="p">}</span>
         <span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Get all error message which is present on the page.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Get all error message which is present on the page.
+     *
+     * @return string
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getErrorMessage</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span>
@@ -1143,22 +1143,22 @@
             <span class="o">-&gt;</span><span class="na">getText</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Get notice message which is present on the page.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Get notice message which is present on the page.
+     *
+     * @return string
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getNoticeMessage</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">waitForElementVisible</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">noticeMessage</span><span class="p">);</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">noticeMessage</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getText</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="sd">/**</span>
-<span class="sd">     * Get warning message which is present on the page.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Get warning message which is present on the page.
+     *
+     * @return string
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getWarningMessage</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">waitForElementVisible</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">warningMessage</span><span class="p">);</span>
@@ -1172,19 +1172,19 @@
 <p>Magento contains basic blocks for the functional testing with a logic that you can reuse. The most popular are the following:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php"><code>Magento\Mtf\Block\Block</code></a></li>
-  <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php"><code>Magento\Mtf\Block\Form</code></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php"><code>Magento\Backend\Test\Block\Widget\FormTabs</code></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php"><code>Magento\Backend\Test\Block\Widget\Grid</code></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php"><code>Magento\Ui\Test\Block\Adminhtml\DataGrid</code></a></li>
+  <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php"><code class="highlighter-rouge">Magento\Mtf\Block\Block</code></a></li>
+  <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php"><code class="highlighter-rouge">Magento\Mtf\Block\Form</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code class="highlighter-rouge">Magento\Backend\Test\Block\Widget\Tab</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php"><code class="highlighter-rouge">Magento\Backend\Test\Block\Widget\FormTabs</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php"><code class="highlighter-rouge">Magento\Backend\Test\Block\Widget\Grid</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php"><code class="highlighter-rouge">Magento\Ui\Test\Block\Adminhtml\DataGrid</code></a></li>
 </ul>
 
 <h2 id="mtf_block_identifier">Block identifier</h2>
 
-<p>Each block has an identifier that includes selector and searching strategy. This identifier is determined by the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php"><code>Magento\Mtf\Client\Element\Locator</code></a> class and is stored in the <code>_rootElement</code> property of the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php"><code>Magento\Mtf\Block\Block</code></a> class.</p>
+<p>Each block has an identifier that includes selector and searching strategy. This identifier is determined by the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php"><code class="highlighter-rouge">Magento\Mtf\Client\Element\Locator</code></a> class and is stored in the <code class="highlighter-rouge">_rootElement</code> property of the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php"><code class="highlighter-rouge">Magento\Mtf\Block\Block</code></a> class.</p>
 
-<p>You can use the <code>_rootElement</code> to find an element in the current block.</p>
+<p>You can use the <code class="highlighter-rouge">_rootElement</code> to find an element in the current block.</p>
 
 <p>Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>WidgetInstance.php</code></a> block:</p>
 
@@ -1193,38 +1193,38 @@
 <span class="p">{</span>
    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addLayoutUpdates</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
-<p>This code uses <code>_rootElement</code> to search the button element by the <code>$this-&gt;addLayoutUpdates</code> selector. The advantage of the <code>_rootElement</code> is that it enables search in the context of the block to which the element belongs.</p>
+<p>This code uses <code class="highlighter-rouge">_rootElement</code> to search the button element by the <code class="highlighter-rouge">$this-&gt;addLayoutUpdates</code> selector. The advantage of the <code class="highlighter-rouge">_rootElement</code> is that it enables search in the context of the block to which the element belongs.</p>
 
 <h2 id="mtf_block_mapping">Form mapping</h2>
 
-<p>Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (<abbr title="Functional Testing Framework">FTF</abbr>) has a <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php"><code>Magento\Mtf\Block\Form</code></a> class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> files. In the <abbr title="Functional Testing Framework">FTF</abbr> we call this process “a mapping”. You can use mapping to transfer data to the block from the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
+<p>Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (<abbr title="Functional Testing Framework">FTF</abbr>) has a <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php"><code class="highlighter-rouge">Magento\Mtf\Block\Form</code></a> class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> files. In the <abbr title="Functional Testing Framework">FTF</abbr> we call this process “a mapping”. You can use mapping to transfer data to the block from the <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
 
 <p>A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.</p>
 
-<p>Let’s see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Block/Form/Login.php">Customer Login</a> block. The block has two input fields: <code>email</code> and <code>password</code>.</p>
+<p>Let’s see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Block/Form/Login.php">Customer Login</a> block. The block has two input fields: <code class="highlighter-rouge">email</code> and <code class="highlighter-rouge">password</code>.</p>
 
 <p><a href="/common/images/ftf/mtf_block_login_ui.png"><img src="/common/images/ftf/mtf_block_login_ui.png" /></a></p>
 
-<p>The mapping file for the block is stored in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml</code>, along with the block.</p>
+<p>The mapping file for the block is stored in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml</code>, along with the block.</p>
 
 <p><img src="/common/images/ftf/mtf_block_login_dir.png" /></p>
 
 <p>The mapping file defines the fields from the form.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">"1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;wrapper&gt;</span>login<span class="nt">&lt;/wrapper&gt;</span>
     <span class="nt">&lt;fields&gt;</span>
         <span class="nt">&lt;email&gt;</span>
-            <span class="nt">&lt;selector&gt;</span>[name=&#39;login[username]&#39;]<span class="nt">&lt;/selector&gt;</span>
+            <span class="nt">&lt;selector&gt;</span>[name='login[username]']<span class="nt">&lt;/selector&gt;</span>
         <span class="nt">&lt;/email&gt;</span>
         <span class="nt">&lt;password</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fields&gt;</span>
@@ -1243,7 +1243,7 @@
 <tr><td><code>class</code> </td><td>Class of the element. Applicable if non of the <code>input</code> options fits. Do not use <code>input</code>, if you use <code>class</code> in the field. </td><td>This node has not been used in the example.</td></tr>
 </tbody></table>
 
-<p>All nodes are optional. Default value is assigned automatically if a node (<code>selector</code>, <code>strategy</code>, <code>input</code>) is absent in the <code>field</code>.</p>
+<p>All nodes are optional. Default value is assigned automatically if a node (<code class="highlighter-rouge">selector</code>, <code class="highlighter-rouge">strategy</code>, <code class="highlighter-rouge">input</code>) is absent in the <code class="highlighter-rouge">field</code>.</p>
 
 <p>The general structure of the form mapping file:</p>
 
@@ -1258,19 +1258,19 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p><img src="/common/images/ftf/mtf_block_tabs_ui.png" /></p>
 
-<p>Four tabs are mapped in the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml</code> file, which is stored along with the block class.</p>
+<p>Four tabs are mapped in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml</code> file, which is stored along with the block class.</p>
 
 <p><img src="/common/images/ftf/mtf_block_tab_struc.png" /></p>
 
 <p>The file contains the following mapping:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
 <span class="nt">&lt;tabs&gt;</span>
     <span class="nt">&lt;settings&gt;</span>
         <span class="nt">&lt;class&gt;</span>\Magento\Widget\Test\Block\Adminhtml\Widget\Instance\Edit\Tab\Settings<span class="nt">&lt;/class&gt;</span>
@@ -1293,7 +1293,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
             <span class="nt">&lt;title</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;store_ids&gt;</span>
                 <span class="nt">&lt;input&gt;</span>multiselectgrouplist<span class="nt">&lt;/input&gt;</span>
-                <span class="nt">&lt;selector&gt;</span>[id=&quot;store_ids&quot;]<span class="nt">&lt;/selector&gt;</span>
+                <span class="nt">&lt;selector&gt;</span>[id="store_ids"]<span class="nt">&lt;/selector&gt;</span>
             <span class="nt">&lt;/store_ids&gt;</span>
         <span class="nt">&lt;/fields&gt;</span>
     <span class="nt">&lt;/frontend_properties&gt;</span>
@@ -1324,16 +1324,16 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 </tbody>
 </table>
 
-<p>Example of <code>composite</code> field from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml">ProductForm.xml</a>:</p>
+<p>Example of <code class="highlighter-rouge">composite</code> field from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml">ProductForm.xml</a>:</p>
 
 <p>In the mapping file:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;quantity_and_stock_status</span> <span class="na">composite=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;quantity_and_stock_status</span> <span class="na">composite=</span><span class="s">"1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;qty&gt;</span>
-        <span class="nt">&lt;selector&gt;</span>[name=&quot;product[quantity_and_stock_status][qty]&quot;]<span class="nt">&lt;/selector&gt;</span>
+        <span class="nt">&lt;selector&gt;</span>[name="product[quantity_and_stock_status][qty]"]<span class="nt">&lt;/selector&gt;</span>
     <span class="nt">&lt;/qty&gt;</span>
     <span class="nt">&lt;is_in_stock&gt;</span>
-        <span class="nt">&lt;selector&gt;</span>[name=&quot;product[quantity_and_stock_status][is_in_stock]&quot;]<span class="nt">&lt;/selector&gt;</span>
+        <span class="nt">&lt;selector&gt;</span>[name="product[quantity_and_stock_status][is_in_stock]"]<span class="nt">&lt;/selector&gt;</span>
         <span class="nt">&lt;input&gt;</span>select<span class="nt">&lt;/input&gt;</span>
     <span class="nt">&lt;/is_in_stock&gt;</span>
 <span class="nt">&lt;/quantity_and_stock_status&gt;</span></code></pre></figure>
@@ -1375,8 +1375,8 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <h4 id="mtf_block_path">How to determine a block name and a path</h4>
 
-<p>The block name and path in the Magento functional tests (<code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app</code>) should reflect a corresponding block in the Magento code base for your convenience.
-For example, you develop a functional test for the <span term-uuid="fbcfce51-68e2-482f-84d5-f28d84404cff" class="glossary-term" data-toggle="popover">bundle product</span> creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the <code>.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>, so in the Magento functional tests you can create a new file <code>.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>.</p>
+<p>The block name and path in the Magento functional tests (<code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app</code>) should reflect a corresponding block in the Magento code base for your convenience.
+For example, you develop a functional test for the <span term-uuid="fbcfce51-68e2-482f-84d5-f28d84404cff" class="glossary-term" data-toggle="popover">bundle product</span> creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the <code class="highlighter-rouge">.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>, so in the Magento functional tests you can create a new file <code class="highlighter-rouge">.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>.</p>
 
 <p>Magento can show you a full class name of the block and path to the <span term-uuid="ae0f1f68-c466-4189-88fd-6cd8b23c804f" class="glossary-term" data-toggle="popover">PHTML</span> template on the Magento page (changes web page design) or implicitly in the HTML code of the page.</p>
 
@@ -1411,7 +1411,7 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
 
 <ul>
   <li>
-    <p>Open <code>&lt;magento2_root_dir&gt;/lib/internal/Magento/Framework/View/Element/Template.php</code></p>
+    <p>Open <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/lib/internal/Magento/Framework/View/Element/Template.php</code></p>
   </li>
   <li>
     <p>Find the method</p>
@@ -1422,11 +1422,11 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">_toHtml</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplate</span><span class="p">())</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="s1">''</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplateFile</span><span class="p">());</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 <ul>
   <li>Change the code to the following</li>
@@ -1436,16 +1436,16 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">_toHtml</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplate</span><span class="p">())</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="s1">''</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getNameInLayout</span><span class="p">();</span>
     <span class="nv">$template</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplateFile</span><span class="p">();</span>
     <span class="nv">$class</span> <span class="o">=</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$this</span><span class="p">);</span>
-    <span class="k">return</span> <span class="s2">&quot;&lt;!-- BEGIN </span><span class="si">$name</span><span class="s2"> using </span><span class="si">$template</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">.</span> <span class="nv">$class</span> <span class="o">.</span> <span class="s2">&quot;--&gt;&quot;</span>
+    <span class="k">return</span> <span class="s2">"&lt;!-- BEGIN </span><span class="nv">$name</span><span class="s2"> using </span><span class="nv">$template</span><span class="s2"> </span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="nv">$class</span> <span class="o">.</span> <span class="s2">"--&gt;"</span>
         <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$template</span><span class="p">)</span>
-        <span class="o">.</span> <span class="s2">&quot;&lt;!-- END </span><span class="si">$name</span><span class="s2"> using </span><span class="si">$template</span><span class="s2"> --&gt;&quot;</span><span class="p">;</span>
+        <span class="o">.</span> <span class="s2">"&lt;!-- END </span><span class="nv">$name</span><span class="s2"> using </span><span class="nv">$template</span><span class="s2"> --&gt;"</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 <ul>
   <li>Save the file</li>
@@ -1461,24 +1461,24 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
 
 <p>For example, the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.</p>
 
-<p><code>block</code> is the node that adds the block to the page:</p>
+<p><code class="highlighter-rouge">block</code> is the node that adds the block to the page:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;WidgetInstanceIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;admin/widget_instance/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Widget&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"WidgetInstanceIndex"</span> <span class="na">area=</span><span class="s">"Adminhtml"</span> <span class="na">mca=</span><span class="s">"admin/widget_instance/index"</span> <span class="na">module=</span><span class="s">"Magento_Widget"</span><span class="nt">&gt;</span>
         ...
-        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;widgetGrid&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid&quot;</span> <span class="na">locator=</span><span class="s">&quot;#widgetInstanceGrid&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"widgetGrid"</span> <span class="na">class=</span><span class="s">"Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid"</span> <span class="na">locator=</span><span class="s">"#widgetInstanceGrid"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
         ...
     <span class="nt">&lt;/page&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <div>
 
-  <p>See the <code>block</code> node attributes details in the following table:</p>
+  <p>See the <code class="highlighter-rouge">block</code> node attributes details in the following table:</p>
 
   <table>
     <thead>
       <tr>
-        <th><code>block</code> attribute</th>
+        <th><code class="highlighter-rouge">block</code> attribute</th>
         <th>Description</th>
         <th>Is required</th>
         <th>Values</th>
@@ -1487,32 +1487,32 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
     </thead>
     <tbody>
       <tr>
-        <td><code>name</code></td>
+        <td><code class="highlighter-rouge">name</code></td>
         <td>Name of the block</td>
         <td>Required</td>
         <td>Unique in the page. The method to get the block class instance is generated using this value.</td>
-        <td><code>widgetGrid</code></td>
+        <td><code class="highlighter-rouge">widgetGrid</code></td>
       </tr>
       <tr>
-        <td><code>class</code></td>
+        <td><code class="highlighter-rouge">class</code></td>
         <td>Full name of the block class</td>
         <td>Required</td>
         <td>Class name</td>
-        <td><code>Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid</code></td>
+        <td><code class="highlighter-rouge">Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid</code></td>
       </tr>
       <tr>
-        <td><code>locator</code></td>
+        <td><code class="highlighter-rouge">locator</code></td>
         <td>CSS selector or XPath locator of the block</td>
         <td>Required</td>
         <td><a href="http://www.w3.org/TR/selectors/">CSS Selectors</a>, <a href="http://www.w3.org/TR/xpath-31/">XPath</a></td>
-        <td>CSS: <code>#widgetInstanceGrid</code>, XPath: <code>//*[@id="widgetInstanceGrid"]</code></td>
+        <td>CSS: <code class="highlighter-rouge">#widgetInstanceGrid</code>, XPath: <code class="highlighter-rouge">//*[@id="widgetInstanceGrid"]</code></td>
       </tr>
       <tr>
-        <td><code>strategy</code></td>
+        <td><code class="highlighter-rouge">strategy</code></td>
         <td>Selector strategy</td>
         <td>Required</td>
-        <td><code>css selector</code> or <code>xpath</code></td>
-        <td><code>css selector</code></td>
+        <td><code class="highlighter-rouge">css selector</code> or <code class="highlighter-rouge">xpath</code></td>
+        <td><code class="highlighter-rouge">css selector</code></td>
       </tr>
     </tbody>
   </table>
@@ -1535,69 +1535,69 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">getTemplateBlock</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
-        <span class="s1">&#39;Magento\Backend\Test\Block\Template&#39;</span><span class="p">,</span>
-        <span class="p">[</span><span class="s1">&#39;element&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">templateBlock</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">)]</span>
+        <span class="s1">'Magento\Backend\Test\Block\Template'</span><span class="p">,</span>
+        <span class="p">[</span><span class="s1">'element'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">templateBlock</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">)]</span>
     <span class="p">);</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
-<p>In this code we are creating the <code>Magento\Backend\Test\Block\Template</code> block with the selector <code>$this-&gt;templateBlock</code>.</p>
+<p>In this code we are creating the <code class="highlighter-rouge">Magento\Backend\Test\Block\Template</code> block with the selector <code class="highlighter-rouge">$this-&gt;templateBlock</code>.</p>
 
 <h3 id="mtf_block_render_handl">Create and use renders</h3>
 
 <p><strong>Use case</strong>: We want to test the “Add to cart” functionality. To add different types of products, we need to configure each type in a different way. For the configuration, we need options of the type we want to configure. We can use render to get product options. Render specifies which class to use for the specific type of product.</p>
 
-<p>Let’s see the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml"><code>Catalog/Test/Page/Product/CatalogProductView.xml</code></a> page. For the better readability we reduced a list of blocks to one block.</p>
+<p>Let’s see the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml"><code class="highlighter-rouge">Catalog/Test/Page/Product/CatalogProductView.xml</code></a> page. For the better readability we reduced a list of blocks to one block.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c"> --&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">area=</span><span class="s">&quot;Product&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;viewBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Product\View&quot;</span> <span class="na">locator=</span><span class="s">&quot;#maincontent&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">/&gt;</span>        
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogProductView"</span> <span class="na">area=</span><span class="s">"Product"</span> <span class="na">mca=</span><span class="s">"catalog/product/view"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"viewBlock"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Product\View"</span> <span class="na">locator=</span><span class="s">"#maincontent"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">/&gt;</span>        
     <span class="nt">&lt;/page&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>This page relates to the Magento_Catalog module and contains <code>ViewBlock</code>. This block has reference to the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php"><code>Magento\Catalog\Test\Block\Product\View</code></a> class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own <code>ViewBlock</code> in a corresponding module. And that is where you can use render!</p>
+<p>This page relates to the Magento_Catalog module and contains <code class="highlighter-rouge">ViewBlock</code>. This block has reference to the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php"><code class="highlighter-rouge">Magento\Catalog\Test\Block\Product\View</code></a> class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own <code class="highlighter-rouge">ViewBlock</code> in a corresponding module. And that is where you can use render!</p>
 
 <h4 id="mtf_block_render_create">Create a render</h4>
 
 <p>Let’s create render for the bundle product.</p>
 
-<p><strong>Step 1</strong>. Create <code>Bundle/Test/Page/Product/CatalogProductView.xml</code> page to merge with the basic page <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml"><code>Catalog/Test/Page/Product/CatalogProductView.xml</code></a>. <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html#mtf_page_merge">Learn more about page merging</a>.</p>
+<p><strong>Step 1</strong>. Create <code class="highlighter-rouge">Bundle/Test/Page/Product/CatalogProductView.xml</code> page to merge with the basic page <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml"><code class="highlighter-rouge">Catalog/Test/Page/Product/CatalogProductView.xml</code></a>. <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html#mtf_page_merge">Learn more about page merging</a>.</p>
 
-<p><strong>Step 2</strong>. In the <code>Bundle/Test/Page/Product/CatalogProductView.xml</code>, copy <code>page</code> node from the <code>Catalog/Test/Page/Product/CatalogProductView.xml</code> without <code>module</code> attribute</p>
+<p><strong>Step 2</strong>. In the <code class="highlighter-rouge">Bundle/Test/Page/Product/CatalogProductView.xml</code>, copy <code class="highlighter-rouge">page</code> node from the <code class="highlighter-rouge">Catalog/Test/Page/Product/CatalogProductView.xml</code> without <code class="highlighter-rouge">module</code> attribute</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c"> --&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">area=</span><span class="s">&quot;Product&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogProductView"</span> <span class="na">area=</span><span class="s">"Product"</span> <span class="na">mca=</span><span class="s">"catalog/product/view"</span><span class="nt">&gt;</span>
                 
     <span class="nt">&lt;/page&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p><strong>Step 3</strong>. Insert <code>block</code> with the same name of block and add a render that indicates the type of product and the class that processes this block</p>
+<p><strong>Step 3</strong>. Insert <code class="highlighter-rouge">block</code> with the same name of block and add a render that indicates the type of product and the class that processes this block</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c"> --&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">area=</span><span class="s">&quot;Product&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;viewBlock&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;render</span> <span class="na">name=</span><span class="s">&quot;bundle&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Bundle\Test\Block\Catalog\Product\View&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogProductView"</span> <span class="na">area=</span><span class="s">"Product"</span> <span class="na">mca=</span><span class="s">"catalog/product/view"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"viewBlock"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;render</span> <span class="na">name=</span><span class="s">"bundle"</span> <span class="na">class=</span><span class="s">"Magento\Bundle\Test\Block\Catalog\Product\View"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/block&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
@@ -1605,8 +1605,8 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
 <p>Details:</p>
 
 <ul>
-  <li>The <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the <code>page</code> node</li>
-  <li>In the <code>block</code>, we indicate <code>name</code> attribute only</li>
+  <li>The <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the <code class="highlighter-rouge">page</code> node</li>
+  <li>In the <code class="highlighter-rouge">block</code>, we indicate <code class="highlighter-rouge">name</code> attribute only</li>
 </ul>
 
 <p><strong>Step 4</strong>. Run the page generator</p>
@@ -1617,42 +1617,42 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
 
 <h4 id="mtf_block_render_use">Use a render</h4>
 
-<p>Let’s take a look at the basic class <code>Magento\Catalog\Test\Block\Product\View</code>, where a render calls the <code>getOptions()</code> method from <code>Magento\Bundle\Test\Block\Catalog\Product\View</code>.</p>
+<p>Let’s take a look at the basic class <code class="highlighter-rouge">Magento\Catalog\Test\Block\Product\View</code>, where a render calls the <code class="highlighter-rouge">getOptions()</code> method from <code class="highlighter-rouge">Magento\Bundle\Test\Block\Catalog\Product\View</code>.</p>
 
 <figure class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">getOptions</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$product</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="sd">/** @var CatalogProductSimple $product */</span>
     <span class="nv">$dataConfig</span> <span class="o">=</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getDataConfig</span><span class="p">();</span>
-    <span class="nv">$typeId</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$dataConfig</span><span class="p">[</span><span class="s1">&#39;type_id&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$dataConfig</span><span class="p">[</span><span class="s1">&#39;type_id&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="k">null</span><span class="p">;</span>
+    <span class="nv">$typeId</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$dataConfig</span><span class="p">[</span><span class="s1">'type_id'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$dataConfig</span><span class="p">[</span><span class="s1">'type_id'</span><span class="p">]</span> <span class="o">:</span> <span class="kc">null</span><span class="p">;</span>
     
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hasRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">)</span>
-        <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">&#39;getOptions&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span>
+        <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">'getOptions'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'product'</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span>
         <span class="o">:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+<span class="cp">?&gt;</span></code></pre></figure>
 
-<p>It contains the <code>getOptions()</code> method that:</p>
+<p>It contains the <code class="highlighter-rouge">getOptions()</code> method that:</p>
 
 <ul>
   <li>
-    <p>Gets from the <code>Bundle/Test/Fixture/BundleProduct.php</code> fixture the <code>type_id</code> field value <code>$dataConfig['type_id']</code>. In our case, <code>type_id='bundle'</code>.</p>
+    <p>Gets from the <code class="highlighter-rouge">Bundle/Test/Fixture/BundleProduct.php</code> fixture the <code class="highlighter-rouge">type_id</code> field value <code class="highlighter-rouge">$dataConfig['type_id']</code>. In our case, <code class="highlighter-rouge">type_id='bundle'</code>.</p>
   </li>
   <li>
-    <p>Calls the <code>hasRender()</code> method to check if there is a render with the name <code>bundle</code></p>
+    <p>Calls the <code class="highlighter-rouge">hasRender()</code> method to check if there is a render with the name <code class="highlighter-rouge">bundle</code></p>
   </li>
   <li>
-    <p>Calls the render if there is a render with the name <code>bundle</code></p>
+    <p>Calls the render if there is a render with the name <code class="highlighter-rouge">bundle</code></p>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">&#39;getOptions&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;product&#39;</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php5" data-lang="php5">$this-&gt;callRender($typeId, 'getOptions', ['product' =&gt; $product])</code></pre></figure>
 
 <ul>
   <li>Calls a default method if the render is absent</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$this-&gt;getCustomOptionsBlock()-&gt;getOptions($product);</code></pre></figure>
 
 <h3 id="define-selector">Define a selector/locator</h3>
 
@@ -1660,12 +1660,12 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
 
 <ol>
   <li>Use <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> and XPath strategies.</li>
-  <li>To work with forms, use the <code>name</code> attribute as a selector.</li>
-  <li>If an attribute is static (not auto-generated), use the <code>id</code> attribute.</li>
-  <li>If you cannot use <code>id</code>, use <code>data-*</code> attributes.</li>
-  <li>We recommend not to use the <code>class</code> attribute, because it can be changed and not unique very often.</li>
-  <li>Do not use complex hard-coded structures like <code>//div/div[2]//tbody//tr[1]/td[0]</code>, they can be unpredictably changed.</li>
-  <li>Do not use enclosed text such as button or label names like <code>//button[contains(., "Sign in")]</code></li>
+  <li>To work with forms, use the <code class="highlighter-rouge">name</code> attribute as a selector.</li>
+  <li>If an attribute is static (not auto-generated), use the <code class="highlighter-rouge">id</code> attribute.</li>
+  <li>If you cannot use <code class="highlighter-rouge">id</code>, use <code class="highlighter-rouge">data-*</code> attributes.</li>
+  <li>We recommend not to use the <code class="highlighter-rouge">class</code> attribute, because it can be changed and not unique very often.</li>
+  <li>Do not use complex hard-coded structures like <code class="highlighter-rouge">//div/div[2]//tbody//tr[1]/td[0]</code>, they can be unpredictably changed.</li>
+  <li>Do not use enclosed text such as button or label names like <code class="highlighter-rouge">//button[contains(., "Sign in")]</code></li>
 </ol>
 
 <!-- LINK DEFINITIONS -->

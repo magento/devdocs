@@ -1145,57 +1145,57 @@
 
 <h2 id="create-new-template-for-shipping-method-item">Create new template for shipping method item</h2>
 
-<p>In your custom module directory, create a new file: <code>&lt;your_module_dir&gt;/view/frontend/web/template/custom-method-item-template.html</code>. In this file, add the following code. 
-It is copied from the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/template/shipping-address/shipping-method-item.html</code> template, with the following modifications:</p>
+<p>In your custom module directory, create a new file: <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/template/custom-method-item-template.html</code>. In this file, add the following code. 
+It is copied from the <code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/template/shipping-address/shipping-method-item.html</code> template, with the following modifications:</p>
 
 <ul>
-  <li>a <code>&lt;tr&gt;</code> element added to contain the shipping method description</li>
+  <li>a <code class="highlighter-rouge">&lt;tr&gt;</code> element added to contain the shipping method description</li>
   <li>a column with trigger elements that provide the collapse/expand functionality added</li>
-  <li>the entire sample wrapped in <code>&lt;tbody&gt;</code> to provide the general collapsible context for rows:</li>
+  <li>the entire sample wrapped in <code class="highlighter-rouge">&lt;tbody&gt;</code> to provide the general collapsible context for rows:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Initialize collapsible binding --&gt;</span>
-<span class="nt">&lt;tbody</span> <span class="na">collapsible=</span><span class="s">&quot;as: &#39;$collapsible_&#39; + method.method_code&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;col col-method&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span>
-                   <span class="na">class=</span><span class="s">&quot;radio&quot;</span>
-                   <span class="na">click=</span><span class="s">&quot;element.selectShippingMethod&quot;</span>
-                   <span class="na">ifnot=</span><span class="s">&quot;method.error_message&quot;</span>
-                   <span class="na">ko-checked=</span><span class="s">&quot;element.isSelected&quot;</span>
-                   <span class="na">ko-value=</span><span class="s">&quot;method.carrier_code + &#39;_&#39; + method.method_code&quot;</span>
-                   <span class="na">attr=</span><span class="s">&quot;&#39;aria-labelledby&#39;: &#39;label_method_&#39; + method.method_code + &#39;_&#39; + method.carrier_code + &#39; &#39; + &#39;label_carrier_&#39; + method.method_code + &#39;_&#39; + method.carrier_code,</span>
-<span class="s">                        &#39;checked&#39;: element.rates().length == 1 || element.isSelected&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;tbody</span> <span class="na">collapsible=</span><span class="s">"as: '$collapsible_' + method.method_code"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col col-method"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span>
+                   <span class="na">class=</span><span class="s">"radio"</span>
+                   <span class="na">click=</span><span class="s">"element.selectShippingMethod"</span>
+                   <span class="na">ifnot=</span><span class="s">"method.error_message"</span>
+                   <span class="na">ko-checked=</span><span class="s">"element.isSelected"</span>
+                   <span class="na">ko-value=</span><span class="s">"method.carrier_code + '_' + method.method_code"</span>
+                   <span class="na">attr=</span><span class="s">"'aria-labelledby': 'label_method_' + method.method_code + '_' + method.carrier_code + ' ' + 'label_carrier_' + method.method_code + '_' + method.carrier_code,
+                        'checked': element.rates().length == 1 || element.isSelected"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/td&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;col col-price&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;each</span> <span class="na">args=</span><span class="s">&quot;element.getRegion(&#39;price&#39;)&quot;</span> <span class="na">render=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col col-price"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;each</span> <span class="na">args=</span><span class="s">"element.getRegion('price')"</span> <span class="na">render=</span><span class="s">""</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/td&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;col col-method&quot;</span>
-            <span class="na">attr=</span><span class="s">&quot;&#39;id&#39;: &#39;label_method_&#39; + method.method_code + &#39;_&#39; + method.carrier_code&quot;</span>
-            <span class="na">text=</span><span class="s">&quot;method.method_title&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;col col-carrier&quot;</span>
-            <span class="na">attr=</span><span class="s">&quot;&#39;id&#39;: &#39;label_carrier_&#39; + method.method_code + &#39;_&#39; + method.carrier_code&quot;</span>
-            <span class="na">text=</span><span class="s">&quot;method.carrier_title&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col col-method"</span>
+            <span class="na">attr=</span><span class="s">"'id': 'label_method_' + method.method_code + '_' + method.carrier_code"</span>
+            <span class="na">text=</span><span class="s">"method.method_title"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col col-carrier"</span>
+            <span class="na">attr=</span><span class="s">"'id': 'label_carrier_' + method.method_code + '_' + method.carrier_code"</span>
+            <span class="na">text=</span><span class="s">"method.carrier_title"</span> <span class="nt">/&gt;</span>
         <span class="c">&lt;!-- Column with collapsible trigger  --&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;col&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">toggleCollapsible=</span><span class="s">&quot;&#39;$collapsible_&#39; + method.method_code&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Info&#39;&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">toggleCollapsible=</span><span class="s">"'$collapsible_' + method.method_code"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">"i18n: 'Info'"</span><span class="nt">&gt;&lt;/span&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
     <span class="c">&lt;!-- Row for shipping method description --&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span> <span class="na">visible=</span><span class="s">&quot;$context[&#39;$collapsible_&#39; + method.method_code].opened&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;col&quot;</span> <span class="na">colspan=</span><span class="s">&quot;5&quot;</span> <span class="na">i18n=</span><span class="s">&quot;&#39;Some description.&#39;&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"row"</span> <span class="na">visible=</span><span class="s">"$context['$collapsible_' + method.method_code].opened"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col"</span> <span class="na">colspan=</span><span class="s">"5"</span> <span class="na">i18n=</span><span class="s">"'Some description.'"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;row row-error&quot;</span>
-        <span class="na">if=</span><span class="s">&quot;method.error_message&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;col col-error&quot;</span> <span class="na">colspan=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;alert&quot;</span> <span class="na">class=</span><span class="s">&quot;message error&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">text=</span><span class="s">&quot;method.error_message&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"row row-error"</span>
+        <span class="na">if=</span><span class="s">"method.error_message"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col col-error"</span> <span class="na">colspan=</span><span class="s">"5"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"alert"</span> <span class="na">class=</span><span class="s">"message error"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">text=</span><span class="s">"method.error_message"</span><span class="nt">&gt;&lt;/div&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;no-display&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span>
-                       <span class="na">attr=</span><span class="s">&quot;&#39;value&#39; : method.method_code, &#39;id&#39;: &#39;s_method_&#39; + method.method_code&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"no-display"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span>
+                       <span class="na">attr=</span><span class="s">"'value' : method.method_code, 'id': 's_method_' + method.method_code"</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
@@ -1203,27 +1203,27 @@ It is copied from the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/we
 
 <h2 id="create-new-template-for-shipping-methods-list">Create new template for shipping methods list</h2>
 
-<p>In your custom module directory, create a new file: <code>&lt;your_module_dir&gt;/view/frontend/web/template/custom-method-list-template.html</code>. In this file, add the following code. It uses the code from the <code>app/code/Magento/Checkout/view/frontend/web/template/shipping-address/shipping-method-list.html</code> template, with the following modifications:</p>
+<p>In your custom module directory, create a new file: <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/template/custom-method-list-template.html</code>. In this file, add the following code. It uses the code from the <code class="highlighter-rouge">app/code/Magento/Checkout/view/frontend/web/template/shipping-address/shipping-method-list.html</code> template, with the following modifications:</p>
 
 <ul>
-  <li>a column for triggers added in <code>&lt;thead&gt;</code></li>
-  <li><code>tbody</code> moved to the item template for collapsible context</li>
+  <li>a column for triggers added in <code class="highlighter-rouge">&lt;thead&gt;</code></li>
+  <li><code class="highlighter-rouge">tbody</code> moved to the item template for collapsible context</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;checkout-shipping-method-load&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;table-checkout-shipping-method&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"checkout-shipping-method-load"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-checkout-shipping-method"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;thead&gt;</span>
-        <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;col col-method&quot;</span> <span class="na">translate=</span><span class="s">&quot;&#39;Select Method&#39;&quot;</span><span class="nt">&gt;&lt;/th&gt;</span>
-            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;col col-price&quot;</span> <span class="na">translate=</span><span class="s">&quot;&#39;Price&#39;&quot;</span><span class="nt">&gt;&lt;/th&gt;</span>
-            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;col col-method&quot;</span> <span class="na">translate=</span><span class="s">&quot;&#39;Method Title&#39;&quot;</span><span class="nt">&gt;&lt;/th&gt;</span>
-            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;col col-carrier&quot;</span> <span class="na">translate=</span><span class="s">&quot;&#39;Carrier Title&#39;&quot;</span><span class="nt">&gt;&lt;/th&gt;</span>
+        <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"col col-method"</span> <span class="na">translate=</span><span class="s">"'Select Method'"</span><span class="nt">&gt;&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"col col-price"</span> <span class="na">translate=</span><span class="s">"'Price'"</span><span class="nt">&gt;&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"col col-method"</span> <span class="na">translate=</span><span class="s">"'Method Title'"</span><span class="nt">&gt;&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"col col-carrier"</span> <span class="na">translate=</span><span class="s">"'Carrier Title'"</span><span class="nt">&gt;&lt;/th&gt;</span>
             <span class="c">&lt;!-- Column for triggers --&gt;</span>
-            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;col&quot;</span><span class="nt">&gt;&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"col"</span><span class="nt">&gt;&lt;/th&gt;</span>
         <span class="nt">&lt;/tr&gt;</span>
         <span class="nt">&lt;/thead&gt;</span>
         <span class="c">&lt;!-- tbody was moved inside item template --&gt;</span>
-        <span class="c">&lt;!-- ko foreach: { data: rates(), as: &#39;method&#39;} --&gt;</span>
+        <span class="c">&lt;!-- ko foreach: { data: rates(), as: 'method'} --&gt;</span>
         	<span class="c">&lt;!--ko template: { name: element.shippingMethodItemTemplate} --&gt;&lt;!-- /ko --&gt;</span>
         <span class="c">&lt;!-- /ko --&gt;</span>
     <span class="nt">&lt;/table&gt;</span>
@@ -1231,24 +1231,24 @@ It is copied from the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/we
 
 <h2 id="override-shipping-step-configuration">Override shipping step configuration</h2>
 
-<p>In your custom module directory, create a new file: <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code>. In this file, add the following code. It overrides the <code>shippingMethodListTemplate</code> and <code>shippingMethodItemTemplate</code> properties of <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/js/view/shipping.js</code>:</p>
+<p>In your custom module directory, create a new file: <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code>. In this file, add the following code. It overrides the <code class="highlighter-rouge">shippingMethodListTemplate</code> and <code class="highlighter-rouge">shippingMethodItemTemplate</code> properties of <code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/js/view/shipping.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"checkout.root"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;jsLayout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;components&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;checkout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;steps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shipping-step&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shippingAddress&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shippingMethodItemTemplate&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Vendor_Checkout/custom-method-item-template<span class="nt">&lt;/item&gt;</span>
-                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shippingMethodListTemplate&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Vendor_Checkout/custom-method-list-template<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"jsLayout"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"components"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"checkout"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"steps"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"shipping-step"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"shippingAddress"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"shippingMethodItemTemplate"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Vendor_Checkout/custom-method-item-template<span class="nt">&lt;/item&gt;</span>
+                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"shippingMethodListTemplate"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Vendor_Checkout/custom-method-list-template<span class="nt">&lt;/item&gt;</span>
                                                     <span class="nt">&lt;/item&gt;</span>
                                                 <span class="nt">&lt;/item&gt;</span>
                                             <span class="nt">&lt;/item&gt;</span>

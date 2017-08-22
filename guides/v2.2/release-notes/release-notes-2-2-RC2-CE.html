@@ -857,7 +857,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 67283 -->
 <ul>
-  <li>When upgrading Magento from 2.1.x to 2.2, the <code>quote_address.free_shipping</code> column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.(RC2.0)</li>
+  <li>When upgrading Magento from 2.1.x to 2.2, the <code class="highlighter-rouge">quote_address.free_shipping</code> column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.(RC2.0)</li>
 </ul>
 
 <!--- 70861-->
@@ -890,17 +890,17 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 69854 -->
 <ul>
-  <li>You can now successfully use the <code>config:set</code> command to set allowed or default currencies.</li>
+  <li>You can now successfully use the <code class="highlighter-rouge">config:set</code> command to set allowed or default currencies.</li>
 </ul>
 
 <!--- 67299, 67315 -->
 <ul>
-  <li>The <code>catalog_url_rewrite_product_category</code> table is the same whether you’ve freshly installed or updated Magento 2.2.</li>
+  <li>The <code class="highlighter-rouge">catalog_url_rewrite_product_category</code> table is the same whether you’ve freshly installed or updated Magento 2.2.</li>
 </ul>
 
 <!--- 70314 -->
 <ul>
-  <li>The <code>cron:install</code> command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for <code>crontab</code> commands contained double quotes that were not escaped, which caused invalid commands to be written to the <code>crontab</code> file. <a href="https://github.com/magento/magento2/issues/10040">GitHub-10040</a></li>
+  <li>The <code class="highlighter-rouge">cron:install</code> command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for <code class="highlighter-rouge">crontab</code> commands contained double quotes that were not escaped, which caused invalid commands to be written to the <code class="highlighter-rouge">crontab</code> file. <a href="https://github.com/magento/magento2/issues/10040">GitHub-10040</a></li>
 </ul>
 
 <!--- 70318 -->
@@ -910,17 +910,17 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 67020 -->
 <ul>
-  <li>Magento now handles the <code>catalog_product_entity_media_gallery_value.position</code>  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code. (RC1.5)</li>
+  <li>Magento now handles the <code class="highlighter-rouge">catalog_product_entity_media_gallery_value.position</code>  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code. (RC1.5)</li>
 </ul>
 
 <!--- 70869 -->
 <ul>
-  <li>Magento no longer displays console errors after CSS merging and minification is enabled. Previously, when CSS merging and minification was enabled, the storefront was not displayed as expected, and the <code>styles-l.min.css</code> and <code>print.min.css</code> files could not be found. (RC1.8)</li>
+  <li>Magento no longer displays console errors after CSS merging and minification is enabled. Previously, when CSS merging and minification was enabled, the storefront was not displayed as expected, and the <code class="highlighter-rouge">styles-l.min.css</code> and <code class="highlighter-rouge">print.min.css</code> files could not be found. (RC1.8)</li>
 </ul>
 
 <!--- 68969 -->
 <ul>
-  <li>The contents of the <code>sales_sequence_meta</code> table is the same whether you install or upgrade Magento. (RC1.8)</li>
+  <li>The contents of the <code class="highlighter-rouge">sales_sequence_meta</code> table is the same whether you install or upgrade Magento. (RC1.8)</li>
 </ul>
 
 <h3 id="catalog-1">Catalog</h3>
@@ -932,7 +932,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 66480 -->
 <ul>
-  <li>You can now successfully create a product  and assign it to a store without encountering the following error: <code>Unique constraint violation found</code>. <a href="https://github.com/magento/magento2/issues/6671">GitHub-6671</a></li>
+  <li>You can now successfully create a product  and assign it to a store without encountering the following error: <code class="highlighter-rouge">Unique constraint violation found</code>. <a href="https://github.com/magento/magento2/issues/6671">GitHub-6671</a></li>
 </ul>
 
 <!--- 62637 -->
@@ -990,7 +990,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 59514 -->
 <ul>
-  <li>The <code>tax_region_id</code> value is no longer hard-coded in the <code>\Magento\Tax\Setup\InstallData</code> file.</li>
+  <li>The <code class="highlighter-rouge">tax_region_id</code> value is no longer hard-coded in the <code class="highlighter-rouge">\Magento\Tax\Setup\InstallData</code> file.</li>
 </ul>
 
 <!--- 69964 -->
@@ -1015,7 +1015,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 67048 -->
 <ul>
-  <li>You can now add a <code>translate</code> attribute to any String argument in the <code>di.xml</code> file for any class. This attribute provides an ability on the level of dependency injection configuration to specify that an argument can be translated. The actual translation of strings is handled by another Magento component. (RC1.6)</li>
+  <li>You can now add a <code class="highlighter-rouge">translate</code> attribute to any String argument in the <code class="highlighter-rouge">di.xml</code> file for any class. This attribute provides an ability on the level of dependency injection configuration to specify that an argument can be translated. The actual translation of strings is handled by another Magento component. (RC1.6)</li>
 </ul>
 
 <!--- 70642 -->
@@ -1091,7 +1091,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 65245 -->
 <ul>
-  <li>Magento now sends the <code>parent_id</code> of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed. (RC1.5)</li>
+  <li>Magento now sends the <code class="highlighter-rouge">parent_id</code> of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed. (RC1.5)</li>
 </ul>
 
 <h3 id="shipping-1">Shipping</h3>

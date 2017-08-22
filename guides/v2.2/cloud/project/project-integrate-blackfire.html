@@ -1591,56 +1591,63 @@
   <li>
     <p>Log in to your Magento Enterprise Cloud Edition project.</p>
 
-    <pre><code>magento-cloud login
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+    </div>
   </li>
   <li>
     <p>List projects:</p>
 
-    <pre><code>magento-cloud project:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+    </div>
   </li>
   <li>
     <p>List environments in the project:</p>
 
-    <pre><code>magento-cloud environment:list -p &lt;project ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project ID&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>See what branch you’re currently in, if any.</p>
 
-    <pre><code>git branch
+    <div class="highlighter-rouge"><pre class="highlight"><code>git branch
 </code></pre>
+    </div>
   </li>
   <li>
     <p>If necessary, check out an existing branch:</p>
 
-    <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
+    </div>
 
-    <p>You can also create a new branch using the <code>magento-cloud environment:branch</code> command.</p>
+    <p>You can also create a new branch using the <code class="highlighter-rouge">magento-cloud environment:branch</code> command.</p>
   </li>
   <li>
     <p>Back up the environment using a snapshot:</p>
 
-    <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+    </div>
   </li>
-  <li>Use a text editor to open <code>&lt;project root dir&gt;/.magento.app.yaml</code>.</li>
+  <li>Use a text editor to open <code class="highlighter-rouge">&lt;project root dir&gt;/.magento.app.yaml</code>.</li>
   <li>
-    <p>Add the following to the <code>extensions</code> block under <code>runtime:</code></p>
+    <p>Add the following to the <code class="highlighter-rouge">extensions</code> block under <code class="highlighter-rouge">runtime:</code></p>
 
-    <pre><code>    - name: blackfire
+    <div class="highlighter-rouge"><pre class="highlight"><code>    - name: blackfire
       configuration:
          server_id: "&lt;blackfire Server ID&gt;"
          server_token: "&lt;blackfire Server token&gt;"
 </code></pre>
+    </div>
 
-    <p>Change <code>&lt;blackfire Server ID&gt;</code> and <code>&lt;blackfire Server token&gt;</code> to the values from your Blackfire account.</p>
+    <p>Change <code class="highlighter-rouge">&lt;blackfire Server ID&gt;</code> and <code class="highlighter-rouge">&lt;blackfire Server token&gt;</code> to the values from your Blackfire account.</p>
 
     <p>For example:</p>
 
-    <pre><code>runtime:
+    <div class="highlighter-rouge"><pre class="highlight"><code>runtime:
   extensions:
     - mcrypt
     - redis
@@ -1651,17 +1658,19 @@
          server_id: "&lt;blackfire Server ID&gt;"
          server_token: "&lt;blackfire Server token&gt;"
 </code></pre>
+    </div>
   </li>
-  <li>Save your changes to <code>.magento.app.yaml</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
   <li>
     <p>Add, commit, and push your changes to the environment:</p>
 
-    <pre><code>git add -A
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
 git commit -m "&lt;message&gt;"
 git push origin
 </code></pre>
+    </div>
 
-    <p>If errors display during deployment, open <code>.magento.app.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
+    <p>If errors display during deployment, open <code class="highlighter-rouge">.magento.app.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
   </li>
 </ol>
 
@@ -1681,12 +1690,13 @@ git push origin
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>php --ri blackfire
+    <div class="highlighter-rouge"><pre class="highlight"><code>php --ri blackfire
 </code></pre>
+    </div>
 
     <p>A sample result follows:</p>
 
-    <pre><code>blackfire
+    <div class="highlighter-rouge"><pre class="highlight"><code>blackfire
 
 Blackfire =&gt; enabled
 Blackfire =&gt; 1.10.3
@@ -1710,6 +1720,7 @@ blackfire.env_token =&gt; no value =&gt; no value
 blackfire.log_level =&gt; 1 =&gt; 1
 blackfire.log_file =&gt; no value =&gt; no value
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1746,7 +1757,7 @@ blackfire.log_file =&gt; no value =&gt; no value
 <h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.2/cloud/project/project-start.html">Get started with a project</a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
 </ul>
 
 		</div>

@@ -1715,7 +1715,7 @@
 
 <ul>
   <li>Errors are logged to the file reports at server, and never shown to a user</li>
-  <li>A symlink to a static view file is published to the <code>pub/static</code> directory for each requested file</li>
+  <li>A symlink to a static view file is published to the <code class="highlighter-rouge">pub/static</code> directory for each requested file</li>
   <li>Default mode is not optimized for a production environment, primarily because of the adverse performance impact of <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> being dynamically generated rather than <a href="https://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized</a>. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.</li>
 </ul>
 
@@ -1727,9 +1727,9 @@
 <p>In developer mode:</p>
 
 <ul>
-  <li>A symlink to a static view file is published to the <code>pub/static</code> directory for each requested file</li>
+  <li>A symlink to a static view file is published to the <code class="highlighter-rouge">pub/static</code> directory for each requested file</li>
   <li>Uncaught exceptions display in the browser</li>
-  <li>System logging in <code>var/report</code> is verbose</li>
+  <li>System logging in <code class="highlighter-rouge">var/report</code> is verbose</li>
   <li>An <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> is thrown in the error handler, rather than being logged</li>
   <li>An exception is thrown when an <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> subscriber cannot be invoked</li>
 </ul>
@@ -1737,7 +1737,7 @@
 <p>For more information, see <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.</p>
 
 <h2 id="mode-production">Production mode</h2>
-<p>You should run the Magento software in production mode when it’s deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento <code>pub/static</code> directory.</p>
+<p>You should run the Magento software in production mode when it’s deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento <code class="highlighter-rouge">pub/static</code> directory.</p>
 
 <p>This improves performance because static files don’t go through the fallback mechanism; instead, URLs for static files are created as needed.</p>
 

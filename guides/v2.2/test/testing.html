@@ -528,9 +528,9 @@
 <p>For more information, please see the <a href="/guides/v2.2/test/js/test_js-unit.html">Extension Developer Guide on JavaScript Tests</a>.</p>
 
 <h2 id="static">Static</h2>
-<p>Static code analysis checks that PHP code follows the Magento 2 coding standards and best practices. They usually are executed during continuous integration using the <code>bin/magento</code> tool.</p>
+<p>Static code analysis checks that PHP code follows the Magento 2 coding standards and best practices. They usually are executed during continuous integration using the <code class="highlighter-rouge">bin/magento</code> tool.</p>
 
-<p>Please see the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html"><code>magento dev:tests:run</code></a> documentation for more information, using the test type <code>static</code>.</p>
+<p>Please see the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html"><code class="highlighter-rouge">magento dev:tests:run</code></a> documentation for more information, using the test type <code class="highlighter-rouge">static</code>.</p>
 
 <h2 id="unit">Unit</h2>
 <p>Unit tests are used to check a single unit of PHP code in isolation. They are usually written during development using <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">test-driven development</a> (TDD).</p>
@@ -541,13 +541,13 @@
 
 <p>Please refer to the article <a href="/guides/v2.2/test/unit/writing_testable_code.html">Writing testable code</a> for more information on what to keep in mind when starting with TDD.</p>
 
-<p>The <code>bin/magento</code> tool provides a common entry point to execute any of the tests, which can be useful for continuous integration. Please see the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html">System Administrators Guide on Running Tests</a> for more information.</p>
+<p>The <code class="highlighter-rouge">bin/magento</code> tool provides a common entry point to execute any of the tests, which can be useful for continuous integration. Please see the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html">System Administrators Guide on Running Tests</a> for more information.</p>
 
 <h2 id="where-to-find-the-tests-in-the-file-system">Where to find the tests in the file system</h2>
 
-<p>Each of the test types listed above corresponds to a subdirectory in <code>&lt;magento2 root dir&gt;/dev/tests</code>.</p>
+<p>Each of the test types listed above corresponds to a subdirectory in <code class="highlighter-rouge">&lt;magento2 root dir&gt;/dev/tests</code>.</p>
 
-<pre><code>dev/tests  
+<div class="highlighter-rouge"><pre class="highlight"><code>dev/tests  
 ├── api-functional  
 ├── functional  
 ├── integration  
@@ -555,6 +555,7 @@
 ├── static  
 └── unit  
 </code></pre>
+</div>
 
 <p>Each one of these test types has different requirements that must be satisfied before they can be executed.</p>
 

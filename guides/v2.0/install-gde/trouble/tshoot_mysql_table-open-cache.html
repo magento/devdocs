@@ -947,8 +947,9 @@
 
 <p>During installation, the following message displays:</p>
 
-<pre><code>MySQL server has gone away
+<div class="highlighter-rouge"><pre class="highlight"><code>MySQL server has gone away
 </code></pre>
+</div>
 
 <h3 id="solution">Solution</h3>
 
@@ -956,32 +957,33 @@
 
 <ol>
   <li>
-    <p>As a user with <code>root</code> privileges, open the MySQL configuration file in a text editor.</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open the MySQL configuration file in a text editor.</p>
 
-    <p>Ubuntu 16: <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code></p>
+    <p>Ubuntu 16: <code class="highlighter-rouge">/etc/mysql/mysql.conf.d/mysqld.cnf</code></p>
 
-    <p>Ubuntu earlier than 16: <code>/etc/mysql/my.cnf</code></p>
+    <p>Ubuntu earlier than 16: <code class="highlighter-rouge">/etc/mysql/my.cnf</code></p>
 
-    <p>CentOS: <code>/etc/my.cnf</code></p>
+    <p>CentOS: <code class="highlighter-rouge">/etc/my.cnf</code></p>
   </li>
   <li>
-    <p>Search for an existing <code>table_open_cache</code> setting. If there is none, add one.</p>
+    <p>Search for an existing <code class="highlighter-rouge">table_open_cache</code> setting. If there is none, add one.</p>
   </li>
   <li>
     <p>Set the value to at least 250:</p>
 
-    <pre><code>table_open_cache=250
+    <div class="highlighter-rouge"><pre class="highlight"><code>table_open_cache=250
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Save your changes to <code>my.cnf</code> and exit the text editor.</p>
+    <p>Save your changes to <code class="highlighter-rouge">my.cnf</code> and exit the text editor.</p>
   </li>
   <li>
-    <p>As a user with <code>root</code> privileges, restart the MySQL service:</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, restart the MySQL service:</p>
 
-    <p>Ubuntu: <code>service mysql restart</code></p>
+    <p>Ubuntu: <code class="highlighter-rouge">service mysql restart</code></p>
 
-    <p>CentOS: <code>service mysqld restart</code></p>
+    <p>CentOS: <code class="highlighter-rouge">service mysqld restart</code></p>
   </li>
 </ol>
 

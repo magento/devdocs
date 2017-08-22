@@ -1199,7 +1199,7 @@
 
 
 			<h2 id="overview">Overview</h2>
-<p>The Expandable Column <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> is an <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> for <a href="/guides/v2.2/ui_comp_guide/components/ui-column.html">Column</a>. It alphabetically sorts the options associated with a record/row and renders several options (the number is defined in configuration) into a cell. The full list of options is displayed in a tooltip implemented by the Tooltip UI component <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/tooltip.js</code>.</p>
+<p>The Expandable Column <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> is an <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> for <a href="/guides/v2.2/ui_comp_guide/components/ui-column.html">Column</a>. It alphabetically sorts the options associated with a record/row and renders several options (the number is defined in configuration) into a cell. The full list of options is displayed in a tooltip implemented by the Tooltip UI component <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/tooltip.js</code>.</p>
 
 <p>The Expandable Column component can be used in <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> and the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
 
@@ -1208,9 +1208,9 @@
 <p>The Expandable Column UI component includes the following files:</p>
 
 <ul>
-  <li>JS component: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/columns/expandable.js</code></li>
-  <li>Template: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/cells/expandable.html</code></li>
-  <li>Template for tooltip content: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/cells/expandable/content.html</code></li>
+  <li>JS component: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/columns/expandable.js</code></li>
+  <li>Template: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/cells/expandable.html</code></li>
+  <li>Template for tooltip content: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/cells/expandable/content.html</code></li>
 </ul>
 
 <h2 id="configuration-settings">Configuration Settings</h2>
@@ -1248,15 +1248,15 @@
     </tr>
 </table>
 
-<p>Component’s options are set in the configuration <code>.xml</code> file as follows:</p>
+<p>Component’s options are set in the configuration <code class="highlighter-rouge">.xml</code> file as follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;ids&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;options&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Catalog\Model\Product\Attribute\Source\Status<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/columns/expandable<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;tooltipTitle&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Tooltip Title<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visibeItemsLimit&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"ids"</span> <span class="na">class=</span><span class="s">"Magento\Ui\Component\MassAction\Columns\Column"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Catalog\Model\Product\Attribute\Source\Status<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/grid/columns/expandable<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tooltipTitle"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Tooltip Title<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"visibeItemsLimit"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>5<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/column&gt;</span></code></pre></figure>
@@ -1266,7 +1266,7 @@
 <p>This component has a dependency on the following component:</p>
 
 <ul>
-  <li>Column: <code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/columns/column.js</code></li>
+  <li>Column: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/columns/column.js</code></li>
 </ul>
 
 <h2 id="methods-and-events">Methods and Events</h2>
@@ -1274,11 +1274,11 @@
 <p>The following <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> methods are available:</p>
 
 <ul>
-  <li><code>getFullLabel()</code>: gets a label from a full list of options.</li>
-  <li><code>getShortLabel()</code>: gets a label from a list of options limited by <code>visibeItemsLimit</code> value.</li>
-  <li><code>getLabelsArray()</code>: extracts an array of labels associated with provided values and sorts these labels alphabetically.</li>
-  <li><code>isExpandable()</code>: checks if the amount of options associated with a record is greater than a <code>visibeItemsLimit</code> value.</li>
-  <li><code>flatOptions()</code>: transforms the tree options structure to a linear array.</li>
+  <li><code class="highlighter-rouge">getFullLabel()</code>: gets a label from a full list of options.</li>
+  <li><code class="highlighter-rouge">getShortLabel()</code>: gets a label from a list of options limited by <code class="highlighter-rouge">visibeItemsLimit</code> value.</li>
+  <li><code class="highlighter-rouge">getLabelsArray()</code>: extracts an array of labels associated with provided values and sorts these labels alphabetically.</li>
+  <li><code class="highlighter-rouge">isExpandable()</code>: checks if the amount of options associated with a record is greater than a <code class="highlighter-rouge">visibeItemsLimit</code> value.</li>
+  <li><code class="highlighter-rouge">flatOptions()</code>: transforms the tree options structure to a linear array.</li>
 </ul>
 
 		</div>

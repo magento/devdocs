@@ -1902,7 +1902,7 @@
 
 
 			<h2 id="ms-entry-script">Set values in an entry point script</h2>
-<p>If necessary, copy the existing <code>index.php</code> entry point script for your <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> or <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> and add to it the following:</p>
+<p>If necessary, copy the existing <code class="highlighter-rouge">index.php</code> entry point script for your <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> or <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> and add to it the following:</p>
 
 <ul>
   <li>
@@ -1913,17 +1913,17 @@
     <p>Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see <a href="/guides/v2.2/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>.</p>
   </li>
   <li>
-    <p>You use one virtual host per website; the virtual host configuration file is <code>/etc/httpd/httpd.conf</code></p>
+    <p>You use one virtual host per website; the virtual host configuration file is <code class="highlighter-rouge">/etc/httpd/httpd.conf</code></p>
 
     <p>Different versions of Apache on different operating systems set up virtual hosts differently. Consult the <a href="https://httpd.apache.org/docs/2.4/vhosts" target="_blank">Apache documentation</a> or a network administrator if you’re not sure how to set up a virtual host.</p>
   </li>
-  <li>The Magento software is installed in <code>/var/www/html/magento2</code></li>
+  <li>The Magento software is installed in <code class="highlighter-rouge">/var/www/html/magento2</code></li>
   <li>
     <p>You have two websites other than the default:</p>
 
     <ul>
-      <li><code>french.mysite.mg</code> with website code <code>french</code> and store view code <code>fr</code></li>
-      <li><code>german.mysite.mg</code> with website code <code>german</code> and store view code <code>de</code></li>
+      <li><code class="highlighter-rouge">french.mysite.mg</code> with website code <code class="highlighter-rouge">french</code> and store view code <code class="highlighter-rouge">fr</code></li>
+      <li><code class="highlighter-rouge">german.mysite.mg</code> with website code <code class="highlighter-rouge">german</code> and store view code <code class="highlighter-rouge">de</code></li>
     </ul>
   </li>
 </ul>
@@ -1941,9 +1941,9 @@
 <p>See <a href="/guides/v2.2/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a>.</p>
 
 <h2 id="ms-apache-vhosts">Step 2: Create Apache virtual hosts</h2>
-<p>This section discusses how to set values for <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> using the Apache server variable <code>SetEnvIf</code> in a virtual host.</p>
+<p>This section discusses how to set values for <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> using the Apache server variable <code class="highlighter-rouge">SetEnvIf</code> in a virtual host.</p>
 
-<p>For more information about <code>SetEnvIf</code>, see:</p>
+<p>For more information about <code class="highlighter-rouge">SetEnvIf</code>, see:</p>
 
 <ul>
   <li><a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html" target="_blank">Apache 2.2</a></li>
@@ -1952,15 +1952,15 @@
 
 <div class="collapsible"><b class="collapsible-title">To create Apache virtual hosts: </b><div class="collapsible-content"><ol>
   <li>
-    <p>As a user with <code>root</code> privileges, open the virtual host configuration file in a text editor.</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open the virtual host configuration file in a text editor.</p>
 
-    <p>For example, open <code>/etc/httpd/conf/httpd.conf</code></p>
+    <p>For example, open <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code></p>
   </li>
-  <li>Locate the section starting with <code>&lt;VirtualHost *:80&gt;</code>.</li>
+  <li>Locate the section starting with <code class="highlighter-rouge">&lt;VirtualHost *:80&gt;</code>.</li>
   <li>
     <p>Create the following virtual hosts after any existing virtual hosts:</p>
 
-    <pre><code> &lt;VirtualHost *:80&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code> &lt;VirtualHost *:80&gt;
     ServerName          mysite.mg
     DocumentRoot        /var/www/html/magento2/pub/
  &lt;/VirtualHost&gt;
@@ -1979,14 +1979,15 @@
     SetEnv MAGE_RUN_TYPE "website"
  &lt;/VirtualHost&gt;
 </code></pre>
+    </div>
   </li>
-  <li>Save your changes to <code>httpd.conf</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">httpd.conf</code> and exit the text editor.</li>
   <li>
     <p>Restart Apache:</p>
 
     <ul>
-      <li>CentOS: <code>service httpd restart</code></li>
-      <li>Ubuntu: <code>service apache2 restart</code></li>
+      <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
+      <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
     </ul>
   </li>
 </ol>
@@ -1995,24 +1996,26 @@
 <h2 id="ms-apache-verify">Verify your site</h2>
 <div>
 
-  <p>Unless you have DNS set up for your stores’ URLs, you must add a static route to the host in your <code>hosts</code> file:</p>
+  <p>Unless you have DNS set up for your stores’ URLs, you must add a static route to the host in your <code class="highlighter-rouge">hosts</code> file:</p>
 
   <ol>
-    <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system" target="_blank"><code>hosts</code> file</a>.</li>
+    <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system" target="_blank"><code class="highlighter-rouge">hosts</code> file</a>.</li>
     <li>
       <p>Add the static route in the format:</p>
 
-      <pre><code>&lt;ip address&gt; french.mysite.mg
+      <div class="highlighter-rouge"><pre class="highlight"><code>&lt;ip address&gt; french.mysite.mg
 &lt;ip address&gt; german.mysite.mg
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Go to one of the following URLs in your browser:</p>
 
-      <pre><code>http://mysite.mg/admin
+      <div class="highlighter-rouge"><pre class="highlight"><code>http://mysite.mg/admin
 http://french.mysite.mg/frenchstoreview
 http://german.mysite.mg/germanstoreview
 </code></pre>
+      </div>
     </li>
   </ol>
 

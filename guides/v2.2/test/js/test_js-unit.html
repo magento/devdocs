@@ -535,7 +535,7 @@
 
 <h2 id="unit-test-overview">Overview</h2>
 
-<p>To run the automated JavaScript unit tests, you run the <a href="#process-overview"><code>run_js_tests.php</code> script</a> inside the PHP interpreter from the command line. When you run the PHP script, it reads <a href="#config-files">configuration files</a> in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory. It also generates a <code>jsTestDriver.conf</code> YAML configuration file in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory. The JsTestDriver reads this generated file to run the tests. After the PHP interpreter runs for the first time, you can run the unit tests from the [PhpStorm IDE].</p>
+<p>To run the automated JavaScript unit tests, you run the <a href="#process-overview"><code class="highlighter-rouge">run_js_tests.php</code> script</a> inside the PHP interpreter from the command line. When you run the PHP script, it reads <a href="#config-files">configuration files</a> in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js</code> directory. It also generates a <code class="highlighter-rouge">jsTestDriver.conf</code> YAML configuration file in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js</code> directory. The JsTestDriver reads this generated file to run the tests. After the PHP interpreter runs for the first time, you can run the unit tests from the [PhpStorm IDE].</p>
 
 <h3 id="test-library">JsTestDriver test library</h3>
 
@@ -547,96 +547,96 @@
 
 <h3 id="framework">jsunit.requirejsUtil framework</h3>
 
-<p>The unit tests also have their own framework. The <code>framework/requirejs-util.js</code> file declares the <code>jsunit.requirejsUtil</code> framework object, which supports testing of <code>RequireJS</code> (AMD) modules.</p>
+<p>The unit tests also have their own framework. The <code class="highlighter-rouge">framework/requirejs-util.js</code> file declares the <code class="highlighter-rouge">jsunit.requirejsUtil</code> framework object, which supports testing of <code class="highlighter-rouge">RequireJS</code> (AMD) modules.</p>
 
-<p>These modules actively call the global <code>define()</code> function just upon loading rather than passively declaring their classes or functions. <code>RequireJS</code> modules usually do not expose anything to the global state. Instead, the modules pass all declarations to the <code>define()</code> function.</p>
+<p>These modules actively call the global <code class="highlighter-rouge">define()</code> function just upon loading rather than passively declaring their classes or functions. <code class="highlighter-rouge">RequireJS</code> modules usually do not expose anything to the global state. Instead, the modules pass all declarations to the <code class="highlighter-rouge">define()</code> function.</p>
 
-<p>This organization enables testing of <code>RequireJS</code> modules without any additional Magento test framework (MTF) support. <code>jsunit.requirejsUtil</code> intercepts all <code>define()</code> calls and can pass <code>RequireJS</code> modules to their corresponding tests.</p>
+<p>This organization enables testing of <code class="highlighter-rouge">RequireJS</code> modules without any additional Magento test framework (MTF) support. <code class="highlighter-rouge">jsunit.requirejsUtil</code> intercepts all <code class="highlighter-rouge">define()</code> calls and can pass <code class="highlighter-rouge">RequireJS</code> modules to their corresponding tests.</p>
 
-<p>For example, <code>&lt;magento2_root_dir&gt;/dev/tests/js/testsuite/mage/requirejs/plugin/id-normalizer-test.js</code>:</p>
+<p>For example, <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js/testsuite/mage/requirejs/plugin/id-normalizer-test.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">IdNormalizerTest</span> <span class="o">=</span> <span class="nx">TestCase</span><span class="p">(</span><span class="s1">&#39;IdNormalizerTest&#39;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">IdNormalizerTest</span> <span class="o">=</span> <span class="nx">TestCase</span><span class="p">(</span><span class="s1">'IdNormalizerTest'</span><span class="p">);</span>
 
 <span class="nx">IdNormalizerTest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setUp</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">defineArgs</span> <span class="o">=</span> <span class="nx">jsunit</span><span class="p">.</span><span class="nx">requirejsUtil</span><span class="p">.</span><span class="nx">getDefineArgsInScript</span><span class="p">(</span><span class="s1">&#39;lib/web/mage/requirejs/plugin/id-normalizer.js&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">defineArgs</span> <span class="o">=</span> <span class="nx">jsunit</span><span class="p">.</span><span class="nx">requirejsUtil</span><span class="p">.</span><span class="nx">getDefineArgsInScript</span><span class="p">(</span><span class="s1">'lib/web/mage/requirejs/plugin/id-normalizer.js'</span><span class="p">);</span>
 
-    <span class="nx">assertNotUndefined</span><span class="p">(</span><span class="s1">&#39;There expected to be a define() call&#39;</span><span class="p">,</span> <span class="nx">defineArgs</span><span class="p">);</span>
-    <span class="nx">assertEquals</span><span class="p">(</span><span class="s1">&#39;Wrong number of arguments in the define() call&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">defineArgs</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="nx">assertNotUndefined</span><span class="p">(</span><span class="s1">'There expected to be a define() call'</span><span class="p">,</span> <span class="nx">defineArgs</span><span class="p">);</span>
+    <span class="nx">assertEquals</span><span class="p">(</span><span class="s1">'Wrong number of arguments in the define() call'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">defineArgs</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">normalizer</span> <span class="o">=</span> <span class="nx">defineArgs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// Now we have object to be tested</span>
 <span class="p">};</span></code></pre></figure>
 
 <h2 id="config-files">Configuration files</h2>
 
-<p>The <code>run_js_tests.php</code> script processes the <a href="#jstestdrivephp"><code>jsTestDriver.php.dist</code></a> and <a href="#jstestdriverorderphp"><code>jsTestDriverOrder.php</code></a> configuration files.</p>
+<p>The <code class="highlighter-rouge">run_js_tests.php</code> script processes the <a href="#jstestdrivephp"><code class="highlighter-rouge">jsTestDriver.php.dist</code></a> and <a href="#jstestdriverorderphp"><code class="highlighter-rouge">jsTestDriverOrder.php</code></a> configuration files.</p>
 
-<p>Both files reside in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</p>
+<p>Both files reside in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</p>
 
-<h3 id="jstestdrivephp"><code>jsTestDriver.php.dist</code> file</h3>
+<h3 id="jstestdrivephp"><code class="highlighter-rouge">jsTestDriver.php.dist</code> file</h3>
 
-<p><code>&lt;magento2_root_dir&gt;/dev/tests/js/jsTestDriver.php.dist</code> specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code:</p>
+<p><code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js/jsTestDriver.php.dist</code> specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;server&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://localhost:9876&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;proxy&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;matcher&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/lib/web/*&#39;</span><span class="p">,</span> <span class="s1">&#39;server&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;%s/test/%s/lib/web/&#39;</span><span class="p">)),</span>
-    <span class="s1">&#39;load&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;/lib/web/globalize&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;/lib/web/jquery/ui&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;/lib/web/mage/localization&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;/lib/web/mage/validation&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;/lib/web/mage/components&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;test&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;/dev/tests/js/testsuite&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;serve&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;/lib/web/mage/calendar&#39;</span><span class="p">)</span>
-<span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">return array(
+    'server' =&gt; 'http://localhost:9876',
+    'proxy' =&gt; array(array('matcher' =&gt; '/lib/web/*', 'server' =&gt; '%s/test/%s/lib/web/')),
+    'load' =&gt; array(
+        '/lib/web/globalize',
+        '/lib/web/jquery/ui',
+        '/lib/web/mage/localization',
+        '/lib/web/mage/validation',
+        '/lib/web/mage/components'),
+    'test' =&gt; array('/dev/tests/js/testsuite'),
+    'serve' =&gt; array('/lib/web/mage/calendar')
+);</code></pre></figure>
 
 <p>For a description of these configuration parameters, see <a href="https://code.google.com/p/js-test-driver/wiki/ConfigurationFile">Configuration file for test runner</a>.</p>
 
 <p>Parameters are the following:</p>
 
 <ul>
-  <li><strong>server</strong>. The default location of the JsTestDriver server in the form: <code>http://&lt;hostname&gt;:&lt;port&gt;</code></li>
+  <li><strong>server</strong>. The default location of the JsTestDriver server in the form: <code class="highlighter-rouge">http://&lt;hostname&gt;:&lt;port&gt;</code></li>
   <li><strong>proxy</strong>. Sets the JsTestDriver to behave as a proxy. The proxy parameter is an array of arrays that enables you to specify multiple matcher and server proxies.</li>
   <li><strong>load</strong>. Defines the list of files to load in the browser before any tests run.</li>
   <li><strong>test</strong>. Defines the list of test sources to run.</li>
   <li><strong>serve</strong>. Defines the list of <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> to load by using the same <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span> as the JsTestDriver.</li>
 </ul>
 
-<h3 id="jstestdriverorderphp"><code>jsTestDriverOrder.php</code> file</h3>
+<h3 id="jstestdriverorderphp"><code class="highlighter-rouge">jsTestDriverOrder.php</code> file</h3>
 
-<p><code>&lt;magento2_root_dir&gt;/dev/tests/js/jsTestDriverOrder.php</code> specifies the order in which the JsTestDriver loads certain JavaScript files. It contains the following PHP code:</p>
+<p><code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js/jsTestDriverOrder.php</code> specifies the order in which the JsTestDriver loads certain JavaScript files. It contains the following PHP code:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;/lib/web/globalize/globalize.js&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;/lib/web/jquery/jquery.js&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;/lib/web/jquery/ui/jquery-ui.js&#39;</span><span class="p">,</span>
-    <span class="o">...</span>
-<span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">return array(
+    '/lib/web/globalize/globalize.js',
+    '/lib/web/jquery/jquery.js',
+    '/lib/web/jquery/ui/jquery-ui.js',
+    ...
+);</code></pre></figure>
 
-<p>The array applies load ordering to the files specified by the <code>load</code> parameter in the <code>jsTestDriver.php</code> or <code>jsTestDriver.php.dist</code> file.</p>
+<p>The array applies load ordering to the files specified by the <code class="highlighter-rouge">load</code> parameter in the <code class="highlighter-rouge">jsTestDriver.php</code> or <code class="highlighter-rouge">jsTestDriver.php.dist</code> file.</p>
 
-<h2 id="process-overview"><code>run_js_tests.php</code> script</h2>
+<h2 id="process-overview"><code class="highlighter-rouge">run_js_tests.php</code> script</h2>
 
-<p>To run the automated unit tests, you run the <a href="#process-overview"><code>run_js_tests.php</code> script</a> inside the PHP interpreter from the command line.</p>
+<p>To run the automated unit tests, you run the <a href="#process-overview"><code class="highlighter-rouge">run_js_tests.php</code> script</a> inside the PHP interpreter from the command line.</p>
 
 <p>To complete the unit tests, the PHP script completes this processing:</p>
 
 <ol>
   <li>
-    <p>The script looks for the <code>JsTestDriver</code> parameter value in a <code>jsTestDriver</code> configuration file in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</p>
+    <p>The script looks for the <code class="highlighter-rouge">JsTestDriver</code> parameter value in a <code class="highlighter-rouge">jsTestDriver</code> configuration file in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</p>
 
-    <p>If found, the script uses the custom <code>jsTestDriver.php</code> configuration file.</p>
+    <p>If found, the script uses the custom <code class="highlighter-rouge">jsTestDriver.php</code> configuration file.</p>
 
-    <p>Otherwise, the script uses the default <code>jsTestDriver.php.dist</code> configuration file.</p>
+    <p>Otherwise, the script uses the default <code class="highlighter-rouge">jsTestDriver.php.dist</code> configuration file.</p>
   </li>
-  <li>The script looks for the <code>Browser</code> parameter value in the <code>jsTestDriver</code> configuration file that it found.
+  <li>The script looks for the <code class="highlighter-rouge">Browser</code> parameter value in the <code class="highlighter-rouge">jsTestDriver</code> configuration file that it found.
 If the parameter is not set in the configuration file, the script uses to the default browser location, as follows:
     <ul>
-      <li><strong>64-bit Windows</strong>. The location is <code>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</li>
-      <li><strong>Linux</strong>. The script runs the <code>which firefox</code> command to determine the location of the Firefox executable in your PATH.</li>
+      <li><strong>64-bit Windows</strong>. The location is <code class="highlighter-rouge">C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</li>
+      <li><strong>Linux</strong>. The script runs the <code class="highlighter-rouge">which firefox</code> command to determine the location of the Firefox executable in your PATH.</li>
     </ul>
   </li>
-  <li>If the script finds the browser executable and the <code>JsTestDriver.jar</code> file, it proceeds with the next step. Otherwise, the script fails.</li>
-  <li>The script determines the order in which the JsTestDriver loads certain JavaScript files through the <code>jsTestDriverOrder.php</code> configuration file in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</li>
+  <li>If the script finds the browser executable and the <code class="highlighter-rouge">JsTestDriver.jar</code> file, it proceeds with the next step. Otherwise, the script fails.</li>
+  <li>The script determines the order in which the JsTestDriver loads certain JavaScript files through the <code class="highlighter-rouge">jsTestDriverOrder.php</code> configuration file in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</li>
 </ol>
 
 <h2 id="test-prereqs">Step 1. Before you begin</h2>
@@ -648,80 +648,83 @@ If the parameter is not set in the configuration file, the script uses to the de
   <li>
     <p><strong>The Firefox browser</strong></p>
 
-    <p>On 64-bit Windows machines, the default installation directory is <code>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</p>
+    <p>On 64-bit Windows machines, the default installation directory is <code class="highlighter-rouge">C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</p>
 
     <p>On Linux machines, locate the browser executable in your PATH.</p>
   </li>
-  <li><strong><code>JsTestDriver.jar</code></strong></li>
+  <li><strong><code class="highlighter-rouge">JsTestDriver.jar</code></strong></li>
 </ul>
 
 <h2 id="main-api">Step 2. Configure unit tests</h2>
 
-<p>Configuration files are located in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</p>
+<p>Configuration files are located in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js</code> directory.</p>
 
-<p>In a custom <code>jsTestDriver.php</code> configuration file or the default <code>jsTestDriver.php.dist</code> file, set these configuration parameters:</p>
+<p>In a custom <code class="highlighter-rouge">jsTestDriver.php</code> configuration file or the default <code class="highlighter-rouge">jsTestDriver.php.dist</code> file, set these configuration parameters:</p>
 
 <dl>
   <dt>Browser</dt>
   <dd>Defines the file path to the executable for the browser.
 
     <p>If you do not set this value, the script uses to the default browser location, as follows:
-* <strong>64-bit Windows</strong>. The location is <code>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.
-* <strong>Linux</strong>. The script runs the <code>which firefox</code> command to determine the location of the Firefox executable in your PATH.</p>
+* <strong>64-bit Windows</strong>. The location is <code class="highlighter-rouge">C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.
+* <strong>Linux</strong>. The script runs the <code class="highlighter-rouge">which firefox</code> command to determine the location of the Firefox executable in your PATH.</p>
   </dd>
   <dt>JsTestDriver</dt>
-  <dd>Required. Defines the file path to the <code>JsTestDriver.jar</code> file.</dd>
+  <dd>Required. Defines the file path to the <code class="highlighter-rouge">JsTestDriver.jar</code> file.</dd>
 </dl>
 
 <h2 id="run-js-unit-tests">Step 3. Run unit tests</h2>
 
-<p>To run the automated JavaScript tests, run the <code>run_js_tests.php</code> script inside the PHP interpreter from the command line:</p>
+<p>To run the automated JavaScript tests, run the <code class="highlighter-rouge">run_js_tests.php</code> script inside the PHP interpreter from the command line:</p>
 
-<pre><code>php &lt;magento2_root_dir&gt;/dev/tests/js/run_js_tests.php
+<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/js/run_js_tests.php
 </code></pre>
+</div>
 
-<p>Find the test results in individual <code>.xml</code> files in the <code>&lt;magento2_root_dir&gt;/dev/tests/js/test-output</code> directory.</p>
+<p>Find the test results in individual <code class="highlighter-rouge">.xml</code> files in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js/test-output</code> directory.</p>
 
 <p>The output of the PHP command resembles this output:</p>
 
 <p><strong>JsTestDriver output:</strong></p>
 
-<pre><code>$ php &lt;magento2_root_dir&gt;dev/tests/js/run_js_tests.php
+<div class="highlighter-rouge"><pre class="highlight"><code>$ php &lt;magento2_root_dir&gt;dev/tests/js/run_js_tests.php
 java -jar C:\Users\mchiocca\lib\JsTestDriver.jar --config C:\git\magento2\dev\tests\js/jsTestDriver.conf --port 9876 --browser "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" --tests all --testOutput C:\git\magento2\dev\tests\js/test-output
 setting runnermode QUIET
 ....................................
 Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
   Firefox 15.0 Windows: Run 36 tests (Passed: 36; Fails: 0; Errors 0) (138.00 ms)
 </code></pre>
+</div>
 
 <p>On Linux, the X Server might generate one or more warning messages in the output:</p>
 
 <p><strong>X Server warning messages on Linux:</strong></p>
 
-<pre><code>FreeFontPath: FPE "unix/:7100" refcount is 2, should be 1; fixing.
+<div class="highlighter-rouge"><pre class="highlight"><code>FreeFontPath: FPE "unix/:7100" refcount is 2, should be 1; fixing.
 </code></pre>
+</div>
 
 <p>An X Server bug causes these benign messages, which you can ignore.</p>
 
-<p>When you run the PHP script, it reads two configuration files. It also generates a <code>jsTestDriver.conf</code> YAML configuration file in the <code>&lt;magento2_root_dir&gt;/dev/tests/js</code> directory. The JsTestDriver reads this generated file to run the tests.</p>
+<p>When you run the PHP script, it reads two configuration files. It also generates a <code class="highlighter-rouge">jsTestDriver.conf</code> YAML configuration file in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js</code> directory. The JsTestDriver reads this generated file to run the tests.</p>
 
-<p>The contents of <code>jsTestDriver.conf</code> resembles this:</p>
+<p>The contents of <code class="highlighter-rouge">jsTestDriver.conf</code> resembles this:</p>
 
 <p><strong>Generated jsTestDriver.conf file:</strong></p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">server</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://localhost:9876</span>
-<span class="l-Scalar-Plain">proxy</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">matcher</span><span class="p-Indicator">:</span> <span class="s">&quot;/lib/web/*&quot;</span><span class="p-Indicator">,</span> <span class="nv">server</span><span class="p-Indicator">:</span> <span class="s">&quot;http://localhost:9876/test/C:/git/magento2/lib/web/&quot;</span><span class="p-Indicator">}</span>
-  <span class="l-Scalar-Plain">...</span>
-<span class="l-Scalar-Plain">load</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">../../../lib/web/globalize/globalize.js</span>
-  <span class="l-Scalar-Plain">...</span>
-<span class="l-Scalar-Plain">test</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">../../../dev/tests/js/testsuite/mage/calendar/calendar-test.js</span>
-  <span class="l-Scalar-Plain">...</span>
-<span class="l-Scalar-Plain">serve</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">../../../lib/web/mage/calendar/calendar.js</span>
-  <span class="l-Scalar-Plain">...</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">server</span><span class="pi">:</span> <span class="s">http://localhost:9876</span>
+<span class="s">proxy</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="pi">{</span><span class="nv">matcher</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/lib/web/*"</span><span class="pi">,</span> <span class="nv">server</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://localhost:9876/test/C:/git/magento2/lib/web/"</span><span class="pi">}</span>
+  <span class="s">...</span>
+<span class="s">load</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">../../../lib/web/globalize/globalize.js</span>
+  <span class="s">...</span>
+<span class="s">test</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">../../../dev/tests/js/testsuite/mage/calendar/calendar-test.js</span>
+  <span class="s">...</span>
+<span class="s">serve</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">../../../lib/web/mage/calendar/calendar.js</span>
+  <span class="s">...</span></code></pre></figure>
 
 <h2 id="step-4-use-phpstorm-to-run-unit-tests">Step 4. Use PhpStorm to run unit tests</h2>
 
@@ -752,7 +755,7 @@ Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
   <li>
     <p>In the <strong>JsTestDriver Server</strong> panel, click the green right arrow to start the server.</p>
 
-    <p>The bar changes to yellow and reads <code>There are no captured browsers</code>.</p>
+    <p>The bar changes to yellow and reads <code class="highlighter-rouge">There are no captured browsers</code>.</p>
   </li>
 </ol>
 
@@ -760,10 +763,10 @@ Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
 
 <ol>
   <li>Enter a name for the run configuration.</li>
-  <li>Select <strong>Configuration File</strong> and provide the location of the <code>jsTestDriver.conf</code> file generated by PHP.</li>
+  <li>Select <strong>Configuration File</strong> and provide the location of the <code class="highlighter-rouge">jsTestDriver.conf</code> file generated by PHP.</li>
   <li>Select <strong>Running in IDE</strong>.</li>
   <li>Click <strong>Test Connection</strong>.
-The <code>Connection to http://localhost:9876 is OK, no captured browsers</code> message appears.</li>
+The <code class="highlighter-rouge">Connection to http://localhost:9876 is OK, no captured browsers</code> message appears.</li>
 </ol>
 
 <h3 id="capture-browser">Capture a browser</h3>
@@ -772,11 +775,11 @@ The <code>Connection to http://localhost:9876 is OK, no captured browsers</code>
   <li>
     <p>In the <strong>JsTestDriver Server</strong> panel, click a browser icon.</p>
 
-    <p>The selected browser opens. In the browser, a green header shows the <code>Server: Waiting...</code> message.</p>
+    <p>The selected browser opens. In the browser, a green header shows the <code class="highlighter-rouge">Server: Waiting...</code> message.</p>
 
     <p>The colored bar in the <strong>JsTestDriver Server</strong> panel turns green.</p>
 
-    <p>The <code>Ready to run tests</code> message appears.</p>
+    <p>The <code class="highlighter-rouge">Ready to run tests</code> message appears.</p>
   </li>
   <li>
     <p>To run the unit tests, select <strong>Run Configuration</strong> and click the <strong>Run</strong> icon.</p>
@@ -790,7 +793,7 @@ The <code>Connection to http://localhost:9876 is OK, no captured browsers</code>
 Use PhpStorm to run the tests.
 Before you can run the tests, click the red square icon in the <strong>JsTestDriver Server</strong> panel to stop the JsTestDriver server that runs in PhpStorm. You must also close the captured browser.</li>
       <li><strong>One or more changed configuration files</strong>
-Use the PHP interpreter at the command line to regenerate the <code>jsTestDriver.conf</code> file and run the tests.</li>
+Use the PHP interpreter at the command line to regenerate the <code class="highlighter-rouge">jsTestDriver.conf</code> file and run the tests.</li>
     </ul>
   </li>
 </ol>

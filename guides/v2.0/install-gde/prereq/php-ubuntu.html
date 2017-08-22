@@ -1037,13 +1037,14 @@
   </ul>
 
   <h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
-  <p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, messages similar to the following display:</p>
+  <p>To verify if PHP is installed already, enter <code class="highlighter-rouge">php -v</code>. If PHP is installed, messages similar to the following display:</p>
 
-  <pre><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
+  <div class="highlighter-rouge"><pre class="highlight"><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1067,11 +1068,12 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>sudo apt-get -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get -y update
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get -y update
 sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
@@ -1080,16 +1082,18 @@ sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0
   <li>
     <p>Enter the following command to verify PHP 7 installed properly:</p>
 
-    <pre><code>php -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -v
 </code></pre>
+    </div>
 
     <p>Following is a sample response that indicates PHP 7.0.8 is installed:</p>
 
-    <pre><code>PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
+    <div class="highlighter-rouge"><pre class="highlight"><code>PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
   with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1108,25 +1112,28 @@ Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>apt-get -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>apt-get -y update
 add-apt-repository ppa:ondrej/php
 apt-get -y update
 apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Enter the following command to verify PHP 5.6 installed properly:</p>
 
-    <pre><code>php -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -v
 </code></pre>
+    </div>
 
     <p>Following is a sample response that indicates PHP 5.6 is installed:</p>
 
-    <pre><code>PHP 5.6.22-4+deb.sury.org~trusty+1 (cli)
+    <div class="highlighter-rouge"><pre class="highlight"><code>PHP 5.6.22-4+deb.sury.org~trusty+1 (cli)
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
 with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1145,18 +1152,20 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>apt-get -y update
+    <div class="highlighter-rouge"><pre class="highlight"><code>apt-get -y update
 apt-get -y install php5 php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Verify the PHP version by entering <code>php -v</code>. Messages similar to the following should display:</p>
+    <p>Verify the PHP version by entering <code class="highlighter-rouge">php -v</code>. Messages similar to the following should display:</p>
 
-    <pre><code>PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
+    <div class="highlighter-rouge"><pre class="highlight"><code>PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
 with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">

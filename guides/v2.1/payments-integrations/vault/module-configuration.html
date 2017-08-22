@@ -751,30 +751,30 @@
 </section>
 
 
-			<p>You need to add dependencies on the Magento_Vault module in the payment method’s <code>composer.json</code> and <code>module.xml</code> files.</p>
+			<p>You need to add dependencies on the Magento_Vault module in the payment method’s <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">module.xml</code> files.</p>
 
 <h2 id="example-adding-vault-module-dependencies-for-the-braintree-payment-method">Example: adding Vault module dependencies for the Braintree payment method</h2>
 
-<p><code>app/code/Magento/Braintree/composer.json</code>:</p>
+<p><code class="highlighter-rouge">app/code/Magento/Braintree/composer.json</code>:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;magento/module-braintree&quot;</span><span class="p">,</span>
-    <span class="err">...</span>
-    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="err">...</span>
-        <span class="nt">&quot;magento/module-vault&quot;</span><span class="p">:</span> <span class="s2">&quot;100.1.*&quot;</span>
-        <span class="err">...</span>
-    <span class="p">}</span>
-    <span class="err">...</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/module-braintree"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="nt">"magento/module-vault"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1.*"</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<p><code>app/code/Magento/Braintree/etc/module.xml</code>:</p>
+<p><code class="highlighter-rouge">app/code/Magento/Braintree/etc/module.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Magento_Braintree&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;2.0.0&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Braintree"</span> <span class="na">setup_version=</span><span class="s">"2.0.0"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;sequence&gt;</span>
             ...
-            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Magento_Vault&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Vault"</span><span class="nt">/&gt;</span>
             ...
         <span class="nt">&lt;/sequence&gt;</span>
     <span class="nt">&lt;/module&gt;</span>

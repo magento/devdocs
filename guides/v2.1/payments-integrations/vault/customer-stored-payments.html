@@ -756,69 +756,69 @@
 <h2 id="token-renderer">Token renderer</h2>
 <p>To implement the displaying functionality, create a token renderer. Its
 implementation depends on token type (card or account). But both  types of renderers
-implement the common <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/TokenRendererInterface.php"><code>TokenRendererInterface</code></a>
-and <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/Customer/IconInterface.php"><code>IconInterface</code></a> interfaces.</p>
+implement the common <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/TokenRendererInterface.php"><code class="highlighter-rouge">TokenRendererInterface</code></a>
+and <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/Customer/IconInterface.php"><code class="highlighter-rouge">IconInterface</code></a> interfaces.</p>
 
-<p>If your vault integration uses card token type, then you need to extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/AbstractCardRenderer.php">AbstractCardRenderer</a>. In other case extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/AbstractTokenRenderer.php"><code>AbstractTokenRenderer</code></a>.</p>
+<p>If your vault integration uses card token type, then you need to extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/AbstractCardRenderer.php">AbstractCardRenderer</a>. In other case extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/AbstractTokenRenderer.php"><code class="highlighter-rouge">AbstractTokenRenderer</code></a>.</p>
 
-<p><code>AbstractCardRenderer</code> implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/CardRendererInterface.php">CardRendererInterface</a> and
+<p><code class="highlighter-rouge">AbstractCardRenderer</code> implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Block/CardRendererInterface.php">CardRendererInterface</a> and
 has additional method to get card details.</p>
 
 <p>The simple card renderer implementation might be like following:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">CardRenderer</span> <span class="k">extends</span> <span class="nx">AbstractCardRenderer</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Can render specified token</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param PaymentTokenInterface $token</span>
-<span class="sd">     * @return boolean</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">canRender</span><span class="p">(</span><span class="nx">PaymentTokenInterface</span> <span class="nv">$token</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">getPaymentMethodCode</span><span class="p">()</span> <span class="o">===</span> <span class="nx">ConfigProvider</span><span class="o">::</span><span class="na">CODE</span><span class="p">;</span>
-    <span class="p">}</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class CardRenderer extends AbstractCardRenderer
+{
+    /**
+     * Can render specified token
+     *
+     * @param PaymentTokenInterface $token
+     * @return boolean
+     */
+    public function canRender(PaymentTokenInterface $token)
+    {
+        return $token-&gt;getPaymentMethodCode() === ConfigProvider::CODE;
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getNumberLast4Digits</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">&#39;maskedCC&#39;</span><span class="p">];</span>
-    <span class="p">}</span>
+    /**
+     * @return string
+     */
+    public function getNumberLast4Digits()
+    {
+        return $this-&gt;getTokenDetails()['maskedCC'];
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getExpDate</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">&#39;expirationDate&#39;</span><span class="p">];</span>
-    <span class="p">}</span>
+    /**
+     * @return string
+     */
+    public function getExpDate()
+    {
+        return $this-&gt;getTokenDetails()['expirationDate'];
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIconUrl</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getIconForType</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">&#39;type&#39;</span><span class="p">])[</span><span class="s1">&#39;url&#39;</span><span class="p">];</span>
-    <span class="p">}</span>
+    /**
+     * @return string
+     */
+    public function getIconUrl()
+    {
+        return $this-&gt;getIconForType($this-&gt;getTokenDetails()['type'])['url'];
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * @return int</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIconHeight</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getIconForType</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">&#39;type&#39;</span><span class="p">])[</span><span class="s1">&#39;height&#39;</span><span class="p">];</span>
-    <span class="p">}</span>
+    /**
+     * @return int
+     */
+    public function getIconHeight()
+    {
+        return $this-&gt;getIconForType($this-&gt;getTokenDetails()['type'])['height'];
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * @return int</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIconWidth</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getIconForType</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">&#39;type&#39;</span><span class="p">])[</span><span class="s1">&#39;width&#39;</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    /**
+     * @return int
+     */
+    public function getIconWidth()
+    {
+        return $this-&gt;getIconForType($this-&gt;getTokenDetails()['type'])['width'];
+    }
+}</code></pre></figure>
 
 <h2 id="layout-and-template">Layout and template</h2>
 
@@ -826,17 +826,17 @@ has additional method to get card details.</p>
 
 <p>Example (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml">vault_cards_listaction.xml</a>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;vault.cards.list&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Braintree\Block\Customer\CardRenderer&quot;</span> <span class="na">name=</span><span class="s">&quot;braintree.card.renderer&quot;</span> <span class="na">template=</span><span class="s">&quot;Magento_Vault::customer_account/credit_card.phtml&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"vault.cards.list"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Braintree\Block\Customer\CardRenderer"</span> <span class="na">name=</span><span class="s">"braintree.card.renderer"</span> <span class="na">template=</span><span class="s">"Magento_Vault::customer_account/credit_card.phtml"</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;/referenceBlock&gt;</span>
         <span class="nt">&lt;/referenceContainer&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
-<p>In this example the default <code>credit_card.phtml</code> vault template is used. But you can create and specify a custom template. Add the template in the <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
+<p>In this example the default <code class="highlighter-rouge">credit_card.phtml</code> vault template is used. But you can create and specify a custom template. Add the template in the <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 <h2 id="whats-next">What’s next</h2>
 <p><a href="/guides/v2.1/payments-integrations/vault/admin-integration.html">Using stored tokens to place order from Admin panel</a>.</p>

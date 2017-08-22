@@ -1599,40 +1599,45 @@
       <li>
         <p>To create a new environment, enter the following command:</p>
 
-        <pre><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
 </code></pre>
+        </div>
       </li>
       <li>
         <p>To check out an existing environment, enter the following command:</p>
 
-        <pre><code>magento-cloud environment:checkout
+        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout
 </code></pre>
+        </div>
       </li>
     </ul>
 
-    <p>For example, to create a new branch named <code>sprint1</code> from master, enter:</p>
+    <p>For example, to create a new branch named <code class="highlighter-rouge">sprint1</code> from master, enter:</p>
 
-    <pre><code>    magento-cloud environment:branch sprint1 master
+    <div class="highlighter-rouge"><pre class="highlight"><code>    magento-cloud environment:branch sprint1 master
 </code></pre>
+    </div>
   </li>
   <li>
     <p>After the command completes, update dependencies:</p>
 
-    <pre><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Create a <a href="/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment.</p>
 
-    <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <h2 id="add-keys-project">Add your local authentication keys to the project</h2>
-<p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code>auth.json</code> file in the Magento root directory. Contact the project administrator or the account owner for the authentication keys. You need these keys to add them locally.</p>
+<p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code class="highlighter-rouge">auth.json</code> file in the Magento root directory. Contact the project administrator or the account owner for the authentication keys. You need these keys to add them locally.</p>
 
-<p>These authentication keys don’t need to be in the Git repository. You can add <code>auth.json</code> to <code>.gitignore</code>.</p>
+<p>These authentication keys don’t need to be in the Git repository. You can add <code class="highlighter-rouge">auth.json</code> to <code class="highlighter-rouge">.gitignore</code>.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>Ensure your project administrator has added authentication keys to the project as discussed in the preceding section.</p>
@@ -1646,18 +1651,19 @@
   <li>
     <p>If you haven’t done so already, log in to your Magento Commerce project, check out an environment, and pull updated code from the server. For additional information, see <a href="/guides/v2.2/cloud/before/before-setup-env-env.html">Step 5, Clone or branch an environment</a></p>
 
-    <pre><code>Use the following commands:
+    <div class="highlighter-rouge"><pre class="highlight"><code>Use the following commands:
 
         magento-cloud login
         magento-cloud environment:list
         magento-cloud environment:checkout &lt;env ID&gt;
         git pull origin &lt;branch name&gt;
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Create a file named <code>auth.json</code> in the Magento project root directory and add your authentication keys to it.</p>
+    <p>Create a file named <code class="highlighter-rouge">auth.json</code> in the Magento project root directory and add your authentication keys to it.</p>
 
-    <pre><code>&lt;div class="bs-callout bs-callout-info" markdown="1"&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="bs-callout bs-callout-info" markdown="1"&gt;
 If you have an `auth.json` file already, contact your project administrator to make sure a project variable has been defined. If there is no project variable that defines authentication keys, skip this step and continue with [Step 7: Set file system permissions and ownership](#setup-env-perms).
 &lt;/div&gt;
 
@@ -1674,15 +1680,16 @@ A sample `auth.json` follows. Replace the same values with your keys.
     }
     ```
 </code></pre>
+    </div>
   </li>
-  <li>Save your changes to <code>auth.json</code> and exit the text editor.</li>
-  <li>Open <code>.gitignore</code> in a text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">auth.json</code> and exit the text editor.</li>
+  <li>Open <code class="highlighter-rouge">.gitignore</code> in a text editor.</li>
   <li>
-    <p>Add <code>auth.json</code> to it anywhere.</p>
+    <p>Add <code class="highlighter-rouge">auth.json</code> to it anywhere.</p>
 
-    <p>A snippet from <code>.gitignore</code> follows:</p>
+    <p>A snippet from <code class="highlighter-rouge">.gitignore</code> follows:</p>
 
-    <pre><code>    &lt;pre class="no-copy"&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>    &lt;pre class="no-copy"&gt;
     /.buildpath
     /.cache
     /.metadata
@@ -1696,8 +1703,9 @@ A sample `auth.json` follows. Replace the same values with your keys.
     auth.json
     &lt;/pre&gt;
 </code></pre>
+    </div>
   </li>
-  <li>Save your changes to <code>.gitignore</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">.gitignore</code> and exit the text editor.</li>
 </ol>
 
 <h4 id="next-step">Next step</h4>

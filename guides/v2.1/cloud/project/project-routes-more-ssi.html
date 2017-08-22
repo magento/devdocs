@@ -1628,9 +1628,9 @@
 <p>More information about <a href="http://nginx.org/en/docs/http/ngx_http_ssi_module.html" target="_blank">nginx SSI</a>.</p>
 
 <p>You can activate or deactivate SSI on a per-route basis in your 
-<code>.magento/routes.yaml</code>; for example:</p>
+<code class="highlighter-rouge">.magento/routes.yaml</code>; for example:</p>
 
-<pre><code>"http://{default}/":	
+<div class="highlighter-rouge"><pre class="highlight"><code>"http://{default}/":	
     type: upstream
     upstream: "myapp:php"
     cache:
@@ -1643,21 +1643,22 @@
     cache:	
       enabled: true
 </code></pre>
+</div>
 
 <p>SSI enables you to include in your HTML response directives that cause the
 server fill in parts of the HTML, respecting the your <a href="/guides/v2.1/cloud/project/project-routes-more-cache.html">caching configuration</a>.</p>
 
 <p>The following example shows how to insert a dynamic date control at the top of a page and another date control at the bottom that updates every 600 seconds:</p>
 
-<p>Add the following to any page, such as <code>/index.php</code>:</p>
+<p>Add the following to any page, such as <code class="highlighter-rouge">/index.php</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span>
-<span class="o">&lt;!--</span><span class="c1">#include virtual=&quot;time.php&quot; --&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">echo date(DATE_RFC2822);
+<span class="c">&lt;!--#include virtual="time.php" --&gt;</span></code></pre></figure>
 
-<p>Add the following to <code>time.php</code>:</p>
+<p>Add the following to <code class="highlighter-rouge">time.php</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Cache-Control: max-age=600&quot;</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">header("Cache-Control: max-age=600");
+echo date(DATE_RFC2822);</code></pre></figure>
 
 <p>Browse to the page on which you added the control. Refresh the page several times and notice that the time at the top of the page changes but the time on the bottom changes only every 600 seconds.</p>
 

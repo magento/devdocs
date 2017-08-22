@@ -1635,27 +1635,31 @@
     <li>
       <p>Enter the following command in a terminal to log in to your project:</p>
 
-      <pre><code>magento-cloud login
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+      </div>
     </li>
     <li>
       <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-      <pre><code>magento-cloud project:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+      </div>
     </li>
-    <li>Change to a project directory. For example, <code>cd /var/www/html/magento2</code></li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
     <li>
       <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-      <pre><code>magento-cloud environment:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
   		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
@@ -1664,28 +1668,32 @@
     <li>
       <p>Fetch origin branches to get the latest code:</p>
 
-      <pre><code>git fetch origin
+      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
+      </div>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
     </li>
     <li>
       <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Create a <a href="/guides/v2.1/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
   </ol>
 </div>
@@ -1710,39 +1718,43 @@
 
 <div class="collapsible"><b class="collapsible-title">To install a theme manually: </b><div class="collapsible-content"><ol>
   <li>
-    <p>Copy the theme’s code under <code>&lt;Magento root dir&gt;/app/design/frontend</code> for a storefront theme or <code>&lt;Magento root dir&gt;/app/design/adminhtml</code> for an Admin theme.</p>
+    <p>Copy the theme’s code under <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/design/frontend</code> for a storefront theme or <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/design/adminhtml</code> for an Admin theme.</p>
 
-    <p>Make sure the top-level directory is <code>&lt;VendorName&gt;</code>; otherwise, the theme won’t install properly.</p>
+    <p>Make sure the top-level directory is <code class="highlighter-rouge">&lt;VendorName&gt;</code>; otherwise, the theme won’t install properly.</p>
 
     <p>For example</p>
 
-    <pre><code>cp -r ExampleTheme &lt;Magento root dir&gt;/app/design/frontend
+    <div class="highlighter-rouge"><pre class="highlight"><code>cp -r ExampleTheme &lt;Magento root dir&gt;/app/design/frontend
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Confirm the theme copied to the correct place.</p>
 
     <ul>
-      <li>Storefront theme: <code>ls &lt;Magento root dir&gt;/app/design/frontend</code></li>
-      <li>Admin theme: <code>ls &lt;Magento root dir&gt;/app/design/adminhtml</code></li>
+      <li>Storefront theme: <code class="highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/frontend</code></li>
+      <li>Admin theme: <code class="highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/adminhtml</code></li>
     </ul>
 
     <p>A sample follows:</p>
 
-    <pre><code>ExampleTheme Magento
+    <div class="highlighter-rouge"><pre class="highlight"><code>ExampleTheme Magento
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Add and commit files:</p>
 
-    <pre><code>git add -A &amp;&amp; git commit -m "Add theme"
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Add theme"
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Push the files to your branch:</p>
 
-    <pre><code>git push origin &lt;branch name&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>git push origin &lt;branch name&gt;
 </code></pre>
+    </div>
   </li>
   <li>Wait for deployment to complete.</li>
   <li>Log in to the Magento Admin.</li>
@@ -1763,21 +1775,24 @@
   <li>
     <p>Change to your Magento root directory and enter the command:</p>
 
-    <pre><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>composer require zero1/theme-fashionista-theme:1.0.0
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer require zero1/theme-fashionista-theme:1.0.0
 </code></pre>
+    </div>
   </li>
   <li>Wait for dependencies to update.</li>
   <li>
     <p>Enter the following commands:</p>
 
-    <pre><code>git add -A &amp;&amp; git commit -m "Add theme"
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Add theme"
 git push origin &lt;branch name&gt;
 </code></pre>
+    </div>
   </li>
   <li>Log in to the Magento Admin.</li>
   <li>

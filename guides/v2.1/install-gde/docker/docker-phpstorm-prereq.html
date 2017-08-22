@@ -691,8 +691,9 @@
 
 <p>In a command window, find your container identifiers:</p>
 
-<pre><code>docker-compose ps
+<div class="highlighter-rouge"><pre class="highlight"><code>docker-compose ps
 </code></pre>
+</div>
 
 <p>The command displays the listen ports. An example follows:</p>
 
@@ -739,7 +740,7 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
   <p>To use Xdebug with <span term-uuid="57f1b0dc-1341-466d-a685-e0dbf5a3b713" class="glossary-term" data-toggle="popover">Docker</span> on Windows, you must set up an SSH tunnel because Windows doesn’t have a native SSH client.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
-    <p>You don’t need to use a third-party SSH client on Mac OS because it has a native client. Instead, run the <code>m2devbox-debug.sh</code> script before you need to create a tunnel to DevBox. One example of doing this is to run <a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Xdebug</a>.</p>
+    <p>You don’t need to use a third-party SSH client on Mac OS because it has a native client. Instead, run the <code class="highlighter-rouge">m2devbox-debug.sh</code> script before you need to create a tunnel to DevBox. One example of doing this is to run <a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Xdebug</a>.</p>
   </div>
 
   <p>The following procedure shows an example of creating an SSH tunnel using <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>. You can use other applications (such as Cygwin); for more information, consult the documentation provided with those applications.</p>
@@ -754,7 +755,7 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
       <p>Enter the following information:</p>
 
       <ul>
-        <li><strong>Host Name (or IP address)</strong> field: Enter <code>127.0.0.1</code></li>
+        <li><strong>Host Name (or IP address)</strong> field: Enter <code class="highlighter-rouge">127.0.0.1</code></li>
         <li><strong>Port</strong> field: Enter the <a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">SSH listen port</a></li>
       </ul>
 
@@ -765,7 +766,7 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
       <p>Enter the following information:</p>
 
       <ul>
-        <li><strong>Auto-login username</strong> field: Enter <code>magento2</code></li>
+        <li><strong>Auto-login username</strong> field: Enter <code class="highlighter-rouge">magento2</code></li>
       </ul>
 
       <p><img src="/common/images/install_docker_putty_autologin.png" alt="Set up Putty" width="350px" /></p>
@@ -775,8 +776,8 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
       <p>Enter the following information:</p>
 
       <ul>
-        <li><strong>Source port</strong> field: Enter <code>9000</code></li>
-        <li><strong>Destination</strong> field: Enter <code>127.0.0.1:9000</code></li>
+        <li><strong>Source port</strong> field: Enter <code class="highlighter-rouge">9000</code></li>
+        <li><strong>Destination</strong> field: Enter <code class="highlighter-rouge">127.0.0.1:9000</code></li>
         <li>Click <strong>Remote</strong></li>
       </ul>
     </li>
@@ -800,7 +801,7 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
   <p>If an “unable to connect” error displays, verify all of the preceding information and try again.</p>
 
   <h2 id="set-the-users-bash-profile">Set the user’s bash profile</h2>
-  <p>This section discusses an optional step of changing to the <code>/var/www/magento2</code> directory in the DevBox’s user’s bash profile. This means every time you start an interactive session in a command shell, you’re executing commands from that directory.</p>
+  <p>This section discusses an optional step of changing to the <code class="highlighter-rouge">/var/www/magento2</code> directory in the DevBox’s user’s bash profile. This means every time you start an interactive session in a command shell, you’re executing commands from that directory.</p>
 
   <p>To set the user’s bash profile:</p>
 
@@ -809,26 +810,29 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
     <li>
       <p>Enter the following command:</p>
 
-      <pre><code>docker-compose exec --user=magento2 web /bin/bash
+      <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web /bin/bash
 </code></pre>
+      </div>
 
       <p>This commands opens an SSH shell.</p>
     </li>
     <li>
       <p>In the shell prompt, enter the following command:</p>
 
-      <pre><code>vim ~/.bash_profile
+      <div class="highlighter-rouge"><pre class="highlight"><code>vim ~/.bash_profile
 </code></pre>
+      </div>
     </li>
-    <li>Press <code>i</code> (insert).</li>
+    <li>Press <code class="highlighter-rouge">i</code> (insert).</li>
     <li>
       <p>Enter the following command in the vim window:</p>
 
-      <pre><code>cd /var/www/magento2
+      <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/magento2
 </code></pre>
+      </div>
     </li>
-    <li>Press <code>:wq</code> to save the file and exit vim.</li>
-    <li>Enter <code>exit</code> to exit the SSH shell and return to your command prompt.</li>
+    <li>Press <code class="highlighter-rouge">:wq</code> to save the file and exit vim.</li>
+    <li>Enter <code class="highlighter-rouge">exit</code> to exit the SSH shell and return to your command prompt.</li>
   </ol>
 
   <h4 id="next-step">Next step</h4>

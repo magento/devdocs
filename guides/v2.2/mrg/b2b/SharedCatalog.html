@@ -985,17 +985,17 @@
 
 			<h2 id="overview">Overview</h2>
 
-<p>The <code>Magento_SharedCatalog</code> modules defines the visibility of products as well as product prices in the catalog and in B2B quotes for different company accounts.</p>
+<p>The <code class="highlighter-rouge">Magento_SharedCatalog</code> modules defines the visibility of products as well as product prices in the catalog and in B2B quotes for different company accounts.</p>
 
 <p>The module allows a merchant to create multiple shared catalogs, link them to one or more company accounts, and set different product prices. Shared catalogs also control the visibility of products and categories for a company in the storefront. The shared catalog type (public or custom) defines the scope of products and prices available for guest users vs logged-in users. The system can have only one public and any number of custom shared catalogs.</p>
 
-<p>The module relies on the <code>CatalogPermissions</code> module, in that the visibility of categories for a customer group is defined by category permissions for this customer group. Once a shared catalog is enabled in B2B features, the category permissions are automatically enabled. Adding a product or a category to a shared catalog enables appropriate category permissions for the customer groups linked to this shared catalog.</p>
+<p>The module relies on the <code class="highlighter-rouge">CatalogPermissions</code> module, in that the visibility of categories for a customer group is defined by category permissions for this customer group. Once a shared catalog is enabled in B2B features, the category permissions are automatically enabled. Adding a product or a category to a shared catalog enables appropriate category permissions for the customer groups linked to this shared catalog.</p>
 
 <p>The module provides web APIs and can be integrated with third-party solutions to manage shared catalogs in Magento.</p>
 
 <h2 id="installation-details">Installation details</h2>
 
-<p>The module heavily depends on the Magento_Company module, which must be installed and enabled the first. Category permissions must be enabled for shared catalogs to work properly. Price configuration for a shared catalog requires the start of a message queue consumer <code>sharedCatalogUpdatePrice</code>.</p>
+<p>The module heavily depends on the Magento_Company module, which must be installed and enabled the first. Category permissions must be enabled for shared catalogs to work properly. Price configuration for a shared catalog requires the start of a message queue consumer <code class="highlighter-rouge">sharedCatalogUpdatePrice</code>.</p>
 
 <p>The module does not create any backward incompatible changes. Can be deactivated and uninstalled at any time.</p>
 
@@ -1011,17 +1011,17 @@
 
 <p>Extension developers can interact with the Magento_SharedCatalog module. For more information about the Magento extension mechanism, see <a href="/guides/v2.2/extension-dev-guide/plugins.html">Magento plug-ins</a>.</p>
 
-<p><a href="/guides/v2.2/extension-dev-guide/depend-inj.html">The Magento dependency injection mechanism</a> enables you to override the functionality of the <code>Magento_SharedCatalog</code> module.</p>
+<p><a href="/guides/v2.2/extension-dev-guide/depend-inj.html">The Magento dependency injection mechanism</a> enables you to override the functionality of the <code class="highlighter-rouge">Magento_SharedCatalog</code> module.</p>
 
 <h3 id="layouts">Layouts</h3>
 
-<p>You can extend and override layouts in the <code>Magento\SharedCatalog\view\adminhtml\layout</code> directory.</p>
+<p>You can extend and override layouts in the <code class="highlighter-rouge">Magento\SharedCatalog\view\adminhtml\layout</code> directory.</p>
 
 <p>For more information about layouts, see the <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html">Layout documentation</a>.</p>
 
 <h3 id="ui-components">UI components</h3>
 
-<p>The <code>Magento\SharedCatalog\view\adminhtml\ui_component</code> directory contains extensible UI components.</p>
+<p>The <code class="highlighter-rouge">Magento\SharedCatalog\view\adminhtml\ui_component</code> directory contains extensible UI components.</p>
 
 <ul>
   <li>

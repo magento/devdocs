@@ -1489,7 +1489,7 @@
 </section>
 
 
-			<p>This topic discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition’s Git repository <code>master</code> branch.</p>
+			<p>This topic discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition’s Git repository <code class="highlighter-rouge">master</code> branch.</p>
 
 <div class="bs-callout bs-callout-warning" id="warning">
   <p>The procedure discussed in this topic replaces your new Magento Enterprise Cloud Edition project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.</p>
@@ -1510,28 +1510,32 @@
 <ol>
   <li>Log in to your local Magento Enterprise Cloud Edition development machine as, or switch to, the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>
-    <p>Make a copy of <code>composer.json</code> <em>in a non-tracked directory</em> so it doesn’t get overwritten.</p>
+    <p>Make a copy of <code class="highlighter-rouge">composer.json</code> <em>in a non-tracked directory</em> so it doesn’t get overwritten.</p>
 
-    <pre><code>cp composer.json ../composer.json.cloud
+    <div class="highlighter-rouge"><pre class="highlight"><code>cp composer.json ../composer.json.cloud
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Rename your Cloud Git remote from <code>origin</code> to <code>cloud-project</code> to make it clear which repository is which:</p>
+    <p>Rename your Cloud Git remote from <code class="highlighter-rouge">origin</code> to <code class="highlighter-rouge">cloud-project</code> to make it clear which repository is which:</p>
 
-    <pre><code>git remote rename origin cloud-project
+    <div class="highlighter-rouge"><pre class="highlight"><code>git remote rename origin cloud-project
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Add a remote upstream for your existing Magento EE installation:</p>
 
-    <pre><code>git remote add prev-project &lt;git url&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>git remote add prev-project &lt;git url&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Confirm what you’ve done so far.</p>
 
-    <pre><code>git remote -v
+    <div class="highlighter-rouge"><pre class="highlight"><code>git remote -v
 </code></pre>
+    </div>
 
     <p>Results are displayed as follows.</p>
 
@@ -1543,17 +1547,19 @@ prev-project    git@github.com:mygitusername/myeereponame.git (fetch)
 prev-project    git@github.com:mygitusername/myeereponame.git (push)</pre>
   </li>
   <li>
-    <p>Make sure you’re on the Cloud project <code>master</code> branch.</p>
+    <p>Make sure you’re on the Cloud project <code class="highlighter-rouge">master</code> branch.</p>
 
-    <pre><code>magento-cloud environment:checkout master
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout master
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Make sure this <code>master</code> branch is set up to import code to the Cloud project.</p>
+    <p>Make sure this <code class="highlighter-rouge">master</code> branch is set up to import code to the Cloud project.</p>
 
-    <pre><code>git fetch cloud-project
+    <div class="highlighter-rouge"><pre class="highlight"><code>git fetch cloud-project
 git branch -u cloud-project/master
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1566,26 +1572,29 @@ git branch -u cloud-project/master
   <li>
     <p>Fetch the Magento EE branch.</p>
 
-    <pre><code>git fetch prev-project
+    <div class="highlighter-rouge"><pre class="highlight"><code>git fetch prev-project
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Reset your Cloud <code>master</code> branch to contain the code and the commit history of your Magento EE branch:</p>
+    <p>Reset your Cloud <code class="highlighter-rouge">master</code> branch to contain the code and the commit history of your Magento EE branch:</p>
 
-    <pre><code>git reset --hard prev-project/&lt;branch name&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>git reset --hard prev-project/&lt;branch name&gt;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Push code from your Magento EE project to your Magento Enterprise Cloud Edition project, overwriting the previous contents and commit history with that of your project:</p>
 
-    <pre><code>git push -f cloud-project master
+    <div class="highlighter-rouge"><pre class="highlight"><code>git push -f cloud-project master
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <p>As the project builds and deploys, many messages are displayed on the screen. A successful deployment is indicated by the following messages:</p>
 
-<pre><code>Re-deploying environment 43biovskhelhy-master-l5ut8gq.
+<div class="highlighter-rouge"><pre class="highlight"><code>Re-deploying environment 43biovskhelhy-master-l5ut8gq.
    Environment configuration:
      mymagento (type: php:7.0, size: S, disk: 2048)
      mysql (type: mysql:10.0, size: S, disk: 2048)
@@ -1596,6 +1605,7 @@ Environment routes:
    http://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
    https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
 </code></pre>
+</div>
 
 <h2 id="cloud-import-db">Import the Magento database</h2>
 <p>Before you can use your existing Magento EE code in Magento Enterprise Cloud Edition, you must import the database.</p>
@@ -1620,43 +1630,49 @@ Environment routes:
   <li>
     <p>SSH to the integration system.</p>
 
-    <pre><code>magento-cloud ssh
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud ssh
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Connect to the database.</p>
 
-    <pre><code>mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Drop the database. At the <code>MariaDB [main]&gt;</code> prompt, enter:</p>
+    <p>Drop the database. At the <code class="highlighter-rouge">MariaDB [main]&gt;</code> prompt, enter:</p>
 
-    <pre><code>drop database main;
+    <div class="highlighter-rouge"><pre class="highlight"><code>drop database main;
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Re-create the database:</p>
 
-    <pre><code>create database main;
+    <div class="highlighter-rouge"><pre class="highlight"><code>create database main;
 </code></pre>
+    </div>
   </li>
-  <li>At the <code>MariaDB [main]&gt;</code> prompt, enter <code>exit</code>.</li>
+  <li>At the <code class="highlighter-rouge">MariaDB [main]&gt;</code> prompt, enter <code class="highlighter-rouge">exit</code>.</li>
   <li>
     <p>At the shell command prompt, enter the following command to re-create the database.</p>
 
-    <pre><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
+    <div class="highlighter-rouge"><pre class="highlight"><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <h3 id="update-base-urls">Update base URLs</h3>
-<p>Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the <code>core_config_data</code> table.</p>
+<p>Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the <code class="highlighter-rouge">core_config_data</code> table.</p>
 
 <p>The following example shows how to change <em>only</em> the insecure URL but you can use the same procedure to change secure URLs as well.</p>
 
@@ -1666,40 +1682,45 @@ Environment routes:
   <li>
     <p>If you haven’t already done so, SSH to the Cloud integration server:</p>
 
-    <pre><code>magento-cloud ssh
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud ssh
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Connect to the database.</p>
 
-    <pre><code>mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Show the contents of the <code>core_config_data</code> table.</p>
+    <p>Show the contents of the <code class="highlighter-rouge">core_config_data</code> table.</p>
 
-    <pre><code>SELECT * from core_config_data;
+    <div class="highlighter-rouge"><pre class="highlight"><code>SELECT * from core_config_data;
 </code></pre>
+    </div>
 
-    <p>Note the <code>path</code> of <code>web/unsecure/base_url</code>; this is the value you’ll change.</p>
+    <p>Note the <code class="highlighter-rouge">path</code> of <code class="highlighter-rouge">web/unsecure/base_url</code>; this is the value you’ll change.</p>
   </li>
   <li>
-    <p>Enter the following command to change the value of <code>path</code> to your integration server’s unsecure base URL:</p>
+    <p>Enter the following command to change the value of <code class="highlighter-rouge">path</code> to your integration server’s unsecure base URL:</p>
 
-    <pre><code>UPDATE core_config_data SET value='&lt;Cloud unsecure base URL&gt;' WHERE path='web/unsecure/base_url';
+    <div class="highlighter-rouge"><pre class="highlight"><code>UPDATE core_config_data SET value='&lt;Cloud unsecure base URL&gt;' WHERE path='web/unsecure/base_url';
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-warning" id="warning">
-      <p>The base URL <em>must</em> end with a <code>/</code> character.</p>
+      <p>The base URL <em>must</em> end with a <code class="highlighter-rouge">/</code> character.</p>
     </div>
   </li>
   <li>
     <p>Confirm the change by entering the following command:</p>
 
-    <pre><code>SELECT * from core_config_data;
+    <div class="highlighter-rouge"><pre class="highlight"><code>SELECT * from core_config_data;
 </code></pre>
+    </div>
   </li>
-  <li>If the change was successful, enter <code>exit</code> to exit the <code>[Maria DB]</code> prompt.</li>
+  <li>If the change was successful, enter <code class="highlighter-rouge">exit</code> to exit the <code class="highlighter-rouge">[Maria DB]</code> prompt.</li>
   <li>Continue with the next section.</li>
 </ol>
 
@@ -1708,7 +1729,7 @@ Environment routes:
 </div>
 
 <h2 id="cloud-import-key">Copy the encryption key</h2>
-<p>The Magento EE encryption key is required as an environment variable in <code>env.php</code> for Integration, Staging, and Production. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code>env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
+<p>The Magento EE encryption key is required as an environment variable in <code class="highlighter-rouge">env.php</code> for Integration, Staging, and Production. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code class="highlighter-rouge">env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
 
 <p>To copy your Magento EE encryption key:</p>
 
@@ -1716,27 +1737,28 @@ Environment routes:
   <li>
     <p>If you haven’t done so already, SSH to the Cloud environment.</p>
 
-    <pre><code>magento-cloud environment:ssh
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh
 </code></pre>
+    </div>
   </li>
-  <li>Open <code>app/etc/env.php</code> in a text editor.</li>
-  <li>Replace the existing value of <code>key</code> with your <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento EE key</a>.</li>
+  <li>Open <code class="highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
+  <li>Replace the existing value of <code class="highlighter-rouge">key</code> with your <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento EE key</a>.</li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s1">&#39;crypt&#39;</span> <span class="o">=&gt;</span>
-          <span class="k">array</span> <span class="p">(</span>
-            <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;your encryption key&gt;&#39;</span><span class="p">,</span>
-          <span class="p">),</span>
-        <span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">        return array (
+          'crypt' =&gt;
+          array (
+            'key' =&gt; '<span class="nt">&lt;your</span> <span class="na">encryption</span> <span class="na">key</span><span class="nt">&gt;</span>',
+          ),
+        );
         </code></pre></figure>
 
 <ol>
-  <li>Save your changes to <code>env.php</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">env.php</code> and exit the text editor.</li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Don’t forget to add this encryption key variable to <code>env.php</code> for all environments: Integration, Staging, and Production.</p>
+  <p>Don’t forget to add this encryption key variable to <code class="highlighter-rouge">env.php</code> for all environments: Integration, Staging, and Production.</p>
 </div>
 
 <h2 id="cloud-import-media">Import media</h2>
@@ -1746,32 +1768,36 @@ Environment routes:
   <li>
     <p>If you haven’t done so already, SSH to the Cloud environment.</p>
 
-    <pre><code>magento-cloud environment:ssh
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Enter the following command to clear existing media files:</p>
 
-    <pre><code>rm -rf pub/media/*
+    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf pub/media/*
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Enter the following command to extract the media files to the <code>pub/media</code> directory:</p>
+    <p>Enter the following command to extract the media files to the <code class="highlighter-rouge">pub/media</code> directory:</p>
 
-    <pre><code>tar -xzf var/media.tgz pub/media
+    <div class="highlighter-rouge"><pre class="highlight"><code>tar -xzf var/media.tgz pub/media
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <h2 id="clear-the-cache">Clear the cache</h2>
 <p>On the Cloud environment, enter the following commands in the order shown:</p>
 
-<pre><code>bin/magento setup:upgrade
+<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento setup:upgrade
 bin/magento magento setup:static-content:deploy
 bin/magento cache:clean
 </code></pre>
+</div>
 
-<p>After the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> flushes, enter <code>exit</code> to close the SSH tunnel.</p>
+<p>After the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> flushes, enter <code class="highlighter-rouge">exit</code> to close the SSH tunnel.</p>
 
 <h2 id="verify-the-import">Verify the import</h2>
 <p>To verify everything imported properly, perform the following tasks in your local Cloud development environment:</p>
@@ -1780,8 +1806,9 @@ bin/magento cache:clean
   <li>
     <p>On your Cloud environment, enter the following commands to find the information to log in to the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> and to view the storefront:</p>
 
-    <pre><code>magento-cloud environment:url
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:url
 </code></pre>
+    </div>
   </li>
   <li>Log in to the Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> using the user name and password of your Magento EE system.</li>
   <li>Make sure settings in the Admin are the same as your Magento EE system.</li>

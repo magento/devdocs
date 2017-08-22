@@ -1203,21 +1203,21 @@
 <p>This topic discusses the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> declaration of UI components.</p>
 
 <h2 id="about-the-layout-configuration-file-and-ui-component-declaration">About the layout configuration file and UI component declaration</h2>
-<p>Every <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that has view representation contains the directory named <code>layout</code>. In this directory, the <code>.xml</code> declarations of the pages are stored. These <code>.xml</code> declarations are, in fact, the pages’ <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>.</p>
+<p>Every <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that has view representation contains the directory named <code class="highlighter-rouge">layout</code>. In this directory, the <code class="highlighter-rouge">.xml</code> declarations of the pages are stored. These <code class="highlighter-rouge">.xml</code> declarations are, in fact, the pages’ <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>.</p>
 
-<p>In a typical Magento <code>.xml</code> layout file we see a <code>&lt;head/&gt;</code> node, <code>&lt;title/&gt;</code> node with the name of the page, and sometimes <a href="/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">links to CSS and JS files</a>. There are other nodes as well, the most important for us now is the <a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceContainer/&gt;</code> node</a>. (The <code>name</code> attribute in this node is responsible for the position of the container on the page.). <a href="/guides/v2.2//ui_comp_guide/bk-ui_comps.html#general-structure">Basic</a> UI components are declared in this node. All nested components are declared in the basic components’ instances configuration files (not in the page layouts).</p>
+<p>In a typical Magento <code class="highlighter-rouge">.xml</code> layout file we see a <code class="highlighter-rouge">&lt;head/&gt;</code> node, <code class="highlighter-rouge">&lt;title/&gt;</code> node with the name of the page, and sometimes <a href="/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">links to CSS and JS files</a>. There are other nodes as well, the most important for us now is the <a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceContainer/&gt;</code> node</a>. (The <code class="highlighter-rouge">name</code> attribute in this node is responsible for the position of the container on the page.). <a href="/guides/v2.2//ui_comp_guide/bk-ui_comps.html#general-structure">Basic</a> UI components are declared in this node. All nested components are declared in the basic components’ instances configuration files (not in the page layouts).</p>
 
 <p>Example of a basic <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> declaration:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;page-container&quot;</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">&quot;%instance_name%&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"page-container"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">"%instance_name%"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/referenceContainer&gt;</span></code></pre></figure>
 
-<p>A UI component is declared using the <code>&lt;uiComponent/&gt;</code> node. The <code>name</code> attribute in the <code>&lt;uiComponent/&gt;</code> node references the XML configuration of the basic UI component’s instance. This configuration is a separate <code>.xml</code> file. It is stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/</code> directory. For example <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/%instance_name%.xml</code>.</p>
+<p>A UI component is declared using the <code class="highlighter-rouge">&lt;uiComponent/&gt;</code> node. The <code class="highlighter-rouge">name</code> attribute in the <code class="highlighter-rouge">&lt;uiComponent/&gt;</code> node references the XML configuration of the basic UI component’s instance. This configuration is a separate <code class="highlighter-rouge">.xml</code> file. It is stored in the <code class="highlighter-rouge">&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/</code> directory. For example <code class="highlighter-rouge">&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/%instance_name%.xml</code>.</p>
 
 <h2 id="about-the-basic-component-configuration-file">About the basic component configuration file</h2>
 
-<p>The instance configuration file name is the name of instance (<code>%instance_name%</code>). The <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> of the names is global; meaning that if the file names in different modules are the same, they are merged into a single configuration for the particular instance.</p>
+<p>The instance configuration file name is the name of instance (<code class="highlighter-rouge">%instance_name%</code>). The <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> of the names is global; meaning that if the file names in different modules are the same, they are merged into a single configuration for the particular instance.</p>
 
 <p>Following are the rules for the instance configuration files:</p>
 
@@ -1226,89 +1226,89 @@
   <li>The top node must contain a link to the XSD schema.</li>
 </ul>
 
-<p>In the top node, there can be an <code>&lt;argument/&gt;</code> node. The <code>&lt;argument/&gt;</code> node contains the configuration for that basic UI component. The <code>&lt;argument/&gt;</code> node’s <code>name</code> attribute value must be <code>data</code>. The child nodes of the <code>&lt;argument&gt;</code> node will be the argument properties that will be passed in to the component.</p>
+<p>In the top node, there can be an <code class="highlighter-rouge">&lt;argument/&gt;</code> node. The <code class="highlighter-rouge">&lt;argument/&gt;</code> node contains the configuration for that basic UI component. The <code class="highlighter-rouge">&lt;argument/&gt;</code> node’s <code class="highlighter-rouge">name</code> attribute value must be <code class="highlighter-rouge">data</code>. The child nodes of the <code class="highlighter-rouge">&lt;argument&gt;</code> node will be the argument properties that will be passed in to the component.</p>
 
-<p>The top node can have nested nodes. Every nested node is regarded as a separate UI component (i.e. the toolbar). For example, if you want your listing to have a toolbar, then the top node is for the listing and a nested node represents a toolbar. Nested nodes can also contain the <code>&lt;argument&gt;</code> node.</p>
+<p>The top node can have nested nodes. Every nested node is regarded as a separate UI component (i.e. the toolbar). For example, if you want your listing to have a toolbar, then the top node is for the listing and a nested node represents a toolbar. Nested nodes can also contain the <code class="highlighter-rouge">&lt;argument&gt;</code> node.</p>
 
 <h2 id="example-of-a-basic-components-configuration-file">Example of a basic component’s configuration file</h2>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-      <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>category_form.category_form_data_source<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;deps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>category_form.category_form_data_source<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+      <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>category_form.category_form_data_source<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"deps"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>category_form.category_form_data_source<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Category Information<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>templates/form/collapsible<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;buttons&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;delete&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Catalog\Block\Adminhtml\Category\Edit\DeleteButton<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;save&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Catalog\Block\Adminhtml\Category\Edit\SaveButton<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Category Information<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>templates/form/collapsible<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"buttons"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"delete"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Catalog\Block\Adminhtml\Category\Edit\DeleteButton<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"save"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Catalog\Block\Adminhtml\Category\Edit\SaveButton<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataScope&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>data<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;namespace&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>category_form<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"dataScope"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>data<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"namespace"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>category_form<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;reverseMetadataMerge&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"reverseMetadataMerge"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;dataSource</span> <span class="na">name=</span><span class="s">&quot;category_form_data_source&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;dataProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;configurableObject&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Catalog\Model\Category\DataProvider<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>category_form_data_source<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;primaryFieldName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;requestFieldName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>id<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;submit_url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;catalog/category/save&quot;</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validate_url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;catalog/category/validate&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;dataSource</span> <span class="na">name=</span><span class="s">"category_form_data_source"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"dataProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Catalog\Model\Category\DataProvider<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>category_form_data_source<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"primaryFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>id<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"submit_url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"catalog/category/save"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"validate_url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"catalog/category/validate"</span><span class="nt">/&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/provider<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/provider<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/dataSource&gt;</span>
-    <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;general&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataType&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>hidden<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;source&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>category<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"general"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"dataType"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"formElement"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>hidden<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>category<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/field&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<p>In the above example, within the top-level <code>&lt;form&gt;</code> node the <code>&lt;fieldset&gt;</code> node is nested. It declares the Fieldset UI component.</p>
+<p>In the above example, within the top-level <code class="highlighter-rouge">&lt;form&gt;</code> node the <code class="highlighter-rouge">&lt;fieldset&gt;</code> node is nested. It declares the Fieldset UI component.</p>
 
-<p>The <code>name</code> attribute value must be a unique among the other components on the same hierarchical level of the same parent node. Look at the <code>&lt;argument&gt;</code> node which <code>name</code> attribute has <code>data</code> value. The child nodes of this node are the arguments that will be passed in to the component.</p>
+<p>The <code class="highlighter-rouge">name</code> attribute value must be a unique among the other components on the same hierarchical level of the same parent node. Look at the <code class="highlighter-rouge">&lt;argument&gt;</code> node which <code class="highlighter-rouge">name</code> attribute has <code class="highlighter-rouge">data</code> value. The child nodes of this node are the arguments that will be passed in to the component.</p>
 
-<p>All other child nodes are declared as items. <code>&lt;item name="config"&gt; ...&lt;/item&gt;</code> contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use <code>&lt;item name="component"&gt;...&lt;/item&gt;</code> to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_requirejs_concept.html#config"><code>require.js</code> configuration</a>.</p>
+<p>All other child nodes are declared as items. <code class="highlighter-rouge">&lt;item name="config"&gt; ...&lt;/item&gt;</code> contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use <code class="highlighter-rouge">&lt;item name="component"&gt;...&lt;/item&gt;</code> to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_requirejs_concept.html#config"><code class="highlighter-rouge">require.js</code> configuration</a>.</p>
 
-<p>In our example, the <code>&lt;item name="component"&gt;...&lt;/item&gt;</code> node within <code>&lt;fieldset&gt;</code> is omitted, because this property of the Fieldset UI component is already defined in <code>definition.xml</code>.</p>
+<p>In our example, the <code class="highlighter-rouge">&lt;item name="component"&gt;...&lt;/item&gt;</code> node within <code class="highlighter-rouge">&lt;fieldset&gt;</code> is omitted, because this property of the Fieldset UI component is already defined in <code class="highlighter-rouge">definition.xml</code>.</p>
 
 <p>In this example we showed only a small part of the possible configuration.</p>
 
 <p>The default configuration of a UI component is declared in one of the following ways:</p>
 
 <ul>
-  <li>inside the UI component itself, in the <code>.js</code> file</li>
-  <li>in the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml"><code>definition.xml</code> file</a></li>
-  <li>in both places, in which case the configurations merge (the UI component <code>.js</code> file has priority).</li>
+  <li>inside the UI component itself, in the <code class="highlighter-rouge">.js</code> file</li>
+  <li>in the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml"><code class="highlighter-rouge">definition.xml</code> file</a></li>
+  <li>in both places, in which case the configurations merge (the UI component <code class="highlighter-rouge">.js</code> file has priority).</li>
 </ul>
 
-<p>In the above example, the Fieldset UI component uses a merged configuration from both the <code>definition.xml</code> file and from the UI componenet’s <code>.js</code> file.</p>
+<p>In the above example, the Fieldset UI component uses a merged configuration from both the <code class="highlighter-rouge">definition.xml</code> file and from the UI componenet’s <code class="highlighter-rouge">.js</code> file.</p>
 
 <p>For more information about the configuration flow, refer to  the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">Configuration Flow of UI Components</a> topic.</p>
 

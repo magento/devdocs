@@ -1081,132 +1081,132 @@ This reduces the change impact on your code when the <span term-uuid="786086f2-6
 
 <h2 id="how-to-write">How to write</h2>
 
-<p>A common approach in developing an adapter is to create an interface named <code>AdapterInterface</code> to describe the functionality the third-party class provides.
-This class is typically found in a directory labeled <code>Adapter</code>.
+<p>A common approach in developing an adapter is to create an interface named <code class="highlighter-rouge">AdapterInterface</code> to describe the functionality the third-party class provides.
+This class is typically found in a directory labeled <code class="highlighter-rouge">Adapter</code>.
 Classes implementing this adapter interface use the third-party class directly to provide indirect functionality.</p>
 
 <p>This approach allows you to update or substitute different implementations provided by other third-party classes without the need to update code that uses your adapter.</p>
 
 <h2 id="examples-of-adapters-in-magento">Examples of adapters in Magento</h2>
 
-<h3 id="magentoframeworkcodeminifier"><code>Magento/Framework/Code/Minifier</code></h3>
+<h3 id="magentoframeworkcodeminifier"><code class="highlighter-rouge">Magento/Framework/Code/Minifier</code></h3>
 
-<p>The <a href="https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Code/Minifier" target="_blank">minifier</a> functionality provided by the <code>Magento/Framework/Code</code> library involves the use of third-party libraries for code compression.</p>
+<p>The <a href="https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Code/Minifier" target="_blank">minifier</a> functionality provided by the <code class="highlighter-rouge">Magento/Framework/Code</code> library involves the use of third-party libraries for code compression.</p>
 
-<p>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/AdapterInterface.php" target="_blank"><code>AdapterInterface</code></a> for this class contains a <code>minify($content)</code> function that the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Css/CSSmin.php" target="_blank"><code>CSSmin</code></a> and <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Js/JShrink.php" target="_blank"><code>JShrink</code></a> implementation class define.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/AdapterInterface.php" target="_blank"><code class="highlighter-rouge">AdapterInterface</code></a> for this class contains a <code class="highlighter-rouge">minify($content)</code> function that the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Css/CSSmin.php" target="_blank"><code class="highlighter-rouge">CSSmin</code></a> and <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Js/JShrink.php" target="_blank"><code class="highlighter-rouge">JShrink</code></a> implementation class define.</p>
 
-<p>The <a href="https://github.com/tedious/JShrink" target="_blank">jshrink</a>(tedivm/jshrink) and <a href="https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port" target="_blank">cssmin</a>(tubalmartin/cssmin) libraries registered in the <a href="https://github.com/magento/magento2/blob/develop/composer.json" target="_blank"><code>composer.json</code></a> file provide the functionalities for the implementation classes.</p>
+<p>The <a href="https://github.com/tedious/JShrink" target="_blank">jshrink</a>(tedivm/jshrink) and <a href="https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port" target="_blank">cssmin</a>(tubalmartin/cssmin) libraries registered in the <a href="https://github.com/magento/magento2/blob/develop/composer.json" target="_blank"><code class="highlighter-rouge">composer.json</code></a> file provide the functionalities for the implementation classes.</p>
 
-<h3 id="magentoframeworkimage"><code>Magento/Framework/Image</code></h3>
+<h3 id="magentoframeworkimage"><code class="highlighter-rouge">Magento/Framework/Image</code></h3>
 
-<p>The <a href="https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Image" target="_blank"><code>Magento/Framework/Image</code></a> library uses adapters to access functionality provided by GD(php-gd2) and ImageMagick(php-imagick) third-party libraries.</p>
+<p>The <a href="https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Image" target="_blank"><code class="highlighter-rouge">Magento/Framework/Image</code></a> library uses adapters to access functionality provided by GD(php-gd2) and ImageMagick(php-imagick) third-party libraries.</p>
 
-<p>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Image/Adapter/AdapterInterface.php" target="_blank"><code>AdapterInterface</code></a> class defines the available functionality, and the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Image/Adapter/Gd2.php" target="_blank"><code>Gd2</code></a> and <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Image/Adapter/ImageMagick.php" target="_blank"><code>ImageMagick</code></a> adapter classes provides the concrete implementation using the third-party libraries.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Image/Adapter/AdapterInterface.php" target="_blank"><code class="highlighter-rouge">AdapterInterface</code></a> class defines the available functionality, and the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Image/Adapter/Gd2.php" target="_blank"><code class="highlighter-rouge">Gd2</code></a> and <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Image/Adapter/ImageMagick.php" target="_blank"><code class="highlighter-rouge">ImageMagick</code></a> adapter classes provides the concrete implementation using the third-party libraries.</p>
 
 <h2 id="example-code">Example Code</h2>
 
 <p>The code below describes an interface for an adapter that parses <span term-uuid="a5ef9041-976f-4eb3-826e-bf836027d8c3" class="glossary-term" data-toggle="popover">markdown</span>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
-<span class="sd"> * Interface for markdown library adapters</span>
-<span class="sd"> */</span>
-<span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+ * Interface for markdown library adapters
+ */
+namespace MyCompany\MyModule\Markdown\Parser\Adapter;
 
-<span class="k">interface</span> <span class="nx">AdapterInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Converts markdown text into another format</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param string $text</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
+interface AdapterInterface
+{
+    /**
+     * Converts markdown text into another format
+     *
+     * @param string $text
+     * @return string
+     */
+    public function parse($text);
+}</code></pre></figure>
 
 <p><br /></p>
 
-<p>The code below is an implementation class of the <code>AdapterInterface</code> that uses the <a href="https://github.com/michelf/php-markdown" target="_blank">php-markdown</a> library to convert markdown into <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>.</p>
+<p>The code below is an implementation class of the <code class="highlighter-rouge">AdapterInterface</code> that uses the <a href="https://github.com/michelf/php-markdown" target="_blank">php-markdown</a> library to convert markdown into <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">namespace MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown;
 
-<span class="k">use</span> <span class="nx">\Michelf\Markdown</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface</span><span class="p">;</span>
+use \Michelf\Markdown;
+use MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface;
 
-<span class="sd">/**</span>
-<span class="sd"> * Adapter for php-markdown library</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="nc">PhpMarkdown</span> <span class="k">implements</span> <span class="nx">AdapterInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Convert markdown into HTML</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param string $text</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">$text</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">Markdown</span><span class="o">::</span><span class="na">defaultTransform</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+/**
+ * Adapter for php-markdown library
+ */
+class PhpMarkdown implements AdapterInterface
+{
+    /**
+     * Convert markdown into HTML
+     *
+     * @param string $text
+     * @return string
+     */
+    public function parse($text)
+    {
+        return Markdown::defaultTransform($text);
+    }
+}</code></pre></figure>
 
 <p><br /></p>
 
 <p>To configure the ObjectManager to use the PhpMarkdown implementation when the AdapterInterface class is requested as a dependency, add the following code in your di.xml file.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">preference</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown\PhpMarkdown&quot;</span> <span class="o">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface"</span> <span class="na">type=</span><span class="s">"MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown\PhpMarkdown"</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <p><br /></p>
 
-<p>The code below is an alternate implementation class of the <code>AdapterInterface</code> that uses the <a href="https://github.com/kzykhys/Ciconia" target="_blank">Ciconia</a> library to parse markdown into HTML.
-This code differs from the previous implementations in that an instance of the <code>Ciconia</code> class is a constructor dependency.</p>
+<p>The code below is an alternate implementation class of the <code class="highlighter-rouge">AdapterInterface</code> that uses the <a href="https://github.com/kzykhys/Ciconia" target="_blank">Ciconia</a> library to parse markdown into HTML.
+This code differs from the previous implementations in that an instance of the <code class="highlighter-rouge">Ciconia</code> class is a constructor dependency.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Ciconia\Ciconia</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">namespace MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia;
+use Ciconia\Ciconia;
+use MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface;
 
-<span class="sd">/**</span>
-<span class="sd"> * Adapter for the Ciconia library</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="nc">CiconiaParser</span> <span class="k">implements</span> <span class="nx">AdapterInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var Ciconia</span>
-<span class="sd">     */</span>
-     <span class="k">protected</span> <span class="nv">$parser</span><span class="p">;</span>
+/**
+ * Adapter for the Ciconia library
+ */
+class CiconiaParser implements AdapterInterface
+{
+    /**
+     * @var Ciconia
+     */
+     protected $parser;
 
-    <span class="sd">/**</span>
-<span class="sd">     * @param Ciconia</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Ciconia</span> <span class="nv">$parser</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">parser</span> <span class="o">=</span> <span class="nv">$parser</span><span class="p">;</span>
-    <span class="p">}</span>
+    /**
+     * @param Ciconia
+     */
+    public function __construct(Ciconia $parser)
+    {
+        $this-&gt;parser = $parser;
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * Convert markdown into HTML</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param string $text</span>
-<span class="sd">     * @return string</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">$text</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">parser</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    /**
+     * Convert markdown into HTML
+     *
+     * @param string $text
+     * @return string
+     */
+    public function parse($text)
+    {
+        return $this-&gt;parser-&gt;render($text);
+    }
+}</code></pre></figure>
 
 <p><br /></p>
 
-<p>The following <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> entries belong in the <code>di.xml</code> file.
+<p>The following <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> entries belong in the <code class="highlighter-rouge">di.xml</code> file.
 They describe to the ObjectManager how to create the third-party and adapter classes.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;defaultCiconia&quot;</span> <span class="na">type=</span><span class="s">&quot;Ciconia\Ciconia&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"defaultCiconia"</span> <span class="na">type=</span><span class="s">"Ciconia\Ciconia"</span> <span class="na">shared=</span><span class="s">"false"</span><span class="nt">&gt;</span>
    <span class="nt">&lt;arguments&gt;</span>
-       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;renderer&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;null&quot;</span><span class="nt">/&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"renderer"</span> <span class="na">xsi:type=</span><span class="s">"null"</span><span class="nt">/&gt;</span>
    <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span>
-<span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia\CiconiaParser&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia\CiconiaParser"</span><span class="nt">&gt;</span>
    <span class="nt">&lt;arguments&gt;</span>
-       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;parser&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>defaultCiconia<span class="nt">&lt;/argument&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"parser"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>defaultCiconia<span class="nt">&lt;/argument&gt;</span>
    <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 

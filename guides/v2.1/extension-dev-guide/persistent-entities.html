@@ -477,57 +477,57 @@
 <p>In Magento, data interfaces, data models, and models all represent entities.</p>
 
 <h4 id="data-interfaces">Data Interfaces</h4>
-<p>A data interface is the interface for an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> that reveals the data it contains to clients. For example, the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Api/Data/CustomerInterface.php" target="_blank"><code>\Magento\Customer\Api\Data\CustomerInterface</code></a> class contains get and set functions for customer entity-related data such as names and email.</p>
+<p>A data interface is the interface for an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> that reveals the data it contains to clients. For example, the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Api/Data/CustomerInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code></a> class contains get and set functions for customer entity-related data such as names and email.</p>
 
-<p>To allow the addition of <a href="/guides/v2.1/extension-dev-guide/attributes.html">custom EAV attributes</a> on your entity, your data interface must extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/CustomAttributesDataInterface.php" target="_blank"><code>\Magento\Framework\Api\CustomAttributesDataInterface</code></a> class.</p>
+<p>To allow the addition of <a href="/guides/v2.1/extension-dev-guide/attributes.html">custom EAV attributes</a> on your entity, your data interface must extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/CustomAttributesDataInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\Api\CustomAttributesDataInterface</code></a> class.</p>
 
-<p>To allow the use of <a href="/guides/v2.1/extension-dev-guide/attributes.html">extension attributes</a> on your entity, your data interface must extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensibleDataInterface.php" target="_blank"><code>\Magento\Framework\Api\ExtensibleDataInterface</code></a> class. We recommend using this approach when you define the data interface for your entity.</p>
+<p>To allow the use of <a href="/guides/v2.1/extension-dev-guide/attributes.html">extension attributes</a> on your entity, your data interface must extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensibleDataInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\Api\ExtensibleDataInterface</code></a> class. We recommend using this approach when you define the data interface for your entity.</p>
 
 <h4 id="data-models">Data Models</h4>
-<p>A data model is a class that implements a data interface and contains data that is accessible using setter and getter methods. <a href="#repositories">Repositories</a> use data models and resource models for entity persistence. We recommend you put data model classes in the <code>Model/Data</code> directory inside your module’s root directory.</p>
+<p>A data model is a class that implements a data interface and contains data that is accessible using setter and getter methods. <a href="#repositories">Repositories</a> use data models and resource models for entity persistence. We recommend you put data model classes in the <code class="highlighter-rouge">Model/Data</code> directory inside your module’s root directory.</p>
 
-<p>An example of a data model is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/Data/Customer.php" target="_blank"><code>\Magento\Customer\Model\Data\Customer</code></a> class.</p>
+<p>An example of a data model is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/Data/Customer.php" target="_blank"><code class="highlighter-rouge">\Magento\Customer\Model\Data\Customer</code></a> class.</p>
 
 <h4 id="models">Models</h4>
 
-<p>Magento models extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Model/AbstractModel.php" target="_blank"><code>Magento\Framework\Model\AbstractModel</code></a> class because it provides useful general functions. Models contain logic for validation, events, and caching. A model class might have a data interface implementation. To set or access data, they use <code>getData</code>, <code>setData</code> and magic methods. A model is not statically typed if it does not have a data interface implementation.</p>
+<p>Magento models extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Model/AbstractModel.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Model\AbstractModel</code></a> class because it provides useful general functions. Models contain logic for validation, events, and caching. A model class might have a data interface implementation. To set or access data, they use <code class="highlighter-rouge">getData</code>, <code class="highlighter-rouge">setData</code> and magic methods. A model is not statically typed if it does not have a data interface implementation.</p>
 
 <p>Model classes should posses logic that relates to those classes and should not contain logic that reveal anything about data storage in the underlying data layer.</p>
 
-<p>We recommend putting model classes in the <code>Model</code> directory inside your module’s root directory.</p>
+<p>We recommend putting model classes in the <code class="highlighter-rouge">Model</code> directory inside your module’s root directory.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Do not use the inherited <code>load</code>,<code>save</code>, <code>delete</code> methods from <code>AbstractModel</code> because these deprecated methods will not be available in the future. Instead, Magento recommends using data interfaces and repositories for persisting entities.</p>
+  <p>Do not use the inherited <code class="highlighter-rouge">load</code>,<code class="highlighter-rouge">save</code>, <code class="highlighter-rouge">delete</code> methods from <code class="highlighter-rouge">AbstractModel</code> because these deprecated methods will not be available in the future. Instead, Magento recommends using data interfaces and repositories for persisting entities.</p>
 </div>
 
-<p>An example of a model is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/Customer.php" target="_blank"><code>\Magento\Customer\Model\Customer</code></a> class.</p>
+<p>An example of a model is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/Customer.php" target="_blank"><code class="highlighter-rouge">\Magento\Customer\Model\Customer</code></a> class.</p>
 
 <h3 id="repositories">Repositories</h3>
 
-<p>Modules interact with other modules through their public <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>. For working with persistent entities, Magento recommends and uses repositories. These classes adopt the <a href="http://martinfowler.com/eaaCatalog/repository.html" target="_blank">repository pattern</a> and act as a layer between your module’s business logic layer and the data mapping layer. We recommend placing the class files for repositories under the <code>Model</code> or <code>Model/ResourceModel</code> directory inside your module’s root directory.</p>
+<p>Modules interact with other modules through their public <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>. For working with persistent entities, Magento recommends and uses repositories. These classes adopt the <a href="http://martinfowler.com/eaaCatalog/repository.html" target="_blank">repository pattern</a> and act as a layer between your module’s business logic layer and the data mapping layer. We recommend placing the class files for repositories under the <code class="highlighter-rouge">Model</code> or <code class="highlighter-rouge">Model/ResourceModel</code> directory inside your module’s root directory.</p>
 
-<p>An example of a repository is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CatalogRule/Model/CatalogRuleRepository.php" target="_blank"><code>Magento\CatalogRule\Model\CatalogRuleRepository</code></a> class.</p>
+<p>An example of a repository is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CatalogRule/Model/CatalogRuleRepository.php" target="_blank"><code class="highlighter-rouge">Magento\CatalogRule\Model\CatalogRuleRepository</code></a> class.</p>
 
-<p>Different parts of the application can use your repository to load entities. To prevent loading of the same data from the database more than once, use a registry inside the repository. For an example of this strategy, take a look at the  <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code>Magento\Customer\Model\ResourceModel\CustomerRepository</code></a> class.</p>
+<p>Different parts of the application can use your repository to load entities. To prevent loading of the same data from the database more than once, use a registry inside the repository. For an example of this strategy, take a look at the  <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code class="highlighter-rouge">Magento\Customer\Model\ResourceModel\CustomerRepository</code></a> class.</p>
 
 <h4 id="resource-models">Resource Models</h4>
 
-<p>Resource models contain logic that allow entities to be persistent. They help decouple the model layer from the data layer by acting as an intermediate mapping layer between the two. These classes provide the interface to manipulate data to the model layer while implementing code that is specific to the data layer. We recommend you put resource models under the <code>Model/ResourceModel</code> directory inside your module’s root directory.</p>
+<p>Resource models contain logic that allow entities to be persistent. They help decouple the model layer from the data layer by acting as an intermediate mapping layer between the two. These classes provide the interface to manipulate data to the model layer while implementing code that is specific to the data layer. We recommend you put resource models under the <code class="highlighter-rouge">Model/ResourceModel</code> directory inside your module’s root directory.</p>
 
 <h4 id="persisting-with-resource-models">Persisting with resource models</h4>
 
-<p>Repository functions should operate on data interfaces. In your repository functions, you can extract a <a href="#data-models">data model</a> from the interface using the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensibleDataObjectConverter.php" target="_blank"><code>\Magento\Framework\Api\ExtensibleDataObjectConverter</code></a> class to create and populate a resource model using a <a href="/guides/v2.1/extension-dev-guide/factories.html">factory</a>. This resource model can then save, load, or delete an entity.</p>
+<p>Repository functions should operate on data interfaces. In your repository functions, you can extract a <a href="#data-models">data model</a> from the interface using the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensibleDataObjectConverter.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\Api\ExtensibleDataObjectConverter</code></a> class to create and populate a resource model using a <a href="/guides/v2.1/extension-dev-guide/factories.html">factory</a>. This resource model can then save, load, or delete an entity.</p>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$customerModel</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="nv">$customerData</span><span class="p">]);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$customerModel = $this-&gt;customerFactory-&gt;create(['data' =&gt; $customerData]);
 
-<span class="sd">/** @var $customerResource \Magento\Customer\Model\ResourceModel\Customer */</span>
-<span class="nv">$customerResource</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$customerModel</span><span class="p">);</span>
+/** @var $customerResource \Magento\Customer\Model\ResourceModel\Customer */
+$customerResource-&gt;save($customerModel);
 
-<span class="nv">$customerResource</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$customerModel</span><span class="p">,</span> <span class="nv">$entityId</span><span class="p">);</span>
+$customerResource-&gt;load($customerModel, $entityId);
 
-<span class="nv">$customerResource</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$customerModel</span><span class="p">);</span></code></pre></figure>
+$customerResource-&gt;delete($customerModel);</code></pre></figure>
 
 <h4 class="no_toc" id="related-topics">Related topics</h4>
 

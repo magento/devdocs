@@ -1116,10 +1116,10 @@
 <p>The high-level steps required to add a new theme in the Magento system are the following:</p>
 
 <ol>
-  <li>Create a directory for the theme under <code>app/design/frontend/&lt;your_vendor_name&gt;/&lt;your_theme_name&gt;</code>.</li>
-  <li>Add a declaration file <code>theme.xml</code> and optionally create <code>etc</code> directory and create a file named <code>view.xml</code> to the theme directory.</li>
-  <li>Add a <code>composer.json</code> file.</li>
-  <li>Add <code>registration.php</code>.</li>
+  <li>Create a directory for the theme under <code class="highlighter-rouge">app/design/frontend/&lt;your_vendor_name&gt;/&lt;your_theme_name&gt;</code>.</li>
+  <li>Add a declaration file <code class="highlighter-rouge">theme.xml</code> and optionally create <code class="highlighter-rouge">etc</code> directory and create a file named <code class="highlighter-rouge">view.xml</code> to the theme directory.</li>
+  <li>Add a <code class="highlighter-rouge">composer.json</code> file.</li>
+  <li>Add <code class="highlighter-rouge">registration.php</code>.</li>
   <li>Create directories for CSS, JavaScript, images, and fonts.</li>
   <li>Configure your theme in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel.</li>
 </ol>
@@ -1137,10 +1137,10 @@
 
 <ol>
   <li>
-    <p>Go to <code>&lt;your Magento install dir&gt;/app/design/frontend</code>.</p>
+    <p>Go to <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/design/frontend</code>.</p>
   </li>
   <li>
-    <p>Create a new directory named according to your vendor name: <code>/app/design/frontend/&lt;Vendor&gt;</code>.</p>
+    <p>Create a new directory named according to your vendor name: <code class="highlighter-rouge">/app/design/frontend/&lt;Vendor&gt;</code>.</p>
   </li>
   <li>
     <p>Under the vendor directory, create a directory named according to your theme.</p>
@@ -1159,114 +1159,114 @@ app/design/frontend/
 
 <h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
 
-<p>After you create a directory for your theme, you must create <code>theme.xml</code> containing at least the theme name and the parent theme name (if the theme <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from one). Optionally you can specify where the theme preview image is stored.</p>
+<p>After you create a directory for your theme, you must create <code class="highlighter-rouge">theme.xml</code> containing at least the theme name and the parent theme name (if the theme <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from one). Optionally you can specify where the theme preview image is stored.</p>
 
 <ol>
   <li>
-    <p>Add or copy from an existing <code>theme.xml</code> to your theme directory <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code></p>
+    <p>Add or copy from an existing <code class="highlighter-rouge">theme.xml</code> to your theme directory <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code></p>
   </li>
   <li>
     <p>Configure it using the following example:</p>
   </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
-     <span class="nt">&lt;title&gt;</span>New theme<span class="nt">&lt;/title&gt;</span> <span class="c">&lt;!-- your theme&#39;s name --&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Config/etc/theme.xsd"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;title&gt;</span>New theme<span class="nt">&lt;/title&gt;</span> <span class="c">&lt;!-- your theme's name --&gt;</span>
      <span class="nt">&lt;parent&gt;</span>Magento/blank<span class="nt">&lt;/parent&gt;</span> <span class="c">&lt;!-- the parent theme, in case your theme inherits from an existing theme --&gt;</span>
      <span class="nt">&lt;media&gt;</span>
-         <span class="nt">&lt;preview_image&gt;</span>media/preview.jpg<span class="nt">&lt;/preview_image&gt;</span> <span class="c">&lt;!-- the path to your theme&#39;s preview image --&gt;</span>
+         <span class="nt">&lt;preview_image&gt;</span>media/preview.jpg<span class="nt">&lt;/preview_image&gt;</span> <span class="c">&lt;!-- the path to your theme's preview image --&gt;</span>
      <span class="nt">&lt;/media&gt;</span>
  <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
 
-<p>If you change the theme title or parent theme information in <code>theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> page for your changes to be saved in the database.</p>
+<p>If you change the theme title or parent theme information in <code class="highlighter-rouge">theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> page for your changes to be saved in the database.</p>
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
 
 <p>Magento default themes are distributed as <a href="https://getcomposer.org/" target="_blank">Composer</a> packages.</p>
 
-<p>To distribute your theme as a package, add a <code>composer.json</code> file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank">https://packagist.org/</a>.</p>
+<p>To distribute your theme as a package, add a <code class="highlighter-rouge">composer.json</code> file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank">https://packagist.org/</a>.</p>
 
-<p><code>composer.json</code> provides theme dependency information.</p>
+<p><code class="highlighter-rouge">composer.json</code> provides theme dependency information.</p>
 
-<p>Example of a theme <code>composer.json</code>:</p>
+<p>Example of a theme <code class="highlighter-rouge">composer.json</code>:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;magento/theme-frontend-luma&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;~5.5.0|~5.6.0|~7.0.0&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/theme-frontend-blank&quot;</span><span class="p">:</span> <span class="s2">&quot;100.0.*&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;magento/framework&quot;</span><span class="p">:</span> <span class="s2">&quot;100.0.*&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-theme&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;100.0.1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;OSL-3.0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;AFL-3.0&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;autoload&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;registration.php&quot;</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/theme-frontend-luma"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0|~7.0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"magento/theme-frontend-blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0.*"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"magento/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0.*"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-theme"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AFL-3.0"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"registration.php"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p>You can find details about the Composer integration in the Magento system in <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</p>
 
 <h2 id="fedg_create_theme_reg">Add registration.php</h2>
 
-<p>To register your theme in the system, in your theme directory add a <code>registration.php</code> file with the following content:</p>
+<p>To register your theme in the system, in your theme directory add a <code class="highlighter-rouge">registration.php</code> file with the following content:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
     <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">THEME</span><span class="p">,</span>
-    <span class="s1">&#39;frontend/&lt;Vendor&gt;/&lt;theme&gt;&#39;</span><span class="p">,</span>
+    <span class="s1">'frontend/&lt;Vendor&gt;/&lt;theme&gt;'</span><span class="p">,</span>
     <span class="nx">__DIR__</span>
 <span class="p">);</span></code></pre></figure>
 
-<p>Where <code>&lt;Vendor&gt;</code> is your vendor name, <code>&lt;theme&gt;</code> is the theme code.</p>
+<p>Where <code class="highlighter-rouge">&lt;Vendor&gt;</code> is your vendor name, <code class="highlighter-rouge">&lt;theme&gt;</code> is the theme code.</p>
 
 <p>For illustration, see the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/luma/registration.php">registration.php</a> file of the Magento Luma theme.</p>
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
-<p>Product image sizes and other properties used on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> are configured in a <code>view.xml</code> configuration file. It is required for a theme, but is optional if exists in the parent theme.</p>
+<p>Product image sizes and other properties used on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> are configured in a <code class="highlighter-rouge">view.xml</code> configuration file. It is required for a theme, but is optional if exists in the parent theme.</p>
 
-<p>If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add <code>view.xml</code> using the following steps:</p>
+<p>If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add <code class="highlighter-rouge">view.xml</code> using the following steps:</p>
 
 <ol>
   <li>
     <p>Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)</p>
   </li>
   <li>
-    <p>Create the <code>etc</code> directory in your theme folder</p>
+    <p>Create the <code class="highlighter-rouge">etc</code> directory in your theme folder</p>
   </li>
   <li>
-    <p>Copy <code>view.xml</code> from the <code>etc</code> directory of an existing theme (for example, from the Blank theme) to your theme’s <code>etc</code> directory.</p>
+    <p>Copy <code class="highlighter-rouge">view.xml</code> from the <code class="highlighter-rouge">etc</code> directory of an existing theme (for example, from the Blank theme) to your theme’s <code class="highlighter-rouge">etc</code> directory.</p>
   </li>
   <li>
-    <p>Configure all storefront product image sizes in <code>view.xml</code>.
+    <p>Configure all storefront product image sizes in <code class="highlighter-rouge">view.xml</code>.
 For example, you can make the <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> grid view product images square by specifying a size of 250 x 250 pixels, here is how the corresponding configuration would look like:</p>
   </li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
-    <span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">&quot;category_page_grid&quot;</span> <span class="na">type=</span><span class="s">&quot;small_image&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">"category_page_grid"</span> <span class="na">type=</span><span class="s">"small_image"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;width&gt;</span>250<span class="nt">&lt;/width&gt;</span>
         <span class="nt">&lt;height&gt;</span>250<span class="nt">&lt;/height&gt;</span>
     <span class="nt">&lt;/image&gt;</span>
 ...</code></pre></figure>
 
-<p>For details about images configuration in <code>view.xml</code>, see the <a href="/guides/v2.1/frontend-dev-guide/themes/theme-images.html" target="_blank">Configure images properties for a theme</a> topic.</p>
+<p>For details about images configuration in <code class="highlighter-rouge">view.xml</code>, see the <a href="/guides/v2.1/frontend-dev-guide/themes/theme-images.html" target="_blank">Configure images properties for a theme</a> topic.</p>
 
 <h2 id="fedg_theme_how-to_static">Create directories for static files</h2>
 
 <p>Your theme will likely contain several types of static files: styles, fonts, <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and images.
-Each type should be stored in a separate sub-directory of <code>web</code> in your theme folder:</p>
+Each type should be stored in a separate sub-directory of <code class="highlighter-rouge">web</code> in your theme folder:</p>
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 ├──&nbsp;web/
@@ -1308,7 +1308,7 @@ app/design/frontend/&lt;Vendor&gt;/
 
 <h2 id="theme_logo">Theme logo</h2>
 
-<p>In the Magento application, the default format and name of a logo image is <code>logo.svg</code>. When you put a <code>logo.svg</code> image in the conventional location, which is <code>&lt;theme_dir&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="/guides/v2.1/frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.</p>
+<p>In the Magento application, the default format and name of a logo image is <code class="highlighter-rouge">logo.svg</code>. When you put a <code class="highlighter-rouge">logo.svg</code> image in the conventional location, which is <code class="highlighter-rouge">&lt;theme_dir&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="/guides/v2.1/frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.</p>
 
 <p>In your custom theme, you can use a logo file with a different name and format, but you might need to declare it.</p>
 
@@ -1331,17 +1331,17 @@ Your theme does not have a parent theme:
 
 <h2 id="logo_declare">Declaring theme logo</h2>
 
-<p>To declare a theme logo, add an <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>&lt;theme_dir&gt;/Magento_Theme/layout/default.xml</code> layout.</p>
+<p>To declare a theme logo, add an <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code class="highlighter-rouge">&lt;theme_dir&gt;/Magento_Theme/layout/default.xml</code> layout.</p>
 
-<p>For example, if your logo file is <code>my_logo.png</code> sized 300x300px, you need to declare it as follows:</p>
+<p>For example, if your logo file is <code class="highlighter-rouge">my_logo.png</code> sized 300x300px, you need to declare it as follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;logo&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"logo"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;logo_file&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>images/my_logo.png<span class="nt">&lt;/argument&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;logo_img_width&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>300<span class="nt">&lt;/argument&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;logo_img_height&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>300<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logo_file"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>images/my_logo.png<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logo_img_width"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>300<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logo_img_height"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>300<span class="nt">&lt;/argument&gt;</span>
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>
     <span class="nt">&lt;/body&gt;</span>

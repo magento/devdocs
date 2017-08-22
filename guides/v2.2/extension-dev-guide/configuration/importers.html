@@ -1250,63 +1250,63 @@
 			<p>A configuration importer provides consistent configurations across multiple systems (such as development, staging, and production).
 This is useful for deployment strategies such as <a href="/guides/v2.2/config-guide/deployment/pipeline/">pipeline deployment</a>.</p>
 
-<p>Magento uses configuration importers to import configuration data from the shared configuration file, <code>config.php</code>, to the appropriate storage, such as a database.</p>
+<p>Magento uses configuration importers to import configuration data from the shared configuration file, <code class="highlighter-rouge">config.php</code>, to the appropriate storage, such as a database.</p>
 
-<p>Use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-import.html"><code>magento app:config:import</code> command</a> to import the configuration from the command line.</p>
+<p>Use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-import.html"><code class="highlighter-rouge">magento app:config:import</code> command</a> to import the configuration from the command line.</p>
 
 <p>Currently Magento has the following importers:</p>
 
 <ul>
-  <li><code>Magento\Config\Model\Config\Importer</code></li>
-  <li><code>Magento\Store\Model\Config\Importer</code></li>
-  <li><code>Magento\Theme\Model\Config\Importer</code></li>
+  <li><code class="highlighter-rouge">Magento\Config\Model\Config\Importer</code></li>
+  <li><code class="highlighter-rouge">Magento\Store\Model\Config\Importer</code></li>
+  <li><code class="highlighter-rouge">Magento\Theme\Model\Config\Importer</code></li>
 </ul>
 
-<h2 id="importerinterface"><code>ImporterInterface</code></h2>
+<h2 id="importerinterface"><code class="highlighter-rouge">ImporterInterface</code></h2>
 
-<p>All Magento importers implement the interface <a href="(https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php" target="_blank"><code>Magento\Framework\App\DeploymentConfig\ImporterInterface</code></a> and define the following methods:</p>
+<p>All Magento importers implement the interface <a href="(https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\App\DeploymentConfig\ImporterInterface</code></a> and define the following methods:</p>
 
 <ul>
   <li>
-    <p><code>import(array $data)</code> - The argument <code>$data</code> is the configuration array from <code>config.php</code>.</p>
+    <p><code class="highlighter-rouge">import(array $data)</code> - The argument <code class="highlighter-rouge">$data</code> is the configuration array from <code class="highlighter-rouge">config.php</code>.</p>
 
     <p>This method should return the array of messages generated during the import process.</p>
   </li>
   <li>
-    <p><code>getWarningMessages(array $data)</code> - Generates and returns the array of warning messages that contain information about what will be changed in the system.</p>
+    <p><code class="highlighter-rouge">getWarningMessages(array $data)</code> - Generates and returns the array of warning messages that contain information about what will be changed in the system.</p>
 
-    <p>The <code>$data</code> argument is the same as for the method <code>import</code>.</p>
+    <p>The <code class="highlighter-rouge">$data</code> argument is the same as for the method <code class="highlighter-rouge">import</code>.</p>
 
     <p>If this method returns an empty array, the import proceeds without interaction.</p>
 
-    <p>You can also provide a message such as <code>Do you want to continue [yes/no]?</code></p>
+    <p>You can also provide a message such as <code class="highlighter-rouge">Do you want to continue [yes/no]?</code></p>
 
-    <p>If the user enters <code>no</code>, import is canceled; otherwise, if the user enters <code>yes</code>, the import is processed.</p>
+    <p>If the user enters <code class="highlighter-rouge">no</code>, import is canceled; otherwise, if the user enters <code class="highlighter-rouge">yes</code>, the import is processed.</p>
   </li>
 </ul>
 
 <h3 id="implement-your-own-importer">Implement your own importer</h3>
 
 <ol>
-  <li>Create an <code>Importer</code> class that implements <a href="(https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php" target="_blank"><code>Magento\Framework\App\DeploymentConfig\ImporterInterface</code></a>.</li>
-  <li>Register your importer in your module’s <a href="/guides/v2.2/extension-dev-guide/depend-inj.html"><code>di.xml</code></a>:</li>
+  <li>Create an <code class="highlighter-rouge">Importer</code> class that implements <a href="(https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/ImporterInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\App\DeploymentConfig\ImporterInterface</code></a>.</li>
+  <li>Register your importer in your module’s <a href="/guides/v2.2/extension-dev-guide/depend-inj.html"><code class="highlighter-rouge">di.xml</code></a>:</li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"> 
-<span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Deploy\Model\DeploymentConfig\ImporterPool&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Deploy\Model\DeploymentConfig\ImporterPool"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;importers&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;i18n&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Vendor\Module\Model\Config\Importer<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>110<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"importers"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"i18n"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Vendor\Module\Model\Config\Importer<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sortOrder"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>110<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
-<p>The sample code in the preceding example registers the importer <code>Vendor\Module\Model\Config\Importer</code> for the <code>i18n</code> array in <code>config.php</code>.</p>
+<p>The sample code in the preceding example registers the importer <code class="highlighter-rouge">Vendor\Module\Model\Config\Importer</code> for the <code class="highlighter-rouge">i18n</code> array in <code class="highlighter-rouge">config.php</code>.</p>
 
-<p>The <code>i18n</code> array has a queue order of 110, which means this importer runs after importers that have value of sort order less than 110 has and if values in the section <code>i18n</code> were changed.</p>
+<p>The <code class="highlighter-rouge">i18n</code> array has a queue order of 110, which means this importer runs after importers that have value of sort order less than 110 has and if values in the section <code class="highlighter-rouge">i18n</code> were changed.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>An array cannot be imported by more than one importer.</p>

@@ -998,12 +998,13 @@
   <h3 id="symptom">Symptom</h3>
   <p>According to PayPal, symptoms of the issue include the following messages in your error log:</p>
 
-  <pre><code>*Unknown SSL protocol error* in connection to api-3t.sandbox.paypal.com:-9824
+  <div class="highlighter-rouge"><pre class="highlight"><code>*Unknown SSL protocol error* in connection to api-3t.sandbox.paypal.com:-9824
 </code></pre>
+  </div>
 
   <p>or</p>
 
-  <pre><code>140062736746144:error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number:s3_pkt.c:337:
+  <div class="highlighter-rouge"><pre class="highlight"><code>140062736746144:error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number:s3_pkt.c:337:
 
 ... (more messages) ...
 
@@ -1016,28 +1017,31 @@ Protocol: SSLv3*
 
 ... (more messages) ...
 </code></pre>
+  </div>
 
   <h3 id="description">Description</h3>
-  <p>The source of the issue is your version of <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code>libcurl</code></a>. <code>libcurl</code> versions earlier than 7.34 use TLS 1.1 or earlier by default.</p>
+  <p>The source of the issue is your version of <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code class="highlighter-rouge">libcurl</code></a>. <code class="highlighter-rouge">libcurl</code> versions earlier than 7.34 use TLS 1.1 or earlier by default.</p>
 
-  <p>To determine the version of <code>libcurl</code> you’re running, enter the following command on the server that processes PayPal transactions:</p>
+  <p>To determine the version of <code class="highlighter-rouge">libcurl</code> you’re running, enter the following command on the server that processes PayPal transactions:</p>
 
-  <pre><code>curl --version
+  <div class="highlighter-rouge"><pre class="highlight"><code>curl --version
 </code></pre>
+  </div>
 
   <p>If the version is earlier than 7.34, continue with the next section. If you’re already running version 7.34 or later, no action is necessary.</p>
 
   <h3 id="solution">Solution</h3>
-  <p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code>libcurl</code></a> library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.</p>
+  <p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code class="highlighter-rouge">libcurl</code></a> library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.</p>
 
   <p>To determine the version of CentOS your server runs, enter the following command:</p>
 
-  <pre><code>cat /etc/*release*
+  <div class="highlighter-rouge"><pre class="highlight"><code>cat /etc/*release*
 </code></pre>
+  </div>
 
   <p>If you’re already running CentOS 6.8 or later, no action is necessary. According to the <a href="https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.8" target="_blank">CentOS 6.8 changelog</a>, “various applications now support TLS 1.2, i.e. OpenLDAP, yum, stunnel, vsftpd, git, postfix and others. Also TLS 1.2 has been enabled by default in various packages”.</p>
 
-  <p>(CentOS 7 has a newer version of <code>libcurl</code> that also defaults to TLS 1.2.)</p>
+  <p>(CentOS 7 has a newer version of <code class="highlighter-rouge">libcurl</code> that also defaults to TLS 1.2.)</p>
 
   <p>You have the following options:</p>
 
@@ -1045,12 +1049,12 @@ Protocol: SSLv3*
     <li>
       <p>(Recommended). Upgrade your Magento server to CentOS 6.8 or later.</p>
 
-      <p>Its recommended repositories support current versions of TLS with <code>libcurl</code>. Using CentOS 6.8 or later is the most secure way to continue operating your store and accepting PayPal.</p>
+      <p>Its recommended repositories support current versions of TLS with <code class="highlighter-rouge">libcurl</code>. Using CentOS 6.8 or later is the most secure way to continue operating your store and accepting PayPal.</p>
 
-      <p>CentOS 6.8 has a <code>libcurl</code> version that defaults to TLS 1.2.</p>
+      <p>CentOS 6.8 has a <code class="highlighter-rouge">libcurl</code> version that defaults to TLS 1.2.</p>
     </li>
     <li>
-      <p>(Less secure, <em>not recommended</em>). Upgrade to <code>libcurl</code> 7.34 or later on CentOS 6 using a non-recommended third-party repository.</p>
+      <p>(Less secure, <em>not recommended</em>). Upgrade to <code class="highlighter-rouge">libcurl</code> 7.34 or later on CentOS 6 using a non-recommended third-party repository.</p>
 
       <p>One possible solution is to use the information on <a href="http://serverfault.com/questions/321321/upgrade-curl-to-latest-on-centos" target="_blank">serverfault</a>.</p>
 

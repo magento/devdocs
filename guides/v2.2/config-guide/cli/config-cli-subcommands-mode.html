@@ -1904,7 +1904,7 @@
 			<h2 id="config-mode-over">Overview of setting Magento modes</h2>
 <p>To improve security and ease-of-use, we added a command that switches <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa.</p>
 
-<p>Production mode also has better performance because static view files are populated in the <code>pub/static</code> directory and because of code compilation.</p>
+<p>Production mode also has better performance because static view files are populated in the <code class="highlighter-rouge">pub/static</code> directory and because of code compilation.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<ul><li>In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.</li>
@@ -1915,18 +1915,19 @@
 
 <p>When you change to developer or production mode, we clear the contents of following directories:</p>
 
-<pre><code>var/cache
+<div class="highlighter-rouge"><pre class="highlight"><code>var/cache
 generated/metadata
 generated/code
 var/view_preprocessed
 pub/static
 </code></pre>
+</div>
 
 <p>Exceptions:</p>
 
 <ul>
-  <li><code>.htaccess</code> files are not removed</li>
-  <li><code>pub/static</code> contains a file that specifies the version of static content; this file is not removed</li>
+  <li><code class="highlighter-rouge">.htaccess</code> files are not removed</li>
+  <li><code class="highlighter-rouge">pub/static</code> contains a file that specifies the version of static content; this file is not removed</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1939,25 +1940,28 @@ pub/static
 
 <p>Command usage:</p>
 
-<pre><code>magento deploy:mode:show
+<div class="highlighter-rouge"><pre class="highlight"><code>magento deploy:mode:show
 </code></pre>
+</div>
 
 <p>A message similar to the following displays:</p>
 
-<pre><code>Current application mode: developer.
+<div class="highlighter-rouge"><pre class="highlight"><code>Current application mode: developer.
 </code></pre>
+</div>
 
 <h2 id="config-mode-change">Change modes</h2>
 <p>Command usage:</p>
 
-<pre><code>magento deploy:mode:set {mode} [-s|--skip-compilation]
+<div class="highlighter-rouge"><pre class="highlight"><code>magento deploy:mode:set {mode} [-s|--skip-compilation]
 </code></pre>
+</div>
 
 <p>where</p>
 
-<p><code>{mode}</code> is required; it can be either <code>developer</code> or <code>production</code></p>
+<p><code class="highlighter-rouge"><span class="p">{</span><span class="err">mode</span><span class="p">}</span></code> is required; it can be either <code class="highlighter-rouge">developer</code> or <code class="highlighter-rouge">production</code></p>
 
-<p><code>--skip-compilation</code> is an optional parameter you can use to skip <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.</p>
+<p><code class="highlighter-rouge">--skip-compilation</code> is an optional parameter you can use to skip <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>You cannot currently change from either developer or production mode to <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
@@ -1967,12 +1971,13 @@ pub/static
 
 <h3 id="change-to-production-mode">Change to production mode</h3>
 
-<pre><code>magento deploy:mode:set production
+<div class="highlighter-rouge"><pre class="highlight"><code>magento deploy:mode:set production
 </code></pre>
+</div>
 
 <p>Following is a summary of messages that display:</p>
 
-<pre><code>Enabled maintenance mode
+<div class="highlighter-rouge"><pre class="highlight"><code>Enabled maintenance mode
 Requested languages: en_US
 === frontend -&gt; Magento/luma -&gt; en_US ===
 ... more ...
@@ -2005,27 +2010,31 @@ Compilation complete
 Disabled maintenance mode
 Enabled production mode.
 </code></pre>
+</div>
 
 <h3 id="change-to-developer-mode">Change to developer mode</h3>
 <p>When you change from production to developer mode, you should clear generated classes and Object Manager entities like proxies to prevent unexpected errors. After doing so, you can change modes. Use the following steps:</p>
 
 <ol>
   <li>
-    <p>If you’re changing from production mode to developer mode, delete the contents of the <code>generated/code</code> and <code>generated/metadata</code> directories:</p>
+    <p>If you’re changing from production mode to developer mode, delete the contents of the <code class="highlighter-rouge">generated/code</code> and <code class="highlighter-rouge">generated/metadata</code> directories:</p>
 
-    <pre><code>rm -rf &lt;your Magento install dir&gt;/generated/metadata/* &lt;your Magento install dir&gt;/generated/code/*
+    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/generated/metadata/* &lt;your Magento install dir&gt;/generated/code/*
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Set the mode:</p>
 
-    <pre><code>magento deploy:mode:set developer
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento deploy:mode:set developer
 </code></pre>
+    </div>
 
     <p>The following message displays:</p>
 
-    <pre><code>Switched to developer mode.
+    <div class="highlighter-rouge"><pre class="highlight"><code>Switched to developer mode.
 </code></pre>
+    </div>
   </li>
 </ol>
 

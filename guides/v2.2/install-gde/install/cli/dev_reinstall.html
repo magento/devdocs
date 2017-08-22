@@ -801,40 +801,43 @@
 </section>
 
 
-			<p>A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> reinstalls Magento by updating <code>composer.json</code> to specify the Magento product version and component versions desired and runs <code>composer update</code>.</p>
+			<p>A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> reinstalls Magento by updating <code class="highlighter-rouge">composer.json</code> to specify the Magento product version and component versions desired and runs <code class="highlighter-rouge">composer update</code>.</p>
 
 <p>To reinstall the Magento software as a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>:</p>
 
 <ol>
   <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">&gt;switch to the Magento file system owner</a>.</li>
   <li>
-    <p>Make a backup copy of <code>composer.json</code> in your Magento installation directory:</p>
+    <p>Make a backup copy of <code class="highlighter-rouge">composer.json</code> in your Magento installation directory:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 cp composer.json composer.json.bak
 </code></pre>
+    </div>
   </li>
-  <li>Open <code>composer.json</code> in a text editor.</li>
+  <li>Open <code class="highlighter-rouge">composer.json</code> in a text editor.</li>
   <li>
     <p>Locate the following line:</p>
 
-    <pre><code> "require": {
+    <div class="highlighter-rouge"><pre class="highlight"><code> "require": {
 	"magento/product-community-edition": "&lt;version&gt;"
 },
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Replace <code>&lt;version&gt;</code> with the version to which you want to upgrade, where <code>&lt;version&gt;</code> is the product version to use.</p>
+    <p>Replace <code class="highlighter-rouge">&lt;version&gt;</code> with the version to which you want to upgrade, where <code class="highlighter-rouge">&lt;version&gt;</code> is the product version to use.</p>
 
-    <p>(The product version is in the format <code>2.0.x</code>)
+    <p>(The product version is in the format <code class="highlighter-rouge">2.0.x</code>)
 <!-- is the `magento/product-community-edition` version from -->.</p>
   </li>
-  <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">composer.json</code> and exit the text editor.</li>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>composer update
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer update
 </code></pre>
+    </div>
 
     <p>Wait for dependencies to update.</p>
   </li>

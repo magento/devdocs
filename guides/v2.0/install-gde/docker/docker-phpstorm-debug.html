@@ -686,14 +686,15 @@
     <li>Start Putty.</li>
     <li>From the <strong>Saved Sessions</strong> list, click the name of your DevBox SSH session and click <strong>Load</strong>.</li>
     <li>Click <strong>Open</strong>.</li>
-    <li>At the <code>Login as</code> prompt, enter <code>magento2</code></li>
+    <li>At the <code class="highlighter-rouge">Login as</code> prompt, enter <code class="highlighter-rouge">magento2</code></li>
   </ol>
 
   <h3 id="ssh-tunnel-mac-os">SSH tunnel: Mac OS</h3>
   <p>To create an SSH tunnel on Mac OS, open a Terminal window and enter the following command:</p>
 
-  <pre><code>./&lt;DevBox root folder&gt;/m2devbox-debug.sh
+  <div class="highlighter-rouge"><pre class="highlight"><code>./&lt;DevBox root folder&gt;/m2devbox-debug.sh
 </code></pre>
+  </div>
 
   <h2 id="debug-code-with-xdebug">Debug code with Xdebug</h2>
   <p>This section discusses how to debug code using Xdebug using PhpStorm and a web browser. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you’ll test your own code; adjust the procedures as required.</p>
@@ -735,8 +736,9 @@
     <li>
       <p><em>Problem</em>: The following error is displayed:</p>
 
-      <pre><code>Connection with 'xdebug 2.5.0' was not established. Validate installation.
+      <div class="highlighter-rouge"><pre class="highlight"><code>Connection with 'xdebug 2.5.0' was not established. Validate installation.
 </code></pre>
+      </div>
 
       <p><em>Solution</em>: Make sure you created an <a href="#devbox-xdebug-tunnel">SSH tunnel</a> to the DevBox container and try again.</p>
     </li>

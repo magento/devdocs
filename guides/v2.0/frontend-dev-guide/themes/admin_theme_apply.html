@@ -1080,13 +1080,13 @@
 <ol>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> are cached by Magento.</li>
   <li><a href="/guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">Create a custom theme for the Admin panel</a>.</li>
-  <li><a href="/guides/v2.0/extension-dev-guide/build/build.html">Add a new custom module</a> or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in <code>&lt;your_custom_module_dir&gt;/etc/module.xml</code> (replace placeholders with your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> information):</li>
+  <li><a href="/guides/v2.0/extension-dev-guide/build/build.html">Add a new custom module</a> or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in <code class="highlighter-rouge">&lt;your_custom_module_dir&gt;/etc/module.xml</code> (replace placeholders with your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> information):</li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;%YourVendor_YourModule%&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;2.0.1&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- Example: &quot;Magento_Backend --&gt;</span>&quot;
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"%YourVendor_YourModule%"</span> <span class="na">setup_version=</span><span class="s">"2.0.1"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- Example: "Magento_Backend --&gt;</span>"
         <span class="nt">&lt;sequence&gt;</span>
-            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Magento_Theme&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Magento_Enterprise&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- For Enterprise versions only --&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Theme"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Enterprise"</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- For Enterprise versions only --&gt;</span>
         <span class="nt">&lt;/sequence&gt;</span>
     <span class="nt">&lt;/module&gt;</span></code></pre></figure>
 
@@ -1100,26 +1100,26 @@
 <p>To apply the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> theme, take the following steps:</p>
 
 <ol>
-  <li><a href="#specify_di">Specify the new Admin theme in your module’s <code>di.xml</code></a></li>
-  <li>Update the components by running the <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep"><code>bin/magento setup:upgrade</code></a> command.</li>
+  <li><a href="#specify_di">Specify the new Admin theme in your module’s <code class="highlighter-rouge">di.xml</code></a></li>
+  <li>Update the components by running the <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep"><code class="highlighter-rouge">bin/magento setup:upgrade</code></a> command.</li>
   <li>Open the Admin in browser and view the new theme applied.</li>
 </ol>
 
 <p>Each step is described further with more details.</p>
 
-<h2 id="specify_di">Specify the custom Admin theme in <code>di.xml</code></h2>
+<h2 id="specify_di">Specify the custom Admin theme in <code class="highlighter-rouge">di.xml</code></h2>
 
-<p>You need to specify the admin theme to be used in the <code>&lt;your_module_dir&gt;/etc/adminhtml/di.xml</code> file. Add it, if the file does not yet exist in your module.</p>
+<p>You need to specify the admin theme to be used in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/adminhtml/di.xml</code> file. Add it, if the file does not yet exist in your module.</p>
 
-<p>In <code>&lt;your_module_dir&gt;/etc/adminhtml/di.xml</code> add the following (replace the placeholders with the vendor name and theme code of your Admin theme):</p>
+<p>In <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/adminhtml/di.xml</code> add the following (replace the placeholders with the vendor name and theme code of your Admin theme):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
 
     <span class="c">&lt;!-- Admin theme. Start --&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Theme\Model\View\Design&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Theme\Model\View\Design"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;themes&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;adminhtml&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%Your_vendor_dir%/%your_theme_code%<span class="nt">&lt;/item&gt;</span> <span class="c">&lt;!-- Example: &quot;Magento/backend&quot; --&gt;</span>
+             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"themes"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"adminhtml"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%Your_vendor_dir%/%your_theme_code%<span class="nt">&lt;/item&gt;</span> <span class="c">&lt;!-- Example: "Magento/backend" --&gt;</span>
              <span class="nt">&lt;/argument&gt;</span>
          <span class="nt">&lt;/arguments&gt;</span> 
     <span class="nt">&lt;/type&gt;</span>
@@ -1129,7 +1129,7 @@
 <h2 id="update-components-to-actually-apply-the-admin-theme">Update components to actually apply the Admin theme</h2>
 
 <p>For your changes to take effect, you need to update Magento components. For this, 
-run the <code>bin/magento setup:upgrade</code> command in your command line. If prompted, also run <code>bin/magento setup:di:compile</code>.</p>
+run the <code class="highlighter-rouge">bin/magento setup:upgrade</code> command in your command line. If prompted, also run <code class="highlighter-rouge">bin/magento setup:di:compile</code>.</p>
 
 <p>For details about performing command line tasks, view the following topics:
 - <a href="/guides/v2.0/config-guide/cli/config-cli.html">Command line configuration</a>

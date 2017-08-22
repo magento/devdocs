@@ -536,7 +536,7 @@
 </section>
 
 
-			<p>Magento uses a custom <a href="http://gruntjs.com/">Grunt</a> task named <code>spec</code> to run Jasmine tests. The task collects the tests from <code>&lt;magento_root_dir&gt;dev/tests/js/jasmine/tests</code> and can be run for a <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
+			<p>Magento uses a custom <a href="http://gruntjs.com/">Grunt</a> task named <code class="highlighter-rouge">spec</code> to run Jasmine tests. The task collects the tests from <code class="highlighter-rouge">&lt;magento_root_dir&gt;dev/tests/js/jasmine/tests</code> and can be run for a <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
 
 <h2 id="prepare-environment">Prepare environment</h2>
 
@@ -544,73 +544,73 @@
 
 <p><strong>Step 2.</strong> <a href="http://gruntjs.com/getting-started">Install grunt-cli</a>.</p>
 
-<p><strong>Step 3.</strong> In <code>&lt;magento_root_dir&gt;</code>, create <code>Gruntfile.js</code> and copy <code>Gruntfile.js.sample</code> into it.</p>
+<p><strong>Step 3.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, create <code class="highlighter-rouge">Gruntfile.js</code> and copy <code class="highlighter-rouge">Gruntfile.js.sample</code> into it.</p>
 
-<p><strong>Step 4.</strong> In <code>&lt;magento_root_dir&gt;</code>, create <code>package.json</code> and copy <code>package.json.sample</code> into it.</p>
+<p><strong>Step 4.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, create <code class="highlighter-rouge">package.json</code> and copy <code class="highlighter-rouge">package.json.sample</code> into it.</p>
 
-<p><strong>Step 5.</strong> In <code>&lt;magento_root_dir&gt;</code>, install all dependencies:</p>
+<p><strong>Step 5.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, install all dependencies:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  npm install</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span>npm install</code></pre></figure>
 
-<p id="prepare-step6"><strong>Step 6.</strong> In <code>&lt;magento_root_dir&gt;</code>, generate static view files in Magento that are going to be tested</p>
+<p id="prepare-step6"><strong>Step 6.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, generate static view files in Magento that are going to be tested</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  php bin/magento setup:static-content:deploy -f</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span>php bin/magento setup:static-content:deploy -f</code></pre></figure>
 
-<p>Note that normally you don’t have permissions to <code>&lt;magento_root_dir&gt;/app/code/</code>, in fact the generated static view file is being tested.</p>
+<p>Note that normally you don’t have permissions to <code class="highlighter-rouge">&lt;magento_root_dir&gt;/app/code/</code>, in fact the generated static view file is being tested.</p>
 
 <div class="bs-callout bs-callout-tip">
   <p><strong>For CentOS users</strong><br />
 If the command fails with error message: <br />
-<code>/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code><br />
+<code class="highlighter-rouge">/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code><br />
 install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctconfig library</a>:{: target=”_blank”}<br />
-<code>$ yum install fontconfig</code> (CentOS)<br />
-<code>$ apt-get install fontconfig</code> (Ubuntu)</p>
+<code class="highlighter-rouge">$ yum install fontconfig</code> (CentOS)<br />
+<code class="highlighter-rouge">$ apt-get install fontconfig</code> (Ubuntu)</p>
 </div>
 
 <p>Learn more in <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict">Deploy static view files</a>.</p>
 
 <h2 id="run-tests">Run tests</h2>
 
-<p><code>Gruntfile.js</code> contains the test run task, so you can run tests for a theme using the following command in the Magento root directory:</p>
+<p><code class="highlighter-rouge">Gruntfile.js</code> contains the test run task, so you can run tests for a theme using the following command in the Magento root directory:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  grunt spec:&lt;THEME&gt;</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span>grunt spec:&lt;THEME&gt;</code></pre></figure>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  grunt spec:backend</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span>grunt spec:backend</code></pre></figure>
 
 <h2 id="write-test">Write a test</h2>
 
-<p>All tests are distributed through modules stored in <code>&lt;magento_root_dir&gt;/dev/tests/js/jasmine/tests</code>. Let’s see how to write a test using an example of an existing test:</p>
+<p>All tests are distributed through modules stored in <code class="highlighter-rouge">&lt;magento_root_dir&gt;/dev/tests/js/jasmine/tests</code>. Let’s see how to write a test using an example of an existing test:</p>
 
-<p><a href="https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js" target="_blank"><code>app/code/Magento/Ui/base/js/grid/columns/actions.test.js</code></a></p>
+<p><a href="https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js" target="_blank"><code class="highlighter-rouge">app/code/Magento/Ui/base/js/grid/columns/actions.test.js</code></a></p>
 
 <p>which tests a JS module:</p>
 
-<p><a href="https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js" target="_blank"><code>&lt;magento_root_dir&gt;/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></a></p>
+<p><a href="https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js" target="_blank"><code class="highlighter-rouge">&lt;magento_root_dir&gt;/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></a></p>
 
 <p>in its static representations generated in <a href="#prepare-step6">Step 6</a> previously:</p>
 
-<p><code>&lt;magento_root_dir&gt;/pub/static/&lt;area&gt;/&lt;theme&gt;/&lt;localisation&gt;/Magento_Ui/js/columns/actions.js</code>.</p>
+<p><code class="highlighter-rouge">&lt;magento_root_dir&gt;/pub/static/&lt;area&gt;/&lt;theme&gt;/&lt;localisation&gt;/Magento_Ui/js/columns/actions.js</code>.</p>
 
-<h3 id="step-1-create-a-new-file-with-name-filenametestjs-in-an-appropriate-module-directory">Step 1. Create a new file with name <code>&lt;fileName&gt;.test.js</code> in an appropriate module directory.</h3>
+<h3 id="step-1-create-a-new-file-with-name-filenametestjs-in-an-appropriate-module-directory">Step 1. Create a new file with name <code class="highlighter-rouge">&lt;fileName&gt;.test.js</code> in an appropriate module directory.</h3>
 
 <p>For convenience, we can reflect the directory structure of a file to test.</p>
 
-<p>A path to JS <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that we want to cover with tests: <code>app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></p>
+<p>A path to JS <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that we want to cover with tests: <code class="highlighter-rouge">app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></p>
 
-<p>A path to a test of the module: <code>app/code/Magento/Ui/base/js/grid/columns/actions.test.js</code></p>
+<p>A path to a test of the module: <code class="highlighter-rouge">app/code/Magento/Ui/base/js/grid/columns/actions.test.js</code></p>
 
-<p>In <code>&lt;magento_root_dir&gt;/dev/tests/js/jasmine/tests</code> create the test with appropriate path.</p>
+<p>In <code class="highlighter-rouge">&lt;magento_root_dir&gt;/dev/tests/js/jasmine/tests</code> create the test with appropriate path.</p>
 
 <h3 id="step-2-require-a-file-that-you-want-to-test">Step 2. Require a file that you want to test.</h3>
 
-<p>For our example we need to cover all static view files ending with <code>Magento_Ui/js/grid/columns/actions</code>.</p>
+<p>For our example we need to cover all static view files ending with <code class="highlighter-rouge">Magento_Ui/js/grid/columns/actions</code>.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
-    <span class="s1">&#39;Magento_Ui/js/grid/columns/actions&#39;</span>
+    <span class="s1">'Magento_Ui/js/grid/columns/actions'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Actions</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+    <span class="s1">'use strict'</span><span class="p">;</span>
 
     <span class="c1">//Test code</span>
     <span class="c1">//...</span>
@@ -621,99 +621,99 @@ install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctcon
 <p>A Jasmine test consists of main two parts:</p>
 
 <ul>
-  <li><code>describe</code> blocks</li>
-  <li><code>it</code> blocks</li>
+  <li><code class="highlighter-rouge">describe</code> blocks</li>
+  <li><code class="highlighter-rouge">it</code> blocks</li>
 </ul>
 
-<p>Both the <code>describe</code> and <code>it</code> functions contains two parameters:</p>
+<p>Both the <code class="highlighter-rouge">describe</code> and <code class="highlighter-rouge">it</code> functions contains two parameters:</p>
 
 <ul>
   <li>a text string with description of what is going to be done</li>
   <li>a function with block of code implementing described action</li>
 </ul>
 
-<p>In <code>describe</code> you can use <code>beforeEach</code> and <code>afterEach</code> functions performing a preparation of what must be done before and after every <code>it</code> test followed.</p>
+<p>In <code class="highlighter-rouge">describe</code> you can use <code class="highlighter-rouge">beforeEach</code> and <code class="highlighter-rouge">afterEach</code> functions performing a preparation of what must be done before and after every <code class="highlighter-rouge">it</code> test followed.</p>
 
-<div class="collapsible"><b class="collapsible-title">See the full code of the test</b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/**</span>
-<span class="cm"> * Copyright © 2016 Magento. All rights reserved.</span>
-<span class="cm"> * See COPYING.txt for license details.</span>
-<span class="cm"> */</span>
+<div class="collapsible"><b class="collapsible-title">See the full code of the test</b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 
 <span class="nx">define</span><span class="p">([</span>
-    <span class="s1">&#39;underscore&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Ui/js/grid/columns/actions&#39;</span>
+    <span class="s1">'underscore'</span><span class="p">,</span>
+    <span class="s1">'Magento_Ui/js/grid/columns/actions'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="nx">Actions</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+    <span class="s1">'use strict'</span><span class="p">;</span>
 
-    <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;ui/js/grid/columns/actions&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">describe</span><span class="p">(</span><span class="s1">'ui/js/grid/columns/actions'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">model</span><span class="p">,</span>
             <span class="nx">action</span><span class="p">;</span>
 
         <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="nx">model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Actions</span><span class="p">({</span>
-                <span class="nx">index</span><span class="o">:</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span>
-                <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;listing_action&#39;</span><span class="p">,</span>
-                <span class="nx">indexField</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
-                <span class="nx">dataScope</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-                <span class="nx">rows</span><span class="o">:</span> <span class="p">[{</span>
-                    <span class="nx">identifier</span><span class="o">:</span> <span class="s1">&#39;row&#39;</span>
+                <span class="na">index</span><span class="p">:</span> <span class="s1">'actions'</span><span class="p">,</span>
+                <span class="na">name</span><span class="p">:</span> <span class="s1">'listing_action'</span><span class="p">,</span>
+                <span class="na">indexField</span><span class="p">:</span> <span class="s1">'id'</span><span class="p">,</span>
+                <span class="na">dataScope</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+                <span class="na">rows</span><span class="p">:</span> <span class="p">[{</span>
+                    <span class="na">identifier</span><span class="p">:</span> <span class="s1">'row'</span>
                 <span class="p">}]</span>
             <span class="p">});</span>
             <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-                <span class="nx">index</span><span class="o">:</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span>
-                <span class="nx">hidden</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nx">rowIndex</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="na">index</span><span class="p">:</span> <span class="s1">'delete'</span><span class="p">,</span>
+                <span class="na">hidden</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="na">rowIndex</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="na">callback</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
                     <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
                 <span class="p">}</span>
             <span class="p">};</span>
         <span class="p">});</span>
 
-        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check addAction function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="nx">action</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
+        <span class="nx">it</span><span class="p">(</span><span class="s1">'Check addAction function'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">'delete'</span><span class="p">,</span> <span class="nx">action</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
         <span class="p">});</span>
 
-        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check getAction function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">it</span><span class="p">(</span><span class="s1">'Check getAction function'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">someAction</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span>
 
-            <span class="nx">someAction</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="s1">&#39;edit&#39;</span><span class="p">;</span>
-            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;edit&#39;</span><span class="p">,</span> <span class="nx">someAction</span><span class="p">);</span>
-            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">getAction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;edit&#39;</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">someAction</span><span class="p">);</span>
+            <span class="nx">someAction</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="s1">'edit'</span><span class="p">;</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">'edit'</span><span class="p">,</span> <span class="nx">someAction</span><span class="p">);</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">getAction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'edit'</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">someAction</span><span class="p">);</span>
         <span class="p">});</span>
 
-        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check getVisibleActions function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">it</span><span class="p">(</span><span class="s1">'Check getVisibleActions function'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">someAction</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span>
 
             <span class="nx">someAction</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-            <span class="nx">someAction</span><span class="p">.</span><span class="nx">index</span><span class="o">=</span> <span class="s1">&#39;view&#39;</span><span class="p">;</span>
-            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;view&#39;</span><span class="p">,</span> <span class="nx">someAction</span><span class="p">);</span>
-            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">getVisibleActions</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">([</span><span class="nx">someAction</span><span class="p">]);</span>
+            <span class="nx">someAction</span><span class="p">.</span><span class="nx">index</span><span class="o">=</span> <span class="s1">'view'</span><span class="p">;</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">'delete'</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">'view'</span><span class="p">,</span> <span class="nx">someAction</span><span class="p">);</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">getVisibleActions</span><span class="p">(</span><span class="s1">'0'</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">([</span><span class="nx">someAction</span><span class="p">]);</span>
         <span class="p">});</span>
 
-        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check updateActions function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">it</span><span class="p">(</span><span class="s1">'Check updateActions function'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">updateActions</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
         <span class="p">});</span>
 
-        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check applyAction function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">applyAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
+        <span class="nx">it</span><span class="p">(</span><span class="s1">'Check applyAction function'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">'delete'</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+            <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">applyAction</span><span class="p">(</span><span class="s1">'delete'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">model</span><span class="p">);</span>
         <span class="p">});</span>
 
-        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check isSingle and isMultiple function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">it</span><span class="p">(</span><span class="s1">'Check isSingle and isMultiple function'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">someAction</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">clone</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span>
 
             <span class="nx">action</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">'delete'</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
             <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isSingle</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
             <span class="nx">someAction</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-            <span class="nx">someAction</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="s1">&#39;edit&#39;</span><span class="p">;</span>
-            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">&#39;edit&#39;</span><span class="p">,</span> <span class="nx">someAction</span><span class="p">);</span>
+            <span class="nx">someAction</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="s1">'edit'</span><span class="p">;</span>
+            <span class="nx">model</span><span class="p">.</span><span class="nx">addAction</span><span class="p">(</span><span class="s1">'edit'</span><span class="p">,</span> <span class="nx">someAction</span><span class="p">);</span>
             <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isSingle</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="nx">toBeFalsy</span><span class="p">();</span>
             <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isMultiple</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
         <span class="p">});</span>
 
-        <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Check isActionVisible function&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">it</span><span class="p">(</span><span class="s1">'Check isActionVisible function'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isActionVisible</span><span class="p">(</span><span class="nx">action</span><span class="p">)).</span><span class="nx">toBeFalsy</span><span class="p">();</span>
             <span class="nx">action</span><span class="p">.</span><span class="nx">hidden</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
             <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isActionVisible</span><span class="p">(</span><span class="nx">action</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
@@ -745,10 +745,10 @@ Warning: Task "spec" not found. Use --force to continue.
 
 <ol>
   <li>Make sure your Node.js version is up-to-date.</li>
-  <li>Remove <code>package.json</code>, <code>Gruntfile.js</code>.</li>
-  <li>Copy <code>package.json</code>, <code>Gruntfile.js</code> from <code>package.json.sample</code>, <code>Gruntfile.js.sample</code>.</li>
-  <li>Delete the <code>node_modules</code> directory.</li>
-  <li>Run <code>npm install</code> in your terminal.</li>
+  <li>Remove <code class="highlighter-rouge">package.json</code>, <code class="highlighter-rouge">Gruntfile.js</code>.</li>
+  <li>Copy <code class="highlighter-rouge">package.json</code>, <code class="highlighter-rouge">Gruntfile.js</code> from <code class="highlighter-rouge">package.json.sample</code>, <code class="highlighter-rouge">Gruntfile.js.sample</code>.</li>
+  <li>Delete the <code class="highlighter-rouge">node_modules</code> directory.</li>
+  <li>Run <code class="highlighter-rouge">npm install</code> in your terminal.</li>
 </ol>
 
 <h3 id="cannot-read-property-pid-warning">Warning: Cannot read property ‘pid’ of undefined</h3>
@@ -766,8 +766,8 @@ Use --force to continue. Aborted due to warnings.
 
 <p>Run in your terminal:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  <span class="nb">cd</span> &lt;magento_root&gt;/node_modules/grunt-contrib-jasmine
-<span class="nv">$ </span>  npm install</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span><span class="nb">cd</span> &lt;magento_root&gt;/node_modules/grunt-contrib-jasmine
+<span class="gp">$   </span>npm install</code></pre></figure>
 
 <!-- LINK DEFINITIONS -->
 

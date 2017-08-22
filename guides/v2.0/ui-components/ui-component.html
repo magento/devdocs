@@ -792,17 +792,17 @@
 <h3>Using UI component in layout file</h3>
 <p>Using <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> is as simple as adding the following code to the appropriate <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> section:</p>
 
-<p><code>&lt;uiСomponent name="some_ui_component_instance_name"/&gt;</code></p>
+<p><code class="highlighter-rouge">&lt;uiСomponent name="some_ui_component_instance_name"/&gt;</code></p>
 
-<p>All UI components have base declaration in <a href="/guides/v2.0/ui-library/ui-definition.html"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a>.</p>
+<p>All UI components have base declaration in <a href="/guides/v2.0/ui-library/ui-definition.html"><code class="highlighter-rouge">Magento/Ui/view/base/ui_component/etc/definition.xml</code></a>.</p>
 
 <p>UI components configuration reader searches through all active modules and read files:</p>
 
-<p><a href="/guides/v2.0/ui-library/ui-definition.html"><code>&lt;your module root dir&gt;/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/etc/definition.xml</code></a></p>
+<p><a href="/guides/v2.0/ui-library/ui-definition.html"><code class="highlighter-rouge">&lt;your module root dir&gt;/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/etc/definition.xml</code></a></p>
 
 <p>And concrete instances of the components each in separate <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> configuration file:</p>
 
-<p><code>&lt;your module root dir&gt;/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/&lt;component_instance_name&gt;.xml</code></p>
+<p><code class="highlighter-rouge">&lt;your module root dir&gt;/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/&lt;component_instance_name&gt;.xml</code></p>
 
 <h3 id="configuration">Configuration</h3>
 
@@ -810,15 +810,15 @@
 
 <p>XSD file contains rules and limitations shared between all components (both definitions and instance configurations):</p>
 
-<p><code>&lt;your module root dir&gt;/Magento/Ui/etc/ui_definition.xsd</code></p>
+<p><code class="highlighter-rouge">&lt;your module root dir&gt;/Magento/Ui/etc/ui_definition.xsd</code></p>
 
-<p>It is possible to create custom component by setting <code>class</code>, <code>component</code> and <code>template</code> parameters of the Container component.</p>
+<p>It is possible to create custom component by setting <code class="highlighter-rouge">class</code>, <code class="highlighter-rouge">component</code> and <code class="highlighter-rouge">template</code> parameters of the Container component.</p>
 
 <p>You can configure existing component and all filter types in the following ways:</p>
 
 <ul>
-  <li>Globally: using any module’s <a href="/guides/v2.0/ui-library/ui-definition.html"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file will be applied to all component’s instances</li>
-  <li>Locally: using concrete component instance configuration, such as <code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
+  <li>Globally: using any module’s <a href="/guides/v2.0/ui-library/ui-definition.html"><code class="highlighter-rouge">view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file will be applied to all component’s instances</li>
+  <li>Locally: using concrete component instance configuration, such as <code class="highlighter-rouge">&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
 </ul>
 
 		</div>

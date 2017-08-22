@@ -1019,8 +1019,8 @@
 </section>
 
 
-			<h3 id="missing-ignore">Problem: missing <code>.gitignore</code> files</h3>
-<p>If you downloaded a compressed archive, there might have been missing <code>.gitignore</code> files that prevent the upgrade from completing properly. To apply our update, patch <code>magento/magento-composer-installer</code> then run <code>composer update</code> from your Magento installation directory.</p>
+			<h3 id="missing-ignore">Problem: missing <code class="highlighter-rouge">.gitignore</code> files</h3>
+<p>If you downloaded a compressed archive, there might have been missing <code class="highlighter-rouge">.gitignore</code> files that prevent the upgrade from completing properly. To apply our update, patch <code class="highlighter-rouge">magento/magento-composer-installer</code> then run <code class="highlighter-rouge">composer update</code> from your Magento installation directory.</p>
 
 <p>The following figure shows an example of this issue when using the Setup Wizard.</p>
 
@@ -1035,9 +1035,10 @@
   <li>
     <p>Run the following commands in the order shown:</p>
 
-    <pre><code>composer update magento/magento-composer-installer
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer update magento/magento-composer-installer
 composer update
 </code></pre>
+    </div>
   </li>
   <li>Try your upgrade again.</li>
 </ol>

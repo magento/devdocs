@@ -765,26 +765,26 @@
 <p>You can configure pagination in several ways:</p>
 
 <ul>
-  <li>Globally: using any module’s <a href="/guides/v2.0/ui-library/ui-definition.html"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file are applied to all component’s instances.</li>
-  <li>Locally: using concrete component instance configuration, such as <code>&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
+  <li>Globally: using any module’s <a href="/guides/v2.0/ui-library/ui-definition.html"><code class="highlighter-rouge">view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file are applied to all component’s instances.</li>
+  <li>Locally: using concrete component instance configuration, such as <code class="highlighter-rouge">&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
 </ul>
 
 <p>To enable pagination for the listing component, the pagination component is declared as a child of the listing component in component instance configuration.</p>
 
 <p>Example:</p>
 
-<p><code>&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
+<p><code class="highlighter-rouge">&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;page_listing_top&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;paging</span> <span class="na">name=</span><span class="s">&quot;listing_paging&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;storageConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_block_listing.cms_block_listing.listing_top.bookmarks<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;namespace&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>current.paging<span class="nt">&lt;/item&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"page_listing_top"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;paging</span> <span class="na">name=</span><span class="s">"listing_paging"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"storageConfig"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cms_block_listing.cms_block_listing.listing_top.bookmarks<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"namespace"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>current.paging<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_block_listing.cms_block_listing.cms_block_columns.ids<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"selectProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cms_block_listing.cms_block_listing.cms_block_columns.ids<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/paging&gt;</span>
@@ -795,15 +795,15 @@
 
 <ul>
   <li>
-    <p><code>storageConfig</code> - storageConfig is a base component property. Here it is configured to take stored page sizes list from bookmarks</p>
+    <p><code class="highlighter-rouge">storageConfig</code> - storageConfig is a base component property. Here it is configured to take stored page sizes list from bookmarks</p>
   </li>
-  <li><code>sizesConfig</code>: configuration of the component that defines available page sizes. By default it is <code>Magento_Ui/js/grid/paging/sizes</code>.
+  <li><code class="highlighter-rouge">sizesConfig</code>: configuration of the component that defines available page sizes. By default it is <code class="highlighter-rouge">Magento_Ui/js/grid/paging/sizes</code>.
     <ul>
-      <li><code>minSize</code>: minimum number of elements on a page, default: 1</li>
-      <li><code>maxSize</code>: maximum number of elements on a page, default: 999</li>
+      <li><code class="highlighter-rouge">minSize</code>: minimum number of elements on a page, default: 1</li>
+      <li><code class="highlighter-rouge">maxSize</code>: maximum number of elements on a page, default: 999</li>
     </ul>
   </li>
-  <li><code>selectProvider</code>: component with selections data.</li>
+  <li><code class="highlighter-rouge">selectProvider</code>: component with selections data.</li>
 </ul>
 
 		</div>

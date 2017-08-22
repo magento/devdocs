@@ -970,9 +970,9 @@
   <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Driver/Facebook/Driver.php">Facebook web driver library</a></li>
 </ul>
 
-<p>Both implement the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code>DriverInterface.php</code></a> interface. The interface declares methods that are used in web page automation such as <code>click()</code>, <code>isVisible()</code>, <code>setValue()</code>, <code>dragAndDrop()</code> etc.</p>
+<p>Both implement the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code class="highlighter-rouge">DriverInterface.php</code></a> interface. The interface declares methods that are used in web page automation such as <code class="highlighter-rouge">click()</code>, <code class="highlighter-rouge">isVisible()</code>, <code class="highlighter-rouge">setValue()</code>, <code class="highlighter-rouge">dragAndDrop()</code> etc.</p>
 
-<p>To use a custom web driver, you must implement the <code>DriverInterface.php</code> interface.</p>
+<p>To use a custom web driver, you must implement the <code class="highlighter-rouge">DriverInterface.php</code> interface.</p>
 
 <p>Use provided in the FTF web drivers as examples.</p>
 
@@ -981,14 +981,15 @@
 <p>To set up the Facebook web driver, use the following steps:</p>
 
 <ol>
-  <li>In <code>&lt;magento2_root_dir&gt;/dev/tests/functional/etc/di.xml</code>, add the <code>&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\Facebook\Driver" /&gt;</code> element.</li>
-  <li>In <code>&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>, move the <code>"facebook/webdriver": "dev-master"</code> entry from the <code>"suggest"</code> list to the <code>"require"</code> list.</li>
+  <li>In <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/etc/di.xml</code>, add the <code class="highlighter-rouge">&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\Facebook\Driver" /&gt;</code> element.</li>
+  <li>In <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>, move the <code class="highlighter-rouge">"facebook/webdriver": "dev-master"</code> entry from the <code class="highlighter-rouge">"suggest"</code> list to the <code class="highlighter-rouge">"require"</code> list.</li>
   <li>
     <p>Run in your terminal:</p>
 
-    <pre><code> cd &lt;magento2_root_dir&gt;/dev/tests/functional
+    <div class="highlighter-rouge"><pre class="highlight"><code> cd &lt;magento2_root_dir&gt;/dev/tests/functional
  composer update
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -998,23 +999,24 @@
 
 <h2 id="add-and-setup-a-custom-web-driver">Add and setup a custom web driver</h2>
 
-<p>To add a custom web driver, you must implement the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code>DriverInterface.php</code></a> interface.</p>
+<p>To add a custom web driver, you must implement the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code class="highlighter-rouge">DriverInterface.php</code></a> interface.</p>
 
 <ol>
-  <li>Create the <code>&lt;magento2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Driver/&lt;Your_driver&gt;</code> directory.</li>
-  <li>In the directory, create the <code>Driver.php</code> class which implements <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code>DriverInterface.php</code></a>.</li>
+  <li>Create the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Driver/&lt;Your_driver&gt;</code> directory.</li>
+  <li>In the directory, create the <code class="highlighter-rouge">Driver.php</code> class which implements <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/DriverInterface.php"><code class="highlighter-rouge">DriverInterface.php</code></a>.</li>
 </ol>
 
 <p>To setup the custom web driver, follow:</p>
 
 <ol>
-  <li>In <code>&lt;magento2_root_dir&gt;/dev/tests/functional/etc/di.xml</code>, add the <code>&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\&lt;Your_driver&gt;\Driver" /&gt;</code> element.</li>
+  <li>In <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/etc/di.xml</code>, add the <code class="highlighter-rouge">&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\&lt;Your_driver&gt;\Driver" /&gt;</code> element.</li>
   <li>
-    <p>In <code>&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>, add corresponding entry to the <code>"require"</code> list (if related module is available on <a href="https://packagist.org/">Packagist</a>). And run in your terminal:</p>
+    <p>In <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>, add corresponding entry to the <code class="highlighter-rouge">"require"</code> list (if related module is available on <a href="https://packagist.org/">Packagist</a>). And run in your terminal:</p>
 
-    <pre><code> cd &lt;magento2_root_dir&gt;/dev/tests/functional
+    <div class="highlighter-rouge"><pre class="highlight"><code> cd &lt;magento2_root_dir&gt;/dev/tests/functional
  composer update
 </code></pre>
+    </div>
   </li>
 </ol>
 

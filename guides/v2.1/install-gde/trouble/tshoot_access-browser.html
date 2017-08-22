@@ -971,9 +971,10 @@
 
 			<h3 id="symptom-the-following-message-displays-when-you-try-to-access-the-magento-storefront-or-admin">Symptom: The following message displays when you try to access the Magento storefront or Admin:</h3>
 
-<pre><code>Whoops, it looks like you have an invalid PHP version.
+<div class="highlighter-rouge"><pre class="highlight"><code>Whoops, it looks like you have an invalid PHP version.
 Magento supports PHP 5.5 or newer.
 </code></pre>
+</div>
 
 <h4 id="solution">Solution</h4>
 
@@ -991,15 +992,15 @@ Magento supports PHP 5.5 or newer.
     <p>If Apache server rewrites are set incorrectly, static files aren’t served from the correct location.</p>
   </li>
   <li>
-    <p>Likely an issue with the base URL you entered during the installation. You specify the base URL as the value of <code>--base-url=</code> when installing Magento from the command line or as the value of the <strong>Your Store Address</strong> field on the Web Configuration page of the web installer.</p>
+    <p>Likely an issue with the base URL you entered during the installation. You specify the base URL as the value of <code class="highlighter-rouge">--base-url=</code> when installing Magento from the command line or as the value of the <strong>Your Store Address</strong> field on the Web Configuration page of the web installer.</p>
 
-    <p>The base URL <em>must</em> start with the scheme (such as <code>http://</code>) and end with a trailing slash (/). Run the installer again with a valid value and try accessing Magento afterward.</p>
+    <p>The base URL <em>must</em> start with the scheme (such as <code class="highlighter-rouge">http://</code>) and end with a trailing slash (/). Run the installer again with a valid value and try accessing Magento afterward.</p>
 
     <p>To restart Apache:</p>
 
     <ul>
-      <li>Ubuntu: <code>service apache2 restart</code></li>
-      <li>CentOS: <code>service httpd restart</code></li>
+      <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+      <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
     </ul>
   </li>
 </ul>

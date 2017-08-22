@@ -814,7 +814,7 @@
     <p>Upgrade your Magento software to get the latest version</p>
   </li>
   <li>
-    <p>Back up the <code>vendor/magento/data-migration-tool</code> directory</p>
+    <p>Back up the <code class="highlighter-rouge">vendor/magento/data-migration-tool</code> directory</p>
   </li>
   <li>
     <p>Make sure the Data Migration Tool version matches the Magento application version</p>
@@ -825,14 +825,15 @@
 
 <p>If you haven’t already done so, run the <a href="/guides/v2.1/comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a> to upgrade the Magento software.</p>
 
-<h3 id="back-up-the-vendormagentodata-migration-tool-directory">Back up the <code>vendor/magento/data-migration-tool</code> directory</h3>
+<h3 id="back-up-the-vendormagentodata-migration-tool-directory">Back up the <code class="highlighter-rouge">vendor/magento/data-migration-tool</code> directory</h3>
 
-<p>Before you upgrade the Data Migration Tool, back up at least the <code>vendor/magento/data-migration-tool</code> directory. During upgrade, it could be deleted and replaced by the updated code.</p>
+<p>Before you upgrade the Data Migration Tool, back up at least the <code class="highlighter-rouge">vendor/magento/data-migration-tool</code> directory. During upgrade, it could be deleted and replaced by the updated code.</p>
 
 <p>You can also back up the entire Magento codebase and database using the following command:</p>
 
-<pre><code>php &lt;your Magento install dir&gt;/bin/magento setup:backup --code --db
+<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento setup:backup --code --db
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-warning">
     <p>The <code>vendor/magento/data-migration-tool</code> directory contains your custom code. Failure to back it up means you can lose your customizations during upgrade.</p>
@@ -864,13 +865,13 @@
   <li>
     <p>Enter the following command:</p>
 
-    <p><code>composer require magento/data-migration-tool:&lt;version&gt;</code></p>
+    <p><code class="highlighter-rouge">composer require magento/data-migration-tool:&lt;version&gt;</code></p>
 
-    <p>where <code>&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
+    <p>where <code class="highlighter-rouge">&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
 
     <p>For example, for version 2.1.2, enter:</p>
 
-    <p><code>composer require magento/data-migration-tool:2.1.2</code></p>
+    <p><code class="highlighter-rouge">composer require magento/data-migration-tool:2.1.2</code></p>
   </li>
   <li>Wait while the command completes.</li>
 </ol>

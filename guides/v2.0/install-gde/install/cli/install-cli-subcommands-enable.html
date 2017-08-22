@@ -785,23 +785,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -821,42 +824,46 @@
   <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
   <p>To enable or disable available modules, use the following command:</p>
 
-  <pre><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
 magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
 </code></pre>
+  </div>
 
   <p>where</p>
 
   <ul>
-    <li><code>&lt;module-list&gt;</code> is a space-delimited list of modules to enable or disable. If any <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> name contains special characters, enclose the name in either single or double quotes.</li>
-    <li><code>--all</code> to enable or disable all modules at the same time.</li>
-    <li><code>-f</code> or <code>--force</code> to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</li>
+    <li><code class="highlighter-rouge">&lt;module-list&gt;</code> is a space-delimited list of modules to enable or disable. If any <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> name contains special characters, enclose the name in either single or double quotes.</li>
+    <li><code class="highlighter-rouge">--all</code> to enable or disable all modules at the same time.</li>
+    <li><code class="highlighter-rouge">-f</code> or <code class="highlighter-rouge">--force</code> to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</li>
     <li>
-      <p><code>-c</code> or <code>--clear-static-content</code> cleans <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.</p>
+      <p><code class="highlighter-rouge">-c</code> or <code class="highlighter-rouge">--clear-static-content</code> cleans <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.</p>
 
       <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don’t clear all of them.</p>
 
-      <p>In other words, because of <a href="/guides/v2.0/architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+      <p>In other words, because of <a href="/guides/v2.0/architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code class="highlighter-rouge">logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
     </li>
   </ul>
 
   <p>Use the following command to list enabled and disabled modules:</p>
 
-  <pre><code>magento module:status
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento module:status
 </code></pre>
+  </div>
 
   <p>For example, to disable the Weee module, enter:</p>
 
-  <pre><code>magento module:disable Magento_Weee
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento module:disable Magento_Weee
 </code></pre>
+  </div>
 
   <p>For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p>
 
   <h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
   <p>If you enabled one or more modules, run the following command to update the database:</p>
 
-  <pre><code>magento setup:upgrade
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:upgrade
 </code></pre>
+  </div>
 
   <h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
   <p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module that is currently available.</p>

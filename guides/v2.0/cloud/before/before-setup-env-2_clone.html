@@ -1494,13 +1494,13 @@
 
 <p>The Magento Commerce project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.</p>
 
-<p>To begin, you need to clone the <code>master</code> environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git <a href="https://git-scm.com/documentation">documentation</a>.</p>
+<p>To begin, you need to clone the <code class="highlighter-rouge">master</code> environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git <a href="https://git-scm.com/documentation">documentation</a>.</p>
 
-<p>The commands in these instructions use Magento CLI commands and Git commands to access the <code>master</code> environment. For a full list of Magento Cloud CLI commands, enter <code>magento-cloud list</code> or see the <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento CLI reference</a>.</p>
+<p>The commands in these instructions use Magento CLI commands and Git commands to access the <code class="highlighter-rouge">master</code> environment. For a full list of Magento Cloud CLI commands, enter <code class="highlighter-rouge">magento-cloud list</code> or see the <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento CLI reference</a>.</p>
 
 <h2 id="clonemaster">Clone the project master Branch</h2>
 
-<p>To clone the project’s <code>master</code> environment to your local:</p>
+<p>To clone the project’s <code class="highlighter-rouge">master</code> environment to your local:</p>
 
 <ol>
   <li>
@@ -1512,50 +1512,56 @@
   <li>
     <p>Log in to the Magento Cloud CLI:</p>
 
-    <pre><code>magento-cloud login
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+    </div>
   </li>
   <li>
     <p>List your projects:</p>
 
-    <pre><code>magento-cloud project:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Clone a project.</p>
 
-    <pre><code>magento-cloud project:get &lt;project ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+    </div>
 
-    <p>When prompted for a directory name, enter <code>magento2</code>.</p>
+    <p>When prompted for a directory name, enter <code class="highlighter-rouge">magento2</code>.</p>
   </li>
-  <li>Change to the project directory: <code>cd magento2</code>.</li>
+  <li>Change to the project directory: <code class="highlighter-rouge">cd magento2</code>.</li>
   <li>
     <p>List environments in the project:</p>
 
-    <pre><code>magento-cloud environment:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
+      <p><code class="highlighter-rouge">magento-cloud environment:list</code> displays environment hierarchies whereas <code class="highlighter-rouge">git branch</code> does not. If you have any nested environments, use <code class="highlighter-rouge">magento-cloud environment:list</code>.</p>
     </div>
   </li>
   <li>
     <p>Fetch origin branches:</p>
 
-    <pre><code>git fetch origin
+    <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Pull updated code:</p>
 
-    <pre><code>git pull origin &lt;environment ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
 </code></pre>
+    </div>
   </li>
 </ol>
 
 <h2 id="setvariables">Change the Magento Admin URL, user name, and password on master</h2>
-<p>Change the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> parameters for security reasons prior to branching from master. If you change the variables in the <code>master</code> branch, you only have to make these changes once. All branches inherit the variables from <code>master</code>.</p>
+<p>Change the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> parameters for security reasons prior to branching from master. If you change the variables in the <code class="highlighter-rouge">master</code> branch, you only have to make these changes once. All branches inherit the variables from <code class="highlighter-rouge">master</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Make note of any changes you make. You may need them when installing Magento with the command line and when verifying the installation.</p>
@@ -1563,13 +1569,15 @@
 
 <p>If you’re not sure whether or not the master branch has been configured, enter the following command:</p>
 
-<pre><code>	magento-cloud variable:get -e &lt;environment ID&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>	magento-cloud variable:get -e &lt;environment ID&gt;
 </code></pre>
+</div>
 
 <p>To set Admin variables, you will use this command format:</p>
 
-<pre><code>	magento-cloud variable:set &lt;name&gt; &lt;value&gt; -e &lt;environment ID&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>	magento-cloud variable:set &lt;name&gt; &lt;value&gt; -e &lt;environment ID&gt;
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-warning">
   <p>Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.</p>
@@ -1579,30 +1587,33 @@
 
 <ol>
   <li>
-    <p>To set the administrator’s user name to <code>meister_x2U8</code> in the <code>master</code> environment, enter:</p>
+    <p>To set the administrator’s user name to <code class="highlighter-rouge">meister_x2U8</code> in the <code class="highlighter-rouge">master</code> environment, enter:</p>
 
-    <pre><code>magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
 </code></pre>
+    </div>
   </li>
   <li>Wait for the project to redeploy.</li>
   <li>
-    <p>To set the administrator’s password to <code>admin_A456</code>, enter:</p>
+    <p>To set the administrator’s password to <code class="highlighter-rouge">admin_A456</code>, enter:</p>
 
-    <pre><code>magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
 </code></pre>
+    </div>
   </li>
   <li>Wait for the project to redeploy.</li>
   <li>
-    <p>To set the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> URI to <code>magento_A8v10</code>, enter:</p>
+    <p>To set the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> URI to <code class="highlighter-rouge">magento_A8v10</code>, enter:</p>
 
-    <pre><code>magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
 </code></pre>
+    </div>
   </li>
   <li>Wait for the project to redeploy.</li>
   <li>
     <p>Log in to the Magento Admin using the values you just changed.</p>
 
-    <p>The simplest way to do that is to use the environment routes that display when you redeploy the <code>master</code> branch. The following example uses these values:</p>
+    <p>The simplest way to do that is to use the environment routes that display when you redeploy the <code class="highlighter-rouge">master</code> branch. The following example uses these values:</p>
 
     <pre class="no-copy">Waiting for the activity ksvciptnzxfto (John Smith added variable ADMIN_URL):
 
@@ -1621,13 +1632,14 @@
         http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
         https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`</pre>
 
-    <p>In the preceding example, go to <code>http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10</code> and log in using the user name <code>meister_x2U8</code> and password <code>admin_A456</code></p>
+    <p>In the preceding example, go to <code class="highlighter-rouge">http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10</code> and log in using the user name <code class="highlighter-rouge">meister_x2U8</code> and password <code class="highlighter-rouge">admin_A456</code></p>
   </li>
   <li>
     <p>After the project redeploys, take a snapshot of the master branch:</p>
 
-    <pre><code>    magento-cloud snapshot:create -e master
+    <div class="highlighter-rouge"><pre class="highlight"><code>    magento-cloud snapshot:create -e master
 </code></pre>
+    </div>
   </li>
 </ol>
 

@@ -1932,27 +1932,28 @@
   <li>
     <p>Maintaining source code.</p>
 
-    <p>You should refresh the cache and also periodically delete everything in the <code>generated/code</code> and <code>generated/metadata</code> directories. For information on refreshing the cache, see the next section.</p>
+    <p>You should refresh the cache and also periodically delete everything in the <code class="highlighter-rouge">generated/code</code> and <code class="highlighter-rouge">generated/metadata</code> directories. For information on refreshing the cache, see the next section.</p>
   </li>
 </ul>
 
 <h2 id="use-varnish-magento-purge">Configure Magento to purge Varnish</h2>
-<p>Magento purges Varnish hosts after you configure Varnish hosts using the <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html"><code>magento setup:config:set</code></a> command.</p>
+<p>Magento purges Varnish hosts after you configure Varnish hosts using the <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html"><code class="highlighter-rouge">magento setup:config:set</code></a> command.</p>
 
-<p>You can use the optional parameter <code>--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. Configure all Varnish hosts, whether you have one or many. (Do not separate hosts with a space character.)</p>
+<p>You can use the optional parameter <code class="highlighter-rouge">--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. Configure all Varnish hosts, whether you have one or many. (Do not separate hosts with a space character.)</p>
 
-<p>The parameter format must be <code>&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code>&lt;listen port&gt;</code> if it’s port 80.</p>
+<p>The parameter format must be <code class="highlighter-rouge">&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code class="highlighter-rouge">&lt;listen port&gt;</code> if it’s port 80.</p>
 
 <p>For example,</p>
 
-<pre><code>magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
+<div class="highlighter-rouge"><pre class="highlight"><code>magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
 </code></pre>
+</div>
 
 <p>You can then purge Varnish hosts when you refresh the Magento cache (also referred to as <em>cleaning</em> the cache) in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> or using the command line.</p>
 
 <p>To refresh the cache using the Admin, click <strong>SYSTEM</strong> &gt; Tools &gt; <strong>Cache Management</strong>, then click <strong>Flush Magento Cache</strong> at the top of the page. (You can also refresh individual cache types.)</p>
 
-<p>To refresh the cache using the command line, you typically use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean [type]</code></a> command as the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
+<p>To refresh the cache using the command line, you typically use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean [type]</code></a> command as the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
 
 
 		</div>

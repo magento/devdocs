@@ -1902,66 +1902,66 @@
 
 
 			<h2 id="config-cache-inval">Cache invalidation</h2>
-<p>The Magento application enables you to clear cached content immediately after a entity changes. We use an <code>IdentityInterface</code> to link entities in the application with cached content and to know what <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> to clear when an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> changes.</p>
+<p>The Magento application enables you to clear cached content immediately after a entity changes. We use an <code class="highlighter-rouge">IdentityInterface</code> to link entities in the application with cached content and to know what <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> to clear when an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> changes.</p>
 
 <p>This section discusses how you inform the Magento application what cache to clear when you change an entity.</p>
 
-<p>First, your entity <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="_blank"><code>Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
+<p>First, your entity <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="_blank"><code class="highlighter-rouge">Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Framework\DataObject\IdentityInterface</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">use Magento\Framework\DataObject\IdentityInterface;
  
-<span class="k">class</span> <span class="nc">Product</span> <span class="k">implements</span> <span class="nx">IdentityInterface</span>
-<span class="p">{</span>
+class Product implements IdentityInterface
+{
  
-     <span class="sd">/**</span>
-<span class="sd">      * Product cache tag</span>
-<span class="sd">      */</span>
-     <span class="k">const</span> <span class="no">CACHE_TAG</span> <span class="o">=</span> <span class="s1">&#39;catalog_product&#39;</span><span class="p">;</span>
+     /**
+      * Product cache tag
+      */
+     const CACHE_TAG = 'catalog_product';
  
-    <span class="sd">/**</span>
-<span class="sd">     * Get identities</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIdentities</span><span class="p">()</span>
-    <span class="p">{</span>
-         <span class="k">return</span> <span class="p">[</span><span class="nx">self</span><span class="o">::</span><span class="na">CACHE_TAG</span> <span class="o">.</span> <span class="s1">&#39;_&#39;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()];</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    /**
+     * Get identities
+     *
+     * @return array
+     */
+    public function getIdentities()
+    {
+         return [self::CACHE_TAG . '_' . $this-&gt;getId()];
+    }
+}</code></pre></figure>
 
-<p>Second, the block object must also implement <code>Magento/Framework/DataObject/IdentityInterface</code> as follows:</p>
+<p>Second, the block object must also implement <code class="highlighter-rouge">Magento/Framework/DataObject/IdentityInterface</code> as follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">AbstractProduct</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\DataObject\IdentityInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Return identifiers for produced content</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIdentities</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getProduct</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getIdentities</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class View extends AbstractProduct implements \Magento\Framework\DataObject\IdentityInterface
+{
+    /**
+     * Return identifiers for produced content
+     *
+     * @return array
+     */
+    public function getIdentities()
+    {
+        return $this-&gt;getProduct()-&gt;getIdentities();
+    }
+}</code></pre></figure>
 
-<p>Blocks collect identities from the entities they render. After blocks are rendered on the page, identities from the blocks that implement <code>IdentityInterface</code> are collected by <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/PageCache/Model/Layout/LayoutPlugin.php" target="_blank"><code>\Magento\PageCache\Model\Layout\LayoutPlugin</code></a> and added to the response header <code>X-Magento-Tags</code>. 
+<p>Blocks collect identities from the entities they render. After blocks are rendered on the page, identities from the blocks that implement <code class="highlighter-rouge">IdentityInterface</code> are collected by <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/PageCache/Model/Layout/LayoutPlugin.php" target="_blank"><code class="highlighter-rouge">\Magento\PageCache\Model\Layout\LayoutPlugin</code></a> and added to the response header <code class="highlighter-rouge">X-Magento-Tags</code>. 
 When you save and entity, Magento gets its identities and use them to clear the cache.</p>
 
 <h2 id="config-priv-vers">Private content versioning</h2>
-<p>Private content, which is stored in the browser local storage, uses the <code>private_content_version</code> cookie to store the version.</p>
+<p>Private content, which is stored in the browser local storage, uses the <code class="highlighter-rouge">private_content_version</code> cookie to store the version.</p>
 
 <p>Versioning works as follows:</p>
 
 <ol>
   <li>The user performs some action, such as adding to a cart, that results in an POST or PUT request to the Magento application.</li>
-  <li>The server generates the <code>private_content_version</code> cookie for this user and returns the response to the browser.</li>
-  <li><span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> interprets the presence of the <code>private_content_version</code> cookie to mean that private content is present on the page, so it sends an AJAX request to the Magento server to get the current private content.</li>
+  <li>The server generates the <code class="highlighter-rouge">private_content_version</code> cookie for this user and returns the response to the browser.</li>
+  <li><span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> interprets the presence of the <code class="highlighter-rouge">private_content_version</code> cookie to mean that private content is present on the page, so it sends an AJAX request to the Magento server to get the current private content.</li>
   <li>
     <p>The server’s reply is cached in the browser’s local storage.</p>
 
     <p>Subsequent requests with the same data version are retrieved from local storage.</p>
   </li>
-  <li>Any future HTTP POST or PUT request changes the value of <code>private_content_version</code> and results in the updated content being cached by the browser.</li>
+  <li>Any future HTTP POST or PUT request changes the value of <code class="highlighter-rouge">private_content_version</code> and results in the updated content being cached by the browser.</li>
 </ol>
 
 		</div>

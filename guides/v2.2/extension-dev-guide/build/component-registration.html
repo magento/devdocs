@@ -1248,73 +1248,80 @@
 
 
 			<h2 id="register-overview">Registration overview</h2>
-<p>Magento components, including modules, themes, and language packages, must be registered in the Magento system through the Magento <code>ComponentRegistrar</code> class.</p>
+<p>Magento components, including modules, themes, and language packages, must be registered in the Magento system through the Magento <code class="highlighter-rouge">ComponentRegistrar</code> class.</p>
 
-<p>Each component must have a file called <code>registration.php</code> in its root directory. For example, here is the <code>registration.php</code> file for Magento’s <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/AdminNotification/registration.php">AdminNotification module</a>. Depending on the type of component, registration is performed through <code>registration.php</code> by adding to it as follows:</p>
+<p>Each component must have a file called <code class="highlighter-rouge">registration.php</code> in its root directory. For example, here is the <code class="highlighter-rouge">registration.php</code> file for Magento’s <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/AdminNotification/registration.php">AdminNotification module</a>. Depending on the type of component, registration is performed through <code class="highlighter-rouge">registration.php</code> by adding to it as follows:</p>
 
 <h2 id="register-modules">Register modules</h2>
 <p>Register modules with:</p>
 
-<pre><code> ComponentRegistrar::register(ComponentRegistrar::MODULE, '&lt;VendorName_ModuleName&gt;', __DIR__);
+<div class="highlighter-rouge"><pre class="highlight"><code> ComponentRegistrar::register(ComponentRegistrar::MODULE, '&lt;VendorName_ModuleName&gt;', __DIR__);
 </code></pre>
+</div>
 
 <p>where &lt;VendorName&gt; is the name of the company providing the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and &lt;ModuleName&gt; is the name of the module.</p>
 
 <p>Do not use “Ui” for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
 <h3 id="example">Example</h3>
-<pre><code>use \Magento\Framework\Component\ComponentRegistrar;
+<div class="highlighter-rouge"><pre class="highlight"><code>use \Magento\Framework\Component\ComponentRegistrar;
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 </code></pre>
+</div>
 
 <h2 id="register-themes">Register themes</h2>
 <p>Register themes with:</p>
 
-<pre><code> ComponentRegistrar::register(ComponentRegistrar::THEME, '&lt;area&gt;/&lt;vendor&gt;/&lt;theme name&gt;', __DIR__);
+<div class="highlighter-rouge"><pre class="highlight"><code> ComponentRegistrar::register(ComponentRegistrar::THEME, '&lt;area&gt;/&lt;vendor&gt;/&lt;theme name&gt;', __DIR__);
 </code></pre>
+</div>
 
 <p>where &lt;area&gt; is the functional area of the module (frontend, controller, and so on.), &lt;vendor&gt; is the name of the company providing the theme, and &lt;theme name&gt; is the name of the <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
 
 <h3 id="example-1">Example</h3>
-<pre><code> ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
+<div class="highlighter-rouge"><pre class="highlight"><code> ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
 </code></pre>
+</div>
 
 <p>&nbsp;</p>
 
 <h2 id="register-lagpacks">Register language packages</h2>
 <p>Register language packages with:</p>
 
-<pre><code> ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, '&lt;VendorName&gt;_&lt;packageName&gt;', __DIR__);
+<div class="highlighter-rouge"><pre class="highlight"><code> ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, '&lt;VendorName&gt;_&lt;packageName&gt;', __DIR__);
 </code></pre>
+</div>
 
 <p>where &lt;VendorName&gt; is the name of the company providing the package and &lt;packageName&gt; is the name of the package.</p>
 
 <h3 id="example-2">Example</h3>
-<pre><code> ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);
+<div class="highlighter-rouge"><pre class="highlight"><code> ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);
 </code></pre>
+</div>
 
 <p>&nbsp;</p>
 
-<h2 id="register-autoload">Invoke <code>registration.php</code> in <code>composer.json</code> with autoload</h2>
-<p>After you create your <code>registration.php</code> file and you are creating <a href="/guides/v2.2/extension-dev-guide/build/composer-integration.html">your component’s composer.json file</a>, invoke your <code>registration.php</code> file in the <code>autoload</code> section of <code>composer.json</code>:</p>
+<h2 id="register-autoload">Invoke <code class="highlighter-rouge">registration.php</code> in <code class="highlighter-rouge">composer.json</code> with autoload</h2>
+<p>After you create your <code class="highlighter-rouge">registration.php</code> file and you are creating <a href="/guides/v2.2/extension-dev-guide/build/composer-integration.html">your component’s composer.json file</a>, invoke your <code class="highlighter-rouge">registration.php</code> file in the <code class="highlighter-rouge">autoload</code> section of <code class="highlighter-rouge">composer.json</code>:</p>
 
-<pre><code> {
-"name": "Acme-vendor/bar-component",
-"autoload": {
-    "psr-4": { "AcmeVendor\\BarComponent\\": "" },
-    "files": [ "registration.php" ]
-} }
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acme-vendor/bar-component"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"AcmeVendor\\BarComponent\\"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
 <p>&nbsp;</p>
 
-<h2 id="register-sample">Sample <code>registration.php</code> file</h2>
+<h2 id="register-sample">Sample <code class="highlighter-rouge">registration.php</code> file</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="p">;</span>
 
-<span class="nx">ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span><span class="nx">ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span> <span class="s1">&#39;Magento_AdminNotification&#39;</span><span class="p">,</span> <span class="nx">__DIR__</span><span class="p">);</span></code></pre></figure>
+<span class="nx">ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span><span class="nx">ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span> <span class="s1">'Magento_AdminNotification'</span><span class="p">,</span> <span class="nx">__DIR__</span><span class="p">);</span></code></pre></figure>
 
 <h4 id="next">Next</h4>
 <p><a href="/guides/v2.2/extension-dev-guide/build/XSD-XML-validation.html">URN schema validation</a></p>

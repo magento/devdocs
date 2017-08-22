@@ -947,19 +947,22 @@
 
 <p>One of the steps to updating the Magento 2 software is to update your local repository by running:</p>
 
-<pre><code>git pull origin develop
+<div class="highlighter-rouge"><pre class="highlight"><code>git pull origin develop
 </code></pre>
+</div>
 
 <p>The following error might display:</p>
 
-<pre><code>error: Your local changes to the following files would be overwritten by merge:
+<div class="highlighter-rouge"><pre class="highlight"><code>error: Your local changes to the following files would be overwritten by merge:
 &lt;list of files&gt;
 </code></pre>
+</div>
 
 <p>To find which files are subject to being overwritten, either read the message or enter:</p>
 
-<pre><code>git status
+<div class="highlighter-rouge"><pre class="highlight"><code>git status
 </code></pre>
+</div>
 
 <p>The next section discusses suggested solutions.</p>
 
@@ -978,8 +981,9 @@
   <li>
     <p>If you’re certain you didn’t modify any files and you don’t mind removing or overwriting the changes in the Magento file system, enter:</p>
 
-    <pre><code>git reset --hard HEAD &amp;&amp; git pull origin develop
+    <div class="highlighter-rouge"><pre class="highlight"><code>git reset --hard HEAD &amp;&amp; git pull origin develop
 </code></pre>
+    </div>
 
     <p>After that, continue where you left off with your Magento 2 update.</p>
   </li>
@@ -988,13 +992,15 @@
 
     <p>To configure GitHub to ignore line endings, enter the following command in your Git client:</p>
 
-    <pre><code>git config --system core.autocrlf false
+    <div class="highlighter-rouge"><pre class="highlight"><code>git config --system core.autocrlf false
 </code></pre>
+    </div>
 
     <p>If you use Windows, enter:</p>
 
-    <pre><code>git config --system core.eol LF
+    <div class="highlighter-rouge"><pre class="highlight"><code>git config --system core.eol LF
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">

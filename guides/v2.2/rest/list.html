@@ -641,12 +641,13 @@
 
 <h3 id="customerbalance">CustomerBalance</h3>
 
-<pre><code>POST   /V1/carts/mine/balance/apply
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/carts/mine/balance/apply
 </code></pre>
+</div>
 
 <h3 id="giftcardaccount">GiftCardAccount</h3>
 
-<pre><code>GET    /V1/carts/:quoteId/giftCards
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/carts/:quoteId/giftCards
 PUT    /V1/carts/:cartId/giftCards
 DELETE /V1/carts/:cartId/giftCards/:giftCardCode
 DELETE /V1/carts/guest-carts/:cartId/giftCards/:giftCardCode
@@ -656,30 +657,34 @@ POST   /V1/carts/guest-carts/:cartId/giftCards
 GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
 GET    /V1/carts/mine/checkGiftCard/:giftCardCode
 </code></pre>
+</div>
 
 <h3 id="giftregistry">GiftRegistry</h3>
 
-<pre><code>POST   /V1/giftregistry/mine/estimate-shipping-methods
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/giftregistry/mine/estimate-shipping-methods
 POST   /V1/guest-giftregistry/:cartId/estimate-shipping-methods
 </code></pre>
+</div>
 
 <h3 id="giftwrapping">GiftWrapping</h3>
 
-<pre><code>GET    /V1/gift-wrappings/:id
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/gift-wrappings/:id
 POST   /V1/gift-wrappings
 PUT    /V1/gift-wrappings/:wrappingId
 GET    /V1/gift-wrappings
 DELETE /V1/gift-wrappings/:id
 </code></pre>
+</div>
 
 <h3 id="reward">Reward</h3>
 
-<pre><code>POST   /V1/reward/mine/use-reward
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/reward/mine/use-reward
 </code></pre>
+</div>
 
 <h3 id="rma">Rma</h3>
 
-<pre><code>POST   /V1/returns/:id/tracking-numbers
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/returns/:id/tracking-numbers
 DELETE /V1/returns/:id/tracking-numbers/:trackId
 GET    /V1/returns/:id
 DELETE /V1/returns/:id
@@ -695,11 +700,13 @@ GET    /V1/returnsAttributeMetadata/custom
 GET    /V1/returns/:id/tracking-numbers
 GET    /V1/returns/:id/labels
 </code></pre>
+</div>
 
 <h3 id="worldpay">Worldpay</h3>
 
-<pre><code>POST   /V1/worldpay-guest-carts/:cartId/payment-information
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/worldpay-guest-carts/:cartId/payment-information
 </code></pre>
+</div>
 
 <h2 id="list">List of REST APIs for Magento Open Source</h2>
 
@@ -709,12 +716,13 @@ GET    /V1/returns/:id/labels
 
 <h3 id="backend">Backend</h3>
 
-<pre><code>GET    /V1/modules
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/modules
 </code></pre>
+</div>
 
 <h3 id="bundle">Bundle</h3>
 
-<pre><code>POST   /V1/bundle-products/:sku/links/:optionId
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/bundle-products/:sku/links/:optionId
 PUT    /V1/bundle-products/:sku/links/:id
 GET    /V1/bundle-products/:productSku/children
 DELETE /V1/bundle-products/:sku/options/:optionId/children/:childSku
@@ -725,10 +733,11 @@ POST   /V1/bundle-products/options/add
 PUT    /V1/bundle-products/options/:optionId
 DELETE /V1/bundle-products/:sku/options/:optionId
 </code></pre>
+</div>
 
 <h3 id="catalog">Catalog</h3>
 
-<pre><code>POST   /V1/products
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/products
 PUT    /V1/products/:sku
 DELETE /V1/products/:sku
 GET    /V1/products
@@ -807,18 +816,20 @@ PUT    /V1/products/:sku/websites
 DELETE /V1/products/:sku/websites/:websiteId
 *GET   /V1/products-render-info
 </code></pre>
+</div>
 
 <h3 id="cataloginventory">CatalogInventory</h3>
 
-<pre><code>GET    /V1/stockItems/:productSku
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/stockItems/:productSku
 PUT    /V1/products/:productSku/stockItems/:itemId
 GET    /V1/stockItems/lowStock/
 GET    /V1/stockStatuses/:productSku
 </code></pre>
+</div>
 
 <h3 id="checkout">Checkout</h3>
 
-<pre><code>POST   /V1/guest-carts/:cartId/shipping-information
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/guest-carts/:cartId/shipping-information
 POST   /V1/carts/mine/shipping-information
 POST   /V1/carts/:cartId/shipping-information
 POST   /V1/carts/:cartId/totals-information
@@ -831,15 +842,17 @@ GET    /V1/carts/mine/payment-information
 POST   /V1/guest-carts/:cartId/set-payment-information
 POST   /V1/carts/mine/set-payment-information
 </code></pre>
+</div>
 
 <h3 id="checkoutagreements">CheckoutAgreements</h3>
 
-<pre><code>GET    /V1/carts/licence
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/carts/licence
 </code></pre>
+</div>
 
 <h3 id="cms">Cms</h3>
 
-<pre><code>GET    /V1/cmsPage/:pageId
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/cmsPage/:pageId
 GET    /V1/cmsPage/search
 POST   /V1/cmsPage
 PUT    /V1/cmsPage/:id
@@ -850,10 +863,11 @@ POST   /V1/cmsBlock
 PUT    /V1/cmsBlock/:id
 DELETE /V1/cmsBlock/:blockId
 </code></pre>
+</div>
 
 <h3 id="configurableproduct">ConfigurableProduct</h3>
 
-<pre><code>GET    /V1/configurable-products/:sku/children
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/configurable-products/:sku/children
 DELETE /V1/configurable-products/:sku/children/:childSku
 PUT    /V1/configurable-products/variation
 POST   /V1/configurable-products/:sku/child
@@ -863,10 +877,11 @@ POST   /V1/configurable-products/:sku/options
 PUT    /V1/configurable-products/:sku/options/:id
 DELETE /V1/configurable-products/:sku/options/:id
 </code></pre>
+</div>
 
 <h3 id="customer">Customer</h3>
 
-<pre><code>GET    /V1/customerGroups/:id
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/customerGroups/:id
 GET    /V1/customerGroups/default/:storeId
 GET    /V1/customerGroups/default
 *PUT    /V1/customerGroups/default/:id
@@ -907,17 +922,19 @@ GET    /V1/customers/me/shippingAddress
 GET    /V1/customers/:customerId/shippingAddress
 DELETE /V1/addresses/:addressId
 </code></pre>
+</div>
 
 <h3 id="directory">Directory</h3>
 
-<pre><code>GET    /V1/directory/currency
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/directory/currency
 GET    /V1/directory/countries
 GET    /V1/directory/countries/:countryId
 </code></pre>
+</div>
 
 <h3 id="downloadable">Downloadable</h3>
 
-<pre><code>GET    /V1/products/:sku/downloadable-links
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/products/:sku/downloadable-links
 GET    /V1/products/:sku/downloadable-links/samples
 POST   /V1/products/:sku/downloadable-links
 PUT    /V1/products/:sku/downloadable-links/:id
@@ -926,19 +943,21 @@ POST   /V1/products/:sku/downloadable-links/samples
 PUT    /V1/products/:sku/downloadable-links/samples/:id
 DELETE /V1/products/downloadable-links/samples/:id
 </code></pre>
+</div>
 
 <h3 id="eav">Eav</h3>
 
-<pre><code>GET    /V1/eav/attribute-sets/list
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/eav/attribute-sets/list
 GET    /V1/eav/attribute-sets/:attributeSetId
 DELETE /V1/eav/attribute-sets/:attributeSetId
 POST   /V1/eav/attribute-sets
 PUT    /V1/eav/attribute-sets/:attributeSetId
 </code></pre>
+</div>
 
 <h3 id="giftmessage">GiftMessage</h3>
 
-<pre><code>GET    /V1/carts/:cartId/gift-message
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/carts/:cartId/gift-message
 GET    /V1/carts/:cartId/gift-message/:itemId
 POST   /V1/carts/:cartId/gift-message
 POST   /V1/carts/:cartId/gift-message/:itemId
@@ -951,16 +970,18 @@ GET    /V1/guest-carts/:cartId/gift-message/:itemId
 POST   /V1/guest-carts/:cartId/gift-message
 POST   /V1/guest-carts/:cartId/gift-message/:itemId
 </code></pre>
+</div>
 
 <h3 id="integration">Integration</h3>
 
-<pre><code>POST   /V1/integration/admin/token
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/integration/admin/token
 POST   /V1/integration/customer/token
 </code></pre>
+</div>
 
 <h3 id="quote">Quote</h3>
 
-<pre><code>GET    /V1/carts/:cartId
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/carts/:cartId
 GET    /V1/carts/search
 POST   /V1/carts/
 POST   /V1/customers/:customerId/carts
@@ -1024,10 +1045,11 @@ GET    /V1/guest-carts/:cartId/totals
 GET    /V1/carts/mine/totals
 PUT    /V1/carts/mine/collect-totals
 </code></pre>
+</div>
 
 <h3 id="sales">Sales</h3>
 
-<pre><code>GET    /V1/orders/:id
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/orders/:id
 GET    /V1/orders
 GET    /V1/orders/:id/statuses
 POST   /V1/orders/:id/cancel
@@ -1073,10 +1095,11 @@ GET    /V1/transactions/:id
 GET    /V1/transactions
 *POST   /V1/order/:orderId/invoice
 </code></pre>
+</div>
 
 <h3 id="salesrule">SalesRule</h3>
 
-<pre><code>GET    /V1/salesRules/:ruleId
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/salesRules/:ruleId
 GET    /V1/salesRules/search
 POST   /V1/salesRules
 PUT    /V1/salesRules/:ruleId
@@ -1090,23 +1113,26 @@ POST   /V1/coupons/generate
 POST   /V1/coupons/deleteByIds
 POST   /V1/coupons/deleteByCodes
 </code></pre>
+</div>
 
 <h3 id="search">Search</h3>
 
-<pre><code>GET    /V1/search
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/search
 </code></pre>
+</div>
 
 <h3 id="store">Store</h3>
 
-<pre><code>GET    /V1/store/storeViews
+<div class="highlighter-rouge"><pre class="highlight"><code>GET    /V1/store/storeViews
 GET    /V1/store/storeGroups
 GET    /V1/store/websites
 GET    /V1/store/storeConfigs
 </code></pre>
+</div>
 
 <h3 id="tax">Tax</h3>
 
-<pre><code>POST   /V1/taxRates
+<div class="highlighter-rouge"><pre class="highlight"><code>POST   /V1/taxRates
 GET    /V1/taxRates/:rateId
 PUT    /V1/taxRates
 DELETE /V1/taxRates/:rateId
@@ -1122,6 +1148,7 @@ PUT    /V1/taxClasses/:classId
 DELETE /V1/taxClasses/:taxClassId
 GET    /V1/taxClasses/search
 </code></pre>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->

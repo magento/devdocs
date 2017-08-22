@@ -1919,23 +1919,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1952,9 +1955,9 @@
   <h2 id="config-cli-perf-prof">About profiles</h2>
   <p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
 
-  <p>Profiles are located in <code>&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
+  <p>Profiles are located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
 
-  <p>For example, <code>/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
+  <p>For example, <code class="highlighter-rouge">/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
 
   <table>
 	<tbody>
@@ -2099,19 +2102,21 @@
 
   <p>Command options:</p>
 
-  <pre><code>magento setup:perf:generate-fixtures {path to profile}
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:perf:generate-fixtures {path to profile}
 </code></pre>
+  </div>
 
-  <p>Where <code>&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
+  <p>Where <code class="highlighter-rouge">&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
 
   <p>For example,</p>
 
-  <pre><code>magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
 </code></pre>
+  </div>
 
   <p>Sample output for the small profile:</p>
 
-  <pre><code>Generating profile with following params:
+  <div class="highlighter-rouge"><pre class="highlight"><code>Generating profile with following params:
  |- Websites: 1
  |- Store Groups Count: 1
  |- Store Views Count: 1
@@ -2136,6 +2141,7 @@ Generating attribute sets...  done in &lt;time&gt;
 Generating simple products...  done in &lt;time&gt;
 ... more ...
 </code></pre>
+  </div>
 
   <p>Current supported fixtures:</p>
 
@@ -2181,7 +2187,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;product_attribute_sets_attributes_values&gt;{int}&lt;/product_attribute_sets_attributes_values&gt;</pre>
 
   <h3 id="config-cli-gen-bundle">Bundle products</h3>
-  <p>Generates bundle products. Generated bundle selections are not displayed individually in <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>. Products will be uniformly distributed per categories and websites. If  <code>assign_entities_to_all_websites</code> from the profile is set to <code>1</code>. products will be assigned to all websites.</p>
+  <p>Generates bundle products. Generated bundle selections are not displayed individually in <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>. Products will be uniformly distributed per categories and websites. If  <code class="highlighter-rouge">assign_entities_to_all_websites</code> from the profile is set to <code class="highlighter-rouge">1</code>. products will be assigned to all websites.</p>
 
   <p>XML profile node:</p>
 
@@ -2210,7 +2216,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;catalog_price_rules&gt;{int}&lt;/catalog_price_rules&gt;</pre>
 
   <h3 id="config-cli-gen-cat">Categories</h3>
-  <p>Generates categories. If <code>assign_entities_to_all_websites</code> is set to <code>0</code>, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>.</p>
+  <p>Generates categories. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">0</code>, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>.</p>
 
   <p>XML profile node:</p>
 
@@ -2236,7 +2242,7 @@ Generating simple products...  done in &lt;time&gt;
     &lt;/configs&gt;</pre>
 
   <h3 id="config-cli-gen-configprod">Configurable products</h3>
-  <p>Generates Configurable products. Generated configurable options are not displayed individually in the catalog. Products are uniformly distributed per categories and websites. If <code>assign_entities_to_all_websites</code> is set to <code>1</code>, products will be assigned to all websites.</p>
+  <p>Generates Configurable products. Generated configurable options are not displayed individually in the catalog. Products are uniformly distributed per categories and websites. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">1</code>, products will be assigned to all websites.</p>
 
   <p>We support the following XML node formats:</p>
 
@@ -2405,9 +2411,9 @@ Generating simple products...  done in &lt;time&gt;
 &lt;orders&gt;{int}&lt;/orders&gt;</pre>
 
   <h3 id="config-cli-gen-simp">Simple products</h3>
-  <p>Generates simple products. Products are distributed per default and pre-defined attribute sets. If extra attribute sets are specified in profile as: <code>&lt;product_attribute_sets&gt;{int}&lt;/product_attribute_sets&gt;</code>, products are also distributed per additional attribute sets.</p>
+  <p>Generates simple products. Products are distributed per default and pre-defined attribute sets. If extra attribute sets are specified in profile as: <code class="highlighter-rouge">&lt;product_attribute_sets&gt;{int}&lt;/product_attribute_sets&gt;</code>, products are also distributed per additional attribute sets.</p>
 
-  <p>Products are uniformly distributed per categories and websites. If <code>assign_entities_to_all_websites</code> is set to <code>1</code>, products are assigned to all websites.</p>
+  <p>Products are uniformly distributed per categories and websites. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">1</code>, products are assigned to all websites.</p>
 
   <p>XML profile node:</p>
 
@@ -2448,25 +2454,25 @@ Generating simple products...  done in &lt;time&gt;
 
   <ul>
     <li>
-      <p><code>&lt;Magento root dir&gt;/setup/performance-toolkit/config/attributeSets.xml</code>—Default attribute sets</p>
+      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/attributeSets.xml</code>—Default attribute sets</p>
     </li>
     <li>
-      <p><code>&lt;Magento root dir&gt;/setup/performance-toolkit/config/customerConfig.xml</code>—Customer configuration</p>
+      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/customerConfig.xml</code>—Customer configuration</p>
     </li>
     <li>
-      <p><code>&lt;Magento root dir&gt;/setup/performance-toolkit/config/description.xml</code>—Product full description configuration</p>
+      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/description.xml</code>—Product full description configuration</p>
     </li>
     <li>
-      <p><code>&lt;Magento root dir&gt;/setup/performance-toolkit/config/shortDescription.xml</code>—Product short description configuration</p>
+      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/shortDescription.xml</code>—Product short description configuration</p>
     </li>
     <li>
-      <p><code>&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchConfig.xml</code>—Configuration for product short and full description. This older implementation is provided for backward compatibility.</p>
+      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchConfig.xml</code>—Configuration for product short and full description. This older implementation is provided for backward compatibility.</p>
     </li>
     <li>
-      <p><code>&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchTerms.xml</code>—Small number of search terms to in short and full descriptions</p>
+      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchTerms.xml</code>—Small number of search terms to in short and full descriptions</p>
     </li>
     <li>
-      <p><code>&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchTermsLarge.xml</code>—Larger number of search terms to use in short and full description.</p>
+      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchTermsLarge.xml</code>—Larger number of search terms to use in short and full description.</p>
     </li>
   </ul>
 

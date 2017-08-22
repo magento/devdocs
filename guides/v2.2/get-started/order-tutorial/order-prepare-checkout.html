@@ -348,303 +348,303 @@
 
 <h3 id="estimate-shipping">Estimate shipping costs</h3>
 
-<p>Magento calculates shipping costs for each shipping method that can be applied to the order. In this tutorial, the <code>flatrate</code> ($5 per item) and <code>tablerate</code> shipping methods are active.</p>
+<p>Magento calculates shipping costs for each shipping method that can be applied to the order. In this tutorial, the <code class="highlighter-rouge">flatrate</code> ($5 per item) and <code class="highlighter-rouge">tablerate</code> shipping methods are active.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/carts/mine/estimate-shipping-methods</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/carts/mine/estimate-shipping-methods</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
-<p><code>Authorization</code> <code>Bearer &lt;customer token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;customer token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
 <p>The payload contains the shipping address.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>  <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;region_id&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
-      <span class="nt">&quot;region_code&quot;</span><span class="p">:</span> <span class="s2">&quot;NY&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;country_id&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;123 Oak Ave&quot;</span>
-        <span class="p">],</span>
-      <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;10577&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Purchase&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;customer_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jdoe@example.com&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;(512) 555-1111&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;same_as_billing&quot;</span><span class="p">:</span> <span class="mi">1</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">  </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"123 Oak Ave"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+      </span><span class="nt">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10577"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purchase"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(512) 555-1111"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"same_as_billing"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 </div></div>
 
 <p><strong>Response</strong></p>
 
-<p>Note that the cost for the <code>flatrate</code> shipping method is $15. The Sprite Yoga Companion Kit bundled product counts as one item. The Advanced Pilates &amp; Yoga item does not have a shipping charge because the customer downloads this item.</p>
+<p>Note that the cost for the <code class="highlighter-rouge">flatrate</code> shipping method is $15. The Sprite Yoga Companion Kit bundled product counts as one item. The Advanced Pilates &amp; Yoga item does not have a shipping charge because the customer downloads this item.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;carrier_code&quot;</span><span class="p">:</span> <span class="s2">&quot;flatrate&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;method_code&quot;</span><span class="p">:</span> <span class="s2">&quot;flatrate&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;carrier_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Flat Rate&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;method_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Fixed&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
-        <span class="nt">&quot;base_amount&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
-        <span class="nt">&quot;available&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nt">&quot;error_message&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;price_excl_tax&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
-        <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">15</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;carrier_code&quot;</span><span class="p">:</span> <span class="s2">&quot;tablerate&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;method_code&quot;</span><span class="p">:</span> <span class="s2">&quot;bestway&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;carrier_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Best Way&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;method_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Table Rate&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="nt">&quot;base_amount&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="nt">&quot;available&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nt">&quot;error_message&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;price_excl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span>
-    <span class="p">}</span>
-<span class="p">]</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"carrier_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flatrate"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"method_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flatrate"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"carrier_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flat Rate"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"method_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fixed"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"price_excl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"carrier_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tablerate"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"method_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bestway"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"carrier_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Best Way"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"method_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Table Rate"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"price_excl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span></code></pre></figure>
 </div></div>
 
 <h3 id="set-addresses">Set shipping and billing information</h3>
 
-<p>In this call, you specify the shipping and billing addresses, as well as the selected <code>carrier_code</code> and <code>method_code</code>. Since the Table Rate shipping method costs only $5, the customer selected this option.</p>
+<p>In this call, you specify the shipping and billing addresses, as well as the selected <code class="highlighter-rouge">carrier_code</code> and <code class="highlighter-rouge">method_code</code>. Since the Table Rate shipping method costs only $5, the customer selected this option.</p>
 
 <p>Magento returns a list of payment options and calculates the order totals.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/carts/mine/shipping-information</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/carts/mine/shipping-information</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
-<p><code>Authorization</code> <code>Bearer &lt;customer token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;customer token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>  <span class="nt">&quot;addressInformation&quot;</span><span class="p">:</span> <span class="p">{</span>
-	  <span class="nt">&quot;shipping_address&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span>
-       <span class="nt">&quot;region_id&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
-       <span class="nt">&quot;region_code&quot;</span><span class="p">:</span> <span class="s2">&quot;NY&quot;</span><span class="p">,</span>
-       <span class="nt">&quot;country_id&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
-       <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&quot;123 Oak Ave&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;10577&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Purchase&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jdoe@example.com&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;512-555-1111&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;billing_address&quot;</span><span class="p">:</span> <span class="p">{</span>
-  	<span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;region_id&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
-    <span class="nt">&quot;region_code&quot;</span><span class="p">:</span> <span class="s2">&quot;NY&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;country_id&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&quot;123 Oak Ave&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;10577&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Purchase&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jdoe@example.com&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;512-555-1111&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;shipping_carrier_code&quot;</span><span class="p">:</span> <span class="s2">&quot;tablerate&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;shipping_method_code&quot;</span><span class="p">:</span> <span class="s2">&quot;bestway&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">  </span><span class="nt">"addressInformation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	  </span><span class="nt">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"123 Oak Ave"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10577"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purchase"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512-555-1111"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  	</span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"123 Oak Ave"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10577"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purchase"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512-555-1111"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"shipping_carrier_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tablerate"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"shipping_method_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bestway"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 </div></div>
 
 <p><strong>Response</strong></p>
 
 <p>The subtotal of the order is $160, and shipping charges are $5. The grand total is $165.</p>
 
-<p>The available payment methods are <code>banktransfer</code> and <code>checkmo</code>. The customer will specify a <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> in the next step.</p>
+<p>The available payment methods are <code class="highlighter-rouge">banktransfer</code> and <code class="highlighter-rouge">checkmo</code>. The customer will specify a <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> in the next step.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;payment_methods&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;cashondelivery&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Cash On Delivery&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;banktransfer&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Bank Transfer Payment&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;purchaseorder&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Purchase Order&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;checkmo&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Check / Money order&quot;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;totals&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;grand_total&quot;</span><span class="p">:</span> <span class="mi">165</span><span class="p">,</span>
-        <span class="nt">&quot;base_grand_total&quot;</span><span class="p">:</span> <span class="mi">165</span><span class="p">,</span>
-        <span class="nt">&quot;subtotal&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
-        <span class="nt">&quot;base_subtotal&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
-        <span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&quot;base_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&quot;subtotal_with_discount&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
-        <span class="nt">&quot;base_subtotal_with_discount&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
-        <span class="nt">&quot;shipping_amount&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="nt">&quot;base_shipping_amount&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="nt">&quot;shipping_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&quot;base_shipping_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&quot;weee_tax_applied_amount&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="nt">&quot;shipping_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&quot;base_shipping_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nt">&quot;subtotal_incl_tax&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
-        <span class="nt">&quot;shipping_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="nt">&quot;base_shipping_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="nt">&quot;base_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;quote_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;items_qty&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-                <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                <span class="nt">&quot;row_total_with_discount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;tax_percent&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;base_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;discount_percent&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="s2">&quot;[]&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;weee_tax_applied_amount&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nt">&quot;weee_tax_applied&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Radiant Tee-M-Orange&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-                <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                <span class="nt">&quot;row_total_with_discount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;tax_percent&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;base_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;discount_percent&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="s2">&quot;[{\&quot;value\&quot;:\&quot;Advanced Pilates &amp; Yoga (Strength)\&quot;,\&quot;label\&quot;:\&quot;Downloads\&quot;}]&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;weee_tax_applied_amount&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nt">&quot;weee_tax_applied&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Advanced Pilates &amp; Yoga (Strength)&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
-                <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-                <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-                <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-                <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-                <span class="nt">&quot;row_total_with_discount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;base_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;discount_percent&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-                <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-                <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-                <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-                <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="s2">&quot;[{\&quot;value\&quot;:\&quot;1 x Sprite Stasis Ball 65 cm &lt;span class=\\\&quot;price\\\&quot;&gt;$27.00&lt;\\/span&gt;\&quot;,\&quot;label\&quot;:\&quot;Sprite Stasis Ball\&quot;},{\&quot;value\&quot;:\&quot;1 x Sprite Foam Yoga Brick &lt;span class=\\\&quot;price\\\&quot;&gt;$5.00&lt;\\/span&gt;\&quot;,\&quot;label\&quot;:\&quot;Sprite Foam Yoga Brick\&quot;},{\&quot;value\&quot;:\&quot;1 x Sprite Yoga Strap 8 foot &lt;span class=\\\&quot;price\\\&quot;&gt;$17.00&lt;\\/span&gt;\&quot;,\&quot;label\&quot;:\&quot;Sprite Yoga Strap\&quot;},{\&quot;value\&quot;:\&quot;1 x Sprite Foam Roller &lt;span class=\\\&quot;price\\\&quot;&gt;$19.00&lt;\\/span&gt;\&quot;,\&quot;label\&quot;:\&quot;Sprite Foam Roller\&quot;}]&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;weee_tax_applied_amount&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nt">&quot;weee_tax_applied&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Yoga Companion Kit&quot;</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-                <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
-                <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
-                <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
-                <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
-                <span class="nt">&quot;row_total_with_discount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;tax_percent&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;base_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;discount_percent&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
-                <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
-                <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
-                <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
-                <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="s2">&quot;[{\&quot;value\&quot;:\&quot;Gray\&quot;,\&quot;label\&quot;:\&quot;Color\&quot;},{\&quot;value\&quot;:\&quot;S\&quot;,\&quot;label\&quot;:\&quot;Size\&quot;}]&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;weee_tax_applied_amount&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nt">&quot;weee_tax_applied&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Chaz Kangeroo Hoodie&quot;</span>
-            <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;total_segments&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;subtotal&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Subtotal&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">160</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;shipping&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Shipping &amp; Handling (Best Way - Table Rate)&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">5</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;tax&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Tax&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;tax_grandtotal_details&quot;</span><span class="p">:</span> <span class="p">[]</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;grand_total&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Grand Total&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">165</span><span class="p">,</span>
-                <span class="nt">&quot;area&quot;</span><span class="p">:</span> <span class="s2">&quot;footer&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"payment_methods"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cashondelivery"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cash On Delivery"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"banktransfer"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer Payment"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"purchaseorder"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purchase Order"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"checkmo"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Check / Money order"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"totals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"grand_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_grand_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"subtotal_with_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_subtotal_with_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"shipping_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_shipping_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"shipping_discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_shipping_discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"weee_tax_applied_amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"shipping_tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_shipping_tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"subtotal_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"shipping_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_shipping_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"base_currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"quote_currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"items_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_row_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total_with_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"tax_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"discount_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_row_total_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[]"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"weee_tax_applied_amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"weee_tax_applied"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Radiant Tee-M-Orange"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_row_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total_with_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"tax_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"discount_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_row_total_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{\"value\":\"Advanced Pilates &amp; Yoga (Strength)\",\"label\":\"Downloads\"}]"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"weee_tax_applied_amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"weee_tax_applied"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced Pilates &amp; Yoga (Strength)"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_row_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total_with_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"discount_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_row_total_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{\"value\":\"1 x Sprite Stasis Ball 65 cm &lt;span class=\\\"price\\\"&gt;$27.00&lt;\\/span&gt;\",\"label\":\"Sprite Stasis Ball\"},{\"value\":\"1 x Sprite Foam Yoga Brick &lt;span class=\\\"price\\\"&gt;$5.00&lt;\\/span&gt;\",\"label\":\"Sprite Foam Yoga Brick\"},{\"value\":\"1 x Sprite Yoga Strap 8 foot &lt;span class=\\\"price\\\"&gt;$17.00&lt;\\/span&gt;\",\"label\":\"Sprite Yoga Strap\"},{\"value\":\"1 x Sprite Foam Roller &lt;span class=\\\"price\\\"&gt;$19.00&lt;\\/span&gt;\",\"label\":\"Sprite Foam Roller\"}]"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"weee_tax_applied_amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"weee_tax_applied"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sprite Yoga Companion Kit"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_row_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total_with_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"tax_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"discount_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"row_total_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"base_row_total_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{\"value\":\"Gray\",\"label\":\"Color\"},{\"value\":\"S\",\"label\":\"Size\"}]"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"weee_tax_applied_amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"weee_tax_applied"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chaz Kangeroo Hoodie"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"total_segments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subtotal"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subtotal"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shipping"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipping &amp; Handling (Best Way - Table Rate)"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tax"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tax"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"tax_grandtotal_details"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grand_total"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grand Total"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"footer"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 </div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you tried this call on your own, and the value of the <code>shipping_amount</code> parameter is <code>0</code>, then you did not deactivate the “Spend $50 or more - shipping is free!” cart price rule. See <a href="order-config-store.html#price-rule">Deactivate a cart price rule</a> for details.</p>
+  <p>If you tried this call on your own, and the value of the <code class="highlighter-rouge">shipping_amount</code> parameter is <code class="highlighter-rouge">0</code>, then you did not deactivate the “Spend $50 or more - shipping is free!” cart price rule. See <a href="order-config-store.html#price-rule">Deactivate a cart price rule</a> for details.</p>
 </div>
 
 <h3 id="verify-step">Verify this step</h3>

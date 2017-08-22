@@ -810,7 +810,7 @@
   <li>The Magento 2 database</li>
 </ul>
 
-<p>Backups are stored in the <code>var/backups</code> directory and can be restored at any time using the <a href="/guides/v2.2/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
+<p>Backups are stored in the <code class="highlighter-rouge">var/backups</code> directory and can be restored at any time using the <a href="/guides/v2.2/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
 
 <p>After backing up, you can <a href="#instgde-cli-uninst-roll">roll back</a> at a later time.</p>
 
@@ -823,23 +823,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -857,12 +860,12 @@
   <div>
 
     <h3 id="why-to-set-ulimit">Why to set ulimit</h3>
-    <p>Rolling back to a previous backup can silently fail, resulting in incomplete data being written to the file system or database. (This includes all types of rollbacks, including using System Upgrade, Component Manager, or the <a href="/guides/v2.2/install-gde/install/cli/install-cli-backup.html##instgde-cli-uninst-roll"><code>magento setup:rollback</code></a> command.)</p>
+    <p>Rolling back to a previous backup can silently fail, resulting in incomplete data being written to the file system or database. (This includes all types of rollbacks, including using System Upgrade, Component Manager, or the <a href="/guides/v2.2/install-gde/install/cli/install-cli-backup.html##instgde-cli-uninst-roll"><code class="highlighter-rouge">magento setup:rollback</code></a> command.)</p>
 
     <p>In some cases, a very long query string causes the user’s allocated memory space to run out of memory because of too many recursive calls.</p>
 
     <h3 id="how-to-set-ulimit">How to set ulimit</h3>
-    <p>We recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_blank"><code>ulimit</code></a> for the Magento file system user to a value of 65536 or more.</p>
+    <p>We recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_blank"><code class="highlighter-rouge">ulimit</code></a> for the Magento file system user to a value of 65536 or more.</p>
 
     <p>You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.</p>
 
@@ -870,8 +873,9 @@
 
     <p>Command:</p>
 
-    <pre><code>ulimit -s 65536
+    <div class="highlighter-rouge"><pre class="highlight"><code>ulimit -s 65536
 </code></pre>
+    </div>
 
     <p>You can change this to a larger value if needed.</p>
 
@@ -883,14 +887,15 @@
 
     <ol>
       <li>If you haven’t done so already, switch to the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-      <li>Open <code>/home/&lt;username&gt;/.bashrc</code> in a text editor.</li>
+      <li>Open <code class="highlighter-rouge">/home/&lt;username&gt;/.bashrc</code> in a text editor.</li>
       <li>
         <p>Add the following line:</p>
 
-        <pre><code>ulimit -s 65536
+        <div class="highlighter-rouge"><pre class="highlight"><code>ulimit -s 65536
 </code></pre>
+        </div>
       </li>
-      <li>Save your changes to <code>.bashrc</code> and exit the text editor.</li>
+      <li>Save your changes to <code class="highlighter-rouge">.bashrc</code> and exit the text editor.</li>
     </ol>
 
     <div class="bs-callout bs-callout-warning">
@@ -900,8 +905,9 @@
     <h2 id="instgde-cli-uninst-back">Backing up</h2>
     <p>Command usage:</p>
 
-    <pre><code>magento setup:backup [--code] [--media] [--db]
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:backup [--code] [--media] [--db]
 </code></pre>
+    </div>
 
     <p>The command performs the following tasks:</p>
 
@@ -948,12 +954,13 @@
 
     <p>For example, to back up the file system and database,</p>
 
-    <pre><code>magento setup:backup --code --db
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:backup --code --db
 </code></pre>
+    </div>
 
     <p>Messages similar to the following display:</p>
 
-    <pre><code>Enabling maintenance mode
+    <div class="highlighter-rouge"><pre class="highlight"><code>Enabling maintenance mode
 Code backup is starting...
 Code backup filename: 1434133011_filesystem.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
 Code backup path: /var/www/html/magento2/var/backups/1434133011_filesystem.tgz
@@ -964,33 +971,38 @@ DB backup path: /var/www/html/magento2/var/backups/1434133011_db.sql
 [SUCCESS]: DB backup completed successfully.
 Disabling maintenance mode
 </code></pre>
+    </div>
 
     <h2 id="instgde-cli-uninst-roll">Roll back</h2>
     <p>This section discusses how to roll back to a backup you made previously. You must know the file name of the backup file to restore.</p>
 
     <p>To find the name of your backups, enter:</p>
 
-    <pre><code>magento info:backups:list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento info:backups:list
 </code></pre>
+    </div>
 
     <p>The first string in the backup file name is the timestamp.</p>
 
     <p>To roll back to a previous backup, enter:</p>
 
-    <pre><code>magento setup:rollback [-c|--code-file="&lt;name&gt;"] [-m|--media-file="&lt;name&gt;"] [-d|--db-file="&lt;name&gt;"]
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:rollback [-c|--code-file="&lt;name&gt;"] [-m|--media-file="&lt;name&gt;"] [-d|--db-file="&lt;name&gt;"]
 </code></pre>
+    </div>
 
-    <p>For example, to restore a media backup named <code>1440611839_filesystem_media.tgz</code>, enter</p>
+    <p>For example, to restore a media backup named <code class="highlighter-rouge">1440611839_filesystem_media.tgz</code>, enter</p>
 
-    <pre><code>magento setup:rollback -m 1440611839_filesystem_media.tgz
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:rollback -m 1440611839_filesystem_media.tgz
 </code></pre>
+    </div>
 
     <p>Messages similar to the following display:</p>
 
-    <pre><code>[SUCCESS]: Media rollback completed successfully.
+    <div class="highlighter-rouge"><pre class="highlight"><code>[SUCCESS]: Media rollback completed successfully.
 Please set file permission of bin/magento to executable
 Disabling maintenance mode
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   <p>If the command results in a <code>Segmentation fault</code> message, see <a href="/guides/v2.2/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>

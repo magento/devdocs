@@ -985,7 +985,7 @@
 
 			<h2 id="overview">Overview</h2>
 
-<p>The <code>Magento_NegotiableQuote</code> module allows a customer and a merchant (admin user) to negotiate product and/or shipping prices before the customer places an order. Its functionality is available for the company members only.</p>
+<p>The <code class="highlighter-rouge">Magento_NegotiableQuote</code> module allows a customer and a merchant (admin user) to negotiate product and/or shipping prices before the customer places an order. Its functionality is available for the company members only.</p>
 
 <p>Currently, B2B quoting is global–the price is given for the quote as a whole. Quoting per item is not supported. The quote lifecycle is managed via quote statuses. The quoting interface allows both a merchant and a customer to manage items in the quote (add, delete, change quantity) as well as make an offer (or request a quote) for items and/or for shipping. The negotiated price set in the negotiable quote is exactly the price that will be applied on a quote during checkout, order generation, and invoice generation.</p>
 
@@ -993,11 +993,11 @@
 
 <h2 id="installation-details">Installation details</h2>
 
-<p>The module heavily depends on the <code>Quote</code> and <code>Magento_Company</code> modules, which must be previously installed and enabled.</p>
+<p>The module heavily depends on the <code class="highlighter-rouge">Quote</code> and <code class="highlighter-rouge">Magento_Company</code> modules, which must be previously installed and enabled.</p>
 
-<p>Also, the module has dependency on the following Magento’s B2C modules: <code>Tax</code>, <code>Checkout</code>, and <code>CartPricingRules</code> modules.</p>
+<p>Also, the module has dependency on the following Magento’s B2C modules: <code class="highlighter-rouge">Tax</code>, <code class="highlighter-rouge">Checkout</code>, and <code class="highlighter-rouge">CartPricingRules</code> modules.</p>
 
-<p>When working with the <code>SharedCatalog</code> module, <code>NegotiableQuote</code> will be restricted to the products added to the shared catalog and custom prices set in the shared catalog.</p>
+<p>When working with the <code class="highlighter-rouge">SharedCatalog</code> module, <code class="highlighter-rouge">NegotiableQuote</code> will be restricted to the products added to the shared catalog and custom prices set in the shared catalog.</p>
 
 <p>The module does not create any backward incompatible changes. Can be deactivated and uninstalled at any time.</p>
 
@@ -1015,7 +1015,7 @@
 
 <h3 id="layouts">Layouts</h3>
 
-<p>You can extend and override layouts in the <code>Magento\NegotiableQuote\view\adminhtml\layout</code> and <code>Magento\NegotiableQuote\view\frontend\layout</code> directories.</p>
+<p>You can extend and override layouts in the <code class="highlighter-rouge">Magento\NegotiableQuote\view\adminhtml\layout</code> and <code class="highlighter-rouge">Magento\NegotiableQuote\view\frontend\layout</code> directories.</p>
 
 <p>For more information about layouts, see the <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html">Layout documentation</a>.</p>
 
@@ -1025,10 +1025,10 @@
 
 <ul>
   <li>
-    <p><code>Magento\NegotiableQuote\view\adminhtml\ui_component</code> -  company form, negotiable quote grid</p>
+    <p><code class="highlighter-rouge">Magento\NegotiableQuote\view\adminhtml\ui_component</code> -  company form, negotiable quote grid</p>
   </li>
   <li>
-    <p><code>Magento\NegotiableQuote\view\frontend\ui_component</code> - negotiable quote listing</p>
+    <p><code class="highlighter-rouge">Magento\NegotiableQuote\view\frontend\ui_component</code> - negotiable quote listing</p>
   </li>
 </ul>
 

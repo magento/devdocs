@@ -1492,39 +1492,39 @@
 			<p>When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Cloud Architecture]</p>
 
 <h2 id="env-start-comm">Common Magento CLI commands</h2>
-<p>The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the <code>-p &lt;project ID&gt;</code> parameter. These commands are meant to be used to manage integration environments. You may notice these commands are similar to Git commands. The <code>magento-cloud</code> versions directly connect with Magento Git, the Magento ECE project, and provide Git features.</p>
+<p>The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the <code class="highlighter-rouge">-p &lt;project ID&gt;</code> parameter. These commands are meant to be used to manage integration environments. You may notice these commands are similar to Git commands. The <code class="highlighter-rouge">magento-cloud</code> versions directly connect with Magento Git, the Magento ECE project, and provide Git features.</p>
 
-<p>All commands are shown with required options only. Get help for any <code>magento-cloud</code> command by appending <code>--help</code>.</p>
+<p>All commands are shown with required options only. Get help for any <code class="highlighter-rouge">magento-cloud</code> command by appending <code class="highlighter-rouge">--help</code>.</p>
 
 <dl>
-  <dt><code>git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code></dt>
+  <dt><code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code></dt>
   <dd>Push an empty commit to force a redeployment. Some actions, like adding a user for example, don’t result in deployment.</dd>
-  <dt><code>magento-cloud login</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud login</code></dt>
   <dd>Log in to the project</dd>
-  <dt><code>magento-cloud project:get &lt;project ID&gt; &lt;directory&gt; -e &lt;environment ID&gt;</code></dt>
-  <dd>Clone a project to a directory. To clone the <code>master</code> environment, omit <code>-e &lt;environment ID&gt;</code>.</dd>
-  <dt><code>magento-cloud environment:list -p &lt;project ID&gt;</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud project:get &lt;project ID&gt; &lt;directory&gt; -e &lt;environment ID&gt;</code></dt>
+  <dd>Clone a project to a directory. To clone the <code class="highlighter-rouge">master</code> environment, omit <code class="highlighter-rouge">-e &lt;environment ID&gt;</code>.</dd>
+  <dt><code class="highlighter-rouge">magento-cloud environment:list -p &lt;project ID&gt;</code></dt>
   <dd>List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).</dd>
-  <dt><code>magento-cloud environment:branch &lt;name&gt; &lt;parent branch&gt;</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud environment:branch &lt;name&gt; &lt;parent branch&gt;</code></dt>
   <dd>Create a new branch (that is, environment); the environment has both a name and an ID</dd>
 </dl>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
 
-  <p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code>{ }</code>), parentheses, asterisk (<code>*</code>), angle brackets (<code>&lt; &gt;</code>), ampersand (<code>&amp;</code>), percent (<code>%</code>), and other characters.</p>
+  <p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
 </div>
 
 <dl>
-  <dt><code>magento-cloud environment:checkout &lt;environment ID&gt;</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud environment:checkout &lt;environment ID&gt;</code></dt>
   <dd>Check out an existing environment</dd>
-  <dt><code>magento-cloud environment:merge -p &lt;project ID&gt; -e &lt;environment ID&gt;</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud environment:merge -p &lt;project ID&gt; -e &lt;environment ID&gt;</code></dt>
   <dd>Merge changes in this environment with its parent.</dd>
-  <dt><code>magento-cloud environment:synchronize -p &lt;project ID&gt; -e &lt;environment ID&gt; {code|data}</code></dt>
-  <dd>Synchronize (that is, <code>git pull</code>) code and/or data from the parent to this environment</dd>
-  <dt><code>magento-cloud variable:list</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud environment:synchronize -p &lt;project ID&gt; -e &lt;environment ID&gt; {code|data}</code></dt>
+  <dd>Synchronize (that is, <code class="highlighter-rouge">git pull</code>) code and/or data from the parent to this environment</dd>
+  <dt><code class="highlighter-rouge">magento-cloud variable:list</code></dt>
   <dd>List variables in this environment</dd>
-  <dt><code>magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code></dt>
+  <dt><code class="highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code></dt>
   <dd>Set a value for an environment variable in this environment</dd>
 </dl>
 
@@ -1543,27 +1543,31 @@
     <li>
       <p>Enter the following command in a terminal to log in to your project:</p>
 
-      <pre><code>magento-cloud login
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
 </code></pre>
+      </div>
     </li>
     <li>
       <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-      <pre><code>magento-cloud project:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
 </code></pre>
+      </div>
     </li>
     <li>
       <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
+      </div>
     </li>
-    <li>Change to a project directory. For example, <code>cd /var/www/html/magento2</code></li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
     <li>
       <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-      <pre><code>magento-cloud environment:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre>
+      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
   		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
@@ -1572,28 +1576,32 @@
     <li>
       <p>Fetch origin branches to get the latest code:</p>
 
-      <pre><code>git fetch origin
+      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
+      </div>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
     </li>
     <li>
       <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
     <li>
       <p>Create a <a href="/guides/v2.0/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -1609,14 +1617,16 @@
       <li>
         <p>SSH to the integration environment.</p>
 
-        <pre><code>magento-cloud ssh
+        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud ssh
 </code></pre>
+        </div>
       </li>
       <li>
         <p>Find the database login information:</p>
 
-        <pre><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+        <div class="highlighter-rouge"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
 </code></pre>
+        </div>
 
         <p>Sample output follows:</p>
 

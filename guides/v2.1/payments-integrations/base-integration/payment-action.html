@@ -762,52 +762,52 @@
 
 <h2 id="configure-the-command">Configure the command</h2>
 
-<p>The gateway command for the payment action must be configured in the <code>di.xml</code> file of your module. Conventionally, its location must be <code>&lt;your_module_dir&gt;/etc/di.xml</code></p>
+<p>The gateway command for the payment action must be configured in the <code class="highlighter-rouge">di.xml</code> file of your module. Conventionally, its location must be <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/di.xml</code></p>
 
 <p>Configure the command as described in <a href="/guides/v2.1//payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands">Gateway Command</a>.</p>
 
-<h2 id="example-authorize-payment-action-for-braintree">Example: <code>authorize</code> payment action for Braintree</h2>
+<h2 id="example-authorize-payment-action-for-braintree">Example: <code class="highlighter-rouge">authorize</code> payment action for Braintree</h2>
 
-<p>Configuring the gateway command and adding it to command pool (<code>app/code/Magento/Braintree/etc/di.xml</code>):</p>
+<p>Configuring the gateway command and adding it to command pool (<code class="highlighter-rouge">app/code/Magento/Braintree/etc/di.xml</code>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeCommandPool&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\CommandPool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeCommandPool"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Command\CommandPool"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;commands&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;authorize&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>BraintreeAuthorizeCommand<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"commands"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"authorize"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>BraintreeAuthorizeCommand<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span>
 
-<span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeAuthorizeCommand&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\GatewayCommand&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeAuthorizeCommand"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Command\GatewayCommand"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;requestBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeAuthorizeRequest<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;transferFactory&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\TransferFactory<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;client&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\Client\TransactionSale<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;handler&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeAuthorizationHandler<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;validator&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\ResponseValidator<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestBuilder"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeAuthorizeRequest<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"transferFactory"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\TransferFactory<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"client"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\Client\TransactionSale<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"handler"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeAuthorizationHandler<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"validator"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\ResponseValidator<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>In the command configuration we see that <code>BraintreeAuthorizeRequest</code> is specified as <code>requestBuilder</code>, that is a
-Let’s look closer on the <code>requestBuilder</code> arguments. This argument value is a list of builders, builder composite.</p>
+<p>In the command configuration we see that <code class="highlighter-rouge">BraintreeAuthorizeRequest</code> is specified as <code class="highlighter-rouge">requestBuilder</code>, that is a
+Let’s look closer on the <code class="highlighter-rouge">requestBuilder</code> arguments. This argument value is a list of builders, builder composite.</p>
 
-<p>The <code>BraintreeAuthorizeRequest</code> builder contains the following builders (<code>app/code/Magento/Braintree/etc/di.xml</code>):</p>
+<p>The <code class="highlighter-rouge">BraintreeAuthorizeRequest</code> builder contains the following builders (<code class="highlighter-rouge">app/code/Magento/Braintree/etc/di.xml</code>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeAuthorizeRequest&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Request\BuilderComposite&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeAuthorizeRequest"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Request\BuilderComposite"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;builders&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;customer&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\CustomerDataBuilder<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;payment&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\PaymentDataBuilder<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;channel&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\ChannelDataBuilder<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;address&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\AddressDataBuilder<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;vault&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\VaultDataBuilder<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;3dsecure&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\ThreeDSecureDataBuilder<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;kount&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\KountPaymentDataBuilder<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"builders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"customer"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\CustomerDataBuilder<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"payment"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\PaymentDataBuilder<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"channel"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\ChannelDataBuilder<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"address"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\AddressDataBuilder<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"vault"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\VaultDataBuilder<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"3dsecure"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\ThreeDSecureDataBuilder<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"kount"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\KountPaymentDataBuilder<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>The most important builder in this pool is <code>Magento\Braintree\Gateway\Request\PaymentDataBuilder</code>, the <code>payment</code> builder. It is responsible for the payment information part of the request.</p>
+<p>The most important builder in this pool is <code class="highlighter-rouge">Magento\Braintree\Gateway\Request\PaymentDataBuilder</code>, the <code class="highlighter-rouge">payment</code> builder. It is responsible for the payment information part of the request.</p>
 
 <p>Please see the <a href="/guides/v2.1/payments-integrations/base-integration/get-payment-info.html">Get payment information from frontend to backend</a> for details about how payment information can be handled.</p>
 

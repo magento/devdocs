@@ -1613,8 +1613,8 @@
 <p>This topic discusses the following options for configuring caching:</p>
 
 <ul>
-  <li>Modifying the provided <code>default</code> cache frontend, which means you modify only <code>&lt;your Magento install dir&gt;/app/etc/di.xml</code> (the Magento application’s global <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration)</li>
-  <li>Configuring your own custom cache frontend, which means you modify only <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> because it overrides the equivalent configuration in <code>di.xml</code></li>
+  <li>Modifying the provided <code class="highlighter-rouge">default</code> cache frontend, which means you modify only <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/di.xml</code> (the Magento application’s global <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration)</li>
+  <li>Configuring your own custom cache frontend, which means you modify only <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> because it overrides the equivalent configuration in <code class="highlighter-rouge">di.xml</code></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1622,63 +1622,63 @@
 </div>
 
 <h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>
-<p>The Magento application has a <code>default</code> cache <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> you can use for any <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a <span term-uuid="ca5ad9ac-9d39-45b5-80b1-e90d192f20d0" class="glossary-term" data-toggle="popover">cache frontend</span> with a different name, which is preferable if you expect to customize your frontend.</p>
+<p>The Magento application has a <code class="highlighter-rouge">default</code> cache <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> you can use for any <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a <span term-uuid="ca5ad9ac-9d39-45b5-80b1-e90d192f20d0" class="glossary-term" data-toggle="popover">cache frontend</span> with a different name, which is preferable if you expect to customize your frontend.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all; you modify Magento's global <code>di.xml</code>. See the topics referenced in <a href="/guides/v2.0/config-guide/cache/caching_low-level.html">Low-level cache options</a>. </p>
 </div>
 
-<p>You must specify a custom cache frontend either <code>app/etc/env.php</code> or Magento’s global <code>app/etc/di.xml</code>.</p>
+<p>You must specify a custom cache frontend either <code class="highlighter-rouge">app/etc/env.php</code> or Magento’s global <code class="highlighter-rouge">app/etc/di.xml</code>.</p>
 
-<p>The following example shows how to define it in <code>env.php</code> (which overrides <code>di.xml</code>):</p>
+<p>The following example shows how to define it in <code class="highlighter-rouge">env.php</code> (which overrides <code class="highlighter-rouge">di.xml</code>):</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;&lt;unique frontend id&gt;&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-             <span class="o">&lt;</span><span class="nx">cache</span> <span class="nx">options</span><span class="o">&gt;</span>
-        <span class="p">],</span>
-    <span class="p">],</span>
-    <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-         <span class="o">&lt;</span><span class="nx">cache</span> <span class="nx">type</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-             <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;unique frontend id&gt;&#39;</span>
-        <span class="p">],</span>
-    <span class="p">],</span>
-    <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-         <span class="o">&lt;</span><span class="nx">cache</span> <span class="nx">type</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-             <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;unique frontend id&gt;&#39;</span>
-        <span class="p">],</span>
-    <span class="p">],</span>
-<span class="p">],</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">'cache' =&gt; [
+    'frontend' =&gt; [
+        '<span class="nt">&lt;unique</span> <span class="na">frontend</span> <span class="na">id</span><span class="nt">&gt;</span>' =&gt; [
+             <span class="nt">&lt;cache</span> <span class="na">options</span><span class="nt">&gt;</span>
+        ],
+    ],
+    'type' =&gt; [
+         <span class="nt">&lt;cache</span> <span class="na">type</span> <span class="na">1</span><span class="nt">&gt;</span> =&gt; [
+             'frontend' =&gt; '<span class="nt">&lt;unique</span> <span class="na">frontend</span> <span class="na">id</span><span class="nt">&gt;</span>'
+        ],
+    ],
+    'type' =&gt; [
+         <span class="nt">&lt;cache</span> <span class="na">type</span> <span class="na">2</span><span class="nt">&gt;</span> =&gt; [
+             'frontend' =&gt; '<span class="nt">&lt;unique</span> <span class="na">frontend</span> <span class="na">id</span><span class="nt">&gt;</span>'
+        ],
+    ],
+],</code></pre></figure>
 
-<p>where <code>&lt;unique frontend id&gt;</code> is a unique name to identify your frontend and <code>&lt;cache options&gt;</code> are options discussed in the topics specific to each type of caching (database, Redis, and so on).</p>
+<p>where <code class="highlighter-rouge">&lt;unique frontend id&gt;</code> is a unique name to identify your frontend and <code class="highlighter-rouge">&lt;cache options&gt;</code> are options discussed in the topics specific to each type of caching (database, Redis, and so on).</p>
 
 <h2 id="cache-mage-adv">Step 2: Configure the cache</h2>
-<p>You can specify frontend and <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> cache configuration options in <code>env.php</code> or <code>di.xml</code>. This task is optional.</p>
+<p>You can specify frontend and <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> cache configuration options in <code class="highlighter-rouge">env.php</code> or <code class="highlighter-rouge">di.xml</code>. This task is optional.</p>
 
-<p><code>env.php</code> example:</p>
+<p><code class="highlighter-rouge">env.php</code> example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">frontend_type</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="s1">&#39;frontend_options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="o">&lt;</span><span class="nx">frontend_option</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">frontend_option_value</span><span class="o">&gt;</span><span class="p">,</span>
-    <span class="o">...</span>
-<span class="p">],</span>
-<span class="s1">&#39;backend&#39;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">backend_type</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="s1">&#39;backend_options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="o">&lt;</span><span class="nx">backend_option</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">backend_option_value</span><span class="o">&gt;</span><span class="p">,</span>
-    <span class="o">...</span>
-<span class="p">],</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">'frontend' =&gt; <span class="nt">&lt;frontend</span><span class="na">_type</span><span class="nt">&gt;</span>,
+'frontend_options' =&gt; [
+    <span class="nt">&lt;frontend</span><span class="na">_option</span><span class="nt">&gt;</span> =&gt; <span class="nt">&lt;frontend</span><span class="na">_option_value</span><span class="nt">&gt;</span>,
+    ...
+],
+'backend' =&gt; <span class="nt">&lt;backend</span><span class="na">_type</span><span class="nt">&gt;</span>,
+'backend_options' =&gt; [
+    <span class="nt">&lt;backend</span><span class="na">_option</span><span class="nt">&gt;</span> =&gt; <span class="nt">&lt;backend</span><span class="na">_option_value</span><span class="nt">&gt;</span>,
+    ...
+],</code></pre></figure>
 
 <p>where</p>
 
 <ul>
   <li>
-    <p><code>&lt;frontend_type&gt;</code> is the low-level frontend <span term-uuid="65f9a5a1-79ee-4f27-aac7-29abe24db40d" class="glossary-term" data-toggle="popover">cache type</span>. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>.</p>
+    <p><code class="highlighter-rouge">&lt;frontend_type&gt;</code> is the low-level frontend <span term-uuid="65f9a5a1-79ee-4f27-aac7-29abe24db40d" class="glossary-term" data-toggle="popover">cache type</span>. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>.</p>
 
-    <p>If you omit <code>&lt;frontend_type&gt;</code>, <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> is used.</p>
+    <p>If you omit <code class="highlighter-rouge">&lt;frontend_type&gt;</code>, <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> is used.</p>
   </li>
-  <li><code>&lt;frontend_option&gt;</code>, <code>&lt;frontend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation.</li>
-  <li><code>&lt;backend_type&gt;</code> is the low-level backend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html" target="_blank">Zend_Cache_Backend</a> and that implements <a href="http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html" target="_blank">Zend_Cache_Backend_Interface</a>.</li>
-  <li><code>&lt;backend_option&gt;</code>, <code>&lt;backend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.</li>
+  <li><code class="highlighter-rouge">&lt;frontend_option&gt;</code>, <code class="highlighter-rouge">&lt;frontend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation.</li>
+  <li><code class="highlighter-rouge">&lt;backend_type&gt;</code> is the low-level backend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html" target="_blank">Zend_Cache_Backend</a> and that implements <a href="http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html" target="_blank">Zend_Cache_Backend_Interface</a>.</li>
+  <li><code class="highlighter-rouge">&lt;backend_option&gt;</code>, <code class="highlighter-rouge">&lt;backend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.</li>
 </ul>
 
 <h4 id="next-step">Next step</h4>

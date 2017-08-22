@@ -1708,17 +1708,19 @@
 <h3 id="config-bootparam-mode">Set the mode using an environment variable</h3>
 <p>You can specify Magento bootstrap variables as system-wide environment variables, which enables all processes to use them.</p>
 
-<p>For example, you can use the <code>MAGE_PROFILER</code> system environment variable to specify a mode as follows:</p>
+<p>For example, you can use the <code class="highlighter-rouge">MAGE_PROFILER</code> system environment variable to specify a mode as follows:</p>
 
-<pre><code>MAGE_PROFILER={firebug|csv|&lt;custom value&gt;}
+<div class="highlighter-rouge"><pre class="highlight"><code>MAGE_PROFILER={firebug|csv|&lt;custom value&gt;}
 </code></pre>
+</div>
 
 <p>Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
 <p>bash shell example for CentOS:</p>
 
-<pre><code>export MAGE_PROFILER=firebug
+<div class="highlighter-rouge"><pre class="highlight"><code>export MAGE_PROFILER=firebug
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1740,13 +1742,13 @@
 <p>See the <a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample#L16" target="_blank">nginx sample configuration</a> on GitHub.</p>
 
 <h3 id="mode-specify-web-htaccess">Specify a variable using .htaccess (Apache only)</h3>
-<p>One way to set the Magento mode is by editing <code>.htaccess</code>. This way, you don’t have to change Apache settings.</p>
+<p>One way to set the Magento mode is by editing <code class="highlighter-rouge">.htaccess</code>. This way, you don’t have to change Apache settings.</p>
 
-<p>You can modify <code>.htaccess</code> in any of the following locations, depending on your entry point to the Magento application:</p>
+<p>You can modify <code class="highlighter-rouge">.htaccess</code> in any of the following locations, depending on your entry point to the Magento application:</p>
 
 <ul>
-  <li><code>&lt;your Magento install dir&gt;/.htaccess</code></li>
-  <li><code>&lt;your Magento install dir&gt;/pub/.htaccess</code></li>
+  <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;/.htaccess</code></li>
+  <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/.htaccess</code></li>
 </ul>
 
 <p>To set a variable:</p>
@@ -1757,28 +1759,30 @@
 
     <p>For example, to specify a <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">mode</a>, uncomment the following:</p>
 
-    <pre><code>#   SetEnv MAGE_PROFILER firebug
+    <div class="highlighter-rouge"><pre class="highlight"><code>#   SetEnv MAGE_PROFILER firebug
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Set the value of <code>MAGE_PROFILER</code> to any of the following:</p>
+    <p>Set the value of <code class="highlighter-rouge">MAGE_PROFILER</code> to any of the following:</p>
 
-    <pre><code>firebug
+    <div class="highlighter-rouge"><pre class="highlight"><code>firebug
 csvfile
 &lt;custom value&gt;
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Save your changes to <code>.htaccess</code>; you don’t need to restart Apache for the change to take effect.</p>
+    <p>Save your changes to <code class="highlighter-rouge">.htaccess</code>; you don’t need to restart Apache for the change to take effect.</p>
   </li>
 </ol>
 
 <h3 id="mode-specify-web-apache">Specify a variable using an Apache setting</h3>
-<p>The Apache web server supports setting the Magento mode using <code>mod_env</code> directives.</p>
+<p>The Apache web server supports setting the Magento mode using <code class="highlighter-rouge">mod_env</code> directives.</p>
 
-<p>The Apache <code>mod_env</code> directive is slightly different in <a href="http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv" target="_blank">version 2.2</a> and <a href="http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv" target="_blank">version 2.4</a>.</p>
+<p>The Apache <code class="highlighter-rouge">mod_env</code> directive is slightly different in <a href="http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv" target="_blank">version 2.2</a> and <a href="http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv" target="_blank">version 2.4</a>.</p>
 
-<p>The procedures that follows show how to set the Magento mode in an Apache virtual host. This is not the only way to use <code>mod_env</code> directives; consult the Apache documentation for details.</p>
+<p>The procedures that follows show how to set the Magento mode in an Apache virtual host. This is not the only way to use <code class="highlighter-rouge">mod_env</code> directives; consult the Apache documentation for details.</p>
 
 <ul>
   <li><a href="#mode-specify-ubuntu">Specify a bootstrap variable for Apache on Ubuntu</a></li>
@@ -1792,44 +1796,48 @@ csvfile
 
 <ol>
   <li>
-    <p>As a user with <code>root</code> privileges, open your virtual host configuration file in a text editor.</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open your virtual host configuration file in a text editor.</p>
 
-    <p>For example, if your virtual host is named <code>my.magento</code>,</p>
+    <p>For example, if your virtual host is named <code class="highlighter-rouge">my.magento</code>,</p>
 
     <ul>
-      <li>Apache 2.4: <code>vim /etc/apache2/sites-available/my.magento.conf</code></li>
-      <li>Apache 2.2: <code>vim /etc/apache2/sites-available/my.magento</code></li>
+      <li>Apache 2.4: <code class="highlighter-rouge">vim /etc/apache2/sites-available/my.magento.conf</code></li>
+      <li>Apache 2.2: <code class="highlighter-rouge">vim /etc/apache2/sites-available/my.magento</code></li>
     </ul>
   </li>
   <li>
     <p>Anywhere in the virtual host configuration, add the following line:</p>
 
-    <pre><code>SetEnv "&lt;variable name&gt;" "&lt;variable value&gt;"
+    <div class="highlighter-rouge"><pre class="highlight"><code>SetEnv "&lt;variable name&gt;" "&lt;variable value&gt;"
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>SetEnv "MAGE_PROFILER" "firebug"
+    <div class="highlighter-rouge"><pre class="highlight"><code>SetEnv "MAGE_PROFILER" "firebug"
 </code></pre>
+    </div>
   </li>
   <li>Save your changes and exit the text editor.</li>
   <li>
     <p>Enable your virtual host if you haven’t already done so:</p>
 
-    <pre><code>a2ensite &lt;virtual host config file name&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>a2ensite &lt;virtual host config file name&gt;
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>a2ensite my.magento.conf
+    <div class="highlighter-rouge"><pre class="highlight"><code>a2ensite my.magento.conf
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Restart the web server:</p>
 
     <ul>
-      <li>Ubuntu: <code>service apache2 restart</code></li>
-      <li>CentOS: <code>service httpd restart</code></li>
+      <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+      <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
     </ul>
   </li>
 </ol>
@@ -1841,18 +1849,20 @@ csvfile
 
 <ol>
   <li>
-    <p>As a user with <code>root</code> privileges, open <code>/etc/httpd/conf/httpd.conf</code> in a text editor.</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> in a text editor.</p>
   </li>
   <li>
     <p>Anywhere in the virtual host configuration, add the following line:</p>
 
-    <pre><code>SetEnv "&lt;variable name&gt;" "&lt;variable value&gt;"
+    <div class="highlighter-rouge"><pre class="highlight"><code>SetEnv "&lt;variable name&gt;" "&lt;variable value&gt;"
 </code></pre>
+    </div>
 
     <p>For example,</p>
 
-    <pre><code>SetEnv "MAGE_PROFILER" "firebug"
+    <div class="highlighter-rouge"><pre class="highlight"><code>SetEnv "MAGE_PROFILER" "firebug"
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Save your changes and exit the text editor.</p>
@@ -1862,8 +1872,8 @@ csvfile
 <p>After setting the mode, restart the web server:</p>
 
 <ul>
-  <li>Ubuntu: <code>service apache2 restart</code></li>
-  <li>CentOS: <code>service httpd restart</code></li>
+  <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+  <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
 </ul>
 
 <h4 id="related-topics">Related topics</h4>

@@ -1015,14 +1015,14 @@
 
 <h2 id="service-contract-anatomy">Service contract anatomy</h2>
 
-<p>The service contract of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is defined by the set of interfaces in the module’s <code>/Api</code>. It typically consists of:</p>
+<p>The service contract of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is defined by the set of interfaces in the module’s <code class="highlighter-rouge">/Api</code>. It typically consists of:</p>
 
 <ul>
   <li>
-    <p>service interfaces in the <code>/Api</code> <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> of the module</p>
+    <p>service interfaces in the <code class="highlighter-rouge">/Api</code> <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> of the module</p>
   </li>
   <li>
-    <p>data (or <em>entity</em>) interfaces in the <code>Api/Data</code> directory. <em>Data entities</em> are data structures passed to and returned from service interfaces.</p>
+    <p>data (or <em>entity</em>) interfaces in the <code class="highlighter-rouge">Api/Data</code> directory. <em>Data entities</em> are data structures passed to and returned from service interfaces.</p>
   </li>
 </ul>
 
@@ -1044,7 +1044,7 @@
 
 <h2 id="advantages-of-service-contracts">Advantages of service contracts</h2>
 
-<p>Service contracts permit you to add a new customer <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the <em>&lt;preference&gt;</em> element of a <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> config file (<code>di.xml</code>) file. The <code>di.xml</code> file specifies which PHP class to use for the interface <code>Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
+<p>Service contracts permit you to add a new customer <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the <em>&lt;preference&gt;</em> element of a <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> config file (<code class="highlighter-rouge">di.xml</code>) file. The <code class="highlighter-rouge">di.xml</code> file specifies which PHP class to use for the interface <code class="highlighter-rouge">Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
 
 <p>Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.</p>
 

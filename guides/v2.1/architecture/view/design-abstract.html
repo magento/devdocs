@@ -478,11 +478,11 @@
 
 <p>The “look and feel” defined in design abstractions might be determined by the purpose of pages or merely by design requirements.</p>
 
-<p>For example, <code>page_three_column</code> is a design abstraction that defines a three-column layout for a page. Example:</p>
+<p>For example, <code class="highlighter-rouge">page_three_column</code> is a design abstraction that defines a three-column layout for a page. Example:</p>
 
 <p><img src="/common/images/view_da.png" alt="Three column layout" /></p>
 
-<p>The other example is a <code>customer_account</code> design abstraction which adds menu items in the left side navigation column. The abstraction is used in layouts of the My Account section pages on the store front:</p>
+<p>The other example is a <code class="highlighter-rouge">customer_account</code> design abstraction which adds menu items in the left side navigation column. The abstraction is used in layouts of the My Account section pages on the store front:</p>
 
 <p><img src="/common/images/view_da3.png" alt="My Account section on the storefront" /></p>
 
@@ -490,7 +490,7 @@
 
 <p>Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">the Magento_Review module’s customer_account.xml</a>.</p>
 
-<p>When a page is rendered, all <code>customer_account</code> layouts are merged, and the pages where the <code>customer_account</code> design abstraction is used contain the elements from all <code>customer_account.xml</code> files.</p>
+<p>When a page is rendered, all <code class="highlighter-rouge">customer_account</code> layouts are merged, and the pages where the <code class="highlighter-rouge">customer_account</code> design abstraction is used contain the elements from all <code class="highlighter-rouge">customer_account.xml</code> files.</p>
 
 <h2 id="m2devgde-design-abstract-declare">Declare design abstractions</h2>
 
@@ -517,7 +517,7 @@ If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_accoun
 
 <p>where <code>design_abstraction_name</code> is the name of the design abstraction layout file.</p>
 
-<p>To complete the <code>customer_account.xml</code> design abstraction example, look at <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/review_customer_index.xml" target="_blank">customer_account_index.xml</a>, which uses the <code>customer_account</code> design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page is defined directly, while the left-hand navigation menu is defined by <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a>.</p>
+<p>To complete the <code class="highlighter-rouge">customer_account.xml</code> design abstraction example, look at <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/review_customer_index.xml" target="_blank">customer_account_index.xml</a>, which uses the <code class="highlighter-rouge">customer_account</code> design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page is defined directly, while the left-hand navigation menu is defined by <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a>.</p>
 
 <h3 id="m2devgde-design-abstract-widget">Design abstractions in widget creation</h3>
 
@@ -525,7 +525,7 @@ If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_accoun
 
 <p><img src="/common/images/view_da4.png" alt="Specifying page type" /></p>
 
-<p>Then in the <strong>Page</strong> list there are available layouts or, in other words, design abstractions. Among others, there is the <strong>Customer My Account (All Pages)</strong> option, which corresponds to the <code>customer_account</code> design abstraction.</p>
+<p>Then in the <strong>Page</strong> list there are available layouts or, in other words, design abstractions. Among others, there is the <strong>Customer My Account (All Pages)</strong> option, which corresponds to the <code class="highlighter-rouge">customer_account</code> design abstraction.</p>
 
 <p><img src="/common/images/view_da5.png" alt="Specifying page" /></p>
 

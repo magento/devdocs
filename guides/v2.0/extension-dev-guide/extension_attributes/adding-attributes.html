@@ -1115,7 +1115,7 @@ Plugin should listen next methods: save, get, getList.</p>
   <p>Non-scalar attribute can be represented by Data Object. </p>
 </div>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">    </span><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="cp">&lt;?php</span>
        <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGet</span>
         <span class="p">(</span>
             <span class="nx">\Magento\Catalog\Api\ProductRepositoryInterface</span> <span class="nv">$subject</span><span class="p">,</span>
@@ -1130,7 +1130,7 @@ Plugin should listen next methods: save, get, getList.</p>
             <span class="k">return</span> <span class="nv">$entity</span><span class="p">;</span>
         <span class="p">}</span>
 
-    <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+    <span class="cp">?&gt;</span></code></pre></figure>
 
 <p>It is the easiest way to add custom attributes. Because we need to know if <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> already has extension attributes.
 Also we need to check whether we already has our <span term-uuid="45013f4a-21a9-4010-8166-e3bd52d56df3" class="glossary-term" data-toggle="popover">extension attribute</span>.</p>
@@ -1139,7 +1139,7 @@ Also we need to check whether we already has our <span term-uuid="45013f4a-21a9-
 
 <p>Likewise afterSave plugin should take data from entity and do some manipulations:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">    </span><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="cp">&lt;?php</span>
            <span class="k">public</span> <span class="k">function</span> <span class="nf">afterSave</span>
             <span class="p">(</span>
                 <span class="nx">\Magento\Catalog\Api\ProductRepositoryInterface</span> <span class="nv">$subject</span><span class="p">,</span>
@@ -1152,55 +1152,55 @@ Also we need to check whether we already has our <span term-uuid="45013f4a-21a9-
                 <span class="k">return</span> <span class="nv">$entity</span><span class="p">;</span>
             <span class="p">}</span>
 
-        <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+        <span class="cp">?&gt;</span></code></pre></figure>
 
-<p>But if some entity doesn’t have implementation to fetch extension attributes, we will always retrieve <code>null</code> and each time when we fetch extension atrributes we need to check if they are <code>null</code> - need to create them. To avoid such code duplication, we need to create <code>afterGet</code> plugin for our entity with extension attributes.</p>
+<p>But if some entity doesn’t have implementation to fetch extension attributes, we will always retrieve <code class="highlighter-rouge">null</code> and each time when we fetch extension atrributes we need to check if they are <code class="highlighter-rouge">null</code> - need to create them. To avoid such code duplication, we need to create <code class="highlighter-rouge">afterGet</code> plugin for our entity with extension attributes.</p>
 
 <p>Let’s assume the product entity doesn’t have any implementation of extension attributes, so our plugin might looks like this:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Catalog\Api\Data\ProductExtensionInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Catalog\Api\Data\ProductInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Catalog\Api\Data\ProductExtensionFactory</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">use Magento\Catalog\Api\Data\ProductExtensionInterface;
+use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Catalog\Api\Data\ProductExtensionFactory;
 
-<span class="k">class</span> <span class="nc">ProductAttributesLoad</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var ProductExtensionFactory</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="nv">$extensionFactory</span><span class="p">;</span>
+class ProductAttributesLoad
+{
+    /**
+     * @var ProductExtensionFactory
+     */
+    private $extensionFactory;
 
-    <span class="sd">/**</span>
-<span class="sd">     * @param ProductExtensionFactory $extensionFactory</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">ProductExtensionFactory</span> <span class="nv">$extensionFactory</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">extensionFactory</span> <span class="o">=</span> <span class="nv">$extensionFactory</span><span class="p">;</span>
-    <span class="p">}</span>
+    /**
+     * @param ProductExtensionFactory $extensionFactory
+     */
+    public function __construct(ProductExtensionFactory $extensionFactory)
+    {
+        $this-&gt;extensionFactory = $extensionFactory;
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * Loads product entity extension attributes</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param ProductInterface $entity</span>
-<span class="sd">     * @param ProductExtensionInterface|null $extension</span>
-<span class="sd">     * @return ProductExtensionInterface</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetExtensionAttributes</span><span class="p">(</span>
-        <span class="nx">ProductInterface</span> <span class="nv">$entity</span><span class="p">,</span>
-        <span class="nx">ProductExtensionInterface</span> <span class="nv">$extension</span> <span class="o">=</span> <span class="k">null</span>
-    <span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$extension</span> <span class="o">===</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$extension</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">extensionFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
-        <span class="p">}</span>
+    /**
+     * Loads product entity extension attributes
+     *
+     * @param ProductInterface $entity
+     * @param ProductExtensionInterface|null $extension
+     * @return ProductExtensionInterface
+     */
+    public function afterGetExtensionAttributes(
+        ProductInterface $entity,
+        ProductExtensionInterface $extension = null
+    ) {
+        if ($extension === null) {
+            $extension = $this-&gt;extensionFactory-&gt;create();
+        }
 
-        <span class="k">return</span> <span class="nv">$extension</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+        return $extension;
+    }
+}</code></pre></figure>
 
-<p>And now need to bind our plugin to <code>ProductInterface</code>:</p>
+<p>And now need to bind our plugin to <code class="highlighter-rouge">ProductInterface</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">&quot;ProductExtensionAttributeOperations&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Catalog\Plugin\ProductAttributesLoad&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Api\Data\ProductInterface"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">"ProductExtensionAttributeOperations"</span> <span class="na">type=</span><span class="s">"Magento\Catalog\Plugin\ProductAttributesLoad"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
@@ -1208,18 +1208,18 @@ Also we need to check whether we already has our <span term-uuid="45013f4a-21a9-
 
 <p>For scalar attributes we can use next configuration:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;first_custom_attribute&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\SomeModule\Api\Data\CustomDataInterface&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;second_custom_attribute&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\SomeModule\Api\Data\CustomDataInterface&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Api/etc/extension_attributes.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">"Magento\Catalog\Api\Data\ProductInterface"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">"first_custom_attribute"</span> <span class="na">type=</span><span class="s">"Magento\SomeModule\Api\Data\CustomDataInterface"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">"second_custom_attribute"</span> <span class="na">type=</span><span class="s">"Magento\SomeModule\Api\Data\CustomDataInterface"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/extension_attributes&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>For non-scalar attributes:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;our_custom_data&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\SomeModule\Api\Data\CustomDataInterface[]&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Api/etc/extension_attributes.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">"Magento\Catalog\Api\Data\ProductInterface"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">"our_custom_data"</span> <span class="na">type=</span><span class="s">"Magento\SomeModule\Api\Data\CustomDataInterface[]"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/extension_attributes&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 

@@ -782,9 +782,9 @@ $("#element").collapsible();
 
 <p>Where <code>#element</code> is the element’s selector.</p>
 
-<p>If you need to be able to save the expanded/collapsed state, the element must have the <code>id</code> attribute specified.</p>
+<p>If you need to be able to save the expanded/collapsed state, the element must have the <code class="highlighter-rouge">id</code> attribute specified.</p>
 
-<p>The element’s <code>id</code> is also used in deep linking: if the <code>id</code> of the content or the <code>id</code> of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.</p>
+<p>The element’s <code class="highlighter-rouge">id</code> is also used in deep linking: if the <code class="highlighter-rouge">id</code> of the content or the <code class="highlighter-rouge">id</code> of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.</p>
 
 <p>Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements’ attributes or passed as widget options. See <a href="/guides/v2.2/javascript-dev-guide/widgets/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.</p>
 
@@ -795,7 +795,7 @@ $("#header").collapsible();
 </pre>
 
 <h2>Initialize collapsible in a template</h2>
-<p>The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or <code>&lt;script&gt;</code> tag, as described in <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.</p>
+<p>The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or <code class="highlighter-rouge">&lt;script&gt;</code> tag, as described in <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.</p>
 
 <h2>Options</h2>
 
@@ -844,18 +844,18 @@ $("#element").collapsible("option","active",false);
 </pre>
 
 <h3 id="fedg_collaps_ajaxUrlElement"><code>ajaxUrlElement</code></h3>
-<p>Selector applied on the header using <code>.find()</code>, for the element that contains the <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> for Ajax request.</p>
+<p>Selector applied on the header using <code class="highlighter-rouge">.find()</code>, for the element that contains the <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> for Ajax request.</p>
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>[data-ajax=true]</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">[data-ajax=true]</code></p>
 
 <h3 id="fedg_collaps_ajaxContent"><code>ajaxContent</code></h3>
 <p>Specifies if the content is updated using Ajax request.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <h3 id="fedg_collaps_animate"><code>animate</code></h3>
 <p>Specifies if the collapse/expand actions are performed with animation.</p>
@@ -878,7 +878,7 @@ For details about the object passed, see <a href="http://api.jquery.com/animate/
 </li>
 </ul>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <p>Initialize the collapsible with the animate option specified:</p>
 
@@ -905,12 +905,12 @@ $("#element").collapsible("option","animate",false);
 
 <p><strong>Default value</strong>: true</p>
 
-<p>Initialize the collapsible widget with the <code>collapsible</code> option specified:</p>
+<p>Initialize the collapsible widget with the <code class="highlighter-rouge">collapsible</code> option specified:</p>
 <pre>
 $("#element").collapsible({ collapsible: true});
 </pre>
 
-<p>Get or set the <code>collapsible</code> option after initialization:</p>
+<p>Get or set the <code class="highlighter-rouge">collapsible</code> option after initialization:</p>
 
 <pre>
 //getter
@@ -927,8 +927,8 @@ $("#element").collapsible("option","collapsible",false);
 <p>An object that contains the following:</p>
 
 <ul>
-  <li><code>element</code>: an element, can be a selector or <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jquery</span> object.</li>
-  <li><code>openedState</code>: the class name which is assigned to the element when the current element is in opened; removed when the current element is closed.</li>
+  <li><code class="highlighter-rouge">element</code>: an element, can be a selector or <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jquery</span> object.</li>
+  <li><code class="highlighter-rouge">openedState</code>: the class name which is assigned to the element when the current element is in opened; removed when the current element is closed.</li>
 </ul>
 
 <p><strong>Type</strong>: String</p>
@@ -939,7 +939,7 @@ $("#element").collapsible("option","collapsible",false);
             }</code></p>
 
 <h3 id="fedg_collaps_content"><code>content</code></h3>
-<p>Selector for the content element, searched for using <code>.find()</code> on the main collapsible element.</p>
+<p>Selector for the content element, searched for using <code class="highlighter-rouge">.find()</code> on the main collapsible element.</p>
 
 <p><strong>Type</strong>:</p>
 <ul>
@@ -947,7 +947,7 @@ $("#element").collapsible("option","collapsible",false);
 <li>jQuery Object</li>
 </ul>
 
-<p><strong>Default value</strong>: <code>[data-role=content]</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">[data-role=content]</code></p>
 
 <p>Initialize the collapsible with the content option specified:</p>
 
@@ -969,14 +969,14 @@ $("#element").collapsible("option","content",".content");
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<p>Initialize the collapsible widget with the <code>closedState</code> option specified:</p>
+<p>Initialize the collapsible widget with the <code class="highlighter-rouge">closedState</code> option specified:</p>
 <pre>
 $("#element").collapsible({ closedState: "collapsible-content"});
 </pre>
 
-<p>Get or set the <code>contentClass</code> option after initialization:</p>
+<p>Get or set the <code class="highlighter-rouge">contentClass</code> option after initialization:</p>
 
 <pre>
 //getter
@@ -991,13 +991,13 @@ $("#element").collapsible("option","contentClass","collapsible-content");
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<p>Initialize the collapsible widget with the <code>disabled</code> option specified:</p>
+<p>Initialize the collapsible widget with the <code class="highlighter-rouge">disabled</code> option specified:</p>
 <pre>
 $("#element").collapsible({ disabled: true});
 </pre>
-<p>Get or set the <code>disabled</code> option after initialization:</p>
+<p>Get or set the <code class="highlighter-rouge">disabled</code> option after initialization:</p>
 
 <pre>
 //getter
@@ -1012,9 +1012,9 @@ $("#element").collapsible("option","disabled",false);
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<p>Initialize the collapsible with the <code>disabledState</code> option specified:</p>
+<p>Initialize the collapsible with the <code class="highlighter-rouge">disabledState</code> option specified:</p>
 <pre>
 $("#element").collapsible({ disabledState: "disabled"});
 </pre>
@@ -1038,7 +1038,7 @@ $("#element").collapsible("option","disabledState","disabled");
 <li>jQuery Object</li>
 </ul>
 
-<p><strong>Default value</strong>: <code>[data-role=title]</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">[data-role=title]</code></p>
 
 <p>Initialize the collapsible with the content option specified:</p>
 
@@ -1063,7 +1063,7 @@ $("#element").collapsible("option","header",".header");
 
 <p><strong>Default value</strong>: <code>{ activeHeader: null, header: null }</code></p>
 
-<p>Initialize the collapsible with the <code>icons</code> option specified:</p>
+<p>Initialize the collapsible with the <code class="highlighter-rouge">icons</code> option specified:</p>
 <pre>
 $("#element").collapsible({ icons: {"header": "plus", "activeHeader": "minus"}});
 </pre>
@@ -1083,13 +1083,13 @@ $("#element").collapsible("option","icons",{"header": "plus", "activeHeader": "m
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<p>Initialize the collapsible with the <code>loadingClass</code> option specified:</p>
+<p>Initialize the collapsible with the <code class="highlighter-rouge">loadingClass</code> option specified:</p>
 <pre>
 $("#element").collapsible({ loadingClass: "loading"});
 </pre>
-<p>Get or set the <code>loadingClass</code> option after initialization:</p>
+<p>Get or set the <code class="highlighter-rouge">loadingClass</code> option after initialization:</p>
 
 <pre>
 //getter
@@ -1099,7 +1099,7 @@ var loadingClass = $("#element).collapsible("option","loadingClass");
 $("#element").collapsible("option","loadingClass","loading");
 </pre>
 
-<p>Initialize the collapsible with the <code>loadingClass</code> option specified:</p>
+<p>Initialize the collapsible with the <code class="highlighter-rouge">loadingClass</code> option specified:</p>
 <pre>
 $("#element").collapsible({ loadingClass: ".ajax"});
 </pre>
@@ -1114,7 +1114,7 @@ var content = $("#element).collapsible("option","loadingClass");
 $("#element").collapsible("option","loadingClass","ajax");
 </pre>
 
-<p>Initialize the collapsible with the <code>ajaxContent</code> option specified:</p>
+<p>Initialize the collapsible with the <code class="highlighter-rouge">ajaxContent</code> option specified:</p>
 <pre>
 $("#element").collapsible({ ajaxContent: true});
 </pre>
@@ -1134,14 +1134,14 @@ $("#element").collapsible("option","ajaxContent",true);
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code>null</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<p>Initialize the collapsible with the <code>openedState</code> option specified:</p>
+<p>Initialize the collapsible with the <code class="highlighter-rouge">openedState</code> option specified:</p>
 <pre>
 $("#element").collapsible({ openedState: "opened"});
 </pre>
 
-<p>Get or set the <code>openedState</code> option after initialization:</p>
+<p>Get or set the <code class="highlighter-rouge">openedState</code> option after initialization:</p>
 
 <pre>
 //getter
@@ -1156,14 +1156,14 @@ $("#element").collapsible("option","openedState","opened");
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>true</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
-<p>Initialize the collapsible widget with the <code>saveState</code> option specified:</p>
+<p>Initialize the collapsible widget with the <code class="highlighter-rouge">saveState</code> option specified:</p>
 <pre>
 $("#element").collapsible({ saveState: true});
 </pre>
 
-<p>Get or set the <code>saveState</code> option after initialization:</p>
+<p>Get or set the <code class="highlighter-rouge">saveState</code> option after initialization:</p>
 
 <pre>
 //getter
@@ -1174,7 +1174,7 @@ $("#element").collapsible("option","saveState",true);
 </pre>
 
 <h3 id="fedg_collaps_trigger"><code>trigger</code></h3>
-<p>Selector for the trigger element, applied using <code>.find()</code> on the main collapsible element. If the trigger is not found, the header becomes a trigger.</p>
+<p>Selector for the trigger element, applied using <code class="highlighter-rouge">.find()</code> on the main collapsible element. If the trigger is not found, the header becomes a trigger.</p>
 
 <p><strong>Type</strong>:</p>
 <ul>
@@ -1182,7 +1182,7 @@ $("#element").collapsible("option","saveState",true);
 <li>jQuery Object</li>
 </ul>
 
-<p><strong>Default value</strong>: <code>[data-role=trigger]</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">[data-role=trigger]</code></p>
 
 <p>Initialize the collapsible with the trigger option specified:</p>
 <pre>
@@ -1256,7 +1256,7 @@ $( "#element" ).collapsible("enable");
 
 <p>This method does not accept any arguments.</p>
 
-<p>Invoke the <code>forceActivate</code> method:</p>
+<p>Invoke the <code class="highlighter-rouge">forceActivate</code> method:</p>
 <pre>
 $("#element").collapsible("forceActivate");
 </pre>

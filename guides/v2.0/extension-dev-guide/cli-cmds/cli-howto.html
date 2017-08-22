@@ -1104,23 +1104,24 @@ This has the additional benefit of eliminating users' learning curve</li>
 </ul>
 
 <h2 id="cli-sample">Add CLI commands using dependency injection</h2>
-<p>The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank"><code>sample-module-command</code></a> for an example. The module’s <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.</p>
+<p>The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank"><code class="highlighter-rouge">sample-module-command</code></a> for an example. The module’s <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.</p>
 
 <p>Following is a summary of the process:</p>
 
 <ol>
   <li>
-    <p>Create a Command class (the recommended location is <code>&lt;your component root dir&gt;/Console/Command</code>).</p>
+    <p>Create a Command class (the recommended location is <code class="highlighter-rouge">&lt;your component root dir&gt;/Console/Command</code>).</p>
 
-    <p>See <code>app/code/Magento/CommandExample/Console/Command</code> for examples.</p>
+    <p>See <code class="highlighter-rouge">app/code/Magento/CommandExample/Console/Command</code> for examples.</p>
   </li>
-  <li>Declare your Command class in <code>Magento\Framework\Console\CommandListInterface</code> using dependency injection (<code>&lt;your component root dir&gt;/etc/di.xml</code>).</li>
+  <li>Declare your Command class in <code class="highlighter-rouge">Magento\Framework\Console\CommandListInterface</code> using dependency injection (<code class="highlighter-rouge">&lt;your component root dir&gt;/etc/di.xml</code>).</li>
   <li>
     <p>Clean the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and compiled code directories:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;/var
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/var
 rm -rf cache/* page_cache/* di/* generation/* 
 </code></pre>
+    </div>
   </li>
 </ol>
 

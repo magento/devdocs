@@ -550,13 +550,14 @@
 
 <p><em>emphasis</em>
  <strong>bold</strong>
- <code>inline code</code></p>
+ <code class="highlighter-rouge">inline code</code></p>
 
 <p>By indenting your content by at least 4 spaces, you can create a code block.</p>
 
-<pre><code>//This is a code block!
+<div class="highlighter-rouge"><pre class="highlight"><code>//This is a code block!
 print "Hello World!";
 </code></pre>
+</div>
 
 <p>For more examples of basic markdown please follow this <a href="https://daringfireball.net/projects/markdown/syntax" target="_self">link</a>.</p>
 
@@ -615,15 +616,15 @@ print "Hello World!";
 
 <h4 id="code-blocks">Code blocks</h4>
 
-<p>Code blocks can also be defined by surrounding the block of code with <code>~~~</code> which can be seen in the <a href="#tables">table</a> example.</p>
+<p>Code blocks can also be defined by surrounding the block of code with <code class="highlighter-rouge">~~~</code> which can be seen in the <a href="#tables">table</a> example.</p>
 
-<p>For highlighted code blocks use the <code>highlight</code> Liquid tag.</p>
+<p>For highlighted code blocks use the <code class="highlighter-rouge">highlight</code> Liquid tag.</p>
 
 <p><em>Example:</em></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/h4&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Paragraph content.<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></figure>

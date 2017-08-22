@@ -1114,8 +1114,8 @@
 <p>The basic view of all Magento <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> pages is defined in two page configuration layout files located in the Magento_Theme module:</p>
 
 <ul>
-  <li><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>: defines the page layout.</li>
-  <li><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default_head_blocks.xml</code>: defines the scripts, images, and meta data included in pages’ <code>&lt;head&gt;</code> section.</li>
+  <li><code class="highlighter-rouge">&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>: defines the page layout.</li>
+  <li><code class="highlighter-rouge">&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default_head_blocks.xml</code>: defines the scripts, images, and meta data included in pages’ <code class="highlighter-rouge">&lt;head&gt;</code> section.</li>
 </ul>
 
 <p>These basic page configuration layouts are extended in other Magento modules and in Magento themes.</p>
@@ -1131,9 +1131,9 @@
 <p>Following are the definitions of each layout file type:</p>
 
 <ul>
-  <li><em>Page layout</em>: an <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file declaring a page wireframe inside the <code>&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
-  <li><em>Page configuration</em>: an XML file declaring detailed structure, contents and meta-information of a page (includes the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> sections of the HTML page markup).</li>
-  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code>body</code> section of the HTML page <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
+  <li><em>Page layout</em>: an <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file declaring a page wireframe inside the <code class="highlighter-rouge">&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
+  <li><em>Page configuration</em>: an XML file declaring detailed structure, contents and meta-information of a page (includes the <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>, <code class="highlighter-rouge">&lt;head&gt;</code>, and <code class="highlighter-rouge">&lt;body&gt;</code> sections of the HTML page markup).</li>
+  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code class="highlighter-rouge">body</code> section of the HTML page <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
 </ul>
 
 <p>For details, refer to <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.</p>
@@ -1147,14 +1147,14 @@
 <ul>
   <li><em>Base layouts</em>: Layout files provided by modules. Conventional location:
     <ul>
-      <li>Page configuration and generic layout files: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
-      <li>Page layout files: <code>&lt;module_dir&gt;/view/frontend/page_layout</code></li>
+      <li>Page configuration and generic layout files: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/layout</code></li>
+      <li>Page layout files: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/page_layout</code></li>
     </ul>
   </li>
   <li><em>Theme layouts</em>: Layout files provided by themes. Conventional location:
     <ul>
-      <li>Page configuration and generic layout files: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
-      <li>Page layout files: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code></li>
+      <li>Page configuration and generic layout files: <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+      <li>Page layout files: <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code></li>
     </ul>
   </li>
 </ul>
@@ -1170,8 +1170,8 @@
 <p>The Magento application processes layout files in the following order:</p>
 
 <ol>
-  <li>Collects all layout files from modules. The order is determined by the modules order in the module list from <code>app/etc/config.php</code>.</li>
-  <li>Determines the sequence of <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherited</a> themes <code>[&lt;parent_theme&gt;, ..., &lt;parent1_theme&gt;] &lt;current_theme&gt;</code></li>
+  <li>Collects all layout files from modules. The order is determined by the modules order in the module list from <code class="highlighter-rouge">app/etc/config.php</code>.</li>
+  <li>Determines the sequence of <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherited</a> themes <code class="highlighter-rouge">[&lt;parent_theme&gt;, ..., &lt;parent1_theme&gt;] &lt;current_theme&gt;</code></li>
   <li>
     <p>Iterates the sequence of themes from last ancestor to current:</p>
 

@@ -805,7 +805,7 @@
 			<h2 id="instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</h2>
 <p>This section discusses how to uninstall one or more language packages, optionally including the language packages’ code from the file system. You can create backups first so you can restore the data at a later time.</p>
 
-<p>This command uninstalls <em>only</em> language packages that are specified in <code>composer.json</code>; in other words, language packages that are provided as <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> packages. If your <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span> is not a Composer package, you must uninstall it manually by removing language package code from the file system.</p>
+<p>This command uninstalls <em>only</em> language packages that are specified in <code class="highlighter-rouge">composer.json</code>; in other words, language packages that are provided as <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> packages. If your <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span> is not a Composer package, you must uninstall it manually by removing language package code from the file system.</p>
 
 <p>You can restore backups at any time using the <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
 
@@ -818,23 +818,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -851,8 +854,9 @@
   <h2 id="instgde-cli-uninst-lgpk-uninst">Uninstall language packages</h2>
   <p>Command usage:</p>
 
-  <pre><code>magento i18n:uninstall [-b|--backup-code] {language package name} ... {language package name}
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento i18n:uninstall [-b|--backup-code] {language package name} ... {language package name}
 </code></pre>
+  </div>
 
   <p>The language package uninstall command performs the following tasks:</p>
 
@@ -862,25 +866,27 @@
 
       <p>To work around this, you can either uninstall all dependent language packages at the same time or you can uninstall the depending language packages first.</p>
     </li>
-    <li>If <code>--backup code</code> is specified, backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories) to <code>var/backups/&lt;timestamp&gt;_filesystem.tgz</code></li>
-    <li>Removes language packages files from the codebase using <code>composer remove</code>.</li>
+    <li>If <code class="highlighter-rouge">--backup code</code> is specified, backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories) to <code class="highlighter-rouge">var/backups/&lt;timestamp&gt;_filesystem.tgz</code></li>
+    <li>Removes language packages files from the codebase using <code class="highlighter-rouge">composer remove</code>.</li>
     <li>Cleans the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>.</li>
   </ol>
 
   <p>For example, if you attempt to uninstall a language package that another language package depends on, the following message displays:</p>
 
-  <pre><code>Cannot uninstall vendorname/language-en_us because the following package(s) depend on it:
+  <div class="highlighter-rouge"><pre class="highlight"><code>Cannot uninstall vendorname/language-en_us because the following package(s) depend on it:
     vendorname/language-en_gb
 </code></pre>
+  </div>
 
   <p>One alternative is to uninstall both language packages after backing up the Magento codebase:</p>
 
-  <pre><code>magento i18n:uninstall vendorname/language-en_us vendorname/language-en_gb --backup-code
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento i18n:uninstall vendorname/language-en_us vendorname/language-en_gb --backup-code
 </code></pre>
+  </div>
 
   <p>Messages similar to the following display:</p>
 
-  <pre><code>Code backup is starting...
+  <div class="highlighter-rouge"><pre class="highlight"><code>Code backup is starting...
 Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
 Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
 [SUCCESS]: Code backup completed successfully.
@@ -893,6 +899,7 @@ Removing Magento/LanguageEn_us
 Writing lock file
 Generating autoload files
 </code></pre>
+  </div>
 
   <h4 id="related-topics">Related topics</h4>
 

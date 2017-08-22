@@ -810,23 +810,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -861,10 +864,11 @@
 
   <p>Command usage:</p>
 
-  <pre><code>magento setup:upgrade [--keep-generated]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:upgrade [--keep-generated]
 </code></pre>
+  </div>
 
-  <p>where <code>--keep-generated</code> is an optional argument that does not update <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">static view files</a>. This optional argument is for use <em>only</em> in limited circumstances by experienced system integrators. It should be used <em>only</em> in <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. It should <em>not</em> be used in <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.</p>
+  <p>where <code class="highlighter-rouge">--keep-generated</code> is an optional argument that does not update <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">static view files</a>. This optional argument is for use <em>only</em> in limited circumstances by experienced system integrators. It should be used <em>only</em> in <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. It should <em>not</em> be used in <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.</p>
 
   <h4 id="related-topics">Related topics</h4>
 

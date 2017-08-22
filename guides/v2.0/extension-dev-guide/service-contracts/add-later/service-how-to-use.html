@@ -446,16 +446,16 @@
 
 <p>To directly invoke a service using its PHP interface, use <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.</p>
 
-<p>Because a service call typically accepts one or more primitive types or service data objects, you might have to convert or extract them before calling the service. For an example, see <code>public function getInputData</code> in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.</p>
+<p>Because a service call typically accepts one or more primitive types or service data objects, you might have to convert or extract them before calling the service. For an example, see <code class="highlighter-rouge">public function getInputData</code> in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.</p>
 
 <p>For example, if you know a customer’s ID and want to get data about the customer, here’s what you do:</p>
 
 <ol>
   <li>
-    <p>Search the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method <code>(public function getCustomer($customerId);)</code></p>
+    <p>Search the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method <code class="highlighter-rouge">(public function getCustomer($customerId);)</code></p>
   </li>
   <li>
-    <p>Notice in the comment <code>@return \Magento\Customer\Service\V1\Data\Customer</code>. This is the <em>service data object</em>.</p>
+    <p>Notice in the comment <code class="highlighter-rouge">@return \Magento\Customer\Service\V1\Data\Customer</code>. This is the <em>service data object</em>.</p>
   </li>
   <li>
     <p>Get the details about the response from the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">service data object</a>.</p>
@@ -496,7 +496,7 @@
 
 <h2 id="method-2-web-services">Method 2: Web Services</h2>
 
-<p>Any service that has an <code>app/code/[Vendor]/&lt;ModuleName&gt;/etc/webapi.xml</code> can be accessed using REST and SOAP. (Additional tasks, not discussed here, are required to access services using SOAP.)</p>
+<p>Any service that has an <code class="highlighter-rouge">app/code/[Vendor]/&lt;ModuleName&gt;/etc/webapi.xml</code> can be accessed using REST and SOAP. (Additional tasks, not discussed here, are required to access services using SOAP.)</p>
 
 <!-- To set up a service so it can be accessed using REST, see [What is the Web API Framework?](/guides/v2.0/extension-dev-guide/service-contracts/add-later/what-is-webapi.html) -->
 

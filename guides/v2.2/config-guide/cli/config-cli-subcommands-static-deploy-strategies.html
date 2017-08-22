@@ -1914,7 +1914,7 @@
 <p>The following sections describe the implementation details and features of each strategy.</p>
 
 <h2 id="static-file-standard">Standard strategy</h2>
-<p>When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/View/Asset/Publisher.php" target="_blank"><code>\Magento\Framework\App\View\Asset\Publisher</code></a>.</p>
+<p>When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/View/Asset/Publisher.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\View\Asset\Publisher</code></a>.</p>
 
 <p>For more information, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>.</p>
 
@@ -1938,9 +1938,9 @@
 <p>This approach minimizes the deployment time required for multiple locales although a lot of files are duplicated.</p>
 
 <h2 id="static-file-compact">Compact strategy</h2>
-<p>The compact strategy avoids file duplication by storing similar files in <code>base</code> subdirectories.</p>
+<p>The compact strategy avoids file duplication by storing similar files in <code class="highlighter-rouge">base</code> subdirectories.</p>
 
-<p>For the most optimized result, three scopes for possible similarity are allocated: area, theme, and locale. <code>base</code> subdirectories are created for all combinations of these scopes.</p>
+<p>For the most optimized result, three scopes for possible similarity are allocated: area, theme, and locale. <code class="highlighter-rouge">base</code> subdirectories are created for all combinations of these scopes.</p>
 
 <p>The files are deployed to these subdirectories according to the following patterns.</p>
 
@@ -2019,41 +2019,41 @@
 <p>The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> and locale. There are separate map files for <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and JS:</p>
 
 <ul>
-  <li><code>map.php</code></li>
-  <li><code>requirejs-map.js</code></li>
+  <li><code class="highlighter-rouge">map.php</code></li>
+  <li><code class="highlighter-rouge">requirejs-map.js</code></li>
 </ul>
 
-<p><code>map.php</code> is used by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/Repository.php" target="_blank"><code>Magento\Framework\View\Asset\Repository</code></a> to build correct URLs.</p>
+<p><code class="highlighter-rouge">map.php</code> is used by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/Repository.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\View\Asset\Repository</code></a> to build correct URLs.</p>
 
-<p><code>requirejs-map.js</code> is used by the <code>baseUrlResolver</code> plugin for RequireJS.</p>
+<p><code class="highlighter-rouge">requirejs-map.js</code> is used by the <code class="highlighter-rouge">baseUrlResolver</code> plugin for RequireJS.</p>
 
-<p>Example of <code>map.php</code>:</p>
+<p>Example of <code class="highlighter-rouge">map.php</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="p">[</span>
-        <span class="s1">&#39;Magento_Checkout::cvv.png&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;area&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;frontend&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;theme&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento/luma&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;locale&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;en_US&#39;</span><span class="p">,</span>
-        <span class="p">],</span>
-        <span class="s1">&#39;...&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;area&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;theme&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;locale&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;...&#39;</span>
-        <span class="p">]</span>
-        <span class="p">];</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">return [
+        'Magento_Checkout::cvv.png' =&gt; [
+            'area' =&gt; 'frontend',
+            'theme' =&gt; 'Magento/luma',
+            'locale' =&gt; 'en_US',
+        ],
+        '...' =&gt; [
+            'area' =&gt; '...',
+            'theme' =&gt; '...',
+            'locale' =&gt; '...'
+        ]
+        ];</code></pre></figure>
 
-<p>Example of <code>requirejs-map.js</code>:</p>
+<p>Example of <code class="highlighter-rouge">requirejs-map.js</code>:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="s2">&quot;config&quot;</span><span class="o">:</span> <span class="p">{</span>
-       <span class="s2">&quot;baseUrlInterceptor&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;jquery.js&quot;</span><span class="o">:</span> <span class="s2">&quot;../../../../base/Magento/base/en_US/&quot;</span>
+    <span class="s2">"config"</span><span class="p">:</span> <span class="p">{</span>
+       <span class="s2">"baseUrlInterceptor"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"jquery.js"</span><span class="p">:</span> <span class="s2">"../../../../base/Magento/base/en_US/"</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span></code></pre></figure>
 
 <h2 id="tips-for-extension-developers">Tips for extension developers</h2>
-<p>To build URLs to static view files, use <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213" target="_blank"><code>\Magento\Framework\View\Asset\Repository::createAsset()</code></a>.</p>
+<p>To build URLs to static view files, use <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213" target="_blank"><code class="highlighter-rouge">\Magento\Framework\View\Asset\Repository::createAsset()</code></a>.</p>
 
 <p>Do not use <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> concatenations to avoid problems with <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> being not found and not displayed during page rendering.</p>
 

@@ -1236,15 +1236,15 @@ After you customize the content of any <code>.less</code> file, changes are appl
 
 <p>When using Grunt for styles preprocessing, you can enable the CSS source maps displaying in your browser. It will make the theme styles debugging easier.</p>
 
-<p>For each theme, Magento compliles all theme <code>.less</code> files into two CSS files: <code>styles-m.css</code> and <code>styles-l.css</code>. So when you debug a theme, you browser only sees <code>styles-m.css</code> and it might be difficult to define which exactly <code>.css</code> or <code>.less</code> file requires corrections. For example:</p>
+<p>For each theme, Magento compliles all theme <code class="highlighter-rouge">.less</code> files into two CSS files: <code class="highlighter-rouge">styles-m.css</code> and <code class="highlighter-rouge">styles-l.css</code>. So when you debug a theme, you browser only sees <code class="highlighter-rouge">styles-m.css</code> and it might be difficult to define which exactly <code class="highlighter-rouge">.css</code> or <code class="highlighter-rouge">.less</code> file requires corrections. For example:</p>
 
 <p><img src="/common/images/fdg/no-map.png" alt="node declaration autocomplete" width="610px" /></p>
 
-<p>CSS source maps solve this issue. They help to find the <code>.less</code> file, where the style is specified. For example:</p>
+<p>CSS source maps solve this issue. They help to find the <code class="highlighter-rouge">.less</code> file, where the style is specified. For example:</p>
 
 <p><img src="/common/images/fdg/with-map.png" alt="node declaration autocomplete" width="610px" /></p>
 
-<p>CSS source maps are generated automatically when you compile CSS for your theme using the <code>grunt less: &lt;theme&gt;</code> command. To use them, you need to enable source maps displaying in your browser.</p>
+<p>CSS source maps are generated automatically when you compile CSS for your theme using the <code class="highlighter-rouge">grunt less: &lt;theme&gt;</code> command. To use them, you need to enable source maps displaying in your browser.</p>
 
 <p>The path to the CSS source maps configuration differs, depending on the browser.</p>
 

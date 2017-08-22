@@ -1628,16 +1628,16 @@
 
 <h3 id="website-load-errors-after-scd-dump-build-and-deploy">Website load errors after scd-dump, build, and deploy</h3>
 <!-- This issue will be resolved with a later release. -->
-<p>After using the command <code>php bin/magento magento-cloud:scd-dump</code> to generate config.local.php, your website may encounter errors after build and deploy. When accessing the site, you may recieve the error “failed to open stream: No such file or directory” for a series of files.</p>
+<p>After using the command <code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code> to generate config.local.php, your website may encounter errors after build and deploy. When accessing the site, you may recieve the error “failed to open stream: No such file or directory” for a series of files.</p>
 
-<p>The issue is due to an issue of enabling HTML minification and the setting in <code>config.local.php</code> when using <code>bin/magento magento-cloud:scd-dump</code>.</p>
+<p>The issue is due to an issue of enabling HTML minification and the setting in <code class="highlighter-rouge">config.local.php</code> when using <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code>.</p>
 
 <p>As a work-around, complete the following:</p>
 
 <ol>
-  <li>Copy the file <code>app/etc/config.local.php</code> to your local.</li>
+  <li>Copy the file <code class="highlighter-rouge">app/etc/config.local.php</code> to your local.</li>
   <li>
-    <p>Edit and remove the minify section from <code>config.local.php</code>:</p>
+    <p>Edit and remove the minify section from <code class="highlighter-rouge">config.local.php</code>:</p>
 
     <p>‘template’ =&gt;
        array (
@@ -1656,8 +1656,8 @@
     <p>php bin/magento cache:flush
  redis-cli -h &lt;&gt; -p &lt;&gt; flushall</p>
   </li>
-  <li>Remove all <code>base_url</code> related items in <code>config.local.php</code>.</li>
-  <li>Save changes and complete full deployment of <code>config.local.php</code>: push to Git branch, build and deploy, and deploy across environments as needed.</li>
+  <li>Remove all <code class="highlighter-rouge">base_url</code> related items in <code class="highlighter-rouge">config.local.php</code>.</li>
+  <li>Save changes and complete full deployment of <code class="highlighter-rouge">config.local.php</code>: push to Git branch, build and deploy, and deploy across environments as needed.</li>
 </ol>
 
 		</div>

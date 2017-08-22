@@ -1251,7 +1251,7 @@
 
 <p>For each indvidual task of a bulk operation, the system creates a message that is published in a <a href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">message queue</a>. A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.</p>
 
-<p>The primary Bulk Operation interface is <code>OperationInterface</code>. It defines the getter and setter methods the bulk operation uses to create and process messages. The following interfaces are also used:</p>
+<p>The primary Bulk Operation interface is <code class="highlighter-rouge">OperationInterface</code>. It defines the getter and setter methods the bulk operation uses to create and process messages. The following interfaces are also used:</p>
 
 <table>
   <thead>
@@ -1290,7 +1290,7 @@
 
 <h3 id="publish-bulk-operations">Publish bulk operations</h3>
 
-<p>The <code>BulkManagementInterface::scheduleBulk</code> is responsible for publishing bulk operations. The following table describes its arguments.</p>
+<p>The <code class="highlighter-rouge">BulkManagementInterface::scheduleBulk</code> is responsible for publishing bulk operations. The following table describes its arguments.</p>
 
 <table>
 <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
@@ -1326,11 +1326,11 @@
 
 <p>When a consumer processes a message, it must notify the system of its status. The status can be OPEN, COMPLETE, RETRIABLY_FAILED, and NOT_RETRIABLY_FAILED.</p>
 
-<p>To send this notification, use <code>OperationManagementInterface::changeOperationStatus($operationId, $status, $message = null, $data = null)</code>.</p>
+<p>To send this notification, use <code class="highlighter-rouge">OperationManagementInterface::changeOperationStatus($operationId, $status, $message = null, $data = null)</code>.</p>
 
 <h4 id="handling-recoverable-exceptions">Handling Recoverable Exceptions</h4>
 
-<p>Magento provides database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is <code>Magneto\Framework\DB\Adapter\&lt;class_name&gt;</code>. These exceptions extend generic <code>\Zend_Db_Adapter_Exception</code>.</p>
+<p>Magento provides database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is <code class="highlighter-rouge">Magneto\Framework\DB\Adapter\&lt;class_name&gt;</code>. These exceptions extend generic <code class="highlighter-rouge">\Zend_Db_Adapter_Exception</code>.</p>
 
 <table>
   <thead>
@@ -1357,22 +1357,22 @@
 
 <p>The following pseudocode illustrates how to recover from database-related errors.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">namespace</span> <span class="nx">example</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Framework\DB\Adapter\LockWaitException</span><span class="p">;</span>
 
-<span class="c1">// ...</span>
-<span class="k">try</span> <span class="p">{</span>
-    <span class="c1">// do something</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">LockWaitException</span> <span class="nv">$exception</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// try to recover from exception</span>
-<span class="p">}</span></code></pre></figure>
+<span class="c1">// ...
+</span><span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// do something
+</span><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">LockWaitException</span> <span class="nv">$exception</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// try to recover from exception
+</span><span class="p">}</span></code></pre></figure>
 
 <p>See <a href="/guides/v2.2/extension-dev-guide/implement-bulk.html#createconsumer">Create a publisher</a> for a detailed example of a consumer.</p>
 
 <h3 id="get-the-status-of-operations">Get the status of operations</h3>
 
-<p>Use <code>getBulkStatus(UuidInterface $bulkId)</code> to get the status of the overall bulk operation.  Possible values are</p>
+<p>Use <code class="highlighter-rouge">getBulkStatus(UuidInterface $bulkId)</code> to get the status of the overall bulk operation.  Possible values are</p>
 
 <table>
   <thead>

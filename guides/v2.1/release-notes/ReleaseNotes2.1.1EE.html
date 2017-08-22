@@ -930,7 +930,7 @@
 
 <!--- 55357/53777-->
 <ul>
-  <li>You can now run <code>magento setup:upgrade --keep-generated</code> in production mode. Previously, Magento would throw an error when you ran <code>setup:upgrade</code> after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a></li>
+  <li>You can now run <code class="highlighter-rouge">magento setup:upgrade --keep-generated</code> in production mode. Previously, Magento would throw an error when you ran <code class="highlighter-rouge">setup:upgrade</code> after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a></li>
 </ul>
 
 <!--- 56974-->
@@ -975,7 +975,7 @@
 
 <!--- 52614 -->
 <ul>
-  <li>The <code>setup:static-content:deploy</code> command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see <a href="https://github.com/magento/magento2/issues/4294" target="_blank">(GITHUB-4294)</a>.</li>
+  <li>The <code class="highlighter-rouge">setup:static-content:deploy</code> command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see <a href="https://github.com/magento/magento2/issues/4294" target="_blank">(GITHUB-4294)</a>.</li>
 </ul>
 
 <!--- 55300, 55620, 54682-->
@@ -1017,7 +1017,7 @@
 
 <!--- 50026 -->
 <ul>
-  <li>Attributes of the <code>salesInvoiceRepository</code> methods are now more appropriately type cast. (The datatype is now a nullable float.)  Previously, due to the use of an incorrect datatype, Magento would produce an error when calling the <code>salesInvoiceRepositoryV1GetList</code> method. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a></li>
+  <li>Attributes of the <code class="highlighter-rouge">salesInvoiceRepository</code> methods are now more appropriately type cast. (The datatype is now a nullable float.)  Previously, due to the use of an incorrect datatype, Magento would produce an error when calling the <code class="highlighter-rouge">salesInvoiceRepositoryV1GetList</code> method. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a></li>
 </ul>
 
 <!--- 55462/52448-->
@@ -1071,17 +1071,19 @@ The Sales API</p>
 
   <h3 id="install-rc-composer" class="no_toc">Get Magento EE using Composer</h3>
 
-  <p>Magento EE is available from <code>repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+  <p>Magento EE is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
 
-  <p>For example, to install 2.1.1 in the <code>magento2</code> directory:</p>
+  <p>For example, to install 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
 </code></pre>
+  </div>
 
   <h3 id="get-zip" class="no_toc">Get Magento EE using a compressed archive</h3>
 
@@ -1096,7 +1098,7 @@ The Sales API</p>
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
     <p>To get the Magento EE archive:</p>
 
@@ -1109,8 +1111,8 @@ The Sales API</p>
         <p>Follow the instructions on your screen to complete the Magento EE download:</p>
 
         <ul>
-          <li><code>Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
       </li>
       <li>Transfer the installation package to your development system.</li>

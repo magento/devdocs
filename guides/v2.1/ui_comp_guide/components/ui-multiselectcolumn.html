@@ -1140,13 +1140,13 @@
 
 <h4 id="multiselectcolumn-js-component-structure">MultiselectColumn JS Component Structure</h4>
 
-<p>The MultiselectColumn component is implemented in the class <code>app\code\Magento\Ui\view\base\web\js\grid\columns\multiselect.js.</code></p>
+<p>The MultiselectColumn component is implemented in the class <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\grid\columns\multiselect.js.</code></p>
 
 <p>Templates used by this component are:</p>
 
 <ul>
-  <li><code>app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html</code> - The template defines each field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.</li>
-  <li><code>app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html</code> - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.</li>
+  <li><code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html</code> - The template defines each field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.</li>
+  <li><code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html</code> - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.</li>
 </ul>
 
 <h2 id="multiselectcolumn-configuration">MultiselectColumn configuration</h2>
@@ -1216,17 +1216,17 @@
 
 <p>Current implementation:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;js_config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">Magento_Ui</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
-         <span class="o">&lt;</span><span class="err">/item&gt;</span>
-         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;indexField&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">page_id</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
-             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;appendTo&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;&lt;</span><span class="err">/item&gt;</span>
-         <span class="o">&lt;</span><span class="err">/item&gt;</span>
-    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"ids"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"Magento\Ui\Component\MassAction\Columns\Column"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"data"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"js_config"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"component"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;</span><span class="nx">Magento_Ui</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>         <span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"config"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"indexField"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;</span><span class="nx">page_id</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"appendTo"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>         <span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/argument</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/column&gt;</span></code></pre></figure>
 
 <p>Example of configuration modifications:</p>
 
@@ -1234,42 +1234,42 @@
   <li>Redefining the link to the template</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"ids"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"Magento\Ui\Component\MassAction\Columns\Column"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"data"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
         <span class="p">...</span>
-        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;headerTmpl&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
-        <span class="o">&lt;</span><span class="err">/item&gt;</span>
-    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"config"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"headerTmpl"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;</span><span class="nx">product</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/argument</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/column&gt;</span></code></pre></figure>
 
 <ul>
   <li>Redefining the name of the property which represents record identifier</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"ids"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"Magento\Ui\Component\MassAction\Columns\Column"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"data"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
         <span class="p">...</span>
-        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;indexField&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product_id</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
-        <span class="o">&lt;</span><span class="err">/item&gt;</span>
-    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"config"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"indexField"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;</span><span class="nx">product_id</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/argument</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/column&gt;</span></code></pre></figure>
 
 <ul>
   <li>Redefining a property data source</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"ids"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"Magento\Ui\Component\MassAction\Columns\Column"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"data"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
         <span class="p">...</span>
-        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;imports&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;rows&quot;</span><span class="o">&gt;</span><span class="nx">products_prodvider</span><span class="o">:</span><span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
-            <span class="o">&lt;</span><span class="err">/item&gt;</span>
-        <span class="o">&lt;</span><span class="err">/item&gt;</span>
-    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"config"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"imports"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"rows"</span><span class="o">&gt;</span><span class="nx">products_prodvider</span><span class="err">:</span><span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/argument</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/column&gt;</span></code></pre></figure>
 
 <h4 id="how-to-add-a-new-component">How to add a new component</h4>
 
@@ -1279,13 +1279,13 @@
   <li>Redefine the link to constructor:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;js_config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">Magento_Products</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
-        <span class="o">&lt;</span><span class="err">/item&gt;</span>
-    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
-<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"ids"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"Magento\Ui\Component\MassAction\Columns\Column"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"data"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"js_config"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"component"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;</span><span class="nx">Magento_Products</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/argument</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/column&gt;</span></code></pre></figure>
 
 
 		</div>

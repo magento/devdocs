@@ -751,7 +751,7 @@
 </section>
 
 
-			<p>In the <code>config.xml</code> file in your <code>%Vendor_Module%/etc</code> directory, configure the options of your <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>. The following table contains the default options available for any payment method.</p>
+			<p>In the <code class="highlighter-rouge">config.xml</code> file in your <code class="highlighter-rouge">%Vendor_Module%/etc</code> directory, configure the options of your <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>. The following table contains the default options available for any payment method.</p>
 
 <table>
   <thead>
@@ -764,109 +764,109 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>active</code></td>
+      <td><code class="highlighter-rouge">active</code></td>
       <td>is payment active by default</td>
       <td>Boolean</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>debug</code></td>
+      <td><code class="highlighter-rouge">debug</code></td>
       <td>enables debug mode by default, for example log for request/response</td>
       <td>Boolean</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>debugReplaceKeys</code></td>
+      <td><code class="highlighter-rouge">debugReplaceKeys</code></td>
       <td>request/response fields that are masked in log</td>
       <td>comma separtated list</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>can_authorize</code></td>
+      <td><code class="highlighter-rouge">can_authorize</code></td>
       <td>whether payment method supports <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span></td>
       <td>Boolean</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>can_capture</code></td>
+      <td><code class="highlighter-rouge">can_capture</code></td>
       <td>whether payment method supports the capture operation</td>
       <td>Boolean</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>can_void</code></td>
+      <td><code class="highlighter-rouge">can_void</code></td>
       <td>whether payment method supports the void operation</td>
       <td>Boolean</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>can_use_checkout</code></td>
+      <td><code class="highlighter-rouge">can_use_checkout</code></td>
       <td>whether payment method is available in <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span></td>
       <td>Boolean</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>can_use_internal</code></td>
+      <td><code class="highlighter-rouge">can_use_internal</code></td>
       <td>whether payment method is available in <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> order creation</td>
       <td>Boolean</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>currency</code></td>
+      <td><code class="highlighter-rouge">currency</code></td>
       <td>supported currency</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>is_gateway</code></td>
+      <td><code class="highlighter-rouge">is_gateway</code></td>
       <td>is an integration with gateway</td>
       <td>Boolean</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>merchant_gateway_key</code></td>
+      <td><code class="highlighter-rouge">merchant_gateway_key</code></td>
       <td>encrypted merchant credential</td>
       <td>string</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>model</code></td>
+      <td><code class="highlighter-rouge">model</code></td>
       <td><a href="/guides/v2.1/payments-integrations/base-integration/facade-configuration.html">payment method facade</a> used for integration with Sales and Checkout modules</td>
       <td>string</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>order_status</code></td>
+      <td><code class="highlighter-rouge">order_status</code></td>
       <td>default <span term-uuid="ab517fb3-c9ff-4da8-b7f9-00337c57b3a5" class="glossary-term" data-toggle="popover">order status</span></td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>paymentInfoKeys</code></td>
+      <td><code class="highlighter-rouge">paymentInfoKeys</code></td>
       <td>transaction request/response fields displayed on payment information block (can be any fields from payment additional information)</td>
       <td>list of comma separated values</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>privateInfoKeys</code></td>
-      <td><code>paymentInfoKeys</code> fields which should not be displayed in customer payment information block (can be any fields from payment additional information)</td>
+      <td><code class="highlighter-rouge">privateInfoKeys</code></td>
+      <td><code class="highlighter-rouge">paymentInfoKeys</code> fields which should not be displayed in customer payment information block (can be any fields from payment additional information)</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>payment_action</code></td>
+      <td><code class="highlighter-rouge">payment_action</code></td>
       <td>default action of payment for the payment method (authorize, sale)</td>
       <td> </td>
-      <td><code>authorize</code>,<code>authorize_capture</code></td>
+      <td><code class="highlighter-rouge">authorize</code>,<code class="highlighter-rouge">authorize_capture</code></td>
     </tr>
     <tr>
-      <td><code>sort_order</code></td>
+      <td><code class="highlighter-rouge">sort_order</code></td>
       <td>payment method order position on checkout/system configuration pages</td>
       <td>integer</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code>title</code></td>
+      <td><code class="highlighter-rouge">title</code></td>
       <td>default title for a payment method</td>
       <td>string</td>
       <td> </td>
@@ -878,9 +878,9 @@
 
 <h2 id="example">Example</h2>
 
-<p>Following is the illustration of such configuration (<code>config.xml</code> of the Braintree module)</p>
+<p>Following is the illustration of such configuration (<code class="highlighter-rouge">config.xml</code> of the Braintree module)</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Store:etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Store:etc/config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;default&gt;</span>
         <span class="nt">&lt;payment&gt;</span>
             <span class="nt">&lt;braintree&gt;</span>

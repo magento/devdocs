@@ -758,7 +758,7 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
 
 <ol>
   <li>Adding vault enabling controls.</li>
-  <li>Modifying the payment component (updating of the <code>additional_data</code> property must be added).</li>
+  <li>Modifying the payment component (updating of the <code class="highlighter-rouge">additional_data</code> property must be added).</li>
   <li>Creating a request data builder.</li>
 </ol>
 
@@ -770,20 +770,20 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
 
 <p>Example (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/web/template/payment/form.html">Magento/Braintree/view/frontend/web/template/payment/form.html</a>):</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;co-transparent-form-braintree&quot;</span> <span class="na">class=</span><span class="s">&quot;form&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;#&quot;</span> <span class="na">novalidate=</span><span class="s">&quot;novalidate&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;fieldset</span> <span class="na">data-bind=</span><span class="s">&quot;attr: {class: &#39;fieldset payment items&#39; + getCode(), id: &#39;payment_form_&#39; + getCode()}&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;legend</span> <span class="na">class=</span><span class="s">&quot;legend&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span&gt;</span><span class="c">&lt;!-- ko i18n: &#39;Credit Card Information&#39;--&gt;&lt;!-- /ko --&gt;</span><span class="nt">&lt;/span&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"co-transparent-form-braintree"</span> <span class="na">class=</span><span class="s">"form"</span> <span class="na">data-bind=</span><span class="s">""</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action=</span><span class="s">"#"</span> <span class="na">novalidate=</span><span class="s">"novalidate"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset</span> <span class="na">data-bind=</span><span class="s">"attr: {class: 'fieldset payment items' + getCode(), id: 'payment_form_' + getCode()}"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;legend</span> <span class="na">class=</span><span class="s">"legend"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span><span class="c">&lt;!-- ko i18n: 'Credit Card Information'--&gt;&lt;!-- /ko --&gt;</span><span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;/legend&gt;</span>
         ...
         <span class="c">&lt;!-- ko if: (isVaultEnabled())--&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;field choice&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span>
-                <span class="na">name=</span><span class="s">&quot;vault[is_enabled]&quot;</span>
-                <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span>
-                <span class="na">data-bind=</span><span class="s">&quot;attr: {&#39;id&#39;: getCode() + &#39;_enable_vault&#39;}, checked: vaultEnabler.isActivePaymentTokenEnabler&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;label&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;attr: {&#39;for&#39;: getCode() + &#39;_enable_vault&#39;}&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span><span class="c">&lt;!-- ko i18n: &#39;Save for later use.&#39;--&gt;&lt;!-- /ko --&gt;</span><span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field choice"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span>
+                <span class="na">name=</span><span class="s">"vault[is_enabled]"</span>
+                <span class="na">class=</span><span class="s">"checkbox"</span>
+                <span class="na">data-bind=</span><span class="s">"attr: {'id': getCode() + '_enable_vault'}, checked: vaultEnabler.isActivePaymentTokenEnabler"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">data-bind=</span><span class="s">"attr: {'for': getCode() + '_enable_vault'}"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;</span><span class="c">&lt;!-- ko i18n: 'Save for later use.'--&gt;&lt;!-- /ko --&gt;</span><span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
         <span class="c">&lt;!-- /ko --&gt;</span>
@@ -794,25 +794,25 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
 
 <h2 id="modifying-the-payment-component">Modifying the payment component</h2>
 
-<p>The payment component must process the state of the vault-enabling control and update payment <code>additional_data</code> before it is sent to the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>.</p>
+<p>The payment component must process the state of the vault-enabling control and update payment <code class="highlighter-rouge">additional_data</code> before it is sent to the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>.</p>
 
-<p>Magento has a default vault enabler <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> (<code>Magento_Vault/js/view/payment/vault-enabler</code>). In the payment component, you just need to call its <code>visitAdditionalData</code> to update the <code>additional_data</code> property. The rest is done by the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Observer/VaultEnableAssigner.php"><code>\Magento\Vault\Observer\VaultEnableAssigner</code></a> observer.</p>
+<p>Magento has a default vault enabler <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> (<code class="highlighter-rouge">Magento_Vault/js/view/payment/vault-enabler</code>). In the payment component, you just need to call its <code class="highlighter-rouge">visitAdditionalData</code> to update the <code class="highlighter-rouge">additional_data</code> property. The rest is done by the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Observer/VaultEnableAssigner.php"><code class="highlighter-rouge">\Magento\Vault\Observer\VaultEnableAssigner</code></a> observer.</p>
 
 <p>Example: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js">the Braintree payment UI component</a></p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
     <span class="p">...</span>
-    <span class="s1">&#39;Magento_Braintree/js/view/payment/method-renderer/cc-form&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Vault/js/view/payment/vault-enabler&#39;</span>
+    <span class="s1">'Magento_Braintree/js/view/payment/method-renderer/cc-form'</span><span class="p">,</span>
+    <span class="s1">'Magento_Vault/js/view/payment/vault-enabler'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(...</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">VaultEnabler</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+    <span class="s1">'use strict'</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
 
-        <span class="cm">/**</span>
-<span class="cm">         * @returns {exports.initialize}</span>
-<span class="cm">         */</span>
-        <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="cm">/**
+         * @returns {exports.initialize}
+         */</span>
+        <span class="na">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
 
             <span class="p">...</span>
@@ -822,10 +822,10 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
             <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
         <span class="p">},</span>
 
-        <span class="cm">/**</span>
-<span class="cm">         * @returns {Object}</span>
-<span class="cm">         */</span>
-        <span class="nx">getData</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="cm">/**
+         * @returns {Object}
+         */</span>
+        <span class="na">getData</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
 
             <span class="k">this</span><span class="p">.</span><span class="nx">vaultEnabler</span><span class="p">.</span><span class="nx">visitAdditionalData</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -833,17 +833,17 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
             <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
         <span class="p">},</span>
 
-        <span class="cm">/**</span>
-<span class="cm">         * @returns {Bool}</span>
-<span class="cm">         */</span>
-        <span class="nx">isVaultEnabled</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="cm">/**
+         * @returns {Bool}
+         */</span>
+        <span class="na">isVaultEnabled</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">vaultEnabler</span><span class="p">.</span><span class="nx">isVaultEnabled</span><span class="p">();</span>
         <span class="p">},</span>
 
-        <span class="cm">/**</span>
-<span class="cm">         * @returns {String}</span>
-<span class="cm">         */</span>
-        <span class="nx">getVaultCode</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="cm">/**
+         * @returns {String}
+         */</span>
+        <span class="na">getVaultCode</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">return</span> <span class="nb">window</span><span class="p">.</span><span class="nx">checkoutConfig</span><span class="p">.</span><span class="nx">payment</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">getCode</span><span class="p">()].</span><span class="nx">vaultCode</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">});</span>
@@ -855,42 +855,42 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
 
 <p>You can create a new request builder, or update the existing request builder of the payment method.</p>
 
-<p>In the Braintree request builder, to pass the data, we set <code>storeInVaultOnSuccess</code> in transaction request:</p>
+<p>In the Braintree request builder, to pass the data, we set <code class="highlighter-rouge">storeInVaultOnSuccess</code> in transaction request:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">VaultDataBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Additional options in request to gateway</span>
-<span class="sd">     */</span>
-    <span class="k">const</span> <span class="no">OPTIONS</span> <span class="o">=</span> <span class="s1">&#39;options&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class VaultDataBuilder implements BuilderInterface
+{
+    /**
+     * Additional options in request to gateway
+     */
+    const OPTIONS = 'options';
 
-    <span class="sd">/**</span>
-<span class="sd">     * The option that determines whether the payment method associated with</span>
-<span class="sd">     * the successful transaction should be stored in the Vault.</span>
-<span class="sd">     */</span>
-    <span class="k">const</span> <span class="no">STORE_IN_VAULT_ON_SUCCESS</span> <span class="o">=</span> <span class="s1">&#39;storeInVaultOnSuccess&#39;</span><span class="p">;</span>
+    /**
+     * The option that determines whether the payment method associated with
+     * the successful transaction should be stored in the Vault.
+     */
+    const STORE_IN_VAULT_ON_SUCCESS = 'storeInVaultOnSuccess';
 
-    <span class="sd">/**</span>
-<span class="sd">     * @inheritdoc</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">build</span><span class="p">(</span><span class="k">array</span> <span class="nv">$buildSubject</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span>
-            <span class="nx">self</span><span class="o">::</span><span class="na">OPTIONS</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="nx">self</span><span class="o">::</span><span class="na">STORE_IN_VAULT_ON_SUCCESS</span> <span class="o">=&gt;</span> <span class="k">true</span>
-            <span class="p">]</span>
-        <span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    /**
+     * @inheritdoc
+     */
+    public function build(array $buildSubject)
+    {
+        return [
+            self::OPTIONS =&gt; [
+                self::STORE_IN_VAULT_ON_SUCCESS =&gt; true
+            ]
+        ];
+    }
+}</code></pre></figure>
 
 <p>The builder must be added to the payment authorize request in the DI configuration. 
-Example from the Braintree <code>di.xml</code>:</p>
+Example from the Braintree <code class="highlighter-rouge">di.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeAuthorizeRequest&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Request\BuilderComposite&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeAuthorizeRequest"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Request\BuilderComposite"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;builders&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"builders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
             ...
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;vault&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\VaultDataBuilder<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"vault"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Request\VaultDataBuilder<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>

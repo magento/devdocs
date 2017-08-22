@@ -1578,37 +1578,39 @@
 			<h2 id="overview">Overview</h2>
 <p>To help prevent <a href="https://www.owasp.org/index.php/Clickjacking" target="_blank">clickjacking</a> exploits, we added an option to use the <a href="https://tools.ietf.org/html/rfc7034" target="_blank">X-Frame-Options</a> HTTP request header in requests to your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
 
-<p>The <code>X-Frame-Options</code> header enables you to specify whether or not a browser should be allowed to render a page in a <code>&lt;frame&gt;</code>, <code>&lt;iframe&gt;</code>, or <code>&lt;object&gt;</code> as follows:</p>
+<p>The <code class="highlighter-rouge">X-Frame-Options</code> header enables you to specify whether or not a browser should be allowed to render a page in a <code class="highlighter-rouge">&lt;frame&gt;</code>, <code class="highlighter-rouge">&lt;iframe&gt;</code>, or <code class="highlighter-rouge">&lt;object&gt;</code> as follows:</p>
 
 <ul>
-  <li><code>DENY</code>: Page cannot be displayed in a frame.</li>
-  <li><code>SAMEORIGIN</code>: (The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.</li>
-  <li><code>ALLOW-FROM &lt;uri&gt;</code>: Page can be displayed only in a frame on the specified origin.</li>
+  <li><code class="highlighter-rouge">DENY</code>: Page cannot be displayed in a frame.</li>
+  <li><code class="highlighter-rouge">SAMEORIGIN</code>: (The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.</li>
+  <li><code class="highlighter-rouge">ALLOW-FROM &lt;uri&gt;</code>: Page can be displayed only in a frame on the specified origin.</li>
 </ul>
 
 <div class="bs-callout bs-callout-warning">
     <p>For security reasons, Magento strongly recommends against running the Magento storefront in a frame.</p>
 </div>
 
-<h2 id="implement-x-frame-options">Implement <code>X-Frame-Options</code></h2>
-<p>Set a value for <code>X-Frame-Options</code> in <code>&lt;your Magento install dir&gt;/app/etc/env.php</code>. Following is the default value:</p>
+<h2 id="implement-x-frame-options">Implement <code class="highlighter-rouge">X-Frame-Options</code></h2>
+<p>Set a value for <code class="highlighter-rouge">X-Frame-Options</code> in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code>. Following is the default value:</p>
 
-<pre><code>  'x-frame-options' =&gt; 'SAMEORIGIN',
+<div class="highlighter-rouge"><pre class="highlight"><code>  'x-frame-options' =&gt; 'SAMEORIGIN',
 </code></pre>
+</div>
 
-<p>We require you to edit <code>env.php</code> because it’s more secure than setting a value in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</p>
+<p>We require you to edit <code class="highlighter-rouge">env.php</code> because it’s more secure than setting a value in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</p>
 
-<h2 id="verify-your-setting-for-x-frame-options">Verify your setting for <code>X-Frame-Options</code></h2>
+<h2 id="verify-your-setting-for-x-frame-options">Verify your setting for <code class="highlighter-rouge">X-Frame-Options</code></h2>
 <p>To verify your setting, view HTTP headers on any storefront page. There are several ways to do this, including using a web browser inspector.</p>
 
 <p>The following example uses curl, which you can run from any machine that can connect to your Magento server over the HTTP protocol.</p>
 
 <p>Use the following command:</p>
 
-<pre><code>curl -I -v --location-trusted '&lt;your Magento storefront URL&gt;'
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -I -v --location-trusted '&lt;your Magento storefront URL&gt;'
 </code></pre>
+</div>
 
-<p>Look for the <code>X-Frame-Options</code> value in the headers.</p>
+<p>Look for the <code class="highlighter-rouge">X-Frame-Options</code> value in the headers.</p>
 
 <h2 id="for-more-information">For more information</h2>
 <ul>

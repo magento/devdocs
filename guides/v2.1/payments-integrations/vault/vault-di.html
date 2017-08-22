@@ -755,24 +755,24 @@
 
 <h2 id="add-vault-payment-facade">Add vault payment facade</h2>
 
-<p>To add a payment facade for the vault payment, create a <a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html#virtual-types">virtual type</a>. In the most cases, it will extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Method/Vault.php"><code>Magento\Vault\Model\Method\Vault</code></a> that is the default implementation of <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/VaultPaymentInterface.php"><code>Magento\Vault\Model\VaultPaymentInterface</code></a>:</p>
+<p>To add a payment facade for the vault payment, create a <a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html#virtual-types">virtual type</a>. In the most cases, it will extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Method/Vault.php"><code class="highlighter-rouge">Magento\Vault\Model\Method\Vault</code></a> that is the default implementation of <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/VaultPaymentInterface.php"><code class="highlighter-rouge">Magento\Vault\Model\VaultPaymentInterface</code></a>:</p>
 
 <p>Example of the vault payment facade configuration for Braintree:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeCreditCardVaultFacade&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Vault\Model\Method\Vault&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeCreditCardVaultFacade"</span> <span class="na">type=</span><span class="s">"Magento\Vault\Model\Method\Vault"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeVaultPaymentConfig<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;valueHandlerPool&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeVaultPaymentValueHandlerPool<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;vaultProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeFacade<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;code&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;const&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Model\Ui\ConfigProvider::CC_VAULT_CODE<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeVaultPaymentConfig<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"valueHandlerPool"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeVaultPaymentValueHandlerPool<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"vaultProvider"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeFacade<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"code"</span> <span class="na">xsi:type=</span><span class="s">"const"</span><span class="nt">&gt;</span>Magento\Braintree\Model\Ui\ConfigProvider::CC_VAULT_CODE<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>This <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> is similar to the <a href="/guides/v2.1/payments-integrations/base-integration/facade-configuration.html">payment method facade</a>. The main difference is the <code>vaultProvider</code> argument. As the Vault payment in the general case is a proxy, the specific payment provider must be specified.</p>
+<p>This <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> is similar to the <a href="/guides/v2.1/payments-integrations/base-integration/facade-configuration.html">payment method facade</a>. The main difference is the <code class="highlighter-rouge">vaultProvider</code> argument. As the Vault payment in the general case is a proxy, the specific payment provider must be specified.</p>
 
 <h2 id="extend-payment-method-configuration">Extend payment method configuration</h2>
 
-<p>To enable vault usage for the payment method, set the <code>can_authorize_vault</code> option in the <a href="/guides/v2.1/payments-integrations/base-integration/payment-option-config.html">method’s configuration</a>.</p>
+<p>To enable vault usage for the payment method, set the <code class="highlighter-rouge">can_authorize_vault</code> option in the <a href="/guides/v2.1/payments-integrations/base-integration/payment-option-config.html">method’s configuration</a>.</p>
 
 <p>Following is an example from Braintree configuration:</p>
 
@@ -794,26 +794,26 @@
 
 <p>Example: a gateway command for the authorize action is added for the Braintree vault</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeVaultAuthorizeCommand&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\GatewayCommand&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeVaultAuthorizeCommand"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Command\GatewayCommand"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;requestBuilder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeVaultAuthorizeRequest<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;transferFactory&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\TransferFactory<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;client&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\Client\TransactionSale<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;handler&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeVaultResponseHandler<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;validator&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\ResponseValidator<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestBuilder"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeVaultAuthorizeRequest<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"transferFactory"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\TransferFactory<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"client"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\Client\TransactionSale<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"handler"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeVaultResponseHandler<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"validator"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\ResponseValidator<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
 <p>This command is similar to the payment provider authorize command. But it uses own <a href="/guides/v2.1/payments-integrations/payment-gateway/request-builder.html">request builders</a> and <a href="/guides/v2.1/payments-integrations/payment-gateway/response-handler.html">response handlers</a>.</p>
 
-<p>The following sample from Braintree configuration illustrates how to add the <code>authorize</code> payment action to command pool:</p>
+<p>The following sample from Braintree configuration illustrates how to add the <code class="highlighter-rouge">authorize</code> payment action to command pool:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeCommandPool&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\CommandPool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeCommandPool"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Command\CommandPool"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;commands&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;authorize&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>BraintreeAuthorizeCommand<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"commands"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"authorize"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>BraintreeAuthorizeCommand<span class="nt">&lt;/item&gt;</span>
             ...
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;vault_authorize&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>BraintreeVaultAuthorizeCommand<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"vault_authorize"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>BraintreeVaultAuthorizeCommand<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
@@ -824,9 +824,9 @@
 
 <p>Example of adding a command manager for Braintree vault:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeCommandManager&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\CommandManager&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeCommandManager"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Command\CommandManager"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;commandPool&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeCommandPool<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"commandPool"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeCommandPool<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
@@ -835,13 +835,13 @@
 <p>There are two ways to add command manager to the pool:</p>
 
 <ul>
-  <li>Add to default <code>CommandManagerPool</code> implementation. Example:</li>
+  <li>Add to default <code class="highlighter-rouge">CommandManagerPool</code> implementation. Example:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Payment\Gateway\Command\CommandManagerPool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Payment\Gateway\Command\CommandManagerPool"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;executors&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;braintree&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>BraintreeCommandManager<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"executors"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"braintree"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>BraintreeCommandManager<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
@@ -850,18 +850,18 @@
   <li>Create custom command manager pool. Example:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeCcVaultCommandManagerPool&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Command\CommandManagerPool&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeCcVaultCommandManagerPool"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Command\CommandManagerPool"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;executors&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;braintree&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>BraintreeCommandManager<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"executors"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"braintree"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>BraintreeCommandManager<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span>
 
-<span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeCreditCardVaultFacade&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Vault\Model\Method\Vault&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeCreditCardVaultFacade"</span> <span class="na">type=</span><span class="s">"Magento\Vault\Model\Method\Vault"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         ...        
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;commandManagerPool&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>BraintreeCcVaultCommandManagerPool<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"commandManagerPool"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeCcVaultCommandManagerPool<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 

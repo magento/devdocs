@@ -685,20 +685,20 @@ It can use custom rules to enforce specific coding standards.</p>
 
 <p>Line termination follows the UNIX text file convention.</p>
 
-<p>Lines must end with a single linefeed(LF) character represented as ordinal 10 or hexadecimal (<code>0x0A</code>).</p>
+<p>Lines must end with a single linefeed(LF) character represented as ordinal 10 or hexadecimal (<code class="highlighter-rouge">0x0A</code>).</p>
 
-<p><em>Do not</em> use carriage the Mac OS convention of carriage returns(CR or <code>0x0D</code>) or the carriage return-linefeed combination(CRLF or <code>0x0D</code> and <code>0x0A</code>) standard for Windows OS.</p>
+<p><em>Do not</em> use carriage the Mac OS convention of carriage returns(CR or <code class="highlighter-rouge">0x0D</code>) or the carriage return-linefeed combination(CRLF or <code class="highlighter-rouge">0x0D</code> and <code class="highlighter-rouge">0x0A</code>) standard for Windows OS.</p>
 
 <h3 id="multi-line-string-literals">Multi-line string literals</h3>
 
 <p>Use string concatenation for multi-line string literals:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myString</span> <span class="o">=</span> <span class="s1">&#39;JavaScript was originally developed in Netscape, by Brendan Eich. &#39;</span> <span class="o">+</span>
-    <span class="s1">&#39;Battling with Microsoft over the Internet, Netscape considered their client-server solution &#39;</span> <span class="o">+</span>
-    <span class="s1">&#39;as a distributed OS, running a portable version of Sun Microsystem&amp;#8217;s Java. &#39;</span> <span class="o">+</span>
-    <span class="s1">&#39;Because Java was a competitor of C++ and aimed at professional programmers, &#39;</span> <span class="o">+</span>
-    <span class="s1">&#39;Netscape also wanted a lightweight interpreted language that would complement Java &#39;</span> <span class="o">+</span>
-    <span class="s1">&#39;by appealing to nonprofessional programmers, like Microsoft&amp;#8217;s VB.[9] (see JavaScript and Java)&#39;</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myString</span> <span class="o">=</span> <span class="s1">'JavaScript was originally developed in Netscape, by Brendan Eich. '</span> <span class="o">+</span>
+    <span class="s1">'Battling with Microsoft over the Internet, Netscape considered their client-server solution '</span> <span class="o">+</span>
+    <span class="s1">'as a distributed OS, running a portable version of Sun Microsystem&amp;#8217;s Java. '</span> <span class="o">+</span>
+    <span class="s1">'Because Java was a competitor of C++ and aimed at professional programmers, '</span> <span class="o">+</span>
+    <span class="s1">'Netscape also wanted a lightweight interpreted language that would complement Java '</span> <span class="o">+</span>
+    <span class="s1">'by appealing to nonprofessional programmers, like Microsoft&amp;#8217;s VB.[9] (see JavaScript and Java)'</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="parentheses">Parentheses</h3>
 
@@ -707,9 +707,9 @@ It can use custom rules to enforce specific coding standards.</p>
 <p>Never use parentheses for:</p>
 
 <ul>
-  <li>Unary operators (e.g. <code>delete</code>, <code>typeof</code>, and <code>void</code>)</li>
-  <li>After keywords such as <code>return</code>, <code>throw</code></li>
-  <li>For <code>case</code>, <code>in</code>, or <code>new</code>, and others keywords like them</li>
+  <li>Unary operators (e.g. <code class="highlighter-rouge">delete</code>, <code class="highlighter-rouge">typeof</code>, and <code class="highlighter-rouge">void</code>)</li>
+  <li>After keywords such as <code class="highlighter-rouge">return</code>, <code class="highlighter-rouge">throw</code></li>
+  <li>For <code class="highlighter-rouge">case</code>, <code class="highlighter-rouge">in</code>, or <code class="highlighter-rouge">new</code>, and others keywords like them</li>
 </ul>
 
 <h3 id="blocks">Blocks</h3>
@@ -756,20 +756,20 @@ When the script tries to call 42 as a function with the second function as a par
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Example 2: Trying to do one thing on Internet Explorer and another on Firefox.</span>
 <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">&#39;i&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s1">&#39;j&#39;</span><span class="o">:</span> <span class="mi">2</span>
+  <span class="s1">'i'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'j'</span><span class="p">:</span> <span class="mi">2</span>
  <span class="p">}</span>  <span class="c1">// &lt;-- Missing semicolon</span>
 
 <span class="p">[</span><span class="nx">normalVersion</span><span class="p">,</span> <span class="nx">ffVersion</span><span class="p">][</span><span class="nx">isIE</span><span class="p">]();</span></code></pre></figure>
 
-<p>A ‘no such property in undefined’ error appears during runtime when the script tries to call <code>x[ffVersion][isIE]()</code>.</p>
+<p>A ‘no such property in undefined’ error appears during runtime when the script tries to call <code class="highlighter-rouge">x[ffVersion][isIE]()</code>.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Example 3: Conditional execution a la bash</span>
 <span class="kd">var</span> <span class="nx">THINGS_TO_EAT</span> <span class="o">=</span> <span class="p">[</span><span class="nx">apples</span><span class="p">,</span> <span class="nx">oysters</span><span class="p">,</span> <span class="nx">sprayOnCheese</span><span class="p">]</span>  <span class="c1">// &lt;-- Missing semicolon</span>
 
 <span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="nx">resultOfOperation</span><span class="p">()</span> <span class="o">||</span> <span class="nx">die</span><span class="p">();</span></code></pre></figure>
 
-<p>The script calls <code>die</code> unless <code>resultOfOperation)_</code> is <code>NaN</code> and assigns <code>THING_TO_EAT</code> the result of <code>die()</code>.</p>
+<p>The script calls <code class="highlighter-rouge">die</code> unless <code class="highlighter-rouge">resultOfOperation)_</code> is <code class="highlighter-rouge">NaN</code> and assigns <code class="highlighter-rouge">THING_TO_EAT</code> the result of <code class="highlighter-rouge">die()</code>.</p>
 
 <h4 id="explanation">Explanation</h4>
 
@@ -786,7 +786,7 @@ JavaScript never ends a statement if the next token is an infix or bracket opera
 
 <p>This is helpful when creating strings that include HTML:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s1">&#39;&amp;lt;span class=&quot;text&quot;&gt;Hello World!&amp;lt;/div&gt;&#39;</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s1">'&amp;lt;span class="text"&gt;Hello World!&amp;lt;/div&gt;'</span><span class="p">;</span></code></pre></figure>
 
 <h2 id="additional-naming-convention-standards">Additional naming convention standards</h2>
 
@@ -795,22 +795,22 @@ JavaScript never ends a statement if the next token is an infix or bracket opera
 <ul>
   <li>Avoid underscores and numbers in names.</li>
   <li>Variables or methods should have names that accurately describe their purpose or behavior.</li>
-  <li>Object methods or variables that are declared <code>private</code> or <code>protected</code> should start with an underscore(<code>_</code>).</li>
+  <li>Object methods or variables that are declared <code class="highlighter-rouge">private</code> or <code class="highlighter-rouge">protected</code> should start with an underscore(<code class="highlighter-rouge">_</code>).</li>
 </ul>
 
 <h3 id="functions-and-methods">Functions and methods</h3>
 
 <ul>
   <li>Class method names should start with an English verb in its infinitive form that describes the method.</li>
-  <li>Names for accessors for instance or static variables should always have the <code>get</code> or <code>set</code> prefix.</li>
+  <li>Names for accessors for instance or static variables should always have the <code class="highlighter-rouge">get</code> or <code class="highlighter-rouge">set</code> prefix.</li>
   <li>In <span term-uuid="53755359-9916-4677-bff2-f7d26025095a" class="glossary-term" data-toggle="popover">design pattern</span> classes, implementation method names should contain the pattern name where practical to provide better behavior description.</li>
-  <li>Methods that return status flags or Boolean values should have the <code>has</code> or <code>is</code> prefix.</li>
+  <li>Methods that return status flags or Boolean values should have the <code class="highlighter-rouge">has</code> or <code class="highlighter-rouge">is</code> prefix.</li>
 </ul>
 
 <h3 id="variables-and-properties">Variables and properties</h3>
 
 <ul>
-  <li>Do not use short variable names such as <code>i</code> or <code>n</code> except in small loop contexts</li>
+  <li>Do not use short variable names such as <code class="highlighter-rouge">i</code> or <code class="highlighter-rouge">n</code> except in small loop contexts</li>
   <li>If a loop contains more than 20 lines of code, the index variables should have more descriptive names.</li>
 </ul>
 
@@ -820,7 +820,7 @@ JavaScript never ends a statement if the next token is an infix or bracket opera
 
 <p>Always put the operator on the preceding line to avoid implicit semi-colon insertion issues.</p>
 
-<h3 id="custom-tostring-method">Custom <code>toString()</code> method</h3>
+<h3 id="custom-tostring-method">Custom <code class="highlighter-rouge">toString()</code> method</h3>
 
 <p>This method must always succeed without side effects.</p>
 
@@ -852,7 +852,7 @@ Feel free to use custom exceptions when appropriate.</p>
 
 <p>For maximum portability and compatibility, use standard features whenever possible.</p>
 
-<p>For example, <code>string.charAt(3)</code> instead of <code>string[3]</code>, and element access with DOM functions instead of using an application-specific shorthand.</p>
+<p>For example, <code class="highlighter-rouge">string.charAt(3)</code> instead of <code class="highlighter-rouge">string[3]</code>, and element access with DOM functions instead of using an application-specific shorthand.</p>
 
 <h3 id="method-definitions">Method definitions</h3>
 
@@ -865,10 +865,10 @@ Feel free to use custom exceptions when appropriate.</p>
 <p>Do not use:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">bar</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="na">bar</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">},</span>
-    <span class="nx">circle</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="na">circle</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 <span class="p">};</span>
@@ -909,21 +909,21 @@ In these situations, the code can be structured as follows:</p>
 <p>Single-line array and object initializers are allowed when they fit on a line as follows:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>  <span class="c1">// No space after [ or before ].</span>
-    <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">a</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">c</span><span class="o">:</span> <span class="mi">3</span><span class="p">};</span>  <span class="c1">// No space after { or before }.  </span></code></pre></figure>
+    <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">};</span>  <span class="c1">// No space after { or before }.  </span></code></pre></figure>
 
 <p>Long identifiers or values present problems for aligned initialization lists, so always prefer non-aligned initialization.</p>
 
 <p>For example:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">a</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nx">b</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nx">lengthyName</span><span class="o">:</span> <span class="mi">2</span>
+    <span class="na">a</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">b</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">lengthyName</span><span class="p">:</span> <span class="mi">2</span>
 <span class="p">};</span></code></pre></figure>
 
 <h3 id="associative-arrays">Associative arrays</h3>
 
-<p>Use <code>Object</code> instead of <code>Array</code> for associative arrays.</p>
+<p>Use <code class="highlighter-rouge">Object</code> instead of <code class="highlighter-rouge">Array</code> for associative arrays.</p>
 
 <h3 id="deferred-initialization">Deferred initialization</h3>
 
@@ -935,17 +935,17 @@ In these situations, the code can be structured as follows:</p>
 
 <h3 id="built-in-objects">Built-in objects</h3>
 
-<p>Modifying built-in like <code>Object.prototype</code> and <code>Array.prototype</code> is strictly forbidden.</p>
+<p>Modifying built-in like <code class="highlighter-rouge">Object.prototype</code> and <code class="highlighter-rouge">Array.prototype</code> is strictly forbidden.</p>
 
-<p>Modifying other built-ins like <code>Function.prototype</code> is less dangerous but leads to debugging issue in production.</p>
+<p>Modifying other built-ins like <code class="highlighter-rouge">Function.prototype</code> is less dangerous but leads to debugging issue in production.</p>
 
 <h3 id="variable-declarations">Variable declarations</h3>
 
-<p>Declare a variable with <code>var</code> wherever possible to avoid overwriting existing global values.</p>
+<p>Declare a variable with <code class="highlighter-rouge">var</code> wherever possible to avoid overwriting existing global values.</p>
 
 <p>Using only one var per scope promotes readability.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="s1">'bar'</span><span class="p">,</span>
     <span class="nx">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span></code></pre></figure>
 

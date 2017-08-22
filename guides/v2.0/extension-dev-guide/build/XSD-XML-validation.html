@@ -1071,7 +1071,7 @@
 
 <p>Magento uses <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Name">Uniform Resource Names</a> (URNs) to reference XML schema declarations.</p>
 
-<p>Magento supported URNs begin with <code>urn:magento</code>. Magento supports two XSD reference types:</p>
+<p>Magento supported URNs begin with <code class="highlighter-rouge">urn:magento</code>. Magento supports two XSD reference types:</p>
 
 <ul>
   <li>Module XSD</li>
@@ -1086,38 +1086,38 @@
 <h3 id="module-xsd">Module XSD</h3>
 <p>The syntax for the module XSD is a colon separated declaration. An example follows:</p>
 
-<p><code>urn:magento:module:Magento_Flow:flows/content.xsd</code></p>
+<p><code class="highlighter-rouge">urn:magento:module:Magento_Flow:flows/content.xsd</code></p>
 
 <p>where</p>
 
 <ul>
-  <li><code>urn:magento</code> is the URN identifier</li>
-  <li><code>module</code> is the reference type identifier</li>
-  <li><code>Magento_Flow</code> is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the <a href="/guides/v2.0/extension-dev-guide/build/component-registration.html">registration.php</a> file.</li>
-  <li><code>flows/content.xsd</code> is the relative path to the module’s directory.</li>
+  <li><code class="highlighter-rouge">urn:magento</code> is the URN identifier</li>
+  <li><code class="highlighter-rouge">module</code> is the reference type identifier</li>
+  <li><code class="highlighter-rouge">Magento_Flow</code> is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the <a href="/guides/v2.0/extension-dev-guide/build/component-registration.html">registration.php</a> file.</li>
+  <li><code class="highlighter-rouge">flows/content.xsd</code> is the relative path to the module’s directory.</li>
 </ul>
 
 <h3 id="framework-xsd">Framework XSD</h3>
 <p>The syntax for the framework XSD is a colon separated declaration. An example follows:</p>
 
-<p><code>urn:magento:framework:Api/etc/extension_attributes.xsd</code></p>
+<p><code class="highlighter-rouge">urn:magento:framework:Api/etc/extension_attributes.xsd</code></p>
 
 <p>where</p>
 
 <ul>
-  <li><code>urn:magento</code> is the URN identifier</li>
-  <li><code>framework</code> is the reference type identifier. You can also add additional framework libraries as separate components with <code>framework-&lt;sub-name&gt;</code></li>
-  <li><code>Api/etc/extension_attributes.xsd</code> is the relative path to the framework’s directory.</li>
+  <li><code class="highlighter-rouge">urn:magento</code> is the URN identifier</li>
+  <li><code class="highlighter-rouge">framework</code> is the reference type identifier. You can also add additional framework libraries as separate components with <code class="highlighter-rouge">framework-&lt;sub-name&gt;</code></li>
+  <li><code class="highlighter-rouge">Api/etc/extension_attributes.xsd</code> is the relative path to the framework’s directory.</li>
 </ul>
 
 <h3 id="referencing-a-xsd-from-another-xsd">Referencing a XSD from another XSD</h3>
 <p>Use URN notation to reference schema from inside a XSD document:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;xs:redefine</span> <span class="na">schemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/view.xsd&quot;</span><span class="nt">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;xs:redefine</span> <span class="na">schemaLocation=</span><span class="s">"urn:magento:framework:Config/etc/view.xsd"</span><span class="nt">&gt;</span></code></pre></figure>
 
-<p>The URN resolution is invoked automatically by the libxml engine. Register the URN resolver by using <code>libxml_set_external_entity_loader</code>:</p>
+<p>The URN resolution is invoked automatically by the libxml engine. Register the URN resolver by using <code class="highlighter-rouge">libxml_set_external_entity_loader</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">libxml_set_external_entity_loader([&#39;Magento\Framework\Config\Dom\UrnResolver&#39;, &#39;registerEntityLoader&#39;]);</code></pre></figure>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', 'registerEntityLoader']);</code></pre></figure>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

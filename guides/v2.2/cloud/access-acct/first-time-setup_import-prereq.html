@@ -1589,8 +1589,9 @@
   <li>
     <p>The command line:</p>
 
-    <pre><code>magento-cloud environment:ssh --pipe
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
 </code></pre>
+    </div>
   </li>
   <li>
     <p>The project <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Web Interface</a>.</p>
@@ -1603,7 +1604,7 @@
 <h2 id="cloud-import-pre-cloudb">Cloud database login information</h2>
 <p>To import the Magento EE database dump into Magento Enterprise Cloud Edition, you must know the Cloud database login information.</p>
 
-<p>The name of the database can be found in the <code>$MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable. Display the variable with the following command. The database name is stored under <code>databases-&gt;path</code>. The password is found under <code>databases-&gt;password</code>.</p>
+<p>The name of the database can be found in the <code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable. Display the variable with the following command. The database name is stored under <code class="highlighter-rouge">databases-&gt;path</code>. The password is found under <code class="highlighter-rouge">databases-&gt;password</code>.</p>
 
 <p>To find database access information:</p>
 
@@ -1611,14 +1612,16 @@
   <li>
     <p>SSH to your integration system:</p>
 
-    <pre><code>magento-cloud environment:ssh
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh
 </code></pre>
+    </div>
   </li>
   <li>
     <p>At the command prompt, enter the following command:</p>
 
-    <pre><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+    <div class="highlighter-rouge"><pre class="highlight"><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1639,7 +1642,7 @@
       }
    ]</pre>
 
-<p>In the preceding example, the database name is <code>main</code>, its listen port is <code>3306</code>, its host name is <code>database.internal</code>, its root user name is <code>user</code> and the user has no password.</p>
+<p>In the preceding example, the database name is <code class="highlighter-rouge">main</code>, its listen port is <code class="highlighter-rouge">3306</code>, its host name is <code class="highlighter-rouge">database.internal</code>, its root user name is <code class="highlighter-rouge">user</code> and the user has no password.</p>
 
 <h2 id="cloud-import-pre-baseurl">Cloud integration system’s unsecure base URL</h2>
 <p>After you import the Magento EE database into Magento Enterprise Cloud Edition, you must change the base URL so you can access the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> and <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
@@ -1650,8 +1653,9 @@
   <li>
     <p>The command line:</p>
 
-    <pre><code>magento-cloud url
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud url
 </code></pre>
+    </div>
   </li>
   <li>
     <p>The project <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Web Interface</a>.</p>

@@ -1489,150 +1489,155 @@
 </section>
 
 
-			<h2 id="cloud-yaml-platform">About <code>.magento.app.yaml</code></h2>
-<p>Magento Commerce supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a <code>.magento.app.yaml</code> at the root of your repository.</p>
+			<h2 id="cloud-yaml-platform">About <code class="highlighter-rouge">.magento.app.yaml</code></h2>
+<p>Magento Commerce supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a <code class="highlighter-rouge">.magento.app.yaml</code> at the root of your repository.</p>
 
 <p>This file controls the application and the way it is built and deployed on Magento Commerce.</p>
 
-<p><a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank">Sample <code>.magento.app.yaml</code></a></p>
+<p><a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank">Sample <code class="highlighter-rouge">.magento.app.yaml</code></a></p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Changes you make using <code>.yaml</code> files affect your <a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="/guides/v2.0/cloud/bk-cloud.html#gethelp">Support ticket</a>.</p>
 </div>
 
-<p>The following sections discuss properties in <code>.magento.app.yaml</code>.</p>
+<p>The following sections discuss properties in <code class="highlighter-rouge">.magento.app.yaml</code>.</p>
 
 <h2 id="cloud-yaml-default">Defaults</h2>
-<p><code>.magento.app.yaml</code> has many default values; see the <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank">sample <code>.magento.app.yaml</code></a>.</p>
+<p><code class="highlighter-rouge">.magento.app.yaml</code> has many default values; see the <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank">sample <code class="highlighter-rouge">.magento.app.yaml</code></a>.</p>
 
-<h2 id="name"><code>name</code> property</h2>
-<p><code>name</code> identifies the application in the project. Magento Commerce
+<h2 id="name"><code class="highlighter-rouge">name</code> property</h2>
+<p><code class="highlighter-rouge">name</code> identifies the application in the project. Magento Commerce
 supports multiple applications in a project, so each application
 must have a <em>unique name</em> in a project.</p>
 
-<p><code>name</code> can consist only of lower case alphanumeric characters; that is, <code>a</code>–<code>z</code> and <code>0</code>–<code>9</code>. <code>name</code>
-is used in the <a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a> to define the HTTP upstream
-(by default, <code>php:php</code>).</p>
+<p><code class="highlighter-rouge">name</code> can consist only of lower case alphanumeric characters; that is, <code class="highlighter-rouge">a</code>–<code class="highlighter-rouge">z</code> and <code class="highlighter-rouge">0</code>–<code class="highlighter-rouge">9</code>. <code class="highlighter-rouge">name</code>
+is used in the <a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a> to define the HTTP upstream
+(by default, <code class="highlighter-rouge">php:php</code>).</p>
 
-<p>For example, if the value of <code>name</code> is <code>app</code>, you must use <code>app:php</code> in the upstream field. You can also use this name in multi-application relationships.</p>
+<p>For example, if the value of <code class="highlighter-rouge">name</code> is <code class="highlighter-rouge">app</code>, you must use <code class="highlighter-rouge">app:php</code> in the upstream field. You can also use this name in multi-application relationships.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you change the name you should think about updating your other configuration files (<code>routes.yaml</code> or the different <code>.magento.app.yaml</code>, you will have in a multi-application project. Changing the name has no effect on your different services (such as databases).</p>
 </div>
 
-<h2 id="cloud-yaml-platform-type"><code>type</code> and <code>build</code></h2>
-<p>The <code>type</code>  and <code>build</code> properties are used to build and run the project. The only supported <code>type</code> currently is <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>.</p>
+<h2 id="cloud-yaml-platform-type"><code class="highlighter-rouge">type</code> and <code class="highlighter-rouge">build</code></h2>
+<p>The <code class="highlighter-rouge">type</code>  and <code class="highlighter-rouge">build</code> properties are used to build and run the project. The only supported <code class="highlighter-rouge">type</code> currently is <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>.</p>
 
 <p>Supported versions:</p>
 
-<pre><code>type: php:5.5
+<div class="highlighter-rouge"><pre class="highlight"><code>type: php:5.5
 type: php:5.6
 type: php:7.0
 </code></pre>
+</div>
 
-<p>The <code>build</code> determines what happens by default when building the project. The only value currently supported is <code>composer</code>.</p>
+<p>The <code class="highlighter-rouge">build</code> determines what happens by default when building the project. The only value currently supported is <code class="highlighter-rouge">composer</code>.</p>
 
 <p>Example:</p>
 
-<pre><code>type: php:5.6
+<div class="highlighter-rouge"><pre class="highlight"><code>type: php:5.6
 build:
     flavor: composer
 </code></pre>
+</div>
 
-<h2 id="cloud-yaml-platform-access"><code>access</code></h2>
-<p><code>access</code> defines the user roles who can log in using SSH to the
+<h2 id="cloud-yaml-platform-access"><code class="highlighter-rouge">access</code></h2>
+<p><code class="highlighter-rouge">access</code> defines the user roles who can log in using SSH to the
 environments to which they have access.</p>
 
 <p>Possible values are:</p>
 
-<pre><code>ssh: admin
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh: admin
 ssh: contributor
 ssh: viewer
 </code></pre>
+</div>
 
-<h2 id="cloud-yaml-platform-rel"><code>relationships</code></h2>
-<p><code>relationships</code> defines how services are mapped in your
+<h2 id="cloud-yaml-platform-rel"><code class="highlighter-rouge">relationships</code></h2>
+<p><code class="highlighter-rouge">relationships</code> defines how services are mapped in your
 application.</p>
 
 <p>The left-hand side is the name of the relationship as it will be exposed
-to the application in the <code>MAGENTO_CLOUD_RELATIONSHIPS</code> environment
+to the application in the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> environment
 variable. The right-hand side is in the form
-<code>&lt;service name&gt;:&lt;endpoint name&gt;</code>, where <code>&lt;service name&gt;</code> comes from
- <code>.magento/services.yaml</code> and  <code>&lt;endpoint name&gt;</code> should be the same as the
- value of <code>type</code>  declared in that same file.</p>
+<code class="highlighter-rouge">&lt;service name&gt;:&lt;endpoint name&gt;</code>, where <code class="highlighter-rouge">&lt;service name&gt;</code> comes from
+ <code class="highlighter-rouge">.magento/services.yaml</code> and  <code class="highlighter-rouge">&lt;endpoint name&gt;</code> should be the same as the
+ value of <code class="highlighter-rouge">type</code>  declared in that same file.</p>
 
 <p>Example of valid options are:</p>
 
-<pre><code>database: "mysql:mysql"
+<div class="highlighter-rouge"><pre class="highlight"><code>database: "mysql:mysql"
 database2: "mysql2:mysql"
 cache: "arediscache:redis"
 search: "searchengine:solr"
 </code></pre>
+</div>
 
-<p>See also <a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code>services.yaml</code> documentation</a> for a full list of currently supported service types and endpoints.</p>
+<p>See also <a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code> documentation</a> for a full list of currently supported service types and endpoints.</p>
 
-<h2 id="cloud-yaml-platform-web"><code>web</code></h2>
-<p><code>web</code> defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an <code>index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code>index.php</code> file can be further down.</p>
+<h2 id="cloud-yaml-platform-web"><code class="highlighter-rouge">web</code></h2>
+<p><code class="highlighter-rouge">web</code> defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an <code class="highlighter-rouge">index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code class="highlighter-rouge">index.php</code> file can be further down.</p>
 
-<p><code>web</code> supports the following:</p>
+<p><code class="highlighter-rouge">web</code> supports the following:</p>
 
 <ul>
-  <li><code>document_root</code>: The path relative to the root of the application
-that is exposed on the web. Typical values include <code>/public</code> and <code>/web</code>.</li>
-  <li><code>passthru</code>: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often <code>/index.php</code> or <code>/app.php</code>.</li>
+  <li><code class="highlighter-rouge">document_root</code>: The path relative to the root of the application
+that is exposed on the web. Typical values include <code class="highlighter-rouge">/public</code> and <code class="highlighter-rouge">/web</code>.</li>
+  <li><code class="highlighter-rouge">passthru</code>: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often <code class="highlighter-rouge">/index.php</code> or <code class="highlighter-rouge">/app.php</code>.</li>
   <li>
-    <p><code>index_files</code>: To use a static file (for example, <code>index.html</code>) to serve
+    <p><code class="highlighter-rouge">index_files</code>: To use a static file (for example, <code class="highlighter-rouge">index.html</code>) to serve
 your application. This key expects a collection.</p>
 
     <p>For this to
 work, the static file(s) should be included in your whitelist. For example,
-to use a file named <code>index.html</code> as an index file, your whitelist should
-include an element that matches the filename, like <code>- \.html$</code>.</p>
+to use a file named <code class="highlighter-rouge">index.html</code> as an index file, your whitelist should
+include an element that matches the filename, like <code class="highlighter-rouge">- \.html$</code>.</p>
   </li>
-  <li><code>blacklist</code>: A list of files that should never be executed. Has no effect on static files.</li>
-  <li><code>whitelist</code>: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.</li>
-  <li><code>expires</code>: The number of seconds whitelisted (that is, static) content
+  <li><code class="highlighter-rouge">blacklist</code>: A list of files that should never be executed. Has no effect on static files.</li>
+  <li><code class="highlighter-rouge">whitelist</code>: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.</li>
+  <li><code class="highlighter-rouge">expires</code>: The number of seconds whitelisted (that is, static) content
 should be cached by the browser. This enables the cache-control and
-Expires headers for static content. The <code>expires</code> directive and
+Expires headers for static content. The <code class="highlighter-rouge">expires</code> directive and
 resulting headers are left out entirely if this isn’t set.</li>
 </ul>
 
-<p>Contrary to standard <code>.htaccess</code> approaches, which accept a
+<p>Contrary to standard <code class="highlighter-rouge">.htaccess</code> approaches, which accept a
 <em>blacklist</em> and allow everything to be accessed except a specific
 list, we accept a <em>whitelist</em>, which means that anything not matched
-will trigger a 404 error and will be passed through to your <code>passthru</code>
+will trigger a 404 error and will be passed through to your <code class="highlighter-rouge">passthru</code>
 URL.</p>
 
 <p>Our default configuration allows the following:</p>
 
 <ul>
-  <li>From the root (<code>/</code>) path, only web, media, and <code>robots.txt</code> files can be accessed</li>
-  <li>From the <code>/pub/static</code> and <code>/pub/media</code> paths, any file can be accessed</li>
+  <li>From the root (<code class="highlighter-rouge">/</code>) path, only web, media, and <code class="highlighter-rouge">robots.txt</code> files can be accessed</li>
+  <li>From the <code class="highlighter-rouge">/pub/static</code> and <code class="highlighter-rouge">/pub/media</code> paths, any file can be accessed</li>
 </ul>
 
-<h2 id="cloud-yaml-platform-disk"><code>disk</code></h2>
-<p><code>disk</code> defines the size of the persistent disk size of the
+<h2 id="cloud-yaml-platform-disk"><code class="highlighter-rouge">disk</code></h2>
+<p><code class="highlighter-rouge">disk</code> defines the size of the persistent disk size of the
 application in MB.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
 </div>
 
-<h2 id="cloud-yaml-platform-mounts"><code>mounts</code></h2>
-<p><code>mounts</code> is an object whose keys are paths relative to the root of
-the application. It’s in the form <code>volume_id[/subpath]</code>.</p>
+<h2 id="cloud-yaml-platform-mounts"><code class="highlighter-rouge">mounts</code></h2>
+<p><code class="highlighter-rouge">mounts</code> is an object whose keys are paths relative to the root of
+the application. It’s in the form <code class="highlighter-rouge">volume_id[/subpath]</code>.</p>
 
 <p>The format is:</p>
 
-<pre><code>"/public/sites/default/files": "shared:files/files"
+<div class="highlighter-rouge"><pre class="highlight"><code>"/public/sites/default/files": "shared:files/files"
 </code></pre>
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><code>shared</code> means that the volume is shared between your applications inside an environment. The <code>disk</code> key defines the size available for that <code>shared</code> volume.</p>
 </div>
 
-<h2 id="cloud-yaml-platform-dep"><code>dependencies</code></h2>
-<p><code>dependencies</code> enables you to specify dependencies that your
+<h2 id="cloud-yaml-platform-dep"><code class="highlighter-rouge">dependencies</code></h2>
+<p><code class="highlighter-rouge">dependencies</code> enables you to specify dependencies that your
 application might need during the build process.</p>
 
 <p>Magento Commerce supports dependencies on the following
@@ -1645,19 +1650,20 @@ languages:</p>
 </ul>
 
 <p>Those dependencies are independent of the eventual dependencies of your
-application, and are available in the <code>PATH</code>, during the build process
+application, and are available in the <code class="highlighter-rouge">PATH</code>, during the build process
 and in the runtime environment of your application.</p>
 
 <p>You can specify those dependencies as follows:</p>
 
-<pre><code>ruby:
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby:
    sass: "~3.4"
 nodejs:
    grunt-cli: "~0.3"
 </code></pre>
+</div>
 
-<h2 id="cloud-yaml-platform-hooks"><code>hooks</code></h2>
-<p>The <code>hooks</code> (also referred to as <code>deployment hooks</code>) enable you to define shell
+<h2 id="cloud-yaml-platform-hooks"><code class="highlighter-rouge">hooks</code></h2>
+<p>The <code class="highlighter-rouge">hooks</code> (also referred to as <code class="highlighter-rouge">deployment hooks</code>) enable you to define shell
 commands to run during the deployment process.</p>
 
 <p>They can be executed at various points in the lifecycle of the
@@ -1666,29 +1672,29 @@ application.</p>
 <p>Possible hooks are:</p>
 
 <ul>
-  <li><code>build</code>: We run build hooks before your application has been
+  <li><code class="highlighter-rouge">build</code>: We run build hooks before your application has been
 packaged. No other services (such as the database, or redis) are accessible at this time since the
 application has not been deployed yet.</li>
-  <li><code>deploy</code>: We run deploy hooks after your application has been
+  <li><code class="highlighter-rouge">deploy</code>: We run deploy hooks after your application has been
 deployed and started. You can access other services at this point.</li>
 </ul>
 
-<p>To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the <code>build</code> or
-<code>deploy</code> sections as follows:</p>
+<p>To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the <code class="highlighter-rouge">build</code> or
+<code class="highlighter-rouge">deploy</code> sections as follows:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">hooks</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span> <span class="p-Indicator">|</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">hooks</span><span class="pi">:</span>
+    <span class="s">build</span><span class="pi">:</span> <span class="pi">|</span>
         <span class="no">php ./bin/magento magento-cloud:build</span>
         <span class="no">php ./bin/magento additional:build:hook</span>
-    <span class="l-Scalar-Plain">deploy</span><span class="p-Indicator">:</span> <span class="p-Indicator">|</span>
+    <span class="s">deploy</span><span class="pi">:</span> <span class="pi">|</span>
         <span class="no">php ./bin/magento magento-cloud:deploy</span>
         <span class="no">php ./bin/magento additional:deploy:hook</span></code></pre></figure>
 
-<p>The home directory, where your application is mounted, is <code>/app</code>, and that is the directory from which hooks will be
-run unless you <code>cd</code> somewhere else.</p>
+<p>The home directory, where your application is mounted, is <code class="highlighter-rouge">/app</code>, and that is the directory from which hooks will be
+run unless you <code class="highlighter-rouge">cd</code> somewhere else.</p>
 
 <p>The hooks fail if the final command in them fails. To
-cause them to fail on the first failed command, add <code>set -e</code> to the beginning
+cause them to fail on the first failed command, add <code class="highlighter-rouge">set -e</code> to the beginning
 of the hook.</p>
 
 <h4 id="example-compile-sass-files-using-grunt">[Example] Compile SASS files using grunt</h4>
@@ -1696,9 +1702,9 @@ of the hook.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">dependencies:
   ruby:
-    sass: &quot;3.4.7&quot;
+    sass: "3.4.7"
   nodejs:
-    grunt-cli: &quot;~0.1.13&quot;
+    grunt-cli: "~0.1.13"
 
 hooks:
   build: |
@@ -1706,31 +1712,32 @@ hooks:
     npm install
     grunt</code></pre></figure>
 
-<h2 id="cloud-yaml-platform-cron"><code>crons</code></h2>
-<p><code>crons</code> describes processes that are triggered on a schedule. We recommend you run cron as the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do not run cron as <code>root</code>. We also recommend against running cron as the web server user.</p>
+<h2 id="cloud-yaml-platform-cron"><code class="highlighter-rouge">crons</code></h2>
+<p><code class="highlighter-rouge">crons</code> describes processes that are triggered on a schedule. We recommend you run cron as the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do not run cron as <code class="highlighter-rouge">root</code>. We also recommend against running cron as the web server user.</p>
 
 <p>More information about crons:</p>
 
-<p><code>crons</code> supports the following:</p>
+<p><code class="highlighter-rouge">crons</code> supports the following:</p>
 
 <ul>
-  <li><code>spec</code>: The cron specification. The minimum interval is once per 5 minutes.</li>
-  <li><code>cmd</code>: The command to execute.</li>
+  <li><code class="highlighter-rouge">spec</code>: The cron specification. The minimum interval is once per 5 minutes.</li>
+  <li><code class="highlighter-rouge">cmd</code>: The command to execute.</li>
 </ul>
 
 <p>A sample Magento cron job follows:</p>
 
-<pre><code>crons:
+<div class="highlighter-rouge"><pre class="highlight"><code>crons:
 cronrun:
     spec: "*/5 * * * *"
     cmd: "php bin/magento cron:run"
 </code></pre>
+</div>
 
 <h2 id="cloud-yaml-platform-php">Configure PHP options</h2>
-<p>You can choose which version of PHP you want to run in your <code>.magento.app.yaml</code> file.:</p>
+<p>You can choose which version of PHP you want to run in your <code class="highlighter-rouge">.magento.app.yaml</code> file.:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">myphpapp</span>
-<span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php:5.6</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">name</span><span class="pi">:</span> <span class="s">myphpapp</span>
+<span class="s">type</span><span class="pi">:</span> <span class="s">php:5.6</span></code></pre></figure>
 
 <p>We support PHP versions 5.5, 5.6, and 7.0. The default is 7.0.</p>
 
@@ -1738,25 +1745,26 @@ cronrun:
 
 <ul>
   <li><a href="#cloud-yaml-platform-php-ext">PHP extensions</a></li>
-  <li><a href="#cloud-yaml-platform-php-set">Customize <code>php.ini</code> settings</a></li>
+  <li><a href="#cloud-yaml-platform-php-set">Customize <code class="highlighter-rouge">php.ini</code> settings</a></li>
 </ul>
 
 <h3 id="cloud-yaml-platform-php-ext">PHP extensions</h3>
 <p>You can define additional PHP extensions you want to enable or disable. Example:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># .magento.app.yaml</span>
-<span class="l-Scalar-Plain">runtime</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">xdebug</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">redis</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ssh2</span>
-    <span class="l-Scalar-Plain">disabled_extensions</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">sqlite3</span></code></pre></figure>
+<span class="s">runtime</span><span class="pi">:</span>
+    <span class="s">extensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">xdebug</span>
+        <span class="pi">-</span> <span class="s">redis</span>
+        <span class="pi">-</span> <span class="s">ssh2</span>
+    <span class="s">disabled_extensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">sqlite3</span></code></pre></figure>
 
 <p>To view the current list of PHP extensions, SSH into your environment and enter the following command:</p>
 
-<pre><code>php -m
+<div class="highlighter-rouge"><pre class="highlight"><code>php -m
 </code></pre>
+</div>
 
 <p>Magento requires the following PHP extensions that are enabled by default:</p>
 
@@ -1790,13 +1798,13 @@ cronrun:
   <li>
     <p><a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later)</p>
 
-    <p>imagick can optionally be used with the <code>gd</code> extension</p>
+    <p>imagick can optionally be used with the <code class="highlighter-rouge">gd</code> extension</p>
   </li>
   <li><a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a></li>
   <li><a href="https://pecl.php.net/package/redis" target="_blank">redis</a></li>
 </ul>
 
-<p>In addition, we strongly recommend you enable <code>opcache</code>.</p>
+<p>In addition, we strongly recommend you enable <code class="highlighter-rouge">opcache</code>.</p>
 
 <p>Other PHP extensions you can optionally install:</p>
 
@@ -1825,11 +1833,11 @@ cronrun:
   <li><a href="http://php.net/manual/en/book.xmlrpc.php" target="_blank">xmlrpc</a></li>
 </ul>
 
-<h3 id="cloud-yaml-platform-php-set">Customize <code>php.ini</code> settings</h3>
-<p>You can also create and push a <code>php.ini</code> file that is appended to
+<h3 id="cloud-yaml-platform-php-set">Customize <code class="highlighter-rouge">php.ini</code> settings</h3>
+<p>You can also create and push a <code class="highlighter-rouge">php.ini</code> file that is appended to
 the configuration maintained by Magento Commerce.</p>
 
-<p>In your repository, the <code>php.ini</code> file should be added to the root of
+<p>In your repository, the <code class="highlighter-rouge">php.ini</code> file should be added to the root of
 the application (the repository root).</p>
 
 <div class="bs-callout bs-callout-warning">
@@ -1838,16 +1846,18 @@ the application (the repository root).</p>
 
 <p>For example, if you need to increase the PHP memory limit:</p>
 
-<pre><code>memory_limit = 756M
+<div class="highlighter-rouge"><pre class="highlight"><code>memory_limit = 756M
 </code></pre>
+</div>
 
 <p>For a list of recommended PHP configuration settings, see <a href="/guides/v2.0/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 
 <p>After pushing your file, you can check that the custom PHP configuration
 has been added to your environment by <a href="/guides/v2.0/cloud/env/environments-start.html#env-start-tunn">creating an SSH tunnel</a> to your environment and entering:</p>
 
-<pre><code>cat /etc/php5/fpm/php.ini
+<div class="highlighter-rouge"><pre class="highlight"><code>cat /etc/php5/fpm/php.ini
 </code></pre>
+</div>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

@@ -1677,35 +1677,36 @@
 </ul>
 
 <h3 id="cloud-first-php">Set up PHP memory limit</h3>
-<p>When you’re working with the Magento Cloud CLI, local environment settings come from the machine on which you’re working, not from Magento Commerce. For example, certain actions (like debugging) require a larger PHP <code>memory_limit</code> than most PHP distributions provide by default.</p>
+<p>When you’re working with the Magento Cloud CLI, local environment settings come from the machine on which you’re working, not from Magento Commerce. For example, certain actions (like debugging) require a larger PHP <code class="highlighter-rouge">memory_limit</code> than most PHP distributions provide by default.</p>
 
-<p>To set <code>memory_limit</code>:</p>
+<p>To set <code class="highlighter-rouge">memory_limit</code>:</p>
 
-<p>Before working with your Magento Commerce (Cloud) project, make sure you set the PHP <code>memory_limit</code> to at least <code>1G</code> for normal use or at least <code>2G</code> for debugging.</p>
+<p>Before working with your Magento Commerce (Cloud) project, make sure you set the PHP <code class="highlighter-rouge">memory_limit</code> to at least <code class="highlighter-rouge">1G</code> for normal use or at least <code class="highlighter-rouge">2G</code> for debugging.</p>
 
 <ol>
   <li>
-    <p>Find your <code>php.ini</code> file using the following command:</p>
+    <p>Find your <code class="highlighter-rouge">php.ini</code> file using the following command:</p>
 
-    <pre><code>php --ini
+    <div class="highlighter-rouge"><pre class="highlight"><code>php --ini
 </code></pre>
+    </div>
 
-    <p>Use the value of <code>Loaded Configuration File</code>.</p>
+    <p>Use the value of <code class="highlighter-rouge">Loaded Configuration File</code>.</p>
   </li>
-  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
-  <li>Change the value of <code>memory_limit</code> to at least <code>1G</code> for normal use or at least <code>2G</code> for debugging.</li>
-  <li>Save your changes to <code>php.ini</code> and exit the text editor.</li>
+  <li>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
+  <li>Change the value of <code class="highlighter-rouge">memory_limit</code> to at least <code class="highlighter-rouge">1G</code> for normal use or at least <code class="highlighter-rouge">2G</code> for debugging.</li>
+  <li>Save your changes to <code class="highlighter-rouge">php.ini</code> and exit the text editor.</li>
   <li>
     <p>Restart your web server:</p>
 
     <ul>
       <li>Apache:
         <ul>
-          <li>CentOS: <code>service httpd restart</code></li>
-          <li>Ubuntu: <code>service apache2 restart</code></li>
+          <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
+          <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
         </ul>
       </li>
-      <li>nginx: <code>service nginx restart</code></li>
+      <li>nginx: <code class="highlighter-rouge">service nginx restart</code></li>
     </ul>
   </li>
 </ol>
@@ -1714,7 +1715,7 @@
 <p>We support installations of <a href="/guides/v2.1/install-gde/prereq/apache.html">Apache</a> and <a href="/guides/v2.1/install-gde/prereq/nginx.html">nginx</a> for your web server.</p>
 
 <h2 id="database">Database (local)</h2>
-<p>You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Commerce environments use <a href="https://mariadb.org/" target="_blank">MariaDB</a>, with a <a href="http://galeracluster.com/" target="_blank">Galara Cluster</a> with triple reducency in the Production environment. Regardless of database, you need to modify the <code>auto_increment_increment</code> value.</p>
+<p>You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Commerce environments use <a href="https://mariadb.org/" target="_blank">MariaDB</a>, with a <a href="http://galeracluster.com/" target="_blank">Galera Cluster</a> with triple reducency in the Production environment. Regardless of database, you need to modify the <code class="highlighter-rouge">auto_increment_increment</code> value.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>The Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.</p>
@@ -1726,28 +1727,32 @@
   <li>
     <p>Use this command to create the database:</p>
 
-    <pre><code> apt-get install mariadb-server
+    <div class="highlighter-rouge"><pre class="highlight"><code> apt-get install mariadb-server
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Secure the database with the following command and completing all prompts:</p>
 
-    <pre><code> mysql_secure_installation
+    <div class="highlighter-rouge"><pre class="highlight"><code> mysql_secure_installation
 </code></pre>
+    </div>
   </li>
   <li>Access the MariaDB database.</li>
   <li>
-    <p>Grant all priviledges to the Magento account you created for the local:</p>
+    <p>Grant all privileges to the Magento account you created for the local:</p>
 
-    <pre><code> grant all priviledges on &lt;database&gt; to '&lt;account&gt;'@'localhost' identified by '&lt;password&gt;';
+    <div class="highlighter-rouge"><pre class="highlight"><code> grant all privileges on &lt;database&gt; to '&lt;account&gt;'@'localhost' identified by '&lt;password&gt;';
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Finally create the database:</p>
 
-    <pre><code> create database magento;
+    <div class="highlighter-rouge"><pre class="highlight"><code> create database magento;
  use magento;
 </code></pre>
+    </div>
   </li>
   <li>Exit when done.</li>
 </ol>
@@ -1756,44 +1761,47 @@
 <p>You need to set an auto-increment value for the MariaDB installation.</p>
 
 <ol>
-  <li>As a user with <code>root</code> privileges, open <code>/etc/mysql/mariadb.conf.d/50-server.cnf</code> in a text editor.</li>
-  <li>In the Basic Settings section, add <code>auto_increment_increment = 3</code>.</li>
-  <li>Restart the service: <code>service mysql restart</code>.</li>
+  <li>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">/etc/mysql/mariadb.conf.d/50-server.cnf</code> in a text editor.</li>
+  <li>In the Basic Settings section, add <code class="highlighter-rouge">auto_increment_increment = 3</code>.</li>
+  <li>Restart the service: <code class="highlighter-rouge">service mysql restart</code>.</li>
 </ol>
 
 <h3 id="cloud-mysql">Set up the auto-increment for MySQL</h3>
-<p>The MySQL configuration parameter <a href="http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html" target="_blank"><code>auto_increment_increment</code></a> is set to <code>1</code> by default in a local MySQL installation. You need to change this value to <code>3</code>.  The Magento Commerce database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.</p>
+<p>The MySQL configuration parameter <a href="http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html" target="_blank"><code class="highlighter-rouge">auto_increment_increment</code></a> is set to <code class="highlighter-rouge">1</code> by default in a local MySQL installation. You need to change this value to <code class="highlighter-rouge">3</code>.  The Magento Commerce database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.</p>
 
-<p>To avoid issues, we recommend you set <code>auto_increment_increment=3</code>.</p>
+<p>To avoid issues, we recommend you set <code class="highlighter-rouge">auto_increment_increment=3</code>.</p>
 
 <p>First, view the current value and verify if it is set to 3:</p>
 
-<pre><code>mysqladmin variables -u &lt;root user name&gt; -p | grep 'auto_increment'
+<div class="highlighter-rouge"><pre class="highlight"><code>mysqladmin variables -u &lt;root user name&gt; -p | grep 'auto_increment'
 </code></pre>
+</div>
 
-<p>If necessary, set <code>auto_increment_increment</code> to 3:</p>
+<p>If necessary, set <code class="highlighter-rouge">auto_increment_increment</code> to 3:</p>
 
 <ol>
   <li>
-    <p>As a user with <code>root</code> privileges, open <code>/etc/my.cnf</code> in a text editor.</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">/etc/my.cnf</code> in a text editor.</p>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		On Ubuntu 16, the path is typically <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>.
+  		On Ubuntu 16, the path is typically <code class="highlighter-rouge">/etc/mysql/mysql.conf.d/mysqld.cnf</code>.
     </div>
   </li>
   <li>
-    <p>Add or edit the following line in the <code>[mysqld]</code> section:</p>
+    <p>Add or edit the following line in the <code class="highlighter-rouge">[mysqld]</code> section:</p>
 
-    <pre><code>auto_increment_increment=3
+    <div class="highlighter-rouge"><pre class="highlight"><code>auto_increment_increment=3
 </code></pre>
+    </div>
 
-    <p>Magento Commerce supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.</p>
+    <p>Magento Commerce supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.</p>
   </li>
   <li>
     <p>Restart MySQL:</p>
 
-    <pre><code>service mysqld restart
+    <div class="highlighter-rouge"><pre class="highlight"><code>service mysqld restart
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1814,31 +1822,35 @@
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>curl -sS https://accounts.magento.cloud/cli/installer | php
+    <div class="highlighter-rouge"><pre class="highlight"><code>curl -sS https://accounts.magento.cloud/cli/installer | php
 </code></pre>
+    </div>
   </li>
   <li>
     <p>After the CLI downloads, an operating system-specific command displays.</p>
 
     <p>For example, on Ubuntu and CentOS, the command is similar to:</p>
 
-    <pre><code>&lt;pre class="no-copy"&gt;source /home/magento_user/.bashrc&lt;/pre&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;pre class="no-copy"&gt;source /home/magento_user/.bashrc&lt;/pre&gt;
 </code></pre>
+    </div>
 
     <p>For more information about the user shell profile, see <a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html" target="_blank">.bash_profile vs .bashrc</a></p>
 
-    <p>You can also add the <code>&lt;magento user home dir&gt;/.magento-cloud/bin</code> to the Magento user’s <code>PATH</code>. 	If the user name is <code>magento_user</code>, the command is similar to the following:</p>
+    <p>You can also add the <code class="highlighter-rouge">&lt;magento user home dir&gt;/.magento-cloud/bin</code> to the Magento user’s <code class="highlighter-rouge">PATH</code>. 	If the user name is <code class="highlighter-rouge">magento_user</code>, the command is similar to the following:</p>
 
-    <pre><code>export PATH=$PATH:/home/magento_user/.magento-cloud/bin
+    <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/home/magento_user/.magento-cloud/bin
 </code></pre>
+    </div>
 
     <p>Consult operating system documentation for details.</p>
   </li>
   <li>
-    <p>Verify the <code>magento-cloud</code> command is in your path by entering the following command:</p>
+    <p>Verify the <code class="highlighter-rouge">magento-cloud</code> command is in your path by entering the following command:</p>
 
-    <pre><code>magento-cloud list
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud list
 </code></pre>
+    </div>
   </li>
 </ol>
 

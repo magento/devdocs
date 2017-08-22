@@ -350,11 +350,11 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>POST /V1/order/&lt;order_ID&gt;/refund</code></td>
+      <td><code class="highlighter-rouge">POST /V1/order/&lt;order_ID&gt;/refund</code></td>
       <td>Issues an offline refund</td>
     </tr>
     <tr>
-      <td><code>POST /V1/invoice/&lt;order_ID&gt;/refund</code></td>
+      <td><code class="highlighter-rouge">POST /V1/invoice/&lt;order_ID&gt;/refund</code></td>
       <td>Issue a refund with an online payment system</td>
     </tr>
   </tbody>
@@ -362,49 +362,49 @@
 
 <p>In this example, the customer did not like the fit of the Radiant T-M-Orange shirt and wants a refund.</p>
 
-<p>Since the customer paid for the order with a bank transfer, we’ll call <code>POST /V1/order/&lt;order ID&gt;/refund</code>. The <code>order_item_id</code> for the Radiant Tee-M-Orange is <code>3</code>.</p>
+<p>Since the customer paid for the order with a bank transfer, we’ll call <code class="highlighter-rouge">POST /V1/order/&lt;order ID&gt;/refund</code>. The <code class="highlighter-rouge">order_item_id</code> for the Radiant Tee-M-Orange is <code class="highlighter-rouge">3</code>.</p>
 
-<p>The <code>arguments</code> object allows you to adjust the amount of the credit to be refunded. Since the customer used the <code>tablerate</code> shipping method, which applied to the whole order, we’ll assume that a refund can’t be applied to the shipping costs. Therefore, the shipping_amount is set to <code>0</code>.</p>
+<p>The <code class="highlighter-rouge">arguments</code> object allows you to adjust the amount of the credit to be refunded. Since the customer used the <code class="highlighter-rouge">tablerate</code> shipping method, which applied to the whole order, we’ll assume that a refund can’t be applied to the shipping costs. Therefore, the shipping_amount is set to <code class="highlighter-rouge">0</code>.</p>
 
-<p>If the customer had selected the <code>flatrate</code> shipping method ($5 per item), we would set the value of <code>shipping_amount</code> to <code>5</code>.</p>
+<p>If the customer had selected the <code class="highlighter-rouge">flatrate</code> shipping method ($5 per item), we would set the value of <code class="highlighter-rouge">shipping_amount</code> to <code class="highlighter-rouge">5</code>.</p>
 
-<p>The <code>return_to_stock_items</code> array specifies which <code>order_item_id</code>s can be returned to stock and be resold.</p>
+<p>The <code class="highlighter-rouge">return_to_stock_items</code> array specifies which <code class="highlighter-rouge">order_item_id</code>s can be returned to stock and be resold.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/order/5/refund</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/order/5/refund</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
-<p><code>Authorization</code> <code>Bearer &lt;administrator token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;administrator token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="nt">&quot;notify&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nt">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;shipping_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;adjustment_positive&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;adjustment_negative&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;return_to_stock_items&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="mi">3</span>
-      <span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"shipping_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"adjustment_positive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"adjustment_negative"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"return_to_stock_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">3</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<p>A <span term-uuid="6a9783a3-cdec-4fed-843d-8eda12819804" class="glossary-term" data-toggle="popover">credit memo</span> id, such as <code>3</code>.</p>
+<p>A <span term-uuid="6a9783a3-cdec-4fed-843d-8eda12819804" class="glossary-term" data-toggle="popover">credit memo</span> id, such as <code class="highlighter-rouge">3</code>.</p>
 
 <h3 id="verify-step">Verify this step</h3>
 

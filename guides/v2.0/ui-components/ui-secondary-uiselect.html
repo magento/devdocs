@@ -768,19 +768,19 @@
 
 <p>Example integration:</p>
 
-<p><code>&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
+<p><code class="highlighter-rouge">&lt;Magento_Cms_module_dir&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">&quot;uiSelect&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;optionsProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;configurableObject&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Cms\Model\Page\Source\PageLayout<span class="nt">&lt;/argument&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">"uiSelect"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"optionsProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Cms\Model\Page\Source\PageLayout<span class="nt">&lt;/argument&gt;</span>
                 <span class="nt">&lt;/argument&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/ui-select<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/filters/elements/ui-select<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataScope&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/ui-select<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/grid/filters/elements/ui-select<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"dataScope"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/argument&gt;</span>
             <span class="nt">&lt;/filterSelect&gt;</span>
@@ -818,11 +818,11 @@
   <li>
     <p>Component elements</p>
 
-    <p>The Ui-select component is implemented in the class <code>app\code\Magento\Ui\view\base\web\js\form\element\ui-select.js</code></p>
+    <p>The Ui-select component is implemented in the class <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\form\element\ui-select.js</code></p>
 
     <p>Templates used by this component are:</p>
 
-    <p><code>app\code\Magento\Ui\view\base\web\templates\grid\filters\elements\ui-select.html</code></p>
+    <p><code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\filters\elements\ui-select.html</code></p>
   </li>
   <li>
     <p>Dependencies on Other Components</p>
@@ -838,8 +838,8 @@
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">imports</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">options</span><span class="o">:</span> <span class="s1">&#39;${ $.optionsConfig.name }:options&#39;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">imports</span><span class="err">:</span> <span class="p">{</span>
+        <span class="nl">options</span><span class="p">:</span> <span class="s1">'${ $.optionsConfig.name }:options'</span>
     <span class="p">}</span>
     </code></pre></figure>
 
@@ -853,18 +853,18 @@
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">actions</span><span class="o">:</span> <span class="p">[{</span>
-                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;selectAll&#39;</span><span class="p">,</span>
-                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Select all&#39;</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">actions</span><span class="err">:</span> <span class="p">[{</span>
+                    <span class="na">value</span><span class="p">:</span> <span class="s1">'selectAll'</span><span class="p">,</span>
+                    <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Select all'</span><span class="p">)</span>
                 <span class="p">},</span> <span class="p">{</span>
-                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;deselectAll&#39;</span><span class="p">,</span>
-                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Deselect all&#39;</span><span class="p">)</span>
+                    <span class="na">value</span><span class="p">:</span> <span class="s1">'deselectAll'</span><span class="p">,</span>
+                    <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Deselect all'</span><span class="p">)</span>
                 <span class="p">},</span> <span class="p">{</span>
-                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;selectPage&#39;</span><span class="p">,</span>
-                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Select all on this page&#39;</span><span class="p">)</span>
+                    <span class="na">value</span><span class="p">:</span> <span class="s1">'selectPage'</span><span class="p">,</span>
+                    <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Select all on this page'</span><span class="p">)</span>
                 <span class="p">},</span> <span class="p">{</span>
-                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;deselectPage&#39;</span><span class="p">,</span>
-                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Deselect all on this page&#39;</span><span class="p">)</span>
+                    <span class="na">value</span><span class="p">:</span> <span class="s1">'deselectPage'</span><span class="p">,</span>
+                    <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Deselect all on this page'</span><span class="p">)</span>
                 <span class="p">}],</span>
     </code></pre></figure>
 

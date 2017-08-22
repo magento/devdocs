@@ -1630,46 +1630,46 @@
 <p><a href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">More information about RabbitMQ</a></p>
 
 <h2 id="relationship">Relationship</h2>
-<p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
+<p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-   <span class="s2">&quot;rabbitmq&quot;</span> : <span class="o">[</span>
+   <span class="s2">"rabbitmq"</span> : <span class="o">[</span>
       <span class="o">{</span>
-         <span class="s2">&quot;password&quot;</span> : <span class="s2">&quot;guest&quot;</span>,
-         <span class="s2">&quot;ip&quot;</span> : <span class="s2">&quot;246.0.129.2&quot;</span>,
-         <span class="s2">&quot;scheme&quot;</span> : <span class="s2">&quot;amqp&quot;</span>,
-         <span class="s2">&quot;port&quot;</span> : 5672,
-         <span class="s2">&quot;host&quot;</span> : <span class="s2">&quot;rabbitmq.internal&quot;</span>,
-         <span class="s2">&quot;username&quot;</span> : <span class="s2">&quot;guest&quot;</span>
+         <span class="s2">"password"</span> : <span class="s2">"guest"</span>,
+         <span class="s2">"ip"</span> : <span class="s2">"246.0.129.2"</span>,
+         <span class="s2">"scheme"</span> : <span class="s2">"amqp"</span>,
+         <span class="s2">"port"</span> : 5672,
+         <span class="s2">"host"</span> : <span class="s2">"rabbitmq.internal"</span>,
+         <span class="s2">"username"</span> : <span class="s2">"guest"</span>
       <span class="o">}</span>
    <span class="o">]</span>
 <span class="o">}</span></code></pre></figure>
 
 <h2 id="usage-example">Usage example</h2>
-<p>In your <code>.magento/services.yaml</code>:</p>
+<p>In your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">myrabbitmq</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">rabbitmq</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1024</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">myrabbitmq</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">rabbitmq</span>
+    <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span></code></pre></figure>
 
-<p>In your <code>.magento.app.yaml</code>:</p>
+<p>In your <code class="highlighter-rouge">.magento.app.yaml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">mq</span><span class="p-Indicator">:</span> <span class="s">&quot;myrabbitmq:rabbitmq&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
+    <span class="s">mq</span><span class="pi">:</span> <span class="s2">"</span><span class="s">myrabbitmq:rabbitmq"</span></code></pre></figure>
 
 <p>You can use the preceding service in a configuration file of your application as follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">getenv</span><span class="p">(</span><span class="s2">&quot;MAGENTO_CLOUD_RELATIONSHIPS&quot;</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$relationships</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span><span class="p">;</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$relationships = getenv("MAGENTO_CLOUD_RELATIONSHIPS");
+if (!$relationships) {
+  return;
+}
 
-<span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$relationships</span><span class="p">),</span> <span class="k">TRUE</span><span class="p">);</span>
+$relationships = json_decode(base64_decode($relationships), TRUE);
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$relationships</span><span class="p">[</span><span class="s1">&#39;mq&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$endpoint</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;rabbitmq_host&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]);</span>
-  <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;rabbitmq_port&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]);</span>
-<span class="p">}</span></code></pre></figure>
+foreach ($relationships['mq'] as $endpoint) {
+  $container-&gt;setParameter('rabbitmq_host', $endpoint['host']);
+  $container-&gt;setParameter('rabbitmq_port', $endpoint['port']);
+}</code></pre></figure>
 
 <h2 id="connect-to-rabbitmq">Connect to RabbitMQ</h2>
 <p>For debugging purposes, it’s sometimes useful to directly connect to
@@ -1685,36 +1685,38 @@ a service instance in one of the following ways:</p>
 <p>You can do this using <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">SSH tunneling</a>:</p>
 
 <ol>
-  <li>Use <code>magento-cloud tunnel:open</code> to open a tunnel to the app.</li>
+  <li>Use <code class="highlighter-rouge">magento-cloud tunnel:open</code> to open a tunnel to the app.</li>
   <li>
     <p>Use the following command to pretty-print your
 relationships. This lets you see which username and password to use, and you
 can double check that the remote service’s port is 5672.</p>
 
-    <pre><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+    <div class="highlighter-rouge"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Use the <code>ssh -L</code> command to enable local port forwarding to RabbitMQ as follows:</p>
+    <p>Use the <code class="highlighter-rouge">ssh -L</code> command to enable local port forwarding to RabbitMQ as follows:</p>
 
-    <pre><code>ssh -L 5672:mq.internal:5672 &lt;project ID&gt;-&lt;branch ID&gt;@ssh.na.magentosite.cloud
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -L 5672:mq.internal:5672 &lt;project ID&gt;-&lt;branch ID&gt;@ssh.na.magentosite.cloud
 </code></pre>
+    </div>
   </li>
   <li>While the session is open, you can start a RabbitMQ client of your
-choice from your local workstation, configured to connect to <code>localhost:5672</code>
+choice from your local workstation, configured to connect to <code class="highlighter-rouge">localhost:5672</code>
 using the user name and password you found in the relationship variable.</li>
 </ol>
 
 <h3 id="cloud-rabbitmq-conn-cont">Connect from the application</h3>
-<p>To connect to RabbitMQ running in an application, you should install a client like <a href="https://github.com/dougbarth/amqp-utils" target="_blank">amqp-utils</a> as a project dependency in your <code>.magento.app.yaml</code> file.</p>
+<p>To connect to RabbitMQ running in an application, you should install a client like <a href="https://github.com/dougbarth/amqp-utils" target="_blank">amqp-utils</a> as a project dependency in your <code class="highlighter-rouge">.magento.app.yaml</code> file.</p>
 
 <p>For example,</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">dependencies</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">ruby</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">amqp-utils</span><span class="p-Indicator">:</span> <span class="s">&quot;0.5.1&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">dependencies</span><span class="pi">:</span>
+  <span class="s">ruby</span><span class="pi">:</span>
+    <span class="s">amqp-utils</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0.5.1"</span></code></pre></figure>
 
-<p>Then, when you SSH into your <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> container, you enter any <code>amqp-</code>
+<p>Then, when you SSH into your <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> container, you enter any <code class="highlighter-rouge">amqp-</code>
 command available to manage your queues.</p>
 
 <h3 id="cloud-rabbitmq-conn-php">Connect from your PHP application</h3>

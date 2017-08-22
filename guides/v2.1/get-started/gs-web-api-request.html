@@ -716,7 +716,7 @@
 </section>
 
 
-			<p>To configure a web API, developers define some of the elements of each API call in the <code>&lt;module root dir&gt;/vendor/&lt;vendor-name&gt;/&lt;module-name&gt;/etc/webapi.xml</code> file, where <code>&lt;vendor-name&gt;</code> is your vendor name (for example, <code>magento</code>) and <code>&lt;module-name&gt;</code> is your module name (which exactly matches its definition in <code>composer.json</code>). For example, the web API for the Customer service is defined in the <code>&lt;your Magento install dir&gt;/vendor/magento/module-customer/etc/webapi.xml</code> configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> calls.</p>
+			<p>To configure a web API, developers define some of the elements of each API call in the <code class="highlighter-rouge">&lt;module root dir&gt;/vendor/&lt;vendor-name&gt;/&lt;module-name&gt;/etc/webapi.xml</code> file, where <code class="highlighter-rouge">&lt;vendor-name&gt;</code> is your vendor name (for example, <code class="highlighter-rouge">magento</code>) and <code class="highlighter-rouge">&lt;module-name&gt;</code> is your module name (which exactly matches its definition in <code class="highlighter-rouge">composer.json</code>). For example, the web API for the Customer service is defined in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/vendor/magento/module-customer/etc/webapi.xml</code> configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> calls.</p>
 
 <h2 id="request-overview">Overview</h2>
 
@@ -799,7 +799,7 @@
 <h3 id="endpoints">Endpoint</h3>
 <p>An endpoint is a combination of the <em>server</em> that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.</p>
 
-<p>For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is <code>magento.ll/index.php/</code>, the web service is <code>rest</code>, the resource is <code>/V1/customerGroups</code>, and the template parameter is <code>id</code>.</p>
+<p>For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is <code class="highlighter-rouge">magento.ll/index.php/</code>, the web service is <code class="highlighter-rouge">rest</code>, the resource is <code class="highlighter-rouge">/V1/customerGroups</code>, and the template parameter is <code class="highlighter-rouge">id</code>.</p>
 
 <h3 id="http-headers">HTTP headers</h3>
 
@@ -855,39 +855,39 @@ See <a href="/guides/v2.1/get-started/authentication/gs-authentication.html">Aut
 <h3 id="payload">Call payload</h3>
 <p>The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both <em>required</em> and <em>optional</em> inputs.</p>
 
-<p>You specify input parameters in the URI. For example, in the <code>GET/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
+<p>You specify input parameters in the URI. For example, in the <code class="highlighter-rouge">GET/V1/customers/:customerId</code> URI, you must specify the <code class="highlighter-rouge">customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
 
-<p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST /V1/customers</code> call, you must specify a request body like this:</p>
+<p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code class="highlighter-rouge">POST /V1/customers</code> call, you must specify a request body like this:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;customers&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;customer&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;defaultShipping&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nt">&quot;defaultBilling&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;regionCode&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;regionId&quot;</span><span class="p">:</span> <span class="mi">12</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;90001&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Zoe Ave&quot;</span><span class="p">],</span>
-                <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;555-000-00-00&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;countryId&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"customers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"defaultShipping"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"defaultBilling"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"regionCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"regionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nt">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90001"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Zoe Ave"</span><span class="p">],</span><span class="w">
+                </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Los Angeles"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555-000-00-00"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"countryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<p>This JSON-formatted request body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
+<p>This JSON-formatted request body includes a <code class="highlighter-rouge">customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
 
 <h2 id="construct-request">Construct a request</h2>
 <p>This example shows you how to construct a REST web API call to create an account.</p>

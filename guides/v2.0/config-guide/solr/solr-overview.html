@@ -1654,14 +1654,14 @@ No coding is required.</p>
 <p>The following suggestions in this topic should <em>not</em> be used in a production environment because they’re potentially unsafe:</p>
 
 <ul>
-  <li>Starting the example Solr web application using <code>java -jar start.jar</code> because it’s not maintainable.
+  <li>Starting the example Solr web application using <code class="highlighter-rouge">java -jar start.jar</code> because it’s not maintainable.
   You should script starting and stopping Solr instead.</li>
   <li>Using the example Solr web application is not recommended because you should customize a new web application for your use.
   You can also <a href="https://dzone.com/articles/top-open-source-javaEE-application-servers" target="_blank">compare application servers</a> to determine if the bundled Jetty application server is appropriate for your needs.</li>
   <li>Turning off your UNIX firewall is not recommended in production.
   (As an alternative, you can set up firewall rules to allow Magento and Solr to communicate.)</li>
   <li>
-    <p>Setting SELinux to <code>permissive</code></p>
+    <p>Setting SELinux to <code class="highlighter-rouge">permissive</code></p>
 
     <p>SELinux settings are entirely up to you.
 Magento does not recommend particular settings; however, be aware that setting up SELinux is very complex.</p>
@@ -1684,10 +1684,11 @@ It’s easier to run Solr in development by disabling the firewall and SELinux b
 <p>If you choose to enable your firewall and SELinux, you must set up rules to allow TCP traffic between Magento and Solr on Solr’s listen port (8983 by default).</p>
 
 <h4 id="disable-iptables-and-selinux">Disable iptables and SELinux</h4>
-<p>To stop the <code>iptables</code> (firewall) service, enter the following command as a user with <code>root</code> privileges:</p>
+<p>To stop the <code class="highlighter-rouge">iptables</code> (firewall) service, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-<pre><code>service iptables stop
+<div class="highlighter-rouge"><pre class="highlight"><code>service iptables stop
 </code></pre>
+</div>
 
 <p>To set SELinux for permissive mode:</p>
 
@@ -1695,17 +1696,19 @@ It’s easier to run Solr in development by disabling the firewall and SELinux b
   <li>
     <p>To determine if SELinux is enabled, enter the following command:</p>
 
-    <pre><code>getenforce
+    <div class="highlighter-rouge"><pre class="highlight"><code>getenforce
 </code></pre>
+    </div>
 
-    <p><code>Enforcing</code> displays to confirm that SELinux is running.
-  (If <code>Permissive</code> displays, continue with the next section.)</p>
+    <p><code class="highlighter-rouge">Enforcing</code> displays to confirm that SELinux is running.
+  (If <code class="highlighter-rouge">Permissive</code> displays, continue with the next section.)</p>
   </li>
   <li>
     <p>To change to permissive mode, enter:</p>
 
-    <pre><code>setenforce 0
+    <div class="highlighter-rouge"><pre class="highlight"><code>setenforce 0
 </code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1723,8 +1726,9 @@ It’s easier to run Solr in development by disabling the firewall and SELinux b
 <h3 id="prereq-java">Install the Java Software Development Kit (JDK)</h3>
 <p>To determine if Java is already installed, enter the following command:</p>
 
-<pre><code>java -version
+<div class="highlighter-rouge"><pre class="highlight"><code>java -version
 </code></pre>
+</div>
 
 <p>If the message <code>java: command not found</code> displays, you must install the Java SDK as discussed in the next section.</p>
 
@@ -1773,18 +1777,19 @@ For more information, see the <a href="http://wiki.apache.org/solr/SolrTomcat" t
 
 <ol>
   <li>
-    <p>As a user with <code>root</code> privileges, use <code>wget</code> or a similar command to download the latest version of Solr 4 to an empty directory such as <code>/opt/solr</code>.</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, use <code class="highlighter-rouge">wget</code> or a similar command to download the latest version of Solr 4 to an empty directory such as <code class="highlighter-rouge">/opt/solr</code>.</p>
 
     <p>An example follows.</p>
 
-    <pre><code>mkdir -p &lt;empty-directory&lt;&gt;  
+    <div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p &lt;empty-directory&lt;&gt;  
 cd &lt;directory&gt;
 wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
 </code></pre>
+    </div>
 
     <p>Messages similar to the following display to confirm a successful download.</p>
 
-    <pre><code>wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
+    <div class="highlighter-rouge"><pre class="highlight"><code>wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
 --2016-10-01 15:54:37--  http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
 Resolving archive.apache.org... 163.172.17.199
 Connecting to archive.apache.org|163.172.17.199|:80... connected.
@@ -1795,12 +1800,14 @@ Saving to: "solr-4.10.4.tgz"
 100%[==========================================================&gt;] 150,059,757 8.99M/s   in 4.5s
 2016-10-01 15:55:23 (3.18 MB/s) - "solr-4.10.4.tgz" saved [150059757/150059757]
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Unpack the Solr installation; an example follows.</p>
 
-    <pre><code>tar -xvf solr-4.10.4.tgz
+    <div class="highlighter-rouge"><pre class="highlight"><code>tar -xvf solr-4.10.4.tgz
 </code></pre>
+    </div>
   </li>
 </ol>
 

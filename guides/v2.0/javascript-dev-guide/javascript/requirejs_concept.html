@@ -745,57 +745,58 @@
 
 <h2 id="config">RequireJS configuration location</h2>
 
-<p>As Magento has a modular architecture we have an ability to define <code>requirejs-config.js</code> for each module, separately for each <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a>: <code>frontend</code> or <code>admin</code>. (Or <code>base</code> if it is same for both, <code>frontend</code> and <code>admin</code>).</p>
+<p>As Magento has a modular architecture we have an ability to define <code class="highlighter-rouge">requirejs-config.js</code> for each module, separately for each <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a>: <code class="highlighter-rouge">frontend</code> or <code class="highlighter-rouge">admin</code>. (Or <code class="highlighter-rouge">base</code> if it is same for both, <code class="highlighter-rouge">frontend</code> and <code class="highlighter-rouge">admin</code>).</p>
 
-<p>Following is the conventional location of <code>requirejs-config.js</code> (RequireJS configuration file):</p>
+<p>Following is the conventional location of <code class="highlighter-rouge">requirejs-config.js</code> (RequireJS configuration file):</p>
 
 <ul>
-  <li>For modules: <code>&lt;Module_dir&gt;/view/&lt;area&gt;/requirejs-config.js</code></li>
-  <li>For themes: <code>&lt;theme_dir&gt;/requirejs-config.js</code></li>
+  <li>For modules: <code class="highlighter-rouge">&lt;Module_dir&gt;/view/&lt;area&gt;/requirejs-config.js</code></li>
+  <li>For themes: <code class="highlighter-rouge">&lt;theme_dir&gt;/requirejs-config.js</code></li>
 </ul>
 
 <h2 id="requirejs-configuration-file">RequireJS configuration file</h2>
 
-<p><code>requirejs-config.js</code> is a valid JavaScript file. It should define the <code>config</code> variable, which is a configuration variable.</p>
+<p><code class="highlighter-rouge">requirejs-config.js</code> is a valid JavaScript file. It should define the <code class="highlighter-rouge">config</code> variable, which is a configuration variable.</p>
 
 <h3 id="example-of-usages">Example of usages</h3>
 
-<p>Lets look at an example, the Catalog module. In the <code>&lt;Magento_Catalog_module_dir&gt;/view/base/requirejs-config.js</code> file we see the configuration variable:</p>
+<p>Lets look at an example, the Catalog module. In the <code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/base/requirejs-config.js</code> file we see the configuration variable:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">map</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s1">&#39;*&#39;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">categoryForm</span><span class="o">:</span>       <span class="s1">&#39;Magento_Catalog/catalog/category/form&#39;</span><span class="p">,</span>
-            <span class="nx">newCategoryDialog</span><span class="o">:</span>  <span class="s1">&#39;Magento_Catalog/js/new-category-dialog&#39;</span><span class="p">,</span>
-            <span class="nx">categoryTree</span><span class="o">:</span>       <span class="s1">&#39;Magento_Catalog/js/category-tree&#39;</span><span class="p">,</span>
-            <span class="nx">productGallery</span><span class="o">:</span>     <span class="s1">&#39;Magento_Catalog/js/product-gallery&#39;</span><span class="p">,</span>
-            <span class="nx">baseImage</span><span class="o">:</span>          <span class="s1">&#39;Magento_Catalog/catalog/base-image-uploader&#39;</span><span class="p">,</span>
-            <span class="nx">productAttributes</span><span class="o">:</span>  <span class="s1">&#39;Magento_Catalog/catalog/product-attributes&#39;</span>
+    <span class="na">map</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'*'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nl">categoryForm</span><span class="p">:</span>       <span class="s1">'Magento_Catalog/catalog/category/form'</span><span class="p">,</span>
+            <span class="na">newCategoryDialog</span><span class="p">:</span>  <span class="s1">'Magento_Catalog/js/new-category-dialog'</span><span class="p">,</span>
+            <span class="na">categoryTree</span><span class="p">:</span>       <span class="s1">'Magento_Catalog/js/category-tree'</span><span class="p">,</span>
+            <span class="na">productGallery</span><span class="p">:</span>     <span class="s1">'Magento_Catalog/js/product-gallery'</span><span class="p">,</span>
+            <span class="na">baseImage</span><span class="p">:</span>          <span class="s1">'Magento_Catalog/catalog/base-image-uploader'</span><span class="p">,</span>
+            <span class="na">productAttributes</span><span class="p">:</span>  <span class="s1">'Magento_Catalog/catalog/product-attributes'</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="nx">deps</span><span class="o">:</span> <span class="p">[</span>
-        <span class="s1">&#39;Magento_Catalog/catalog/product&#39;</span>
+    <span class="na">deps</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'Magento_Catalog/catalog/product'</span>
     <span class="p">]</span>
 <span class="p">};</span></code></pre></figure>
 
-<p>The <code>config</code> variable contains properties with the <code>map</code> and <code>deps</code> keys. These properties are equivalent to the native RequireJS properties. For example, in this case  the <code>map</code> property contains an object with the keys that are aliases to files and values that are real paths to files.</p>
+<p>The <code class="highlighter-rouge">config</code> variable contains properties with the <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">deps</code> keys. These properties are equivalent to the native RequireJS properties. For example, in this case  the <code class="highlighter-rouge">map</code> property contains an object with the keys that are aliases to files and values that are real paths to files.</p>
 
-<p>For a particular area, all modules and themes <code>requirejs-config.js</code> files are merged into a single file. This file is written to the <code>pub/static/requirejs</code> directory. This occurs during the first launch of Magento in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">develop or default mode</a> or during static files generation using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">bin/magento setup:static-content:deploy</a> console command.</p>
+<p>For a particular area, all modules and themes <code class="highlighter-rouge">requirejs-config.js</code> files are merged into a single file. This file is written to the <code class="highlighter-rouge">pub/static/requirejs</code> directory. This occurs during the first launch of Magento in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">develop or default mode</a> or during static files generation using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">bin/magento setup:static-content:deploy</a> console command.</p>
 
-<p>The merged configuration will be loaded on the page right after <code>require.js</code> and will be used by <code>require()</code> and <code>define()</code> functions.</p>
+<p>The merged configuration will be loaded on the page right after <code class="highlighter-rouge">require.js</code> and will be used by <code class="highlighter-rouge">require()</code> and <code class="highlighter-rouge">define()</code> functions.</p>
 
 <p>Example of how aliases can be used. Open a browser console on any Magento page and type:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">require</span><span class="p">([</span><span class="s1">&#39;productGallery&#39;</span><span class="p">]);</span> <span class="c1">// load the module on the page</span>
-	<span class="kd">var</span> <span class="nx">gallery1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;productGallery&#39;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">gallery2</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;Magento_Catalog/js/product-gallery&#39;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">require</span><span class="p">([</span><span class="s1">'productGallery'</span><span class="p">]);</span> <span class="c1">// load the module on the page</span>
+	<span class="kd">var</span> <span class="nx">gallery1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'productGallery'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">gallery2</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'Magento_Catalog/js/product-gallery'</span><span class="p">);</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span><span class="p">);</span> <span class="c1">// it does not return a simple type</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span> <span class="o">===</span> <span class="nx">gallery2</span><span class="p">);</span> <span class="c1">// they are the same</span></code></pre></figure>
 
-<p>Tip: One more way that you can use <code>require</code> object is to retrieve a current configuration during runtime. Just type in a browser console:</p>
+<p>Tip: One more way that you can use <code class="highlighter-rouge">require</code> object is to retrieve a current configuration during runtime. Just type in a browser console:</p>
 
-<pre><code>require.s.contexts._.config;
+<div class="highlighter-rouge"><pre class="highlight"><code>require.s.contexts._.config;
 </code></pre>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->

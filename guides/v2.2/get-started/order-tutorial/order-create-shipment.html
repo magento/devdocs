@@ -339,58 +339,58 @@
 
 </section>
 
-			<p>To create a shipment, you need the <code>order_item_id</code> of each item to be shipped. Since the Sprite Yoga Companion Kit is a bundle item, you only need to include the top-level <code>order_item_id</code> (<code>5</code>). The <code>order_item_id</code> for the Radiant Tee-M-Orange is <code>3</code>.</p>
+			<p>To create a shipment, you need the <code class="highlighter-rouge">order_item_id</code> of each item to be shipped. Since the Sprite Yoga Companion Kit is a bundle item, you only need to include the top-level <code class="highlighter-rouge">order_item_id</code> (<code class="highlighter-rouge">5</code>). The <code class="highlighter-rouge">order_item_id</code> for the Radiant Tee-M-Orange is <code class="highlighter-rouge">3</code>.</p>
 
-<p>To create a partial shipment, specify only those <code>order_item_id</code>s that are to be shipped now.</p>
+<p>To create a partial shipment, specify only those <code class="highlighter-rouge">order_item_id</code>s that are to be shipped now.</p>
 
 <p>If the call is successful on a full shipment, Magento changes the status of an order to Complete.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/order/3/ship</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/order/3/ship</code></p>
 
-<p>where <code>3</code> is the order id.</p>
+<p>where <code class="highlighter-rouge">3</code> is the order id.</p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
-<p><code>Authorization</code> <code>Bearer &lt;administrator token&gt;</code></p>
+<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;administrator token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
-<p>The <code>tracks</code> array optionally allows you to include one or more tracking numbers for the <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span>.</p>
+<p>The <code class="highlighter-rouge">tracks</code> array optionally allows you to include one or more tracking numbers for the <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="nt">&quot;notify&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nt">&quot;appendComment&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nt">&quot;tracks&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;track_number&quot;</span><span class="p">:</span> <span class="s2">&quot;1Y-9876543210&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;United Parcel Service&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;carrier_code&quot;</span><span class="p">:</span> <span class="s2">&quot;ups&quot;</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre></figure>
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"appendComment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tracks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"track_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1Y-9876543210"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Parcel Service"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"carrier_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ups"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 </div></div>
 
 <p><strong>Response</strong></p>
 
-<p>A shipment ID, such as <code>3</code>.</p>
+<p>A shipment ID, such as <code class="highlighter-rouge">3</code>.</p>
 
 <h2 id="verify-this-step">Verify this step</h2>
 

@@ -690,55 +690,55 @@
 
 <h2 id="interface">Interface</h2>
 
-<p>Basic interface for a response handler is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Response/HandlerInterface.php"><code>Magento\Payment\Gateway\Response\HandlerInterface</code></a></p>
+<p>Basic interface for a response handler is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Response/HandlerInterface.php"><code class="highlighter-rouge">Magento\Payment\Gateway\Response\HandlerInterface</code></a></p>
 
 <h3 id="useful-implementations">Useful implementations</h3>
 
-<p><code>\Magento\Payment\Gateway\Response\HandlerChain</code> might be used as a basic container of response handlers, handling different parts.</p>
+<p><code class="highlighter-rouge">\Magento\Payment\Gateway\Response\HandlerChain</code> might be used as a basic container of response handlers, handling different parts.</p>
 
 <h3 id="example">Example</h3>
 
-<p>Example of a simple response handler (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php"><code>app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php</code></a>):</p>
+<p>Example of a simple response handler (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php"><code class="highlighter-rouge">app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php</code></a>):</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">PayPalDetailsHandler</span> <span class="k">implements</span> <span class="nx">HandlerInterface</span>
-<span class="p">{</span>
-    <span class="k">const</span> <span class="no">PAYMENT_ID</span> <span class="o">=</span> <span class="s1">&#39;paymentId&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class PayPalDetailsHandler implements HandlerInterface
+{
+    const PAYMENT_ID = 'paymentId';
 
-    <span class="k">const</span> <span class="no">PAYER_EMAIL</span> <span class="o">=</span> <span class="s1">&#39;payerEmail&#39;</span><span class="p">;</span>
+    const PAYER_EMAIL = 'payerEmail';
 
-    <span class="sd">/**</span>
-<span class="sd">     * @var SubjectReader</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="nv">$subjectReader</span><span class="p">;</span>
+    /**
+     * @var SubjectReader
+     */
+    private $subjectReader;
 
-    <span class="sd">/**</span>
-<span class="sd">     * Constructor</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param SubjectReader $subjectReader</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">SubjectReader</span> <span class="nv">$subjectReader</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span> <span class="o">=</span> <span class="nv">$subjectReader</span><span class="p">;</span>
-    <span class="p">}</span>
+    /**
+     * Constructor
+     *
+     * @param SubjectReader $subjectReader
+     */
+    public function __construct(SubjectReader $subjectReader)
+    {
+        $this-&gt;subjectReader = $subjectReader;
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * @inheritdoc</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="k">array</span> <span class="nv">$handlingSubject</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$response</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$paymentDO</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readPayment</span><span class="p">(</span><span class="nv">$handlingSubject</span><span class="p">);</span>
+    /**
+     * @inheritdoc
+     */
+    public function handle(array $handlingSubject, array $response)
+    {
+        $paymentDO = $this-&gt;subjectReader-&gt;readPayment($handlingSubject);
 
-        <span class="sd">/** @var \Braintree\Transaction $transaction */</span>
-        <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readTransaction</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
+        /** @var \Braintree\Transaction $transaction */
+        $transaction = $this-&gt;subjectReader-&gt;readTransaction($response);
 
-        <span class="sd">/** @var OrderPaymentInterface $payment */</span>
-        <span class="nv">$payment</span> <span class="o">=</span> <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getPayment</span><span class="p">();</span>
+        /** @var OrderPaymentInterface $payment */
+        $payment = $paymentDO-&gt;getPayment();
 
-        <span class="nv">$payPal</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readPayPal</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
-        <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">setAdditionalInformation</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">PAYMENT_ID</span><span class="p">,</span> <span class="nv">$payPal</span><span class="p">[</span><span class="nx">self</span><span class="o">::</span><span class="na">PAYMENT_ID</span><span class="p">]);</span>
-        <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">setAdditionalInformation</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">PAYER_EMAIL</span><span class="p">,</span> <span class="nv">$payPal</span><span class="p">[</span><span class="nx">self</span><span class="o">::</span><span class="na">PAYER_EMAIL</span><span class="p">]);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+        $payPal = $this-&gt;subjectReader-&gt;readPayPal($transaction);
+        $payment-&gt;setAdditionalInformation(self::PAYMENT_ID, $payPal[self::PAYMENT_ID]);
+        $payment-&gt;setAdditionalInformation(self::PAYER_EMAIL, $payPal[self::PAYER_EMAIL]);
+    }
+}</code></pre></figure>
 
 <p>(the code sample is from Magento CE v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)</p>
 

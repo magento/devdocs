@@ -643,7 +643,7 @@
   <h3 id="create-the-magento-crontab">Create the Magento crontab</h3>
   <p>Starting with version 2.2, Magento creates a crontab for you. We add the Magento crontab to any configured crontab for the Magento file system owner. In other words, if you already set up crontabs for other extensions or applications, we add the Magento crontab to it.</p>
 
-  <p>The Magento crontab is inside <code>#~ MAGENTO START</code> and <code>#~ MAGENTO END</code> comments in your crontab.</p>
+  <p>The Magento crontab is inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
 
   <p>To create the Magento crontab:</p>
 
@@ -653,33 +653,36 @@
     <li>
       <p>Enter the following command:</p>
 
-      <pre><code>php bin/magento cron:install [--force]
+      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cron:install [--force]
 </code></pre>
+      </div>
     </li>
   </ol>
 
-  <p>Use <code>--force</code> to rewrite an existing Magento crontab.</p>
+  <p>Use <code class="highlighter-rouge">--force</code> to rewrite an existing Magento crontab.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
     <ul>
-      <li><code>magento cron:install</code> does not rewrite an existing crontab inside <code>#~ MAGENTO START</code> and <code>#~ MAGENTO END</code> comments in your crontab.</li>
-      <li><code>magento cron:install --force</code> has no effect on any cron jobs outside the Magento comments.</li>
+      <li><code class="highlighter-rouge">magento cron:install</code> does not rewrite an existing crontab inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</li>
+      <li><code class="highlighter-rouge">magento cron:install --force</code> has no effect on any cron jobs outside the Magento comments.</li>
     </ul>
   </div>
 
   <p>To view the crontab, enter the following command as the Magento file system owner:</p>
 
-  <pre><code>crontab -l
+  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -l
 </code></pre>
+  </div>
 
   <p>A sample follows:</p>
 
-  <pre><code>#~ MAGENTO START
+  <div class="highlighter-rouge"><pre class="highlight"><code>#~ MAGENTO START
 * * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run 2&gt;&amp;1 | grep -v Ran jobs by schedule &gt;&gt; /var/www/html/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/update/cron.php &gt;&gt; /var/www/html/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/html/magento2/var/log/setup.cron.log
 #~ MAGENTO END
 </code></pre>
+  </div>
 
   <p>For more information about cron, including how to remove a crontab and run cron from the command line, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>.</p>
 
@@ -688,8 +691,8 @@
 
   <ul>
     <li>Make sure your file ownership and permissions are set properly</li>
-    <li>We strongly recommend <a href="/guides/v2.2/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from <code>admin</code> to something else</li>
-    <li>Make sure the <a href="/guides/v2.2/config-guide/secy/secy-xframe.html"><code>X-Frame-Option</code> HTTP header</a> is set properly.</li>
+    <li>We strongly recommend <a href="/guides/v2.2/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from <code class="highlighter-rouge">admin</code> to something else</li>
+    <li>Make sure the <a href="/guides/v2.2/config-guide/secy/secy-xframe.html"><code class="highlighter-rouge">X-Frame-Option</code> HTTP header</a> is set properly.</li>
     <li>Take precautions against cross-site scripting (XSS) by <a href="/guides/v2.2/frontend-dev-guide/templates/template-security.html">securing your templates</a>
 <!-- Set up roles and restricted users (Admin) --></li>
   </ul>
@@ -709,7 +712,7 @@
 
   <h4 id="log-rotation">Log rotation</h4>
 
-  <p>The UNIX <code>logrotate</code> utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.</p>
+  <p>The UNIX <code class="highlighter-rouge">logrotate</code> utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.</p>
 
   <p>For more information, see one of the following:</p>
 

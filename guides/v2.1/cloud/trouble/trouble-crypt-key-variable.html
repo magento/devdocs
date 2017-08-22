@@ -1627,7 +1627,7 @@
 <p>This topic discusses solutions to typical issues you might experience with Magento EE encryption key in your environments.</p>
 
 <h3 id="cloud-trouble-nocrypt">Ecryption key not in all environments</h3>
-<p>When creating and setting up your ECE project, as a best practice you should install and deploy Magento across all environments starting with Integration to Staging to Production. During this process, the Magento EE encryption key should have been added as an environment variable to <code>env.php</code> per environment.</p>
+<p>When creating and setting up your ECE project, as a best practice you should install and deploy Magento across all environments starting with Integration to Staging to Production. During this process, the Magento EE encryption key should have been added as an environment variable to <code class="highlighter-rouge">env.php</code> per environment.</p>
 
 <p>All Cloud environments require this encryption key in all three environments or the store will encounter authentication and authorization errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.</p>
 
@@ -1637,23 +1637,24 @@
   <li>
     <p>SSH to each of the Cloud environments: Integration, Staging, and Production.</p>
 
-    <pre><code>magento-cloud environment:ssh
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh
 </code></pre>
+    </div>
   </li>
-  <li>Open <code>app/etc/env.php</code> in a text editor.</li>
-  <li>Verify the existing value of <code>key</code> for <code>crypt</code>. The value should be your <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento EE key</a>.</li>
+  <li>Open <code class="highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
+  <li>Verify the existing value of <code class="highlighter-rouge">key</code> for <code class="highlighter-rouge">crypt</code>. The value should be your <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento EE key</a>.</li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s1">&#39;crypt&#39;</span> <span class="o">=&gt;</span>
-          <span class="k">array</span> <span class="p">(</span>
-            <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;your encryption key&gt;&#39;</span><span class="p">,</span>
-          <span class="p">),</span>
-        <span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">        return array (
+          'crypt' =&gt;
+          array (
+            'key' =&gt; '<span class="nt">&lt;your</span> <span class="na">encryption</span> <span class="na">key</span><span class="nt">&gt;</span>',
+          ),
+        );
         </code></pre></figure>
 
 <ol>
-  <li>If the value is incorrect, add the key value, and save your changes to <code>env.php</code>.</li>
+  <li>If the value is incorrect, add the key value, and save your changes to <code class="highlighter-rouge">env.php</code>.</li>
   <li>Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.</li>
 </ol>
 

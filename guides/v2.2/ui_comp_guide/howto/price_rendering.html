@@ -1247,76 +1247,76 @@ A product can have more than one price shown and taxes may or may not apply to a
 
 <p>The <a href="/guides/v2.2/ui_comp_guide/howto/new_component_declaration.html">XML configuration file</a> for UI components shows the parent-child relationship between different UI components and tells Magento which template files to use when rendering.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
     ...
     <span class="nt">&lt;datasource&gt;</span>
-        <span class="c">&lt;!-- </span>
-<span class="c">            DataProvider should retrieve information about product. In our case will be good to retrieve</span>
-<span class="c">            formatted prices with currency code, etc... and raw prices.</span>
-<span class="c">            So there will be 4 types of prices:</span>
-<span class="c">            {</span>
-<span class="c">                ...</span>
-<span class="c">                final_price: 13,</span>
-<span class="c">                regular_price: 28,</span>
-<span class="c">                formatted: {</span>
-<span class="c">                    final_price: &quot;$ 13&quot;,</span>
-<span class="c">                    regular_price: &quot;$ 28&quot;,</span>
-<span class="c">                },</span>
-<span class="c">                adjustments: {</span>
-<span class="c">                    tax: 12,</span>
-<span class="c">                    formatted: {</span>
-<span class="c">                        tax: &quot;$ 12&quot;</span>
-<span class="c">                    }</span>
-<span class="c">                }</span>
-<span class="c">                ...</span>
-<span class="c">            }</span>
-<span class="c">         </span>
-<span class="c">        --&gt;</span>
-        <span class="nt">&lt;dataProvider</span> <span class="na">class=</span><span class="s">&quot;SomeVendor\SomeModule\Ui\DataProvider\Listing\DataProvider&quot;</span> <span class="na">name=</span><span class="s">&quot;datasource&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- 
+            DataProvider should retrieve information about product. In our case will be good to retrieve
+            formatted prices with currency code, etc... and raw prices.
+            So there will be 4 types of prices:
+            {
+                ...
+                final_price: 13,
+                regular_price: 28,
+                formatted: {
+                    final_price: "$ 13",
+                    regular_price: "$ 28",
+                },
+                adjustments: {
+                    tax: 12,
+                    formatted: {
+                        tax: "$ 12"
+                    }
+                }
+                ...
+            }
+         
+        --&gt;</span>
+        <span class="nt">&lt;dataProvider</span> <span class="na">class=</span><span class="s">"SomeVendor\SomeModule\Ui\DataProvider\Listing\DataProvider"</span> <span class="na">name=</span><span class="s">"datasource"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;settings&gt;</span>
                 <span class="nt">&lt;requestFieldName/&gt;</span>
                 <span class="nt">&lt;primaryFieldName/&gt;</span>
             <span class="nt">&lt;/settings&gt;</span>
         <span class="nt">&lt;/dataProvider&gt;</span>
     <span class="nt">&lt;/datasource&gt;</span>
-    <span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;some_columns&quot;</span> <span class="na">component=</span><span class="s">&quot;SomeVendor_SomeComponent/js/product/list/listing&quot;</span><span class="nt">&gt;</span>
-        <span class="c">&lt;!-- </span>
-<span class="c">            Price columns is composite component (it has children),</span>
-<span class="c">            so it should have possibility to create those children by itself.</span>
-<span class="c">            </span>
-<span class="c">            The structure of prices should be:</span>
-<span class="c">                -- Price Box (collection of all prices)</span>
-<span class="c">                    --- Price (is responsible for specific price information, also price can hold the collection of adjustments)</span>
-<span class="c">                        ---- Adjustment</span>
-<span class="c">         --&gt;</span>
-        <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">component=</span><span class="s">&quot;SomeVendor_SomeComponent/js/product/list/columns/price-box&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;renders&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;prices&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;special_price&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Special Price<span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/js/product/list/columns/final-price<span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;productType&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple<span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;bodyTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/product/price/special_price<span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">"some_columns"</span> <span class="na">component=</span><span class="s">"SomeVendor_SomeComponent/js/product/list/listing"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- 
+            Price columns is composite component (it has children),
+            so it should have possibility to create those children by itself.
+            
+            The structure of prices should be:
+                -- Price Box (collection of all prices)
+                    --- Price (is responsible for specific price information, also price can hold the collection of adjustments)
+                        ---- Adjustment
+         --&gt;</span>
+        <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">component=</span><span class="s">"SomeVendor_SomeComponent/js/product/list/columns/price-box"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"renders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"prices"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"special_price"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Special Price<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/js/product/list/columns/final-price<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"productType"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>simple<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"bodyTmpl"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/product/price/special_price<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sortOrder"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/item&gt;</span>
                                     <span class="c">&lt;!-- Below the collection of all adjustments is listed --&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;tax&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/js/price/adjustment<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tax"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/js/price/adjustment<span class="nt">&lt;/item&gt;</span>
                                         <span class="nt">&lt;/item&gt;</span>
                                     <span class="nt">&lt;/item&gt;</span>
                                 <span class="nt">&lt;/item&gt;</span>
-                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;regular_price&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Regular Price<span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/js/product/list/columns/final-price<span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;bodyTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/product/price/regular_price<span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;productType&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple<span class="nt">&lt;/item&gt;</span>
-                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;tax&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/js/price/adjustment<span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"regular_price"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Regular Price<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/js/product/list/columns/final-price<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"bodyTmpl"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/product/price/regular_price<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sortOrder"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"productType"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>simple<span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tax"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>SomeVendor_SomeComponent/js/price/adjustment<span class="nt">&lt;/item&gt;</span>
                                         <span class="nt">&lt;/item&gt;</span>
                                     <span class="nt">&lt;/item&gt;</span>
                                 <span class="nt">&lt;/item&gt;</span>
@@ -1329,20 +1329,20 @@ A product can have more than one price shown and taxes may or may not apply to a
     <span class="nt">&lt;/columns&gt;</span>
 <span class="nt">&lt;/listing&gt;</span></code></pre></figure>
 
-<p>A good example from the Magento codebase is the Catalog module’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml" target="_blank"><code>widget_recently_viewed.xml</code></a> file.</p>
+<p>A good example from the Magento codebase is the Catalog module’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml" target="_blank"><code class="highlighter-rouge">widget_recently_viewed.xml</code></a> file.</p>
 
 <h3 id="price-box-component">Price box component</h3>
 
-<p>In the following code sample, the <code>price-box</code> component aggregates and creates the <code>price</code> components for a specific product.</p>
+<p>In the following code sample, the <code class="highlighter-rouge">price-box</code> component aggregates and creates the <code class="highlighter-rouge">price</code> components for a specific product.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
-<span class="cm"> * Retrieve array of prices, that should be rendered for specific product</span>
-<span class="cm"> *</span>
-<span class="cm"> * @param {Array} row</span>
-<span class="cm"> * @return {Array}</span>
-<span class="cm"> */</span>
-<span class="nx">getPrices</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">elems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">()</span> <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">()</span> <span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">getObservable</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;elems&#39;</span><span class="p">),</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**
+ * Retrieve array of prices, that should be rendered for specific product
+ *
+ * @param {Array} row
+ * @return {Array}
+ */</span>
+<span class="nl">getPrices</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">elems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">()</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">()</span> <span class="p">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">getObservable</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'elems'</span><span class="p">),</span>
         <span class="nx">result</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">initPrices</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>    
     <span class="nx">result</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">elems</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">elem</span><span class="p">)</span> <span class="p">{</span>
@@ -1352,13 +1352,13 @@ A product can have more than one price shown and taxes may or may not apply to a
     <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
 <span class="p">},</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * Init dynamic price components</span>
-<span class="cm"> *</span>
-<span class="cm"> * @param {Array} row</span>
-<span class="cm"> * @returns {void}</span>
-<span class="cm"> */</span>
-<span class="nx">initPrices</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+<span class="cm">/**
+ * Init dynamic price components
+ *
+ * @param {Array} row
+ * @returns {void}
+ */</span>
+<span class="nx">initPrices</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">prices</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">renders</span><span class="p">.</span><span class="nx">prices</span><span class="p">;</span>
     <span class="nx">_</span><span class="p">.</span><span class="nx">sortBy</span><span class="p">(</span><span class="nx">prices</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">_comparePrices</span><span class="p">);</span>
 
@@ -1377,15 +1377,15 @@ A product can have more than one price shown and taxes may or may not apply to a
 <span class="p">},</span>
 
 
-<span class="cm">/**</span>
-<span class="cm"> * Sort callback to compare prices by sort order</span>
-<span class="cm"> *</span>
-<span class="cm"> * @param {Number} firstPrice</span>
-<span class="cm"> * @param {Number} secondPrice</span>
-<span class="cm"> * @returns {Number}</span>
-<span class="cm"> * @private</span>
-<span class="cm"> */</span>
-<span class="nx">_comparePrices</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">firstPrice</span><span class="p">,</span> <span class="nx">secondPrice</span><span class="p">)</span> <span class="p">{</span>
+<span class="cm">/**
+ * Sort callback to compare prices by sort order
+ *
+ * @param {Number} firstPrice
+ * @param {Number} secondPrice
+ * @returns {Number}
+ * @private
+ */</span>
+<span class="nx">_comparePrices</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">firstPrice</span><span class="p">,</span> <span class="nx">secondPrice</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">firstPrice</span><span class="p">.</span><span class="nx">sortOrder</span> <span class="o">&lt;</span> <span class="nx">secondPrice</span><span class="p">.</span><span class="nx">sortOrder</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
@@ -1397,58 +1397,58 @@ A product can have more than one price shown and taxes may or may not apply to a
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>The preceding code sample is based on the Catalog module’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js" target="_blank"><code>price-box</code> component</a>.</p>
+<p>The preceding code sample is based on the Catalog module’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js" target="_blank"><code class="highlighter-rouge">price-box</code> component</a>.</p>
 
 <h3 id="price-component">Price component</h3>
 
-<p>In our example, each price is configured to have its own template, but they all share a common price component called <code>final-price</code>.
+<p>In our example, each price is configured to have its own template, but they all share a common price component called <code class="highlighter-rouge">final-price</code>.
 This component is defined in the following code sample:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
-<span class="cm"> * Retrieve specific template</span>
-<span class="cm"> *</span>
-<span class="cm"> * @returns {String}</span>
-<span class="cm"> */</span>
-<span class="nx">getBody</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**
+ * Retrieve specific template
+ *
+ * @returns {String}
+ */</span>
+<span class="nl">getBody</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">bodyTmpl</span><span class="p">;</span>
 <span class="p">},</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * Check if product has special price.</span>
-<span class="cm"> *</span>
-<span class="cm"> * @param {Object} row</span>
-<span class="cm"> * @return {HTMLElement} special price html</span>
-<span class="cm"> */</span>
-<span class="nx">hasSpecialPrice</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">row</span><span class="p">[</span><span class="s1">&#39;price_info&#39;</span><span class="p">][</span><span class="s1">&#39;regular_price&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">row</span><span class="p">[</span><span class="s1">&#39;price_info&#39;</span><span class="p">][</span><span class="s1">&#39;final_price&#39;</span><span class="p">];</span>
+<span class="cm">/**
+ * Check if product has special price.
+ *
+ * @param {Object} row
+ * @return {HTMLElement} special price html
+ */</span>
+<span class="nx">hasSpecialPrice</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">row</span><span class="p">[</span><span class="s1">'price_info'</span><span class="p">][</span><span class="s1">'regular_price'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">row</span><span class="p">[</span><span class="s1">'price_info'</span><span class="p">][</span><span class="s1">'final_price'</span><span class="p">];</span>
 <span class="p">},</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * Get product regular price.</span>
-<span class="cm"> *</span>
-<span class="cm"> * @param {Object} row</span>
-<span class="cm"> * @return {HTMLElement} regular price html</span>
-<span class="cm"> */</span>
-<span class="nx">getRegularPrice</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">row</span><span class="p">[</span><span class="s1">&#39;price_info&#39;</span><span class="p">][</span><span class="s1">&#39;formatted&#39;</span><span class="p">][</span><span class="s1">&#39;regular_price&#39;</span><span class="p">];</span>
+<span class="cm">/**
+ * Get product regular price.
+ *
+ * @param {Object} row
+ * @return {HTMLElement} regular price html
+ */</span>
+<span class="nx">getRegularPrice</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">row</span><span class="p">[</span><span class="s1">'price_info'</span><span class="p">][</span><span class="s1">'formatted'</span><span class="p">][</span><span class="s1">'regular_price'</span><span class="p">];</span>
 <span class="p">},</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * Get product final price.</span>
-<span class="cm"> *</span>
-<span class="cm"> * @param {Object} row</span>
-<span class="cm"> * @return {HTMLElement} final price html</span>
-<span class="cm"> */</span>
-<span class="nx">getPrice</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">row</span><span class="p">[</span><span class="s1">&#39;price_info&#39;</span><span class="p">][</span><span class="s1">&#39;formatted&#39;</span><span class="p">][</span><span class="s1">&#39;final_price&#39;</span><span class="p">];</span>
+<span class="cm">/**
+ * Get product final price.
+ *
+ * @param {Object} row
+ * @return {HTMLElement} final price html
+ */</span>
+<span class="nx">getPrice</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">row</span><span class="p">[</span><span class="s1">'price_info'</span><span class="p">][</span><span class="s1">'formatted'</span><span class="p">][</span><span class="s1">'final_price'</span><span class="p">];</span>
 <span class="p">},</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * Get all price adjustments.</span>
-<span class="cm"> *</span>
-<span class="cm"> * @returns {Object}</span>
-<span class="cm"> */</span>
-<span class="nx">getAdjustments</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="cm">/**
+ * Get all price adjustments.
+ *
+ * @returns {Object}
+ */</span>
+<span class="nx">getAdjustments</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">adjustments</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">();</span>
 
     <span class="nx">_</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">adjustments</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">adjustment</span><span class="p">)</span> <span class="p">{</span>
@@ -1458,48 +1458,48 @@ This component is defined in the following code sample:</p>
     <span class="k">return</span> <span class="nx">adjustments</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>This code sample is based on the Catalog module’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js" target="_blank"><code>final-price</code> component</a>.</p>
+<p>This code sample is based on the Catalog module’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js" target="_blank"><code class="highlighter-rouge">final-price</code> component</a>.</p>
 
 <h3 id="price-template">Price template</h3>
 
 <p>The following code sample is for the special price template.
-It calls the <code>hasSpecialPrice</code> function to check if a special price exists for a product.</p>
+It calls the <code class="highlighter-rouge">hasSpecialPrice</code> function to check if a special price exists for a product.</p>
 
-<p>If a product has a special price, it calls <code>getPrice</code> to get the value and renders any adjustments configured for the price.</p>
+<p>If a product has a special price, it calls <code class="highlighter-rouge">getPrice</code> to get the value and renders any adjustments configured for the price.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;if</span> <span class="na">args=</span><span class="s">&quot;isSalable($row()) &amp;&amp; hasSpecialPrice($row())&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;special-price&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;price-container&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;span</span> <span class="na">if=</span><span class="s">&quot;label&quot;</span>
-                  <span class="na">class=</span><span class="s">&quot;price-label&quot;</span>
-                  <span class="na">text=</span><span class="s">&quot;label&quot;</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;if</span> <span class="na">args=</span><span class="s">"isSalable($row()) &amp;&amp; hasSpecialPrice($row())"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"special-price"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"price-container"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">if=</span><span class="s">"label"</span>
+                  <span class="na">class=</span><span class="s">"price-label"</span>
+                  <span class="na">text=</span><span class="s">"label"</span><span class="nt">/&gt;</span>
 
-            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;price-wrapper&quot;</span>
-                  <span class="na">css=</span><span class="s">&quot;priceWrapperCssClasses&quot;</span>
-                  <span class="na">attr=</span><span class="s">&quot;priceWrapperAttr&quot;</span>
-                  <span class="na">data-price-amount=</span><span class="s">&quot;&quot;</span>
-                  <span class="na">data-price-type=</span><span class="s">&quot;finalPrice&quot;</span>
-                  <span class="na">html=</span><span class="s">&quot;getPrice($row())&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"price-wrapper"</span>
+                  <span class="na">css=</span><span class="s">"priceWrapperCssClasses"</span>
+                  <span class="na">attr=</span><span class="s">"priceWrapperAttr"</span>
+                  <span class="na">data-price-amount=</span><span class="s">""</span>
+                  <span class="na">data-price-type=</span><span class="s">"finalPrice"</span>
+                  <span class="na">html=</span><span class="s">"getPrice($row())"</span><span class="nt">/&gt;</span>
 
-            <span class="nt">&lt;each</span> <span class="na">args=</span><span class="s">&quot;data: getAdjustments(), as: &#39;$adj&#39;&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;render</span> <span class="na">args=</span><span class="s">&quot;$adj.getBody()&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;each</span> <span class="na">args=</span><span class="s">"data: getAdjustments(), as: '$adj'"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;render</span> <span class="na">args=</span><span class="s">"$adj.getBody()"</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;/each&gt;</span>
         <span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/if&gt;</span></code></pre></figure>
 
-<p>This example is based on the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html" target="_blank"><code>special_price.html</code> template file</a> for Magento Catalog.</p>
+<p>This example is based on the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html" target="_blank"><code class="highlighter-rouge">special_price.html</code> template file</a> for Magento Catalog.</p>
 
 <h3 id="tax-template">Tax template</h3>
 
 <p>The following is sample template code that is rendered for the tax adjustment component:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;if</span> <span class="na">args=</span><span class="s">&quot;displayBothPrices()&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;price-wrapper price-excluding-tax&quot;</span>
-          <span class="na">attr=</span><span class="s">&quot;&#39;data-label&#39;: $t(&#39;Excl. Tax&#39;)&quot;</span>
-          <span class="na">data-price-amount=</span><span class="s">&quot;&quot;</span>
-          <span class="na">data-price-type=</span><span class="s">&quot;basePrice&quot;</span>
-          <span class="na">html=</span><span class="s">&quot;getTax($row())&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- You can implement self::getTax function how you want --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;if</span> <span class="na">args=</span><span class="s">"displayBothPrices()"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"price-wrapper price-excluding-tax"</span>
+          <span class="na">attr=</span><span class="s">"'data-label': $t('Excl. Tax')"</span>
+          <span class="na">data-price-amount=</span><span class="s">""</span>
+          <span class="na">data-price-type=</span><span class="s">"basePrice"</span>
+          <span class="na">html=</span><span class="s">"getTax($row())"</span><span class="nt">&gt;</span><span class="c">&lt;!-- You can implement self::getTax function how you want --&gt;</span>
     <span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/if&gt;</span></code></pre></figure>
 

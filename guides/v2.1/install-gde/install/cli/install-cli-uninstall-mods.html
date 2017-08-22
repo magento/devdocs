@@ -825,23 +825,26 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre>
+      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
       <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
       <p>bash shell example for CentOS:</p>
 
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre>
+      </div>
     </li>
   </ol>
 
@@ -858,11 +861,12 @@
   <h2 id="instgde-cli-uninst-mod-uninst">Uninstall modules</h2>
   <p>Command usage:</p>
 
-  <pre><code>magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
 {ModuleName} ... {ModuleName}
 </code></pre>
+  </div>
 
-  <p>where <code>{ModuleName}</code> specifies the module name in <code>&lt;VendorName&gt;_&lt;ModuleName&gt;</code> format. For example, the Magento Customer module name is <code>Magento_Customer</code>. To get a list of module names, enter <code>magento module:status</code></p>
+  <p>where <code class="highlighter-rouge"><span class="p">{</span><span class="err">ModuleName</span><span class="p">}</span></code> specifies the module name in <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ModuleName&gt;</code> format. For example, the Magento Customer module name is <code class="highlighter-rouge">Magento_Customer</code>. To get a list of module names, enter <code class="highlighter-rouge">magento module:status</code></p>
 
   <p>The module uninstall command performs the following tasks:</p>
 
@@ -912,14 +916,14 @@
 </table>
     </li>
     <li>
-      <p>If <code>--remove-data</code> is specified, removes the database schema and data defined in the module’s <code>Uninstall</code> classes.</p>
+      <p>If <code class="highlighter-rouge">--remove-data</code> is specified, removes the database schema and data defined in the module’s <code class="highlighter-rouge">Uninstall</code> classes.</p>
 
-      <p>For each specified module to uninstall, invokes the <code>uninstall</code> method in its <code>Uninstall</code> class. This class must inherit from <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank">Magento\Framework\Setup\UninstallInterface</a>.</p>
+      <p>For each specified module to uninstall, invokes the <code class="highlighter-rouge">uninstall</code> method in its <code class="highlighter-rouge">Uninstall</code> class. This class must inherit from <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank">Magento\Framework\Setup\UninstallInterface</a>.</p>
     </li>
-    <li>Removes the specified modules from the <code>setup_module</code> database table.</li>
+    <li>Removes the specified modules from the <code class="highlighter-rouge">setup_module</code> database table.</li>
     <li>Removes the specified modules from the module list in the <a href="/guides/v2.1/config-guide/config/config-php.html">deployment configuration</a>.</li>
     <li>
-      <p>Removes code from the codebase using <code>composer remove</code>.</p>
+      <p>Removes code from the codebase using <code class="highlighter-rouge">composer remove</code>.</p>
 
       <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
@@ -928,25 +932,27 @@
     </li>
     <li>Cleans the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>.</li>
     <li>Updates generated classes.</li>
-    <li>If <code>--clear-static-content</code> is specified, cleans <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.</li>
+    <li>If <code class="highlighter-rouge">--clear-static-content</code> is specified, cleans <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.</li>
     <li>Takes the store out of maintenance mode.</li>
   </ol>
 
   <p>For example, if you attempt to uninstall a module that another module depends on, the following message displays:</p>
 
-  <pre><code>magento module:uninstall Magento_SampleMinimal
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento module:uninstall Magento_SampleMinimal
 	Cannot uninstall module 'Magento_SampleMinimal' because the following module(s) depend on it:
     Magento_SampleModifyContent
 </code></pre>
+  </div>
 
-  <p>One alternative is to uninstall both modules after backing up the Magento module file system, <code>pub/media</code> files, and database tables but <em>not</em> removing the module’s <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> or data:</p>
+  <p>One alternative is to uninstall both modules after backing up the Magento module file system, <code class="highlighter-rouge">pub/media</code> files, and database tables but <em>not</em> removing the module’s <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> or data:</p>
 
-  <pre><code>magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
 </code></pre>
+  </div>
 
   <p>Messages similar to the following display:</p>
 
-  <pre><code>You are about to remove code and/or database tables. Are you sure?[y/N]y
+  <div class="highlighter-rouge"><pre class="highlight"><code>You are about to remove code and/or database tables. Are you sure?[y/N]y
 Enabling maintenance mode
 Code backup is starting...
 Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
@@ -977,6 +983,7 @@ Generated classes cleared successfully.
 Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option. Failure to clear static view files might cause display issues in the Admin and storefront.
 Disabling maintenance mode
 </code></pre>
+  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -986,10 +993,11 @@ Disabling maintenance mode
   <h2 id="instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</h2>
   <p>To restore the Magento codebase to the state at which you backed it up, use the following command:</p>
 
-  <pre><code>magento setup:rollback [-c|--code-file="&lt;filename&gt;"] [-m|--media-file="&lt;filename&gt;"] [-d|--db-file="&lt;filename&gt;"]
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:rollback [-c|--code-file="&lt;filename&gt;"] [-m|--media-file="&lt;filename&gt;"] [-d|--db-file="&lt;filename&gt;"]
 </code></pre>
+  </div>
 
-  <p>where <code>&lt;filename&gt;</code> is the name of the backup file located in <code>&lt;your Magento install dir&gt;/var/backups</code>. To display a list of backup files, enter <code>magento info:backups:list</code></p>
+  <p>where <code class="highlighter-rouge">&lt;filename&gt;</code> is the name of the backup file located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/backups</code>. To display a list of backup files, enter <code class="highlighter-rouge">magento info:backups:list</code></p>
 
   <div class="bs-callout bs-callout-warning">
     <p>This command deletes the specified files or the database before restoring them. (For example, the <code>--media-file</code> option deletes media assets under <code>pub/media</code> before restoring from the specified rollback file.) Make sure you have made no changes to the file system or database that you want to keep before using this command.</p>
@@ -1008,7 +1016,7 @@ Disabling maintenance mode
     <li>
       <p>If you specify a code rollback file:</p>
 
-      <p>a.	Verifies the rollback destination locations are writable (note that the <code>pub/static</code> and <code>var</code> folders are ignored).</p>
+      <p>a.	Verifies the rollback destination locations are writable (note that the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var</code> folders are ignored).</p>
 
       <p>b.	Deletes all files and directories under your Magento 2 installation directory.</p>
 
@@ -1026,7 +1034,7 @@ Disabling maintenance mode
 
       <p>a.	Verifies the rollback destination locations are writable.</p>
 
-      <p>b.	Deletes all files and directories under <code>pub/media</code></p>
+      <p>b.	Deletes all files and directories under <code class="highlighter-rouge">pub/media</code></p>
 
       <p>c.	Extracts the archive file to the destination locations.</p>
     </li>
@@ -1039,24 +1047,27 @@ Disabling maintenance mode
     <li>
       <p>Display a list of backups:</p>
 
-      <pre><code>magento info:backups:list
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento info:backups:list
 </code></pre>
+      </div>
     </li>
     <li>
-      <p>Restore a file backup named <code>1433876616_filesystem.tgz</code>:</p>
+      <p>Restore a file backup named <code class="highlighter-rouge">1433876616_filesystem.tgz</code>:</p>
 
-      <pre><code>magento setup:rollback --code-file="1433876616_filesystem.tgz"
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:rollback --code-file="1433876616_filesystem.tgz"
 </code></pre>
+      </div>
 
       <p>Messages similar to the following display:</p>
 
-      <pre><code>Enabling maintenance mode
+      <div class="highlighter-rouge"><pre class="highlight"><code>Enabling maintenance mode
 Code rollback is starting ...
 Code rollback filename: 1433876616_filesystem.tgz
 Code rollback file path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
 [SUCCESS]: Code rollback has completed successfully.
 Disabling maintenance mode
 </code></pre>
+      </div>
     </li>
   </ul>
 

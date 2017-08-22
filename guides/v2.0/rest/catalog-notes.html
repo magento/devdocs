@@ -595,9 +595,9 @@
 
 			<h2 id="post-v1categories">POST V1/categories</h2>
 
-<p>When you create a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> from Admin, you have the option to configure display and <span term-uuid="ae8f7f2b-ddfb-41ed-bec3-bed191406fdd" class="glossary-term" data-toggle="popover">search engine optimization</span> settings. To configure these settings using REST, you can specify the following parameters as <code>attribute_code</code> values:</p>
+<p>When you create a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> from Admin, you have the option to configure display and <span term-uuid="ae8f7f2b-ddfb-41ed-bec3-bed191406fdd" class="glossary-term" data-toggle="popover">search engine optimization</span> settings. To configure these settings using REST, you can specify the following parameters as <code class="highlighter-rouge">attribute_code</code> values:</p>
 
-<pre><code>all_children
+<div class="highlighter-rouge"><pre class="highlight"><code>all_children
 children
 children_count
 custom_apply_to_products
@@ -622,42 +622,43 @@ path_in_store
 url_key
 url_path
 </code></pre>
+</div>
 
 <p>Third-party modules may define other custom attributes.</p>
 
-<p>The following example uses the <code>POST V1/categories</code> call to assign four custom attributes to the “My New Category” category.</p>
+<p>The following example uses the <code class="highlighter-rouge">POST V1/categories</code> call to assign four custom attributes to the “My New Category” category.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-<span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;My New Category&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;is_active&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nt">&quot;include_in_menu&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;custom_attributes&quot;</span><span class="p">:[</span>
-         <span class="p">{</span>
-            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;description&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;Women category description&quot;</span>
-         <span class="p">},</span>
-         <span class="p">{</span>
-            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;meta_title&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;Women meta title&quot;</span>
-         <span class="p">},</span>
-         <span class="p">{</span>
-            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;meta_keywords&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;Women meta keywords&quot;</span>
-         <span class="p">},</span>
-         <span class="p">{</span>
-            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;meta_description&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;Women meta description&quot;</span>
-         <span class="p">},</span>
-         <span class="p">{</span>
-            <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span><span class="s2">&quot;url_key&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;women-test-key&quot;</span>
-         <span class="p">}</span>
-      <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+</span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My New Category"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"custom_attributes"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"description"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Women category description"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"meta_title"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Women meta title"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"meta_keywords"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Women meta keywords"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"meta_description"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Women meta description"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"url_key"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"women-test-key"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 
 		</div>

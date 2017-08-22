@@ -779,9 +779,9 @@
 
 <ul>
   <li>
-    <p>New Magento DevBox installations: Files are shared in the <code>shared/webroot</code> folder relative to your Magento installation root folder.</p>
+    <p>New Magento DevBox installations: Files are shared in the <code class="highlighter-rouge">shared/webroot</code> folder relative to your Magento installation root folder.</p>
 
-    <p>The Magento installation root folder is typically a subfolder of the folder in which you extracted the <code>.zip</code> file you download from Magento.</p>
+    <p>The Magento installation root folder is typically a subfolder of the folder in which you extracted the <code class="highlighter-rouge">.zip</code> file you download from Magento.</p>
   </li>
   <li>
     <p>If you use an existing Magento installation with DevBox: Files are shared in the location to which you downloaded Magento.</p>
@@ -792,7 +792,7 @@
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Magento authentication prerequisites </h2><div class="collapsible-content"><div>
 
   <h2 id="auth-overview">Overview of Magento authentication</h2>
-  <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.</p>
+  <p>The <code class="highlighter-rouge">repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.</p>
 
   <p>To get your authentication keys:</p>
 
@@ -833,10 +833,10 @@
     <li>To delete keys: Click <strong>Delete</strong>.</li>
   </ul>
 
-  <p>You cannot delete or disable keys you created by signing in to <code>magento.com</code>. To manage those keys:</p>
+  <p>You cannot delete or disable keys you created by signing in to <code class="highlighter-rouge">magento.com</code>. To manage those keys:</p>
 
   <ol>
-    <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code>magento.com</code> account.</li>
+    <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code class="highlighter-rouge">magento.com</code> account.</li>
     <li>In the top navigation bar, click <strong>Connect</strong>.</li>
     <li>
       <p>In the left pane, click <strong>Secure keys</strong>.</p>
@@ -851,13 +851,13 @@
 <p id="devbox-download"></p>
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">How to download Magento code </h2><div class="collapsible-content"><p>This section applies to you if you use an existing Magento installation with DevBox. This means you first download the Magento software using either <a href="/guides/v2.1/install-gde/prereq/integrator_install.html">Composer</a> or a <a href="/guides/v2.1/install-gde/prereq/zip_install.html">compressed archive</a> but you don’t <em>install</em> the software.</p>
 
-<p>Downloading a compressed archive has potential issues on the Mac OS, which extracts known compressed file types like <code>.zip</code> to a folder. The folder contains files that have to be copied in a particular way; otherwise, the Magento DevBox doesn’t perform properly.</p>
+<p>Downloading a compressed archive has potential issues on the Mac OS, which extracts known compressed file types like <code class="highlighter-rouge">.zip</code> to a folder. The folder contains files that have to be copied in a particular way; otherwise, the Magento DevBox doesn’t perform properly.</p>
 
-<p>If you download a compressed archive on the Mac OS, you must make sure to copy <em>all</em> of the Magento code to an empty folder. In particular, you must copy all Apache <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration files</a>, named <code>.htaccess</code>, to the folder. <code>.htaccess</code> files are located in several Magento directories, including in the root folder.</p>
+<p>If you download a compressed archive on the Mac OS, you must make sure to copy <em>all</em> of the Magento code to an empty folder. In particular, you must copy all Apache <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration files</a>, named <code class="highlighter-rouge">.htaccess</code>, to the folder. <code class="highlighter-rouge">.htaccess</code> files are located in several Magento directories, including in the root folder.</p>
 
-<p>Failure to copy <code>.htaccess</code> files causes the Magento application to function incorrectly because URL redirects won’t work.</p>
+<p>Failure to copy <code class="highlighter-rouge">.htaccess</code> files causes the Magento application to function incorrectly because URL redirects won’t work.</p>
 
-<p>When you download a file on the Mac OS, the file is usually located in the <code>/Users/&lt;name&gt;/Downloads</code> folder. If you download a <code>.zip</code> file, it’s usually extracted to a subfolder like the following:</p>
+<p>When you download a file on the Mac OS, the file is usually located in the <code class="highlighter-rouge">/Users/&lt;name&gt;/Downloads</code> folder. If you download a <code class="highlighter-rouge">.zip</code> file, it’s usually extracted to a subfolder like the following:</p>
 
 <pre class="no-copy">
 /Users/&lt;name&gt;/Downloads/&lt;Magento folder name&gt;
@@ -870,19 +870,21 @@ mkdir -p &lt;path&gt;
 cp -r /Users/&lt;name&gt;/Downloads/&lt;Magento folder name&gt; &lt;path&gt;</pre>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Don’t use arguments like <code>/*</code> in the <code>cp</code> command because hidden files like <code>.htaccess</code> won’t copy.</p>
+  <p>Don’t use arguments like <code class="highlighter-rouge">/*</code> in the <code class="highlighter-rouge">cp</code> command because hidden files like <code class="highlighter-rouge">.htaccess</code> won’t copy.</p>
 </div>
 
-<p>For example, to copy Magento CE 2.1.3 code to a new folder named <code>/Users/me/Applications/Magento</code>, use the following commands:</p>
+<p>For example, to copy Magento CE 2.1.3 code to a new folder named <code class="highlighter-rouge">/Users/me/Applications/Magento</code>, use the following commands:</p>
 
-<pre><code>mkdir -p /Users/me/Applications/Magento
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p /Users/me/Applications/Magento
 cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/Applications/Magento
 </code></pre>
+</div>
 
 <p>Double-check to make sure the hidden files were copied:</p>
 
-<pre><code>ls -al /Users/me/Applications/Magento
+<div class="highlighter-rouge"><pre class="highlight"><code>ls -al /Users/me/Applications/Magento
 </code></pre>
+</div>
 
 <p>The first files listed should be:</p>
 
@@ -920,7 +922,7 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 <p>Click a <a href="#devbox-sys-req">supported operating system</a>.</p>
 
 <h4 id="local-project-path-existing-installation-only">Local Project Path (existing installation only)</h4>
-<p>Enter the path to install the Magento application. The simplest option is to specify an absolute file system path like <code>/Users/me/magento</code>. The folder must already exist.</p>
+<p>Enter the path to install the Magento application. The simplest option is to specify an absolute file system path like <code class="highlighter-rouge">/Users/me/magento</code>. The folder must already exist.</p>
 
 <p>See <a href="#devbox-download">How to download Magento code</a>.</p>
 
@@ -934,7 +936,7 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 <h4 id="access-keys">Access Keys</h4>
 <p>Enter your Magento public and private authentication keys in the provided fields.</p>
 
-<p>Click <strong>Take Me to My Access Keys</strong> to log in to <code>magento.com</code> and get or generate <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
+<p>Click <strong>Take Me to My Access Keys</strong> to log in to <code class="highlighter-rouge">magento.com</code> and get or generate <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
 </div></div>
 
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Advanced options for new installations </h2><div class="collapsible-content"><p>To provide you more control over your Magento installation, we enable you to choose the following advanced options:</p>
@@ -999,17 +1001,19 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 </div></div>
 
 <h2 id="devbox-root-dir">Run scripts</h2>
-<p>After you finish the DevBox wizard, you’re prompted to download a <code>.zip</code> file to any folder on your system. When you extract the <code>.zip</code> file, your operating system might create another folder.</p>
+<p>After you finish the DevBox wizard, you’re prompted to download a <code class="highlighter-rouge">.zip</code> file to any folder on your system. When you extract the <code class="highlighter-rouge">.zip</code> file, your operating system might create another folder.</p>
 
-<p>In the following example, the user downloaded <code>build-18c4e4d3c5a541f37e9cffd35f1bf74e.zip</code> to a <code>C:\magento</code> folder on Windows. Extracting the <code>.zip</code> created a subfolder.</p>
+<p>In the following example, the user downloaded <code class="highlighter-rouge">build-18c4e4d3c5a541f37e9cffd35f1bf74e.zip</code> to a <code class="highlighter-rouge">C:\magento</code> folder on Windows. Extracting the <code class="highlighter-rouge">.zip</code> created a subfolder.</p>
 
-<pre><code>C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e
+<div class="highlighter-rouge"><pre class="highlight"><code>C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e
 </code></pre>
+</div>
 
 <p>An equivalent folder on Mac OS follows:</p>
 
-<pre><code>/Users/me/Downloads/build-18c4e4d3c5a541f37e9cffd35f1bf74e
+<div class="highlighter-rouge"><pre class="highlight"><code>/Users/me/Downloads/build-18c4e4d3c5a541f37e9cffd35f1bf74e
 </code></pre>
+</div>
 
 <p>The preceding sample paths are referred to as the <em>DevBox root folder</em>.</p>
 
@@ -1018,24 +1022,24 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 <p>The following DevBox scripts and configuration files are located in the root folder:</p>
 
 <ul>
-  <li><code>m2devbox-init.[bat|sh]</code> which starts the DevBox installation.</li>
+  <li><code class="highlighter-rouge">m2devbox-init.[bat|sh]</code> which starts the DevBox installation.</li>
   <li>
-    <p><code>m2devbox-reset.[bat|sh]</code> which restarts the DevBox installation.</p>
+    <p><code class="highlighter-rouge">m2devbox-reset.[bat|sh]</code> which restarts the DevBox installation.</p>
 
     <p>You can run this script, for example, after you stop and start your computer or Docker. DevBox assigns new ports to services. You can do the following:</p>
 
     <ul>
-      <li>To set static listen ports that don’t change every time you restart a container, see <a href="#devbox-static-port">Set static listen ports</a> <em>before</em> you run <code>m2devbox-init.[bat|sh]</code></li>
+      <li>To set static listen ports that don’t change every time you restart a container, see <a href="#devbox-static-port">Set static listen ports</a> <em>before</em> you run <code class="highlighter-rouge">m2devbox-init.[bat|sh]</code></li>
       <li>To find the listen ports currently being used, see <a href="/guides/v2.1/install-gde/docker/docker-commands.html#cloud-docker-cmds-stopstart">Stop, start, restart, and view port mappings</a>.</li>
     </ul>
   </li>
   <li>
-    <p><code>docker-compose.yml</code> DevBox configuration file.</p>
+    <p><code class="highlighter-rouge">docker-compose.yml</code> DevBox configuration file.</p>
 
     <p>To set static listen ports so you don’t have to reconfigure PhpStorm every time you start DevBox, see <a href="#devbox-static-port">Set static ports</a>.</p>
   </li>
-  <li><em>Windows only</em>: <code>m2devbox-unison-sync.bat</code>, which runs Unison file synchronization. You should not run this script by itself; one of the other scripts starts it automatically.</li>
-  <li><em>Mac OS only</em>: <code>m2devbox-debug.sh</code>, which opens an SSH tunnel to the <span term-uuid="57f1b0dc-1341-466d-a685-e0dbf5a3b713" class="glossary-term" data-toggle="popover">Docker</span> container so PhpStorm can connect to it.</li>
+  <li><em>Windows only</em>: <code class="highlighter-rouge">m2devbox-unison-sync.bat</code>, which runs Unison file synchronization. You should not run this script by itself; one of the other scripts starts it automatically.</li>
+  <li><em>Mac OS only</em>: <code class="highlighter-rouge">m2devbox-debug.sh</code>, which opens an SSH tunnel to the <span term-uuid="57f1b0dc-1341-466d-a685-e0dbf5a3b713" class="glossary-term" data-toggle="popover">Docker</span> container so PhpStorm can connect to it.</li>
 </ul>
 
 <div class="bs-callout bs-callout-info">
@@ -1045,26 +1049,27 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 </div>
 
 <h3 id="devbox-static-port">Set static listen ports</h3>
-<p>By default, every time you start a Docker container, all listen ports are reassigned randomly. To cause DevBox to use the same listen ports every time you restart, you must modify <code>docker-compose.yml</code> <em>before you initialize</em> DevBox for the first time.</p>
+<p>By default, every time you start a Docker container, all listen ports are reassigned randomly. To cause DevBox to use the same listen ports every time you restart, you must modify <code class="highlighter-rouge">docker-compose.yml</code> <em>before you initialize</em> DevBox for the first time.</p>
 
 <p>To set static listen ports:</p>
 
 <ol>
   <li>
-    <p>Open <code>docker-compose.yml</code> in a text editor.</p>
+    <p>Open <code class="highlighter-rouge">docker-compose.yml</code> in a text editor.</p>
 
     <p>It’s located in the root directory to which you downloaded DevBox.</p>
   </li>
-  <li>Locate the <code>ports:</code> section.</li>
+  <li>Locate the <code class="highlighter-rouge">ports:</code> section.</li>
   <li>
-    <p>Precede the default listen port with a free port number followed by <code>:</code></p>
+    <p>Precede the default listen port with a free port number followed by <code class="highlighter-rouge">:</code></p>
 
     <p>An example follows.</p>
 
-    <pre><code>ports:
+    <div class="highlighter-rouge"><pre class="highlight"><code>ports:
    - "12345:80" 
    - "54321:22"
 </code></pre>
+    </div>
 
     <p>The preceding example causes the web container to listen on port 12345 and SSH to listen on port 54321.</p>
 
@@ -1072,7 +1077,7 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
       <p>Make sure the ports you assign to DevBox are not used by another process.</p>
     </div>
   </li>
-  <li>Save your changes to <code>docker-compose.yml</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="highlighter-rouge">docker-compose.yml</code> and exit the text editor.</li>
 </ol>
 
 <h4 id="next-step">Next step</h4>

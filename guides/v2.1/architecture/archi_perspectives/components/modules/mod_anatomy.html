@@ -478,40 +478,40 @@
 
 <ul>
   <li>
-    <p><code>/Block</code></p>
+    <p><code class="highlighter-rouge">/Block</code></p>
   </li>
   <li>
-    <p><code>/Controller</code></p>
+    <p><code class="highlighter-rouge">/Controller</code></p>
   </li>
   <li>
-    <p><code>/etc</code></p>
+    <p><code class="highlighter-rouge">/etc</code></p>
   </li>
   <li>
-    <p><code>/Helper</code></p>
+    <p><code class="highlighter-rouge">/Helper</code></p>
   </li>
   <li>
-    <p><code>/Model</code></p>
+    <p><code class="highlighter-rouge">/Model</code></p>
   </li>
   <li>
-    <p><code>/Setup</code></p>
+    <p><code class="highlighter-rouge">/Setup</code></p>
   </li>
 </ul>
 
 <h3 id="block">Block</h3>
 
-<p><i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> (<code>PHTML</code> files).</p>
+<p><i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> (<code class="highlighter-rouge">PHTML</code> files).</p>
 
 <h3 id="controller">Controller</h3>
 
-<p><i>Controllers</i> represent all business logic actions for the given request. These actions include <code>dispatch()</code>, <code>preDispatch()</code>, <code>postDispatch()</code> methods and delegate commands to other parts of the system. Controllers correspond to the Controller portion of the Model-View-Controller model.</p>
+<p><i>Controllers</i> represent all business logic actions for the given request. These actions include <code class="highlighter-rouge">dispatch()</code>, <code class="highlighter-rouge">preDispatch()</code>, <code class="highlighter-rouge">postDispatch()</code> methods and delegate commands to other parts of the system. Controllers correspond to the Controller portion of the Model-View-Controller model.</p>
 
 <h3 id="etc">/etc</h3>
 
-<p>This directory contains the XML files that declare and configure behavior of all modules. Each module must have a <code>config.xml</code> file, where  all models, routers, blocks, helpers are declared.</p>
+<p>This directory contains the XML files that declare and configure behavior of all modules. Each module must have a <code class="highlighter-rouge">config.xml</code> file, where  all models, routers, blocks, helpers are declared.</p>
 
-<p>Optionally, this folder could have <code>adminhtml.xml</code> (grant permissions for your tabs/sections in server-side menus) and <code>system.xml</code> (creates this new section or specifies where it should be displayed in the existing one).</p>
+<p>Optionally, this folder could have <code class="highlighter-rouge">adminhtml.xml</code> (grant permissions for your tabs/sections in server-side menus) and <code class="highlighter-rouge">system.xml</code> (creates this new section or specifies where it should be displayed in the existing one).</p>
 
-<p>Magento 2.x looks for configuration information for each module in that module’s ‘/etc’ directory. Depending on the purpose of your module, it might contain the following configuration files in its <code>/etc</code> directory:</p>
+<p>Magento 2.x looks for configuration information for each module in that module’s ‘/etc’ directory. Depending on the purpose of your module, it might contain the following configuration files in its <code class="highlighter-rouge">/etc</code> directory:</p>
 
 <ul>
   <li>
@@ -555,7 +555,7 @@
   </li>
 </ul>
 
-<p>Configuration files that are in the top level of that module’s <code>/etc</code> directory are global to that component. Configuration files placed in subdirectories (<code>adminhtml</code>, <code>frontend</code>, <code>webapi_rest</code>, <code>webapi_soap</code>, <code>crontab</code>) apply only to those respective functional areas.</p>
+<p>Configuration files that are in the top level of that module’s <code class="highlighter-rouge">/etc</code> directory are global to that component. Configuration files placed in subdirectories (<code class="highlighter-rouge">adminhtml</code>, <code class="highlighter-rouge">frontend</code>, <code class="highlighter-rouge">webapi_rest</code>, <code class="highlighter-rouge">webapi_soap</code>, <code class="highlighter-rouge">crontab</code>) apply only to those respective functional areas.</p>
 
 <p>The specific set of configuration files that your module requires depends on the module’s purpose and the Magento area in which it functions.</p>
 
@@ -563,7 +563,7 @@
 
 <p>Helpers contain utility methods, which are commonly used throughout the application. Methods, as declared in helpers, can be called from any template file or block, model, controller class.</p>
 
-<p>Each module has a default Data Helper class <code>Modulename/Helper/Data.php</code>.</p>
+<p>Each module has a default Data Helper class <code class="highlighter-rouge">Modulename/Helper/Data.php</code>.</p>
 
 <h3 id="model">Model</h3>
 <p>In a typical Model-View-Controller-based application, models are used to connect to the database and process  data from and to it. Magento has adapted this pattern slightly.</p>

@@ -801,15 +801,15 @@
     <p>Magento CE:</p>
 
     <ul>
-      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ce</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE</li>
+      <li><code class="highlighter-rouge">&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ce</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE</li>
     </ul>
   </li>
   <li>
     <p>Magento EE:</p>
 
     <ul>
-      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ee</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE</li>
-      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ee-to-ee</code>: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE</li>
+      <li><code class="highlighter-rouge">&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ee</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE</li>
+      <li><code class="highlighter-rouge">&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ee-to-ee</code>: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE</li>
     </ul>
   </li>
 </ul>
@@ -818,7 +818,7 @@
 
 <h2 id="migration-configure">Configuring the migration</h2>
 
-<p>Before you migrate any data, you must create a <code>config.xml</code> configuration file from the provided sample.</p>
+<p>Before you migrate any data, you must create a <code class="highlighter-rouge">config.xml</code> configuration file from the provided sample.</p>
 
 <p>To create a configuration file:</p>
 
@@ -829,17 +829,19 @@
   <li>
     <p>Change to the following directory:</p>
 
-    <pre><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;migration edition&gt;/&lt;ce or version&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;migration edition&gt;/&lt;ce or version&gt;
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Enter the following command to create a <code>config.xml</code> from the provided sample:</p>
+    <p>Enter the following command to create a <code class="highlighter-rouge">config.xml</code> from the provided sample:</p>
 
-    <pre><code>cp config.xml.dist config.xml
+    <div class="highlighter-rouge"><pre class="highlight"><code>cp config.xml.dist config.xml
 </code></pre>
+    </div>
   </li>
   <li>
-    <p>Open <code>config.xml</code> in a text editor.</p>
+    <p>Open <code class="highlighter-rouge">config.xml</code> in a text editor.</p>
   </li>
   <li>
     <p>Specify the following at minimum:</p>
@@ -847,42 +849,42 @@
 </ol>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
-    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"127.0.0.1"</span> <span class="na">name=</span><span class="s">"magento1"</span> <span class="na">user=</span><span class="s">"root"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/source&gt;</span>
 <span class="nt">&lt;destination&gt;</span>
-    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"127.0.0.1"</span> <span class="na">name=</span><span class="s">"magento2"</span> <span class="na">user=</span><span class="s">"root"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/destination&gt;</span>
 <span class="nt">&lt;options&gt;</span>
     <span class="nt">&lt;crypt_key</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/options&gt;</span></code></pre></figure>
 
-<p>The <code>&lt;crypt_key&gt;</code> tag is mandatory to fill. It can be found in <code>local.xml</code> file which is located in the directory of Magento 1 instance at <code>app/etc/local.xml</code> in <code>&lt;key&gt;</code> tag</p>
+<p>The <code class="highlighter-rouge">&lt;crypt_key&gt;</code> tag is mandatory to fill. It can be found in <code class="highlighter-rouge">local.xml</code> file which is located in the directory of Magento 1 instance at <code class="highlighter-rouge">app/etc/local.xml</code> in <code class="highlighter-rouge">&lt;key&gt;</code> tag</p>
 
 <p>Optional parameters:</p>
 
 <ul>
   <li>
-    <p>Database user password: <code>password=&lt;password&gt;</code></p>
+    <p>Database user password: <code class="highlighter-rouge">password=&lt;password&gt;</code></p>
   </li>
   <li>
-    <p>Table prefix: <code>&lt;source_prefix&gt;</code>, <code>&lt;dest_prefix&gt;</code></p>
+    <p>Table prefix: <code class="highlighter-rouge">&lt;source_prefix&gt;</code>, <code class="highlighter-rouge">&lt;dest_prefix&gt;</code></p>
   </li>
 </ul>
 
-<p>For example, if your database owner’s user name is <code>root</code> with password <code>pass</code> and you use the prefix <code>magento1</code> in your Magento 1 database, use the following in <code>config.xml</code>:</p>
+<p>For example, if your database owner’s user name is <code class="highlighter-rouge">root</code> with password <code class="highlighter-rouge">pass</code> and you use the prefix <code class="highlighter-rouge">magento1</code> in your Magento 1 database, use the following in <code class="highlighter-rouge">config.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
-    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"127.0.0.1"</span> <span class="na">name=</span><span class="s">"magento1"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">password=</span><span class="s">"pass"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/source&gt;</span>
 <span class="nt">&lt;destination&gt;</span>
-    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"127.0.0.1"</span> <span class="na">name=</span><span class="s">"magento2"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">password=</span><span class="s">"pass"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/destination&gt;</span>
 <span class="nt">&lt;options&gt;</span>
     <span class="nt">&lt;source_prefix&gt;</span>magento1<span class="nt">&lt;/source_prefix&gt;</span>
     <span class="nt">&lt;crypt_key&gt;</span>f3e25abe619dae2387df9fs594f01985<span class="nt">&lt;/crypt_key&gt;</span>
 <span class="nt">&lt;/options&gt;</span></code></pre></figure>
 
-<p>When finished, save your changes to <code>config.xml</code> and exit the text editor.</p>
+<p>When finished, save your changes to <code class="highlighter-rouge">config.xml</code> and exit the text editor.</p>
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
 
@@ -903,27 +905,27 @@
   </li>
 </ul>
 
-<p>Mapping files for supported Magento versions are located in subdirectories of <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code></p>
+<p>Mapping files for supported Magento versions are located in subdirectories of <code class="highlighter-rouge">&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code></p>
 
 <p>To use the mapping files:</p>
 
 <ol>
   <li>
-    <p>Rename or copy them to remove the <code>.dist</code> <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>.</p>
+    <p>Rename or copy them to remove the <code class="highlighter-rouge">.dist</code> <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>.</p>
   </li>
   <li>
     <p>Edit them using the schema located in</p>
 
-    <p><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code>.</p>
+    <p><code class="highlighter-rouge">&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code>.</p>
   </li>
   <li>
-    <p>Then change config.xml in <code>&lt;options&gt;</code> node with the new name of the file.</p>
+    <p>Then change config.xml in <code class="highlighter-rouge">&lt;options&gt;</code> node with the new name of the file.</p>
   </li>
 </ol>
 
-<p>The <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code> and <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;ce version&gt;</code> directories contain the following configuration files:</p>
+<p>The <code class="highlighter-rouge">&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code> and <code class="highlighter-rouge">&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;ce version&gt;</code> directories contain the following configuration files:</p>
 
-<p>Even though you will be working with <code>map.xml.dist</code> file most of the time, the following table discusses each mapping and other files.</p>
+<p>Even though you will be working with <code class="highlighter-rouge">map.xml.dist</code> file most of the time, the following table discusses each mapping and other files.</p>
 
 <table>
 <tbody>

@@ -786,34 +786,34 @@ $("#element").accordion();
 
 <p>Mark-up examples:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;element&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;trigger&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"element"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"collapsible"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"trigger"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;span&gt;</span>Title 1<span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>Content 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"content"</span><span class="nt">&gt;</span>Content 1<span class="nt">&lt;/div&gt;</span>
 
-    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;trigger&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"collapsible"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"trigger"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;span&gt;</span>Title 2<span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>Content 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"content"</span><span class="nt">&gt;</span>Content 2<span class="nt">&lt;/div&gt;</span>
 
-    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;trigger&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"collapsible"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"trigger"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;span&gt;</span>Title 3<span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>Content 3<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"content"</span><span class="nt">&gt;</span>Content 3<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">require</span><span class="p">([</span>
-        <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;accordion&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#element&quot;</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
+        <span class="s1">'jquery'</span><span class="p">,</span>
+        <span class="s1">'accordion'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
@@ -831,7 +831,7 @@ $("#element").accordion({
 
 <h3>Initialize accordion in a template</h3>
 
-<p>The accordion widget can be initialized using the <code>data-mage-init</code> attribute or <code>&lt;script&gt;</code> element, as described in <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.</p>
+<p>The accordion widget can be initialized using the <code>data-mage-init</code> attribute or <code class="highlighter-rouge">&lt;script&gt;</code> element, as described in <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.</p>
 
 <h2 id="accordion_options">Options</h2>
 <p>Accordion options coincide with <a href="/guides/v2.0/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:</p>
@@ -847,7 +847,7 @@ $("#element").accordion({
 
 <p><strong>Type</strong>: Array, String</p>
 
-<p><strong>Default value</strong>: <code>0</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">0</code></p>
 
 <p>Example of the accordion initialization with the <code>active</code> option specified:</p>
 <pre>
@@ -860,7 +860,7 @@ $("#element").accordion({ active: [0,1]});
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <p>Example of the accordion initialization with the <code>multipleCollapsible</code> option specified:</p>
 <pre>
@@ -881,7 +881,7 @@ $("#element").tabs("option","multipleCollapsible",false);
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <h2 id="accordion_methods">Methods</h2>
 <p>Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.</p>
@@ -894,11 +894,11 @@ $("#element").tabs("option","multipleCollapsible",false);
 </ul>
 
 <h3 id="meth_act"><code>activate(index)</code></h3>
-<p>Activate a tab with the specified <code>index</code>.</p>
+<p>Activate a tab with the specified <code class="highlighter-rouge">index</code>.</p>
 
 <p><strong>Type</strong>: Number, Array.</p>
 
-<p>If no <code>index</code> is passed, all panels are activated.</p>
+<p>If no <code class="highlighter-rouge">index</code> is passed, all panels are activated.</p>
 
 <p>Code examples:</p>
 <pre>
@@ -908,7 +908,7 @@ $( "#element" ).accordion( "activate", [0,1]);
 </pre>
 
 <h3 id="meth_deact"><code>deactivate(index)</code></h3>
-<p>Deactivate a tab with the specified <code>index</code>.</p>
+<p>Deactivate a tab with the specified <code class="highlighter-rouge">index</code>.</p>
 
 <p><strong>Type</strong>: Number, Array.</p>
 

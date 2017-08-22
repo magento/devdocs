@@ -809,35 +809,39 @@
 <ol>
   <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>
-    <p>Save any changes you made to <code>composer.json</code> because the following steps will overwrite it:</p>
+    <p>Save any changes you made to <code class="highlighter-rouge">composer.json</code> because the following steps will overwrite it:</p>
 
-    <pre><code> cd &lt;your Magento install dir&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code> cd &lt;your Magento install dir&gt;
  cp composer.json composer.json.old
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Update your local repository to get the latest code:</p>
 
-    <pre><code>git pull origin develop
+    <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin develop
 </code></pre>
+    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
   			<p>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.1/install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
 </div>
   </li>
-  <li>Diff and merge your <code>composer.json.old</code> with <code>composer.json</code> installed with the Magento software.</li>
+  <li>Diff and merge your <code class="highlighter-rouge">composer.json.old</code> with <code class="highlighter-rouge">composer.json</code> installed with the Magento software.</li>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>composer update
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer update
 </code></pre>
+    </div>
   </li>
   <li>
     <p>Update the Magento database:</p>
 
-    <pre><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
+    <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
 </code></pre>
+    </div>
   </li>
 </ol>
 

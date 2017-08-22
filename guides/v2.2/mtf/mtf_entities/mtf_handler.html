@@ -1023,12 +1023,13 @@
 
 <p>One fixture can have various handlers. When we create an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.</p>
 
-<h3 id="mtf_handler_configxml"><code>config.xml</code></h3>
+<h3 id="mtf_handler_configxml"><code class="highlighter-rouge">config.xml</code></h3>
 
-<p>The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called <code>config.xml</code>:</p>
+<p>The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called <code class="highlighter-rouge">config.xml</code>:</p>
 
-<pre><code>cp config.xml.dist config.xml
+<div class="highlighter-rouge"><pre class="highlight"><code>cp config.xml.dist config.xml
 </code></pre>
+</div>
 
 <p>The following nodes influence handlers:</p>
 
@@ -1056,43 +1057,43 @@
 
 <p>Each handler must implement a handler interface.</p>
 
-<p>You should mention in a fixture the <code>handler_interface</code> attribute with a reference to the PHP class: <code>Magento\[module_name]\Test\Handler\[object_name]\[object_name]Interface</code> (example for the Widget: <code>Magento\Widget\Test\Handler\Widget\WidgetInterface</code>).</p>
+<p>You should mention in a fixture the <code class="highlighter-rouge">handler_interface</code> attribute with a reference to the PHP class: <code class="highlighter-rouge">Magento\[module_name]\Test\Handler\[object_name]\[object_name]Interface</code> (example for the Widget: <code class="highlighter-rouge">Magento\Widget\Test\Handler\Widget\WidgetInterface</code>).</p>
 
-<p>Example of <code>WidgetInterface.php</code> (should be placed in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>):</p>
+<p>Example of <code class="highlighter-rouge">WidgetInterface.php</code> (should be placed in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>):</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Handler\Widget</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Mtf\Handler\HandlerInterface</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Interface WidgetInterface</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Interface WidgetInterface
+ */</span>
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
-    <span class="c1">//</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="c1">//
+</span><span class="p">}</span></code></pre></figure>
 
 <h3 id="mtf_handler_conf_hand">Handler class</h3>
 
-<p>To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the <a href="#mtf_handler_config"><code>config.xml</code></a>, and declare interface/class relationships in the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the <code>persist()</code> method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.</p>
+<p>To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the <a href="#mtf_handler_config"><code>config.xml</code></a>, and declare interface/class relationships in the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the <code class="highlighter-rouge">persist()</code> method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.</p>
 
-<p>The <code>persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path <code>&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>.</p>
+<p>The <code class="highlighter-rouge">persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Persists Fixture Data into application.</span>
-<span class="sd"> *</span>
-<span class="sd"> * @return void</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Persists Fixture Data into application.
+ *
+ * @return void
+ */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">&#39;persist_before&#39;</span><span class="p">],</span> <span class="p">[</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$this</span><span class="p">)]);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">'persist_before'</span><span class="p">],</span> <span class="p">[</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$this</span><span class="p">)]);</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">handlerInterface</span><span class="p">))</span> <span class="p">{</span>
         <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">handlerFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">handlerInterface</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">(</span><span class="nv">$this</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span> <span class="p">{</span>
@@ -1101,29 +1102,29 @@
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">&#39;persist_after&#39;</span><span class="p">],</span> <span class="p">[</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$this</span><span class="p">)]);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">'persist_after'</span><span class="p">],</span> <span class="p">[</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$this</span><span class="p">)]);</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Create the handler in the same directory where the interface is stored: <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php</code></p>
+<p>Create the handler in the same directory where the interface is stored: <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php</code></p>
 
-<h3 id="mtf_handler_di"><code>di.xml</code></h3>
+<h3 id="mtf_handler_di"><code class="highlighter-rouge">di.xml</code></h3>
 
-<p>The <code>di.xml</code> file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]</code>.</p>
+<p>The <code class="highlighter-rouge">di.xml</code> file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]</code>.</p>
 
-<p>See an example for the Widget cURL handler (<code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml</code>):</p>
+<p>See an example for the Widget cURL handler (<code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml</code>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © Magento, Inc. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\Curl&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>In this example, the <code>di.xml</code> file causes the <code>Curl</code> class to replace the <code>WidgetInterface</code>.</p>
+<p>In this example, the <code class="highlighter-rouge">di.xml</code> file causes the <code class="highlighter-rouge">Curl</code> class to replace the <code class="highlighter-rouge">WidgetInterface</code>.</p>
 
 <p>See the directory structure mentioned for the case with the Widget cURL handler:</p>
 
@@ -1134,39 +1135,39 @@
 <p>Let’s create a cURL handler that creates a new widget.</p>
 
 <ul>
-  <li>Create a directory with the name <code>Widget</code> in the <code>Handler</code> directory of the Magento_Widget module - <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>.</li>
-  <li>In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file <code>WidgetInterface.php</code>. Our new interface extends <code>HandlerInterface</code> class.</li>
+  <li>Create a directory with the name <code class="highlighter-rouge">Widget</code> in the <code class="highlighter-rouge">Handler</code> directory of the Magento_Widget module - <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>.</li>
+  <li>In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file <code class="highlighter-rouge">WidgetInterface.php</code>. Our new interface extends <code class="highlighter-rouge">HandlerInterface</code> class.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Handler\Widget</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Mtf\Handler\HandlerInterface</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Interface WidgetInterface</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Interface WidgetInterface
+ */</span>
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
-    <span class="c1">//</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="c1">//
+</span><span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>Create <code>Curl.php</code> in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.</li>
+  <li>Create <code class="highlighter-rouge">Curl.php</code> in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.</li>
 </ul>
 
 <p id="mtf_curl_script">The following code includes detailed comments for better understanding.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
  
 <span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Handler\Widget</span><span class="p">;</span>
 
@@ -1175,159 +1176,159 @@
 <span class="k">use</span> <span class="nx">Magento\Mtf\Util\Protocol\CurlTransport</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Mtf\Util\Protocol\CurlTransport\BackendDecorator</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Curl handler for creating widgetInstance/frontendApp.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Curl handler for creating widgetInstance/frontendApp.
+ */</span>
 <span class="k">class</span> <span class="nc">Curl</span> <span class="k">extends</span> <span class="nx">AbstractCurl</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Mapping values for data.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @var array</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Mapping values for data.
+     *
+     * @var array
+     */</span>
     <span class="k">protected</span> <span class="nv">$mappingData</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;code&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;CMS Page Link&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cms_page_link&#39;</span><span class="p">,</span>
+        <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'CMS Page Link'</span> <span class="o">=&gt;</span> <span class="s1">'cms_page_link'</span><span class="p">,</span>
         <span class="p">],</span>
-        <span class="s1">&#39;block&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;Main Content Area&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;content&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Sidebar Additional&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sidebar.additional&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Sidebar Main&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sidebar.main&#39;</span><span class="p">,</span>
+        <span class="s1">'block'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'Main Content Area'</span> <span class="o">=&gt;</span> <span class="s1">'content'</span><span class="p">,</span>
+            <span class="s1">'Sidebar Additional'</span> <span class="o">=&gt;</span> <span class="s1">'sidebar.additional'</span><span class="p">,</span>
+            <span class="s1">'Sidebar Main'</span> <span class="o">=&gt;</span> <span class="s1">'sidebar.main'</span><span class="p">,</span>
         <span class="p">]</span>
     <span class="p">];</span>
     
-    <span class="sd">/**</span>
-<span class="sd">     * Post request for creating widget instance.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param FixtureInterface $fixture [optional]</span>
-<span class="sd">     * @throws \Exception</span>
-<span class="sd">     * @return null|array instance id</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$fixture</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="sd">/**
+     * Post request for creating widget instance.
+     *
+     * @param FixtureInterface $fixture [optional]
+     * @throws \Exception
+     * @return null|array instance id
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$fixture</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Prepare data to send it using cURL.</span>
-        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prepareData</span><span class="p">(</span><span class="nv">$fixture</span><span class="p">);</span>
-        <span class="c1">// Build url to send post request to create widget.</span>
-        <span class="nv">$url</span> <span class="o">=</span> <span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;app_backend_url&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;admin/widget_instance/save/code/&#39;</span>
-            <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;/theme_id/&#39;</span> <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;theme_id&#39;</span><span class="p">];</span>
-        <span class="c1">// Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.</span>
-        <span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_configuration</span><span class="p">);</span>
-        <span class="c1">// Send request to url with prepared data.</span>
-        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="c1">// Read response.</span>
-        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">();</span>
-        <span class="c1">// Close connection to server.</span>
-        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
-        <span class="c1">// Verify whether request has been successful (check if success message is present).</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">&#39;data-ui-id=&quot;messages-message-success&quot;&#39;</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">&quot;Widget instance creation by curl handler was not successful! Response: </span><span class="si">$response</span><span class="s2">&quot;</span><span class="p">);</span>
+        <span class="c1">// Prepare data to send it using cURL.
+</span>        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prepareData</span><span class="p">(</span><span class="nv">$fixture</span><span class="p">);</span>
+        <span class="c1">// Build url to send post request to create widget.
+</span>        <span class="nv">$url</span> <span class="o">=</span> <span class="nv">$_ENV</span><span class="p">[</span><span class="s1">'app_backend_url'</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'admin/widget_instance/save/code/'</span>
+            <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'code'</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'/theme_id/'</span> <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'theme_id'</span><span class="p">];</span>
+        <span class="c1">// Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.
+</span>        <span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_configuration</span><span class="p">);</span>
+        <span class="c1">// Send request to url with prepared data.
+</span>        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="c1">// Read response.
+</span>        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">();</span>
+        <span class="c1">// Close connection to server.
+</span>        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+        <span class="c1">// Verify whether request has been successful (check if success message is present).
+</span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">'data-ui-id="messages-message-success"'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">"Widget instance creation by curl handler was not successful! Response: </span><span class="nv">$response</span><span class="s2">"</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="c1">// Get id of created widget in order to use in other tests.</span>
-        <span class="nv">$id</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nb">preg_match_all</span><span class="p">(</span><span class="s1">&#39;/\/widget_instance\/edit\/instance_id\/(\d+)/&#39;</span><span class="p">,</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$matches</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// Get id of created widget in order to use in other tests.
+</span>        <span class="nv">$id</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">preg_match_all</span><span class="p">(</span><span class="s1">'/\/widget_instance\/edit\/instance_id\/(\d+)/'</span><span class="p">,</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$matches</span><span class="p">))</span> <span class="p">{</span>
             <span class="nv">$id</span> <span class="o">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="nb">count</span><span class="p">(</span><span class="nv">$matches</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">];</span>
     <span class="p">}</span>
     
-    <span class="sd">/**</span>
-<span class="sd">     * Prepare data to create widget.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param FixtureInterface $widget</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Prepare data to create widget.
+     *
+     * @param FixtureInterface $widget
+     * @return array
+     */</span>
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">prepareData</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$widget</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.</span>
-        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">replaceMappingData</span><span class="p">(</span><span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
-        <span class="c1">// Perform data manipulations to prepare the cURL request based on input data.</span>
-        <span class="o">...</span>
+        <span class="c1">// Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.
+</span>        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">replaceMappingData</span><span class="p">(</span><span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+        <span class="c1">// Perform data manipulations to prepare the cURL request based on input data.
+</span>        <span class="o">...</span>
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="c1">// Additional methods.</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="c1">// Additional methods.
+</span><span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code>etc/curl</code> directory of the Magento_Widget module.</li>
+  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code class="highlighter-rouge">etc/curl</code> directory of the Magento_Widget module.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © Magento, Inc. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\Curl&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h3 id="mtf_handler_decor">cURL authentication classes</h3>
 
-<p>In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the <code>BackendDecorator</code> class.</p>
+<p>In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the <code class="highlighter-rouge">BackendDecorator</code> class.</p>
 
 <p>The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
 
 <h4 id="mtf_handler_curl_backdecor">BackendDecorator class</h4>
 
-<p><code>BackendDecorator</code> manages authentication in Admin and saves the Admin’s session.</p>
+<p><code class="highlighter-rouge">BackendDecorator</code> manages authentication in Admin and saves the Admin’s session.</p>
 
-<p>Full class name is <code>Mtf\Util\Protocol\CurlTransport\BackendDecorator</code>.</p>
+<p>Full class name is <code class="highlighter-rouge">Mtf\Util\Protocol\CurlTransport\BackendDecorator</code>.</p>
 
-<p>Add to the <code>Curl.php</code> the following code:</p>
+<p>Add to the <code class="highlighter-rouge">Curl.php</code> the following code:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$curl = new BackendDecorator(new CurlTransport(), new Config());</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$curl = new BackendDecorator(new CurlTransport(), new Config());</code></pre></figure>
 
-<p><code>Config()</code> takes Admin’s configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.</p>
+<p><code class="highlighter-rouge">Config()</code> takes Admin’s configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.</p>
 
 <h4 id="mtf_handler_cirl_frontdecor">FrontendDecorator class</h4>
 
-<p><code>FrontendDecorator</code> helps to authorize the customer and saves his session.</p>
+<p><code class="highlighter-rouge">FrontendDecorator</code> helps to authorize the customer and saves his session.</p>
 
-<p>Full class name is <code>Mtf\Util\Protocol\CurlTransport\FrontendDecorator</code>.</p>
+<p>Full class name is <code class="highlighter-rouge">Mtf\Util\Protocol\CurlTransport\FrontendDecorator</code>.</p>
 
-<p>Use the following code in the <code>Curl.php</code> file:</p>
+<p>Use the following code in the <code class="highlighter-rouge">Curl.php</code> file:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$curl = new FrontendDecorator(new CurlTransport(), $this-&gt;customer);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$curl = new FrontendDecorator(new CurlTransport(), $this-&gt;customer);</code></pre></figure>
 
 <h2 id="mtf_handler_howto-create-ui">How to create a UI handler</h2>
 
 <p>Let’s create a UI handler that creates a new widget.</p>
 
 <ul>
-  <li>Create a directory with the name <code>Widget</code> in the <code>Handler</code> directory of the Magento_Widget module - <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>.</li>
-  <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file <code>WidgetInterface.php</code>. Our new interface extends <code>HandlerInterface</code> class.</li>
+  <li>Create a directory with the name <code class="highlighter-rouge">Widget</code> in the <code class="highlighter-rouge">Handler</code> directory of the Magento_Widget module - <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>.</li>
+  <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file <code class="highlighter-rouge">WidgetInterface.php</code>. Our new interface extends <code class="highlighter-rouge">HandlerInterface</code> class.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Handler\Widget</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Mtf\Handler\HandlerInterface</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Interface WidgetInterface</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Interface WidgetInterface
+ */</span>
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
-    <span class="c1">//</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="c1">//
+</span><span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>Create <code>Ui.php</code> in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.</li>
+  <li>Create <code class="highlighter-rouge">Ui.php</code> in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.</li>
 </ul>
 
 <p>The code has detailed comments for better understanding.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
  
 <span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Handler\Widget</span><span class="p">;</span>
 
@@ -1336,93 +1337,93 @@
 <span class="k">use</span> <span class="nx">Magento\Mtf\Util\Protocol\CurlTransport</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Mtf\Util\Protocol\CurlTransport\BackendDecorator</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Curl handler for creating widgetInstance/frontendApp.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Curl handler for creating widgetInstance/frontendApp.
+ */</span>
 <span class="k">class</span> <span class="nc">Curl</span> <span class="k">extends</span> <span class="nx">AbstractCurl</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Mapping values for data.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @var array</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Mapping values for data.
+     *
+     * @var array
+     */</span>
     <span class="k">protected</span> <span class="nv">$mappingData</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;code&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;CMS Page Link&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cms_page_link&#39;</span><span class="p">,</span>
+        <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'CMS Page Link'</span> <span class="o">=&gt;</span> <span class="s1">'cms_page_link'</span><span class="p">,</span>
         <span class="p">],</span>
-        <span class="s1">&#39;block&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;Main Content Area&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;content&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Sidebar Additional&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sidebar.additional&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Sidebar Main&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sidebar.main&#39;</span><span class="p">,</span>
+        <span class="s1">'block'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'Main Content Area'</span> <span class="o">=&gt;</span> <span class="s1">'content'</span><span class="p">,</span>
+            <span class="s1">'Sidebar Additional'</span> <span class="o">=&gt;</span> <span class="s1">'sidebar.additional'</span><span class="p">,</span>
+            <span class="s1">'Sidebar Main'</span> <span class="o">=&gt;</span> <span class="s1">'sidebar.main'</span><span class="p">,</span>
         <span class="p">]</span>
     <span class="p">];</span>
     
-    <span class="sd">/**</span>
-<span class="sd">     * Post request for creating widget instance.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param FixtureInterface $fixture [optional]</span>
-<span class="sd">     * @throws \Exception</span>
-<span class="sd">     * @return null|array instance id</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$fixture</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="sd">/**
+     * Post request for creating widget instance.
+     *
+     * @param FixtureInterface $fixture [optional]
+     * @throws \Exception
+     * @return null|array instance id
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$fixture</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Prepare data to send it using cURL.</span>
-        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prepareData</span><span class="p">(</span><span class="nv">$fixture</span><span class="p">);</span>
-        <span class="c1">// Build url to send post request to create widget.</span>
-        <span class="nv">$url</span> <span class="o">=</span> <span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;app_backend_url&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;admin/widget_instance/save/code/&#39;</span>
-            <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;/theme_id/&#39;</span> <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;theme_id&#39;</span><span class="p">];</span>
-        <span class="c1">// Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.</span>
-        <span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_configuration</span><span class="p">);</span>
-        <span class="c1">// Send request to url with prepared data.</span>
-        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="c1">// Read response.</span>
-        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">();</span>
-        <span class="c1">// Close connection to server.</span>
-        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
-        <span class="c1">// Verify whether request has been successful (check if success message is present).</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">&#39;data-ui-id=&quot;messages-message-success&quot;&#39;</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">&quot;Widget instance creation by curl handler was not successful! Response: </span><span class="si">$response</span><span class="s2">&quot;</span><span class="p">);</span>
+        <span class="c1">// Prepare data to send it using cURL.
+</span>        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prepareData</span><span class="p">(</span><span class="nv">$fixture</span><span class="p">);</span>
+        <span class="c1">// Build url to send post request to create widget.
+</span>        <span class="nv">$url</span> <span class="o">=</span> <span class="nv">$_ENV</span><span class="p">[</span><span class="s1">'app_backend_url'</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'admin/widget_instance/save/code/'</span>
+            <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'code'</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'/theme_id/'</span> <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'theme_id'</span><span class="p">];</span>
+        <span class="c1">// Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.
+</span>        <span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_configuration</span><span class="p">);</span>
+        <span class="c1">// Send request to url with prepared data.
+</span>        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="c1">// Read response.
+</span>        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">();</span>
+        <span class="c1">// Close connection to server.
+</span>        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+        <span class="c1">// Verify whether request has been successful (check if success message is present).
+</span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">'data-ui-id="messages-message-success"'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">"Widget instance creation by curl handler was not successful! Response: </span><span class="nv">$response</span><span class="s2">"</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="c1">// Get id of created widget in order to use in other tests.</span>
-        <span class="nv">$id</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nb">preg_match_all</span><span class="p">(</span><span class="s1">&#39;/\/widget_instance\/edit\/instance_id\/(\d+)/&#39;</span><span class="p">,</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$matches</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// Get id of created widget in order to use in other tests.
+</span>        <span class="nv">$id</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">preg_match_all</span><span class="p">(</span><span class="s1">'/\/widget_instance\/edit\/instance_id\/(\d+)/'</span><span class="p">,</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$matches</span><span class="p">))</span> <span class="p">{</span>
             <span class="nv">$id</span> <span class="o">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="nb">count</span><span class="p">(</span><span class="nv">$matches</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">];</span>
     <span class="p">}</span>
     
-    <span class="sd">/**</span>
-<span class="sd">     * Prepare data to create widget.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param FixtureInterface $widget</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Prepare data to create widget.
+     *
+     * @param FixtureInterface $widget
+     * @return array
+     */</span>
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">prepareData</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$widget</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.</span>
-        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">replaceMappingData</span><span class="p">(</span><span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
-        <span class="c1">// Perform data manipulations to prepare the cURL request based on input data.</span>
-        <span class="o">...</span>
+        <span class="c1">// Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.
+</span>        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">replaceMappingData</span><span class="p">(</span><span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+        <span class="c1">// Perform data manipulations to prepare the cURL request based on input data.
+</span>        <span class="o">...</span>
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="c1">// Additional methods.</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="c1">// Additional methods.
+</span><span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code>etc/ui</code> directory of the Magento_Widget <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</li>
+  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code class="highlighter-rouge">etc/ui</code> directory of the Magento_Widget <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span>
-                <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Ui&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span>
+                <span class="na">type=</span><span class="s">"\Magento\Widget\Test\Handler\Widget\Ui"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h2 id="mtf_handler_howto-create-webapi">How to create a WebAPI handler</h2>
@@ -1430,37 +1431,37 @@
 <p>Let’s create a WebAPI handler that creates a new <span term-uuid="f35f5e81-db5d-4754-937e-b5607ac255fa" class="glossary-term" data-toggle="popover">tax rule</span>.</p>
 
 <ul>
-  <li>Create a directory with the name <code>TaxRule</code> in the <code>Handler</code> directory of the Magento_Tax module - <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule</code>.</li>
-  <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file <code>TaxRuleInterface.php</code>. Our new interface extends <code>HandlerInterface</code> class.</li>
+  <li>Create a directory with the name <code class="highlighter-rouge">TaxRule</code> in the <code class="highlighter-rouge">Handler</code> directory of the Magento_Tax module - <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule</code>.</li>
+  <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file <code class="highlighter-rouge">TaxRuleInterface.php</code>. Our new interface extends <code class="highlighter-rouge">HandlerInterface</code> class.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Handler\Widget</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Mtf\Handler\HandlerInterface</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Interface WidgetInterface</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Interface WidgetInterface
+ */</span>
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
-    <span class="c1">//</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="c1">//
+</span><span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>Create <code>Webapi.php</code> in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data.</li>
+  <li>Create <code class="highlighter-rouge">Webapi.php</code> in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**</span>
-<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="sd"> * See COPYING.txt for license details.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
  
 <span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Handler\Widget</span><span class="p">;</span>
 
@@ -1469,93 +1470,93 @@
 <span class="k">use</span> <span class="nx">Magento\Mtf\Util\Protocol\CurlTransport</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Mtf\Util\Protocol\CurlTransport\BackendDecorator</span><span class="p">;</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * Curl handler for creating widgetInstance/frontendApp.</span>
-<span class="sd"> */</span>
+<span class="sd">/**
+ * Curl handler for creating widgetInstance/frontendApp.
+ */</span>
 <span class="k">class</span> <span class="nc">Curl</span> <span class="k">extends</span> <span class="nx">AbstractCurl</span>
 <span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Mapping values for data.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @var array</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Mapping values for data.
+     *
+     * @var array
+     */</span>
     <span class="k">protected</span> <span class="nv">$mappingData</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;code&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;CMS Page Link&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cms_page_link&#39;</span><span class="p">,</span>
+        <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'CMS Page Link'</span> <span class="o">=&gt;</span> <span class="s1">'cms_page_link'</span><span class="p">,</span>
         <span class="p">],</span>
-        <span class="s1">&#39;block&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;Main Content Area&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;content&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Sidebar Additional&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sidebar.additional&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Sidebar Main&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sidebar.main&#39;</span><span class="p">,</span>
+        <span class="s1">'block'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'Main Content Area'</span> <span class="o">=&gt;</span> <span class="s1">'content'</span><span class="p">,</span>
+            <span class="s1">'Sidebar Additional'</span> <span class="o">=&gt;</span> <span class="s1">'sidebar.additional'</span><span class="p">,</span>
+            <span class="s1">'Sidebar Main'</span> <span class="o">=&gt;</span> <span class="s1">'sidebar.main'</span><span class="p">,</span>
         <span class="p">]</span>
     <span class="p">];</span>
     
-    <span class="sd">/**</span>
-<span class="sd">     * Post request for creating widget instance.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param FixtureInterface $fixture [optional]</span>
-<span class="sd">     * @throws \Exception</span>
-<span class="sd">     * @return null|array instance id</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$fixture</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="sd">/**
+     * Post request for creating widget instance.
+     *
+     * @param FixtureInterface $fixture [optional]
+     * @throws \Exception
+     * @return null|array instance id
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$fixture</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Prepare data to send it using cURL.</span>
-        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prepareData</span><span class="p">(</span><span class="nv">$fixture</span><span class="p">);</span>
-        <span class="c1">// Build url to send post request to create widget.</span>
-        <span class="nv">$url</span> <span class="o">=</span> <span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;app_backend_url&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;admin/widget_instance/save/code/&#39;</span>
-            <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;/theme_id/&#39;</span> <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;theme_id&#39;</span><span class="p">];</span>
-        <span class="c1">// Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.</span>
-        <span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_configuration</span><span class="p">);</span>
-        <span class="c1">// Send request to url with prepared data.</span>
-        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="c1">// Read response.</span>
-        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">();</span>
-        <span class="c1">// Close connection to server.</span>
-        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
-        <span class="c1">// Verify whether request has been successful (check if success message is present).</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">&#39;data-ui-id=&quot;messages-message-success&quot;&#39;</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">&quot;Widget instance creation by curl handler was not successful! Response: </span><span class="si">$response</span><span class="s2">&quot;</span><span class="p">);</span>
+        <span class="c1">// Prepare data to send it using cURL.
+</span>        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prepareData</span><span class="p">(</span><span class="nv">$fixture</span><span class="p">);</span>
+        <span class="c1">// Build url to send post request to create widget.
+</span>        <span class="nv">$url</span> <span class="o">=</span> <span class="nv">$_ENV</span><span class="p">[</span><span class="s1">'app_backend_url'</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'admin/widget_instance/save/code/'</span>
+            <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'code'</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'/theme_id/'</span> <span class="o">.</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'theme_id'</span><span class="p">];</span>
+        <span class="c1">// Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.
+</span>        <span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_configuration</span><span class="p">);</span>
+        <span class="c1">// Send request to url with prepared data.
+</span>        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="c1">// Read response.
+</span>        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">();</span>
+        <span class="c1">// Close connection to server.
+</span>        <span class="nv">$curl</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+        <span class="c1">// Verify whether request has been successful (check if success message is present).
+</span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">'data-ui-id="messages-message-success"'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">"Widget instance creation by curl handler was not successful! Response: </span><span class="nv">$response</span><span class="s2">"</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="c1">// Get id of created widget in order to use in other tests.</span>
-        <span class="nv">$id</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nb">preg_match_all</span><span class="p">(</span><span class="s1">&#39;/\/widget_instance\/edit\/instance_id\/(\d+)/&#39;</span><span class="p">,</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$matches</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// Get id of created widget in order to use in other tests.
+</span>        <span class="nv">$id</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">preg_match_all</span><span class="p">(</span><span class="s1">'/\/widget_instance\/edit\/instance_id\/(\d+)/'</span><span class="p">,</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$matches</span><span class="p">))</span> <span class="p">{</span>
             <span class="nv">$id</span> <span class="o">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="nb">count</span><span class="p">(</span><span class="nv">$matches</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">];</span>
     <span class="p">}</span>
     
-    <span class="sd">/**</span>
-<span class="sd">     * Prepare data to create widget.</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param FixtureInterface $widget</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
+    <span class="sd">/**
+     * Prepare data to create widget.
+     *
+     * @param FixtureInterface $widget
+     * @return array
+     */</span>
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">prepareData</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$widget</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.</span>
-        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">replaceMappingData</span><span class="p">(</span><span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
-        <span class="c1">// Perform data manipulations to prepare the cURL request based on input data.</span>
-        <span class="o">...</span>
+        <span class="c1">// Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.
+</span>        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">replaceMappingData</span><span class="p">(</span><span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+        <span class="c1">// Perform data manipulations to prepare the cURL request based on input data.
+</span>        <span class="o">...</span>
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="c1">// Additional methods.</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="c1">// Additional methods.
+</span><span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code>etc/webapi</code> directory of the Magento_Tax module.</li>
+  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code class="highlighter-rouge">etc/webapi</code> directory of the Magento_Tax module.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
-<span class="c">&lt;!--</span>
-<span class="c">/**</span>
-<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
-<span class="c"> * See COPYING.txt for license details.</span>
-<span class="c"> */</span>
-<span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Tax\Test\Handler\TaxRule\TaxRuleInterface&quot;</span>
-                <span class="na">type=</span><span class="s">&quot;\Magento\Tax\Test\Handler\TaxRule\Webapi&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Tax\Test\Handler\TaxRule\TaxRuleInterface"</span>
+                <span class="na">type=</span><span class="s">"\Magento\Tax\Test\Handler\TaxRule\Webapi"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 

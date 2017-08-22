@@ -347,7 +347,7 @@
 
 <p>This section lists the HTTP verb and full path to the endpoint. The basic structure of a REST call in Magento is</p>
 
-<p><code>&lt;HTTP verb&gt; http://&lt;host&gt;/rest/&lt;scope&gt;/&lt;endpoint&gt;</code></p>
+<p><code class="highlighter-rouge">&lt;HTTP verb&gt; http://&lt;host&gt;/rest/&lt;scope&gt;/&lt;endpoint&gt;</code></p>
 
 <p>where:</p>
 
@@ -360,20 +360,20 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>HTTP verb</code></td>
-      <td>One of <code>GET</code>, <code>POST</code>, <code>PUT</code>, or <code>DELETE</code></td>
+      <td><code class="highlighter-rouge">HTTP verb</code></td>
+      <td>One of <code class="highlighter-rouge">GET</code>, <code class="highlighter-rouge">POST</code>, <code class="highlighter-rouge">PUT</code>, or <code class="highlighter-rouge">DELETE</code></td>
     </tr>
     <tr>
-      <td><code>host</code></td>
+      <td><code class="highlighter-rouge">host</code></td>
       <td>The host name or IP address (and optionally, port) of the Magento installation.</td>
     </tr>
     <tr>
-      <td><code>scope</code></td>
-      <td>Specifies which store the call affects. In this tutorial, this value is <code>default</code>.</td>
+      <td><code class="highlighter-rouge">scope</code></td>
+      <td>Specifies which store the call affects. In this tutorial, this value is <code class="highlighter-rouge">default</code>.</td>
     </tr>
     <tr>
-      <td><code>endpoint</code></td>
-      <td>The full URI (Uniform Resource Indentifier) to the endpoint. These values always start with <code>/V1</code>. For example, <code>/V1/orders/4</code>.</td>
+      <td><code class="highlighter-rouge">endpoint</code></td>
+      <td>The full URI (Uniform Resource Indentifier) to the endpoint. These values always start with <code class="highlighter-rouge">/V1</code>. For example, <code class="highlighter-rouge">/V1/orders/4</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -384,7 +384,7 @@
 
 <p><strong>Payload</strong></p>
 
-<p>This section lists the information that is sent to Magento. All payload samples are valid and can be copied and pasted into your calls, but you might need to change the <code>id</code> values that Magento returns.</p>
+<p>This section lists the information that is sent to Magento. All payload samples are valid and can be copied and pasted into your calls, but you might need to change the <code class="highlighter-rouge">id</code> values that Magento returns.</p>
 
 <p><strong>Response</strong></p>
 
@@ -400,24 +400,24 @@
 
 <p><strong>Endpoint</strong></p>
 
-<p><code>POST http://&lt;host&gt;/rest/default/V1/integration/admin/token</code></p>
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/integration/admin/token</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code>Content-Type</code> <code>application/json</code></p>
+<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-<span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
-<span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;123123q&quot;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+</span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123123q"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
 <p>Magento returns the admin’s access token.</p>
 
-<p><code>5r8cvmpr11j6gmau8990rcj2qk7unh8i</code></p>
+<p><code class="highlighter-rouge">5r8cvmpr11j6gmau8990rcj2qk7unh8i</code></p>
 
 <p>This token must be specified in the authorization header of every call that requires <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> permissions.</p>
 

@@ -1035,8 +1035,8 @@
 <h2 id="framework-changes">Framework changes</h2>
 
 <ul>
-  <li>A <code>convertConfigTimeToUtc()</code> method is added to the <code>lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface</code> interface. To implement this interface, please implement the method.</li>
-  <li>A <code>convertConfigTimeToUtc</code> method is added to the  <code>lib/internal/Magento/Framework/Stdlib/DateTime/Timezone</code>.</li>
+  <li>A <code class="highlighter-rouge">convertConfigTimeToUtc()</code> method is added to the <code class="highlighter-rouge">lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface</code> interface. To implement this interface, please implement the method.</li>
+  <li>A <code class="highlighter-rouge">convertConfigTimeToUtc</code> method is added to the  <code class="highlighter-rouge">lib/internal/Magento/Framework/Stdlib/DateTime/Timezone</code>.</li>
 </ul>
 
 <h2 id="magentocatalogrule-module-changes">Magento_CatalogRule module changes</h2>
@@ -1044,8 +1044,8 @@
 <h3 id="db-schema-changes">DB schema changes</h3>
 
 <ul>
-  <li>From the <code>catalogrule</code> table the following rows were deleted: <code>sub_is_enable</code>, <code>sub_simple_action</code>, <code>sub_discount_amount</code>.</li>
-  <li>From the <code>catalogrule_product</code> table the following rows were deleted: <code>sub_simple_action</code>, <code>sub_discount_amount</code>.</li>
+  <li>From the <code class="highlighter-rouge">catalogrule</code> table the following rows were deleted: <code class="highlighter-rouge">sub_is_enable</code>, <code class="highlighter-rouge">sub_simple_action</code>, <code class="highlighter-rouge">sub_discount_amount</code>.</li>
+  <li>From the <code class="highlighter-rouge">catalogrule_product</code> table the following rows were deleted: <code class="highlighter-rouge">sub_simple_action</code>, <code class="highlighter-rouge">sub_discount_amount</code>.</li>
 </ul>
 
 <h3 id="ui-changes">UI changes</h3>
@@ -1087,8 +1087,8 @@
   </li>
   <li>POST data structure changed
     <ul>
-      <li>The parent <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> ID <code>parent_id</code> is now posted in the <code>general</code> field.</li>
-      <li>The category data from the <code>general</code> array is split to the specific arrays by a field set name.</li>
+      <li>The parent <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> ID <code class="highlighter-rouge">parent_id</code> is now posted in the <code class="highlighter-rouge">general</code> field.</li>
+      <li>The category data from the <code class="highlighter-rouge">general</code> array is split to the specific arrays by a field set name.</li>
     </ul>
   </li>
 </ul>
@@ -1101,47 +1101,47 @@
   <tr>
     <td>
     
-<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="p">[</span>
-        <span class="s1">&#39;general&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Category&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;is_enabled&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="s1">&#39;layout_update&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;XML CODE&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
-        <span class="p">],</span>
-        <span class="o">...</span>
-    <span class="p">]</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    [
+        'general' =&gt; [
+            'name' =&gt; 'Category',
+            'is_enabled' =&gt; 1,
+            'layout_update' =&gt; '<span class="nt">&lt;XML</span> <span class="na">CODE</span><span class="nt">&gt;</span>',
+            'enabled' =&gt; 1
+        ],
+        ...
+    ]
     </code></pre></figure>
 
     </td>
     <td>
     
-<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="p">[</span>
-        <span class="s1">&#39;general&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Category&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;is_enabled&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="s1">&#39;parent_id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span>
-        <span class="p">],</span>
-        <span class="s1">&#39;custom_layout&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;layout_update&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;XML CODE&gt;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;enabled&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
-        <span class="p">],</span>
-        <span class="o">...</span>
-    <span class="p">]</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    [
+        'general' =&gt; [
+            'name' =&gt; 'Category',
+            'is_enabled' =&gt; 1,
+            'parent_id' =&gt; 3
+        ],
+        'custom_layout' =&gt; [
+            'layout_update' =&gt; '<span class="nt">&lt;XML</span> <span class="na">CODE</span><span class="nt">&gt;</span>',
+            'enabled' =&gt; 1
+        ],
+        ...
+    ]
     </code></pre></figure>
 
     </td>
   </tr>
 </table>
 
-<p>You can find a <code>setup_version</code> parameter in the <code>&lt;your_Magento_module_dir&gt;/etc/module.xml</code> file.</p>
+<p>You can find a <code class="highlighter-rouge">setup_version</code> parameter in the <code class="highlighter-rouge">&lt;your_Magento_module_dir&gt;/etc/module.xml</code> file.</p>
 
 <ul>
   <li>The Google Optimizer POST data moved to a specific array.</li>
-  <li><code>On/Off</code> fields
+  <li><code class="highlighter-rouge">On/Off</code> fields
     <ul>
-      <li>The input type has been changed from <code>select</code> to <code>switcher</code>.</li>
-      <li>A web page sends POST message with attribute <code>value = "true"</code> if the field is checked or <code>value = "false"</code> if it is not.</li>
-      <li>A server converts <code>value</code> attribute to the PHP <code>true/false</code> boolean type value.</li>
+      <li>The input type has been changed from <code class="highlighter-rouge">select</code> to <code class="highlighter-rouge">switcher</code>.</li>
+      <li>A web page sends POST message with attribute <code class="highlighter-rouge">value = "true"</code> if the field is checked or <code class="highlighter-rouge">value = "false"</code> if it is not.</li>
+      <li>A server converts <code class="highlighter-rouge">value</code> attribute to the PHP <code class="highlighter-rouge">true/false</code> boolean type value.</li>
     </ul>
   </li>
 </ul>
@@ -1162,31 +1162,31 @@
 </table>
 
 <ul>
-  <li>Check boxes and radio buttons work as <code>on/off</code> fields.</li>
+  <li>Check boxes and radio buttons work as <code class="highlighter-rouge">on/off</code> fields.</li>
   <li>Category products grid
     <ul>
       <li>Rendered by a <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> as a standalone block</li>
-      <li>Initialized using the <code>magento-init</code> <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span></li>
+      <li>Initialized using the <code class="highlighter-rouge">magento-init</code> <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span></li>
     </ul>
   </li>
-  <li>To join <abbr title="&lt;span term-uuid=&quot;a9027f5d-efab-4662-96aa-c2999b5ab259&quot; class=&quot;glossary-term&quot; data-toggle=&quot;popover&quot;&gt;Entity&lt;/span&gt; Attribute Value">EAV</abbr> attributes use <code>linkField</code>.</li>
+  <li>To join <abbr title="&lt;span term-uuid=&quot;a9027f5d-efab-4662-96aa-c2999b5ab259&quot; class=&quot;glossary-term&quot; data-toggle=&quot;popover&quot;&gt;Entity&lt;/span&gt; Attribute Value">EAV</abbr> attributes use <code class="highlighter-rouge">linkField</code>.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getLinkField</span><span class="p">()</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -&gt; getLinkField()</code></pre></figure>
 
 <ul>
-  <li>To set a relation with another entities such as <code>category_product_entity</code> use <code>identifierField</code>.</li>
+  <li>To set a relation with another entities such as <code class="highlighter-rouge">category_product_entity</code> use <code class="highlighter-rouge">identifierField</code>.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getIdentifierField</span><span class="p">()</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -&gt; getIdentifierField()</code></pre></figure>
 
 <h3 id="form-initialization-changes">Form initialization changes</h3>
 
 <ul>
   <li>A form is built with UI components (<a href="/guides/v2.0/ui-components/ui-form.html">more info about a form component</a>).</li>
-  <li>The form is extended using a form configuration file <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml"><code>&lt;magento2&gt;/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml</code></a> (see <a href="/guides/v2.0/ui-components/ui-definition.html">Overview of UI components</a>).</li>
-  <li>A data provider <code>\Magento\Catalog\Model\Category\DataProvider</code> is used to set data and fields <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> for the form.</li>
-  <li>Default form data is now a part of metadata that is fetched from the <code>\Magento\Catalog\Model\Category\DataProvider</code>.</li>
+  <li>The form is extended using a form configuration file <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml"><code class="highlighter-rouge">&lt;magento2&gt;/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml</code></a> (see <a href="/guides/v2.0/ui-components/ui-definition.html">Overview of UI components</a>).</li>
+  <li>A data provider <code class="highlighter-rouge">\Magento\Catalog\Model\Category\DataProvider</code> is used to set data and fields <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> for the form.</li>
+  <li>Default form data is now a part of metadata that is fetched from the <code class="highlighter-rouge">\Magento\Catalog\Model\Category\DataProvider</code>.</li>
 </ul>
 
 <h3 id="flow-changes-1">Flow changes</h3>
