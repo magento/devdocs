@@ -26,7 +26,7 @@ It’s what we do.
 
 ## How to get the Magento software {#install-get-software}
 
-Consult the following table for how to get started installing Magento Community Edition (CE) or Magento Enterprise Edition (EE).
+Consult the following table for how to get started installing {{site.data.var.ce}} or {{site.data.var.ee}}.
 
 <table>
 	<tbody>

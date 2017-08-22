@@ -51,7 +51,7 @@ Linux systems provide software like PHP in one or more *repositories*. CentOS, u
 
 We're not aware that you can install PHP 5.5, 5.6, or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
 
-*	If you're setting up a system that will be deployed in production, you should choose a hosting provider who uses repositories considered to be safe and reliable. 
+*	If you're setting up a system that will be deployed in production, you should choose a hosting provider who uses repositories considered to be safe and reliable.
 
 	You should also consider upgrading to a later version of CentOS that has the desired PHP version in a recommended repository.
 *	If you're setting up a development system, you can use any repository you wish.
@@ -92,7 +92,7 @@ There is more than one way to install PHP 7.0.2 or later; the following is a sug
 		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+  		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
 	</div>
 
 2.	Restart Apache: `service httpd restart`
@@ -112,7 +112,7 @@ There is more than one way to install PHP 7.0.2 or later; the following is a sug
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html). 
+3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -133,7 +133,7 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+  		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
 	</div>
 
 2.	*CentOS 7*. Enter the following commands in the order shown:
@@ -148,7 +148,7 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+  		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
 	</div>
 
 2.	Restart Apache: `service httpd restart`
@@ -189,7 +189,7 @@ There is more than one way to upgrade CentOS 6 to PHP 5.5; the following is a su
 
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+  		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
 	</div>
 2.	Enter the following command to verify the version:
 

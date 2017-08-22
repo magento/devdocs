@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 20_cqrs
-title: Split database performance solution (Enterprise Edition only)
-menu_title: Split database performance solution (Enterprise Edition only)
+title: Split database performance solution (Magento Commerce only)
+menu_title: Split database performance solution (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.0
@@ -13,14 +13,14 @@ github_link: config-guide/multi-master/multi-master.md
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 <h2 id="config-ee-multidb-over">Overview of the split database solution</h2>
-*This feature is available in Magento Enterprise Edition (EE) only.*
+*This feature is available in {{site.data.var.ee}} only.*
 
-Magento 2 EE offers number of scalability advantages, including the ability to use three separate master databases for different functional areas of the Magento application.
+{{site.data.var.ee}} offers number of scalability advantages, including the ability to use three separate master databases for different functional areas of the Magento application.
 
 Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation independently scales load from {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} checkouts, order management activities, website browsing, and merchandising activities, depending on your needs.  These changes provide considerable flexibility in how the database tier can be scaled.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Magento Enterprise Cloud Edition does _not_ support this feature at this time.
+{{site.data.var.ece}} does _not_ support this feature at this time.
 </div>
 
 The `ResourceConnections` class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank">Command Query Responsibility Segregation (CQRS)</a> database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.
@@ -35,16 +35,16 @@ MySQL databases replicate asynchronously, which means slaves do not need to be c
 
 The following figure shows how this feature works.
 
-<img src="{{ site.baseurl }}common/images/ee_split-db-diagram.png" alt="Magento EE uses different databases to store tables">
+<img src="{{ site.baseurl }}common/images/ee_split-db-diagram.png" alt="{{site.data.var.ee}} uses different databases to store tables">
 
-In Magento Community Edition (CE), only one master database is used.
+In {{site.data.var.ce}}, only one master database is used.
 
-Magento EE uses three master databases and a configurable number of slave databases for replication. Magento EE has a single interface for database connections, resulting in faster performance and better scalability.
+{{site.data.var.ee}} uses three master databases and a configurable number of slave databases for replication. {{site.data.var.ee}} has a single interface for database connections, resulting in faster performance and better scalability.
 
 ## Configuration options {#config-ee-multidb-opts}
 Because of the way the split database performance solution is designed, your custom code and installed components *cannot* do any of the following:
 
-*	Write directly to the database (instead, you must use the Magento EE database interface)
+*	Write directly to the database (instead, you must use the {{site.data.var.ee}} database interface)
 *	Use JOINs that affect the sales or {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} databases
 *	Use foreign keys to tables in the checkout, sales, or main databases
 
