@@ -391,193 +391,225 @@
 <p>You will use the <code>order_item_id</code> values to create a <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span> in the next step.</p>
 
 <div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;base_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;base_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;base_grand_total&quot;</span><span class="p">:</span> <span class="mi">113</span><span class="p">,</span>
-  <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;base_shipping_amount&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-  <span class="nt">&quot;base_shipping_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-  <span class="nt">&quot;base_shipping_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;base_subtotal&quot;</span><span class="p">:</span> <span class="mi">108</span><span class="p">,</span>
-  <span class="nt">&quot;base_subtotal_incl_tax&quot;</span><span class="p">:</span> <span class="mi">108</span><span class="p">,</span>
-  <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;base_to_global_rate&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;base_to_order_rate&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;billing_address_id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-  <span class="nt">&quot;can_void_flag&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-01-31 02:17:39&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;email_sent&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-  <span class="nt">&quot;global_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;grand_total&quot;</span><span class="p">:</span> <span class="mi">113</span><span class="p">,</span>
-  <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;increment_id&quot;</span><span class="p">:</span> <span class="s2">&quot;000000003&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;order_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;order_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-  <span class="nt">&quot;shipping_address_id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-  <span class="nt">&quot;shipping_amount&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-  <span class="nt">&quot;shipping_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;shipping_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-  <span class="nt">&quot;shipping_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="nt">&quot;store_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="nt">&quot;store_to_base_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;store_to_order_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;subtotal&quot;</span><span class="p">:</span> <span class="mi">108</span><span class="p">,</span>
-  <span class="nt">&quot;subtotal_incl_tax&quot;</span><span class="p">:</span> <span class="mi">108</span><span class="p">,</span>
-  <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="nt">&quot;total_qty&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-  <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-01-31 02:17:39&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Radiant Tee-M-Orange&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">1555</span><span class="p">,</span>
-      <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;WS12-M-Orange&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-      <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-      <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Advanced Pilates &amp; Yoga (Strength)&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-      <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-      <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">49</span><span class="p">,</span>
-      <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-      <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV08&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-      <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-      <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Yoga Companion Kit&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-      <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
-      <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span>
-      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080-24-WG084-24-WG088-24-WG082-blue-24-WG086&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
-      <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
-      <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-      <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Stasis Ball 65 cm&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
-      <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
-      <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span>
-      <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
-      <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
-      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG082-blue&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Foam Yoga Brick&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
-      <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG084&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-      <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-      <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
-      <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Yoga Strap 8 foot&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-      <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-      <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
-      <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-      <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG086&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Foam Roller&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG088&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="nt">&quot;comments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="nt">&quot;base_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;base_discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;base_grand_total&quot;</span><span class="p">:</span> <span class="mi">165</span><span class="p">,</span>
+    <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;base_shipping_amount&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;base_shipping_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;base_shipping_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;base_subtotal&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
+    <span class="nt">&quot;base_subtotal_incl_tax&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
+    <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;base_to_global_rate&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;base_to_order_rate&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;billing_address_id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="nt">&quot;can_void_flag&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-08-21 22:36:02&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;email_sent&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;global_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grand_total&quot;</span><span class="p">:</span> <span class="mi">165</span><span class="p">,</span>
+    <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;increment_id&quot;</span><span class="p">:</span> <span class="s2">&quot;000000003&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;order_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;order_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;shipping_address_id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;shipping_amount&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;shipping_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;shipping_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;shipping_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;store_currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;store_to_base_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;store_to_order_rate&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;subtotal&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
+    <span class="nt">&quot;subtotal_incl_tax&quot;</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
+    <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;total_qty&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-08-21 22:36:03&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Radiant Tee-M-Orange&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">1553</span><span class="p">,</span>
+            <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;WS12-M-Orange&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Advanced Pilates &amp; Yoga (Strength)&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">49</span><span class="p">,</span>
+            <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+            <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV08&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
+            <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
+            <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Yoga Companion Kit&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
+            <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span>
+            <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080-24-WG084-24-WG088-24-WG082-blue-24-WG086&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+            <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+            <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Stasis Ball 65 cm&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+            <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span>
+            <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+            <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+            <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG082-blue&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+            <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Foam Yoga Brick&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
+            <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG084&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+            <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+            <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Yoga Strap 8 foot&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+            <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
+            <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+            <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+            <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG086&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+            <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+            <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+            <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sprite Foam Roller&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+            <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+            <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+            <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+            <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG088&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;base_discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+            <span class="nt">&quot;base_price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+            <span class="nt">&quot;base_row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+            <span class="nt">&quot;base_tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&quot;discount_tax_compensation_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Chaz Kangeroo Hoodie&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+            <span class="nt">&quot;price_incl_tax&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">67</span><span class="p">,</span>
+            <span class="nt">&quot;row_total&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+            <span class="nt">&quot;row_total_incl_tax&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+            <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;MH01-S-Gray&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;tax_amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;base_price&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Chaz Kangeroo Hoodie-S-Gray&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
+            <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;MH01-S-Gray&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;order_item_id&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+            <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;comments&quot;</span><span class="p">:</span> <span class="p">[]</span>
 <span class="p">}</span></code></pre></figure>
 </div></div>
 
 <h3 id="verify-step">Verify this step</h3>
 
-<p>Log in to <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>. Click <strong>Sales &gt; Invoices</strong>. The invoice is displayed in the grid.</p>
+<p>Log in to <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>. Click <strong>Sales &gt; Invoices</strong>. The invoice is displayed in the grid. The status is Paid. Then click <strong>Sales &gt; Orders</strong>. The status is Processing.</p>
 
 
       <div class="horisontal-nav">

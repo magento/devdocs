@@ -429,6 +429,90 @@
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
+<h3 id="add-configurable">Add a configurable product to a cart</h3>
+
+<p>To add a configurable product to a cart, you must specify the <code>sku</code> as well as the set of <code>option_id</code>/<code>option_value</code> pairs that make the product configurable.</p>
+
+<p>In this example, we’ll add the Chaz Kangeroo Hoodie (<code>sku: MH01</code>) configurable product to the cart. This product comes in three colors (black, gray, and orange) and five sizes (XS, S, M, L, XL). In the sample data, the <code>option_id</code> values for Size and Color are <code>141</code> and <code>93</code>, respectively. You can use the <code>GET /V1/configurable-products/:sku/options/all</code> call to determine the <code>option_id</code> values for the given SKU.</p>
+
+<p>The <code>GET /V1/configurable-products/:sku/children</code> call returns information about each combination of color and size, 15 in all for <code>MH01</code>. The following sample shows the returned values for <code>size</code> and <code>color</code> for a small gray Chaz Kangeroo Hoodie.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;168&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;attribute_code&quot;</span><span class="p">:</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;52&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>We now know the values for <code>option_value</code> for <code>size</code> and <code>color</code> are <code>168</code> and <code>52</code>, so we’re ready to add the product to the cart.</p>
+
+<p><strong>Endpoint</strong></p>
+
+<p><code>POST http://&lt;host&gt;/rest/default/V1/carts/mine/items</code></p>
+
+<p><strong>Headers</strong></p>
+
+<p><code>Content-Type</code> <code>application/json</code></p>
+
+<p><code>Authorization</code> <code>Bearer &lt;customer token&gt;</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;cartItem&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;MH01&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;product_option&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;configurable_item_options&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="s2">&quot;93&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;option_value&quot;</span><span class="p">:</span> <span class="mi">52</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="s2">&quot;141&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;option_value&quot;</span><span class="p">:</span> <span class="mi">168</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;item_id&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;MH01-S-Gray&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Chaz Kangeroo Hoodie&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+    <span class="nt">&quot;product_type&quot;</span><span class="p">:</span> <span class="s2">&quot;configurable&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;quote_id&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;product_option&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;configurable_item_options&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="s2">&quot;93&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;option_value&quot;</span><span class="p">:</span> <span class="mi">52</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;option_id&quot;</span><span class="p">:</span> <span class="s2">&quot;141&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;option_value&quot;</span><span class="p">:</span> <span class="mi">168</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
 <h3 id="add-bundle">Add a bundle product to a cart</h3>
 
 <p>The sample data provides one bundled product, the Sprite Yoga Companion Kit (<code>sku</code>: <code>24-WG080</code>). The kit contains the following items:</p>
