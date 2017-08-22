@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.1 Release Candidate 1 (RC1) Release Notes 
-menu_title: Magento CE 2.1 Release Candidate 1 (RC1) Release Notes 
+title: Magento Open Source 2.1 Release Candidate 1 (RC1) Release Notes 
+menu_title: Magento Open Source 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_order: 420
 version: 2.0
 level3_menu_node: level3child
@@ -19,13 +19,13 @@ We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release ca
 
 * test your 2.0 extensions against  2.1 
 
-We welcome your participation in this process!  Please open any Community Edition issues or Pull Requests on the Community Edition GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>.
+We welcome your participation in this process!  Please open any Open Source issues or Pull Requests on the Open Source GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>.
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 
 <h3>Highlights</h3>
-Magento Community Edition 2.1 includes several new features:
+Magento Open Source 2.1 includes several new features:
 
 
 * **PayPal in-context {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} helps to increase {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} rates** by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
@@ -129,7 +129,7 @@ This section discusses how to upgrade to a Release Candidate.
 </div>
 
 ### Upgrade an existing installation from the GitHub repository
-Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+Developers who contribute to the Open Source codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
 
 1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 

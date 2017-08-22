@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.0.6 Release Notes 
-menu_title: Magento EE 2.0.6 Release Notes 
+title: Magento Commerce 2.0.6 Release Notes 
+menu_title: Magento Commerce 2.0.6 Release Notes 
 menu_order: 289
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
@@ -11,7 +11,7 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.6EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements.
+We are pleased to present Magento Commerce (formerly EE) 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements.
 
 <div class="bs-callout bs-callout-warning">
     <p>2.0.6 contains important security updates. Please update to this version or use the latest available Magento version when starting a new project.</p>
@@ -82,13 +82,13 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 <h3>Installation instructions</h3>
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Enterprise Edition 2.0.6 from an archive file.
+New users can now complete a full installation of Magento Commerce 2.0.6 from an archive file.
 
 ##### <b>Download a new installation</b>#####
 1. Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click **My Account**. Then, log in to your account. 
-2. In the panel on the left, choose **Downloads**. Choose **Magento Enterprise Edition 2.x**, and do the following:
+2. In the panel on the left, choose **Downloads**. Choose **Magento Commerce 2.x**, and do the following:
 
-	a.	Click **Magento Enterprise Edition 2.x Release**.
+	a.	Click **Magento Commerce 2.x Release**.
 
 	b.	In the list, choose **Version 2.0.6**.
 
@@ -98,7 +98,7 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 
 
 <h4>Upgrade existing installations</h4>
-If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
+If you installed Magento Commerce 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
 ##### <b>Upgrade an existing installation from the Setup Wizard</b>#####
@@ -115,8 +115,8 @@ For more information, see <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-g
 Magento partners can download the release and the release notes in PDF format from the Partner Portal.
 
 1.	Log in to the <a href="https://magento.com/partners/become-a-partner" target="_blank">Partner Portal</a>.
-2.	Under Magento Enterprise Edition, choose **Magento Enterprise Edition 2.x**.
-3.	Find the **Magento Enterprise Edition 2.x Release**, and choose **Version 2.0.6**.
+2.	Under Magento Commerce, choose **Magento Commerce 2.x**.
+3.	Find the **Magento Commerce 2.x Release**, and choose **Version 2.0.6**.
 
 <h3>Migration toolkits</h3>
 The <a href="{{page.baseurl}}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{page.baseurl}}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

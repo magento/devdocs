@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.0.7 Release Notes 
-menu_title: Magento EE 2.0.7 Release Notes 
+title: Magento Commerce 2.0.7 Release Notes 
+menu_title: Magento Commerce 2.0.7 Release Notes 
 menu_order: 288
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
@@ -11,7 +11,7 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.7EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.0.7. This release includes  several functional fixes.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.7. This release includes  several functional fixes.
 
 
 Backward-incompatible changes are documented in <a href="{{page.baseurl}}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
@@ -44,13 +44,13 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 <h3>Installation instructions</h3>
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Enterprise Edition 2.0.7 from an archive file.
+New users can now complete a full installation of Magento Commerce 2.0.7 from an archive file.
 
 ##### <b>Download a new installation</b>#####
 1. Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click **My Account**. Then, log in to your account. 
-2. In the panel on the left, choose **Downloads**. Choose **Magento Enterprise Edition 2.x**, and do the following:
+2. In the panel on the left, choose **Downloads**. Choose **Magento Commerce 2.x**, and do the following:
 
-	a.	Click **Magento Enterprise Edition 2.x Release**.
+	a.	Click **Magento Commerce 2.x Release**.
 
 	b.	In the list, choose **Version 2.0.7**.
 
@@ -61,21 +61,21 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 
 <h4><b>Upgrade existing installations</b></h4>
 
-This section discusses how to upgrade to Magento EE 2.0.7.
+This section discusses how to upgrade to Magento Commerce 2.0.7.
 
 
 ##### <b>Upgrade using the Setup Wizard</b>#####
 Use the instructions in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose 2.0.7.
 
 ##### <b>Upgrade an existing installation from the GitHub repository</b>#####
-Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento EE GitHub repository.
+Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Commerce GitHub repository.
 
 1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 
 2.	Follow the instructions to pull the updates from the repository and update using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 
 ##### <b>Upgrade using the command line</b>#####
-To upgrade to Magento EE 2.0.7 using the command line:
+To upgrade to Magento Commerce 2.0.7 using the command line:
 
 1.	Log in to your Magento server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Change to the directory in which you installed the Magento software.
@@ -91,7 +91,7 @@ To upgrade to Magento EE 2.0.7 using the command line:
 
 	
 
-	To upgrade to Magento EE 2.0.7, enter:
+	To upgrade to Magento Commerce 2.0.7, enter:
 
 		composer require magento/product-enterprise-edition 2.0.7 --no-update
 		composer update

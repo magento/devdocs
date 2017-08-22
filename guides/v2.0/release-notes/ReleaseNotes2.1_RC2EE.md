@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1 Release Candidate 2 (RC2) Release Notes 
-menu_title: Magento EE 2.1 Release Candidate 2 (RC2) Release Notes 
+title: Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes 
+menu_title: Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_order: 411
 version: 2.0
 level3_menu_node: level3child
@@ -21,19 +21,19 @@ We are pleased to present Magento 2.1 Release Candidate 2 (RC2). This release ca
 
 We welcome your participation in this process! Enterprise Edition customers can provide feedback in these two ways: 
 
-* Enterprise Edition GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+* Magento Commerce GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
 
 * Email to DL-Magento-2.1-Feedback@magento.com.
 
 
-This Release Candidate is available from `repo.magento.com` if you have an Enterprise Edition license or GitHub  if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.
+This Release Candidate is available from `repo.magento.com` if you have a Magento Commerce license or GitHub  if you have previously signed an agreement to access Magento Commerce 2.0 beta software on GitHub.
 
 
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
 <h3>Highlights</h3>
 
-Magento Enterprise Edition 2.1 includes several new and exciting features:
+Magento Commerce 2.1 includes several new and exciting features:
 
 * **Content Staging and Preview** improves productivity by enabling business teams to easily create, preview, and schedule a wide range of content updates without involving IT. Merchants can make updates to products, categories, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content, promotions, and pricing and can preview these changes based on specific dates and times or store views. User-friendly dashboards provide greater visibility into all planned site changes and updates can be automatically deployed at scheduled times.
  
@@ -229,7 +229,7 @@ We do not support PHP 5.5.x or 7.0.5.
 
 
 ## Installation and upgrade instructions
-You can install Magento Enterprise Edition 2.1 Release Candidate 2 (RC2) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
+You can install Magento Commerce 2.1 Release Candidate 2 (RC2) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
@@ -257,7 +257,7 @@ If you installed optional sample data, see [Upgrade to an RC with sample data](#
 Use the instructions in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
 ### Upgrade an existing installation from the GitHub repository
-Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+Developers who contribute to the Open Source codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
 
 1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 
@@ -276,12 +276,12 @@ Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-m
 		composer require <product> 2.1.0-rc2 --no-update
 		composer update
 
-	To upgrade to Magento CE 2.1 RC2, enter:
+	To upgrade to Magento Open Source 2.1 RC2, enter:
 
 		composer require magento/product-community-edition 2.1.0-rc2 --no-update
 		composer update
 
-	To upgrade to Magento EE 2.1 RC2, enter:
+	To upgrade to Magento Commerce 2.1 RC2, enter:
 
 		composer require magento/product-enterprise-edition 2.1.0-rc2 --no-update
 		composer update

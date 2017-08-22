@@ -2,15 +2,15 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.0.12 Release Notes
-menu_title: Magento CE 2.0.12 Release Notes
+title: Magento Open Source 2.0.12 Release Notes
+menu_title: Magento Open Source 2.0.12 Release Notes
 menu_order: 167
 version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.12CE.md
 ---
-We are pleased to present Magento Community Edition 2.0.12. 
+We are pleased to present Magento Open Source (formerly CE) 2.0.12. 
 
 
 

@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.1 Release Candidate 2 (RC2) Release Notes 
-menu_title: Magento CE 2.1 Release Candidate 2 (RC2) Release Notes 
+title: Magento Open Source 2.1 Release Candidate 2 (RC2) Release Notes 
+menu_title: Magento Open Source 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_order: 410
 version: 2.0
 level3_menu_node: level3child
@@ -19,14 +19,14 @@ We are pleased to present Magento 2.1 Release Candidate 2 (RC2). This release ca
 
 * test your 2.0 extensions against  2.1 
 
-We welcome your participation in this process!  Please open any Community Edition issues or Pull Requests on the Community Edition GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>.
+We welcome your participation in this process!  Please open any Open Source  issues or Pull Requests on the Open Source GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>.
 
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
  
 
 <h3>Highlights</h3>
 
-Magento Community Edition 2.1 includes several new and exciting features:
+Magento Open Source 2.1 includes several new and exciting features:
 
 * **PayPal enhancements** include PayPal in-context {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and saved credit cards. In-context checkout helps to increase {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface.
  
@@ -37,7 +37,7 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 
 <h3>Known issues</h3>
-Magento Community Edition 2.1, Release Candidate 2 includes the following known issues: 
+Magento Open Source 2.1, Release Candidate 2 includes the following known issues: 
 
 
 <!--- 53169 --> * Magento does not apply the Cart Price or {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} Price {% glossarytooltip 09569c6c-2e5c-4dd8-9c4b-ab299f324d42 %}sales rules{% endglossarytooltip %} accordingly to the store  website's timezone, as expected.
@@ -190,7 +190,7 @@ We do not support PHP 5.5.x or 7.0.5.
 
 
 ## Installation and upgrade instructions
-You can install Magento Community Edition 2.1 Release Candidate 1 (RC1) from either Github or by using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
+You can install Magento Open Source 2.1 Release Candidate 1 (RC1) from either Github or by using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
 See one of the following sections:
@@ -220,7 +220,7 @@ This section discusses how to upgrade to a Release Candidate.
 </div>
 
 ### Upgrade an existing installation from the GitHub repository
-Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+Developers who contribute to the Open Source codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
 
 1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 

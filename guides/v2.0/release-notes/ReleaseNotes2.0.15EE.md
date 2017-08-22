@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.0.15 Release Notes
-menu_title: Magento EE 2.0.15 Release Notes
+title: Magento Commerce 2.0.15 Release Notes
+menu_title: Magento Commerce 2.0.15 Release Notes
 menu_order: 264
 version: 2.0
 level3_menu_node: level3child
@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.0.15EE.md
 
 *Patch code and release notes were published on June 21, 2017.* 
 
-We are pleased to present Magento Enterprise Edition 2.0.15. This release includes only one enhancement: Support for changes in PayPal's Instant Payment Notification (IPN) service.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.15. This release includes only one enhancement: Support for changes in PayPal's Instant Payment Notification (IPN) service.
 
 For increased security, merchants using PayPal’s Instant Payment Notification (IPN) service will be able to use only HTTPS when posting messages back to PayPal for verification. In the past, PayPal has allowed the use of HTTP for these postbacks. PayPal provides more information at [IPN Verification Postback to HTTPS Microsite](https://www.paypal-knowledge.com/infocenter/index?page=content&widgetview=true&id=FAQ1916&viewlocale=en_US){:target="_blank"}.
 
@@ -23,7 +23,7 @@ You must upgrade or apply this patch by June 30, 2017 to avoid any disruption to
 </div>
 
 
- Looking for the [Magento Enterprise Cloud Edition Release Notes](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}?
+ Looking for the [Magento Commerce (Cloud)  Release Notes](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}?
 
 
 

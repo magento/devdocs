@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.0.12 Release Notes
-menu_title: Magento EE 2.0.12 Release Notes
+title: Magento Commerce 2.0.12 Release Notes
+menu_title: Magento Commerce 2.0.12 Release Notes
 menu_order: 267
 version: 2.0
 level3_menu_node: level3child
@@ -11,9 +11,9 @@ level3_subgroup: ee20-relnotes
 github_link: release-notes/ReleaseNotes2.0.12EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.0.12. This release includes many functional fixes and enhancements. 
+We are pleased to present Magento Commerce (formerly EE) 2.0.12. This release includes many functional fixes and enhancements. 
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?
+Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes</a>?
 
 
 ## Highlights
