@@ -704,9 +704,12 @@
 
 			<ul id="markdown-toc">
   <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
-  <li><a href="#issues-fixed-in-this-release-candidate-rc-2x" id="markdown-toc-issues-fixed-in-this-release-candidate-rc-2x">Issues fixed in this Release Candidate (RC 2.x)</a>    <ul>
+  <li><a href="#issues-fixed-in-this-release-candidate-rc-2x" id="markdown-toc-issues-fixed-in-this-release-candidate-rc-2x">Issues fixed in this Release Candidate (RC 2x)</a>    <ul>
       <li><a href="#installation-and-configuration" id="markdown-toc-installation-and-configuration">Installation and Configuration</a></li>
+      <li><a href="#cart" id="markdown-toc-cart">Cart</a></li>
       <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
+      <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
+      <li><a href="#email" id="markdown-toc-email">Email</a></li>
       <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
       <li><a href="#shipping" id="markdown-toc-shipping">Shipping</a></li>
       <li><a href="#url-rewrites" id="markdown-toc-url-rewrites">URL rewrites</a></li>
@@ -715,7 +718,7 @@
   <li><a href="#issues-resolved-in-release-candidate-1x" id="markdown-toc-issues-resolved-in-release-candidate-1x">Issues resolved in Release Candidate 1.x</a>    <ul>
       <li><a href="#installation-and-configuration-1" id="markdown-toc-installation-and-configuration-1">Installation and Configuration</a></li>
       <li><a href="#catalog-1" id="markdown-toc-catalog-1">Catalog</a></li>
-      <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
+      <li><a href="#checkout-1" id="markdown-toc-checkout-1">Checkout</a></li>
       <li><a href="#importexport" id="markdown-toc-importexport">Import/export</a></li>
       <li><a href="#magento-business-intelligence" id="markdown-toc-magento-business-intelligence">Magento Business Intelligence</a></li>
       <li><a href="#miscellaneous-1" id="markdown-toc-miscellaneous-1">Miscellaneous</a></li>
@@ -732,9 +735,9 @@
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p><em>Release date: August 14, 2017</em></p>
+<p><em>Release date: August 19, 2017</em></p>
 
-<p><em>Notes updated: August 15, 2017</em></p>
+<p><em>Notes updated: August 21, 2017</em></p>
 
 <p>Magento Open Source 2.2.0 Release Candidate 2.x (formerly Community Edition) includes significant new features as well as many bug fixes.</p>
 
@@ -760,14 +763,31 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   </li>
 </ul>
 
-<h2 id="issues-fixed-in-this-release-candidate-rc-2x">Issues fixed in this Release Candidate (RC 2.x)</h2>
-<p>The following fixed issues have been logged against the Magento 2.2.0 RC2.1 release. Issues fixed in the  Release Candidate 1.x are listed below.</p>
+<h2 id="issues-fixed-in-this-release-candidate-rc-2x">Issues fixed in this Release Candidate (RC 2x)</h2>
+<p>The following fixed issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below.</p>
 
 <h3 id="installation-and-configuration">Installation and Configuration</h3>
 
 <!--- 70705 -->
 <ul>
   <li>The installation process no longer stops when loading the Magento_Tax module. <a href="https://github.com/magento/magento2/issues/10138">GitHub-10138</a> (RC2.0)</li>
+</ul>
+
+<!--- 70571 -->
+<ul>
+  <li>You can now activate DEBUG logging while running Magento in production mode. (This feature is available, but disabled by default.) (RC21)</li>
+</ul>
+
+<!--- 71257 -->
+<ul>
+  <li>The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See <a href="/guides/v2.2/config-guide/config/disable-module-output.html">Disable module output</a> for details. (RC21)</li>
+</ul>
+
+<h3 id="cart">Cart</h3>
+
+<!--- 70806 -->
+<ul>
+  <li>The Persistent Shopping Cart feature now works as expected when enabled. This feature (<strong>Store &gt; Configurations &gt; CUSTOMERS &gt; Persistent Shopping Cart &gt; General Options &gt; Enable Persistence = Yes</strong>) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)</li>
 </ul>
 
 <h3 id="catalog">Catalog</h3>
@@ -780,6 +800,25 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <!--- 70877 -->
 <ul>
   <li>You can now successfully add a product to the compare list. Previously, when you tried to add a product to a compare list, Magento displayed an error. (RC2.0)</li>
+</ul>
+
+<!--- 71242 -->
+<ul>
+  <li>We’ve resolved failures with indexing in installations that implemented catalogs containing at least 5,000 - 6,000 SKUs. (RC21)</li>
+</ul>
+
+<h3 id="checkout">Checkout</h3>
+
+<!--- 70846 -->
+<ul>
+  <li>Magento now displays white space after the first address field of the customer address field during checkout. (RC21)</li>
+</ul>
+
+<h3 id="email">Email</h3>
+
+<!--- 71349 -->
+<ul>
+  <li>You can now configure an email return-path. (RC21)</li>
 </ul>
 
 <h3 id="miscellaneous">Miscellaneous</h3>
@@ -804,26 +843,36 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>You can now enable JavaScript minification without error. Previously, after enabling JS minification, the Magento  Admin displayed 404 errors when accessing JavaScript elements. (RC2.0)</li>
 </ul>
 
+<!--- 70816 -->
+<ul>
+  <li>The WSDL listing now lists all available methods at all times without requiring authorization. (RC21)</li>
+</ul>
+
+<!--- 71030 -->
+<ul>
+  <li>Magento now plays the sound from only the video you’ve selected. Previously, when you clicked on a video associated with a configurable product, Magento played the soundtrack from both the selected video and the video of its parent. (RC21)</li>
+</ul>
+
 <h3 id="shipping">Shipping</h3>
 
-<!--- MAGETWO-67283 -->
+<!--- 67283 -->
 <ul>
   <li>When upgrading Magento from 2.1.x to 2.2, the <code>quote_address.free_shipping</code> column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.(RC2.0)</li>
 </ul>
 
-<!--- MAGETWO-70861-->
+<!--- 70861-->
 <ul>
   <li>Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)</li>
 </ul>
 
 <h3 id="url-rewrites">URL rewrites</h3>
 
-<!--- MAGETWO-70663 -->
+<!--- 70663 -->
 <ul>
   <li>You can now assign products to a category when <strong>Match Products by rule</strong> is enabled. (RC2.0)</li>
 </ul>
 
-<!--- MAGETWO-70779 -->
+<!--- 70779 -->
 <ul>
   <li>Magento now saves Category URL rewrites as expected. (RC2.0)</li>
 </ul>
@@ -896,7 +945,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>You can now remove custom options from simple products. Previously, when you tried to remove a custom option from a product, Magento did not remove the options, and displayed an error message. (RC1.6)</li>
 </ul>
 
-<h3 id="checkout">Checkout</h3>
+<h3 id="checkout-1">Checkout</h3>
 
 <!--- 70618 -->
 <ul>
