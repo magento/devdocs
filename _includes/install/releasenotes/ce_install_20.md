@@ -3,14 +3,14 @@
 ## Install the Magento software
 See one of the following sections:
 
-*	[Get Magento CE using Composer](#install-ce-composer)
-*	[Get Magento CE using a compressed archive](#get-zip)
+*	[Get Magento Open Source using Composer](#install-ce-composer)
+*	[Get Magento Open Source using a compressed archive](#get-zip)
 *	[Complete the installation](#install-complete)
 
-### Get the Magento CE software using Composer {#install-ce-composer}
+### Get the Magento Open Source software using Composer {#install-ce-composer}
 {:.no_toc}
 
-This software is available from `repo.magento.com`. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+This software is available from `repo.magento.com`. Before installing the Open Source software using Composer, familiarize yourself with the Composer metapackage  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
 
@@ -20,7 +20,7 @@ For example, to install Magento CE 2.0.10 in the `magento2` directory:
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
 
-### Get Magento CE using a compressed archive {#get-zip}
+### Get Magento Open Source using a compressed archive {#get-zip}
 {:.no_toc}
 
 {% include install/releasenotes/get-ce-software_zip.md %}
@@ -28,7 +28,7 @@ For example, to install Magento CE 2.0.10 in the `magento2` directory:
 ### Complete the installation {#install-complete}
 {:.no_toc}
 
-After you get the CE software:
+After you get the Open Source software:
 
 1.	[Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).
 2.	Install the Magento software:

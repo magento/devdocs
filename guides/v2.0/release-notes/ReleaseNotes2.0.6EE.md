@@ -11,7 +11,7 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.6EE.md
 ---
 
-We are pleased to present Magento Commerce (formerly EE) 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements.
 
 <div class="bs-callout bs-callout-warning">
     <p>2.0.6 contains important security updates. Please update to this version or use the latest available Magento version when starting a new project.</p>

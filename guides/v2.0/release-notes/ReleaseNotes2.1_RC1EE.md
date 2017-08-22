@@ -34,11 +34,11 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <h3>Highlights</h3>
 
-Magento Enterprise Edition 2.1 includes several new features:
+Magento Commerce (formerly Enterprise Edition) 2.1 includes several new features:
 
 * **Content Staging and Preview** improves productivity by enabling business teams to easily create, preview, and schedule a wide range of content updates without involving IT. Merchants can make updates to products, categories, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content, promotions, and pricing and can preview these changes based on specific dates and times or store views. User-friendly dashboards provide greater visibility into all planned site changes and updates can be automatically deployed at scheduled times.
  
-* **Elasticsearch is a next-generation search technology** that is replacing Solr in Magento Enterprise Edition 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box, and merchants can configure stop words and synonyms to ensure high quality search results.
+* **Elasticsearch is a next-generation search technology** that is replacing Solr in Magento Commerce 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box, and merchants can configure stop words and synonyms to ensure high quality search results.
 
 * **PayPal in-context {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} helps to increase {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} rates** by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
  
@@ -113,7 +113,7 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 We do not support PHP 5.5.x or 7.0.5. 
 
 ## Installation and upgrade instructions
-You can install Magento Enterprise Edition 2.1 Release Candidate 1 (RC1) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
+You can install Magento Commerce 2.1 Release Candidate 1 (RC1) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 

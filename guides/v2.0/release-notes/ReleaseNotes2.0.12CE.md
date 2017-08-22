@@ -10,7 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.12CE.md
 ---
-We are pleased to present Magento Open Source (formerly CE) 2.0.12. 
+We are pleased to present Magento Open Source (formerly Community Edition) 2.0.12. 
 
 
 

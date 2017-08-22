@@ -11,7 +11,7 @@ level3_subgroup: ce20-relnotes
 github_link: release-notes/ReleaseNotes2.0.13CE.md
 ---
 
-We are pleased to present Magento Open Source (formerly CE) 2.0.13. 
+We are pleased to present Magento Open Source (formerly Community Edition) 2.0.13. 
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.

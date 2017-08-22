@@ -11,7 +11,7 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.7CE.md
 ---
 
-We are pleased to present Magento Open Source (formerly CE) 2.0.7. This release includes one functional fix. 
+We are pleased to present Magento Open Source (formerly Community Edition) 2.0.7. This release includes one functional fix. 
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.

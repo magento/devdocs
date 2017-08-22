@@ -11,7 +11,7 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.6CE.md
 ---
 
-We are pleased to present Magento Open Source (formerly CE) 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements. 
+We are pleased to present Magento Open Source (formerly Community Edition) 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements. 
 
 <div class="bs-callout bs-callout-warning">
     <p>2.0.6 contains important security updates. Please update to this version or use the latest available Magento version when starting a new project.</p>
@@ -100,7 +100,7 @@ New users can now complete a full installation of Magento Open Source 2.0.6 from
 
 2.	Under **Download with Composer**, click **Download**.
 
-3.	Follow the instructions to download Composer, and get the Magento CE {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
+3.	Follow the instructions to download Composer, and get the Magento Open Source {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 
 <h4><b>Upgrade existing installations</b></h4>

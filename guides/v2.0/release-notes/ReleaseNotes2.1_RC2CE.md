@@ -26,7 +26,7 @@ Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}rele
 
 <h3>Highlights</h3>
 
-Magento Open Source 2.1 includes several new and exciting features:
+Magento Open Source (formerly Community Edition) 2.1 includes several new and exciting features:
 
 * **PayPal enhancements** include PayPal in-context {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and saved credit cards. In-context checkout helps to increase {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface.
  
