@@ -156,121 +156,12 @@ To create a custom error/maintenance page:
 5.	In the Magento Admin, click **Save Config**.
 
 ## Create custom VCL snippets {#custom-vcl}
-To create and upload custom VCL snippets, you need to use Fastly APIs at this time. Normally, you need to create VCL snippets using cURL commands through a terminal command. If you want an easier solution, we also provide a bash script to upload all snippets found in a directory.
-
-For extensive details on cURL commands, see Fastly's [Using regular VCL snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="_blank"} documentation.
-
-Copy and modify the following bash script into a file located in the same directory as your `.vcl` snippets. Add the specific version, Fastly Service ID, and Fastly API Key. When adding VCLs to Staging and Production, you may want to create two bash files with those Service IDs specified, or modify the code further.
-
-	#!/bin/bash
-
-	#############################################################################
-	# Upload snippets from the current directory
-	#
-	# Requires you to specify following environment variables
-	#  VERSION
-	#  SERVICE_ID
-	#  API_KEY
-	#############################################################################
-
-	if [ "x$VERSION" == "x" -o  "x$SERVICE_ID" == "x" -o "x$API_KEY" == "x" -o "xSNIPPET_NAME_PREFIX" == "x" ]; then
-	cat <<ENDOF
-	This script upload snippets from the local directory to their appropriate snippet type e.g. recv.vcl
-	to recv type, fetch.vcl to fetch type etc.
-
-	You need to define these variables
-		 export VERSION=<SERVICE_ID_VERSION>
-		 export SERVICE_ID=<SERVICE_ID>
-		 export API_KEY=<API_KEY>
-		 export SNIPPET_NAME_PREFIX=<SNIPPET_NAME_PREFIX_NO_SPACES>
-	ENDOF
-	exit 1
-	fi
-
-	rawurlencode() {
-	while IFS="" read -r string; do
-		local strlen=${#string}
-		local encoded=""
-		local pos c o
-
-		for (( pos=0 ; pos<strlen ; pos++ )); do
-			 c=${string:$pos:1}
-			 case "$c" in
-					[-_.~a-zA-Z0-9] ) o="${c}" ;;
-					* )               printf -v o '%%%02x' "'$c"
-			 esac
-			 encoded+="${o}"
-		done
-		echo -n "${encoded}"
-		echo -n %0A
-	done
-	}
-
-	# Find all VCLs in this directory
-	for vcl in *.vcl
-	do
-
-	TYPE=${vcl%.vcl}
-
-	curl -X POST -s https://app.fastly.com/service/${SERVICE_ID}/version/${VERSION}/snippet \
-	-H "Fastly-Key:$API_KEY" \
-	--data "name=${SNIPPET_NAME_PREFIX}_${TYPE}&type=$TYPE&dynamic=0&content=$(cat $vcl | rawurlencode)";
-
-	done
-
-Create VCL snippet files with the extension .vcl with the required values.
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-When creating VCL snippets, make sure to carefully use the Service ID. If you want to add the snippets for Staging and Production environments, you will need to enter cURL commands twice with different Service IDs in each command. Keep this in mind when editing and deleting snippets from either environment.
-</div>
-
-Fastly returns a JSON response for the VCL snippets:
-
-	{
-	"service_id": "<Service Id>",
-	"version": "<Editable Version>",
-	"name": "my_regular_snippet",
-	"type": "recv",
-	"content": "if ( req.url ) {\n set req.http.my-snippet-test-header = \"true\";\n}",
-	"priority": 100,
-	"dynamic": 0,
-	"id": "56789exampleid",
-	"created_at": "2016-09-09T20:34:51+00:00",
-	"updated_at": "2016-09-09T20:34:51+00:00",
-	"deleted_at": null
-	}
-
-The important values for the VCL snippet include:
-
-	* `Service ID`: The ID indicates the specific Staging or Production environment. We provide this value.
-	* `FASTLY_API_TOKEN`: The API Key for your Fastly account. We provide this value.
-	* `content`: The snippet of VCL code to run
-	* `priority`: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number. If after Magento modules, use a higher number.
-	* `dynamic`: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
-
-To review an individual snippet, enter the following API call in a terminal:
-
-	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN"
-
-To list all regular VCL snippets attached to a service, enter the following API call in a terminal:
-
-	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
-
-To update a VCL snippet using the API, list the snippet then enter a cURL command with the specific snippet information and edits:
-
-	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
-
-To delete an individual VCL snippet using the API, get a list of snippets and enter a cURL command with the speicific snippet information to delete. We recommend keeping a copy of the creation command and JSON if you need to recreate it later.
-
-	curl -X DELETE -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN"
-
-## Custom VCLs {#custom-vcl}
-You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="_blank"}.
-
-Failure to follow these guidelines means your customizations won't work as expected.
+For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
 
 #### Related topics
 
+* [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
+* [Fastly in Cloud]({{ page.baseurl}}cloud/welcome/cloud-fastly.html)
 *	[Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)
 *	[Fastly documentation](https://docs.fastly.com/guides){:target="_blank"}
 *	[Fastly VCL documentation](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="_blank"}

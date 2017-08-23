@@ -116,10 +116,18 @@ The output for this command is similar to curl Staging and Production. Verify th
 	< Fastly-Magento-VCL-Uploaded: yes
 	< X-Cache: HIT, MISS
 
+## Determine if VCL is not uploaded {#vcl-uploaded}
+To determine if the VCL snippets are not uploaded, check the following:
+
+* Top level navigation does not work: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
+* Pages are not caching: By default Fastly doesn’t cache pages with Set-Cookies. Magento sets Cookies even on cacheable pages (TTL > 0). Magento Fastly VCL strips those cookies on cacheable pages. This may also happen if page block in a template is marked uncacheable. If this occurs, it's due to a 3rd party module or Magento extension blocking or removing the Magento headers. See [X-Cache missed section](#xcache-miss) for details.
+* Geo-location/GeoIP does not work: The uploaded Magento Fastly VCL snippets append the country code to the URL. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
+
+
 ## Resolve errors
 This section provides suggestions for resolving errors you might find using the `curl` command.
 
-### `Fastly-Module-Enabled` is not present
+### `Fastly-Module-Enabled` is not present {#no-module}
 If you don't receive a "yes" for the `Fastly-Module-Enabled` in the response headers, you need to verify the Fasty module is installed and selected.
 
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
@@ -131,10 +139,10 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 
 If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html) for instructions.
 
-### `Fastly-Magento-VCL-Uploaded` is not present
-During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets)
+### `Fastly-Magento-VCL-Uploaded` is not present {#no-VCL}
+During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
 
-### `X-Cache` includes `MISS`
+### `X-Cache` includes `MISS` {#xcache-miss}
 If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
 
 If you get the same result, use the [`curl` commands](#curl) and verify the [response headers](#response-headers):
@@ -158,4 +166,6 @@ If the issue persists, another extension is likely resetting these headers. Repe
 When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates for 3rd party extension developers to work with Fastly caching.
 
 #### Related topics
+* [Fastly in Cloud]({{ page.baseurl}}cloud/welcome/cloud-fastly.html)
 * [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html)
+* [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
