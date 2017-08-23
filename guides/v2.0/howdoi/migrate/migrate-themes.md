@@ -18,4 +18,6 @@ Magento 1 themes cannot be migrated to Magento 2 directly but we provide the fol
 	For assistance, see the [Frontend Developer Guide]({{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html)
 * Installing one of the available themes from the <a href="https://marketplace.magento.com/themes.html" target="_blank">Magento Marketplace</a>. 
 
-* You can reference from magento 2 setup, Default Luma theme built by magento. check reference [app/design/frontend/Magento/luma]({{site.mage2200url}}app/design/frontend/Magento/luma)
+* Use the [default Luma theme][luma] as a starting point and match the look and feel of your Magento 1 theme.
+
+[luma]: {{site.mage2000url}}app/design/frontend/Magento/luma
