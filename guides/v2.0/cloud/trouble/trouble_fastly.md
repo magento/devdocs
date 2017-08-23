@@ -33,7 +33,7 @@ To get values for these headers, you must run the following `curl` commands:
 
 	This command goes through the Fastly extension and returns the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers
 
-You should perform the test on your [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessary on your [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
+You should perform the test on your [Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [Production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessary on your [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
 
 ## Test your Staging and Production sites {#cloud-test-stage}
 This section discusses how to use `curl` to get response headers from your Staging or Production site (the origin servers).

@@ -66,11 +66,9 @@ Complete the following configuration steps in Staging and Production environment
 4.	For **Caching Application**, uncheck the **Use system value** check box and select **Fastly CDN** from the drop-down list.
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud-fastly_enable-admin.png){:width="550px"}
-5.	Expand **Fastly Configuration**.
-
-		You can then [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="_blank"}.
+5.	Expand **Fastly Configuration**. You can then [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="_blank"}.
 6.	When you're done, click **Save Config** at the top of the page.
-7.	Clear the cache according to the notification. After you have cleared the cache, navigate back to Stores > Configuration > Advanced > System > Fastly Configuration and continue your configurations.
+7.	Clear the cache according to the notification. After you have cleared the cache, navigate back to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration** and continue your configurations.
 
 Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}:
 
@@ -91,7 +89,7 @@ _Origin shielding_ routes all requests for your store to a specific Point of Pre
 You can add multiple backends.
 
 1. Access and expand **Fastly Configuration**.
-2. Expand Backend settings and click the gear to configure or add a backend.
+2. Expand **Backend settings** and click the gear to configure or add a backend.
 3. A modal opens with options to select and configure.
 4. Select a **Shield** location (or datacenter) closest to your server region. For example, if Staging is on the West Coast of the United States, you may want to select a shield in US, Los Angeles, CA. This is the POP accessed for providing caching services.
 5. Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
@@ -105,7 +103,7 @@ You can optionally create a custom page for errors or when your site is down for
 
 To create a custom error/maintenance page:
 
-1.	In the Fastly Configuration section, expand **Error/Maintenance Page** as the following figure shows.
+1.	In the **Fastly Configuration** section, expand **Error/Maintenance Page** as the following figure shows.
 
 	![Custom Fastly error page]({{ site.baseurl }}common/images/cloud-fastly_err-pg.png){:width="650px"}
 2.	Click **Set HTML**.
@@ -136,7 +134,7 @@ With this uploaded, you can create and upload custom VCL snippets with advanced 
 
 For more information, see [Fastly VCL documentation](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="_blank"}.
 
-### Create custom VCL snippets {custom-vcl}
+### Create custom VCL snippets {#custom-vcl}
 To create and upload custom VCL snippets, you need to use Fastly APIs at this time. Normally, you need to create VCL snippets using cURL commands through a terminal command. If you want an easier solution, we also provide a bash script to upload all snippets found in a directory.
 
 For extensive details on cURL commands, see Fastly's [Using regular VCL snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="_blank"} documentation.
@@ -147,7 +145,7 @@ The installed Fastly module automatically uploads the following [VCL snippets](h
 
 Copy and modify the following bash script into a file located in the same directory as your `.vcl` snippets. Add the specific version, Fastly Service ID, and Fastly API Key. When adding VCLs to Staging and Production, you may want to create two bash files with those Service IDs specified, or modify the code further.
 
-	<pre>#!/bin/bash
+	#!/bin/bash
 
 	#############################################################################
 	# Upload snippets from the current directory
@@ -201,15 +199,9 @@ Copy and modify the following bash script into a file located in the same direct
 	-H "Fastly-Key:$API_KEY" \
 	--data "name=${SNIPPET_NAME_PREFIX}_${TYPE}&type=$TYPE&dynamic=0&content=$(cat $vcl | rawurlencode)";
 
-	done</pre>
+	done
 
 Create VCL snippet files with the extension .vcl with the required values.
-
-* Service ID: The ID indicates the specific Staging or Production environment
-* FASTLY_API_TOKEN: The API Key
-* content: The snippet of VCL code to run
-* priority: all Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number. If after Magento modules, use a higher number.
-* dynamic: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 When creating VCL snippets, make sure to carefully use the Service ID. If you want to add the snippets for Staging and Production environments, you will need to enter cURL commands twice with different Service IDs in each command. Keep this in mind when editing and deleting snippets from either environment.
@@ -230,6 +222,14 @@ Fastly returns a JSON response for the VCL snippets:
 	"updated_at": "2016-09-09T20:34:51+00:00",
 	"deleted_at": null
 	}
+
+The important values for the VCL snippet include:
+
+	* `Service ID`: The ID indicates the specific Staging or Production environment. We provide this value.
+	* `FASTLY_API_TOKEN`: The API Key for your Fastly account. We provide this value.
+	* `content`: The snippet of VCL code to run
+	* `priority`: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number. If after Magento modules, use a higher number.
+	* `dynamic`: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 
 To review an individual snippet, enter the following API call in a terminal:
 
