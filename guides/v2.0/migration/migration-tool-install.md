@@ -105,14 +105,13 @@ If you've cloned Magento 2 from the GitHub repository, follow the steps below to
 
 1. Change to your Data Migration Tool directory: `<vendor>/magento/data-migration-tool`.
 
-2. Open `composer.json` in a text editor.
+2. Open [`composer.json`][composer-json] in a text editor.
 
-3. Find the value of the `version` tag by search **"magento/data-migration-tool"**.
-
-4. Value of **"magento/data-migration-tool": "2.1.7"** means your data-migration version is 2.1.7
-
+3. The `version` entry in that file is the version of the Data Migration Tool.
 
 ## Related topics
 
 * <a href="{{page.baseurl}}migration/migration-tool-configure.html">Configure migration</a>
 * <a href="{{page.baseurl}}migration/migration-tool-preconditions.html">Preconditions</a>
+
+[composer-json]: https://github.com/magento/data-migration-tool/blob/master/composer.json
