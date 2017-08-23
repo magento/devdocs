@@ -81,16 +81,12 @@ Apart from the configuration file and theme metadata file, all theme files fall 
 
 ### Where do themes live?
 
-Each theme resides in a unique directory under `app/design` folder.
+Each theme resides in a unique directory under `app/design/frontend` or `app/design/adminhtml` folder.
+This directory contains page templates and layouts for Magento modules.
 
-Themes live under **app/design** directories:
+The base package provides hooks to all of Magento's core features.
 
-* `app/design/<area>/<Vendor>/<theme>/`: contains page templates and layouts for each module of magento.
+We recommend you add override features rather than edit default theme files.
 
-Base package provides hooks to all of Magento's core features.
-
-Add override features rather than edit default theme files.
-
-Themes and layouts are discussed extensively in the
 <h2 id="related">Related topics</h2>
 <a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
