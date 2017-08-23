@@ -108,6 +108,96 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 }
 {% endhighlight %}
 
+### Add a configurable product to a cart {#add-configurable}
+
+To add a configurable product to a cart, you must specify the `sku` as well as the set of `option_id`/`option_value` pairs that make the product configurable.
+
+In this example, we'll add the Chaz Kangeroo Hoodie (`sku: MH01`) configurable product to the cart. This product comes in three colors (black, gray, and orange) and five sizes (XS, S, M, L, XL). In the sample data, the `option_id` values for Size and Color are `141` and `93`, respectively. You can use the `GET /V1/configurable-products/:sku/options/all` call to determine the `option_id` values for the given SKU.
+
+The `GET /V1/configurable-products/:sku/children` call returns information about each combination of color and size, 15 in all for `MH01`. The following sample shows the returned values for `size` and `color` for a small gray Chaz Kangeroo Hoodie.
+
+{% highlight json %}
+{
+  "custom_attributes": [
+    {
+      "attribute_code": "size",
+      "value": "168"
+    },
+    {
+      "attribute_code": "color",
+      "value": "52"
+    }
+  ]
+}
+{% endhighlight %}
+
+We now know the values for `option_value` for `size` and `color` are `168` and `52`, so we're ready to add the product to the cart.
+
+**Endpoint**
+
+`POST http://<host>/rest/default/V1/carts/mine/items`
+
+**Headers**
+
+`Content-Type` `application/json`
+
+`Authorization` `Bearer <customer token>`
+
+**Payload**
+
+{% highlight json %}
+{
+  "cartItem": {
+    "sku": "MH01",
+    "qty": 1,
+    "quote_id": "4",
+    "product_option": {
+      "extension_attributes": {
+        "configurable_item_options": [
+          {
+            "option_id": "93",
+            "option_value": 52
+          },
+          {
+            "option_id": "141",
+            "option_value": 168
+          }
+        ]
+      }
+    },
+    "extension_attributes": {}
+  }
+}
+{% endhighlight %}
+
+**Response**
+
+{% highlight json %}
+{
+    "item_id": 13,
+    "sku": "MH01-S-Gray",
+    "qty": 1,
+    "name": "Chaz Kangeroo Hoodie",
+    "price": 52,
+    "product_type": "configurable",
+    "quote_id": "4",
+    "product_option": {
+        "extension_attributes": {
+            "configurable_item_options": [
+                {
+                    "option_id": "93",
+                    "option_value": 52
+                },
+                {
+                    "option_id": "141",
+                    "option_value": 168
+                }
+            ]
+        }
+    }
+}
+{% endhighlight %}
+
 
 ### Add a bundle product to a cart {#add-bundle}
 

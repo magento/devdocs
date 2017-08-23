@@ -16,10 +16,21 @@ In the sections that follow, we use port 8080 as an example.
 
 To change the Apache 2.2 listen port:
 
-1.	Open `/etc/httpd/conf/httpd.conf` in a text editor.
+1.	Open `/etc/httpd/conf/httpd.conf` (or `/etc/apache2/ports.conf` on Debian and Ubuntu) in a text editor.
 2.	Locate the `Listen` directive.
 3.	Change the value of the listen port to `8080`. (You can use any available listen port.)
 4.	Save your changes to `httpd.conf` and exit the text editor.
+
+on Debian and Ubuntu
+1.	Open `/etc/apache2/ports.conf` in a text editor.
+2.	Locate the `Listen` directive.
+3.	Change the value of the listen port to `8080`. (You can use any available listen port.)
+4.	Save your changes to `ports.conf` and exit the text editor.
+5. 	Open `/etc/apache2/sites-enabled/000-default.conf` in a text editor.
+6.	change <VirtualHost *:80> to <VirtualHost *:8080>
+7.	Save your changes to `000-default.conf` and exit the text editor.
+
+
 
 <h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
 To modify the Varnish system configuration:

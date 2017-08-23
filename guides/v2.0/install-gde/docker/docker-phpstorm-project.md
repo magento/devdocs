@@ -10,7 +10,7 @@ version: 2.0
 github_link: install-gde/docker/docker-phpstorm-project.md
 ---
 
-{% include_relative inc/deprecated-note.html %}
+{% include install/docker/deprecated-note.html %}
 
 This topic discusses how to set up a PhpStorm project to work with Magento DevBox. 
 

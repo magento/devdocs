@@ -15,6 +15,9 @@ Prior to entering your ticket to go live and switching the DNS, you should compl
 ## Completely test in Production {#test}
 See [Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptence Tests (UAT), and performance testing.
 
+## Go Live Prep call with support {#call}
+Contact Support to schedule a Go Live Preparation call. We walk through the Go Live process, verify your readiness with a checklist, and discuss the final steps.
+
 ## Enter a ticket with domain names {#domainticket}
 You may [need information]({{ page.baseurl }}cloud/live/live.html#goliveinfo) for this ticket.
 
@@ -81,9 +84,6 @@ You can also test using the following 3rd party options:
 * [New Relic](https://support.newrelic.com/){:target="_blank"} (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
 * [Blackfire]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
 * [WebPageTest](https://www.webpagetest.org/){:target="_blank"} and [Pingdom](https://www.pingdom.com/){:target="_blank"}: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
-
-## Go Live Prep call with support {#call}
-Contact Support to schedule a Go Live Preparation call. We walk through the Go Live process, verify your readiness with a checklist, and discuss the final steps.
 
 #### Next step:
 [Launch steps]({{ page.baseurl }}cloud/live/launch-steps.html)

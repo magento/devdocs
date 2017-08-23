@@ -94,4 +94,4 @@ Therefore, when upgrading to a new Cloud version or adding, removing, or changin
 
 For more information, see [Test a Magento patch]({{ page.baseurl }}cloud/project/project-upgrade.html).
 
-This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after a deploying an updated version of Magento, one of the first things to check should be whether all of the base package files were added to source control.
+This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check should be whether all of the base package files were added to source control.

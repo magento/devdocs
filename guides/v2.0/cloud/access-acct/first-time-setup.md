@@ -31,7 +31,7 @@ We highly recommend having experience with the following technologies and method
 * [Git](https://git-scm.com/){:target="_blank"} for repository and code management, [branching methodologies](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows){:target="_blank"}, and working with Magento Git code
 * [GitHub](https://github.com/){:target="_blank"} for managing your code and accessing Magento repos
 * [Fastly](https://www.fastly.com/){:target="_blank"} for CDN and caching, used in Staging and Production
-* [Galara Cluster](http://galeracluster.com/){:target="_blank"} for databases, used in Staging and Production (with triple reduncy failover in Production)
+* [Galera Cluster](http://galeracluster.com/){:target="_blank"} for databases, used in Staging and Production (with triple reduncy failover in Production)
 
 ## Gather credentials
 Prior to setting up your workspace, you may want to gather the following credentials and accounts:
