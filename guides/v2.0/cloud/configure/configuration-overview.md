@@ -4,7 +4,7 @@ group: cloud
 subgroup: 090_configure
 title: Configure Magento Commerce
 menu_title: Configure Magento Commerce
-menu_order: 5
+menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/configure/configuration-overview.md
