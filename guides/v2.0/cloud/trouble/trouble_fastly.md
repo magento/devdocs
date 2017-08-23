@@ -12,45 +12,28 @@ github_link: cloud/trouble/trouble_fastly.md
 
 For information setting up and configuring Fastly, see [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html).
 
-## Overview of troubleshooting Fastly
-To verify the Fastly {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly.
+To verify the Fastly extension is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.
 
-Response headers and values:
-
-*	`Fastly-Magento-VCL-Uploaded` should be present
-*	`X-Magento-Tags` should be returned
-*	`Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
-*	`X-Cache` should be either `HIT` or `HIT, HIT`
-*	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
-*	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
-
-To get values for these headers, you must run the following `curl` commands:
-
-*	Staging or production {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (also referred to as the [*origin server*](https://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3){:target="_blank"})
-
-	This command goes directly to the origin server, bypassing the Fastly extension; it returns the headers `Fastly-Module-Enabled`, `Cache-Control: max-age`, and `Pragma`
-*	Live site URL
-
-	This command goes through the Fastly extension and returns the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers
-
-You should perform the test on your [Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [Production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessary on your [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
 
 ## Test your Staging and Production sites {#cloud-test-stage}
-This section discusses how to use `curl` to get response headers from your Staging or Production site (the origin servers).
+This section discusses how to use `dig` and `curl` to get response headers from your Staging or Production site (the origin servers). You never need to test on the Integration environments. Basically, you are curling the edge for responses.
 
-The URL format follows:
+### dig command {#dig}
+First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
 
-*	Staging: `http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud`
-*	Production:
+For example:
 
-	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
-	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+* Staging: `dig http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud`
+* Production: `dig http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
-If you don't know your staging or production URLs, locate the Onboarding Spreadsheet in your Magento Enterprise Cloud Edition OneDrive account. Tab 3 (DNSSSLCDN) has access information for your staging and production systems. Use the values in the CNAME/Alias (No CDN) cell.
+### cURL command {#curl}
+Next, use a curl command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production:
 
-Enter the following command to test your site:
+* Staging: `curl http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+* Production:
 
-	curl -k <staging or production URL> [-H 'Host: <public URL>'] -vo /dev/null -HFastly-Debug:1
+	* The load balancer: `curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+	* A direct Origin node: `curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 
 For example, if you have a public URL `www.mymagento.biz`, enter a command similar to the following to test the production site:
 
@@ -60,7 +43,20 @@ If you do not have DNS set up for a public host name, enter a command similar to
 
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
-The output for this command can be lengthy so the following is a summary only:
+### Check response headers {#response-headers}
+Check the returned response headers and values:
+
+*	`Fastly-Magento-VCL-Uploaded` should be present
+*	`X-Magento-Tags` should be returned
+*	`Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
+*	`X-Cache` should be either `HIT` or `HIT, HIT`
+*	`x-cache-hits` should be 1,1
+*	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
+* [`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
+
+The following example shows the correct values for `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled`.
+
+The output for cURL commands can be lengthy. The following is a summary only:
 
 	* STATE: INIT => CONNECT handle 0x600057800; line 1402 (connection #-5000)
 	* Rebuilt URL to: https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud/
@@ -93,14 +89,12 @@ The output for this command can be lengthy so the following is a summary only:
 	  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
 	* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
 
-The preceding example shows the correct values for `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled`.
-
-## Test your live site
-This section discusses how to test your live site URL, which means the `curl` command goes through the Fastly extension. This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers.
+## Test your live site {#curl-live}
+This section discusses how to test and check the response headers on your live site URL with `curl`. The command goes through the Fastly extension to receive responses. This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers.
 
 If you don't have a live site set up with DNS, you can use either a static route or you can use the optional `--resolve` flag, which bypasses DNS name resolution.
 
-Optional: Set up a static route only if your site isn't set up with DNS:
+_Optional:_ To set up a static route only if your site isn't set up with DNS:
 
 1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
 2.  Add the static route in the format:
@@ -111,13 +105,13 @@ Enter the following command to test your live site URL:
 
 	curl http://<live URL> -vo /dev/null -HFastly-Debug:1 [--resolve]
 
-Use `--resolve` only if your live URL isn't set up with DNS.
+Use `--resolve` only if your live URL isn't set up with DNS and you don't have a static route set.
 
 For example,
 
-	http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1
+	curl http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1
 
-The output for this command is similar to the [preceding command](#cloud-test-stage); following are only the unique headers returned by this command:
+The output for this command is similar to curl Staging and Production. Verify the [response headers](#response-headers) to ensure Fastly is working. For example, you should see the returned unique headers by this command:
 
 	< Fastly-Magento-VCL-Uploaded: yes
 	< X-Cache: HIT, MISS
@@ -126,34 +120,42 @@ The output for this command is similar to the [preceding command](#cloud-test-st
 This section provides suggestions for resolving errors you might find using the `curl` command.
 
 ### `Fastly-Module-Enabled` is not present
-Verify the Fasty module is installed and selected.
+If you don't receive a "yes" for the `Fastly-Module-Enabled` in the response headers, you need to verify the Fasty module is installed and selected.
 
-1.	[Install the Fastly module]({{ page.baseurl }}cloud/access-acct/fastly.html).
-2.	In the Magento Admin, [set Fastly as the page cache]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-fastly-admin).
-3.	Push the changes to your staging or production server.
+To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
+
+1. Log into the Admin console for Staging and Production using the URL with /admin (or the changed Admin URL).
+2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
+3. Ensure Fastly CDN is selected.
+4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
+
+If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html) for instructions.
 
 ### `Fastly-Magento-VCL-Uploaded` is not present
-[Upload the Fastly VCL]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly)
+During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets)
 
 ### `X-Cache` includes `MISS`
-If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
+If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
 
-If you get the same result, use the [first `curl` command](#cloud-test-stage) discussed in this topic to verify that:
+If you get the same result, use the [`curl` commands](#curl) and verify the [response headers](#response-headers):
 
 *	`Pragma` is `cache`
 *	`X-Magento-Tags` exists
 *	`Cache-Control: max-age` is greater than 0
 
-If the issue persists, another extension is likely resetting these headers. Repeat the following procedure as many times as necessary to identify which extension is resetting the headers:
+If the issue persists, another extension is likely resetting these headers. Repeat the following procedure in Staging to disable extensions to find which one is causing the issue. After you locate the extension(s) causes issues, you will need to disable the extension(s) in Production.
 
-1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
-2.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **Advanced**.
+1.	Log in to the Magento Admin on your Staging or Production site.
+2.	Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **Advanced**.
 3.	In the Disable Modules Output section in the right pane, locate an extension.
 4.	From the list next to the extension name, click **Disable**.
 5.	Click **Save Config**.
 6.	Click **System** > Tools > **Cache Management**.
 7.	Click **Flush Magento Cache**.
-8.	Try the `curl` commands discussed in this topic again.
+8.	Try the [`curl` commands](#curl) and verify the [response headers](#response-headers).
 9.	If the results are the same, repeat the tasks discussed in this section to disable another extension.
 
-When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance.
+When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates for 3rd party extension developers to work with Fastly caching.
+
+#### Related topics
+* [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html)
