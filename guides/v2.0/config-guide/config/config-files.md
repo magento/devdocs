@@ -11,7 +11,7 @@ redirect_from: /guides/v1.0/config-guide/config/config-files.html
 ---
 
 <h2 id="config-files-overview">Overview of module configuration files</h2>
-The responsibilities of the <a href=" {{ site.mage2000url }}app/code/Magento/Cms/etc/config.xml" target="_blank">config.xml</a> configuration file used in earlier versions of Magento is now divided between several files, located in various {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
+The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
 
 You can use these files&mdash;also referred to as *configuration types*&mdash;to customize specific aspects of your module's behavior.
 
