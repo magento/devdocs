@@ -1625,25 +1625,35 @@
 
 			<p>This topic discusses how you can use logs to troubleshoot problems related to Magento Commerce <a href="/guides/v2.1/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build">build hooks</a> and <a href="/guides/v2.1/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook">deploy hooks</a>.</p>
 
+<p>You may need to SSH into the environments to locate and view logs.</p>
+
+<ul>
+  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">Integration</a>: Copy the link for the SSH command per environment through the Project Web Interface</li>
+  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage">Staging</a>: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod">Production</a>: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+</ul>
+
 <h2 id="build-logs">Build logs</h2>
 <p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code class="highlighter-rouge">git push</code>, so you can observe them in the terminal or capture them (along with error messages) with <code class="highlighter-rouge">git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
 <h2 id="log-deploy-log">Deploy logs</h2>
+<p>You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.</p>
+
 <p>Logs from the deploy hook are located on the server in the following locations:</p>
 
 <ul>
-  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">Integration</a>: <code class="highlighter-rouge">/tmp/log/deploy.log</code></li>
-  <li>
-    <p><a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage">Staging</a> or <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod">Production</a>: <code class="highlighter-rouge">/var/log/platform/&lt;prodject ID&gt;/post_deploy.log</code></p>
-
-    <p>The value of <code class="highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="highlighter-rouge">yw1unoukjcawe</code>, the Staging environment user is <code class="highlighter-rouge">yw1unoukjcawe_stg</code> and the Production environment user is <code class="highlighter-rouge">yw1unoukjcawe</code>.</p>
-
-    <p>So on a staging environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at <code class="highlighter-rouge">/var/log/platform/yw1unoukjcawe_stg/post_deploy.log</code>.</p>
-  </li>
+  <li>Integration: <code class="highlighter-rouge">/tmp/log/deploy.log</code></li>
+  <li>Staging: <code class="highlighter-rouge">/var/log/platform/&lt;prodject ID&gt;/post_deploy.log</code></li>
+  <li>Production: <code class="highlighter-rouge">/var/log/platform/{1|2|3}.&lt;prodject ID&gt;/post_deploy.log</code></li>
 </ul>
 
-<p>Logs for all deployments that have happened on this environment are appended to
-this file, so check the timestamps on log entries to verify that you’re seeing the logs that correspond to the deployment that you are interested in.</p>
+<p>The value of <code class="highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="highlighter-rouge">yw1unoukjcawe</code>, the Staging environment user is <code class="highlighter-rouge">yw1unoukjcawe_stg</code> and the Production environment user is <code class="highlighter-rouge">yw1unoukjcawe</code>.</p>
+
+<p>For example, on the Staging environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at <code class="highlighter-rouge">/var/log/platform/yw1unoukjcawe_stg/post_deploy.log</code>.</p>
+
+<p>For Production, you have a three node structure. Logs are available with specific information for that node. For example, on the Production environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at node 1 <code class="highlighter-rouge">/var/log/platform/1.yw1unoukjcawe/post_deploy.log</code>, node 2 <code class="highlighter-rouge">/var/log/platform/2.yw1unoukjcawe/post_deploy.log</code>, and node 3 <code class="highlighter-rouge">/var/log/platform/3.yw1unoukjcawe/post_deploy.log</code>.</p>
+
+<p>Logs for all deployments that have occurred on this environment are appended to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment.</p>
 
 <p>The actual log output is highly verbose to allow troubleshooting. The following is a condensed example:</p>
 
@@ -1662,7 +1672,11 @@ this file, so check the timestamps on log entries to verify that you’re seeing
 <code class="highlighter-rouge">Starting pre-deploy</code>, <code class="highlighter-rouge">Pre-deploy complete.</code>, <code class="highlighter-rouge">Start deploy.</code>, and <code class="highlighter-rouge">Deployment complete.</code>.</p>
 
 <h2 id="app-log">Application logs</h2>
-<p>To review other application logs in Staging or Production, you can access and review those logs in <code class="highlighter-rouge">/var/log/platform/ProjectID</code>. For staging, the project ID has <code class="highlighter-rouge">_stg</code> at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in <code class="highlighter-rouge">/var/log/platform/ProjectID_stg</code>.</p>
+<p>To review other application logs in Staging or Production, you can access and review those logs in <code class="highlighter-rouge">/var/log/platform/ProjectID</code>.</p>
+
+<p>For Staging, the project ID has <code class="highlighter-rouge">_stg</code> at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in <code class="highlighter-rouge">/var/log/platform/ProjectID_stg</code>.</p>
+
+<p>Remember, when viewing the logs for Production, you have three nodes to check.</p>
 
 		</div>
 		<!-- /.content-wrap -->

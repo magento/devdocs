@@ -1623,7 +1623,9 @@
 </section>
 
 
-			<h2 id="overview-of-troubleshooting-fastly">Overview of troubleshooting Fastly</h2>
+			<p>For information setting up and configuring Fastly, see <a href="/guides/v2.1/cloud/access-acct/fastly.html">Set up Fastly</a>.</p>
+
+<h2 id="overview-of-troubleshooting-fastly">Overview of troubleshooting Fastly</h2>
 <p>To verify the Fastly <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> is working or to debug the Fastly extension, you can use the <code class="highlighter-rouge">curl</code> command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly.</p>
 
 <p>Response headers and values:</p>
@@ -1654,9 +1656,8 @@
 
 <p>You should perform the test on your <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod">production</a> site. The Fastly extension isn’t necessary on your <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">integration</a> site, so there’s no point in testing it there.</p>
 
-<h2 id="cloud-test-stage">Test your staging or production site</h2>
-
-<div class="collapsible"><b class="collapsible-title">Test your staging or production site: </b><div class="collapsible-content"><p>This section discusses how to use <code class="highlighter-rouge">curl</code> to get response headers from your staging or production site (that is, the origin server).</p>
+<h2 id="cloud-test-stage">Test your Staging and Production sites</h2>
+<p>This section discusses how to use <code class="highlighter-rouge">curl</code> to get response headers from your Staging or Production site (the origin servers).</p>
 
 <p>The URL format follows:</p>
 
@@ -1728,14 +1729,13 @@
 </div>
 
 <p>The preceding example shows the correct values for <code class="highlighter-rouge">Pragma</code>, <code class="highlighter-rouge">X-Magento-Tags</code>, and <code class="highlighter-rouge">Fastly-Module-Enabled</code>.</p>
-</div></div>
 
 <h2 id="test-your-live-site">Test your live site</h2>
 <p>This section discusses how to test your live site URL, which means the <code class="highlighter-rouge">curl</code> command goes through the Fastly extension. This command returns the values of the <code class="highlighter-rouge">Fastly-Magento-VCL-Uploaded</code> and <code class="highlighter-rouge">X-Cache</code> headers.</p>
 
 <p>If you don’t have a live site set up with DNS, you can use either a static route or you can use the optional <code class="highlighter-rouge">--resolve</code> flag, which bypasses DNS name resolution.</p>
 
-<div class="collapsible"><b class="collapsible-title">To optionally set up a static route: </b><div class="collapsible-content"><p>Set up a static route only if your site isn’t set up with DNS.</p>
+<p>Optional: Set up a static route only if your site isn’t set up with DNS:</p>
 
 <ol>
   <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system" target="_blank"><code class="highlighter-rouge">hosts</code> file</a>.</li>
@@ -1747,9 +1747,8 @@
     </div>
   </li>
 </ol>
-</div></div>
 
-<div class="collapsible"><b class="collapsible-title">Test your live site: </b><div class="collapsible-content"><p>Enter the following command to test your live site URL:</p>
+<p>Enter the following command to test your live site URL:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>curl http://&lt;live URL&gt; -vo /dev/null -HFastly-Debug:1 [--resolve]
 </code></pre>
@@ -1769,16 +1768,15 @@
 &lt; X-Cache: HIT, MISS
 </code></pre>
 </div>
-</div></div>
 
 <h2 id="resolve-errors">Resolve errors</h2>
 <p>This section provides suggestions for resolving errors you might find using the <code class="highlighter-rouge">curl</code> command.</p>
 
 <h3 id="fastly-module-enabled-is-not-present"><code class="highlighter-rouge">Fastly-Module-Enabled</code> is not present</h3>
-<p>Do the following:</p>
+<p>Verify the Fasty module is installed and selected.</p>
 
 <ol>
-  <li><a href="/guides/v2.1/cloud/access-acct/fastly.html">Install the Fastly module</a></li>
+  <li><a href="/guides/v2.1/cloud/access-acct/fastly.html">Install the Fastly module</a>.</li>
   <li>In the Magento Admin, <a href="/guides/v2.1/cloud/access-acct/fastly.html#cloud-fastly-admin">set Fastly as the page cache</a>.</li>
   <li>Push the changes to your staging or production server.</li>
 </ol>
@@ -1801,7 +1799,7 @@
 
 <ol>
   <li>Log in to the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> as an administrator.</li>
-  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Advanced</strong>.</li>
+  <li>Click <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Advanced</strong>.</li>
   <li>In the Disable Modules Output section in the right pane, locate an extension.</li>
   <li>From the list next to the extension name, click <strong>Disable</strong>.</li>
   <li>Click <strong>Save Config</strong>.</li>

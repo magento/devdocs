@@ -1637,10 +1637,14 @@
 
 <ol>
   <li>Log into the Admin console for Staging and Production using the URL with /admin (or the changed Admin URL).</li>
-  <li>CLick to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>. Scroll and click <strong>Full Page Cache</strong>.</li>
+  <li>Navigate to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>. Scroll and click <strong>Full Page Cache</strong>.</li>
   <li>Ensure Fastly CDN is selected.</li>
-  <li>Click on Fastly configuration and ensure the Fastly Service ID and Fastly API key are entered.</li>
+  <li>Click on Fastly Configuration. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click <strong>Test credentials</strong> to help.</li>
 </ol>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching won’t work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.</p>
+</div>
 
 <p>The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see <a href="/guides/v2.2/cloud/access-acct/fastly.html">Set up Fastly</a> and <a href="/guides/v2.2/cloud/trouble/trouble_fastly.html">Fastly troubleshooting</a>.</p>
 
