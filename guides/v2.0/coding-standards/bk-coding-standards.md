@@ -15,9 +15,11 @@ redirect_from: /guides/v1.0/coding-standards/bk-coding-standards.html
 <!-- Referring file: contributing.md owned by core -->
 
 
-Like many large projects, Magento has coding standards.
+Like Many large projects, Magento has coding standards. 
 
-To code extensions, follow the Magento standards for code:
+Use Magento Standard Code For customize magento code Which is Useful for Website to give better performance,scalabitliy and robustness.
+
+To code extensions or Projects, follow the Magento standards for code:
 
 
 - [Code demarcation standard]({{page.baseurl}}coding-standards/code-standard-demarcation.html)
