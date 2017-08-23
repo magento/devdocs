@@ -42,9 +42,12 @@ External applications can make requests for business logic with simple SOAP and 
 
 The service contract of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is defined by the set of interfaces in the module's `/Api`. It typically consists of:
 
-* service interfaces in the `/Api` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} of the module
+* service interfaces in the `/Api` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} of the module.
+(Reference for [Catalog API]({{site.mage2200url}}app/code/Magento/Customer/Api))
 
 * data (or *entity*) interfaces in the `Api/Data` directory. *Data entities* are data structures passed to and returned from service interfaces.
+(Reference for [Catalog API/Data]({{site.mage2200url}}app/code/Magento/Customer/Api/Data))
+* In Data directory file, You can **get()** and **set()** method of your entity table plus set and get **ExtensionAttributes()**.
 
 Typically, service contracts provide three distinct types of interfaces:
 
@@ -58,7 +61,11 @@ However, there is no requirement that service contracts conform to all three pat
 
 ## Advantages of service contracts
 
-Service contracts permit you to add a new customer {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the *&lt;preference&gt;* element of a {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} config file (`di.xml`) file. The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`.
+Service contracts permit you to add a new customer {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that adds or changes business logic-level resource models and models without breaking the system.
+
+**How?** Through the use of the *&lt;preference&gt;* element of a {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} config file (`di.xml`) file. 
+
+The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`.
 
 Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.
 
