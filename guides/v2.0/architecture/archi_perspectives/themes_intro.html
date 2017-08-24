@@ -982,13 +982,12 @@ Themes are highly extensible.</p>
 
 <h2 id="control">Control</h2>
 
-<p>1) the visual aspect of site design (skinning).
-Includes CSS, images, design/UI- specific <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">Javascript</span>
-2) also control many functional aspects of site.
-Layouts control which default blocks/modules are available
-    Templates control which data is shown and how</p>
+<p>1) The visual aspect of site design (skinning).
+Includes CSS, images, design/UI- specific <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">Javascript</span></p>
 
-<p>Themes do not include business logic.</p>
+<p>2) Many functional aspects of site.
+    <strong>Layouts</strong> control which default blocks/modules are available.
+    <strong>Templates</strong> control which data is shown on page.</p>
 
 <h2 id="theme-components">Theme components</h2>
 
@@ -1045,24 +1044,13 @@ This will be used when you want to make your theme compatible with different lan
 
 <h3 id="where-do-themes-live">Where do themes live?</h3>
 
-<p>Each theme resides in a unique directory</p>
+<p>Each theme resides in a unique directory under <code class="highlighter-rouge">app/design/frontend</code> or <code class="highlighter-rouge">app/design/adminhtml</code> folder.
+This directory contains page templates and layouts for Magento modules.</p>
 
-<p>Themes live in two different directories:</p>
+<p>The base package provides hooks to all of Magento’s core features.</p>
 
-<ul>
-  <li>
-    <p>/skin/frontend: contains images and CSS for a theme.</p>
-  </li>
-  <li>
-    <p>/app/design/frontend: contains page templates and layouts</p>
-  </li>
-</ul>
+<p>We recommend you add override features rather than edit default theme files.</p>
 
-<p>Base package provides hooks to all of Magento’s core features.</p>
-
-<p>Add override features rather than edit default theme files.</p>
-
-<p>Themes and layouts are discussed extensively in the</p>
 <h2 id="related">Related topics</h2>
 <p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
 

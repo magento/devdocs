@@ -983,7 +983,8 @@
 
 			<h2 id="what-is-a-service-layer">What is a Service layer?</h2>
 
-<p>The service layer provides a bridge between the presentation layer and the model layer of <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span> logic and resource-specific data. This is implemented using <em>service contracts</em>, which are defined using <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> interfaces.</p>
+<p>The service layer provides a bridge between the presentation layer and the model layer of <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span> logic and resource-specific data.
+This is implemented using <em>service contracts</em>, which are defined using <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> interfaces.</p>
 
 <p>In general, the service layer:</p>
 
@@ -995,7 +996,8 @@
     <p>Contains service contracts, which define how the implementation will behave.</p>
   </li>
   <li>
-    <p>Provides an easy way to access the REST/SOAP <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files — no coding required.</p>
+    <p>Provides an easy way to access the REST/SOAP <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> framework code (which also resides above the service contracts).
+You can bind service contracts to web service APIs in configuration files — no coding required.</p>
   </li>
   <li>
     <p>Provides a stable API for other modules to call into.</p>
@@ -1004,9 +1006,12 @@
 
 <h2 id="who-accesses-the-service-layer">Who accesses the service layer?</h2>
 
-<p>All calls from web service interfaces, or users working with your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic.</p>
+<p>All calls from web service interfaces, or users working with your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> (that is, controller-initiated requests), are typically routed through the service layer.
+We strongly encourage the use of service contracts to call business logic.</p>
 
-<p>External applications can make requests for business logic with simple SOAP and REST calls. With some simple <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.</p>
+<p>External applications can make requests for business logic with simple SOAP and REST calls.
+With some simple <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services.
+Once implemented, a web service can make a single API call and return an information-rich data structure.</p>
 
 <p><span term-uuid="cdf644c4-bc99-4550-a954-dd5ae165785a" class="glossary-term" data-toggle="popover">Service contract</span> clients include:</p>
 
@@ -1024,14 +1029,19 @@
 
 <h2 id="service-contract-anatomy">Service contract anatomy</h2>
 
-<p>The service contract of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is defined by the set of interfaces in the module’s <code class="highlighter-rouge">/Api</code>. It typically consists of:</p>
+<p>The service contract of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is defined by the set of interfaces in the module’s <code class="highlighter-rouge">/Api</code> directory.</p>
+
+<p>This directory contains:</p>
 
 <ul>
   <li>
-    <p>service interfaces in the <code class="highlighter-rouge">/Api</code> <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> of the module</p>
+    <p>Service interfaces in the <code class="highlighter-rouge">/Api</code> <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> of the module (e.g <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api">Catalog API</a>).</p>
   </li>
   <li>
-    <p>data (or <em>entity</em>) interfaces in the <code class="highlighter-rouge">Api/Data</code> directory. <em>Data entities</em> are data structures passed to and returned from service interfaces.</p>
+    <p>Data (or <em>entity</em>) interfaces in the <code class="highlighter-rouge">Api/Data</code> directory (e.g. <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api/Data">Catalog API/Data</a>).
+Data entities* are data structures passed to and returned from service interfaces.</p>
+
+    <p>Files in the data directory contain <code class="highlighter-rouge">get()</code> and <code class="highlighter-rouge">set()</code> methods for entries in the entity table and extension attributes.</p>
   </li>
 </ul>
 
@@ -1053,15 +1063,21 @@
 
 <h2 id="advantages-of-service-contracts">Advantages of service contracts</h2>
 
-<p>Service contracts permit you to add a new customer <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the <em>&lt;preference&gt;</em> element of a <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> config file (<code class="highlighter-rouge">di.xml</code>) file. The <code class="highlighter-rouge">di.xml</code> file specifies which PHP class to use for the interface <code class="highlighter-rouge">Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
+<p>Service contracts allow you to add a new customer <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that adds or changes business logic-level resource models without breaking the system.</p>
 
-<p>Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.</p>
+<p>This is done using the <em>&lt;preference&gt;</em> element in a custom module’s <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration file (<code class="highlighter-rouge">di.xml</code>) file.</p>
+
+<p>The <code class="highlighter-rouge">di.xml</code> file specifies which PHP class to use for the interface <code class="highlighter-rouge">Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
+
+<p>Another module can change this interface file by specifying a different class name.
+However, if the client code uses the interface definition only, no class change is necessary.</p>
 
 <h2 id="related">Related topics</h2>
 
 <p><a href="/guides/v2.1/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
 
 <p><a href="/guides/v2.1/architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a></p>
+
 
 		</div>
 		<!-- /.content-wrap -->
