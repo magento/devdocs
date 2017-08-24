@@ -12,7 +12,7 @@ github_link: cloud/configure/cloud-vcl-custom-snippets.md
 
 Fastly and {{site.data.var.<ece>}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating edge dictionaries and edge ACLs for your VCL snippets. You're free to customize your Fastly VCL snippets any way you like to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
 
-This information includes a walk-through creating snippets with [cURL commands](#vcl-curl) or running a modified [bash script](#bash-script) with `.vcl` files. Don't worry, we walk you through the process with examples. Also, you can open a terminal to complete these commands. You do not need to SSH into a specific environment.
+This information includes a walk-through creating snippets with [`curl` commands](#vcl-curl) or running a modified [bash script](#bash-script) with `.vcl` files. Don't worry, we walk you through the process with examples. Also, you can open a terminal to complete these commands. You do not need to SSH into a specific environment.
 
 You need the following information to create VCL snippets:
 
@@ -27,14 +27,14 @@ For Fastly resources on creating VCL snippets, see:
 *	[Using dynamic VCL snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 * [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="_blank"}
 
-## Create VCL snippets with cURL {#vcl-curl}
-Using cURL commands, you can directly access the Fastly API and generate VCL snippets directly to your specific service.
+## Create VCL snippets with curl {#vcl-curl}
+Using `curl` commands, you can directly access the Fastly API and generate VCL snippets directly to your specific service.
 
-What you should know about the cURL command and JSON values:
+What you should know about the `curl` command and JSON values:
 
 * Service ID: The ID indicates the specific Staging or Production service/environment. We provide this value.
 * FASTLY_API_TOKEN: The API Key for your Fastly account. We provide this value.
-* Editable Version #: The editable version for the VCL snippet from the first cURL
+* Editable Version #: The editable version for the VCL snippet from the first `curl`
 * type: Specifies the location to place the snippet such as `init` (above subroutines) and within subroutines like `recv`. See [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="_blank"} for examples.
 * content: The snippet of VCL code to run
 * priority: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number like 5. If after Magento modules, use a higher number like 75.
@@ -53,13 +53,13 @@ Fastly returns the editable version number and Service ID. You use the version n
 	}
 
 ### Create the VCL snippet
-Create the VCL snippet on the new version. We recommend typing out your cURL command to make sure everything is correct before entering it in a terminal. You can always copy and paste the command when
+Create the VCL snippet on the new version. We recommend typing out your `curl` command to make sure everything is correct before entering it in a terminal. You can always copy and paste the command when
 
 Use the following command as a template:
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "apply_acl", "type": "recv", "dynamic": 0, "priority": 100, "content": "if ((client.ip ~ {ACLNAME}) && !req.http.Fastly-FF){ error 403; }"}
 
-After you run the cURL command, Fastly returns a JSON response with the data:
+After you run the `curl` command, Fastly returns a JSON response with the data:
 
 	{
 	  "id": "62Yd1WfiCBPENLloXfXmlO",
@@ -90,7 +90,7 @@ If received errors back from Fastly, track down the errors and edit the VCL snip
 
 	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
 
-## Manage VCL snippets with cURL {#manage-vcl}
+## Manage VCL snippets with curl {#manage-vcl}
 To review an individual snippet, enter the following API call in a terminal:
 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN"
@@ -99,11 +99,11 @@ To list all regular VCL snippets attached to a service, enter the following API 
 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
 
-To update a VCL snippet using the API, list the snippet then enter a cURL command with the specific snippet version, name, and edits:
+To update a VCL snippet using the API, list the snippet then enter a `curl` command with the specific snippet version, name, and edits:
 
 	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
 
-To delete an individual VCL snippet using the API, get a list of snippets and enter a cURL command with the speicific snippet information to delete. We recommend keeping a copy of the creation command and JSON if you need to recreate it later.
+To delete an individual VCL snippet using the API, get a list of snippets and enter a `curl` command with the speicific snippet information to delete. We recommend keeping a copy of the creation command and JSON if you need to recreate it later.
 
 	curl -X DELETE -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN"
 
@@ -168,20 +168,29 @@ Create a VCL coded file to use with an ACL list to block a set of IPs from acces
 ### Extend Magento Admin timeout on Fastly {#admin-timeout}
 Fastly has a strict timeout for the Magento Admin of three minutes. This may not be enough time for some extended actions. To extend the default timeout for the Magento Admin, you can make a VCL snippet file copy of this pass.vcl snippet from Fastly.
 
-1. Copy the code from the [Fastly pass.vcl](https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl){:target="_blank"} into a new .vcl file. Or copy the code below into a new file.
+1. Copy the code from the [Fastly pass.vcl](https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl){:target="_blank"} or copy the code below:
 
-  <pre># Deactivate gzip on origin
-  unset bereq.http.Accept-Encoding;
+	  # Deactivate gzip on origin
+	  unset bereq.http.Accept-Encoding;
 
-  # Increase first byte timeouts for /admin* URLs to 3 minutes
-  if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
-        set bereq.first_byte_timeout = 180s;
-				}</pre>
+	  # Increase first byte timeouts for /admin* URLs to 3 minutes
+	  if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
+	        set bereq.first_byte_timeout = 180s;
+				}
 2. In your copy, modify the `set bereq.first_byte_timeout = 180s;` from 180s (three minutes) to a higher amount. For example, enter 300s for five minutes or 600s for ten minutes.
-3. Save the `.vcl` file to your directly of VCL snippets and run the bash script to upload.
+
+You can create a `curl` command to overwrite the pass.vcl with a new version:
+
+1. Use a [command to list the VCL](#manage-vcl) snippets. For example, enter the following command to get a list of all snippets to find the `pass.vcl`:
+
+		curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+2. Build an update command for the `pass.vcl` using data from the located VCL snippet and the updated timeout. For example:
+
+		curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name for pass.vcl> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=unset bereq.http.Accept-Encoding; if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 300s; }';
+3. Enter the `curl` command to update, validate, and activate.
 
 ## Creating VCL snippets with a Bash script {#bash-snippets}
-We provide another solution then entering cURL commands to create VCL snippets using `.vcl` files and a bash script to upload all snippets found in a directory.
+We provide another solution then entering `curl` commands to create VCL snippets using `.vcl` files and a bash script to upload all snippets found in a directory.
 
 To create VCL snippets this way:
 
@@ -193,7 +202,7 @@ To create VCL snippets this way:
 Copy and modify the following bash script into a file located in the same directory as your `.vcl` snippets. Give the bash script file a name like `upload_snippets.sh`. Add the specific version, Fastly Service ID, and Fastly API key (or token). When adding VCLs to Staging and Production, you may want to create two bash files with those Service IDs specified, or modify the code further.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-When modifying the bash script, make sure to carefully use the Service ID. If you want to add the snippets for Staging and Production environments, you will need to enter cURL commands twice with different Service IDs in each command. Keep this in mind when editing and deleting snippets from either environment.
+When modifying the bash script, make sure to carefully use the Service ID. If you want to add the snippets for Staging and Production environments, you will need to enter `curl` commands twice with different Service IDs in each command. Keep this in mind when editing and deleting snippets from either environment.
 </div>
 
 	#!/bin/bash

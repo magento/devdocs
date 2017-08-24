@@ -66,10 +66,10 @@ We provide Fastly services only for your Staging and Production environments. Yo
 	* In the "require" section, you should have `"fastly/magento2": <version number>`
 	* In the "repositories" section, you should have:
 
-			"fastly-magento2": {
-						"type": "vcs",
-						"url": "https://github.com/fastly/fastly-magento2.git"
-				}
+		"fastly-magento2": {
+					"type": "vcs",
+					"url": "https://github.com/fastly/fastly-magento2.git"
+		}
 3.	Add, commit, and push the changes to your code repository with the following command:
 
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
@@ -153,10 +153,11 @@ For more information from Fastly, see the Magento 2 [Backend settings guide](htt
 Fastly provides multiple types of purge options on your Magento Cache Management page including purging product category, product assets, and content. When enabled, Fastly watches for events to automatically purge those caches. If you disable a purge option, you can manually purge Fastly aches after finishing updates through the Cache Management page.
 
 The options include:
-* Purge category: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
-* Purge product: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
-* Purge CMS page: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
-* Soft purge: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
+
+* **Purge category**: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
+* **Purge product**: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
+* **Purge CMS page**: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
+* **Soft purge**: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
 
 ![Configure purge options]({{ site.baseurl }}common/images/cloud_fastly-purgeoptions.png){:width="650px"}
 
