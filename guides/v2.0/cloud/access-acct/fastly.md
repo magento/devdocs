@@ -119,7 +119,7 @@ To use snippets, you must upload the Fastly VCL using the Magento Admin as follo
 
 With this uploaded, you can create and upload custom VCL snippets with advanced settings and options. You use APIs to add these VCL snippets, further adding them in your site code depending on the actions.
 
-For more information, see [Fastly VCL documentation](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="_blank"} and [Fastly VCL snippets](https://docs.fastly.com/guides/vcl-snippets/about-vcl-snippets){:target="_blank"}..
+For more information, see [Fastly VCL documentation](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="_blank"} and [Fastly VCL snippets](https://docs.fastly.com/guides/vcl-snippets/about-vcl-snippets){:target="_blank"}.
 
 ## Configure backends and Origin shielding {#backend}
 Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A _backend_ is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.
@@ -129,12 +129,13 @@ _Origin shielding_ routes all requests for your store to a specific Point of Pre
 You can add multiple backends.
 
 1. Access and expand **Fastly Configuration**.
-2. Expand **Backend settings** and click the gear to configure or add a backend.
-3. A modal opens with options to select and configure.
-4. Select a **Shield** location (or datacenter) closest to your server region. For example, if Staging is on the West Coast of the United States, you may want to select a shield in US, Los Angeles, CA. This is the POP accessed for providing caching services.
-5. Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
-6. Optionally, select to Activate the backend and Shield after editing or saving.
-7. Click **Upload** to save. The settings are commiunicated to Fastly.
+2. Expand **Backend settings** and click the gear to configure the default backend. A modal opens with options to select and configure.
+
+	![Modify the backend]({{ site.baseurl }}common/images/cloud_fastly-backend.png){:width="600px"}
+3. Select a **Shield** location (or datacenter) closest to your server region. For example, if Staging is on the West Coast of the United States, you may want to select a shield in US, Los Angeles, CA. This is the POP accessed for providing caching services.
+4. Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
+5. Optionally, select to Activate the backend and Shield after editing or saving.
+6. Click **Upload** to save. The settings are commiunicated to Fastly.
 
 For more information from Fastly, see the Magento 2 [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md){:target="_blank"}.
 
@@ -157,6 +158,19 @@ To create a custom error/maintenance page:
 
 ## Create custom VCL snippets {#custom-vcl}
 For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
+
+## Configure GeoIP handling {#geoip}
+The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
+
+1. In the **Fastly Configuration** section, expand **Advanced**.
+2. Scroll down and select **Yes** to **Enable GeoIP**. Additional configuration options disply.
+3. For GeoIP Action, select if the visitor is automatically redirected with **Redirect** or provided a list of stores to select from with **Dialog**.
+4. For **Country Mapping**, click **Add** to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2){:target="_blank"}.
+
+	![Add GeoIP country maps]({{ site.baseurl }}common/images/cloud_fastly-geo-code.png)
+5. Click **Save Config** at the top of the page.
+
+Fastly also provides a series of [geolocation-related VCL features](https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features){:target="_blank"} for customized geolocation coding.
 
 #### Related topics
 

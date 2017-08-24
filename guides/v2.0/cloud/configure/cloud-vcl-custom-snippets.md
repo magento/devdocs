@@ -28,7 +28,7 @@ For Fastly resources on creating VCL snippets, see:
 ## Configure the bash script {#bash-script}
 We provide an easier solution then entering cURL commands to create VCL snippets. Currently, to create and upload custom VCL snippets, you need to use Fastly APIs with cURL commands for [regular](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="_blank"} and [dynamic](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"} snippets. We also provide a bash script to upload all snippets found in a directory.
 
-Copy and modify the following bash script into a file located in the same directory as your `.vcl` snippets. Add the specific version, Fastly Service ID, and Fastly API Key. When adding VCLs to Staging and Production, you may want to create two bash files with those Service IDs specified, or modify the code further.
+Copy and modify the following bash script into a file located in the same directory as your `.vcl` snippets. Give the bash script file a name like `upload_snippets.sh`. Add the specific version, Fastly Service ID, and Fastly API Key. When adding VCLs to Staging and Production, you may want to create two bash files with those Service IDs specified, or modify the code further.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 When modifying the bash script, make sure to carefully use the Service ID. If you want to add the snippets for Staging and Production environments, you will need to enter cURL commands twice with different Service IDs in each command. Keep this in mind when editing and deleting snippets from either environment.
@@ -161,28 +161,65 @@ You can reference and use this edge ACL with your VCL snippet code.
 ### Create block bad referers VCL {#bad-refer}
 Create a VCL coded file to use with an edge dictionary of domains to block. For this example, you could use the referers dictionary. The priority is set to 5 to run before uploaded magentomodule snippets (priority 50).
 
-Name: block_bad_referers
-Within subroutine: vcl_recv
-Advanced options:
-Priority: 5
-Content
 
-  # capture host of referer into a header
-    set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1");
-  # check if referrer host is in blocklist table
-    if (table.lookup(referer_blocklist, req.http.Referer-Host)) {
-        error 403 "Forbidden";
-    }
+* Name: block_bad_referers
+* Within subroutine: vcl_recv
+* Advanced options:
+* Priority: 5
+* Content
+
+    # capture host of referer into a header
+      set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1");
+    # check if referrer host is in blocklist table
+      if (table.lookup(referer_blocklist, req.http.Referer-Host)) {
+          error 403 "Forbidden";
+      }
 
 ### Create block IP VCL {#block-ip}
 Create a VCL coded file to use with an ACL list to block a set of IPs from accessing the site. The priority is set to 5 to run before uploaded magentomodule snippets (priority 50).
 
-Name: block_bad_ips
-Within subroutine: vcl_recv
-Advanced options:
-Priority: 5
-Content
+* Name: block_bad_ips
+* Within subroutine: vcl_recv
+* Advanced options:
+* Priority: 5
+* Content
 
-  if ( client.ip ~ blocklist) {
-    error 403 "Forbidden";
+    if ( client.ip ~ blocklist) {
+      error 403 "Forbidden";
+      }
+
+### Extend Magento Admin timeout on Fastly {#admin-timeout}
+Fastly has a strict timeout for the Magento Admin of three minutes. This may not be enough time for some extended actions. To extend the default timeout for the Magento Admin, you can make a VCL snippet file copy of this pass.vcl snippet from Fastly.
+
+1. Copy the code from the [Fastly pass.vcl](https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl) into a new .vcl file. Or copy the code below into a new file.
+
+    # Deactivate gzip on origin
+    unset bereq.http.Accept-Encoding;
+
+    # Increase first byte timeouts for /admin* URLs to 3 minutes
+    if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
+
+      set bereq.first_byte_timeout = 180s;
+
+
     }
+2. In your copy, modify the `set bereq.first_byte_timeout = 180s;` from 180s (three minutes) to a higher amount. For example, enter 300s for five minutes or 600s for ten minutes.
+3. Save the `.vcl` file to your directly of VCL snippets and run the bash script to upload.
+
+## Run the bash script {#run-script}
+When you have VCLs to upload, it's time to run the bash script.
+
+To run the script and verify scripts:
+
+1. In a terminal, move to the directory with the VCL snippets and bash script files.
+2. Run the bash script by entering the file name. For example, enter `upload_snippets`.
+3. As the script runs, VCL snippets should be generating and uploading to Fastly.
+4. To list all all regular VCL snippets attached to a service, enter the following API call with the appropriate information:
+
+	 curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+
+#### Related topics
+
+* [Fastly in Cloud]({{ page.baseurl}}cloud/welcome/cloud-fastly.html)
+* [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html)
+* [Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)

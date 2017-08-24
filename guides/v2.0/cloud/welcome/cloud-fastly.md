@@ -16,36 +16,42 @@ When you update products, catalogs, content, and more, Fastly purges that specif
 
 We provide Fastly service credentials including a Fastly Service ID and API key pair for your Staging and Production environments. You use the credentials, upload VCL snippets, and configured backends (with Origin shields)
 
-The power of Fastly is using the following:
+Fastly provides the following powerful tools for Magento:
 
 * Create edge and ACL dictionaries with VCL snippets (Varnish 2.1 compliant) to modify how caching responds to requests
 * Three types of purges for:
 
   * Quick Purge (by URL)
-  * Surrogate/key purge using tags for HTML, images, categories, and so on
+  * Surrogate/key purge using tags to purge specific HTML, images, categories, and so on
   * Purge all, which clears everything in the cache
 * GeoIP extension support
 * Force unencrypted requests over to TLS
 
-## Fastly and 503 timeouts {#503}
+## Fastly and 503 timeouts {#timeouts}
 When you receive a 503 error from Fastly, it may be due to a lengthy operation or performing bulk actions. Fastly has a default 60 second time out. Any request that takes longer than 60 seconds will return a 503 error.
 
 If you receive a 503 error, make the request directly to the origin or review logs
 
 Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes.
 
+We provide [VCL snippet instructions]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html#admin-timeout) for extending the timeout for the Magento Admin.
+
 ## Backends and Origin shields {#backend}
 Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A _backend_ is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.
 
 _Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.
 
+We provide detailed instructions for configuring backends when you [configure Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html).
+
 ## Basic authentication {#basic-auth}
-Basic authentication is a feature to protect every page and asset on your site with a username and password. We do not recommend activating basic authentication on your Production environment. You can configure it on Staging to protect your site when completing development.
+Basic authentication is a feature to protect every page and asset on your site with a username and password. We **do not recommend** activating basic authentication on your Production environment. You can configure it on Staging to protect your site when completing development.
 
 If you add user access and enable basic authentication on Staging, you can still access the Magento Admin without requiring additional credentials to enter.
 
 ## Custom VCLs and actions {#custom-vcl}
 Fastly provides an extremely custom code friendly method for creating lists of items like IPs and domains to complete actions via Fastly and Varnish code blocks. For example, with edge and ACL dictionaries and VCL code, you could allow, block, or redirect access for specific users or IPs.
+
+After you have [set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html), you can create [custom VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html) using these edge dictionaries and ACLs.
 
 ### Edge dictionaries {#dictionary}
 Save key-value pairs on Fastly Edge nodes of dictionary containers and items to invoke with VCL snippets in your site. You have up to 1,000 entries per dictionary.
@@ -76,6 +82,9 @@ For detailed information on VCL snippets, see the following:
 
 ## Force TLS {#tls}
 Fastly supports forcing unencrypted requests to TLS through the Force TLS feature. Set up a secure base URL in Magento and turn on the Force TLS option in the Fastly extension. For details and instructions, see Fastly's [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md){:target="_blank"}.
+
+## GeoIP service support {#geoip}
+Fastly provides a GeoIP service and supports some GeoIP functionality. GeoIP handling manages visitor redirection (automatically) and store matching (select from list) based on their obtained country code. For more information, see Fastly's [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling){:target="_blank"}.
 
 ## Installation and configuration {#install-configure}
 The installation and configuration process is:
