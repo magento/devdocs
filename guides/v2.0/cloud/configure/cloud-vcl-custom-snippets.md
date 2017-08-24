@@ -48,8 +48,8 @@ First, create a new service configuration version number with the following comm
 Fastly returns the editable version number and Service ID. You use the version number when creating, calling, and managing VCL snippets. For example:
 
 	{
-		 "number":1,
-		 "service_id": "SU1Z0isxPaozGVKXdv0eY"
+		"number":1,
+		"service_id": "SU1Z0isxPaozGVKXdv0eY"
 	}
 
 ### Create the VCL snippet
