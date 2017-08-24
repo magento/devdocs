@@ -145,7 +145,9 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 						"type": "vcs",
 						"url": "https://github.com/fastly/fastly-magento2.git"
 				}
-6. Edit the `app/etc/config.php` file (if Fastly is already installed) and make sure the setting `'Fastly_Cdn' => 1` is correct. If the setting is `'Fastly_Cdn' => 0` you will need to modify, save, and commit the file change.
+6. If you use [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm), you should have a configuration file. Edit the `app/etc/config.app.php` (2.0, 2.1) or `app/etc/config.php` (2.2) file and make sure the setting `'Fastly_Cdn' => 1` is correct. The setting should not be `'Fastly_Cdn' => 0` (meaning disabled).
+
+	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
 
 If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html) for instructions.
 
@@ -175,9 +177,10 @@ If the issue persists, another extension is likely resetting these headers. Repe
 
 When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates for 3rd party extension developers to work with Fastly caching.
 
-## Purges do not process
-If you attempt to use a purge option, and it does not process, you may have incorrect Fastly credentials in your environment or may have encountered an issue.
+## Purges do not process {#purge}
+If you attempt to use a Fastly purge option, and it does not process, you may have incorrect Fastly credentials in your environment or may have encountered an issue. You may receive the error: "The purge request was not processed successfully."
 
+### Check Fasty credentials
 Verify if you have the correct Fastly Service ID and API token in your environment. If you have Staging credentials in Production, the purges may not process or process incorrectly.
 
 1. Log in to your local Magento Admin as an administrator.
@@ -185,13 +188,12 @@ Verify if you have the correct Fastly Service ID and API token in your environme
 3. Expand **Fastly Configuration** and verify the Fastly Service ID and API token for your environment.
 4. If you modify the values, click **Test Credentials**.
 
+### Check VCL snippets
 If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:
 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
 
 Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
-
-You can further test caching to verify if the issue occurs in Fastly or {{site.data.var.<ee>}}.
 
 #### Related topics
 * [Fastly in Cloud]({{ page.baseurl}}cloud/welcome/cloud-fastly.html)
