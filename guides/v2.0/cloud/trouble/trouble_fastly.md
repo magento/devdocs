@@ -29,11 +29,19 @@ For example:
 ### cURL command {#curl}
 Next, use a curl command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production:
 
-* Staging: `curl http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
-* Production:
+**Staging:**
 
-	* The load balancer: `curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
-	* A direct Origin node: `curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+	curl http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1
+
+**Production:**
+
+The load balancer:
+
+	curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1
+
+A direct Origin node:
+
+	curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1
 
 For example, if you have a public URL `www.mymagento.biz`, enter a command similar to the following to test the production site:
 
@@ -46,13 +54,13 @@ If you do not have DNS set up for a public host name, enter a command similar to
 ### Check response headers {#response-headers}
 Check the returned response headers and values:
 
-*	`Fastly-Magento-VCL-Uploaded` should be present
-*	`X-Magento-Tags` should be returned
-*	`Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
-*	`X-Cache` should be either `HIT` or `HIT, HIT`
-*	`x-cache-hits` should be 1,1
-*	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
-* [`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
+*	Fastly-Magento-VCL-Uploaded should be present
+*	X-Magento-Tags should be returned
+*	Fastly-Module-Enabled should be either Yes or the Fastly extension version number
+*	X-Cache should be either `HIT` or `HIT, HIT`
+*	x-cache-hits should be 1,1
+*	[Cache-Control: max-age](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
+* [Pragma](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
 
 The following example shows the correct values for `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled`.
 
@@ -127,7 +135,7 @@ To determine if the VCL snippets are not uploaded, check the following:
 ## Resolve errors found by cURL
 This section provides suggestions for resolving errors you might find using the `curl` command.
 
-### `Fastly-Module-Enabled` is not present {#no-module}
+### Fastly-Module-Enabled is not present {#no-module}
 If you don't receive a "yes" for the `Fastly-Module-Enabled` in the response headers, you need to verify the Fasty module is installed and selected.
 
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
@@ -151,10 +159,10 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 
 If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html) for instructions.
 
-### `Fastly-Magento-VCL-Uploaded` is not present {#no-VCL}
+### Fastly-Magento-VCL-Uploaded is not present {#no-VCL}
 During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
 
-### `X-Cache` includes `MISS` {#xcache-miss}
+### X-Cache includes MISS {#xcache-miss}
 If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
 
 If you get the same result, use the [`curl` commands](#curl) and verify the [response headers](#response-headers):
