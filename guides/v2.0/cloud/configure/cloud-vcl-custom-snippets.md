@@ -38,7 +38,7 @@ What you should know about the `curl` command and JSON values:
 * type: Specifies the location to place the snippet such as `init` (above subroutines) and within subroutines like `recv`. See [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="_blank"} for examples.
 * content: The snippet of VCL code to run
 * priority: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number like 5. If after Magento modules, use a higher number like 75.
-* Dynamic: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
+* dynamic: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 
 ### Get a version number
 First, create a new service configuration version number with the following command. Your VCL snippets are versioned. You may notice the versioning when you upload VCLs during Fastly configuration. Make sure to enter your Service ID and API key in the command.
@@ -131,12 +131,15 @@ Edge ACLs create IP lists for managing access for your VCL snippet. These instru
 4. Click **Add ACL** to create a list.
 5. Enter IP values in the list. Optionally, select the Negated checkbox if needed.
 
-You can use the Edge Dictionary by name in your VCL snippet code.
+You can use the Edge ACL by name in your VCL snippet code.
 
 For more information on using manually added ACLs with your VCL snippets, see Fastly's [Manually creating access control lists](https://docs.fastly.com/guides/access-control-lists/manually-creating-access-control-lists){:target="_blank"}.
 
+## Example VCL snippets {#examples}
+THe following are example VCL snippets using Edge Dictionaries and ACLs.
+
 ### Create block bad referers VCL {#bad-refer}
-Create a VCL coded file to use with an edge dictionary of domains to block. For this example, you could use the referers dictionary. The priority is set to 5 to run before uploaded magentomodule snippets (priority 50).
+Create a VCL coded file to use with an Edge Dictionary of domains to block. For this example, you could use the referers dictionary. The priority is set to 5 to run before uploaded magentomodule snippets (priority 50).
 
 
 * Name: block_bad_referers
@@ -153,7 +156,7 @@ Create a VCL coded file to use with an edge dictionary of domains to block. For 
         }
 
 ### Create block IP VCL {#block-ip}
-Create a VCL coded file to use with an ACL list to block a set of IPs from accessing the site. The priority is set to 5 to run before uploaded magentomodule snippets (priority 50).
+Create a VCL coded file to use with an Edge ACL list to block a set of IPs from accessing the site. The priority is set to 5 to run before uploaded magentomodule snippets (priority 50).
 
 * Name: block_bad_ips
 * Within subroutine: vcl_recv
@@ -170,13 +173,13 @@ Fastly has a strict timeout for the Magento Admin of three minutes. This may not
 
 1. Copy the code from the [Fastly pass.vcl](https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl){:target="_blank"} or copy the code below:
 
-	  # Deactivate gzip on origin
-	  unset bereq.http.Accept-Encoding;
+		# Deactivate gzip on origin
+		unset bereq.http.Accept-Encoding;
 
-	  # Increase first byte timeouts for /admin* URLs to 3 minutes
-	  if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
-	        set bereq.first_byte_timeout = 180s;
-				}
+		# Increase first byte timeouts for /admin* URLs to 3 minutes
+		if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
+			set bereq.first_byte_timeout = 180s;
+			}
 2. In your copy, modify the `set bereq.first_byte_timeout = 180s;` from 180s (three minutes) to a higher amount. For example, enter 300s for five minutes or 600s for ten minutes.
 
 You can create a `curl` command to overwrite the pass.vcl with a new version:
