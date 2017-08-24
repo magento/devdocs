@@ -193,7 +193,7 @@ You can create a `curl` command to overwrite the `pass.vcl` with a new version:
 3. Enter the [`curl` commands](#manage-vcl) to update, validate, and activate.
 
 ## Creating VCL snippets with a Bash script {#bash-snippets}
-We provide another solution then entering `curl` commands to create VCL snippets using `.vcl` files and a bash script to upload all snippets found in a directory.
+We provide another solution than entering `curl` commands to create VCL snippets using `.vcl` files and a bash script to upload all snippets found in a directory.
 
 To create VCL snippets this way:
 
