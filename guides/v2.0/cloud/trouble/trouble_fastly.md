@@ -18,6 +18,8 @@ To verify the Fastly extension is working or to debug the Fastly extension, you 
 ## Test your Staging and Production sites {#cloud-test-stage}
 This section discusses how to use `dig` and `curl` to get response headers from your Staging or Production site (the origin servers). You never need to test on the Integration environments. Basically, you are curling the edge for responses.
 
+**Note:** If you encounter issues when using `dig` and `curl` to the direct origin servers, not through the live server domain, the issue may not be Fastly.
+
 ### dig command {#dig}
 First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
 
@@ -26,8 +28,13 @@ For example:
 * Staging: `dig http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud`
 * Production: `dig http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
-### cURL command {#curl}
-Next, use a curl command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production:
+### curl command {#curl}
+Next, use a `curl` command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production.
+
+For more information on these commands, you bypass Fastly when you inject `-H "host:URL"`, replace with origin to connecting location (CNAME informatin from your OneDrive Spreadsheet), `-k` ignores SSL, and `-v` provides verbose responses. If headers display correctly, check the live site and verify headers again.
+
+* If header issues occur when directly hitting the origin servers bypassing Fastly, you may have issues in your code, with extensions, or with the infrastructure.
+* If you encounter no errors directly hitting the origin servers, but headers are missing hitting the live domain through Fastly, you may have Fastly errors.
 
 **Staging:**
 
@@ -127,9 +134,9 @@ The output for this command is similar to curl Staging and Production. Verify th
 ## Determine if VCL is not uploaded {#vcl-uploaded}
 To determine if the VCL snippets are not uploaded, check the following:
 
-* Top level navigation does not work: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
-* Pages are not caching: By default Fastly doesn’t cache pages with Set-Cookies. Magento sets Cookies even on cacheable pages (TTL > 0). Magento Fastly VCL strips those cookies on cacheable pages. This may also happen if page block in a template is marked uncacheable. If this occurs, it's due to a 3rd party module or Magento extension blocking or removing the Magento headers. See [X-Cache missed section](#xcache-miss) for details.
-* Geo-location/GeoIP does not work: The uploaded Magento Fastly VCL snippets append the country code to the URL. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
+* **Top level navigation does not work**: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
+* **Pages are not caching**: By default Fastly doesn’t cache pages with Set-Cookies. Magento sets Cookies even on cacheable pages (TTL > 0). Magento Fastly VCL strips those cookies on cacheable pages. This may also happen if page block in a template is marked uncacheable. If this occurs, it's due to a 3rd party module or Magento extension blocking or removing the Magento headers. See [X-Cache missed section](#xcache-miss) for details.
+* **Geo-location/GeoIP does not work**: The uploaded Magento Fastly VCL snippets append the country code to the URL. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
 
 
 ## Resolve errors found by cURL
