@@ -12,7 +12,7 @@ github_link: cloud/configure/cloud-vcl-custom-snippets.md
 
 Fastly and {{site.data.var.<ece>}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating edge dictionaries and edge ACLs for your VCL snippets. You're free to customize your Fastly VCL snippets any way you like to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
 
-THis information includes a walk-through creating snippets with [cURL commands](#vcl-curl) or running a modified [bash script](#bash-script) with `.vcl` files. Don't worry, we walk you through the process with examples.
+This information includes a walk-through creating snippets with [cURL commands](#vcl-curl) or running a modified [bash script](#bash-script) with `.vcl` files. Don't worry, we walk you through the process with examples. Also, you can open a terminal to complete these commands. You do not need to SSH into a specific environment.
 
 You need the following information to create VCL snippets:
 
@@ -170,14 +170,13 @@ Fastly has a strict timeout for the Magento Admin of three minutes. This may not
 
 1. Copy the code from the [Fastly pass.vcl](https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl){:target="_blank"} into a new .vcl file. Or copy the code below into a new file.
 
-      # Deactivate gzip on origin
-      unset bereq.http.Accept-Encoding;
+  <pre># Deactivate gzip on origin
+  unset bereq.http.Accept-Encoding;
 
-      # Increase first byte timeouts for /admin* URLs to 3 minutes
-      if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
-
+  # Increase first byte timeouts for /admin* URLs to 3 minutes
+  if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
         set bereq.first_byte_timeout = 180s;
-      }
+				}</pre>
 2. In your copy, modify the `set bereq.first_byte_timeout = 180s;` from 180s (three minutes) to a higher amount. For example, enter 300s for five minutes or 600s for ten minutes.
 3. Save the `.vcl` file to your directly of VCL snippets and run the bash script to upload.
 
