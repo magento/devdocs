@@ -27,8 +27,6 @@ For Fastly resources on creating VCL snippets, see:
 *	[Using dynamic VCL snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 * [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="_blank"}
 
-Currently, to create and upload custom VCL snippets, you need to use Fastly APIs with cURL commands for [regular](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="_blank"} and [dynamic](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"} snippets.
-
 ## Create VCL snippets with cURL {#vcl-curl}
 Using cURL commands, you can directly access the Fastly API and generate VCL snippets directly to your specific service.
 
