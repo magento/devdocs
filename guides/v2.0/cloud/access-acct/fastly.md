@@ -29,7 +29,7 @@ To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/welco
 We'll provide you with the following credentials for your Staging and Production services:
 
 *	Fastly Service ID
-*	Fastly API key
+*	Fastly API token
 
 Make note of which environment each set of credentials is used for. If you use the wrong credentials in an environment, you'll encounter issues with Fastly.
 
@@ -61,6 +61,15 @@ We provide Fastly services only for your Staging and Production environments. Yo
 3.	Enter the following command to fully update and clear the cache:
 
 		php bin/magento setup:upgrade && php bin/magento cache:clean
+4. Edit your composer.json and ensure the Fasty module is included with version.
+
+	* In the "require" section, you should have `"fastly/magento2": <version number>`
+	* In the "repositories" section, you should have:
+
+			"fastly-magento2": {
+						"type": "vcs",
+						"url": "https://github.com/fastly/fastly-magento2.git"
+				}
 3.	Add, commit, and push the changes to your code repository with the following command:
 
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
@@ -73,7 +82,7 @@ After deployment, you can log into the Admin in Staging and Production to config
 ## Enable and configure Fastly using the Magento Admin {#cloud-fastly-config}
 To begin configuring Fastly, you need to enter and test Fastly credentials in Staging and Production. After successfully testing the credentials, you can continue with advanced configurations and [VCL snippets](#custom-vcl).
 
-We provide your Fastly Service ID and API key for Staging and Production environments. These credentials are different for each environment. Make sure to use the correct credentials.
+We provide your Fastly Service ID and API key (or token) for Staging and Production environments. These credentials are different for each environment. Make sure to use the correct credentials.
 
 Complete the following configuration steps in Staging and Production environments:
 
@@ -96,7 +105,7 @@ Configure the following features and enable additional [configuration options](h
 * [Upload Fastly VCL snippets](#upload-vcl-snippets)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-*	Ignore the link to create a free Fastly account. We'll provide your Fastly credentials (Service ID and API Key).
+*	Ignore the link to create a free Fastly account. We'll provide your Fastly credentials (Service ID and API token).
 *	With Fastly version 1.2.0 and later, you no longer need to upload your VCL to Fastly. The **Upload VCL to Fastly** button enables you to upload [VCL snippets](#custom-vcl).
 </div>
 
@@ -136,8 +145,28 @@ You can add multiple backends.
 4. Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
 5. Optionally, select to Activate the backend and Shield after editing or saving.
 6. Click **Upload** to save. The settings are commiunicated to Fastly.
+7. In the Magento Admin, click **Save Config**.
 
 For more information from Fastly, see the Magento 2 [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md){:target="_blank"}.
+
+## Configure purge options {#purge}
+Fastly provides multiple types of purge options on your Magento Cache Management page including purging product category, product assets, and content. When enabled, Fastly watches for events to automatically purge those caches. If you disable a purge option, you can manually purge Fastly aches after finishing updates through the Cache Management page.
+
+The options include:
+* Purge category: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
+* Purge product: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
+* Purge CMS page: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
+* Soft purge: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
+
+![Configure purge options]({{ site.baseurl }}common/images/cloud_fastly-purgeoptions.png){:width="650px"}
+
+To configure Fastly purge options:
+
+1. In the **Fastly Configuration** section, expand **Advanced**.
+2. All purge options display. Select "Yes" per purge option to enable automatic purging. Select "No" to disable automatic purging, allowing you to manually purge caches through the Cache Management page.
+4. Click **Save Config** at the top of the page.
+
+For more information, see [Fastly's configuration options](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}.
 
 ## Create a custom error/maintenance page {#fastly-errpg}
 You can optionally create a custom page for errors or when your site is down for maintenance. Create your page with HTML code to provide detailed information why the site is temporarily down, instead of an HTTP error code.
@@ -154,7 +183,7 @@ To create a custom error/maintenance page:
 	Avoid using images on your site in the event Fastly is not available. To use images, refer to [Data URIs on the css-tricks site](https://css-tricks.com/data-uris/){:target="_blank"}.
 	</div>
 4.	When you're done, click **Upload** to send your updates to Fastly.
-5.	In the Magento Admin, click **Save Config**.
+5.	Click **Save Config** at the top of the page.
 
 ## Create custom VCL snippets {#custom-vcl}
 For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)

@@ -124,7 +124,7 @@ To determine if the VCL snippets are not uploaded, check the following:
 * Geo-location/GeoIP does not work: The uploaded Magento Fastly VCL snippets append the country code to the URL. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
 
 
-## Resolve errors
+## Resolve errors found by cURL
 This section provides suggestions for resolving errors you might find using the `curl` command.
 
 ### `Fastly-Module-Enabled` is not present {#no-module}
@@ -136,6 +136,16 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
 3. Ensure Fastly CDN is selected.
 4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
+5. Edit your `composer.json` and ensure the Fasty module is included with version. This file has all modules listed with versions.
+
+	* In the "require" section, you should have `"fastly/magento2": <version number>`
+	* In the "repositories" section, you should have:
+
+			"fastly-magento2": {
+						"type": "vcs",
+						"url": "https://github.com/fastly/fastly-magento2.git"
+				}
+6. Edit the `app/etc/config.php` file (if Fastly is already installed) and make sure the setting `'Fastly_Cdn' => 1` is correct. If the setting is `'Fastly_Cdn' => 0` you will need to modify, save, and commit the file change.
 
 If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html) for instructions.
 
@@ -155,15 +165,33 @@ If the issue persists, another extension is likely resetting these headers. Repe
 
 1.	Log in to the Magento Admin on your Staging or Production site.
 2.	Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **Advanced**.
-3.	In the Disable Modules Output section in the right pane, locate an extension.
-4.	From the list next to the extension name, click **Disable**.
+3.	In the Disable Modules Output section in the right pane, locate and disable all of your extensions*.
 5.	Click **Save Config**.
-6.	Click **System** > Tools > **Cache Management**.
+6.	Click **System** > **Tools** > **Cache Management**.
 7.	Click **Flush Magento Cache**.
-8.	Try the [`curl` commands](#curl) and verify the [response headers](#response-headers).
-9.	If the results are the same, repeat the tasks discussed in this section to disable another extension.
+8.	Now enable one extension at a time, saving the configuration and flushing the Magento cache.
+9.	Try the [`curl` commands](#curl) and verify the [response headers](#response-headers).
+10.	Repeat steps 8 and 9 to enable and test the `curl` commands. When the Fastly headers no longer display, you have found the extension causing issues with Fastly.
 
 When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates for 3rd party extension developers to work with Fastly caching.
+
+## Purges do not process
+If you attempt to use a purge option, and it does not process, you may have incorrect Fastly credentials in your environment or may have encountered an issue.
+
+Verify if you have the correct Fastly Service ID and API token in your environment. If you have Staging credentials in Production, the purges may not process or process incorrectly.
+
+1. Log in to your local Magento Admin as an administrator.
+2. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
+3. Expand **Fastly Configuration** and verify the Fastly Service ID and API token for your environment.
+4. If you modify the values, click **Test Credentials**.
+
+If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:
+
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+
+Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+
+You can further test caching to verify if the issue occurs in Fastly or {{site.data.var.<ee>}}.
 
 #### Related topics
 * [Fastly in Cloud]({{ page.baseurl}}cloud/welcome/cloud-fastly.html)
