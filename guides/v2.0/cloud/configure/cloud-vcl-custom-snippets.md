@@ -182,7 +182,7 @@ Fastly has a strict timeout for the Magento Admin of three minutes. This may not
 			}
 2. In your copy, modify the `set bereq.first_byte_timeout = 180s;` from 180s (three minutes) to a higher amount. For example, enter 300s for five minutes or 600s for ten minutes.
 
-You can create a `curl` command to overwrite the pass.vcl with a new version:
+You can create a `curl` command to overwrite the `pass.vcl` with a new version:
 
 1. Use a [command to list the VCL](#manage-vcl) snippets. For example, enter the following command to get a list of all snippets to find the `pass.vcl`:
 
@@ -190,7 +190,7 @@ You can create a `curl` command to overwrite the pass.vcl with a new version:
 2. Build an update command for the `pass.vcl` using data from the located VCL snippet and the updated timeout. For example:
 
 		curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name for pass.vcl> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=unset bereq.http.Accept-Encoding; if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 300s; }';
-3. Enter the `curl` command to update, validate, and activate.
+3. Enter the [`curl` commands](#manage-vcl) to update, validate, and activate.
 
 ## Creating VCL snippets with a Bash script {#bash-snippets}
 We provide another solution then entering `curl` commands to create VCL snippets using `.vcl` files and a bash script to upload all snippets found in a directory.
