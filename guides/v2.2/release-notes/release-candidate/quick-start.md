@@ -66,8 +66,6 @@ Keep in mind the following features of this Release Candidate  during your evalu
 
 * No technical support is available for problems you encounter during Release Candidate evaluation.
 
-* You cannot share Release Candidate code with anyone external to your organization.
-
 
 
 ### Participants
@@ -89,6 +87,8 @@ The Magento 2.2.0 EE Release Candidate evaluation is open to all Solution Partne
 * Sign the [Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLmNvbS9wYXJ0bmVycy9wb3J0YWwvYWdyZWVtZW50Lw,,/). Note that the Magento Primary Contact must sign the agreement.
 
 * Provide GitHub account information for an Individual Account for a Solution Partner Employee. The company name field must contain the Partner’s name or @partnername. Alternatively, the user’s profile must show that the developer is a member of the Solution Partner’s GitHub Organization.
+
+* You cannot share Release Candidate code with anyone external to your organization.
 
 
 ## More information?
