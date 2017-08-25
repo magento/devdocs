@@ -189,6 +189,23 @@ To create a custom error/maintenance page:
 ## Create custom VCL snippets {#custom-vcl}
 For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
 
+## Bypass Fastly for access to the Magento Admin {#bulkaction}
+Fastly enforces a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. You can extend the timeout using a [custom VCL snippet]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html##admin-timeout) or directly access the Magento server, bypassing Fastly.
+
+For these instructions, you need your direct domain name and project ID to build a new URL.
+
+1. Access the Magento Admin in your Staging or Production environment.
+2. Navigate to **Stores** > **Configuration** > **Advanced** and click **Admin**. Expand the Admin Base URL to modify the value.
+3. For **Use Custom Admin URL**, uncheck the **Use system value** checkbox and select Yes. A field displays to enter a URL.
+4. For **Custom Admin URL**, uncheck the **Use system value** checkbox and enter the direct (origin) URL for the target environment in the following format: `https://<name>.c.<projectid>.ent.magento.cloud/admin`. For example, if your domain name is BobStore and project ID is abcdefghijklmn, the URL would be: `https://bobstore.com.c.abcdefghijklmn.ent.magento.cloud/admin`.
+6. Click **Save Config**.
+7. Navigate to **Stores** > **Configuration** > **General** > **Web** and expand **Base Urls (Secure)**.
+8. Set Yes for **Use Secure URLs in Admin**.
+7. Flush the Magento cache using the Admin or this CLI command: `cache bin/magento cache:flush`.
+8. Enter a Support ticket requesting the value for `UPDATE_URLS` set to disabled for Staging and/or Production environment. This setting ensures any code deployments will not overwrite this URL and redirect your Magento Admin access back through Fastly.
+
+Wait until the ticket has completed before attempting bulk actions. When accessing the Admin, you will use the direct URL you configured. This URL is directly to the origin, bypassing Fastly for Admin operations and completing bulk actions without encountering a timeout.
+
 ## Configure GeoIP handling {#geoip}
 The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
 

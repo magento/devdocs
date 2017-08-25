@@ -40,7 +40,7 @@ What you should know about the `curl` command and JSON values:
 * priority: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number like 5. If after Magento modules, use a higher number like 75.
 * dynamic: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 
-### Get a version number
+### Get a version number {#version-number}
 First, create a new service configuration version number with the following command. Your VCL snippets are versioned. You may notice the versioning when you upload VCLs during Fastly configuration. Make sure to enter your Service ID and API key in the command.
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version
@@ -52,7 +52,7 @@ Fastly returns the editable version number and Service ID. You use the version n
 		"service_id": "SU1Z0isxPaozGVKXdv0eY"
 	}
 
-### Create the VCL snippet
+### Create the VCL snippet {#create-snippet}
 Create the VCL snippet on the new version. We recommend typing out your `curl` command to make sure everything is correct before entering it in a terminal. You can always copy and paste the command when
 
 Use the following command as a template:
@@ -75,7 +75,7 @@ After you run the `curl` command, Fastly returns a JSON response with the data:
 	  "deleted_at": null
 	}
 
-### Validate and activate
+### Validate and activate {#validate}
 When you add the VCL snippet, Fastly creates and assigns it to your service. Next, you should verify the entered VCL snippet validates with Fastly. Use the following command entering specifics for the snippet to validate:
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
