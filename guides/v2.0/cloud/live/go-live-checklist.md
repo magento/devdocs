@@ -54,6 +54,11 @@ Many other providers also offer workarounds to accomplish this goal. The most co
 
 For the format, we support `www.domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`. We don't support a domain without www: `domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`.
 
+### TLS and Fastly {#fastly-tls}
+If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your Support ticket for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly's TXT record file for your account. You can then send this record to your DNS provider.
+
+For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="_blank"}.
+
 ## Verify Production configurations
 Make a final pass for any Production configurations in the store(s). If you need to make changes to configurations, you can modify in Production. If settings are read-only, you may need to SSH and CLI commands to modify, or make configuration changes in your local and deploy across.
 
