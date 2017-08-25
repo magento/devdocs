@@ -1,0 +1,45 @@
+label: REST API Reference
+pages:
+    - label: Overview
+      url: rest/bk-rest.html
+      children:
+        - label: REST APIs
+          versions: ["2.0"]
+          url: http://devdocs.magento.com/swagger/index_20.html
+
+        - label: REST APIs
+          versions: ["2.1"]
+          url: http://devdocs.magento.com/swagger/index_21.html
+
+        - label: REST APIs
+          versions: ["2.2"]
+          url: http://devdocs.magento.com/swagger/index_22.html
+
+        - label: List of REST endpoints by module
+          url: rest/list.html
+
+        - label: List of service names per module
+          url: rest/rest_endpoints.html
+
+        - label: Generate a local API reference
+          url: rest/generate-local.html
+
+        - label: Restricting access to anonymous web APIs
+          url: rest/anonymous-api-security.html
+
+        - label: REST usage notes
+          url: rest/notes.html
+
+    - label: Modules
+      versions: ["2.2"]
+      children:
+
+        - label: Catalog
+          children:
+
+            - label: Manage prices for multiple products
+              url: rest/catalog-pricing.html
+
+            - label: Usage notes
+              url: rest/catalog-notes.html
+
