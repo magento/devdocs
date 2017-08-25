@@ -9,7 +9,7 @@ version: 2.2
 github_link: release-notes/release-candidate/component-status.md
 ---
 
-**Last Updated:** August 21, 2017
+**Last Updated:** August 25, 2017
 
 This page shows the ongoing status of each component during the Magento 2.2 Release Candidate period and is intended to show you the readiness of different components.
 
@@ -26,32 +26,31 @@ Issues that are not related to the 2.2 release are not part of this report.
 
 | Name                                           | Status                                    |
 | ---------------------------------------------- | ----------------------------------------- |
-| Module/ Bundle                                 | <span class='status red'>Red</span>       |
 | Module/ Catalog                                | <span class='status red'>Red</span>       |
 | Module/ ConfigurableProduct                    | <span class='status red'>Red</span>       |
-| Module/ Eav                                    | <span class='status red'>Red</span>       |
+| Module/ Paypal                                 | <span class='status red'>Red</span>       |
 | Infrastructure/ Configuration Framework        | <span class='status yellow'>Yellow</span> |
 | Infrastructure/ Functional Tests               | <span class='status yellow'>Yellow</span> |
+| Infrastructure/ Module Framework               | <span class='status yellow'>Yellow</span> |
 | Module/ AdvancedPricingImportExport            | <span class='status yellow'>Yellow</span> |
 | Module/ Authorizenet                           | <span class='status yellow'>Yellow</span> |
-| Module/ Braintree                              | <span class='status yellow'>Yellow</span> |
+| Module/ Bundle                                 | <span class='status yellow'>Yellow</span> |
 | Module/ Catalog/ Pricing                       | <span class='status yellow'>Yellow</span> |
 | Module/ CatalogImportExport                    | <span class='status yellow'>Yellow</span> |
 | Module/ CatalogInventory                       | <span class='status yellow'>Yellow</span> |
 | Module/ CatalogRule                            | <span class='status yellow'>Yellow</span> |
-| Module/ CatalogUrlRewrite                      | <span class='status yellow'>Yellow</span> |
 | Module/ Customer/ Customer Groups              | <span class='status yellow'>Yellow</span> |
-| Module/ FedEx                                  | <span class='status yellow'>Yellow</span> |
+| Module/ DHL                                    | <span class='status yellow'>Yellow</span> |
+| Module/ Eav                                    | <span class='status yellow'>Yellow</span> |
 | Module/ Integration                            | <span class='status yellow'>Yellow</span> |
 | Module/ Msrp                                   | <span class='status yellow'>Yellow</span> |
 | Module/ Pagecache                              | <span class='status yellow'>Yellow</span> |
-| Module/ Paypal                                 | <span class='status yellow'>Yellow</span> |
+| Module/ Quote                                  | <span class='status yellow'>Yellow</span> |
 | Module/ Rule                                   | <span class='status yellow'>Yellow</span> |
 | Module/ Sales/ Order Management                | <span class='status yellow'>Yellow</span> |
+| Module/ SalesRule                              | <span class='status yellow'>Yellow</span> |
+| Module/ Setup                                  | <span class='status yellow'>Yellow</span> |
 | Module/ Translation                            | <span class='status yellow'>Yellow</span> |
-| Module/ UI                                     | <span class='status yellow'>Yellow</span> |
-| Tools/ Web Server Configuration                | <span class='status yellow'>Yellow</span> |
-| Infrastructure/ Code Process Framework         | <span class='status green'>Green</span>   |
 | Infrastructure/ Dependency Injection Framework | <span class='status green'>Green</span>   |
 | Infrastructure/ Entity Manager                 | <span class='status green'>Green</span>   |
 | Infrastructure/ Message Framework              | <span class='status green'>Green</span>   |
@@ -60,30 +59,30 @@ Issues that are not related to the 2.2 release are not part of this report.
 | Module/ CatalogSearch/ Search Frontend         | <span class='status green'>Green</span>   |
 | Module/ CatalogWidget                          | <span class='status green'>Green</span>   |
 | Module/ Cms/ CMS Content                       | <span class='status green'>Green</span>   |
-| Module/ Cms/ CMS Hierarchy                     | <span class='status green'>Green</span>   |
 | Module/ Config                                 | <span class='status green'>Green</span>   |
 | Module/ Customer/ Customers                    | <span class='status green'>Green</span>   |
 | Module/ Deploy                                 | <span class='status green'>Green</span>   |
-| Module/ Email                                  | <span class='status green'>Green</span>   |
-| Module/ Quote                                  | <span class='status green'>Green</span>   |
-| Module/ SalesRule                              | <span class='status green'>Green</span>   |
 | Module/ Sample Data                            | <span class='status green'>Green</span>   |
+| Module/ UI                                     | <span class='status green'>Green</span>   |
 | Tools/ Dev Tools                               | <span class='status green'>Green</span>   |
 | Module/ AdminNotification                      | <span class='status green'>Green</span>   |
 | Module/ Analytics                              | <span class='status green'>Green</span>   |
 | Module/ Authorization                          | <span class='status green'>Green</span>   |
 | Module/ Backend/ Dashboard                     | <span class='status green'>Green</span>   |
 | Module/ Backup                                 | <span class='status green'>Green</span>   |
+| Module/ Braintree                              | <span class='status green'>Green</span>   |
 | Module/ BundleImportExport                     | <span class='status green'>Green</span>   |
 | Module/ Captcha                                | <span class='status green'>Green</span>   |
 | Module/ CatalogRuleConfigurable                | <span class='status green'>Green</span>   |
 | Module/ CatalogSearch/ Search Terms            | <span class='status green'>Green</span>   |
+| Module/ CatalogUrlRewrite                      | <span class='status green'>Green</span>   |
 | Module/ Checkout/ Guest Checkout               | <span class='status green'>Green</span>   |
 | Module/ Checkout/ Mini Shopping Cart           | <span class='status green'>Green</span>   |
 | Module/ Checkout/ One Page Checkout            | <span class='status green'>Green</span>   |
 | Module/ Checkout/ Shopping Cart                | <span class='status green'>Green</span>   |
 | Module/ CheckoutAgreements                     | <span class='status green'>Green</span>   |
 | Module/ Cms/ Blog                              | <span class='status green'>Green</span>   |
+| Module/ Cms/ CMS Hierarchy                     | <span class='status green'>Green</span>   |
 | Module/ CmsUrlRewrite                          | <span class='status green'>Green</span>   |
 | Module/ ConfigurableImportExport               | <span class='status green'>Green</span>   |
 | Module/ Contact                                | <span class='status green'>Green</span>   |
@@ -95,11 +94,12 @@ Issues that are not related to the 2.2 release are not part of this report.
 | Module/ CustomerAnalytics                      | <span class='status green'>Green</span>   |
 | Module/ CustomerImportExport                   | <span class='status green'>Green</span>   |
 | Module/ Developer                              | <span class='status green'>Green</span>   |
-| Module/ DHL                                    | <span class='status green'>Green</span>   |
 | Module/ Directory                              | <span class='status green'>Green</span>   |
 | Module/ Downloadable                           | <span class='status green'>Green</span>   |
 | Module/ DownloadableImportExport               | <span class='status green'>Green</span>   |
+| Module/ Email                                  | <span class='status green'>Green</span>   |
 | Module/ EncryptionKey                          | <span class='status green'>Green</span>   |
+| Module/ FedEx                                  | <span class='status green'>Green</span>   |
 | Module/ GiftMessage                            | <span class='status green'>Green</span>   |
 | Module/ GoogleAdwords                          | <span class='status green'>Green</span>   |
 | Module/ GoogleAnalytics                        | <span class='status green'>Green</span>   |
@@ -153,88 +153,89 @@ Issues that are not related to the 2.2 release are not part of this report.
 
 ## EE Modules
 
-| Name                               | Status                                    |
-| ---------------------------------- | ----------------------------------------- |
-| Module/ Staging                    | <span class='status red'>Red</span>       |
-| Module/ ElasticSearch              | <span class='status yellow'>Yellow</span> |
-| Module/ GiftWrapping               | <span class='status yellow'>Yellow</span> |
-| Module/ Rma                        | <span class='status yellow'>Yellow</span> |
-| Module/ AdvancedCheckout           | <span class='status green'>Green</span>   |
-| Module/ CustomerCustomAttributes   | <span class='status green'>Green</span>   |
-| Module/ GiftRegistry               | <span class='status green'>Green</span>   |
-| Module/ MultipleWishlist           | <span class='status green'>Green</span>   |
-| Module/ VisualMerchandiser         | <span class='status green'>Green</span>   |
-| Module/ AdminGWS                   | <span class='status green'>Green</span>   |
-| Module/ AdvancedCatalog            | <span class='status green'>Green</span>   |
-| Module/ AdvancedSearch             | <span class='status green'>Green</span>   |
-| Module/ AsynchronousOperations     | <span class='status green'>Green</span>   |
-| Module/ Banner                     | <span class='status green'>Green</span>   |
-| Module/ BannerCustomerSegment      | <span class='status green'>Green</span>   |
-| Module/ BundleStaging              | <span class='status green'>Green</span>   |
-| Module/ CatalogEvent               | <span class='status green'>Green</span>   |
-| Module/ CatalogImportExportStaging | <span class='status green'>Green</span>   |
-| Module/ CatalogInventoryStaging    | <span class='status green'>Green</span>   |
-| Module/ CatalogPermissions         | <span class='status green'>Green</span>   |
-| Module/ CatalogRuleStaging         | <span class='status green'>Green</span>   |
-| Module/ CatalogStaging             | <span class='status green'>Green</span>   |
-| Module/ CatalogUrlRewriteStaging   | <span class='status green'>Green</span>   |
-| Module/ CheckoutStaging            | <span class='status green'>Green</span>   |
-| Module/ CmsStaging                 | <span class='status green'>Green</span>   |
-| Module/ ConfigurableProductStaging | <span class='status green'>Green</span>   |
-| Module/ CustomAttributeManagement  | <span class='status green'>Green</span>   |
-| Module/ CustomerBalance            | <span class='status green'>Green</span>   |
-| Module/ CustomerFinance            | <span class='status green'>Green</span>   |
-| Module/ CustomerSegment            | <span class='status green'>Green</span>   |
-| Module/ Cybersource                | <span class='status green'>Green</span>   |
-| Module/ DownloadableStaging        | <span class='status green'>Green</span>   |
-| Module/ Enterprise                 | <span class='status green'>Green</span>   |
-| Module/ Eway                       | <span class='status green'>Green</span>   |
-| Module/ GiftCard                   | <span class='status green'>Green</span>   |
-| Module/ GiftCardAccount            | <span class='status green'>Green</span>   |
-| Module/ GiftCardImportExport       | <span class='status green'>Green</span>   |
-| Module/ GiftCardStaging            | <span class='status green'>Green</span>   |
-| Module/ GiftMessageStaging         | <span class='status green'>Green</span>   |
-| Module/ GiftWrappingStaging        | <span class='status green'>Green</span>   |
-| Module/ GoogleOptimizerStaging     | <span class='status green'>Green</span>   |
-| Module/ GoogleTagManager           | <span class='status green'>Green</span>   |
-| Module/ GroupedProductStaging      | <span class='status green'>Green</span>   |
-| Module/ Invitation                 | <span class='status green'>Green</span>   |
-| Module/ LayeredNavigationStaging   | <span class='status green'>Green</span>   |
-| Module/ Logging                    | <span class='status green'>Green</span>   |
-| Module/ MsrpStaging                | <span class='status green'>Green</span>   |
-| Module/ PaymentStaging             | <span class='status green'>Green</span>   |
-| Module/ PersistentHistory          | <span class='status green'>Green</span>   |
-| Module/ PricePermissions           | <span class='status green'>Green</span>   |
-| Module/ ProductVideoStaging        | <span class='status green'>Green</span>   |
-| Module/ PromotionPermissions       | <span class='status green'>Green</span>   |
-| Module/ Reminder                   | <span class='status green'>Green</span>   |
-| Module/ ResourceConnections        | <span class='status green'>Green</span>   |
-| Module/ ReviewStaging              | <span class='status green'>Green</span>   |
-| Module/ Reward                     | <span class='status green'>Green</span>   |
-| Module/ RmaStaging                 | <span class='status green'>Green</span>   |
-| Module/ SalesArchive               | <span class='status green'>Green</span>   |
-| Module/ SalesRuleStaging           | <span class='status green'>Green</span>   |
-| Module/ ScalableCheckout           | <span class='status green'>Green</span>   |
-| Module/ ScalableOMS                | <span class='status green'>Green</span>   |
-| Module/ ScheduledImportExport      | <span class='status green'>Green</span>   |
-| Module/ SearchStaging              | <span class='status green'>Green</span>   |
-| Module/ Signifyd                   | <span class='status green'>Green</span>   |
-| Module/ Solr                       | <span class='status green'>Green</span>   |
-| Module/ Support                    | <span class='status green'>Green</span>   |
-| Module/ TargetRule                 | <span class='status green'>Green</span>   |
-| Module/ VersionsCms                | <span class='status green'>Green</span>   |
-| Module/ WebsiteRestriction         | <span class='status green'>Green</span>   |
-| Module/ WeeeStaging                | <span class='status green'>Green</span>   |
-| Module/ Worldpay                   | <span class='status green'>Green</span>   |
+| Name                                      | Status                                    |
+| ----------------------------------------- | ----------------------------------------- |
+| Module/ Staging                           | <span class='status red'>Red</span>       |
+| Module/ ElasticSearch                     | <span class='status yellow'>Yellow</span> |
+| Module/ GiftWrapping                      | <span class='status yellow'>Yellow</span> |
+| Module/ Rma                               | <span class='status yellow'>Yellow</span> |
+| Infrastructure/ Bulk Operations Framework | <span class='status green'>Green</span>   |
+| Module/ AdvancedCheckout                  | <span class='status green'>Green</span>   |
+| Module/ CustomerCustomAttributes          | <span class='status green'>Green</span>   |
+| Module/ GiftRegistry                      | <span class='status green'>Green</span>   |
+| Module/ MultipleWishlist                  | <span class='status green'>Green</span>   |
+| Module/ VisualMerchandiser                | <span class='status green'>Green</span>   |
+| Module/ AdminGWS                          | <span class='status green'>Green</span>   |
+| Module/ AdvancedCatalog                   | <span class='status green'>Green</span>   |
+| Module/ AdvancedSearch                    | <span class='status green'>Green</span>   |
+| Module/ AsynchronousOperations            | <span class='status green'>Green</span>   |
+| Module/ Banner                            | <span class='status green'>Green</span>   |
+| Module/ BannerCustomerSegment             | <span class='status green'>Green</span>   |
+| Module/ BundleStaging                     | <span class='status green'>Green</span>   |
+| Module/ CatalogEvent                      | <span class='status green'>Green</span>   |
+| Module/ CatalogImportExportStaging        | <span class='status green'>Green</span>   |
+| Module/ CatalogInventoryStaging           | <span class='status green'>Green</span>   |
+| Module/ CatalogPermissions                | <span class='status green'>Green</span>   |
+| Module/ CatalogRuleStaging                | <span class='status green'>Green</span>   |
+| Module/ CatalogStaging                    | <span class='status green'>Green</span>   |
+| Module/ CatalogUrlRewriteStaging          | <span class='status green'>Green</span>   |
+| Module/ CheckoutStaging                   | <span class='status green'>Green</span>   |
+| Module/ CmsStaging                        | <span class='status green'>Green</span>   |
+| Module/ ConfigurableProductStaging        | <span class='status green'>Green</span>   |
+| Module/ CustomAttributeManagement         | <span class='status green'>Green</span>   |
+| Module/ CustomerBalance                   | <span class='status green'>Green</span>   |
+| Module/ CustomerFinance                   | <span class='status green'>Green</span>   |
+| Module/ CustomerSegment                   | <span class='status green'>Green</span>   |
+| Module/ Cybersource                       | <span class='status green'>Green</span>   |
+| Module/ DownloadableStaging               | <span class='status green'>Green</span>   |
+| Module/ Enterprise                        | <span class='status green'>Green</span>   |
+| Module/ Eway                              | <span class='status green'>Green</span>   |
+| Module/ GiftCard                          | <span class='status green'>Green</span>   |
+| Module/ GiftCardAccount                   | <span class='status green'>Green</span>   |
+| Module/ GiftCardImportExport              | <span class='status green'>Green</span>   |
+| Module/ GiftCardStaging                   | <span class='status green'>Green</span>   |
+| Module/ GiftMessageStaging                | <span class='status green'>Green</span>   |
+| Module/ GiftWrappingStaging               | <span class='status green'>Green</span>   |
+| Module/ GoogleOptimizerStaging            | <span class='status green'>Green</span>   |
+| Module/ GoogleTagManager                  | <span class='status green'>Green</span>   |
+| Module/ GroupedProductStaging             | <span class='status green'>Green</span>   |
+| Module/ Invitation                        | <span class='status green'>Green</span>   |
+| Module/ LayeredNavigationStaging          | <span class='status green'>Green</span>   |
+| Module/ Logging                           | <span class='status green'>Green</span>   |
+| Module/ MsrpStaging                       | <span class='status green'>Green</span>   |
+| Module/ PaymentStaging                    | <span class='status green'>Green</span>   |
+| Module/ PersistentHistory                 | <span class='status green'>Green</span>   |
+| Module/ PricePermissions                  | <span class='status green'>Green</span>   |
+| Module/ ProductVideoStaging               | <span class='status green'>Green</span>   |
+| Module/ PromotionPermissions              | <span class='status green'>Green</span>   |
+| Module/ Reminder                          | <span class='status green'>Green</span>   |
+| Module/ ResourceConnections               | <span class='status green'>Green</span>   |
+| Module/ ReviewStaging                     | <span class='status green'>Green</span>   |
+| Module/ Reward                            | <span class='status green'>Green</span>   |
+| Module/ RmaStaging                        | <span class='status green'>Green</span>   |
+| Module/ SalesArchive                      | <span class='status green'>Green</span>   |
+| Module/ SalesRuleStaging                  | <span class='status green'>Green</span>   |
+| Module/ ScalableCheckout                  | <span class='status green'>Green</span>   |
+| Module/ ScalableOMS                       | <span class='status green'>Green</span>   |
+| Module/ ScheduledImportExport             | <span class='status green'>Green</span>   |
+| Module/ SearchStaging                     | <span class='status green'>Green</span>   |
+| Module/ Signifyd                          | <span class='status green'>Green</span>   |
+| Module/ Solr                              | <span class='status green'>Green</span>   |
+| Module/ Support                           | <span class='status green'>Green</span>   |
+| Module/ TargetRule                        | <span class='status green'>Green</span>   |
+| Module/ VersionsCms                       | <span class='status green'>Green</span>   |
+| Module/ WebsiteRestriction                | <span class='status green'>Green</span>   |
+| Module/ WeeeStaging                       | <span class='status green'>Green</span>   |
+| Module/ Worldpay                          | <span class='status green'>Green</span>   |
 
 ## B2B Modules
 
-| Name                      | Status                                    |
-| ------------------------- | ----------------------------------------- |
-| Module/ Company           | <span class='status red'>Red</span>       |
-| Module/ SharedCatalog     | <span class='status red'>Red</span>       |
-| Module/ NegotiableQuote   | <span class='status yellow'>Yellow</span> |
-| Module/ Requisition Lists | <span class='status green'>Green</span>   |
-| Module/ CompanyCredit     | <span class='status green'>Green</span>   |
-| Module/ CompanyPayment    | <span class='status green'>Green</span>   |
-| Module/ QuickOrder        | <span class='status green'>Green</span>   |
+| Name                      | Status                                  |
+| ------------------------- | --------------------------------------- |
+| Module/ Company           | <span class='status red'>Red</span>     |
+| Module/ NegotiableQuote   | <span class='status red'>Red</span>     |
+| Module/ SharedCatalog     | <span class='status red'>Red</span>     |
+| Module/ CompanyCredit     | <span class='status green'>Green</span> |
+| Module/ Requisition Lists | <span class='status green'>Green</span> |
+| Module/ CompanyPayment    | <span class='status green'>Green</span> |
+| Module/ QuickOrder        | <span class='status green'>Green</span> |
