@@ -13,9 +13,9 @@ github_link: release-notes/release-notes-2-2-RC2-CE.md
 *	TOC
 {:toc}
 
-*Release date: August 19, 2017*
+*Release date: August 25, 2017*
 
-*Notes updated: August 21, 2017*
+*Notes updated: August 25, 2017*
 
 
 Magento Open Source 2.2.0 Release Candidate 2.x (formerly Community Edition) includes significant new features as well as many bug fixes.
@@ -58,6 +58,13 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 <!--- 71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}config-guide/config/disable-module-output.html) for details. (RC21)
 
 
+<!--- 70573 -->* It is now possible to configure Redis settings for session storage, default cache, and full page cache from the command line. (RC23)
+
+
+<!--- 64351 -->* Magento now correctly generates URL rewrites when you save a product. (RC23)
+
+
+
 ### Cart
 
 <!--- 70806 -->* The Persistent Shopping Cart feature now works as expected when enabled. This feature (**Store > Configurations > CUSTOMERS > Persistent Shopping Cart > General Options > Enable Persistence = Yes**) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)
@@ -71,6 +78,14 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 71242 -->* We’ve resolved failures with indexing in installations that implemented catalogs containing at least 5,000 - 6,000 SKUs. (RC21)
 
+<!--- 69967 -->* Magento no longer indexes configurable products multiple times. Previously,  when you enabled break point activation on a configurable product, configurable products were indexed twice. (RC23)
+
+<!--- 70987 -->* Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled. (RC23)
+
+
+
+
+
 
 ### Checkout
 
@@ -80,6 +95,12 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 ### Email
 
 <!--- 71349 -->* You can now configure an email return-path. (RC21)
+
+
+### Import
+
+<!--- 60470 -->* Magento now successfully saves products with imported options. (RC23)
+
 
 
 ### Miscellaneous
@@ -95,6 +116,22 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 <!--- 70816 -->* The WSDL listing now lists all available methods at all times without requiring authorization. (RC21)
 
 <!--- 71030 -->* Magento now plays the sound from only the video you’ve selected. Previously, when you clicked on a video associated with a configurable product, Magento played the soundtrack from both the selected video and the video of its parent. (RC21)
+
+<!--- 71179 -->* Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account. 
+
+
+
+### Payment methods
+
+<!--- 70500 -->* Fixed issue related to incorrect stock quantity calculation for bundle and configurable products during the place order flow with PayPal Express Checkout. (RC23)
+
+<!--- 71307 -->* Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had a FPT, Paypal Express reported an error when you tried to place the order. (RC23)
+
+<!--- 71371 -->* Merchants can now accept payment on a Suspected Fraud order without Magento altering the amount in Total Paid. Previously,  when a merchant accepted payment for an order with a  status  of Suspected Fraud, Magento doubled the payment amount. (RC23)
+
+<!--- 71050 -->* Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error `No such entity with customerId = 0`. (RC23)
+
+
 
 
 ### Shipping
