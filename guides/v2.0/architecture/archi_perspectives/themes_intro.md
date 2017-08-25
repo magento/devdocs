@@ -33,13 +33,12 @@ Themes are highly extensible.
 
 ## Control
 
-1) the visual aspect of site design (skinning).
+1) The visual aspect of site design (skinning).
 Includes CSS, images, design/UI- specific {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %}
-2) also control many functional aspects of site.
-Layouts control which default blocks/modules are available
-    Templates control which data is shown and how
 
-Themes do not include business logic.
+2) Many functional aspects of site.
+    **Layouts** control which default blocks/modules are available.
+    **Templates** control which data is shown on page.
 
 ## Theme components
 
@@ -82,18 +81,12 @@ Apart from the configuration file and theme metadata file, all theme files fall 
 
 ### Where do themes live?
 
-Each theme resides in a unique directory
+Each theme resides in a unique directory under `app/design/frontend` or `app/design/adminhtml` folder.
+This directory contains page templates and layouts for Magento modules.
 
-Themes live in two different directories:
+The base package provides hooks to all of Magento's core features.
 
-* /skin/frontend: contains images and CSS for a theme.
+We recommend you add override features rather than edit default theme files.
 
-* /app/design/frontend: contains page templates and layouts
-
-Base package provides hooks to all of Magento's core features.
-
-Add override features rather than edit default theme files.
-
-Themes and layouts are discussed extensively in the
 <h2 id="related">Related topics</h2>
 <a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
