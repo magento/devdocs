@@ -117,7 +117,7 @@ Switching to production mode improves store front responsiveness and prevents lo
 Run the following commands to switch to production mode:
 
 ~~~
-bin/magento deploy:mode:set -s production
+bin/magento deploy:mode:set production
 ~~~
 
 ### Optimizing Asset Performance
