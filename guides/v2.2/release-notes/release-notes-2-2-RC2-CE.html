@@ -710,7 +710,9 @@
       <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
       <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
       <li><a href="#email" id="markdown-toc-email">Email</a></li>
+      <li><a href="#import" id="markdown-toc-import">Import</a></li>
       <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
+      <li><a href="#payment-methods" id="markdown-toc-payment-methods">Payment methods</a></li>
       <li><a href="#shipping" id="markdown-toc-shipping">Shipping</a></li>
       <li><a href="#url-rewrites" id="markdown-toc-url-rewrites">URL rewrites</a></li>
     </ul>
@@ -735,9 +737,9 @@
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p><em>Release date: August 19, 2017</em></p>
+<p><em>Release date: August 25, 2017</em></p>
 
-<p><em>Notes updated: August 21, 2017</em></p>
+<p><em>Notes updated: August 25, 2017</em></p>
 
 <p>Magento Open Source 2.2.0 Release Candidate 2.x (formerly Community Edition) includes significant new features as well as many bug fixes.</p>
 
@@ -783,6 +785,16 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See <a href="/guides/v2.2/config-guide/config/disable-module-output.html">Disable module output</a> for details. (RC21)</li>
 </ul>
 
+<!--- 70573 -->
+<ul>
+  <li>It is now possible to configure Redis settings for session storage, default cache, and full page cache from the command line. (RC22)</li>
+</ul>
+
+<!--- 64351 -->
+<ul>
+  <li>Magento now correctly generates URL rewrites when you save a product. (RC22)</li>
+</ul>
+
 <h3 id="cart">Cart</h3>
 
 <!--- 70806 -->
@@ -807,6 +819,16 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>We’ve resolved failures with indexing in installations that implemented catalogs containing at least 5,000 - 6,000 SKUs. (RC21)</li>
 </ul>
 
+<!--- 69967 -->
+<ul>
+  <li>Magento no longer indexes configurable products multiple times. Previously,  when you enabled break point activation on a configurable product, configurable products were indexed twice. (RC22)</li>
+</ul>
+
+<!--- 70987 -->
+<ul>
+  <li>Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled. (RC22)</li>
+</ul>
+
 <h3 id="checkout">Checkout</h3>
 
 <!--- 70846 -->
@@ -819,6 +841,13 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <!--- 71349 -->
 <ul>
   <li>You can now configure an email return-path. (RC21)</li>
+</ul>
+
+<h3 id="import">Import</h3>
+
+<!--- 60470 -->
+<ul>
+  <li>Magento now successfully saves products with imported options. (RC22)</li>
 </ul>
 
 <h3 id="miscellaneous">Miscellaneous</h3>
@@ -853,11 +882,38 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now plays the sound from only the video you’ve selected. Previously, when you clicked on a video associated with a configurable product, Magento played the soundtrack from both the selected video and the video of its parent. (RC21)</li>
 </ul>
 
+<!--- 71179 -->
+<ul>
+  <li>Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account. (RC22)</li>
+</ul>
+
+<h3 id="payment-methods">Payment methods</h3>
+
+<!--- 70500 -->
+<ul>
+  <li>Fixed issue related to incorrect stock quantity calculation for bundle and configurable products during the place order flow with PayPal Express Checkout. (RC22)</li>
+</ul>
+
+<!--- 71307 -->
+<ul>
+  <li>Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had a FPT, Paypal Express reported an error when you tried to place the order. (RC22)</li>
+</ul>
+
+<!--- 71371 -->
+<ul>
+  <li>Merchants can now accept payment on a Suspected Fraud order without Magento altering the amount in Total Paid. Previously,  when a merchant accepted payment for an order with a  status  of Suspected Fraud, Magento doubled the payment amount. (RC22)</li>
+</ul>
+
+<!--- 71050 -->
+<ul>
+  <li>Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error <code class="highlighter-rouge">No such entity with customerId = 0</code>. (RC22)</li>
+</ul>
+
 <h3 id="shipping">Shipping</h3>
 
 <!--- 67283 -->
 <ul>
-  <li>When upgrading Magento from 2.1.x to 2.2, the <code class="highlighter-rouge">quote_address.free_shipping</code> column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.(RC2.0)</li>
+  <li>When upgrading Magento from 2.1.x to 2.2, the <code class="highlighter-rouge">quote_address.free_shipping</code> column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column. (RC2.0)</li>
 </ul>
 
 <!--- 70861-->
