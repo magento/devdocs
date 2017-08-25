@@ -2060,11 +2060,7 @@ In this case editing your MySQL configuration file and allocating more memory to
 
 <p>Run the following commands to switch to production mode:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento setup:static-content:deploy
-bin/magento setup:di:compile
-bin/magento deploy:mode:set -s production
-bin/magento index:reindex
-bin/magento cache:flush
+<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento deploy:mode:set production
 </code></pre>
 </div>
 
