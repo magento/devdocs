@@ -14,9 +14,9 @@ github_link: release-notes/release-notes-2-2-RC2-EE.md
 {:toc}
 
 
-*Release date: August 19, 2017*
+*Release date: August 25, 2017*
 
-*Notes updated: August 21, 2017*
+*Notes updated: August 25, 2017*
 
 
 Magento Commerce 2.2.0 Release Candidate 2x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
@@ -69,6 +69,17 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 	`report.CRITICAL: Error Connecting to server (0): Failed to parse address ":" {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at /vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} []`
 
 
+<!--- 70573 -->* It is now possible to configure Redis settings for session storage, default cache, and full page cache from the command line. (RC22)
+
+
+<!--- 64351 -->* Magento now correctly generates URL rewrites when you save a product. (RC22)
+
+
+
+
+
+
+
 
 ### Cart
 
@@ -92,6 +103,14 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70619 -->* You can now successfully filter category products using the scope selector. (RC21)
 
+<!--- 69967 -->* Magento no longer indexes configurable products multiple times. Previously,  when you enabled break point activation on a configurable product, configurable products were indexed twice. (RC22)
+
+<!--- 70987 -->* Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled. (RC22)
+
+
+
+
+
 
 ### Checkout
 
@@ -104,6 +123,9 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 65631 -->* Magento now sends email that provides updates on the status of RMA authorization. (RC21)
 
+### Import
+
+<!--- 60470 -->* Magento now successfully saves products with imported options. (RC22)
 
 
 ### Miscellaneous
@@ -130,6 +152,25 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70853 -->* We’ve fixed an SQL error that previously caused a logical error during the creation of a TargetRule. (This issue affected the `modifyConditionByCategoryIdsAttribute` function.) (RC21)
 
+<!--- 71179 -->* Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account. 
+
+<!--- 71230 -->* The Firefox browser now correctly displays the Hierarchy Tree in **Admin Panel > Content > Hierarchy**.  (RC22)
+
+
+### Payment methods
+
+<!--- 70500 -->* Fixed issue related to incorrect stock quantity calculation for bundle and configurable products during the place order flow with PayPal Express Checkout. (RC22)
+
+<!--- 71307 -->* Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had a FPT, Paypal Express reported an error when you tried to place the order. (RC22)
+
+<!--- 71371 -->* Merchants can now accept payment on a Suspected Fraud order without Magento altering the amount in Total Paid. Previously,  when a merchant accepted payment for an order with a  status  of Suspected Fraud, Magento doubled the payment amount. (RC22)
+
+<!--- 71050 -->* Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error `No such entity with customerId = 0`. (RC22)
+
+
+
+
+
 
 ### Shipping
 
@@ -145,6 +186,9 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70708 -->* You can now change the Start Date for a campaign. (RC2.0)
 
 <!--- 71373 -->* You can now install Magento Commerce without Staging modules. (RC21)
+
+<!--- 71289 -->* Magento now saves scheduled updates for products with custom options as expected. (RC22)
+
 
 
 ### URL rewrites
