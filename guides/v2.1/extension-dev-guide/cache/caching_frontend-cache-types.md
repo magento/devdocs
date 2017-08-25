@@ -1,0 +1,1 @@
+../../../v2.0/extension-dev-guide/cache/caching_frontend-cache-types.md
