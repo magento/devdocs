@@ -14,6 +14,30 @@ For information setting up and configuring Fastly, see [Set up Fastly]({{ page.b
 
 To verify the Fastly extension is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.
 
+## Test your live site {#curl-live}
+First, check your live site to verify the response headers with `curl`. The command goes through the Fastly extension to receive responses. If you don't receive the correct headers, then you should test the [origin servers directly](#cloud-test-stage). This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers.
+
+If you don't have a live site set up with DNS, you can use either a static route or you can use the optional `--resolve` flag, which bypasses DNS name resolution.
+
+_Optional:_ To set up a static route only if your site isn't set up with DNS:
+
+1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
+2.  Add the static route in the format:
+
+        <ip address> <url>
+
+Check your response headers on the live site URL:
+
+1. In a terminal, enter the following command to test your live site URL:
+
+		curl http://<live URL> -vo /dev/null -HFastly-Debug:1 [--resolve]
+
+	Use `--resolve` only if your live URL isn't set up with DNS and you don't have a static route set.
+	For example: `curl http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1`
+2. Verify the [response headers](#response-headers) to ensure Fastly is working. The output for this command is similar to curl Staging and Production. For example, you should see the returned unique headers by this command:
+
+		< Fastly-Magento-VCL-Uploaded: yes
+		< X-Cache: HIT, MISS
 
 ## Test your Staging and Production sites {#cloud-test-stage}
 This section discusses how to use `dig` and `curl` to get response headers from your Staging or Production site (the origin servers). You never need to test on the Integration environments. Basically, you are curling the edge for responses.
@@ -103,33 +127,6 @@ The output for cURL commands can be lengthy. The following is a summary only:
 	* multi_done
 	  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
 	* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
-
-## Test your live site {#curl-live}
-This section discusses how to test and check the response headers on your live site URL with `curl`. The command goes through the Fastly extension to receive responses. This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers.
-
-If you don't have a live site set up with DNS, you can use either a static route or you can use the optional `--resolve` flag, which bypasses DNS name resolution.
-
-_Optional:_ To set up a static route only if your site isn't set up with DNS:
-
-1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
-2.  Add the static route in the format:
-
-        <ip address> <url>
-
-Enter the following command to test your live site URL:
-
-	curl http://<live URL> -vo /dev/null -HFastly-Debug:1 [--resolve]
-
-Use `--resolve` only if your live URL isn't set up with DNS and you don't have a static route set.
-
-For example,
-
-	curl http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1
-
-The output for this command is similar to curl Staging and Production. Verify the [response headers](#response-headers) to ensure Fastly is working. For example, you should see the returned unique headers by this command:
-
-	< Fastly-Magento-VCL-Uploaded: yes
-	< X-Cache: HIT, MISS
 
 ## Determine if VCL is not uploaded {#vcl-uploaded}
 To determine if the VCL snippets are not uploaded, check the following:
