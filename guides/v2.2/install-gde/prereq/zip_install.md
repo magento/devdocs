@@ -35,7 +35,7 @@ To transfer the Magento software archive to your server:
 
 	Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
 
-3.	After you log in to your server, browse to locate the Magento CE or EE archive on your local system.
+3.	After you log in to your server, browse to locate the {{site.data.var.ce}} or {{site.data.var.ee}} archive on your local system.
 
 	On the remote system, browse to locate the web server docroot directory.
 
@@ -75,19 +75,19 @@ Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}ins
 
 <table>
 <tbody>
-<tr> 
+<tr>
 	<th>File format</th>
 	<th>Command to extract</th>
 </tr>
-<tr> 
+<tr>
 	<td>.tar.gz</td>
 	<td><code>tar zxf &lt;filename></code></td>
 </tr>
-<tr> 
+<tr>
 	<td>.zip</td>
 	<td><code>unzip &lt;filename></code></td>
 </tr>
-<tr> 
+<tr>
 	<td>.tar.bz2</td>
 	<td><code>tar jxf &lt;filename></code></td>
 </tr>

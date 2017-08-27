@@ -78,7 +78,7 @@ defaults:
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 kramdown:
   toc_levels: 2..3
 
