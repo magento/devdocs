@@ -10,6 +10,8 @@ version: 2.0
 github_link: cloud/trouble/trouble_fastly.md
 ---
 
+For information setting up and configuring Fastly, see [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html).
+
 ## Overview of troubleshooting Fastly
 To verify the Fastly {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly.
 
@@ -33,11 +35,8 @@ To get values for these headers, you must run the following `curl` commands:
 
 You should perform the test on your [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessary on your [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
 
-## Test your staging or production site {#cloud-test-stage}
-
-{% collapsible Test your staging or production site: %}
-
-This section discusses how to use `curl` to get response headers from your staging or production site (that is, the origin server).
+## Test your Staging and Production sites {#cloud-test-stage}
+This section discusses how to use `curl` to get response headers from your Staging or Production site (the origin servers).
 
 The URL format follows:
 
@@ -96,25 +95,17 @@ The output for this command can be lengthy so the following is a summary only:
 
 The preceding example shows the correct values for `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled`.
 
-{% endcollapsible %}
-
 ## Test your live site
 This section discusses how to test your live site URL, which means the `curl` command goes through the Fastly extension. This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers.
 
 If you don't have a live site set up with DNS, you can use either a static route or you can use the optional `--resolve` flag, which bypasses DNS name resolution.
 
-{% collapsible To optionally set up a static route: %}
-
-Set up a static route only if your site isn't set up with DNS.
+Optional: Set up a static route only if your site isn't set up with DNS:
 
 1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
 2.  Add the static route in the format:
 
         <ip address> <url>
-
-{% endcollapsible %}
-
-{% collapsible Test your live site: %}
 
 Enter the following command to test your live site URL:
 
@@ -131,15 +122,13 @@ The output for this command is similar to the [preceding command](#cloud-test-st
 	< Fastly-Magento-VCL-Uploaded: yes
 	< X-Cache: HIT, MISS
 
-{% endcollapsible %}
-
 ## Resolve errors
 This section provides suggestions for resolving errors you might find using the `curl` command.
 
 ### `Fastly-Module-Enabled` is not present
-Do the following:
+Verify the Fasty module is installed and selected.
 
-1.	[Install the Fastly module]({{ page.baseurl }}cloud/access-acct/fastly.html)
+1.	[Install the Fastly module]({{ page.baseurl }}cloud/access-acct/fastly.html).
 2.	In the Magento Admin, [set Fastly as the page cache]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-fastly-admin).
 3.	Push the changes to your staging or production server.
 
@@ -158,7 +147,7 @@ If you get the same result, use the [first `curl` command](#cloud-test-stage) di
 If the issue persists, another extension is likely resetting these headers. Repeat the following procedure as many times as necessary to identify which extension is resetting the headers:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
-2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Advanced**.
+2.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **Advanced**.
 3.	In the Disable Modules Output section in the right pane, locate an extension.
 4.	From the list next to the extension name, click **Disable**.
 5.	Click **Save Config**.

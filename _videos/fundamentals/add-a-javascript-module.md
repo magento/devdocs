@@ -17,10 +17,10 @@ It will illustrate how Magento 2 works with JavaScript files, executing the code
 The steps we’ll need to take are:
 
 1. Create a new module.
-2. Create a requirejs-config.jsand a JavaScript module file.
+2. Create a requirejs-config.js and a JavaScript module file.
 3. Create a layout update to add a template that will enable the JavaScript module.
 4. Create a template file.
-5. Addthemodule and test it.
+5. Add the module and test it.
 
 Let’s go through each step.
 
