@@ -14,6 +14,7 @@
 
 {% endcollapsibleh2 %}
 
+
 {% collapsibleh2 Magento Commerce 2.1 Release Notes %}
 *	[Version 2.1.9]({{page.baseurl}}release-notes/ReleaseNotes2.1.9CE.html){:target="_blank"}
 *	[Version 2.1.8]({{page.baseurl}}release-notes/ReleaseNotes2.1.8CE.html){:target="_blank"}
