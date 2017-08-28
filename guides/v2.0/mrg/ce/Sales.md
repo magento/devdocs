@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Community Edition
+subgroup: Open Source
 title: Magento_Sales module
 menu_title: Sales
 menu_order: 1

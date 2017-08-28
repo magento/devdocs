@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: Commerce
 title: Magento_GoogleOptimizerStaging module
 menu_title: GoogleOptimizerStaging
 menu_order: 2
@@ -13,7 +13,7 @@ github_link: mrg/ee/GoogleOptimizerStaging.md
 
 ## Overview
 
-The Magento_GoogleOptimizerStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to stage values of the product {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %}.
+The Magento_GoogleOptimizerStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to stage values of the product {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %}.
 
 ## Implementation details
 
@@ -33,4 +33,4 @@ You can find the list of modules that have dependencies on the Magento_GoogleOpt
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

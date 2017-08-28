@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: Commerce
 title: Magento_Staging module
 menu_title: Staging
 menu_order: 2
@@ -13,7 +13,7 @@ github_link: mrg/ee/Staging.md
 
 ## Overview
 
-The Magento_Staging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} enables you to work with the future [campaigns](#campaign) in Magento EE.
+The Magento_Staging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} enables you to work with the future [campaigns](#campaign) in {{site.data.var.ee}}.
 
 With the Magento_Staging module you can:
 
@@ -262,7 +262,7 @@ You can extend and override layouts in the `view/adminhtml/layout` directory. Fo
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
 
 ### cron options
 
