@@ -22,12 +22,22 @@ github_link: release-notes/ReleaseNotes2.1.9CE.md
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.9. This release includes important enhancements to your Magento software.
 
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+</div>
+
+
 ## Highlights
 
 Magento 2.1.8 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:
 
+* reduced opportunities for remote code execution (RCE), Cross-Site Request Forgery (CSRF), and Cross-Site Scripting (XSS) attacks. 
 
-## Fixed issues and enhancements
+* minimized data leaks, including the unintentional disclosure of pathways that unauthorized users could exploit to launch malicious attacks. 
+
+
+See [Magento 2.0.16 and 2.1.9 Security Patches](https://magento.com/security/patches/magento-2016-and-219-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
+
 
 
 
