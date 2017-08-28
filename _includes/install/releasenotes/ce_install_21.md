@@ -1,7 +1,11 @@
 <div markdown="1">
  
 ## Install the Magento software
+<<<<<<< HEAD
 You can get Magento Open Source 2.1 from Github, Composer, or using a compressed archive. 
+=======
+You can get Magento Open Source (formerly Community Edition) 2.1 from Github, Composer, or using a compressed archive. 
+>>>>>>> 7426bccfb1b6f693906e891c0a8fc64252122815
 
 See one of the following sections for more information:
 

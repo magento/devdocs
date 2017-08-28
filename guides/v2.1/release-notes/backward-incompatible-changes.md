@@ -48,7 +48,7 @@ The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossaryt
 **Action:** Added the setter method `setMetaTitle`<br/>
 **Description:** Set meta title field of CMS pages<br/>
 
-### GiftcardAccount Module (EE Only)
+### GiftcardAccount Module (Commerce Only)
 
 A data interfaces has been changed in the GiftcardAccount module.
 
