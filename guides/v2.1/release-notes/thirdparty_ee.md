@@ -1,10 +1,10 @@
 ---
 layout: default
 group: release-notes
-subgroup: Third-party licenses
+subgroup: 99_third
 menu_title: Magento Commerce third-party licenses
 menu_order: 2
-version: 2.2
+version: 2.1
 github_link: release-notes/thirdparty_ee.md
 ---
 
