@@ -6,12 +6,9 @@ title: Magento_WeeeStaging module
 menu_title: WeeeStaging
 menu_order: 2
 version: 2.1
+ee_only: true
 github_link: mrg/ee/WeeeStaging.md
 ---
-
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-## Overview
 
 The Magento_WeeeStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to stage a value of Fixed Product Tax.
 

@@ -6,12 +6,9 @@ title: Magento_CheckoutStaging module
 menu_title: CheckoutStaging
 menu_order: 2
 version: 2.1
+ee_only: true
 github_link: mrg/ee/CheckoutStaging.md
 ---
-
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-## Overview
 
 The Magento_CheckoutStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}.
 It extends the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} functionality and enables you to use it in the staging preview mode.
