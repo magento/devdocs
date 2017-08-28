@@ -43,13 +43,13 @@ We provide more information on [Edge Dictionaries](#edge-dictionary), [Edge ACLs
 ### VCL snippet values {#vcl-curl}
 What you should know about the `curl` command and JSON values:
 
-* Service ID: The ID indicates the specific Staging or Production service/environment. We provide this value.
-* FASTLY_API_TOKEN: The API Key for your Fastly account. We provide this value.
-* Editable Version #: The version of the service you add snippets to for validating and activating
-* type: Specifies the location to place the generated snippet such as `init` (above subroutines) and within subroutines like `recv`. See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="_blank"} for information on these values.
-* content: The snippet of VCL code to run
-* priority: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number like 5. If after Magento modules, use a higher number like 75. The defaul priority is 100.
-* dynamic: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
+* `Service ID`: The ID indicates the specific Staging or Production service/environment. We provide this value.
+* `FASTLY_API_TOKEN`: The API Key for your Fastly account. We provide this value.
+* `Editable Version #`: The version of the service you add snippets to for validating and activating
+* `type`: Specifies the location to place the generated snippet such as `init` (above subroutines) and within subroutines like `recv`. See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="_blank"} for information on these values.
+* `content`: The snippet of VCL code to run
+* `priority`: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number like 5. If after Magento modules, use a higher number like 75. The defaul priority is 100.
+* `dynamic`: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 
 ### Get a service version number {#version-number}
 When creating a new regular VCL snippet, or updating a current one, you need a new version number. This version is a new service configuration version number for your Fastly service. When adding VCL snippets, you add them all to a specific version of the service. You may have noticed the versioning when you upload VCLs during Fastly configuration through the Fastly module.
