@@ -10,6 +10,8 @@ github_link: release-notes/thirdparty_ce.md
 ---
 
 This page contains links to license agreements of the third party components used within Magento Open Source (formerly Community Edition).  Click the **License** links to view the end user license agreement for the corresponding software.
+
+
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
 Zend Framework|2.4.6|BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
