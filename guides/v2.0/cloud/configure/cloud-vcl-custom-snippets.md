@@ -10,9 +10,9 @@ version: 2.0
 github_link: cloud/configure/cloud-vcl-custom-snippets.md
 ---
 
-Fastly and {{site.data.var.<ece>}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating edge dictionaries and edge ACLs for your VCL snippets. You're free to customize your Fastly VCL snippets any way you like to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
+Fastly and {{site.data.var.<ece>}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating Edge Dictionaries and Edge ACLs for your VCL snippets. You're free to customize your Fastly VCL snippets any way you like to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
 
-This information includes a walk-through creating snippets with [`curl` commands](#vcl-curl) or running a modified [bash script](#bash-script) with `.vcl` files. Don't worry, we walk you through the process with examples. Also, you can open a terminal to complete these commands. You do not need to SSH into a specific environment.
+To create and upload these VCL snippets, you use a terminal application. You do not need to SSH into a specific environment. This information includes a walk-through creating regular snippets with [`curl` commands](#vcl-curl). _Don't worry, we walk you through the process with examples._
 
 You need the following information to create VCL snippets:
 
@@ -23,25 +23,40 @@ For Fastly resources on creating VCL snippets, see:
 
 * [All Fastly VCL content](https://docs.fastly.com/guides/vcl/){:target="_blank"}
 *	[Fastly VCL guide](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="_blank"}
-*	[Using regular VCL snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="_blank"}
-*	[Using dynamic VCL snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 * [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="_blank"}
+* [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="_blank"}
 
-## Create VCL snippets with curl {#vcl-curl}
-Using `curl` commands, you can directly access the Fastly API and generate VCL snippets directly to your specific service.
+Fastly supports two types of snippets. We recommend and document how to create and use regular snippets.
+* [Regular snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="_blank"} are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.
+* [Dynamic snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"} are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.
 
+## The VCL snippet process {#process}
+How do you create and add snippets? Here's the process:
+
+1. [Get a service version](#version-number) number for Fastly
+2. [Create VCL snippets](#create-snippet) for that version number
+3. [Validate](#validate) all VCL snippets for the version number
+4. [Activate](#validate) all VCL snippets for the version number
+
+We provide more information on [Edge Dictionaries](#edge-dictionary), [Edge ACLs](#edge-acl), and [custom VCL snippets](#examples) to get you started.
+
+### VCL snippet values {#vcl-curl}
 What you should know about the `curl` command and JSON values:
 
 * Service ID: The ID indicates the specific Staging or Production service/environment. We provide this value.
 * FASTLY_API_TOKEN: The API Key for your Fastly account. We provide this value.
-* Editable Version #: The editable version for the VCL snippet from the first `curl`
-* type: Specifies the location to place the snippet such as `init` (above subroutines) and within subroutines like `recv`. See [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="_blank"} for examples.
+* Editable Version #: The version of the service you add snippets to for validating and activating
+* type: Specifies the location to place the generated snippet such as `init` (above subroutines) and within subroutines like `recv`. See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="_blank"} for information on these values.
 * content: The snippet of VCL code to run
 * priority: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number like 5. If after Magento modules, use a higher number like 75.
 * dynamic: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 
-### Get a version number {#version-number}
-First, create a new service configuration version number with the following command. Your VCL snippets are versioned. You may notice the versioning when you upload VCLs during Fastly configuration. Make sure to enter your Service ID and API key in the command.
+### Get a service version number {#version-number}
+When creating a new regular VCL snippet, or updating a current one, you need a new version number. This version is a new service configuration version number for your Fastly service. When adding VCL snippets, you add them all to a specific version of the service. You may have noticed the versioning when you upload VCLs during Fastly configuration through the Fastly module.
+
+When you validate and activate your snippets, you actually activate a version. All snippets assigned to the version activate.
+
+To generate the version, use the following command with your Service ID and API key in the command:
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version
 
@@ -52,14 +67,18 @@ Fastly returns the editable version number and Service ID. You use the version n
 		"service_id": "SU1Z0isxPaozGVKXdv0eY"
 	}
 
-### Create the VCL snippet {#create-snippet}
-Create the VCL snippet on the new version. We recommend typing out your `curl` command to make sure everything is correct before entering it in a terminal. You can always copy and paste the command when
+When reviewing a list of VCL snippets, you will also note the snippets have a specific version number in the JSON output.
+
+### Create the regular VCL snippet for a version {#create-snippet}
+Create one or more VCL snippets on the new version numbers. We recommend typing out your `curl` command in a text editor to make sure everything is correct before entering it in a terminal. You can always copy and paste the command when ready to enter it.
+
+When you assign VCL snippets to the version, you can then validate and activate all snippets for that version. When activated, that new service number is active.
 
 Use the following command as a template:
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "apply_acl", "type": "recv", "dynamic": 0, "priority": 100, "content": "if ((client.ip ~ {ACLNAME}) && !req.http.Fastly-FF){ error 403; }"}
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "{VCL Name}", "type": "Type", "dynamic": 0, "priority": 100, "content": "{VCL snippet code}"}
 
-After you run the `curl` command, Fastly returns a JSON response with the data:
+After you run the `curl` command, Fastly returns a JSON response with the data. For example:
 
 	{
 	  "id": "62Yd1WfiCBPENLloXfXmlO",
@@ -75,22 +94,22 @@ After you run the `curl` command, Fastly returns a JSON response with the data:
 	  "deleted_at": null
 	}
 
-### Validate and activate {#validate}
-When you add the VCL snippet, Fastly creates and assigns it to your service. Next, you should verify the entered VCL snippet validates with Fastly. Use the following command entering specifics for the snippet to validate:
+### Validate and activate snippets for a version {#validate}
+When you add the VCL snippet(s) to the version, Fastly creates and assigns it to your service per that version number. Next, you should verify the entered VCL snippet(s) validates with Fastly. Use the following command to validate all snippets for the version:
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
 
-Fastly should return: `"status": "ok"`. If you received an OK, activate the VCL snippet for that service:
+Fastly should return: `"status": "ok"`. If you received an OK, activate the version for that service:
 
-Assuming no errors (if there are errors, fix them before proceeding), the last step is to activate the version:
+Assuming no errors (if there are errors, fix them before proceeding), the last step is to activate the version with the following command. All VCL snippets associated with the version activate.
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
 
-If received errors back from Fastly, track down the errors and edit the VCL snippet using this command:
+If your received errors back from Fastly, track down the errors and update the specific snippet with the following command. Make sure to use the same version number you are working to activate.
 
 	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
 
-## Manage VCL snippets with curl {#manage-vcl}
+## Manage regular VCL snippets with curl {#manage-vcl}
 To review an individual snippet, enter the following API call in a terminal:
 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN"
@@ -108,7 +127,7 @@ To delete an individual VCL snippet using the API, get a list of snippets and en
 	curl -X DELETE -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN"
 
 ## Create edge dictionary {#edge-dictionary}
-Edge Dictionaries create key-value pairs for running against your VCL snippet. These instructions include an example for a dictionary of bad referring domains you want to block access to.
+Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to collect  for a dictionary of bad referring domains you want to block access to.
 
 1. Log in to the Magento Admin.
 2. Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
@@ -120,10 +139,10 @@ Edge Dictionaries create key-value pairs for running against your VCL snippet. T
 
 You can use the Edge Dictionary by name in your VCL snippet code.
 
-For more information on using Edge Dictionaries with your VCL snippets, see Fastly's [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries){:target="_blank"} and example [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples){:target="_blank"}.
+For more information on using Edge Dictionaries with your VCL snippets, see Fastly's [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries){:target="_blank"} and their example [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples){:target="_blank"}.
 
 ## Create edge ACL {#edge-acl}
-Edge ACLs create IP lists for managing access for your VCL snippet. These instructions include an example for a dictionary of IPs to white list or to block from the site. Or you can create an Edge ACL and VCL snippet manually in code and upload it. Fastly recommends using the manual method to keep your ACL and VCL content together.
+Edge ACLs create IP lists for managing access for your VCL snippet. For example, you may want to create ACLs of IPs to whitelist or blacklist for access to your site. You can create an Edge ACL for whitelist IPs and another for blacklist IPs. Then create VCL snippets to manage access by providing normal access, redirection to a specific location, or present a 403 Forbidden message.
 
 1. Log in to the Magento Admin.
 2. Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
@@ -133,17 +152,23 @@ Edge ACLs create IP lists for managing access for your VCL snippet. These instru
 
 You can use the Edge ACL by name in your VCL snippet code.
 
-For more information on using manually added ACLs with your VCL snippets, see Fastly's [Manually creating access control lists](https://docs.fastly.com/guides/access-control-lists/manually-creating-access-control-lists){:target="_blank"}.
+While we walk through the process of creating ACLs through the module for your VCL snippets, you can also manually manage the ACL along with the VCL in code. For more information on using manually added ACLs with your VCL snippets, see Fastly's [Manually creating access control lists](https://docs.fastly.com/guides/access-control-lists/manually-creating-access-control-lists){:target="_blank"}.
 
 ## Example VCL snippets {#examples}
-THe following are example VCL snippets using Edge Dictionaries and ACLs.
+The following are example regular VCL snippets using Edge Dictionaries and Edge ACLs. When creating your custom VCL snippet code, you may want to review the following references:
 
-### Create block bad referers VCL {#bad-refer}
-Create a VCL coded file to use with an Edge Dictionary of domains to block. For this example, you could use the referers dictionary. The priority is set to 5 to run before uploaded magentomodule snippets (priority 50).
+* [Fastly's VCL regular expression cheat sheet](https://docs.fastly.com/guides/vcl/vcl-regular-expression-cheat-sheet){:target="_blank"}
+* [Fastly's VCL extensions](https://docs.fastly.com/guides/vcl/guide-to-vcl#fastlys-vcl-extensions){:target="_blank"}
 
+### Create a block bad referers VCL {#bad-refer}
+You may want to create a VCL snippet that runs before all other modules to block bad referring websites from accessing your site. To block these sites with a 403 Forbidden error through Fastly, create a VCL snippet to use with an Edge Dictionary of domains to block.
+
+Of note for this snippet, you want to set the priority to 5. This priority runs the snippet before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge Dictionary is also `referer_blocklist`. If the domain matches the dictionary, it is blocked from access.
+
+The following is an example of this VCL code from Fastly:
 
 * Name: block_bad_referers
-* Within subroutine: vcl_recv
+* Type: recv, puts the code in the subroutine vcl_recv
 * Advanced options:
 * Priority: 5
 * Content:
@@ -155,11 +180,17 @@ Create a VCL coded file to use with an Edge Dictionary of domains to block. For 
             error 403 "Forbidden";
         }
 
-### Create block IP VCL {#block-ip}
-Create a VCL coded file to use with an Edge ACL list to block a set of IPs from accessing the site. The priority is set to 5 to run before uploaded magentomodule snippets (priority 50).
+The curl command would look like the following:
+
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_referers", "type": "recv", "dynamic": 0, "priority": 5, "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }"}
+
+### Create a block IP VCL {#block-ip}
+You may want to create a black list of IPs to block from accessing your site. You can create an Edge ACL list of the blacklisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is blocked with a 403 Forbidden error.
+
+Of note for this snippet, you want to set the priority to 5. This priority runs the snippet before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also `blocklist`. If the domain matches the dictionary, it is blocked from access.
 
 * Name: block_bad_ips
-* Within subroutine: vcl_recv
+* Type: recv, puts the code in the subroutine vcl_recv
 * Advanced options:
 * Priority: 5
 * Content:
@@ -168,113 +199,57 @@ Create a VCL coded file to use with an Edge ACL list to block a set of IPs from 
         error 403 "Forbidden";
         }
 
+The curl command would look like the following:
+
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }"}
+
+
 ### Extend Magento Admin timeout on Fastly {#admin-timeout}
-Fastly has a strict timeout for the Magento Admin of three minutes. This may not be enough time for some extended actions. To extend the default timeout for the Magento Admin, you can make a VCL snippet file copy of this pass.vcl snippet from Fastly.
+Fastly has a strict timeout for the Magento Admin of three minutes. This may not be enough time for some extended actions. To extend the default timeout for the Magento Admin, you can edit the `pass.vcl` VCL snippet.
 
-1. Copy the code from the [Fastly pass.vcl](https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl){:target="_blank"} or copy the code below:
+Instead of building a new command, this example displays how you would update an existing VCL snippet. When you first uploded your VCL snippets when configuring Fastly, you uploaded a default VCL with a default timeout of 180 seconds (three minutes). The VCL snippet uploaded was from this [Fastly pass.vcl snippet](https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl){:target="_blank"}. The important code that sets the timeout is the `first_byte_timeout` value:
 
-		# Deactivate gzip on origin
-		unset bereq.http.Accept-Encoding;
+	# Deactivate gzip on origin
+	unset bereq.http.Accept-Encoding;
 
-		# Increase first byte timeouts for /admin* URLs to 3 minutes
-		if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
-			set bereq.first_byte_timeout = 180s;
-			}
-2. In your copy, modify the `set bereq.first_byte_timeout = 180s;` from 180s (three minutes) to a higher amount. For example, enter 300s for five minutes or 600s for ten minutes.
+	# Increase first byte timeouts for /admin* URLs to 3 minutes
+	if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
+		set bereq.first_byte_timeout = 180s;
+		}
 
-You can create a `curl` command to overwrite the `pass.vcl` with a new version:
+To update the snippet:
 
 1. Use a [command to list the VCL](#manage-vcl) snippets. For example, enter the following command to get a list of all snippets to find the `pass.vcl`:
 
 		curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
-2. Build an update command for the `pass.vcl` using data from the located VCL snippet and the updated timeout. For example:
+2. Build an update command for the `pass.vcl` using data from the located VCL snippet and the updated timeout. For example, this update changes the timeout to five minutes:
 
 		curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name for pass.vcl> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=unset bereq.http.Accept-Encoding; if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 300s; }';
-3. Enter the [`curl` commands](#manage-vcl) to update, validate, and activate.
+3. Run the `curl` command to update the snippet.
+4. [Validate and activate](#validate) the snippet.
 
-## Creating VCL snippets with a Bash script {#bash-snippets}
-We provide another solution than entering `curl` commands to create VCL snippets using `.vcl` files and a bash script to upload all snippets found in a directory.
+### Choose a different backend VCL {#dif-backend}
+You may have a separate Wordpress blog for all of your store's blog entries, kept separate from your store. For this example, you are trying to check the first part of the incoming path and redirect the visitor to your Wordpress backend. You would create an Edge Dictionary called `wordpress_urls` with a list of paths.
 
-To create VCL snippets this way:
+This VCL snippet locates and extracts the first part of the path. For example, it extracts `mypath` from the `/mypath/someotherpath`. It then compares that path against the Edge Dictionary. If a match is found, the visitor is redirected to the Wordpress backend.
 
-* Create VCL (`.vcl`) files with code snippets in a single directory
-* Create and modify the bash script, saving it in the same directory with the `.vcl` files
-* Run the bash script to upload the VCL snippets
+The following is an example of this VCL code from Fastly:
 
-### Configure the bash script {#bash-script}
-Copy and modify the following bash script into a file located in the same directory as your `.vcl` snippets. Give the bash script file a name like `upload_snippets.sh`. Add the specific version, Fastly Service ID, and Fastly API key (or token). When adding VCLs to Staging and Production, you may want to create two bash files with those Service IDs specified, or modify the code further.
+	# Extract first part of the path: /mypath/someotherpath extracts mypath.
+	# Look up the path in the Wordpress URL lookup table and mark it as needed
+	# to be processed by Wordpress.
+	if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) {
+     # check if first part of the url is in the wordpress urls table
+     if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) {
+       set req.http.X-WP = "1";
+     }
+  }
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-When modifying the bash script, make sure to carefully use the Service ID. If you want to add the snippets for Staging and Production environments, you will need to enter `curl` commands twice with different Service IDs in each command. Keep this in mind when editing and deleting snippets from either environment.
-</div>
+For example, the command may look like this:
 
-	#!/bin/bash
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "wordpress_backend", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }"}
 
-	#############################################################################
-	# Upload snippets from the current directory
-	#
-	# Requires you to specify following environment variables
-	#  VERSION
-	#  SERVICE_ID
-	#  API_KEY
-	#############################################################################
-
-	if [ "x$VERSION" == "x" -o  "x$SERVICE_ID" == "x" -o "x$API_KEY" == "x" -o "xSNIPPET_NAME_PREFIX" == "x" ]; then
-	cat <<ENDOF
-	This script upload snippets from the local directory to their appropriate snippet type e.g. recv.vcl
-	to recv type, fetch.vcl to fetch type etc.
-
-	You need to define these variables
-		 export VERSION=<SERVICE_ID_VERSION>
-		 export SERVICE_ID=<SERVICE_ID>
-		 export API_KEY=<API_KEY>
-		 export SNIPPET_NAME_PREFIX=<SNIPPET_NAME_PREFIX_NO_SPACES>
-	ENDOF
-	exit 1
-	fi
-
-	rawurlencode() {
-	while IFS="" read -r string; do
-		local strlen=${#string}
-		local encoded=""
-		local pos c o
-
-		for (( pos=0 ; pos<strlen ; pos++ )); do
-			 c=${string:$pos:1}
-			 case "$c" in
-					[-_.~a-zA-Z0-9] ) o="${c}" ;;
-					* )               printf -v o '%%%02x' "'$c"
-			 esac
-			 encoded+="${o}"
-		done
-		echo -n "${encoded}"
-		echo -n %0A
-	done
-	}
-
-	# Find all VCLs in this directory
-	for vcl in *.vcl
-	do
-
-	TYPE=${vcl%.vcl}
-
-	curl -X POST -s https://app.fastly.com/service/${SERVICE_ID}/version/${VERSION}/snippet \
-	-H "Fastly-Key:$API_KEY" \
-	--data "name=${SNIPPET_NAME_PREFIX}_${TYPE}&type=$TYPE&dynamic=0&content=$(cat $vcl | rawurlencode)";
-
-	done
-
-### Run the bash script {#run-script}
-When you have VCLs to upload, it's time to run the bash script.
-
-To run the script and verify scripts:
-
-1. In a terminal, move to the directory with the VCL snippets and bash script files.
-2. Run the bash script by entering the file name. For example, enter `upload_snippets`.
-3. As the script runs, VCL snippets should be generating and uploading to Fastly.
-4. To list all all regular VCL snippets attached to a service, enter the following API call with the appropriate information:
-
-	   curl -X  GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+For this VCL snippet to work, you also need to attach a condition to the Wordpress backend to handle this request: `req.http.X-WP == “1”`
 
 #### Related topics
 
