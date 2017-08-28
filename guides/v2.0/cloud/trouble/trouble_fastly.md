@@ -207,6 +207,6 @@ If the credentials are correct, you may have issues with your VCLs. To list and 
 Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
 
 #### Related topics
-* [Fastly in Cloud]({{ page.baseurl}}cloud/welcome/cloud-fastly.html)
+* [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)
 * [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html)
 * [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)

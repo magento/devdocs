@@ -48,7 +48,7 @@ What you should know about the `curl` command and JSON values:
 * Editable Version #: The version of the service you add snippets to for validating and activating
 * type: Specifies the location to place the generated snippet such as `init` (above subroutines) and within subroutines like `recv`. See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="_blank"} for information on these values.
 * content: The snippet of VCL code to run
-* priority: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number like 5. If after Magento modules, use a higher number like 75.
+* priority: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number like 5. If after Magento modules, use a higher number like 75. The defaul priority is 100.
 * dynamic: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
 
 ### Get a service version number {#version-number}
@@ -253,6 +253,6 @@ For this VCL snippet to work, you also need to attach a condition to the Wordpre
 
 #### Related topics
 
-* [Fastly in Cloud]({{ page.baseurl}}cloud/welcome/cloud-fastly.html)
+* [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)
 * [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html)
 * [Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)

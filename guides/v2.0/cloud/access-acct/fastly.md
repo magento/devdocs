@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/access-acct/fastly.md
 ---
 
-[Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for {{site.data.var.<ece>}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.
+[Fastly]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.<ece>}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.
 
 This information gets you started with installing and configuring Fastly. We provide additional information for backends and Origin shields, and error/maintenance page, and VCL snippets.
 
@@ -41,7 +41,7 @@ To create a branch:
 {% include cloud/cli-get-started.md %}
 
 ## Install Fastly in an Integration branch and deploy {#cloud-fastly-setup}
-You should install the Fastly module on your local, pushing the code to Integration and deploying across to your Staging and Production environments.
+You should install the Fastly module on your local, pushing the code to Integration and deploying across to your Staging and Production environments. For {{site.data.var.<ece>}} 2.2, install Fastly module 1.2.27 or later for all updated settings and full VCL snippet uploading support.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Don't configure the module in your local before building and deploying. You'll configure the module in those environments.
@@ -189,22 +189,8 @@ To create a custom error/maintenance page:
 ## Create custom VCL snippets {#custom-vcl}
 For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
 
-## Bypass Fastly for access to the Magento Admin {#bulkaction}
-Fastly enforces a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. You can extend the timeout using a [custom VCL snippet]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html##admin-timeout) or directly access the Magento server, bypassing Fastly.
-
-For these instructions, you need your direct domain name and project ID to build a new URL.
-
-1. Access the Magento Admin in your Staging or Production environment.
-2. Navigate to **Stores** > **Configuration** > **Advanced** and click **Admin**. Expand the Admin Base URL to modify the value.
-3. For **Use Custom Admin URL**, uncheck the **Use system value** checkbox and select Yes. A field displays to enter a URL.
-4. For **Custom Admin URL**, uncheck the **Use system value** checkbox and enter the direct (origin) URL for the target environment in the following format: `https://<name>.c.<projectid>.ent.magento.cloud/admin`. For example, if your domain name is BobStore and project ID is abcdefghijklmn, the URL would be: `https://bobstore.com.c.abcdefghijklmn.ent.magento.cloud/admin`.
-6. Click **Save Config**.
-7. Navigate to **Stores** > **Configuration** > **General** > **Web** and expand **Base Urls (Secure)**.
-8. Set Yes for **Use Secure URLs in Admin**.
-7. Flush the Magento cache using the Admin or this CLI command: `cache bin/magento cache:flush`.
-8. Enter a Support ticket requesting the value for `UPDATE_URLS` set to disabled for Staging and/or Production environment. This setting ensures any code deployments will not overwrite this URL and redirect your Magento Admin access back through Fastly.
-
-Wait until the ticket has completed before attempting bulk actions. When accessing the Admin, you will use the direct URL you configured. This URL is directly to the origin, bypassing Fastly for Admin operations and completing bulk actions without encountering a timeout.
+## Extend Fastly timeout for the Magento Admin {#bulkaction}
+Fastly enforces a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. You can extend the timeout using a [custom VCL snippet]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html##admin-timeout) to set this to five minutes or ten minutes, (the hard cap).
 
 ## Configure GeoIP handling {#geoip}
 The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
@@ -222,7 +208,7 @@ Fastly also provides a series of [geolocation-related VCL features](https://docs
 #### Related topics
 
 * [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
-* [Fastly in Cloud]({{ page.baseurl}}cloud/welcome/cloud-fastly.html)
+* [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)
 *	[Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)
 *	[Fastly documentation](https://docs.fastly.com/guides){:target="_blank"}
 *	[Fastly VCL documentation](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="_blank"}

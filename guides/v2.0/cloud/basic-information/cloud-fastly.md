@@ -14,7 +14,7 @@ Fastly is a CDN based on Varnish caching, basically a cloud varnish service. Whe
 
 When you update products, catalogs, content, and more, Fastly purges that specific cached content to refresh and provide the latest changes.
 
-We provide Fastly service credentials including a Fastly Service ID and API key pair for your Staging and Production environments. To [set up Fastly](#install-configure), you enter credentials, upload VCL snippets, and configure backends (with Origin shields) in Staging and Production environments, not in Integration.
+We provide Fastly service credentials including a Fastly Service ID and API key pair for your Staging and Production environments. To [set up Fastly](#install-configure), you enter credentials, upload VCL snippets, and configure backends (with Origin shields) in Staging and Production environments, not in Integration. 
 
 Fastly provides the following powerful tools for Magento:
 
@@ -27,7 +27,7 @@ Fastly provides the following powerful tools for Magento:
 * GeoIP extension support
 * Force unencrypted requests over to TLS
 
-We highly recommend enabling and using Fastly for your caching and CDN. The only situation you may not want to enable is for a headless deployment. 
+We highly recommend enabling and using Fastly for your caching and CDN. The only situation you may not want to enable is for a headless deployment.
 
 ## Fastly and 503 timeouts {#timeouts}
 When you receive a 503 error from Fastly, it may be due to a lengthy operation or performing bulk actions. Fastly has a default 60 second time out. Any request that takes longer than 60 seconds will return a 503 error.
