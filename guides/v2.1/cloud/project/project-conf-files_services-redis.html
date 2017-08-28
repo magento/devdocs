@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up the redis service | Magento 2 Developer Documentation</title>
+	<title>Set up the Redis service | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -275,6 +275,14 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.1/cloud/reference/cloud-composer.html">Composer in Cloud</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/basic-information/cloud-fastly.html">Fastly in Cloud</a></li>
 
 									
 
@@ -564,87 +572,26 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/project/projects.html">Manage your project</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/configure/configuration-overview.html">Configure Magento Commerce</a></li>
 									
 								
 
 									
 
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage branches</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
-
-									
 
 								
 
 									
 
 									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/fastly.html">Set up Fastly</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a></li>
 
 									
 
@@ -660,7 +607,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple websites or stores</a></li>
 
 									
 
@@ -745,7 +692,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the mysql service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
 
 
 									
@@ -755,17 +702,7 @@
 									
 
 
-											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up the redis service</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
+											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
 
 
 									
@@ -785,7 +722,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up the rabbitmq service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
 
 
 									
@@ -815,6 +752,114 @@
 
 
 											<li class="level3Child integrate " data-menunode="integrate"><a href="/guides/v2.1/cloud/project/project-integrate-github.html">GitHub integration</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/project/projects.html">Manage your project</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Manage users</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage branches</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
 
 									
@@ -1592,7 +1637,7 @@
 
           
 
-          <span property="name">Set up the redis service</span>
+          <span property="name">Set up the Redis service</span>
 
         
 
@@ -1615,7 +1660,7 @@
 
 	
 
-	<h1 class="page-heading">Set up the redis service</h1>
+	<h1 class="page-heading">Set up the Redis service</h1>
 
   
 
@@ -1682,7 +1727,6 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>redis-cli -h redis.internal
 </code></pre>
 </div>
-
 
 		</div>
 		<!-- /.content-wrap -->

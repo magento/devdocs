@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up the mysql service | Magento 2 Developer Documentation</title>
+	<title>Set up the MySQL service | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -275,6 +275,14 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.1/cloud/reference/cloud-composer.html">Composer in Cloud</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/basic-information/cloud-fastly.html">Fastly in Cloud</a></li>
 
 									
 
@@ -564,87 +572,26 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/project/projects.html">Manage your project</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/configure/configuration-overview.html">Configure Magento Commerce</a></li>
 									
 								
 
 									
 
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage branches</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
-
-									
 
 								
 
 									
 
 									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/fastly.html">Set up Fastly</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a></li>
 
 									
 
@@ -660,7 +607,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple websites or stores</a></li>
 
 									
 
@@ -745,7 +692,7 @@
 									
 
 
-											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the mysql service</a>
+											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
 
 
 									
@@ -755,17 +702,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up the redis service</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
 
 
 									
@@ -785,7 +722,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up the rabbitmq service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
 
 
 									
@@ -815,6 +752,114 @@
 
 
 											<li class="level3Child integrate " data-menunode="integrate"><a href="/guides/v2.1/cloud/project/project-integrate-github.html">GitHub integration</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/project/projects.html">Manage your project</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Manage users</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage branches</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
 
 									
@@ -1592,7 +1637,7 @@
 
           
 
-          <span property="name">Set up the mysql service</span>
+          <span property="name">Set up the MySQL service</span>
 
         
 
@@ -1615,7 +1660,7 @@
 
 	
 
-	<h1 class="page-heading">Set up the mysql service</h1>
+	<h1 class="page-heading">Set up the MySQL service</h1>
 
   
 
@@ -1641,7 +1686,7 @@ following command:</p>
 <p>To set up multiple databases and users, you must specify multiple endpoints. An <em>endpoint</em> is a user who has privileges you specify.</p>
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <p>You can’t use multiple <em>databases</em> with Magento Enterprise Cloud Edition at this time. You can, however, create multiple endpoints to restrict access to the <code class="highlighter-rouge">main</code> database.</p>
+  <p>You can’t use multiple <em>databases</em> with Magento Commerce at this time. You can, however, create multiple endpoints to restrict access to the <code class="highlighter-rouge">main</code> database.</p>
 </div>
 
 <p>To specify user access, use the <code class="highlighter-rouge">endpoints</code> nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.</p>
@@ -1722,7 +1767,6 @@ following command:</p>
     <li>MySQL errors such as <code class="highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code class="highlighter-rouge">.magento/services.yaml</code></a>.</li>
   </ul>
 </div>
-
 
 		</div>
 		<!-- /.content-wrap -->
