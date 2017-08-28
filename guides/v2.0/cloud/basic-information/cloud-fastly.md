@@ -14,7 +14,7 @@ Fastly is a CDN based on Varnish caching, basically a cloud varnish service. Whe
 
 When you update products, catalogs, content, and more, Fastly purges that specific cached content to refresh and provide the latest changes.
 
-We provide Fastly service credentials including a Fastly Service ID and API key pair for your Staging and Production environments. To [set up Fastly](#install-configure), you enter credentials, upload VCL snippets, and configure backends (with Origin shields) in Staging and Production environments, not in Integration. 
+We provide Fastly service credentials including a Fastly Service ID and API key pair for your Staging and Production environments. To [set up Fastly](#install-configure), you enter credentials, upload VCL snippets, and configure backends (with Origin shields) in Staging and Production environments, not in Integration.
 
 Fastly provides the following powerful tools for Magento:
 
@@ -75,12 +75,7 @@ For a few examples, you can create VCL snippets to:
 * Redirect blog links from your store to a blog site
 * Extend timeouts for Fastly and Magento
 
-For detailed information on VCL snippets, see the following:
-
-*	[Fastly VCL documentation](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="_blank"}
-*	[Using regular VCL snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="_blank"}
-*	[Using dynamic VCL snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
-* [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="_blank"}
+After you have [set up Fastly](#install-configure), we provide detailed instructions on creating [custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
 
 ## Force TLS {#tls}
 Fastly supports forcing unencrypted requests to TLS through the Force TLS feature. Set up a secure base URL in Magento and turn on the Force TLS option in the Fastly extension. For details and instructions, see Fastly's [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md){:target="_blank"}.
@@ -93,10 +88,10 @@ The installation and configuration process is:
 
 * Install the Fastly module in an Integration branch, without configuring settings or entering credentials.
 * Deploy the code to `master` then to Staging and Production
-* Configure Fastly in Staging and Production
+* Configure Fastly in Staging and Production, not in Integration or your local
 * Test Fastly for caching
 
-For instructions, see [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html).
+For instructions, see [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html). After you have configured it, you can continue with advanced options including custom VCL snippets.
 
 #### Related topics
 

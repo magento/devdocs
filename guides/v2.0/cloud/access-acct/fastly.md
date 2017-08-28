@@ -31,7 +31,9 @@ We'll provide you with the following credentials for your Staging and Production
 *	Fastly Service ID
 *	Fastly API token
 
+<div class="bs-callout bs-callout-warning" markdown="1">
 Make note of which environment each set of credentials is used for. If you use the wrong credentials in an environment, you'll encounter issues with Fastly.
+</div>
 
 ## Get started {#cloud-fastly-start}
 You need to install Fastly in its own branch. Fine-tuning Fastly can be a complex process, depending on your needs and store size. If you already have a branch to work in, or know how to create a branch, continue to [installing Fastly](#cloud-fastly-setup).
@@ -100,9 +102,9 @@ Complete the following configuration steps in Staging and Production environment
 
 Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options){:target="_blank"}:
 
+* [Upload Fastly VCL snippets](#upload-vcl-snippets)
 * [Configure backends and Origin shielding](#backend)
 * [Create custom error/maintenance page](#fastly-errpg)
-* [Upload Fastly VCL snippets](#upload-vcl-snippets)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 *	Ignore the link to create a free Fastly account. We'll provide your Fastly credentials (Service ID and API token).

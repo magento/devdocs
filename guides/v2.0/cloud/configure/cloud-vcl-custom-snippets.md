@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/configure/cloud-vcl-custom-snippets.md
 ---
 
-Fastly and {{site.data.var.<ece>}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating Edge Dictionaries and Edge ACLs for your VCL snippets. You're free to customize your Fastly VCL snippets any way you like to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
+[Fastly]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html) and {{site.data.var.<ece>}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating Edge Dictionaries and Edge ACLs for your VCL snippets. You're free to customize your Fastly VCL snippets any way you like to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
 
 To create and upload these VCL snippets, you use a terminal application. You do not need to SSH into a specific environment. This information includes a walk-through creating regular snippets with [`curl` commands](#vcl-curl). _Don't worry, we walk you through the process with examples._
 
@@ -127,7 +127,7 @@ To delete an individual VCL snippet using the API, get a list of snippets and en
 	curl -X DELETE -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN"
 
 ## Create edge dictionary {#edge-dictionary}
-Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to collect  for a dictionary of bad referring domains you want to block access to.
+Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to build a dictionary of bad referring domains to block from your site. First, you would create the Edge Dictionary, then create a [custom VCL snippet](#bad-refer) using it.
 
 1. Log in to the Magento Admin.
 2. Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
@@ -142,7 +142,7 @@ You can use the Edge Dictionary by name in your VCL snippet code.
 For more information on using Edge Dictionaries with your VCL snippets, see Fastly's [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries){:target="_blank"} and their example [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples){:target="_blank"}.
 
 ## Create edge ACL {#edge-acl}
-Edge ACLs create IP lists for managing access for your VCL snippet. For example, you may want to create ACLs of IPs to whitelist or blacklist for access to your site. You can create an Edge ACL for whitelist IPs and another for blacklist IPs. Then create VCL snippets to manage access by providing normal access, redirection to a specific location, or present a 403 Forbidden message.
+Edge ACLs create IP lists for managing access for your VCL snippet. For example, you may want to create ACLs of IPs to whitelist or blacklist for access to your site. You can create an Edge ACL for whitelist IPs and another for blacklist IPs. Then create custom VCL snippets to manage access by providing normal access, redirecting to a specific location, or [displaying a 403 Forbidden message](#block-ip).
 
 1. Log in to the Magento Admin.
 2. Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
@@ -167,9 +167,8 @@ Of note for this snippet, you want to set the priority to 5. This priority runs 
 
 The following is an example of this VCL code from Fastly:
 
-* Name: block_bad_referers
-* Type: recv, puts the code in the subroutine vcl_recv
-* Advanced options:
+* Name: `block_bad_referers`
+* Type: `recv`, puts the code in the subroutine vcl_recv
 * Priority: 5
 * Content:
 
@@ -184,14 +183,13 @@ The curl command would look like the following:
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_referers", "type": "recv", "dynamic": 0, "priority": 5, "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }"}
 
-### Create a block IP VCL {#block-ip}
+### Create a block blacklisted IPs VCL {#block-ip}
 You may want to create a black list of IPs to block from accessing your site. You can create an Edge ACL list of the blacklisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is blocked with a 403 Forbidden error.
 
 Of note for this snippet, you want to set the priority to 5. This priority runs the snippet before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also `blocklist`. If the domain matches the dictionary, it is blocked from access.
 
-* Name: block_bad_ips
-* Type: recv, puts the code in the subroutine vcl_recv
-* Advanced options:
+* Name: `block_bad_ips`
+* Type: `recv`, puts the code in the subroutine vcl_recv
 * Priority: 5
 * Content:
 
@@ -241,15 +239,17 @@ The following is an example of this VCL code from Fastly:
 	if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) {
      # check if first part of the url is in the wordpress urls table
      if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) {
-       set req.http.X-WP = "1";
-     }
-  }
+		 	set req.http.X-WP = "1";
+			}
+		}
 
 For example, the command may look like this:
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "wordpress_backend", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }"}
 
-For this VCL snippet to work, you also need to attach a condition to the Wordpress backend to handle this request: `req.http.X-WP == “1”`
+For this VCL snippet to work, you also need to attach a condition to the Wordpress backend to handle this request:
+
+	req.http.X-WP == “1”
 
 #### Related topics
 
