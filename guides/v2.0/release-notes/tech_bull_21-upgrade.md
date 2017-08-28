@@ -10,7 +10,11 @@ version: 2.1
 github_link: release-notes/tech_bull_21-upgrade.md
 ---
 
+<<<<<<< HEAD
+These instructions apply to anyone upgrading to Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition)  version 2.1 (including a Release Candidate). 
+=======
 These instructions apply to anyone upgrading to Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition) version 2.1 (including a Release Candidate). 
+>>>>>>> 7426bccfb1b6f693906e891c0a8fc64252122815
 
 See one of the following sections for more information:
 
@@ -55,7 +59,11 @@ After applying the patch, complete your upgrade as follows:
 
 {%include install/sampledata/sample-data-rc1-cli.md %}
 
+<<<<<<< HEAD
+### Commerce only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data {#tb-upgr-samp-wiz}
+=======
 ### Enterprise Edition only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data {#tb-upgr-samp-wiz}
+>>>>>>> 7426bccfb1b6f693906e891c0a8fc64252122815
 Upgrades to Magento Commerce 2.1 with sample data can fail because of the following issues:
 
 *	An issue with the Magento `composer-installer` component. It doesn't correctly detect code changes and therefore doesn't update the cache and compiled code directories properly. As a result, fatal errors display during the upgrade.
