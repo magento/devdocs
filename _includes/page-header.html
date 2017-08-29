@@ -3,7 +3,7 @@
 	{% include breadcrumbs.html %}
 
 	{% if page.ee_only == true %}
-		<span class="ee-only">Enterprise Edition only</span>
+		<span class="ee-only">{{site.data.var.ee}} only</span>
 	{% endif %}
 
 	{% if page.subtitle %}
