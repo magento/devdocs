@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 08_Page caching
+subgroup: 09_Full page caching
 title: Public content
 menu_title: Public content
 menu_order: 17
@@ -120,6 +120,7 @@ Magento generates a hash based on all context variables (`\Magento\Framework\App
 
 <div class="bs-callout bs-callout-tip" markdown="1">
 Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2000url }}app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="&#95;blank"} uses the following:
+
 ```
 sub vcl_hash {
 if (req.http.cookie ~ "X-Magento-Vary=") {
@@ -157,7 +158,7 @@ class CustomerAgeContextPlugin
 }
 ```
 
-The `subject->setValue` argument specifies the value for newcomer context and is used to guarantee parity during cache key generation for newcomers and users who already received the X-Magento-Vary cookie.
+The `subject->setValue` argument specifies the value for newcomer context and is used to guarantee parity during cache key generation for newcomers and users who already received the `X-Magento-Vary` cookie.
 
 For another example of a context class, see [Magento/Framework/App/Http/Context]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Http/Context.php){:target="&#95;blank"}.
 

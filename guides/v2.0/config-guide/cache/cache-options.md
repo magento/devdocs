@@ -1,15 +1,13 @@
 ---
 layout: default
-group: extension-dev-guide
-subgroup: 08_Caching
+group: config-guide
+subgroup: 08_Configure caching
 title: Low-level cache options
 menu_title: Low-level cache options
 menu_order: 5
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: cache-types
 version: 2.0
-github_link: extension-dev-guide/cache/caching_low-level.md
+github_link: config-guide/cache/cache-options.md
 redirect_from:
   - /guides/v2.0/config-guide/cache/caching_low-level.html
   - /guides/v2.1/config-guide/cache/caching_low-level.html

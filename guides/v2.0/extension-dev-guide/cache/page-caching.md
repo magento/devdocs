@@ -1,9 +1,9 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 08_Page caching
+subgroup: 09_Full page caching
 title: Page caching
-menu_title: Page caching
+menu_title: Full page caching
 menu_order: 16
 menu_node: parent
 version: 2.0

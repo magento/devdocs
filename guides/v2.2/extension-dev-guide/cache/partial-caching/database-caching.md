@@ -1,19 +1,20 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 08_Caching
-title: Database caching
-menu_title: Database caching
+subgroup: 08_Partial caching
+title: Create custom cache engines
+menu_title: Create custom cache engines
 menu_order: 9
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: cache-types
-version: 2.0
-github_link: extension-dev-guide/cache/caching-database.md
+version: 2.2
+github_link: extension-dev-guide/cache/partial-caching/database-caching.md
 redirect_from:
   -  /guides/v2.0/config-guide/database/database.html
   -  /guides/v2.1/config-guide/database/database.html
   -  /guides/v2.2/config-guide/database/database.html
+  -  /guides/v2.0/config-guide/cache/caching-database.html
+  -  /guides/v2.1/config-guide/cache/caching-database.html
+  -  /guides/v2.2/config-guide/cache/caching-database.html
 ---
 
 <h2 id="mage-cache-db-over">Overview of database caching</h2>
@@ -147,7 +148,7 @@ Use the following steps:
 1.	If you haven't done so already, log in to the Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Clear the current cache directories:
 
-		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*
+		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
 
 3.	In a web browser, go to any cacheable page (such as the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} front door page).
 

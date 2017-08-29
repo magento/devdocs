@@ -1,21 +1,20 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 08_Caching
-title: Caching
-menu_title: Caching
+subgroup: 08_Partial caching
+title: Partial caching
+menu_title: Partial caching
 menu_order: 1
 menu_node: parent
 version: 2.0
-github_link: extension-dev-guide/cache/caching.md
+github_link: extension-dev-guide/cache/partial-caching.md
 redirect_from:
   - /guides/v1.0/config-guide/cache/caching.html
   - /guides/v2.0/config-guide/config/caching.html
   - /guides/v2.2/config-guide/config/caching.html
 ---
 
-<h2 id="m2devgde-cache-explore">Overview of caching</h2>
-Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> to interact with the cache storage. However, Magento also has the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} for implementing Magento-specific caching. These topics discuss how to configure caching and {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types.
+Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="&#95;blank">Zend_Cache</a> to interact with the cache storage. However, Magento also has the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache" target="&#95;blank">Magento\Cache</a> {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} for implementing Magento-specific caching. These topics discuss how to configure caching and {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under <code>&lt;your Magento install dir>/var</code>.</p>
@@ -45,7 +44,7 @@ The cache configuration is an associative array similar to the following:
 
 The preceding lists all cache types and shows they are all enabled.
 
-<h2 id="m2devgde-cache-more">More information about caching</h2>
+## More information about caching
 The following topics discuss how to set up caching:
 
 *	<a href="{{page.baseurl}}config-guide/cache/caching-cache-type.html">Create a cache type</a>

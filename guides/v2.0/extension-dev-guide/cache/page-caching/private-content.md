@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 08_Page caching
+subgroup: 09_Full page caching
 title: Private content
 menu_title: Private content
 menu_order: 18

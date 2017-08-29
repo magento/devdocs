@@ -12,7 +12,7 @@ The Magento page cache library contains a simple PHP reverse proxy that enables 
 We recommend using [Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html), but you can use Magento's default caching mechanism instead, which stores cache files in any of the following:
 
 -   File system (You don't need to do anything to use file-based caching.)
--   [Database]({{ page.baseurl }}extension-dev-guide/cache/caching-database.html)
+-   [Database]({{ page.baseurl }}extension-dev-guide/cache/partial-caching/database-caching.html)
 -   [Redis]({{ page.baseurl }}config-guide/redis/redis-pg-cache.html)
 
 ## Cacheable and uncacheable pages {#cache-over-cacheable}
