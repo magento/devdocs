@@ -96,13 +96,13 @@ __Step 1.__ Create a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}P
  
 __Step 2.__ Extend your class from the [default element](#basic_class) or the [Magento custom element](#magento_class) class
 
-{%highlight php startinline=1%} 
+``` php?start_inline=1 
 class OptgroupselectElement extends SelectElement
-{%endhighlight %}
+```
 
 __Step 3.__ Redefine methods of the extended class according to your goals
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 /**
  * Option group locator
  *
@@ -124,14 +124,14 @@ public function setValue($value)
     $option = $this->find($xpath, Locator::SELECTOR_XPATH);
     $option->click();
 }
-{%endhighlight %}
+```
 
 ## How to use {#use}
 
 Typified elements are used in the [FTF blocks][].
 Use a `find()` method to find an element. This method is declared in the [SimpleElement][] class:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 /**
  * Find element using locator in context of current element
  *
@@ -144,11 +144,11 @@ public function find($selector, $strategy = Locator::SELECTOR_CSS, $type = null)
 {
     return $this->driver->find($selector, $strategy, $type, $this);
 }
-{%endhighlight%}
+```
 
 The following code is an example of the `find()` method usage from the [\Magento\Catalog\Test\Block\Adminhtml\Category\Tree][] block:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 /**
  * Check category in category tree
  *
@@ -162,7 +162,7 @@ public function isCategoryVisible(Category $category)
     return $this->_rootElement->find($this->treeElement, Locator::SELECTOR_CSS, 'tree')
         ->isElementVisible($categoryPath);
 }
-{%endhighlight%}
+```
 
 ### Mapping {#mapping}
 
