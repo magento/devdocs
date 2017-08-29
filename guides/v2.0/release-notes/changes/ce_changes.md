@@ -8,7 +8,7 @@ version: 2.0
 github_link: release-notes/changes/ce_changes.md
 ---
 
-This topic provides details about backward incompatible changes made in Magento Open Source (formerly Community Edition) 2.0.
+This topic provides details about backward incompatible changes made in {{site.data.var.ce}} 2.0.
 
 All changes are aggregated into two tables:
 
