@@ -4,7 +4,7 @@ group: config-guide
 subgroup: 08_Configure caching
 title: Low-level cache options
 menu_title: Low-level cache options
-menu_order: 5
+menu_order: 2
 menu_node:
 version: 2.0
 github_link: config-guide/cache/cache-options.md
