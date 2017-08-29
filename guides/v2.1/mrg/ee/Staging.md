@@ -6,12 +6,9 @@ title: Magento_Staging module
 menu_title: Staging
 menu_order: 2
 version: 2.1
+ee_only: true
 github_link: mrg/ee/Staging.md
 ---
-
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-## Overview
 
 The Magento_Staging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} enables you to work with the future [campaigns](#campaign) in {{site.data.var.ee}}.
 

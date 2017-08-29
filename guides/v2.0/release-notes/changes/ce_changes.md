@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 03_BC
-title: Magento OpenSource Backward Incompatible Changes
-menu_title: Magento OS changes
+title: Magento Open Source Backward Incompatible Changes
+menu_title: Magento Open Source changes
 version: 2.0
 github_link: release-notes/changes/ce_changes.md
 ---

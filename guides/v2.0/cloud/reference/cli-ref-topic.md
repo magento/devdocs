@@ -10,12 +10,11 @@ version: 2.0
 github_link: cloud/reference/cli-ref-topic.md
 ---
 
-## CLI command reference {#cloud-cli-ref}
-The Magento CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. This reference lists all available commands, and a list of commonly used commands, for Magento cloud.
+The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. This reference lists all available commands, and a list of commonly used commands, for Magento cloud.
 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must install the Magento CLI to your local workspace to issue commands. For details, see:
+You must install the Magento Cloud CLI to your local workspace to issue commands. For details, see:
 
 * [Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
 * [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-php.html)
@@ -67,11 +66,11 @@ An environment name _cannot_ include characters reserved for your Linux shell or
 `magento-cloud variable:set <name> <value>`
 :	Set a value for an environment variable in this environment
 
-### Display all commands
+## Display all commands {#all}
 
 The `magento-cloud list` displays all available commands.
 
-### Help for a command
+## Help for a command {#help}
 You can preface or append any command with `help` to see more information on how to use that command.
 
 	$ magento-cloud help domain:add
@@ -97,8 +96,8 @@ You can preface or append any command with `help` to see more information on how
 	 --no (-n)             Answer "no" to all prompts
 	 --shell (-s)          Launch the shell
 
-### List of Magento CLI commands {#cloud-cli-commands}
-The following table provides an extensive list of Magento CLI commands for ECE accessed with `magento-cloud` To see a full list of commands, enter `magento-cloud list`.
+## List of Magento CLI commands {#cloud-cli-commands}
+The following table provides an extensive list of Magento CLI commands for ECE accessed with `magento-cloud` To see a full list of commands, enter `magento-cloud list`. The listed commands are for Magento Cloud CLI version 1.10.1 and later.
 
 <table>
 	     <tbody>
@@ -122,10 +121,66 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				<td>app:list (apps)</td>
 	 				<td>Gets a list of all apps in the local repository</td>
 	 				</tr>
+					<tr>
+					<td>auth-info</td>
+					<td>Display yourt account information</td>
+					</tr>
+					<tr>
+					<td>auth:login (login)</td>
+					<td>Log in to the Magento Cloud CLI</td>
+					</tr>
+					<tr>
+					<td>auth:logout (logout)</td>
+					<td>Log out of Magento Cloud CLI</td>
+					</tr>
+					<tr>
+					<td>certificate:add</td>
+					<td>Adds an SSL certificate to the project</td>
+					</tr>
+					<tr>
+					<td>certificate:delete</td>
+					<td>Deletes a certificate from the project</td>
+					</tr>
+					<tr>
+					<td>certificate:get</td>
+					<td>View a certificate added to the project</td>
+					</tr>
+					<tr>
+					<td>certificate:list (certificates)</td>
+					<td>Lists project certificates</td>
+					</tr>
+					<tr>
+					<td>db:dump</td>
+					<td>Creates a local dump of the remote database data. You can push the dump to another remote database. For example, you could pull data from the Production environment (products, catalogs, etc) and push it into Staging for testing.</td>
+					</tr>
+					<tr>
+					<td>db:size</td>
+					<td>Estimates the disk usage of the database.</td>
+					</tr>
+					<tr>
+					<td>db:sql (sql)</td>
+					<td>Opens an SQL console on the remote database. You can view tables and dump data from a local to the remote database. For example, you could push a data dump from Production into Staging for testing.</td>
+					</tr>
 	 				<tr>
 	 				<td>domain:add</td>
 	 				<td>Adds a new domain to the project</td>
 	 				</tr>
+					<tr>
+					<td>domain:delete</td>
+					<td>Deletes a domain from the project</td>
+					</tr>
+					<tr>
+					<td>domain:get</td>
+					<td>Shows detailed information for a domain including the project ID, hostname, and so on</td>
+					</tr>
+					<tr>
+					<td>domain:list (domains)</td>
+					<td>Gets a list of all domains</td>
+					</tr>
+					<tr>
+					<td>domain:update</td>
+					<td>Updates data for a domain</td>
+					</tr>
 	 				<tr>
 	 				<td>environment:activate</td>
 	 				<td>Activates an environment</td>
@@ -167,18 +222,6 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				<td>Displays an environment's relationships</td>
 	 				</tr>
 	 				<tr>
-	 				<td>environment:routes (routes)</td>
-	 				<td>Lists an environment's routes</td>
-	 				</tr>
-	 				<tr>
-	 				<td>environment:sql (sql)</td>
-	 				<td>Runs SQL on the remote database</td>
-	 				</tr>
-	 				<tr>
-	 				<td>environment:sql-dump (sql-dump)</td>
-	 				<td>Creates a local dump of the remote database</td>
-	 				</tr>
-	 				<tr>
 	 				<td>environment:ssh (ssh)</td>
 	 				<td>Opens an SSH session to the current environment</td>
 	 				</tr>
@@ -198,6 +241,10 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				<td>integration:delete</td>
 	 				<td>Deletes an integration from a project</td>
 	 				</tr>
+					<tr>
+					<td>integration:get</td>
+					<td>Shows details for an integration</td>
+					</tr>
 	 				<tr>
 	 				<td>integration:list (integrations)</td>
 	 				<td>Views project integration(s)</td>
@@ -208,17 +255,13 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				</tr>
 	 				<tr>
 	 				<td>local:build (build)</td>
-	 				<td>Builds the current project locally</td>
+	 				<td>Builds the current project locally strictly to test the build without the full patch and commit process. This command allows you to build locally without patches just to check the build. We recommend you run this command separately in a different location. You should not commit the files from this build to Git.</td>
 	 				</tr>
 	 				<tr>
 	 				<td>local:clean (clean)</td>
-	 				<td>Removes old project builds</td>
+	 				<td>Removes old project builds. When using local:build in a separate location from your code, use this command to clear those builds. </td>
 	 				</tr>
-	 				<tr>
-	 				<td>project:delete</td>
-	 				<td>Deletes a project</td>
-	 				</tr>
-	 				<tr>
+					<tr>
 	 				<td>prohect:get (get)</td>
 	 				<td>Clones a project locally</td>
 	 				</tr>
@@ -230,6 +273,30 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				<td>project:list (projects)</td>
 	 				<td>Gets a list of all active projects</td>
 	 				</tr>
+					<tr>
+					<td>project:set-remote</td>
+					<td>Set the remote project for the current Git repository</td>
+					</tr>
+					<tr>
+					<td>project:variable:delete</td>
+					<td>Delete a variable from a project</td>
+					</tr>
+					<tr>
+					<td>project:variable:get (project-variables, pvget)</td>
+					<td>View variable(s) for a project</td>
+					</tr>
+					<tr>
+					<td>project:variable:set (pvset)</td>
+					<td>Set a variable for a project</td>
+					</tr>
+					<tr>
+					<td>route:get</td>
+					<td>View a resolved route</td>
+					</tr>
+					<tr>
+					<td>route:list (routes)</td>
+					<td>List all routes for an environment</td>
+					</tr>
 	 				<tr>
 	 				<td>self:install</td>
 	 				<td>Installs or updates CLI configuration files</td>
@@ -263,7 +330,7 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				<td>Gets a list of SSH keys in your account</td>
 	 				</tr>
 	 				<tr>
-	 				<td>tunnelclose</td>
+	 				<td>tunnel:close</td>
 	 				<td>Closes SSH tunnels</td>
 	 				</tr>
 	 				<tr>
@@ -290,17 +357,21 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				<td>user:list (users)</td>
 	 				<td>Lists users for the project</td>
 	 				</tr>
+					<tr>
+					<td>user:role</td>
+					<td>View to change a user's role </td>
+					</tr>
 	 				<tr>
 	 				<td>variable:delete</td>
-	 				<td>Deletes an environment variable</td>
+	 				<td>Deletes an environment variable for a specific environment/Git branch</td>
 	 				</tr>
 	 				<tr>
 	 				<td>variable:get (variables, vget)</td>
-	 				<td>Views variable(s) for an environment</td>
+	 				<td>Views variable(s) for a specific environment/Git branch</td>
 	 				</tr>
 	 				<tr>
 	 				<td>variable:set (vset)</td>
-	 				<td>Sets an environment variable</td>
+	 				<td>Sets an environment variable for a specific environment/Git branch</td>
 	 				</tr>
 	 		</tbody>
 </table>

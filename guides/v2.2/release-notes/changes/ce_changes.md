@@ -8,7 +8,7 @@ version: 2.2
 github_link: release-notes/changes/ce_changes.md
 ---
 
-This topic provides details about backward incompatible changes related to Magento Open Source 2.2.
+This topic provides details about backward incompatible changes related to {{site.data.var.ce}} 2.2.
 
 All changes are aggregated into two tables:
 

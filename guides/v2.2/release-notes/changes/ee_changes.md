@@ -8,7 +8,7 @@ version: 2.2
 github_link: release-notes/changes/ee_changes.md
 ---
 
-This topic provides details about backward incompatible changes related to Magento Commerce 2.2.
+This topic provides details about backward incompatible changes related to {{site.data.var.ee}} 2.2.
 
 All changes are aggregated into two tables:
 

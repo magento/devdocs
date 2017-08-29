@@ -2,15 +2,15 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.0.11 Release Notes
-menu_title: Magento CE 2.0.11 Release Notes
+title: Magento Open Source 2.0.11 Release Notes
+menu_title: Magento Open Source 2.0.11 Release Notes
 menu_order: 168
 version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.11CE.md
 ---
-We are pleased to present Magento Community Edition 2.0.11. 
+We are pleased to present Magento Open Source Edition 2.0.11. 
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
