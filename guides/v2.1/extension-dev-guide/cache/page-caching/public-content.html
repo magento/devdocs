@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Public content | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/extension-dev-guide/cache/page-caching/public-content.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/cache/page-caching/public-content.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/cache/page-caching/public-content.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/extension-dev-guide/cache/page-caching/public-content.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>PHP Developer Guide</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/prepare/prepare.html">Prepare (development quick start)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/dev-modtypes.html">Component types and versioning</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/prepare/lifecycle.html">Extension lifecycle</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/build/build.html">Build</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/di-xml-file.html">The di.xml file</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/optimal-dev-environment.html">Optimal development environment</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html">The composer.json file</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/required-configuration-files.html">Define your configuration files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/component-registration.html">Register your component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/XSD-XML-validation.html">URN schema validation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/create_component.html">Name your component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/module-load-order.html">Component load order</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/build/enable-module.html">Enable or disable your component</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/package/package.html">Package</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/package/package_module.html">Package a component</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/package/package_mktpl.html">Upload your component to the Magento Marketplace</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/validate/validate.html">Validate</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/validate/test-module.html">Test your component</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/cache/partial-caching.html">Partial caching</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cache/partial-caching/database-caching.html">Create custom cache engines</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cache/partial-caching/create-cache-type.html">Create a cache type</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/cache/page-caching.html">Full page caching</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/extension-dev-guide/cache/page-caching/public-content.html">Public content</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cache/page-caching/private-content.html">Private content</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/staging.html">Staging (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/extension-dev-guide/module-development.html">Component development</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/object-manager.html">ObjectManager</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/events-and-observers.html">Events and observers</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/factories.html">Factories</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/proxies.html">Proxies</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/code-generation.html">Code generation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/plugins.html">Plugins (Interceptors)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/routing.html">Routing</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="index"><a href="#">Indexing</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child index " data-menunode="index"><a href="/guides/v2.1/extension-dev-guide/indexing.html">Indexing overview</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child index " data-menunode="index"><a href="/guides/v2.1/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/message-queues.html">Message Queues (Enterprise Edition Only)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to entity</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/howdoi/php/php_clear-dirs.html">Clear directories during development</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/adapters.html">Adapters</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/versioning/">Versioning and compatibility</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Security</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/extension-dev-guide/security/non-secure-functions.html">Non-secure functions</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">
+            <span property="name">PHP Developer Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Public content</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Public content</h1>
+
+  
+
+
+</section>
+
+
+			
+<p>By default, all pages in Magento are cacheable, but you can disable caching if necessary (e.g., payment method return page, debug page, or AJAX data source).</p>
+
+<h2 id="disable-caching">Disable caching</h2>
+<p>To disable caching, add a <code class="highlighter-rouge">cacheable="false"</code> attribute to any block in your layout.</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Paypal\Block\Payflow\Link\Iframe"</span> <span class="na">template=</span><span class="s">"payflowlink/redirect.phtml"</span> <span class="na">cacheable=</span><span class="s">"false"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento disables page caching if at least one non-cacheable block is present in the layout.</p>
+</div>
+
+<p>You can also disable caching with HTTP headers. Use the controller to return an object that contains methods for manipulating the cache:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DynamicController</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\App\Action\Action</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$pageFactory</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">\Magento\Framework\App\Action\Context</span> <span class="nv">$context</span><span class="p">,</span>
+        <span class="nx">\Magento\Framework\View\Result\PageFactory</span> <span class="nv">$resultPageFactory</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pageFactory</span> <span class="o">=</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * This action render random number for each request
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pageFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
+        <span class="c1">//We are using HTTP headers to control various page caches (varnish, fastly, built-in php cache)
+</span>        <span class="nv">$page</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">'Cache-Control'</span><span class="p">,</span> <span class="s1">'no-store, no-cache, must-revalidate, max-age=0'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$page</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="define-caching-policy">Define caching policy</h2>
+<p>You can use the Admin to define caching policies or you can define them programmatically in a controller:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DynamicController</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\App\Action\Action</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$pageFactory</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">\Magento\Framework\App\Action\Context</span> <span class="nv">$context</span><span class="p">,</span>
+        <span class="nx">\Magento\Framework\View\Result\PageFactory</span> <span class="nv">$resultPageFactory</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pageFactory</span> <span class="o">=</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * This action render random number for each request
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pageFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
+        <span class="c1">//We are using HTTP headers to control various page caches (varnish, fastly, built-in php cache)
+</span>        <span class="nv">$page</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">'Cache-Control'</span><span class="p">,</span> <span class="s1">'no-store, no-cache, must-revalidate, max-age=0'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$page</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <ul>
+    <li>
+      <p>You should take caching into account even if you need to refresh data every second. Lots of visitors can get content from the cache within a one-second time period.</p>
+    </li>
+    <li>
+      <p>Only GET and HEAD methods are cacheable.</p>
+    </li>
+  </ul>
+</div>
+
+<h2 id="configure-page-variations">Configure page variations</h2>
+<p>Most caching servers and proxies use a <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> as a key for cache records; however, Magento URLs are not unique <em>enough</em> to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:</p>
+
+<ul>
+  <li>Collisions in cache storage</li>
+  <li>Unwanted information leaks (e.g., French language website partially visible on an English language website, prices for customer group visiable in public, etc.)</li>
+</ul>
+
+<p>To make each cached URL totally unique, we use <em>HTTP context variables</em>. Context variables enable the Magento application to serve different content on the same URL based on:</p>
+
+<ul>
+  <li>Customer group</li>
+  <li>Selected language</li>
+  <li>Selected store</li>
+  <li>Selected currency</li>
+  <li>Whether a customer is logged in or not</li>
+</ul>
+
+<p>Context variables should not be specific to individual users because variables are used in cache keys for public content. In other words, a context variable per user results in a separate copy of content cached on the server for each user.</p>
+
+<p>Magento generates a hash based on all context variables (<code class="highlighter-rouge">\Magento\Framework\App\Http\Context::getVaryString</code>). The hash and current URL are used as keys for cache storage.</p>
+
+<div class="bs-callout bs-callout-tip">
+  <p>Use the <code class="highlighter-rouge">X-Magento-Vary</code> cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68" target="&#95;blank">our sample Varnish 4 configuration</a> uses the following:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>sub vcl_hash {
+if (req.http.cookie ~ "X-Magento-Vary=") {
+hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
+}
+... more ...
+}
+</code></pre>
+  </div>
+</div>
+
+<p>For example, let’s declare a context variable that shows a drinks catalog and advertisement to adult customers only. The following code snippet will create a copy of every page in Magento for users under the age of 18.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="sd">/**
+ * Plugin on \Magento\Framework\App\Http\Context
+ */</span>
+<span class="k">class</span> <span class="nc">CustomerAgeContextPlugin</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">\Magento\Customer\Model\Session</span> <span class="nv">$customerSession</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerSession</span> <span class="o">=</span> <span class="nv">$customerSession</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="sd">/**
+     * \Magento\Framework\App\Http\Context::getVaryString is used by Magento to retrieve unique identifier for selected context,
+     * so this is a best place to declare custom context variables
+     */</span>
+    <span class="k">function</span> <span class="nf">beforeGetVaryString</span><span class="p">(</span><span class="nx">\Magento\Framework\App\Http\Context</span> <span class="nv">$subject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$age</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerSession</span><span class="o">-&gt;</span><span class="na">getCustomerData</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getCustomAttribute</span><span class="p">(</span><span class="s1">'age'</span><span class="p">);</span>
+        <span class="nv">$defaultAgeContext</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="nv">$ageContext</span> <span class="o">=</span> <span class="nv">$age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="nv">$defaultAgeContext</span><span class="p">;</span>
+        <span class="nv">$subject</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="s1">'CONTEXT_AGE'</span><span class="p">,</span> <span class="nv">$ageContext</span><span class="p">,</span> <span class="nv">$defaultAgeContext</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">subject-&gt;setValue</code> argument specifies the value for newcomer context and is used to guarantee parity during cache key generation for newcomers and users who already received the <code class="highlighter-rouge">X-Magento-Vary</code> cookie.</p>
+
+<p>For another example of a context class, see <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http/Context.php" target="&#95;blank">Magento/Framework/App/Http/Context</a>.</p>
+
+<h2 id="invalidate-public-content">Invalidate public content</h2>
+<p>You can clear cached content immediately after a entity changes. Magento uses  <code class="highlighter-rouge">IdentityInterface</code> to link entities in the application with cached content and to know what cache to clear when an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> changes.</p>
+
+<p>This section shows you how to tell Magento what cache to clear when you change an entity.</p>
+
+<p>First, your entity <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="&#95;blank"><code class="highlighter-rouge">Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Magento\Framework\DataObject\IdentityInterface</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Product</span> <span class="k">implements</span> <span class="nx">IdentityInterface</span>
+<span class="p">{</span>
+     <span class="sd">/**
+      * Product cache tag
+      */</span>
+     <span class="k">const</span> <span class="no">CACHE_TAG</span> <span class="o">=</span> <span class="s1">'catalog_product'</span><span class="p">;</span>
+    <span class="sd">/**
+     * Get identities
+     *
+     * @return array
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIdentities</span><span class="p">()</span>
+    <span class="p">{</span>
+         <span class="k">return</span> <span class="p">[</span><span class="nx">self</span><span class="o">::</span><span class="na">CACHE_TAG</span> <span class="o">.</span> <span class="s1">'_'</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Second, the block object must also implement <code class="highlighter-rouge">Magento/Framework/DataObject/IdentityInterface</code> as follows:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">AbstractProduct</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\DataObject\IdentityInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * Return identifiers for produced content
+     *
+     * @return array
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIdentities</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getProduct</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getIdentities</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Magento uses cache tags for link creation. The performance of cache storage has a direct dependency on the number of tags per cache record, so try to minimize the number of tags and use them only for entities that are used in production mode. In other words, don’t use invalidation for actions related to store setup.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don’t expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html">RFC-2616 section 13</a> {:target=”_blank”}</p>
+</div>
+
+<h2 id="cacheable-page-checklist">Cacheable page checklist</h2>
+<ul>
+  <li>
+    <p>Pages use GET requests</p>
+  </li>
+  <li>
+    <p>Pages render only cacheable blocks</p>
+  </li>
+  <li>
+    <p>Pages render without sensitive private data; session and customer DTO objects are empty</p>
+  </li>
+  <li>
+    <p>Functionality specific to both current session (customer) and page should be written using JavaScript (e.g., related product listing should exclude items that are already in the shopping cart)</p>
+  </li>
+  <li>
+    <p>Model and block level should identify themselves for invalidation support</p>
+  </li>
+  <li>
+    <p>Declare a custom <a href="/guides/v2.1/extension-dev-guide/cache/page-caching/public-content.html#configure-page-variations">context variable</a> if you plan to show different public content with the same URL</p>
+  </li>
+</ul>
+
+<h2 id="non-cacheable-page-checklist">Non-cacheable page checklist</h2>
+<ul>
+  <li>
+    <p>Use POST requests to modify Magento state (e.g., adding to shopping cart, wishlist, etc.)</p>
+  </li>
+  <li>
+    <p>Blocks that can’t be cached should be marked as non-cacheable in the layout</p>
+  </li>
+  <li>
+    <p>Controllers that don’t use layouts should set <code class="highlighter-rouge">no-cache</code> HTTP headers</p>
+  </li>
+</ul>
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/cache/page-caching/public-content.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/extension-dev-guide/cache/page-caching/public-content.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
