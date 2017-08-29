@@ -767,30 +767,32 @@
 
 <p>Following is an example of a component provider for Admin:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class TokenUiComponentProvider implements TokenUiComponentProviderInterface
-{
-    /**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TokenUiComponentProvider</span> <span class="k">implements</span> <span class="nx">TokenUiComponentProviderInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * @inheritdoc
-     */
-    public function getComponentForToken(PaymentTokenInterface $paymentToken)
-    {
-        $data = json_decode($paymentToken-&gt;getTokenDetails() ?: '{}', true);
-        $component = $this-&gt;componentFactory-&gt;create(
-            [
-                'config' =&gt; [
-                    'code' =&gt; ConfigProvider::CC_VAULT_CODE,
-                    'nonceUrl' =&gt; $this-&gt;getNonceRetrieveUrl(),
-                    TokenUiComponentProviderInterface::COMPONENT_DETAILS =&gt; $data,
-                    TokenUiComponentProviderInterface::COMPONENT_PUBLIC_HASH =&gt; $paymentToken-&gt;getPublicHash(),
-                    'template' =&gt; 'Magento_Braintree::form/vault.phtml'
-                ],
-                'name' =&gt; Template::class
-            ]
-        );
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getComponentForToken</span><span class="p">(</span><span class="nx">PaymentTokenInterface</span> <span class="nv">$paymentToken</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()</span> <span class="o">?:</span> <span class="s1">'{}'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="nv">$component</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">componentFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="s1">'config'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="nx">ConfigProvider</span><span class="o">::</span><span class="na">CC_VAULT_CODE</span><span class="p">,</span>
+                    <span class="s1">'nonceUrl'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getNonceRetrieveUrl</span><span class="p">(),</span>
+                    <span class="nx">TokenUiComponentProviderInterface</span><span class="o">::</span><span class="na">COMPONENT_DETAILS</span> <span class="o">=&gt;</span> <span class="nv">$data</span><span class="p">,</span>
+                    <span class="nx">TokenUiComponentProviderInterface</span><span class="o">::</span><span class="na">COMPONENT_PUBLIC_HASH</span> <span class="o">=&gt;</span> <span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">getPublicHash</span><span class="p">(),</span>
+                    <span class="s1">'template'</span> <span class="o">=&gt;</span> <span class="s1">'Magento_Braintree::form/vault.phtml'</span>
+                <span class="p">],</span>
+                <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="nx">Template</span><span class="o">::</span><span class="na">class</span>
+            <span class="p">]</span>
+        <span class="p">);</span>
 
-        return $component;
-    }
-}</code></pre></figure>
+        <span class="k">return</span> <span class="nv">$component</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <h2 id="vault-js-component">Vault JS component</h2>
 

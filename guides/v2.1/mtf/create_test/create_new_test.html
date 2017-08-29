@@ -1561,15 +1561,19 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 
 <p>Fortunately, you already have a <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">block</a> that contains a method to add a new entity in a grid: <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php"><code class="highlighter-rouge">\Magento\Backend\Test\Block\GridPageActions</code></a>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="sd">/**
  * Click the "Add New" button
  *
  * @return void
- */
-public function addNew()
-{
-    $this-&gt;_rootElement-&gt;find($this-&gt;addNewButton)-&gt;click();
-}</code></pre></figure>
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">addNew</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addNewButton</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
 
 <p>In <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> page, to locate the UI block that contains a button, we will use a <code class="highlighter-rouge">.page-main-actions</code> locator. Learn how to <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html#define-a-selector">define a locator</a>.</p>
 
@@ -1694,21 +1698,29 @@ public function addNew()
 
 <p>An argument for the <code class="highlighter-rouge">test()</code> method is a <a href="#test-object">test object</a> (a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>).</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="sd">/**
  * Create Synonym group test.
  * 
  * @param Synonym $synonym
  * @return void
- */
-public function test(Synonym $synonym)
-{
-    // Steps
-}</code></pre></figure>
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nx">Synonym</span> <span class="nv">$synonym</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Steps
+</span><span class="p">}</span>
+
+</code></pre>
+</div>
 
 <p>Now we can add page classes made in <a href="#create-pages">Step 5</a>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">use Magento\Search\Test\Page\Adminhtml\SynonymsIndex;
-use Magento\Search\Test\Page\Adminhtml\SynonymsNew;</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsIndex</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsNew</span><span class="p">;</span>
+
+</code></pre>
+</div>
 
 <p>All methods are defined in blocks (<a href="#create-blocks">Step 6</a>) that are grouped in pages (<a href="#create-pages">Step 5</a>, <a href="#add-blocks-to-pages">Step 7</a>).</p>
 
@@ -1728,13 +1740,21 @@ use Magento\Search\Test\Page\Adminhtml\SynonymsNew;</code></pre></figure>
 
 <p>In the <abbr title="Functional Testing Framework">FTF</abbr>, the process of logging in doesn’t require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an <code class="highlighter-rouge">open()</code> method of the <code class="highlighter-rouge">Magento/Mtf/Page/BackendPage</code> class. There is no need to add this class in <code class="highlighter-rouge">use</code>, because it is inherited from the <code class="highlighter-rouge">Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$this-&gt;synonymsIndex-&gt;open();</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span>
+
+</code></pre>
+</div>
 
 <p><strong>Click the “New Synonym Group” button</strong></p>
 
 <p>To Click the “New Synonym Group” button, we will use the <code class="highlighter-rouge">addNew()</code> method from the <code class="highlighter-rouge">pageActionsBlock</code> block. A <code class="highlighter-rouge">getPageActionsBlock()</code> of the generated <code class="highlighter-rouge">Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class receives parameters defined in the <code class="highlighter-rouge">pageActionsBlock</code> block (<code class="highlighter-rouge">class</code>, <code class="highlighter-rouge">locator</code>, <code class="highlighter-rouge">strategy</code>).</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$this-&gt;synonymsIndex-&gt;getPageActionsBlock()-&gt;addNew();</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span>
+
+</code></pre>
+</div>
 
 <p>This action opens the New Synonym Group page.</p>
 
@@ -1742,30 +1762,42 @@ use Magento\Search\Test\Page\Adminhtml\SynonymsNew;</code></pre></figure>
 
 <p>To enter data in the form, we use the <code class="highlighter-rouge">fill()</code> method from the <code class="highlighter-rouge">synonymForm</code> block of the <code class="highlighter-rouge">synonymsNew</code> page. An argument for this method is a fixture <code class="highlighter-rouge">Synonym</code>. A <code class="highlighter-rouge">getSynonymForm()</code> method of the generated <code class="highlighter-rouge">Magento/Search/Test/Page/Adminhtml/SynonymsNew</code> class receives parameters defined in the <code class="highlighter-rouge">synonymForm</code> block.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$this-&gt;synonymsNew-&gt;getSynonymForm()-&gt;fill($synonym);</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span>
+
+</code></pre>
+</div>
 
 <p><strong>Click the “Save Synonym Group” button</strong></p>
 
 <p>A <code class="highlighter-rouge">save()</code> method with parameters defined in a <code class="highlighter-rouge">formPageActions</code> block. Parameters are injected using a <code class="highlighter-rouge">getFormPageActions()</code> method from the <code class="highlighter-rouge">synonymsNew</code> page (generated <code class="highlighter-rouge">Magento/Search/Test/Page/Adminhtml/SynonymsNew</code> page class).</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$this-&gt;synonymsNew-&gt;getFormPageActions()-&gt;save();</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+
+</code></pre>
+</div>
 
 <p><strong>Full <code class="highlighter-rouge">test()</code> definition</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="sd">/**
  * Create Synonym group test.
  *
  * @param Synonym $synonym
  * @return void
- */
-public function test(Synonym $synonym)
-{
-    // Steps
-    $this-&gt;synonymsIndex-&gt;open(); // logs in to Admin, opens Search Synonyms page
-    $this-&gt;synonymsIndex-&gt;getPageActionsBlock()-&gt;addNew(); // receiving of the page action block with '_rootElement' containing locator which is indicated in the page class for PageActionBlock from the page, makes 'click' action on it
-    $this-&gt;synonymsNew-&gt;getSynonymForm()-&gt;fill($synonym); // enters data from variation in the New Synonym Group fields 
-    $this-&gt;synonymsNew-&gt;getFormPageActions()-&gt;save(); // `click` on the Save Synonym Group button
-}</code></pre></figure>
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nx">Synonym</span> <span class="nv">$synonym</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Steps
+</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span> <span class="c1">// logs in to Admin, opens Search Synonyms page
+</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span> <span class="c1">// receiving of the page action block with '_rootElement' containing locator which is indicated in the page class for PageActionBlock from the page, makes 'click' action on it
+</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span> <span class="c1">// enters data from variation in the New Synonym Group fields 
+</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span> <span class="c1">// `click` on the Save Synonym Group button
+</span><span class="p">}</span>
+
+</code></pre>
+</div>
 
 <h4 id="step-9-check-the-test-run">Step 9. Check the test run</h4>
 

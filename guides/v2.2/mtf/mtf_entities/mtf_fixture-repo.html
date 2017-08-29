@@ -1537,17 +1537,18 @@ Reference to the repository is placed in the fixture <span term-uuid="8c0645c5-a
 
 <p>you have the following code in the Customer repository (<code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php</code>):</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  
-$this-&gt;_data['default'] = [
-  'firstname' =&gt; 'John',
-  'lastname' =&gt; 'Doe',
-  'email' =&gt; 'JohnDoe_%isolation%@example.com',
-  'new_field' =&gt; 'Some value',
-  'password' =&gt; '123123q',
-  'password_confirmation' =&gt; '123123q',
-];
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>  
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_data</span><span class="p">[</span><span class="s1">'default'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">'firstname'</span> <span class="o">=&gt;</span> <span class="s1">'John'</span><span class="p">,</span>
+  <span class="s1">'lastname'</span> <span class="o">=&gt;</span> <span class="s1">'Doe'</span><span class="p">,</span>
+  <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s1">'JohnDoe_%isolation%@example.com'</span><span class="p">,</span>
+  <span class="s1">'new_field'</span> <span class="o">=&gt;</span> <span class="s1">'Some value'</span><span class="p">,</span>
+  <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'123123q'</span><span class="p">,</span>
+  <span class="s1">'password_confirmation'</span> <span class="o">=&gt;</span> <span class="s1">'123123q'</span><span class="p">,</span>
+<span class="p">];</span>
   
-  </code></pre></figure>
+</code></pre>
+</div>
 
 <p>As you can see, a repository with the name <code class="highlighter-rouge">default</code> contains data from the <code class="highlighter-rouge">customer_new_default</code> repository.</p>
 

@@ -746,29 +746,31 @@ like this:</p>
 
 <p>2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.</p>
 
-<div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">class Composite
-{
-    /**
+<div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Composite</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * @var RendererInterface[]
-     */
-    private $renderers;
+     */</span>
+    <span class="k">private</span> <span class="nv">$renderers</span><span class="p">;</span>
 
-    /**
+    <span class="sd">/**
      * @param RendererInterface[] $renderers
      * @throws InvalidArgumentException
-     */
-    public function __construct(array $renderers)
-    {
-        foreach ($renderers as $renderer) {
-            if (!$renderer instanceof RendererInterface) {
-                throw new InvalidArgumentException(
-                    sprintf('Instance of the phrase renderer is expected, got %s instead.', get_class($renderer))
-                );
-            }
-        }
-        $this-&gt;renderers = $renderers;
-    }
-}</code></pre></figure>
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$renderers</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$renderers</span> <span class="k">as</span> <span class="nv">$renderer</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$renderer</span> <span class="nx">instanceof</span> <span class="nx">RendererInterface</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nx">InvalidArgumentException</span><span class="p">(</span>
+                    <span class="nb">sprintf</span><span class="p">(</span><span class="s1">'Instance of the phrase renderer is expected, got %s instead.'</span><span class="p">,</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$renderer</span><span class="p">))</span>
+                <span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">renderers</span> <span class="o">=</span> <span class="nv">$renderers</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 </div></div>
 <hr />
 
@@ -1125,26 +1127,28 @@ like this:</p>
 
 <p>14.1. All values (including objects) passed to an <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.</p>
 
-<div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">class SampleEventObserverThatModifiesInputs
-{
-    /**
+<div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SampleEventObserverThatModifiesInputs</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * @param \Magento\Framework\Event\Observer $observer
-     */
-    public function execute(\Magento\Framework\Event\Observer $observer)
-    {
-        /** @var \Magento\Framework\App\DataObject $transport */
-        $transport = $observer-&gt;getData('transport');
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="sd">/** @var \Magento\Framework\App\DataObject $transport */</span>
+        <span class="nv">$transport</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'transport'</span><span class="p">);</span>
 
-        if ($transport-&gt;getData('some_value') === true) {
-            /**
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$transport</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'some_value'</span><span class="p">)</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="sd">/**
              * Expecting this value to go back to the original event dispatcher violates
              * this rule. Other observers could change the data, or Magento could make
              * architectural changes always sending immutable objects.
-             */
-            $transport-&gt;setData('output_return_value', true);
-        }
-    }
-}</code></pre></figure>
+             */</span>
+            <span class="nv">$transport</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="s1">'output_return_value'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 </div></div>
 <hr />
 

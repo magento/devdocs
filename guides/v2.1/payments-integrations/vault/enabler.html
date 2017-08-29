@@ -857,31 +857,33 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
 
 <p>In the Braintree request builder, to pass the data, we set <code class="highlighter-rouge">storeInVaultOnSuccess</code> in transaction request:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class VaultDataBuilder implements BuilderInterface
-{
-    /**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">VaultDataBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * Additional options in request to gateway
-     */
-    const OPTIONS = 'options';
+     */</span>
+    <span class="k">const</span> <span class="no">OPTIONS</span> <span class="o">=</span> <span class="s1">'options'</span><span class="p">;</span>
 
-    /**
+    <span class="sd">/**
      * The option that determines whether the payment method associated with
      * the successful transaction should be stored in the Vault.
-     */
-    const STORE_IN_VAULT_ON_SUCCESS = 'storeInVaultOnSuccess';
+     */</span>
+    <span class="k">const</span> <span class="no">STORE_IN_VAULT_ON_SUCCESS</span> <span class="o">=</span> <span class="s1">'storeInVaultOnSuccess'</span><span class="p">;</span>
 
-    /**
+    <span class="sd">/**
      * @inheritdoc
-     */
-    public function build(array $buildSubject)
-    {
-        return [
-            self::OPTIONS =&gt; [
-                self::STORE_IN_VAULT_ON_SUCCESS =&gt; true
-            ]
-        ];
-    }
-}</code></pre></figure>
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">build</span><span class="p">(</span><span class="k">array</span> <span class="nv">$buildSubject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="nx">self</span><span class="o">::</span><span class="na">OPTIONS</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="nx">self</span><span class="o">::</span><span class="na">STORE_IN_VAULT_ON_SUCCESS</span> <span class="o">=&gt;</span> <span class="kc">true</span>
+            <span class="p">]</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>The builder must be added to the payment authorize request in the DI configuration. 
 Example from the Braintree <code class="highlighter-rouge">di.xml</code>:</p>

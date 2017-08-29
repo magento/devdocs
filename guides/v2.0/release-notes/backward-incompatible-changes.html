@@ -1172,13 +1172,17 @@
   <li>To join <abbr title="&lt;span term-uuid=&quot;a9027f5d-efab-4662-96aa-c2999b5ab259&quot; class=&quot;glossary-term&quot; data-toggle=&quot;popover&quot;&gt;Entity&lt;/span&gt; Attribute Value">EAV</abbr> attributes use <code class="highlighter-rouge">linkField</code>.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -&gt; getLinkField()</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getLinkField</span><span class="p">()</span>
+</code></pre>
+</div>
 
 <ul>
   <li>To set a relation with another entities such as <code class="highlighter-rouge">category_product_entity</code> use <code class="highlighter-rouge">identifierField</code>.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -&gt; getIdentifierField()</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getIdentifierField</span><span class="p">()</span>
+</code></pre>
+</div>
 
 <h3 id="form-initialization-changes">Form initialization changes</h3>
 

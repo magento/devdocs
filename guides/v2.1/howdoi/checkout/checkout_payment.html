@@ -1288,17 +1288,19 @@ This configuration is stored in the <code class="highlighter-rouge">window.check
 
 <p>A sample <code class="highlighter-rouge">.php</code> class implementing <code class="highlighter-rouge">\Magento\Checkout\Model\ConfigProviderInterface</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
-{
-...
-    public function getConfig()
-    {
-        return [
-            // 'key' =<span class="ni">&amp;gt;</span> 'value' pairs of configuration
-        ];
-    }
-...
-}</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyCustomPaymentConfigProvider</span> <span class="k">implements</span> <span class="nx">\Magento\Checkout\Model\ConfigProviderInterface</span>
+<span class="p">{</span>
+<span class="o">...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getConfig</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="c1">// 'key' =&amp;gt; 'value' pairs of configuration
+</span>        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="o">...</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>A sample DI configuration file of a custom module <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/di.xml</code>:</p>
 

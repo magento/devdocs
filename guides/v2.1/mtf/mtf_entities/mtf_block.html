@@ -1646,13 +1646,17 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php5" data-lang="php5">$this-&gt;callRender($typeId, 'getOptions', ['product' =&gt; $product])</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">'getOptions'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'product'</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span>
+</code></pre>
+</div>
 
 <ul>
   <li>Calls a default method if the render is absent</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$this-&gt;getCustomOptionsBlock()-&gt;getOptions($product);</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
+</code></pre>
+</div>
 
 <h3 id="define-selector">Define a selector/locator</h3>
 

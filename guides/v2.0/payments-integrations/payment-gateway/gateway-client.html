@@ -585,28 +585,32 @@
 
 <p>The similar example of factory might looks like this:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> public function create(array $request)
- {
-    return $this-&gt;transferBuilder
-        -&gt;setBody($request)
-        -&gt;build();
- }</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code> <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="k">array</span> <span class="nv">$request</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">transferBuilder</span>
+        <span class="o">-&gt;</span><span class="na">setBody</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">build</span><span class="p">();</span>
+ <span class="p">}</span>
+</code></pre>
+</div>
 
 <p>In this example transfer factory simply sets request data using Transfer Builder and returns the created object.</p>
 
 <p>Following is an example of a more complicated behavior. Here transfer factory sets all required data to process requests using <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> credentials and all data is sent in JSON format.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">public function create(array $request)
-{
-    return $this-&gt;transferBuilder
-        -&gt;setMethod(Curl::POST)
-        -&gt;setHeaders(['Content-Type' =&gt; 'application/json'])
-        -&gt;setBody(json_encode($request, JSON_UNESCAPED_SLASHES))
-        -&gt;setAuthUsername($this-&gt;getApiKey())
-        -&gt;setAuthPassword($this-&gt;getApiPassword())
-        -&gt;setUri($this-&gt;getUrl())
-        -&gt;build();
-}</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="k">array</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">transferBuilder</span>
+        <span class="o">-&gt;</span><span class="na">setMethod</span><span class="p">(</span><span class="nx">Curl</span><span class="o">::</span><span class="na">POST</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">setHeaders</span><span class="p">([</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">])</span>
+        <span class="o">-&gt;</span><span class="na">setBody</span><span class="p">(</span><span class="nb">json_encode</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">JSON_UNESCAPED_SLASHES</span><span class="p">))</span>
+        <span class="o">-&gt;</span><span class="na">setAuthUsername</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getApiKey</span><span class="p">())</span>
+        <span class="o">-&gt;</span><span class="na">setAuthPassword</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getApiPassword</span><span class="p">())</span>
+        <span class="o">-&gt;</span><span class="na">setUri</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">())</span>
+        <span class="o">-&gt;</span><span class="na">build</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 
 		</div>

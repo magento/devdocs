@@ -1009,11 +1009,13 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
 
 <p>This method is called one time only during the test launch and is optional to use. <code class="highlighter-rouge">__prepare</code> can return an array of arguments which can be used as arguments in the <code class="highlighter-rouge">test()</code> method of a test case and the <code class="highlighter-rouge">processAssert()</code> method in <a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">constraints</a>. The following example creates and returns the <code class="highlighter-rouge">$customer</code> fixture.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">public function __prepare(Customer $customer)
-{
-    $customer-&gt;persist();
-    return ['customer' =&gt; $customer];
-}</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">__prepare</span><span class="p">(</span><span class="nx">Customer</span> <span class="nv">$customer</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$customer</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">();</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s1">'customer'</span> <span class="o">=&gt;</span> <span class="nv">$customer</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>A returned argument <code class="highlighter-rouge">$customer</code> is available in the test and in <a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">constraints</a>.</p>
 
@@ -1021,13 +1023,15 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
 
 <p>The <code class="highlighter-rouge">__inject()</code> method is used to inject data in a test (usually to initialize a page). For an example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">public function __inject(
-    CatalogProductIndex $productGrid,
-    CatalogProductEdit $editProductPage
-) {
-    $this-&gt;productGrid = $productGrid;
-    $this-&gt;editProductPage = $editProductPage;
-}</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">__inject</span><span class="p">(</span>
+    <span class="nx">CatalogProductIndex</span> <span class="nv">$productGrid</span><span class="p">,</span>
+    <span class="nx">CatalogProductEdit</span> <span class="nv">$editProductPage</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">productGrid</span> <span class="o">=</span> <span class="nv">$productGrid</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">editProductPage</span> <span class="o">=</span> <span class="nv">$editProductPage</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>This method is run before each <a href="/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">variation</a> test started. Returned arguments from this method are available in <a href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">constraints</a> and in the test as well.</p>
 
@@ -1085,13 +1089,15 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
 
 <p>For example, the following code deletes a sales rule after each variation:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">public function tearDown()
-{
-    $this-&gt;promoQuoteIndex-&gt;open();
-    $this-&gt;promoQuoteIndex-&gt;getPromoQuoteGrid()-&gt;searchAndOpen(['name' =&gt; $this-&gt;salesRuleName]);
-    $this-&gt;promoQuoteEdit-&gt;getFormPageActions()-&gt;delete();
-    $this-&gt;promoQuoteEdit-&gt;getModalBlock()-&gt;acceptAlert();
-}</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteIndex</span><span class="o">-&gt;</span><span class="na">getPromoQuoteGrid</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">searchAndOpen</span><span class="p">([</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">salesRuleName</span><span class="p">]);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteEdit</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">promoQuoteEdit</span><span class="o">-&gt;</span><span class="na">getModalBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">acceptAlert</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <h2 id="flow">Test case flow</h2>
 

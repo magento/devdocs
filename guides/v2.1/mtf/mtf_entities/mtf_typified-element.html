@@ -1178,66 +1178,73 @@
 
 <p><strong>Step 2.</strong> Extend your class from the <a href="#basic_class">default element</a> or the <a href="#magento_class">Magento custom element</a> class</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> 
-class OptgroupselectElement extends SelectElement</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">OptgroupselectElement</span> <span class="k">extends</span> <span class="nx">SelectElement</span>
+</code></pre>
+</div>
 
 <p><strong>Step 3.</strong> Redefine methods of the extended class according to your goals</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="sd">/**
  * Option group locator
  *
  * @var string
- */
-protected $optionGroupValue = ".//optgroup[@label = '%s']/option[text() = '%s']";
+ */</span>
+<span class="k">protected</span> <span class="nv">$optionGroupValue</span> <span class="o">=</span> <span class="s2">".//optgroup[@label = '%s']/option[text() = '%s']"</span><span class="p">;</span>
 
-/**
+<span class="sd">/**
  * Select value in dropdown that has option groups
  *
  * @param string $value
  * @return void
- */
-public function setValue($value)
-{
-    $this-&gt;eventManager-&gt;dispatchEvent(['set_value'], [__METHOD__, $this-&gt;getAbsoluteSelector()]);
-    list($group, $option) = explode('/', $value);
-    $xpath = sprintf($this-&gt;optionGroupValue, $group, $option);
-    $option = $this-&gt;find($xpath, Locator::SELECTOR_XPATH);
-    $option-&gt;click();
-}</code></pre></figure>
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setValue</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">'set_value'</span><span class="p">],</span> <span class="p">[</span><span class="nx">__METHOD__</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAbsoluteSelector</span><span class="p">()]);</span>
+    <span class="k">list</span><span class="p">(</span><span class="nv">$group</span><span class="p">,</span> <span class="nv">$option</span><span class="p">)</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
+    <span class="nv">$xpath</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">optionGroupValue</span><span class="p">,</span> <span class="nv">$group</span><span class="p">,</span> <span class="nv">$option</span><span class="p">);</span>
+    <span class="nv">$option</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$xpath</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">);</span>
+    <span class="nv">$option</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <h2 id="use">How to use</h2>
 
 <p>Typified elements are used in the <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html"><abbr title="Functional Testing Framework">FTF</abbr> blocks</a>.
 Use a <code class="highlighter-rouge">find()</code> method to find an element. This method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a> class:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="sd">/**
  * Find element using locator in context of current element
  *
  * @param string $selector
  * @param string $strategy [optional]
  * @param null|string $type [optional]
  * @return ElementInterface
- */
-public function find($selector, $strategy = Locator::SELECTOR_CSS, $type = null)
-{
-    return $this-&gt;driver-&gt;find($selector, $strategy, $type, $this);
-}</code></pre></figure>
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span> <span class="o">=</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">,</span> <span class="nv">$type</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">driver</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span><span class="p">,</span> <span class="nv">$type</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>The following code is an example of the <code class="highlighter-rouge">find()</code> method usage from the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php">\Magento\Catalog\Test\Block\Adminhtml\Category\Tree</a> block:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="sd">/**
  * Check category in category tree
  *
  * @param Category $category
  * @return bool
- */
-public function isCategoryVisible(Category $category)
-{
-    $categoryPath = $this-&gt;prepareFullCategoryPath($category);
-    $categoryPath = implode('/', $categoryPath);
-    return $this-&gt;_rootElement-&gt;find($this-&gt;treeElement, Locator::SELECTOR_CSS, 'tree')
-        -&gt;isElementVisible($categoryPath);
-}</code></pre></figure>
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">isCategoryVisible</span><span class="p">(</span><span class="nx">Category</span> <span class="nv">$category</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$categoryPath</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prepareFullCategoryPath</span><span class="p">(</span><span class="nv">$category</span><span class="p">);</span>
+    <span class="nv">$categoryPath</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="nv">$categoryPath</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">treeElement</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">,</span> <span class="s1">'tree'</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">isElementVisible</span><span class="p">(</span><span class="nv">$categoryPath</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <h3 id="mapping">Mapping</h3>
 

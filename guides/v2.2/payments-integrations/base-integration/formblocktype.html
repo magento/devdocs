@@ -689,47 +689,49 @@ most cases it is enough to use the <code class="highlighter-rouge">\Magento\Paym
 
 <p>In the integration with the Braintree payment provider, we use the <code class="highlighter-rouge">\Magento\Braintree\Block\Form</code> class as <code class="highlighter-rouge">formBlockType</code>. It allows displaying only card types available for configured countries:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class Form extends Cc
-{
-    /**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">Cc</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * Get list of available card types of order billing address country
      * @return array
-     */
-    public function getCcAvailableTypes()
-    {
-        $configuredCardTypes = $this-&gt;getConfiguredCardTypes();
-        $countryId = $this-&gt;sessionQuote-&gt;getQuote()-&gt;getBillingAddress()-&gt;getCountryId();
-        return $this-&gt;filterCardTypesForCountry($configuredCardTypes, $countryId);
-    }
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCcAvailableTypes</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$configuredCardTypes</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getConfiguredCardTypes</span><span class="p">();</span>
+        <span class="nv">$countryId</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sessionQuote</span><span class="o">-&gt;</span><span class="na">getQuote</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getBillingAddress</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getCountryId</span><span class="p">();</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">filterCardTypesForCountry</span><span class="p">(</span><span class="nv">$configuredCardTypes</span><span class="p">,</span> <span class="nv">$countryId</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    /**
+    <span class="sd">/**
      * Get card types available for Braintree
      * @return array
-     */
-    private function getConfiguredCardTypes()
-    {
-        $types = $this-&gt;ccType-&gt;getCcTypeLabelMap();
-        $configCardTypes = array_fill_keys($this-&gt;gatewayConfig-&gt;getAvailableCardTypes(), '');
+     */</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">getConfiguredCardTypes</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$types</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ccType</span><span class="o">-&gt;</span><span class="na">getCcTypeLabelMap</span><span class="p">();</span>
+        <span class="nv">$configCardTypes</span> <span class="o">=</span> <span class="nb">array_fill_keys</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">gatewayConfig</span><span class="o">-&gt;</span><span class="na">getAvailableCardTypes</span><span class="p">(),</span> <span class="s1">''</span><span class="p">);</span>
 
-        return array_intersect_key($types, $configCardTypes);
-    }
+        <span class="k">return</span> <span class="nb">array_intersect_key</span><span class="p">(</span><span class="nv">$types</span><span class="p">,</span> <span class="nv">$configCardTypes</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    /**
+    <span class="sd">/**
      * Filter card types for specific country
      * @param array $configCardTypes
      * @param string $countryId
      * @return array
-     */
-    private function filterCardTypesForCountry(array $configCardTypes, $countryId)
-    {
-        $filtered = $configCardTypes;
-        $countryCardTypes = $this-&gt;gatewayConfig-&gt;getCountryAvailableCardTypes($countryId);
-        // filter card types only if specific card types are set for country
-        ...
+     */</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">filterCardTypesForCountry</span><span class="p">(</span><span class="k">array</span> <span class="nv">$configCardTypes</span><span class="p">,</span> <span class="nv">$countryId</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$filtered</span> <span class="o">=</span> <span class="nv">$configCardTypes</span><span class="p">;</span>
+        <span class="nv">$countryCardTypes</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">gatewayConfig</span><span class="o">-&gt;</span><span class="na">getCountryAvailableCardTypes</span><span class="p">(</span><span class="nv">$countryId</span><span class="p">);</span>
+        <span class="c1">// filter card types only if specific card types are set for country
+</span>        <span class="o">...</span>
 
-        return $filtered;
-    }
-}</code></pre></figure>
+        <span class="k">return</span> <span class="nv">$filtered</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <h2 id="template">Template</h2>
 

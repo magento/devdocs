@@ -701,50 +701,52 @@
 
 <p>In the following example a response validator is implemented and added to the pool of the Braintree payment provider request validators.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class AcceptValidator extends AbstractValidator
-{
-    /**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AcceptValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * Performs domain-related validation for business object
      *
      * @param array $validationSubject
      * @return ResultInterface
-     */
-    public function validate(array $validationSubject)
-    {
-        $response = SubjectReader::readResponse($validationSubject);
-        $paymentDO = SubjectReader::readPayment($validationSubject);
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span><span class="k">array</span> <span class="nv">$validationSubject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$response</span> <span class="o">=</span> <span class="nx">SubjectReader</span><span class="o">::</span><span class="na">readResponse</span><span class="p">(</span><span class="nv">$validationSubject</span><span class="p">);</span>
+        <span class="nv">$paymentDO</span> <span class="o">=</span> <span class="nx">SubjectReader</span><span class="o">::</span><span class="na">readPayment</span><span class="p">(</span><span class="nv">$validationSubject</span><span class="p">);</span>
 
-        $isValid = true;
-        $fails = [];
+        <span class="nv">$isValid</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nv">$fails</span> <span class="o">=</span> <span class="p">[];</span>
 
-        $statements = [
-            [
-                $paymentDO-&gt;getOrder()-&gt;getCurrencyCode() === $response['authCurrency'],
-                __('Currency doesn\'t match.')
-            ],
-            [
-                sprintf(
-                    '%.2F',
-                    $paymentDO-&gt;getOrder()-&gt;getGrandTotalAmount()) === $response['authCost'],
-                    __('Amount doesn\'t match.'
-                )
-            ],
-            [
-                in_array($response['authMode'], ['A', 'E']),
-                __('Not supported response.')
-            ]
-        ];
+        <span class="nv">$statements</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[</span>
+                <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getOrder</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getCurrencyCode</span><span class="p">()</span> <span class="o">===</span> <span class="nv">$response</span><span class="p">[</span><span class="s1">'authCurrency'</span><span class="p">],</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s1">'Currency doesn\'t match.'</span><span class="p">)</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="nb">sprintf</span><span class="p">(</span>
+                    <span class="s1">'%.2F'</span><span class="p">,</span>
+                    <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getOrder</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getGrandTotalAmount</span><span class="p">())</span> <span class="o">===</span> <span class="nv">$response</span><span class="p">[</span><span class="s1">'authCost'</span><span class="p">],</span>
+                    <span class="nx">__</span><span class="p">(</span><span class="s1">'Amount doesn\'t match.'</span>
+                <span class="p">)</span>
+            <span class="p">],</span>
+            <span class="p">[</span>
+                <span class="nb">in_array</span><span class="p">(</span><span class="nv">$response</span><span class="p">[</span><span class="s1">'authMode'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">]),</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s1">'Not supported response.'</span><span class="p">)</span>
+            <span class="p">]</span>
+        <span class="p">];</span>
 
-        foreach ($statements as $statementResult) {
-            if (!$statementResult[0]) {
-                $isValid = false;
-                $fails[] = $statementResult[1];
-            }
-        }
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$statements</span> <span class="k">as</span> <span class="nv">$statementResult</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$statementResult</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+                <span class="nv">$isValid</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+                <span class="nv">$fails</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$statementResult</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-        return $this-&gt;createResult($isValid, $fails);
-    }
-}</code></pre></figure>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createResult</span><span class="p">(</span><span class="nv">$isValid</span><span class="p">,</span> <span class="nv">$fails</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>Now, the newly added validator should be specified for a specific command. Below is an example of specifying a validator for an <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> command:</p>
 

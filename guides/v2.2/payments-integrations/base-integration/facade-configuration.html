@@ -781,30 +781,32 @@ configuration from database or payment config file.</p>
 <p>A custom validator should implement the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator\ValidatorInterface</code>. In the most cases, it is enough
 to extend the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator\AbstractValidator</code> and create an implementation of the <code class="highlighter-rouge">validate</code> method:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class CountryValidator extends AbstractValidator
-{
-    /**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CountryValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * @inheritdoc
-     */
-    public function validate(array $validationSubject)
-    {
-        $isValid = true;
-        $storeId = $validationSubject['storeId'];
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span><span class="k">array</span> <span class="nv">$validationSubject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$isValid</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nv">$storeId</span> <span class="o">=</span> <span class="nv">$validationSubject</span><span class="p">[</span><span class="s1">'storeId'</span><span class="p">];</span>
 
-        if ((int)$this-&gt;config-&gt;getValue('allowspecific', $storeId) === 1) {
-            $availableCountries = explode(
-                ',',
-                $this-&gt;config-&gt;getValue('specificcountry', $storeId)
-            );
+        <span class="k">if</span> <span class="p">((</span><span class="nx">int</span><span class="p">)</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">(</span><span class="s1">'allowspecific'</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$availableCountries</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span>
+                <span class="s1">','</span><span class="p">,</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">(</span><span class="s1">'specificcountry'</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span>
+            <span class="p">);</span>
 
-            if (!in_array($validationSubject['country'], $availableCountries)) {
-                $isValid =  false;
-            }
-        }
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$validationSubject</span><span class="p">[</span><span class="s1">'country'</span><span class="p">],</span> <span class="nv">$availableCountries</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nv">$isValid</span> <span class="o">=</span>  <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-        return $this-&gt;createResult($isValid);
-    }
-}</code></pre></figure>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createResult</span><span class="p">(</span><span class="nv">$isValid</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <p>Then, the newly created validator needs to be added to the global pool of validators:</p>
 

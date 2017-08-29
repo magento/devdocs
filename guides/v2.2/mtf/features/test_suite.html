@@ -1171,9 +1171,13 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
   <li>Any tags that are used in the test case should be added to the beginning of a class definition:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/* tags */
-const TEST_TYPE = '3rd_party_test_deprecated';
-/* end tags */</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="cm">/* tags */</span>
+<span class="k">const</span> <span class="no">TEST_TYPE</span> <span class="o">=</span> <span class="s1">'3rd_party_test_deprecated'</span><span class="p">;</span>
+<span class="cm">/* end tags */</span>
+
+</code></pre>
+</div>
 
 <ul>
   <li>The tag in the rule:</li>
@@ -1187,11 +1191,15 @@ const TEST_TYPE = '3rd_party_test_deprecated';
 
 <p>A test case can contain multiple tag groups, and a group can have multiple values. For example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/* tags */
-const MVP = 'yes';
-const DOMAIN = 'PS';
-const TEST_TYPE = 'extended_acceptance_test, 3rd_party_test_deprecated';
-/* end tags */</code></pre></figure>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="cm">/* tags */</span>
+<span class="k">const</span> <span class="no">MVP</span> <span class="o">=</span> <span class="s1">'yes'</span><span class="p">;</span>
+<span class="k">const</span> <span class="no">DOMAIN</span> <span class="o">=</span> <span class="s1">'PS'</span><span class="p">;</span>
+<span class="k">const</span> <span class="no">TEST_TYPE</span> <span class="o">=</span> <span class="s1">'extended_acceptance_test, 3rd_party_test_deprecated'</span><span class="p">;</span>
+<span class="cm">/* end tags */</span>
+
+</code></pre>
+</div>
 
 <h3 id="scope-variation"><code class="highlighter-rouge">scope = "variation"</code></h3>
 
@@ -1281,14 +1289,18 @@ const TEST_TYPE = 'extended_acceptance_test, 3rd_party_test_deprecated';
   <li>Any tags that are used in the constraint should be added to the beginning of a class definition:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class AssertProductView extends AbstractConstraint
-{
-    /* tags */
-    const SEVERITY = 'low';
-    /* end tags */
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">AssertProductView</span> <span class="k">extends</span> <span class="nx">AbstractConstraint</span>
+<span class="p">{</span>
+    <span class="cm">/* tags */</span>
+    <span class="k">const</span> <span class="no">SEVERITY</span> <span class="o">=</span> <span class="s1">'low'</span><span class="p">;</span>
+    <span class="cm">/* end tags */</span>
 
-    // ...
-}</code></pre></figure>
+    <span class="c1">// ...
+</span><span class="p">}</span>
+
+</code></pre>
+</div>
 
 <ul>
   <li>The rule that allows constraints with this tag only:</li>

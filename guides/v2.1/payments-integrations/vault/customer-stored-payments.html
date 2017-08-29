@@ -766,59 +766,61 @@ has additional method to get card details.</p>
 
 <p>The simple card renderer implementation might be like following:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class CardRenderer extends AbstractCardRenderer
-{
-    /**
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CardRenderer</span> <span class="k">extends</span> <span class="nx">AbstractCardRenderer</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * Can render specified token
      *
      * @param PaymentTokenInterface $token
      * @return boolean
-     */
-    public function canRender(PaymentTokenInterface $token)
-    {
-        return $token-&gt;getPaymentMethodCode() === ConfigProvider::CODE;
-    }
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">canRender</span><span class="p">(</span><span class="nx">PaymentTokenInterface</span> <span class="nv">$token</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">getPaymentMethodCode</span><span class="p">()</span> <span class="o">===</span> <span class="nx">ConfigProvider</span><span class="o">::</span><span class="na">CODE</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    /**
+    <span class="sd">/**
      * @return string
-     */
-    public function getNumberLast4Digits()
-    {
-        return $this-&gt;getTokenDetails()['maskedCC'];
-    }
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getNumberLast4Digits</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">'maskedCC'</span><span class="p">];</span>
+    <span class="p">}</span>
 
-    /**
+    <span class="sd">/**
      * @return string
-     */
-    public function getExpDate()
-    {
-        return $this-&gt;getTokenDetails()['expirationDate'];
-    }
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getExpDate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">'expirationDate'</span><span class="p">];</span>
+    <span class="p">}</span>
 
-    /**
+    <span class="sd">/**
      * @return string
-     */
-    public function getIconUrl()
-    {
-        return $this-&gt;getIconForType($this-&gt;getTokenDetails()['type'])['url'];
-    }
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIconUrl</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getIconForType</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">'type'</span><span class="p">])[</span><span class="s1">'url'</span><span class="p">];</span>
+    <span class="p">}</span>
 
-    /**
+    <span class="sd">/**
      * @return int
-     */
-    public function getIconHeight()
-    {
-        return $this-&gt;getIconForType($this-&gt;getTokenDetails()['type'])['height'];
-    }
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIconHeight</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getIconForType</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">'type'</span><span class="p">])[</span><span class="s1">'height'</span><span class="p">];</span>
+    <span class="p">}</span>
 
-    /**
+    <span class="sd">/**
      * @return int
-     */
-    public function getIconWidth()
-    {
-        return $this-&gt;getIconForType($this-&gt;getTokenDetails()['type'])['width'];
-    }
-}</code></pre></figure>
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getIconWidth</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getIconForType</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">'type'</span><span class="p">])[</span><span class="s1">'width'</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 <h2 id="layout-and-template">Layout and template</h2>
 
