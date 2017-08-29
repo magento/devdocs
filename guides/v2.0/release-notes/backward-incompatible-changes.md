@@ -63,7 +63,7 @@ For more information about backward compatibility, see [Magento’s backward com
   </tr>
   <tr>
     <td>
-    {%highlight php startinline=1%}
+    {% highlight php %}
     [
         'general' => [
             'name' => 'Category',
@@ -73,10 +73,10 @@ For more information about backward compatibility, see [Magento’s backward com
         ],
         ...
     ]
-    {%endhighlight%}
+    {% endhighlight %}
     </td>
     <td>
-    {%highlight php startinline=1%}
+    {% highlight php %}
     [
         'general' => [
             'name' => 'Category',
@@ -89,7 +89,7 @@ For more information about backward compatibility, see [Magento’s backward com
         ],
         ...
     ]
-    {%endhighlight%}
+    {% endhighlight %}
     </td>
   </tr>
 </table>
@@ -123,15 +123,15 @@ You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/m
   * Initialized using the `magento-init` {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %}
 * To join EAV attributes use `linkField`.
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -> getLinkField()
-{% endhighlight %}
+```
 
 * To set a relation with another entities such as `category_product_entity` use `identifierField`.
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -> getIdentifierField()
-{% endhighlight %}
+```
 
 ### Form initialization changes
 
