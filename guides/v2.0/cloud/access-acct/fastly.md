@@ -108,7 +108,7 @@ Configure the following features and enable additional [configuration options](h
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 *	Ignore the link to create a free Fastly account. We'll provide your Fastly credentials (Service ID and API token).
-*	With Fastly version 1.2.0 and later, you no longer need to upload your VCL to Fastly. The **Upload VCL to Fastly** button enables you to upload [VCL snippets](#custom-vcl).
+*	With Fastly version 1.2.0 and later (we recommend 1.2.27 or later), use the **Upload VCL to Fastly** button to upload your default [VCL snippets](#custom-vcl).
 </div>
 
 ## Upload Fastly VCL snippets {#upload-vcl-snippets}
@@ -123,7 +123,7 @@ To use snippets, you must upload the Fastly VCL using the Magento Admin as follo
 	![Upload a Magento VCL to Fastly]({{ site.baseurl }}common/images/cloud_upload-vcl-to-fastly.png)
 
 	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. For details, see [Update extensions]({{ page.baseurl}}cloud/howtos/update-components.html). Fastly's Composer name is `fastly/magento2`.
+  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.27 or later. For details, see [Update extensions]({{ page.baseurl}}cloud/howtos/update-components.html). Fastly's Composer name is `fastly/magento2`.
 	</div>
 
 2.	Once the upload completes, the modal automatically closes with a success message.
