@@ -2,18 +2,18 @@
 layout: default
 group: cloud
 subgroup: 010_welcome
-title: Pro Architecture
-menu_title: Pro Architecture
+title: Pro architecture
+menu_title: Pro architecture
 menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/reference/discover-arch.md
 ---
 
-Magento Commerce (Cloud) Pro provides three environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches in your project and supporting any development and branching methodology.
+Magento Commerce (Cloud) Pro projects provide three complete environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace. You can use any development and branching methodology you like.
 
 ## Integration environment {#cloud-arch-int}
-Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a PAAS (Platform as a Service) providing up to eight active environments for eight active Git branches. Each branch deploys to an environment with a web server, database, and configured services to fully test your site.
+Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a PAAS (Platform as a Service) providing up to eight active environments on a grid for eight active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
 
 The Integration environments run in a Linux container (LXC) on a grid of servers as a PAAS (Platform as a Service). You can have up to eight active *environments* (Git branches) at a time to development and test code. You can have more than eight branches, but not all will be active to access, view, and test in Integration. This environment does not support all services, for example, Fastly is not accessible in Integration. All environments are read-only.
 
@@ -66,9 +66,10 @@ The Production environment has three VMs behind an Elastic Load Balancer managed
 
 * Fastly for http caching and CDN
 * Nginx web server speaking to PHP-FPM, one instance with multiple workers
-* GlusterFS file server for managing all static file deployments and syncs with four directoris mounted: `var`, `pub/media`, `pub/static`, and `app/etc`
+* GlusterFS file server for managing all static file deployments and syncs with four directories mounted: `var`, `pub/media`, `pub/static`, and `app/etc`
 * Redis server, one per VM with only one active and the other two as replicas
-* Elasticsearch
+* Elasticsearch for searching for {{site.data.var.<ece>}} 2.1 and later
+* Solr search is supported for {{site.data.var.<ece>}} 2.0
 * Galara database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
 
 The following figure shows the technology used in the Production environment:
@@ -133,14 +134,23 @@ Each service runs in its own secure container. containers are managed together i
 You can even have multiple applications running in the same project. Building a microservice oriented architecture with Magento Commerce is as easy as managing a monolithic application.
 
 ## Software versions {#cloud-arch-software}
-Magento Commerce uses:
+{{site.data.var.<ece>}} uses:
 
 *	Operating system: Debian GNU/Linux 8 (jessie)
 *	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
 
-This software is *not* upgradable but versions for the following software is configurable: [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html), [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html), [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html), [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html), [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html), and [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html).
+This software is *not* upgradable but versions for the following software is configurable:
+
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
+* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
+* [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
+* [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
+* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
+
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
 #### Related topics
-*	[Develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	[Develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html#pro)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 *	[Magento Commerce requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)

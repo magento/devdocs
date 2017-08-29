@@ -59,7 +59,7 @@ You should become familiar with the following technologies:
 * MySQL (including command-line interation)
 * Basic linux shell usage
 
-See [Magento Commerce requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html) for details.
+See [Magento Commerce requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/requirements/cloud-requirements.html) for details and additional technologies.
 
 ## Where do I get started? {#getstarted}
 If you have experience with Magento 2 Enterprise Edition, we recommend reviewing content in these DevDocs to understand the differences between EE and Enterprise Cloud Edition. If you are new to Magento and the Cloud, this guide introduces all aspects from getting started to going live and continuous integration deployments.
