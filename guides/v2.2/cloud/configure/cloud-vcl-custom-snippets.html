@@ -1616,7 +1616,7 @@
 <p>We provide more information on <a href="#edge-dictionary">Edge Dictionaries</a>, <a href="#edge-acl">Edge ACLs</a>, and <a href="#examples">custom VCL snippets</a> to get you started.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a lower priority value.</p>
+  <p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a higher priority value of 100.</p>
 </div>
 
 <h3 id="vcl-curl">VCL snippet values</h3>
@@ -1628,11 +1628,11 @@
   <li><code class="highlighter-rouge">Editable Version #</code>: The version of the service you add snippets to for validating and activating</li>
   <li><code class="highlighter-rouge">type</code>: Specifies the location to place the generated snippet such as <code class="highlighter-rouge">init</code> (above subroutines) and within subroutines like <code class="highlighter-rouge">recv</code>. See <a href="https://docs.fastly.com/api/config#snippet" target="_blank">Fastly VCL snippet object values</a> for information on these values.</li>
   <li><code class="highlighter-rouge">content</code>: The snippet of VCL code to run</li>
-  <li><code class="highlighter-rouge">priority</code>: All Magento module uploaded snippets are 50. If you want an action to occur prior to Magento modules, enter a lower number like 5. If after Magento modules, use a higher number like 75. The default priority is 100.</li>
+  <li><code class="highlighter-rouge">priority</code>: Determines the order VCL snippets call. Lower values run first, from 1 to 100. All Magento module uploaded snippets are 50. If you want an action to occur last or override Magento default VCL snippets, enter a higher number like 100. To have code occur immediately, enter a lower value like 5.</li>
   <li><code class="highlighter-rouge">dynamic</code>: Indicates if this is a <a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets" target="_blank">dynamic snippet</a></li>
 </ul>
 
-<p>All default snippets have a priority of 50. Priorities will go from the lowest value (1) to the highest (100). Any VCL snippet at priority 5 will override any code at priority 50 or 100. If you do not set a priority with your <code class="highlighter-rouge">curl</code> command, the default value set is 100, which is lower priority than Magento default VCL snippets.</p>
+<p>All default VCL snippets have a priority of 50. Priorities will call VCL snippets starting from 1 to 100. Any VCL snippet at priority 5 will run immediately, best for blacklists, whitelists, and redirects. Priority 100 is best for overriding default VCL snippet code and values, best for extending timeouts. If you do not set a priority with your <code class="highlighter-rouge">curl</code> command, the default value set is 100.</p>
 
 <h3 id="version-number">Get a service version number</h3>
 <p>When creating a new regular VCL snippet, or updating a current one, you need a new version number. This version is a new service configuration version number for your Fastly service. When adding VCL snippets, you add them all to a specific version of the service. You may have noticed the versioning when you upload VCLs during Fastly configuration through the Fastly module.</p>
@@ -1725,7 +1725,7 @@
 </code></pre>
 </div>
 
-<p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a lower priority value.</p>
+<p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults).</p>
 
 <p>To delete an individual VCL snippet using the API, get a list of snippets and enter a <code class="highlighter-rouge">curl</code> command with the speicific snippet information to delete. We recommend keeping a copy of the creation command and JSON if you need to recreate it later.</p>
 
@@ -1776,7 +1776,7 @@
 <h3 id="bad-refer">Create a block bad referers VCL</h3>
 <p>You may want to create a VCL snippet that runs before all other modules to block bad referring websites from accessing your site. To block these sites with a 403 Forbidden error through Fastly, create a VCL snippet to use with an Edge Dictionary of domains to block.</p>
 
-<p>Of note for this snippet, you want to set the priority to 5. This priority runs the snippet before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge Dictionary is also <code class="highlighter-rouge">referer_blocklist</code>. If the domain matches the dictionary, it is blocked from access.</p>
+<p>Of note for this snippet, you want to set the priority to 5 to immediate run and block the bad referers. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge Dictionary is also <code class="highlighter-rouge">referer_blocklist</code>. If the domain matches the dictionary, it is blocked from access.</p>
 
 <p>The following is an example of this VCL code from Fastly:</p>
 
@@ -1807,9 +1807,9 @@
 <p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
 
 <h3 id="block-ip">Create a block blacklisted IPs VCL</h3>
-<p>You may want to create a black list of IPs to block from accessing your site. You can create an Edge ACL list of the blacklisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is blocked with a 403 Forbidden error.</p>
+<p>You may want to create a blacklist of IPs to block from accessing your site. You can create an Edge ACL list of the blacklisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is blocked with a 403 Forbidden error.</p>
 
-<p>Of note for this snippet, you want to set the priority to 5. This priority runs the snippet before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also <code class="highlighter-rouge">blocklist</code>. If the domain matches the dictionary, it is blocked from access.</p>
+<p>Of note for this snippet, you want to set the priority to 5 to immediately run and block those blacklisted IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also <code class="highlighter-rouge">blocklist</code>. If the domain matches the dictionary, it is blocked from access.</p>
 
 <ul>
   <li>Name: <code class="highlighter-rouge">block_bad_ips</code></li>
@@ -1834,8 +1834,36 @@
 
 <p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
 
+<h3 id="block-ip">Create a whitelist VCL</h3>
+<p>You may want to create a whitelist of IPs to allow accessing your Magento Admin console. You can create an Edge ACL list of the whitelisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is allowed access. All other IPs receive a 403 Forbidden error.</p>
+
+<p>Of note for this snippet, you want to set the priority to 5 to immediately run and check for whitelisted IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also <code class="highlighter-rouge">whitelist</code>. If the domain matches the dictionary, it is allowed access to a path of <code class="highlighter-rouge">/admin</code>. If you changed your Magento Admin path, use that value in this code example.</p>
+
+<ul>
+  <li>Name: <code class="highlighter-rouge">whitelist_admin</code></li>
+  <li>Type: <code class="highlighter-rouge">recv</code>, puts the code in the subroutine vcl_recv</li>
+  <li>Priority: 5</li>
+  <li>
+    <p>Content:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>      if (req.url ~ "^/admin" &amp;&amp; ! (client.ip ~ whitelist)) {
+          error 403 "Forbidden";
+          }
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>The curl command would look like the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if (req.url ~ "^/admin" &amp;&amp; ! (client.ip ~ whitelist)) { error 403 "Forbidden"; }"}
+</code></pre>
+</div>
+
+<p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
+
 <h3 id="admin-timeout">Extend Magento Admin timeout on Fastly</h3>
-<p>Fastly has a strict timeout for the Magento Admin of three minutes. This may not be enough time for some extended actions. To extend the default timeout for the Magento Admin, you will create a new VCL snippet with a higher priority (a lower value than 50) with a longer timeout value. This VCL snippet value will override the default value in <code class="highlighter-rouge">pass.vcl</code> with a priority of 50 (already uploaded to your service).</p>
+<p>Fastly has a strict timeout for the Magento Admin of three minutes. This may not be enough time for some extended actions. To extend the default timeout for the Magento Admin, you will create a new VCL snippet with a priority of 100 and a longer timeout value. This VCL snippet value will run last and override the default value in <code class="highlighter-rouge">pass.vcl</code> with a priority of 50 (already uploaded to your service).</p>
 
 <p>To build the new command, we can take the default code and revise it with a new name and lower priority value. The order of priorities will use this value over the default 180 seconds. How did you set the default timeout? When you first uploded your VCL snippets when configuring Fastly, you uploaded a default VCL with a default timeout of 180 seconds (three minutes). The VCL snippet uploaded was from this <a href="https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl" target="_blank">Fastly pass.vcl snippet</a>. The important code that sets the timeout is the <code class="highlighter-rouge">first_byte_timeout</code> value:</p>
 
@@ -1862,7 +1890,7 @@ if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
 <h3 id="dif-backend">Choose a different backend VCL</h3>
 <p>You may have a separate Wordpress blog for all of your store’s blog entries, kept separate from your store. For this example, you are trying to check the first part of the incoming path and redirect the visitor to your Wordpress backend. You would create an Edge Dictionary called <code class="highlighter-rouge">wordpress_urls</code> with a list of paths.</p>
 
-<p>This VCL snippet locates and extracts the first part of the path. For example, it extracts <code class="highlighter-rouge">mypath</code> from the <code class="highlighter-rouge">/mypath/someotherpath</code>. It then compares that path against the Edge Dictionary. If a match is found, the visitor is redirected to the Wordpress backend.</p>
+<p>This VCL snippet locates and extracts the first part of the path. For example, it extracts <code class="highlighter-rouge">mypath</code> from the <code class="highlighter-rouge">/mypath/someotherpath</code>. It then compares that path against the Edge Dictionary. If a match is found, the visitor is redirected to the Wordpress backend. For this snippet, you may want to use priority 5 to have the check runn immediately and redirect those visitors to the other backend.</p>
 
 <p>The following is an example of this VCL code from Fastly:</p>
 
