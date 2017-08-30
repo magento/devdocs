@@ -4,18 +4,28 @@ group: cloud
 subgroup: 010_welcome
 title: Pro architecture
 menu_title: Pro architecture
-menu_order: 20
+menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/reference/discover-arch.md
 ---
 
-Magento Commerce (Cloud) Pro projects provide three complete environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace. You can use any development and branching methodology you like.
+Magento Commerce (Cloud) Pro _projects_ provide three complete environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace. You can use any development and branching methodology you like.
+
+All of your code is contained in the Magento Commerce (Cloud) Starter project. The project is your Magento store code, extensions, and integrations in a `master` Git branch. Each project supports up to eight active Integration *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
+
+Pro also provides a dedicated Infrastructure-as-a-Service (IaaS) for Production and Staging. You deploy the `master` Git branch to these dedicated environments. Production includes a three-node high availability infrastructure to ensure your site is always available. When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
+
+All environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.
+
+You can use any development and branching methodology you like.
 
 ## Integration environment {#cloud-arch-int}
 Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a PAAS (Platform as a Service) providing up to eight active environments on a grid for eight active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
 
-The Integration environments run in a Linux container (LXC) on a grid of servers as a PAAS (Platform as a Service). You can have up to eight active *environments* (Git branches) at a time to development and test code. You can have more than eight branches, but not all will be active to access, view, and test in Integration. This environment does not support all services, for example, Fastly is not accessible in Integration. All environments are read-only.
+The Integration environments run in a Linux container (LXC) on a grid of servers as a PAAS (Platform as a Service). You can have up to eight active Git branches with an associated environments to development and test code. You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them.
+
+This environment does not support all services. For example, Fastly is not accessible in Integration.
 
 The process for developing in Integration requires the following process:
 
@@ -116,11 +126,6 @@ The following table details the differences:
 </tbody>
 </table>
 
-## Projects {#cloud-arch-projects}
-The container for your Magento application is a *project*. The project is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to eight active Integration *environments* with an associated active Git branch. Consider each of the eight Integration environments your development environment, allowing you to develop and test different branches simultaneously. Each environment is comprised of *services*, which are deployed inside highly restricted containers on a grid of servers.
-
-When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
-
 ## Services {#cloud-arch-services}
 Magento Commerce (Cloud) currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
 
@@ -150,7 +155,19 @@ This software is *not* upgradable but versions for the following software is con
 
 For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
+## Prepare for development {#develop}
+To branch and develop your Magento store:
+
+* Set up your local environment
+* Clone the `master` branch from the Project to your local
+* Branch and develop in a new Git branch on your local workspace
+* Push code to Git that builds and deploys to an environment for testing
+
+Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html), working with Git branches, and [deploying code]({{page.baseurl}}cloud/live/stage-prod-live.html).
+
+We walk you through the entire process from [deployment]({{page.baseurl}}cloud/live/stage-prod-live.html) to [going live]({{page.baseurl}}cloud/live/live.html) requirements and processes.
+
 #### Related topics
-*	[Develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html#pro)
+*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 *	[Magento Commerce requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)

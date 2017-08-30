@@ -2,45 +2,40 @@
 layout: default
 group: cloud
 subgroup: 010_welcome
-title: Pro Develop and Deploy Workflow
-menu_title: Pro Develop and Deploy Workflow
-menu_order: 35
+title: Starter Develop and Deploy Workflow
+menu_title: Starter Develop and Deploy Workflow
+menu_order: 25
 menu_node:
 version: 2.0
-github_link: cloud/welcome/discover-workflow.md
+github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 ---
 
 Everything in Magento Commerce (Cloud) is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.<ece>}} plan subscription, your deployment workflow may differ.
 
 The general workflow for all development and deployment requires pushing code to the remote Git branch. A series of build and deploy processes run with the environments updated with code, services, and configurations. The following sections provide high-level walk-throughs for development, branching, and deployments.
 
-If you have the Pro plan, you have a larger Integration environment for your development across eight active branches, a Staging environment, and a Production environment.
+If you have the Starter plan, you have access to four active environments, including a `master` environment for your Production server. You have the option to use the remaining three active branches any way you want. We recommend creating a Staging branch for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create and use for all development.
 
-The [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) infrastructure supports up to eight fully active environments including a `master` branch. Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. You can access the store and Admin panel using provided URLs and [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. Only the Production and Staging environments have full services including Fastly and New Relic.
 
-You can test every feature in isolation in the [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) active environments, then deploy into [Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [Production]({{ page.baseurl }}cloud/reference/iscover-arch.html#cloud-arch-prod).
+The following diagram details the branch and environment relationships:
 
-The following figure shows how it works at a high level:
+![High-level view of Starter project]({{ site.baseurl }}common/images/cloud_arch-starter.png)
 
-![High-level view of Magento Commerce]({{ site.baseurl }}common/images/cloud_code-flow.png)
+You can manage all of your environments including Production and Staging directly through the [Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html), through the store and Admin panel using provided URLs, and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
-* Create a project that clones Magento code from our repository into a Git `master` branch
-* Develop code and customizations in active branches to test in Integration environments
-* Use the [Magento Cloud command line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html) to configure your project and use an [automated deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html) to push code
-* Test custom code, themes, 3rd party integrations, and extensions
-* Deploy to the Staging environment to complete full near-production testing
-* Deploy to Production and begin go live steps
+## Starter environments and branches {#env-branches}
+For your environments, we recommend deploying and testing following a Development > Staging > Production workflow.
 
-You can use any methodology you already have or you can invent new ones for your development and branching strategies.
-
-### Pro environments and branches {#env-branches}
-For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying and testing in Staging gives you near-Production features and additional services including Fastly. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These enviornments are not public facing. Finally, Production is your live, public environment.
+* Production environment is your `master` Git branch with an associated full environment with all services
+* Staging environment is a Git branch you create called `staging`
+* Develop environments include two active branches
 
 For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
 
 From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.
 
-For detailed information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
+For detailed information, see [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html).
 
 ## Development workflow {#development}
 discuss full process here
@@ -58,14 +53,11 @@ configure store settings, configuration, etc.
 scd-dump
 env.php/env variables
 
-### Push to Integration and test {#push-code}
+### Push code and test {#push-code}
 push code to Git remote and test
 push to staging and test
 
-### Push to Staging and test {#staging}
-push to `master`, test, go live. provide links
-
-### Push to Production and go live {#go-live}
+### Push to production and go live {#go-live}
 push to `master`, test, go live. provide links
 
 ## Continuous integration {#continuous-integration}
@@ -82,5 +74,5 @@ To follow continuous integration best practices, we recommend replicating your P
 
 #### Related topics
 *	[First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
-*	[Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+*	[Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)

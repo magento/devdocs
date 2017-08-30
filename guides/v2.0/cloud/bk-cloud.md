@@ -21,9 +21,63 @@ redirect_from:
   - /guides/v2.2/cloud/welcome/10000-ft-overview.html
 ---
 
-Magento Commerce (Cloud), formerly Enterprise Cloud Edition, is a managed and automated high-availability hosting platform for Magento specifically created and hosted on the Cloud. This version combines Magento Commerce, Cloud hosting, with a few differences and added features including Git integration and three key environments for development, staging, and live production.
+{{site.data.var.<ece>}}, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines {{site.data.var.<ee>}}, Cloud infrastructure hosting, with a few differences and added features including Git integration and key environments for development, staging, and live production.
 
 Code, test, and deploy across development, staging, and finally production environment for continuous integration of your store.
+
+## {{site.data.var.<ece>}} plans {#plans}
+{{site.data.var.<ece>}} includes two plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison).
+
+<table>
+    <tbody>
+
+    <tr>
+        <td class="blank"></td>
+        <th>Starter</th>
+        <th>Pro</th>
+    </tr>
+    <tr><td>Core features</td>
+    <td>All Magento 2 core features</td>
+    <td>All Magento 2 core features</td>
+    </tr>
+    <tr><td>Infrastructure and deployment</td>
+    <td>
+    <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for Magento</li>
+    <li>Continuous cloud integration tools with unlimited users</li>
+    <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
+    <li>Unrestricted versions of New Relic APM Pro (Performance Monitoring) and Blackfire.io Enterprise (Performance Testing)</li>
+</td>
+    <td>
+    <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for Magento</li>
+    <li>Infrastructure-as-a-Service (IaaS) dedicated for Production and Staging</li>
+    <li>Continuous cloud integration tools with unlimited users</li>
+    <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
+    <li>Unrestricted versions of New Relic APM Pro (Performance Monitoring) and Blackfire.io Enterprise (Performance Testing)</li>
+    </td>
+    </tr>
+    <tr><td>24x7 email support</td>
+    <td>24x7 monitoring and email support for the core application and the cloud infrastructure</td>
+    <td>24x7 monitoring and email support for the core application and the cloud infrastructure</td>
+    </tr>
+    <tr><td>Business Intelligence</td>
+    <td class="blank"></td>
+    <td>Magento Business Intelligence Essentials giving you full visibility into your data with 75 reports and 5 dashboards available out of the box</td>
+    </tr>
+    <tr><td>High availability infrastructure</td>
+    <td class="blank"></td>
+    <td>High availability architecture with a three-server setup in the underlying Infrastructure-as-a-Service (IaaS) to provide enterprise grade reliability and availability</td>
+    </tr>
+    <tr><td>Dedicated hardware</td>
+    <td class="blank"></td>
+    <td>Isolated and dedicated hardware setup in the underlying Infrastructure-as-a-Service (IaaS) to provide even higher levels of reliability and availability</td>
+    </tr>
+    <tr><td>Dedicated Launch Manager</td>
+    <td class="blank"></td>
+    <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
+    </tr>
+
+</tbody>
+</table>
 
 ## Direct access to your environments {#environments}
 Fully access your Magento development and deployment through a UI console or CLI. Your servers are within reach from development to production in the Amazon Web Services (AWS) cloud.
@@ -71,8 +125,14 @@ If you are the account owner, you should complete these tasks to give your techn
 We recommend the following starting points:
 
 *	[Magento Commerce requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
-*	[Cloud Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-*	[Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	Pro information:
+
+  * [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+  *	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	Starter information:
+
+  * [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
+  *	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 * [Set up a project and dev workspace]({{page.baseurl}}cloud/before/before-workspace.html)
 

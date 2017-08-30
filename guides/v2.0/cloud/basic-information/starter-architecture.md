@@ -4,13 +4,13 @@ group: cloud
 subgroup: 010_welcome
 title: Starter architecture
 menu_title: Starter architecture
-menu_order: 25
+menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/basic-information/starter-architecture.md
 ---
 
-All of your code is contained in the Magento Commerce (Cloud) Starter project. The project is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to four active *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
+All of your code is contained in the Magento Commerce (Cloud) Starter project. The _project_ is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to four active *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
 
 These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.
 
@@ -110,10 +110,10 @@ To branch and develop your Magento store:
 
 Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html), working with Git branches, and [deploying code]({{page.baseurl}}cloud/live/stage-prod-live.html).
 
-We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-prod-live.html) and [Go Live]({{page.baseurl}}cloud/live/live.html) requirements and processes.
+We walk you through the entire process from [deployment]({{page.baseurl}}cloud/live/stage-prod-live.html) to [going live]({{page.baseurl}}cloud/live/live.html) requirements and processes.
 
 
 #### Related topics
-*	[Develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html#starter)
+*	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-*	[Magento Commerce requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[Magento Commerce (Cloud) requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
