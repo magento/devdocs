@@ -772,13 +772,21 @@
 <p>This tutorial uses the following framework <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> in the following ways:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code> - This class converts values for a field in a table from one format to another.</li>
-  <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverterFactory</code> - This class creates instances of the <code class="highlighter-rouge">FieldDataConverter</code> with the appropriate data converter implementation.</li>
+  <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code> - This class converts values for a field in a table from one format to another.
+    <ul>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverterFactory</code> - This class creates instances of the <code class="highlighter-rouge">FieldDataConverter</code> with the appropriate data converter implementation.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter</code> - This is a service class that allows specifying multiple fields from different tables at once. This class creates instances of the <code class="highlighter-rouge">FieldDataConverter</code> class and accepts a list of <code class="highlighter-rouge">\Magento\Framework\DB\FieldToConvert</code> value objects with field information. A single <code class="highlighter-rouge">convert()</code> method call is limited to one DB connection.</li>
+    </ul>
+  </li>
   <li><code class="highlighter-rouge">\Magento\Framework\DB\DataConverter\DataConverterInterface</code> - This interface is for classes that convert data between different formats or types of data.</li>
-  <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\QueryModifierInterface</code> - Interface for classes that add a condition to the database query to target specific entries.</li>
-  <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\QueryModifierFactory</code> - This class creates instances of specific implementations of <code class="highlighter-rouge">QueryModifierInterface</code>.</li>
-  <li>
-    <p><code class="highlighter-rouge">\Magento\Framework\DB\Select\InQueryModifier</code> - An implementation of the <code class="highlighter-rouge">QueryModifierInterface</code> that adds an IN condition to a query.</p>
+  <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code> This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
+    <ul>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\QueryModifierInterface</code> - Interface for classes that add a condition to the database query to target specific entries.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\QueryModifierFactory</code> - This class creates instances of specific implementations of <code class="highlighter-rouge">QueryModifierInterface</code>.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\InQueryModifier</code> - An implementation of the <code class="highlighter-rouge">QueryModifierInterface</code> that adds an IN condition to a query.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\LikeQueryModifier</code> - An implementation of the <code class="highlighter-rouge">QueryModifierInterface</code> that adds a LIKE condition to a query.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\CompositeQueryModifier</code> - An implementation of the <code class="highlighter-rouge">QueryModifierInterface</code> that allows the application of multiple query modifiers.</li>
+    </ul>
 
     <p>You can create your own query modifier or use any of the ones listed in the <code class="highlighter-rouge">app/etc/di.xml</code> file.</p>
   </li>
@@ -1176,6 +1184,33 @@ $fieldDataConverter-&gt;convert(
     'item_id',
     'product_options'
 );</code></pre></figure>
+</div></div>
+
+<h3 id="step-3e-convert-data-from-multiple-fields">Step 3e: Convert data from multiple fields</h3>
+
+<p>Use the <code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter</code> class to update multiple files instead of <code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code>.
+The following code sample updates two fields in different tables taking into account setup version of the module.
+It is possible to aggregate fields for the same connection only. If it is necessary to use multiple connections in one setup script, multiple calls to <code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter::convert()</code> must be made.</p>
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">/** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
+$salesSetup = $this-&gt;salesSetupFactory-&gt;create(['setup' =&gt; $setup]);
+ 
+$fieldsToUpdate = [
+    new FieldToConvert(
+        SerializedToJson::class,
+        $salesSetup-&gt;getTable('sales_invoice_item'),
+        'entity_id',
+        'tax_ratio'
+    ),
+];
+if (version_compare($setupVersion, '2.0.5', '<span class="err">&lt;</span>')) {
+    $fieldsToUpdate[] = new FieldToConvert(
+        SerializedDataConverter::class,
+        $salesSetup-&gt;getTable('sales_order_item'),
+        'item_id',
+        'product_options'
+    );
+}
+$this-&gt;aggregatedFieldConverter-&gt;convert($fieldsToUpdate, $salesSetup-&gt;getConnection());</code></pre></figure>
 </div></div>
 
 <h2 id="related-topics">Related Topics</h2>
