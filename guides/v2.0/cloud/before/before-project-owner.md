@@ -26,19 +26,14 @@ As the Account Owner, you must complete the following, required by development a
 After you have completed those tasks, the project admin can manage development and deployments for you.
 
 ## Sign up for a {{site.data.var.<ece>}} account {#cloud-first-acct}
-To sign up for a {{site.data.var.<ece>}} account, sign up for a [free 30-day trial](https://magento.com/trial){:target="_blank"} for a Starter or Pro plan, or contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. We will create your account and send you a welcome e-mail that provides instructions to access the project.
+Sign up for a [free 30-day trial](https://magento.com/trial){:target="_blank"} for a Starter or Pro plan, or contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. We will create your account and send you a welcome e-mail that provides instructions to access the project.
 
-The person who signs up for a {{site.data.var.<ece>}} account is referred to as the *account owner*. You receive a welcome e-mail that enables you to set up the project initially.
-
-## Your welcome e-mail {#cloud-first-email}
-After you register for an account, Magento sends you a welcome e-mail at the address at which you registered. The e-mail contains a link to your {{site.data.var.<ece>}} project.
-
-You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
+The person who signs up for a {{site.data.var.<ece>}} account is referred to as the _Account Owner_. You receive a welcome e-mail that enables you to set up the project initially. You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
 
 ## Generate authentication keys {#cloud-owner-keys}
-To access the project, you need to generate Magento authentication keys (includes 1 public and 1 private) through your Magento Marketplace account. Only the account owner can create these keys and will be prompted to add them when creating the initial project.
+Any developers or users that want to access the project require Magento authentication keys. The Account Owner needs to generate Magento authentication keys (includes 1 public and 1 private) through a Magento Marketplace account for themselves and any other user. Only the Account Owner can create these keys. When you first create your project, you will be prompted to add them.
 
-As the account owner, you must create one set of keys for each technical person you expect will work on {{site.data.var.<ee>}}. Each user must add these keys to their `auth.json` file, which is located in the project root directory. We recommend against providing the keys over e-mail because it isn't secure. Please find a secure method, working with your IT staff, for distributing the keys.
+You must create one set of keys for each technical person you expect will work on {{site.data.var.<ee>}}. Each user must add these keys to their `auth.json` file, which is located in the project root directory. We recommend against providing the keys over e-mail because it isn't secure. Please find a secure method, working with your IT staff, for distributing the keys.
 
 To create authentication keys through the Magento Marketplace:
 

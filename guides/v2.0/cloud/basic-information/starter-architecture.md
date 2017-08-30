@@ -93,12 +93,7 @@ This software is *not* upgradable but versions for the following software is con
 For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
 ### Backup and disaster recovery {#backup}
-We automatically back up your Production environment every six hours. This snapshot and backup includes your deployed code, installed software and services, and data.
-
-The coordinating agent that monitors your production system:
-
-* Detects failures at the service level (for example, MySQL)
-* Fully automaties and coordinates recovery where an automated recovery is possible
+We automatically back up your Production environment every six hours. This snapshot and backup includes your deployed code, installed software and services, and data. You can also perform [snapshots]({{page.baseurl}}cloud/project/project-webint-snap.html) and database dumps with CLI commands. 
 
 ## Prepare for development {#develop}
 To branch and develop your Magento store:
