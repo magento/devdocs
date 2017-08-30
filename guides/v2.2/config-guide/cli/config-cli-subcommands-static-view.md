@@ -166,8 +166,7 @@ The following table discusses the meanings of this command's parameters and valu
           Themes to exclude when deploying static content.
         </p>
         <p>
-          For example, <code>--exclude-theme Magento/blank --theme
-          Magento/luma</code>
+          For example, <code>--exclude-theme Magento/blank</code>
         </p>
       </td>
       <td>

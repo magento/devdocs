@@ -37,7 +37,7 @@ To set up custom cron jobs and groups, see [Configure custom cron jobs and cron 
 </div>
 
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
-This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).
+This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both {{site.data.var.ce}} and {{site.data.var.ee}}.
 
 Run Magento cron jobs as the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 

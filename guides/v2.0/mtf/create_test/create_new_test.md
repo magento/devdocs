@@ -549,7 +549,7 @@ Let's see in the [test description][] what actions must be performed:
 
 Fortunately, you already have a [block][] that contains a method to add a new entity in a grid: [`\Magento\Backend\Test\Block\GridPageActions`][].
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 /**
  * Click the "Add New" button
@@ -561,7 +561,7 @@ public function addNew()
     $this->_rootElement->find($this->addNewButton)->click();
 }
 
-{% endhighlight %}
+```
 
 In {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. Learn how to [define a locator].
 
@@ -713,7 +713,7 @@ Here we should recall [Step 3][], where the initial test case was created.
 
 An argument for the `test()` method is a [test object][] (a [fixture][]).
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 /**
  * Create Synonym group test.
@@ -726,16 +726,16 @@ public function test(Synonym $synonym)
     // Steps
 }
 
-{% endhighlight %}
+```
 
 Now we can add page classes made in [Step 5][]:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 use Magento\Search\Test\Page\Adminhtml\SynonymsIndex;
 use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
 
-{% endhighlight %}
+```
 
 All methods are defined in blocks ([Step 6][]) that are grouped in pages ([Step 5][], [Step 7][]).
  
@@ -753,21 +753,21 @@ Let's code it!
 
 In the FTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
 
-{% highlight php startinline=1  %}
+``` php?start_inline=1
 
 $this->synonymsIndex->open();
 
-{% endhighlight %}
+```
 
 **Click the "New Synonym Group" button**
 
 To Click the "New Synonym Group" button, we will use the `addNew()` method from the `pageActionsBlock` block. A `getPageActionsBlock()` of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class receives parameters defined in the `pageActionsBlock` block (`class`, `locator`, `strategy`).
 
-{% highlight php startinline=1  %}
+``` php?start_inline=1
 
 $this->synonymsIndex->getPageActionsBlock()->addNew();
 
-{% endhighlight %}
+```
 
  This action opens the New Synonym Group page.
 
@@ -775,25 +775,25 @@ $this->synonymsIndex->getPageActionsBlock()->addNew();
 
 To enter data in the form, we use the `fill()` method from the `synonymForm` block of the `synonymsNew` page. An argument for this method is a fixture `Synonym`. A `getSynonymForm()` method of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` class receives parameters defined in the `synonymForm` block.
 
-{% highlight php startinline=1  %}
+``` php?start_inline=1
 
 $this->synonymsNew->getSynonymForm()->fill($synonym);
 
-{% endhighlight %}
+```
 
 **Click the "Save Synonym Group" button**
 
 A `save()` method with parameters defined in a `formPageActions` block. Parameters are injected using a `getFormPageActions()` method from the `synonymsNew` page (generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` page class).
 
-{% highlight php startinline=1  %}
+``` php?start_inline=1
 
 $this->synonymsNew->getFormPageActions()->save();
 
-{% endhighlight %}
+```
 
 **Full `test()` definition**
 
-{% highlight php startinline=1%}
+``` php?start_inline=1
 
 /**
  * Create Synonym group test.
@@ -810,7 +810,7 @@ public function test(Synonym $synonym)
     $this->synonymsNew->getFormPageActions()->save(); // `click` on the Save Synonym Group button
 }
 
-{% endhighlight %}
+```
 
 #### Step 9. Check the test run
 

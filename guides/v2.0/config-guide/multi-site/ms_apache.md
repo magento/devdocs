@@ -5,7 +5,7 @@ subgroup: 11_sites
 title: Tutorial&mdash;Set up multiple websites with Apache
 menu_title: Tutorial&mdash;Set up multiple websites with Apache
 menu_order: 9
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/multi-site/ms_apache.md
 ---
@@ -17,7 +17,7 @@ If necessary, copy the existing `index.php` entry point script for your {% gloss
 
     Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-    Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html).
+    Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html).
 *   You use one virtual host per website; the virtual host configuration file is `/etc/httpd/httpd.conf`
 
     Different versions of Apache on different operating systems set up virtual hosts differently. Consult the [Apache documentation](https://httpd.apache.org/docs/2.4/vhosts){:target="_blank"} or a network administrator if you're not sure how to set up a virtual host.
@@ -72,7 +72,7 @@ For more information about `SetEnvIf`, see:
            SetEnv MAGE_RUN_CODE "german"
            SetEnv MAGE_RUN_TYPE "website"
         </VirtualHost>
-        
+
 5.  Save your changes to `httpd.conf` and exit the text editor.
 6.  Restart Apache:
 

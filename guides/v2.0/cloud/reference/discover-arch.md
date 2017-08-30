@@ -67,7 +67,7 @@ The Production environment has three VMs behind an Elastic Load Balancer managed
 * GlusterFS file server for managing all static file deployments and syncs with four directoris mounted: `var`, `pub/media`, `pub/static`, and `app/etc`
 * Redis server, one per VM with only one active and the other two as replicas
 * Elasticsearch
-* Galara database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
+* Galera database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
 
 The following figure shows the technology used in the Production environment:
 
@@ -130,15 +130,24 @@ Each service runs in its own secure container. containers are managed together i
 *	Git
 *	Secure Shell (SSH)
 
-You can even have multiple applications running in the same project. Building a microservice oriented architecture with {{site.data.var.<ee>}} is as easy as managing a monolithic application.
+You can also have multiple applications running in the same project. 
 
 ## Software versions {#cloud-arch-software}
-{{site.data.var.<ee>}} uses:
+{{site.data.var.<ece>}} uses:
 
 *	Operating system: Debian GNU/Linux 8 (jessie)
 *	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
 
-This software is *not* upgradable but versions for the following software is configurable: [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html), [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html), [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html), [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html), [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html), and [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html).
+This software is *not* upgradable but versions for the following software is configurable:
+
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
+* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
+* [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
+* [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
+* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
+
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
 #### Related topics
 *	[Develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)

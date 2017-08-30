@@ -34,7 +34,8 @@ For **continuous integration** after first time setup, you will:
 
 If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
-## Migrate deployment hooks in your `.magento.app.yaml` file {#cloud-live-migrate-yaml}
+## Migrate deployment hooks in your `.magento.app.yaml` file (optional) {#cloud-live-migrate-yaml}
+**Important:** If you have **not modified** the default deployment hooks, skip this step and continue with [Get your access URLs](#cloud-live-migrate-urls). Only migrate the hooks if you modified them. 
 
 {% include cloud/hooks.md %}
 

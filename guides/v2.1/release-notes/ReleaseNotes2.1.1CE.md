@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.1.1 Release Notes
-menu_title: Magento CE 2.1.1 Release Notes
+title: Magento Open Source 2.1.1 Release Notes
+menu_title: Magento Open Source 2.1.1 Release Notes
 menu_order: 198
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes
@@ -11,7 +11,7 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.1CE.md
 ---
 
-We are pleased to present Magento Community Edition 2.1.1. This release includes several functional fixes and enhancements to the deployment of static assets. 
+We are pleased to present Magento Open Source (formerly Community Edition) 2.1.1. This release includes several functional fixes and enhancements to the deployment of static assets. 
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html).

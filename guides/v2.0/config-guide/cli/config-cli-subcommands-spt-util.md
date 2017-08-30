@@ -1,19 +1,19 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Run the support utilities
-menu_title: Run the support utilities (Enterprise Edition only)
-menu_node: 
+menu_title: Run the support utilities (Magento Commerce only)
+menu_node:
 menu_order: 900
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 ---
 
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
+<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 ## Overview of the support utilities {#config-cli-spt-utils-over}
-The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable Enterprise Edition (EE) users to gather troubleshooting information about your system that can be used by our Support team. 
+The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
 
 Magento Support uses these backups (also referred to as *dumps*) to analyze issues that require access to your code. A typical scenario follows:
 
@@ -46,7 +46,7 @@ Command options:
 
 	magento support:backup:code [--name=<file name>] [-o|--output=<path>] [-l|--logs]
 
-where 
+where
 
 *	`--name` specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
 *	`-o|--output=<path>` is the absolute file system path to store the backup (required).
@@ -70,7 +70,7 @@ Command options:
 
 	magento support:backup:db [--name=<name>] [-o|--output=<path>] [-l|--logs] [-i|--ignore-sanitize]
 
-where 
+where
 
 *	`--name` specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
 *	`-o|--output=<path>` is the absolute file system path to store the backup (required).
@@ -96,7 +96,7 @@ Run the following commands in the order shown to display the paths to the applic
 		<span class="glyphicon-class">
   		<p>The commands run properly <em>only</em> from your Magento installation directory.</p></span>
 	</div>
-1.	`php bin/magento support:utility:paths` creates `<your Magento install dir>/var/support/Paths.php`, which lists the paths to all application used by the utility. 
+1.	`php bin/magento support:utility:paths` creates `<your Magento install dir>/var/support/Paths.php`, which lists the paths to all application used by the utility.
 2.	`php bin/magento support:utility:check -u` displays the file system paths.
 
 A sample follows:
