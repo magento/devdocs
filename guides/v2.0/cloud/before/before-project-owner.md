@@ -1,43 +1,44 @@
 ---
 layout: default
 group: cloud
-subgroup: 060_setup
-title: Account owner tasks
-menu_title: Account owner tasks
-menu_order: 1
-menu_node: parent
-version: 2.1
+subgroup: 020_onboarding
+title: Set up your project
+menu_title: Set up your project
+menu_order: 5
+menu_node:
+version: 2.0
 github_link: cloud/before/before-project-owner.md
 ---
 
-The account owner has sole authority over Magento Commerce to manage your store, project and Git access, and more.
+To initially set up your {{site.data.var.<ece>}} project, you need the account owner to create the project, add a super user, and generate {{site.data.var.<ee>}} authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.
 
-As the account owner, you must complete the following, required by development and technical resources:
+After your company purchases a subscription plan for {{site.data.var.<ece>}}, the only person who has access to the project and code is the *Account Owner*&mdash;the person who purchased the software. The account owner is typically a "business user" in your business or finance organization. This is your point of contact with Magento regarding the account overall.
 
-* Access to the Magento Commerce (Cloud) project through added user accounts
+The Account Owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
+
+As the Account Owner, you must complete the following, required by development and technical resources:
+
+* Access to the {{site.data.var.<ece>}} project through added user accounts
 * Generate Magento authentication keys
 * Create the project
 * Add a project admin account
 
-## What is the account owner {#cloud-owner-over}
-After your company licenses the Magento Commerce, the only person who has access to it is the *account owner*&mdash;the person who purchased the software. The account owner is typically a "business user"&mdash; someone in the business or finance organization. This is your point of contact with Magento regarding the account overall.
+After you have completed those tasks, the project admin can manage development and deployments for you.
 
-The owner can add accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
+## Sign up for a {{site.data.var.<ece>}} account {#cloud-first-acct}
+To sign up for a {{site.data.var.<ece>}} account, sign up for a [free 30-day trial](https://magento.com/trial){:target="_blank"} for a Starter or Pro plan, or contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. We will create your account and send you a welcome e-mail that provides instructions to access the project.
 
-## Sign up for a Magento Cloud account {#cloud-first-acct}
-To sign up for a Magento Commerce account, contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. They will create your account and send you a welcome e-mail that provides instructions to access the project.
-
-The person who signs up for a Magento Commerce account is referred to as the *account owner*. You receive a welcome e-mail that enables you to set up the project initially.
+The person who signs up for a {{site.data.var.<ece>}} account is referred to as the *account owner*. You receive a welcome e-mail that enables you to set up the project initially.
 
 ## Your welcome e-mail {#cloud-first-email}
-After you register for an account, Magento sends you a welcome e-mail at the address at which you registered. The e-mail contains a link to your Magento Commerce (Cloud) project.
+After you register for an account, Magento sends you a welcome e-mail at the address at which you registered. The e-mail contains a link to your {{site.data.var.<ece>}} project.
 
 You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
 
 ## Generate authentication keys {#cloud-owner-keys}
 To access the project, you need to generate Magento authentication keys (includes 1 public and 1 private) through your Magento Marketplace account. Only the account owner can create these keys and will be prompted to add them when creating the initial project.
 
-As the account owner, you must create one set of keys for each technical person you expect will work on Magento Commerce. Each user must add these keys to their `auth.json` file, which is located in the project root directory. We recommend against providing the keys over e-mail because it isn't secure. Please find a secure method, working with your IT staff, for distributing the keys.
+As the account owner, you must create one set of keys for each technical person you expect will work on {{site.data.var.<ee>}}. Each user must add these keys to their `auth.json` file, which is located in the project root directory. We recommend against providing the keys over e-mail because it isn't secure. Please find a secure method, working with your IT staff, for distributing the keys.
 
 To create authentication keys through the Magento Marketplace:
 
@@ -56,7 +57,7 @@ If you are concerned with creating the Project, you can create a Project Adminis
 
 	![Enter a name for your project]({{ site.baseurl }}common/images/cloud_project_name.png){:width="550px"}
 
-4.  Click **Create a blank site from a template** and click **Continue**. We recommend always starting with the blank site from a template as your initial project option. Completely deploy this code across your entire environment from Integration to Staging to Production for a clear experience with deployment in Magento Commerce. If you have an existing Magento deployment, import code, extensions, themes, and data after fully deploying this base Magento code.
+4.  Click **Create a blank site from a template** and click **Continue**. We recommend always starting with the blank site from a template as your initial project option. Completely deploy this code across your entire environment from Integration to Staging to Production for a clear experience with deployment in {{site.data.var.<ee>}}. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code. We walk you through the steps during [First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html).
 
 	When you initially set up a project from a template, we retrieve the code from the [`magento-cloud-configuration` repository](https://github.com/magento/magento-cloud-configuration){:target="_blank"}, build and deploy it as your Master branch.
 
@@ -75,15 +76,15 @@ If you are concerned with creating the Project, you can create a Project Adminis
 You should create user accounts to this project for each developer, administrator, and consultant that needs access to the code.
 
 ## Create project admins and user accounts {#cloud-owner-admins}
-As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), Magento Commerce (Cloud) has a number of user roles and permissions available project-wide or per environment.
+As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), {{site.data.var.<ece>}} has a number of user roles and permissions available project-wide or per environment.
 
 Typically, the only user the account owner must create is the *project administrator* (also referred to as the super user). This user can create other users and delegate roles as desired.
 
-Before you start, create a list of e-mail address for the users you want to add. New accounts receive an invitation to register with Magento Commerce (Cloud) and receive access based on the role. You can add and manage users at any time.
+Before you start, create a list of e-mail address for the users you want to add. New accounts receive an invitation to register with {{site.data.var.<ece>}} and receive access based on the role. You can add and manage users at any time.
 
 To create user accounts:
 
-1.  Log in to [your Magento Commerce account](https://accounts.magento.cloud){:target="_blank"}.
+1.  Log in to [your {{site.data.var.<ece>}} account](https://accounts.magento.cloud){:target="_blank"}.
 2.  Click the **Projects** tab as the following figure shows.
 
 	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
@@ -106,19 +107,19 @@ To create user accounts:
 	*	Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
 8.	Click **Add User**.
 
-The users you add receive an e-mail inviting them to join the Magento Commerce project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
+The users you add receive an e-mail inviting them to join the {{site.data.var.<ece>}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
 
 ## Blackfire and New Relic {#cloud-owner-creds}
 Your project includes [Blackfire]({{ site.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ site.baseurl }}cloud/project/project-integrate-github.html) services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 [Blackfire](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
-[New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in Magento Commerce.
+[New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.<ece>}}.
 
 ### Blackfire credentials
 To get your Blackfire credentials:
 
-1.	As the Magento Commerce (Cloud) account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
+1.	As the {{site.data.var.<ece>}} account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
 2.	In the upper right corner, click **&lt;your name>** > **Account Settings** as the following figure shows.
 
 	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png){:width="650px"}
@@ -135,4 +136,14 @@ To get your Blackfire credentials:
 Your New Relic credentials are displayed on the same page as Blackfire. You may receive the initial New Relic invitiation through an e-mail. You can create New Relic users and provide that information to your technical resources responsible for administering New Relic.
 
 #### Related topics
-[Set up a project and dev workspace]({{ page.baseurl }}cloud/access-acct/first-time-setup.html)
+*	[{{site.data.var.<ece>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	Pro information:
+
+  * [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+  *	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	Starter information:
+
+  * [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
+  *	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
+*	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
+* [First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)

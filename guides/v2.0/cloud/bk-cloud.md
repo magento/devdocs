@@ -125,14 +125,14 @@ If you are the account owner, you should complete these tasks to give your techn
 We recommend the following starting points:
 
 *	[Magento Commerce requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
-*	Pro information:
-
-  * [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-  *	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	Starter information:
 
   * [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
   *	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
+*	Pro information:
+
+  * [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+  *	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 * [Set up a project and dev workspace]({{page.baseurl}}cloud/before/before-workspace.html)
 

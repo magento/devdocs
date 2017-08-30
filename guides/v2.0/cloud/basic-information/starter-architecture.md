@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/basic-information/starter-architecture.md
 ---
 
-All of your code is contained in the Magento Commerce (Cloud) Starter project. The _project_ is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to four active *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
+All of your code is contained in the {{site.data.var.<ece>}} Starter project. The _project_ is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to four active *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
 
 These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.
 
@@ -64,7 +64,7 @@ The Production and Staging environments include the following technologies. You 
 * Solr search is supported for {{site.data.var.<ece>}} 2.0
 
 ### Services {#cloud-arch-services}
-Magento Commerce (Cloud) currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
+{{site.data.var.<ece>}} currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
 
 Each service runs in its own secure container. containers are managed together in the project. Some services are built-in, such as the following:
 
@@ -116,4 +116,4 @@ We walk you through the entire process from [deployment]({{page.baseurl}}cloud/l
 #### Related topics
 *	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-*	[Magento Commerce (Cloud) requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[{{site.data.var.<ece>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)

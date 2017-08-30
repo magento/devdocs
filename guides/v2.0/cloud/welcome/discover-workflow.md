@@ -22,7 +22,7 @@ You can test every feature in isolation in the [Integration]({{ page.baseurl }}c
 
 The following figure shows how it works at a high level:
 
-![High-level view of Magento Commerce]({{ site.baseurl }}common/images/cloud_code-flow.png)
+![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
 
 * Create a project that clones Magento code from our repository into a Git `master` branch
 * Develop code and customizations in active branches to test in Integration environments
