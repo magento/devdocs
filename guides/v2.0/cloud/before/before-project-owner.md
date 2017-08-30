@@ -2,21 +2,21 @@
 layout: default
 group: cloud
 subgroup: 020_onboarding
-title: Set up your project
-menu_title: Set up your project
-menu_order: 5
+title: Prepare project environments
+menu_title: Prepare project environments
+menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/before/before-project-owner.md
 ---
 
-To initially set up your {{site.data.var.<ece>}} project, you need the account owner to create the project, add a super user, and generate {{site.data.var.<ee>}} authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This information details the manually steps for setting up your project, account, and environment access for development. If you joined with a free trial, some of the provisioning steps were completed for you. In this case, you can review these steps or use the new onboarding portal.
+</div>
 
-After your company purchases a subscription plan for {{site.data.var.<ece>}}, the only person who has access to the project and code is the *Account Owner*&mdash;the person who purchased the software. The account owner is typically a "business user" in your business or finance organization. This is your point of contact with Magento regarding the account overall.
+To initially set up your {{site.data.var.<ece>}} project, you need the Project Owner to create the project, add a super user, and generate {{site.data.var.<ee>}} authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.
 
-The Account Owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
-
-As the Account Owner, you must complete the following, required by development and technical resources:
+As the Project Owner, you must complete the following, required by development and technical resources:
 
 * Access to the {{site.data.var.<ece>}} project through added user accounts
 * Generate Magento authentication keys
@@ -25,13 +25,10 @@ As the Account Owner, you must complete the following, required by development a
 
 After you have completed those tasks, the project admin can manage development and deployments for you.
 
-## Sign up for a {{site.data.var.<ece>}} account {#cloud-first-acct}
-Sign up for a [free 30-day trial](https://magento.com/trial){:target="_blank"} for a Starter or Pro plan, or contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. We will create your account and send you a welcome e-mail that provides instructions to access the project.
+## Generate Magento authentication keys {#cloud-owner-keys}
+**Important: **This step is required for the Project Owner.
 
-The person who signs up for a {{site.data.var.<ece>}} account is referred to as the _Account Owner_. You receive a welcome e-mail that enables you to set up the project initially. You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
-
-## Generate authentication keys {#cloud-owner-keys}
-Any developers or users that want to access the project require Magento authentication keys. The Account Owner needs to generate Magento authentication keys (includes 1 public and 1 private) through a Magento Marketplace account for themselves and any other user. Only the Account Owner can create these keys. When you first create your project, you will be prompted to add them.
+Any developers or users that want to access the project require Magento authentication keys. The Project Owner needs to generate Magento authentication keys (includes 1 public and 1 private) through a Magento Marketplace account for themselves and any other user. Only the Project Owner can create these keys. When you first create your project, you will be prompted to add them.
 
 You must create one set of keys for each technical person you expect will work on {{site.data.var.<ee>}}. Each user must add these keys to their `auth.json` file, which is located in the project root directory. We recommend against providing the keys over e-mail because it isn't secure. Please find a secure method, working with your IT staff, for distributing the keys.
 
@@ -44,7 +41,7 @@ To create authentication keys through the Magento Marketplace:
 5. The keys generate  a Public and Private key you can click to copy. Save this information or keep the page open when creating your project.
 
 ## Create the project {#create-project}
-If you are concerned with creating the Project, you can create a Project Administrator. This account with Super User access can create the project for you.
+If the Project Owner did not have their account provisioned through the free trial subscription plan, you may need to create the project manually. If you are concerned with creating the Project, you can create a Technical Admin. This account with Super User access can create the project for you.
 
 1.  Access your account. You can open the email you received from Magento Cloud, accounts@magento.cloud, and click the Access your project now link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud){:target="_blank"}.
 2.  Click the **Projects** tab. You should see an untitled new project.
@@ -52,13 +49,13 @@ If you are concerned with creating the Project, you can create a Project Adminis
 
 	![Enter a name for your project]({{ site.baseurl }}common/images/cloud_project_name.png){:width="550px"}
 
-4.  Click **Create a blank site from a template** and click **Continue**. We recommend always starting with the blank site from a template as your initial project option. Completely deploy this code across your entire environment from Integration to Staging to Production for a clear experience with deployment in {{site.data.var.<ee>}}. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code. We walk you through the steps during [First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html).
+4.  Click **Create a blank site from a template** and click **Continue**. We recommend always starting with the blank site from a template as your initial project option. You will deploy this code across all environments including Staging and Production as part of your [First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html). If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.
 
 	When you initially set up a project from a template, we retrieve the code from the [`magento-cloud-configuration` repository](https://github.com/magento/magento-cloud-configuration){:target="_blank"}, build and deploy it as your Master branch.
 
 	![Create a site using the sample Magento project]({{ site.baseurl }}common/images/cloud_project_template.png){:width="650px"}
 
-5.  When prompted, enter your Magento EE [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the keys and click **Finish**.
+5.  When prompted, enter your {{site.data.var.<ee>}} [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the keys and click **Finish**.
 
 	![Enter your authentication keys]({{ site.baseurl }}common/images/cloud-project-magento-auth-creds.png){:width="650px"}
 
@@ -73,7 +70,7 @@ You should create user accounts to this project for each developer, administrato
 ## Create project admins and user accounts {#cloud-owner-admins}
 As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), {{site.data.var.<ece>}} has a number of user roles and permissions available project-wide or per environment.
 
-Typically, the only user the account owner must create is the *project administrator* (also referred to as the super user). This user can create other users and delegate roles as desired.
+Typically, the only user the Project Owner must create is the Technical Admin. This user should have the Super User role, giving them the ability to create user accounts, set environment permissions, and manage all branches and environments. 
 
 Before you start, create a list of e-mail address for the users you want to add. New accounts receive an invitation to register with {{site.data.var.<ece>}} and receive access based on the role. You can add and manage users at any time.
 

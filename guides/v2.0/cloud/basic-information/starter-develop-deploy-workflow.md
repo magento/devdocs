@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 ---
 
-Everything in Magento Commerce (Cloud) is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.<ece>}} plan subscription, your deployment workflow may differ.
+Everything in {{site.data.var.<ece>}} is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.<ece>}} plan subscription, your deployment workflow may differ.
 
 The general workflow for all development and deployment requires pushing code to the remote Git branch. A series of build and deploy processes run with the environments updated with code, services, and configurations. The following sections provide high-level walk-throughs for development, branching, and deployments.
 

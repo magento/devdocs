@@ -23,7 +23,7 @@ Make sure all code for your site and stores is in the Magento Commerce Git branc
 ## Track the process {#track}
 You can track the ongoing build and deploy actions in your terminal and the Project Web Interface in real-time. the status displays in-progress, pending, success, or failed. Logs are available to review through the interface.
 
-If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow what's happening in their interface and in the Magento Commerce (Cloud) Web Interface.
+If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow what's happening in their interface and in the {{site.data.var.<ece>}} Project Web Interface.
 
 ## Project configuration {#cloud-deploy-conf}
 A set of YAML configuration files located in the project root directory define your Magento installation and describe its dependencies.
