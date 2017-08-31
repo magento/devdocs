@@ -4,7 +4,7 @@ group:  config-guide
 subgroup: 04_CLI
 title: Deploy static view files
 menu_title: Deploy static view files
-menu_node: 
+menu_node:
 menu_order: 300
 version: 2.1
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
@@ -24,7 +24,7 @@ Static view files are located in the `<your Magento install dir>/pub/static` dir
 Static view files deployment is affected by Magento modes as follows:
 
 *	<a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">The default</a> and <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>: Magento generates them on demand, but the rest are cached in a file for speed of access.
-*	<a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">The production</a> mode: Static files are *not* generated or cached. 
+*	<a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">The production</a> mode: Static files are *not* generated or cached.
 
 	You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
@@ -45,7 +45,7 @@ To deploy static view files:
 2.	Delete the contents of `<your Magento install dir>/pub/static`.
 3.	Run the static view files deployment tool `<your Magento install dir>/bin/magento setup:static-content:deploy`.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
-	
+
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
@@ -53,9 +53,9 @@ To deploy static view files:
 
 Command options:
 
-	magento setup:static-content:deploy [<list of languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] 
+	magento setup:static-content:deploy [<list of languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run]
 
-The following table discusses the meanings of this command's parameters and values. 
+The following table discusses the meanings of this command's parameters and values.
 
 <table>
 	<col width="15%">
@@ -93,7 +93,7 @@ The following table discusses the meanings of this command's parameters and valu
     <tr>
         <td>--exclude-theme &lt;theme></td>
         <td><p>Themes to exclude when deploying static content.</p>
-            <p>For example, <code>--exclude-theme Magento/blank --theme Magento/luma</code></p></td>
+            <p>For example, <code>--exclude-theme Magento/blank</code></p></td>
         <td><p>No</p></td>
     </tr>
     <tr>
@@ -157,7 +157,7 @@ The following table discusses the meanings of this command's parameters and valu
         <td><p>Include to view the files output by the tool without outputting anything.</p></td>
         <td><p>No</p></td>
     </tr>
-    
+
 
 	</tbody>
 </table>
@@ -193,14 +193,14 @@ Use the following steps:
 2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
 3.	<a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
-	
+
 	<!-- <div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 	</div> -->
 
 ## Tip for developers customizing the static content deployment tool
-When creating a custom implementation of the {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment tool, use only [atomic](https://en.wikipedia.org/wiki/Linearizability){:target="_blank"} file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content. 
+When creating a custom implementation of the {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment tool, use only [atomic](https://en.wikipedia.org/wiki/Linearizability){:target="_blank"} file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content.
 
 One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php){:target="_blank"}.
 

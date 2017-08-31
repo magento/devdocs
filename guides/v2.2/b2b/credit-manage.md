@@ -242,7 +242,7 @@ Name | Description | Format | Requirements
 `purchase_order` | The company's purchase order number  | String | Optional
 `order_increment` | Order increment | String | Optional
 `currency_display` | Currency code for displaying the operation | String | Optional
-`currency_base` | The base currency |  Optional
+`currency_base` | The base currency | String | Optional
 
 ### Increase the company credit balance
 

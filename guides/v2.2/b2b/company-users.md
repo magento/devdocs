@@ -55,7 +55,7 @@ The `POST /V1/customers` call creates a Magento customer. B2B extends the `custo
 
 **Payload**
 
-Add the `company_attributes` code block to the payload required to create a standard customer
+Add the `company_attributes` code block to the payload that is required to create a standard customer.
 
 {% highlight json %}
 
@@ -77,7 +77,7 @@ Full example:
 		"email": "mshaw@example.com",
 		"firstname": "Melanie",
 		"lastname": "Shaw",
-		 "extension_attributes": {
+		"extension_attributes": {
     		"company_attributes": {
     		"company_id": 2,
     		"status": 1,
@@ -85,8 +85,7 @@ Full example:
     		"telephone": "512-555-3322"
     		}
 		}
-	},
-  "password": "Password1"
+	}
 }
 {% endhighlight %}
 

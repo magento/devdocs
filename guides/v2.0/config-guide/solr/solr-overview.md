@@ -16,7 +16,7 @@ github_link: config-guide/solr/solr-overview.md
 Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
 In a future release, Solr compatibility will be removed.
 
-If possible, use [Elastic Search]({{page.baseurl}}config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
+If possible, use [Elastic Search](../../../v2.1/config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
 </div>
 
 {{site.data.var.ee}} version 2.x enables you to configure either of the following as a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} search engine:
