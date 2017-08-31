@@ -11,7 +11,7 @@ github_link: design-styleguide/content-voice-tone/content-voice-tone.md
 ---
 ## Content Voice and Tone
 
-Magento Admin’s content is crafted to be read and clearly understood by merchants performing administrative tasks and managing their stores through the Magento software interface. Writers will need to change their tone, depending on the context:
+Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} content is crafted to be read and clearly understood by merchants performing administrative tasks and managing their stores through the Magento software interface. Writers will need to change their tone, depending on the context:
 
 * Most Admin content is instructional and task-oriented. This content should guide merchants through each task with a casual — but direct, professional, and empowering — writing tone.
 
@@ -19,7 +19,7 @@ Magento Admin’s content is crafted to be read and clearly understood by mercha
 
 * Many Admin content types are specific to user interfaces and design patterns – including alt text (image descriptions), button and link labels, contextual help, form content, navigation, and errors and messages. While this tone is more focused on accuracy and brevity than other content the same standards apply: Use clear, plain language and consult global conventions to ensure the content is understood by all.
 
-In all contexts, be sure that you use the correct terms to avoid confusion – when in doubt, consult the [Magento Glossary](https://magento.github.io/glossary/index.html), [Magento Word Usage Bank](https://magento.github.io/glossary/word-usage.html), the [Admin Design Pattern Library]({{page.baseurl}}pattern-library/pattern-library.html), and our external writing references, including:
+In all contexts, be sure that you use the correct terms to avoid confusion – when in doubt, consult the [Magento Glossary](https://magento.github.io/glossary/index.html), [Magento Word Usage Bank](https://magento.github.io/glossary/word-usage.html), the [Admin Design Pattern Library]({{page.baseurl}}pattern-library/bk-pattern.html), and our external writing references, including:
 
 1.	The Associated Press Stylebook
 2.	Microsoft Manual of Style — Content for a worldwide audience (Ch. 3), Accessible content (Ch. 4), Procedures and technical content (Ch. 6)
@@ -36,6 +36,7 @@ Content should be gender neutral. To avoid “his” or “her” pronouns, conv
 
 <div class="bs-callout bs-callout-tip" markdown="1">
  **No** – "A merchant can update his extensions."
+
   Yes – "Merchants can update their extensions."
 </div>
 
@@ -56,9 +57,12 @@ When introducing a term that a merchant may not know, apply a glossary term from
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   **No** – “Magento is the flexible commerce solution.”
+
   Yes – “With Magento you can customize everything in your site’s design, ranging from storefront interface to background processes.”
 
+
   **No** – “This SaaS feature is only available in Magento Commerce.”
+
   Yes – “This software-as-a-service (SaaS) feature is only available in Magento Commerce.”
 </div>
 
@@ -68,6 +72,7 @@ Avoid negative sentences constructions to ensure clarity and a positive tone.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   **No** – Don’t use negative constructions.
+
   Yes – Avoid negative constructions.
 </div>
 
@@ -79,6 +84,7 @@ Zombie test: If you can put the words “by zombies” after a subject and verb,
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   **No** – “The store address is used to calculate …”
+  
   Yes – “The system uses the store address to calculate ...”
 </div>
 
@@ -92,6 +98,7 @@ Use future tense only when it’s necessary to emphasize that something, from th
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   **No** – A customer will receive an email confirmation after purchase.
+
   Yes – A customer receives an email confirmation after purchase.
 </div>
 
@@ -104,8 +111,12 @@ Avoid using “my”, “we”, “they”, or “I” when referring to merchan
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   **No** – Change your My Account preferences.
+
   Yes – Change your Account preferences.
+
+
   **No** – We will send a confirmation, and you will receive it in 2-3 days.
+
   Yes – You will receive a confirmation in 2-3 days.
 </div>
 
@@ -115,9 +126,12 @@ Wherever content is displayed in data tables and forms, it should be consistent 
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   Yes – “Continue” button in “Catalog” task flow
+
   Yes – “Continue” button in “Reports” task flow
 
+
   **No** – “Next” button in “Catalog” task flow
+
   Yes – “Continue” button in “Reports” task flow
 </div>
 
@@ -130,5 +144,6 @@ Take a neutral tone – don’t blame a merchant, use personal pronouns, or in a
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   **No** – “You didn’t enter your email address.”
+
   Yes – “An email address is required. Enter the email address and click “Continue”.”
 </div>
