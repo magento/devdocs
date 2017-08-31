@@ -702,7 +702,7 @@
 </section>
 
 
-			<p><strong>Last Updated:</strong> August 25, 2017</p>
+			<p><strong>Last Updated:</strong> August 31, 2017</p>
 
 <p>This page shows the ongoing status of each component during the Magento 2.2 Release Candidate period and is intended to show you the readiness of different components.</p>
 
@@ -715,9 +715,8 @@
 </ul>
 
 <p>The issues used to generate the status of these components come from verified internal and GitHub reports for Magento 2.2 that are planned to be fixed prior to the General Availability release.
-Issues that are not related to the 2.2 release are not part of this report.</p>
-
-<h2 id="ce-modules">CE Modules</h2>
+Issues that are not related to the 2.2 release are not part of this report.
+E Modules</p>
 
 <table>
   <thead>
@@ -732,15 +731,23 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status red">Red</span></td>
     </tr>
     <tr>
-      <td>Module/ ConfigurableProduct</td>
-      <td><span class="status red">Red</span></td>
-    </tr>
-    <tr>
       <td>Module/ Paypal</td>
       <td><span class="status red">Red</span></td>
     </tr>
     <tr>
-      <td>Infrastructure/ Configuration Framework</td>
+      <td>Module/ Eav</td>
+      <td><span class="status red">Red</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Sales/ Order Management</td>
+      <td><span class="status yellow">Yellow</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ConfigurableProduct</td>
+      <td><span class="status yellow">Yellow</span></td>
+    </tr>
+    <tr>
+      <td>Infrastructure/ App Framework</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
@@ -764,11 +771,11 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
-      <td>Module/ Catalog/ Pricing</td>
+      <td>Module/ CacheInvalidate</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
-      <td>Module/ CatalogImportExport</td>
+      <td>Module/ Catalog/ Pricing</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
@@ -780,15 +787,7 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
-      <td>Module/ Customer/ Customer Groups</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ DHL</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Eav</td>
+      <td>Module/ CatalogUrlRewrite</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
@@ -800,19 +799,15 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
-      <td>Module/ Pagecache</td>
+      <td>Module/ Payment/ Payment Methods</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
-      <td>Module/ Quote</td>
+      <td>Module/ Persistent</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
       <td>Module/ Rule</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Sales/ Order Management</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
@@ -824,7 +819,15 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
+      <td>Module/ Swatches</td>
+      <td><span class="status yellow">Yellow</span></td>
+    </tr>
+    <tr>
       <td>Module/ Translation</td>
+      <td><span class="status yellow">Yellow</span></td>
+    </tr>
+    <tr>
+      <td>Module/ UrlRewrite</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
@@ -840,15 +843,7 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Infrastructure/ Performance</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Module/ CacheInvalidate</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Module/ CatalogSearch/ Search Frontend</td>
+      <td>Module/ CatalogImportExport</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
@@ -860,10 +855,6 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ Config</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
       <td>Module/ Customer/ Customers</td>
       <td><span class="status green">Green</span></td>
     </tr>
@@ -872,11 +863,27 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
+      <td>Module/ Pagecache</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Quote</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
       <td>Module/ Sample Data</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
+      <td>Module/ Tax</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
       <td>Module/ UI</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Widget</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
@@ -920,11 +927,11 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ CatalogSearch/ Search Terms</td>
+      <td>Module/ CatalogSearch/ Search Frontend</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ CatalogUrlRewrite</td>
+      <td>Module/ CatalogSearch/ Search Terms</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
@@ -960,6 +967,10 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
+      <td>Module/ Config</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
       <td>Module/ ConfigurableImportExport</td>
       <td><span class="status green">Green</span></td>
     </tr>
@@ -984,6 +995,10 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
+      <td>Module/ Customer/ Customer Groups</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
       <td>Module/ Customer/ VAT ID</td>
       <td><span class="status green">Green</span></td>
     </tr>
@@ -997,6 +1012,10 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
     </tr>
     <tr>
       <td>Module/ Developer</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ DHL</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
@@ -1092,15 +1111,7 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ Payment/ Payment Methods</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
       <td>Module/ PayPal/ Billing Agreement</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Persistent</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
@@ -1164,14 +1175,6 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ Swatches</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Tax</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
       <td>Module/ TaxImportExport</td>
       <td><span class="status green">Green</span></td>
     </tr>
@@ -1181,10 +1184,6 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
     </tr>
     <tr>
       <td>Module/ UPS</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Module/ UrlRewrite</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
@@ -1216,10 +1215,6 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ Widget</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
       <td>Module/ Wishlist</td>
       <td><span class="status green">Green</span></td>
     </tr>
@@ -1241,7 +1236,7 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status red">Red</span></td>
     </tr>
     <tr>
-      <td>Module/ ElasticSearch</td>
+      <td>Module/ CatalogStaging</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
@@ -1251,10 +1246,6 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
     <tr>
       <td>Module/ Rma</td>
       <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Infrastructure/ Bulk Operations Framework</td>
-      <td><span class="status green">Green</span></td>
     </tr>
     <tr>
       <td>Module/ AdvancedCheckout</td>
@@ -1325,10 +1316,6 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ CatalogStaging</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
       <td>Module/ CatalogUrlRewriteStaging</td>
       <td><span class="status green">Green</span></td>
     </tr>
@@ -1366,6 +1353,10 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
     </tr>
     <tr>
       <td>Module/ DownloadableStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ElasticSearch</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
@@ -1538,16 +1529,16 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
   </thead>
   <tbody>
     <tr>
-      <td>Module/ Company</td>
-      <td><span class="status red">Red</span></td>
+      <td>Module/ SharedCatalog</td>
+      <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
       <td>Module/ NegotiableQuote</td>
-      <td><span class="status red">Red</span></td>
+      <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
-      <td>Module/ SharedCatalog</td>
-      <td><span class="status red">Red</span></td>
+      <td>Module/ Company</td>
+      <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
       <td>Module/ CompanyCredit</td>
