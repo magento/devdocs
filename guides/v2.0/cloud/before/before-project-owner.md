@@ -10,9 +10,11 @@ version: 2.0
 github_link: cloud/before/before-project-owner.md
 ---
 
+<!--
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This information details the manually steps for setting up your project, account, and environment access for development. If you joined with a free trial, some of the provisioning steps were completed for you. In this case, you can review these steps or use the new onboarding portal.
 </div>
+-->
 
 To initially set up your {{site.data.var.<ece>}} project, you need the Project Owner to create the project, add a super user, and generate {{site.data.var.<ee>}} authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.
 
@@ -26,7 +28,7 @@ As the Project Owner, you must complete the following, required by development a
 After you have completed those tasks, the project admin can manage development and deployments for you.
 
 ## Generate Magento authentication keys {#cloud-owner-keys}
-**Important: **This step is required for the Project Owner.
+**Important:** This step is required for the Project Owner.
 
 Any developers or users that want to access the project require Magento authentication keys. The Project Owner needs to generate Magento authentication keys (includes 1 public and 1 private) through a Magento Marketplace account for themselves and any other user. Only the Project Owner can create these keys. When you first create your project, you will be prompted to add them.
 
@@ -34,14 +36,21 @@ You must create one set of keys for each technical person you expect will work o
 
 To create authentication keys through the Magento Marketplace:
 
-1. Log in to the [Magento Marketplace](https://marketplace.magento.com).
+1. Log in to the [Magento Marketplace](https://marketplace.magento.com). If you don't have an account, click **Register**.
 2. Click your account name in the top-right of the page and select **My Profile**.
 3. Click **Access Keys** in the Marketplace tab.
-4. Click Create A New Access Key. Enter a specific name for the keys, for example CloudProductOwner or the name of the developer receiving the keys.
-5. The keys generate  a Public and Private key you can click to copy. Save this information or keep the page open when creating your project.
+
+	![Click Access Keys]({{ site.baseurl }}common/images/cloud_access-key.png)
+4. Click **Create A New Access Key**. Enter a specific name for the keys, for example CloudProductOwner or the name of the developer receiving the keys.
+5. The keys generate a Public and Private key you can click to copy. Save this information or keep the page open when creating your project.
 
 ## Create the project {#create-project}
-If the Project Owner did not have their account provisioned through the free trial subscription plan, you may need to create the project manually. If you are concerned with creating the Project, you can create a Technical Admin. This account with Super User access can create the project for you.
+<!-- If the Project Owner did not have their account provisioned through the free trial subscription plan, you may need to create the project manually.-->
+The project contains all of your code branches, environments from development to Production, and allows you to manage access and configurations. After the Project Owner has signed up for a plan and logged in from the email, they can begin creating and managing the project.
+
+The Project Owner creates the project, selecting the option for a blank site, which is a fully functional Magento template of a store and code. When created, we generate a `master` branch of Git code from repo.magento.com and add it to a development environment. This environment is `master` production for Starter and `master` Integration for Pro.
+
+If you are concerned with creating the Project, you can create a Technical Admin and have them create the project.
 
 1.  Access your account. You can open the email you received from Magento Cloud, accounts@magento.cloud, and click the Access your project now link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud){:target="_blank"}.
 2.  Click the **Projects** tab. You should see an untitled new project.
@@ -70,7 +79,7 @@ You should create user accounts to this project for each developer, administrato
 ## Create project admins and user accounts {#cloud-owner-admins}
 As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), {{site.data.var.<ece>}} has a number of user roles and permissions available project-wide or per environment.
 
-Typically, the only user the Project Owner must create is the Technical Admin. This user should have the Super User role, giving them the ability to create user accounts, set environment permissions, and manage all branches and environments. 
+Typically, the only user the Project Owner must create is the Technical Admin. This user should have the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments.
 
 Before you start, create a list of e-mail address for the users you want to add. New accounts receive an invitation to register with {{site.data.var.<ece>}} and receive access based on the role. You can add and manage users at any time.
 
@@ -104,12 +113,12 @@ The users you add receive an e-mail inviting them to join the {{site.data.var.<e
 ## Blackfire and New Relic {#cloud-owner-creds}
 Your project includes [Blackfire]({{ site.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ site.baseurl }}cloud/project/project-integrate-github.html) services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
-[Blackfire](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
+[Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
-[New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.<ece>}}.
+[New Relic APM](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.<ece>}}.
 
 ### Blackfire credentials
-To get your Blackfire credentials:
+To get your Blackfire Profiler credentials:
 
 1.	As the {{site.data.var.<ece>}} account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
 2.	In the upper right corner, click **&lt;your name>** > **Account Settings** as the following figure shows.
@@ -125,7 +134,7 @@ To get your Blackfire credentials:
 	![Your Blackfire credentials]({{ site.baseurl }}common/images/cloud_blackfire-account-info.png){:width="450px"}
 
 ### New Relic credentials
-Your New Relic credentials are displayed on the same page as Blackfire. You may receive the initial New Relic invitiation through an e-mail. You can create New Relic users and provide that information to your technical resources responsible for administering New Relic.
+Your New Relic APM credentials are displayed on the same page as Blackfire. You may receive the initial New Relic invitiation through an e-mail. You can create New Relic users and provide that information to your technical resources responsible for administering New Relic.
 
 #### Related topics
 *	[{{site.data.var.<ece>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
