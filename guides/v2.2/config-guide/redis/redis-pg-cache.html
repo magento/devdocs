@@ -1787,7 +1787,7 @@
 
 <p><code class="highlighter-rouge">--cache-backend=redis</code> enables Redis default caching. If this feature has already been enabled, omit this parameter.</p>
 
-<p><code class="highlighter-rouge">--cache-backend-redis-&lt;parameter_name&gt;=&lt;parameter_value&gt;</code> refers to any number of the following parameters that can be used to configure default caching:</p>
+<p><code class="highlighter-rouge">--cache-backend-redis-&lt;parameter_name&gt;=&lt;parameter_value&gt;</code> is a list of parameter/value pairs that configure default caching:</p>
 
 <table>
 <tbody>
@@ -1814,7 +1814,7 @@
 <td>database</td>
 <td>
 <p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
-<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</p>
+<p><strong>Important</strong>: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2. </p>
 </td>
 <td>0</td>
 </tr>
@@ -1823,9 +1823,9 @@
 
 <h2 id="example-command">Example command</h2>
 
-<p>The following example enables Redis default caching, sets the host to <code class="highlighter-rouge">redis.example.com</code> and assigns the database number to 1. All other parameters are set to the default value.</p>
+<p>The following example enables Redis default caching, sets the host to <code class="highlighter-rouge">redis.example.com</code> and assigns the database number to 0. All other parameters are set to the default value.</p>
 
-<p><code class="highlighter-rouge">bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis.example.com --cache-backend-redis-db=1</code></p>
+<p><code class="highlighter-rouge">bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis.example.com --cache-backend-redis-db=0</code></p>
 
 <h2 id="configure-redis-page-caching">Configure Redis page caching</h2>
 
@@ -1837,7 +1837,7 @@
 
 <p><code class="highlighter-rouge">--page-cache=redis</code> enables Redis page caching. If this feature has already been enabled, omit this parameter.</p>
 
-<p><code class="highlighter-rouge">--page-cache-redis-&lt;parameter_name&gt;=&lt;parameter_value&gt;</code> refers to any number of the following parameters that can be used to configure page caching:</p>
+<p><code class="highlighter-rouge">--page-cache-redis-&lt;parameter_name&gt;=&lt;parameter_value&gt;</code> is a list of parameter/value pairs that configure page caching:</p>
 
 <table>
 <tbody>
@@ -1864,7 +1864,7 @@
 <td>database</td>
 <td>
 <p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
-<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</p>
+<p><strong>Important</strong>: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2. </p>
 </td>
 <td>0</td>
 </tr>
@@ -1879,9 +1879,9 @@
 
 <h2 id="example-command-1">Example command</h2>
 
-<p>The following example enables Redis page caching, sets the host to <code class="highlighter-rouge">redis.example.com</code> and assigns the database number to 2. All other parameters are set to the default value.</p>
+<p>The following example enables Redis page caching, sets the host to <code class="highlighter-rouge">redis.example.com</code> and assigns the database number to 1. All other parameters are set to the default value.</p>
 
-<p><code class="highlighter-rouge">bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=redis.example.com --page-cache-redis-db=2</code></p>
+<p><code class="highlighter-rouge">bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=redis.example.com --page-cache-redis-db=1</code></p>
 
 <h2 id="results">Results</h2>
 
@@ -1897,7 +1897,7 @@
             'backend_options' =&gt;
               array(
                 'server' =&gt; 'redis.example.com',
-                'database' =&gt; '1',
+                'database' =&gt; '0',
                 'port' =&gt; '6379'
               ),
         ),
@@ -1908,7 +1908,7 @@
               array(
                 'server' =&gt; 'redis.example.com',
                 'port' =&gt; '6379',
-                'database' =&gt; '2',
+                'database' =&gt; '1',
                 'compress_data' =&gt; '0'
               )
         )
