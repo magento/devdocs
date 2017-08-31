@@ -4,7 +4,7 @@ group: styleguide
 subgroup: Style Guide
 title: Admin Style Guide
 menu_title: Page Grid
-menu_order: 3
+menu_order: 4
 menu_node:
 version: 2.0
 github_link: design-styleguide/pagegrid/pagegrid.md

@@ -4,7 +4,7 @@ group: styleguide
 subgroup: Style Guide
 title: Admin Style Guide
 menu_title: Iconography
-menu_order: 4
+menu_order: 5
 menu_node:
 version: 2.0
 github_link: design-styleguide/iconography/iconography.md
@@ -12,7 +12,7 @@ github_link: design-styleguide/iconography/iconography.md
 
 <h2>Iconography</h2>
 
-<h3>Contents</h3> 
+<h3>Contents</h3>
 * <a href="#overview">Overview</a>
 * <a href="#how-icons-used">How icons are used</a>
 * <a href="#icon-library">Icon Library</a>
@@ -84,18 +84,18 @@ How to use the icon grid:
 
 <h3 id="icon-fonts">Icon Fonts</h3>
 
-We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found here <a href="https://github.com/magento/magento2/tree/develop/app/design/adminhtml/Magento/backend/web/fonts/admin-icons" target="_blank"> https://github.com/magento/magento2/tree/develop/app/design/adminhtml/Magento/backend/web/fonts/admin-icons </a> 
+We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found here <a href="https://github.com/magento/magento2/tree/develop/app/design/adminhtml/Magento/backend/web/fonts/admin-icons" target="_blank"> https://github.com/magento/magento2/tree/develop/app/design/adminhtml/Magento/backend/web/fonts/admin-icons </a>
 
 If you want to add your own icons, each icon will need to be in its own SVG files. There are multiple ways to create icon fonts, here is one to get started:
 
 
 1. Go to <a href="https://icomoon.io/app/" target="_blank"> https://icomoon.io/app/ </a> or download this app in Chrome web store  
 
-2. Upload your icons in SVG format into the app. 
+2. Upload your icons in SVG format into the app.
 
-3. Specify desired font names and specify the Unicode characters to map the icons. Setting the icons to Private User Area will disable screen-readers or other accessibility tools to read your icon's characters (read "Unicode" section here). 
+3. Specify desired font names and specify the Unicode characters to map the icons. Setting the icons to Private User Area will disable screen-readers or other accessibility tools to read your icon's characters (read "Unicode" section here).
 
-4. Then initialize a download in the app to generate the icon font and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} style sheet. 
+4. Then initialize a download in the app to generate the icon font and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} style sheet.
 
 
 
@@ -103,8 +103,8 @@ If you want to add your own icons, each icon will need to be in its own SVG file
 
 Efforts should be made to optimize icons and/or icon fonts for assistive technology.  
 
-Use "aria-hidden" attribute: 
-Modern versions of assistive technologies will announce CSS generated content, as well as specific Unicode characters. To avoid unintended and confusing output in screen readers hide them with the aria-hidden="true" attribute. 
+Use "aria-hidden" attribute:
+Modern versions of assistive technologies will announce CSS generated content, as well as specific Unicode characters. To avoid unintended and confusing output in screen readers hide them with the aria-hidden="true" attribute.
 
 From: <a href="http://getbootstrap.com/components/" target="_blank">http://getbootstrap.com/components/</a>
 
@@ -131,7 +131,7 @@ Icons, if in fonts or not, should be very descriptive, especially if they stand 
 
 2.	Use colors with enough contrast for your icons.
 
-3.	Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all. 
+3.	Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.
 
 From: <a href="http://modernwebaccessibility.com/en/blog/demystify-speak-none" target="_blank"> http://modernwebaccessibility.com/en/blog/demystify-speak-none </a>
 
@@ -143,5 +143,3 @@ From: <a href="http://modernwebaccessibility.com/en/blog/demystify-speak-none" t
 
 <a href="http://pictos.cc/articles/using-icon-fonts/
 " target="_blank">http://pictos.cc/articles/using-icon-fonts/</a>
-
-
