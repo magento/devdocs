@@ -59,10 +59,10 @@ The following table lists variables that you can override using environment vari
     <td>production</td>
     </tr>
     <tr><td>CLEAN_STATIC_FILES</td>
-    <td><p>The default value, <code>true</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development.</p>
+    <td><p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
     <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
     <p>In other words, because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
-    <td>true</td>
+    <td>enable</td>
     </tr>
     <tr><td>UPDATE_URLS</td>
     <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
@@ -78,7 +78,20 @@ The following table lists variables that you can override using environment vari
     </tr> -->
 
 
-For an example, see [Step 1, Get started setting up an environment]({{page.baseurl}}cloud/access-acct/set-up-env.html#setup-env-adminurl).
+## Add environment variables {#addvariables}
+You can add environment variables for active environments through the Project web interface and through the Magento Cloud CLI. To create variables through the Project web interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
+</div>
+
+To create a variable using the command line:
+
+1. Login to the Magento Cloud CLI. Enter the command `magento-cloud login` and provide your credentials.
+2. To set a variable for the project, use the command `magento-cloud project:variable:set <name> <value>`. The alias for this command is also `pvset`. For example, `magento-cloud pvset example 123` creates a variable example with a string value of 123 for the project.
+3. After creating these variables, you can list all project variables with the command `magento-cloud project:variable:get` or `magento-cloud pvget`.
+4. To set a variable for the branch, use the command `magento-cloud variable:set <name> <value>`. The alias for this command is also `vset`. For example, `magento-cloud vset example2 abc` creates a variable example2 with a string value of abc for the branch.
+5. After creating these variables, you can list all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
 In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} something goes wrong and you can't access your environment after it deploys, try the following:

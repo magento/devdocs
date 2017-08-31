@@ -10,10 +10,23 @@ version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.7.md
 ---
  
-These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.7, `magento-cloud-configuration` releases 101.7.3 and 101.7.4. 
+These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.7, `magento-cloud-configuration` releases 101.7.3, 101.7.4, and 101.7.5. 
 
 ## Changes and enhancements in this release
-In `magento-cloud-configuration` releases 101.7.3 and 101.7.4 on Magento Enterprise Edition 2.1.7, we provide the following improvements:
+In `magento-cloud-configuration` releases 101.7.3, 101.7.4, and 101.7.5 on Magento Enterprise Edition 2.1.7, we provide the following improvements:
+
+
+
+
+### 101.7.5 changes
+
+<!--- MAGECLOUD-870 -->* Magento no longer automatically disables Google Analytics when deployed in the master branch.
+
+<!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud. 
+
+### 101.7.4 changes
+
+<!--- MAGECLOUD-792 -->* Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.
 
 
 ### 101.7.3 changes
@@ -29,9 +42,6 @@ In `magento-cloud-configuration` releases 101.7.3 and 101.7.4 on Magento Enterpr
 
 
 
-### 101.7.4 changes
-
-<!--- MAGECLOUD-792 -->* Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.
 
 
 

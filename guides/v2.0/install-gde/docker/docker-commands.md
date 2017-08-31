@@ -10,6 +10,8 @@ version: 2.0
 github_link: install-gde/docker/docker-commands.md
 ---
 
+{% include install/docker/deprecated-note.html %}
+
 This topic lists DevBox commands you might find useful for day-to-day use or when troubleshooting issues. For more information about the Docker commands on which many of these are based, see the [Docker command reference](https://docs.docker.com/engine/reference/commandline){:target="_blank"}.
 
 ## Run cron, populate the cache and the storefront

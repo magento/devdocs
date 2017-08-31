@@ -2,18 +2,38 @@
 layout: default
 group: release-notes
 subgroup: Backward Incompatibility
-title: Magento CE Backward Incompatible Changes
-menu_title: Magento CE changes
+title: Magento Open Source Backward Incompatible Changes
+menu_title: Magento Open Source changes
 version: 2.2
 github_link: release-notes/changes/ce_changes.md
 ---
 
-This topic provides details about backward incompatible changes related to Magento CE 2.2.
+This topic provides details about backward incompatible changes related to {{site.data.var.ce}} 2.2.
 
 All changes are aggregated into two tables:
 
 - that contains backward incompatible changes made to Magento classes
 - that contains backward incompatible changes made to the Magento interfaces
+
+## 2.2.0 RC2.2 - 2.2.0 RC2.1 {#changes-220rc22}
+
+{% include changes/ce/220rc22-220rc21.html %}
+
+## 2.2.0 RC2.1 - 2.2.0 RC2.0 {#changes-220rc21}
+
+{% include changes/ce/220rc21-220rc20.html %}
+
+## 2.2.0 RC2.0 - 2.2.0 RC1.8 {#changes-220rc20}
+
+{% include changes/ce/220rc20-220rc18.html %}
+
+## 2.2.0 RC1.8 - 2.2.0 RC1.6 {#changes-220rc18}
+
+{% include changes/ce/220rc18-220rc16.html %}
+
+## 2.2.0 RC1.6 - 2.2.0 RC1.5 {#changes-220rc16}
+
+{% include changes/ce/220rc16-220rc15.html %}
 
 ## 2.2.0 RC1.5 - 2.2.0 RC1.4 {#changes-220rc15}
 

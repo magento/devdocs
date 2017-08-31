@@ -10,10 +10,32 @@ version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.6.md
 ---
  
-These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.6, `magento-cloud-configuration` releases 101.6.2, 101.6.3, and 101.6.4. 
+These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.6, `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, and 101.6.5. 
 
 ## Changes and enhancements in this release
-In `magento-cloud-configuration` releases 101.6.2, 101.6.3, and 101.6.4 on Magento Enterprise Edition 2.1.6, we provide the following improvements:
+In `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, and 101.6.5 on Magento Enterprise Edition 2.1.6, we provide the following improvements:
+
+
+
+### 101.6.5 changes
+
+<!--- MAGECLOUD-870 -->* Magento no longer automatically disables Google Analytics when deployed in the master branch.
+
+<!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud. 
+
+
+
+### 101.6.4 changes
+
+
+<!--- MAGECLOUD-792 -->* Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.
+
+
+### 101.6.3 changes
+
+
+<!--- MAGECLOUD-771 -->* You can now successfully deploy your Cloud installation with multiple locales to staging after upgrading to `magento-cloud-configuration` 101.6.2. 
+
 
 
 ### 101.6.2 changes
@@ -31,17 +53,6 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, and 101.6.4 on Magen
 
 <!--- MAGECLOUD-717 -->* You can now successfully deploy when using the `.regenerate` flag. (We corrected an error in the `magento-cloud-configuration/pre-deploy.php` file.) Previously, a PHP fatal error occurred during deployment with `magento-cloud-configuration` 101.6.0. 
 
-
-### 101.6.3 changes
-
-
-<!--- MAGECLOUD-771 -->* You can now successfully deploy your Cloud installation with multiple locales to staging after upgrading to `magento-cloud-configuration` 101.6.2. 
-
-
-### 101.6.4 changes
-
-
-<!--- MAGECLOUD-792 -->* Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.
 
 
 

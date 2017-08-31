@@ -5,7 +5,7 @@ subgroup: 11_sites
 title: Set up multiple websites, stores, and store views in the Admin
 menu_title: Set up multiple websites, stores, and store views in the Admin
 menu_order: 2
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/multi-site/ms_websites.md
 ---
@@ -125,7 +125,7 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url.png){:width="650px"}
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for deployment Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
+  		<p>If you're setting up a base URL for deployment {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
   		<p>If you're setting up a base URL for local testing, use a period.</p>
 	</div>
 5.	Click **Save Config**.
@@ -134,7 +134,7 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 {% endcollapsible %}
 
 ## Step 6: Add the store code to the base URL {#multi-storecode-baseurl}
-Magento gives you the option to add the store code to the site's base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`. 
+Magento gives you the option to add the store code to the site's base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`.
 
 This prevents `index.php` and `.htaccess` from getting out of sync with the Magento codebase in future upgrades.
 
@@ -165,7 +165,7 @@ You must perform this step last because after it's done, you'll lose access to t
 2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
 
 
-	![Select the default config scope]({{ site.baseurl }}common/images/config_multi-site-default.png){:width="250px"} 
+	![Select the default config scope]({{ site.baseurl }}common/images/config_multi-site-default.png){:width="250px"}
 
 3.	In the right pane, expand **Base URLs**.
 4.	Enter `http://mysite.mg` as the following example shows.
@@ -173,14 +173,14 @@ You must perform this step last because after it's done, you'll lose access to t
 	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url-default2.png){:width="650px"}
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for Magento Enterprise Cloud Edition, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
+  		<p>If you're setting up a base URL for {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
 	</div>
 5.	Click **Save Config**.
 
 {% endcollapsible %}
 
 #### Next step
-*	Magento Enterprise Cloud Edition: [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
+*	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
 *	[Tutorial&mdash;Set up multiple websites or stores with nginx]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
 *	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
 

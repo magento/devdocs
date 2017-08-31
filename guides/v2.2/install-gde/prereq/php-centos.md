@@ -85,7 +85,7 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
 		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+  		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
 	</div>
 
 4.	Restart Apache: `service httpd restart`
@@ -187,7 +187,7 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 		yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+  		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
 	</div>
 
 4.	Restart Apache: `service httpd restart`

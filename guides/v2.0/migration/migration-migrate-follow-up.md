@@ -31,7 +31,7 @@ Reference numbers for Orders, Invoices, Shipments, Credit Memos, and RMA migrate
 
 ## Steps
 
-### Resave Customer Segments [Magento 2 EE only]
+### Resave Customer Segments [{{site.data.var.ee}} only]
 
 After migration, Customer Segments must be resaved from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Panel to get them up and running.
 
