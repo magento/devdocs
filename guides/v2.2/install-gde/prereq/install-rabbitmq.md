@@ -92,27 +92,31 @@ where:
 <th>Parameter</th><th>Description</th>
 </tr>
 <tr>
-<td>amqp-host</td>
+<td>--amqp-host</td>
 <td>The host name where RabbitMQ is installed.</td>
 </tr>
 <tr>
-<td>amqp-port</td>
+<td>--amqp-port</td>
 <td>The port to use to connect to RabbitMQ. The default is 5672.</td>
 </tr>
 <tr>
-<td>amqp-user</td>
+<td>--amqp-user</td>
 <td>The user name for connecting to RabbitMQ. Do not use the default user `guest`. </td>
 </tr>
 <tr>
-<td>amqp-password</td>
+<td>--amqp-password</td>
 <td>The password for connecting to RabbitMQ. Do not use the default password `guest`. </td>
 </tr>
 <tr>
-<td>amqp-virtualhost</td>
+<td>--amqp-virtualhost</td>
 <td><p>The virtual host for connecting to RabbitMQ. The default is <code>/</code>. </p>
 <p>For additional information, see RabbitMQ documentation:</p>
 <ul><li><a href="https://www.rabbitmq.com/vhosts.html" target="&#95;blank">Virtual hosts</a></li>
 <li><a href="https://www.rabbitmq.com/access-control.html" target="&#95;blank">Access control</a></li></ul></td>
+</tr>
+<tr>
+<td>amqp-ssl</td>
+<td><p>Indicates whether to connect to RabbitMQ. The default is <code>false</code>. If you set the value to <code>true</code>, see <a href="#configure-ssl">Configure SSL</a> for more information.</p></td>
 </tr>
 </table>
 
@@ -120,7 +124,8 @@ where:
 
 To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the `<install_directory>/app/etc/env.php` file so that they are similar to the following:
 
-```
+{% highlight php startinline=true %}
+
 'queue' =>
   array (
     'amqp' =>
@@ -138,7 +143,8 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
        ],
      ),
   ),
-  ```
+
+{% endhighlight %}
 
 #### Related topics
 *	[Installing optional software]({{page.baseurl}}install-gde/prereq/optional.html)
