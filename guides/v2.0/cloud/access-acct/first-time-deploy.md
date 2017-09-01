@@ -13,15 +13,16 @@ github_link: cloud/access-acct/first-time-deploy.md
 [Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You only need to complete this step one time for a new project. As a best practice, you need to have the template Magento Commerce project (or `master` branch) fully deployed across all environments to ensure all future code pushes correctly deploy.
+You only need to complete this step one time for a new **Pro project**. This code is already on `master` for the Starter project. As a best practice, you need to have the template Magento Commerce project (or `master` branch) fully deployed across all environments to ensure all future code pushes correctly deploy.
 </div>
 
-After fully setting up your local workspace, you should have the cloned Integration `master` branch on your local. To finish your initial setup, we **strongly recommend fully deploying** `master` branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.
+After fully setting up your local workspace, for **Pro** you should have the cloned Integration `master` branch on your local. To finish your initial setup, we **strongly recommend fully deploying** `master` branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.
 
 This initial push provides the following benefits:
 
 * Fully installs Magento in each environment
 * Allows the build/deploy scripts to use the `setup:upgrade` command instead of `setup:install` (important for adding extensions)
+* Pushes the Magento encryption key across all environments
 * Protects against errors and failures when installing with added modules and extensions
 
   Not all extensions are correctly tested with the setup:install command and application modes. If you initially install Magento code with added 3rd party extensions or custom code, you may receive errors and build/deploy failures. By deploying the unmodified Magento template, all future deployments to Staging and Production typically do not encounter installation issues from 3rd party and custom code.
