@@ -39,7 +39,7 @@ To create an SSH key pair:
 
 1. The command syntax follows, entering the email used for your GitHub account:
 
-		ssh-keygen -t rsa -C "your_email_address@example.com"
+		ssh-keygen -t rsa
 
 	GitHub also uses the key length `-b 4096` in the command.
 	Follow the prompts to complete the key.
