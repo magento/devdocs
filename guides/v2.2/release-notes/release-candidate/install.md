@@ -47,11 +47,11 @@ Before you begin, install Composer:
 
     -   Enter the following command for {{site.data.var.ce}}:
 
-            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> 2.2.0-rc22
+            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> 2.2.0-rc23
 
     -   Enter the following command for {{site.data.var.ee}}:
 
-            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name> 2.2.0-rc22
+            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name> 2.2.0-rc23
 
 	When prompted, enter your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
 
