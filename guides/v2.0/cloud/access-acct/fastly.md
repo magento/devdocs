@@ -23,12 +23,6 @@ The process for configuring Fastly includes:
 * Configure Fastly credentials and settings
 * Advanced configurations including VCL snippets
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-**Important TLS Deprecation Notice**: We are following Fastly's timeline for [TLS 1.0/1.1 deprecation](https://www.fastly.com/blog/phase-two-our-tls-10-and-11-deprecation-plan).
-
-We currently cannot enable or disable protocols on a per-customer basis due to Fastly's limitations. You may receive early warnings from PCI scans, which are within PCI's deadline for the protocol's deprecation.
-</div>
-
 ## Get your Fastly credentials {#cloud-fastly-creds}
 To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html). You must provide your fully-qualified domain name.
 
