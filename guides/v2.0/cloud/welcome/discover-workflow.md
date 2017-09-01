@@ -96,7 +96,7 @@ We recommend using a branching strategy with your development work. Using one br
 
 And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
 
-![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-push-code.png)
+![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-pro-push-code.png)
 
 ### Configure store {#configure-store}
 At any time, you should start configuring your store. For the best information on configurations, we recommend reviewing {{site.data.var.<ee>}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
@@ -136,7 +136,7 @@ You will add this file to your branch repository and include it with every push.
 
 An additional feature of this command is part of {{site.data.var.<ece>}} 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called `env.php` in `app/etc/`. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository.
 
-![Environment variables generate]({{ site.baseurl }}common/images/cloud_workflow-env-variables.png)
+![Environment variables generate]({{ site.baseurl }}common/images/cloud_workflow-pro-env-variables.png)
 
 ### Push code and test {#push-code}
 At this point, you should have a developed code branch with a configuration file (`config.app.php` or `config.php`) ready to push and test.
@@ -170,7 +170,7 @@ Prior to pushing the data to another environment, you should consider sanitizing
 </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Important: We never recommend pushing a database from a development or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.
+Important: We don't recommend pushing a database from a development or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.
 </div>
 
 ## Deployment workflow {#deploy}

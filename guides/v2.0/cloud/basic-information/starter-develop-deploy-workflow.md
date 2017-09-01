@@ -176,7 +176,7 @@ Prior to pushing the data to another environment, you should consider sanitizing
 </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Important: We never recommend pushing a database from a development or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.
+Important: We don't recommend pushing a database from a development or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.
 </div>
 
 ## Deployment workflow {#deploy}
