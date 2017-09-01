@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 010_welcome
-title: Cloud Architecture
-menu_title: Cloud Architecture
+title: Pro Architecture
+menu_title: Pro Architecture
 menu_order: 20
 menu_node:
 version: 2.0
@@ -19,23 +19,25 @@ The Integration environments run in a Linux container (LXC) on a grid of servers
 
 The process for developing in Integration requires the following process:
 
-* Clone the Master branch of Magento code from a Git repository
-* Branch and develop in a new Git Git branch on your local workspace
+* Clone the `master` branch from the Project to your local
+* Branch and develop in a new Git branch on your local workspace
 * Push code to Git that builds and deploys to an Integration environment for testing
 
-Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html), working with Git branches, and deploying code.
+Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html), working with Git branches, and [deploying code]({{page.baseurl}}cloud/live/stage-prod-live.html).
 
 ## Staging environment {#cloud-arch-stage}
 The Staging environment provides a near-Production environment to test your site. This environment includes all services used in Production including Fastly, New Relic, Blackfire, and search. All code in Staging is read-only, requiring deploys of Git repositories. This environment shares the same dedicated server with Production.
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.
 
+We walk you through [deploying to Staging]({{page.baseurl}}cloud/live/stage-prod-live.html) and [testing your store(s)]({{page.baseurl}}cloud/live/stage-prod-test.html) requirements and processes.
+
 We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.
 
 ## Production environment {#cloud-arch-prod}
 The Production environment runs your public-facing Magento single and multisite storefronts. This environment include triple-redundant High Availability nodes for continuous access and failover protection for your customers. This system is read-only, requiring deployment across the architecture from Integration to Staging and finally Production.
 
-Additional sections in this guide provide walk-throughs for deploying to Production and Go Live requirements and processes.
+We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-prod-live.html) and [Go Live]({{page.baseurl}}cloud/live/live.html) requirements and processes.
 
 We highly recommend fully testing in Staging prior to pushing to Production.
 
@@ -118,11 +120,9 @@ The container for your Magento application is a *project*. The project is your M
 
 When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>{{site.data.var.<ece>}} currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.</p>
-</div>
-
 ## Services {#cloud-arch-services}
+Magento Commerce (Cloud) currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
+
 Each service runs in its own secure container. containers are managed together in the project. Some services are built-in, such as the following:
 
 *	HTTP router (handling incoming requests, but also caching and redirects)
