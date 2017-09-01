@@ -1,19 +1,16 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: Commerce
 title: Magento_RmaStaging module
 menu_title: RmaStaging
 menu_order: 2
 version: 2.1
+ee_only: true
 github_link: mrg/ee/RmaStaging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-## Overview
-
-The Magento_RmaStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to create updates for the parameters of the Autosettings field set of a product.
+The Magento_RmaStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to create updates for the parameters of the Autosettings field set of a product.
 
 RMA stands for a return merchandise {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %}.
 
@@ -33,4 +30,4 @@ You can find the list of modules that have dependencies on the Magento_RmaStagin
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

@@ -3,23 +3,23 @@ layout: default
 group: config-guide
 subgroup: 15_Solr
 title: Install and configure Solr
-menu_title: Install and configure Solr (Enterprise Edition only)
+menu_title: Install and configure Solr (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: config-guide/solr/solr-overview.md
 ---
 
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
+<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Solr is deprecated in Magento 2.1 and will not be supported in 2.2. 
+Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
 In a future release, Solr compatibility will be removed.
 
-If possible, use [Elastic Search]({{page.baseurl}}config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
+If possible, use [Elastic Search](../../../v2.1/config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
 </div>
 
-Magento Enterprise Edition (EE) version 2.x enables you to configure either of the following as a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} search engine:
+{{site.data.var.ee}} version 2.x enables you to configure either of the following as a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} search engine:
 
 *	Full text search using the MySQL database (the default)
 *	The [Apache Solr search engine](http://lucene.apache.org/solr/){:target="_blank"}
@@ -35,10 +35,10 @@ See one of the following sections for more information:
 *	[More information about the Solr solution](#overview-solr){:target="_blank"}
 
 ### Intended audience and purpose of this topic {#overview-this-topic}
-This topic is intended for Magento EE administrators and systems integrators who have some familiarity with search engines&mdash;ideally, who also have Solr configuration experience.
+This topic is intended for {{site.data.var.ee}} administrators and systems integrators who have some familiarity with search engines&mdash;ideally, who also have Solr configuration experience.
 No programming is required to perform the tasks discussed in this topic.
 
-This topic discusses a simple Solr configuration that uses the example Solr configuration provided with Solr, default Solr integration options provided with Magento EE, and also explains how to configure Magento EE to use Solr.
+This topic discusses a simple Solr configuration that uses the example Solr configuration provided with Solr, default Solr integration options provided with {{site.data.var.ee}}, and also explains how to configure {{site.data.var.ee}} to use Solr.
 Advanced configuration tasks&mdash;such as setting up dictionaries&mdash;are beyond the scope of this topic.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -91,7 +91,7 @@ The following suggestions in this topic should *not* be used in a production env
   You can also [compare application servers](https://dzone.com/articles/top-open-source-javaEE-application-servers){:target="_blank"} to determine if the bundled Jetty application server is appropriate for your needs.
 *	Turning off your UNIX firewall is not recommended in production.
   (As an alternative, you can set up firewall rules to allow Magento and Solr to communicate.)
-*	Setting SELinux to `permissive` 
+*	Setting SELinux to `permissive`
 
 	SELinux settings are entirely up to you.
 Magento does not recommend particular settings; however, be aware that setting up SELinux is very complex.
@@ -185,7 +185,7 @@ For more information, see the [Solr With Tomcat Wiki](http://wiki.apache.org/sol
 
 To install Solr and Jetty:
 
-1.  As a user with `root` privileges, use `wget` or a similar command to download the latest version of Solr 4 to an empty directory such as `/opt/solr`. 
+1.  As a user with `root` privileges, use `wget` or a similar command to download the latest version of Solr 4 to an empty directory such as `/opt/solr`.
 
 	An example follows.
 
@@ -211,4 +211,4 @@ To install Solr and Jetty:
 		tar -xvf solr-4.10.4.tgz
 
 #### Next step
-[Configure Solr to work with Magento]({{page.baseurl}}config-guide/solr/solr-magento.html){:target="_blank"} 
+[Configure Solr to work with Magento]({{page.baseurl}}config-guide/solr/solr-magento.html){:target="_blank"}

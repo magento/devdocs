@@ -15,7 +15,7 @@ github_link: config-guide/prod/config-reference-b2b.md
 This topic lists configuration paths for Magento Enterprise B2B Extension. The [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This reference lists _only_ configuration paths unique to Magento Enterprise B2B Extension. Magento Enterprise B2B Extension includes all configuration paths for Magento Community Edition (CE) and Magento Enterprise Edition (EE) as well.
+This reference lists _only_ configuration paths unique to Magento Enterprise B2B Extension. Magento Enterprise B2B Extension includes all configuration paths for {{site.data.var.ce}} and {{site.data.var.ee}} as well.
 </div>
 
 For those configuration paths, see:

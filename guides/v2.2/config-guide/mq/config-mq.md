@@ -9,7 +9,7 @@ version: 2.2
 github_link: config-guide/mq/config-mq22.md
 ---
 
-The message queue topology is an Enterprise Edition feature. It can be included as part of EE installation, or you can add it existing modules.
+The message queue topology is an {{site.data.var.ee}} feature. It can be included as part of {{site.data.var.ee}} installation, or you can add it existing modules.
 
 ### Overview ###
 Configuring the message queue topology involves creating and modifying the following configuration files in the `<module>/etc` directory:

@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.0.5 Release Notes 
-menu_title: Magento CE 2.0.5 Release Notes 
+title: Magento Open Source 2.0.5 Release Notes 
+menu_title: Magento Open Source 2.0.5 Release Notes 
 menu_order: 190
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes
@@ -11,7 +11,7 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.5CE.md
 ---
 
-We are pleased to present Magento Community Edition 2.0.5. This release includes miscellaneous functional fixes. 
+We are pleased to present Magento Open Source 2.0.5. This release includes miscellaneous functional fixes. 
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
@@ -73,11 +73,11 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 <h3>Installation instructions</h3>
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Community Edition 2.0.5 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
+New users can now complete a full installation of Magento Open Source 2.0.5 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
 
 ##### <b>Download a new installation</b>#####
 
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
+1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Open Source Download</a> page.
 
 2. Under Full Release, select a format for the download archive file. Then, click **Download**.
 
@@ -85,15 +85,15 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 
 ##### <b>Install a new installation with Composer</b>#####
 
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
+1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Open Source Download</a> page.
 
 2.	Under **Download with Composer**, click **Download**.
 
-3.	Follow the instructions to download Composer, and get the Magento CE {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
+3.	Follow the instructions to download Composer, and get the Magento Open Source {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 
 <h4><b>Upgrade existing installations</b></h4>
-If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
+If you installed Magento Open Source 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
 ##### <b>Upgrade an existing installation from the Setup Wizard</b>#####
@@ -108,7 +108,7 @@ For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-m
 
 
 ##### <b>Upgrade an existing installation from the GitHub repository</b>#####
-Developers who contribute to the CE codebase can <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+Developers who contribute to the Open Source codebase can <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
 
 1.	Go to the <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">Contributing Developers</a> page.
 

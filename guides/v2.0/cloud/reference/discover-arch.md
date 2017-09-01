@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/reference/discover-arch.md
 ---
 
-Magento Commerce (Cloud) Pro provides three environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches in your project and supporting any development and branching methodology.
+{{site.data.var.<ece>}} provides three environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches in your project and supporting any development and branching methodology.
 
 ## Integration environment {#cloud-arch-int}
 Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a PAAS (Platform as a Service) providing up to eight active environments for eight active Git branches. Each branch deploys to an environment with a web server, database, and configured services to fully test your site.
@@ -42,7 +42,7 @@ We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-p
 We highly recommend fully testing in Staging prior to pushing to Production.
 
 ### Advantage of redundant hardware
-Rather than running a traditional active-passive master or master-slave setup, Magento Commerce (Cloud) runs a triple-redundant multimaster where all three instances accept reads and writes. This architecture offers zero downtime when scaling, and also provides guaranteed transactional integrity.
+Rather than running a traditional active-passive master or master-slave setup, {{site.data.var.<ece>}} runs a triple-redundant multimaster where all three instances accept reads and writes. This architecture offers zero downtime when scaling, and also provides guaranteed transactional integrity.
 
 Because of our unique triple-redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to {% glossarytooltip 34f8f61d-2b48-4628-be06-aaa6e32ddc1f %}whitelist{% endglossarytooltip %} multiple IPs, so having more than one fixed IP isn't usually a problem.
 
@@ -69,13 +69,13 @@ The Production environment has three VMs behind an Elastic Load Balancer managed
 * GlusterFS file server for managing all static file deployments and syncs with four directoris mounted: `var`, `pub/media`, `pub/static`, and `app/etc`
 * Redis server, one per VM with only one active and the other two as replicas
 * Elasticsearch
-* Galara database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
+* Galera database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
 
 The following figure shows the technology used in the Production environment:
 
 ![Production technology stack]({{ site.baseurl }}common/images/cloud_stack-diagram.png)
 
-Magento Commerce seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
+{{site.data.var.<ee>}} seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
 In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="_blank"} to complement the vertical scaling provided by extra CPUs on the database level.
 
@@ -130,15 +130,24 @@ Each service runs in its own secure container. containers are managed together i
 *	Git
 *	Secure Shell (SSH)
 
-You can even have multiple applications running in the same project. Building a microservice oriented architecture with Magento Commerce is as easy as managing a monolithic application.
+You can also have multiple applications running in the same project. 
 
 ## Software versions {#cloud-arch-software}
-Magento Commerce uses:
+{{site.data.var.<ece>}} uses:
 
 *	Operating system: Debian GNU/Linux 8 (jessie)
 *	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
 
-This software is *not* upgradable but versions for the following software is configurable: [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html), [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html), [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html), [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html), [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html), and [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html).
+This software is *not* upgradable but versions for the following software is configurable:
+
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
+* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
+* [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
+* [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
+* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
+
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
 #### Related topics
 *	[Develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)

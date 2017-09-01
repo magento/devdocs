@@ -45,7 +45,7 @@ This section previews your migration experience by providing a high-level overvi
 
 The data migration tool recognizes the differences in database structure between Magento 1.x versions. Most of these database structural differences are declared in *map files*. Each step in the process uses map files to transform data for use in your Magento 2 store.
 
-For example, when you transform data from a Magento CE 1.8.0.0 database to Magento 2.x.x, the map file accounts for the fact that a table was renamed and renames it accordingly in the destination database. If there are no differences in data structure or data format, the Data Migration Tool transfers it as-is to the Magento 2 database, including data from tables created by extensions.
+For example, when you transform data from a {{site.data.var.ce}} 1.8.0.0 database to {{site.data.var.ce}} 2.x.x, the map file accounts for the fact that a table was renamed and renames it accordingly in the destination database. If there are no differences in data structure or data format, the Data Migration Tool transfers it as-is to the Magento 2 database, including data from tables created by extensions.
 
 When differences are not declared in map files, then the Data Migration Tool displays an error and does not start.
 

@@ -34,7 +34,8 @@ For **continuous integration** after first time setup, you will:
 
 If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
-## Migrate deployment hooks in your `.magento.app.yaml` file {#cloud-live-migrate-yaml}
+## Migrate deployment hooks in your `.magento.app.yaml` file (optional) {#cloud-live-migrate-yaml}
+**Important:** If you have **not modified** the default deployment hooks, skip this step and continue with [Get your access URLs](#cloud-live-migrate-urls). Only migrate the hooks if you modified them. 
 
 {% include cloud/hooks.md %}
 
@@ -114,4 +115,4 @@ To set up an SSH agent:
 For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html) as part of your local setup.
 
 #### Next step
-[Migrate data and static files]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+[Migrate and deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)

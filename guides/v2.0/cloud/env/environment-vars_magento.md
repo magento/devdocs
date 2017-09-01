@@ -59,10 +59,10 @@ The following table lists variables that you can override using environment vari
     <td>production</td>
     </tr>
     <tr><td>CLEAN_STATIC_FILES</td>
-    <td><p>The default value, <code>true</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development.</p>
+    <td><p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
     <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
     <p>In other words, because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
-    <td>true</td>
+    <td>enable</td>
     </tr>
     <tr><td>UPDATE_URLS</td>
     <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
