@@ -1,38 +1,38 @@
 ---
 layout: default
 group: styleguide
-subgroup: Style Guide
-title: Admin Style Guide
-menu_title: Content Voice and Tone
-menu_order: 3
+subgroup: Admin Style Guide
+title: Admin Voice and Tone
+menu_title: Voice and Tone
+menu_order: 5
 menu_node:
 version: 2.0
 github_link: design-styleguide/content-voice-tone/content-voice-tone.md
 ---
-## Content Voice and Tone
+Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} content is crafted to be read and clearly understood by merchants performing administrative tasks and managing their stores through the Magento software interface.
 
-Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} content is crafted to be read and clearly understood by merchants performing administrative tasks and managing their stores through the Magento software interface. Writers will need to change their tone, depending on the context:
+Writers should change their tone, depending on the context:
 
 * Most Admin content is instructional and task-oriented. This content should guide merchants through each task with a casual — but direct, professional, and empowering — writing tone.
 
-* Some Magento content is marketing oriented, and this tone is different – writers engage customers with specific value propositions (not fluff) and descriptions that include accurate and tangible benefits.
+* Some Magento content is marketing oriented, requiring writers to engage customers with specific value propositions (not fluff) and descriptions that include accurate and tangible benefits.
 
-* Many Admin content types are specific to user interfaces and design patterns – including alt text (image descriptions), button and link labels, contextual help, form content, navigation, and errors and messages. While this tone is more focused on accuracy and brevity than other content the same standards apply: Use clear, plain language and consult global conventions to ensure the content is understood by all.
+* User interface and design pattern content – including alt text (image descriptions), button and link labels, contextual help, form content, navigation, and errors and messages – require more brevity. While this tone is more focused on accuracy and conciseness than other content, the same standards apply: Use clear, plain language and consult global conventions to ensure the content is understood by all.
 
-In all contexts, be sure that you use the correct terms to avoid confusion – when in doubt, consult the [Magento Glossary](https://magento.github.io/glossary/index.html), [Magento Word Usage Bank](https://magento.github.io/glossary/word-usage.html), the [Admin Design Pattern Library]({{page.baseurl}}pattern-library/bk-pattern.html), and our external writing references, including:
+In all contexts, use correct terms to avoid confusion – when in doubt, consult the [Magento Glossary](https://magento.github.io/glossary/index.html), [Magento Word Usage Bank](https://magento.github.io/glossary/word-usage.html), the [Admin Design Pattern Library]({{page.baseurl}}pattern-library/bk-pattern.html), and our external writing references, including:
 
 1.	The Associated Press Stylebook
 2.	Microsoft Manual of Style — Content for a worldwide audience (Ch. 3), Accessible content (Ch. 4), Procedures and technical content (Ch. 6)
 
-### Guidelines
+## Guidelines
 
-**Write casually, but professionally, in gender-neutral language.**
+**Write casual, but professional, content in gender-neutral terms.**
 
 Create a consistent tone of communication that sounds like dialogue, as you would hear it. Here’s a useful tip when creating copy:  Imagine describing the product or task face-to-face with a new marketing employee.
 
 Use contractions for verbs and write sentences with plain, concise language. Never use a long word when a shorter word can be used, and omit unnecessary words.
 
-Content should be gender neutral. To avoid “his” or “her” pronouns, convert singular words to plural words, so you can use “their”, instead.
+Content should be gender neutral. To avoid “his” or “her” pronouns, change from singular to plural and use a gender-neutral “their”, instead.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
  **No** – "A merchant can update his extensions."
@@ -40,12 +40,11 @@ Content should be gender neutral. To avoid “his” or “her” pronouns, conv
   Yes – "Merchants can update their extensions."
 </div>
 
+**Follow accessibility and readability standards.**
 
-**Follow accessibility content standards, for users with special needs.**
+To ensure that users with special needs, including the use of screen readers, can easily access your content [follow this summary of tips](https://www.w3.org/WAI/WCAG20/glance/) to meet Web Content Accessibility Guidelines (WCAG) 2.0 standards.
 
-Use Magento punctuation standards and test your content’s readability.  
-
-On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php]), Magento Admin content should score above 50 (high school level). Test your content here.
+Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php]), Magento Admin content should score above 50 (high-school level).
 
 **Avoid jargon, slang, and acronyms.**
 
@@ -58,8 +57,9 @@ When introducing a term that a merchant may not know, apply a glossary term from
 <div class="bs-callout bs-callout-tip" markdown="1">
   **No** – “Magento is the flexible commerce solution.”
 
-  Yes – “With Magento you can customize everything in your site’s design, ranging from storefront interface to background processes.”
+  Yes – “With Magento, almost everything can be customized, from the storefront user interface theme to the site's backend processes.”
 
+---
 
   **No** – “This SaaS feature is only available in Magento Commerce.”
 
@@ -68,7 +68,7 @@ When introducing a term that a merchant may not know, apply a glossary term from
 
 **Empower the merchant and use active voice.**
 
-Avoid negative sentences constructions to ensure clarity and a positive tone.
+Avoid negative sentence constructions to ensure clarity and a positive tone.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   **No** – Don’t use negative constructions.
@@ -76,15 +76,15 @@ Avoid negative sentences constructions to ensure clarity and a positive tone.
   Yes – Avoid negative constructions.
 </div>
 
-Active voice uses the subject-verb-object construction. When you describe an action, start the sentence with the actor – usually the user. Active-voice sentences clarify who is performing an action and they are easier to understand than passive-voice sentences.
+Active voice uses the subject-verb-object construction. When you describe an action, start the sentence with the actor – usually the user. Active-voice sentences clarify who is performing an action, and they're easier to understand than passive-voice sentences.
 
 Passive voice identifies the recipient (not the source) of the action as the subject of the verb. This is more complicated and less engaging.
 
 Zombie test: If you can put the words “by zombies” after a subject and verb, you’re using passive voice. Example: “Magento is used (by zombies)”
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-  **No** – “The store address is used to calculate …”
-  
+  **No** – “The store address is used to calculate ...”
+
   Yes – “The system uses the store address to calculate ...”
 </div>
 
@@ -104,16 +104,16 @@ Use future tense only when it’s necessary to emphasize that something, from th
 
 **Avoid personal pronouns.**
 
-Most websites have eliminated personal pronouns because using “you” and “I” or “your” and “my” can confuse merchants in determining whether content refers to the company or the user.
+Most websites have eliminated personal pronouns because using pronouns like “you” and “I” or “your” and “my” can confuse users. Personal pronouns often leave room for doubt or misinterpretation – does the pronoun refer to Magento or to the merchant? Avoid using “my”, “we”, “they”, or “I” when your content refers to either Magento representatives or merchants.
 
-“You” or “your” may be used in some cases to directly engage merchants in familiar, conversational language.
-Avoid using “my”, “we”, “they”, or “I” when referring to merchants or Magento representatives.
+However, “you” or “your” may be used in some cases to directly engage merchants in familiar, conversational language.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   **No** – Change your My Account preferences.
 
   Yes – Change your Account preferences.
 
+  ---
 
   **No** – We will send a confirmation, and you will receive it in 2-3 days.
 
@@ -122,13 +122,14 @@ Avoid using “my”, “we”, “they”, or “I” when referring to merchan
 
 **Use consistent labels in navigation, tables, forms, and calls to action.**
 
-Wherever content is displayed in data tables and forms, it should be consistent and use global conventions, when available.
+Wherever content is displayed in data tables and forms, it should be consistent and use Magento standard or global conventions.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
   Yes – “Continue” button in “Catalog” task flow
 
   Yes – “Continue” button in “Reports” task flow
 
+  ---
 
   **No** – “Next” button in “Catalog” task flow
 
