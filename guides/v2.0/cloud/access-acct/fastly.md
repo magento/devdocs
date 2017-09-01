@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 020_tech
+subgroup: 090_configure
 title: Set up Fastly
 menu_title: Set up Fastly
-menu_order: 15
+menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/access-acct/fastly.md

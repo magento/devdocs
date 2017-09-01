@@ -32,24 +32,33 @@ When you sign up for a {{site.data.var.<ece>}} account, you will receive an emai
 
 You will need these credentials and the license associated to them. See the email for details.
 
-<!--
+
 ## Configure New Relic APM {#configure}
+You can locate your New Relic APM credentials and key in the [Project Web Interface]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). The Project Owner can [log in](https://accounts.magento.cloud){:target="_blank"} to the interface and review project and environment credentials.
+
+For **Pro plan projects**, New Relic is already set up for you in Staging and Production environments. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.
+
+For **Starter plan projects**, New Relic will provide an email of credentials and access information, possibly also a call.
+
 Add a project level variable with your license:
 
-1. In a terminal, SSH log into your local project.
+1. Log in to the Project Web Interface.
+2. Locate the SSH link for accessing your `master` Production and Staging environments
+3. In a terminal, SSH log in to each environment (Production and Master) and enter the following command. You will need the license key from New Relic.
 
     magento-cloud project:variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
 
-Add to `.magento.app.yaml`:
+Add New Relic to `.magento.app.yaml`:
 
-1. In your development or Integration code branch, edit `.magento.app.yaml` with a text editor.
+1. In your development code branch, edit `.magento.app.yaml` with a text editor.
 2. Add the following information:
 
     runtime:
       extensions:
           - newrelic
 3. Save and push the changes to deploy across Staging and Production.
-4. -->
+
+You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access both environments via SSH and install the agent. 
 
 ## Investigate performance {#investigate}
 New Relic connects and monitors your site using an agent via php. As it collects data, you can [log in](https://login.newrelic.com/login/){:target="_blank"} and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page){:target="_blank"}.
