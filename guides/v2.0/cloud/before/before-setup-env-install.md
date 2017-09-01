@@ -140,8 +140,7 @@ With these steps completed, you should have:
 * Your initial code branch
 * Magento authentication keys set up and configured in the project and local
 
-## Next steps
-We strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production.
+## Next steps:
+For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html).
 
-#### Next step:
-[First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html)
+For Starter accounts, you are ready to start developing.
