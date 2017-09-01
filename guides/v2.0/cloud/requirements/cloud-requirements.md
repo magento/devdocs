@@ -25,13 +25,13 @@ The following information detail technologiess, knowledges, accounts, and steps 
 ## Prerequisite technologies and knowledges {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
 
-*	Experienced with [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
-*	Experienced with [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)
-*	Familiar with [Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
-*	Familiar with [Continuous Integration]({{ page.baseurl }}cloud/deploy/continuous-deployment.html)
-*	Understand [Starter]({{ page.baseurl }}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}cloud/reference/discover-arch.html) architecture
+*	[Git](#git).
+*	[Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)
+*	[Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
+*	[Continuous Integration]({{ page.baseurl }}cloud/deploy/continuous-deployment.html)
+*	Architectures including [Starter]({{ page.baseurl }}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}cloud/reference/discover-arch.html) architecture
 
-Some advanced technologies you should also learn about include:
+Here are some advanced technologies we recommend getting familiar with:
 
 * [Fastly]({{ page.baseurl }}cloud/basic-information/cloud-fastly.html) for CDN and caching (based on Varnish)
 * [Blackfire Profiler]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html) for performance testing
@@ -41,14 +41,13 @@ Some advanced technologies you should also learn about include:
 {% include cloud/split-db-nosupport.md %}
 
 ### Git knowledge {#git}
-We assume you have a good working knowledge of Git. If not, consult the following resources:
+We hope you have a good working knowledge of Git. Need some help? Don't worry, we have you covered with some of our favorite links and information. We'll also include a Git guide to branching and developing soon.
 
-*	[Git documentation](https://git-scm.com/documentation){:target="_blank"}
-*	[Git reference](https://git-scm.com/docs){:target="_blank"}
-*	[Git tutorial](http://git-scm.com/docs/gittutorial){:target="_blank"}
-*	[Git videos](https://git-scm.com/videos){:target="_blank"}
+*	[Git documentation](https://git-scm.com/documentation){:target="_blank"} and [videos](https://git-scm.com/videos){:target="_blank"} from the makers of Git
+*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf){:target="_blank"} and [quick guide](http://rogerdudler.github.io/git-guide/){:target="_blank"} from Roger Dudler
+*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="_blank"} with DevForge to understand how people use the repo and commands with a fun story
 
-Before getting started, make sure you have a <a href="https://git-scm.com/downloads" target="_blank">Git client</a> installed on your computer to be able to interact with {{site.data.var.<ee>}}.
+To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="_blank"} on your local. We also recommend checking
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, {{site.data.var.<ee>}} adds two additional requirements:</p>
@@ -61,7 +60,7 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.<ece>}} project, you need to understand set up the following:
 
-*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. Develop in branches to add modules, extensions, 3rd party integrations, and configurations.
+*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter] or [Pro] plan.
 *	Get [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
 *	Get a [project invite]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-admins) by the Project Owner or a super user to the project
 *	Get [Magento authentication keys]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-keys) from the Project Owner
