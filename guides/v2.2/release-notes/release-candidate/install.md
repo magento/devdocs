@@ -58,11 +58,7 @@ Before you begin, install Composer:
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation-directory-name>` if you provided the parameter or `project-enterprise-edition` if you did not.
 
   <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The following error indicates your tokens are incorrect:
-
-    Could not find package magento/project-enterprise-edition with version 2.2.0-rc22
-
-Contact Mark Brinton at [mbrinton@magento.com](mailto:mbrinton@magento.com) to request access to our pre-release Composer repositories.
+If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there aren't any typos in your command. If you still encounter errors, you may not have access to our pre-release Composer repositories. Contact Mark Brinton at [mbrinton@magento.com](mailto:mbrinton@magento.com) to request access.
 
 If the following error displays, see [troubleshooting]({{page.baseurl}}install-gde/trouble/tshoot_composer-fail.html):
 
