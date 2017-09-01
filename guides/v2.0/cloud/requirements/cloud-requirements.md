@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 020_tech
-title: Requirements for Cloud
-menu_title: Requirements for Cloud
+title: Technologies and requirements
+menu_title: Technologies and requirements
 menu_order: 40
 menu_node: parent
 version: 2.0
@@ -20,19 +20,23 @@ redirect from:
   -  /guides/v2.1/cloud/reference/git-integration.html
 ---
 
-The following requirements detail technologies, knowledges, accounts, and steps to complete when working with your {{site.data.var.<ee>}} code and store in the Cloud.
+The following information detail technologiess, knowledges, accounts, and steps to complete when working with your {{site.data.var.<ece>}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.
 
 ## Prerequisite technologies and knowledges {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
 
 *	Experienced with [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
-*	Experienced with [Composer](https://getcomposer.org/doc){:target="_blank"}. For info on how we use Composer, see [Compose for Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+*	Experienced with [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)
 *	Familiar with [Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
-*	Familiar with [Continuous Integration Best Practices](https://www.google.com/search?q=Continuous+Integration+Best+Practices){:target="_blank"}
-*	Understand [cloud architecture]({{ page.baseurl }}cloud/reference/discover-arch.html) for {{site.data.var.<ee>}}
-*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. Develop in branches to add modules, extensions, 3rd party integrations, and configurations.
-*	Obtain [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
-*	Obtain an invite by the Account Owner or a super user to the project
+*	Familiar with [Continuous Integration]({{ page.baseurl }}cloud/deploy/continuous-deployment.html)
+*	Understand [Starter]({{ page.baseurl }}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}cloud/reference/discover-arch.html) architecture
+
+Some advanced technologies you should also learn about include:
+
+* [Fastly]({{ page.baseurl }}cloud/basic-information/cloud-fastly.html) for CDN and caching (based on Varnish)
+* [Blackfire Profiler]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html) for performance testing
+* [New Relic APM]({{ page.baseurl }}cloud/project/new-relic.html) for performance testing
+* [GitHub]({{ page.baseurl }}cloud/project/project-integrate-github.html) if you need a Git repo
 
 {% include cloud/split-db-nosupport.md %}
 
@@ -54,10 +58,20 @@ Before getting started, make sure you have a <a href="https://git-scm.com/downlo
 
 You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. For more information, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a>.
 
+## Requirements to get started {#requirements}
+To get started as a developer in a {{site.data.var.<ece>}} project, you need to understand set up the following:
+
+*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. Develop in branches to add modules, extensions, 3rd party integrations, and configurations.
+*	Get [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
+*	Get a [project invite]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-admins) by the Project Owner or a super user to the project
+*	Get [Magento authentication keys]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-keys) from the Project Owner
+
+We walk you through everything you need to do and know.
+
 ## Testing configurations {#cloud-req-test}
 Before you test any custom code in your local {{site.data.var.<ee>}} environment, you must do all of the following:
 
-*	Set the database [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html#database)
+*	For Pro, set the database [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html#database)
 *	Test with the correct file permissions in [PRODUCTION mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`

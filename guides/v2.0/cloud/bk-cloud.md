@@ -123,7 +123,7 @@ If you are the Product Owner, you should complete these [onboarding tasks]({{pag
 
 We recommend the following starting points:
 
-*	[{{site.data.var.<ee>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
 *	Starter information:
 
 	* [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
