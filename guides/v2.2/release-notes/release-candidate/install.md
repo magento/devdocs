@@ -11,7 +11,7 @@ version: 2.2
 github_link: release-notes/release-candidate/install.md
 ---
 
-We now offer {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackages{% endglossarytooltip %} for installing the latest release candidate code using [Composer](https://getcomposer.org/){:target="&#95;blank">}.
+We now offer {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackages{% endglossarytooltip %} for installing the latest release candidate code using [Composer](https://getcomposer.org/){:target="&#95;blank">}. Contact Mark Brinton at [mbrinton@magento.com](mailto:mbrinton@magento.com) to request access to our pre-release Composer repositories.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
 You can still install release candidate code by [cloning Github repositories](#install-with-github), but we recommend using Composer.
@@ -61,6 +61,8 @@ Before you begin, install Composer:
 The following error indicates your tokens are incorrect:
 
     Could not find package magento/project-enterprise-edition with version 2.2.0-rc22
+
+Contact Mark Brinton at [mbrinton@magento.com](mailto:mbrinton@magento.com) to request access to our pre-release Composer repositories.
 
 If the following error displays, see [troubleshooting]({{page.baseurl}}install-gde/trouble/tshoot_composer-fail.html):
 
