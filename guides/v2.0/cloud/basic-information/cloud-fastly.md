@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 020_tech
-title: Fastly in Cloud
-menu_title: Fastly in Cloud
+title: Fastly
+menu_title: Fastly
 menu_node:
 menu_order: 15
 version: 2.0
@@ -28,6 +28,12 @@ Fastly provides the following powerful tools for Magento:
 * Force unencrypted requests over to TLS
 
 We highly recommend enabling and using Fastly for your caching and CDN. The only situation you may not want to enable is for a headless deployment.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+**Important TLS Deprecation Notice**: We are following Fastly's timeline for [TLS 1.0/1.1 deprecation](https://www.fastly.com/blog/phase-two-our-tls-10-and-11-deprecation-plan).
+
+We currently cannot enable or disable protocols on a per-customer basis due to Fastly's limitations. You may receive early warnings from PCI scans, which are within PCI's deadline for the protocol's deprecation.
+</div>
 
 ## Fastly and 503 timeouts {#timeouts}
 When you receive a 503 error from Fastly, it may be due to a lengthy operation or performing bulk actions. Fastly has a default 60 second time out. Any request that takes longer than 60 seconds will return a 503 error.

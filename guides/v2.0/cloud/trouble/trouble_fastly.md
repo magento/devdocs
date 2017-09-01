@@ -14,6 +14,13 @@ For information setting up and configuring Fastly, see [Set up Fastly]({{ page.b
 
 To verify the Fastly extension is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.
 
+## Received warning about TLS deprecation {#tls}
+**Important TLS Deprecation Notice**: We are following Fastly's timeline for [TLS 1.0/1.1 deprecation](https://www.fastly.com/blog/phase-two-our-tls-10-and-11-deprecation-plan).
+
+We currently cannot enable or disable protocols on a per-customer basis due to Fastly's limitations. You may receive early warnings from PCI scans, which are within PCI's deadline for the protocol's deprecation.
+
+Please consider and plan your upgrade to a supported TLS version as part of your deployment.
+
 ## Test your live site {#curl-live}
 First, check your live site to verify the response headers with `curl`. The command goes through the Fastly extension to receive responses. If you don't receive the correct headers, then you should test the [origin servers directly](#cloud-test-stage). This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers.
 
