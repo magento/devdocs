@@ -163,7 +163,7 @@ As you develop features, add extensions, and design themes, having real data to 
 
 To learn more about database dumps, see [Snapshots and Backup management]({{page.baseurl}}cloud/project/project-webint-snap.html#db-dump).
 
-![Pull and sanitize production data]({{ site.baseurl }}common/images/cloud_workflow-data-code-process.png)
+![Pull and sanitize production data]({{ site.baseurl }}common/images/cloud_workflow-pro-data-code-process.png)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including how you dump your database or developing a script to scrub out customer data.
@@ -199,14 +199,14 @@ When fully completed, your store comes back online, live, with all of your updat
 To learn more, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
 ### Push to Staging and test {#staging}
-You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including Fastly, Blackfire Profiler, and New Relic APM. We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
+You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{page.baseurl}}cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html), and [New Relic APM]({{page.baseurl}}cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
 
 Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.
 
 To learn more, see [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html).
 
 ### Push to Master / Production {#pro}
-When you push to the `master` branch, you are pushing to Production. Treat configuration and testing of Production much as your Staging environment. The important difference in this environment is using live credentials. The moment you go live and launch, customers must be able to complete purchases and administrators should be able to manage your live store.
+When ready to start launching or to push iterations of code live, push to Production. Treat configuration and testing of Production much as your Staging environment. The important difference in this environment is using live credentials. The moment you go live and launch, customers must be able to complete purchases and administrators should be able to manage your live store.
 
 To learn more, see [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html).
 
@@ -218,7 +218,7 @@ To learn more, check out [Go live and launch]({{page.baseurl}}cloud/live/live.ht
 ## Continuous integration {#continuous-integration}
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
 
-Both Starter and Pro plan environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
+{{site.data.var.<ece>}} environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
 
 * Create development branches with future features and changes
 * Test the code in your development environments

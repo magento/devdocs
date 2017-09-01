@@ -40,6 +40,7 @@ We provide a Project Web Interface for you to create your project, add user acco
 For details on these environments, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) and [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
 
 To access and manage your project environments, the Project Owner needs to:
+
 * Create the project
 * Add user accounts to invite developers to the project
 * Generate and provide Magento authentication keys to added accounts
@@ -48,6 +49,8 @@ To access and manage your project environments, the Project Owner needs to:
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
 For detailed instructions for setting up environments, see [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html).
+
+![Use the Project Web Interface to manage environments]({{ site.baseurl }}common/images/cloud_project-access.png)
 
 ## Coming soon: Onboarding Portal {#portal}
 <!-- (http://cloud.magento.com){:target="_blank"} -->

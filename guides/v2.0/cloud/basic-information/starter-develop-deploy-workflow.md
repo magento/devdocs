@@ -205,7 +205,7 @@ When fully completed, your store comes back online, live, with all of your updat
 To learn more, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
 ### Push to Staging and test {#staging}
-You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including Fastly, Blackfire Profiler, and New Relic APM. We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
+You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{page.baseurl}}cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html), and [New Relic APM]({{page.baseurl}}cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
 
 Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.
 
@@ -224,7 +224,7 @@ To learn more, check out [Go live and launch]({{page.baseurl}}cloud/live/live.ht
 ## Continuous integration {#continuous-integration}
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
 
-Both Starter and Pro plan environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
+{{site.data.var.<ece>}} environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
 
 * Create development branches with future features and changes
 * Test the code in your development environments

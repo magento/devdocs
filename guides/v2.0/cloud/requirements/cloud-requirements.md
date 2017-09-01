@@ -22,10 +22,10 @@ redirect from:
 
 The following information detail technologiess, knowledges, accounts, and steps to complete when working with your {{site.data.var.<ece>}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.
 
-## Prerequisite technologies and knowledges {#cloud-req-pre}
+## Technologies and knowledges {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
 
-*	[Git](#git).
+*	[Git](#git)
 *	[Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)
 *	[Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
 *	[Continuous Integration]({{ page.baseurl }}cloud/deploy/continuous-deployment.html)
@@ -40,7 +40,9 @@ Here are some advanced technologies we recommend getting familiar with:
 
 {% include cloud/split-db-nosupport.md %}
 
-### Git knowledge {#git}
+### What is Git {#git}
+Git is the heart of all your code in repositories. It acts as a version control system through branches from a parent. Multiple developers can work together in personal branches all merging into the same parent. You can also work on features at the same time in multiple branches.
+
 We hope you have a good working knowledge of Git. Need some help? Don't worry, we have you covered with some of our favorite links and information. We'll also include a Git guide to branching and developing soon.
 
 *	[Git documentation](https://git-scm.com/documentation){:target="_blank"} and [videos](https://git-scm.com/videos){:target="_blank"} from the makers of Git
@@ -55,7 +57,7 @@ To get started with Git, you should have [Git installed](https://git-scm.com/dow
   	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
 </div>
 
-You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. For more information, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a>.
+You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local. 
 
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.<ece>}} project, you need to understand set up the following:

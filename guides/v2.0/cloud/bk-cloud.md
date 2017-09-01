@@ -26,7 +26,7 @@ redirect_from:
 Code, test, and deploy across development, staging, and finally production environment for continuous integration of your store.
 
 ## {{site.data.var.<ece>}} plans {#plans}
-{{site.data.var.<ece>}} includes two plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison).
+{{site.data.var.<ece>}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}.
 
 <table>
     <tbody>
