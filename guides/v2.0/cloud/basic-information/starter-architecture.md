@@ -45,7 +45,7 @@ We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-p
 
 We highly recommend fully testing in your Staging environment and branch prior to pushing to Production.
 
-## Staging environment {#cloud-arch-stage}
+## Staging branch and environment {#cloud-arch-stage}
 We recommend creating a branch called `staging`. Use this Staging environment and Git branch as your pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment includes all services used in Production and `master` including Fastly, New Relic, Blackfire, and search.
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.
@@ -55,7 +55,7 @@ We walk you through [deploying to Staging]({{page.baseurl}}cloud/live/stage-prod
 We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.
 
 ## Production and Staging technology stack {#technology}
-The Production and Staging environments include the following technologies. You can modify and configure these technologies through the [.magento.app.yaml file]]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html).
+The Production and Staging environments include the following technologies. You can modify and configure these technologies through the [.magento.app.yaml file]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html).
 
 * Fastly for http caching and CDN
 * Nginx web server speaking to PHP-FPM, one instance with multiple workers
@@ -93,7 +93,7 @@ This software is *not* upgradable but versions for the following software is con
 For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
 ### Backup and disaster recovery {#backup}
-We automatically back up your Production environment every six hours. This snapshot and backup includes your deployed code, installed software and services, and data. You can also perform [snapshots]({{page.baseurl}}cloud/project/project-webint-snap.html) and database dumps with CLI commands. 
+We automatically back up your Production environment every six hours. This snapshot and backup includes your deployed code, installed software and services, and data. You can also perform [snapshots]({{page.baseurl}}cloud/project/project-webint-snap.html) and database dumps with CLI commands.
 
 ## Prepare for development {#develop}
 To branch and develop your Magento store:

@@ -12,9 +12,15 @@ github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 
 Everything in {{site.data.var.<ece>}} is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.<ece>}} plan subscription, your deployment workflow may differ.
 
-The general workflow for all development and deployment requires pushing code to the remote Git branch. A series of build and deploy processes run with the environments updated with code, services, and configurations. The following sections provide high-level walk-throughs for development, branching, and deployments.
+The general workflow for all development and deployment includes:
 
-If you have the Starter plan, you have access to four active environments, including a `master` environment for your Production server. You have the option to use the remaining three active branches any way you want. We recommend creating a Staging branch for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create and use for all development.
+* Push code to the remote Git branch
+* Build and deploy processes run
+* The environments updated with code, services, and configurations
+
+The Starter plan gives you four active environments, including a `master` environment for your Production server. You have the option to use the remaining three active branches any way you want.
+
+We **recommend creating a Staging branch** for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create and use for all development.
 
 Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. Only the Production and Staging environments have full services including Fastly and New Relic.
 
@@ -65,11 +71,11 @@ The format of the Git clone command is:
   git fetch origin
   git pull origin <environment ID>
 
-The first time you start working in branches for your Starter project, you need to create a Staging branch. this sets up a Staging environment with a code branch matching the Production `master` branch.
+The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production `master` branch.
 
-Then you can create a developer branch from `master` or `staging`. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch. You will have two active Git branches available. When you create one, a full environment is available to provide full testing when you push the code.
+Then you can create a developer branch from `master` or `staging`. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch. You will have two active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.
 
-When you set up your local developer environment, we walk-through the software and tools you should install, including Git and the Magento Cloud CLI (a bit more robust than Git).
+When you [set up your local]({{page.baseurl}}cloud/access-acct/first-time-setup.html) developer environment, we walk-through the software and tools you should install, including Git and the Magento Cloud CLI (a bit more robust than Git).
 
 The format of the Git branch command is:
 
@@ -83,7 +89,7 @@ The format of the Magento Cloud CLI branch command is:
 ![Branch from Master]({{ site.baseurl }}common/images/cloud_workflow-branching.png)
 
 ### Develop code {#dev-code}
-It's the time you have been waiting for...write code. Using this base branch of {{site.data.var.<ece>}} code, you can start installing extensions, configuring extension settings and your store options, creating multi-sites and stores, adding themes, and much more.
+It's the time you have been waiting for...writing code. Using this base branch of {{site.data.var.<ece>}} code, you can start installing extensions, configuring extension settings and your store options, creating multi-sites and stores, adding themes, and much more.
 
 We recommend using a branching strategy with your development work. Using one branch to do all of your work all at once might make testing difficult. For example, you could follow continuous integration and sprint methodologies to work:
 

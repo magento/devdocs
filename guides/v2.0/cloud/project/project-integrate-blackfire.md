@@ -18,19 +18,23 @@ For full details on integrations, also review [Blackfire’s complete Magento Co
 
 Blackfire includes the following [environments](https://blackfire.io/docs/reference-guide/environments){:target="_blank"} through their site:
 
-* Magento Cloud (<Project ID>) - Dev: This is your Integration or development environments.
-* Magento Cloud (<Project ID>) - Test: This is your Staging environment.
-* Magento Cloud (<Project ID>) - Prod: This is your Production environment.
+* `Magento Cloud (<Project ID>)` - Dev: This is your Integration or development environments.
+* `Magento Cloud (<Project ID>)` - Test: This is your Staging environment.
+* `Magento Cloud (<Project ID>)` - Prod: This is your Production environment.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For Pro plans, you need to enter a Support ticket with your Blackfire credentials to get Staging and Production configured with Blackfire. We'll help you get Blackfire configured in those environments.
 </div>
 
 ## Get your Blackfire credentials {#cloud-int-black}
-The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.<ece>}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation. For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}.
+The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.<ece>}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation.
+
+For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}.
 
 ## Add collaborator accounts {#collaborators}
-After you have accessed your Blackfire account, you can [add additional collaborator accounts](http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments){:target="_blank"}. We recommend adding at least one account through Blackfire to manage all access, integrations, and usage of the tool. We also recommend promoting one of the added members to Admin, to manage all Blackfire access and integrations.
+After you have accessed your Blackfire account, you can [add additional collaborator accounts](http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments){:target="_blank"}.
+
+We recommend adding at least one account through Blackfire to manage all access, integrations, and usage of the tool. We also recommend promoting one of the added members to Admin, to manage all Blackfire access and integrations.
 
 1. Using the Project Owner Blackfire credentials, log in to [Blackfire](https://blackfire.io/login){:target="_blank"}.
 2. Select an environment.
