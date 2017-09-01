@@ -5,17 +5,17 @@ subgroup: Style Guide
 title: Admin Style Guide
 menu_title: Typography
 menu_order: 2
-menu_node: 
+menu_node:
 version: 2.0
 github_link: design-styleguide/typography/typography.md
 ---
 
 
 <h2 id="typography">Typography</h2>
-Typography is used to develop page hierarchy. 
+Typography is used to develop page hierarchy.
 
 <h3 id="headings">Headings</h3>
-<br> <br> 
+<br> <br>
 <h1>H1-Page title is Open Sans font, regular, 28px, line height 34px</h1>
 
 <br><br>
@@ -38,5 +38,3 @@ Typography is used to develop page hierarchy.
 	<il>Legal text (or small text) is Open Sans, Regular, 12px, line height 15px. Spacing (margin) between paragraphs is 12px.</il>
 	<il>Link text is the same as body text, adding a #0066cc color and an underline hover state.</il>
 </ul>
-
-
