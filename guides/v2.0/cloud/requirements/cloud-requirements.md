@@ -60,7 +60,7 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.<ece>}} project, you need to understand set up the following:
 
-*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter] or [Pro] plan.
+*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}cloud/welcome/discover-workflow.html) plan.
 *	Get [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
 *	Get a [project invite]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-admins) by the Project Owner or a super user to the project
 *	Get [Magento authentication keys]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-keys) from the Project Owner
