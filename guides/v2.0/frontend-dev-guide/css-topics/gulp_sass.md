@@ -13,7 +13,7 @@ github_link: frontend-dev-guide/css-topics/gulp_sass.md
 
 By default, Magento uses [Less](http://lesscss.org/) for themes styling. But you can use other stylesheet languages that can be compiled (processed) to CSS. For example, Sass is a popular alternative.
 
-If you decide not to use Less and default [Magento UI library]({{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html), you need to create your own theme from scratch and use an alternative preprocessor. You can write a custom pre-processor  or used an existing one. This topic describes how to configure and use [Gulp](http://gulpjs.com/) preprocessor for Sass.
+If you decide not to use Less and default [Magento UI library]({{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html), you need to create your own theme from scratch and use an alternative preprocessor. You can write a custom pre-processor or use an existing one. This topic describes how to configure and use [Gulp](http://gulpjs.com/) preprocessor for Sass.
 
 For details about adding a custom preprocessor, see the [Add custom CSS preprocessor]({{page.baseurl}}frontend-dev-guide/css-topics/custom_preprocess.html) topic.
 

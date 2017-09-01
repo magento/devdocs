@@ -47,14 +47,14 @@ The following sections discuss the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0c
 *	[`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig)
 *	[`magento/product-enterprise-edition`](#cloud-composer-prodee)
 
-### `magento/magento-cloud-metapackage` {#cloud-composer-cloudmeta}
+### magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
 `magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"} and does not contain any code.
 
 The metapackage depends on the appropriate versions of [`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig) and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. Therefore, to use Magento EE version 2.1.4, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.1.4.
 
 This package depends on a floating version of `magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified Magento EE version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
-### `magento/magento-cloud-configuration` (MCC) {#cloud-composer-cloudconfig}
+### magento/magento-cloud-configuration (MCC) {#cloud-composer-cloudconfig}
 This package contains the following scripts and `magento` commands that automatically perform building and deployment of the codebase on the cloud environment:
 
  * `pre-deploy.php`
@@ -71,7 +71,7 @@ MCC versions are specified as: `<100 + x>.<y>.*`. For example, Magento EE 2.1.4 
 
 We release updated MCC code to add a new patch or to improve the build and deploy hooks.
 
-### `magento/product-enterprise-edition` {#cloud-composer-prodee}
+### magento/product-enterprise-edition {#cloud-composer-prodee}
 This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on.
 
 ## Base packages and file marshaling
@@ -94,4 +94,4 @@ Therefore, when upgrading to a new Cloud version or adding, removing, or changin
 
 For more information, see [Test a Magento patch]({{ page.baseurl }}cloud/project/project-upgrade.html).
 
-This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after a deploying an updated version of Magento, one of the first things to check should be whether all of the base package files were added to source control.
+This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check should be whether all of the base package files were added to source control.

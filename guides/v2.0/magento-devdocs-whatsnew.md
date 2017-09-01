@@ -18,6 +18,13 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date 
 -------------|--------------|----------------------|--------
+Added backward incompatible changes for 2.2.0 RC2.2 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 28
+Added backward incompatible changes for 2.2.0 RC2.1 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 22
+[Frontend Product Repository](http://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html)<br/>[Render prices on frontend with Ui component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/howto/price_rendering.html)<br/>[Added backward incompatible changes](http://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes.html#recently-viewed-and-recently-compared-widgets)<br/>[Updated the list of REST endpoints](http://devdocs.magento.com/guides/v2.2/rest/list.html#catalog)|2.2.x|New and Updated|Aug 21
+[Rendering prices with UI Components](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/howto/price_rendering.html)<br/>[Frontend Product Repository](http://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html)|2.2.x|New|Aug 21
+[Elasticsearch update](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/es-overview.html)|2.2.x|Updated|Aug 21
+Added backward incompatible changes for 2.2.0 RC2.0 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 18
+Added [Composer-based installation instructions](http://devdocs.magento.com/guides/v2.2/release-notes/release-candidate/install.html) for 2.2.0 RC 2.0.|2.2.x|Updated|Aug 16
 [Updated backward incompatible changes](http://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes.html#advanced-section-in-system-configurations)|2.2.x|Updated|Aug 14
 [Updated docs about config.php being in .gitignore](http://devdocs.magento.com/guides/v2.2/config-guide/config/config-php.html)|2.2.x|Updated|Aug 11
 Major revisions for deployment content|2.0.x, 2.1.x, 2.2.x|Updated|Aug 11

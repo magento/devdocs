@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 100_project
-title: Configure services with services.yaml
+subgroup: 090_configure
+title: services.yaml
 menu_title: services.yaml
-menu_order: 81
+menu_order: 55
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: services

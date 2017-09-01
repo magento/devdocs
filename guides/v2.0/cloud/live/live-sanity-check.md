@@ -24,23 +24,42 @@ For more information on the full five step process, see the [Deployment process]
 We highly recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others.
 </div>
 
-## Push code to Git and Cloud
-Before you continue, make sure you push all current code to the remote Cloud server so that, in {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues, you can recover the state of the Magento application.
+## Update composer if you add extensions {#composer}
+If you modified your [composer.json]({{ page.baseurl }}cloud/cloud-composer.html) to add modules, we recommend running the `composer update` command in a terminal. This command updates any dependencies in the `composer.lock`. During the build phase, we run `composer install` on a fresh clone of your Git branch of code to retrieve the latest dependencies.
+
+## Test build your code locally before pushing {#test-build}
+Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. The generated build files from this test build **should not be pushed** into Git. This is just a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins.
+
+1. SSH into your local Magento workspace.
+2. Move to another location to run your build. You should keep this build separate from your usual Git branch.
+3. Run the following command to build locally. The command builds the current project locally strictly to test the build without the full patching and commit process.
+
+		magento-cloud local:build
+
+	For details, enter `magento-cloud local:build --help`.
+4. Watch for the results. A series of files will generate for the build. If you do not encounter errors, you can [push code to the remote Git branch](#push) and continue.
+
+If errors occur during the build, you can investigate and resolve the code issues. You should not commit the files from this build to Git.
+
+To remove these test builds, you can use the `magento-cloud local:clean` command. For details, enter `magento-cloud local:clean --help`.
+
+## Push code to Git and Integration {#push}
+Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
 
 To prepare your code and branch:
 
 {% include cloud/cli-get-started.md %}
 
-To push code to your remote server:
+To push code to your remote environment:
 
 1.	If you haven't already, change to your project root directory.
-2.	Enter the following commands to complete code commits:
+2.	Enter the following commands to complete code commits in a terminal:
 
 		git add -A && git commit -m "<comment>"
 		git push origin <branch name>
-3.	Wait for deployment to complete.
+3.	The build and deploy phases begin. Wait for the deployment to complete.
 
-## Build phase
+## Build phase {#build}
 During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
 *	Apply patches distributed to all Magento Commerce (Cloud) accounts
@@ -137,7 +156,7 @@ To deploy your site:
 
 		php bin/magento deploy:mode:set production
 
-If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to get additional assistance.
+If errors display, debug them if possible, [review logs]({{ page.baseurl }}cloud/trouble/environments-logs.html), or open a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to get additional assistance.
 
 #### Next step
 [Prepare to deploy to Staging and Production]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)

@@ -1,6 +1,6 @@
 <div markdown="1">
 
-You must create an SSH keypair on every machine and workspace you and your team expect to work with and access Magento Enterprise Cloud Edition and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.
+You must create an SSH key pair on every machine and workspace you and your team expect to work with and access Magento Enterprise Cloud Edition and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.
 
 The SSH keys require the following:
 
@@ -13,8 +13,8 @@ For more information on SSH keys, see the following:
 *	[Manually generating your SSH key in Windows](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows){:target="_blank"}
 *	[ssh-keygen man page](http://linux.die.net/man/1/ssh-keygen){:target="_blank"}
 
-### Locate an existing SSH keypair
-An existing SSH keypair is typically located in the `.ssh` subdirectory of the user's home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.
+### Locate an existing SSH key pair
+An existing SSH key pair is typically located in the `.ssh` subdirectory of the user's home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.
 
 You can quickly verify if you have SSH keys by entering commands using terminal access.
 
@@ -26,14 +26,14 @@ If you have SSH keys, a directory listing is displayed similar to the following:
 
 	id_rsa  id_rsa.pub  known_hosts
 
-If you don't have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See [Create a new SSH keypair](#ssh-create-new-keypair).
+If you don't have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See [Create a new SSH key pair](#ssh-create-new-key-pair).
 
 If you already have SSH keys, continue to:
 * [Add a public SSH key to your Magento account](#ssh-add-to-account) section
 * [Add your SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
-### Create a new SSH keypair {#ssh-create-new-keypair}
-Use the `ssh-keygen` command to create an SSH keypair. `ssh-keygen` is typically installed on Linux systems.
+### Create a new SSH key pair {#ssh-create-new-key-pair}
+Use the `ssh-keygen` command to create an SSH key pair. `ssh-keygen` is typically installed on Linux systems.
 
 To create an SSH key pair:
 
@@ -48,7 +48,7 @@ To create an SSH key pair:
 
 3. When prompted to enter a secure passphrase, enter a phrase to use like a password. Make note of this passphrase. You may be requested to enter it depending on tasks you complete using a terminal during development.
 
-4. After creating the SSH, start the ssh-agent:
+4. After creating the SSH key pair, start the ssh-agent:
 
 	For Mac or Linux:
 
@@ -66,11 +66,11 @@ To create an SSH key pair:
 
 5. Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace `id_rsa` with that file name.
 
-	For Mac or Linux:
+	For Mac:
 
 		ssh-add -K ~/.ssh/id_rsa
 
-	For Windows:
+	For Windows or Linux:
 
 		ssh-add ~/.ssh/id_rsa
 
@@ -84,7 +84,7 @@ After adding the SSH keys, test the SSH connection to GitHub:
 
 		ssh -T git@github.com
 
-2. You may see a warning that the authenticity of the host can't be established followed by an RSA fingerprint. Enter `yes` to conitnue.
+2. You may see a warning that the authenticity of the host can't be established followed by an RSA fingerprint. Enter `yes` to continue.
 
 3. If successful, you should receive a success message. If you receive a permission denied error, see [Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey) troubleshooting on GitHub.
 

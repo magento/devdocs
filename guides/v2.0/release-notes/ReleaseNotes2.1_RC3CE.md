@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.1 Release Candidate 3 (RC3) Release Notes 
-menu_title: Magento CE 2.1 Release Candidate 3 (RC3) Release Notes 
+title: Magento Open Source 2.1 Release Candidate 3 (RC3) Release Notes 
+menu_title: Magento Open Source 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_order: 405
 version: 2.0
 level3_menu_node: level3child
@@ -19,14 +19,14 @@ We are pleased to present Magento 2.1 Release Candidate 3 (RC3). This release ca
 
 * test your 2.0 extensions against 2.1 
 
-We welcome your participation in this process!  Please open any Community Edition issues or Pull Requests on the Community Edition GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>.
+We welcome your participation in this process!  Please open any Magento Open Source  issues or Pull Requests on the Open Source GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>.
 
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
  
 
 <h3>Highlights</h3>
 
-Magento Community Edition 2.1 includes several new and exciting features:
+Magento Open Source 2.1 includes several new and exciting features:
 
 * **PayPal enhancements** include PayPal in-context {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and saved credit cards. In-context checkout helps to increase {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface.
  

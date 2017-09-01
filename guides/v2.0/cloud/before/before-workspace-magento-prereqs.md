@@ -73,7 +73,7 @@ Before working with your {{site.data.var.<ece>}} project, make sure you set the 
 
 1.	Find your `php.ini` file using the following command:
 
-			php --ini
+		php --ini
 
 	Use the value of `Loaded Configuration File`.
 2.	As a user with `root` privileges, open `php.ini` in a text editor.
@@ -90,6 +90,7 @@ Before working with your {{site.data.var.<ece>}} project, make sure you set the 
 We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server.
 
 ## Database (local) {#database}
+
 You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.<ee>}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment.
 
 Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
@@ -102,18 +103,18 @@ These example instructions detail how to install and create a MariaDB database f
 
 1. Use this command to create the database:
 
-        apt-get install mariadb-server
+		apt-get install mariadb-server
 2. Secure the database with the following command and completing all prompts:
 
-        mysql_secure_installation
+		mysql_secure_installation
 3. Access the MariaDB database.
-4. Grant all priviledges to the Magento account you created for the local:
+4. Grant all privileges to the Magento account you created for the local:
 
-        grant all priviledges on <database> to '<account>'@'localhost' identified by '<password>';
+		grant all privileges on <database> to '<account>'@'localhost' identified by '<password>';
 5. Finally create the database:
 
-        create database magento;
-        use magento;
+		create database magento;
+		use magento;
 6. Exit when done.
 
 ### Pro: Set up the auto-increment for MariaDB {#cloud-mysql}
@@ -142,13 +143,13 @@ If necessary, set `auto_increment_increment` to 3:
 
 2.	Add or edit the following line in the `[mysqld]` section:
 
-			auto_increment_increment=3
+		auto_increment_increment=3
 
 	{{site.data.var.<ece>}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.
 
 3.	Restart MySQL:
 
-			service mysqld restart
+		service mysqld restart
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
 The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.<ece>}}. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
@@ -163,7 +164,7 @@ To install the Magento Cloud CLI:
 
 3.	Enter the following command:
 
-			curl -sS https://accounts.magento.cloud/cli/installer | php
+		curl -sS https://accounts.magento.cloud/cli/installer | php
 
 4.	After the CLI downloads, an operating system-specific command displays.
 
@@ -175,13 +176,13 @@ To install the Magento Cloud CLI:
 
 	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the user name is `magento_user`, the command is similar to the following:
 
-			export PATH=$PATH:/home/magento_user/.magento-cloud/bin
+		export PATH=$PATH:/home/magento_user/.magento-cloud/bin
 
 	Consult operating system documentation for details.
 
 5.	Verify the `magento-cloud` command is in your path by entering the following command:
 
-			magento-cloud list
+		magento-cloud list
 
 ## Additional options
 You can also install additional [optional software]({{ page.baseurl }}install-gde/prereq/optional.html). These packages should be installed on the local VM.

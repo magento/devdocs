@@ -24,7 +24,7 @@ has additional method to get card details.
 
 The simple card renderer implementation might be like following:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class CardRenderer extends AbstractCardRenderer
 {
     /**
@@ -78,7 +78,7 @@ class CardRenderer extends AbstractCardRenderer
         return $this->getIconForType($this->getTokenDetails()['type'])['width'];
     }
 }
-{% endhighlight %}
+```
 
 ## Layout and template
 

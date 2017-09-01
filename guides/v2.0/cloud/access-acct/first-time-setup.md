@@ -31,7 +31,7 @@ We highly recommend having experience with the following technologies and method
 * [Git](https://git-scm.com/){:target="_blank"} for repository and code management, [branching methodologies](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows){:target="_blank"}, and working with Magento Git code
 * [GitHub](https://github.com/){:target="_blank"} for managing your code and accessing Magento repos
 * [Fastly](https://www.fastly.com/){:target="_blank"} for CDN and caching, used in Staging and Production
-* [Galara Cluster](http://galeracluster.com/){:target="_blank"} for databases, used in Staging and Production (with triple reduncy failover in Production)
+* [Galera Cluster](http://galeracluster.com/){:target="_blank"} for databases, used in Staging and Production (with triple reduncy failover in Production)
 
 ## Gather credentials
 Prior to setting up your workspace, you may want to gather the following credentials and accounts:
@@ -48,10 +48,11 @@ For complete steps, see [Set up a project and dev workspace]({{ page.baseurl }}c
 #### Related topics
 *	[Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
 * [Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
-* [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-php.html)
-* [Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
-* [Clone the project]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
-* [Clone or branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
+* [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+* [Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)
+* [Clone the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)
+* [Set up Magento authentication keys]({{ page.baseurl }}cloud/before/before-setup-env-keys.html)
+* [Branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
 * [Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
 * [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html)
 * [First steps for importing Magento EE]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)

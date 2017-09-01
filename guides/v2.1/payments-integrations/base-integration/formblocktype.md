@@ -19,7 +19,8 @@ most cases it is enough to use the `\Magento\Payment\Block\Form\Cc`. All payment
 ## Example of custom formBlockType: Braintree payment method implementation
 
 In the integration with the Braintree payment provider, we use the `\Magento\Braintree\Block\Form` class as `formBlockType`. It allows displaying only card types available for configured countries:
-{% highlight php startinline=1 %}
+
+``` php?start_inline=1
 class Form extends Cc
 {
     /**
@@ -61,7 +62,7 @@ class Form extends Cc
         return $filtered;
     }
 }
-{% endhighlight %}
+```
 
 
 ## Template

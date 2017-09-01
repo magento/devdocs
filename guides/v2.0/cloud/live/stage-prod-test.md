@@ -45,10 +45,20 @@ Verify Fastly is caching properly on Staging and Production. [Configuring Fastly
 
 First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
 
-Use a curl command to verify X-Magento-Tags exist. The command format differs for Staging and Production:
+For example:
+
+* Staging: `dig http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud`
+* Production: `dig http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+
+Next, use a curl command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production:
 
 * Staging: `curl http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
-* Production: ` curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+* Production:
+
+	* The load balancer: `curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+	* A direct Origin node: `curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+
+After you are live, you can also check your live site: `curl https://<your domain> -k -vo /dev/null -HFastly-Debug:1`  You can also add `--resolve` if your live URL isn't set up with DNS.
 
 Check the returned response headers and values:
 
@@ -56,15 +66,20 @@ Check the returned response headers and values:
 *	`X-Magento-Tags` should be returned
 *	`Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
 *	`X-Cache` should be either `HIT` or `HIT, HIT`
+*	`x-cache-hits` should be 1,1
 *	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
 *	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
 
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
 
 1. Log into the Admin console for Staging and Production using the URL with /admin (or the changed Admin URL).
-2. CLick to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
+2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
 3. Ensure Fastly CDN is selected.
-4. Click on Fastly configuration and ensure the Fastly Service ID and Fastly API key are entered.
+4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching won't work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.
+</div>
 
 The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) and [Fastly troubleshooting]({{ page.baseurl }}cloud/trouble/trouble_fastly.html).
 
