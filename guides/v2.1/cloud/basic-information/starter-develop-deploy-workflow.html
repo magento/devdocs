@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Starter Develop and Deploy Workflow | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Magento Enterprise Cloud Guide</h4>
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/bk-cloud.html">Welcome to Magento Commerce (Cloud)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/basic-information/starter-architecture.html">Starter architecture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html">Starter Develop and Deploy Workflow</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/reference/discover-arch.html">Pro architecture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/welcome/discover-workflow.html">Pro Develop and Deploy Workflow</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-project-owner.html">Prepare project environments</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/requirements/cloud-requirements.html">Technologies and requirements</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/reference/cloud-composer.html">Composer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-integrate-github.html">GitHub</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/basic-information/cloud-fastly.html">Fastly in Cloud</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/fastly.html">Set up Fastly</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/new-relic.html">New Relic APM</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html">Magento Enterprise Cloud Edition Release Notes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.html">magento-cloud-configuration release 101.8.x Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.html">magento-cloud-configuration release 101.7.x Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.6.html">magento-cloud-configuration release 101.6.x Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.5.html">magento-cloud-configuration release 101.5.x Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.4.html">magento-cloud-configuration release 101.4.x Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.html">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html">Magento Enterprise Cloud Edition 2.1.3 and 2.0.11 Release Notes</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/access-acct/first-time-setup.html">First-time development setup</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-workspace.html">Set up a project and dev workspace</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Enable SSH keys</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-setup-env-2_clone.html">Clone the project</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-setup-env-keys.html">Set up Magento authentication keys</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-setup-env-env.html">Branch an environment</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/before/before-setup-env-install.html">Install Magento</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/first-time-deploy.html">First time deployment</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="import"><a href="#">Import an existing Magento project</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento EE</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prereq.html">Find the information you need for your import</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento EE system</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/configure/configuration-overview.html">Configure Magento Commerce</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/paypal-onboarding.html">Set up PayPal</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple websites or stores</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="routes"><a href="#">Configure routes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html">routes.yaml</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.1/cloud/project/project-routes-more-cache.html">Caching</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.1/cloud/project/project-routes-more-redir.html">Redirects</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.1/cloud/project/project-routes-more-ssi.html">Server side includes</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="services"><a href="#">Configure services</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services.html">services.yaml</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/project/projects.html">Manage your project</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Manage users</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage branches</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/env/environments.html">Manage your environments</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/env/environments-start.html">Get started with an environment</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/env/environments-ssh.html">SSH into your environment</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_over.html">Overview of environment variables</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="manageconfig"><a href="#">Manage the configuration</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="configreference"><a href="#">Configuration reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child configreference " data-menunode="configreference"><a href="/guides/v2.1/cloud/live/config-reference-most.html">All configuration paths except payments reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child configreference " data-menunode="configreference"><a href="/guides/v2.1/cloud/live/config-reference-payment.html">Payment configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child configreference " data-menunode="configreference"><a href="/guides/v2.1/cloud/live/config-reference-sens.html">Sensitive configuration paths reference</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment process</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/deploy/continuous-deployment.html">Continuous integration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/live-prot.html">Protective block</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/live-sanity-check.html">Build and deploy on local</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/stage-prod-test.html">Test deployment</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/live/live.html">Go live and launch</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/go-live-checklist.html">Go live checklist</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/launch-steps.html">Launch steps</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/trouble/trouble.html">Troubleshooting</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/trouble.html">Troubleshoot deployment</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/environments-logs.html">View logs for troubleshooting</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble_ce-creds.html">Incorrect credentials</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble_fastly.html">Troubleshoot Fastly</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">How To</span></li>
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.1/cloud/howtos/upgrade-magento.html">Upgrade and test Magento Commerce</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.1/cloud/howtos/patch-magento.html">Patch and test Magento Commerce</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="update-extensions"><a href="#">Install and update extensions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child update-extensions " data-menunode="update-extensions"><a href="/guides/v2.1/cloud/howtos/install-components.html">Install extensions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child update-extensions " data-menunode="update-extensions"><a href="/guides/v2.1/cloud/howtos/update-components.html">Update extensions</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment (tutorial)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/howtos/custom-theme.html">Install a theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/howtos/sample-data.html">Install optional sample data</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/howtos/debug.html">Run a PHP debugger</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.1/cloud/bk-cloud.html">
+            <span property="name">Welcome to Magento Commerce (Cloud)</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Starter Develop and Deploy Workflow</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Starter Develop and Deploy Workflow</h1>
+
+  
+
+
+</section>
+
+
+			<p>Everything in Magento Commerce (Cloud) is Git-driven. Your <a href="/guides/v2.1/cloud/project/projects.html">project</a> is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your Magento Commerce (Cloud) plan subscription, your deployment workflow may differ.</p>
+
+<p>The general workflow for all development and deployment includes:</p>
+
+<ul>
+  <li>Push code to the remote Git branch</li>
+  <li>Build and deploy processes run</li>
+  <li>The environments updated with code, services, and configurations</li>
+</ul>
+
+<p>The Starter plan gives you four active environments, including a <code class="highlighter-rouge">master</code> environment for your Production server. You have the option to use the remaining three active branches any way you want.</p>
+
+<p>We <strong>recommend creating a Staging branch</strong> for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create and use for all development.</p>
+
+<p>Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. Only the Production and Staging environments have full services including Fastly and New Relic.</p>
+
+<p>The following diagram details the branch and environment relationships:</p>
+
+<p><img src="/common/images/cloud_arch-starter.png" alt="High-level view of Starter project" /></p>
+
+<p>You can manage all of your environments including Production and Staging directly through the <a href="/guides/v2.1/cloud/project/project-webint-basic.html">Project Web Interface</a>, through the store and Admin panel using provided URLs, and using SSH and the <a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento Cloud command-line</a>.</p>
+
+<h2 id="env-branches">Starter environments and branches</h2>
+<p>For your environments, we recommend deploying and testing following a Development &gt; Staging &gt; Production workflow.</p>
+
+<ul>
+  <li>Production environment is your <code class="highlighter-rouge">master</code> Git branch with an associated full environment with all services</li>
+  <li>Staging environment is a Git branch you create called <code class="highlighter-rouge">staging</code></li>
+  <li>Develop environments include two active branches</li>
+</ul>
+
+<p>For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create <a href="/guides/v2.1/cloud/env/environments.html#cloud-env-work">branches for every sprint</a>.</p>
+
+<p>From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.</p>
+
+<p>For detailed information, see <a href="/guides/v2.1/cloud/basic-information/starter-architecture.html">Starter architecture</a>.</p>
+
+<h2 id="development">Development workflow</h2>
+<p>Development and deployment on Starter plans begins with your initial project. You create your project with the “blank site”, which is a Magento Commerce (Cloud) template code repo with a fully prepared store. This creates a <code class="highlighter-rouge">master</code> branch of Git code in your Production environment.</p>
+
+<p>The full process involves:</p>
+
+<ul>
+  <li><a href="#clone-branch">Clone and branch</a> from Master for Staging and development branches</li>
+  <li><a href="#dev-code">Develop code</a> and install extensions locally in a branch</li>
+  <li><a href="#configure-store">Configure</a> your store settings</li>
+  <li><a href="#config-management">Generate configuration</a> management files</li>
+  <li><a href="#push-code">Push code</a> and configuration to build and deploy to an environment</li>
+</ul>
+
+<p><img src="/common/images/cloud_workflow-starter.png" alt="Develop and deploy workflow" /></p>
+
+<p>You also have a few optional steps to help develop and test your code and store data:</p>
+
+<ul>
+  <li><a href="#sample-data">Install sample data</a> to your store</li>
+  <li><a href="#prod-data">Pull production store data</a> down to environments</li>
+</ul>
+
+<p>This process assumes you would have your <a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">local developer workspace</a> set up. Feel free to read over this process even if your local isn’t ready.</p>
+
+<h3 id="clone-branch">Clone and branch</h3>
+<p>When you created your project, a <code class="highlighter-rouge">master</code> branch was cloned using the Magento Commerce (Cloud) Git repository. To start branching and working with code, you will need to clone the <code class="highlighter-rouge">master</code> to your local.</p>
+
+<p>The format of the Git clone command is:</p>
+
+<p>git fetch origin
+  git pull origin <environment ID=""></environment></p>
+
+<p>The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production <code class="highlighter-rouge">master</code> branch.</p>
+
+<p>Then you can create a developer branch from <code class="highlighter-rouge">master</code> or <code class="highlighter-rouge">staging</code>. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch. You will have two active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.</p>
+
+<p>When you <a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">set up your local</a> developer environment, we walk-through the software and tools you should install, including Git and the Magento Cloud CLI (a bit more robust than Git).</p>
+
+<p>The format of the Git branch command is:</p>
+
+<p>git checkout <branch name=""></branch></p>
+
+<p>The format of the Magento Cloud CLI branch command is:</p>
+
+<p>magento-cloud environment:branch <environment name=""> <parent environment="" ID=""></parent></environment></p>
+
+<p><img src="/common/images/cloud_workflow-branching.png" alt="Branch from Master" /></p>
+
+<h3 id="dev-code">Develop code</h3>
+<p>It’s the time you have been waiting for…writing code. Using this base branch of Magento Commerce (Cloud) code, you can start installing extensions, configuring extension settings and your store options, creating multi-sites and stores, adding themes, and much more.</p>
+
+<p>We recommend using a branching strategy with your development work. Using one branch to do all of your work all at once might make testing difficult. For example, you could follow continuous integration and sprint methodologies to work:</p>
+
+<ul>
+  <li>Add a few extensions and configure them with your first branch</li>
+  <li>Push this code, test, and merge to Staging then Production</li>
+  <li>Fully configure your store, services in <code class="highlighter-rouge">services.yaml</code>, and add a theme</li>
+  <li>Push this code, test, and merge to Staging then Production</li>
+  <li>Integrate with a 3rd party service</li>
+  <li>Push this code, test, and merge to Staging then Production</li>
+</ul>
+
+<p>And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!</p>
+
+<p><img src="/common/images/cloud_workflow-push-code.png" alt="Develop code and push to deploy" /></p>
+
+<h3 id="configure-store">Configure store</h3>
+<p>At any time, you should start configuring your store. For the best information on configurations, we recommend reviewing Magento Commerce and your extension documentation. Here are some links and ideas to help you get kickstarted:</p>
+
+<ul>
+  <li><a href="http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html" target="_blank">Basic configuration</a> for store admin access, name, languages, currencies, branding, sites, store views and more</li>
+  <li><a href="http://docs.magento.com/m2/ee/user_guide/design/design-theme.html" target="_blank">Theme</a> for your look and feel of the site and stores including CSS and layouts</li>
+  <li><a href="http://docs.magento.com/m2/ee/user_guide/system/system.html" target="_blank">System configuration</a> for roles, tools, notifications, and your encryption key for your database</li>
+  <li>Extension settings using their documentation</li>
+</ul>
+
+<p>Beyond just store settings, you can further configure multiple sites and stores, configured services, and more. For details, see <a href="/guides/v2.1/cloud/configure/configuration-overview.html">Configure Magento Commerce</a>.</p>
+
+<p>Now you need to get these settings into your code. We have a helpful command to do this, keep reading.</p>
+
+<h3 id="config-management">Generate configuration management files</h3>
+<p>If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or Excel all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.</p>
+
+<p>Magento Commerce (Cloud) provides a set of two <a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> commands that export configuration settings from your environment into a file. These commands are only available for Magento Commerce (Cloud) 2.1.4 and later.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code>: Recommended. Exports only the configuration settings you have entered or modified from defaults into a configuration file.</li>
+  <li><code class="highlighter-rouge">php bin/magento app:config:dump</code>: Exports every configuration setting, including modified and default, into a configuration file.</li>
+</ul>
+
+<p>The generated file is located in <code class="highlighter-rouge">app/etc/</code>:</p>
+
+<ul>
+  <li>For 2.1.4 and later: <code class="highlighter-rouge">config.app.php</code></li>
+  <li>For 2.2 and later: <code class="highlighter-rouge">config.php</code></li>
+</ul>
+
+<p>You will add this file to your branch repository and include it with every push. We provide details on how to manage this file and setting.</p>
+
+<p><strong>Important notes</strong> on Configuration Management:</p>
+
+<ul>
+  <li>
+    <p>Any configuration setting included in the file is locked from editing, or read-only, in the deployed environment. This is one reason we recommend using scd-dump.</p>
+
+    <p>For example, we will have you install a module for Fastly in your development environment. You will only configure this module in Staging and Production. Using <code class="highlighter-rouge">scd-dump</code> keeps those default fields editable.</p>
+  </li>
+  <li>
+    <p>This file can be long depending on the size of your deployment. The <code class="highlighter-rouge">scd-dump</code> command generates a far small file than <code class="highlighter-rouge">app:config:dump</code>.</p>
+  </li>
+</ul>
+
+<p><img src="/common/images/cloud_workflow-config-mgmt.png" alt="Generate configuration management file" /></p>
+
+<p>An additional feature of this command is part of Magento Commerce (Cloud) 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called <code class="highlighter-rouge">env.php</code> in <code class="highlighter-rouge">app/etc/</code>. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository.</p>
+
+<p><img src="/common/images/cloud_workflow-env-variables.png" alt="Environment variables generate" /></p>
+
+<h3 id="push-code">Push code and test</h3>
+<p>At this point, you should have a developed code branch with a configuration file (<code class="highlighter-rouge">config.app.php</code> or <code class="highlighter-rouge">config.php</code>) ready to push and test.</p>
+
+<p>Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploys it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.</p>
+
+<p>You can directly access this environment with a store URL, Magento Admin URL, and SSH to enter any needed CLI commands. These environments include a web server, database, and configured services.</p>
+
+<p>For more information, see <a href="#deploy">Deployment workflow</a>.</p>
+
+<h3 id="sample-data">Optional: Install sample data</h3>
+<p>If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a “blank site” Magento Commerce (Cloud) template installation when creating your project.</p>
+
+<p>We recommend installing sample data in your local Integration and development branches and environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.</p>
+
+<p>For instructions, see <a href="/guides/v2.1/cloud/howtos/sample-data.html">Install optional sample data</a>.</p>
+
+<p><img src="/common/images/cloud_workflow-sample-data.png" alt="Install optional sample data" /></p>
+
+<h3 id="prod-data">Optional: Pull production data</h3>
+<p>We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. Why in Production? By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.</p>
+
+<p>As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and other development environments as you like.</p>
+
+<p>To learn more about database dumps, see <a href="/guides/v2.1/cloud/project/project-webint-snap.html#db-dump">Snapshots and Backup management</a>.</p>
+
+<p><img src="/common/images/cloud_workflow-data-code-process.png" alt="Pull and sanitize production data" /></p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including how you dump your database or developing a script to scrub out customer data.</p>
+</div>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Important: We don’t recommend pushing a database from a development or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.</p>
+</div>
+
+<h2 id="deploy">Deployment workflow</h2>
+<p>As we detailed in the architecture information, Magento Commerce (Cloud) is Git driven. Deploying Magento Commerce (Cloud) is part of your Git push processes for branches.</p>
+
+<p>When you push branched code from your local to the remote Git branch, a series of build and deploy scripts begin.</p>
+
+<p>Build scripts:</p>
+
+<ul>
+  <li>Your site on the target environment continue running during a build</li>
+  <li>Check and run Magento Commerce (Cloud) patches and hotfixes</li>
+  <li>Compile your code with a build and deploy log</li>
+  <li>Check for Configuration Management, if there static content deploy occurs during this phase</li>
+  <li>Create or use a slug of unchanged code to speed up the process</li>
+  <li>Provision all backend services and applications</li>
+</ul>
+
+<p>Deploy scripts:</p>
+
+<ul>
+  <li>Puts your site on the target environment in Maintenance mode</li>
+  <li>Deploys static content if not completed during Build</li>
+  <li>Installs or updates Magento Commerce (Cloud)</li>
+  <li>Configure routing for traffic</li>
+</ul>
+
+<p>When fully completed, your store comes back online, live, with all of your updated code and configurations.</p>
+
+<p>To learn more, see <a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment process</a>.</p>
+
+<h3 id="staging">Push to Staging and test</h3>
+<p>You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including <a href="/guides/v2.1/cloud/basic-information/cloud-fastly.html">Fastly</a>, <a href="/guides/v2.1/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a>, and <a href="/guides/v2.1/cloud/project/new-relic.html">New Relic APM</a>. We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.</p>
+
+<p>Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.</p>
+
+<p>To learn more, see <a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
+
+<h3 id="pro">Push to Master / Production</h3>
+<p>When you push to the <code class="highlighter-rouge">master</code> branch, you are pushing to Production. Treat configuration and testing of Production much as your Staging environment. The important difference in this environment is using live credentials. The moment you go live and launch, customers must be able to complete purchases and administrators should be able to manage your live store.</p>
+
+<p>To learn more, see <a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
+
+<h3 id="go-live">Go live</h3>
+<p>We provide a clear walk-through for going live and launching. It requires more steps than pressing a button. But when complete, your store can serve up products in your customized theme for sale immediately.</p>
+
+<p>To learn more, check out <a href="/guides/v2.1/cloud/live/live.html">Go live and launch</a>.</p>
+
+<h2 id="continuous-integration">Continuous integration</h2>
+<p>Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.</p>
+
+<p>Magento Commerce (Cloud) environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.</p>
+
+<ul>
+  <li>Create development branches with future features and changes</li>
+  <li>Test the code in your development environments</li>
+  <li>Deploy and test in Staging</li>
+  <li>Deploy to Production</li>
+</ul>
+
+<p>For more information, see <a href="/guides/v2.1/cloud/deploy/continuous-deployment.html">Continuous integration</a>.</p>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">First-time development setup</a></li>
+  <li><a href="/guides/v2.1/cloud/basic-information/starter-architecture.html">Starter architecture</a></li>
+  <li><a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment process</a></li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
