@@ -9,15 +9,9 @@ version: 2.2
 github_link: extension-dev-guide/framework/serializer.md
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
-This library provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.
+This {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.
 
 Magento's Serialize library provides the `Magento\Framework\Serialize\SerializerInterface` and the Json and Serialize implementations for serializing data.
 
@@ -44,7 +38,7 @@ This class does not unserialize objects.
 ### Serialize
 
 The [`Magento\Framework\Serialize\Serializer\Serialize`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php){:target="_blank"} class is less secure than the Json implementation but provides better performance on large arrays.
-This class does not unserialize objects in PHP 7.
+This class does not unserialize objects in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 
@@ -65,7 +59,7 @@ use Magento\Framework\Serialize\SerializerInterface;
 
 /**
  * @var SerializerInterface
- */ 
+ */
 private $serializer;
 
 ...
@@ -84,14 +78,14 @@ The following example shows how to use a serializer's `serialize()` and `unseria
 
 /**
  * @var string
- */ 
+ */
 private $cacheId = 'mySerializedData';
 
 ...
 
 /**
  * Save data to cache
- * @param array $data  
+ * @param array $data
  *
  * @return bool
  */

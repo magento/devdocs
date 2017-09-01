@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 15_howto
+subgroup: How To
 title: Install and update extensions
 menu_title: Install and update extensions
 menu_order: 40

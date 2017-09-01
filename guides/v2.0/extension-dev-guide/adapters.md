@@ -9,12 +9,6 @@ version: 2.0
 github_link: extension-dev-guide/adapters.md
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Adapter classes follow the [adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern){:target="_blank"} and wrap around classes from third-party libraries.
@@ -22,8 +16,8 @@ These classes allow you to use functionality from third-party libraries in your 
 
 ## When to use
 
-You should always use adapter classes instead of directly using classes from third-party libraries.
-This reduces the change impact on your code when the API changes in a third-party library.
+You should always use {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} classes instead of directly using classes from third-party libraries.
+This reduces the change impact on your code when the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} changes in a third-party {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
 
 We recommend using adapter classes for [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) to get access to the functionality provided by third-party classes.
 
@@ -53,7 +47,7 @@ The [`AdapterInterface`](https://github.com/magento/magento2/blob/2.0/lib/intern
 
 ## Example Code
 
-The code below describes an interface for an adapter that parses markdown.
+The code below describes an interface for an adapter that parses {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %}.
 
 {% highlight php startinline %}
 /**
@@ -65,7 +59,7 @@ interface AdapterInterface
 {
     /**
      * Converts markdown text into another format
-     * 
+     *
      * @param string $text
      * @return string
      */
@@ -75,7 +69,7 @@ interface AdapterInterface
 
 <br/>
 
-The code below is an implementation class of the `AdapterInterface` that uses the [php-markdown](https://github.com/michelf/php-markdown){:target="_blank"} library to convert markdown into HTML.
+The code below is an implementation class of the `AdapterInterface` that uses the [php-markdown](https://github.com/michelf/php-markdown){:target="_blank"} library to convert markdown into {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %}.
 
 {% highlight php startinline %}
 namespace MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown;
@@ -152,7 +146,7 @@ class CiconiaParser implements AdapterInterface
 
 <br/>
 
-The following dependency injection entries belong in the `di.xml` file.
+The following {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} entries belong in the `di.xml` file.
 They describe to the ObjectManager how to create the third-party and adapter classes.
 
 {% highlight xml %}

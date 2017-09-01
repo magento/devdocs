@@ -13,12 +13,8 @@ github_link: howdoi/design_config.md
 
 <h2>What's in this topic</h2>
 
-This topic describes how to customize (add, delete, change) the configuration options available in Magento Admin under **CONTENT** > **Design** > **Configuration**. These options define the various aspects of storefront design. In Magento 2.0.x and earlier these options were set under **STORES** > **Configuration** > **Design**. But starting from Magento 2.1.0 they were moved to the new location, and the configuration form was refactored.
+This topic describes how to customize (add, delete, change) the configuration options available in {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} under **CONTENT** > **Design** > **Configuration**. These options define the various aspects of {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} design. In Magento 2.0.x and earlier these options were set under **STORES** > **Configuration** > **Design**. But starting from Magento 2.1.0 they were moved to the new location, and the configuration form was refactored.
 
-**Contents:**
-
-* TOC
-{:toc}
 
 ## Overview
 
@@ -27,13 +23,13 @@ In Magento out of the box, when you navigate to **CONTENT** > **Design** > **Con
 <img src="{{site.baseurl}}common/images/design_conf1.png">
 
 When you click **Edit** in any of the scope records, the page with available design options is displayed. 
-For example, the default set of design options for the store view level is the following:
+For example, the default set of design options for the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} level is the following:
 
 <img src="{{site.baseurl}}common/images/design_conf2.png" alt="Design Configuration page">
 
 Both the grid and the configuration form are implemented using UI components.
 
-To change the grid view, you need to customize the grid configuration by adding your custom `design_config_listing.xml` in your module.
+To change the grid view, you need to customize the grid configuration by adding your custom `design_config_listing.xml` in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 To change the available design settings you need to customize the grid configuration by adding your custom `design_config_form.xml` in your module. If you add a new field, you must also declare it in `di.xml` how it is processed and saved.
 

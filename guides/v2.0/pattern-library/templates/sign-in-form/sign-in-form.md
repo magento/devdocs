@@ -11,19 +11,8 @@ github_link: pattern-library/templates/sign-in-form/sign-in-form.md
 redirect_from: /guides/v1.0/pattern-library/templates/sign-in-form/sign-in-form.html
 ---
 
-<h2> Sign In Form </h2>
-
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use</a>
-* <a href="#interaction">Interaction and Behavior</a>
-* <a href="#style">Style</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-“Sign in” is used to log into the system, or to recover lost password.
+## Sign-in form
+"Sign in" is used to log into the system, or to recover a lost password.
 
 <h3 id="when-to-use">When to Use</h3>
 Use this pattern when user needs to sign into the system.
@@ -32,17 +21,17 @@ Use this pattern when user needs to sign into the system.
 
 #### General:
 
-The user may “tab” to navigate the form in the following order:
+The user may "tab" to navigate the form in the following order:
 
-First tab = active “Username” field.
-Second tab = active “Password” field.
-Third tab = focus on “Sign in” button.
-Fourth tab = focus on hyperlink (“Forgot your password?”)
+First tab = active "Username" field.
+Second tab = active "Password" field.
+Third tab = focus on "Sign in" button.
+Fourth tab = focus on hyperlink ("Forgot your password?")
 Fifth tab = return to top of the order.
 
 #### Initial state:
 
-In its initial state the sign-in module consists of 
+In its initial state the sign-in {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} consists of 
 
 * a Welcome message 
 * two text fields – **Username** and **Password**
@@ -53,7 +42,7 @@ In its initial state the sign-in module consists of
 
 #### Error state:
 
-In the event that invalid credentials are submitted the sign-in module consists of 
+In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that invalid credentials are submitted the sign-in module consists of 
 
 * an alert message informing the user that either the Username or Password is invalid 
 * two text fields – **Username** and **Password**, where the Username field will retain the initial entry as 
@@ -66,12 +55,12 @@ typed by the user and be the active field and the password field will be blank
 
 #### Password retrieval:
 
-If the user opts to retrieve their password via the hyperlink (“Forgot your password?”) the sign-in module will display 
+If the user opts to retrieve their password via the hyperlink ("Forgot your password?") the sign-in module will display 
 
 * the title **Password Help** in the style of the Welcome message from the initial state 
 * instructional text explaining the process for retrieving one’s password 
 * a text field to enter the user’s email address used at the time of registration; a button to submit the user’s email address and initiate the process – **Retrieve Password**
-* a link to cancel the retrieval and return to the initial state of the sign-in module – “Back to Sign in”
+* a link to cancel the retrieval and return to the initial state of the sign-in module – "Back to Sign in"
 
 <img src="img/Sign-in_password-retrieval.png">
 
@@ -81,7 +70,7 @@ If the user opts to retrieve their password via the hyperlink (“Forgot your pa
 Once a user submits their email address to retreive their password, the module will provide a confirmation on the action via text in the module. 
 * the title **Password Help** in the style of the Welcome message from the initial state 
 * text confirming that an email has been sent
-* a link to return to the initial state of the sign-in module – “Back to Sign in”
+* a link to return to the initial state of the sign-in module – "Back to Sign in"
 
 <img src="img/Sign-in_password-retrieval_confirmation.png">
 
@@ -91,7 +80,7 @@ In the event that the user enters an invalid email address, either by mistyping 
 * the title Password Help in the style of the Welcome message from the initial state 
 * an alert message indicating the email address failed
 * a text field to enter the user’s email address used at the time of registration; a button to submit the user’s email address and initiate the process – Retrieve Password 
-* a link to cancel the retrieval and return to the initial state of the sign-in module – “Back to Sign in”
+* a link to cancel the retrieval and return to the initial state of the sign-in module – "Back to Sign in"
 
 <img src="img/Sign-in_password-retrieval_error.png">
 

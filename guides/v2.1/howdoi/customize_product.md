@@ -2,8 +2,8 @@
 layout: default
 group: howdoi
 subgroup: product-create-page
-title: Customize Product Creation Form
-menu_title: Customize Product Creation Form 
+title: Customize product creation form
+menu_title: Customize product creation form 
 menu_node: parent
 menu_order: 1
 version: 2.1
@@ -12,22 +12,17 @@ github_link: howdoi/customize_product.md
 
 <h2>What's in this topic</h2>
 
-This topic describes how developers can customize the product creation form used on the product creation and product edit pages in Admin. 
+This topic describes how developers can customize the product creation form used on the product creation and product edit pages in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. 
 
 The following image is an illustration of the default view of the form on the **New Product** page:
 
 <img src="{{site.baseurl}}common/images/product_pmg.png" alt="The product creation page in Admin">
 
-**Contents**
-
-* TOC
-{:toc}
-
 ## Overview
 
 In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component]({{page.baseurl}}ui-components/ui-form.html). 
 
-Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your module.
+Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 
 ## Prerequisites
@@ -68,7 +63,7 @@ To customize the product creation form, take the following steps:
             </argument>  
             <field name="%field_name%">
     			<argument name="data" xsi:type="array">
-                    <item name="config" xsi:type="array"
+                    <item name="config" xsi:type="array">
                         <item name="%field_option1%" xsi:type="%option_type%">%value%</item>
                         <item name="%field_option2%" xsi:type="%option_type%">%value%</item>
 ....
@@ -83,7 +78,7 @@ To customize the product creation form, take the following steps:
 
 ### Adding new elements
 
-By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all product types. 
+By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %}. 
 
 In the [modifier class described further](#modifier), you can set the conditions for displaying certain elements for certain product types.
 
@@ -131,7 +126,7 @@ To add your custom modifier, you need to do the following:
 
 In your custom module directory, add the modifier class that implements the `Magento\UI\DataProvider\ModifierInterface` interface or extends the `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier`class. In your modifier, the `modifyData()` and the `modifyMeta()` methods must be implemented.
 
-In the modifier class, you can add UI elements using the same structure as in the XML configuration.
+In the modifier class, you can add UI elements using the same structure as in the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration.
 
 For example:
 {% highlight php %}

@@ -8,15 +8,10 @@ menu_order: 6
 version: 2.0
 github_link: extension-dev-guide/events-and-observers.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ### Overview
 
-Working with events and observers is one of the main ways to extend Magento functionality. The events and observers implementation in Magento 2 is based on the [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){:target="_self"}. Using events and observers, you can run your custom code in response to a specific Magento event or even a custom event.
+Working with events and observers is one of the main ways to extend Magento functionality. The events and observers implementation in Magento 2 is based on the [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){:target="_self"}. Using events and observers, you can run your custom code in response to a specific Magento {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} or even a custom event.
 
 ### Events
 
@@ -33,14 +28,14 @@ The following example shows you how to dispatch an event with and without an arr
 {% highlight php startinline=true %}
 
 namespace MyCompany\MyModule;
-
+use Magento\Framework\Event\ObserverInterface;
 class MyClass{
   /**
   * @var EventManager
   */
   private $eventManager;
 
-  __construct(EventManager $eventManager){
+  public function __construct(\Magento\Framework\Event\Manager $eventManager){
     $this->eventManager = $eventManager;
   }
 
@@ -75,6 +70,8 @@ Below is an example of the basic observer class structure:
 {% highlight php startinline=true %}
 namespace MyCompany\MyModule\Observer;
 
+use Magento\Framework\Event\ObserverInterface;
+
 class MyObserver implements ObserverInterface
 {
   public function __construct()
@@ -94,6 +91,7 @@ One of the more powerful feature of observers is that they are able to use param
 
 {% highlight php startinline=true %}
 namespace MyCompany\MyModule\Observer;
+use Magento\Framework\Event\ObserverInterface;
 
 class AnotherObserver implements ObserverInterface
 {
@@ -115,7 +113,7 @@ class AnotherObserver implements ObserverInterface
 
 Observers can be configured to watch certain events in the `events.xml` file.
 
-The `observer` xml element has the following properties:
+The `observer` {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}xml{% endglossarytooltip %} element has the following properties:
 
 * `name` (required) - The name of the observer for the event definition.
 * `instance` (required) - The fully qualified class name of the observer.

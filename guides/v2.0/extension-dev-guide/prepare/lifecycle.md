@@ -9,18 +9,12 @@ version: 2.0
 github_link: extension-dev-guide/prepare/lifecycle.md
 ---
 
-## {{page.title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ### Overview
 
 This article describes your module's lifecycle and how you can create executable classes that will run when it is initialized or uninstalled. During initialization or uninstallation, these classes can perform database setup tasks, upgrade tasks, clean up tasks, and so on.
 
 <div class="bs-callout bs-callout-info" id="other-component-types">
-  <p>Since theme components and language packages generally do not need to install a database schema or update data in the database, they do not need to worry about initialization or uninstallation tasks.</p>
+  <p>Since {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} components and language packages generally do not need to install a {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} or update data in the database, they do not need to worry about initialization or uninstallation tasks.</p>
 </div>
 
 ### Lifecycle class rules
@@ -30,7 +24,7 @@ Magento will detect the classes you are using to hook into the different lifecyc
 * The class should be in the `Setup` directory in your module's root directory with the appropriate file name. For the correct file name, please see the specific examples below.
 * The class must use the specific name for the phase in which it will be executed in. To determine the correct class name to use, please see the specific examples below.
 * The class must implement the specific class interface for the phase in which it will be executed in. To determine the correct interface to use, please see the specific examples below.
-* The version you use in your module should follow our [versioning policy]({{page.baseurl}}architecture/versioning.html).
+* The version you use in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} should follow our [versioning policy]({{page.baseurl}}architecture/versioning.html).
 
 ### Schema initialization
 
@@ -227,7 +221,7 @@ class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\Upgrade
 
 ### Uninstall event
 
-The uninstall event begins when you uninstall your module using the [Component Manager]({{page.baseurl}}comp-mgr/compman-uninst.html) or by running the command `bin/magento module:uninstall --remove-data <module_name>`.
+The uninstall {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} begins when you uninstall your module using the [Component Manager]({{page.baseurl}}comp-mgr/module-man/compman-uninst-final.html) or by running the command `bin/magento module:uninstall --remove-data <module_name>`.
 
 In this stage, your module should remove all traces of its existence in the database; e.g. dropping tables, deleting data, or restoring data.
 
@@ -249,7 +243,7 @@ class \<Vendor>\<Module>\Setup\Uninstall implements \Magento\Framework\Setup\Uni
 ~~~
 
 <div class="bs-callout bs-callout-warning" id="uninstall-disabled">
-  <p>A disabled module's uninstall routine can still be invoked when it is uninstalled. This means that module specific configurations such as dependency injection configurations and event/observer configurations will not be available and can cause problems. To avoid this, uninstall classes should not have dependencies on them.</p>
+  <p>A disabled module's uninstall routine can still be invoked when it is uninstalled. This means that module specific configurations such as {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configurations and event/observer configurations will not be available and can cause problems. To avoid this, uninstall classes should not have dependencies on them.</p>
 </div>
 
 **Related Topics**

@@ -10,20 +10,8 @@ version: 2.0
 github_link: pattern-library/feedbackToUser/progressIndicator/progressIndicator.md
 redirect_from: /guides/v1.0/pattern-library/feedbackToUser/progressIndicator/progressIndicator.html
 ---
-<h2>Progress Indicator</h2>
 
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use</a>
-* <a href="#when-not-to-use">When Not to Use</a>
-* <a href="#behavior">Behavior</a>
-* <a href="#variations">Variations</a>
-* <a href="#style">Style</a>
-* <a href="#assets">Assets</a>
-
-<h3 id="overview">Overview</h3>
-
+## Progress indicator
 Within the Magento application, users sometimes need to wait for a process to be completed by the system. In such case, it is best to communicate that to the user that the system is working the process that the user requested. There are two types of progress indicator: 1.) a progress bar and 2.) a spinner. 
 
 The use of progress indicator should follow this guideline.

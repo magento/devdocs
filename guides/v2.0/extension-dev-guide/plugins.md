@@ -11,19 +11,13 @@ redirect_from:
   - /guides/v1.0/extension-dev-guide/plugins.html
   - /guides/v1.0/config-guide/config/plugins.html
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 
 ### Overview
 A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any class or *interface*.
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class which are referred to as plugins.
 
-This interception approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.
+This {% glossarytooltip deea5a5a-e9e5-4591-b141-b849458feb1a %}interception{% endglossarytooltip %} approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.
 
 #### Limitations
 
@@ -34,26 +28,33 @@ Plugins cannot be used with any of the following:
 * Final classes
 * Any class that contains at least one final public method
 * Non-public methods
-* Class methods (such as static methods)
+* Static methods
 * `__construct`
 * Virtual types
 
 ### Declaring a plugin
 
-A plugin for a class object can be declared in the <code>di.xml</code> file in your module:
+A plugin for a class object is declared in the <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
+{% highlight xml %} 
+<config>
+    <type name="{ObservedType}">
+      <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" />
+    </type>
+</config>
+{% endhighlight %}
 
 You must specify these elements:
 
-* `type name`. A class or interface which the plugin observes.
-* `plugin name`. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.
-* `plugin type`. The name of a plugin's class or its virtual type. Use the following naming convention when you specify this element: `\Vendor\Module\Plugin\<ModelName>Plugin`.
+* `type name`: A class or interface which the plugin observes.
+* `plugin name`: An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.
+* `plugin type`: The name of a plugin's class or its virtual type. Use the following naming convention when you specify this element: `\Vendor\Module\Plugin\<ModelName>Plugin`.
 
 The following elements are optional:
 
-* `plugin sortOrder`. The order in which plugins that call the same method are run.
-* `plugin disabled`. To disable a plugin, set this element to `true`. The default value is `false`.
+* `plugin sortOrder`: The order in which plugins that call the same method are run.
+* `plugin disabled`: To disable a plugin, set this element to `true`. The default value is `false`.
+  * Use this property to disable core or third-party plugins in your `di.xml` file.
 
 ### Defining a plugin
 A plugin is used to extend or modify a public method's behavior by applying code before, after, or around that observed method.
@@ -122,7 +123,7 @@ namespace My\Module\Plugin;
 
 class ProductPlugin
 {
-    public function aroundSave(\Magento\Catalog\Model\Product $subject, \callable $proceed)
+    public function aroundSave(\Magento\Catalog\Model\Product $subject, callable $proceed)
     {
         $this->doSmthBeforeProductIsSaved();
         $returnValue = $proceed();
@@ -135,7 +136,7 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
-When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints. 
+When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints.
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
@@ -162,14 +163,14 @@ namespace My\Module\Plugin;
 
 class MyUtilityPlugin
 {
-    public function aroundSave(\My\Module\Model\MyUtility $subject, \callable $proceed, SomeType $obj)
+    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, SomeType $obj)
     {
       //do something
     }
 }
 {% endhighlight %}
 
-Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> PHP would throw a fatal error as your plugin does not accept <code>null</code>.
+Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
 
 It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this simply:
 
@@ -180,7 +181,7 @@ namespace My\Module\Plugin;
 
 class MyUtilityPlugin
 {
-    public function aroundSave(\My\Module\Model\MyUtility $subject, \callable $proceed, ...$args)
+    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, ...$args)
     {
       //do something
       $proceed(...$args);
@@ -240,7 +241,7 @@ All plugins added for interfaces and inherited classes will be added to classes 
 
 Plugins defined in the global scope will be applied when the system is in a specific area (i.e. frontend, backend, etc). These global plugin configuration can also be extended or overridden via an area's `di.xml`.
 
-For example, the developer can disable a global plugin in the backend area by disabling it in the specific `di.xml` file for the backend area.
+For example, the developer can disable a global plugin in the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} area by disabling it in the specific `di.xml` file for the backend area.
 
 ### Related topics
 

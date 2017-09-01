@@ -10,12 +10,6 @@ version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-urn.md
 ---
 
-#### Contents
-
-*	<a href="#config-cli-urn-overview">Overview of the URN highlighter</a>
-*	<a href="#urn-first">First steps</a>
-*	<a href="#urn-command">Configure your IDE</a>
-
 
 <h2 id="config-cli-urn-overview">Overview of URN highlighter</h2>
 Magento code references all XSD schemas as <a href="https://www.ietf.org/rfc/rfc2141.txt" target="_blank">Uniform Resource Names (URNs)</a>. If you're developing code and need to reference XSDs, this command configures your integrated developer environment (IDE) to recognize and highlight URNs. This makes development easier.

@@ -71,10 +71,10 @@ layout: 0 -> 1
 [2016-07-28 15:22:17 UTC] Job "setup:upgrade []" has started
 Cache cleared successfully
 File system cleanup:
-/var/www/html/magento2/var/generation/Composer
-/var/www/html/magento2/var/generation/Magento
-/var/www/html/magento2/var/generation/Symfony
-The directory '/var/www/html/magento2/var/di/' doesn't exist - skipping cleanup
+/var/www/html/magento2/generated/code/Composer
+/var/www/html/magento2/generated/code/Magento
+/var/www/html/magento2/generated/code/Symfony
+The directory '/var/www/html/magento2/generated/metadata/' doesn't exist - skipping cleanup
 /var/www/html/magento2/pub/static/_requirejs
 /var/www/html/magento2/pub/static/adminhtml
 /var/www/html/magento2/var/view_preprocessed/source

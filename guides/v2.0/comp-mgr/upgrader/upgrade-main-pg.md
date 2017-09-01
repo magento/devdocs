@@ -10,12 +10,6 @@ version: 2.0
 github_link: comp-mgr/upgrader/upgrade-main-pg.md
 ---
 
-
-<h4>Contents</h4>   
-
-*	<a href="#upgr-access">System upgrade options</a>
-*	<a href="#upgr-comps">Upgrade components</a>
-
 <h2 id="upgrade-access">System upgrade options</h2>
 To choose which components to upgrade:
 

@@ -10,15 +10,10 @@ contributor_link: http://www.classyllama.com/
 version: 2.0
 github_link: extension-dev-guide/factories.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Overview
 
-Factories are service classes that instantiate non-injectable classes, that is, models that represent a database entity.
+Factories are service classes that instantiate non-injectable classes, that is, models that represent a database {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}.
 They create a layer of abstraction between the `ObjectManager` and business code.
 
 ## Relationship to `ObjectManager`
@@ -26,7 +21,7 @@ They create a layer of abstraction between the `ObjectManager` and business code
 The `Magento\Framework\ObjectManager` is the class responsible for instantiating objects in the Magento application.
 Magento prohibits depending on and directly using the `ObjectManager` in your code.
 
-Factories are an exception to this rule because they require the `ObjectManager` to instantiate specific models.
+Factories are an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} to this rule because they require the `ObjectManager` to instantiate specific models.
 
 The following example illustrates the relationship between a simple factory and the `ObjectManager`:
 
@@ -38,8 +33,8 @@ class BaseFactory
   /**
    * @var \Magento\Framework\ObjectManagerInterface
    */
-  private $objectManager;
-  
+  private $_objectManager;
+
   /**
    * @param \Magento\Framework\ObjectManagerInterface $objectManager
    */
@@ -91,11 +86,11 @@ $block = $this->blockFactory->create();
 For classes that require parameters, the automatically generated `create()` function accepts an array of parameters that it passes on to the `ObjectManager` to create the target class.
 
 The example below shows the construction of a `Magento\Search\Model\Autocomplete\Item` object by passing in an array of parameters to a factory:
-{% highlight php startinline=true %} 
+{% highlight php startinline=true %}
 $resultItem = $this->itemFactory->create([
   'title' => $item->getQueryText(),
   'num_results' => $item->getNumResults(),
-]); 
+]);
 {%endhighlight%}
 
 ### Interfaces
@@ -109,4 +104,4 @@ For example, in the [`CatalogInventory`]({{site.mage2000url}}app/code/Magento/Ca
 {% endhighlight %}
 
 It instructs Magento to use the specific [`Item`]({{site.mage2000url}}app/code/Magento/CatalogInventory/Model/Stock/Item.php){:target="_blank"} class wherever the [`StockItemInterface`]({{site.mage2000url}}app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php){:target="_blank"} is used.
-When a class in that module includes the factory `StockItemInterfaceFactory` as a dependency, Magento generates a factory that is capable of creating the specific `Item` objects.
+When a class in that {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} includes the factory `StockItemInterfaceFactory` as a dependency, Magento generates a factory that is capable of creating the specific `Item` objects.

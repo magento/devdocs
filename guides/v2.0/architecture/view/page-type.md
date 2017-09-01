@@ -10,17 +10,11 @@ github_link: architecture/view/page-type.md
 redirect_from: /guides/v1.0/architecture/view/page-type.html
 ---
 
-## Introduction to page types {#m2devgde-pagetype-intro}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
-Page types are semantic abstractions of those controller actions which are used for page rendering. They help to qualify pages by context type, like Product View page, Shopping Cart page, and so on, providing business users the ability to customize page design. In particular, page types are used in the widget creation  to define the pages where a widget can be displayed.
+Page types are semantic abstractions of those controller actions which are used for page rendering. They help to qualify pages by context type, like Product View page, {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}Shopping Cart{% endglossarytooltip %} page, and so on, providing business users the ability to customize page design. In particular, page types are used in the {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} creation  to define the pages where a widget can be displayed.
 
-Page types are defined for the frontend area only, that is for the store front pages.
+Page types are defined for the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} area only, that is for the store front pages.
 
 <p class="q">Reviewer: Clarify "for now"</p>
 
@@ -34,7 +28,7 @@ Full action names are mapped to the controller actions as follows:
 
 where
 
-*	`module` is the name of a module
+*	`module` is the name of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}
 
 *	`Controller` is the module's `Controller` directory
 
@@ -48,7 +42,7 @@ For example,
 
 ## Page types and layout handles {#m2devgde-pagetype-handles}
 
-In Magento, full action names also used as identifiers for sets of layout instructions (layout handles): a controller action by default loads a layout handle which coincides with its full action name. This means that page types correspond to some of the layout handles.
+In Magento, full action names also used as identifiers for sets of {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} instructions (layout handles): a controller action by default loads a layout handle which coincides with its full action name. This means that page types correspond to some of the layout handles.
 
 <div class="bs-callout bs-callout-info" id="info">
  <p>There are also other types of layout handles, like specific page handles, as well as custom handles.</p>
@@ -78,11 +72,11 @@ An example is shown in the previously referenced Customer module `page_types.xml
 
 ## Page types in widget creation {#m2devge-pagetype-widget}
 
-To create a widget, you must specify the pages on which it displays in the Magento Admin as follows:
+To create a widget, you must specify the pages on which it displays in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as follows:
 
 1.	In the Magento Admin, click **Content** > **Frontend App**.
 
-2.	After choosing to create a new widget instance, specify the widget type and the design theme.
+2.	After choosing to create a new widget instance, specify the widget type and the design {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 3.	In the page for configuring other widget options, click **Add Layout Update**. You can now specify pages by clicking the corresponding layout handle names.
 

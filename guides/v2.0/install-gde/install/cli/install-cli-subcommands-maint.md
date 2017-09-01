@@ -12,16 +12,6 @@ redirect_from:
   -  /guides/v1.0/install-gde/install/install-cli-subcommands-maint.html
   -  /guides/v2.0/install-gde/install/install-cli-subcommands-maint.html
 ---
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-cli-subcommands-maint-prereq">Prerequisites</a>
-*	<a href="#instgde-cli-maint">Enable or disable maintenance mode</a>
-*	<a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>
-
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}

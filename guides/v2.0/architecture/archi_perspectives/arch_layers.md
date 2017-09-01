@@ -10,23 +10,17 @@ github_link: architecture/archi_perspectives/arch_layers.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/arch_layers.html
 ---
 
-## Magento Framework and architectural layers
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Magento Framework
 
 ### Overview
 
-The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and exception handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.
+The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.
 
-This primarily PHP software component is organized into logical groups called <i>libraries</i>, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
-(Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model.)
+This primarily {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} software component is organized into logical groups called <i>libraries</i>, which all modules can call.  Most of the framework code sits under the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
+(Although the Magento Framework does not contain resource models, it does contain a {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} of code to help implement a resource model.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Don’t confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
+  <p>Don't confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
 </div>
 
 You should never modify the framework files, although if you are extending Magento, you must know how to call the framework libraries. Modules you create will typically inherit from classes and interfaces defined in the framework directories.  
@@ -54,19 +48,19 @@ Lib/
             ../Framework
  </pre>
 
-* `/lib/internal` contains some non-PHP as well as PHP components. Non-PHP framework libraries includes JavaScript and LESS/CSS.
+* `/lib/internal` contains some non-PHP as well as PHP components. Non-PHP framework libraries includes {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and LESS/CSS.
 
-* `/lib/internal/Magento/Framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries). For example, libraries in the framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support CSS rendering.
+* `/lib/internal/Magento/Framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries). For example, libraries in the framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} rendering.
 
 * `/lib/web` contains JavaScript and CSS/LESS files. These files reside  under `web` and not `internal` because they are accessible from a web browser, while the PHP code under `internal` is not. (Any code that a web browser must access should be under `web`, while everything else under `internal`.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> namespace.</p>
+  <p>The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p>
 </div>
 
 ### Highlights of the Magento Framework
 
-The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust range of functionality. If you are an extension developer, you may be interested in this subset of Framework namespaces.
+The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust range of functionality. If you are an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developer, you may be interested in this subset of Framework namespaces.
 
 <table>
    <tbody>
@@ -191,7 +185,7 @@ Other namespaces under `Magento\Framework` that will interest extension develope
 
 ### How Presentation code calls other layers
 
-Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the business logic layer. For example, the Admin UI screens are often tightly linked a specific implementation and are not generic across implementations.
+Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the business logic layer. For example, the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} UI screens are often tightly linked a specific implementation and are not generic across implementations.
 
 ## Service layer
 
@@ -203,17 +197,17 @@ In general, the service layer
 
 * Contains service contracts, which define how the implementation will behave.
 
-* Provides an easy way to access the REST/SOAP API framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files -- no coding required.
+* Provides an easy way to access the REST/SOAP {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files -- no coding required.
 
 * Provides a stable API for other modules to call into.
 
 ### Who accesses the service layer?
 
-All calls from web service interfaces, or users working with your storefront (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic.
+All calls from web service interfaces, or users working with your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic.
 
-External applications can make requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.
+External applications can make requests for business logic with simple SOAP and REST calls. With some simple {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} or JSON, you can expose the service layer's PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.
 
-Service contract clients include:
+{% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}Service contract{% endglossarytooltip %} clients include:
 
 * Controllers (initiated by actions of users of the storefront)
 * Web services (SOAP and REST API calls)
@@ -221,7 +215,7 @@ Service contract clients include:
 
 ### Service contract anatomy
 
-The service contract of a module is defined by the set of interfaces in the module's `/Api`. It typically consists of:
+The service contract of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is defined by the set of interfaces in the module's `/Api`. It typically consists of:
 
 * service interfaces in the `/Api` namespace of the module
 
@@ -233,13 +227,13 @@ Typically, service contracts provide three distinct types of interfaces:
 
 * Management interfaces
 
-* Metadata interfaces
+* {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}Metadata{% endglossarytooltip %} interfaces
 
 However, there is no requirement that service contracts conform to all three patterns.
 
 ### Advantages of service contracts
 
-Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a dependency injection config file (`di.xml`) file. The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`.
+Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} config file (`di.xml`) file. The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`.
 
 Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.
 

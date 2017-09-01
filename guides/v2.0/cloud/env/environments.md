@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 12_env
+subgroup: 120_env
 title: Manage your environments
 menu_title: Manage your environments
 menu_order: 1
@@ -15,7 +15,7 @@ A Magento Enterprise Cloud *environment* consists of a running Magento instance.
 
 Each environment is a branch of the `master` environment (which is your live environment). Every Cloud project has at least one environment, the `master`, which cannot be removed or renamed. You can create up to 6 additional environments. Typically, these environments are used for development and testing.
 
-If you use GitHub or Bitbucket, every pull request or branch can be deployed into its own environment on Magento Enterprise Cloud.
+If you use GitHub, every pull request or branch can be deployed into its own environment on Magento Enterprise Cloud.
 
 ## Master environment
 Every Magento Enterprise Cloud Edition project starts with a `master` environment that corresponds to the `master` branch in Git. The master environment is your live, production environment.
@@ -72,7 +72,7 @@ In this example, the following can happen:
 	*	Creates the Sprint-X environments and grants contributor privileges to developers to create the story environments.
 	*	Creates all the environments and grants contributor privileges to developers.
 
-2.	When the sprint is finished (or when the story is closed), the administrator can review the work by accessing the website of the feature environment. The new feature is then merged back to the Sprint-X environment.
+2.	When the sprint is finished (or when the story is closed), the administrator can review the work by accessing the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} of the feature environment. The new feature is then merged back to the Sprint-X environment.
 3.	The administrator synchronizes Sprint-X with QA so all features can be tested.
 3.	The administrator backs up the live site, then merges the Sprint-X environment into the `master` environment, making it live.
 4.	The administrator synchronizes the next sprint's environment with data from the `master` environment to repeat and continue the development process.

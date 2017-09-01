@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/translations/translate_practice.md
 
 <h2>What's in this topic</h2>
 
-This topic is a step-by-step illustration of creating a default en_US locale <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> for a custom theme. 
+This topic is a step-by-step illustration of creating a default en_US {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> for a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
 
 <h2 id="theme">Changing default strings</h2>
 OrangeCo created a custom `orange` theme that inherits from the Magento Blank theme.
@@ -34,7 +34,6 @@ The following image shows a page where the strings meant to be changed are used:
 
 <div style="border: 1px solid #ABABAB">
 <img width="700px" src="{{ site.baseurl }}common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed">
-</img>
 </div>
 
 To override the strings, OrangeCo plan to use the en_US dictionary file. 
@@ -46,7 +45,7 @@ So OrangeCo take the following steps:
 <li>
 Run the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n (internationalization) tool</a> to generate the en_US dictionary for the <code>orange</code> theme:
 <pre>
-php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
+{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}php{% endglossarytooltip %} magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
 </pre>
 </li>
 <li>
@@ -61,6 +60,11 @@ Open the newly generated <code>magento2/app/design/frontend/OrangeCo/orange/i18n
 </li>
 
 </ol>
+
+Now you can run deploy command to get changes of localization,
+<pre>
+php bin/magento setup:static-content:deploy
+</pre>
 
 When the OrangeCo apply the orange theme, the custom strings are used instead default ones. 
 

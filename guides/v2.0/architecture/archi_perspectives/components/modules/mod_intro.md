@@ -14,19 +14,13 @@ redirect_from:
   - /guides/v2.0/architecture/modules/mod_intro.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## What is a Magento module? {#arch-modules-overview}
 
-A <i>module</i> is a logical group -- that is, a directory containing blocks, controllers, helpers, models -- that are related to a specific business feature. In keeping with Magento's commitment to optimal modularity, a module encapsulates one feature and has minimal dependencies on other modules.
+A <i>module</i> is a logical group -- that is, a directory containing blocks, controllers, helpers, models -- that are related to a specific business feature. In keeping with Magento's commitment to optimal modularity, a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} encapsulates one feature and has minimal dependencies on other modules.
 
-Modules and themes are the units of customization in Magento. Modules provide business features, with supporting logic,  while themes strongly influence user experience and storefront appearance. Both components have a life cycle that allows them to be installed, deleted, and disabled. From the perspective of both merchants and extension developers, modules are the central unit of Magento organization.
+Modules and themes are the units of customization in Magento. Modules provide business features, with supporting logic,  while themes strongly influence user experience and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} appearance. Both components have a life cycle that allows them to be installed, deleted, and disabled. From the perspective of both merchants and {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers, modules are the central unit of Magento organization.
 
-The Magento Framework provides a set of core logic: PHP code, libraries, and the basic functions that are inherited by the modules and other components.
+The Magento Framework provides a set of core logic: {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code, libraries, and the basic functions that are inherited by the modules and other components.
 
 ## Module purpose
 
@@ -34,7 +28,7 @@ The purpose of each module is to provide specific product features by implementi
 
 ## Module components
 
-A module is a directory that contains the PHP and XML files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_themes.html">themes</a>, <a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_libraries.html">libraries</a>, and <a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_translations.html">language packages</a>.
+A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_themes.html">themes</a>, <a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_libraries.html">libraries</a>, and <a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_translations.html">language packages</a>.
 
 See <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_anatomy.html">Module anatomy</a> for an overview of module structure.
 

@@ -1,32 +1,25 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
-title: Step 2, Set up the Magento file system owner
-menu_title: Step 2, Set up the Magento file system owner
-menu_order: 10
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: workspace
+subgroup: 080_setup
+title: Set up the Magento file system owner
+menu_title: Set up the Magento file system owner
+menu_order: 25
+menu_node:
 version: 2.0
 github_link: cloud/before/before-workspace-file-sys-owner.md
 ---
+#### Previous step: {#mage-owner-about-group}
+[Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
 
-#### Contents
-*	[About the shared group](#mage-owner-about-group)
-*	[Step 1: Create the Magento file system owner and give the user a strong password](#mage-owner-create-user)
-*	[Step 2: Find the web server group](#install-update-depend-user-findgroup)
-*	[Step 3: Put the Magento file system owner in the web server's group](#install-update-depend-user-add2group)
+To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}, both users must be in the same group. This is necessary so both users can share access to Magento files, including files created using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or other web-based utilities.
 
-### About the shared group {#mage-owner-about-group}
-To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner, both users must be in the same group. This is necessary so both users can share access to Magento files (including files created using the Magento Admin or other web-based utilities).
+You need to create a new Magento file system owner and put that user in the web server's group. If you use an existing user account, we recommend the user account has a strong password for security reasons.
 
-This section discusses how to create a new Magento file system owner and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
+## Create the Magento file system owner {#mage-owner-create-user}
+Create the Magento file system owner with a strong password. Magento file system owner is another term for the *command-line user*.
 
-### Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}
-This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the *command-line user*.)
-
-To create a user on CentOS or Ubuntu, enter the following command as a user with `root` privileges:
+To create the Magento file system owner, enter the following command as a user with `root` privileges:
 
 	adduser <username>
 
@@ -49,7 +42,9 @@ For example, to create a user named `magento_user` and give the user a password,
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
 </div>
 
-### Step 2: Find the web server user's group {#install-update-depend-user-findgroup}
+
+## Find the web server user's group {#install-update-depend-user-findgroup}
+
 To find the web server user's group:
 
 *	CentOS: `egrep -i '^user|^group' /etc/httpd/conf/httpd.conf`
@@ -59,8 +54,10 @@ To find the web server user's group:
 
 	Typically, the user name and the group name are both `www-data`
 
-### Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}
-To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
+
+## Put the Magento file system owner in the web server's primary group {#install-update-depend-user-add2group}
+
+Assuming the typical Apache group name for CentOS and Ubuntu, enter the following command as a user with `root` privileges:
 
 *	CentOS: `usermod -g apache <username>`
 *	Ubuntu: `usermod -g www-data <username>`
@@ -82,7 +79,5 @@ To complete the task, restart the web server:
 *	Ubuntu: `service apache2 restart`
 *	CentOS: `service httpd restart`
 
-#### Next step
-[Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
-
-
+#### Next step:
+[Clone the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)

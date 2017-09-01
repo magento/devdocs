@@ -11,7 +11,7 @@ github_link: javascript-dev-guide/widgets/widget_gallery.md
 
 <h2>Overview</h2>
 
-The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks. 
+The gallery {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} implements a content area with images organized into preview and thumbnails blocks. 
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:
 
@@ -23,7 +23,7 @@ Gallery is displayed consistently across all supported browsers and is responsiv
 
 The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.
 
-The important feature of the gallery widget implementation is the possibility to configure the widget options in the `view.xml` configuration file of a theme. 
+The important feature of the gallery widget implementation is the possibility to configure the widget options in the `view.xml` configuration file of a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
 
 The gallery widget source code is <a href="{{site.mage2000url}}lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>
 
@@ -33,8 +33,6 @@ The gallery magnifier source is <a href="{{site.mage2000url}}lib/web/magnifier/m
 
 <h3>Contents</h3>
 
-* TOC
-{:toc}
 
 ## Initialize the gallery widget {#gallery_init}
 
@@ -333,7 +331,7 @@ Display navigation arrows on the sides of previews in the fullscreen view.
 **Type**: Boolean
 
 #### `fullscreen/caption` {#full_caption}
-Display alt text as image title in the fullscreen view.
+Display {% glossarytooltip 9122e7d4-7db9-48b2-ad27-1af26bad1215 %}alt text{% endglossarytooltip %} as image title in the fullscreen view.
 
 **Type**: Boolean
 
@@ -482,10 +480,10 @@ var api = $('[data-gallery-role="gallery"]').data('gallery');
 
 {% endhighlight %}
 
-This method returns JS object that contains API functions.
+This method returns JS object that contains {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} functions.
 
 
-To ensure that the gallery is fully formed, wrap your code with event handler function and add it to the `gallery:loaded` event:
+To ensure that the gallery is fully formed, wrap your code with {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} handler function and add it to the `gallery:loaded` event:
 
 {% highlight php %}
 

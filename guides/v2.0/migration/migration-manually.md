@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: manually
+subgroup: E_manually
 title: Data that needs to be migrated manually
 menu_title: Data that needs to be migrated manually
 menu_node: parent
@@ -11,23 +11,17 @@ github_link: migration/migration-manually.md
 redirect_from: /guides/v1.0/migration/migration-manually.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Data types
 
-There are three types of data that need to be manually migrated:
+There are three four of data that need to be migrated manually:
 
 *	Media
 
-*	Storefront design
+*	{% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %} design
 
-*	Admin users
+*	{% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} user accounts
 
-*	ACLs
+*	Access Control Lists (ACLs)
 
 ## Media
 
@@ -38,30 +32,34 @@ This section discusses how to manually migrate media files.
 This section applies to you *only* if you store media files in the Magento database. This step should be performed before <a href="{{page.baseurl}}migration/migration-migrate-data.html">migration of data</a>:
 
 1.	Log in to the Magento 1 Admin Panel as an administrator.
+
 2.	Click **System** > **Configuration** > ADVANCED > **System**.
+
 3.	In the right pane, scroll to **Storage Configuration for Media**.
-4.	From the **Select Media Database** list, click the name of your media storage database.
+
+4.	From the **Select Media Database** list, click the name of your {% glossarytooltip d95142d7-023f-451c-a2e9-dd88763dcd70 %}media storage{% endglossarytooltip %} database.
+
 5.	Click **Synchronize**.
 
 Then, repeat the same steps in your Magento 2 Admin panel.
 
 ### Media files in the file system
 
-All media files (images for products, categories, the WYSIWYG editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`.
+All media files (images for products, categories, the {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`.
 
 However, do *not* copy the `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved.
 
 ## Storefront design
 
-* Design in files (css, js, templates, XML layouts) changed its location and format
+* Design in files (CSS, JS, templates, {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} layouts) changed its location and format
 
-* Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages
+* {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} Updates stored in database. Placed through Magento 1 Admin in {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Pages, CMS Widgets, {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} Pages and Product Pages
 
-## ACLs (Access Control Lists)
+## Access Control Lists (ACLs)
 
 You must manually re-create all:
 
-*	credentials for web services APIs (that is, SOAP, XML-RPC, and REST)
+*	credentials for web service APIs (SOAP, XML-RPC, and REST)
 
 *	administrative user accounts and associate them with access privileges
 

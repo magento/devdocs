@@ -1,20 +1,14 @@
----
+/---
 layout: default
 group: cloud
-subgroup: 03_ReleaseNotes
+subgroup: 030_ReleaseNotes
 title: Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
 menu_title: Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
-menu_order: 2
+menu_order: 99
 menu_node: 
-version: 2.1
+version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.2.md
 ---
-
-## Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
-{:.no_toc}
-
-*	TOC
-{:toc}
 
 ### Changes
 We made the following change in this release:
@@ -49,5 +43,9 @@ This is a known issue with Magento core software; we're actively working to addr
 3.  Follow the prompts to open an issue with Support.
 
 <div class="bs-callout bs-callout-warning">
-    <p>This issue affects staging and production environments only. There are no issues in an integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch.html">Architecture</a>.</p>
+    <p>This issue affects staging and production environments only. There are no issues in an integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch.html">Architecture</a>.</p>
 </div>
+
+### Magento EE Release Notes
+*	[Magento EE 2.0.10 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html)
+*	[Magento EE 2.1.2 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2EE.html)

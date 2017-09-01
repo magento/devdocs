@@ -2,18 +2,18 @@
 layout: default
 group: rest
 subgroup: A_rest
-title: List of REST APIs by module
-menu_title: List of REST APIs by module
+title: List of REST endpoints by module
+menu_title: List of REST endpoints by module
 menu_order: 3
 version: 2.1
 github_link: rest/list.md
 ---
 
-## List of REST APIs for Magento Enterprise Edition {#listee}
+## List of REST endpoints for Magento Enterprise Edition {#listee}
 
-The REST APIs for Magento Enterprise Edition (EE) are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
+The REST endpoints for Magento Enterprise Edition (EE) are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
 
-Additions since 2.0 are marked with asterisks (*).
+Additions since 2.1 are marked with asterisks (*).
 
 ### CustomerBalance
 
@@ -409,6 +409,8 @@ Additions since 2.0 are marked with asterisks (*).
     GET    /V1/transactions
     * POST /V1/order/:orderId/invoice
     * POST /V1/order/:orderId/ship
+    * POST /V1/invoice/:invoiceId/refund
+    * POST /V1/order/:orderId/refund
 
 
 ### SalesRule

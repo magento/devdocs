@@ -4,18 +4,12 @@ group: UI_Components_guide
 subgroup: concepts
 title: About the uiCollection class
 menu_title: About the uiCollection class
-menu_order: 12
+menu_order: 80
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uicollection_concept.md
 ---
 
-## {{page.menu_title}}  
-{:.no_toc}
-
-* TOC
-{:toc}
-
-## What is `uiCollection` 
+## What is `uiCollection`
 
 The `uiCollection` library class should be used as a base class by any components that contain a collection of child UI components.  `uiCollection` inherits from the [uiElement class]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html).
 
@@ -25,8 +19,8 @@ The `uiCollection` library class should be used as a base class by any component
 
 The `uiCollection` class implements the following methods:
 
-* The `initElement()` method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The `initElement()` method gets the child UI component instance as a parameter.
-  
+* The `initElement()` method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The `initElement()` method gets the child {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} instance as a parameter.
+
   Example:
 
   {%highlight js%}
@@ -48,8 +42,8 @@ The `uiCollection` class implements the following methods:
     this.destroy();
 {%endhighlight%}
 
-* The `getChild()` method returns an element from the collection of child UI components. 
- 
+* The `getChild()` method returns an element from the collection of child UI components.
+
   Example:
 {%highlight js%}
     this.getChild(childIndex)

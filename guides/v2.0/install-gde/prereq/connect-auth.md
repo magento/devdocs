@@ -10,11 +10,6 @@ version: 2.0
 github_link: install-gde/prereq/connect-auth.md
 ---
 
-#### Contents
-
-*	<a href="#auth-overview">Overview of Magento Marketplace authentication</a>
-*	<a href="#auth-get">Get your authentication keys</a>
-
 {% include install/auth-tokens-get.md %}
 
 

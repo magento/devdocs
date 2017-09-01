@@ -2,36 +2,46 @@
  * This file contains style definitions for collapsible elements
  */
 
-.collapsible{
+.collapsible {
 
-  .collapsible-title{
+  .collapsible-title {
     cursor: pointer;
     display: block;
-
-    text-decoration: none;
-    background-repeat: no-repeat;
-    background-position: 0px center;
-    padding: 5px 0 5px 15px;
-    margin: 0px;
-
-    font-size: initial;
+    margin: 0;
 
     &:focus{
       outline: none;
     }
   }
 
+  &:hover .anchor {
+    display: none;
+  }
+
   .collapsible-content{
-    font-size: initial;
-    font-weight: normal;
+
   }
 
-  .ui-accordion-header{
-    background-image: url('../../common/css/caret_right.png');
+  .ui-accordion-header-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px 0 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 0 4px 6px;
+    border-color: transparent transparent transparent $link-color;
+    transition: all .3s;
   }
 
-  .ui-accordion-header-active{
-    background-image: url('../../common/css/caret_down.png');
+  .ui-state-active .ui-accordion-header-icon {
+    transform: rotate(90deg);
   }
 
+}
+.collapsible-h2 {
+  margin: 15px 0 10px 0;
+}
+.collapsible-h3 {
+  margin: 15px 0 10px 0;
 }

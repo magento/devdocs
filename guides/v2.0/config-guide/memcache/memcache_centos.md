@@ -10,15 +10,10 @@ version: 2.0
 github_link: config-guide/memcache/memcache_ubuntu.md
 ---
 
-#### Contents
-*   <a href="#config-memcache-memcached">PHP memcache and memcached extensions</a>
-*   <a href="#config-memcache-install">Install and configure memcached on CentOS</a>
-*   <a href="#config-memcache-verify-its-cent">Verify memcached works before installing Magento</a>
-
 {% include config/php-memcache.md %}
 
 <h2 id="config-memcache-install">Install and configure memcached on CentOS</h2>
-This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart" target="_blank">memcached wiki</a>.
+This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://github.com/memcached/old-wiki" target="_blank">memcached wiki</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
@@ -91,7 +86,7 @@ To verify memcached is recognized by the web server:
 
 ### Create a memcache test consisting of a MySQL database and PHP script
 
-The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A PHP script first searches the cache. If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the `set` command.
+The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script first searches the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the `set` command.
 
 <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-12-04" target="_blank">More details about this test</a>
 

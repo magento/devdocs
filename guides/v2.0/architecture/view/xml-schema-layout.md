@@ -10,15 +10,9 @@ github_link: architecture/view/xml-schema-layout.md
 redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#m2devgde-xml-layout-intro}
 
-<p>In the Magento system, you define application page layouts in XML files, also known as <i>layouts</i>.</p>
+<p>In the Magento system, you define application page layouts in {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files, also known as <i>layouts</i>.</p>
 
 <p>The system uses the Magento XML schemas to validate these layouts.</p>
 
@@ -54,7 +48,7 @@ These layout-specific XML schemas might use additional universal XML schemas.
 
 ## XML layout elements and structure {#layout-elements}
 
-The following table lists the allowable XML layout elements. The table reflects the correct structure for these elements.
+The following table lists the allowable XML {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} elements. The table reflects the correct structure for these elements.
 
 <table style="width:135%">
    <col width="33%">

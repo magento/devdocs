@@ -13,7 +13,7 @@ redirect_from:
   -  /guides/v2.0/install-gde/trouble/tshoot_pdo.html
 ---
 
-<h2 id="install-trouble-pdo">During installation, fatal PDO error displays</h2>
+### Details
 
 	PHP Fatal error:  Class 'PDO' not found in /var/www/html/magento2/setup/module/Magento/Setup/src/Module/Setup/ConnectionFactory.php on line 44
 

@@ -13,7 +13,6 @@ redirect_from:
   - guides/v2.1/install-gde/install/dev_updater.html
 ---
 
-## Contributing developers&mdash;update, reinstall Magento
 The following topics apply to you *only* if you used `git clone` to install the Magento CE GitHub repository. This usually means you contribute code to the Magento CE codebase.
 
 <div class="bs-callout bs-callout-warning">

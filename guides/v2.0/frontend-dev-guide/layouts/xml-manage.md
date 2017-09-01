@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-manage.html
 
 <h2>What's in this topic</h2>
 
-This article describes the following typical layout customization tasks:
+This article describes the following typical {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} customization tasks:
 
 *	<a href="#layout_markup_columns">Set the page layout</a>
 *	<a href="#layout_markup_css">Include static resources (JavaScript, CSS, fonts) in &lt;head&gt;</a>
@@ -30,7 +30,7 @@ This article describes the following typical layout customization tasks:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
+  <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
 </div>
 
 <h2 id="layout_markup_columns">Set the page layout</h2>
@@ -51,7 +51,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 
 <h2 id="layout_markup_css">Include static resources (JavaScript, CSS, fonts)</h2>
 
-JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
+JavaScript, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and other static assets are added in the `<head>` section of a <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
 
 <code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
@@ -67,9 +67,9 @@ The following file is a sample of a file you must add:
         <link src="js/sample.js"/>
 		
     	<!-- Add external resources -->
-	    <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
+	<css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" src_type="url" />
-        <link src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" /> 
+        <link rel="stylesheet" type="text/css" src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" /> 
     </head>
 </page>
 {%endhighlight xml%}
@@ -77,10 +77,12 @@ The following file is a sample of a file you must add:
 
 When adding external resources, specifying the <code>src_type="url"</code> argument value is a must.
 
+If you'd like to include a google webfont, you have to add the <code>rel="stylesheet" type="text/css"</code> to the <link> tag, otherwise it won't work.
+
 
 You can use either `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme.
 
-The path to assets is specified relatively to one the following locations:
+The path to assets is specified relatively to one of the following locations:
 <ul>
 <li><code>&lt;theme_dir&gt;/web</code></li>
 <li><code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
@@ -148,11 +150,11 @@ Example: add links to the page header panel.
 
 {%highlight xml%}
 <referenceContainer name="header.panel">
-        <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
-            <arguments>
-                <argument name="css_class" xsi:type="string">header links</argument>
-            </arguments>
-        </block>
+    <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+        <arguments>
+            <argument name="css_class" xsi:type="string">header links</argument>
+        </arguments>
+    </block>
 </referenceContainer>
 {%endhighlight xml%}
 
@@ -160,7 +162,7 @@ Example: add links to the page header panel.
 
 Blocks are created (declared) using the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
 
-Example: add a block with a product SKU information.
+Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %} information.
 
 {%highlight xml%}
 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
@@ -181,9 +183,9 @@ Example: pass the image to the `logo` block.
 
 {%highlight xml%}
 <referenceBlock name="logo">
-        <arguments>
-            <argument name="logo_file" xsi:type="string">images/logo.png</argument>
-        </arguments>
+    <arguments>
+        <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+    </arguments>
 </referenceBlock>
 {%endhighlight xml%}
 
@@ -206,9 +208,9 @@ Both approaches are demonstrated in the following examples of changing the templ
 
 {%highlight xml%}
  <referenceBlock name="page.main.title">
-        <arguments>
-            <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
-        </arguments>
+     <arguments>
+         <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+     </arguments>
  </referenceBlock>
 {%endhighlight%}
 
@@ -267,19 +269,19 @@ Example 1: Set a CSS class and add an attribute for the product page using `<arg
 Extending layout:
 
 {%highlight xml%}
-	<referenceBlock name="page.main.title">
-		<arguments>
-		    <argument name="css_class" xsi:type="string">product</argument>
-		    <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
-		</arguments>
-	</referenceBlock>
+<referenceBlock name="page.main.title">
+    <arguments>
+        <argument name="css_class" xsi:type="string">product</argument>
+        <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
+    </arguments>
+</referenceBlock>
 {%endhighlight xml%}
 
 Example 2: Set a page title using `<action>`. 
 
 <div class="bs-callout bs-callout-warning" id="info">
 <span class="glyphicon-class">
- <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code></a> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
+ <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
 </div>
 
 
@@ -336,7 +338,7 @@ This would make the product page look like following:
 
 Elements are removed using the `remove` attribute for the `<referenceBlock>` and `<referenceContainer>`. 
 
-**Example**: remove the Compare Products sidebar block from all store pages. 
+**Example**: remove the Compare Products {% glossarytooltip 31751771-8163-434b-88bc-c5f94d859fc3 %}sidebar{% endglossarytooltip %} block from all store pages. 
 
 This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
 

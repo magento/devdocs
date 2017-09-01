@@ -11,19 +11,10 @@ github_link: frontend-dev-guide/translations/translate_theory.md
 
 ## What's in this topic ##
 
-Your custom theme might contain new strings that are not present in the Magento out of the box themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of your theme are added to the translation <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run.
-Then when a new language package is created and used to translate a store view, all theme strings are translated as well.
+Your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} might contain new strings that are not present in the Magento out of the box themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of your theme are added to the translation <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run.
+Then when a new {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} is created and used to translate a store view, all theme strings are translated as well.
 
 This topic describes how to add theme strings in a way that they get collected by the i18n tool and are added to the dictionary.
-
-### Contents ###
-
-- [Strings added in `.phtml` templates](#add_strings_phtml)
-- [Strings added in email templates](#add_strings_email)
-- [Strings added in UI components' templates](#add_strings_ui_html)
-- [Strings added in UI components configuration files](#add_strings_ui_xml)
-- [Strings added in `.js` files](#add_strings_js)
-
 
 <h2 id="add_strings_phtml">Strings added in .phtml templates</h2>
 
@@ -64,6 +55,12 @@ To ensure that the text you add in `.html` templates of UI components is added t
 
 {% highlight HTML%}
     <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
+{% endhighlight HTML%}
+
+- when a string is added as an attribute of an HTML element:
+
+{% highlight HTML%}
+    <input type="text" data-bind="attr: {placeholder: $t('First Name')}" />
 {% endhighlight HTML%}
 
 <h2 id="add_strings_ui_xml">Strings added in UI components configuration files</h2>

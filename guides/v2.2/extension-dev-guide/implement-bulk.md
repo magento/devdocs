@@ -10,12 +10,9 @@ github_link: extension-dev-guide/implement-bulk.md
 
 ---
 
-## {{page.title}}
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This article applies to Enterprise Edition only">
-
 This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:
 
-* Create a publisher that sends messages to the message queue
+* Create a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %} that sends messages to the message queue
 * Create a consumer that receives and processes messages
 * Configure the message queues
 
@@ -295,7 +292,7 @@ For more information about the `di.xml` file, see [Dependency Injection]({{page.
 
 #### Create `communication.xml`
 
-The `communication.xml` file defines aspects of the message queue system that apply to all topics for the module. Create this file with the following contents:
+The `communication.xml` file defines aspects of the message queue system that apply to all topics for the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. Create this file with the following contents:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">

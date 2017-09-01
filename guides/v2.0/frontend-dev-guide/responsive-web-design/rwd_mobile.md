@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_mobile.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html
 ---
 <h2>What's in this topic</h2>
-The topic describes how to create a responsive mobile-specific theme using the default Magento approaches. 
+The topic describes how to create a responsive mobile-specific {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} using the default Magento approaches. 
 
 <h2>Creating a mobile-specific theme</h2>
 
@@ -19,7 +19,7 @@ To use all the responsive approaches implemented in the Magento out-of-the-box B
 To create a mobile-specific theme:
 
 1. Create a theme as described in <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>, having specified Blank or Luma as a parent theme.
-2. Add a <code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code> layout file with the following content:
+2. Add a <code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code> {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file with the following content:
 
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">

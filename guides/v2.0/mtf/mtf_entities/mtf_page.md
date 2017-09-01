@@ -2,24 +2,17 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Page
 menu_title: Page
 menu_order: 6
 version: 2.0
 github_link: mtf/mtf_entities/mtf_page.md
 ---
 
-<h2>Page</h2>
-
-* TOC
-{:toc}
-
-## Page overview {#mtf_page_overview}
-
 A page object is a class that serves to interact with the Magento page under test.
 A page serves as container for [blocks]({{page.baseurl}}mtf/mtf_entities/mtf_page.html).
 
-In the functional tests, Page Object Design Pattern is used. Test uses block methods of page object class to interact with application under test.
+In the functional tests, Page Object {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %} is used. Test uses block methods of page object class to interact with application under test.
 
 Benefit of this approach is that tests don’t need to be changed after changes in the UI. Only code in corresponding block must be changed. This approach provides the following advantages:
 
@@ -27,20 +20,20 @@ Benefit of this approach is that tests don’t need to be changed after changes 
 - Single repository for the services or operations provided by the page.
 - Decreased duplication of the code.
 
-You can learn from this topic how to create new page, add blocks to the page. Furthermore, it discusses mechanism of extending the page in another module.
+You can learn from this topic how to create new page, add blocks to the page. Furthermore, it discusses mechanism of extending the page in another {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 ## Create page {#mtf_page_create}
 
 The general flow is the following:
 
-1. Create an XML file in the Page directory of the module to which it belongs
+1. Create an {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file in the Page directory of the module to which it belongs
 
 2. Add the previously created blocks presented on this page to the `<page>` node
 
 3. Run the page generator
 
 
-Let's see an example of the Magento Widget page:
+Let's see an example of the Magento {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}Widget{% endglossarytooltip %} page:
 
 `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml`
 
@@ -86,8 +79,8 @@ Also, block can contain a `render` node. [Read about renders in the Block topic]
 
 Depending on `area` and `mca` attributes, page can be of one of the following types:
 
-* Admin page is extended from [Magento\Mtf\Page\BackendPage][] class
-* Storefront page is extended from [Magento\Mtf\Page\FrontendPage][] class
+* {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} page is extended from [Magento\Mtf\Page\BackendPage][] class
+* {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %} page is extended from [Magento\Mtf\Page\FrontendPage][] class
 * External page is extended from [Magento\Mtf\Page\ExternalPage][] class
 
 ### Admin page {#mtf_page_admin}
@@ -321,7 +314,7 @@ To override blocks, follow:
 
 Let's see an example with the following use case:
 
-- A Magento_NewModule changes the category creation behaviour of a Magento_Catalog module.
+- A Magento_NewModule changes the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} creation behaviour of a Magento_Catalog module.
 - `editForm` block from page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` must be changed according to new functionality.
 
 Let us see page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit`:
@@ -376,7 +369,7 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
 
 {% endhighlight %}
 
-**Step 3.** Add blocks that you want to redirect.
+**Step 3.** Add blocks that you want to {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %}.
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>

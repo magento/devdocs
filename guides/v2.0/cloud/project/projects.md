@@ -1,16 +1,15 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
-title: Manage your projects
-menu_title: Manage your projects
+subgroup: 100_project
+title: Manage your project
+menu_title: Manage your project
 menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/project/projects.md
 ---
 
-## Manage your projects
 A Magento Enterprise Cloud Edition *project* is a container for your *applications*. Applications have *environments* and *services* that run on them. (Examples of services include database, web server, and caching server.)
 
 The project's `master` branch corresponds to your live Magento store; that is, you work in Git branches (each branch corresponds on an environment) and, when you're done, you merge with the `master` branch, which is deployed to the live cloud.
@@ -28,7 +27,7 @@ Log in to your project using Bitbucket, GitHub, Google, or a e-mail address and 
 ![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="450px"}
 
 ### Access the project
-Hovering the mouse pointer over **Access Site** shows how to access your site using a URL or SSH.
+Hovering the mouse pointer over **Access Site** shows how to access your site using a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} or SSH.
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png){:width="450px"}
 
@@ -37,17 +36,17 @@ Click **Configure environment** to create and manage [*environments*]({{page.bas
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png){:width="450px"}
 
-This displays the following page, which enables you to configure settings, [variables]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel), [routes]({{page.baseurl}}cloud/project/project-conf-files_routes.html), and [users]({{page.baseurl}}cloud/admin/admin-user-admin.html).
+This displays the following page, which enables you to configure settings, [variables]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel), [routes]({{page.baseurl}}cloud/project/project-conf-files_routes.html), and [users]({{page.baseurl}}cloud/project/user-admin.html).
 
 ![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png){:width="450px"}
 
 ### Configure the project
-Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/admin/admin-user-admin.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project.
+Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/project/user-admin.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project.
 
 ![configure project]({{ site.baseurl }}common/images/cloud_project-config.png){:width="450px"}
 
 ### Manage users
-The **Users** tab page enables you to add users to the project and to give them [privileges to access the project and environments]({{page.baseurl}}cloud/admin/admin-user-admin.html).
+The **Users** tab page enables you to add users to the project and to give them [privileges to access the project and environments]({{page.baseurl}}cloud/project/user-admin.html).
 
 ![Manage users]({{ site.baseurl }}common/images/cloud_project-config.png){:width="450px"}
 

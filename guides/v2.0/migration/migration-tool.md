@@ -1,21 +1,15 @@
 ---
 layout: default
 group:  migration
-subgroup: C_Data migration tool
-title: Data migration tool
-menu_title: Data migration tool
+subgroup: C_DMTool
+title: Data Migration Tool
+menu_title: Data Migration Tool
 menu_node: parent
 menu_order: 3
 version: 2.0
 github_link: migration/migration-tool.md
 redirect_from: /guides/v1.0/migration/migration-tool.html
 ---
-
-## Data Migration Tool
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Overview
 
@@ -29,8 +23,8 @@ The Tool operates in three modes:
 
 2. **Data**: bulk migrates main data in the database
 
-3. **Delta**: transfers incremental data updates, added to Magento 1 storefront and Admin Panel while running previous migration modes
+3. **Delta**: transfers incremental data updates, added to Magento 1 {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Panel while running previous migration modes
 
 ## Steps
 
-Each mode consists of several steps that perform specific steps (for example: URL rewrite, EAV, settings, etc.). Each step initially checks data integrity between Magento 1 and Magento 2 databases and, after verification succeeds, performs the transfer. Then the Tool runs the data verification tests again.
+Each mode consists of several steps that perform specific steps (for example: {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} rewrite, EAV, settings, etc.). Each step initially checks data integrity between Magento 1 and Magento 2 databases and, after verification succeeds, performs the transfer. Then the Tool runs the data verification tests again.

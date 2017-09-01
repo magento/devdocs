@@ -11,18 +11,10 @@ github_link: config-guide/cli/config-cli-subcommands-depen.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html
 ---
 
-
-#### Contents
-
-*	<a href="#config-cli-depend-rpt-overview">Overview of dependency reports</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-depend-rpt-run">Run dependency reports</a>
-
-
 <h2 id="config-cli-depend-rpt-overview">Overview of dependency reports</h2>
 You can run the following types of reports:
 
-*	Module dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft
+*	{% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft
 *	Circular dependencies: Shows the total number of dependency chains and the number and list of circular dependencies for each module
 *	Framework dependencies: Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library)
 

@@ -10,23 +10,7 @@ version: 2.0
 github_link: pattern-library/navigation/wizard/wizard.md
 ---
 
-<h2> Wizard </h2>
-
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use</a>
-* <a href="#when-not-to-use">When Not to Use</a>
-* <a href="#how-to-use">How to Use</a>
-* <a href="#structure">Structure</a>
-* <a href="#style">Style</a>
-* <a href="#interaction-and-behavior">Interaction and Behavior</a>
-* <a href="#variations">Variations</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-
+## Wizard
 Within the Magento application, it is often necessary to guide a user step-by-step through completing a process. By using a wizard, user can complete a task easier because the user can just follow a preplanned, step-by-step path to accomplish his/her goal. It also increases the chances that the task gets completed successfully.
 
 For solutions not described in this article or for further information, please contact the Magento UX Design Team.
@@ -132,7 +116,7 @@ Any other steps, Save button is present. Both 'Back' and 'Next' buttons are enab
 
 <h4>3. Process with many steps that cannot fit in the given section</h4>
 
-It is not recommended to have too many steps for a wizard. But if a use case arise such that your extension will have many steps that cannot fit the available space, please follow this truncation rule if not all steps in the navigation can be visible at once. This case may happen based on multiple reasons such as screen size changes, too many buttons, or simply too many steps.
+It is not recommended to have too many steps for a wizard. But if a use case arise such that your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} will have many steps that cannot fit the available space, please follow this truncation rule if not all steps in the navigation can be visible at once. This case may happen based on multiple reasons such as screen size changes, too many buttons, or simply too many steps.
 
 (for specific styling of this variation, refer to the link to .psd files in Assets.)
 

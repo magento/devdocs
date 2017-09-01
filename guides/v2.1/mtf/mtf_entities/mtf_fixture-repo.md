@@ -2,24 +2,17 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Fixture repository
 menu_title: Fixture Repository
 menu_order: 2
 version: 2.1
 github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
 
-<h2>Fixture repository</h2>
-
-* TOC
-{:toc}
-
-## Repository overview {#mtf_repository_overview}
-
 The repository stores pre-defined data for the fixture.
 It contains only data sets that are used in the test along with the associated field data.
-Repositories are stored in the `Repository` directory in the module to which they belong.
-Reference to the repository is placed in the fixture XML file in attribute named `repository`.
+Repositories are stored in the `Repository` directory in the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to which they belong.
+Reference to the repository is placed in the fixture {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file in attribute named `repository`.
 
 In this topic you will learn how to create, use, and merge a repository.
 
@@ -82,7 +75,7 @@ Also `layout` and `widgetOptions` fields use `<magento2>/dev/tests/functional/te
 
 <a href="#mtf_repository_create-field"> Learn how to create repository for the fixture field</a>.
 
-We want to specify data sets for two cases of submitting Widget forms: `default` with minimum data, and `cms_page_link` with data needed to create new CMS page link.
+We want to specify data sets for two cases of submitting {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}Widget{% endglossarytooltip %} forms: `default` with minimum data, and `cms_page_link` with data needed to create new {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page link.
 
 To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: <a href="#mtf_repo_ex_set">**Settings**</a>, <a href="#mtf_repo_ex_store">**Storefront Properties**</a>, <a href="#mtf_repo_ex_front">**Frontend Apps Options**</a>. The following text along with screenshots gives an example of how to create a data set of the repository.
 
@@ -249,7 +242,7 @@ In the preceding section, the Widget fixture code contains fields with the links
 
 The repository value is a reference to the repository XML file. Therefore, we should create `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`. The XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.
 
-Assume that we want to provide data for the Layout Update block for the following cases shown on the screenshots (name of data sets have orange font, fields defined in repository are highlighted in orange).
+Assume that we want to provide data for the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} Update block for the following cases shown on the screenshots (name of data sets have orange font, fields defined in repository are highlighted in orange).
 
 Case 1. **all_pages** data set:
 
@@ -390,7 +383,7 @@ Let's see the following example of configuration settings for <a href="{{site.ma
 
 {% endhighlight %}
 
-Path to the `Authorizenet` UI form in Admin is **STORES > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
+Path to the `Authorizenet` UI form in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} is **STORES > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
 
 This repository contains two data sets: `authorizenet` that covers seven fields, and `authorizenet_rollback` that covers one field.
 
@@ -494,7 +487,7 @@ After the repository generation
 
 you have the following code in the Customer repository (`<magento2>/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php`):
 
-  {%highlight php startinline=1%}
+``` php?start_inline=1
   
 $this->_data['default'] = [
   'firstname' => 'John',
@@ -505,7 +498,7 @@ $this->_data['default'] = [
   'password_confirmation' => '123123q',
 ];
   
-  {%endhighlight%}
+```
 
 As you can see, a repository with the name `default` contains data from the `customer_new_default` repository.
 

@@ -10,18 +10,13 @@ github_link: architecture/view/page-assets.md
 redirect_from: /guides/v1.0/architecture/view/page-assets.html
 ---
 
-## Introduction to page assets
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Overview {#m2devgde-page-assets-intro}
 
-An _asset_ is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using `<head/>`, `<img/>`, `<object/>` elements.
+An _asset_ is a reference to a certain resource linked to an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page; that is, references to scripts, stylesheets, RSS feeds, and so on using `<head/>`, `<img/>`, `<object/>` elements.
 
 This topic discusses how to work with Magento page assets (particularly interfaces and classes). The article is mostly aimed at developers
-who have solid experience with PHP and are familiar with <a href="{{page.baseurl}}architecture/view/xml-schema-layout.html">Magento XML layouts</a>.
+who have solid experience with {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and are familiar with <a href="{{page.baseurl}}architecture/view/xml-schema-layout.html">Magento XML layouts</a>.
 
 ## Asset interfaces {#m2devgde-page-assets-interf}
 
@@ -46,7 +41,7 @@ These types are represented as interfaces in the
 
 The classes Implement the interfaces are responsible for:
 
-* Remote: Implements an asset for which there is only URL and content type information. Used for rendering included RSS feeds, for example.
+* Remote: Implements an asset for which there is only {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} and content type information. Used for rendering included RSS feeds, for example.
 
 * File: Implements  a local asset that is referred using a relative path in Magento file system. The same relative path invariant is appended to the base URL when the full URL is requested. Because these assets are available locally, the Magento system can work with them in many ways; for example, transform the content, merge assets, or substitute with other assets.
 
@@ -70,7 +65,7 @@ It accepts URL and `content-type` in the constructor and serves only as a value 
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/File.php" target="_blank">\Magento\Framework\View\Asset\File</a> represents resources that reside in the local file system and for which you know the absolute file system path and an invariant "file path".
 
-This kind of asset accommodates arbitrary static view files that might be embedded in, or referred from, a web page. That might include anything from user-uploaded images to CSS files provided in Magento themes. Because these assets are available locally, the Magento software can manipulate them in many ways; for example, transform the content, merge assets, or substitute with other assets.
+This kind of asset accommodates arbitrary static view files that might be embedded in, or referred from, a web page. That might include anything from user-uploaded images to {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} files provided in Magento themes. Because these assets are available locally, the Magento software can manipulate them in many ways; for example, transform the content, merge assets, or substitute with other assets.
 
 Its asset class diagram follows:
 
@@ -103,11 +98,11 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 
 ## Page assets and static view files {#m2devgde-page-assets-static-view}
 
-According to the Magento classification of view files, CSS, JavaScript, images, and other assets that are included in a web page and presented on the storefront without modification are _static view files_.
+According to the Magento classification of view files, CSS, JavaScript, images, and other assets that are included in a web page and presented on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} without modification are _static view files_.
 
 Like all Magento view files, static view files are located using the fallback mechanism. This mechanism implements inheritance of files from one directory to others. In this way, we enable you to extend or override view files of existing components with new components.
 
-For example, a particular theme might extend or override files of its parent theme, all themes generally override module view files, and so on.
+For example, a particular {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} might extend or override files of its parent theme, all themes generally override {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} view files, and so on.
 
 ## Manipulate page assets {#m2devgde-page-assets-static-manip}
 
@@ -119,7 +114,7 @@ This section discusses the following ways to work with view assets:
 
 ### Use layout XML to manipulate assets {#m2devgde-page-assets-static-manip-xml}
 
-Although you can use the API to manipulate assets, frontend developers should use <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.
+Although you can use the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} to manipulate assets, {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} developers should use <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.
 
 This method is preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.
 
@@ -157,7 +152,7 @@ Expand one of the following sections for more information:
 
 #### Use layout XML to manipulate browser matching {#m2devgde-page-assets-static-manip-xml-brows}
 
-Use _browser matching_ to change the behavior of JavaScript and CSS for certain browsers only (usually because of technology-specific workarounds). The following example illustrates using layout instructions to set using a CSS file only when a page is loaded in Internet Explorer:
+Use _browser matching_ to change the behavior of {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and CSS for certain browsers only (usually because of technology-specific workarounds). The following example illustrates using {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} instructions to set using a CSS file only when a page is loaded in Internet Explorer:
 
 Layout instructions:
 

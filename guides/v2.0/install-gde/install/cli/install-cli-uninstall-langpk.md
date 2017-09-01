@@ -14,24 +14,16 @@ redirect_from:
 ---
 
   
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</a>
-*	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-cli-uninst-mod-lgpk">Uninstall language packages</a>
-
 <h2 id="instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</h2>
 This section discusses how to uninstall one or more language packages, optionally including the language packages' code from the file system. You can create backups first so you can restore the data at a later time.
 
-This command uninstalls *only* language packages that are specified in `composer.json`; in other words, language packages that are provided as Composer packages. If your language package is not a Composer package, you must uninstall it manually by removing language package code from the file system.
+This command uninstalls *only* language packages that are specified in `composer.json`; in other words, language packages that are provided as {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages. If your {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} is not a Composer package, you must uninstall it manually by removing language package code from the file system.
 
 You can restore backups at any time using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-uninst-lgpk-uninst">Uninstall language packages</h2>
 Command usage:
@@ -45,7 +37,7 @@ The language package uninstall command performs the following tasks:
 	To work around this, you can either uninstall all dependent language packages at the same time or you can uninstall the depending language packages first.
 2.	If `--backup code` is specified, backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories) to `var/backups/<timestamp>_filesystem.tgz`
 3.	Removes language packages files from the codebase using `composer remove`.
-4.	Cleans the cache.
+4.	Cleans the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
 
 For example, if you attempt to uninstall a language package that another language package depends on, the following message displays:
 

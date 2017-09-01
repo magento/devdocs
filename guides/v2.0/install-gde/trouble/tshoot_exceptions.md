@@ -12,8 +12,6 @@ redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
 ---
 
 
-<h2 id="install-trouble-except">Exceptions display during installation</h2>
-
 ### Symptom: Exceptions display during installation. Users have reported a variety of exceptions, including the following:
 
 	Module 'Magento_Indexer':

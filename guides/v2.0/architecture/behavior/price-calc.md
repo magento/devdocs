@@ -11,12 +11,8 @@ redirect_from: /guides/v1.0/architecture/behavior/price-calc.html
 ---
 
 ## Introduction to the Magento pricing library {#m2devgde-pricecalc-intro}
-{:.no_toc}
 
-This article provides in-depth information about Magento price calculation logic implemented in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library.
-
-* TOC
-{:toc}
+This article provides in-depth information about Magento price calculation logic implemented in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
 
 ## Price calculation: general flow {#m2devgde-pricecalc-gen}
 

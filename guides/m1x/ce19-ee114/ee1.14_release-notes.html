@@ -25,7 +25,10 @@
 <div class="toc"> <h4 class="toc">Contents</h4>
 <p>These Release Notes contain the following information:</p>
 <ul><li><a href="#upgrade">Important Upgrade Information</a></li>
-	<li><a href="#8788">SUPEE-8788 Security Patch Advisory</a></li>
+
+	<li><a href="#ee114-11434">Magento EE 1.14.3.4 Release Notes</a></li>
+	<li><a href="#ee114-11433">Magento EE 1.14.3.3 Release Notes</a></li>
+	<li><a href="#ee114-11432">Magento EE 1.14.3.2 Release Notes</a></li>
 	<li><a href="#ee114-11431">Magento EE 1.14.3.1 Release Notes</a></li>
 	<li><a href="#ee114-11430">Magento EE 1.14.3.0 Release Notes</a></li>
 <li><a href="http://docs.magento.com/m1/ee/user_guide/magento/release-notes-ee-1.14.2.html" target="_blank">Magento EE 1.14.2.0 Release Notes</a></li>
@@ -38,11 +41,97 @@
 
 </div> 
 
-<h2 id="8788">SUPEE-8788 Security Patch Advisory</h2>
-<p>The <a href="https://magento.com/security/patches/supee-8788" target="_blank">SUPEE-8788 security patch</a> released in October 2016 has potential issues for certain Magento EE versions. See <a href="http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html#apply-8788" target="_blank">How to Apply the SUPEE-8788 Patch</a></p>.
+
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use EE 1.14.3.0 or later for <em>all new EE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+
+
+<h2 id="ee114-11434">Magento EE 1.14.3.4 Release Notes</h2>
+ <p>This patch (SUPEE-9767 version 2) addresses both security and functional issues discovered when using the <code>SUPEE-9767</code> patch. We recommend upgrading your Magento store to this latest version.  
+
+ Here are your upgrade options:
+
+
+<ul><li>Upgrade to Magento EE 1.14.3.4. You don’t need to revert any patches or install SUPEE-9767 version 2 as version 2 is already included in the 1.14.3.4 release. </li>
+
+<li>If you’ve already installed SUPEE-9767 version 1, you can either: 
+
+	<ul>
+	<li>Upgrade to  Magento EE 1.14.3.4, or</li>
+
+	<li>revert SUPEE-9767 version 1, then install SUPEE-9767 version 2.</li>
+	</ul>
+	</li>
+
+
+
+<li>If you haven’t installed SUPEE-9767 version 1, you can either: 
+
+	<ul><li>Upgrade to Magento EE 1.14.3.4, or </li>
+
+	<li>install SUPEE-9767 version 2.
+	</li></ul>
+
+</ul>
+
+
+
+
+
+
+
+See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">Magento Security Center</a> for a comprehensive discussion of these security issues.</p>
+
+ <p>This release also provides support for the following functional issues: </p>
+
+<h3>General fixes</h3>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9584" target="_blank">MPERF-9584</a>. -->We’ve added a missing <code>form_key</code> to the enterprise shipping template (<code>app/design/frontend/enterprise/default/template/checkout/onepage/shipping.phtml</code>).</li>
+
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9591" target="_blank">MPERF-9591</a>.-->We’ve restored missing <code>strip_tags</code> functionality in the checkout JavaScript.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9583" target="_blank">MPERF-9583</a> .-->We’ve changed how Magento validates form keys during the generic five-step checkout process. Previously, customer registration failed during standard checkout processing if form key authentication was enabled.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9589" target="_blank">MPERF-9589</a>. -->You can now successfully add a product to the shopping cart when FPC (Full Page Cache) is enabled. Previously, when FPC was enabled, adding a product to the cart resulted in an empty cart.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9585" target="_blank">MPERF-9585</a>. -->Magento now displays the <code>Allow_symlinks</code> message in the Admin message area as expected.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9594" target="_blank">MPERF-9594</a>.  -->Magento now preserves the background transparency of uploaded images as expected. Previously, transparency was lost after the image was uploaded, resulting in an unusable image.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9635" target="_blank">MPERF-9635</a>.  --> You can now use Checkout with Multiple Addresses when checkout form validation is enabled.</li>
+
+	</ul>
+
+<h3>Installation</h3>
+	<ul>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9581" target="_blank">MPERF-9581</a>. --> The Allow symlinks option is now disabled during installation or upgrade processes. Previously, when you changed the Allow symlinks setting to true in the database before upgrading and then installing the patch, this option remained enabled,  but you could no longer access it from the Admin panel.</li>
+</ul>
+
+This patch is available from <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>.</p>
+
+
+
+
+
+
+
+
+
+<h2 id="ee114-11433">Magento EE 1.14.3.3 Release Notes</h2>
+ <p>This patch provides resolution of multiple critical security issues. These critical issues include remote code execution for authenticated Admin users, access control bypass, and cross-site request forgery issues. See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+ 
+ <p>This release also provides support for the following issue: </p>
+
+ <p><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9553" target="_blank">MPERF-9553</a>  -->Support for PayPal's update to its Instant Payment Notification (IPN) server URL. PayPal provides more information about this feature in <a href="https://www.paypal-knowledge.com/infocenter/index?page=content&widgetview=true&id=FAQ1916&viewlocale=en_US" target="_blank">IPN Verification Postback to HTTPS Microsite</a>. This update is essential for retaining uninterrupted service after June 30.</p>
+
+ <p><code>SUPEE-8167</code>, an older patch that also contains this fix, was added on May 8, 2017, and is available from <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>.</p>
+
+<h3>Known Issues</h3>
+<p>This patch/release has known issues. Please see <a href="https://magento.com/security/patches/supee-9767" target="_blank">SUPEE-9767</a> for updates.</p>
+
+<p><b>Note:</b> Before applying this patch or updating to this release, disable the <b>Symlinks</b> setting in <b>System > Configuration > Advanced > Developer > Enable Symlinks</b>. If the <b>Symlinks</b> setting is enabled, it will override your configuration file settings. If that override occurs, you will need to directly modify the database to change those settings.</p>
+
+<h2 id="ee114-11432">Magento EE 1.14.3.2 Release Notes</h2>
+<p>This patch addresses the following issues:</p>
+<ul><li>Removal of vulnerability with the Zend framework <code>Zend_Mail</code> library. For more information, see <a href="https://magento.com/security/patches/supee-9652" target="_blank">Magento Security Center</a>. </li>
+	<li>Updated the copyright year to 2017.</li></ul>
+
 
 <h2 id="ee114-11431">Magento EE 1.14.3.1 Release Notes</h2>
 <p>This patch addresses the following issues:</p>

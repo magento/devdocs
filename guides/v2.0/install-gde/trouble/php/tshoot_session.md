@@ -10,8 +10,7 @@ version: 2.0
 github_link: install-gde/trouble/php/tshoot_session.md
 ---
 
-<h2>During installation, Exception - SessionHandler::read</h2>
-**Symptom**: At the last step of installing Magento 2, the following exception displays:
+**Symptom**: At the last step of installing Magento 2, the following {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} displays:
 
 {% highlight PHP %} 
 exception 'Exception' with message 'Warning: SessionHandler::read():

@@ -1,18 +1,16 @@
 ---
 layout: default
 group: cloud
-subgroup: 12_env
-title: Magento Cloud environment variables
-menu_title: Magento Cloud environment variables
+subgroup: 120_env
+title: Magento Enterprise Cloud Edition environment variables
+menu_title: Magento Enterprise Cloud Edition environment variables
 menu_order: 75
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: vars
 version: 2.0
 github_link: cloud/env/environment-vars_cloud.md
 ---
-
-## Magento Enterprise Cloud Edition environment variables {#cloud-env-vars-cloud}
 
 Environment variables that are specific to Magento Enterprise Cloud Edition are prefixed with `MAGENTO_CLOUD_*`.
 
@@ -41,8 +39,7 @@ Environment variables that are specific to Magento Enterprise Cloud Edition are 
 -   **MAGENTO_CLOUD_VARIABLES**: A base64-encoded JSON object which keys are
     variables names and values are variable values (a string).
 
-Since values can change over time, the best thing is to just inspect
-the variable at runtime and use it to configure your application.
+Since values can change over time, you should inspect the variable at runtime and use it to configure your application.
 
 For example, we use the **MAGENTO_CLOUD_RELATIONSHIPS** variable to retrieve environment-related relationships as follows:
 

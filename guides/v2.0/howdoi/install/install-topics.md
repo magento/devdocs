@@ -25,4 +25,4 @@ github_link: howdoi/install/install-topics.md
 	*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Clean or flush the cache</a>
 	*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Reindex</a>
 	*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Run cron (task scheduler)</a>
-	*	<a href="{{page.baseurl}}onfig-guide/cli/config-cli-subcommands-compiler.html">Compile code</a>
+	*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Compile code</a>

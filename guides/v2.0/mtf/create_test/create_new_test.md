@@ -6,19 +6,12 @@ title: Create a test in the Functional Testing Framework
 menu_title: New functional test. Practice
 menu_order: 3
 version: 2.0
-github_link: mtf/create_test/new_test.md
+github_link: mtf/create_test/create_new_test.md
 ---
-
-<h2>New functional test: Practice</h2>
 
 To demonstrate the usage of test components from previous sections in the test creation process, we will create a new functional [injectable test][] step-by-step. Before creating automated test, try to pass it manually.
 
 To make the documentation more consistent, we created a completely new test specially for this tutorial. We used the [concrete Magento commit][] functionality for this test. You can [install one][] and try to follow this guide.
-
-<h3>Contents</h3>
-
-* TOC
-{:toc}
 
 ### Test description {#example-test-description}
 
@@ -34,7 +27,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 **Variation 1:**
 
-1. Log in to Admin.
+1. Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
 3. Click the "New Synonyms Group" button.
 4. Enter data in the "Synonyms" field.
@@ -82,7 +75,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 #### Step 2. Create the testing object - a fixture {#create-test-object}
 
-This step is applicable if a fixture doesn't exist in a module.
+This step is applicable if a fixture doesn't exist in a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 Use a [`generateFixtureXml.php`][] to create a new [fixture][].
 
@@ -536,7 +529,7 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 
 ![Created pages]({{site.baseurl}}common/images/ftf/mtf_tutorial_pages.png)
 
-To generate PHP classes for these [pages][] enter and run in your terminal
+To generate {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes for these [pages][] enter and run in your terminal
 
     php <magento2_root_dir>/dev/tests/functional/utils/generate.php
     
@@ -556,7 +549,7 @@ Let's see in the [test description][] what actions must be performed:
 
 Fortunately, you already have a [block][] that contains a method to add a new entity in a grid: [`\Magento\Backend\Test\Block\GridPageActions`][].
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 /**
  * Click the "Add New" button
@@ -568,9 +561,9 @@ public function addNew()
     $this->_rootElement->find($this->addNewButton)->click();
 }
 
-{% endhighlight %}
+```
 
-In HTML page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator.
+In {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. Learn how to [define a locator].
 
 The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.
 
@@ -605,7 +598,7 @@ We need a `fill()` method from the [`\Magento\Mtf\Block\Form`][] class and a map
 
 **Form mapping**
 
-[Learn about form mapping][].
+[Learn about form mapping.][].
 
 We don't need to define mapping parameters for the `synonyms` field, because they are the same as the default values. (See the [nodes description table][].) The same is applicable to the `scope_id` field except a type of input element, which is a [custom typified element][] [`\Magento\Mtf\Client\Element\SelectstoreElement`][] in our case. Let's create the mapping file `SynonymsForm.xml`, which has the following code:
                                                                       
@@ -647,7 +640,7 @@ Now we have the following structure:
 ![Form mapping block]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_mapping.png)
 
 
-Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page, use an `id='page:main-container'` css selector.
+Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page, use an `id='page:main-container'` {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}css{% endglossarytooltip %} selector.
 
 {% highlight xml %}
 
@@ -692,7 +685,7 @@ The page with a block:
 
 **New Synonym Group page**
 
-A corresponding page object in a functional test is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`
+A corresponding page object in a functional test is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsNew.xml`
 
 The page with blocks:
 
@@ -720,7 +713,7 @@ Here we should recall [Step 3][], where the initial test case was created.
 
 An argument for the `test()` method is a [test object][] (a [fixture][]).
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 /**
  * Create Synonym group test.
@@ -733,16 +726,16 @@ public function test(Synonym $synonym)
     // Steps
 }
 
-{% endhighlight %}
+```
 
 Now we can add page classes made in [Step 5][]:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 use Magento\Search\Test\Page\Adminhtml\SynonymsIndex;
 use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
 
-{% endhighlight %}
+```
 
 All methods are defined in blocks ([Step 6][]) that are grouped in pages ([Step 5][], [Step 7][]).
  
@@ -760,21 +753,21 @@ Let's code it!
 
 In the FTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
 
-{% highlight php startinline=1  %}
+``` php?start_inline=1
 
 $this->synonymsIndex->open();
 
-{% endhighlight %}
+```
 
 **Click the "New Synonym Group" button**
 
 To Click the "New Synonym Group" button, we will use the `addNew()` method from the `pageActionsBlock` block. A `getPageActionsBlock()` of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class receives parameters defined in the `pageActionsBlock` block (`class`, `locator`, `strategy`).
 
-{% highlight php startinline=1  %}
+``` php?start_inline=1
 
 $this->synonymsIndex->getPageActionsBlock()->addNew();
 
-{% endhighlight %}
+```
 
  This action opens the New Synonym Group page.
 
@@ -782,25 +775,25 @@ $this->synonymsIndex->getPageActionsBlock()->addNew();
 
 To enter data in the form, we use the `fill()` method from the `synonymForm` block of the `synonymsNew` page. An argument for this method is a fixture `Synonym`. A `getSynonymForm()` method of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` class receives parameters defined in the `synonymForm` block.
 
-{% highlight php startinline=1  %}
+``` php?start_inline=1
 
 $this->synonymsNew->getSynonymForm()->fill($synonym);
 
-{% endhighlight %}
+```
 
 **Click the "Save Synonym Group" button**
 
 A `save()` method with parameters defined in a `formPageActions` block. Parameters are injected using a `getFormPageActions()` method from the `synonymsNew` page (generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` page class).
 
-{% highlight php startinline=1  %}
+``` php?start_inline=1
 
 $this->synonymsNew->getFormPageActions()->save();
 
-{% endhighlight %}
+```
 
 **Full `test()` definition**
 
-{% highlight php startinline=1%}
+``` php?start_inline=1
 
 /**
  * Create Synonym group test.
@@ -817,7 +810,7 @@ public function test(Synonym $synonym)
     $this->synonymsNew->getFormPageActions()->save(); // `click` on the Save Synonym Group button
 }
 
-{% endhighlight %}
+```
 
 #### Step 9. Check the test run
 
@@ -1087,7 +1080,8 @@ That's it!
 [block]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
 [blocks]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
 [block mapping]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[Learn about form mapping]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[Learn about form mapping.]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[define a locator]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#define-a-selector
 [nodes description table]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
 [page]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
 [pages]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html

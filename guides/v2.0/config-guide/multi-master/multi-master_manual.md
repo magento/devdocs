@@ -12,23 +12,12 @@ github_link: config-guide/multi-master/multi-master_manual.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
-#### Contents
-*   [Overview of manual split database configuration](#config-ee-multidb-manual-over)
-*   [Back up the Magento system](#config-ee-multidb-backup)
-*   [Set up additional master databases](#config-ee-multidb-master-masters)
-*   [Configure the sales database](#config-ee-multidb-oms)
-*   [Configure the quote database](#config-ee-multidb-checkout)
-*   [Drop sales and quote tables from the Magento database](#config-ee-multidb-drop)
-*   [Update your deployment configuration](#config-ee-multidb-config)
-*   [Reference scripts](#split-db-ref)
-*   [Verify split databases]({{page.baseurl}}config-guide/multi-master/multi-master_verify.html)
-
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.
 
 Manually splitting databases involves:
 
-*   Create the checkout and order management system (OMS) databases
+*   Create the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and order management system (OMS) databases
 *   Run a series of SQL scripts that:
 
     *   Drop foreign keys
@@ -55,7 +44,7 @@ This topic uses the following naming conventions:
 </div>
 
 ## Back up the Magento system {#config-ee-multidb-backup}
-We strongly recommend you back up your current database and file system so you can restore it later in the event of issues during the process.
+We strongly recommend you back up your current database and file system so you can restore it later in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues during the process.
 
 {% collapsible Click to show how to back up Magento %}
 
@@ -69,7 +58,7 @@ To back up your system:
 {% endcollapsible %}
 
 ## Set up additional master databases {#config-ee-multidb-master-masters}
-This section discusses how to create database instances for sales and quote tables.
+This section discusses how to create database instances for sales and {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} tables.
 
 {% collapsible Click to show how to create database instances %}
 Create sales and OMS quote databases as follows:
@@ -495,7 +484,7 @@ Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` s
 {% endcollapsible %}
 
 ## Reference scripts {#split-db-ref}
-This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento database schema.
+This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %}.
 
 {% collapsible Click to view reference SQL scripts %}
 

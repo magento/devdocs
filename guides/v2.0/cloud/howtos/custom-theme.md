@@ -1,17 +1,16 @@
 ---
 layout: default
 group: cloud
-subgroup: 15_howto
+subgroup: How To
 title: Install a theme
 menu_title: Install a theme
 menu_order: 60
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/howtos/custom-theme.md
 ---
 
-## How to install a theme {#cloud-howto-theme}
-This topic discusses how to install a theme either by extracting its code to the Magento file system or using Composer. 
+This topic discusses how to install a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} either by extracting its code to the Magento file system or using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 
 ### Get started
 

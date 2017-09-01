@@ -2,13 +2,15 @@
 layout: default
 group: howdoi
 subgroup: AA_Top
-title: How do I...?
-menu_title: How do I...?
+title: How To
+landing-page: How To
+menu_title: How To
 menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: howdoi/bk-how-do-i.md
 ---
+
 ## Tell me how
 
 This section documents some of the most commonly performed tasks and procedures in Magento 2. New sections are being added each sprint, but we could use your help!
@@ -25,7 +27,7 @@ To sign up to contribute, all you need to do is to submit a <a href="{{ page.bas
 
 Use <a href="{{page.baseurl}}howdoi/howdoi_template.html">this template</a> if you'd like. You can get a copy of the <a href="{{ site.githuburl }}howdoi/howdoi_template.md">.md file  on Github</a>.
 
-Submissions should be authored in Markdown but HTML is welcome also.
+Submissions should be authored in {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}Markdown{% endglossarytooltip %} but {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} is welcome also.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>All content submitted to us is subject to internal review. Content should be consistent with Magento practices, including <a href="{{page.baseurl}}coding-standards/bk-coding-standards.html">coding standards</a>.</p>

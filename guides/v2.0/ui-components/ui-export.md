@@ -12,8 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-export.html
 
 ---
 
-<h2 id="export">UI ExportButton Component</h2>
-
 ExportButton Component is responsible for export grid data to specified data format (cvs, xml, and so on).
 
 To enable ExportButton Component add exportButton element with specified selectProvider item to listing configuration file.
@@ -44,7 +42,7 @@ Example: `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_gri
 </listing>
 {% endhighlight %}
 
-By default Magento allows CSV and Excel XML export data formats.
+By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} and Excel {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} export data formats.
 
 #### How to add new export format
 

@@ -9,18 +9,11 @@ version: 2.0
 github_link: mtf/create_test/out-of-the-box.md
 ---
 
-<h2>Out-of-the-box test</h2>
-
 The out-of-the-box tests are the ready to use functional tests developed by Magento. You can find them in the `<magento2_root_dir>/dev/tests/functional` directory.
-
-<h3>Contents</h3>
-
-* TOC
-{:toc}
 
 ### Coverage {#coverage}
 
-Test coverage of the out-of-the-box test depends on a module which it belongs to. The out-of-the-box tests cover the basic functionality of the Magento application. In general, they cover the CRUD functionality for all basic entities (CRUD is an abbreviation for "create", "read", "update", "delete" actions). The most important modules are covered better.
+Test coverage of the out-of-the-box test depends on a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} which it belongs to. The out-of-the-box tests cover the basic functionality of the Magento application. In general, they cover the CRUD functionality for all basic entities (CRUD is an abbreviation for "create", "read", "update", "delete" actions). The most important modules are covered better.
 
 ### Usage {#oob-usage}
 

@@ -1,11 +1,12 @@
 {% include header.html %}
 
-{% include full-width/404-page-header.html %}
-
 <div class="container">
 	<section class="full-width-content content">
 		<div class="content-wrap">
-		{{ content }}
+			{% include page-header.html %}
+			{{ content }}
+		</div>
+		<div class="page-info">
 		</div>
 	</section>
 <!-- /main content -->

@@ -249,7 +249,7 @@ title: Create Your Own API
 		</div>
 </div></div>
 
-<p> Note that you cannot create method “list” because it’s a PHP keyword, so instead the method is named items. In order to make this work, add a &lt;method&gt; element into the &lt;list&gt; element in <b>api.xml</b>, as shown below.</p>
+<p> Note that you cannot create method "list" because it’s a PHP keyword, so instead the method is named items. In order to make this work, add a &lt;method&gt; element into the &lt;list&gt; element in <b>api.xml</b>, as shown below.</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
 		<pre class="theme: Default; brush: java; gutter: false">&lt;config&gt;
@@ -546,7 +546,7 @@ title: Create Your Own API
 		</div>
 </div></div>
 
-<p> The “fault” method allows you to send fault exceptions for XML-RPC service when handling requests. </p>
+<p> The "fault" method allows you to send fault exceptions for XML-RPC service when handling requests. </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
 		<pre class="theme: Default; brush: php; gutter: false">public function fault($code, $message)
@@ -601,5 +601,5 @@ title: Create Your Own API
 		</div>
 </div></div>
 
-<p> If you are missing this method, the error “Invalid api path” will be returned. </p>
+<p> If you are missing this method, the error "Invalid api path" will be returned. </p>
 <?php include(__ROOT__ . 'footer.php'); ?>

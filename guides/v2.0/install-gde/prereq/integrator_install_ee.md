@@ -10,8 +10,6 @@ version: 2.0
 github_link: install-gde/prereq/integrator_install_ee.md
 ---
 
-## Get the Magento EE metapackage {#integrator-first-composer-ee}
-
 To get the Magento EE metapackage:
 
 1.	See [(Integrator) Integrator installation]({{ page.baseurl }}install-gde/prereq/integrator_install.html) first.
@@ -28,7 +26,9 @@ To get the Magento EE metapackage:
 
 	The following error indicates your tokens are incorrect:
 
-		  Could not find package magento/project-enterprise-edition with version 2.0.0
+		  Could not find package magento/project-enterprise-edition with version <version>
+
+	If you receive this error after creating authentication keys as discussed previously, your account might not be authorized to download Magento EE. Contact [Magento support]({{ page.baseurl }}install-gde/install/get-help.html) to resolve the issue.
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-enterprise-edition` if you did not.
 

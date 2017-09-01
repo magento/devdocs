@@ -11,19 +11,13 @@ github_link: migration/migration-migrate-delta.md
 redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
 ---
 
-## Migrate incremental changes
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Incremental migration enables you to migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
 
-* data that customers added via storefront (created orders, reviews, changes in customer profiles, etc.)
+* data that customers added via {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} (created orders, reviews, changes in customer profiles, etc.)
 
-* all operations with orders in the Magento Admin panel
+* all operations with orders in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel
 
 ## Before you start: routine preparations
 
@@ -54,7 +48,7 @@ where;
 
 In the `Delta` mode, the Data Migration Tool migrates data created only by Magento's own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created data in the storefront database and the merchant wants to have this data in Magento 2 --- config files of the Data Migration Tool should be created and modified accordingly.
 
-If an extension has its own tables, and you need to track their changes for delta migration, follow these steps:
+If an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} has its own tables, and you need to track their changes for delta migration, follow these steps:
 
 1. Add the tables to be tracked to the `deltalog.xml` file
 

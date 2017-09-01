@@ -12,15 +12,8 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.h
 ---
 
 
-#### Contents
-
-*	<a href="#config-cli-xml-overview">Overview of layout XML conversion</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-xml-run">Convert layout XML files</a>
-
-
 <h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
-This command enables you to update your layout XML files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet. 
+This command enables you to update your {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet. 
 
 For more information about layout XML files, see:
 
@@ -39,7 +32,7 @@ Command options:
 where
 
 *	`{xml file}` is the full path and file name of a layout XML file to convert (required)
-*	`{xslt stylesheet}` is the full path and file name of an XSLT stylesheet file to use for conversion (required)
+*	`{xslt stylesheet}` is the full path and file name of an XSLT stylesheet file to use for {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} (required)
 *	`-o|--overwrite` include this option to overwrite the existing XML file
 
 #### Related topics

@@ -1,40 +1,68 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
-title: Overview of a Magento workspace
-menu_title: Overview of a Magento workspace
-menu_order: 6
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: workspace
+subgroup: 080_setup
+title: Set up a project and dev workspace
+menu_title: Set up a project and dev workspace
+menu_order: 5
+menu_node:
 version: 2.0
 github_link: cloud/before/before-workspace.md
+redirect from:
+  -  /guides/v2.0/cloud/access-acct/set-up-env.html
+  -  /guides/v2.1/cloud/access-acct/set-up-env.html
+  -  /guides/v2.1/cloud/access-acct/set-up-env.html
+  - /guides/v2.0/cloud/access-acct/first-time-setup_template.html
+  - /guides/v2.1/cloud/access-acct/first-time-setup_template.html
+  - /guides/v2.2/cloud/access-acct/first-time-setup_template.html
 ---
 
-#### Contents
-*	[Overview of a Magento workspace](#cloud-first-workspace)
-*	[Step 1, Set up an account]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
-*	[Step 2, Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)
-*	[Step 3, Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
-*	[Step 4, Set up SSH]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
-*	[Step 5, Set up PHP and MySQL]({{ page.baseurl }}cloud/before/before-workspace-php.html)
+To develop, deploy, and test Magento Commerce (Cloud), you need to setup your local workspace and clone your project's master Git branch. This local workspace provides a development system for your custom code, extensions, and configurations to push for active testing in one of of the Integration environments.
 
-## Overview of a Magento workspace {#cloud-first-workspace}
-The following sections discuss your options for setting up a Magento Enterprise Cloud Edition project.
+This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Magento merchants moving to the cloud. If you have already completed some of these steps or have an existing Magento developer environment, make sure to review the expected results to continue to the next. Some configurations and workflows differ for Magento Commerce than a typical Enterprise Edition installation.
 
-We assume you'll install the Magento software so you can use the command line and the Magento Admin on your laptop. That means you must set up the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html) on your laptop so files and directories you created are owned by that user.
+## Set up an account {#newaccount}
+To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Magento Commerce (Cloud) account](https://accounts.magento.cloud){:target="_blank"}. The account provides access to your project for Magento development and deployment across all supported environments.
 
-To be able to manage your projects, environments, and services, you must set up the Magento Enterprise Cloud Edition command-line interface (CLI) and Secure Shell (SSH). These tools enable you to perform tasks like:
+You should receive an e-mail invitation to verify and access the project. If you don't see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your project account.
 
-*	Work on a local branch
-*	Branch and merge in your project
-*	Push changes to the parent branch
-*	Pull changes from the parent branch
+When logged in, you should see a named project to select.
 
-This guide assumes you're working on a UNIX system or in a UNIX shell environment. On Windows, you can use a UNIX environment like Cygwin or you can use Putty. The tool you use is up to you.
+If the project name is **[UntitledProject]**, the project administrator (Super User admin) or the account owner needs to create the project, which sets up a master Git repository on the Integration environment. Only one of these users can create the project. For instructions, see [Create the Project]({{ page.baseurl }}cloud/before/cloud/before/before-project-owner.html#create-project).
 
-#### Next step
-[Step 1, Set up an account]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
+![Project owner needs to create the project]({{ site.baseurl }}common/images/cloud_project_new.png){:width="440px"}
+
+## Magento specific tools
+When working on your local, you will be accessing the [Magento Cloud CLI]({{ page.baseurl }}cloud/reference/cli-ref-topic.html) to issue commands and programmatically complete tasks and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} for the store UI and configurations.
+
+You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your local to assign that user as the owner for all created files and directories. For more information, see [Overview of ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
+
+## Recommended tools
+This guide assumes you're working on a UNIX system or in a UNIX shell environment. For MAC OS and Linux-based systems, feel free to use any CLI tools of choice for issuing commands. For Windows users, we recommend a UNIX environment like [Cygwin](https://www.cygwin.com/){:target="_blank"}, [Putty](http://www.putty.org/){:target="_blank"}, or Git Bash.
+
+For development on your local, use any development environment or tools you prefer. For recommendations, many Magento developers use tools including [WebStorm](https://www.jetbrains.com/webstorm/){:target="_blank"}, [PHPStorm](https://www.jetbrains.com/phpstorm/){:target="_blank"}, and [Atom](https://atom.io/){:target="_blank"}.
+
+Developing code for Magento Commerce requires working in Git branches. Not everyone remembers [Git](https://git-scm.com/docs){:target="_blank"} commands with ease. If you want a Git client, use any client of your choice. Some developers use clients including [GitKraken](https://www.gitkraken.com/){:target="_blank"} and [SmartGit](https://www.syntevo.com/smartgit/){:target="_blank"}.
+
+## Prerequisites
+Have the following prepared to complete your initial workspace and project setup:
+
+ * Magento Commerce account with an added user account
+ * [Magento authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html) from Magento Marketplace
+
+## Get started
+You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:
+
+* Install all prerequisite software and tools on your host system (laptop, desktop, etc) and local workspace (VM)
+* Install Magento Cloud CLI
+* Set up SSH keys
+* Configure the Magento file system owner
+* Clone the project, create a branch
+* Set up Magento authentication keys (encryption keys)
+* Install Magento
+* Complete configurations and file/folder permissions
+* Verify install, branches, and get to coding!
 
 
+#### Next step:
+[Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)

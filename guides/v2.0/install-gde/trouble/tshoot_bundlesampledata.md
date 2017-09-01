@@ -10,8 +10,6 @@ version: 2.0
 github_link: install-gde/trouble/tshoot_bundlesampledata.md
 ---
 
-## Unknown module Magento_BundleSampleData
-
 ### Details
 
 During the installation, a  message similar to the following displays: 

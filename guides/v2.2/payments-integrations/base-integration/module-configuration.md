@@ -1,0 +1,1 @@
+../../../v2.1/payments-integrations/base-integration/module-configuration.md

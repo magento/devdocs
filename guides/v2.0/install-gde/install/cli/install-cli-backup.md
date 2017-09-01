@@ -13,16 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-backup.html
 ---
 
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-cli-uninst-back-over">Overview of backup</a>
-*	<a href="#instgde-cli-before">First steps</a>
-*	[Set ulimit for the web server user](#instgde-cli-ulimit)
-*	<a href="#instgde-cli-uninst-back">Back up</a>
-*	<a href="#instgde-cli-uninst-roll">Roll back</a>
 
 <h2 id="instgde-cli-uninst-back-over">Overview of backup</h2>
 This command enables you to back up:
@@ -77,7 +67,7 @@ The command performs the following tasks:
 	<tr>
 		<td><p>--db</p></td>
 		<td><p>Back up the Magento 2 database.</p></td>
-		<td><p>var/backups/&lt;timestamp>_db.gz</p></td>
+		<td><p>var/backups/&lt;timestamp>_db.sql</p></td>
 	</tr>
 	<tr>
 	</tbody>
@@ -97,8 +87,8 @@ Messages similar to the following display:
 	Code backup path: /var/www/html/magento2/var/backups/1434133011_filesystem.tgz
 	[SUCCESS]: Code backup completed successfully.
 	DB backup is starting...
-	DB backup filename: 1434133011_db.gz (The archive can be uncompressed with 7-Zip on Windows systems)
-	DB backup path: /var/www/html/magento2/var/backups/1434133011_db.gz
+	DB backup filename: 1434133011_db.sql
+	DB backup path: /var/www/html/magento2/var/backups/1434133011_db.sql
 	[SUCCESS]: DB backup completed successfully.
 	Disabling maintenance mode
 

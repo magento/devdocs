@@ -12,9 +12,9 @@ redirect_from:
   - guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
 <h2>Overview</h2>
-Magento dropdownDialog widget is a customization of the standard <a href="http://api.jqueryui.com/dialog/">jQuery UI Dialog</a>. As extra functionality it implements the following:
+Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog</a>. As extra functionality it implements the following:
 <ul>
-<li>triggering event for opening</li>
+<li>triggering {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} for opening</li>
 <li>delaying to automatically close the drop-down on mouse out</li>
 <li>clicking outside the area closes the drop-down</li>
 </ul>
@@ -23,11 +23,11 @@ The dropdownDialog widget source is located in <a href="{{site.mage2000url}}lib/
 
 <h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
 
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="dialog_options">Options</h2>
  
-Magento customized Dialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">Query UI Dialog widget</a> options, plus several custom options:
+Magento customized Dialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> options, plus several custom options:
 <ul>
 <li><a href="#d_autoPosition">autoPosition</a></li>
 <li><a href="#d_autoSize">autoSize</a></li>
@@ -42,7 +42,7 @@ Magento customized Dialog widget has default <a href="http://api.jqueryui.com/di
 <li><a href="#d_triggerTarget">triggerTarget</a></li>
 </ul>
 
-Description of each option follows.
+Description of each option as follows below location.
 
 <h3 id="d_autoPosition"><code>autoPosition</code></h3>
 Specifies if the <a href="http://api.jqueryui.com/dialog/#option-position" target="_blank"><code>position</code></a> option is used for calculating the drop-down offset. 
@@ -127,7 +127,7 @@ Element that triggers the drop-down.
 **Type**: 
 
 - String
-- jQuery object
+- {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} object
 
 **Default value**: `null`
 
@@ -141,7 +141,7 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 
 
 <h2 id="dialog_methods">Methods</h2>
-Magento customized dropdownDialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">Query UI Dialog widget</a> methods, though some of them are customized. 
+Magento customized dropdownDialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> methods, though some of them are customized. 
 
 
 Customized public methods:
@@ -154,5 +154,5 @@ Customized public methods:
 Beside default functionality, this method calls the `_mouseLeave()` and `_mouseEnter()` functions, adds classes on trigger and drop-down parent, and binds the close on mouse click outside drop-down to the `<body>` element.
 
 <h3 id="d_close"><code>close()</code></h3>
-Beside default functionality, this method removes the classes from trigger and drop-down parent and clears the timeout if the latter exists.
+Beside default functionality, this method removes the classes from trigger and drop-down parent.Also clears the timeout if the latter exists.
 

@@ -11,14 +11,6 @@ github_link: config-guide/cli/config-cli-subcommands-index.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
 ---
 
-
-#### Contents
-
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-index-status">View indexer status</a>
-*	<a href="#config-cli-subcommands-index-reindex">Reindex</a>
-*	<a href="#config-cli-subcommands-index-conf">Configure indexers</a>
-
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
@@ -110,7 +102,7 @@ Sample result:
 <h2 id="config-cli-subcommands-index-conf">Configure indexers</h2>
 This command enables you to set the following indexer options:
 
-*	Update on save (`realtime`): Indexed data is updated as soon as a change is made in the Admin. (For example, the category products index is reindex after products are added to a category in the Admin.) This is the default.
+*	Update on save (`realtime`): Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
 *	Update by schedule (`schedule`): Data is indexed according to the schedule set by your Magento cron job.
 
 [More information about indexing]({{ page.baseurl }}extension-dev-guide/indexing.html)

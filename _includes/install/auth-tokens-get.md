@@ -13,13 +13,13 @@ To get your authentication keys:
 2.	After you log in, click **My Access Keys** as the following figure shows.
 
 	![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}common/images/install_mkpl_access-keys.png){:width="500px"}
-3.	If you already have keys, use the **Public key** as your user name and the **Private key** as your password.
+3.	If you already have keys, use the **Public Key** as your user name and the **Private Key** as your password.
 3.	To create a new key pair, click **Create a New Access Key**.
 
 	The following figure shows an example.
 
 	![]({{ site.baseurl }}common/images/install_mkpl_access-keys-detail.png){:width="500px"}
-4.	When prompted, enter a descritive name to identify the key pair.
+4.	When prompted, enter a descriptive name to identify the key pair.
 5.	Click **Generate New**.
 
 	Use the **Public key** as your user name and the **Private key** as your password.
@@ -27,11 +27,11 @@ To get your authentication keys:
 #### Manage your authentiation keys
 You can optionally disable or delete authentication keys you created. For example, you can disable or delete keys for security reasons after someone left your organization.
 
-*	Disable keys: Click **Disable**. You can do this if you want to suspend use of your keys.
-*	Enable a previously disabled key: Click **Enable**.
-*	Delete keys: Click **Delete**.
+*	To disable keys: Click **Disable**. You can do this if you want to suspend use of your keys.
+*	To enable a previously disabled key: Click **Enable**.
+*	To delete keys: Click **Delete**.
 
-You cannot delete or disable keys you created by logging in to `magento.com`. To manage those keys:
+You cannot delete or disable keys you created by signing in to `magento.com`. To manage those keys:
 
 1.	[Log in](https://www.magentocommerce.com/products/customer/account/login){:target="_blank"} to your `magento.com` account.
 2.	In the top navigation bar, click **Connect**.

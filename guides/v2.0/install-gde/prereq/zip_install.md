@@ -10,14 +10,6 @@ version: 2.0
 github_link: install-gde/prereq/zip_install.md
 ---
 
-
-#### Contents 
-
-*	<a href="#integrator-aud">Intended audience</a>
-*	<a href="#zip-prereq">Prerequisites</a>
-*	<a href="#get-archive">Get the Magento software package</a>
-*	[Set pre-installation file system ownership and permissions](#perms-over) 
-
 <h2 id="integrator-aud">Intended audience</h2>
 The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and <a href="{{page.baseurl}}install-gde/bk-install-guide.html">choose another starting point</a>.
 

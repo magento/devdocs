@@ -1,18 +1,13 @@
 ---
 layout: default
-group: 
-subgroup: 
+group:
+subgroup:
 title: Persistent entities
 menu_title: Persistent entities
 menu_order: 1000
 version: 2.1
 github_link: extension-dev-guide/persistent-entities.md
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ### Overview
 
@@ -25,7 +20,7 @@ Starting in Magento 2.1, we no longer recommend using the deprecated save, load,
 In Magento, data interfaces, data models, and models all represent entities.
 
 #### Data Interfaces
-A data interface is the interface for an entity that reveals the data it contains to clients. For example, the [`\Magento\Customer\Api\Data\CustomerInterface`]({{ site.mage2100url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php){:target="_blank"} class contains get and set functions for customer entity-related data such as names and email.
+A data interface is the interface for an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} that reveals the data it contains to clients. For example, the [`\Magento\Customer\Api\Data\CustomerInterface`]({{ site.mage2100url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php){:target="_blank"} class contains get and set functions for customer entity-related data such as names and email.
 
 To allow the addition of [custom EAV attributes]({{page.baseurl}}extension-dev-guide/attributes.html) on your entity, your data interface must extend the [`\Magento\Framework\Api\CustomAttributesDataInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/CustomAttributesDataInterface.php){:target="_blank"} class.
 
@@ -38,7 +33,7 @@ An example of a data model is the [`\Magento\Customer\Model\Data\Customer`]({{ s
 
 #### Models
 
-Magento models extend the [`Magento\Framework\Mode\AbstractModel`]({{ site.mage2100url }}lib/internal/Magento/Framework/Model/AbstractModel.php){:target="_blank"} class because it provides useful general functions. Models contain logic for validation, events, and caching. A model class might have a data interface implementation. To set or access data, they use `getData`, `setData` and magic methods. A model is not statically typed if it does not have a data interface implementation.
+Magento models extend the [`Magento\Framework\Model\AbstractModel`]({{ site.mage2100url }}lib/internal/Magento/Framework/Model/AbstractModel.php){:target="_blank"} class because it provides useful general functions. Models contain logic for validation, events, and caching. A model class might have a data interface implementation. To set or access data, they use `getData`, `setData` and magic methods. A model is not statically typed if it does not have a data interface implementation.
 
  Model classes should posses logic that relates to those classes and should not contain logic that reveal anything about data storage in the underlying data layer.
 
@@ -52,11 +47,11 @@ An example of a model is the [`\Magento\Customer\Model\Customer`]({{ site.mage21
 
 ### Repositories
 
-Modules interact with other modules through their public API. For working with persistent entities, Magento recommends and uses repositories. These classes adopt the [repository pattern](http://martinfowler.com/eaaCatalog/repository.html){:target="_blank"} and act as a layer between your module's business logic layer and the data mapping layer. We recommend placing the class files for repositories under the `Model` or `Model/ResourceModel` directory inside your module's root directory.
+Modules interact with other modules through their public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}. For working with persistent entities, Magento recommends and uses repositories. These classes adopt the [repository pattern](http://martinfowler.com/eaaCatalog/repository.html){:target="_blank"} and act as a layer between your module's business logic layer and the data mapping layer. We recommend placing the class files for repositories under the `Model` or `Model/ResourceModel` directory inside your module's root directory.
 
 An example of a repository is the [`Magento\CatalogRule\Model\CatalogRuleRepository`]({{ site.mage2100url }}app/code/Magento/CatalogRule/Model/CatalogRuleRepository.php){:target="_blank"} class.
 
-Different parts of the application can use your repository to load entities. To prevent loading of the same data from the database more than once, use a registry inside the repository. For an example of this strategy, take a look at the  [`Magento\Customer\Model\ResourceModelCustomerRepository`]({{ site.mage2100url }}app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php){:target="_blank"} class.
+Different parts of the application can use your repository to load entities. To prevent loading of the same data from the database more than once, use a registry inside the repository. For an example of this strategy, take a look at the  [`Magento\Customer\Model\ResourceModel\CustomerRepository`]({{ site.mage2100url }}app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php){:target="_blank"} class.
 
 #### Resource Models
 

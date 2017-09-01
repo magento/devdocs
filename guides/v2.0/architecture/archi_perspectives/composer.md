@@ -10,6 +10,4 @@ github_link: architecture/archi_perspectives/composer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/composer.html
 ---
 
-## Composer
-
 This document is not ready yet, but we are working on it.

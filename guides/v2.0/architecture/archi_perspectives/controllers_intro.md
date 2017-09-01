@@ -10,12 +10,6 @@ github_link: architecture/archi_perspectives/controllers_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/controllers_intro.html
 ---
 
-## Magento Blocks and Controllers
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
 Blocks hold presentation logic --- no business logic code that controls.
@@ -34,7 +28,7 @@ Layouts have output blocks
 
 ### Magento Front Controller
 
-Front controller design pattern has two parts
+Front controller {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} has two parts
 
 Tasks are highly limited, restricted to routing and dispatching.
 

@@ -13,14 +13,14 @@ redirect_from: /guides/v2.0/get-started/usage.html
 
 ## Specifying searchCriteria ##
 
-POST, PUT, and DELETE requests to the REST Web API require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or XML structure) in the body of the message.
+POST, PUT, and DELETE requests to the REST Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} structure) in the body of the message.
 
-For search APIs that invoke a `*Repository::getList(SearchCriteriaInterface *)` call, the searchCriteria must be specified in the URL of the GET request. The basic pattern for specifying the criteria is
+For search APIs that invoke a `*Repository::getList(SearchCriteriaInterface *)` call, the searchCriteria must be specified in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} of the GET request. The basic pattern for specifying the criteria is
 
 {% highlight html %}
-searchCriteria[filter_groups][<index>][filters][<index>][field=<field_name>]
-searchCriteria[filter_groups][<index>][filters][<index>][value=<search_value>]
-searchCriteria[filter_groups][<index>][filters][<index>][condition_type=<operator>]
+searchCriteria[filter_groups][<index>][filters][<index>][field]=<field_name>
+searchCriteria[filter_groups][<index>][filters][<index>][value]=<search_value>
+searchCriteria[filter_groups][<index>][filters][<index>][condition_type]=<operator>
 {% endhighlight %}
 
 where:
@@ -36,13 +36,13 @@ Condition | Notes
 `from` | The beginning of a range. Must be used with `to`
 `gt` | Greater than
 `gteq` |  Greater than or equal
-`in` | In
+`in` | In. The `value` can contain a comma-separated list of values.
 `like` | Like. The `value` can contain the SQL wildcard characters when `like` is specified.
 `lt` | Less than
 `lteq` | Less than or equal
 `moreq` | More or equal
 `neq` | Not equal
-`nin` | Not in
+`nin` | Not in. The `value` can contain a comma-separated list of values.
 `notnull` | Not null
 `null` | Null
 `to` | The end of a range. Must be used with `from`
@@ -58,6 +58,7 @@ When constructing a search, keep the following in mind:
 * To perform a logical OR, specify multiple `filters` within a `filter_groups`.
 * To perform a logical AND, specify multiple `filter_groups`.
 * You cannot perform a logical OR across different `filter_groups`, such as `(A AND B) OR (X AND Y)`. ORs can be performed only within the context of a single `filter_groups`.
+* You can only search top-level attributes.
 
 The following sections provide examples of each type of search. These examples use the Magento CE sample data.
 
@@ -73,7 +74,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=finset
 
 The system creates an array, as shown in the following pseudo-code.
 
-<pre>
+<pre class="no-copy">
 searchCriteria => [
   'filterGroups' => [
     0 => [
@@ -115,7 +116,7 @@ searchCriteria[filter_groups][0][filters][1][condition_type]=like
 
 The system creates an array, as shown in the following pseudo-code.
 
-<pre>
+<pre class="no-copy">
 searchCriteria => [
   'filterGroups' => [
     0 => [
@@ -152,7 +153,7 @@ searchCriteria[filter_groups][1][filters][0][condition_type]=lt
 
 The system creates an array, as shown in the following pseudo-code.
 
-<pre>
+<pre class="no-copy">
 searchCriteria => [
   'filterGroups' => [
     0 => [

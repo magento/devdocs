@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install_cli 
+group: install_cli
 subgroup: 05_Command-line installation
 title: Install the Magento software
 menu_title: Install the Magento software
@@ -15,17 +15,6 @@ redirect_from:
 <div class="bs-callout bs-callout-tip">
   <p>Totally lost? Need a helping hand? Try our <a href="{{page.baseurl}}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{page.baseurl}}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
-*	[Set file system permissions after installing](#instgde-install-cli-magento-perms)
-
-See also <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
-
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
@@ -56,8 +45,11 @@ The installer is designed to be run multiple times if necessary so you can:
   <li>If you get errors during the installation, see <a href="{{page.baseurl}}install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
 </div>
 
-<h2 id="instgde-cli-help-cmds">Installer help commands</h2>
+See also <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
+{% include install/fully-secure.md %}
+
+## Installer help commands {#instgde-cli-help-cmds}
 You can run the following commands to find values for some required arguments:
 
 <table>
@@ -86,7 +78,7 @@ You can run the following commands to find values for some required arguments:
   <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{page.baseurl}}install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
 </div>
 
-	
+
 <h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
 The format of the install command follows:
 
@@ -152,7 +144,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
 			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
 			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
-			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only. It can be up to 255 characters in length.</p></td>
+			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code>_</code>) only. </p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -189,7 +181,7 @@ The following table discusses the meanings of installation option names and valu
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	
+
 	<tr>
 		<td><p>--language</p></td>
 		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
@@ -213,16 +205,16 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--use-secure</p></td>
-		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all storefront URLs. Make sure your web server supports SSL before you select this option.</p>
+		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p>
-		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
+		</td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--base-url-secure</p></td>
 		<td>Secure base URL to use to access your Magento Admin and storefront in the following format:
 		<code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>
-		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
+		</td>
 		<td><p>No</p></td>
 	</tr>
 
@@ -238,7 +230,7 @@ The following table discusses the meanings of installation option names and valu
 		<p><code>0</code> disables the use of the key.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	<!-- <tr> 
+	<!-- <tr>
 		<td>enable_modules=&lt;list>}</td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>To enable and disable modules after installing Magento, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
@@ -255,8 +247,8 @@ The following table discusses the meanings of installation option names and valu
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="{{page.baseurl}}config-guide/database/database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
-			
+		<ul><li><code>db</code> to store session data in the <a href="{{page.baseurl}}config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+
 			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 	</ul></td>
 		<td><p>No</p></td>
@@ -284,23 +276,23 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 <tr>
 <td><p>--amqp-host</p></td>
-<td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<td><p>{{site.data.var.ee}} only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
 <p>The host name where RabbitMQ is installed.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-port</p></td>
-<td><p>Enterprise Edition only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
+<td><p>{{site.data.var.ee}} only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-user</p></td>
-<td><p>Enterprise Edition only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>{{site.data.var.ee}} only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-password</p></td>
-<td><p>Enterprise Edition only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
+<td><p>{{site.data.var.ee}} only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 	</tbody>
@@ -349,7 +341,7 @@ The following example installs Magento with the following options:
 Messages similar to the following display to indicate a successful installation:
 
 	Post installation file permissions check...
-	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 	[Progress: 274 / 274]
 	[SUCCESS]: Magento installation complete.
 	[SUCCESS]: Admin Panel URI: /admin_puu71q
@@ -392,7 +384,7 @@ The following example installs Magento with the following options:
 Messages similar to the following display to indicate a successful installation:
 
 	Post installation file permissions check...
-	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 	[Progress: 274 / 274]
 	[SUCCESS]: Magento installation complete.
 	[SUCCESS]: Admin Panel URI: /admin_puu71q

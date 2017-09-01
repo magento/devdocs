@@ -2,21 +2,14 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Handler
 menu_title: Handler
 menu_order: 3
 version: 2.0
 github_link: mtf/mtf_entities/mtf_handler.md
 ---
 
-<h2>Handler</h2>
-
-* TOC
-{:toc}
-  
-## Handler overview {#mtf_handler_overview}
-
-You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular widget that must be implicitly created before the test is started. You need <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
+You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} that must be implicitly created before the test is started. You need <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
 
 This topic focuses on handlers, and we'll discuss types of handlers as well as how to create and use one.
 
@@ -30,13 +23,13 @@ Magento uses the following handlers:
 |---|---|---|---|
 |UI|Drives the web browser.| Set of scripts for Selenium that simulate user actions to create a widget through a web browser.| The UI handler is much slower then the other handlers. When the test execution time is critical, you should avoid use of the UI handler. The UI handler code is very similar to the code of the test that doesn't contain constraints. If you have a test for widget creation, you can re-use the code, because the code of UI handler that creates widget is very similar.|
 |cURL|Sends POST or PUT requests to the server hosting the application that is being tested.|HTTP POST request to the application server, that transfers Widget fixture fields and corresponding values from the data set.|Browser is not involved, that's why the cURL handler works much faster than the UI handler.|
-|WebAPI|Sends a POST request using the REST API. <a href="{{page.baseurl}}rest/bk-rest.html">See REST API reference documentation.</a> |Similar to cURL but uses the REST API entry point. |Has the advantage of testing the API, faster than cURL.|
+|WebAPI|Sends a POST request using the REST API. <a href="{{page.baseurl}}rest/bk-rest.html">See REST API reference documentation.</a> |Similar to cURL but uses the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} entry point. |Has the advantage of testing the API, faster than cURL.|
 
 Furthermore, you can create your own handlers, such as **Direct**, which is very fast because the **Direct** handler sends a direct call to the Magento application using Magento models. The **Direct** handler requires deep understanding of the Magento application, and also requires access to the Magento code and the database. Difficulties can be caused when the Magento code and Magento tests are run on different hosts.
 
 ## Configuration {#mtf_handler_config}
 
-One fixture can have various handlers. When we create an entity in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.
+One fixture can have various handlers. When we create an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.
 
 ### `config.xml` {#mtf_handler_configxml}
 
@@ -48,7 +41,7 @@ The following nodes influence handlers:
 
 <table>
 <tr><th>Node</th><th>Semantics</th><th>Example</th></tr>
-<tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the Admin.</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
+<tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
 <tr><td><code>&lt;backendLogin&gt;</code></td><td>A username to access the Admin as a Magento administrator.</td><td><code>&lt;backendLogin&gt;admin&lt;/backendLogin&gt;</code></td></tr>
 <tr><td><code>&lt;backendPassword&gt;</code></td><td>A password to access the Admin as a Magento administrator.</td><td><code>&lt;backendPassword&gt;pas$worD&lt;/backendPassword&gt;</code></td></tr>
 <tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
@@ -281,7 +274,7 @@ class Curl extends AbstractCurl
 
 In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the `BackendDecorator` class. 
 
-The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the storefront.
+The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
 #### BackendDecorator class {#mtf_handler_curl_backdecor}
 
@@ -431,7 +424,7 @@ class Curl extends AbstractCurl
 
 {% endhighlight %}
 
-* Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/ui` directory of the Magento_Widget module.
+* Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/ui` directory of the Magento_Widget {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 {%highlight xml%}
 
@@ -452,7 +445,7 @@ class Curl extends AbstractCurl
 
 ## How to create a WebAPI handler {#mtf_handler_howto-create-webapi}
 
-Let's create a WebAPI handler that creates a new tax rule.
+Let's create a WebAPI handler that creates a new {% glossarytooltip f35f5e81-db5d-4754-937e-b5607ac255fa %}tax rule{% endglossarytooltip %}.
 
 * Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file `TaxRuleInterface.php`. Our new interface extends `HandlerInterface` class.

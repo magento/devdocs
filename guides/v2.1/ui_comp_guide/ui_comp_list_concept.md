@@ -1,19 +1,13 @@
 ---
 layout: default
 group: UI_Components_guide
-subgroup: 
-title: A list of Magento UI components 
+subgroup:
+title: A list of Magento UI components
 menu_title: A list of Magento UI components
-menu_order: 2
+menu_order: 3
 version: 2.1
 github_link: ui_comp_guide/ui_comp_list_concept.md
 ---
-
-## {{page.menu_title}}  
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## What's in this topic
 This page will contain a list of all Magento UI components. This topic is being updated.
@@ -21,11 +15,11 @@ This page will contain a list of all Magento UI components. This topic is being 
 ## Magento UI components
 
 {% collapsible Form %}
-- **UI Component**: [Form](http://devdocs.magento.com/guides/v2.1/ui-components/ui-form.html)  
+- **UI Component**: [Form](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html)
 - **Link to constructor**: [form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
 - **Node name in `definition.xml`**: `<form>`
 - **Is top-level**: Yes
-- **Top-level parent component**: - 
+- **Top-level parent component**: -
 - **Description**: Form component allows performing CRUD operations on an entity.
 - **Has server-side template**: [default.xhtml]({{site.mage2100url}}app/code/Magento/Ui/view/base/ui_component/templates/form/default.xhtml)
 
@@ -33,11 +27,11 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 
 {% collapsible Listing %}
-- **UI Component**: [Listing](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html) 
+- **UI Component**: [Listing](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html)
 - **Link to constructor**: [listing.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)
 - **Node name in `definition.xml`**: `<listing>`
 - **Is top-level**: Yes
-- **Top-level parent component**: - 
+- **Top-level parent component**: -
 - **Description**: Listing is a basic component responsible for rendering grids, lists, and tiles.
 - **Has server-side template**: [default.xhtml]({{site.mage2100url}}app/code/Magento/Ui/view/base/ui_component/templates/listing/default.xhtml)
 {%endcollapsible%}
@@ -66,7 +60,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 {% collapsible Group %}
 - **UI Component**: Group
-- **Link to constructor**: [group.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/components/group.js) 
+- **Link to constructor**: [group.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/components/group.js)
 - **Node name in `definition.xml`**: `<multiline>`
 - **Is top-level**: No
 - **Top-level parent component**: Form
@@ -76,7 +70,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 {% collapsible Tab%}
 - **UI Component**: Tab
-- **Link to constructor**: [tab.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/components/tab.js) 
+- **Link to constructor**: [tab.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/components/tab.js)
 - **Node name in `definition.xml`**: `<tab>`
 - **Is top-level**: No
 - **Top-level parent component**: Form
@@ -129,8 +123,8 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 
 {% collapsible Modal %}
-- **UI Component**: [Modal](http://devdocs.magento.com/guides/v2.1/ui-components/ui-modal.html)
-- **Link to constructor**: [modal-component.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/modal/modal-component.js) 
+- **UI Component**: [Modal](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-modal.html)
+- **Link to constructor**: [modal-component.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
 - **Node name in `definition.xml`**: `<modal>`
 - **Is top-level**: No
 - **Top-level parent component**: Form
@@ -141,17 +135,17 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 {% collapsible Button adapter %}
 - **UI Component**: Button adapter
-- **Link to constructor**: [button-adapter.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/button-adapter.js) 
+- **Link to constructor**: [button-adapter.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/button-adapter.js)
 - **Node name in `definition.xml`**: `<container>`
 - **Is top-level**: No
 - **Top-level parent component**: Form
-- **Description**: Wraps the buttons and adds to a form created by the UI component. For example, this component can be used to create a button bar. 
+- **Description**: Wraps the buttons and adds to a form created by the UI component. For example, this component can be used to create a button bar.
 - **Has server-side template**: No.
 {% endcollapsible %}
 
 
 {% collapsible Form provider %}
-- **UI Component**: Form provider 
+- **UI Component**: Form provider
 - **Link to constructor**: [provider.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/provider.js)
 - **Node name in `definition.xml`**: `<dataSource>`
 - **Is top-level**: No
@@ -171,7 +165,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 - FilterDate
 - ContainerMassAction
 - Actions
-- Action 
+- Action
 - ActionDelete
 - Column
 - Columns
@@ -198,6 +192,5 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 
 
-<!-- 
-Notes: the column called Top-level nested... the UI component must be nested in the specific top-level UI component. Or use magic workaround  -->
-
+<!--
+Notes: the column called Top-level nested... the {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} must be nested in the specific top-level UI component. Or use magic workaround  -->

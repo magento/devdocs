@@ -15,7 +15,7 @@ This topic walks you through how to customize a template.
 
 ## Prerequisites 
 
-[Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way static files are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
+[Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are cached by Magento. The recommendations about {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} development we provide in this chapter are developer/default-mode specific.
 
 ## Template customization walkthrough
 
@@ -48,7 +48,7 @@ To add the text, OrangeCo needs to override the default review form template in 
 
 First, they copy the `form.phtml` template from `<Magento_Review_module_dir>/view/frontend/templates` to the corresponding subdirectory in the Orange theme directory: `app/design/frontend/OrangeCo/orange/Magento_Review/templates`.
 
-In the theme `form.phtml` file they add the HTML snippet with the message before the <code>&lt;form&gt;</code>:
+In the theme `form.phtml` file they add the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} snippet with the message before the <code>&lt;form&gt;</code>:
 
 <img src="{{site.baseurl}}common/images/template-sample-code.png" alt="a HTML snippet you need to add">
 

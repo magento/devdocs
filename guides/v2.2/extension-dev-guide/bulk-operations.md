@@ -10,12 +10,9 @@ github_link: extension-dev-guide/bulk-operations.md
 
 ---
 
-## {{page.title}}
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This article applies to Enterprise Edition only">
-
 Bulk operations are actions that are performed on a large scale. Example bulk operations tasks include importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.
 
-For each indvidual task of a bulk operation, the system creates a message that is published in a [message queue]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html). A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the Admin panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
+For each indvidual task of a bulk operation, the system creates a message that is published in a [message queue]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html). A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
 
 The primary Bulk Operation interface is `OperationInterface`. It defines the getter and setter methods the bulk operation uses to create and process messages. The following interfaces are also used:
 
@@ -49,7 +46,7 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 <li><p>bulk_uuid -  A bulk identifier </p></li>
 <li><p>status -  The default operation status <code>OperationInterface::STATUS_TYPE_OPEN</code></p></li>
 <li><p>serialized_data - An array of serialized data with the following required keys:</p></li>
-  <ul><li><p>entity_id - Your entity ID</p></li>
+  <ul><li><p>entity_id - Your {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} ID</p></li>
   <li><p>entity_link - Link to your entity</p></li>
   <li><p>meta_info - String that describes your entity. For example, "SKU: Simple_Product"</p></li></ul>
 <p>This data is required to display the results of operations couldn't be executed for any non-recoverable reason. These results are displayed in the failed operations grid.</p>
@@ -64,11 +61,11 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 <td>The Admin user ID that executes this bulk operation.</td></tr>
 </table>
 
-See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createpublisher) for a detailed example of a publisher.
+See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createpublisher) for a detailed example of a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}.
 
 ### Consume messages
 
-When a consumer processes a message, it must notify the system of its status. The status can be OPEN, COMPLETE, RETRIABLY_FAILED, and NOT_RETRIABLY_FAILED.  
+When a consumer processes a message, it must notify the system of its status. The status can be OPEN, COMPLETE, RETRIABLY_FAILED, and NOT_RETRIABLY_FAILED.
 
 To send this notification, use `OperationManagementInterface::changeOperationStatus($operationId, $status, $message = null, $data = null)`.
 
@@ -76,7 +73,7 @@ To send this notification, use `OperationManagementInterface::changeOperationSta
 
 Magento provides database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is `Magneto\Framework\DB\Adapter\<class_name>`. These exceptions extend generic `\Zend_Db_Adapter_Exception`.
 
-Exception class | Description of database error(s)
+{% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}Exception{% endglossarytooltip %} class | Description of database error(s)
 --- | ---
 ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <BR>SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
 LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded

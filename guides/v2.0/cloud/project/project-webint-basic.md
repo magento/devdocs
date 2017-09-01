@@ -1,36 +1,32 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Basic project information
 menu_title: Basic project information
-menu_order: 4
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: project
+menu_order: 21
+menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-basic.md
 ---
 
-## Basic project information {#project-basic}
-This topic discusses how to use the Web Interface to:
+Projects in Magento Enterprise Cloud Edition (ECE) represent the master branch and all children branches of your Magento code, extensions, themes, and more for your store and sites. These branches are fully functional environments with direct access for testing. To manage and review your project information, branches, SSH and URL links, and more, you can use the Magento Web Interface or CLI commands.
 
-*	[Log in](#project-login) to the project
-*	[Access](#project-access) your site
-*	Get started [configuring your project](#project-conf)
-*	Get started [configuring an environment](#project-conf-env)
-*	View [environment history](#project-conf-hist)
+The project console enables you to:
+
+* Create and manage projects
+* Access up to eight active branches using SSH, CLI, and web links
+* Configure environment settings, environment variables, and routes
+* Manage users
+* Manage Git branches
 
 ## Log in to your project {#project-login}
-The Web Interface URL for your project is available in the following ways:
+The web console {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your project is available in the following ways:
 
-*	Your welcome e-mail
+*	Your welcome e-mail to Magento ECE
 *	The Magento Enterprise Cloud Edition command-line interface (CLI)
 
-### Find the project URL using the CLI
-
-{% collapsible Click to show/hide content %}
-To find the project URL using the CLI:
+To find the project URL using the Magento CLI:
 
 1.	Log in to the machine on which your SSH keys are stored.
 2.	Log in to your project:
@@ -50,27 +46,20 @@ To find the project URL using the CLI:
 		| pwga254dhx97o | Magento 2    | https://us.magento.cloud/#/projects/pwga254dhx97o |
 		+---------------+--------------+---------------------------------------------------+
 4.	Enter the value in the URL column in a web browser.
-{% endcollapsible %}
 
-### Log in to the project
-In a web browser, enter the project URL from your welcome e-mail or that you found using the CLI. When prompted, log in to your project using Bitbucket, GitHub, Google, or a e-mail address and password.
-
-{% collapsible Click to show/hide image %}
+In a web browser, enter the project URL to access the console and project. When prompted, log in to your project using Bitbucket, GitHub, Google, or an e-mail address and password.
 
 ![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="450px"}
-{% endcollapsible %}
 
 ## Access your project and environments {#project-access}
 The Web Interface provides several ways to access your project and environments:
 
-*	Your storefront URL (every environment, or branch, has a different URL)
+*	Your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} URL for each active (up to eight)
 *	Secure Shell (SSH), a way to interact with services using a command terminal
-*	Clone the project using the Magento Enterprise Cloud Edition CLI
+*	Clone the project using the Magento ECE CLI
 *	Clone the project using Git
 
-{% collapsible Click to show/hide content %}
-
-To access projects and environments:
+To access projects and environments through the Web Interface:
 
 1.	[Log in to your project](#project-login).
 2.	Hover the mouse pointer over **Access Project** as the following figure shows:
@@ -87,7 +76,6 @@ To access projects and environments:
 
 	Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
-{% endcollapsible %}
 
 ## Get started configuring your project {#project-conf}
 Configuring a project means:
@@ -95,16 +83,15 @@ Configuring a project means:
 *	Managing users
 *	Using a deploy key to pull code from a private repository
 
-{% collapsible To configure your project: %}
+To configure your project:
 
 1.	[Log in to your project](#project-login).
 2.	Click ![configure your project]({{ site.baseurl }}common/images/cloud_edit-project.png) (Configure project) next to the project name.
 3.	See one of the following for more information:
 
-	*	[Manage users]({{page.baseurl}}cloud/admin/admin-user-admin.html)
+	*	[Manage users]({{page.baseurl}}cloud/project/user-admin.html)
 	*	[Pull code from a private Git repository]({{page.baseurl}}cloud/project/project-priv-repos.html)
 
-{% endcollapsible %}
 
 ## Get started configuring an environment {#project-conf-env}
 Configuring an environment means:
@@ -114,7 +101,6 @@ Configuring an environment means:
 *	Configuring routes
 *	Managing users
 
-{% collapsible Click to show/hide content %}
 To configure an environment:
 
 1.	[Log in to your project](#project-login).
@@ -126,7 +112,7 @@ To configure an environment:
 	*	[Environment settings](#project-conf-env-set)
 	*	[Set environment variables](#project-conf-env-var)
 	*	[Configure routes](#project-conf-env-route)
-	*	[Manage users]({{page.baseurl}}cloud/admin/admin-user-admin.html)
+	*	[Manage users]({{page.baseurl}}cloud/project/user-admin.html)
 
 ### Environment settings {#project-conf-env-set}
 The following table shows available environment settings.
@@ -154,6 +140,8 @@ The following table shows available environment settings.
 ### Set environment variables {#project-conf-env-var}
 As discussed in [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html), environment variables are settings specific to an environment. Variables can be either text or JSON format.
 
+To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
+
 For example, you can change the Magento Admin administrative password using environment variables as follows:
 
 1.	Click **Add Variable**.
@@ -173,7 +161,6 @@ The following figure shows an example.
 
 ![Configure a route]({{ site.baseurl }}common/images/cloud_routes.png)
 
-{% endcollapsible %}
 
 ## View environment history {#project-conf-hist}
 An environment's history includes:
@@ -183,7 +170,6 @@ An environment's history includes:
 *	Syncs and merges
 *	Code pushes
 
-{% collapsible Click to show/hide content %}
 To view an environment's history:
 
 1.	[Log in to your project](#project-login).
@@ -204,7 +190,6 @@ To view an environment's history:
 	*	Environment variable added
 	*	Environment snapshot created
 
-{% endcollapsible %}
 
 #### Related topics
 *	[Manage environments (branches)]({{page.baseurl}}cloud/project/project-webint-branch.html)

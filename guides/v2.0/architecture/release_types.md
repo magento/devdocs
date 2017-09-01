@@ -13,15 +13,9 @@ version: 2.0
 github_link: architecture/release_types.md
 ---
 
-## Release types and version numbers {#verpol}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
-This topic describes how  and when the software version numbers will be changed with releases.
+This topic describes how and when the software version numbers will be changed with releases.
 
 The software version  always changes with any release of Magento source code.
 

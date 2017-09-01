@@ -3,6 +3,7 @@ layout: default
 group: soap
 subgroup: A_soap
 title: SOAP Reference
+landing-page: SOAP API
 menu_title: Overview
 menu_order: 1
 menu_node: parent
@@ -14,8 +15,6 @@ redirect_from: /guides/v1.0/soap/bk-soap.html
 ### Contents
 {:.no_toc}
 
-* TOC
-{:toc}
 
 ## Soap WSDL Endpoint Format
 
@@ -27,7 +26,7 @@ redirect_from: /guides/v1.0/soap/bk-soap.html
   <ul>
   <li><code>default</code></li>
   <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>get</code>operations cannot be performed when you specify <code>all</code>.</li>
+  <li><code>all</code>. This value only applies to the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call affects all the merchant's stores. <code>get</code>operations cannot be performed when you specify <code>all</code>.</li>
 </ul>
 </div>
 

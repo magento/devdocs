@@ -10,15 +10,9 @@ github_link: ext-best-practices/extension-coding/example-module-adminpage.md
 
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ### Overview
 
-This tutorial gives instructions for the creation of a module that displays a simple page in the Magento admin.
+This tutorial gives instructions for the creation of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that displays a simple page in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento admin{% endglossarytooltip %}.
 
 For the purposes of this tutorial MyCompany is the name of the company associated with a module named ExampleAdminNewPage.
 
@@ -26,7 +20,7 @@ For the purposes of this tutorial MyCompany is the name of the company associate
 
 Start by creating the working directory for all the module files.
 
-In your Magento development environment under the `app/code` directory, run the following command: 
+In your Magento development environment under the `app/code` directory, run the following command:
 
 ~~~
 mkdir -p MyCompany/ExampleAdminNewPage
@@ -41,7 +35,7 @@ These initial boilerplate files are the bare essential files needed for any Mage
 
 #### `composer.json`
 {:.no_toc}
-In the module's root directory, create the file `composer.json`. This file gives composer the ability to install this module and its dependencies. 
+In the module's root directory, create the file `composer.json`. This file gives {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} the ability to install this module and its dependencies.
 For more information see: [`composer.json`]({{page.baseurl}}extension-dev-guide/build/composer-integration.html).
 
 {% collapsible File content for composer.json %}
@@ -70,7 +64,7 @@ For more information see: [`composer.json`]({{page.baseurl}}extension-dev-guide/
 
 #### `registration.php`
 {:.no_toc}
-In the module's root directory, create the file `registration.php`. This file registers the module `MyCompany_ExampleAdminNewPage` with Magento. 
+In the module's root directory, create the file `registration.php`. This file registers the module `MyCompany_ExampleAdminNewPage` with Magento.
 
 For more information see: [registering your component]({{page.baseurl}}extension-dev-guide/build/component-registration.html).
 
@@ -87,7 +81,7 @@ For more information see: [registering your component]({{page.baseurl}}extension
 
 #### `etc/module.xml`
 {:.no_toc}
-In the module's root directory, create a new directory called `etc`. Under that directory, create the file `module.xml`. This file specifies the name and setup version of this module. 
+In the module's root directory, create a new directory called `etc`. Under that directory, create the file `module.xml`. This file specifies the name and setup version of this module.
 
 For more information see: [naming your component]({{page.baseurl}}extension-dev-guide/build/create_component.html).
 
@@ -109,7 +103,7 @@ For more information on this topic, see: [routing]({{page.baseurl}}extension-dev
 
 #### `etc/adminhtml/menu.xml`
 {:.no_toc}
-Under the created `etc` directory, create a new directory called `adminhtml`. Under that directory, create the file `menu.xml`. This XML file adds new menu items to the Magento admin.
+Under the created `etc` directory, create a new directory called `adminhtml`. Under that directory, create the file `menu.xml`. This {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file adds new menu items to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %}.
 
 The `menu.xml` file provided below adds two items in the Content section of the left navigation:
 
@@ -170,20 +164,20 @@ Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`.
   {% highlight php %}
     <?php
       namespace MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld;
-      
+
       class Index extends \Magento\Backend\App\Action
       {
         /**
-        * @var \Magento\Framework\View\Result\PageFactory 
+        * @var \Magento\Framework\View\Result\PageFactory
         */
         protected $resultPageFactory;
-        
+
         /**
          * Constructor
          *
          * @param \Magento\Backend\App\Action\Context $context
          * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
-         */ 
+         */
         public function __construct(
             \Magento\Backend\App\Action\Context $context,
             \Magento\Framework\View\Result\PageFactory $resultPageFactory
@@ -222,7 +216,7 @@ These files belong in the `view/adminhtml` directory because the Magento admin a
 #### `view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml`
 {:.no_toc}
 
-This file defines the layout and structure of the index page for the HelloWorld controller. It sets the title to "Greetings" and instructs Magento to use the `helloworld.phtml` template as the content in a `Magento\Backend\Block\Template` block class.
+This file defines the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} and structure of the index page for the HelloWorld controller. It sets the title to "Greetings" and instructs Magento to use the `helloworld.phtml` template as the content in a `Magento\Backend\Block\Template` block class.
 
 The name of this file uses the following pattern: *frontName*\_*controller*\_*action*.xml
 
@@ -310,4 +304,3 @@ Now that the module is code-complete, run the following commands to install it:
 Once the module installation has completed, the link to the **Hello World** page should appear in the **Greetings** section under **Content** in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.
 
 ![Hello World Page]({{ site.baseurl }}common/images/ext-best-practices/hello-world-page.png)
-

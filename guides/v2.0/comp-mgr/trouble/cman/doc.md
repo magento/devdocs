@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/trouble/cman/doc.md
 ---
 
-<h2 id="trouble-doc"><code>magento/theme-doc-blank</code> failure</h2>
 When installing new purchases, you might see an error like the following during readiness check:
 
 	Command "update" failed: Loading composer repositories with package information

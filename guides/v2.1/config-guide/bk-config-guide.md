@@ -3,6 +3,7 @@ layout: default
 group: config-guide
 subgroup: 01_Introduction
 title: Configuration Guide
+landing-page: Configuration Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
@@ -22,8 +23,9 @@ You can configure the Magento application in any of the following ways:
 
 	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Set up Varnish</a>
 	*  	<a href="{{page.baseurl}}config-guide/cache/caching.html">Set up caching</a>
-	*	<a href="{{page.baseurl}}config-guide/database/database.html">Set up database caching</a>
-	*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Set up Redis</a>
+	*	[Use Redis for the Magento page and default cache]({{ page.baseurl}}config-guide/redis/redis-pg-cache.html)
+	*	[Use Redis for session storage]({{ page.baseurl }}config-guide/redis/redis-session.html)
+	*	[Set up database caching]({{ page.baseurl }}config-guide/cache/caching-database.html)
 
 *	Magento in production
 

@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/updater/update-updater.md
 ---
 
-## Update the updater application
 In some cases, you might need to update the updater application, which is responsible for updating components and the Magento application. You should do this only if instructed to do so.
 
 To update the updater application:
@@ -25,4 +24,4 @@ To update the updater application:
 
 		composer create-project magento/updater update --repository https://repo.magento.com
 4.	If prompted, enter your Magento [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
-5.	Wait while Composer installs the updater and its dependencies.
+5.	Wait while {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} installs the updater and its dependencies.

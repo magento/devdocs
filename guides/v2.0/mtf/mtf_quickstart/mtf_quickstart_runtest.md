@@ -2,14 +2,13 @@
 layout: default
 group: mtf-guide
 subgroup: 30_Quickstart
-title: Quick start with the Functional Testing Framework
+title: Quick start. Test run
 menu_title: Test run
 menu_order: 3
 version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_runtest.md
 redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html
 ---
-<h2 id="mtf_quickstart_testrun">Test run</h2>
 
 All tests classified by categories in corresponding directories in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento`.
 
@@ -38,7 +37,7 @@ Enter in terminal:
     cd <magento2_root_dir>/dev/tests/functional
     vendor/bin/phpunit --filter <name of test>
 
-Name of test is the name of PHP file with test.
+Name of test is the name of {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} file with test.
 
 Example:
 

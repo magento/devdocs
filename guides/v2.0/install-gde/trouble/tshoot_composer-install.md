@@ -12,11 +12,9 @@ redirect_from: /guides/v1.0/install-gde/trouble/tshoot_composer-install.html
 ---
 
 
-<h2 id="install-trouble-composer-install">Cannot run <code>composer install</code></h2>
-
 ### Suggestion
 
-Change to the directory in which you installed Composer and enter the following command:
+Change to the directory in which you installed {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} and enter the following command:
 
 `mv composer.phar /usr/local/bin/composer`
 

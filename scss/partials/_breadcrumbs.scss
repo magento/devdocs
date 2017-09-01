@@ -1,0 +1,44 @@
+.breadcrumbs {
+  font-size: 13px;
+  padding-bottom: 5px;
+  
+  ol {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  li.breadcrumb-item {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  a, span {
+    font-size: 13px;
+    display: inline;
+  }
+
+  a {
+    color: $link-color;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    &:after {
+      display: inline-block;
+      content: ' › ';
+      padding: 0 5px;
+    }
+
+  }
+
+  .active {
+    color: #999;
+  }
+}

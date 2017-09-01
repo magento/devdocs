@@ -11,14 +11,10 @@ github_link: migration/migration-migrate-settings.md
 redirect_from: /guides/v1.0/migration/migration-migrate-settings.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
+## Overview
 
 The `Settings` mode migrates stores, websites, and system configuration like shipping, payment, tax settings, etc.
-According to our data migration [order]({{page.baseurl}}/migration/migration-migrate.html#migration_order), you should migrate settings first.
-
-* TOC
-{:toc}
+According to our data migration [order]({{page.baseurl}}migration/migration-migrate.html#migration_order), you should migrate settings first.
 
 ## Before you start: routine preparations
 
@@ -42,7 +38,7 @@ where:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
+  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} before proceeding.</p></span>
 </div>
 
 The `Migration completed` message is displayed after the settings are transferred successfully.

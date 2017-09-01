@@ -11,17 +11,10 @@ github_link: install-gde/install/prepare-install.md
 redirect_from: /guides/v1.0/install-gde/install/prepare-install.html
 ---
 
-#### Contents
-
-*	<a href="#install-update-depend">Introduction to Magento installation dependencies</a>
-*	<a href="#install-composer-install">Run `composer install` to update dependencies</a>
-*	[Set pre-installation file system ownership and permissions](#perms-over) 
-
-  
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
 We now use <a href="http://getcomposer.org">Composer</a> to resolve dependencies before you install the Magento software and extensions.
 
-Composer is a separate application that manages PHP dependencies. Before you can install the Magento software, you must perform the following tasks in the order shown:
+{% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is a separate application that manages {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} dependencies. Before you can install the Magento software, you must perform the following tasks in the order shown:
 
 1.	<a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Install the Composer software</a>.
 2.	<a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Create the Magento file system owner</a> so Composer writes files to the web server docroot as the correct user.
@@ -39,7 +32,7 @@ For you to be able to run the Magento application, make sure you perform all tas
 <h2 id="install-composer-install">Run <code>composer install</code> to update dependencies</h2>
 Update installation dependencies as follows:
 
-1.	Log in to your Magento server as the Magento file system owner or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to that user</a>.
+1.	Log in to your Magento server as the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to that user</a>.
 2.	Change to the Magento installation directory and run `composer install`. Examples:
 
 	CentOS:

@@ -2,8 +2,8 @@
 layout: default  
 group: fedg
 subgroup: A_Themes
-title: Create a storefront theme
-menu_title: Create a storefront theme
+title: Create a new storefront theme
+menu_title: Create a new storefront theme
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-create.md
@@ -15,8 +15,6 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images. 
 
 
-* TOC
-{:toc}
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
@@ -24,8 +22,25 @@ This topic discusses how to create the files that make up a theme, how to add a 
 
 ## Prerequisites 
 
-1. For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom theme.
-2. [Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way static files are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
+1. For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+2. [Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
+
+## Create a storefront theme: walkthrough {#theme-gen-walkthrough}
+The high-level steps required to add a new theme in the Magento system are the following:
+
+1. Create a directory for the theme under `app/design/frontend/<your_vendor_name>/<your_theme_name>`.
+2. Add a declaration file `theme.xml` and optionally create `etc` directory and create a file named `view.xml` to the theme directory.
+3. Add a `composer.json` file.
+4. Add `registration.php`.
+3. Create directories for CSS, JavaScript, images, and fonts.
+4. Configure your theme in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel.
+
+<h2 id="theme-gen-read">Recommended reading</h2>
+
+* <a href="{{ site.mage2000url }}app/code/Magento" target="_blank">Checklist of modules</a>
+* <a href="{{page.baseurl}}architecture/view/static-process.html" target="_blank">Static view files processing</a>
+
+
 
 ## Create a theme directory {#layout_theme_how-to_dirs}
 
@@ -65,7 +80,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
  </theme>
 {% endhighlight %}
 
-If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any Magento Admin page for your changes to be saved in the database.
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
 
 ## Make your theme a Composer package (optional) {#fedg_create_theme_composer}
 
@@ -129,7 +144,7 @@ For illustration, see the <a href="{{site.mage2000url}}app/design/frontend/Magen
 
 ## Configure images {#fedg_create_theme_how-to-images}
 
-Product image sizes and other properties used on the storefront are configured in a `view.xml` configuration file. It is required for a theme, but is optional if exists in the parent theme.
+Product image sizes and other properties used on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} are configured in a `view.xml` configuration file. It is required for a theme, but is optional if exists in the parent theme.
 
 If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add `view.xml` using the following steps:
 
@@ -140,7 +155,7 @@ If the product image sizes of your theme differ from those of the parent theme, 
 2.	Copy `view.xml` from the `etc` directory of an existing theme (for example, from the Blank theme) to your theme's `etc` directory.
 
 3.	Configure all storefront product image sizes in `view.xml`.
-For example, you can make the category grid view product images square by specifying a size of 250 x 250 pixels, here is how the corresponding configuration would look like:
+For example, you can make the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} grid view product images square by specifying a size of 250 x 250 pixels, here is how the corresponding configuration would look like:
 
 {% highlight XML%}
 ...
@@ -155,7 +170,7 @@ For details about images configuration in `view.xml`, see the <a href="{{page.ba
 
 ## Create directories for static files {#fedg_theme_how-to_static}
 
-Your theme will likely contain several types of static files: styles, fonts, JavaScript and images.
+Your theme will likely contain several types of static files: styles, fonts, {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and images.
 Each type should be stored in a separate sub-directory of `web` in your theme folder:
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
@@ -174,7 +189,7 @@ It is likely that your theme will also contain module-specific files, which are 
 <span class="glyphicon-class">
 <p>
 
-During theme development, when you change any files stored here, you need to clear <code>pub/static</code> and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront. 
+During theme development, when you change any files stored here, you need to clear <code>pub/static</code> (preserving the `.htaccess` file in place) and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront. 
 
 </p></span>
 </div>
@@ -217,7 +232,7 @@ Your theme does not have a parent theme:
 <li>Your theme has a parent theme:
 <ul>
 <li>if your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it;</li>
-<li>if your logo image has different name or format, declare it in layout.</li>
+<li>if your logo image has different name or format, declare it in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.</li>
 </ul>
 </li>
 </ul>

@@ -1,16 +1,16 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Run the support utilities
-menu_title: Run the support utilities (Enterprise Edition only)
-menu_node: 
+menu_title: Run the support utilities (Magento Commerce only)
+menu_node:
 menu_order: 900
 version: 2.1
 github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 ---
 
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
+<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 #### Contents
 *	[Overview of the support utilities](#config-cli-spt-utils-over)
@@ -19,7 +19,7 @@ github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 *	[Troubleshooting: display utilities and paths](#config-cli-spt-utils-trouble)
 
 ## Overview of the support utilities {#config-cli-spt-utils-over}
-The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable Enterprise Edition (EE) users to gather troubleshooting information about your system that can be used by our Support team. 
+The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
 
 Magento Support uses these backups (also referred to as *dumps*) to analyze issues that require access to your code. A typical scenario follows:
 
@@ -52,7 +52,7 @@ Command options:
 
 	magento support:backup:code [--name=<file name>] [-o|--output=<path>] [-l|--logs]
 
-where 
+where
 
 *	`--name` specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
 *	`-o|--output=<path>` is the absolute file system path to store the backup (required).
@@ -60,7 +60,7 @@ where
 
 For example, to create a code backup named `/var/www/html/magento2/var/log/mycodebackup.tar.gz`, enter:
 
-	magento magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
+	magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
 
 After the command completes, provide the code backup to Magento Support.
 
@@ -76,7 +76,7 @@ Command options:
 
 	magento support:backup:db [--name=<name>] [-o|--output=<path>] [-l|--logs] [-i|--ignore-sanitize]
 
-where 
+where
 
 *	`--name` specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
 *	`-o|--output=<path>` is the absolute file system path to store the backup (required).
@@ -88,7 +88,7 @@ After the command completes, provide the database backup to Magento Support.
 {% include install/sens-data.md %}
 
 ## Troubleshooting: display utilities and paths {#config-cli-spt-utils-trouble}
-We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the Admin or on the command line:
+We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or on the command line:
 
 	Utility lsof not found
 
@@ -102,7 +102,7 @@ Run the following commands in the order shown to display the paths to the applic
 		<span class="glyphicon-class">
   		<p>The commands run properly <em>only</em> from your Magento installation directory.</p></span>
 	</div>
-1.	`php bin/magento support:utility:paths` creates `<your Magento install dir>/var/support/Paths.php`, which lists the paths to all application used by the utility. 
+1.	`php bin/magento support:utility:paths` creates `<your Magento install dir>/var/support/Paths.php`, which lists the paths to all application used by the utility.
 2.	`php bin/magento support:utility:check` displays the file system paths.
 
 A sample follows:

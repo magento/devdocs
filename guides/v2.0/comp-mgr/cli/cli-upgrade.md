@@ -13,7 +13,7 @@ github_link: comp-mgr/cli/cli-upgrade.md
 ## Command-line upgrade
 You can upgrade Magento from the command line if you installed the software using any of the following:
 
-*	Downloaded the metapackage using `composer create-project`
+*	Downloaded the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`
 *	Installed the compressed archive
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -70,14 +70,14 @@ To prevent access to your store while it's being upgraded, put your store in mai
 		composer require <product> <version> --no-update
 		composer update
 
-	For example, to upgrade to Magento CE version 2.0.6, enter:
+	For example, to upgrade to Magento CE version 2.0.13, enter:
 
-		composer require magento/product-community-edition 2.0.6 --no-update
+		composer require magento/product-community-edition 2.0.13 --no-update
 		composer update
 
-	To upgrade to Magento EE version 2.0.6, enter:
+	To upgrade to Magento EE version 2.0.13, enter:
 
-		composer require magento/product-enterprise-edition 2.0.6 --no-update
+		composer require magento/product-enterprise-edition 2.0.13 --no-update
 		composer update
 	
 	<div class="bs-callout bs-callout-info" id="info">
@@ -85,9 +85,22 @@ To prevent access to your store while it's being upgraded, put your store in mai
 	</div>
 
 3.	If prompted, enter your [authentication keys]({{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html).
+4.	Manually clear `var` subdirectories:
+
+		rm -rf <Magento install dir>/var/cache/*
+		rm -rf <Magento install dir>/var/page_cache/*
+		rm -rf <Magento install dir>/var/generation/* 
+
+    <div class="bs-callout bs-callout-info" markdown="1">
+    If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
+    </div>
+
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
+5.	Put your storefront online (that is, cancel maintenance mode):
+
+		php bin/magento maintenance:disable
 5.	Restart Varnish if you use it for page caching.
 
 		service varnish restart

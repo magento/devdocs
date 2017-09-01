@@ -13,23 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-subcommands.html
 ---
 
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-cli-before">First steps</a>
-*	<a href="#instgde-cli-summary">Command summary</a>
-*	<a href="#instgde-cli-help">Help commands</a>
-*	<a href="#instgde-cli-subcommands-common">Common arguments</a>
-*	<a href="#instgde-cli-subcommands">Commands</a>
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
-
-<!-- *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>
-*	<a href="#instgde-cli-maint-configphp">Maintenance mode</a> -->
-
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 {% include install/before-you-begin-cli.html %}
 
@@ -81,8 +64,8 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>Magento software installed</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">php magento config:set</a></td>
-		<td><p>Creates the deployment configuration.</p></td>
+		<td><a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">magento setup:config:set</a></td>
+		<td><p>Creates or updates the deployment configuration.</p></td>
 		<td><p>None</p></td>
 	</tr>
 	<tr>

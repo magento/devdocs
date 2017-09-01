@@ -11,8 +11,6 @@ github_link: install-gde/trouble/tshoot_wrong-mysql.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html
 ---
 
-<h2 id="install-trouble-clear-var">During installation, Reflection Exception error</h2>
-
 ### Details
 
 During the installation, a  message similar to the following displays: 

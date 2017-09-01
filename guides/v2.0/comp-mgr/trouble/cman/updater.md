@@ -10,7 +10,6 @@ version: 2.0
 github_link: comp-mgr/trouble/cman/updater.md
 ---
 
-<h2 id="trouble-updater">Troubleshoot the updater application</h2>
 If the updater application is not available, the following message displays in the readiness check:
 
 	Updater application is not available. 

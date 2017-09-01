@@ -10,8 +10,6 @@ version: 2.0
 github_link: install-gde/prereq/integrator_install_ce.md
 ---
 
-## Get the Magento CE metapackage {#integrator-first-composer-ce}
-
 To get the Magento CE metapackage:
 
 1.	See [(Integrator) Integrator installation]({{ page.baseurl }}install-gde/prereq/integrator_install.html) first.

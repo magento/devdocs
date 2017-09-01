@@ -12,8 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-bookmark.html
 
 ---
 
-<h3 id="bookmark">UI Bookmark component</h3>
-
 Bookmark Component is responsible for storing active and changed states of data grids. It includes state of filters, columns position, applied sorting, pagination, and so on.
 
 Bookmark Component use DB as persistence storage for grid`s state.

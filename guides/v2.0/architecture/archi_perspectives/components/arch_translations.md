@@ -6,29 +6,23 @@ title: Language packages
 menu_title: Language packages
 menu_order: 9
 version: 2.0
-github_link: architecture/components/arch_translations.md
+github_link: architecture/archi_perspectives/components/arch_translations.md
 redirect_from: /guides/v1.0/architecture/components/arch_translations.html
 ---
 
-## Language packages and translation
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#m2arch-translations-overview}
 
-Any text that is presented to the user can have several captions or labels on the control elements, notifications, and error messages.  By default, Magento renders all these phrases in English (`US`) language (`en_US`). But if you deploy a storefront in a different language (or use the Magento Admin panel in a different language), you can incorporate other dictionaries for translations.
+Any text that is presented to the user can have several captions or labels on the control elements, notifications, and error messages. By default, Magento renders all these phrases in English (`US`) language (`en_US`). But if you deploy a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a different language (or use the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel in a different language), you can incorporate other dictionaries for translations.
 
 You can use the language packages provided with Magento, create your own, or obtain packages from the community. Check out the language packages, modules, and themes available on Magento Marketplace.
 
-Creating a language package is part of the process of <i>localizing</i> your storefront.
+Creating a {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} is part of the process of *localizing* your storefront.
 
 ## Magento language packages
 
-A <i>language package</i> is  a collection of translation dictionaries for a particular language together with additional information that tells Magento how to process the information, including:
+A <i>language package</i> is a collection of translation dictionaries for a particular language together with additional information that tells Magento how to process the information, including:
 
-* `.csv` file contains the actual strings that comprise the language dictionary. A translation dictionary is a comma-separated value (`.csv`) file with at least two columns: the original phrase in the `en_US` locale and a translation of that phrase to another locale.
+* `.csv` file contains the actual strings that comprise the language dictionary. A translation dictionary is a comma-separated value (`.csv`) file with at least two columns: the original phrase in the `en_US` {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and a translation of that phrase to another locale.
 
 * `composer.json` file contains any dependencies for the language package and a mapping to its defined locale.
 

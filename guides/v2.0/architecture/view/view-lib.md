@@ -10,25 +10,18 @@ github_link: architecture/view/view-lib.md
 redirect_from: /guides/v1.0/architecture/view/view-lib.html
 ---
 
-## The View library
-{:.no_toc}
-
-* TOC
-{:toc}
-
-
 ## Overview
 
 An independent view layer domain, the View component was created to eliminate
 global dependencies on `Magento_Core`, `Magento_Backend`, `Magento_Adminhtml` and `Magento_Page` modules
-for HTML content rendering. All application modules perform rendering using the
+for {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} content rendering. All application modules perform rendering using the
 View component, and remain independent from each other.
 
 The View component is represented as `Magento\Framework\View` library: `/lib/internal/Magento/Framework/View`.
 
 ## Using Magento\Framework\View library
 
-The View component contains basic classes, factories and interfaces used to implement HTML content rendering for the frontend and backend application areas. 
+The View component contains basic classes, factories and interfaces used to implement HTML content rendering for the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} application areas. 
 
 ## Magento\View Library components
 
@@ -48,7 +41,7 @@ The `Magento\Framework\View` library has the following components:
 
     * Theme
 
-* Layout.
+* {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %}.
 
 ## Magento\Framework\View library dependencies
 

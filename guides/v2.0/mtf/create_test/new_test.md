@@ -9,14 +9,7 @@ version: 2.0
 github_link: mtf/create_test/new_test.md
 ---
 
-<h2>New functional test: Theory</h2>
-
 The FTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.
-
-<h3>Contents</h3>
-
-* TOC
-{:toc}
 
 ### Extend an out-of-the-box test {#extending-oob-test}
 
@@ -24,7 +17,7 @@ You can extend a test by adding or replacing a [test entity][]. Test entities fo
 
 #### Usage {#ext-usage}
 
-This approach is useful when the Magento functionality was extended. For example, the minor changes were made in the existing functionality of a module. Also you can extend an out-of-the-box test to extend the current test coverage if the target functionality is not completely covered by the out-of-the-box test.
+This approach is useful when the Magento functionality was extended. For example, the minor changes were made in the existing functionality of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. Also you can extend an out-of-the-box test to extend the current test coverage if the target functionality is not completely covered by the out-of-the-box test.
 
 Example use cases:
 
@@ -58,7 +51,7 @@ There are two types of test data:
 
 #### Test flow {#test-flow}
 
-A test flow is a set of test steps that you want to perform under the test object to check required functionality. Test steps are defined in a [test case][]. Usually, a test step contains a set of actions. Each action is managed by a method defined in a [block][]. A [page][] is a container for blocks. It stores selectors to identify blocks on an HTML page. 
+A test flow is a set of test steps that you want to perform under the test object to check required functionality. Test steps are defined in a [test case][]. Usually, a test step contains a set of actions. Each action is managed by a method defined in a [block][]. A [page][] is a container for blocks. It stores selectors to identify blocks on an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page. 
 
 #### Test assertions {#test-assertions}
 

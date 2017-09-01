@@ -10,8 +10,6 @@ github_link: architecture/archi_perspectives/components.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/components.html
 ---
 
-## Magento components
-
 This document is not ready yet, but we are working on it.
 
 Meanwhile, see [Magento Components]({{page.baseurl}}architecture/archi_perspectives/components/AComponents.html).

@@ -8,15 +8,9 @@ version: 2.0
 github_link: mtf/features/webdriver.md
 ---
 
-<h3>Contents</h3>
-
-* TOC
-{:toc}
-
-
 ## Overview
 
-The Functional Testing Framework (FTF) enables you to change a web driver library used for communication with Selenium Server, PhantomJS or any other web page automation tool.
+The Functional Testing Framework (FTF) enables you to change a web driver {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} used for communication with Selenium Server, PhantomJS or any other web page automation tool.
 
 Web drivers provided with the FTF are the following:
 

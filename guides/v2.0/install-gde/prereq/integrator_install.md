@@ -14,16 +14,8 @@ github_link: install-gde/prereq/integrator_install.md
   <p>Totally lost? Need a helping hand? Try our <a href="{{page.baseurl}}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{page.baseurl}}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
-#### Contents
-*	[Intended audience](#int-aud)
-*	[Prerequisites](#prereq)
-*	[Composer and Magento](#instgde-overview-composer)
-*	[Install Composer]({{ page.baseurl }}install-gde/prereq/integrator_install_composer.html)
-*	[Get the Magento CE metapackage]({{ page.baseurl }}install-gde/prereq/integrator_install_ce.html)
-*	[Get the Magento EE metapackage]({{ page.baseurl }}install-gde/prereq/integrator_install_ee.html)
-
 ## (Integrator) Overview of integrator installation
-This topic provides an overview of how to get either the Magento Community Edition (CE) or Enterprise Edition (EE) metapackage.
+This topic provides an overview of how to get either the {{site.data.var.ce}} or {{site.data.var.ee}} {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 ## Intended audience {#int-aud}
 The audience for this topic is anyone who downloads the Magento metapackage using `composer create-project`. If that isn't you, go back and <a href="{{page.baseurl}}install-gde/bk-install-guide.html">choose another starting point</a>.
@@ -31,7 +23,7 @@ The audience for this topic is anyone who downloads the Magento metapackage usin
 ## Prerequisites {#prereq}
 
 {% include install/prereq.md %}
-	
+
 {% include install/composer-overview.html %}
 
 #### Next step

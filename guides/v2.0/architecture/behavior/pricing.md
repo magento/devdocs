@@ -11,12 +11,8 @@ redirect_from: /guides/v1.0/architecture/behavior/pricing.html
 ---
 
 ## Magento Pricing library: implementation and usage {#m2devgde-pricelib-intro}
-{:.no_toc}
 
-This topic discusses how to use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library in your module and how to add price rendering to page templates and layouts.
-
-* TOC
-{:toc}
+This topic discusses how to use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and how to add price rendering to page templates and layouts.
 
 ## Use the pricing library in your module {#m2devgde-pricelib-integrate}
 
@@ -26,7 +22,7 @@ To use the pricing library in a module:
 
 2. Add prices and adjustments in the <code>di.xml</code> of a module.
 
-3. Prepare a layout: create a pricing layout handle (or use the default Magento one) and add a price rendering block to page layouts.
+3. Prepare a layout: create a pricing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} handle (or use the default Magento one) and add a price rendering block to page layouts.
 
 4. Add price rendering to page templates.
 
@@ -99,7 +95,7 @@ To add a custom price type, create a corresponding class extending `AbstractPric
 
 To specify the price types which you plan to use for the corresponding product, add the price type codes to <code>Price\Pool</code> in the module's <code>di.xml</code> file.
 
-An example of Catalog module price configuration in its <a href="{{ site.mage2000url }}app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.
+An example of {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} module price configuration in its <a href="{{ site.mage2000url }}app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.
 
 Price type codes are discussed in <a href="#m2devgde-pricelib-def">Default price types</a>.
 
@@ -127,7 +123,7 @@ The name of the layout handle is arbitrary. But if you want to use also default 
 
 To learn about locations of layouts in Magento application, see <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.
 
-For example, the Catalog module's <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular product types in the `catalog_product_prices.xml` layout handle of the corresponding module.
+For example, the Catalog module's <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %} in the `catalog_product_prices.xml` layout handle of the corresponding module.
 
 Class and template declarations in the pricing layout handles are based on the following fallback structures.
 

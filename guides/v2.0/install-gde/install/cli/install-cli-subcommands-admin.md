@@ -2,23 +2,14 @@
 layout: default
 group: install_cli 
 subgroup: 05_Command-line installation
-title: Create or unlock a Magento administrator account
-menu_title: Create or unlock a Magento administrator account
+title: Create, edit, or unlock a Magento administrator account
+menu_title: Create, edit, or unlock a Magento administrator account
 menu_node: 
 menu_order: 50
 version: 2.0
 github_link: install-gde/install/cli/install-cli-subcommands-admin.md
 redirect_from: /guides/v2.0/install-gde/install/install-cli-subcommands-admin.html
 ---
-
-  
-<h4>Contents</h4>
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-cli-admin-prereq">Prerequisites</a>
-*	<a href="#instgde-cli-admin">Create an administrator</a>
-*	<a href="#instgde-cli-admin-unlock">Unlock an administrator account</a>
 
 
 <h2 id="instgde-cli-before">First steps</h2>
@@ -30,14 +21,16 @@ Before you can use this command, you must do all of the following:
 
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable at minimum the Magento_Authorization and Magento_User modules</a>
-*	Create the Magento database schema
+*	Create the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %}
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
   		<p>The simplest way to create the database is to use the command <code>magento setup:upgrade</code>.</span>
 	</div>
 
-<h2 id="instgde-cli-admin">Create an administrator</h2>
+## Create or edit an administrator {#instgde-cli-admin}
+Use this command to create a new administrator or to edit an existing administrator. If you're editing an administrator, only the first name, last name, and password can be edited.
+
 Command usage:
 
 	magento admin:user:create [--<parameter_name>=<value>, ...]

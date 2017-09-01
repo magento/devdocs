@@ -13,19 +13,19 @@ github_link: extension-dev-guide/arch-basics
 
 ### Magento technology stack
 
-Magento’s highly modular structure includes the following open-source technologies:
+Magento's highly modular structure includes the following open-source technologies:
 
 Stack components include:
 
-* PHP (5.5 and 5.6)
+* {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} (5.5 and 5.6)
 
 * Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide), PSR-3, PSR-4
 
 * HTML5
 
-* CSS3 (LESS CSS pre-processor)
+* CSS3 (LESS {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} pre-processor)
 
-* JQuery (primary JavaScript library)
+* {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}JQuery{% endglossarytooltip %} (primary {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} library)
 
 * RequireJS (library that helps load JavaScript resources on demand)
 
@@ -33,11 +33,11 @@ Stack components include:
 
 * Apache 2.2, 2.4
 
-* Nginx 1.7
+* {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}Nginx{% endglossarytooltip %} 1.7
 
 * MySQL 5.6
 
-* Composer (dependency management package for PHP)
+* {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} (dependency management package for PHP)
 
 Optional stack components include:
 
@@ -61,7 +61,7 @@ Merchants and developers want the process of upgrading between revisions of Mage
 
 To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses Semantic Versioning 2.0.0 to indicate whether a change breaks backward compatibility. Version numbers are in the format MAJOR.MINOR.PATCH, where:
 
-* MAJOR indicates incompatible API changes
+* MAJOR indicates incompatible {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} changes
 
 * MINOR indicates backward-compatible functionality has been added
 

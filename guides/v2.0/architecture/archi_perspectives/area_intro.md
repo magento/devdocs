@@ -10,15 +10,9 @@ github_link: architecture/archi_perspectives/area_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/area_intro.html
 ---
 
-## Magento area
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview
 
-A Magento Area contains user-oriented functionality, which is responsible for managing user interaction with the system. It consists of components that provide a bridge into the core business logic encapsulated in the Domain (business logic) layer.
+A Magento Area contains user-oriented functionality, which is responsible for managing user interaction with the system. It consists of components that provide a bridge into the core business logic encapsulated in the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}Domain{% endglossarytooltip %} (business logic) layer.
 
 — responsible for presentation layer components
 
@@ -26,7 +20,7 @@ A Magento Area contains user-oriented functionality, which is responsible for ma
 
 — modules independent of area
 
-— when an area is disabled, then an entry point to module presentation is lost
+— when an area is disabled, then an entry point to {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} presentation is lost
 
 ### Magento area module structure
 
@@ -35,7 +29,7 @@ A Magento Area contains user-oriented functionality, which is responsible for ma
 — area configuration
 — area code
 
-The admin panel area serves for managing the store. The code of this area is adminhtml. Respectively, adminhtml subdirectory contains the view resources and Adminhtml subdirectory contains the controllers of the admin panel area.
+The {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel area serves for managing the store. The code of this area is {% glossarytooltip 749044c4-a002-4006-a3b8-eace2df90303 %}adminhtml{% endglossarytooltip %}. Respectively, adminhtml subdirectory contains the view resources and Adminhtml subdirectory contains the controllers of the admin panel area.
 
 The resources visible and accessible in an area as well as area's behavior are defined by modules. The same module can influence several areas
 

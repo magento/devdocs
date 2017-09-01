@@ -10,8 +10,6 @@ github_link: ui-components/ui-listing-grid.md
 redirect_from: /guides/v2.0/ui-library/ui-listing-grid.html
 ---
 
-<h2 id="listing">UI Listing/Grid Component</h2>
-
 Listing is a basic component responsible for rendering grids, lists and tiles, providing filtering, pagination, sorting and other features.
 
 #### Integration
@@ -49,7 +47,7 @@ Example configuration of Listing Component instance:
 
 #### Data Source
 
-Data Source is another UI Component that provides data in specific format which is shared among all UI Components. 
+Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} that provides data in specific format which is shared among all UI Components. 
 
 The listing component requires the data source to be properly configured and associated with it:
 

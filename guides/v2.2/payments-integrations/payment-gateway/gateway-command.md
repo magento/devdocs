@@ -1,0 +1,1 @@
+../../../v2.1/payments-integrations/payment-gateway/gateway-command.md

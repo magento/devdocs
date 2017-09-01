@@ -12,8 +12,6 @@ redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
 ---
 
 
-<h2 id="install-trouble-web-browser">Cannot access Magento software in a web browser</h2>
-
 ### Symptom: The following message displays when you try to access the Magento storefront or Admin:
 
 	Whoops, it looks like you have an invalid PHP version.
@@ -21,7 +19,7 @@ redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
 	
 #### Solution
 
-Either upgrade PHP or restart Apache (Apache might not be using the same PHP version as is on the file system).
+Either upgrade {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} or restart Apache (Apache might not be using the same PHP version as is on the file system).
 
 ### Symptom: A 404 (Not Found) error displays.
 

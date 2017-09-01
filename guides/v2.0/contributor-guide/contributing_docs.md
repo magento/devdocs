@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: contributor
+subgroup: contributor_docs
 title: DevDocs Contributions
 menu_title: DevDocs Contributions
 menu_order: 1
@@ -34,13 +34,13 @@ What's your area of expertise? Please share your knowledge with us! Contribution
 
 We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/develop/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>.
 
-The language we use in our documentation is [Markdown](http://daringfireball.net/projects/markdown/){:target="_blank"}, which is a simple markup language that gets converted to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="_blank"}. 
+The language we use in our documentation is [Markdown](http://daringfireball.net/projects/markdown/){:target="_blank"}, which is a simple markup language that gets converted to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="_blank"}.
 
-We also have a <a href="{{page.baseurl}}contributor-guide/contributing_docs_suggested_topics.html" target="_blank">list of suggested topics</a>, if you want to peruse and pick one that appeals to you.
+We also have a [list of suggested topics]({{page.baseurl}}contributor-guide/contributing_docs_suggested.html), if you want to peruse and pick one that appeals to you.
 
 If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{page.baseurl}}howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.
 
-Use the <a href="#fork">fork</a> & <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
+Use the <a href="#fork">fork</a> and <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
 This contribution model means that contributors maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
 
 The Magento DevDocs team reviews all issues and contributions submitted by the community. During the review we might require clarifications from the contributor. If you know what you want to write about, but you aren't sure where within our multiple documents the topic should go, we can help you with the "info architecture" part.
@@ -50,8 +50,6 @@ The Magento DevDocs team reviews all issues and contributions submitted by the c
 </div>
 
 <h2 id="requirements">Contribution guidelines</h2>
-
-
 1. Some common writing guidelines include:
     * Define what the goal of your topic is: what exactly do you want to teach the reader?
     * Make the title of your topic reflect the content.
@@ -65,21 +63,21 @@ The Magento DevDocs team reviews all issues and contributions submitted by the c
 4. First, check the <a href="https://github.com/magento/devdocs/pulls" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!
 5. For large contributions or changes that include multiple files, please <a href="https://github.com/magento/devdocs/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and the DevDocs team can help find the best home for your new topics.
 
-<h2 id="fork">Fork a repository</h2>
+<h2 id="fork">Fork and clone a repository</h2>
 To fork a repository on Github, do the following:
 
-1. Create or log in to your developemnt environment account on GitHub.
+1. Create or log in to your development environment account on GitHub.
 
 2. Navigate to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs repository</a>.
 
 3. Click **Fork** at the top right.
 
-4. Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on mulitple changes.
+4. Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on multiple changes.
 
 5. You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs/blob/develop/README.md" target="_blank">instructions in our README</a>.
 
 ### Update the fork with the latest changes {#sync}
-As community and Magento writers' changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is <number> commits behind magento:2.0.` displays, it means your fork must be updated.
+As community and Magento writers' changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is <number> commits behind magento:2.0.` displays, it means your fork must be updated.
 
 There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.github.com/articles/syncing-a-fork){:target="_blank"}. Make sure to update from the correct branch!
 
@@ -121,7 +119,7 @@ To add an issue:
 3. Click **Submit new issue**.
 
 <h2 id="report">Edit metadata</h2>  
-The .md (Markdown) file's metadata is a set of key-value pairs (where the key is before the : and the value is after). The metadata section is located in the beginning of the file.
+The .md (Markdown) file's {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} is a set of key-value pairs (where the key is before the : and the value is after). The metadata section is located in the beginning of the file.
 
 ### Example:
     ---
@@ -133,8 +131,8 @@ The .md (Markdown) file's metadata is a set of key-value pairs (where the key is
     menu_node: parent
     menu_order: 1
     version: 2.0
-github_link: install-gde/continue.md
-    ---	
+    github_link: install-gde/continue.md
+    ---
 
 ### Definitions
 Refer to the following table for a description of each key value pair in the metadata section of the .md file.
@@ -176,10 +174,10 @@ Refer to the following table for a description of each key value pair in the met
       </tr>
        <tr>
          <td>menu_order: 1</td>
-         <td>Sets the order files display. But not the order that subgroups appear in. 
-         
+         <td>Sets the order files display. But not the order that subgroups appear in.
+
 <!--
-You can order where each file appears in the list by changing its menu_order number. Subgroups, by default, will show up in alphabetical order. To get your own order instead of alphabetical, create a file for each subgroup header: introduction.md, prepare.md, build,md, etc. In the metadata section for each of the files set menu_node: parent.
+You can order where each file appears in the list by changing its menu_order number. Subgroups, by default, will show up in alphabetical order. To get your own order instead of alphabetical, create a file for each subgroup header: introduction.md, prepare.md, build.md, etc. In the metadata section for each of the files set menu_node: parent.
 
 They still show up in alphabetical order, based on subgroup's name. Now change the name of subgroup to get the order you need using the alphabet. When you set menu_node to parent, the displayed name will be taken from menu_title instead of from subgroup. So, if you want Introduction to show up first and Prepare to show up second, set subgroup in introduction.md to for example 1_introduction and then set subgroup in prepare.md to 2_prepare. That is, just follow an alphanumeric order to get the order you want. Then set menu_title to the name you want displayed. Then, for each file you want to attach to that subgroup, you just give it that subgroup name. In those files, leave menu_node empty or omit it.
 -->
@@ -196,8 +194,8 @@ github_link: install-gde/continue.md</td>
 ### How to add a Contributor's name to a topic
 When a community member contributes an entire topic, or makes substantial improvements to an existing topic, we like to thank them by adding their name (or company name) right beneath the title of the topic, and link that name to their blog or web site.
 
-In the metadata secion at the top of the file, just add these two entries:
- 
+In the metadata section at the top of the file, just add these two entries:
+
 * contributor_name: \<name_of_contributor\>
 * contributor_link: \<link_to_contributors_site_or_blog\>
 

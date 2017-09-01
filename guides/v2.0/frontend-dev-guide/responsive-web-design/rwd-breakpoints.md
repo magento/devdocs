@@ -14,18 +14,13 @@ redirect_from:
 
 <h2>What's in this topic</h2>
 
-Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of [default breakpoints]({{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to add a custom breakpoint in your theme. 
-
-**Contents**
-
-* TOC
-{:toc}
+Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of [default breakpoints]({{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to add a custom breakpoint in your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
 
 ## Overview
 To add a custom breakpoint in your theme, you need to do the following:
 
 1. Define a variable for the new breakpoint.
-2. Override the library `_responsive.less` file, and add the new rule for the new breakpoint. 
+2. Override the {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} `_responsive.less` file, and add the new rule for the new breakpoint. 
 3. Implement the screen changes for the new breakpoint.
 
 ## Add a new breakpoint variable
@@ -54,7 +49,7 @@ To do this, take the following steps:
 1. Copy the `_responsive.less` file to your `<your_theme_dir>/web/css/source/lib/` directory from one of the following locations:
 	- `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other option. 
 	- `<your_theme_dir>/web/css/source/lib/_responsive.less`: the library file.
-2. In your `_responsive.less`, add the `.media-width` mixin rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
+2. In your `_responsive.less`, add the `.media-width` {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
 
 Example:
 

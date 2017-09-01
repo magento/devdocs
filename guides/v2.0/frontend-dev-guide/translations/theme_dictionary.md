@@ -11,11 +11,11 @@ github_link: frontend-dev-guide/translations/theme_dictionary.md
 
 <h2>What's in this topic</h2>
 
-This topic describes how default strings can be changed in your custom theme using <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#translate_terms">translation dictionaries</a>. It also gives a short overview of the order in which translations are searched and applied by the Magento application.
+This topic describes how default strings can be changed in your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} using <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#translate_terms">translation dictionaries</a>. It also gives a short overview of the order in which translations are searched and applied by the Magento application.
 
 <h2>How Magento applies locales</h2>
 
-When the locale is changed for a store, Magento searches for translations in the corresponding dictionaries in the following locations:
+When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} is changed for a store, Magento searches for translations in the corresponding dictionaries in the following locations:
 
 4. Module translations: `<module_dir>/i18n/`
 4. Theme translations: 
@@ -24,7 +24,7 @@ When the locale is changed for a store, Magento searches for translations in the
 4. Translation package: `app/i18n/`
 5. Magento database
 
-If there are different translations for one string, the theme dictionary translations have priority over the module translations, and child theme translations have priority over parent theme translations.
+If there are different translations for one string, the theme dictionary translations have priority over the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} translations, and child theme translations have priority over parent theme translations.
 
 <h2>Creating a theme dictionary to override parent strings for default locale</h2>
 

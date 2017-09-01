@@ -10,12 +10,6 @@ version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-mode.md
 ---
 
-
-#### Contents
-*	<a href="#config-mode-over">Overview of setting Magento modes</a>
-*	<a href="#config-mode-show">Display the current mode</a>
-*	<a href="#config-mode-change">Change modes</a>
-
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>
 To improve security and ease-of-use, we added a command that switches <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. 
 
@@ -66,7 +60,7 @@ where
 
 `{mode}` is required; it can be either `developer` or `production`
 
-`--skip-compilation` is an optional parameter you can use to skip <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.
+`--skip-compilation` is an optional parameter you can use to skip <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>You cannot currently change from either developer or production mode to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
@@ -104,8 +98,8 @@ Following is a summary of messages that display:
 	New version of deployed files: 1440461332
 	Static content deployment complete
 Gathering css/styles-m.less sources.
-Successfully processed LESS and/or SASS files
-CSS deployment complete
+Successfully processed LESS and/or {% glossarytooltip 45f1f76d-91cd-4789-a8b5-1e3f321a6280 %}SASS{% endglossarytooltip %} files
+{% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} deployment complete
 Generated classes:
         Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor
         Magento\Sales\Api\Data\CreditmemoCommentInterfaceFactory

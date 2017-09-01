@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: 30_admin
+subgroup: 030_admin
 title: Reuse code across projects with Git submodules
 menu_title: Reuse code across projects with Git submodules
 menu_order: 200
@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/admin/admin-submodules.md
 ---
 
-## Reuse code across projects with Git submodules
 [Git *submodules*](https://git-scm.com/book/en/v2/Git-Tools-Submodules){:target="_blank"} provide an easy way to reuse code in multiple projects. Git submodules are typically
 listed in a `.gitmodules` file at the root of your Git repository. When you push to your project, 
 Magento Enterprise Cloud Edition clones the submodules automatically.
@@ -35,7 +34,7 @@ When you run `git push`, messages similar to the following display:
 	  Updated submodule git://github.com/orocrm/OroEntitySerializedFieldsBundle: 11 references updated.
 
 ## Error validating submodules
-The following error displays if you access a Git URL like `git@github.com:...` because no SSH key is present in the repository referenced by the submodule:
+The following error displays if you access a Git {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} like `git@github.com:...` because no SSH key is present in the repository referenced by the submodule:
 
 	Validating submodules.
 	  Found unresolvable links, updating submodules.

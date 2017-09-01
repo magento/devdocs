@@ -2,23 +2,18 @@
 layout: default
 group: mtf-guide
 subgroup: 30_Quickstart
-title: Quick start with the Functional Testing Framework
+title: Quick start. Prepare Magento application
 menu_title: Prepare Magento application
 menu_order: 1
 version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_magento.md
 ---
 
-<h2>Prepare Magento application</h2>
-
-* TOC
-{:toc}
-
 ## Change WYSIWYG settings
 
-A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disables the WYSIWYG and enables the web-driver to process these fields as simple text areas.
+A Selenium web-driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}. This option disables the WYSIWYG and enables the web-driver to process these fields as simple text areas.
 
-1. Log in to the Magento Admin as an administrator.
+1. Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 2. Follow **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
 3. Set **Enable WYSIWYG Editor** to **Disabled Completely**.
 4. Click **Save Config**.
@@ -27,9 +22,9 @@ A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disa
 
 ## Change security settings
 
-Disable the Secret Key in URL setting to open pages using direct URLs.
+Disable the Secret Key in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} setting to open pages using direct URLs.
 
-1. Follow **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
+1. Follow **Stores &gt; Configuration &gt; Advanced &gt; {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} &gt; Security**.
 2. Set **Add Secret Key to URLs** to **No**.
 
 ![Change security settings]({{site.baseurl}}common/images/ftf/mtf_qstart_mag_secur_20.png){:width="650px"}
@@ -44,6 +39,5 @@ Disable the Secret Key in URL setting to open pages using direct URLs.
 * From the **Actions** list in the upper left, click **Refresh**.
 * Click **Submit**.
 
-<h2 id="mtf_install_pre">Next Steps</h2>
 
 [&lt;&lt; Adjust configuration]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html)

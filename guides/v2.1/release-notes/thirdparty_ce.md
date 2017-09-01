@@ -1,14 +1,16 @@
 ---
 layout: default
 group: release-notes
-subgroup: Third Party Licenses
-menu_title: Magento CE third-party licenses
+subgroup: 99_third
+menu_title: Magento Open Source third-party licenses
+title: Magento Open Source third-party licenses
 menu_order: 1
 version: 2.1
 github_link: release-notes/thirdparty_ce.md
 ---
 
-This page contains links to license agreements of the third party components used within Magento CE.  Click the **License** links to view the end user license agreement for the corresponding software.
+This page contains links to license agreements of the third party components used within Magento Open Source (formerly Community Edition).  Click the **License** links to view the end user license agreement for the corresponding software.
+
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---

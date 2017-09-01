@@ -10,23 +10,11 @@ version: 2.0
 github_link: pattern-library/controls/buttons/buttons.md
 redirect_from: /guides/v1.0/pattern-library/controls/buttons/buttons.html
 ---
-<h2> Buttons </h2>
 
-<h3> Contents </h3>
-
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use</a>
-* <a href="#when-not-to-use">When Not to Use</a>
-* <a href="#variations">Variations</a>
-* <a href="#style_behavior">Styles and Behavior</a>
-* <a href="#accessibility">Accessibility</a>
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
-
+## Buttons 
 Buttons bring attention to actions on the screen. This article will cover the use of general buttons on Magento. 
-For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
+
+For solutions not described in this topic, please refer to other related patterns or contact the Magento UX Design team.
 
 
 <h3 id="when-to-use">When to Use</h3>
@@ -36,7 +24,7 @@ used when deciding when to use a button vs. a hyperlink, icon, or another call t
 
 <h3 id="when-not-to-use">When Not to Use</h3>
 * Do not use buttons to indicate actions that are better suited as hyperlinks such     
-  as “Cancel”. Some exceptions may apply.
+  as "Cancel". Some exceptions may apply.
 * Do not use more than one primary page level action on a single page for 
   different actions. Some exceptions may apply.
 * Do not use buttons to indicate a link to more information or to a task not related 
@@ -99,7 +87,7 @@ Buttons will be take on one of the below variations.
 	</tbody>
 </table>
 
-CSS style classes will need to be established for any buttons that require a custom
+{% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} style classes will need to be established for any buttons that require a custom
 defined style.
 
 <h2 id="style_behavior">Styles and Behavior</h2>
@@ -240,7 +228,7 @@ Left/Right margin spacing should not be less than 10px<br>
 <img src="img/TableButtonExample.png">
 
 ####  5. Toggle Buttons
-The toggle button acts like a checkbox. When you touch/click on it, the state toggles between “yes” and “no” and/or “on” and “off”.<br>
+The toggle button acts like a checkbox. When you touch/click on it, the state toggles between "yes" and "no" and/or "on" and "off".<br>
 <br>
 **When to Use/When Not to Use**<br>
 Use toggle for:<br>

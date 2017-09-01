@@ -11,8 +11,6 @@ github_link: extension-dev-guide/prepare/prepare.md
 redirect_from: /guides/v2.0/extension-dev-guide/prepare.html
 ---
 
-## {{page.menu_title}}
-
 Before you start building Magento modules, we suggest you use the following checklist:
 
 *	[Install Magento and any required dependencies]({{page.baseurl}}/install-gde/bk-install-guide.html)

@@ -8,13 +8,11 @@ menu_order: 25
 version: 2.2
 github_link: extension-dev-guide/repositories.md
 ---
-* TOC
-{:toc}
 
 ### What is a repository? {#m2devgde-repository-intro}
 
 Repositories give service requestors the ability to perform create, read, update, and delete (CRUD) operations on entities or a list of entities.
-A repository is an example of a [service contract]({{page.baseurl}}extension-dev-guide/service-contracts/design-patterns.html), and its implementation is part of the domain layer.
+A repository is an example of a [service contract]({{page.baseurl}}extension-dev-guide/service-contracts/design-patterns.html), and its implementation is part of the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} layer.
  
 #### Repository state
 
@@ -175,7 +173,7 @@ The method applies custom filters for some fields, otherwise it applies `$collec
 {% endcollapsible %}
 
 You can configure this class to use a specific custom field mapping and custom filter in the `di.xml` file.
-The example below uses dependency injection to create a virtual type from a Filter Processor that applies the module-specific [`ProductCategoryFilter`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php){:target="_blank"} on a particular field mapping.
+The example below uses {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} to create a {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} from a Filter Processor that applies the module-specific [`ProductCategoryFilter`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php){:target="_blank"} on a particular field mapping.
 
 {% highlight XML %}
     <virtualType name="Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupFilterProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor">

@@ -1,22 +1,20 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 090_configure
 title: Blackfire integration
 menu_title: Blackfire integration
-menu_order: 105
-menu_node: 
+menu_order: 85
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: integrate
 version: 2.0
 github_link: cloud/project/project-integrate-blackfire.md
 ---
 
-#### Contents
-*	[Get your Blackfire credentials](#cloud-int-black) 
-*	[Enable the Blackfire integration](#cloud-int-black-en)
-*	[Verify it's working](#cloud-int-black-verify)
-*	[Profile your site](#cloud-int-black-profile)
+This topic provides information for setting up your Blackfire credentials and integration.
+
+For full details on integrations, also review [Blackfire's complete Magento Commerce (Cloud)](https://support.blackfire.io/blackfire-on-magento-cloud){:target="_blank"} guide.
 
 ## Get your Blackfire credentials {#cloud-int-black}
 The account owner has access to the Blackfire credentials for your project. Contact the account owner for more information.
@@ -27,7 +25,7 @@ We recommend you enable the Blackfire integration in an environment (that is, br
 To enable Blackfire:
 
 1.	Log in to the machine on which your SSH keys are stored.
-1.	Log in to your Magento Enterprise Cloud Edition project.
+1.	Log in to your {{site.data.var.<ece>}} project.
 
 		magento-cloud login
 2.	List projects:
@@ -84,7 +82,7 @@ To verify Blackfire works, you can SSH to the environment and run a command as f
 1.	Log in to the Web UI.
 2.	In the right pane, click the name of your environment.
 3. 	Hover the mouse pointer over **Access site**.
-4.	Copy the **SSH access** URL to the clipboard as the following figure shows.
+4.	Copy the **SSH access** {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to the clipboard as the following figure shows.
 
 	![Find the SSH URL for the environment]({{ site.baseurl }}common/images/cloud_ssh-access2.png){:width="500px"}
 5.	Enter that command in your terminal window to log in using SSH.
@@ -121,7 +119,10 @@ To verify Blackfire works, you can SSH to the environment and run a command as f
 ## Profile your site {#cloud-int-black-profile}
 To start profiling your site using Blackfire:
 
-1.	Use the Web UI to find the **Web access** URL for your environment as the following figure shows:
+1.	Install the Blackfire.io Companion browser {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} for your browser.
+
+	For example, to install the Chrome Companion, see [Blackfire.io documentation](https://blackfire.io/docs/integrations/chrome){:target="_blank"}.
+2.	Use the Web UI to find the **Web access** URL for your environment as the following figure shows:
 
 	![Find your environment's URL]({{ site.baseurl }}common/images/cloud_web-access.png){:width="500px"}
 2.	Go to your site using Chrome.

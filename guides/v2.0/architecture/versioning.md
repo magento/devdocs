@@ -10,20 +10,16 @@ github_link: architecture/versioning.md
 redirect_from: /guides/v1.0/architecture/versioning.html
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ## Overview {#verpol}
 
-The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{page.baseurl}}architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes.
+The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{page.baseurl}}architecture/back-compatibility.html">backward-incompatible</a> changes in the public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} or other significant code changes.
 
 Magento software versioning complies with the following specifications:
 
 * [Semantic Versioning 2.0.0](http://semver.org/)
+
 * [Versioning specification of Composer system](https://getcomposer.org/doc/04-schema.md#version)
+
 * [PHP version_compare()](http://php.net/version_compare)
 
 ## Version formats
@@ -41,12 +37,13 @@ The pre-release version format is: `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`, whe
 
 ## Public APIs
 
-Source code is considered public API only if it is explicitly marked as such using the `@api` docblock tag. This designation indicates the code can be used or customized by other components, such as formal interfaces and dependency injection points.
+Source code is considered public API only if it is explicitly marked as such using the `@api` docblock tag. This designation indicates the code can be used or customized by other components, such as formal interfaces and {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} points.
 
-For PHP code, compatibility of `@api` may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).
+For {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code, compatibility of `@api` may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).
 
 ## Where versioning is used
-The software version can be found in the source code of any Magento component or bundle, inside the `composer.json` file.
+
+The software version can be found in the source code of any {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} or bundle, inside the `composer.json` file.
 
 It can be declared as the version of the component:
 
@@ -142,12 +139,13 @@ The `x.y.z` numbers will change according to Semantic Versioning policy provisio
 
 ## Example lifecycle
 
-The following steps demonstrate the packaging and backward compatibility story from the view of Magento, system integrators, and extension developers. This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.
+The following steps demonstrate the packaging and backward compatibility story from the view of Magento, system integrators, and {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers. This example uses several {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.
+
 <ol>
 <li>Start by cloning the master branch from github.
 
 
-   This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
+  This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
 
 {% highlight JSON %}
 {
@@ -163,7 +161,6 @@ The following steps demonstrate the packaging and backward compatibility story f
 </li>
 
 <li>Run the <code>composer update</code> command. Core modules a & b are pulled down from the repository.</li>
-
 
 <li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
 
@@ -243,6 +240,6 @@ The following steps demonstrate the packaging and backward compatibility story f
 
 ## Related topics
 
-<a href="{{page.baseurl}}architecture/backward-compatibility.html">Backward compatibility</a>
+<a href="{{page.baseurl}}architecture/back-compatibility.html">Backward compatibility</a>
 
 <a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>

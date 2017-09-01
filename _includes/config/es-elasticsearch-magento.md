@@ -1,6 +1,5 @@
 <div markdown="1">
 
-## Configure Magento to use Elasticsearch {#elastic-m2-configure}
 This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the [Magento EE User Guide](http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html){:target="_blank"}.
 
 To configure Magento to use Elasticsearch:
@@ -21,11 +20,13 @@ To configure Magento to use Elasticsearch:
 	</tr>
 	<tr>
 		<td>Elasticsearch Server Hostname</td>
-		<td>Enter the fully qualified host name or IP address of the machine running Elasticsearch. </td>
+		<td><p>Enter the fully qualified host name or IP address of the machine running Elasticsearch.</p>
+		<p>Magento Enterprise Cloud Edition: <a href="{{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p> </td>
 	</tr>
 	<tr>
 		<td>Elasticsearch Server Port</td>
-		<td>Enter the Elasticsearch web server proxy port. In our example, the port is <code>8080</code> but if you're using a secure proxy, it's typically <code>443</code>.</td>
+		<td><p>Enter the Elasticsearch web server proxy port. In our example, the port is <code>8080</code> but if you're using a secure proxy, it's typically <code>443</code>.</p>
+		<p>Magento Enterprise Cloud Edition: <a href="{{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p></td>
 	</tr>
 	<tr>
 		<td>Enable Elasticsearch HTTP Auth</td>
@@ -44,7 +45,7 @@ One of the following displays:
 	</tr>
 	<tr>
 		<td><img src="{{ site.baseurl }}common/images/elastic_test-success.png"></td>
-		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="{{page.baseurl}}config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>.</td>
+		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="{{site.gdeurl21}}config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a> or <a href="{{site.gdeurl21}}config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a>.</td>
 	</tr>
 	<tr>
 		<td><img src="{{ site.baseurl }}common/images/elastic_test-fail.png"></td>
@@ -54,7 +55,7 @@ One of the following displays:
 				<li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.</li>
 				<li>Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Elasticsearch as a user with <code>root</code> privileges.</li>
-<li>Make sure that <a href="{{page.baseurl}}config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
+<li>Make sure that <a href="{{site.gdeurl21}}config-guide/elasticsearch/es-overview.html#firewall-selinux">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>Elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Elasticsearch Server Port</strong> field is not being used by another process.<br />
 	For example, to see if Elasticsearch is running on its default port, use the following command:

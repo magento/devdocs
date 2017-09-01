@@ -10,10 +10,6 @@ version: 2.0
 github_link: config-guide/memcache/memcache_ubuntu.md
 ---
 
-#### Contents
-*   <a href="#config-memcache-memcached">PHP memcache and memcached extensions</a>
-*   <a href="#config-memcache-install">Install and configure memcached on Ubuntu</a>
-*   <a href="#config-memcache-verify-its-ub">Verify memcached works before installing Magento</a>
 
 {% include config/php-memcache.md %}
 
@@ -77,7 +73,7 @@ To verify memcached is recognized by the web server:
     If memcache does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the `php-pecl-memcache` extension.
 
 ### Verify memcached can cache data
-This test uses a PHP script to verify that memcached can store and retrieve cache data.
+This test uses a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script to verify that memcached can store and retrieve {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} data.
 
 For more information about this test, see <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04" target="_blank">this digitalocean tutorial</a>.
 

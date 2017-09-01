@@ -15,11 +15,6 @@ github_link: frontend-dev-guide/css-topics/css_debug.md
 The topic describes how to install, configure and use <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a> for compiling <code>.less</code> files in Magento 2. </p>
 
 
-**Contents**
-
-* TOC
-{:toc}
-
 ## Prerequisites 
 Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
 
@@ -44,6 +39,7 @@ Rename the following files in your Magento root directory:
 </ul>
 </li>
 <li>
+
 Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br>
 
 <pre>
@@ -54,9 +50,9 @@ npm update
 </li>
 
 <li>
-Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/themes.js</code> file, add your theme to <code>module.exports</code> like following:
+Add your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/themes.js</code> file, add your theme to <code>module.exports</code> like following:
 <pre>
-module.exports = {
+{% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.exports = {
     ...
     &lt;theme&gt;: {
         area: 'frontend',
@@ -77,7 +73,7 @@ Where the following notation is used:
 <code>&lt;theme&gt;</code>: your theme code, conventionally should correspond to the theme directory name.
 </li>
 <li>
-<code>&lt;language&gt;</code>: specified in the 'code_subtag' format, for example <code>en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code>language</code>
+<code>&lt;language&gt;</code>: specified in the 'code_subtag' format, for example <code>en_US</code>. Only one {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code>language</code>
 </li>
 <li>
 <code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory. You need to specify all <a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files of the theme</a>. If your theme <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
@@ -119,7 +115,7 @@ grunt clean:blank
 </pre>
 </td>
 <td>
-Removes the theme related static files in the <code>pub/static</code> and <code>var</code> directories.
+Removes the theme related {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} in the <code>pub/static</code> and <code>var</code> directories.
 </td>
 </tr>
 <tr>
@@ -183,3 +179,21 @@ After you customize the content of any <code>.less</code> file, changes are appl
 <li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
 
 </ul>
+
+## CSS source maps {#source_maps}
+
+When using Grunt for styles preprocessing, you can enable the CSS source maps generation in your browser. It will make the theme styles debugging easier. 
+
+For each theme, Magento compliles all theme `.less` files into two CSS files: `styles-m.css` and `styles-l.css`. So when you debug a theme, you browser only sees `styles-m.css` and it might be difficult to define which exactly `.css` or `.less` file requires corrections. For example:
+
+![node declaration autocomplete]({{site.baseurl}}common/images/fdg/no-map.png){:width="610px"}
+
+CSS source maps solve this issue. They help to find the `.less` file, where the style is specified. For example:
+
+![node declaration autocomplete]({{site.baseurl}}common/images/fdg/with-map.png){:width="610px"}
+
+CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable source maps displaying in your browser.
+
+The path to the CSS source maps configuration differs, depending on the browser.
+
+In Google Chrome, to enable source maps generation, go to **Inspect** > **Settings** > **Preferences** > **Enable CSS source maps**.   

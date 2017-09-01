@@ -10,12 +10,6 @@ version: 2.0
 github_link: config-guide/memcache/memcache.md
 ---
 
-#### Contents
-*	<a href="#config-memcache-over">Overview of memcached session storage</a>
-*	<a href="{{page.baseurl}}config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a>
-*   <a href="{{page.baseurl}}config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a>
-*	<a href="{{page.baseurl}}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
-
 <h2 id="config-memcache-over">Overview of memcached session storage</h2>
 memcached is a general-purpose distributed memory caching system. It is often used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times an external data source (such as a database or API) must be read. (Source: <a href="https://en.wikipedia.org/wiki/Memcached" target="_blank">Wikipedia</a>)
 
@@ -25,7 +19,7 @@ Magento uses memcached for session storage but not for page caching. For page ca
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
-   <p>We recommend you use memcached for session storage. The Redis session handler in the <code>phpredis</code> PHP extension does not support session locking, which might cause issues with distributed systems and applications that rely on Ajax.</p></span>
+   <p>We recommend you use memcached for session storage. The Redis session handler in the <code>phpredis</code> {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} does not support session locking, which might cause issues with distributed systems and applications that rely on Ajax.</p></span>
 </div>
 
 #### Next step

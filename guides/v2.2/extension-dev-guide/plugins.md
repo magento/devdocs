@@ -10,19 +10,13 @@ github_link: extension-dev-guide/plugins.md
 redirect_from:
 
 ---
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 
 ### Overview
 A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any class or *interface*.
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class.
 
-This interception approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.
+This {% glossarytooltip deea5a5a-e9e5-4591-b141-b849458feb1a %}interception{% endglossarytooltip %} approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.
 
 #### Limitations
 
@@ -39,7 +33,7 @@ Plugins can not be used on following:
 
 ### Declaring a plugin
 
-The <code>di.xml</code> file in your module declares a plugin for a class object:
+The <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} declares a plugin for a class object:
 
 <script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
 
@@ -103,7 +97,7 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
-After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method. 
+After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method.
 
 Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{site.mage2100url}}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
@@ -168,7 +162,7 @@ In the example, the `afterUpdateWebsites` function uses the variable `$websiteId
 #### Around methods
 Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
-Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function. 
+Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function.
 
 <div class="bs-callout bs-callout-warning">
   <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
@@ -183,7 +177,7 @@ namespace My\Module\Plugin;
 
 class ProductPlugin
 {
-    public function aroundSave(\Magento\Catalog\Model\Product $subject, \callable $proceed)
+    public function aroundSave(\Magento\Catalog\Model\Product $subject, callable $proceed)
     {
         $this->doSmthBeforeProductIsSaved();
         $returnValue = $proceed();
@@ -196,7 +190,7 @@ class ProductPlugin
 ?>
 {% endhighlight %}
 
-When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method. 
+When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method.
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
@@ -223,14 +217,14 @@ namespace My\Module\Plugin;
 
 class MyUtilityPlugin
 {
-    public function aroundSave(\My\Module\Model\MyUtility $subject, \callable $proceed, SomeType $obj)
+    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, SomeType $obj)
     {
       //do something
     }
 }
 {% endhighlight %}
 
-Note the missing <code>= null</code>. Now, if Magento calls the original method with <code>null</code>, PHP would throw a fatal error as your plugin does not accept <code>null</code>.
+Note the missing <code>= null</code>. Now, if Magento calls the original method with <code>null</code>, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
 
 You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
@@ -241,7 +235,7 @@ namespace My\Module\Plugin;
 
 class MyUtilityPlugin
 {
-    public function aroundSave(\My\Module\Model\MyUtility $subject, \callable $proceed, ...$args)
+    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, ...$args)
     {
       //do something
       $proceed(...$args);
@@ -257,7 +251,7 @@ The prioritization rules for ordering plugins:
 
 * Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
 
-  * During each plugin execution, Magento executes the current plugin's before method. 
+  * During each plugin execution, Magento executes the current plugin's before method.
   * After the before plugin completes execution, the current plugin's around method will wrap and execute the next plugin or observed method.
 
 * Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
@@ -297,11 +291,11 @@ The execution flow will be as follows:
 
 ### Configuration inheritance
 
-Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class. 
+Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class.
 
 Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can also extend or override these global plugin configuration via an area's `di.xml`.
 
-For example, the developer can disable a global plugin in the backend area by disabling it in the specific `di.xml` file for the backend area.
+For example, the developer can disable a global plugin in the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} area by disabling it in the specific `di.xml` file for the backend area.
 
 ### Related topics
 

@@ -14,24 +14,16 @@ redirect_from:
   - /guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html
 ---
 
-#### Contents
-
-*	<a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-single">Run the single-tenant compiler</a>
-*	<a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a>
-
-
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
 <p>This section discusses the basics of code compilation.</p>
 <p>Code compilation consists of all of the following in no particular order:</p>
 <ul><li>Application code generation (factories, proxies, and so on)</li>
-<li>Area configuration aggregation (that is, optimized dependency injection configurations per area)</li>
+<li>Area configuration aggregation (that is, optimized {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configurations per area)</li>
 <li>Interceptor generation (that is, optimized code generation of interceptors)</li>
-<li>Interception cache generation</li>
+<li>Interception {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} generation</li>
 <li>Repositories code generation (that is, generated code for APIs)</li>
-<li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
-<p>You can find code compilation in classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p> 
+<li>Service data attributes generation (that is, generated {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} classes for data objects)</li></ul>
+<p>You can find code compilation in classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p> 
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
@@ -56,7 +48,7 @@ Use this command if you have multiple *tenants*, which means more than one indep
 
 *	There is one Magento 2 code base instance
 *	There is one database instance per tenant
-*	Independent configurations in the Magento Admin per tenant
+*	Independent configurations in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} per tenant
 *	The storefronts are independent of each other
 
 If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.

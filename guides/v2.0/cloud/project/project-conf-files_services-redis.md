@@ -1,18 +1,17 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
-title: Set up the redis service
-menu_title: Set up the redis service
-menu_order: 32
-menu_node: 
+subgroup: 090_configure
+title: Set up the Redis service
+menu_title: Set up the Redis service
+menu_order: 65
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
 version: 2.0
 github_link: cloud/project/project-conf-files_services-redis.md
 ---
 
-## Set up the redis service
 [Redis](http://redis.io){:target="_blank"} is an optional backend cache solution to replace [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html){:target="_blank"}, which is used in Magento 2 by default.
 
 [More information about Redis]({{page.baseurl}}config-guide/redis/config-redis.html)
@@ -77,8 +76,6 @@ if (getenv('MAGENTO_CLOUD_RELATIONSHIPS')) {
 
 ## Using `redis-cli` to access your Redis service
 
-Assuming your Redis relationship is named `redis`, you can access it by opening an [SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) to a host named `redis.internal` using the redis-cli tool. 
+Assuming your Redis relationship is named `redis`, you can access it by opening an [SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) to a host named `redis.internal` using the redis-cli tool.
 
     redis-cli -h redis.internal
-
-

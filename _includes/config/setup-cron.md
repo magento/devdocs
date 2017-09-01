@@ -39,9 +39,9 @@ For example,
 
 A text editor displays. (You might need to choose a text editor first.)
 
-	* * * * * <path to php binary> <magento install dir>/bin/magento cron:run | grep -v "Ran jobs by schedule" >> <magento install dir>/var/log/magento.cron.log
-	* * * * * <path to php binary> <magento install dir>/update/cron.php >> <magento install dir>/var/log/update.cron.log
-	* * * * * <path to php binary> <magento install dir>/bin/magento setup:cron:run >> <magento install dir>/var/log/setup.cron.log
+<pre class="no-copy">* * * * * &lt;path to php binary> &lt;magento install dir>/bin/magento cron:run | grep -v "Ran jobs by schedule" >> &lt;magento install dir>/var/log/magento.cron.log
+* * * * * &lt;path to php binary> &lt;magento install dir>/update/cron.php >> &lt;magento install dir>/var/log/update.cron.log
+* * * * * &lt;path to php binary> &lt;magento install dir>/bin/magento setup:cron:run >> &lt;magento install dir>/var/log/setup.cron.log</pre>
 
 where 
 
@@ -49,7 +49,7 @@ where
 *	`<magento install dir>` is the directory in which you installed the Magento software; for example, `/var/www`
 *	`| grep -v "Ran jobs by schedule"` filters this message from the log, making any errors easier to spot
 
-The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
+The first command (`magento cron:run`) reindexes indexers, sends automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you're a contributing developer (that is, you <a href="{{ page.baseurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 GitHub repository</a>), only the first line applies to you. See the examples that follow for details.</p>
@@ -57,7 +57,7 @@ The first command (`magento cron:run`) reindexes indexers, send automated e-mail
 
 **Example 1:** Everyone except contributing developers
 
-For example, if the PHP binary is located in `/usr/bin`, you installed Magento in `/var/www/html/magento2`, enter
+For example, if the PHP binary is located in `/usr/bin`, you installed Magento in `/var/www/magento2`, enter
 
 Example:
 

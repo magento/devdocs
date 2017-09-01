@@ -1,10 +1,10 @@
 ---
 layout: default
-group: install_cli 
+group: install_cli
 subgroup: 05_Command-line installation
 title: Create or update the deployment configuration
 menu_title: Create or update the deployment configuration
-menu_node: 
+menu_node:
 menu_order: 9
 version: 2.0
 github_link: install-gde/install/cli/install-cli-subcommands-deployment.md
@@ -13,20 +13,13 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
 ---
 
-
-#### Contents
-
-*	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-cli-subcommands-configphp-prereq">Prerequisites</a>
-*	<a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a>
-
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-subcommands-configphp-prereq">Prerequisites</h2>
 There are no prerequisites for using this command.
-  
+
 <h2 id="instgde-cli-subcommands-configphp">Create or update the Magento deployment configuration</h2>
 <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a> provides the information Magento needs to initialize and bootstrap.
 
@@ -40,7 +33,7 @@ Command options:
 
 	magento setup:config:set [--<parameter>=<value>, ...]
 
-The following table discusses the meanings of installation parameters and values. 
+The following table discusses the meanings of installation parameters and values.
 
 <table>
 	<col width="25%">
@@ -52,11 +45,11 @@ The following table discusses the meanings of installation parameters and values
 			<th>Value</th>
 			<th>Required?</th>
 		</tr>
-		
+
 	<tr>
 		<td><p>--backend-frontname</p></td>
 		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin.</p>
-			<p>To prevent exploits, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only. It can be up to 255 characters in length.</p></td>
+			<p>To prevent exploits, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code>_</code>) only. </p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -96,9 +89,10 @@ The following table discusses the meanings of installation parameters and values
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="{{page.baseurl}}config-guide/database/database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
-			
-			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
+		<ul><li><code>db</code> to store session data in the <a href="{{page.baseurl}}config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+
+    <li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow oe you have a clustered database.</li>
+    
 	</ul></td>
 		<td><p>No</p></td>
 	</tr>
@@ -107,7 +101,7 @@ The following table discusses the meanings of installation parameters and values
 		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	<!-- <tr> 
+	<!-- <tr>
 		<td>enable_modules=&lt;list></td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
@@ -122,7 +116,7 @@ The following table discusses the meanings of installation parameters and values
 	<tr>
 		<td><p>--db-init-statements</p></td>
 		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database.</p>
-			<p>Default is <code>SET NAMES utf8;</code>.</p> 
+			<p>Default is <code>SET NAMES utf8;</code>.</p>
 			<p>Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -140,7 +134,7 @@ The following table discusses the meanings of installation parameters and values
 If applicable, continue your Magento software installation:
 
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Command line installation</a>
-*	<a href="{{page.baseurl}}install-gde/install/install-web.html">Setup Wizard installation</a>
+*	<a href="{{page.baseurl}}install-gde/install/web/install-web.html">Setup Wizard installation</a>
 
 <!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
 {% include install/enable-disable-modules.html %} -->

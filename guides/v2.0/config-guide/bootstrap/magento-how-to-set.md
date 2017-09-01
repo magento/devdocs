@@ -11,11 +11,6 @@ github_link: config-guide/bootstrap/magento-how-to-set.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-how-to-set.html
 ---
 
-#### Contents
-*	<a href="#config-bootparam-overview">Overview of setting bootstrap parameter values</a>
-*	<a href="#mode-specify-var">Specifying a parameter value using an environment variable</a>
-*	<a href="#mode-specify-web">Specifying a parameter value using your web server environment</a>
-
 <h2 id="config-bootparam-overview">Overview of setting bootstrap parameter values</h2>
 This topic discusses how to set the values of Magento application bootstrap parameters. <a href="{{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html">More information about Magento application bootstrapping</a>.
 
@@ -66,11 +61,11 @@ bash shell example for CentOS:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If a <code>PHP Fatal error</code> displays in the browser after you set a profiler value, restart your web server. The reason might be related to PHP bytecode caching, which caches bytecodes and PHP classpaths.</p></span>
+  <p>If a <code>PHP Fatal error</code> displays in the browser after you set a profiler value, restart your web server. The reason might be related to {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} bytecode caching, which caches bytecodes and PHP classpaths.</p></span>
 </div>
 
 <h2 id="mode-specify-web">Specifying a parameter value</h2>
-This section discusses how to specify the mode for either Apache or nginx.
+This section discusses how to specify the mode for either Apache or {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}.
 
 See one of the following sections for more information:
 

@@ -10,11 +10,6 @@ version: 2.0
 github_link: comp-mgr/prereq/prereq_auth-token.md
 ---
 
-#### Contents
-
-*	<a href="#auth-overview">Overview of Magento Marketplace authentication</a>
-*	<a href="#auth-get">Get your authentication tokens</a>
-*	<a href="#compman-token-admin">Enter the tokens in the Admin</a>
 
 {% include install/auth-tokens-get.md %}
 
@@ -25,7 +20,7 @@ github_link: comp-mgr/prereq/prereq_auth-token.md
 <h2 id="compman-token-admin">Enter the tokens in the Admin</h2>
 To enter your authentication tokens:
 
-1.	Log in to the Magento Admin as an administrator.
+1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 2.	Click **System** > Tools > **Web Setup Wizard**.
 3.	Click **System Configuration**.
 

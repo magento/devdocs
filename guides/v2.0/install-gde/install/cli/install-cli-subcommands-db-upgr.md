@@ -9,14 +9,6 @@ menu_order: 16
 version: 2.0
 github_link: install-gde/install/cli/install-cli-subcommands-db-upgr.md
 ---
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-cli-subcommands-maint-prereq">Prerequisites</a>
-*	[Upgrade the Magento database schema and data](#instgde-cli-db-upgr)
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
@@ -26,7 +18,7 @@ In addition to the command arguments discussed here, see <a href="{{page.baseurl
 Before you use this command, you must <a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
 ## Upgrade the Magento database schema and data {#instgde-cli-db-upgr}
-Anytime you perform an action that causes the Magento database schema or data to change, you must update them by running the command discussed in this section. A partial list of reasons follows:
+Anytime you perform an action that causes the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} or data to change, you must update them by running the command discussed in this section. A partial list of reasons follows:
 
 *	You upgraded the Magento software using the command line
 *	You installed or updated a component using the command line

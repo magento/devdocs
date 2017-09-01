@@ -11,20 +11,7 @@ github_link: pattern-library/filters/data-table-filters/filtering.md
 redirect_from: /guides/v1.0/pattern-library/filters/data-table-filters/filtering.html
 ---
 
-<h2>Filters</h2>
-
-<h3>Contents</h3> 
-* <a href="#overview">Overview</a>
-* <a href="#search">Filter by Search</a>
-* <a href="#advanced">Advanced Filters</a>
-* <a href="#remove">Removing Filters</a>
-<h4>Future Capabilities</h4> 
-* <a href="#quick">Quick Filters</a>
-
-* <a href="#assets">Assets</a>
-
-
-<h3 id="overview">Overview</h3>
+## Filters
 Filters allow users to customize the display of information in an associated data-table. By entering desired parameters (for example, a date range) in the available filter input sections table returns a modified view, making visible only the records meeting the user-determined criteria.
 
 <h3 id="search">Filter by Search</h3>
@@ -40,7 +27,7 @@ A search box associated with a data-table allows users to filter table data by e
 <br />
 <br />
 
-In the event that the user enters a term that is not found in the data, the table will display a message to the user: "Your search term did not return any results". When this happens the user-entered term will remain in the search field for the user's reference.
+In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that the user enters a term that is not found in the data, the table will display a message to the user: "Your search term did not return any results". When this happens the user-entered term will remain in the search field for the user's reference.
 <br />
 <br />
 <img src="img/search_not-found.png">
@@ -77,7 +64,7 @@ Users may remove a filter setting by clicking/tapping the remove control next to
 <img src="img/filter_remove.png">
 
 <h2>Future Capabilities</h2>
-Additional capabilites have been designed to further increase the functionality of filtering, however these features have not, as of yet, been developed.  These include **“Quick Filters”**.
+Additional capabilites have been designed to further increase the functionality of filtering, however these features have not, as of yet, been developed.  These include **"Quick Filters"**.
 
 
 <h3 class="quick">Quick Filters</h3>

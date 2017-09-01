@@ -13,18 +13,6 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-uninstall.html
 ---
 
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-install-magento-prereq">Prerequisites</a>
-*	<a href="#instgde-install-magento-update">Update the Magento software</a>
-*	<a href="#instgde-install-magento-reinstall">Reinstall the Magento software</a>
-*	<a href="#instgde-install-uninstall">Uninstall the Magento software</a>
-*	<a href="#instgde-install-keep">Optionally keeping generated files</a>
-
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
@@ -65,8 +53,8 @@ To reinstall the Magento software as a system integrator:
 
 3.	Install the Magento software:
 
-	*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
-	*	<a href="{{page.baseurl}}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+	*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a>
+	*	<a href="{{page.baseurl}}install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
 Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under `var`.
@@ -82,7 +70,7 @@ The following message displays to confirm a successful uninstallation:
 <h2 id="instgde-install-keep">Optionally keeping generated files</h2>
 By default, `magento setup:upgrade` clears compiled code and the cache. Typically, you use `magento setup:upgrade` to update components and each component can require different compiled classes.
 
-However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The cache is still cleared.) To update the Magento database schema and data *without* clearing compiled code, enter:
+However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} is still cleared.) To update the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data *without* clearing compiled code, enter:
 
 	magento setup:upgrade --keep-generated
 
@@ -94,8 +82,8 @@ However, in some situations (particularly, deploying Magento to production), you
 
 6.	Install the Magento software:
 
-	*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
-	*	<a href="{{page.baseurl}}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+	*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a>
+	*	<a href="{{page.baseurl}}install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

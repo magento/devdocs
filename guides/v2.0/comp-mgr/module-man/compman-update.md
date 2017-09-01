@@ -13,7 +13,6 @@ github_link: comp-mgr/module-man/compman-update.md
 redirect_from: /guides/v2.0/comp-mgr/compman-update.html
 ---
 
-## Step 3. Component Update
 This step displays if you're updating components. The following figure shows an example.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_update-step.png" width="350px" alt="Click update to complete the task">

@@ -7,15 +7,8 @@ menu_title:
 menu_node:
 menu_order: 1
 version: 2.1
-github_link:
+github_link: ui_comp_guide/ui_comp_conceptual_template.md
 ---
-
-# Title
-{:.no_toc}
-
-<!-- Table of Content -->
-* Table of Content placeholder; required but will not be rendered
-{:toc}
 
 <!-- Содержание -->
 
@@ -42,7 +35,7 @@ Add any diagrams or text that explains core workflows.
 
 
 ### Basic Markdown Syntax
-Below are some basic examples of what you can do with markdown.
+Below are some basic examples of what you can do with {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %}.
 
 #### Text Effects
 

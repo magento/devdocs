@@ -12,18 +12,10 @@ redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-override.html
 
 <h2>What's in this topic</h2>
 This topic discusses the main concepts of how default templates work in the Magento application. 
-The following topics are covered:
-
-* <a href="#template-layout">How templates are initiated</a>
-* <a href="#root">Root template</a>
-* <a href="#template-convention">Conventional templates location</a>
-* <a href="#override">Templates overriding</a>
-* <a href="#getter">Getting argument values from layout</a>
-
 
 <h2 id="template-layout">How templates are initiated</h2>
 
-Templates are usually initiated in layout files.
+Templates are usually initiated in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files.
 Each layout block has an associated template. 
 The template is specified in the `template` attribute of the <block> layout instruction. 
 For example, from <code><a href="{{site.mage2000url}}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_category_view.xml</a></code>:
@@ -32,7 +24,7 @@ For example, from <code><a href="{{site.mage2000url}}app/code/Magento/Catalog/vi
 &lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
 </pre>
 
-This means that the `category.image` block is rendered by the `image.phtml` template, which is located in the `category` subdirectory of the `Magento_Catalog` module templates directory.
+This means that the `category.image` block is rendered by the `image.phtml` template, which is located in the `category` subdirectory of the `Magento_Catalog` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} templates directory.
 
 The templates directory of `Magento_Catalog` is `<Magento_Catalog_module_dir>/view/frontend/templates`.
 
@@ -50,7 +42,7 @@ Here <code>&lt;path_to_templates&gt;</code> might have several levels of directo
 
 <h2 id="override">Templates overriding</h2>
 For template files with the same name, the following is true: 
-theme templates override module templates, and those of a <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent theme templates.
+theme templates override module templates, and those of a <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} templates.
 
 This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to override one in your custom theme.
 
@@ -59,7 +51,7 @@ Overriding templates is described with more details in the <a href="{{page.baseu
 
 <h2 id="root">Root template</h2>
 
-In Magento there's a special template which serves as root template for all storefront pages in the application: `<Magento_Theme_module_dir>/view/base/templates/root.phtml`.
+In Magento there's a special template which serves as root template for all {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} pages in the application: `<Magento_Theme_module_dir>/view/base/templates/root.phtml`.
 
 Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to `<head>` and `<body>` sections of all pages rendered by Magento application. But similar to other templates, `root.phtml` can be overridden in a theme. 
 

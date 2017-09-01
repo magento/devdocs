@@ -10,12 +10,6 @@ github_link: ext-best-practices/extension-coding/observers-bp.md
 
 ---
 
-## {{page.menu_title}}
-{:.no_toc}
-
-* TOC
-{:toc}
-
 ### Overview
 [Observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html) are capable of modifying the behavior of a Magento application because they are dynamically injected into the execution flow. Poorly designed and coded observers can cause issues, instabilities, or otherwise break the application.
 
@@ -25,7 +19,7 @@ We encourage you to follow these best practices aimed towards reducing problems 
 
 #### Make your observer efficient
 
-Try to keep your observer small and efficient by avoiding complex computations, if possible. This is especially important when your observer is listening to an event that is frequently dispatched. Having complex computations in your observer can slow down application processes.
+Try to keep your observer small and efficient by avoiding complex computations, if possible. This is especially important when your observer is listening to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that is frequently dispatched. Having complex computations in your observer can slow down application processes.
 
 #### Do not include business logic
 

@@ -9,8 +9,6 @@ version: 2.0
 github_link: mtf/features.md
 ---
 
-## About features
-
 The Functional Testing Framework is:
 
 - Flexible, because of [modularity support].

@@ -8,13 +8,15 @@ menu_node:
 menu_order: 2
 version: 2.0
 github_link: comp-mgr/module-man/compman-start.md
-redirect_from: /guides/v2.0/comp-mgr/compman-start.html
+redirect_from: 
+  - /guides/v2.0/comp-mgr/compman-start.html
+  - /guides/v2.1/comp-mgr/compman-start.html
 ---
 
 <h2 id="compman-access">Start the Component Manager from the Magento Admin</h2>
 To run the Component Manager:
 
-1.	Log in to the Magento Admin as an administrator.
+1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento"><br><br>
