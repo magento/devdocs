@@ -14,7 +14,10 @@ When you deploy {{site.data.var.<ee>}}, complete all of your development in your
 
 What happens technically: Build scripts parse configuration files committed to the repository and provide info used by deploy scripts to rebuild the environment you are working in.
 
-For the Integration environment, every active branch build and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the `master` branch in Integration then pushed to those environments using SSH or a ticket.
+The build and deploy process is slightly different for each plan:
+
+* **Starter plans**: Every active branch build and deploys to a full environment for access and testing. Fully test your code by merging to the Staging branch. Finally to go live, merge your code to the `master` branch. You have full access to all branches through the Project Web Interface and CLI commands.
+* **Pro plans**: For the Integration environment, every active branch build and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the `master` branch in Integration then pushed to those environments using SSH or a ticket.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Make sure all code for your site and stores is in the {{site.data.var.<ee>}} Git branch. If you point to or include hooks to code in other branches, especially a private branch, the build and deploy process will have issues. For example, add any new themes into the Git branch of code. If you include it from a private repo, the theme won't build with the Magento code.
@@ -48,6 +51,9 @@ Deployment consists of the following phases:
 
 ### Phase 1: Code and configuration validation {#cloud-deploy-over-phases-conf}
 When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.<ee>}} template](https://github.com/magento/magento-cloud){:target="_blank"}. This code repo is cloned to your project as the `master` branch.
+
+* **For Starter**: `master` branch is your Production environment.
+* **For Pro**: `master` begins as origin branch for the Integration environment. `master` is deployed across to Staging and Production.
 
 The remote server gets your code using Git. When you push your code from local to the remote Git, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
 

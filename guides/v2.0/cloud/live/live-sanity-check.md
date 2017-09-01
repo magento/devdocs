@@ -10,12 +10,12 @@ version: 2.0
 github_link: cloud/live/live-sanity-check.md
 ---
 
-Before pushing your code to [Staging]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage}}) or [Production]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod}}), you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.
+Before pushing your code to your [Starter]({{ page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl}}cloud/reference/discover-arch.html) Staging and Production environments, you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.
 
 These tasks walk through:
 
 * Complete development on your local
-* Complete a full build and deploy process on your local (deploys to the associated active [Integration environment]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int))
+* Complete a full build and deploy process on your local (deploys to the associated active development environment)
 * Test fully before continuing deployment to Staging
 
 For more information on the full five step process, see the [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html).

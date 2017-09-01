@@ -231,7 +231,7 @@ Following your branching and development methodologies, you can easily develop n
 * Deploy and test in Staging
 * Deploy to Production
 
-To follow continuous integration best practices, we recommend replicating your Production environment data into the Staging environment. Feel free to run scripts for sanitizing data to remove important data (such as customer information) in Staging. With Integration code and Production data in your Staging environment, you can [fully test]({{page.baseurl}}cloud/live/stage-prod-test.html) modifications with full services (Fastly, New Relic, Blackfire, and more) without affecting your live store and customers.
+For more information, see [Continuous integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html).
 
 #### Related topics
 *	[First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
