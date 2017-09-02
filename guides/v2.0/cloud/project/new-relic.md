@@ -15,7 +15,7 @@ github_link: cloud/project/new-relic.md
 You can mix the higher level data captured by New Relic APM with the deeper method and call dive data from [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). Using these two tools together in Staging and Production environments, you gain a better view into your store performance.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You receiv New Relic APM with your {{site.data.var.<ece>}} subscription. You do not need to purchase or install install the New Relic module.
+You receiv New Relic APM with your {{site.data.var.<ece>}} subscription. You do not need to purchase or install install the New Relic extension (different than the APM service).
 </div>
 
 ## Key features {#features}
@@ -30,11 +30,11 @@ New Relic APM provides the following [key features](https://newrelic.com/php/mag
 ## New Relic APM credentials {#credentials}
 When you sign up for a {{site.data.var.<ece>}} account, you will receive an email of credentials to your account. The agent software for New Relic is already installed to capture data for review through the service.
 
-You will need these credentials and the license associated to them. See the email for details.
+You will need these credentials and the license associated to them. You receive this information by email and in your [project details]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-creds).
 
 
 ## Configure New Relic APM {#configure}
-You can locate your New Relic APM credentials and key in the [Project Web Interface]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). The Project Owner can [log in](https://accounts.magento.cloud){:target="_blank"} to the interface and review project and environment credentials.
+You can locate your New Relic APM credentials and key in the [Project Web Interface]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). The Project Owner can [log in](https://accounts.magento.cloud){:target="_blank"} to the interface and review [project and environment credentials]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-creds).
 
 For **Pro plan projects**, New Relic is already set up for you in Staging and Production environments. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.
 
@@ -58,7 +58,7 @@ Add New Relic to `.magento.app.yaml`:
           - newrelic
 3. Save and push the changes to deploy across Staging and Production.
 
-You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access both environments via SSH and install the agent. 
+You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access both environments via SSH and install the agent.
 
 ## Investigate performance {#investigate}
 New Relic connects and monitors your site using an agent via php. As it collects data, you can [log in](https://login.newrelic.com/login/){:target="_blank"} and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page){:target="_blank"}.
@@ -76,6 +76,8 @@ We recommend reviewing the tracked data for:
 * Highest throughput: Identifies the pages hit the most based on bytes transmitted/size.
 
 All collected data details the time spent on an action transmitting data, queries, redis, and more. If queries cause issues, New Relic provides a depth of information to track and respond to it.
+
+## New Relic and Blackfire {#blackfire}
 
 Armed with this information, you can investigate further with Blackfire.io Profiler. Each services has strengths and weaknesses that balance incredibly well together:
 

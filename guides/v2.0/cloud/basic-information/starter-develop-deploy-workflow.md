@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 010_welcome
-title: Starter Develop and Deploy Workflow
-menu_title: Starter Develop and Deploy Workflow
+title: Starter develop and deploy workflow
+menu_title: Starter develop and deploy workflow
 menu_order: 25
 menu_node:
 version: 2.0
@@ -68,8 +68,8 @@ When you created your project, a `master` branch was cloned using the {{site.dat
 
 The format of the Git clone command is:
 
-  git fetch origin
-  git pull origin <environment ID>
+    git fetch origin
+    git pull origin <environment ID>
 
 The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production `master` branch.
 
@@ -79,11 +79,11 @@ When you [set up your local]({{page.baseurl}}cloud/access-acct/first-time-setup.
 
 The format of the Git branch command is:
 
-  git checkout <branch name>
+    git checkout <branch name>
 
 The format of the Magento Cloud CLI branch command is:
 
-  magento-cloud environment:branch <environment name> <parent environment ID>
+    magento-cloud environment:branch <environment name> <parent environment ID>
 
 
 ![Branch from Master]({{ site.baseurl }}common/images/cloud_workflow-branching.png)

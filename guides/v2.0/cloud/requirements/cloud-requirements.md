@@ -49,7 +49,7 @@ We hope you have a good working knowledge of Git. Need some help? Don't worry, w
 *	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf){:target="_blank"} and [quick guide](http://rogerdudler.github.io/git-guide/){:target="_blank"} from Roger Dudler
 *	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="_blank"} with DevForge to understand how people use the repo and commands with a fun story
 
-To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="_blank"} on your local. We also recommend checking
+To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="_blank"} on your local.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, {{site.data.var.<ee>}} adds two additional requirements:</p>
@@ -57,10 +57,10 @@ To get started with Git, you should have [Git installed](https://git-scm.com/dow
   	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
 </div>
 
-You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local. 
+You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.
 
 ## Requirements to get started {#requirements}
-To get started as a developer in a {{site.data.var.<ece>}} project, you need to understand set up the following:
+To get started as a developer in a {{site.data.var.<ece>}} project, you need to set up the following:
 
 *	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}cloud/welcome/discover-workflow.html) plan.
 *	Get [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
