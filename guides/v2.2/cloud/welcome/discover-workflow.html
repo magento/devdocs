@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Pro Develop and Deploy Workflow | Magento 2 Developer Documentation</title>
+	<title>Pro develop and deploy workflow | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -257,7 +257,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html">Starter Develop and Deploy Workflow</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html">Starter develop and deploy workflow</a></li>
 
 									
 
@@ -273,7 +273,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/cloud/welcome/discover-workflow.html">Pro Develop and Deploy Workflow</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/cloud/welcome/discover-workflow.html">Pro develop and deploy workflow</a></li>
 
 									
 
@@ -1620,7 +1620,7 @@
 
           
 
-          <span property="name">Pro Develop and Deploy Workflow</span>
+          <span property="name">Pro develop and deploy workflow</span>
 
         
 
@@ -1643,7 +1643,7 @@
 
 	
 
-	<h1 class="page-heading">Pro Develop and Deploy Workflow</h1>
+	<h1 class="page-heading">Pro develop and deploy workflow</h1>
 
   
 
@@ -1711,8 +1711,10 @@
 
 <p>The format of the Git clone command is:</p>
 
-<p>git fetch origin
-  git pull origin <environment ID=""></environment></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
+git pull origin &lt;environment ID&gt;
+</code></pre>
+</div>
 
 <p>You can create a developer branch from <code class="highlighter-rouge">master</code>, which is an active branch in Integration. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch. You will have up to seven active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.</p>
 
@@ -1720,11 +1722,15 @@
 
 <p>The format of the Git branch command is:</p>
 
-<p>git checkout <branch name=""></branch></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>git checkout &lt;branch name&gt;
+</code></pre>
+</div>
 
 <p>The format of the Magento Cloud CLI branch command is:</p>
 
-<p>magento-cloud environment:branch <environment name=""> <parent environment="" ID=""></parent></environment></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
+</code></pre>
+</div>
 
 <p><img src="/common/images/cloud_workflow-pro-branching.png" alt="Branch from Master" /></p>
 
