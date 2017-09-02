@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 010_welcome
-title: Pro Develop and Deploy Workflow
-menu_title: Pro Develop and Deploy Workflow
+title: Pro develop and deploy workflow
+menu_title: Pro develop and deploy workflow
 menu_order: 35
 menu_node:
 version: 2.0
@@ -64,8 +64,8 @@ When you created your project, a `master` branch was cloned using the {{site.dat
 
 The format of the Git clone command is:
 
-  git fetch origin
-  git pull origin <environment ID>
+    git fetch origin
+    git pull origin <environment ID>
 
 You can create a developer branch from `master`, which is an active branch in Integration. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch. You will have up to seven active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.
 
@@ -73,11 +73,11 @@ When you [set up your local]({{page.baseurl}}cloud/access-acct/first-time-setup.
 
 The format of the Git branch command is:
 
-  git checkout <branch name>
+    git checkout <branch name>
 
 The format of the Magento Cloud CLI branch command is:
 
-  magento-cloud environment:branch <environment name> <parent environment ID>
+    magento-cloud environment:branch <environment name> <parent environment ID>
 
 
 ![Branch from Master]({{ site.baseurl }}common/images/cloud_workflow-pro-branching.png)

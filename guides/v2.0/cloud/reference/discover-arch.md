@@ -20,6 +20,8 @@ All environments are read-only, accepting deployed code changes from Git branche
 
 You can use any development and branching methodology you like.
 
+![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
+
 ## Integration environment {#cloud-arch-int}
 Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a Platform-as-a-Servie (PaaS) providing up to eight active environments on a grid for eight active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
 
