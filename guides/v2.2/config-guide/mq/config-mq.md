@@ -9,7 +9,7 @@ version: 2.2
 github_link: config-guide/mq/config-mq22.md
 ---
 
-The message queue topology is an Enterprise Edition feature. It can be included as part of EE installation, or you can add it existing modules.
+The message queue topology is an {{site.data.var.ee}} feature. It can be included as part of {{site.data.var.ee}} installation, or you can add it existing modules.
 
 ### Overview ###
 Configuring the message queue topology involves creating and modifying the following configuration files in the `<module>/etc` directory:
@@ -194,7 +194,7 @@ The following illustrates an `arguments` block:
 
 The `queue_publisher.xml` file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:
 
-* publisher
+* {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}
 * publisher/connection
 
 #### Example `queue_publisher.xml` file

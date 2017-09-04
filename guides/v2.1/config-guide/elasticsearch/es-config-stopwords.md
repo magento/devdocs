@@ -5,12 +5,12 @@ subgroup: 14_Elastic
 title: Configure Elasticsearch stopwords
 menu_title: Configure Elasticsearch stopwords
 menu_order: 10
-menu_node: 
+menu_node:
 version: 2.1
 github_link: config-guide/elasticsearch/es-config-stopwords.md
 ---
 
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
+<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 
 #### Contents
@@ -36,7 +36,7 @@ For more information about how Elasticsearch uses stopwords, see the following r
 ## Configure stopwords {#config-stopwords}
 Elasticsearch stopwords are located in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory. Magento ships with one `.csv` file containing stopwords for our default locales and an additional file, `stopwords.csv`, which has stopwords for any locale that is not represented by another `.csv` file.
 
-The default lifetime for stopwords file cache is 15 minutes.
+The default lifetime for stopwords file {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} is 15 minutes.
 
 See one of the following topics for more information:
 
@@ -51,17 +51,17 @@ To edit stopwords:
 
 	`.csv` files use the naming convention `stopwords_<locale_code>.csv`. For example, the German stopword file is named `stopwords_de_DE.csv`.
 3.	Add words, remove words, or change words in the file.
-	
+
 	(Each stopword in a file starts on a new line.)
 4.	Save your changes and exit the text editor.
-5.	Clean the Magento configuration cache. 
+5.	Clean the Magento configuration cache.
 
 	*	Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** check box and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
 	*	Command line: As the Magento file system owner, enter the following command:
 
 			php <your Magento install dir>/bin/magento magento cache:clean config
-6.	Check the results by searching for terms on your storefront.
+6.	Check the results by searching for terms on your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
 ### Create stopwords for a new locale {#config-create-stopwords}
 To add stopwords for a locale:
@@ -82,7 +82,7 @@ To add stopwords for a locale:
 
 	    <it_IT>stopwords_it_IT.csv</it_IT>
 7.	Save the changes to `esconfig.xml` and exit the text editor.
-8.	Clean the Magento configuration cache. 
+8.	Clean the Magento configuration cache.
 
 	*	Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** check box and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
@@ -94,7 +94,7 @@ To add stopwords for a locale:
 ## Change the stopword directory {#config-stopword-dir}
 This section discusses how to optionally change the default stopword directory from one of the following:
 
-*	`<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` 
+*	`<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords`
 *	`<your Magento install dir>/app/code/Magento/Elasticsearch/etc/stopwords/`
 
 The location depends on how you installed the Magento software. If you cloned the Magento 2 GitHub repository, the path is under `app/code`. If you installed a compressed archive or a metapackage, the path is under `vendor`.

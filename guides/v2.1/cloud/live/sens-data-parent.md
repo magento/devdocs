@@ -1,15 +1,13 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: 120_env
 title: Manage the configuration
 menu_title: Manage the configuration
-menu_order: 10
-menu_node: 
+menu_order: 90
+menu_node:
 level3_menu_node: level3parent
-level3_subgroup: sens-data
+level3_subgroup: manageconfig
 version: 2.1
 github_link: cloud/live/sens-data-parent.md
 ---
-
- 

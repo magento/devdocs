@@ -16,34 +16,56 @@ redirect_from:
 
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Magento collapsible widget</a>.
 
-The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js" target="_blank">lib/web/mage/tabs.js</a>. 
+The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js" target="_blank">lib/web/mage/tabs.js</a>. 
 
 
 <h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 
+Generally the tabs widget is instantiated like following:
+<pre>
+$("#element").tabs();
+</pre>
+
+Where:
+<ul>
+<li><code>#element</code> is the selector of the element for tabs is initialized.</li>
+<ul>
+
+Phtml template file examples using script:
+
+{%highlight html%}
+<script>
+    require([
+        'jquery',
+        'tabs'], function ($) {
+        $("#element").tabs();
+    });
+</script>
+{%endhighlight%}
+
 <h2 id="fedg_tabs_options">Options</h2>
 
 The tabs widget has the following options:
 
-*	<a href="#fedg_tabs_options-active">active</a>
-*	<a href="#fedg_tabs_options-ajaxUrlElement">ajaxUrlElement</a>
-*	<a href="#fedg_tabs_options-ajaxContent">ajaxContent</a>
-*	<a href="#fedg_tabs_options-animate">animate</a>
-*	<a href="#fedg_tabs_options-closedState">closedState</a>
-*	<a href="#fedg_tabs_options-collapsible">collapsible</a>
-*	<a href="#fedg_tabs_options-collapsibleElement">collapsibleElement</a>
-*	<a href="#fedg_tabs_options-content">content</a>
-*	<a href="#fedg_tabs_options-disabled">disabled</a>
-*	<a href="#fedg_tabs_options-disabledState">disabledState</a>
-*	<a href="#fedg_tabs_options-header">header</a>
-*	<a href="#fedg_tabs_options-icons">icons</a>
-*	<a href="#fedg_tabs_options-loadingClass">loadingClass</a>
-*	<a href="#fedg_tabs_options-openedState">openedState</a>
-*	<a href="#fedg_tabs_options-openOnFocus">openOnFocus</a>
-*	<a href="#fedg_tabs_options-saveState">saveState</a>
-*	<a href="#fedg_tabs_options-trigger">trigger</a>
+* <a href="#fedg_tabs_options-active">active</a>
+* <a href="#fedg_tabs_options-ajaxUrlElement">ajaxUrlElement</a>
+* <a href="#fedg_tabs_options-ajaxContent">ajaxContent</a>
+* <a href="#fedg_tabs_options-animate">animate</a>
+* <a href="#fedg_tabs_options-closedState">closedState</a>
+* <a href="#fedg_tabs_options-collapsible">collapsible</a>
+* <a href="#fedg_tabs_options-collapsibleElement">collapsibleElement</a>
+* <a href="#fedg_tabs_options-content">content</a>
+* <a href="#fedg_tabs_options-disabled">disabled</a>
+* <a href="#fedg_tabs_options-disabledState">disabledState</a>
+* <a href="#fedg_tabs_options-header">header</a>
+* <a href="#fedg_tabs_options-icons">icons</a>
+* <a href="#fedg_tabs_options-loadingClass">loadingClass</a>
+* <a href="#fedg_tabs_options-openedState">openedState</a>
+* <a href="#fedg_tabs_options-openOnFocus">openOnFocus</a>
+* <a href="#fedg_tabs_options-saveState">saveState</a>
+* <a href="#fedg_tabs_options-trigger">trigger</a>
 
 <h3 id="fedg_tabs_options-active"><code>active</code></h3>
 
@@ -54,7 +76,7 @@ Index of the tab, which is active at the moment of initialization. Starts from "
 **Default value**: `0`
 
 <h3 id="fedg_tabs_options-ajaxUrlElement"><code>ajaxUrlElement</code></h3> 
-Selector for the tab element, which contains the URL for the Ajax request.
+Selector for the tab element, which contains the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for the Ajax request.
 The option of the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: String
@@ -194,7 +216,7 @@ The option of the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_c
 **Type**: 
 
 - String
-- jQuery object
+- {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} object
 
 **Default value**: `[data-role=trigger]`
 
@@ -235,5 +257,3 @@ Called before the content is opened.
 
 <h3 id="fedg_tabs_dimensionsChanged"><code>dimensionsChanged</code></h3>
 Called after content is opened or closed.
-
-

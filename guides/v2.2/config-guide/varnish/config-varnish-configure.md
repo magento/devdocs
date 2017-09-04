@@ -26,28 +26,20 @@ To change the Apache 2.2 listen port:
 To modify the Varnish system configuration:
 
 1.	Open `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) in a text editor.
+
 2.	Set the Varnish listen port to 80:
 
 		VARNISH_LISTEN_PORT=80
 
-3.	If necessary, comment out the following:
+    For Varnish 4.&#42;, make sure that DAEMON_OPTS contains the correct listening port for the `-a` parameter (even if VARNISH_LISTEN_PORT is set to the correct value):
 
-		## Alternative 1, Minimal configuration, no VCL
-		#DAEMON_OPTS="-a :6081 \
-		#             -T localhost:6082 \
-		#             -b localhost:8080 \
-		#             -u varnish -g varnish \
-		#             -s file,/var/lib/varnish/varnish_storage.bin,1G"
-		## Alternative 2, Configuration with VCL
-		#DAEMON_OPTS="-a :6081 \
-		#             -T localhost:6082 \
-		#             -f /etc/varnish/default.vcl \
-		#             -u varnish -g varnish \
-		#             -S /etc/varnish/secret \
-		#             -s file,/var/lib/varnish/varnish_storage.bin,1G"
+		DAEMON_OPTS="-a :80 \
+		   -T localhost:6082 \
+		   -f /etc/varnish/default.vcl \
+		   -S /etc/varnish/secret \
+		   -s malloc,256m"
 
-
-4.	Save your changes to `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) and exit the text editor.
+3.	Save your changes to `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) and exit the text editor.
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
 This section discusses how to provide minimal configuration so Varnish returns HTTP response headers. This enables you to verify Varnish works before you configure Magento to use Varnish.
@@ -169,7 +161,7 @@ If you experience this error, edit `default.vcl` and add a timeout to the `backe
 	}
 
 <h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
-Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.
+Now you can verify that Varnish is serving pages by looking at {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} response headers returned from any Magento page.
 
 Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
 
@@ -201,7 +193,7 @@ A long list of response headers display in your command prompt window. Look for 
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
 #### Look at HTML response headers
-There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.
+There are several ways to look at response headers, including using a browser {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.
 
 The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 

@@ -34,6 +34,7 @@ They are listed here because the content has been well received within the Magen
 
 ## Install/deploy
 
+* *Blog post* [Magento 2 - Launch Checklist][21]{:target="_blank"} by Syed Muneeb Ul Hasan 
 * *Presentation:* [Magento 2 Deployment: What you should know][4]{:target="_blank"} by Olga KopyLova
 * *Blog post* [Magento 2 deployment without the downtime][5]{:target="_blank"} by Robert Egginton
 * *Blog post* [Deploying Magento 2 - History & Overview][6]{:target="_blank"} by Matthias Walter
@@ -41,15 +42,19 @@ They are listed here because the content has been well received within the Magen
 * *Blog post* [Deploying Magento 2 with Composer and Envoyer][16]{:target="_blank"} by Nick Rigby
 * *GitHub* [Magento 2 Docker][18]{:target="_blank"}
 
+## Automated Testing
+* *Presentation:* [Writing testable code][10]{:target="_blank"} by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
+* *Book:* [Test Driven Magento Extension Development][12]{:target="_blank"} by Allan MacGregor
+* *Blog post:* [Integration Tests with Magento 2][19]{:target="_blank"} by Andreas von Studnitz
+
 ## Mastering Magento 2
 
-*  *Book:* [Magento 2 DIY][7]{:target="_blank"} by Viktor Khliupko
-*  *Book:* [Magento 2 Cookbook][8]{:target="_blank"} by Ray Bogman and Vladimir Kerkhoff
-*  *Presentation:* [Staging and Preview][9]{:target="_blank"} by Igor Melnykov
-*  *Presentation:* [Writing testable code][10]{:target="_blank"} by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
-*  *Book:* [Test Driven Magento Extension Development][12]{:target="_blank"} by Allan MacGregor
-*  *Blog post:* [Introducing UI Components][13]{:target="_blank"} by Alan Storm
-*  *Presentation:* [Micro Services][14]{:target="_blank"} by Ivan Chepurnyi
+* *Book:* [Magento 2 DIY][7]{:target="_blank"} by Viktor Khliupko
+* *Book:* [Magento 2 Cookbook][8]{:target="_blank"} by Ray Bogman and Vladimir Kerkhoff
+* *Presentation:* [Staging and Preview][9]{:target="_blank"} by Igor Melnykov
+* *Blog post:* [Introducing UI Components][13]{:target="_blank"} by Alan Storm
+* *Presentation:* [Micro Services][14]{:target="_blank"} by Ivan Chepurnyi
+* *Blog post:* [10 Practical Rules to Build High Quality Magento 2 Module][20]{:target="_blank"} by Max Pronko
 
 ## Performance
 
@@ -74,3 +79,6 @@ They are listed here because the content has been well received within the Magen
 [16]: https://nickrigby.uk/magento/deploying-magento-2-with-composer-and-envoyer.html
 [17]: http://davidalger.com/development/magento/deploying-magento-2-using-capistrano/
 [18]: https://github.com/meanbee/docker-magento2
+[19]: https://www.integer-net.com/integration-tests-with-magento-2/
+[20]: https://medium.com/@maxpronko/10-practical-rules-to-build-high-quality-magento-2-module-e6fe2c9461ac
+[21]: https://magenticians.com/magento-2-launch-checklist/

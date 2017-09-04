@@ -9,7 +9,7 @@ version: 2.1
 github_link: payments-integrations/vault/token-ui-component-provider.md
 ---
 
-This topic describes how to create custom vault payments UI components, that are used to  display stored tokens on checkout page and order placing using vault. 
+This topic describes how to create custom vault payments UI components, that are used to  display stored tokens on {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page and order placing using vault. 
 
 ## Token component provider {#token_provider}
 
@@ -17,7 +17,7 @@ The main logic for displaying tokens on checkout page is located in
 [Vault TokensConfigProvider]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to create a token component provider. It should implement the 
 [TokenUiComponentProviderInterface]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 interface TokenUiComponentProviderInterface
 {
     const COMPONENT_DETAILS = 'details';
@@ -29,11 +29,11 @@ interface TokenUiComponentProviderInterface
      */
     public function getComponentForToken(PaymentTokenInterface $paymentToken);
 }
-{% endhighlight %}
+```
 
-The basic implementation of the token UI component provider can be like following:
+The basic implementation of the token {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} provider can be like following:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 {
     /**
@@ -58,9 +58,9 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
         return $component;
     }
 }
-{% endhighlight %}
+```
 
-This implementation allows to retrieve all available payment token details and specify the JS component for storefront.
+This implementation allows to retrieve all available payment token details and specify the JS component for {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
 Having created the component provider, you need to add it to the list of available vault config providers in `di.xml` - the DI configuration file. 
 

@@ -1,19 +1,17 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
-title: GitHub integration
-menu_title: GitHub integration
-menu_order: 110
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: integrate
+subgroup: 020_tech
+title: GitHub
+menu_title: GitHub
+menu_order: 10
+menu_node:
 version: 2.0
 github_link: cloud/project/project-integrate-github.md
 ---
 
 ## About the GitHub integration {#cloud-int-gh-about}
-The GitHub integration enables you to manage your Magento Enterprise Cloud Edition environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with Magento Enterprise Cloud Edition. Therefore, before you begin, make sure your project and environments are in a GitHub repository.
+The GitHub integration enables you to manage your {{site.data.var.<ece>}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.<ee>}}. Therefore, before you begin, make sure your project and environments are in a GitHub repository.
 
 We strongly recommend you use a *private* GitHub repository.
 
@@ -64,7 +62,7 @@ To enable the GitHub integration for your environment:
 
 	where
 
-	`<project ID>` is your Magento Enterprise Cloud Edition project ID
+	`<project ID>` is your {{site.data.var.<ece>}} project ID
 
 	`<your GitHub token>` is the token you got in the preceding section
 
@@ -93,7 +91,7 @@ To enable the GitHub integration for your environment:
 		Fetch branches: yes
 		Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
 
-5.	Copy the Payload URL displayed by the command and continue with the next section.
+5.	Copy the Payload {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} displayed by the command and continue with the next section.
 
 ## Add the webhook {#cloud-int-gh-hook}
 To add the webhook to your GitHub repository:

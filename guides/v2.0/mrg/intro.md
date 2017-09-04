@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: 10_Introduction
+subgroup: 01_Introduction
 title: Introduction to Module Reference Guide
 landing-page: Module Reference Guide
 menu_title: INTRODUCTION
@@ -10,7 +10,8 @@ version: 2.0
 github_link: mrg/intro.md
 ---
 
-The Module Reference Guide contains information about Magento modules of Community Edition and Enterprise Edition.
+The {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} Reference Guide contains information about Magento modules of {{site.data.var.ce}}
+ and {{site.data.var.ee}}.
 
 The information includes:
 

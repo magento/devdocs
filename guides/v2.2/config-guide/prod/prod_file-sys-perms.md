@@ -1,16 +1,15 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
-title: Magento ownership and permissions in development and production
-menu_title: Magento ownership and permissions in development and production
+subgroup: 045_pipeline
+title: File systems access permissions
+menu_title: File systems access permissions
 menu_node:
-menu_order: 2
+menu_order: 3000
 version: 2.2
 github_link: config-guide/prod/prod_file-sys-perms.md
 ---
 
-## Overview of development and production file system ownership and permissions {#mage-owner}
 This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
 
 This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions]({{page.baseurl}}install-gde/prereq/file-system-perms.html).
@@ -23,7 +22,7 @@ The sections that follow discuss requirements for one or two Magento file system
 
 	Instead, you have separate users:
 
-	*	The web server user, which runs the Magento Admin (including Setup Wizard) and storefront. 
+	*	The web server user, which runs the Magento Admin (including Setup Wizard) and storefront.
 
 	*	A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
@@ -49,8 +48,8 @@ You can set these permissions using either the command line or a file manager ap
 ### Set up one owner for production mode {#mage-owner-one-prod}
 When you're ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
-*	`vendor` 
-*	`app/code` 
+*	`vendor`
+*	`app/code`
 *	`app/etc`
 *	`pub/static`
 *	Any other static resources
@@ -117,7 +116,7 @@ Files in the following directories must be writable by both users in developer a
 * `pub/media`
 * `app/etc`
 
-Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/){:target="_blank"} bit on directories so permissions always inherit from the parent directory. 
+Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/){:target="_blank"} bit on directories so permissions always inherit from the parent directory.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 `setgid` applies to directories only, _not_ to files.
@@ -137,8 +136,8 @@ To set `setgid` and permissions for developer mode:
 ### Two Magento file system owners in production mode {#mage-owner-two-prod}
 When you're ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
-*	`vendor` 
-*	`app/code` 
+*	`vendor`
+*	`app/code`
 *	`app/etc`
 *	`lib`
 *	`pub/static`
@@ -169,9 +168,3 @@ To make files and directories writable so you can update components and upgrade 
 		find app/code lib var generated vendor pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
 
 {% endcollapsibleh2 %}
-
-
-
-
-
-

@@ -24,7 +24,7 @@ Magento requires:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento no longer supports PHP 5.4.</p></span>
+  <p>Magento no longer supports {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.4.</p></span>
 </div>
 
 <h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
@@ -69,7 +69,7 @@ If PHP is *not* installed, see one of the following sections:
 		sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+  		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
 	</div>
 
 2.	Enter the following command to verify PHP 7 installed properly:
@@ -87,7 +87,7 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html). 
+3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -101,7 +101,7 @@ If PHP is *not* installed, see one of the following sections:
 		add-apt-repository ppa:ondrej/php
 		apt-get -y update
 		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip
-		
+
 
 2.	Enter the following command to verify PHP 5.6 installed properly:
 
@@ -130,7 +130,7 @@ If PHP is *not* installed, see one of the following sections:
 
 		apt-get -y update
 		apt-get -y install php5 php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
-		
+
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
 
 		PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
@@ -155,4 +155,3 @@ If PHP is *not* installed, see one of the following sections:
 *	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
 *	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
-

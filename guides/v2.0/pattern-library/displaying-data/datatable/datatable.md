@@ -11,7 +11,7 @@ github_link: pattern-library/displaying-data/datatable/datatable.md
 ---
 
 ## Data table
-The data-table organizes complex data into a tabular view. Each data record has its own row with data elements presented in columns with meaningful column headings. This allows users to quickly scan and understand complex data and perform actions against the data. 
+The data-table organizes {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} into a tabular view. Each data record has its own row with data elements presented in columns with meaningful column headings. This allows users to quickly scan and understand complex data and perform actions against the data. 
 
 Data-table requirements for Magento 2 include:
 <ul>
@@ -111,13 +111,13 @@ Pagination controls allow the user to easily page through and organize data. Pag
 <br />
 
 <h2 id="massactions">Mass Actions</h2>
-A common theme across the existing Magento user experience includes mass actions that can be taken. This is a convention used on both data-table and non-data-table pages. Not all pages have these action buttons. This document will not attempt to capture all actions that appear here or how they might be redesigned for Magento 2. This document will make note that these actions exist on many of the data-table pages and will use the area directly above the table to indicate placement of such action buttons where they might be needed.
+A common {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} across the existing Magento user experience includes mass actions that can be taken. This is a convention used on both data-table and non-data-table pages. Not all pages have these action buttons. This document will not attempt to capture all actions that appear here or how they might be redesigned for Magento 2. This document will make note that these actions exist on many of the data-table pages and will use the area directly above the table to indicate placement of such action buttons where they might be needed.
 <br />
 <br />
 <img src="img/datatable08.jpg">
 <br />
 <br />
-Actions will be positioned above the table . Each table  will have it’s own set of actions, some table s will have no actions. This new proposal removes the submit button which is currently visible next to the "Actions" drop down selector. In the event that any confirmations are needed for actions, modal dialogs will be used.
+Actions will be positioned above the table . Each table  will have it’s own set of actions, some table s will have no actions. This new proposal removes the submit button which is currently visible next to the "Actions" drop down selector. In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that any confirmations are needed for actions, modal dialogs will be used.
 <br />
 <br />
 <br />
@@ -157,7 +157,7 @@ Once an action is taken, success/fail messaging should appear as an overlay whic
 This section will cover the ability to set column visibility, save view state, and search. Filters will be covered in the following section.
 
 <h3>Keyword Search</h3>
-A keyword search will allow users to search on the data that has been loaded into the table  being viewed. This search is a part of the table, and is separate from the global record search in the page header. It will allow for exact phrases(using quotations) and the following boolean operators:
+A {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} search will allow users to search on the data that has been loaded into the table  being viewed. This search is a part of the table, and is separate from the global record search in the page header. It will allow for exact phrases(using quotations) and the following boolean operators:
 
 <h3>Placement and Behavior</h3>
 The keyword search function and table controls will be:
@@ -470,7 +470,7 @@ Some data-tables will be used to display "settings" content. In these instances 
 <br />
 <br />
 <h3>Single Select Button</h3>
-The data table can also accomodate buttons in rows, and has a special case in the "Single Select" button.  This button functions not unlike a typical radio button control, but is used instead of the radio button when the task flow or experience in the Admin application are better served with the more implicit action of selecting a single choice from a data table. This provides greater visibility and imediate confirmation of the action to the user. The use of this should be carefully considered in the context of the experience to determine if it provides greater understanding to the user than radio buttons.
+The data table can also accomodate buttons in rows, and has a special case in the "Single Select" button.  This button functions not unlike a typical radio button control, but is used instead of the radio button when the task flow or experience in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} application are better served with the more implicit action of selecting a single choice from a data table. This provides greater visibility and imediate confirmation of the action to the user. The use of this should be carefully considered in the context of the experience to determine if it provides greater understanding to the user than radio buttons.
 <br />
 <br />
 <br />

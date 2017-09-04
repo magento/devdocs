@@ -11,7 +11,7 @@ github_link: comp-mgr/module-man/compman-readiness.md
 redirect_from: /guides/v2.0/comp-mgr/compman-readiness.html
 ---
 
-The readiness check makes sure your server and environment are set up correctly for updating, enabling, or disabling components. In the event of errors, you can consult troubleshooting suggestions in this guide.
+The readiness check makes sure your server and environment are set up correctly for updating, enabling, or disabling components. In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of errors, you can consult troubleshooting suggestions in this guide.
 
 To start, click either **Start Readiness Check** or **Next**. A sample follows.
 

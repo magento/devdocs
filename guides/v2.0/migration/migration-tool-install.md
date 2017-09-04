@@ -19,7 +19,7 @@ Make sure you are using *the same released version* of both Magento 2 and the Da
 
 #### Composer metapackage
 
-If you downloaded the Magento software using a Composer metapackage, enter the following command:
+If you downloaded the Magento software using a {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} metapackage, enter the following command:
 
 	php <your Magento install dir>/bin/magento --version
 
@@ -105,13 +105,13 @@ If you've cloned Magento 2 from the GitHub repository, follow the steps below to
 
 1. Change to your Data Migration Tool directory: `<vendor>/magento/data-migration-tool`.
 
-2. Open `composer.json` in a text editor.
+2. Open [`composer.json`][composer-json] in a text editor.
 
-3. Find the value of the `version` tag.
-
-This is the version of your Data Migration Tool.
+3. The `version` entry in that file is the version of the Data Migration Tool.
 
 ## Related topics
 
 * <a href="{{page.baseurl}}migration/migration-tool-configure.html">Configure migration</a>
 * <a href="{{page.baseurl}}migration/migration-tool-preconditions.html">Preconditions</a>
+
+[composer-json]: https://github.com/magento/data-migration-tool/blob/master/composer.json

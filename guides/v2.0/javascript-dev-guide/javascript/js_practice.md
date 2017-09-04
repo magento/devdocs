@@ -13,7 +13,7 @@ redirect_from:
 ---
 
 <h2 id="practice_overview">Overview</h2>
-This topic features a step-by-step illustration of how to customize a jQuery widget and how to use a custom widget instead the default Magento one. 
+This topic features a step-by-step illustration of how to customize a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} and how to use a custom widget instead the default Magento one. 
 
 <h2>Customize a default Magento jQuery widget</h2>
 
@@ -141,4 +141,4 @@ var config = {
 </pre>
 
 ## Recommended reading ##
-<a href="{{page.baseurl}}frontend-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>
+<a href="{{page.baseurl}}javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>

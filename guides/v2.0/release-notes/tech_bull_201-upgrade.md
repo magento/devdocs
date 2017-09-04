@@ -19,10 +19,10 @@ This bulletin informs you of the following issues:
 *	[Error during upgrade: "We're sorry, we can't take that action right now"](#sorry)
 
 ### Issue: Upgrade failures {#gitignore}
-Magento Community Edition (CE) and Enterprise Edition (EE) upgrades failed in any of the following circumstances:
+Magento Open Source (formerly Community Edition) and Commerce (formerly Enterprise Edition) upgrades failed in any of the following circumstances:
 
 *	If you got the Magento software <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> (`.tar.gz`, `.zip`, or `.bz2`).
-*	If your server runs PHP 7 and you installed the Magento software using *either* a <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Composer metapackage</a>.
+*	If your server runs {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 and you installed the Magento software using *either* a <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Composer metapackage</a>.
 
 We addressed the following issues:
 
@@ -40,20 +40,20 @@ The following table summarizes what you need to do.
 	<th>What to do</th>
 </tr>
 <tr>
-	<td>Magento CE or EE 2.0.2 installed <em>or</em> you haven't installed Magento yet.</td>
+	<td>Magento Open Source or Commerce 2.0.2 installed <em>or</em> you haven't installed Magento yet.</td>
 	<td><p>No action is required. Install version 2.0.2 if you haven't already.</p>
 		<p>You can ignore this bulletin.</p></td>
 </tr>
 <tr>
-	<td>Magento CE or EE 2.0.0 to 2.0.1</td>
+	<td>Magento Open Source or Commerce 2.0.0 to 2.0.1</td>
 	<td>Apply the fix</td>
 </tr>
 <tr>
-	<td>Magento CE or EE 2.0.0 to 2.0.2</td>
+	<td>Magento Open Source or Commerce 2.0.0 to 2.0.2</td>
 	<td>Apply the fix</td>
 </tr>
 <tr>
-	<td>Magento CE or EE 2.0.1 to 2.0.2</td>
+	<td>Magento Open Source or Commerce 2.0.1 to 2.0.2</td>
 	<td>Apply the fix</td>
 </tr>
 <tr>
@@ -65,7 +65,7 @@ The following table summarizes what you need to do.
 </table>
 
 #### Detail
-Our compressed archives for CE and EE were missing `.gitignore` files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the `magento/magento-composer-installer` component so it reports missing files instead of throwing an exception with no details about what was wrong.
+Our compressed archives for Open Source and Commerce were missing `.gitignore` files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the `magento/magento-composer-installer` component so it reports missing files instead of throwing an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} with no details about what was wrong.
 
 At the same time, we fixed a separate issue that prevented upgrading if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the `.gitignore` issue fix.)
 
@@ -110,10 +110,10 @@ To apply the patch:
 	<li>Transfer the patch to your development system.</li></ol></td>
 	</tr>
 	<tr>
-		<td>Magento EE partner portal</td>
+		<td>Magento Commerce partner portal</td>
 		<td>Use the following steps:
 		<ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a></li>
-		<li>Click <strong>Magento Enterprise Edition</strong> > <strong>Magento Enterprise Edition 2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong>.</li>
+		<li>Click <strong>Magento Commerce</strong> > <strong>Magento Commerce 2.X</strong> > <strong>Magento Commerce 2.x Release</strong> > <strong>Support Patches</strong>.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 		<li>Follow the instructions on your screen to download <code>MDVA-84.*</code></li>
 	<li>Transfer the patch to your development system.</li></ol></td>
@@ -155,7 +155,7 @@ To apply the patch:
 To resolve the missing `.gitignore` files issue using this method, all of the following must be true:
 
 *	You must have command-line access to your Magento server
-*	Your server must be running Magento 2 CE or EE version 2.0.0
+*	Your server must be running Magento 2 Open Source and Commerce version 2.0.0
 
 	To confirm the version, you can either look in the lower right corner of the Magento Admin or you can use the `php <your Magento install dir>/bin/magento --version` command.
 
@@ -177,7 +177,7 @@ To resolve the issue:
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>You can upgrade to either <code>magento/product-community-edition 2.0.2</code> or <code>magento/product-community-edition 2.0.1</code>; we recommend 2.0.2.</p>
 	</div>
-6.	After the commands complete, enter the following command to update the database schema and data:
+6.	After the commands complete, enter the following command to update the {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data:
 
 		php bin/magento setup:upgrade
 6.	Verify your server is running version 2.0.1 or 2.0.2 in any of the ways discussed earlier in this resolution.

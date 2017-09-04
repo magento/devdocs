@@ -20,7 +20,7 @@ This section discusses how to upgrade Magento CE to Magento EE.
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{page.baseurl}}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
-In addition, you might need to install the PHP <a href="http://php.net/manual/en/book.bc.php" target="_blank">`bcmath`</a> extension, which is required by EE. Examples follow:
+In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} <a href="http://php.net/manual/en/book.bc.php" target="_blank">`bcmath`</a> extension, which is required by EE. Examples follow:
 
 *	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
@@ -32,7 +32,7 @@ In addition, you might need to install the PHP <a href="http://php.net/manual/en
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 To run System Upgrade:
 
-1.	Log in to the Magento Admin as an administrator.
+1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento">

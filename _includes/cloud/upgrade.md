@@ -1,34 +1,33 @@
 <div markdown="1">
 
-This topic discusses how to upgrade Magento Enterprise Cloud Edition from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
+This information details how to upgrade Magento Commerce (Cloud) from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
+
+When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already. 
+
+For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always upgrade your local system first, then your [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) (that is, the remote Cloud server). Resolve any issues before upgrading either [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod).
+Always upgrade your local system first, then your [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) (that is, the remote Cloud server). Resolve any issues before upgrading either [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
 </div>
-
-### Prerequisite: create `auth.json` (if necessary)
-
-{% include cloud/auth-json.md %}
 
 ## Upgrade to the latest version
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your integration, staging, and production systems.
 
-{% collapsibleh3 Back up your integration system database and code %}
+### Back up the database
+Back up your integration system database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
 
-        magento-cloud environment:mysql-dump
+        magento-cloud environment:sql-dump
 2.  Enter the following command to back up code and media:
 
         php bin/magento setup:backup --code [--media]
 
     You can optionally omit `[--media]` if you have a large number of static files that are already in source control.
 
-{% endcollapsibleh3 %} 
+Back up your staging or production system database:
 
-{% collapsibleh3 Back up your staging or production system database %}
-
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html)
+1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
 2.  Find the database login information:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
@@ -36,8 +35,6 @@ We recommend that you first back up the database of the system you are upgrading
 3.  Create a database dump:
 
         mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
-
-{% endcollapsibleh3 %} 
 
 ### Verify other changes
 Verify other changes you're going to submit to source control before you start the upgrade:
@@ -52,21 +49,23 @@ Verify other changes you're going to submit to source control before you start t
 
 1.  Change to your Magento base directory and enter the following command:
 
-        composer require magento/magento-cloud-metapackage <requiredversion>
+        composer require magento/magento-cloud-metapackage <requiredversion> --no-update
+        composer update
 
     For example, to upgrade to version 2.1.4:
 
-        composer require magento/magento-cloud-metapackage 2.1.4
-        
+        composer require magento/magento-cloud-metapackage 2.1.4 --no-update
+        composer update
+
 4.  Add, commit, and push your changes to initiate a deployment:
 
         git add -A
         git commit -m "Upgrade"
         git push origin <branch name>
 
-    `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages. Both `composer install` and `composer update` marshal files from the base package (that is, `magento/magento2-base` and `magento/magento2-ee-base`) into the package root. 
+    `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages. Both `composer install` and `composer update` marshal files from the base package (that is, `magento/magento2-base` and `magento/magento2-ee-base`) into the package root.
 
-    The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Enterprise Cloud Edition, so you must add the marshaled files to source control.
+    The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.
 
 5.  Wait for deployment to complete.
 
@@ -74,10 +73,10 @@ Verify other changes you're going to submit to source control before you start t
 
 <p id="cloud-upgrade-204"></p>{% collapsibleh2 Upgrade from version 2.0.4 %}
 
-This section discusses steps to upgrade *only* if your current Magento Enterprise Cloud Edition version is 2.0.4.
+This section discusses steps to upgrade *only* if your current Magento Commerce version is 2.0.4.
 
 ### Create an authorization file
-To enable you to install and update the Magento software, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento EE [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html).
+To enable you to install and update the Magento software, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento Commerce [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html).
 
 In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one.
 
@@ -130,7 +129,7 @@ Open `composer.json` and update the `"files"` directive in the `autoload` sectio
     }
 ```
 
-Move `app/NonComposerComponentRegistration.php` to `app/etc/NonComposerComponentRegistration.php`. Make sure the relative paths that point to locations in the `app` and `lib` directories reflect the  new location of the file. 
+Move `app/NonComposerComponentRegistration.php` to `app/etc/NonComposerComponentRegistration.php`. Make sure the relative paths that point to locations in the `app` and `lib` directories reflect the  new location of the file.
 
 Update the `require` section as follows to:
 
@@ -154,7 +153,7 @@ Run `composer update`, and make sure the updated composer.lock and other changed
 checked in to git.
 
 ## Repository structure
-Here are the specific files for this example to work on Magento Enterprise Cloud Edition:
+Here are the specific files for this example to work on Magento Commerce:
 
 ```
 .magento/
@@ -169,7 +168,7 @@ php.ini
 
 `.magento/routes.yaml` redirects `www` to the naked domain, and that the application that will be serving HTTP is named `php`.
 
-`.magento/services.yaml` sets up a MySQL instance, plus Redis and Solr. 
+`.magento/services.yaml` sets up a MySQL instance, plus Redis and Solr.
 
 ``composer.json`` fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.
 
@@ -182,7 +181,7 @@ This section discusses how to verify your upgrade and to troubleshoot any issues
 
 To verify the upgrade in your integration, staging, or production system:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html)
+1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version

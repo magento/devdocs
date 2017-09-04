@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 15_howto
-title: Test a Magento patch
-menu_title: Test a Magento patch
+subgroup: How To
+title: Patch and test Magento Commerce
+menu_title: Patch and test Magento Commerce
 menu_order: 27
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: patch-upgrade2
 version: 2.0

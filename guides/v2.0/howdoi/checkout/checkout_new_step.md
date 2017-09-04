@@ -10,14 +10,14 @@ github_link: howdoi/checkout/checkout_new_step.md
 ---
 
 ## What's in this topic
-The default Magento Checkout consists of two steps:
+The default Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} consists of two steps:
 
  - Shipping Information
  - Review and Payments Information
 
-You can add a custom checkout step, it should be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. 
+You can add a custom checkout step, it should be implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. 
 
-This topic describes how to create the frontend part of the component, implementing a checkout step, and how to add it to the checkout flow.
+This topic describes how to create the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} part of the component, implementing a checkout step, and how to add it to the checkout flow.
 
 
 ## Create the view part of the checkout step component
@@ -32,7 +32,7 @@ Each step is described in details in the following paragraphs.
 
 ### Add the JavaScript file implementing the new step {#component}
 
-A new checkout step must be implemented as UI component. That is, its JavaScript implementation must be a JavaScript module. 
+A new checkout step must be implemented as UI component. That is, its {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation must be a JavaScript module. 
 
 The file must be stored under the `<your_module_dir>/view/frontend/web/js/view` directory.
 
@@ -194,3 +194,54 @@ A sample `checkout_index_index.xml` follows:
 </page>
 {%endhighlight xml%}
 
+## Create mixins for payment and shipping steps (optional)
+
+If your new step is the first step, you have to create mixins for the payment and shipping steps. Otherwise two steps will be activated on loading of the checkout.
+
+Create a mixin as follows:
+
+1. Create a `Vendor/Module/view/base/requirejs-config.js` file with these contents;
+
+{%highlight js%}
+var config = {
+'config': {
+    'mixins': {
+        'Magento_Checkout/js/view/shipping': {
+            'Vendor_Module/js/view/shipping-payment-mixin': true
+        },
+        'Magento_Checkout/js/view/payment': {
+            'Vendor_Module/js/view/shipping-payment-mixin': true
+        }
+    }
+}
+{%endhighlight js%}
+
+2. Create the mixin. We'll use the same mixin for both payment and shipping:
+
+{%highlight js%}
+define(
+    [
+        'ko'
+    ], function (ko) {
+        'use strict';
+
+        var mixin = {
+
+            initialize: function () {
+                this.visible = ko.observable(false); // set visible to be initially false to have your step show first
+                this._super();
+
+                return this;
+            }
+        };
+
+        return function (target) {
+            return target.extend(mixin);
+        };
+    }
+);
+{%endhighlight js%}
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For your changes to be applied, you might need to [clean layout cache]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{page.baseurl}}howdoi/clean_static_cache.html). For more info on mixins go to [JS Mixins](http://devdocs.magento.com/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html).
+</div>

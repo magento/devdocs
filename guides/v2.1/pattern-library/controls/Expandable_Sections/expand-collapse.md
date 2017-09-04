@@ -40,7 +40,7 @@ Required fields should not be located within a collapsed section as this increas
 * Level 2, 3 and 4 has 18px top and bottom padding of the section title. Each expandable sub-section is indented by 40px.<sup>_*_</sup>
 <img src="img/specs.png">
 
-* If the expandable section belongs to a layout with a side bar:
+* If the expandable section belongs to a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} with a side bar:
 ..* And the content area contains forms, then the form field starts at the 7th column for level 2 and at 8th column for level 3 and 4
 * The content areas in the expandable section has 30px padding at the top and bottom.
 <br >
