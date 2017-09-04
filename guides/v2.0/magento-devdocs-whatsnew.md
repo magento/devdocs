@@ -14,11 +14,17 @@ github_link: magento-devdocs-whatsnew.md
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
 
-## August 2017
+## September 2017
 
 Description  | Versions applied to  | New or Updated | Date 
 -------------|--------------|----------------------|--------
 Updated backward incompatible changes after 2.2.0 RC2.3 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Sep 04
+
+
+{% collapsibleh2 August 2017 %}
+
+Description  | Versions applied to  | New or Updated | Date 
+-------------|--------------|----------------------|--------
 [Added explanation of AggregatedFieldDataConverter](http://devdocs.magento.com/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)|2.2.x|Updated|Aug 30
 Added backward incompatible changes for 2.2.0 RC2.2 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 28
 Added backward incompatible changes for 2.2.0 RC2.1 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 22
@@ -34,6 +40,7 @@ Added backward incompatible changes for delta of 2.1.8 and 2.1.7 versions in [Op
 Added a [new topic](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/nginx.html) describing how to install Magento 2 on an nginx web server (Ubuntu 16 and CentOS 7).|2.x|New|Aug 08
 Added backward incompatible changes for 2.2.0 RC1.8 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 07
 [Migrating data to Cloud: add triggers to DB dump command](http://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html#cloud-live-migrate-db)|2.x|Updated|Aug 03
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 July 2017 %}
 
