@@ -12,11 +12,11 @@ Magento integration testing framework allows controlling whether certain cache t
 
 Enable or disable cache type
  
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 /** 
  * @magentoCache <type>|all enabled|disabled
  */ 
-{% endhighlight %}
+```
 
 Where:
 - `<type>` is one of cache types
@@ -33,7 +33,7 @@ Configures a single test to run with specified configuration of cache types.
 
 ## Example
 
-{% highlight php %}
+``` php
 <?php
 namespace Magento\Foo;
  
@@ -73,7 +73,7 @@ class BarTest extends \PHPUnit_Framework_TestCase
         ...
     }
 }
-{% endhighlight %}
+```
 
 Note:
 - The class annotation ("@magentoCache all enabled") will cause every test method to run with all cache types enabled, unless a method defines own "@magentoCache"

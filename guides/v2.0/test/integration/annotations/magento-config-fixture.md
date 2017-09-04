@@ -10,7 +10,7 @@ github_link: test/integration/annotations/magento-config-fixture.md
 
 Integration testing framework allows Magento configuration values to be set for individual tests, then reverted to their original state following test execution. Annotation @magentoConfigFixture is used for this purpose.
 
-```
+``` php?start_inline=1
 Fixture for Configuration Option
 /**
  * @magentoConfigFixture [<store_code>_store] <config_path> <config_value>
@@ -34,7 +34,7 @@ Emulates config values within a method context
 
 The annotation can be used multiple times in one test to declare required precondition values for multiple configuration options. For example, setting up configuration values:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class Magento_Test_Annotation_ConfigFixtureTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -63,5 +63,5 @@ class Magento_Test_Annotation_ConfigFixtureTest extends PHPUnit_Framework_TestCa
         $this->assertEquals('192.168.0.2', $this->_coreStoreConfig->getConfig('dev/restrict/allow_ips', 'admin'));
     }
 }
-{% endhighlight %}
+```
 

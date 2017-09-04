@@ -14,7 +14,7 @@ Using data fixtures for integration tests is an elegant solution (at least versu
 
 **Data Fixture Annotation Synopsis**
 
-```
+``` php?start_inline=1
 /**
  * @magentoDataFixture <script_filename>|<method_name>
  */
@@ -48,8 +48,8 @@ The designated file is included as a PHP-script and executed.
 
 **Fixture Script File Content**
 
-{% highlight php %}
-<?php
+``` php?start_inline=1
+
 $model = new Magento_Core_Model_Layout_Update();
 $model->setData(array(
     'handle'     => 'custom',
@@ -57,13 +57,13 @@ $model->setData(array(
     'sort_order' => 456,
 ));
 $model->save();
-{% endhighlight %}
+```
 
 To include this file, specify it for a test or test case as follows:
 
 **Fixture Script File Usage**
 
-{% highlight php startinline=1%}
+``` php?start_inline=1
 
 /**
  * @magentoDataFixture Magento/Core/Model/Layout/_files/layout_custom_handle.php
@@ -78,13 +78,13 @@ class Magento_Core_Model_Layout_UpdateTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(456, $model->getSortOrder());
     }
 }
-{% endhighlight %}
+```
 
 ### Fixture Method
 
 A method of the current test case class must be declared as public and static.
 
-{% highlight php startinline=1%}
+``` php?start_inline=1
 /**
  * @magentoDataFixture layoutDataFixture
  */
@@ -112,7 +112,7 @@ class Magento_Core_Model_Layout_UpdateTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(123, $model->getSortOrder());
     }
 }
-{% endhighlight %}
+```
 
 ### Fixture per Test vs. per Test Case
 

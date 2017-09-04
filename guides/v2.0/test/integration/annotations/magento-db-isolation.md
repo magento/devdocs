@@ -13,7 +13,7 @@ Sometimes integration tests make changes in the database. To isolate these chang
 
 **Database Isolation Annotation Synopsis**
 
-```
+``` php?start_inline=1
 /**
  * @magentoDbIsolation enabled|disabled
  */
@@ -23,7 +23,7 @@ Sometimes integration tests make changes in the database. To isolate these chang
 
 If a test among other tests in a test case performs changes to the database, its changes can be isolated from other tests by raising DB isolation on a test level. An example of a test that pollutes database is Magento_VersionsCms_Model_IncrementTest:
 
-{% highlight php startinline=1%}
+``` php?start_inline=1
 /**
  * @magentoDbIsolation enabled
  */
@@ -42,7 +42,7 @@ public function testGetNewIncrementId()
     $this->assertEquals(1, $this->_model->getIncrementLevel());
     $this->assertNotEmpty($this->_model->getId());
 }
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Before implementation of this annotation, db isolation of a test used to be done using @magentoDataFixture annotation with an empty fixture.
@@ -55,7 +55,7 @@ There can be cases when multiple tests perform changes to the database and rely 
 
 **Test Case Wrapped into Transaction**
 
-{% highlight php startinline=1%}
+``` php?start_inline=1
 
 /**
  * @magentoDbIsolation enabled
@@ -103,4 +103,4 @@ class Some_EntityTest extends PHPUnit_Framework_TestCase
     }
 }
 
-{% endhighlight %}
+```

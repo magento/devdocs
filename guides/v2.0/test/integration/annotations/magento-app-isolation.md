@@ -10,11 +10,11 @@ github_link: test/integration/annotations/magento-app-isolation.md
 
 Many integration tests rely on application state, which can be altered during execution of some tests. Such changes to the environment may cause the failure of other tests. The integration testing framework uses default policies that keep tests relatively isolated and provide optimal performance simultaneously. Isolation can be controlled using the @magentoAppIsolation annotation.
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 /**
  * @magentoAppIsolation enabled|disabled
  */
-{% endhighlight %}
+```
  
 ## Test Case Isolation
 
@@ -28,7 +28,7 @@ Do not share, and don't rely on sharing, application object(s) between test case
 
 By default, application isolation is disabled between tests. Automatic reinitialization (application isolation) can be enabled for a test using the @magentoAppIsolation annotation:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 /**
  * @magentoAppIsolation enabled
  */
@@ -38,7 +38,7 @@ public function testRegister()
     Mage::register('test', $object);
     $this->assertSame($object, Mage::registry('test'));
 }
-{% endhighlight %}
+```
 
 Controller tests usually depend strongly on the application state and require reinitialization per test. Therefore all test cases that inherit Magento_TestFramework_TestCase_ControllerAbstract behave as if @magentoAppIsolation is enabled for each test.
 

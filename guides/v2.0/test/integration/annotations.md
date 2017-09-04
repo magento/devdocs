@@ -37,7 +37,7 @@ The Magento-specific annotations for integration tests are applied in the follow
 
 This order is necessary to meet the requirement of setting up the store-scoped configuration values for fixture stores (stores that are created by data fixtures), for example:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class Mage_Newsletter_Model_TemplateTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -64,7 +64,7 @@ class Mage_Newsletter_Model_TemplateTest extends PHPUnit_Framework_TestCase
         );
     }
 }
-{% endhighlight %}
+```
 
 Добавить описание примера{: style="color: red"}
 

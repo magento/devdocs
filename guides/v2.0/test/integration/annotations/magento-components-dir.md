@@ -31,7 +31,7 @@ Configures a single test to run with specified fixture(s).
 
 ## Examples
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 // Magento/Foo/_files/modules/moduleOne/registration.php
  
 \Magento\Framework\Component\ComponentRegistrar::register(
@@ -39,9 +39,9 @@ Configures a single test to run with specified fixture(s).
     'Magento_FooOne',
     __DIR__
 );
-{% endhighlight %}
+```
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 namespace Magento\Foo;
  
 /**
@@ -70,14 +70,14 @@ class BarTest extends \PHPUnit_Framework_TestCase
         */
     }
 }
-{% endhighlight %}
+```
 
 ## Registration of Themes
 
 Themes require additional registration (in database) in most of cases.
 @magentoComponentsDir annotation is NOT responsible for this and this is up to the developer of the test to determine whether to register themes in the DB or not. The reason for such distinction of responsibilities is that themes registration may require special pre-conditions and it's impossible to re-register themes w/o resetting whole application. Additionally, it breaks DB integrity, so the developer must also use @magentoDbIsolation annotation in this case.
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 namespace Magento\Foo;
  
@@ -126,4 +126,4 @@ class BarTest extends \PHPUnit_Framework_TestCase
         Bootstrap::getInstance()->loadArea(BackendFrontNameResolver::AREA_CODE);
     }
 }
-{% endhighlight %}
+```
