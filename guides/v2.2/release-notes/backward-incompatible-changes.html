@@ -769,6 +769,10 @@
 
 <p>Please note, that all inheritance of old widget.xml file will break Magento. Use <code class="highlighter-rouge">Magento/Catalog/etc/widget.xml</code> instead of <code class="highlighter-rouge">Magento/Reports/etc/widget.xml</code>.</p>
 
+<h3 id="eav-module-changes">Eav Module Changes</h3>
+
+<p>The class <code class="highlighter-rouge">\Magento\Eav\Model\Entity\Attribute\Backend\Serialized</code> has been marked as deprecated, <code class="highlighter-rouge">Magento\Eav\Model\Entity\Attribute\Backend\JsonEncoded</code> can be used instead.</p>
+
 <h3 id="messagequeue-module-api">MessageQueue Module API</h3>
 
 <p>The <code class="highlighter-rouge">Magento\Framework\MessageQueue\ConfigInterface</code> has been deprecated. 
