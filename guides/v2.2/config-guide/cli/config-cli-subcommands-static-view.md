@@ -383,12 +383,14 @@ The following table discusses the meanings of this command's parameters and valu
       </td>
       <td>
         Define the deployment strategy. Use these options only if you have more than one locale.
-        <p>
-          Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a>. To conserve disk space on the server, use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a>.</p>
-        <p>
-          By default, the quick strategy is used.
-        </p>
-
+				<p>
+					Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-standard">standard strategy</a> to deploy all static view files for all packages.
+				</p>
+				<p>
+          Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a> to minimize deployment time. This is the default command option if not specified.</p>
+				<p>
+					Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a> to conserve disk space on the server.
+				</p>
       </td>
       <td>
         <p>
