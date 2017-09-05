@@ -85,7 +85,7 @@ Fully access your Magento development and deployment through a UI console or CLI
 We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration.
 
 ### Starter environments {#starter}
-For Starter plan subscriptions, you receive the following [environments]({{page.baseurl}}cloud/basic-information/cloud-starter-architecture.html):
+For Starter plan subscriptions, you receive the following [environments]({{page.baseurl}}cloud/basic-information/starter-architecture.html):
 
 * **Master**: The Master branch for your project is your live store(s) and Production environment. This environment includes your active `master` Git branch, database, web server, caching, services, environment variables, and configurations. This is a read-only environment that you deploy to.
 * **Development active branches**: You have a number of active Git branches, each with a complete environment to develop and test your code. Each environment includes your active Git branch, database, web server, caching, services, environment variables, and configurations.
@@ -114,7 +114,7 @@ You should become familiar with the following technologies:
 * MySQL (including command-line interation)
 * Basic linux shell usage
 
-See [{{site.data.var.<ee>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/basic-information/cloud-starter-architecture.html) for details and additional technologies.
+See [{{site.data.var.<ee>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html) for details and additional technologies.
 
 ## Where do I get started? {#getstarted}
 If you have experience with {{site.data.var.<ee>}} 2, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.<ee>}} and {{site.data.var.<ece>}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, setitng up your local, continuous deployment across environments, and going live.

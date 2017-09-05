@@ -91,7 +91,7 @@ We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache
 
 ## Database (local) {#database}
 
-You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.<ee>}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment.
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.<ee>}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galera Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment.
 
 Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
 
@@ -125,7 +125,7 @@ You need to set an auto-increment value for the MariaDB installation.
 3.	Restart the service: `service mysql restart`.
 
 ### Pro: Set up the auto-increment for MySQL {#cloud-mysql}
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.<ee>}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
+The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.<ee>}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 
@@ -145,7 +145,7 @@ If necessary, set `auto_increment_increment` to 3:
 
 		auto_increment_increment=3
 
-	{{site.data.var.<ece>}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.
+	{{site.data.var.<ece>}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
 
 3.	Restart MySQL:
 
@@ -170,9 +170,9 @@ To install the Magento Cloud CLI:
 
 	For example, on Ubuntu and CentOS, the command is similar to:
 
-		<pre class="no-copy">source /home/magento_user/.bashrc</pre>
+		source /home/magento_user/.bashrc
 
-	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}
+	For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc){:target="_blank"}
 
 	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the user name is `magento_user`, the command is similar to the following:
 

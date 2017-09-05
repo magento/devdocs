@@ -20,7 +20,7 @@ The general workflow for all development and deployment includes:
 
 The Starter plan gives you four active environments, including a `master` environment for your Production server. You have the option to use the remaining three active branches any way you want.
 
-We **recommend creating a Staging branch** for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create and use for all development.
+We **recommend creating a Staging branch** for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create from `staging` and use for all development, easily merging work up through `staging` then `master`.
 
 Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. Only the Production and Staging environments have full services including Fastly and New Relic.
 
@@ -35,9 +35,9 @@ For your environments, we recommend deploying and testing following a Developmen
 
 * Production environment is your `master` Git branch with an associated full environment with all services
 * Staging environment is a Git branch you create called `staging`
-* Develop environments include two active branches
+* Develop environments include two active branches we recommend created from `staging`
 
-For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
+For your branches, you can follow any methodology. One example follows Agile such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
 
 From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.
 
@@ -68,12 +68,12 @@ When you created your project, a `master` branch was cloned using the {{site.dat
 
 The format of the Git clone command is:
 
-    git fetch origin
-    git pull origin <environment ID>
+    git fetch magento
+    git pull magento <environment ID>
 
 The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production `master` branch.
 
-Then you can create a developer branch from `master` or `staging`. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch. You will have two active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.
+Then you can create a developer branch from `master` or `staging`. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from `staging`. You will have two active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.
 
 When you [set up your local]({{page.baseurl}}cloud/access-acct/first-time-setup.html) developer environment, we walk-through the software and tools you should install, including Git and the Magento Cloud CLI (a bit more robust than Git).
 

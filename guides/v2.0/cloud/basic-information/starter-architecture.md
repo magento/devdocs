@@ -19,7 +19,7 @@ These four environments include Production, Staging, and two remaining. Consider
 ## How the environments work {#how-work}
 You have up to four full, active environments that generate in containers for your project. When we first provision your project, we create a `master` Git branch with a full environment. You automatically get a `master` branch and environment. This is your live site.
 
-You have up to three active Git branches you can create from `master`. Each Git branch has an associated environment with a web server, database, and configured services. For these three remaining active environments, we recommend creating a branch from `master` called `staging`. Use the remaining two active environments and Git branches for development.
+You have up to three active Git branches you can create from `master`. Each Git branch has an associated environment with a web server, database, and configured services. For these three remaining active environments, we recommend creating a branch from `master` called `staging`. Create your remaining two active Git branches from `staging` for development.
 
 When you deactivate (or delete) a Git branch, you open a slot for an active Git branch. When activated, a new environment container generates for the code.
 
@@ -46,13 +46,18 @@ We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-p
 We highly recommend fully testing in your Staging environment and branch prior to pushing to Production.
 
 ## Staging branch and environment {#cloud-arch-stage}
-We recommend creating a branch called `staging`. Use this Staging environment and Git branch as your pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment includes all services used in Production and `master` including Fastly, New Relic, Blackfire, and search.
+We recommend creating a branch called `staging` from `master`. Use this Staging environment and Git branch as your pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment includes all services used in Production and `master` including Fastly, New Relic, Blackfire, and search.
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.
 
 We walk you through [deploying to Staging]({{page.baseurl}}cloud/live/stage-prod-live.html) and [testing your store(s)]({{page.baseurl}}cloud/live/stage-prod-test.html) requirements and processes.
 
 We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.
+
+## Development branches and environments {#dev}
+From `staging`, create branches for your development code. Add extensions, work in agile sprints, resolve issues all through these branches. When completed and tested, you can merge up to `staging`, test in Staging, then merge to `master` to go live.
+
+We do not recommend branching these environments directly from `master` if you have a `staging` branch. Having a Staging branch and environment allows you to fully test and verify every code change before pushing to Production.
 
 ## Production and Staging technology stack {#technology}
 The Production and Staging environments include the following technologies. You can modify and configure these technologies through the [.magento.app.yaml file]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html).

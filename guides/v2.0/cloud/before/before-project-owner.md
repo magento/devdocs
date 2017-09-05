@@ -137,14 +137,15 @@ To get your Blackfire Profiler credentials:
 Your New Relic APM credentials are displayed on the same page as Blackfire. You may receive the initial New Relic invitiation through an e-mail. You can create New Relic users and provide that information to your technical resources responsible for administering New Relic.
 
 #### Related topics
+
 *	[{{site.data.var.<ece>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
 *	Pro information:
 
-  * [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-  *	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+	* [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+	*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	Starter information:
 
-  * [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
-  *	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
+	* [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
+	*	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 * [First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
