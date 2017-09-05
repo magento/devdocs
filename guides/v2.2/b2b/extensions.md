@@ -11,4 +11,4 @@ ee_only: true
 github_link: b2b/extensions.md
 ---
 
-See [Module Reference Guide]({{page.baseurl}}mrg/intro.html) for information about each B2B module.
+See [Module Reference Guide]({{page.baseurl}}mrg/intro.html) for information about each {{site.data.var.b2b}} module.
