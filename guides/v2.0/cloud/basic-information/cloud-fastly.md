@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 010_welcome
-title: Fastly in Cloud
-menu_title: Fastly in Cloud
+subgroup: 020_tech
+title: Fastly
+menu_title: Fastly
 menu_node:
-menu_order: 50
+menu_order: 15
 version: 2.0
 github_link: cloud/welcome/cloud-fastly.md
 ---

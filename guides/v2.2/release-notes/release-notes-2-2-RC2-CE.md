@@ -13,9 +13,9 @@ github_link: release-notes/release-notes-2-2-RC2-CE.md
 *	TOC
 {:toc}
 
-*Release date: August 25, 2017*
+*Release date: September 1, 2017*
 
-*Notes updated: August 25, 2017*
+*Notes updated: September 4, 2017*
 
 
 Magento Open Source 2.2.0 Release Candidate 2.x (formerly Community Edition) includes significant new features as well as many bug fixes.
@@ -63,6 +63,15 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 64351 -->* Magento now correctly generates URL rewrites when you save a product. (RC22)
 
+<!--- 67037 -->* The `core_config_data.value` of the `core_config_data` table is now populated consistently when you upgrade to or freshly install  Magento 2.2. (RC23)
+
+
+<!--- 67092 -->* The `salesrule_product_attribute` table is now populated consistently when you upgrade to or freshly install  Magento 2.2. (RC23)
+
+<!--- 71551 -->* Inconsistencies in the database tables that contain quote information no longer result when you upgrade from Magento 2.1.8 to 2.2. (RC23)
+
+
+
 
 
 ### Cart
@@ -97,9 +106,13 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 <!--- 71349 -->* You can now configure an email return-path. (RC21)
 
 
-### Import
+
+
+### Import and Export
 
 <!--- 60470 -->* Magento now successfully saves products with imported options. (RC22)
+
+<!--- 71013 -->* The export process now populates values in the  `configurable variations` column for configurable products  as expected. Previously, when exporting more than one product, the values for the `configurable variations` column for configurable products were not included. (RC23)
 
 
 
@@ -119,13 +132,19 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 71179 -->* Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account. (RC22)
 
+<!--- 70540 -->* You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product in the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)
+
+<!--- 64085 -->* Fixed HTML inline style used when sending emails that implement the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241) (RC23)
+
+<!--- 71415 -->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)
+
 
 
 ### Payment methods
 
 <!--- 70500 -->* Fixed issue related to incorrect stock quantity calculation for bundle and configurable products during the place order flow with PayPal Express Checkout. (RC22)
 
-<!--- 71307 -->* Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had a FPT, Paypal Express reported an error when you tried to place the order. (RC22)
+<!--- 71307 -->* Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had an FPT, Paypal Express reported an error when you tried to place the order. (RC22)
 
 <!--- 71371 -->* Merchants can now accept payment on a Suspected Fraud order without Magento altering the amount in Total Paid. Previously,  when a merchant accepted payment for an order with a  status  of Suspected Fraud, Magento doubled the payment amount. (RC22)
 
@@ -139,6 +158,10 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 <!--- 67283 -->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column. (RC2.0)
 
 <!--- 70861-->* Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)
+
+<!--- 71749-->* Magento now displays tracking information when selected for the second shipping label created for the DHL shipping method. Previously, when you tried to display a completed DHL  shipping label, Magento displayed an exception. (RC23)
+
+
 
 
 ### URL rewrites
