@@ -93,7 +93,7 @@
           
           <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
           <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
         </ul>
     </li>
@@ -193,7 +193,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Magento Enterprise Cloud Guide</h4>
+<h4>Magento Commerce (Cloud) Guide</h4>
 
 
 
@@ -1720,7 +1720,7 @@
 
 <p>The Starter plan gives you four active environments, including a <code class="highlighter-rouge">master</code> environment for your Production server. You have the option to use the remaining three active branches any way you want.</p>
 
-<p>We <strong>recommend creating a Staging branch</strong> for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create and use for all development.</p>
+<p>We <strong>recommend creating a Staging branch</strong> for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create from <code class="highlighter-rouge">staging</code> and use for all development, easily merging work up through <code class="highlighter-rouge">staging</code> then <code class="highlighter-rouge">master</code>.</p>
 
 <p>Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. Only the Production and Staging environments have full services including Fastly and New Relic.</p>
 
@@ -1736,10 +1736,10 @@
 <ul>
   <li>Production environment is your <code class="highlighter-rouge">master</code> Git branch with an associated full environment with all services</li>
   <li>Staging environment is a Git branch you create called <code class="highlighter-rouge">staging</code></li>
-  <li>Develop environments include two active branches</li>
+  <li>Develop environments include two active branches we recommend created from <code class="highlighter-rouge">staging</code></li>
 </ul>
 
-<p>For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create <a href="/guides/v2.1/cloud/env/environments.html#cloud-env-work">branches for every sprint</a>.</p>
+<p>For your branches, you can follow any methodology. One example follows Agile such as scrum to create <a href="/guides/v2.1/cloud/env/environments.html#cloud-env-work">branches for every sprint</a>.</p>
 
 <p>From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.</p>
 
@@ -1774,14 +1774,14 @@
 
 <p>The format of the Git clone command is:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
-git pull origin &lt;environment ID&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>git fetch magento
+git pull magento &lt;environment ID&gt;
 </code></pre>
 </div>
 
 <p>The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production <code class="highlighter-rouge">master</code> branch.</p>
 
-<p>Then you can create a developer branch from <code class="highlighter-rouge">master</code> or <code class="highlighter-rouge">staging</code>. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch. You will have two active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.</p>
+<p>Then you can create a developer branch from <code class="highlighter-rouge">master</code> or <code class="highlighter-rouge">staging</code>. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from <code class="highlighter-rouge">staging</code>. You will have two active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.</p>
 
 <p>When you <a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">set up your local</a> developer environment, we walk-through the software and tools you should install, including Git and the Magento Cloud CLI (a bit more robust than Git).</p>
 

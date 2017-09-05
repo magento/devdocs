@@ -93,7 +93,7 @@
           
           <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
           <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
         </ul>
     </li>
@@ -196,7 +196,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Magento Enterprise Cloud Guide</h4>
+<h4>Magento Commerce (Cloud) Guide</h4>
 
 
 
@@ -1660,7 +1660,7 @@
 <h2 id="how-work">How the environments work</h2>
 <p>You have up to four full, active environments that generate in containers for your project. When we first provision your project, we create a <code class="highlighter-rouge">master</code> Git branch with a full environment. You automatically get a <code class="highlighter-rouge">master</code> branch and environment. This is your live site.</p>
 
-<p>You have up to three active Git branches you can create from <code class="highlighter-rouge">master</code>. Each Git branch has an associated environment with a web server, database, and configured services. For these three remaining active environments, we recommend creating a branch from <code class="highlighter-rouge">master</code> called <code class="highlighter-rouge">staging</code>. Use the remaining two active environments and Git branches for development.</p>
+<p>You have up to three active Git branches you can create from <code class="highlighter-rouge">master</code>. Each Git branch has an associated environment with a web server, database, and configured services. For these three remaining active environments, we recommend creating a branch from <code class="highlighter-rouge">master</code> called <code class="highlighter-rouge">staging</code>. Create your remaining two active Git branches from <code class="highlighter-rouge">staging</code> for development.</p>
 
 <p>When you deactivate (or delete) a Git branch, you open a slot for an active Git branch. When activated, a new environment container generates for the code.</p>
 
@@ -1689,13 +1689,18 @@
 <p>We highly recommend fully testing in your Staging environment and branch prior to pushing to Production.</p>
 
 <h2 id="cloud-arch-stage">Staging branch and environment</h2>
-<p>We recommend creating a branch called <code class="highlighter-rouge">staging</code>. Use this Staging environment and Git branch as your pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment includes all services used in Production and <code class="highlighter-rouge">master</code> including Fastly, New Relic, Blackfire, and search.</p>
+<p>We recommend creating a branch called <code class="highlighter-rouge">staging</code> from <code class="highlighter-rouge">master</code>. Use this Staging environment and Git branch as your pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment includes all services used in Production and <code class="highlighter-rouge">master</code> including Fastly, New Relic, Blackfire, and search.</p>
 
 <p>Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.</p>
 
 <p>We walk you through <a href="/guides/v2.2/cloud/live/stage-prod-live.html">deploying to Staging</a> and <a href="/guides/v2.2/cloud/live/stage-prod-test.html">testing your store(s)</a> requirements and processes.</p>
 
 <p>We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.</p>
+
+<h2 id="dev">Development branches and environments</h2>
+<p>From <code class="highlighter-rouge">staging</code>, create branches for your development code. Add extensions, work in agile sprints, resolve issues all through these branches. When completed and tested, you can merge up to <code class="highlighter-rouge">staging</code>, test in Staging, then merge to <code class="highlighter-rouge">master</code> to go live.</p>
+
+<p>We do not recommend branching these environments directly from <code class="highlighter-rouge">master</code> if you have a <code class="highlighter-rouge">staging</code> branch. Having a Staging branch and environment allows you to fully test and verify every code change before pushing to Production.</p>
 
 <h2 id="technology">Production and Staging technology stack</h2>
 <p>The Production and Staging environments include the following technologies. You can modify and configure these technologies through the <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml file</a>.</p>

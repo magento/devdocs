@@ -93,7 +93,7 @@
           
           <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
           <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
         </ul>
     </li>
@@ -191,7 +191,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Magento Enterprise Cloud Guide</h4>
+<h4>Magento Commerce (Cloud) Guide</h4>
 
 
 
@@ -1671,13 +1671,11 @@
   <li>
     <p>Create a file named <code class="highlighter-rouge">auth.json</code> in the Magento project root directory and add your authentication keys to it.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="bs-callout bs-callout-info" markdown="1"&gt;
-If you have an `auth.json` file already, contact your project administrator to make sure a project variable has been defined. If there is no project variable that defines authentication keys, skip this step and continue with [Step 7: Set file system permissions and ownership](#setup-env-perms).
-&lt;/div&gt;
+    <p>If you have an <code class="highlighter-rouge">auth.json</code> file already, contact your project administrator to make sure a project variable has been defined.</p>
 
-A sample `auth.json` follows. Replace the same values with your keys.
+    <p>A sample <code class="highlighter-rouge">auth.json</code> follows. Replace the same values with your keys.</p>
 
-    ``` json
+    <div class="highlighter-rouge"><pre class="highlight"><code>    ``` json
     {
        "http-basic": {
           "repo.magento.com": {
@@ -1697,8 +1695,7 @@ A sample `auth.json` follows. Replace the same values with your keys.
 
     <p>A snippet from <code class="highlighter-rouge">.gitignore</code> follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    &lt;pre class="no-copy"&gt;
-    /.buildpath
+    <div class="highlighter-rouge"><pre class="highlight"><code>    /.buildpath
     /.cache
     /.metadata
     /.project
@@ -1709,7 +1706,6 @@ A sample `auth.json` follows. Replace the same values with your keys.
     /.idea
     /.gitattributes
     auth.json
-    &lt;/pre&gt;
 </code></pre>
     </div>
   </li>

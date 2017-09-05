@@ -93,7 +93,7 @@
           
           <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
           <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
         </ul>
     </li>
@@ -709,10 +709,13 @@
       <li><a href="#cart" id="markdown-toc-cart">Cart</a></li>
       <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
       <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
+      <li><a href="#elasticsearch" id="markdown-toc-elasticsearch">Elasticsearch</a></li>
       <li><a href="#email" id="markdown-toc-email">Email</a></li>
-      <li><a href="#import" id="markdown-toc-import">Import</a></li>
+      <li><a href="#gift-wrap" id="markdown-toc-gift-wrap">Gift wrap</a></li>
+      <li><a href="#import-and-export" id="markdown-toc-import-and-export">Import and Export</a></li>
       <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
       <li><a href="#payment-methods" id="markdown-toc-payment-methods">Payment methods</a></li>
+      <li><a href="#reports" id="markdown-toc-reports">Reports</a></li>
       <li><a href="#shipping" id="markdown-toc-shipping">Shipping</a></li>
       <li><a href="#staging" id="markdown-toc-staging">Staging</a></li>
       <li><a href="#url-rewrites" id="markdown-toc-url-rewrites">URL rewrites</a></li>
@@ -740,9 +743,9 @@
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p><em>Release date: August 25, 2017</em></p>
+<p><em>Release date: September 1, 2017</em></p>
 
-<p><em>Notes updated: August 25, 2017</em></p>
+<p><em>Notes updated: September 4, 2017</em></p>
 
 <p>Magento Commerce 2.2.0 Release Candidate 2x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.</p>
 
@@ -814,6 +817,21 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now correctly generates URL rewrites when you save a product. (RC22)</li>
 </ul>
 
+<!--- 67037 -->
+<ul>
+  <li>The <code class="highlighter-rouge">core_config_data.value</code> of the <code class="highlighter-rouge">core_config_data</code> table is now populated consistently when you upgrade to or freshly install  Magento 2.2. (RC23)</li>
+</ul>
+
+<!--- 67092 -->
+<ul>
+  <li>The <code class="highlighter-rouge">salesrule_product_attribute</code> table is now populated consistently when you upgrade to or freshly install  Magento 2.2. (RC23)</li>
+</ul>
+
+<!--- 71551 -->
+<ul>
+  <li>Inconsistencies in the database tables that contain quote information no longer result when you upgrade from Magento 2.1.8 to 2.2. (RC23)</li>
+</ul>
+
 <h3 id="cart">Cart</h3>
 
 <!--- 70806 -->
@@ -870,6 +888,13 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now displays white space after the first address field of the customer address field during checkout. (RC21)</li>
 </ul>
 
+<h3 id="elasticsearch">Elasticsearch</h3>
+
+<!--- 71562 -->
+<ul>
+  <li>The Elasticsearch indexer search-by-attribute functionality now works as expected. (RC23)</li>
+</ul>
+
 <h3 id="email">Email</h3>
 
 <!--- 71349 -->
@@ -882,11 +907,23 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now sends email that provides updates on the status of RMA authorization. (RC21)</li>
 </ul>
 
-<h3 id="import">Import</h3>
+<h3 id="gift-wrap">Gift wrap</h3>
+
+<!--- 70603 -->
+<ul>
+  <li>You can now add gift options to an order if logged in using a secure URL. (RC23)</li>
+</ul>
+
+<h3 id="import-and-export">Import and Export</h3>
 
 <!--- 60470 -->
 <ul>
   <li>Magento now successfully saves products with imported options. (RC22)</li>
+</ul>
+
+<!--- 71013 -->
+<ul>
+  <li>The export process now populates values in the  <code class="highlighter-rouge">configurable variations</code> column for configurable products  as expected. Previously, when exporting more than one product, the values for the <code class="highlighter-rouge">configurable variations</code> column for configurable products were not included. (RC23)</li>
 </ul>
 
 <h3 id="miscellaneous">Miscellaneous</h3>
@@ -952,6 +989,21 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>The Firefox browser now correctly displays the Hierarchy Tree in <strong>Admin Panel &gt; Content &gt; Hierarchy</strong>.  (RC22)</li>
 </ul>
 
+<!--- 70540 -->
+<ul>
+  <li>You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product in the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)</li>
+</ul>
+
+<!--- 64085 -->
+<ul>
+  <li>Fixed HTML inline style used when sending emails that implement the upgraded <code class="highlighter-rouge">emorgifier</code> library. <a href="https://github.com/magento/magento2/issues/8241">GitHub-8241</a> (RC23)</li>
+</ul>
+
+<!--- 71415 -->
+<ul>
+  <li>Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)</li>
+</ul>
+
 <h3 id="payment-methods">Payment methods</h3>
 
 <!--- 70500 -->
@@ -961,7 +1013,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 71307 -->
 <ul>
-  <li>Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had a FPT, Paypal Express reported an error when you tried to place the order. (RC22)</li>
+  <li>Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had an FPT, Paypal Express reported an error when you tried to place the order. (RC22)</li>
 </ul>
 
 <!--- 71371 -->
@@ -974,6 +1026,13 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error <code class="highlighter-rouge">No such entity with customerId = 0</code>. (RC22)</li>
 </ul>
 
+<h3 id="reports">Reports</h3>
+
+<!--- 69757 -->
+<ul>
+  <li>Magento now displays uncorrupted information in the shared catalogs bulk operations report. Previously, error information was corrupted. (RC23)</li>
+</ul>
+
 <h3 id="shipping">Shipping</h3>
 
 <!--- 67283 -->
@@ -984,6 +1043,11 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <!--- 70861-->
 <ul>
   <li>Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)</li>
+</ul>
+
+<!--- 71749-->
+<ul>
+  <li>Magento now displays tracking information when selected for the second shipping label created for the DHL shipping method. Previously, when you tried to display a completed DHL  shipping label, Magento displayed an exception. (RC23)</li>
 </ul>
 
 <h3 id="staging">Staging</h3>
@@ -1006,6 +1070,11 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <!--- 71289 -->
 <ul>
   <li>Magento now saves scheduled updates for products with custom options as expected. (RC22)</li>
+</ul>
+
+<!--- 71708 -->
+<ul>
+  <li>You can now create a staging update for a product that contains a unique attribute in its attribute set. Previously, under these conditions, Magento displayed this error: <code class="highlighter-rouge">The value of attribute "test" must be unique’</code>. (RC23)</li>
 </ul>
 
 <h3 id="url-rewrites">URL rewrites</h3>

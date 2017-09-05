@@ -93,7 +93,7 @@
           
           <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
           <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
         </ul>
     </li>
@@ -193,7 +193,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Magento Enterprise Cloud Guide</h4>
+<h4>Magento Commerce (Cloud) Guide</h4>
 
 
 
@@ -1766,14 +1766,14 @@
   <li>
     <p>Fetch origin branches:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
+    <div class="highlighter-rouge"><pre class="highlight"><code>git fetch magento
 </code></pre>
     </div>
   </li>
   <li>
     <p>Pull updated code:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code>git pull magento &lt;environment ID&gt;
 </code></pre>
     </div>
   </li>
@@ -1834,22 +1834,21 @@
 
     <p>The simplest way to do that is to use the environment routes that display when you redeploy the <code class="highlighter-rouge">master</code> branch. The following example uses these values:</p>
 
-    <pre class="no-copy">Waiting for the activity ksvciptnzxfto (John Smith added variable ADMIN_URL):
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;pre class="no-copy"&gt;Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
+Slug already built for this tree id, skipping.
 
-    Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
-    Slug already built for this tree id, skipping.
+Re-deploying environment k4wtvm7ogzr5s-master.
+Environment configuration:
 
-    Re-deploying environment k4wtvm7ogzr5s-master.
-    Environment configuration:
+    mymagento (type: php:7.0, size: S, disk: 2048)
+    mysql (type: mysql:10.0, size: S, disk: 2048)
+    redis (type: redis:3.0, size: S)
+    solr (type: solr:4.10, size: S, disk: 1024)
 
-        mymagento (type: php:7.0, size: S, disk: 2048)
-        mysql (type: mysql:10.0, size: S, disk: 2048)
-        redis (type: redis:3.0, size: S)
-        solr (type: solr:4.10, size: S, disk: 1024)
-
-    Environment routes:
-        http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
-        https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`</pre>
+Environment routes:
+    http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`&lt;/pre&gt;
+</code></pre>
+    </div>
 
     <p>In the preceding example, go to <code class="highlighter-rouge">http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10</code> and log in using the user name <code class="highlighter-rouge">meister_x2U8</code> and password <code class="highlighter-rouge">admin_A456</code></p>
   </li>
