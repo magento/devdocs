@@ -185,7 +185,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
-<!--- 70540 -->* You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product fin the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)
+<!--- 70540 -->* You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product in the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)
 
 <!--- 64085 -->* Fixed HTML inline style used when sending emails that implement the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241) (RC23)
 

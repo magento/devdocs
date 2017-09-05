@@ -132,9 +132,9 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 71179 -->* Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account. (RC22)
 
-<!--- 70540 -->* You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product fin the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)
+<!--- 70540 -->* You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product in the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)
 
-<!--- 64085 -->* Fixed HTML inline style used when sending emails that implement the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241) (RC23)
+<!--- 64085 -->* Fixed HTML inline style used when sending emails that implemen the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241) (RC23)
 
 <!--- 71415 -->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)
 
