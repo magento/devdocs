@@ -13,7 +13,7 @@ github_link: cloud/project/project-conf-files_routes.md
 ---
 
 ## `routes.yaml` overview {#cloud-yaml-routes-over}
-A *route* describes how an incoming {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} is processed by {{site.data.var.<ee>}}.
+A *route* describes how an incoming {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} is processed by {{site.data.var.ee}}.
 
 `routes.yaml` defines routes for development, integration, staging, and production systems. This one configuration file handles routes for all systems.
 
@@ -42,7 +42,7 @@ If you do not have a `routes.yaml` file, the following default is used:
 
 If the domain is `example.com`, these routes resolve: `http://www.example.com/` and `https://example.com/blog` for the live environment (that is, the Master).
 
-{{site.data.var.<ee>}} also generates URLs for every active environment that enable you to test that system. In a test system, `{default}` is replaced with `[branch]-[project-id].[region].magentosite.cloud`.
+{{site.data.var.ee}} also generates URLs for every active environment that enable you to test that system. In a test system, `{default}` is replaced with `[branch]-[project-id].[region].magentosite.cloud`.
 
 For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcss` hosted in the `na` cluster, the domains are: `http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/` and `https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog`
 
@@ -92,7 +92,7 @@ The following route does not redirect from the `www` to the naked domain; instea
 The difference between the two preceding examples is that for the first one the server responds directly to a request of the form `http://example.com/hello`, but it will issue a 301 redirect for `http://www.example.com/mypath` (to `http://example.com/mypath`).
 
 ## Wildcard routes {#cloud-yaml-routes-sample-wild}
-{{site.data.var.<ee>}} supports wildcard routes, so you can map multiple subdomains to the same application. This works both for {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} and upstream routes. You can simply prefix the route with a star (`*`), for example `*.example.com`, and `www.example.com`, `blog.example.com`, and `us.example.com` all get routed to the same application.
+{{site.data.var.ee}} supports wildcard routes, so you can map multiple subdomains to the same application. This works both for {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} and upstream routes. You can simply prefix the route with a star (`*`), for example `*.example.com`, and `www.example.com`, `blog.example.com`, and `us.example.com` all get routed to the same application.
 
 For your live environment, this functions as a catch-all domain.
 
@@ -100,7 +100,7 @@ For your live environment, this functions as a catch-all domain.
 You can also route to a system that is not mapped to a domain (basically anything other than
 a live master).
 
-Suppose your project on the EU cluster has an ID `vmwklxcpbi6zq` and a branch named `add-theme`. {{site.data.var.<ee>}} automatically routes the URL `http://add-theme-vmwklxcpbi6zq.na.magento.com/` to this environment. If, for example, you also defined a `http://www.{default}/` route, you could visit `http://www---add-theme-vmwklxcpbi6zq.na.magento.com/` to see the same environment.
+Suppose your project on the EU cluster has an ID `vmwklxcpbi6zq` and a branch named `add-theme`. {{site.data.var.ee}} automatically routes the URL `http://add-theme-vmwklxcpbi6zq.na.magento.com/` to this environment. If, for example, you also defined a `http://www.{default}/` route, you could visit `http://www---add-theme-vmwklxcpbi6zq.na.magento.com/` to see the same environment.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The triple dash (<code>---</code>) is used as a separator for the subdomain. This is what replaces the dot (<code>.</code>).</p>

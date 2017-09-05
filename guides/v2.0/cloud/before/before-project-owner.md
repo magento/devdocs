@@ -16,11 +16,11 @@ This information details the manually steps for setting up your project, account
 </div>
 -->
 
-To initially set up your {{site.data.var.<ece>}} project, you need the Project Owner to create the project, add a super user, and generate {{site.data.var.<ee>}} authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.
+To initially set up your {{site.data.var.ece}} project, you need the Project Owner to create the project, add a super user, and generate {{site.data.var.ee}} authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.
 
 As the Project Owner, you must complete the following, required by development and technical resources:
 
-* Access to the {{site.data.var.<ece>}} project through added user accounts
+* Access to the {{site.data.var.ece}} project through added user accounts
 * Generate Magento authentication keys
 * Create the project
 * Add a project admin account
@@ -32,7 +32,7 @@ After you have completed those tasks, the project admin can manage development a
 
 Any developers or users that want to access the project require Magento authentication keys. The Project Owner needs to generate Magento authentication keys (includes 1 public and 1 private) through a Magento Marketplace account for themselves and any other user. Only the Project Owner can create these keys. When you first create your project, you will be prompted to add them.
 
-You must create one set of keys for each technical person you expect will work on {{site.data.var.<ee>}}. Each user must add these keys to their `auth.json` file, which is located in the project root directory. We recommend against providing the keys over e-mail because it isn't secure. Please find a secure method, working with your IT staff, for distributing the keys.
+You must create one set of keys for each technical person you expect will work on {{site.data.var.ee}}. Each user must add these keys to their `auth.json` file, which is located in the project root directory. We recommend against providing the keys over e-mail because it isn't secure. Please find a secure method, working with your IT staff, for distributing the keys.
 
 To create authentication keys through the Magento Marketplace:
 
@@ -64,7 +64,7 @@ If you are concerned with creating the Project, you can create a Technical Admin
 
 	![Create a site using the sample Magento project]({{ site.baseurl }}common/images/cloud_project_template.png){:width="650px"}
 
-5.  When prompted, enter your {{site.data.var.<ee>}} [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the keys and click **Finish**.
+5.  When prompted, enter your {{site.data.var.ee}} [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the keys and click **Finish**.
 
 	![Enter your authentication keys]({{ site.baseurl }}common/images/cloud-project-magento-auth-creds.png){:width="650px"}
 
@@ -77,15 +77,15 @@ If you are concerned with creating the Project, you can create a Technical Admin
 You should create user accounts to this project for each developer, administrator, and consultant that needs access to the code.
 
 ## Create project admins and user accounts {#cloud-owner-admins}
-As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), {{site.data.var.<ece>}} has a number of user roles and permissions available project-wide or per environment.
+As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), {{site.data.var.ece}} has a number of user roles and permissions available project-wide or per environment.
 
 Typically, the only user the Project Owner must create is the Technical Admin. This user should have the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments.
 
-Before you start, create a list of e-mail address for the users you want to add. New accounts receive an invitation to register with {{site.data.var.<ece>}} and receive access based on the role. You can add and manage users at any time.
+Before you start, create a list of e-mail address for the users you want to add. New accounts receive an invitation to register with {{site.data.var.ece}} and receive access based on the role. You can add and manage users at any time.
 
 To create user accounts:
 
-1.  Log in to [your {{site.data.var.<ece>}} account](https://accounts.magento.cloud){:target="_blank"}.
+1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2.  Click the **Projects** tab as the following figure shows.
 
 	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
@@ -108,19 +108,19 @@ To create user accounts:
 	*	Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
 8.	Click **Add User**.
 
-The users you add receive an e-mail inviting them to join the {{site.data.var.<ece>}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
+The users you add receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
 
 ## Blackfire and New Relic {#cloud-owner-creds}
 Your project includes [Blackfire]({{ site.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ site.baseurl }}cloud/project/project-integrate-github.html) services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
-[New Relic APM](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.<ece>}}.
+[New Relic APM](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.ece}}.
 
 ### Blackfire credentials
 To get your Blackfire Profiler credentials:
 
-1.	As the {{site.data.var.<ece>}} account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
+1.	As the {{site.data.var.ece}} account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
 2.	In the upper right corner, click **&lt;your name>** > **Account Settings** as the following figure shows.
 
 	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png){:width="650px"}
@@ -138,7 +138,7 @@ Your New Relic APM credentials are displayed on the same page as Blackfire. You 
 
 #### Related topics
 
-*	[{{site.data.var.<ece>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[{{site.data.var.ece}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
 *	Pro information:
 
 	* [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)

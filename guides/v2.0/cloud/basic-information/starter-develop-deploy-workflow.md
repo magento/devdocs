@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 ---
 
-Everything in {{site.data.var.<ece>}} is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.<ece>}} plan subscription, your deployment workflow may differ.
+Everything in {{site.data.var.ece}} is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.ece}} plan subscription, your deployment workflow may differ.
 
 The general workflow for all development and deployment includes:
 
@@ -44,7 +44,7 @@ From each sprint, you can have branches for every user story. All the stories be
 For detailed information, see [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html).
 
 ## Development workflow {#development}
-Development and deployment on Starter plans begins with your initial project. You create your project with the "blank site", which is a {{site.data.var.<ece>}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Production environment.
+Development and deployment on Starter plans begins with your initial project. You create your project with the "blank site", which is a {{site.data.var.ece}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Production environment.
 
 The full process involves:
 
@@ -64,7 +64,7 @@ You also have a few optional steps to help develop and test your code and store 
 This process assumes you would have your [local developer workspace]({{page.baseurl}}cloud/access-acct/first-time-setup.html) set up. Feel free to read over this process even if your local isn't ready.
 
 ### Clone and branch {#clone-branch}
-When you created your project, a `master` branch was cloned using the {{site.data.var.<ece>}} Git repository. To start branching and working with code, you will need to clone the `master` to your local.
+When you created your project, a `master` branch was cloned using the {{site.data.var.ece}} Git repository. To start branching and working with code, you will need to clone the `master` to your local.
 
 The format of the Git clone command is:
 
@@ -89,7 +89,7 @@ The format of the Magento Cloud CLI branch command is:
 ![Branch from Master]({{ site.baseurl }}common/images/cloud_workflow-branching.png)
 
 ### Develop code {#dev-code}
-It's the time you have been waiting for...writing code. Using this base branch of {{site.data.var.<ece>}} code, you can start installing extensions, configuring extension settings and your store options, creating multi-sites and stores, adding themes, and much more.
+It's the time you have been waiting for...writing code. Using this base branch of {{site.data.var.ece}} code, you can start installing extensions, configuring extension settings and your store options, creating multi-sites and stores, adding themes, and much more.
 
 We recommend using a branching strategy with your development work. Using one branch to do all of your work all at once might make testing difficult. For example, you could follow continuous integration and sprint methodologies to work:
 
@@ -105,7 +105,7 @@ And so on until you have your store fully built, configured, and ready to go liv
 ![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-push-code.png)
 
 ### Configure store {#configure-store}
-At any time, you should start configuring your store. For the best information on configurations, we recommend reviewing {{site.data.var.<ee>}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
+At any time, you should start configuring your store. For the best information on configurations, we recommend reviewing {{site.data.var.ee}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
 
 * [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html){:target="_blank"} for store admin access, name, languages, currencies, branding, sites, store views and more
 * [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html){:target="_blank"} for your look and feel of the site and stores including CSS and layouts
@@ -119,7 +119,7 @@ Now you need to get these settings into your code. We have a helpful command to 
 ### Generate configuration management files {#config-management}
 If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or Excel all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
 
-{{site.data.var.<ece>}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for {{site.data.var.<ece>}} 2.1.4 and later.
+{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for {{site.data.var.ece}} 2.1.4 and later.
 
 * `php bin/magento magento-cloud:scd-dump`: Recommended. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
@@ -140,7 +140,7 @@ You will add this file to your branch repository and include it with every push.
 
 ![Generate configuration management file]({{ site.baseurl }}common/images/cloud_workflow-config-mgmt.png)
 
-An additional feature of this command is part of {{site.data.var.<ece>}} 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called `env.php` in `app/etc/`. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository.
+An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called `env.php` in `app/etc/`. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository.
 
 ![Environment variables generate]({{ site.baseurl }}common/images/cloud_workflow-env-variables.png)
 
@@ -154,7 +154,7 @@ You can directly access this environment with a store URL, Magento Admin URL, an
 For more information, see [Deployment workflow](#deploy).
 
 ### Optional: Install sample data {#sample-data}
-If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.<ece>}} template installation when creating your project.
+If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.ece}} template installation when creating your project.
 
 We recommend installing sample data in your local Integration and development branches and environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.
 
@@ -180,14 +180,14 @@ Important: We don't recommend pushing a database from a development or Staging e
 </div>
 
 ## Deployment workflow {#deploy}
-As we detailed in the architecture information, {{site.data.var.<ece>}} is Git driven. Deploying {{site.data.var.<ece>}} is part of your Git push processes for branches.
+As we detailed in the architecture information, {{site.data.var.ece}} is Git driven. Deploying {{site.data.var.ece}} is part of your Git push processes for branches.
 
 When you push branched code from your local to the remote Git branch, a series of build and deploy scripts begin.
 
 Build scripts:
 
 * Your site on the target environment continue running during a build
-* Check and run {{site.data.var.<ece>}} patches and hotfixes
+* Check and run {{site.data.var.ece}} patches and hotfixes
 * Compile your code with a build and deploy log
 * Check for Configuration Management, if there static content deploy occurs during this phase
 * Create or use a slug of unchanged code to speed up the process
@@ -197,7 +197,7 @@ Deploy scripts:
 
 * Puts your site on the target environment in Maintenance mode
 * Deploys static content if not completed during Build
-* Installs or updates {{site.data.var.<ece>}}
+* Installs or updates {{site.data.var.ece}}
 * Configure routing for traffic
 
 When fully completed, your store comes back online, live, with all of your updated code and configurations.
@@ -224,7 +224,7 @@ To learn more, check out [Go live and launch]({{page.baseurl}}cloud/live/live.ht
 ## Continuous integration {#continuous-integration}
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
 
-{{site.data.var.<ece>}} environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
+{{site.data.var.ece}} environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
 
 * Create development branches with future features and changes
 * Test the code in your development environments

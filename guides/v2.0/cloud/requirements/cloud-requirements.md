@@ -20,7 +20,7 @@ redirect from:
   -  /guides/v2.1/cloud/reference/git-integration.html
 ---
 
-The following information detail technologiess, knowledges, accounts, and steps to complete when working with your {{site.data.var.<ece>}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.
+The following information detail technologiess, knowledges, accounts, and steps to complete when working with your {{site.data.var.ece}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.
 
 ## Technologies and knowledges {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
@@ -60,7 +60,7 @@ To get started with Git, you should have [Git installed](https://git-scm.com/dow
 You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.
 
 ## Requirements to get started {#requirements}
-To get started as a developer in a {{site.data.var.<ece>}} project, you need to set up the following:
+To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
 *	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}cloud/welcome/discover-workflow.html) plan.
 *	Get [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
@@ -97,7 +97,7 @@ For development and testing, we recommend the following:
 *	Profile key flows and customizations using Blackfire.io
 
 ## License and authentication requirements
-The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) creates the initial {{site.data.var.<ece>}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
+The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) creates the initial {{site.data.var.ece}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
 
 To work with and deploy stores, you need the following:
 

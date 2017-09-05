@@ -15,9 +15,9 @@ redirect_from:
 ---
 
 ## About `.magento.app.yaml` {#cloud-yaml-platform}
-{{site.data.var.<ee>}} supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
+{{site.data.var.ee}} supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
 
-This file controls the application and the way it is built and deployed on {{site.data.var.<ee>}}.
+This file controls the application and the way it is built and deployed on {{site.data.var.ee}}.
 
 [Sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}
 
@@ -31,7 +31,7 @@ The following sections discuss properties in `.magento.app.yaml`.
 `.magento.app.yaml` has many default values; see the [sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}.
 
 ## `name` property {#name}
-`name` identifies the application in the project. {{site.data.var.<ee>}} supports multiple applications in a project, so each application must have a *unique name* in a project.
+`name` identifies the application in the project. {{site.data.var.ee}} supports multiple applications in a project, so each application must have a *unique name* in a project.
 
 `name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name` is used in the [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) to define the HTTP upstream (by default, `php:php`).
 
@@ -127,7 +127,7 @@ The format is:
 `dependencies` enables you to specify dependencies that your application might need during the build process.
 
 
-{{site.data.var.<ee>}} supports dependencies on the following
+{{site.data.var.ee}} supports dependencies on the following
 languages:
 
 *	PHP
@@ -294,7 +294,7 @@ Other PHP extensions you can optionally install:
 *	[xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="_blank"}
 
 ### Customize `php.ini` settings {#cloud-yaml-platform-php-set}
-You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.<ee>}}.
+You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
 

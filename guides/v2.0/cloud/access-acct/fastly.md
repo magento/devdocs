@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/access-acct/fastly.md
 ---
 
-[Fastly]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.<ece>}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.
+[Fastly]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.
 
 This information gets you started with installing and configuring Fastly. We provide additional information for backends and Origin shields, and error/maintenance page, and VCL snippets.
 
@@ -43,7 +43,7 @@ To create a branch:
 {% include cloud/cli-get-started.md %}
 
 ## Install Fastly in an Integration branch and deploy {#cloud-fastly-setup}
-You should install the Fastly module on your local, pushing the code to Integration and deploying across to your Staging and Production environments. For {{site.data.var.<ece>}} 2.2, install Fastly module 1.2.27 or later for all updated settings and full VCL snippet uploading support.
+You should install the Fastly module on your local, pushing the code to Integration and deploying across to your Staging and Production environments. For {{site.data.var.ece}} 2.2, install Fastly module 1.2.27 or later for all updated settings and full VCL snippet uploading support.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Don't configure the module in your local before building and deploying. You'll configure the module in those environments.

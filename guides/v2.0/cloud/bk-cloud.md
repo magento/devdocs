@@ -21,12 +21,12 @@ redirect_from:
   - /guides/v2.2/cloud/welcome/10000-ft-overview.html
 ---
 
-{{site.data.var.<ece>}}, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines {{site.data.var.<ee>}}, Cloud infrastructure hosting, with a few differences and added features including Git integration and key environments for development, staging, and live production.
+{{site.data.var.ece}}, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines {{site.data.var.ee}}, Cloud infrastructure hosting, with a few differences and added features including Git integration and key environments for development, staging, and live production.
 
 Code, test, and deploy across development, staging, and finally production environment for continuous integration of your store.
 
-## {{site.data.var.<ece>}} plans {#plans}
-{{site.data.var.<ece>}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}.
+## {{site.data.var.ece}} plans {#plans}
+{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}.
 
 <table>
     <tbody>
@@ -114,10 +114,10 @@ You should become familiar with the following technologies:
 * MySQL (including command-line interation)
 * Basic linux shell usage
 
-See [{{site.data.var.<ee>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html) for details and additional technologies.
+See [{{site.data.var.ee}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html) for details and additional technologies.
 
 ## Where do I get started? {#getstarted}
-If you have experience with {{site.data.var.<ee>}} 2, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.<ee>}} and {{site.data.var.<ece>}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, setitng up your local, continuous deployment across environments, and going live.
+If you have experience with {{site.data.var.ee}} 2, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, setitng up your local, continuous deployment across environments, and going live.
 
 If you are the Product Owner, you should complete these [onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) to give your technical staff and solution experts access.
 
@@ -156,8 +156,8 @@ If you would like to learn more about Magento 2, see the following resources:
 * **Project**: The project contains all of your code branches, environments from development to Production, and allows you to manage access and configurations. Initially only the Project Owner has access to the project. To gain access to the project, you must receive a user account, with permissions, and a Magento authentication key from the Project Owner.
 * **Project Owner**: Typically a "business user" in your business or finance organization, they are the point of contact with Magento regarding the account overall. They purchased the subscription plan, create the project, and add users to develop and deploy stores and sites.
 * **Active Environment**: An active environment is a fully accessible environment in the Integration enviornment. Each active environment provides a database, environment variables, routes, configurations, and one associated Git branch of code. You can access the Magento Admin and store to test as a merchant and customer for each of these environments, allowing you to develop custom code, add extensions, and integrate 3rd party systems in multiple environments for testing.
-* **Inactive Environment**: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for {{site.data.var.<ee>}}. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
-* **Branch**: {{site.data.var.<ee>}} is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.
+* **Inactive Environment**: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for {{site.data.var.ee}}. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
+* **Branch**: {{site.data.var.ee}} is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.
 * **Local**: Your local is a workspace for developing Magento code including added extensions and 3rd party integrations. The local is typically a Virtual Machine (VM) with an entire environment of software, packages, database, web server, and more prerequisites to support an installed Magento and cloned Git branches. We provide full details on how to [set up your local for Magento development]({{ page.baseurl }}cloud/before/before-workspace.html).
 * **Project Web Interface**: The Web Interface is a [console for accessing your project](https://accounts.magento.cloud){:target="_blank"}, user accounts, and your Integration enviornment. You can modify environment settings, environment variables, routes, and manage environments. Links (store URL, SSH, Git) are provided for the eight active environments through the active Git branches.
 

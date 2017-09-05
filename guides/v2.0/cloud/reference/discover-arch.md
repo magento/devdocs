@@ -10,9 +10,9 @@ version: 2.0
 github_link: cloud/reference/discover-arch.md
 ---
 
-{{site.data.var.<ece>}} Pro _projects_ provide three complete environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace. You can use any development and branching methodology you like.
+{{site.data.var.ece}} Pro _projects_ provide three complete environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace. You can use any development and branching methodology you like.
 
-All of your code is contained in the {{site.data.var.<ece>}} Starter project. The project is your Magento store code, extensions, and integrations in a `master` Git branch. Each project supports up to eight active Integration *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
+All of your code is contained in the {{site.data.var.ece}} Starter project. The project is your Magento store code, extensions, and integrations in a `master` Git branch. Each project supports up to eight active Integration *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
 
 Pro also provides a dedicated Infrastructure-as-a-Service (IaaS) for Production and Staging. You deploy the `master` Git branch to these dedicated environments. Production includes a three-node high availability infrastructure to ensure your site is always available. When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
 
@@ -54,7 +54,7 @@ We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-p
 We highly recommend fully testing in Staging prior to pushing to Production.
 
 ### Advantage of redundant hardware
-Rather than running a traditional active-passive master or master-slave setup, {{site.data.var.<ece>}} runs a triple-redundant multimaster where all three instances accept reads and writes. This architecture offers zero downtime when scaling, and also provides guaranteed transactional integrity.
+Rather than running a traditional active-passive master or master-slave setup, {{site.data.var.ece}} runs a triple-redundant multimaster where all three instances accept reads and writes. This architecture offers zero downtime when scaling, and also provides guaranteed transactional integrity.
 
 Because of our unique triple-redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to {% glossarytooltip 34f8f61d-2b48-4628-be06-aaa6e32ddc1f %}whitelist{% endglossarytooltip %} multiple IPs, so having more than one fixed IP isn't usually a problem.
 
@@ -80,15 +80,15 @@ The Production environment has three VMs behind an Elastic Load Balancer managed
 * Nginx web server speaking to PHP-FPM, one instance with multiple workers
 * GlusterFS file server for managing all static file deployments and syncs with four directories mounted: `var`, `pub/media`, `pub/static`, and `app/etc`
 * Redis server, one per VM with only one active and the other two as replicas
-* Elasticsearch for searching for {{site.data.var.<ece>}} 2.1 and later
-* Solr search is supported for {{site.data.var.<ece>}} 2.0
+* Elasticsearch for searching for {{site.data.var.ece}} 2.1 and later
+* Solr search is supported for {{site.data.var.ece}} 2.0
 * Galera database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
 
 The following figure shows the technology used in the Production environment:
 
 ![Production technology stack]({{ site.baseurl }}common/images/cloud_stack-diagram.png)
 
-{{site.data.var.<ee>}} seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
+{{site.data.var.ee}} seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
 In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="_blank"} to complement the vertical scaling provided by extra CPUs on the database level.
 
@@ -129,7 +129,7 @@ The following table details the differences:
 </table>
 
 ## Services {#cloud-arch-services}
-{{site.data.var.<ece>}} currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
+{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
 
 Each service runs in its own secure container. containers are managed together in the project. Some services are built-in, such as the following:
 
@@ -138,10 +138,10 @@ Each service runs in its own secure container. containers are managed together i
 *	Git
 *	Secure Shell (SSH)
 
-You can even have multiple applications running in the same project. Building a microservice oriented architecture with {{site.data.var.<ee>}} is as easy as managing a monolithic application.
+You can even have multiple applications running in the same project. Building a microservice oriented architecture with {{site.data.var.ee}} is as easy as managing a monolithic application.
 
 ## Software versions {#cloud-arch-software}
-{{site.data.var.<ece>}} uses:
+{{site.data.var.ece}} uses:
 
 *	Operating system: Debian GNU/Linux 8 (jessie)
 *	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
@@ -172,4 +172,4 @@ We walk you through the entire process from [deployment]({{page.baseurl}}cloud/l
 #### Related topics
 *	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-*	[{{site.data.var.<ee>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[{{site.data.var.ee}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
