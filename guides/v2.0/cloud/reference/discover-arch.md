@@ -82,7 +82,7 @@ The Production environment has three VMs behind an Elastic Load Balancer managed
 * Redis server, one per VM with only one active and the other two as replicas
 * Elasticsearch for searching for {{site.data.var.<ece>}} 2.1 and later
 * Solr search is supported for {{site.data.var.<ece>}} 2.0
-* Galara database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
+* Galera database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
 
 The following figure shows the technology used in the Production environment:
 
