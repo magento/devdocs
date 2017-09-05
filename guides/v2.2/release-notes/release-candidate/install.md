@@ -144,7 +144,7 @@ There are three Magento code repositories on GitHub where you can find release c
     <td>Publicly available</td>
 </tr>
 <tr>
-    <td><b>{{site.data.var.ce}}</b></td>
+    <td><b>{{site.data.var.ee}}</b></td>
     <td><a href="https://github.com/magento/magento2ee">https://github.com/magento/magento2ee</a></td>
     <td>2.2.0-release-candidate</td>
     <td>Available after contract has been signed</td>
