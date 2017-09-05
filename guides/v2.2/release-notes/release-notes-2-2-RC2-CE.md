@@ -105,7 +105,6 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 71349 -->* You can now configure an email return-path. (RC21)
 
-<!--- 71366 -->* Magento now sends email notification of the status changes to customers as expected. (RC23)
 
 
 

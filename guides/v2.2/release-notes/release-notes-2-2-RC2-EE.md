@@ -137,7 +137,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 65631 -->* Magento now sends email that provides updates on the status of RMA authorization. (RC21)
 
-<!--- 71366 -->* Magento now sends email notification of the status changes to customers as expected. (RC23)
 
 
 
@@ -192,7 +191,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71415 -->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)
 
-
+71
 
 ### Payment methods
 
