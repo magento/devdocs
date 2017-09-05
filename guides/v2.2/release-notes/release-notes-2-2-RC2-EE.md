@@ -14,9 +14,11 @@ github_link: release-notes/release-notes-2-2-RC2-EE.md
 {:toc}
 
 
-*Release date: August 25, 2017*
+*Release date: September 1, 2017*
 
-*Notes updated: August 25, 2017*
+*Notes updated: September 4, 2017*
+
+
 
 
 Magento Commerce 2.2.0 Release Candidate 2x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.

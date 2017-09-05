@@ -13,9 +13,9 @@ github_link: release-notes/release-notes-2-2-RC2-CE.md
 *	TOC
 {:toc}
 
-*Release date: August 25, 2017*
+*Release date: September 1, 2017*
 
-*Notes updated: August 25, 2017*
+*Notes updated: September 4, 2017*
 
 
 Magento Open Source 2.2.0 Release Candidate 2.x (formerly Community Edition) includes significant new features as well as many bug fixes.
