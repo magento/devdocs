@@ -63,6 +63,15 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 64351 -->* Magento now correctly generates URL rewrites when you save a product. (RC22)
 
+<!--- 67037 -->* The core_config_data.value of the core_config_data table is now populated consistently when you upgrade or freshly install upgrading to Magento 2.2. (RC23)
+
+
+<!--- 67092 -->* The salesrule_product_attribute table is now populated consistently when you upgrade or freshly install upgrading to Magento 2.2. (RC23)
+
+<!--- 71551 -->* Inconsistencies in the database tables that contain quote information no longer result when you upgrade from Magento 2.1.8 to 2.2. (RC23)
+
+
+
 
 
 ### Cart
@@ -96,10 +105,15 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 71349 -->* You can now configure an email return-path. (RC21)
 
+<!--- 71366 -->* Magento now sends email notification of the status changes to customers as expected. (RC23)
 
-### Import
+
+
+### Import and Export
 
 <!--- 60470 -->* Magento now successfully saves products with imported options. (RC22)
+
+<!--- 71013 -->* The export process now populates values in the  configurable variations column for configurable products  as expected. Previously, when exporting more than one product, the values for the configurable variations column for configurable products were not included. (RC23)
 
 
 
@@ -118,6 +132,12 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 <!--- 71030 -->* Magento now plays the sound from only the video you’ve selected. Previously, when you clicked on a video associated with a configurable product, Magento played the soundtrack from both the selected video and the video of its parent. (RC21)
 
 <!--- 71179 -->* Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account. (RC22)
+
+<!--- 70540 -->* You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product fin the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)
+
+<!--- 64085 -->* Fixed HTML inline style used when sending emails when implementing the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241) (RC23)
+
+<!--- 71415 -->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)
 
 
 
@@ -139,6 +159,10 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 <!--- 67283 -->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column. (RC2.0)
 
 <!--- 70861-->* Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)
+
+<!--- 71749-->* Magento now displays tracking information when selected for the second shipping label created for the DHL shipping method. Previously, when you tried to display a completed DHL  shipping label, Magento displayed an exception. (RC23)
+
+
 
 
 ### URL rewrites
