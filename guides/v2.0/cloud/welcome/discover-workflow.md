@@ -64,8 +64,8 @@ When you created your project, a `master` branch was cloned using the {{site.dat
 
 The format of the Git clone command is:
 
-    git fetch origin
-    git pull origin <environment ID>
+    git fetch magento
+    git pull magento <environment ID>
 
 You can create a developer branch from `master`, which is an active branch in Integration. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch. You will have up to seven active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.
 
