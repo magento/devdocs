@@ -134,7 +134,7 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 70540 -->* You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product in the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)
 
-<!--- 64085 -->* Fixed HTML inline style used when sending emails that implemen the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241) (RC23)
+<!--- 64085 -->* Fixed HTML inline style used when sending emails that implement the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241) (RC23)
 
 <!--- 71415 -->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)
 
@@ -144,7 +144,7 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 70500 -->* Fixed issue related to incorrect stock quantity calculation for bundle and configurable products during the place order flow with PayPal Express Checkout. (RC22)
 
-<!--- 71307 -->* Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had a FPT, Paypal Express reported an error when you tried to place the order. (RC22)
+<!--- 71307 -->* Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had an FPT, Paypal Express reported an error when you tried to place the order. (RC22)
 
 <!--- 71371 -->* Merchants can now accept payment on a Suspected Fraud order without Magento altering the amount in Total Paid. Previously,  when a merchant accepted payment for an order with a  status  of Suspected Fraud, Magento doubled the payment amount. (RC22)
 
