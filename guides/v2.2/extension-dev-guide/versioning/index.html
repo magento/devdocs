@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Versioning and compatibility | Magento 2 Developer Documentation</title>
+	<title>Versioning | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -315,7 +315,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/extension-dev-guide/prepare/dev-modtypes.html">Component types and versioning</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/extension-dev-guide/prepare/dev-modtypes.html">Component types</a></li>
 
 									
 
@@ -898,14 +898,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.2/extension-dev-guide/implement-bulk.html">Example bulk operations implementation (Enterprise Edition Only)</a></li>
 
 									
@@ -931,14 +923,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/extension-dev-guide/adapters.html">Adapters</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2  active "><a href="/guides/v2.2/extension-dev-guide/versioning/">Versioning and compatibility</a></li>
 
 									
 
@@ -1069,6 +1053,51 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/extension-dev-guide/security/non-secure-functions.html">Non-secure functions</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.2/extension-dev-guide/versioning/">Versioning</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/extension-dev-guide/versioning/dependencies.html">Module version dependencies</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/extension-dev-guide/versioning/codebase-changes.html">Codebase changes</a></li>
 
 									
 
@@ -1306,7 +1335,7 @@
 
           
 
-          <span property="name">Versioning and compatibility</span>
+          <span property="name">Versioning</span>
 
         
 
@@ -1329,7 +1358,7 @@
 
 	
 
-	<h1 class="page-heading">Versioning and compatibility</h1>
+	<h1 class="page-heading">Versioning</h1>
 
   
 
@@ -1337,726 +1366,179 @@
 </section>
 
 
-			<p>The Magento Platform and Magento <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">Module</span> releases have their own unique version number.</p>
+			<p>Magento software and Magento module releases have their own unique version number.</p>
 
-<p>A change in the version for the Magento Platform indicates a patch or feature release.
+<h2 id="software-version-format">Software version format</h2>
+
+<p>A change in the version for the Magento software indicates a patch or feature release.
 This version change does not reflect the nature of the changes in the code base.</p>
 
-<p>Magento Modules follow Magento’s Module Versioning Policy.
-The policy itself follows <a href="http://semver.org/" target="_blank">Semantic Versioning</a> standards.</p>
+<h2 id="module-version-format">Module version format</h2>
 
-<p>The <code class="highlighter-rouge">version</code> field in the module’s <a href="/guides/v2.2/extension-dev-guide/build/composer-integration.html">composer.json</a> file specifies the module version and consists of three numbers in the following format:</p>
+<p>The <code class="highlighter-rouge">version</code> field in a modules <a href="/guides/v2.2/extension-dev-guide/build/composer-integration.html"><code class="highlighter-rouge">composer.json</code></a> file specifies the module version and consists of three numbers in the following format:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>MAJOR.MINOR.PATCH
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">MAJOR.MINOR.PATCH</code></p>
 
-<h2 id="public-vs-private-code-changes">Public vs private code changes</h2>
+<p>The format follows <a href="http://semver.org/">Semantic Versioning</a> rules:</p>
 
-<p>A Magento Module’s codebase consists of public and private code.</p>
+<ul>
+  <li>The MAJOR version increments when incompatible API changes are made.</li>
+  <li>The MINOR version increments when backward-compatible functionality has been added.</li>
+  <li>The PATCH version increments when backward-compatible bug fixes occur.</li>
+</ul>
 
-<p>Changes in public code always trigger MINOR or MAJOR version bumps.</p>
+<h3 id="pre-release-versions">Pre-release versions</h3>
 
-<p>In most cases, modifications to private code will trigger PATCH version bumps.
-On rare occasions, if the Magento development team made significant modifications to private code, they will bump the MINOR or MAJOR version.</p>
+<p>For pre-release versions, the format is:</p>
 
-<p>Third-party modules should not use or modify private code.
-If this is unavoidable, you must depend on the patch version of the core modules used.</p>
-
-<h2 id="api-and-customization-points">API and customization points</h2>
-
-<p>Public code includes Public <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> (Application Programming Interface) and Public Customization Points.</p>
-
-<p>Modules call APIs to create new application scenarios.
-Modifications that break the API will trigger a bump in a module’s MAJOR version.</p>
-
-<p>Modules customize or replace Customization Points to customize existing application scenarios.
-Modifications that break Customization Points will trigger a bump in a module’s MINOR version.</p>
-
-<p>An interface or a <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> can represent both API and Customization Point.</p>
-
-<p>This policy allows third-party module developers to declare more granular dependencies depending on their module’s interaction with Magento modules.</p>
-
-<h3 id="version-dependencies">Version dependencies</h3>
-
-<p>The following table lists common use cases for API/customization points and the version dependency for each use case.
-Use this table to set the appropriate version dependency on a module based on how you use its API/customization points.</p>
+<p><code class="highlighter-rouge">MAJOR.MINOR.PATCH-&lt;alpha | beta | rc&gt;n</code></p>
 
 <table>
-  <thead>
-    <tr>
-      <th>API/Customization Point</th>
-      <th>Third-party Use Case</th>
-      <th>Version Dependency</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td><strong>PHP Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
-      <td>Inject in a constructor and/or call methods</td>
-      <td>MAJOR</td>
+      <td><code class="highlighter-rouge">alpha</code>, <code class="highlighter-rouge">beta</code> or <code class="highlighter-rouge">rc</code></td>
+      <td>Stability indicators, as described in the <a href="http://php.net/version_compare" target="_blank"><code class="highlighter-rouge">version_compare()</code></a> specification</td>
     </tr>
     <tr>
-      <td> </td>
-      <td>Implement the interface</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Re-define the interface preference in <code class="highlighter-rouge">di.xml</code></td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Add a plugin to the interface</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>PHP Class</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
-      <td>Inject in a constructor</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Extend from an abstract class</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Add a plugin to the class</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Configure class preference in <code class="highlighter-rouge">di.xml</code></td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Configure constructor argument in <code class="highlighter-rouge">di.xml</code></td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>JavaScript Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
-      <td>Inject in a constructor and/or call methods</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Implement the interface</td>
-      <td>MINOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Javascript class</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
-      <td>Inject in a constructor</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Extend from a class</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Override a method</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Subscribe to an <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span></td>
-      <td>MINOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Virtual Type</strong></td>
-      <td>Configure a virtual type in the <code class="highlighter-rouge">di.xml</code> file as a class dependency</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>URL Paths</strong></td>
-      <td>Link to from custom pages</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Console commands and their arguments</strong></td>
-      <td>Called in custom shell scripts</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Less variables and mixins</strong></td>
-      <td>Use in LESS declarations</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Message queue topics and data types</strong></td>
-      <td>Consume a topic/message</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Publish an existing topic</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Layout handles declared by modules</strong></td>
-      <td>Instance blocks added</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Blocks and containers moved/removed</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Static and dynamic events triggered by a component</strong></td>
-      <td>Subscribing to event</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>XML configuration type</strong></td>
-      <td>Provide additional configuration to the configuration type</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Extend existing XSD</td>
-      <td>MINOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Structure of System Configuration fields used by module</strong></td>
-      <td>Configure module through System Configuration values</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Read system configuration using config path</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Database structure</strong></td>
-      <td>Read/write to a table</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Add a column to a table</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Declare a foreign key on a module table</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Declare a trigger on a module table</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Read from table or write to table from a temporary table</td>
-      <td>PATCH</td>
+      <td><code class="highlighter-rouge">n</code></td>
+      <td>An increment number to distinguish releases of the non-stable versions</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="version-bump-scenarios">Version bump scenarios</h3>
+<p>Magento’s module versioning policy complies with the following specifications:</p>
 
-<p>This table lists code change scenarios and which version number it affects.
-Use this table to understand what changes Magento can make and what version number gets bumped for that change.</p>
+<ul>
+  <li><a href="http://semver.org/" target="_blank">Semantic Versioning</a></li>
+  <li><a href="https://getcomposer.org/doc/04-schema.md#version" target="_blank">Composer version specification</a></li>
+  <li><a href="http://php.net/version_compare" target="_blank">PHP <code class="highlighter-rouge">version_compare()</code> specification</a></li>
+</ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>API/Customization Point</th>
-      <th>Code Change</th>
-      <th>Version Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>PHP Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
-      <td>New interface</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New method added</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Interface removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Method removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New required method argument</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed the last argument for a method</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Changed a method signature (excluding last argument removal)</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>PHP Class</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
-      <td>New Class</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New method added</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Class removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Method removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New required method argument</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed a non-last argument</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New required constructor object argument</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New required constructor scalar argument (without pre-configured value)</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed a non-last constructor argument</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed a last constructor argument</td>
-      <td>PATCH</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Changed format of the returned method result</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>JavaScript Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
-      <td>New interface</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New method added</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Interface removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Method removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New required method argument</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Changed method signature</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Last argument added</td>
-      <td>MINOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Javascript class</strong> (marked with <code class="highlighter-rouge">@api</code></td>
-      <td>New class</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New method added</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Class removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Method removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New required method argument</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New last method argument</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New event</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Renamed event</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed event</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New event property</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Changed event property</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed event property</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Changed event ordering</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Virtual Type</strong></td>
-      <td>Virtual type removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Virtual type added</td>
-      <td>MINOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>URL Paths</strong></td>
-      <td>Path removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed/renamed a request parameter</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New required request parameter</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New optional request parameter</td>
-      <td>MINOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Console commands and their arguments</strong></td>
-      <td>Command removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New required argument</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed/renamed argument</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New command exit code</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New command</td>
-      <td>MINOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Less variables and mixins</strong></td>
-      <td>Removed variable</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span></td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New required mixin argument</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Message queue topics and data types</strong></td>
-      <td>Topic removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Topic arguments modified</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Consumer removed</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New topic published</td>
-      <td>MINOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Layout handles declared by modules</strong></td>
-      <td>New <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> page handle</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New container/block added to handle</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed/renamed container/block</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed layout handle</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Static and dynamic events triggered by a component</strong></td>
-      <td>Event argument removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Event removed</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Schema of configuration types introduced by module</strong></td>
-      <td>Schema file or configuration type renamed/removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Obligatory node/attribute added</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Node/attribute removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>New optional node/attribute added</td>
-      <td>MINOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Structure of System Configuration fields used by module</strong></td>
-      <td>Config path removed/renamed</td>
-      <td>MAJOR</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><strong>Database structure</strong></td>
-      <td>Table removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Table added</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Column removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Column added</td>
-      <td>MINOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Compatible changes in column configuration (soften column constraints: increase size, make optional)</td>
-      <td>PATCH</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Incompatible changes in column configuration</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Primary key column added/removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Added column to unique key</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Removed column from unique key</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Unique key added/removed</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Index added/changed</td>
-      <td>PATCH</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Foreign key added</td>
-      <td>MAJOR</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Temporary tables added/removed/changed</td>
-      <td>PATCH</td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="where-versioning-is-used">Where versioning is used</h2>
 
-<h2 id="core-module-dependency-rules">Core module dependency rules</h2>
+<p>The software version can be found in the source code of any <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span> or bundle, inside the <code class="highlighter-rouge">composer.json</code> file.</p>
 
-<p>Magento platform clients need notifications about breaking changes for their installed extensions and customizations when they upgrade their Magento installation.</p>
+<p>It can be declared as the version of the component:</p>
 
-<p>To achieve this, all third-party modules must obey the following rules:</p>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"acme/foo"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"version"</span><span class="err">:</span><span class="w"> </span><span class="mf">1.2</span><span class="err">.</span><span class="mi">0</span></code></pre></figure>
+
+<p>Or it can be used to declare a dependency on a particular version of a component:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"require"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"acme/foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2.*"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"acme/bar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.0"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h3 id="version-usage-example">Version usage example</h3>
+
+<p>The following example shows how versions are used with composer to install software and third-party extensions.</p>
+
+<p>This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.</p>
 
 <ol>
-  <li>You must specify the dependency on all modules listed in the ‘require’ section of your module’s <code class="highlighter-rouge">composer.json</code> file.</li>
-  <li>Do not specify a dependency on meta packages (e.g. ‘product-community-edition’).</li>
-  <li>Specify a module’s MAJOR and/or MINOR version number if you use any of that module’s customization points.</li>
-  <li>Specify a module’s MAJOR, MINOR, and PATCH versions if you call or customize a module’s private code.</li>
+<li>Start by cloning the master branch from github.
+
+
+  This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
+
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+</li>
+
+<li>Run the <code>composer update</code> command. Core modules a &amp; b are pulled down from the repository.</li>
+
+<li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
+
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+</li>
+
+<li>Run <code>composer update</code> and see the new extension downloaded.</li>
+
+<li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
+
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+</li>
+
+<li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy.
+
+   This step repeats with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
+</li>
+
+<li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
+
+   
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+</li>
+
+<li>Run <code>composer update</code> and notice that <code>acme-extension</code> is marked as incompatible. </li>
+
+<li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
+
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+</li>
+
+<li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
+
 </ol>
 
-<h2 id="deprecation">Deprecation</h2>
+<h2 id="related-topics">Related Topics</h2>
 
-<p>Marking public code with <code class="highlighter-rouge">@deprecated</code> on a MINOR release indicates that Magento plans to remove that code in a future MINOR release.</p>
+<p><a href="/guides/v2.2/extension-dev-guide/versioning/dependencies.html">Module version dependencies</a> - Information about how your module can depend on the version of other modules.</p>
 
-<p>When Magento deprecates the API or customization point in favor of a new implementation, the <code class="highlighter-rouge">@see</code> annotation points to the new implementation.</p>
-
-<p><strong>Deprecated Code Example</strong></p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
- * @deprecated since 2.1.0
- * @see \Magento\Framework\Model\ResourceModel\Db\AbstractDb::save()
- */
-public function save()
-{
-    // ...
-}</code></pre></figure>
+<p><a href="/guides/v2.2/extension-dev-guide/versioning/codebase-changes.html">Codebase changes</a> - Information on how changes in a Magento module’s codebase affect versions.</p>
 
 
 		</div>
