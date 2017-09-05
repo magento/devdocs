@@ -99,7 +99,7 @@ And so on until you have your store fully built, configured, and ready to go liv
 ![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-pro-push-code.png)
 
 ### Configure store {#configure-store}
-At any time, you should start configuring your store. For the best information on configurations, we recommend reviewing {{site.data.var.<ee>}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
+At any time, you should start configuring your store. For the best information on configurations, we recommend reviewing {{site.data.var.ee}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
 
 * [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html){:target="_blank"} for store admin access, name, languages, currencies, branding, sites, store views and more
 * [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html){:target="_blank"} for your look and feel of the site and stores including CSS and layouts

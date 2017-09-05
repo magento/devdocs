@@ -52,7 +52,7 @@ We hope you have a good working knowledge of Git. Need some help? Don't worry, w
 To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="_blank"} on your local.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, {{site.data.var.<ee>}} adds two additional requirements:</p>
+  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, {{site.data.var.ee}} adds two additional requirements:</p>
   <ul><li>The <code>/</code> character isn't allowed.</li>
   	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
 </div>
@@ -70,7 +70,7 @@ To get started as a developer in a {{site.data.var.ece}} project, you need to se
 We walk you through everything you need to do and know.
 
 ## Testing configurations {#cloud-req-test}
-Before you test any custom code in your local {{site.data.var.<ee>}} environment, you must do all of the following:
+Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *	For Pro, set the database [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html#database)
 *	Test with the correct file permissions in [PRODUCTION mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
@@ -105,7 +105,7 @@ To work with and deploy stores, you need the following:
 *	[Project invitiation]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct##cloud-owner-admins) for contributing developers from the Account Owner or a super user
 *	Magento [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
 
-Your {{site.data.var.<ee>}} account must *authenticate* using any of the following:
+Your {{site.data.var.ee}} account must *authenticate* using any of the following:
 
 *	GitHub
 *	Bitbucket
