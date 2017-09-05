@@ -6,8 +6,8 @@ title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
 menu_order: 92
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: manageconfig
+level3_menu_node:
+level3_subgroup:
 version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---

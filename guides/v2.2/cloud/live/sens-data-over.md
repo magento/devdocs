@@ -6,25 +6,31 @@ title: Configuration management
 menu_title: Configuration management
 menu_order:  91
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: manageconfig
+level3_menu_node:
+level3_subgroup:
 version: 2.2
 github_link: cloud/live/sens-data-over.md
 ---
 
-In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4 and later, we provide the following improvements:
+Configuration management, or [Pipeline Deployment]({{ page.baseurl }}config-guide/deployment/pipeline/), provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments to keep consistent settings and reduce downtime.
 
-*	Better way to [manage the configuration](#cloud-confman-over) so your integration, staging, and production systems stay in synchronization with each other more easily.
+For extensive technical information, see [Pipeline Deployment]({{ page.baseurl }}config-guide/deployment/pipeline/). This section provides specific walk-throughs for {{site.data.var.ece}} Starter and Pro environments.
 
-	<!-- Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only. -->
-*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by reducing the time required for static file deployment.
+It provides the following benefits:
+
+*	Better way to [manage and synchronize](#cloud-confman-over) the configuration across your development or Integration, Staging, and Production environments.
+*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build process.
+*	Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.
+These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
 </div>
 
+## Feature availability {#release}
+Configuration management and Pipeline Deployment in {{site.data.var.ece}} 2.2 differs from previous releases, with additional commands and refinements.
+
 ### Managing the configuration {#cloud-confman-over}
-We <!-- help you protect sensitive settings and  -->make it easy to manage system-specific settings as follows:
+We help you protect sensitive settings and make it easy to manage system-specific settings as follows:
 
 <!-- *	A new method to manage sensitive settings (such as {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} passwords).
  -->
@@ -48,11 +54,6 @@ In other words, Cloud's build phase is less time-consuming than deployment. Ther
 
 ### Configuration settings locked in the Magento Admin {#cloud-confman-locked-over}
 Settings in `config.php` are not editable in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. This also helps keep your settings consistent across the integration, staging, and production systems.
-
-### How to get `magento-cloud-configuration` release 101.4.1
-Magento Enterprise Cloud Edition periodically provides patch releases in components like `magento-cloud-configuration`.
-
-To test and apply the patch, see [Test general patches]({{ page.baseurl }}cloud/project/project-patch.html#cloud-patch-gen).
 
 ## Manage your configuration <!-- and protect sensitive settings --> {#cloud-config-manage-sens-over}
 Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.

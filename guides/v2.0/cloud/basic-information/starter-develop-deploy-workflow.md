@@ -50,7 +50,7 @@ The full process involves:
 
 * [Clone and branch](#clone-branch) from Master for Staging and development branches
 * [Develop code](#dev-code) and install extensions locally in a branch
-* [Configure](#configure-store) your store settings
+* [Configure](#configure-store) your store and extension settings
 * [Generate configuration](#config-management) management files
 * [Push code](#push-code) and configuration to build and deploy to an environment
 
@@ -68,8 +68,8 @@ When you created your project, a `master` branch was cloned using the {{site.dat
 
 The format of the Git clone command is:
 
-    git fetch magento
-    git pull magento <environment ID>
+    git fetch origin
+    git pull origin <environment ID>
 
 The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production `master` branch.
 
@@ -95,17 +95,21 @@ We recommend using a branching strategy with your development work. Using one br
 
 * Add a few extensions and configure them with your first branch
 * Push this code, test, and merge to Staging then Production
-* Fully configure your store, services in `services.yaml`, and add a theme
+* Fully configure your services in `services.yaml` and add a theme
 * Push this code, test, and merge to Staging then Production
 * Integrate with a 3rd party service
 * Push this code, test, and merge to Staging then Production
+
+Do not complete any configurations on your local yet.
 
 And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
 
 ![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-push-code.png)
 
 ### Configure store {#configure-store}
-At any time, you should start configuring your store. For the best information on configurations, we recommend reviewing {{site.data.var.ee}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
+When you are ready to configure your store, have all code pushed to your Integration environment and access the Magento Admin. You should fully configure all store settings in the Integration environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.
+
+For the best information on configurations, we recommend reviewing {{site.data.var.ee}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
 
 * [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html){:target="_blank"} for store admin access, name, languages, currencies, branding, sites, store views and more
 * [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html){:target="_blank"} for your look and feel of the site and stores including CSS and layouts
@@ -119,7 +123,7 @@ Now you need to get these settings into your code. We have a helpful command to 
 ### Generate configuration management files {#config-management}
 If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or Excel all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
 
-{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for {{site.data.var.ece}} 2.1.4 and later.
+{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later**.
 
 * `php bin/magento magento-cloud:scd-dump`: Recommended. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
@@ -129,7 +133,7 @@ The generated file is located in `app/etc/`:
 * For 2.1.4 and later: `config.app.php`
 * For 2.2 and later: `config.php`
 
-You will add this file to your branch repository and include it with every push. We provide details on how to manage this file and setting.
+You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
 
 **Important notes** on Configuration Management:
 
@@ -140,16 +144,18 @@ You will add this file to your branch repository and include it with every push.
 
 ![Generate configuration management file]({{ site.baseurl }}common/images/cloud_workflow-config-mgmt.png)
 
-An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called `env.php` in `app/etc/`. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository.
+An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called `env.php` in `app/etc/`. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository. You can also create environment variables with CLI commands in all {{site.data.var.ece}} versions.
 
 ![Environment variables generate]({{ site.baseurl }}common/images/cloud_workflow-env-variables.png)
 
+For more information, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).
+
 ### Push code and test {#push-code}
-At this point, you should have a developed code branch with a configuration file (`config.app.php` or `config.php`) ready to push and test.
+At this point, you should have a developed code branch with a configuration file (`config.app.php` or `config.php`) ready to test.
 
-Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploys it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
+Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
 
-You can directly access this environment with a store URL, Magento Admin URL, and SSH to enter any needed CLI commands. These environments include a web server, database, and configured services.
+You can directly access this environment with a store URL, Magento Admin URL, and SSH to enter any needed CLI commands. These environments include a web server, database, and configured services. When ready, you can start deploying and testing in Staging.
 
 For more information, see [Deployment workflow](#deploy).
 
