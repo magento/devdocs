@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>GitHub | Magento 2 Developer Documentation</title>
+	<title>Add sitemap and robots.txt | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/project/project-integrate-github.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/trouble/robots-sitemap.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-integrate-github.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/robots-sitemap.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-integrate-github.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/robots-sitemap.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/project/project-integrate-github.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/trouble/robots-sitemap.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -355,7 +355,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/cloud/project/project-integrate-github.html">GitHub</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-integrate-github.html">GitHub</a></li>
 
 									
 
@@ -1258,7 +1258,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/trouble/robots-sitemap.html">Add sitemap and robots.txt</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/cloud/trouble/robots-sitemap.html">Add sitemap and robots.txt</a></li>
 
 									
 
@@ -1628,7 +1628,7 @@
 
           
 
-          <span property="name">GitHub</span>
+          <span property="name">Add sitemap and robots.txt</span>
 
         
 
@@ -1651,7 +1651,7 @@
 
 	
 
-	<h1 class="page-heading">GitHub</h1>
+	<h1 class="page-heading">Add sitemap and robots.txt</h1>
 
   
 
@@ -1659,229 +1659,54 @@
 </section>
 
 
-			<h2 id="cloud-int-gh-about">About the GitHub integration</h2>
-<p>The GitHub integration enables you to manage your Magento Commerce (Cloud) environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with Magento Commerce. Therefore, before you begin, make sure your project and environments are in a GitHub repository.</p>
+			<p>When creating and adding your sitemap and robots.txt to your store, you may run into issues due to the read-only environment. You may receive errors such as the following:</p>
 
-<p>We strongly recommend you use a <em>private</em> GitHub repository.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>The path ".:///app/app/" is not writable.
+Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
+</code></pre>
+</div>
 
-<p>This integration enables you to:</p>
+<p>To best add these files, please review the steps below.</p>
+
+<h2 id="generate">Generate sitemap and robots</h2>
+<p>Access an environment fully configured for your site:</p>
 
 <ul>
-  <li>Create a new environment when you create a branch or opening a pull request on GitHub.</li>
-  <li>Rebuild the environment when you push new code to GitHub.</li>
-  <li>Delete the environment when you merge a pull request.</li>
+  <li>For Starter, access an active development branch</li>
+  <li>For Pro, access your <code class="highlighter-rouge">master</code> environment in Integration</li>
 </ul>
 
-<p>To set up the integration, you must obtain a GitHub token and a webhook. The following sections walk you through the process.</p>
-
-<h2 id="cloud-int-gh-token">Generate a GitHub token</h2>
-<p>To perform this task, you must be a member of a group that can write to the GitHub repository. (In other words, you must be able to push to the repository.)</p>
-
-<p>To generate a token:</p>
+<p>Generate your <code class="highlighter-rouge">sitemap.xml</code> and <code class="highlighter-rouge">robots.txt</code>:</p>
 
 <ol>
-  <li>Log in to GitHub.</li>
-  <li>In your personal settings, on the <strong>Personal access tokens</strong> tab page, click <a href="https://github.com/settings/tokens/new" target="_blank"><strong>Generate new token</strong></a>.</li>
-  <li>In the <strong>Token description</strong> field, enter a meaningful name.</li>
-  <li>
-    <p>Select check boxes corresponding to how you intend to use the token:</p>
-
-    <ul>
-      <li>To integrate with public repositories, select <strong>public_repo</strong></li>
-      <li>To integrate with your personal, private repositories, select <strong>repo</strong></li>
-      <li>To integrate with your organization’s private repositories, select <strong>repo</strong> and <strong>read:org</strong></li>
-    </ul>
-
-    <p>The following figure shows an example of creating a token that can be used to integrate with a private repository to which you have write access:</p>
-
-    <p><img src="/common/images/cloud_github-token.png" alt="Create a GitHub token for a private repository" width="600px" /></p>
-  </li>
-  <li>Click <strong>Generate token</strong>.</li>
-  <li>
-    <p>Copy the token to the clipboard.</p>
-
-    <p><img src="/common/images/cloud_github-token-copy.png" alt="Create a GitHub token for a private repository" width="600px" /></p>
-  </li>
+  <li>Log into the Magento Admin.</li>
+  <li>Navigate to <strong>Marketing</strong> &gt; <strong>Site Map</strong>.</li>
+  <li>Click <strong>Add Sitemap</strong> to generate a new site map. The file saves as <code class="highlighter-rouge">sitemap.xml</code>.</li>
+  <li>Navigate to Stores &gt; Configuration &gt; Design.</li>
+  <li>Select options and update <code class="highlighter-rouge">robots.txt</code>.</li>
+  <li>Save your configuration.</li>
 </ol>
 
-<h2 id="cloud-int-gh-enable">Enable the GitHub integration</h2>
-<p>This section discusses how to enable the GitHub integration.</p>
+<p>For additional information, see <a href="http://docs.magento.com/m2/ee/user_guide/marketing/sitemap-xml.html" target="_blank">Using a Sitemap</a> and <a href="http://docs.magento.com/m2/ee/user_guide/marketing/search-engine-robots.html" target="_blank">Search Engine Robots</a>.</p>
 
-<h3 id="get-started">Get started</h3>
-<p>To get started:</p>
+<h2 id="files">Add files to Git</h2>
+<p>If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use <code class="highlighter-rouge">rsync</code> or  <code class="highlighter-rouge">scd</code> through a terminal. If you completed the commands on your local, move the files to the correct location.</p>
 
-<div>
+<p>Move and add the files to your Git branch:</p>
 
-  <ol>
-    <li>Log in to your local development system, or switch to, the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-    <li>Change to a directory to which the Magento file system owner has write access.</li>
-    <li>
-      <p>Enter the following command in a terminal to log in to your project:</p>
+<ol>
+  <li>Move the files into the <code class="highlighter-rouge">/pub/media/</code> directory. This is a writable directory for .</li>
+  <li>
+    <p>Add the files to Git. For example:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
-</code></pre>
-      </div>
-    </li>
-    <li>
-      <p>List your projects. With the project ID, you can complete additional commands.</p>
+    <p>git add pub/media/sitemap.xml &amp;&amp; git commit -m “Add sitemap” &amp;&amp; git push origin master
+ git add pub/media/robots.txt &amp;&amp; git commit -m “Add robots” &amp;&amp; git push origin master</p>
+  </li>
+  <li>Push and merge your changes in development, Staging, and Production environments.</li>
+  <li>Enter a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">ticket with Support</a> to have redirects added for <code class="highlighter-rouge">sitemap.xml</code> and <code class="highlighter-rouge">robots.txt</code>.</li>
+</ol>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
-</code></pre>
-      </div>
-    </li>
-    <li>
-      <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
-</code></pre>
-      </div>
-    </li>
-    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
-    <li>
-      <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
-</code></pre>
-      </div>
-
-      <div class="bs-callout bs-callout-info" id="info">
-  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
-</div>
-    </li>
-    <li>
-      <p>Fetch origin branches to get the latest code:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
-</code></pre>
-      </div>
-    </li>
-    <li>
-      <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
-</code></pre>
-      </div>
-
-      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
-    </li>
-    <li>
-      <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
-</code></pre>
-      </div>
-    </li>
-    <li>
-      <p>Create a <a href="/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-      </div>
-    </li>
-  </ol>
-
-  <h3 id="enable-the-integration">Enable the integration</h3>
-  <p>To enable the GitHub integration for your environment:</p>
-
-  <ol>
-    <li>
-      <p>Enable the integration:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=&lt;project ID&gt; --token=&lt;your GitHub token&gt; {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
-</code></pre>
-      </div>
-
-      <p>where</p>
-
-      <p><code class="highlighter-rouge">&lt;project ID&gt;</code> is your Magento Commerce (Cloud) project ID</p>
-
-      <p><code class="highlighter-rouge">&lt;your GitHub token&gt;</code> is the token you got in the preceding section</p>
-
-      <p><code class="highlighter-rouge">--repository=USER/REPOSITORY</code> is how you specify your personal, private GitHub repository</p>
-
-      <p><code class="highlighter-rouge">--repository=ORGANIZATION/REPOSITORY</code> is how you specify an organization repository</p>
-
-      <p><code class="highlighter-rouge">--build-pull-requests</code> is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (<code class="highlighter-rouge">true</code> by default)</p>
-
-      <p><code class="highlighter-rouge">--fetch-branches</code> is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (<code class="highlighter-rouge">true</code> by default)</p>
-
-      <p><strong>Example 1</strong>: Enable the GitHub integration for a personal, private repository:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=myUserName/myrepo
-</code></pre>
-      </div>
-
-      <p><strong>Example 2</strong>: Enable the GitHub integration for an organization repository:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=Magento/teamrepo
-</code></pre>
-      </div>
-    </li>
-    <li>
-      <p>Enter the required information when prompted.</p>
-
-      <p>Sample output:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>Created integration wp2f2thlmxwcg (type: github)
-Repository: myUserName/myrepo
-Build PRs: yes
-Fetch branches: yes
-Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
-</code></pre>
-      </div>
-    </li>
-    <li>
-      <p>Copy the Payload <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> displayed by the command and continue with the next section.</p>
-    </li>
-  </ol>
-
-  <h2 id="cloud-int-gh-hook">Add the webhook</h2>
-  <p>To add the webhook to your GitHub repository:</p>
-
-  <ol>
-    <li>
-      <p>In your GitHub repository, click <strong>Settings</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_github-acct-settings.png" alt="Go to your GitHub's account settings" width="650px" /></p>
-    </li>
-    <li>In the left navigation bar, click <strong>Webhooks &amp; services</strong>.</li>
-    <li>
-      <p>In the right pane, click <strong>Add webhook</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_github-acct-webhook.png" alt="Add the webhook to your account" width="650px" /></p>
-    </li>
-    <li>
-      <p>Enter the following information:</p>
-
-      <ul>
-        <li><strong>Payload URL</strong>: Enter the URL displayed by the command in the preceding section.</li>
-        <li><strong>Content type</strong>: Click <strong>application/json</strong></li>
-        <li><strong>Secret</strong>: Enter a verification secret.</li>
-        <li><strong>Which events would you like to trigger this webhook?</strong>: Click <strong>Send me everything</strong></li>
-        <li>Select the <strong>Active</strong> check box.</li>
-      </ul>
-
-      <p>The following figure shows an example:</p>
-
-      <p><img src="/common/images/cloud_github-acct-webhook2.png" alt="Add the webhook to your account" width="650px" /></p>
-    </li>
-    <li>Click <strong>Add webhook</strong></li>
-  </ol>
-
-  <h2 id="cloud-int-gh-verify">Verify it works</h2>
-  <p>To verify the integration works:</p>
-
-  <ol>
-    <li>Make a change in the GitHub repository with which you integrated.</li>
-    <li>In the Magento Cloud CLI, pull the change to an environment.</li>
-  </ol>
-
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.2/cloud/project/project-start.html">Get started with a project</a></li>
-    <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  </ul>
-</div>
+<p>When the redirects are completed, keep these files updated in that file location for your Git branches during deployment.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1892,14 +1717,14 @@ Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-integrate-github.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/robots-sitemap.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/project/project-integrate-github.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/trouble/robots-sitemap.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

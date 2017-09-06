@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure routes | Magento 2 Developer Documentation</title>
+	<title>Add sitemap and robots.txt | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/project/project-routes-parent.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/trouble/robots-sitemap.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-routes-parent.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/robots-sitemap.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-routes-parent.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/robots-sitemap.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/project/project-routes-parent.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/trouble/robots-sitemap.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -692,7 +692,7 @@
 
 									
 
-										<li class="level3Parent  active " id="routes"><a href="#">Configure routes</a>
+										<li class="level3Parent " id="routes"><a href="#">Configure routes</a>
 
 
 									
@@ -1307,7 +1307,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/robots-sitemap.html">Add sitemap and robots.txt</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/trouble/robots-sitemap.html">Add sitemap and robots.txt</a></li>
 
 									
 
@@ -1685,7 +1685,7 @@
 
           
 
-          <span property="name">Configure routes</span>
+          <span property="name">Add sitemap and robots.txt</span>
 
         
 
@@ -1708,7 +1708,7 @@
 
 	
 
-	<h1 class="page-heading">Configure routes</h1>
+	<h1 class="page-heading">Add sitemap and robots.txt</h1>
 
   
 
@@ -1716,7 +1716,54 @@
 </section>
 
 
-			
+			<p>When creating and adding your sitemap and robots.txt to your store, you may run into issues due to the read-only environment. You may receive errors such as the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>The path ".:///app/app/" is not writable.
+Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
+</code></pre>
+</div>
+
+<p>To best add these files, please review the steps below.</p>
+
+<h2 id="generate">Generate sitemap and robots</h2>
+<p>Access an environment fully configured for your site:</p>
+
+<ul>
+  <li>For Starter, access an active development branch</li>
+  <li>For Pro, access your <code class="highlighter-rouge">master</code> environment in Integration</li>
+</ul>
+
+<p>Generate your <code class="highlighter-rouge">sitemap.xml</code> and <code class="highlighter-rouge">robots.txt</code>:</p>
+
+<ol>
+  <li>Log into the Magento Admin.</li>
+  <li>Navigate to <strong>Marketing</strong> &gt; <strong>Site Map</strong>.</li>
+  <li>Click <strong>Add Sitemap</strong> to generate a new site map. The file saves as <code class="highlighter-rouge">sitemap.xml</code>.</li>
+  <li>Navigate to Stores &gt; Configuration &gt; Design.</li>
+  <li>Select options and update <code class="highlighter-rouge">robots.txt</code>.</li>
+  <li>Save your configuration.</li>
+</ol>
+
+<p>For additional information, see <a href="http://docs.magento.com/m2/ee/user_guide/marketing/sitemap-xml.html" target="_blank">Using a Sitemap</a> and <a href="http://docs.magento.com/m2/ee/user_guide/marketing/search-engine-robots.html" target="_blank">Search Engine Robots</a>.</p>
+
+<h2 id="files">Add files to Git</h2>
+<p>If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use <code class="highlighter-rouge">rsync</code> or  <code class="highlighter-rouge">scd</code> through a terminal. If you completed the commands on your local, move the files to the correct location.</p>
+
+<p>Move and add the files to your Git branch:</p>
+
+<ol>
+  <li>Move the files into the <code class="highlighter-rouge">/pub/media/</code> directory. This is a writable directory for .</li>
+  <li>
+    <p>Add the files to Git. For example:</p>
+
+    <p>git add pub/media/sitemap.xml &amp;&amp; git commit -m “Add sitemap” &amp;&amp; git push origin master
+ git add pub/media/robots.txt &amp;&amp; git commit -m “Add robots” &amp;&amp; git push origin master</p>
+  </li>
+  <li>Push and merge your changes in development, Staging, and Production environments.</li>
+  <li>Enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">ticket with Support</a> to have redirects added for <code class="highlighter-rouge">sitemap.xml</code> and <code class="highlighter-rouge">robots.txt</code>.</li>
+</ol>
+
+<p>When the redirects are completed, keep these files updated in that file location for your Git branches during deployment.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1727,14 +1774,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-routes-parent.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/robots-sitemap.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/project/project-routes-parent.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/trouble/robots-sitemap.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
