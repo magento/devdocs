@@ -111,7 +111,7 @@ You should become familiar with the following technologies:
 * [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
 *	[Composer](https://getcomposer.org/doc){:target="_blank"}
 *	[Secure Shell]({{page.baseurl}}cloud/env/environments-ssh.html) (SSH)
-* MySQL (including command-line interation)
+* MySQL (including command-line interaction)
 * Basic linux shell usage
 
 See [{{site.data.var.ee}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html) for details and additional technologies.
