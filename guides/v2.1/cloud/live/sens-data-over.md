@@ -41,9 +41,7 @@ For {{site.data.var.ece}}, we **do not recommend** app:config:dump as this comma
 
 Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments.
 
-By using the `scd-dump` command, you can configure only the settings you want copied across all environments. After merged, you can configure additional settings in Staging and Production. For sensitive configurations, you can also add those settings to environment variables. For example, you may want to add different PayPal merchant account credentials for Staging (sandbox) and Production (live).
-
-You can also modify the configuration file in each environment.
+By using the `scd-dump` command, you can configure only the settings you want copied across all environments. After you merge the code, you can configure additional settings in Staging and Production. For sensitive configurations, you can also add those settings to environment variables. For example, you may want to add different PayPal merchant account credentials for Staging (sandbox) and Production (live).
 
 ### Configuration data {#data}
 System settings refer to the configurations in the Magento Admin in **Stores** > Settings > **Configuration**. Depending on the command used, all or just modified system configurations save to the file.
@@ -92,12 +90,28 @@ The following table shows the configuration settings affected by the `bin/magent
 ## Recommended procedure to manage your settings {#cloud-config-specific-recomm}
 Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions. We can help you manage those settings more easily. For example, you may want to change the default locale and a store's static file optimization settings, with different settings in Staging and Production. Instead of making these changes in every environment, use `config.local.php`.
 
-We strongly recommend using `scd-dump` to generate `config.local.php`. This file includes only the settings you configured without locking all default values.
+We **strongly recommend** using `scd-dump` to generate `config.local.php`. This file includes only the settings you configured without locking all default values. It also ensures all extensions used in Staging and Production do not break due to read-only configurations, especially Fastly.
 
 To fully understand the process, please see [our extensive example]({{ page.baseurl }}cloud/live/sens-data-initial.html).
 
-1. Access the Magento Admin in the development (Starter) or Integration (Pro) environment. If you need a link, see the Project Web Interface and select a branch.
-2. Configure your store settings in that environment, not on your local.
+The following figure shows a high-level overview of this process for Starter plan environments:
+
+![Overview of Starter configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-starter-2-1.png){:width="650px"}
+
+The following figure shows a high-level overview of this process for Pro plan environments:
+
+![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png){:width="650px"}
+
+<table>
+<tr>
+<td style="width:50px">Step 1</td>
+<td>Complete all configurations for your stores in the Admin console.</td>
+<td>
+1. Log into the Magento Adming for one of the environments:
+
+  * Starter: An active development branch
+  * Pro: The `master` environment in Integration
+2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.
 3. Open a terminal on your local and use an SSH command to generate `app/etc/config.local.php` on the environment:
 
     ssh -k <SSH URL> "<Command>"
@@ -105,63 +119,46 @@ To fully understand the process, please see [our extensive example]({{ page.base
   For example for Pro, to run the `scd-dump` on Integration `master`:
 
     ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
-
-4. Transfer the file to your local:
+</td>
+</tr>
+<tr>
+<td style="width:50px">Step 2</td>
+<td>Push `config.local.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.</td>
+<td>
+1.	Transfer `config.local.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 
     rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
-5. Add and push this file to your Git branch:
-
-    git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
-
-Merge the branch and deploy to Staging and Production environments. Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed. If you used `app:config:dump`, all configuration values are displayed and read-only.
-
-
-
-
-
-
-
-
-The following figure shows a high-level overview of this process.
-
-![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="650px"}
-
-Our recommended method relies on the following important points:
-
-*	Complete all of your configuration in your Integration `master` branch. The `master` branch is your "source of truth" for configuration management.
-*	Transfer those settings using `config.local.php` to the other systems (local, staging, and production).
-
-To generate and deploy:
-
-**Step A**. Complete all configurations for your stores in the Admin console.
-
-1. Log into your Integration environment for the `master` branch.
-2. Create and configure stores.
-3. Generate `config.local.php` on your Integration environment using the `magento-cloud:scd-dump` command. The command which populates `config.local.php` with only the configuration values necessary for static content deployment.
-
-**Step B**. Push `config.local.php` to the Integration `master` branch. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.
-
-1.	Transfer `config.local.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 2.	Add and push `config.local.php` to the Git `master` branch.
 
-**Step C**. When you push to the Git branch, Magento Enterprise Cloud Edition automatically deploys the settings to your Integration environment for the `master` branch. This file is included in any branches from Master, transfering the locked configurations into those environments.
+    git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
+</td>
+</tr>
+<tr>
+<td style="width:50px">Step 3 & 4</td>
+<td>Push the Git branch to Staging and Production and complete configurations.
+Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.</td>
+<td>For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.
 
-**Step D**. If you need to change any configuration settings on the Integration environment, we recommend completing them in the Integration environment for the `master` branch. You need to take a few extra steps because all Integration environments are read-only.
+For Pro, when you push to the Git branch, the Integration `master` environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
+</td>
+</tr>
+</table>
 
-To complete these changes:
+## Update configuations {#update}
+If you need to change any configuration settings `config.local.php`, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration `master` environment.
 
-1.	Delete `config.local.php` on your Integration environment.
+If you only need to make a small change, you can edit `config.local.php` in a local Git branch and redeploy across environments.
 
-	You must delete the file to change settings. The stored configurations in the file are blocked from editing in the Admin console. For example, if you want to change a store name, you can't edit it until this file is removed.
+To complete extensive changes:
+
+1.	Delete `config.local.php` in your development or Integration environment.
+
+	You must delete the file to change settings. All of your configurations still exist in the database, displaying as editable in your Magento Admin. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can't edit it until this file is removed.
 2.	Make configuration changes in the Admin on the Integration environment.
-3.	Re-create `config.local.php` and repeat Step B.
-
-After you've configured the Integration environment and tested it thoroughly, see [Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-over.html) to start the process of migrating to a staging or production system.
+3.	Repeat the process to re-create `config.local.php` and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those enviornment specific settings.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-We assume system settings are the same in Staging and Production environments. <!-- Only sensitive configuration values should change in those systems and you manage them using environment variables. -->
-
-If you choose to use different system settings in Staging and Production, you can manually edit `config.local.php`. We highly recommend making any configuration changes in Integration to deploy into Staging and Production.
+While you can manually edit `config.local.php` in Staging and Production, we don't recommend it. The file helps keep consistent configurations across your entire environment.
 </div>
 
 #### Next step
