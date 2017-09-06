@@ -40,7 +40,7 @@ Content should be gender neutral. To avoid “his” or “her” pronouns, chan
 
 To ensure that users with special needs, including the use of screen readers, can easily access your content [follow this summary of tips](https://www.w3.org/WAI/WCAG20/glance/) to meet Web Content Accessibility Guidelines (WCAG) 2.0 standards.
 
-Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php]), Magento Admin content should score above 50 (high-school level).
+Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php), Magento Admin content should score above 50 (high-school level).
 
 **Use correct terms and content style.**
 

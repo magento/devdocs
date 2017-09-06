@@ -23,7 +23,7 @@ Typically icons should represent a single, unique concept and be used consistent
 
 <h2 id="icon-library">Icon Library</h2>
 
-In the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} UI icons have a simple, flat, single-color, 2D, style. This style prevents the loss of detail at smaller sizes and makes the shapes easier to comprehend.
+In the Magento Admin, UI icons have a simple, flat, single-color, 2D, style. This style prevents the loss of detail at smaller sizes and makes the shapes easier to comprehend.
 
 <a href="src/Magento-icon-library.ai"> Download Icon Library .ai file</a><br>
 <a href="src/magento_icon_library.sketch"> Download Icon Library Sketch file</a>
