@@ -29,7 +29,7 @@ The merchant and a buyer representing a company can negotiate the price of an or
 
 ## B2B Modules
 
-Magento B2B is a set of modules that is installed on top of the Magento 2.x {{site.data.var.ee}}. The following table lists the modules provided with B2B.
+{{site.data.var.b2b}} is a set of modules that is installed on top of {{site.data.var.ee}}. The following table lists the modules provided with B2B.
 
 Name | Description | WebAPI enabled?
 --- | --- | ---
