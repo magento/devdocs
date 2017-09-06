@@ -23,7 +23,7 @@ Access an environment fully configured for your site:
 * For Starter, access an active development branch
 * For Pro, access your `master` environment in Integration
 
-Generate your sitemap.xml and robots.txt:
+Generate your `sitemap.xml` and `robots.txt`:
 
 1. Log into the Magento Admin.
 2. Navigate to **Marketing** > **Site Map**.
