@@ -34,7 +34,7 @@ The generated Swagger documentation provides the capability to test REST API req
 
 You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to `GET` and the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to
 
-`http://<magento_host>/rest/<store_code>/schema&services=<serviceName1,serviceName2,..>`
+`http://<magento_host>/rest/<store_code>/schema?services=<serviceName1,serviceName2,..>`
 
 The value of `store_code` must be one of the following:
 
