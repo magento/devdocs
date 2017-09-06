@@ -43,6 +43,7 @@ Move and add the files to your Git branch:
 2. Add the files to Git. For example:
 
     git add pub/media/sitemap.xml && git commit -m "Add sitemap" && git push origin master
+    
     git add pub/media/robots.txt && git commit -m "Add robots" && git push origin master
 3. Push and merge your changes in development, Staging, and Production environments.
 4. Enter a [ticket with Support]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to have redirects added for `sitemap.xml` and `robots.txt`.
