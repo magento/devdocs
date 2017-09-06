@@ -12,7 +12,7 @@ ee_only: true
 github_link: b2b/bk-b2b.md
 ---
 
-The B2B functionality suggests that services and goods are sold to companies and not to individuals.
+Unlike the standard business-to-consumer model, {{site.data.var.b2b}} (Business to Business) is designed to meet the needs of merchants whose customers are primarily companies—possibly with complex organizational structures and multiple users with various roles and levels of permission.
 
 There are two basic actors in B2B model:
 
@@ -29,7 +29,7 @@ The merchant and a buyer representing a company can negotiate the price of an or
 
 ## B2B Modules
 
-Magento B2B ais a set of modules that is installed on top of the Magento 2.x Enterprise Edition. The following table lists the modules provided with B2B.
+Magento B2B is a set of modules that is installed on top of the Magento 2.x {{site.data.var.ee}}. The following table lists the modules provided with B2B.
 
 Name | Description | WebAPI enabled?
 --- | --- | ---

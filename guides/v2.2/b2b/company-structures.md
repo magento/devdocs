@@ -12,7 +12,7 @@ level3_subgroup: company
 github_link: b2b/company-structures.md
 ---
 
-B2B allows company users to be assigned to company teams and hierarchies.
+{{site.data.var.b2b}} allows company users to be assigned to company teams and hierarchies.
 
 ## Manage company teams
 

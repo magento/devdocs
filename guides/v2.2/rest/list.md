@@ -9,13 +9,13 @@ version: 2.2
 github_link: rest/list.md
 ---
 
-## List of REST endpoints for Magento Commerce {#listee}
+## List of REST endpoints for {{site.data.var.ee}} {#listee}
 
-The REST endpoints for Magento Commerce (formerly Enterprise Edition (EE)) are available on Commerce installations only. Commerce installations automatically have access to all Magento Open source (formerly Community Edition (CE)) REST APIs.
+The REST endpoints for {{site.data.var.ee}} (formerly Enterprise Edition (EE)) are available on {{site.data.var.ee}} installations only. Commerce installations automatically have access to all {{site.data.var.ce}} (formerly Community Edition (CE)) REST APIs.
 
 Additions since 2.1 are marked with asterisks (*).
 
-See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a list of endpoints provided with B2B.
+See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a list of endpoints provided with {{site.data.var.b2b}}.
 
 ### CustomerBalance
 
@@ -72,9 +72,9 @@ See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a
 
     POST   /V1/worldpay-guest-carts/:cartId/payment-information
 
-## List of REST APIs for Magento Open Source {#list}
+## List of REST APIs for {{site.data.var.ce}} {#list}
 
-The Magento Open Source REST APIs are available on all Commerce and Open Source installations.
+The {{site.data.var.ce}} REST APIs are available on all {{site.data.var.ee}} and {{site.data.var.ce}} installations.
 
 Additions since 2.1 are marked with asterisks (*).
 

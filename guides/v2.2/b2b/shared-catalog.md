@@ -18,7 +18,7 @@ Products and categories are not created or stored within a shared catalog. The p
 
 Custom shared catalogs can be assigned to companies only. They cannot be set for individual users. A company can be assigned only one shared catalog.
 
-B2B provides two types of shared catalog: public and custom. A public catalog is the default shared catalog. It is automatically displayed to all guest customers and to logged-in customers that are not company users, though a company can be assigned the public catalog. The merchant assigns a custom shared catalog to specific companies. There can only be one public catalog, and it cannot be deleted.
+{{site.data.var.b2b}} provides two types of shared catalog: public and custom. A public catalog is the default shared catalog. It is automatically displayed to all guest customers and to logged-in customers that are not company users, though a company can be assigned the public catalog. The merchant assigns a custom shared catalog to specific companies. There can only be one public catalog, and it cannot be deleted.
 
 ## Related information
 

@@ -12,7 +12,7 @@ level3_subgroup: nq
 github_link: b2b/negotiable-manage.md
 ---
 
-This topic describes the calls required to initiate a negotiable quote and get it ready to be converted to an order.
+This topic describes the calls required to initiate a negotiable quote and to prepare it to be converted to an order.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 All negotiable quote calls require an admin authorization token.

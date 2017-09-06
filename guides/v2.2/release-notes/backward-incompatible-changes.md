@@ -57,10 +57,12 @@ Change was done in order to add default values to customer attributes.
 
 **Description:** Retrieve and set default values to customer attributes<br/>
 
+
 ### Wishlist module
 
 **Class:** [`Magento\Wishlist\Model\Wishlist`]({{site.mage2200url}}app/code/Magento/Wishlist/Model/Wishlist.php){:target="_blank"}<br/>
 **Action:** The format of the string for the `buyRequest` parameter in the `addNewItem` method changed from serialized to JSON.<br/>
+
 
 ### Recently Viewed and Recently Compared Widgets
 
@@ -74,6 +76,10 @@ Change was done in order to add default values to customer attributes.
 **Action:** Removed <br/>
 
 Please note, that all inheritance of old widget.xml file will break Magento. Use `Magento/Catalog/etc/widget.xml` instead of `Magento/Reports/etc/widget.xml`.
+
+### Eav Module Changes
+
+The class `\Magento\Eav\Model\Entity\Attribute\Backend\Serialized` has been marked as deprecated, `Magento\Eav\Model\Entity\Attribute\Backend\JsonEncoded` can be used instead. 
 
 ### MessageQueue Module API
 

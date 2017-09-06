@@ -9,11 +9,11 @@ version: 2.1
 github_link: rest/list.md
 ---
 
-## List of REST endpoints for Magento Enterprise Edition {#listee}
+## List of REST endpoints for {{site.data.var.ee}} {#listee}
 
-The REST endpoints for Magento Enterprise Edition (EE) are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
+The REST endpoints for {{site.data.var.ee}} are available on Commerce installations only. Commerce installations automatically have access to all {{site.data.var.ce}} REST APIs.
 
-Additions since 2.1 are marked with asterisks (*).
+Additions since 2.0 are marked with asterisks (*).
 
 ### CustomerBalance
 
@@ -70,9 +70,9 @@ Additions since 2.1 are marked with asterisks (*).
 
     * POST   /V1/worldpay-guest-carts/:cartId/payment-information
 
-## List of REST APIs for Magento Community Edition {#list}
+## List of REST APIs for {{site.data.var.ce}} {#list}
 
-The Magento Community Edition (CE) REST APIs are available on all EE and CE installations.
+The {{site.data.var.ce}} REST APIs are available on all installations.
 
 Additions since 2.0 are marked with asterisks (*).
 
