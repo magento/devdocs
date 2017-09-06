@@ -700,7 +700,7 @@ POST /V1/products/special-price-delete
       <td><code class="highlighter-rouge">price_from</code></td>
       <td>The date and time the special price goes into effect. The date/time format is <code class="highlighter-rouge">YYYY-MM-DD hh:mm:ss</code>. The specified time must be later than the current time.</td>
       <td>string</td>
-      <td>Required in Enterprise Edition. Optional in Community Edition.</td>
+      <td>Required in Magento Commerce. Optional in Magento Open Source.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">price_to</code></td>
@@ -713,7 +713,7 @@ POST /V1/products/special-price-delete
 
 <h3 id="set-special-prices">Set special prices</h3>
 
-<p>All calls to set special prices must include the <code class="highlighter-rouge">store_id</code>, <code class="highlighter-rouge">sku</code>, and <code class="highlighter-rouge">price</code> parameters. If the call is sent to an Enterprise Edition installation, the call must also include the <code class="highlighter-rouge">price_from</code> parameter. If the call is sent to a Community Edition installation, then the <code class="highlighter-rouge">price_from</code> parameter is optional.</p>
+<p>All calls to set special prices must include the <code class="highlighter-rouge">store_id</code>, <code class="highlighter-rouge">sku</code>, and <code class="highlighter-rouge">price</code> parameters. If the call is sent to an Magento Commerce installation, the call must also include the <code class="highlighter-rouge">price_from</code> parameter. If the call is sent to a Magento Open Source installation, then the <code class="highlighter-rouge">price_from</code> parameter is optional.</p>
 
 <p>For bundled products, the value of the <code class="highlighter-rouge">price</code> parameter must be expressed as a discount percentage.</p>
 

@@ -1845,7 +1845,7 @@
   <h2 id="config-cli-subcommands-run">Run the code compiler</h2>
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:di:compile [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and 
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:di:compile [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and
 filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&gt;"]
 </code></pre>
   </div>
@@ -1862,7 +1862,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 			<th>Value</th>
 			<th>Required?</th>
 		</tr>
-		
+
 	<tr>
 		<td><p>--serializer</p></td>
 		<td><p>Specify either <code>serialize</code> or <a href="https://github.com/phadej/igbinary" target="_blank">igbinary</a>. Default is <code>serialize</code>.</p></td>
@@ -1888,7 +1888,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 		<td><p>Regular expression that enables you to exclude paths from compilation. Default is <code>#[\\/]m1[\\/]#i)</code></p></td>
 		<td><p>No</p></td>
 	</tr>
-	
+
 	</tbody>
 </table>
 
@@ -1917,8 +1917,8 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
     Magento\Catalog\Model\Product\TypeTransitionManager\Interceptor
     Magento\Catalog\Model\Product\Type\Interceptor
     ... more messages ...
-    On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory. 
-    For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user 
+    On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory.
+    For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user
     (example command: "chown -R www-data:www-data &lt;MAGENTO_ROOT&gt;/var" where MAGENTO_ROOT is the Magento root directory).
 </code></pre>
   </div>
@@ -1953,7 +1953,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 
   <p><strong><em>Code compiling without a database</em></strong></p>
 
-  <p>In order to run compilation without a database, see the following topic: <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db"></a></p>
+  <p>Refer to <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db">Deploy static view files without installing Magento</a> for more information.</p>
 
   <h4 id="related-topics">Related topics</h4>
 
