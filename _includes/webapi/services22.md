@@ -1,8 +1,8 @@
 <div markdown="1">
 
-## Magento Commerce Web APIs Services per Module {#eelist}
+## {{site.data.var.ee}} Web APIs Services per Module {#eelist}
 
-The Web APIs for Magento Commerce (formerly Magento Enterprise Edition) are available on Magento Commerce installations only. Magento Commerce installations automatically have access to all Open Source (formerly Magento Community Edition) web APIs.
+The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are available on {{site.data.var.ee}} installations only. {{site.data.var.ee}} installations automatically have access to all {{site.data.var.ce}} (formerly Magento Community Edition) web APIs.
 
 ### Customer balance
     customerBalanceBalanceManagementV1
@@ -30,9 +30,9 @@ The Web APIs for Magento Commerce (formerly Magento Enterprise Edition) are avai
     worldpayGuestPaymentInformationManagementProxyV1
 
 
-## Magento Commeunity Edition (CE) Web APIs Services per Module {#celist}
+## {{site.data.var.ce}} Web APIs Services per Module {#celist}
 
-  The Magento Open Sourc Web APIs are available on all Magento Commerce and Magento Open Source installations.
+  The {{site.data.var.ce}} Web APIs are available on all installations.
 
 ### Backend
     backendModuleServiceV1
