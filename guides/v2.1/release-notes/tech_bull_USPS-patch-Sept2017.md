@@ -16,8 +16,9 @@ github_link: release-notes/tech_bull_USPS-patch-Sept2017.md
 
 On September 1, USPS changed their First-Class Mail Parcel Service to First-Class Package Service – Retail. Because the First-Class Mail Parcel is no longer available after September 1,  Magento 1.x and 2.x merchants offering this service must change this service name in the `Usps.php` file as soon as possible. If you do not take action, your store will not support checkout using the First-Class Package Service - Retail mailing option. 
 
-
-Note: Fixes for this issue will be included in the Magento 2.1.9 and 2.0.16 releases, which are scheduled for release in the second half of September. 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Fixes for this issue will be included in the Magento 2.1.9 and 2.0.16 releases, which are scheduled for release in the second half of September.
+</div>
 
 
 ### Who is affected by this issue?
@@ -26,7 +27,10 @@ Users of any version of Magento Open Source 1.x and Magento Commerce 1.x are aff
 
 Users of any version of Magento Open Source and Magento Commerce before 2.1.9 or 2.0.16 are affected by this change, too. If you are running a store on any version of Magento 2.x prior to 2.1.9 or 2.0.16, you must follow the workaround detailed below.
 
-Note: If you are running the ShipperHQ extension, you do not need to either apply the patch or implement the workaround. Please consult USPS API [Changes Sept 1st 2017](http://blog.shipperhq.com/2017/09/usps-api-changes-sept-1st-2017/)
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you are running the ShipperHQ extension, you do not need to either apply the patch or implement the workaround. Please consult USPS API [Changes Sept 1st 2017](http://blog.shipperhq.com/2017/09/usps-api-changes-sept-1st-2017/).
+</div>
+
 
 
 
