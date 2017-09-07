@@ -25,7 +25,7 @@ If you do not take action, your store will not support checkout using the First-
 
 Users of any version of Magento Open Source 1.x and Magento Commerce 1.x are affected by this change. If you are running a store on any version of Magento 1.x,  you must either apply a Magento-provided patch or following the workaround detailed below.  
 
-Users of any version of Magento Open Source and Magento Commerce before 2.1.9 or 2.0.16 are affected by this change, too. If you are running a store on any version of Magento 2.x prior to 2.1.9 or 2.0.16, you must follow the workaround detailed below.
+Users of any version of Magento Open Source and Magento Commerce before 2.1.9 or 2.0.16 (expected to be released next week) are affected by this change, too. If you are running a store on any version of Magento 2.x prior to 2.1.9 or 2.0.16, you must follow the workaround detailed below.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you are running a different shipping extension, contact your entension provider to determine whether you're affected, and if so, the remedial action to take.
@@ -36,7 +36,7 @@ If you are running a different shipping extension, contact your entension provid
 
 ### Recommended Magento 1.x actions
 
-Users of Magento 1.x can either apply the `SUPEE-10336 for 1.x` patch or implement the workaround described below. If you implemented the temporary workaround, you'll need to delete it before you can install the patch.
+Users of Magento 1.x can either apply the `SUPEE-10336 for 1.x` patch (expected to be released next week) or implement the workaround described below. If you implemented the temporary workaround, you'll need to delete it before you can install the patch.
 
 
 
@@ -71,7 +71,7 @@ Follow this procedure to edit the `Usps.php` file to use the new shipping method
 **If you've implemented the temporary workaround, you'll need to delete it before you can install the patch.**
 
 
-#### Recommended Magento 2.x actions
+### Recommended Magento 2.x actions
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Fixes for this issue will be included in the Magento 2.1.9 and 2.0.16 releases, which are scheduled for release on September 14. We strongly recommend that you install or upgrade to these versions as soon as they are available.
