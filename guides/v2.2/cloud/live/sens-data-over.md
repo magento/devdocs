@@ -29,6 +29,8 @@ These new methods are optional but strongly recommended. The process ensures fas
 ## Feature availability {#release}
 Configuration management was released in `magento-cloud-configuration` 101.4.1 on {{site.data.var.ece}} 2.1.4 and later. The options and functions differ in {{site.data.var.ece}} 2.2. We provide recommendations for {{site.data.var.ece}} deployments in this section.
 
+To complete these configuration management tasks, you must have at a minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
+
 ## How it works {#cloud-confman-over}
 Magento's store configurations are stored in the database. When updating configurations in development/Integration, Staging, and Production environments, you would need to make those changes in the Magento Admin per environment. By using these commands, you generate a file, exporting all Magento configuration settings into a single text file: `app/etc/config.php`.
 
@@ -85,35 +87,35 @@ The following table shows the configuration settings affected by the `bin/magent
 <tbody>
 <tr>
 <th style="width:250px;">Description</th>
-<th>Path in Magento Admin (omitting **Stores** > **Configuration**)</th>
+<th>Path in Magento Admin (omitting Stores > Configuration)</th>
 </tr>
 <tr>
 <td>Store locale</td>
-<td>General > **General**, **Locale Options** > **Locale**</td>
+<td>General > General, Locale Options > Locale</td>
 </tr>
 <tr>
 <td>Static asset signing</td>
-<td>Advanced > **Developer**, **Static Files Settings** > **Static Files Signing**</td>
+<td>Advanced > Developer, Static Files Settings > Static Files Signing</td>
 </tr>
 <tr>
 <td>Server-side or client-side LESS compilation</td>
-<td>Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type**</td>
+<td>Advanced > Developer, Frontend Developer Workflow > Workflow type</td>
 </tr>
 <tr>
 <td>HTML minification</td>
-<td>Advanced > **Developer**, **Template Settings** > **Minify Html**</td>
+<td>Advanced > Developer, Template Settings > Minify Html</td>
 </tr>
 <tr>
 <td>JavaScript minification</td>
-<td>Advanced > **Developer**, **JavaScript Settings** > (several options)</td>
+<td>Advanced > Developer, JavaScript Settings > (several options)</td>
 </tr>
 <tr>
 <td>CSS minification</td>
-<td>Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**</td>
+<td>Advanced > Developer, CSS Settings > Merge CSS Files and Minify CSS Files</td>
 </tr>
 <tr>
 <td>Disable modules output</td>
-<td>Advanced > **Advanced** > **Disable Modules Output**</td>
+<td>Advanced > Advanced > Disable Modules Output</td>
 </tr>
 </tbody>
 </table>
@@ -146,35 +148,33 @@ The **Pro plan** environment high-level overview of this process:
 <td>
 <ol><li>Log into the Magento Adming for one of the environments:
 <ul><li>Starter: An active development branch</li>
-<li>Pro: The `master` environment in Integration</li></ul></li>
+<li>Pro: The <code>master</code> environment in Integration</li></ul></li>
 <li>Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.</li>
-<li><p>Open a terminal on your local and use an SSH command to generate `app/etc/config.php` on the environment:</p>
+<li><p>Open a terminal on your local and use an SSH command to generate <code>/app/etc/config.php</code> on the environment:</p>
 <pre>ssh -k <SSH URL> "<Command>"</pre>
-<p>For example for Pro, to run the `scd-dump` on Integration `master`:</p>
+<p>For example for Pro, to run the <code>scd-dump</code> on Integration <code>master</code>:</p>
 <pre>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"</pre>
 </li></ol>
-<p>During the process, if any sensitive settings are found, the values are saved as environment variables to `env.php` for that environment. If these variables are needed in another environment, you will need to recreate them with environment specific values.</p>
 </td>
 </tr>
 <tr>
 <td >Step 2</td>
-<td>Push `config.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.</td>
+<td>Push <code>config.php</code> to Git. To push this file to the <code>master</code> Git branch, you need to complete a few extra steps because this environment is read-only.</td>
 <td>
-<ol><li><p>Transfer `config.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.</p>
+<ol><li><p>Transfer <code>config.php</code> to your local system using <code>rsync</code> or <code>scp</code>. You can only add this file to the Git branch through your local.</p>
 <pre>rsync <SSH URL>:app/etc/config.php ./app/etc/config.php</pre></li>
-<li><p>Add and push `config.php` to the Git `master` branch.</p>
+<li><p>Add and push <code>config.php</code> to the Git <code>master</code> branch.</p>
 <pre>git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master</pre></li>
 </ol>
-<p>Do not transfer or commit `env.php`.</p>
 </td>
 </tr>
 <tr>
 <td >Step 3 & 4</td>
 <td>Push the Git branch to Staging and Production and complete configurations.
 </td>
-<td><p>Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.</p>
-<p>For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.</p>
-<p>For Pro, when you push to the Git branch, the Integration `master` environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
+<td><p>Log into the Magento Admin in those environments to verify the settings. If you used <code>scd-dump</code>, only configured settings display. You can continue configuring the environment if needed.</p>
+<p>For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally <code>master</code> for Production. Complete any additional configurations in Staging and Production as needed.</p>
+<p>For Pro, when you push to the Git branch, the Integration <code>master</code> environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
 </td>
 </tr>
 </tbody>
