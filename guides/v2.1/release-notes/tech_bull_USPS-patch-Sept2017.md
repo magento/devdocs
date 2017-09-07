@@ -28,7 +28,7 @@ Users of any version of Magento Open Source 1.x and Magento Commerce 1.x are aff
 Users of any version of Magento Open Source and Magento Commerce before 2.1.9 or 2.0.16 are affected by this change, too. If you are running a store on any version of Magento 2.x prior to 2.1.9 or 2.0.16, you must follow the workaround detailed below.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you are running the ShipperHQ extension, you do not need to either apply the patch or implement the workaround. Please consult USPS API [Changes Sept 1st 2017](http://blog.shipperhq.com/2017/09/usps-api-changes-sept-1st-2017/).
+If you are running the ShipperHQ extension, you do not need to either apply the patch or implement the workaround. Please consult [USPS API Changes Sept 1st 2017](http://blog.shipperhq.com/2017/09/usps-api-changes-sept-1st-2017/).
 </div>
 
 
