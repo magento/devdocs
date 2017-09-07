@@ -207,6 +207,18 @@ The Fastly module includes GeoIP handling to automatically redirect visitors or 
 
 Fastly also provides a series of [geolocation-related VCL features](https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features){:target="_blank"} for customized geolocation coding.
 
+## Configure DNS for Fastly {#fastly-dns}
+These steps you complete when going live.
+
+We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. The domain validation process is executed by Fastly. When you are ready to go, you will need to provide your domain names in a Support ticket to us. We will then provide a DNS TXT record to add to your apex domain to confirm ownership.
+
+For details, see [Go live checklist]({{ page.baseurl}}cloud/live/go-live-checklist.html).
+
+### TLS and Fastly {#fastly-tls}
+If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your Support ticket for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly's TXT record file for your account. You can then send this record to your DNS provider.
+
+For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="_blank"}.
+
 #### Related topics
 
 * [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)

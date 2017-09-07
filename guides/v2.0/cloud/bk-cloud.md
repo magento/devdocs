@@ -84,17 +84,17 @@ Fully access your Magento development and deployment through a UI console or CLI
 We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration.
 
 ### Starter environments {#starter}
-For Starter plan subscriptions, you receive the following [environments]({{page.baseurl}}cloud/basic-information/starter-architecture.html):
+For Starter plan subscriptions, you receive four [environments]({{page.baseurl}}cloud/basic-information/starter-architecture.html) including the following:
 
-* **Integration**: The ultimate developer environment providing four testable environments associated with an active Git branch. Each environment includes a database, web server, caching, services, environment variables, and configurations.
-* **Staging**: As code and extensions pass your tests, merge your Integration branches to `staging`. The Staging environment is for pre-Production testing. This environment includes the `staging` active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly.
-* **Production**: When code is ready and tested, push your `staging` branch to `master` for deployment to the Production live site. This environment includes your active `master` Git branch, database, web server, caching, services, environment variables, and configurations. This environment includes additional services like Fastly.
+* **Integration**: The ultimate developer environments, Integration provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.
+* **Staging**: We highly recommend you create an active `staging` branch as one of the three Integration environments. Create this branch directly from `master`. As code and extensions pass your tests, you can merge your Integration branches to `staging`. This Staging environment becomes your pre-Production testing environment. It includes the `staging` active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.
+* **Production**: When code is ready and tested, all code merges to `master` for deployment to the Production live site. This environment includes your active `master` Git branch, database, web server, caching, services, environment variables, and configurations. This environment includes additional services like Fastly.
 
 ### Pro environments {#pro}
 For Pro subscriptions, you receive the following [environments]({{page.baseurl}}cloud/reference/discover-arch.html):
 
-* **Integration**: The ultimate developer environment providing eight testable environments with your active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test up to eight Git branches in this interactive environment, one per active environment.
-* **Staging**: As code and extensions pass your tests, deploy the master Git branch to Staging for near-Production testing. This environment includes a database, web server, caching, services, environment variables, configurations, and Fastly for the pushed Integration `master` branch of code.
+* **Integration**: The ultimate developer environment, Integration provides eight testable environments including a `master`. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test your code before merging to `master` to push to Staging.
+* **Staging**: As code and extensions pass your tests, deploy the Integration `master` Git branch to Staging for pre-Production testing. This environment includes a database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.
 * **Production**: When code is ready and testing complete, deploy the Integration `master` Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
 
 ### Details about the cloud {#details}

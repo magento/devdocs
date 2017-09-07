@@ -30,12 +30,16 @@ The following diagram details the branch and environment relationships:
 
 You can manage all of your environments including Production and Staging directly through the [Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html), through the store and Admin panel using provided URLs, and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The following workflow and examples uses a Production, Staging, and Integration architecture.
+</div>
+
 ## Starter environments and branches {#env-branches}
 For your environments, we recommend deploying and testing following a Development > Staging > Production workflow.
 
-* Production environment is your `master` Git branch with an associated full environment with all services
-* Staging environment is a Git branch you create called `staging`
-* Develop environments include two active branches we recommend created from `staging`
+* Production environment (live site) is your `master` Git branch with an associated full environment with all services
+* Staging environment is a Git branch we recommend you create called `staging`, to receive full services matching Production
+* Integration environments include two active branches we recommend created from `staging`
 
 For your branches, you can follow any methodology. One example follows Agile such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
 
