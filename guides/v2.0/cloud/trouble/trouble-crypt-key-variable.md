@@ -23,7 +23,7 @@ All Cloud environments require this encryption key in all three environments or 
 
 To verify and update the encryption key environment variable:
 
-1.  SSH to each of the Cloud environments: development or Integration, Staging, and Production.
+1.  SSH to each of the Cloud environments: Integration, Staging, and Production.
 
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.

@@ -187,7 +187,7 @@ If you only need to make a small change, you can edit `config.php` in a local Gi
 
 To complete extensive changes:
 
-1.	Delete `config.php` in your development or Integration environment.
+1.	Delete `config.php` in your Integration environment.
 
 	You must delete the file to change settings. All of your configurations still exist in the database, displaying as editable in your Magento Admin. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can't edit it until this file is removed.
 2.	Make configuration changes in the Admin on the Integration environment.
