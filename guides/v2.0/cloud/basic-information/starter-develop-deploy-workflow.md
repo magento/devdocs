@@ -137,7 +137,7 @@ You will generate the file in the Integration environment where you configured M
 
 **Important notes** on Configuration Management:
 
-* Any configuration setting included in the file is locked from editing, or read-only, in the deployed environment. This is one reason we recommend using scd-dump.
+* Any configuration setting included in the file is locked from editing, or read-only, in the deployed environment. This is one reason we recommend using `scd-dump`.
 
   For example, we will have you install a module for Fastly in your development environment. You will only configure this module in Staging and Production. Using `scd-dump` keeps those default fields editable.
 * This file can be long depending on the size of your deployment. The `scd-dump` command generates a far small file than `app:config:dump`.

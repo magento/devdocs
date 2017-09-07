@@ -77,15 +77,42 @@ If no value exists in any of those sources, we use either the default value or `
 ## Configuration settings you can change {#cloud-clp-settings}
 The following table shows the configuration settings affected by the `bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php bin/magento app:config:dump`, all settings are exported.
 
-| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) |
-|--------------|--------------|----------------------|
-| Store locale  | General > **General**, **Locale Options** > **Locale**  |
-| Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing**
-| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type**
-|  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**
-| JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)
-| {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**
-| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** |
+<table>
+<tbody>
+<tr>
+<th "width:250px">Description</th>
+<th>Path in Magento Admin (omitting **Stores** > **Configuration**)</th>
+</tr>
+<tr>
+<td>Store locale</td>
+<td>General > **General**, **Locale Options** > **Locale**</td>
+</tr>
+<tr>
+<td>Static asset signing</td>
+<td>Advanced > **Developer**, **Static Files Settings** > **Static Files Signing**</td>
+</tr>
+<tr>
+<td>Server-side or client-side LESS compilation</td>
+<td>Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type**</td>
+</tr>
+<tr>
+<td>HTML minification</td>
+<td>Advanced > **Developer**, **Template Settings** > **Minify Html**</td>
+</tr>
+<tr>
+<td>JavaScript minification</td>
+<td>Advanced > **Developer**, **JavaScript Settings** > (several options)</td>
+</tr>
+<tr>
+<td>CSS minification</td>
+<td>Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**</td>
+</tr>
+<tr>
+<td>Disable modules output</td>
+<td>Advanced > **Advanced** > **Disable Modules Output**</td>
+</tr>
+</tbody>
+</table>
 
 ## Recommended procedure to manage your settings {#cloud-config-specific-recomm}
 Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions. We can help you manage those settings more easily. For example, you may want to change the default locale and a store's static file optimization settings, with different settings in Staging and Production. Instead of making these changes in every environment, use `config.local.php`.
@@ -94,24 +121,30 @@ We **strongly recommend** using `scd-dump` to generate `config.local.php`. This 
 
 To fully understand the process, please see [our extensive example]({{ page.baseurl }}cloud/live/sens-data-initial.html).
 
-The following figure shows a high-level overview of this process for Starter plan environments:
+The **Starter plan** environment high-level overview of this process:
 
 ![Overview of Starter configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-starter-2-1.png)
 
-The following figure shows a high-level overview of this process for Pro plan environments:
+The **Pro plan** environment high-level overview of this process:
 
 ![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png)
 
 <table>
+<tbody>
+<tr>
+<th>Step</th>
+<th>Actions per diagram step</th>
+<th></th>
+</tr>
 <tr>
 <td style="width:100px">Step 1</td>
-<td>Complete all configurations for your stores in the Admin console.</td>
+<td style="width:250px">Complete all configurations for your stores in the Admin console.</td>
 <td>
 <ol><li>Log into the Magento Adming for one of the environments:
 <ul><li>Starter: An active development branch</li>
 <li>Pro: The `master` environment in Integration</li></ul></li>
 <li>Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.</li>
-<li>Open a terminal on your local and use an SSH command to generate `app/etc/config.local.php` on the environment:
+<li><p>Open a terminal on your local and use an SSH command to generate `app/etc/config.local.php` on the environment:</p>
 <pre>ssh -k <SSH URL> "<Command>"</pre>
 <p>For example for Pro, to run the `scd-dump` on Integration `master`:</p>
 <pre>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"</pre>
@@ -122,9 +155,9 @@ The following figure shows a high-level overview of this process for Pro plan en
 <td style="width:50px">Step 2</td>
 <td>Push `config.local.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.</td>
 <td>
-<ol><li>Transfer `config.local.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
+<ol><li><p>Transfer `config.local.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.</p>
 <pre>rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php</pre></li>
-<li>Add and push `config.local.php` to the Git `master` branch.
+<li><p>Add and push `config.local.php` to the Git `master` branch.</p>
 <pre>git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master</pre></li>
 </ol>
 </td>
@@ -138,6 +171,7 @@ The following figure shows a high-level overview of this process for Pro plan en
 <p>For Pro, when you push to the Git branch, the Integration `master` environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
 </td>
 </tr>
+</tbody>
 </table>
 
 ## Update configuations {#update}
@@ -154,7 +188,7 @@ To complete extensive changes:
 3.	Repeat the process to re-create `config.local.php` and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those enviornment specific settings.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-While you can manually edit `config.local.php` in Staging and Production, we don't recommend it. The file helps keep consistent configurations across your entire environment.
+While you can manually edit `config.local.php` in Staging and Production, we don't recommend it. The file helps keep all of your configurations consistent across all of your environments.
 </div>
 
 #### Next step
