@@ -4,7 +4,7 @@ group: config-guide
 subgroup: 04_CLI
 title: Code compiler
 menu_title: Code compiler
-menu_node: 
+menu_node:
 menu_order: 175
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-compiler.md
@@ -19,7 +19,7 @@ github_link: config-guide/cli/config-cli-subcommands-compiler.md
 <li>Interception {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} generation</li>
 <li>Repositories code generation (that is, generated code for APIs)</li>
 <li>Service data attributes generation (that is, generated {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} classes for data objects)</li></ul>
-<p>You can find code compilation in classes in the <a href="{{ site.mage2100url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p> 
+<p>You can find code compilation in classes in the <a href="{{ site.mage2100url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p>
 
 <div class="bs-callout bs-callout-warning">
     <p>In this release, the Magento software doesn't support the multi-tenant compiler (that is, the <code>magento setup:di:compile-multi-tenant</code> command).</p>
@@ -41,10 +41,10 @@ The following message displays to confirm success:
 <h2 id="config-cli-subcommands-run">Run the code compiler</h2>
 Command options:
 
-	magento setup:di:compile [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
+	magento setup:di:compile [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and
 	filename>"] [--di="<path and filename>"] [--exclude-pattern="<regex>"]
 
-The following table discusses the meanings of this command's parameters and values. 
+The following table discusses the meanings of this command's parameters and values.
 
 <table>
 	<col width="25%">
@@ -56,7 +56,7 @@ The following table discusses the meanings of this command's parameters and valu
 			<th>Value</th>
 			<th>Required?</th>
 		</tr>
-		
+
 	<tr>
 		<td><p>--serializer</p></td>
 		<td><p>Specify either <code>serialize</code> or <a href="https://github.com/phadej/igbinary" target="_blank">igbinary</a>. Default is <code>serialize</code>.</p></td>
@@ -82,7 +82,7 @@ The following table discusses the meanings of this command's parameters and valu
 		<td><p>Regular expression that enables you to exclude paths from compilation. Default is <code>#[\\/]m1[\\/]#i)</code></p></td>
 		<td><p>No</p></td>
 	</tr>
-	
+
 	</tbody>
 </table>
 
@@ -109,8 +109,8 @@ Messages similar to the following display:
         Magento\Catalog\Model\Product\TypeTransitionManager\Interceptor
         Magento\Catalog\Model\Product\Type\Interceptor
         ... more messages ...
-        On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory. 
-        For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user 
+        On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory.
+        For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user
         (example command: "chown -R www-data:www-data <MAGENTO_ROOT>/var" where MAGENTO_ROOT is the Magento root directory).
 
 ## Optional. Compile code before installing the Magento application {#config-cli-subcommands-single-before}
@@ -125,7 +125,7 @@ Use the optional `[-c|--clear-static-content]` option to clear {% glossarytoolti
 [More information about enabling modules]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-enable.html).
 
 <h2 id="config-cli-subcommands-single">Compile code</h2>
-Use this command to compile code. 
+Use this command to compile code.
 
 Run the command as follows (there are no options):
 
@@ -136,8 +136,8 @@ The following message displays to confirm success:
 	Generated code and dependency injection configuration successfully.
 
 ***Code compiling without a database***
- 
-In order to run compilation without a database, see the following topic: <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db"></a>
+
+Refer to [Deploy static view files without installing Magento]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db) for more information.
 
 #### Related topics
 

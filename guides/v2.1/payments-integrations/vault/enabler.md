@@ -117,7 +117,7 @@ You can create a new request builder, or update the existing request builder of 
 
 In the Braintree request builder, to pass the data, we set `storeInVaultOnSuccess` in transaction request:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class VaultDataBuilder implements BuilderInterface
 {
     /**
@@ -143,7 +143,7 @@ class VaultDataBuilder implements BuilderInterface
         ];
     }
 }
-{% endhighlight %}
+```
 
 The builder must be added to the payment authorize request in the DI configuration. 
 Example from the Braintree `di.xml`:

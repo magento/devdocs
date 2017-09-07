@@ -83,6 +83,25 @@ To restore an environment snapshot using the Magento CLI:
 
 	For a full list of options, enter `magento-cloud snapshot:restore --help`.
 
+## Dump your database {#db-dump}
+To create a copy of your database, you dump the data from the database to a file on your local.
+
+1.	SSH into the environment you want to create a database dump from:
+
+	*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+	*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+	* To SSH into the `master` branch of your Integration environment:
+
+			magento-cloud environment:ssh
+2.	Find the database login information:
+
+		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+3.	Create a database dump:
+
+		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
+
+If you want to push this data into an environment, see [Migrate data and static files]({{page.baseurl}}cloud/live/stage-prod-migrate.html).
+
 ## Rollbacks to remove code {#rollback-code}
 We recommend creating a snapshot of the environment and a backup of the database prior to deployments.
 

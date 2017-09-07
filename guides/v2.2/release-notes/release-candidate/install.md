@@ -11,7 +11,7 @@ version: 2.2
 github_link: release-notes/release-candidate/install.md
 ---
 
-We now offer {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackages{% endglossarytooltip %} for installing the latest release candidate code using [Composer](https://getcomposer.org/){:target="&#95;blank">}.
+We now offer {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackages{% endglossarytooltip %} for installing the latest release candidate code using [Composer](https://getcomposer.org/){:target="&#95;blank">}. Contact Mark Brinton at [mbrinton@magento.com](mailto:mbrinton@magento.com) to request access to our pre-release Composer repositories.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
 You can still install release candidate code by [cloning Github repositories](#install-with-github), but we recommend using Composer.
@@ -47,20 +47,18 @@ Before you begin, install Composer:
 
     -   Enter the following command for {{site.data.var.ce}}:
 
-            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> 2.2.0-rc22
+            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> 2.2.0-rc23
 
     -   Enter the following command for {{site.data.var.ee}}:
 
-            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name> 2.2.0-rc22
+            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name> 2.2.0-rc23
 
 	When prompted, enter your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation-directory-name>` if you provided the parameter or `project-enterprise-edition` if you did not.
 
   <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The following error indicates your tokens are incorrect:
-
-    Could not find package magento/project-enterprise-edition with version 2.2.0-rc22
+If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there aren't any typos in your command. If you still encounter errors, you may not have access to our pre-release Composer repositories. Contact Mark Brinton at [mbrinton@magento.com](mailto:mbrinton@magento.com) to request access.
 
 If the following error displays, see [troubleshooting]({{page.baseurl}}install-gde/trouble/tshoot_composer-fail.html):
 
@@ -146,7 +144,7 @@ There are three Magento code repositories on GitHub where you can find release c
     <td>Publicly available</td>
 </tr>
 <tr>
-    <td><b>{{site.data.var.ce}}</b></td>
+    <td><b>{{site.data.var.ee}}</b></td>
     <td><a href="https://github.com/magento/magento2ee">https://github.com/magento/magento2ee</a></td>
     <td>2.2.0-release-candidate</td>
     <td>Available after contract has been signed</td>
