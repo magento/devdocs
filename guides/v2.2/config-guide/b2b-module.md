@@ -1,9 +1,9 @@
 ---
 layout: default
 group: config-guide
-subgroup: 14_Configure B2B
+subgroup: 22_Configure B2B
 title: Configure the B2B module
-menu_title: Configure the B2B module
+menu_title: Configure the B2B module  (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.2

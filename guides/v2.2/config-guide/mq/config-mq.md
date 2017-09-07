@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 15_RabbitMQ
+subgroup: 24_RabbitMQ
 title: Configure 2.2 message queues
 menu_title: Configure 2.2 message queues
 menu_order: 2
