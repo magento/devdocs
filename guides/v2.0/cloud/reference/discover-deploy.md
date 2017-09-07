@@ -16,11 +16,11 @@ What happens technically: Build scripts parse configuration files committed to t
 
 The build and deploy process is slightly different for each plan:
 
-* **Starter plans**: Every active branch build and deploys to a full environment for access and testing. Fully test your code by merging to the Staging branch. Finally to go live, merge your code to the `master` branch. You have full access to all branches through the Project Web Interface and CLI commands.
+* **Starter plans**: For the Integration environment, every active branch build and deploys to a full environment for access and testing. Fully test your code by merging to the `staging` branch. Finally to go live, push `staging` to `master` to deploy to Production. You have full access to all branches through the Project Web Interface and CLI commands.
 * **Pro plans**: For the Integration environment, every active branch build and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the `master` branch in Integration then pushed to those environments using SSH or a ticket.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Make sure all code for your site and stores is in the {{site.data.var.ee}} Git branch. If you point to or include hooks to code in other branches, especially a private branch, the build and deploy process will have issues. For example, add any new themes into the Git branch of code. If you include it from a private repo, the theme won't build with the Magento code.
+Make sure all code for your site and stores is in the active {{site.data.var.ee}} Git branch. If you point to or include hooks to code in other branches, especially a private branch, the build and deploy process will have issues. For example, add any new themes into the Git branch of code. If you include it from a private repo, the theme won't build with the Magento code.
 </div>
 
 ## Track the process {#track}
@@ -37,7 +37,7 @@ If you intend to make changes, modify the YAML files in your Git branch of code.
 *	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) defines how an incoming URL is processed by {{site.data.var.ee}}.
 *	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html) defines the services Magento uses by name and version. For example, this file may include versions of MySQL, some PHP extensions, and Elasticsearch. These are referred to as *services*.
 
-We also recommend configuring your [system-specific settings]({{page.baseurl}}cloud/live/sens-data-over.html) into a `config.local.php` file. This file captures all of your configuration settings, or only those you changed. You push this file into your Git branch, deploying it across all environments. If the file is found in the deployed code, all static file deployment occurs during the Build phase, not Deploy. Static file deployment takes a long time to complete, reducing deployment and site downtime if done in the Build phase.
+We also recommend configuring your [system-specific settings]({{page.baseurl}}cloud/live/sens-data-over.html) into a `config.local.php` file. This file captures your configuration settings. You add and push this file into your Git branch, deploying it across all environments. If the file is found in the deployed code, all static file deployment occurs during the Build phase, not Deploy. Static file deployment takes a long time to complete, reducing deployment and site downtime if done in the Build phase.
 
 ## Five phases of deployment {#cloud-deploy-over-phases}
 Deployment consists of the following phases:
@@ -52,8 +52,8 @@ Deployment consists of the following phases:
 ### Phase 1: Code and configuration validation {#cloud-deploy-over-phases-conf}
 When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud){:target="_blank"}. This code repo is cloned to your project as the `master` branch.
 
-* **For Starter**: `master` branch is your Production environment.
-* **For Pro**: `master` begins as origin branch for the Integration environment. `master` is deployed across to Staging and Production.
+* **For Starter**: `master` branch is used in your Production environment.
+* **For Pro**: `master` begins as origin branch for the Integration environment. You deploy this branch to Staging and Production.
 
 The remote server gets your code using Git. When you push your code from local to the remote Git, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
 
@@ -110,7 +110,7 @@ If the `config.local.php` file does not exist in the codebase, static file deplo
 
 There are two default deploy hooks. `pre-deploy.php` completes necessary cleanup and retrieval of resources and code generated in the build hook. `bin/magento magento-cloud:deploy` runs a series of commands and scripts:
 
-*	If Magento is **not installed**, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} URLs). **Important:** When you completed the [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html) during setup, {{site.data.var.ee}} was installed and deployed across all environments.
+*	If Magento is **not installed**, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and website URLs). **Important:** When you completed the [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html) during setup, {{site.data.var.ee}} was installed and deployed across all environments.
 
 *	If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
 

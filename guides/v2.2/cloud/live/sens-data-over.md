@@ -84,7 +84,7 @@ The following table shows the configuration settings affected by the `bin/magent
 <table>
 <tbody>
 <tr>
-<th "width:250px">Description</th>
+<th style="width:250px;">Description</th>
 <th>Path in Magento Admin (omitting **Stores** > **Configuration**)</th>
 </tr>
 <tr>
@@ -136,13 +136,13 @@ The **Pro plan** environment high-level overview of this process:
 <table>
 <tbody>
 <tr>
-<th>Step</th>
-<th>Actions per diagram step</th>
+<th style="width:100px;">Step</th>
+<th style="width:250px;">Actions per diagram step</th>
 <th></th>
 </tr>
 <tr>
-<td style="width:100px">Step 1</td>
-<td style="width:250px">Complete all configurations for your stores in the Admin console.</td>
+<td >Step 1</td>
+<td >Complete all configurations for your stores in the Admin console.</td>
 <td>
 <ol><li>Log into the Magento Adming for one of the environments:
 <ul><li>Starter: An active development branch</li>
@@ -157,7 +157,7 @@ The **Pro plan** environment high-level overview of this process:
 </td>
 </tr>
 <tr>
-<td style="width:50px">Step 2</td>
+<td >Step 2</td>
 <td>Push `config.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.</td>
 <td>
 <ol><li><p>Transfer `config.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.</p>
@@ -169,7 +169,7 @@ The **Pro plan** environment high-level overview of this process:
 </td>
 </tr>
 <tr>
-<td style="width:50px">Step 3 & 4</td>
+<td >Step 3 & 4</td>
 <td>Push the Git branch to Staging and Production and complete configurations.
 </td>
 <td><p>Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.</p>

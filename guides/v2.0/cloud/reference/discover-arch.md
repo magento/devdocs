@@ -14,7 +14,7 @@ github_link: cloud/reference/discover-arch.md
 
 All of your code is contained in the {{site.data.var.ece}} Starter project. The project is your Magento store code, extensions, and integrations in a `master` Git branch. Each project supports up to eight active Integration *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
 
-Pro also provides a dedicated Infrastructure-as-a-Service (IaaS) for Production and Staging. You deploy the `master` Git branch to these dedicated environments. Production includes a three-node high availability infrastructure to ensure your site is always available. When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
+Pro also provides a dedicated Infrastructure-as-a-Service (IaaS) for Production and Staging. You deploy the Integration `master` Git branch to these dedicated environments. Production includes a three-node high availability infrastructure to ensure your site is always available. When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
 
 All environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.
 

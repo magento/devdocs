@@ -71,11 +71,11 @@ The format of the Git clone command is:
     git fetch origin
     git pull origin <environment ID>
 
-The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production `master` branch.
+The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production `master` branch and environment.
 
-Then you can create a developer branch from `master` or `staging`. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from `staging`. You will have two active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.
+Next, create branches from `staging` to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from `staging`. You will have four active Integration environments available. When you push your an active branch of Git code, one of these Integration environments automatically deploys your code to test.
 
-When you [set up your local]({{page.baseurl}}cloud/access-acct/first-time-setup.html) developer environment, we walk-through the software and tools you should install, including Git and the Magento Cloud CLI (a bit more robust than Git).
+We walk you through the process when you [set up your local]({{page.baseurl}}cloud/access-acct/first-time-setup.html).
 
 The format of the Git branch command is:
 
@@ -89,7 +89,7 @@ The format of the Magento Cloud CLI branch command is:
 ![Branch from Master]({{ site.baseurl }}common/images/cloud_workflow-branching.png)
 
 ### Develop code {#dev-code}
-It's the time you have been waiting for...writing code. Using this base branch of {{site.data.var.ece}} code, you can start installing extensions, configuring extension settings and your store options, creating multi-sites and stores, adding themes, and much more.
+It's the time you have been waiting for...writing code. Using this base branch of {{site.data.var.ece}} code, you can start installing extensions, developing custom code, adding themes, and much more.
 
 We recommend using a branching strategy with your development work. Using one branch to do all of your work all at once might make testing difficult. For example, you could follow continuous integration and sprint methodologies to work:
 
@@ -100,9 +100,11 @@ We recommend using a branching strategy with your development work. Using one br
 * Integrate with a 3rd party service
 * Push this code, test, and merge to Staging then Production
 
-Do not complete any configurations on your local yet.
-
 And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Do not complete any configurations on your local yet.
+</div>
 
 ![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-push-code.png)
 
@@ -121,7 +123,7 @@ Beyond just store settings, you can further configure multiple sites and stores,
 Now you need to get these settings into your code. We have a helpful command to do this, keep reading.
 
 ### Generate configuration management files {#config-management}
-If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or Excel all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
+If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or a file all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
 
 {{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later**.
 
@@ -162,7 +164,7 @@ For more information, see [Deployment workflow](#deploy).
 ### Optional: Install sample data {#sample-data}
 If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.ece}} template installation when creating your project.
 
-We recommend installing sample data in your local Integration and development branches and environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.
+We recommend installing sample data in your local installation and Integration environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.
 
 For instructions, see [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html).
 
@@ -182,7 +184,7 @@ Prior to pushing the data to another environment, you should consider sanitizing
 </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Important: We don't recommend pushing a database from a development or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.
+Important: We don't recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.
 </div>
 
 ## Deployment workflow {#deploy}
