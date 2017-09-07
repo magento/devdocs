@@ -135,6 +135,7 @@ The **Pro plan** environment high-level overview of this process:
 
 ![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png)
 
+<!--
 <table>
 <tbody>
 <tr>
@@ -178,7 +179,7 @@ The **Pro plan** environment high-level overview of this process:
 </td>
 </tr>
 </tbody>
-</table>
+</table> -->
 
 ## Update configuations {#update}
 If you need to change any configuration settings `config.php`, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration `master` environment.
