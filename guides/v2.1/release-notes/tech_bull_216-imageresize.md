@@ -12,10 +12,10 @@ github_link: release-notes/tech_bull_216-imageresize.md
 
 *Technical bulletin updated on May 17, 2017.*
 
-These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6. 
+These instructions apply to anyone upgrading to Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition) version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6. 
 
 ### Who needs this information?
-You need to read this bulletin if you've upgraded to Magento 2.1.6 (CE or EE) and are experiencing any of the following issues: 
+You need to read this bulletin if you've upgraded to Magento 2.1.6 (Open Source or Commerce) and are experiencing any of the following issues: 
 
 * all images on the product front end appear reduced in size, including the base image
 
@@ -58,8 +58,8 @@ You can fix this issue with image resizing by downloading and installing the `EE
 
 
 
-#### Magento Enterprise Cloud Edition
-General ECE patches are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. `magento-cloud-configuration 101.6.2` contains the hot fix for this image resize issue. 
+#### Magento Commerce (Cloud) 
+General Magento Commerce (Cloud) patches are provided for all Magento Commerce (Cloud) customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. `magento-cloud-configuration 101.6.2` contains the hot fix for this image resize issue. 
 
 See [Update extensions](http://devdocs.magento.com/guides/v2.1/cloud/howtos/update-components.html){:target="_blank"} for more information on running `composer update` to upgrade your Cloud extension. 
 

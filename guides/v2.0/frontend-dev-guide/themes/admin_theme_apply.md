@@ -21,6 +21,7 @@ This topic describes how to apply your custom {% glossarytooltip d2093e4a-2b71-4
     <module name="%YourVendor_YourModule%" setup_version="2.0.1"> <!-- Example: "Magento_Backend -->"
         <sequence>
             <module name="Magento_Theme"/>
+            <module name="Magento_Enterprise"/> <!-- For Enterprise versions only -->
         </sequence>
     </module>
 {%endhighlight%}

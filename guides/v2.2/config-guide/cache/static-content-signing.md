@@ -1,19 +1,16 @@
 ---
 layout: default
 group: config-guide
-subgroup: 08_Caching
-title: Static Content Signing
-menu_title: Static Content Signing
+subgroup: 08_Configure caching
+title: Static content signing
+menu_title: Static content signing
 menu_node:
-menu_order: 100
-level3_menu_node: level3child
-level3_subgroup: cache-priv
+menu_order: 3
 version: 2.2
 github_link: config-guide/cache/static-content-signing.md
 ---
 
 ### Static content cache
-
 To improve performance, Magento sets the `Expires` headers for static resources such as images, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} files.
 Setting the `Expires` header on a static resource tells the browser to {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} the resource at that {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} and serve the cached version until it expires.
 This is a common [best practice](https://developer.yahoo.com/performance/rules.html#expires=){:target="_blank"} for caching static resources.

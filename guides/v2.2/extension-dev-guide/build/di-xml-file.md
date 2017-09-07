@@ -124,7 +124,7 @@ Magento converts any value for this argument node into a boolean value.
 See table below:
 
 | Input Type | Data     | Boolean Value |
-| ---------- | -------- | ------------- |
+| --- | --- | --- |
 | Boolean    | true     | true          |
 | Boolean    | false    | false         |
 | String     | "true"*  | true          |
@@ -321,85 +321,41 @@ In this example `Magento\Filesystem` is not shared, so all clients will retrieve
 Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
-In the Magento [split deployment model]({{ page.baseurl }}), there are the following types of configuration settings:
 
-* Shared, which can be shared between systems using `app/etc/config.php`
-* System-specific, which are unique to a particular system.
+For multi-system deployments, such as the [pipeline deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can specify the following types of configuration settings:
 
-  Typical examples include host names and ports.
-* Sensitive, managed using either an environment variable, using the [`magento config:sensitive:set` command]({{ page.baseurl }}) or using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+| shared          | Settings that are shared between systems using `app/etc/config.php` |
+| sensitive       | Settings that are restricted or confidential                        |
+| system-specific | Settings that are unique to a particular system or environment      |
 
-  Typical examples are {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} keys, user names, or passwords.
-
-  You cannot share either system-specific or sensitive settings between development and production systems.
-
-To specify either a system-specific or sensitive configuration value, add a reference to [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="_blank"} to `di.xml` as follows:
+The following code sample is a template for specifying values as sensitive or system-specific:
 
 {% highlight php startinline=true %}
 <type name="Magento\Config\Model\Config\TypePool">
    <arguments>
-      <argument name="{sensitive|environment}" xsi:type="array">
-         <item name="<config path>" xsi:type="string">1</item>
+      <argument name="VALUE_TYPE" xsi:type="array">
+         <item name="CONFIG_PATH" xsi:type="string">ARGUMENT_VALUE</item>
       </argument>
    </arguments>
 </type>
 {% endhighlight %}
 
-where `<argument name="{sensitive|environment}` specifies the type of value: either sensitive or system-specific.
+| `VALUE_TYPE`     | Specifies the type of value: either `sensitive` or `environment`.                                                                                              |
+| `CONFIG_PATH`    | A unique, `/`-delimited string that identifies this configuration setting.                                                                                     |
+| `ARGUMENT_VALUE` | A value of `1` indicates the `CONFIG_PATH` value is sensitive or system-specific. The default `0` value indicates it is neither sensitive nor system specific. |
 
-and `<config path>` is a `/`-delimited string that uniquely identifies this configuration setting.
+Do not share sensitive or system-specific settings stored in `app/etc/env.php` between development and production systems.
 
-<div class="bs-callout bs-callout-info" id="merging-info" markdown="1">
-The same configuration setting can be both sensitive and system-specific.
-</div>
+See [sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples.
 
-### Sensitive setting
-An example of a sensitive setting follows:
+### Information related to pipeline deployment
 
-{% highlight php startinline=true %}
-<type name="Magento\Config\Model\Config\TypePool">
-   <arguments>
-      <argument name="sensitive" xsi:type="array">
-         <item name="payment/test/password" xsi:type="string">1</item>
-      </argument>
-   </arguments>
-</type>
-{% endhighlight %}
+*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.)
+*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
-After specifying the sensitive setting, use the following commands to verify it:
-
-    php bin/magento cache:clean
-    php bin/magento app:config:dump
-
-A message similar to the following is displayed:
-
-    The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
-    CONFIG__DEFAULT__PAYMENT__TEST__PASWORD for payment/test/password
-    Done.
-
-### System-specific settings
-Like sensitive settings, system-specific settings are written to `app/etc/env.php` only.
-
-A configuration example follows:
-
-{% highlight php startinline=true %}
-<type name="Magento\Config\Model\Config\TypePool">
-   <arguments>
-      <argument name="environemnt" xsi:type="array">
-         <item name="<config path>" xsi:type="string">1</item>
-      </argument>
-   </arguments>
-</type>
-{% endhighlight %}
-
-A complete list of Magento configuration paths can be found in:
-
-*   [TBD]()
-*   [TBD]()
-*   [TBD]()
-*   [TBD]()
-
-#### Related topics
+## Related topics
 
 * [ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
 * [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
+* [Sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html)

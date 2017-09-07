@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1.4 Release Notes
-menu_title: Magento EE 2.1.4 Release Notes
+title: Magento Commerce 2.1.4 Release Notes
+menu_title: Magento Commerce 2.1.4 Release Notes
 menu_order: 267
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
@@ -14,10 +14,10 @@ github_link: release-notes/ReleaseNotes2.1.4EE.md
 *	TOC
 {:toc}
 
-We are pleased to present Magento Enterprise Edition 2.1.4. This release includes many functional fixes and enhancements, plus one important security fix.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.4. This release includes many functional fixes and enhancements, plus one important security fix.
 
 
-Looking for the <a href="{{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?
+Looking for the <a href="{{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Commerce (Cloud)  2.1.4 and 2.0.12 Release Notes</a>?
 
 ## Highlights
 

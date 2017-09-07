@@ -6,6 +6,7 @@ title: Form component
 menu_title: Form component
 version: 2.1
 github_link: ui_comp_guide/components/ui-form.md
+redirect_from: /guides/v2.1/ui-components/ui-form.html
 ---
 
 
@@ -414,6 +415,6 @@ To replace one instance of a UI Form Component redefine link to a constructor in
         <item name="js_config" xsi:type="array">
             <item name="component" xsi:type="string">Magento_Customer/js/form/customFormConstructor</item>
         </item>
-        </argument>
+    </argument>
 </form>
 {% endhighlight %}

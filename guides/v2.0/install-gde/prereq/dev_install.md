@@ -31,6 +31,8 @@ The audience for this topic is anyone who contributes to the Magento CE codebase
 
 {% include install/composer-overview.html %}
 
+## Install Composer {#instgde-prereq-compose-install}
+
 {% include install/composer-clone.md %}
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
@@ -82,7 +84,7 @@ To clone the Magento GitHub repository using the SSH protocol:
 	<p><img src="{{ site.baseurl }}common/images/install_mage2_clone-ssh.png" width="650px" alt="Clone the Magento GitHub repository using SSH"></p>
 
 1.	Change to your web server's docroot directory.
-	Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
+	Typically, for Ubuntu, it's `/var/www` or `/var/www/html` and for CentOS it's `/var/www/html`.
 
 	Need help locating the docroot? Click <a href="{{page.baseurl}}install-gde/basics/basics_docroot.html">here.
 
@@ -128,7 +130,7 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 1.	Change to your web server's docroot directory.
 
-	Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
+	Typically, for Ubuntu, it's `/var/www` or `/var/www/html` and for CentOS it's `/var/www/html`.
 
 2.	Enter `git clone` and paste the value you obtained from step 1.
 
@@ -136,13 +138,6 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 		git clone https://github.com/magento/magento2.git
 3.	Wait for the repository to clone on your server.
-
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
-			<pre>Cloning into 'magento2'...
-Permission denied (publickey).
-fatal: The remote end hung up unexpectedly</pre>
-	</div>
 
 4.	Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:
 

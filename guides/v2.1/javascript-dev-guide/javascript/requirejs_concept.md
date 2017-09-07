@@ -62,10 +62,10 @@ Example of how aliases can be used. Open a browser console on any Magento page a
 
 {%highlight js%}
 
-	require(['productGallery']); // load the module on the page
-	var gallery1 = require('productGallery');
+    require(['productGallery']); // load the module on the page
+    var gallery1 = require('productGallery');
     var gallery2 = require('Magento_Catalog/js/product-gallery');
-	console.log(gallery1); // it does not return a simple type
+    console.log(gallery1); // it does not return a simple type
     console.log(gallery1 === gallery2); // they are the same
 
 {%endhighlight%}
@@ -73,4 +73,4 @@ Example of how aliases can be used. Open a browser console on any Magento page a
 
 Tip: One more way that you can use `require` object is to retrieve a current configuration during runtime. Just type in a browser console:
 
-	require.s.contexts._.config;
+    require.s.contexts._.config;

@@ -4,7 +4,7 @@ group: fedg
 subgroup: A_Themes
 title: Configure images properties for a theme
 menu_title: Configure images properties for a theme
-menu_order: 4
+menu_order: 90
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-images.md
 ---

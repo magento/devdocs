@@ -1,10 +1,10 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Step 3. Enable/Disable
 menu_title: Enable/Disable
-menu_node: 
+menu_node:
 menu_order: 11
 version: 2.2
 github_link: comp-mgr/module-man/modman-enable-disable.md
@@ -17,4 +17,4 @@ To enable or disable your module, click the appropriate button. The following fi
 
 If successful, a page similar to the following displays.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/modman_disable_success.png" width="250px" alt="Your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} was successfully disabled">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/modman_disable_success.png" width="250px" alt="Your module was successfully disabled">

@@ -20,6 +20,9 @@ versions:
    -
       name: "2.1"
       url: guides/v2.1/
+   -
+      name: "2.2"
+      url: guides/v2.2/
 
 # GitHub variables
 github: "https://github.com/magento/devdocs/tree/develop/guides/"
@@ -75,7 +78,7 @@ defaults:
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 kramdown:
   toc_levels: 2..3
 
@@ -84,9 +87,4 @@ incremental: false
 gems:
   - jekyll-redirect-from
 
-
-
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'guides/v2.2']
-
-
-
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea']

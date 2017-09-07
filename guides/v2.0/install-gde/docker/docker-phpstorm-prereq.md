@@ -10,6 +10,8 @@ version: 2.0
 github_link: install-gde/docker/docker-phpstorm-prereq.md
 ---
 
+{% include install/docker/deprecated-note.html %}
+
 This topic discusses tasks you must perform before you can use PhpStorm with DevBox.
 
 ## Find a service port

@@ -4,8 +4,7 @@
     <li class="first">
       <a href="#">Setup and Deployment</a>
         <ul class="menu nav">
-          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
-            <li><a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation Guide</a></li>
+          <li><a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation Guide</a></li>
           {% if page.guide_version == "2.2" %}
           <li class="leaf"><a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
           {% elsif page.guide_version == "2.1" %}
@@ -15,7 +14,7 @@
           {% endif %}
           <li class="leaf"><a href="{{page.baseurl}}config-guide/bk-config-guide.html">Configuration Guide</a></li>
           <li class="leaf"><a href="{{page.baseurl}}migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li class="leaf"><a href="{{page.baseurl}}cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="{{page.baseurl}}cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li class="leaf"><a href="{{site.baseurl}}magento-release-information.html">Release Information</a></li>
         </ul>
     </li>
@@ -40,7 +39,7 @@
         <a href="#">Frontend</a>
         <ul class="menu nav">
           <li class="first leaf"><a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-          {% if page.guide_version == "2.1" %}
+          {% if page.guide_version == "2.1" or page.guide_version == "2.2" %}
           <li class="leaf"><a href="{{page.baseurl}}ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
           {% elsif page.guide_version == "2.0" %}
           <li class="leaf"><a href="{{page.baseurl}}ui-components/ui-component.html">UI Components</a></li>

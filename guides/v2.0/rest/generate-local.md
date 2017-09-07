@@ -12,13 +12,13 @@ github_link: rest/generate-local.md
 
 ## Get more REST API documentation
 
-The REST documentation on the Magento devdocs {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2 Community Edition. However, the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.
+The REST documentation on the Magento devdocs {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2. However, the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.
 
 Magento provides two ways to get detailed information about the structure of the REST APIs, as described below.
 
 ## Generate a full REST API reference locally
 
-The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include Magento Enterprise Edition (EE) modules, third-party modules, and {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes that have been installed on your system. To view this documentation, go to:
+The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include {{site.data.var.ee}} modules, third-party modules, and {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes that have been installed on your system. To view this documentation, go to:
 
 `http://<magento_host>/swagger`
 
@@ -34,7 +34,7 @@ The generated Swagger documentation provides the capability to test REST API req
 
 You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to `GET` and the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to
 
-`http://<magento_host>/rest/<store_code>/schema&services=<serviceName1,serviceName2,..>`
+`http://<magento_host>/rest/<store_code>/schema?services=<serviceName1,serviceName2,..>`
 
 The value of `store_code` must be one of the following:
 

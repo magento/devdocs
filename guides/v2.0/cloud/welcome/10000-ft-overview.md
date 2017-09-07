@@ -1,11 +1,11 @@
 ---
 layout: default
-group: cloud
-subgroup: 010_welcome
+group:
+subgroup:
 title: The 10,000 ft overview
 menu_title: 10,000 ft overview
-menu_order: 20
-menu_node: 
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/welcome/10000-ft-overview.md
 ---
@@ -68,7 +68,7 @@ There are two kinds of hooks that run at different points in time: `build` and `
 
 The default hooks are as follows:
 
- * `php bin/magento magento-cloud:build` - this is a build hook. It handles applying any patches you might have provided 
+ * `php bin/magento magento-cloud:build` - this is a build hook. It handles applying any patches you might have provided
  * `php vendor/magento/magento-cloud-configuration/pre-deploy.php` - this is a deploy hook that clears the cache and marshals files around to enable the next deploy hook, which depends on Magento's console frmaework, to be able to run correctly.
  * `php bin/magento magento-cloud:deploy` - this deploy hook installs or updates the application, and updates config values whenever they change (such as DB connection details).
 
