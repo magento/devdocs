@@ -2,8 +2,8 @@
 layout: default
 group: mrg
 subgroup: Commerce
-title: Module Reference Guide
-menu_title: Magento_CatalogInventoryStaging module
+title: Magento_CatalogInventoryStaging module
+menu_title: CatalogInventoryStaging
 menu_order: 2
 version: 2.1
 ee_only: true

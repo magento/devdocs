@@ -1,13 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 090_configure
-title: GitHub integration
-menu_title: GitHub integration
-menu_order: 90
+subgroup: 020_tech
+title: GitHub
+menu_title: GitHub
+menu_order: 10
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: integrate
 version: 2.0
 github_link: cloud/project/project-integrate-github.md
 ---

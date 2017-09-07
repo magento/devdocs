@@ -29,17 +29,20 @@ Write sentences with plain, concise language. Use contractions for verbs. Never 
 
 Content should be gender neutral. To avoid “his” or “her” pronouns, change singular pronouns to plural and use a gender-neutral “their”, instead.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
- **No** – "A merchant can update his extensions."
+*Example:*
 
-  Yes – "Merchants can update their extensions."
-</div>
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – "A merchant can update his extensions."</li>
+  <li>Yes – "Merchants can update their extensions."</li>
+</ul>  
+<br>
 
 **Follow accessibility and readability standards.**
 
 To ensure that users with special needs, including the use of screen readers, can easily access your content [follow this summary of tips](https://www.w3.org/WAI/WCAG20/glance/) to meet Web Content Accessibility Guidelines (WCAG) 2.0 standards.
 
-Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php]), Magento Admin content should score above 50 (high-school level).
+Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php), Magento Admin content should score above 50 (high-school level).
+<br>
 
 **Use correct terms and content style.**
 
@@ -49,6 +52,7 @@ When uncertain about using a correct term or style, consult the [Magento Glossa
 
 1.	The Associated Press (AP) Stylebook
 2.	Microsoft Manual of Style — Content for a worldwide audience (Ch. 3), Accessible content (Ch. 4), Procedures and technical content (Ch. 6)
+<br>
 
 **Avoid jargon, slang, and acronyms.**
 
@@ -58,27 +62,32 @@ Avoid terms that may not translate internationally, like metaphors, other figura
 
 When introducing a term that may be unfamiliar to merchants, apply a glossary term from the Magento Glossary, provide further explanation, or add contextual help. To see what acronyms can be used on first reference, check the Magento Word Usage Bank and AP Stylebook. When in doubt, use the full spelling and add the acronym in parenthesis afterword.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-  **No** – “Magento is the flexible commerce solution.”
+*Example:*
 
-  Yes – “With Magento, almost everything can be customized, from the storefront user interface theme to the site's backend processes.”
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “Magento is the flexible commerce solution.”</li>
+  <li>Yes – “With Magento, almost everything can be customized, from the storefront user interface theme to the site's backend processes.”</li>
+</ul>
 
----
+*Example:*
 
-  **No** – “This SaaS feature is only available in Magento Commerce.”
-
-  Yes – “This {% glossarytooltip 4fd82444-6f73-436c-9e67-04f9a6b0fa9d %}software as a service{% endglossarytooltip %} (SaaS) feature is only available in Magento Commerce.”
-</div>
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “This SaaS feature is only available in Magento Commerce.”</li>
+  <li>Yes – “This {% glossarytooltip 4fd82444-6f73-436c-9e67-04f9a6b0fa9d %}software as a service{% endglossarytooltip %} (SaaS) feature is only available in Magento Commerce.”</li>
+</ul>  
+<br>
 
 **Empower the merchant with positive tone and sentence structure.**
 
 Avoid negative sentence constructions using words like "no", "never", "don't" to ensure clarity and a positive tone.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-  **No** – Don’t use negative sentence construction.
+*Example:*
 
-  Yes – Avoid negative sentence construction.
-</div>
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – Don’t use negative sentence construction.</li>
+  <li>Yes – Avoid negative sentence construction.</li>
+</ul>  
+<br>
 
 **Use active voice.**
 
@@ -88,11 +97,13 @@ Passive voice identifies the action's recipient, not the source, as the subject 
 
 Zombie test: If you can put the words “by zombies” after a subject and verb, you’re using passive voice. Example: “Magento is used (by zombies)”
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-  **No** – “The store address is used to calculate ...”
+*Example:*
 
-  Yes – “The system uses the store address to calculate ...”
-</div>
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “The store address is used to calculate ...”</li>
+  <li>Yes – “The system uses the store address to calculate ...”</li>
+</ul>  
+<br>
 
 **Write in present tense.**
 
@@ -102,11 +113,13 @@ Additionally, present tense is easier to read than past or future tense.
 
 Use future tense only to emphasize that something, from the user’s perspective, will occur later.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-  **No** – A customer will receive an email confirmation after purchase.
+*Example:*
 
-  Yes – A customer receives an email confirmation after purchase.
-</div>
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – A customer will receive an email confirmation after purchase.</li>
+  <li>Yes – A customer receives an email confirmation after purchase.</li>
+</ul>  
+<br>
 
 **Avoid personal pronouns.**
 
@@ -114,39 +127,42 @@ Most websites have eliminated personal pronouns because using pronouns like “y
 
 Exception: “You” or “your” neutral pronouns may be used in some cases to directly engage merchants in familiar, conversational language.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-  **No** – Change your My Account preferences.
+*Example:*
 
-  Yes – Change your Account preferences.
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – Change your My Account preferences.</li>
+  <li>Yes – Change your Account preferences.</li>
+</ul>
 
-  ---
+*Example:*
 
-  **No** – We will send a confirmation, and you will receive it in 2-3 days.
-
-  Yes – You will receive a confirmation in 2-3 days.
-</div>
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – We will send a confirmation, and you will receive it in 2-3 days.</li>
+  <li>Yes – You will receive a confirmation in 2-3 days.</li>
+</ul>  
+<br>
 
 **Use consistent labels in user-interface (UI) content.**
 
 The tone in UI content – including navigation, tables, forms, and calls to action – is usually more focused on accuracy and conciseness, but the same standards apply: Use clear, plain language and consult global conventions to ensure content is understood by all.
 
 Consistency is critical. For example, wherever content is displayed in data tables and forms, it should use Magento standard or global conventions.
+<br>
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-  In a task flow:
+*Correct example of button-label consistency, in a task flow:*
 
-  Yes – “Continue” button in “Catalog” pages
+<ul style="list-style-type:none">
+  <li>Yes – “Continue” button in “Catalog” pages</li>
+  <li>Yes – “Continue” button in “Reports” pages</li>
+</ul>  
 
-  Yes – “Continue” button in “Reports” pages
+*Incorrect example of button-label consistency, in a task flow:*
 
-  ---
-
-  In a task flow:
-
-  **No** – “Next” button in “Catalog” pages
-
-  Yes – “Continue” button in “Reports” pages
-</div>
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “Next” button in “Catalog” pages</li>
+  <li>Yes – “Continue” button in “Reports” pages</li>
+</ul>  
+<br>
 
 **Write empowering errors and messages that lead to appropriate next steps.**
 
@@ -155,8 +171,9 @@ Take a neutral tone – don’t blame a merchant or in any way indicate that the
 1.	Tell merchants what went wrong, in specific terms.
 2.	Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-  **No** – “You didn’t enter your email address.”
+*Example:*
 
-  Yes – “An email address is required. Enter the email address and click “Continue”.”
-</div>
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “You didn’t enter your email address.”</li>
+  <li>Yes – “An email address is required. Enter the email address and click “Continue”.”</li>
+</ul>  

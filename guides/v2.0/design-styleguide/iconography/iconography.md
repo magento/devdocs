@@ -1,34 +1,19 @@
 ---
 layout: default
 group: styleguide
-subgroup: Style Guide
-title: Admin Style Guide
+subgroup: Admin Style Guide
+title: Admin Iconography
 menu_title: Iconography
-menu_order: 4
+menu_order: 2
 menu_node:
 version: 2.0
 github_link: design-styleguide/iconography/iconography.md
 ---
-
-<h2>Iconography</h2>
-
-<h3>Contents</h3>
-* <a href="#overview">Overview</a>
-* <a href="#how-icons-used">How icons are used</a>
-* <a href="#icon-library">Icon Library</a>
-* <a href="#creating-icons">Creating Icons</a>
-* <a href="#icon-fonts">Icon Fonts</a>
-* <a href="#accessibility">Accessibility</a>
-
-
-<h3 id="overview">Overview</h3>
-
-Icons are used throughout the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} interface, often as a controls to initiate a function (such as "Filter"), or to direct the user to section (such as "Account").
+Icons are used throughout the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} interface, often as controls to initiate a function (such as a "Filter") or to direct a user to a section (such as "Account").
 
 Icons are meant to provide a visual representation of functionality or content and should therefore bear some conceptual resemblance to them. Icons should be able to communicate their "use" to the user without the assistance of a text label, though labels should be used in the UI whenever possible to minimize ambiguity.
 
-
-<h3 id="how-icons-used">How icons are used</h3>
+<h2 id="how-icons-used">How icons are used</h2>
 
 Icons may appear in a variety of sizes within the interface as controls for tools and functions and to assist in "way-finding" within the application.  Principles of a "Touch-Friendly" UI should be observed; icons should be large enough to provide a reasonable "touch-target" for the user.  The icon may be scaled at something less than this optimal size when coupled with a "target" area that provides this optimal size, such as an expand control used where the entire header row is clickable/tappable.
 
@@ -36,18 +21,16 @@ The functionality associated with a particular icon should be used consistently 
 
 Typically icons should represent a single, unique concept and be used consistently in the UI. However some icons have a dual purpose and rely on size, placement and context to communicate their meaning to the user.  The "Error" icon is an example of this. When used in an "Alert", the supporting elements of copy, position, etc. help provide meaning.  This same icon can also be used as a remove or close control, and size, color, position and context differentiate its’ use for the user.  
 
+<h2 id="icon-library">Icon Library</h2>
 
-<h3 id="icon-library">Icon Library</h3>
-
-In the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} UI icons have a simple, flat, single-color, 2D, style. This style prevents the loss of detail at smaller sizes and makes the shapes easier to comprehend.
+In the Magento Admin, UI icons have a simple, flat, single-color, 2D, style. This style prevents the loss of detail at smaller sizes and makes the shapes easier to comprehend.
 
 <a href="src/Magento-icon-library.ai"> Download Icon Library .ai file</a><br>
 <a href="src/magento_icon_library.sketch"> Download Icon Library Sketch file</a>
 
 <img src="img/Magento-icon-contact-sheet.png">
 
-
-<h3 id="creating-icons">Creating Icons</h3>
+<h2 id="creating-icons">Creating Icons</h2>
 
 **Rules**
 
@@ -82,7 +65,7 @@ How to use the icon grid:
 <img src="img/using-icon-grid.png">
 
 
-<h3 id="icon-fonts">Icon Fonts</h3>
+<h2 id="icon-fonts">Icon Fonts</h2>
 
 We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found here <a href="https://github.com/magento/magento2/tree/develop/app/design/adminhtml/Magento/backend/web/fonts/admin-icons" target="_blank"> https://github.com/magento/magento2/tree/develop/app/design/adminhtml/Magento/backend/web/fonts/admin-icons </a>
 
@@ -99,7 +82,7 @@ If you want to add your own icons, each icon will need to be in its own SVG file
 
 
 
-<h3 id="accessibility">Accessibility</h3>
+<h2 id="accessibility">Accessibility</h2>
 
 Efforts should be made to optimize icons and/or icon fonts for assistive technology.  
 
