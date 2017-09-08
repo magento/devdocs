@@ -27,8 +27,8 @@ Specific files manage your Magento configurations for builds, services, and rout
 
   * [MySQL service]({{ page.baseurl }}cloud/project/project-conf-files_services-mysql.html) configuration for the database set in services.yaml
   * [Redis service]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html) configuration for a backend caching solution set in services.yaml
-  * [Solr service]({{ page.baseurl }}cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.<ee>}} 2.0 set in services.yaml
-  * [Elasticsearch service]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html) configuration for searches supported for {{site.data.var.<ee>}} 2.1 and later set in services.yaml
+  * [Solr service]({{ page.baseurl }}cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.ee}} 2.0 set in services.yaml
+  * [Elasticsearch service]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html) configuration for searches supported for {{site.data.var.ee}} 2.1 and later set in services.yaml
   * [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html) configuration for a messaging broker set in services.yaml
 
 You should also configure services directly in Staging and Production:

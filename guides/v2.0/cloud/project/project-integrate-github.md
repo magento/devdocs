@@ -11,7 +11,7 @@ github_link: cloud/project/project-integrate-github.md
 ---
 
 ## About the GitHub integration {#cloud-int-gh-about}
-The GitHub integration enables you to manage your {{site.data.var.<ece>}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.<ee>}}. Therefore, before you begin, make sure your project and environments are in a GitHub repository.
+The GitHub integration enables you to manage your {{site.data.var.ece}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.ee}}. Therefore, before you begin, make sure your project and environments are in a GitHub repository.
 
 We strongly recommend you use a *private* GitHub repository.
 
@@ -62,7 +62,7 @@ To enable the GitHub integration for your environment:
 
 	where
 
-	`<project ID>` is your {{site.data.var.<ece>}} project ID
+	`<project ID>` is your {{site.data.var.ece}} project ID
 
 	`<your GitHub token>` is the token you got in the preceding section
 

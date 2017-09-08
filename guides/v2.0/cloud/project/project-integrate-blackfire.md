@@ -12,22 +12,22 @@ github_link: cloud/project/project-integrate-blackfire.md
 
 [Blackfire Profiler](https://blackfire.io/profiler){:target="_blank"} helps you locate and investigate performance issues in your environment at the code-level. it creates a performance profile by tracking every PHP call and method and SQL queries performed by your code. Blackfire digs deeper providing granular performance analytics. You can activate and use Blackfire Profiler in all of your environments, especially helpful in Staging and Production.
 
-This information helps you get Blackfire installed on your local, integrated into development or Integration, and running your first profile.
+This information helps you get Blackfire installed on your local, integrated into Integration, and running your first profile.
 
 For full details on integrations, also review [Blackfire’s complete Magento Commerce (Cloud)](https://support.blackfire.io/blackfire-on-magento-cloud){:target="_blank"} guide. They also include a number of [incredible resources](#resources) to get you started.
 
 Blackfire includes the following [environments](https://blackfire.io/docs/reference-guide/environments){:target="_blank"} through their site:
 
-* `Magento Cloud (<Project ID>)` - Dev: This is your Integration or development environments.
-* `Magento Cloud (<Project ID>)` - Test: This is your Staging environment.
-* `Magento Cloud (<Project ID>)` - Prod: This is your Production environment.
+* `Magento Cloud (<Project ID>)` - Dev: This is your Integration environments
+* `Magento Cloud (<Project ID>)` - Test: This is your Staging environment
+* `Magento Cloud (<Project ID>)` - Prod: This is your Production environment
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For Pro plans, you need to enter a Support ticket with your Blackfire credentials to get Staging and Production configured with Blackfire. We'll help you get Blackfire configured in those environments.
 </div>
 
 ## Get your Blackfire credentials {#cloud-int-black}
-The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.<ece>}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation.
+The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation.
 
 For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}.
 
@@ -45,18 +45,18 @@ We recommend adding at least one account through Blackfire to manage all access,
 	![Promote an admin]({{ site.baseurl }}common/images/cloud_blackfire-member.png)
 
 ## Enable Blackfire on your local {#cloud-int-black-en}
-You need to install and configure Blackfire on your local workspace with your working {{site.data.var.<ece>}} installation. You don't need to run these installations directly on the hosted environments, only on your local.
+You need to install and configure Blackfire on your local workspace with your working {{site.data.var.ece}} installation. You don't need to run these installations directly on the hosted environments, only on your local.
 
 We recommend using their installation guide to walk you through the process:
 
 1. Log in to [Blackfire](https://blackfire.io/login){:target="_blank"}.
-2. Select the Integration and Development environment in the **Current Environment** list.
+2. Select the Integration environment in the **Current Environment** list.
 3. Select the Settings tab.
 4. Scroll to the bottom and locate the Server ID and Server Token for the environment. You will need these values for the instructions.
 5. Open [this guide](https://blackfire.io/docs/up-and-running/installation){:target="_blank"}, select the Operating System, and follow the instructions.
 
 ## Integrate Blackfire in development {#dev}
-We recommend enabling Blackfire in all of your environments including development and Integration. To integrate, you begin in the Blackfire site. For full details, see [their guide.](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud){:target="_blank"}. You can integrate with Pro's Integration environment and Starter's development branches.
+We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see [their guide.](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud){:target="_blank"}. You can integrate with Pro's Integration environment and Starter's development branches.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For Starter plans, pushing your code and `.magento.app.yaml` file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.
@@ -135,7 +135,7 @@ To verify Blackfire works, you have a couple options: a browser extension or usi
 To profile using the browser:
 
 1. Install the Blackfire browser extension in [Chrome](https://blackfire.io/docs/integrations/chrome#installing-the-companion){:target="_blank"} or [Firefox](https://blackfire.io/docs/integrations/firefox#installing-the-companion){:target="_blank"}. A new Blackfire icon displays in your browser next to the address location. If you don't see it, you may need to display the bar.
-2. Visit the store or site URL for your specific environment. For example, access the URL for your development or Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.
+2. Visit the store or site URL for your specific environment. For example, access the URL for your Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.
 3. Click the Blackfire icon to profile. For Compare with, select No Reference.
 
 	![Start profiling]({{ site.baseurl }}common/images/cloud_blackfire.png)
