@@ -53,9 +53,16 @@ To access and manage your project environments, the Project Owner needs to:
 
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
-For detailed instructions for setting up environments, see [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html).
+For detailed instructions for setting up environments, see [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html). For more information on the interface, see [Manage your project]({{page.baseurl}}cloud/project/projects.html).
 
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}common/images/cloud_project-access.png)
+
+## Access your Magento Admin panel {#admin}
+When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. URLs to access your store are available through [Project Web Interface]({{page.baseurl}}cloud/project/projects.html).
+
+For the store URL, add /admin at the end. A login panel displays. We provide an general Admin account to initially login. The default username is admin and password is admin12. You should immediately change the password.
+
+These values are controlled through the Admin Panel and the environment application variables for ADMIN_USERNAME and ADMIN_PASSWORD. For details, see [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
 
 ## Coming soon: Onboarding Portal {#portal}
 <!-- (http://cloud.magento.com){:target="_blank"} -->

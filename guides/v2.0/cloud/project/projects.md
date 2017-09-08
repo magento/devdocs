@@ -40,11 +40,11 @@ To access an environment store and admin, select a branch and click **Access Sit
 
 For Pro, to view Staging and Production, you need to use a URL or SSH commands:
 
-* Staging: http[s]://staging.<domain>.<project ID>.ent.magento.cloud
+* Staging: `http[s]://staging.<domain>.<project ID>.ent.magento.cloud`
 * Production:
 
-  * Load balancer URL: http[s]://<your domain>.c.<project ID>.ent.magento.cloud
-  * Direct access to one of the three redundant servers: http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud
+  * Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+  * Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
   The production URL is used by the content delivery network (CDN).
 
