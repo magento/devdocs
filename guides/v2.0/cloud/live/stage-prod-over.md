@@ -1,38 +1,28 @@
 ---
 layout: default
-group: cloud
-subgroup: 160_live
+group:
+subgroup:
 title: Overview of staging and production
 menu_title: Overview of staging and production
-menu_order: 3
-menu_node: 
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/live/stage-prod-over.md
 ---
 
-<style>
-td.blank {border: none!important;
-background: none!important;
-}
-</style>
+As discussed in more detail in [Cloud Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html), Magento Enterprise Cloud Edition has three types of environments:
 
-As discussed in more detail in [Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html), Magento Enterprise Cloud Edition has three types of systems:
+*	*Integration*: provides eight active environments, including your project's `master` branch, for your developers to code, build, and test. You merge all of your final code to the `master` and deploy to Staging for extensive production-like testing.
 
-*	*Integration*, used by a developer to write custom code and test it.
+*	*Staging*: provides an environment for full testing prior to going live. Staging includes all production services to provide a near-production environment for testing your finalized code for merchant and customer interactions. It shares a dedicated container with Production.
 
-    You can have up to eight environments in your integration system.
+*	*Production*: hosts your public-facing live store on triple-redundant hardware for immediate fail-over to and continued access by your customers and merchant admins. Production shares a dedicated container with Staging.
 
-*	*Staging*, which runs on hardware similar to production.
-
-	Staging is where you test your finalized code before deploying to your live production system.
-
-*	*Production*, which runs your public-facing store on triple-redundant hardware.
-
-The differences between integration, staging, and production follow:
+This table lists the differences between the environments.
 
 <table>
     <tbody>
-        
+
     <tr>
         <td class="blank"></td>
         <th>Integration</th>
@@ -59,7 +49,7 @@ The differences between integration, staging, and production follow:
     <td>Yes</td>
     <td>Yes</td>
     </tr>
-    
+
 </tbody>
 </table>
 
@@ -67,26 +57,34 @@ The following diagram illustrates how the three systems work on a high level:
 
 ![How test, staging, and production works]({{ site.baseurl }}common/images/cloud_stage-prod-concept1.png){:width="600px"}
 
-In your integration system, you can create up to eight environments however you want. For example, you could have a feature branch and iterate development over several sprints. At the end of a sprint, you could merge (that is, push) code the the parent branch (labeled Feature1 in the preceding diagram). To start another sprint you could sync (that is, pull) code from Feature1 to your next sprint.
+In your Integration environment, you can create up to eight active environments for each active Git branch of your code. For example, you could have a feature branch and iterate development over several sprints. At the end of a sprint, you could merge (that is, push) code to the parent branch (labeled Feature1 in the preceding diagram). To start another sprint you could sync (that is, pull) code from Feature1 to your next sprint.
 
-After you fix bugs, you merge Feature1 with master, making that code potentially ready for deployment to staging and then to production.
+After you fix bugs, you merge Feature1 with `master`, making that code potentially ready for deployment to Staging and then to Production.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Although the integration system can have many branches, staging and production have only one, <code>master</code>.</p>
+  <p>Although the Integration environment can have many branches, Staging and Production have only one branch: the deployed Git <code>master</code>.</p>
 </div>
 
-*Assisted deployment* means that your staging and production systems require you to perform the tasks discussed in the following paragraphs.
+## Assisted deployment
+The Staging and Production environments require *assisted deployment*. These environments are not accessible through the Enterprise Cloud Edition Web Interface to add SSH keys or to modify environment variables, routes, or settings. You must enter a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to deploy code, add SSH keys, and go live.
 
-### Support ticket
-Create a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html) to notify us you're ready to move to either staging or production.
+With SSH keys added, you can access the environments to complete CLI commands without requiring tickets.
 
+### Enter a ticket to deploy
 {% include cloud/hooks.md %}
 
 ### Git and SSH URLs
-Get your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Enterprise Cloud Edition.
+Locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Enterprise Cloud Edition.
 
-After you know these URLs, you can access them without further intervention. You can deploy updated code to staging or production using Git commands. 
+After you know these URLs, you can access those environments without further intervention.
+* Use the URLs to access the store as a customer.
+* Use the URL /admin to access the Admin panel.
+* Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-You should always deploy code and data from the `master` branch of your integration environment to staging, and then from staging to production. If you need to fix issues, fix them in development and push them to staging before production.
-</div>
+## Read-only environments
+You should always deploy code and data from the `master` branch of your Integration environment to Staging, then to Production. If you need to fix issues, fix them in local development, push to Git, and complete the full deployment.
+
+#### Related topics
+*	[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
+*	[Deploy code and data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+*	[Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html)

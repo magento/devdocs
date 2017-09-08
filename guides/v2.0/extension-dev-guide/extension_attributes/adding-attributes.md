@@ -97,7 +97,7 @@ Likewise afterSave plugin should take data from entity and do some manipulations
             ) {
                 $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
                 $ourCustomData = $extensionAttributes->getOurCustomData();
-                $this-customDataRepository->save($ourCustomData);
+                $this->customDataRepository->save($ourCustomData);
 
                 return $entity;
             }
@@ -109,7 +109,7 @@ But if some entity doesn't have implementation to fetch extension attributes, we
 
 Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might looks like this:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 use Magento\Catalog\Api\Data\ProductExtensionInterface;
 use Magento\Catalog\Api\Data\ProductInterface;
@@ -149,7 +149,7 @@ class ProductAttributesLoad
     }
 }
 
-{% endhighlight %}
+```
 
 And now need to bind our plugin to `ProductInterface`:
 
@@ -174,11 +174,13 @@ For scalar attributes we can use next configuration:
 {% endhighlight %}
 
 For non-scalar attributes:
+{% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
     </extension_attributes>
 </config>
+{% endhighlight %}
 
 In first case we will get the next result:
 

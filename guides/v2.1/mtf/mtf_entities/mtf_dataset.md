@@ -223,7 +223,7 @@ If a variable is assigned more than one value:
 
 the value is processed as an array:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 $price = [
     'data' => [
         'shopping_cart' => [
@@ -236,7 +236,7 @@ $price = [
         ]
     ]
 ]
-{%endhighlight php%}
+```
 
 Also, in similar cases you can use array type in a data set, like:
 

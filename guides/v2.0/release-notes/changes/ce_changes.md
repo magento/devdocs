@@ -2,13 +2,13 @@
 layout: default
 group: release-notes
 subgroup: 03_BC
-title: Magento CE Backward Incompatible Changes
-menu_title: Magento CE changes
+title: Magento Open Source Backward Incompatible Changes
+menu_title: Magento Open Source changes
 version: 2.0
 github_link: release-notes/changes/ce_changes.md
 ---
 
-This topic provides details about backward incompatible changes made in Magento CE 2.0.
+This topic provides details about backward incompatible changes made in {{site.data.var.ce}} 2.0.
 
 All changes are aggregated into two tables:
 
@@ -19,6 +19,10 @@ where each change is displayed in a separate row in the table, with the followin
 
 - **Class** or **Interface** with the name of an affected class or interface
 - **What changed** with the description of a backward incompatible change
+
+## 2.0.15 - 2.0.14
+
+{% include changes/ce/2014-2015.html %}
 
 ## 2.0.14 - 2.0.13
 

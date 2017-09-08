@@ -1,17 +1,17 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Generate data for performance testing
 menu_title: Generate data for performance testing
-menu_node: 
+menu_node:
 menu_order: 800
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-perf-data.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
 ---
 
-<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
+## Overview of performance testing data {#config-cli-perf-overview}
 To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
@@ -22,11 +22,11 @@ The following figure shows how a product displays on the {% glossarytooltip 1a70
 
 This gives you an idea about what the data looks like.
 
-<h2 id="config-cli-before">First steps</h2>
+## First steps {#config-cli-before}
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see [Common arguments]({{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common).
 
-<h2 id="config-cli-perf-prof">About profiles</h2>
+## About profiles {#config-cli-perf-prof}
 The following table provides details about the data generator profiles (small, medium, large, and extra large).
 
 Profiles are located in `<your Magento install dir>/setup/performance-toolkit/profiles/<ce or ee>`
@@ -42,7 +42,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
             <th>Large profile</th>
             <th>Extra large profile</th>
         </tr>
-        
+
     <tr>
         <td><p>websites</p></td>
         <td><p>1</p></td>
@@ -66,10 +66,10 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
     </tr>
     <tr>
         <td><p>simple_products</p></td>
-        <td><p>800</p></td> 
+        <td><p>800</p></td>
         <td><p>16,000</p></td>
         <td><p>400,000</p></td>
-        <td><p>800,000</p></td> 
+        <td><p>800,000</p></td>
     </tr>
     <tr>
         <td><p>configurable_products</p></td>
@@ -97,7 +97,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
         <td><p>10</p></td>  
         <td><p>20</p></td>
         <td><p>50</p></td>
-        <td><p>100</p></td> 
+        <td><p>100</p></td>
     </tr>
     <tr>
         <td><p>catalog_target_rules</p></td>
@@ -144,14 +144,18 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
     </tbody>
 </table>
 
-<h3 id="config-cli-perf-run">Run the data generator</h3>
-Run the command as discussed in this section. After the command runs, it rebuilds indexers.
+### Run the data generator {#config-cli-perf-run}
+<div class="bs-callout bs-callout-warning" markdown="1">
+Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
+</div>
+
+Run the command as discussed in this section. After the command runs, you must [reindex all indexers]({{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex).
 
 Command options:
 
     magento setup:perf:generate-fixtures {path to profile}
 
-where `<path to profile>` specifies the absolute file system path to and name of a profile.
+Where `<path to profile>` specifies the absolute file system path to, and name of, a profile.
 
 For example,
 
@@ -178,16 +182,15 @@ Sample output for the small profile:
 
 
 #### Related topics
-
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
-*   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*   [Manage the cache]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html)
+*   [Manage the indexers]({{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html)
+*   [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html)
+*   [Code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html)
+*   [Set the Magento mode]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html)
+*   [URN highlighter]({{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html)
+*   [Dependency reports]({{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html)
+*   [Translation dictionaries and language packages]({{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html)
+*   [Deploy static view files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html)
+*   [Create symlinks to LESS files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html)
+*   [Run unit tests]({{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html)
+*   [Convert layout XML files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html)

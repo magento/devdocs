@@ -14,7 +14,7 @@ The Magento application generates code to create non-existent classes. As an exa
 
 	...
 	    public function __construct(
-	        \Magento\Customer\Model\AddressFactory $addressFactory,	
+	        \Magento\Customer\Model\AddressFactory $addressFactory,
 	...
 
 The first constructor parameter has a type of `Magento\Customer\Model\AddressFactory`. However, this class does not exist in `\Magento\Customer\Model` in the Magento 2 codebase. The Magento application *generates* this class because its name uses a recognized convention (in this case, because the name ends with `Factory`).
@@ -45,14 +45,12 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 *	The code is correct. You don’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon, and you don’t have to write tests for the generated code.
 *	Code generation writes the boilerplate code to enable you to write more challenging and interesting code.
 *	Consistent implementation.
-	
-	All generated Factories work the same way. After you learn know how one Factory works, you know how they all work.
-	
+
+	All generated Factories work the same way. After you know how one Factory works, you know how they all work.
+
 
 <h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
 When code changes as discussed in the preceding section, the Object Manager compiles it.
 
 
 The code compiler compiler creates `generated/metadata/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
-
-

@@ -29,7 +29,7 @@ The following is a list of recommended software for production instances in orde
 For multi-server deployments or for merchants planning on scaling their business we recommend the following:
 
 *	[Redis][redis-session] for sessions (from 2.0.6+)
-*	A separate Redis instance as your [default cache][redis-default-cache] 
+*	A separate Redis instance as your [default cache][redis-default-cache]
   *	Do not use this instance for page cache
 
 ### Server - Composer Optimization
@@ -92,9 +92,9 @@ Go to the Admin in default of developer mode and change the following settings f
 | ---------------- | -------------------- | ------ |
 | General Settings | Asynchronous Sending | Enable |
 
-#### Stores -> Index Management
+#### System -> Index Management
 
-Set all indexers to "Update on Schedule" mode.
+Set all indexers to "Update by Schedule" mode.
 
 
 ### Production Mode
@@ -104,11 +104,7 @@ Switching to production mode improves store front responsiveness and prevents lo
 Run the following commands to switch to production mode:
 
 ~~~
-bin/magento setup:static-content:deploy
-bin/magento setup:di:compile
-bin/magento deploy:mode:set -s production
-bin/magento index:reindex
-bin/magento cache:flush
+bin/magento deploy:mode:set production
 ~~~
 
 [composer-install]: {{page.baseurl}}install-gde/prereq/integrator_install.html

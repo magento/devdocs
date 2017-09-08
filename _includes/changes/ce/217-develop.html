@@ -106,18 +106,6 @@
         <td>Class was removed.</td>
     </tr>
     <tr>
-        <td>Magento\Integration\Setup\UpgradeData</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Integration\Plugin\Model\AdminUser</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Integration\Plugin\Model\CustomerUser</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
         <td>Magento\Indexer\Model\Processor\Handler</td>
         <td>Class was removed.</td>
     </tr>
@@ -482,6 +470,10 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Session\Config::configureCookieLifetime</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\RequireJs\Config::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -510,6 +502,18 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\ObjectManager\Code\Generator\Repository::NO_SUCH_ENTITY_EXCEPTION</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\ObjectManager\Code\Generator\Repository::INPUT_EXCEPTION</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\ObjectManager\Code\Generator\Repository::SEARCH_CRITERIA</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Module\Plugin\DbStatusValidator::aroundDispatch</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -530,8 +534,16 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Mail\Transport::$_message</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\HTTP\Adapter\Curl::__construct</td>
         <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Data\Argument\Interpreter\StringUtils::__construct</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\Css\PreProcessor\FileGenerator\RelatedGenerator::__construct</td>
@@ -622,6 +634,34 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\UrlRewrite\Model\Storage\AbstractStorage::doFindAllByData</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\AbstractStorage::doFindOneByData</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\AbstractStorage::doReplace</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\DbStorage::prepareSelect</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\DbStorage::doFindAllByData</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\DbStorage::doFindOneByData</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\DbStorage::doReplace</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Ui\Component\Listing\Columns\Date::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -640,6 +680,14 @@
     <tr>
         <td>Magento\Theme\Block\Html\Topmenu::$registry</td>
         <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Tax\Setup\InstallData::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Tax\Setup\UpgradeData::__construct</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Tax\Model\TaxRuleRepository::getList</td>
@@ -702,6 +750,10 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Store\App\Config\Source\RuntimeConfigSource::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Store\App\Action\Plugin\Context::aroundDispatch</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -716,6 +768,10 @@
     <tr>
         <td>Magento\Store\App\Action\Plugin\StoreCheck::aroundDispatch</td>
         <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SampleData\Model\Dependency::__construct</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\SalesInventory\Model\Plugin\Order\ReturnToStockInvoice::aroundExecute</td>
@@ -806,6 +862,10 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Reports\Model\ResourceModel\Report\Collection::setInterval</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Quote\Observer\Frontend\Quote\Address\CollectTotalsObserver::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -816,6 +876,10 @@
     <tr>
         <td>Magento\Quote\Model\QuoteRepository::getList</td>
         <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\Quote\TotalsReader::merge</td>
+        <td>[protected] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Quote\Model\Product\Plugin\RemoveQuoteItems::aroundDelete</td>
@@ -918,6 +982,10 @@
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\ImportExport\Controller\Adminhtml\Import\Start::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\GroupedProduct\Model\Sales\AdminOrder\Product\Quote\Plugin\Initializer::aroundInit</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -966,6 +1034,10 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Downloadable\Controller\Adminhtml\Product\Initialization\Helper\Plugin\Downloadable::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -1000,6 +1072,10 @@
     <tr>
         <td>Magento\Cron\Observer\ProcessCronQueueObserver::__construct</td>
         <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cron\Observer\ProcessCronQueueObserver::$timezone</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Cron\Model\Config\Reader\Db::__construct</td>
@@ -1050,6 +1126,10 @@
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Config\Controller\Adminhtml\System\AbstractConfig::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Config\App\Config\Type\System::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -1062,7 +1142,7 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogWidget\Model\Rule\Condition\Product::__construct</td>
+        <td>Magento\CatalogUrlRewrite\Observer\CategoryProcessUrlRewriteMovingObserver::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
@@ -1072,6 +1152,14 @@
     <tr>
         <td>Magento\CatalogUrlRewrite\Observer\CategoryProcessUrlRewriteSavingObserver::$urlPersist</td>
         <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogUrlRewrite\Observer\UrlRewriteHandler::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogUrlRewrite\Model\Storage\DbStorage::prepareSelect</td>
+        <td>[protected] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogUrlRewrite\Model\Category\Plugin\Storage::aroundReplace</td>
@@ -1162,6 +1250,10 @@
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogRule\Model\ResourceModel\Rule::getRulePrices</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogInventory\Setup\UpgradeData::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -1186,7 +1278,15 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogInventory\Model\Stock::$eventObject</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogInventory\Model\Stock\Item::$eventPrefix</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Model\Stock\Item::$eventObject</td>
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
@@ -2526,6 +2626,302 @@
         <td>[protected] Property has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::initializeData</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::setStore</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::getStore</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::canUseInternal</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::canUseCheckout</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::canUseForCountry</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::canUseForCurrency</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::getCode</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::getFormBlockType</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::getTitle</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::getConfigData</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::isAvailable</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::isActive</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::_debug</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::getDebugReplacePrivateDataKeys</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_code</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_formBlockType</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_infoBlockType</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_isGateway</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_isOffline</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canOrder</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canAuthorize</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canCapture</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canCapturePartial</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canCaptureOnce</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canRefund</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canRefundInvoicePartial</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canVoid</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canUseInternal</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canUseCheckout</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_isInitializeNeeded</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canFetchTransactionInfo</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canReviewPayment</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_canCancelInvoice</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_debugReplacePrivateDataKeys</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_paymentData</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$_scopeConfig</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::$logger</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::ACTION_ORDER</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::ACTION_AUTHORIZE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::ACTION_AUTHORIZE_CAPTURE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::STATUS_UNKNOWN</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::STATUS_APPROVED</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::STATUS_ERROR</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::STATUS_DECLINED</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::STATUS_VOID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::STATUS_SUCCESS</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::CHECK_USE_FOR_COUNTRY</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::CHECK_USE_FOR_CURRENCY</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::CHECK_USE_CHECKOUT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::CHECK_USE_INTERNAL</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::CHECK_ORDER_TOTAL_MIN_MAX</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::CHECK_ZERO_TOTAL</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\Method\AbstractMethod::GROUP_OFFLINE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::_getReplacements</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::_getAccessList</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::_getDesignExceptions</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::$_scopeConfig</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::$_cacheState</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::$readFactory</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::$reader</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::BUILT_IN</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::VARNISH</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::XML_PAGECACHE_TTL</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::XML_PAGECACHE_TYPE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::XML_VARNISH_PAGECACHE_ACCESS_LIST</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::XML_VARNISH_PAGECACHE_BACKEND_PORT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::XML_VARNISH_PAGECACHE_BACKEND_HOST</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::XML_VARNISH_PAGECACHE_GRACE_PERIOD</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::XML_VARNISH_PAGECACHE_DESIGN_THEME_REGEX</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::VARNISH_5_CONFIGURATION_PATH</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Model\Config::VARNISH_4_CONFIGURATION_PATH</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Integration\Model\Integration::__construct</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -3022,7 +3418,39 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\View\TemplateEnginePool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\View\Url\CssResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Page\Config\Structure</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Layout\Element</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Layout\GeneratorPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Layout\ScheduledStructure</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Layout\Reader\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Layout\Generator\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Layout\Data\Structure</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -3043,6 +3471,10 @@
     </tr>
     <tr>
         <td>Magento\Framework\View\Element\Text\ListText</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\Template\Context</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -3134,7 +3566,151 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Session\Generic</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Serialize\Serializer\Json</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\EntityMetadata</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Response\Aggregation</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Response\QueryResponse</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Binder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Cleaner</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Dimension</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\EmptyRequestDataException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Mapper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\NonExistingRequestNameException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Query\BoolExpression</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Query\Filter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Query\Match</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Filter\BoolExpression</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Filter\Range</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Filter\Term</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Filter\Wildcard</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\Aggregation\DynamicBucket</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Dynamic\Algorithm</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Dynamic\DataProviderFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Dynamic\EntityStorage</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Dynamic\EntityStorageFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Dynamic\IntervalFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Dynamic\Algorithm\Repository</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\ConditionManager</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\DocumentFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Mapper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\ScoreBuilder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\TemporaryStorage</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\TemporaryStorageFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Query\Builder\Match</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Field\FieldFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Aggregation\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Aggregation\DataProviderContainer</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -3194,6 +3770,14 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Notification\MessageList</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Notification\NotifierList</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Mview\View\ChangelogTableNotExistsException</td>
         <td>Class was added.</td>
     </tr>
@@ -3202,7 +3786,15 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Module\Dir\Reader</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Model\AbstractModel</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Model\ResourceModel\Db\ObjectRelationProcessor</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -3422,6 +4014,14 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Data\Form\FormKey</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Data\Form\FormKey\Validator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Data\Form\Element\AbstractElement</td>
         <td>Class was added.</td>
     </tr>
@@ -3482,7 +4082,55 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Config\AbstractXml</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\ConfigOptionsListConstants</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\Dom</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\DomFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\FileIterator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\FileIteratorFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\Theme</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Config\View</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\Reader\Filesystem</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\File\ConfigFilePool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\Dom\UrnResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\Dom\ValidationException</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -3490,11 +4138,43 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Config\Data\ConfigData</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\Data\Scoped</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\Converter\Dom\Flat</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\Composer\Package</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Cache\Frontend\Decorator\TagScope</td>
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Backup\AbstractBackup</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Backup\BackupException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Backup\Db</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Backup\Factory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Backup\Filesystem\Rollback\AbstractRollback</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -3515,6 +4195,10 @@
     </tr>
     <tr>
         <td>Magento\Framework\Backup\Exception\NotEnoughPermissions</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Backup\Db\BackupFactory</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -3566,11 +4250,31 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Api\FilterBuilder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Api\Search\Document</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Api\Search\SearchCriteria</td>
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Api\Search\SearchCriteriaBuilder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Acl\AclResource</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Acl\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Acl\RootResource</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -3774,6 +4478,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Weee\Model\ProductRender\WeeeAdjustmentAttribute</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Weee\Helper\Data</td>
         <td>Class was added.</td>
     </tr>
@@ -3794,15 +4502,7 @@
         <td>Class was added.</td>
     </tr>
     <tr>
-        <td>Magento\Vault\Model\AbstractPaymentTokenFactory</td>
-        <td>Class was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Vault\Model\AccountPaymentTokenFactory</td>
-        <td>Class was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Vault\Model\CreditCardTokenFactory</td>
+        <td>Magento\Vault\Model\PaymentTokenFactory</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -3938,6 +4638,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\UrlRewrite\Model\Exception\UrlAlreadyExistsException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\UrlRewrite\Block\GridContainer</td>
         <td>Class was added.</td>
     </tr>
@@ -3947,6 +4651,190 @@
     </tr>
     <tr>
         <td>Magento\Ups\Block\Backend\System\CarrierConfig</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\DataProvider\AbstractDataProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\DataProvider\EavValidationRules</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Controller\Adminhtml\AbstractAction</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\AbstractComponent</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Container</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\DataSource</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\DynamicRows</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Filters</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Listing</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\MassAction</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Modal</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Paging</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\MassAction\Filter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Listing\Columns</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Listing\Columns\Column</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Listing\Columns\Date</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\AttributeMapper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Field</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Fieldset</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\AbstractElement</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\AbstractOptionsField</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\ActionDelete</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\Checkbox</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\CheckboxSet</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\Hidden</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\Input</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\MultiSelect</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\Multiline</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\Radio</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\RadioSet</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\Range</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\Select</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\Textarea</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\Wysiwyg</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\DataType\AbstractDataType</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\DataType\Number</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\DataType\Text</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Filters\Type\AbstractFilter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Filters\Type\Date</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Filters\Type\DateRange</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Filters\Type\Input</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Filters\Type\Range</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Filters\Type\Search</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Filters\Type\Select</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -4210,6 +5098,38 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Sitemap\Model\Sitemap</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\Source\Product\Image\IncludeImage</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\ResourceModel\Sitemap</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\ResourceModel\Sitemap\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\ResourceModel\Cms\Page</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\ResourceModel\Catalog\Category</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\ResourceModel\Catalog\Product</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Block\Robots</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Sitemap\Block\Adminhtml\Sitemap</td>
         <td>Class was added.</td>
     </tr>
@@ -4342,7 +5262,63 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Search\Model\AdapterFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\EngineResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\Query</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\QueryFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\QueryResult</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\SearchCollectionFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\SynonymReader</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Search\Model\Synonym\MergeConflictException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\SearchEngine\Config\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\ResourceModel\Query</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\ResourceModel\SynonymGroup</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\ResourceModel\SynonymGroup\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\ResourceModel\Query\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\Adminhtml\System\Config\Source\Engine</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Helper\Data</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -4402,7 +5378,27 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\SalesRule\Model\Coupon</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRule\Model\Rule</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRule\Model\Rule\Condition\Combine</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRule\Model\Rule\Condition\Product\Combine</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\SalesRule\Model\Rule\Action\Discount\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRule\Model\ResourceModel\Rule\Collection</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -4534,11 +5530,19 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Sales\Model\Order\Reorder\OrderedProductAvailabilityChecker</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Sales\Model\Order\Pdf\AbstractPdf</td>
         <td>Class was added.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Model\Order\Pdf\Items\AbstractItems</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Payment\Info</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -5138,6 +6142,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Rule\Model\Condition\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Rule\Model\Condition\Product\AbstractProduct</td>
         <td>Class was added.</td>
     </tr>
@@ -5163,6 +6171,18 @@
     </tr>
     <tr>
         <td>Magento\Rss\Block\Feeds</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rss\App\Action\Plugin\BackendAuthentication</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Robots\Model\Config\Value</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Robots\Block\Data</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -5302,6 +6322,230 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Reports\Model\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\Flag</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\Item</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Wishlist\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Wishlist\Product\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Review\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Review\Product\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Review\Customer\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Report\AbstractReport</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Report\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Report\Product\Viewed</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Report\Product\Viewed\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Report\Collection\AbstractCollection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Report\Collection\Factory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Refresh\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Quote\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Quote\Item\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Sold\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Sold\Collection\Initial</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Lowstock\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Index\AbstractIndex</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Index\Compared</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Index\Viewed</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Index\Viewed\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Index\Compared\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Index\Collection\AbstractCollection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Product\Downloads\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Order\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Event\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Event\Type</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Event\Type\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Customer\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Customer\Totals\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Customer\Totals\Collection\Initial</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Customer\Orders\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Customer\Orders\Collection\Initial</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Accounts\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Accounts\Collection\Initial</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\Product\Index\AbstractIndex</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\Product\Index\Compared</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\Product\Index\Factory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\Product\Index\Viewed</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\Grouped\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\Event\Type</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Controller\Adminhtml\Index</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Controller\Adminhtml\Report\AbstractReport</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Controller\Adminhtml\Report\Customer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Controller\Adminhtml\Report\Product</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Controller\Adminhtml\Report\Review</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Controller\Adminhtml\Report\Sales</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Controller\Adminhtml\Report\Shopcart</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Controller\Adminhtml\Report\Statistics</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Reports\Block\Adminhtml\Grid</td>
         <td>Class was added.</td>
     </tr>
@@ -5362,6 +6606,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Reports\Block\Adminhtml\Grid\Column\Renderer\Currency</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Reports\Block\Adminhtml\Filter\Form</td>
         <td>Class was added.</td>
     </tr>
@@ -5415,6 +6663,14 @@
     </tr>
     <tr>
         <td>Magento\Quote\Model\Quote\Address\RateRequest</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\Quote\Address\Total</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\Quote\Address\Total\AbstractTotal</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6010,6 +7266,14 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\LayeredNavigation\Model\Attribute\Source\FilterableOptions</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\LayeredNavigation\Block\Navigation</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\LayeredNavigation\Block\Navigation\FilterRenderer</td>
         <td>Class was added.</td>
     </tr>
@@ -6062,6 +7326,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Indexer\Model\ResourceModel\AbstractResource</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Indexer\Block\Backend\Container</td>
         <td>Class was added.</td>
     </tr>
@@ -6103,6 +7371,10 @@
     </tr>
     <tr>
         <td>Magento\ImportExport\Model\ResourceModel\CollectionByPagesIterator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ImportExport\Model\ResourceModel\Helper</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6238,6 +7510,34 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\GoogleOptimizer\Ui\DataProvider\Product\Form\Modifier\GoogleOptimizer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleOptimizer\Observer\AbstractSave</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleOptimizer\Model\Code</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleOptimizer\Model\ResourceModel\Code</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleOptimizer\Helper\Code</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleOptimizer\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleOptimizer\Helper\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\GoogleOptimizer\Block\Code\Category</td>
         <td>Class was added.</td>
     </tr>
@@ -6250,7 +7550,39 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\GoogleAnalytics\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\GoogleAnalytics\Block\Ga</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleAdwords\Model\Validator\Factory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleAdwords\Model\Filter\UppercaseTitle</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleAdwords\Model\Config\Source\Language</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleAdwords\Model\Config\Source\ValueType</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleAdwords\Model\Config\Backend\AbstractConversion</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleAdwords\Model\Config\Backend\Color</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleAdwords\Model\Config\Backend\ConversionId</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6342,7 +7674,15 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Setup\EavSetup</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Model\Attribute</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\AttributeFactory</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6354,11 +7694,31 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\ResourceModel\Attribute</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\Helper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\Form\Fieldset\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\Form\Element\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Model\ResourceModel\Form\Attribute\Collection</td>
         <td>Class was added.</td>
     </tr>
     <tr>
         <td>Magento\Eav\Model\ResourceModel\Entity\Attribute</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\Entity\Type</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6370,6 +7730,26 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\ResourceModel\Entity\Attribute\Group\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\Attribute\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Form\Element</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Form\Factory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Form\Fieldset</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Model\Entity\AbstractEntity</td>
         <td>Class was added.</td>
     </tr>
@@ -6378,11 +7758,35 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\Entity\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Store</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Model\Entity\Type</td>
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\Entity\Setup\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Increment\AbstractIncrement</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Increment\NumericValue</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Model\Entity\Collection\AbstractCollection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Collection\VersionControl\AbstractCollection</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6394,7 +7798,19 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Model\Entity\Attribute\Exception</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Group</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Option</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6402,7 +7818,27 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Source\Boolean</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Source\Store</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Source\Table</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Frontend\Datetime</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Frontend\DefaultFrontend</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6410,7 +7846,51 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Backend\Datetime</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Backend\DefaultBackend</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Backend\Increment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Backend\JsonEncoded</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Backend\Store</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Backend\Time\Created</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Backend\Time\Updated</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Model\Attribute\Data\AbstractData</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Attribute\Data\File</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Block\Adminhtml\Attribute\Grid\AbstractGrid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Block\Adminhtml\Attribute\Edit\Options\AbstractOptions</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6554,6 +8034,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Directory\Model\RegionFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Directory\Model\ResourceModel\Country</td>
         <td>Class was added.</td>
     </tr>
@@ -6678,7 +8162,15 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Customer\Model\Group</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Customer\Model\Registration</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\ResourceModel\Customer</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6702,6 +8194,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Customer\Helper\Address</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Customer\CustomerData\JsLayoutDataProviderPool</td>
         <td>Class was added.</td>
     </tr>
@@ -6711,6 +8207,10 @@
     </tr>
     <tr>
         <td>Magento\Customer\Block\CustomerData</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Block\CustomerScopeData</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6823,6 +8323,22 @@
     </tr>
     <tr>
         <td>Magento\Customer\Block\Account\Dashboard\Info</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CurrencySymbol\Model\System\Currencysymbol</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CurrencySymbol\Controller\Adminhtml\System\Currency</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CurrencySymbol\Controller\Adminhtml\System\Currencysymbol</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CurrencySymbol\Block\Adminhtml\System\Currency</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -6954,6 +8470,158 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Config\Model\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\PreparedValueFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\ResourceModel\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\ResourceModel\Config\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\ResourceModel\Config\Data\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Placeholder\Environment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Placeholder\PlaceholderFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\BackendFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\CommentFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Factory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Importer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Loader</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\PathValidator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\SchemaLocator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\ScopeDefiner</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\SourceFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\TypePool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\AbstractElement</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\AbstractMapper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\ConcealInProductionConfigList</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Converter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\ElementVisibilityComposite</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Reader</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Search\Proxy</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Mapper\Dependencies</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Mapper\ExtendsMapper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Mapper\Factory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Mapper\Ignore</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Mapper\Path</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Mapper\Sorting</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Mapper\Helper\RelativePathConverter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Mapper\Attribute\Inheritance</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\AbstractComposite</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Field</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\FlyweightFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Group</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Config\Model\Config\Structure\Element\Iterator</td>
         <td>Class was added.</td>
     </tr>
@@ -6962,11 +8630,391 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Tab</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Iterator\Field</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Iterator\Group</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Iterator\Section</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Iterator\Tab</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Group\Proxy</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Dependency\Field</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Dependency\FieldFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\Element\Dependency\Mapper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Enabledisable</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Locale</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Nooptreq</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Store</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Website</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Yesno</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Yesnocustom</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Website\AdminOptionHash</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Website\OptionHash</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Web\Protocol</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Web\Redirect</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Reports\Scope</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Locale\Country</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Locale\Currency</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Locale\Timezone</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Locale\Weekdaycodes</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Locale\Weekdays</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Locale\Currency\All</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Image\Adapter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Email\Identity</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Email\Method</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Email\Smtpauth</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Email\Template</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Dev\Dbautoup</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Design\Robots</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Date\Short</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Source\Admin\Page</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Reader\Source\Deployed\DocumentRoot</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Reader\Source\Deployed\SettingChecker</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Processor\EnvironmentPlaceholder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Parser\Comment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Export\Comment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Compiler\IncludeElement</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\BackendClone\Factory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Baseurl</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Cache</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Datashare</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Encrypted</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\File</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Filename</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Image</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Locale</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Secure</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Serialized</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Store</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Translate</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Log\Cron</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Locale\Timezone</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Image\Adapter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Image\Favicon</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Image\Logo</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Image\Pdf</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Email\Address</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Email\Sender</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Design\Exception</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Currency\AbstractCurrency</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Currency\Allow</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Currency\Base</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Currency\Cron</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Currency\DefaultCurrency</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Admin\Custom</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Admin\Custompath</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Admin\Usecustom</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Admin\Usesecretkey</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\Admin\Password\Link\Expirationperiod</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Controller\Adminhtml\System\AbstractConfig</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Controller\Adminhtml\System\Config\AbstractScopeConfig</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigSetCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigShowCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigShow\ValueProcessor</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigSet\ConfigSetProcessorFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigSet\DefaultProcessor</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigSet\ProcessorFacade</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Config\Block\System\Config\Edit</td>
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Config\Block\System\Config\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Config\Block\System\Config\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Block\System\Config\Form\Field</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Block\System\Config\Form\Fieldset</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Block\System\Config\Form\Fieldset\Modules\DisableOutput</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Block\System\Config\Form\Field\Heading</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Block\System\Config\Form\Field\Notification</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\App\Config\Type\System</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\App\Config\Source\EnvironmentConfigSource</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\App\Config\Source\InitialSnapshotConfigSource</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\App\Config\Source\ModularConfigSource</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\App\Config\Source\RuntimeConfigSource</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -7134,11 +9182,115 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogSearch\Model\Advanced</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Source\Weight</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Search\RequestGenerator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Search\TableMapper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Search\RequestGenerator\GeneratorResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\Advanced</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\EngineProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\Fulltext</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\Search\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\Advanced\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\IndexStructure</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\IndexStructureFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\IndexerHandler</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\IndexerHandlerFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\ProductFieldset</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogSearch\Model\Indexer\Scope\IndexTableNotExistException</td>
         <td>Class was added.</td>
     </tr>
     <tr>
         <td>Magento\CatalogSearch\Model\Indexer\Scope\UnknownStateException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Processor</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\Full</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\IndexIterator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Advanced\Request\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Adminhtml\System\Config\Backend\Engine</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Adapter\Options</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Adapter\Mysql\Filter\AliasResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Helper\Data</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -7191,6 +9343,10 @@
     </tr>
     <tr>
         <td>Magento\CatalogInventory\Block\Stockqty\DefaultStockqty</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Block\Adminhtml\Form\Field\Minsaleqty</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -7406,6 +9562,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Pricing\Price\TierPrice</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\AbstractModel</td>
         <td>Class was added.</td>
     </tr>
@@ -7435,6 +9595,10 @@
     </tr>
     <tr>
         <td>Magento\Catalog\Model\ResourceModel\AbstractResource</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\ResourceModel\Product</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -7530,6 +9694,18 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Model\Product\Type</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Url</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Visibility</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\Product\Type\Price</td>
         <td>Class was added.</td>
     </tr>
@@ -7590,6 +9766,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Model\Product\Attribute\Source\Boolean</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\Product\Attribute\Source\Status</td>
         <td>Class was added.</td>
     </tr>
@@ -7607,6 +9787,10 @@
     </tr>
     <tr>
         <td>Magento\Catalog\Model\Layer\Filter\AbstractFilter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Layer\Filter\Price\Range</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -7710,11 +9894,27 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\FrontendStorageManager</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Block\Navigation</td>
         <td>Class was added.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Block\ShortcutButtons</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Ui\ProductViewCounter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Product\AbstractProduct</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -7731,6 +9931,10 @@
     </tr>
     <tr>
         <td>Magento\Catalog\Block\Product\View</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Product\View\AbstractView</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8094,6 +10298,50 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backup\Model\Backup</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Model\BackupFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Model\Db</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Model\ResourceModel\Db</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Model\ResourceModel\Helper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Model\Grid\Options</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Model\Fs\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Model\Config\Source\Type</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Model\Config\Backend\Cron</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backup\Controller\Adminhtml\Index</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backup\Block\Adminhtml\Backup</td>
         <td>Class was added.</td>
     </tr>
@@ -8102,11 +10350,51 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Model\AdminPathConfig</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Auth</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Model\Menu</td>
         <td>Class was added.</td>
     </tr>
     <tr>
         <td>Magento\Backend\Model\Session</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Url</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Widget\Grid\AbstractTotals</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Widget\Grid\Parser</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Widget\Grid\SubTotals</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Widget\Grid\Totals</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Widget\Grid\Row\UrlGenerator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Widget\Grid\Row\UrlGeneratorFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Widget\Grid\Row\UrlGeneratorId</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8122,7 +10410,67 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Model\View\Result\RedirectFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\View\Page\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\View\Layout\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\View\Layout\StructureManager</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\View\Layout\Reader\Block</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Url\ScopeResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Translate\Inline\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Setup\MenuBuilder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Session\AdminConfig</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Model\Session\Quote</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Search\Customer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Search\Order</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\ResourceModel\Translate</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\AbstractDirector</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Config</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8130,7 +10478,159 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Model\Menu\Iterator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Item\Factory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Item\Validator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Filter\Iterator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Director\Director</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Config\Converter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Config\Reader</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Config\SchemaLocator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Config\Menu\Dom</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Builder\AbstractCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Builder\CommandFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Builder\Command\Add</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Builder\Command\Remove</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Menu\Builder\Command\Update</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Locale\Manager</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Locale\Resolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Config\SessionLifetime\BackendModel</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Cache\ResourceModel\Grid\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Authorization\RoleLocator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Auth\Session</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Helper\Js</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Helper\Dashboard\AbstractDashboard</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Helper\Dashboard\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Helper\Dashboard\Order</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Controller\Adminhtml\Index\GlobalSearch</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Controller\Adminhtml\Auth\Login</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Console\Command\AbstractCacheCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Console\Command\AbstractCacheManageCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Console\Command\AbstractCacheSetCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Console\Command\AbstractCacheTypeManageCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Console\Command\CacheCleanCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Console\Command\CacheDisableCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Console\Command\CacheEnableCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Console\Command\CacheFlushCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Console\Command\CacheStatusCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\AbstractBlock</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\Cache</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Context</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8158,6 +10658,14 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Block\Widget</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Accordion</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\Widget\Breadcrumbs</td>
         <td>Class was added.</td>
     </tr>
@@ -8170,7 +10678,23 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Block\Widget\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\Widget\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Tab</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Tabs</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8202,6 +10726,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Massaction\AbstractMassaction</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\Widget\Grid\Massaction\Additional</td>
         <td>Class was added.</td>
     </tr>
@@ -8214,6 +10742,10 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Extended</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\Widget\Grid\Column\Multistore</td>
         <td>Class was added.</td>
     </tr>
@@ -8222,7 +10754,135 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Action</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Button</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Checkbox</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Concat</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Country</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Currency</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Date</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Datetime</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\DraggableHandle</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Input</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Ip</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Longtext</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Massaction</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Number</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Options</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Price</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Radio</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Select</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Store</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Text</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Wrapline</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Renderer\Options\Converter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Filter\AbstractFilter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Filter\Date</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Filter\Range</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Filter\Select</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Filter\Text</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Form\Container</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Form\Generic</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Form\Renderer\Element</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\Widget\Form\Renderer\Fieldset</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Form\Renderer\Fieldset\Element</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Form\Element\Dependence</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8234,7 +10894,27 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Block\Widget\Button\SplitButton</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Button\Toolbar\Container</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Text\ListText</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Template\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\System\Design</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\System\Store\Edit</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8247,6 +10927,14 @@
     </tr>
     <tr>
         <td>Magento\Backend\Block\Store\Switcher</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Store\Switcher\Form\Renderer\Fieldset</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Store\Switcher\Form\Renderer\Fieldset\Element</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8270,6 +10958,14 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Block\Media\Uploader</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Dashboard\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\Dashboard\Tab\Products\Viewed</td>
         <td>Class was added.</td>
     </tr>
@@ -8282,6 +10978,14 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Backend\Block\Dashboard\Searches\Renderer\Searchquery</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Catalog\Product\Tab\Container</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\Cache\Additional</td>
         <td>Class was added.</td>
     </tr>
@@ -8291,6 +10995,54 @@
     </tr>
     <tr>
         <td>Magento\Backend\Block\Admin\Formkey</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\AbstractAction</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\Action</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\BackendApp</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\BackendAppList</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\DefaultPath</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\Router</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\UserConfig</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\Router\NoRouteHandler</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\Response\Http\FileFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\Request\PathInfoProcessor</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\Area\FrontNameResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\App\Action\Context</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8330,7 +11082,83 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\AdminNotification\Ui\Component\DataProvider\DataProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\Feed</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\Inbox</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\NotificationService</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\System\Message</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\System\Message\CacheOutdated</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\System\Message\Security</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\System\Message\Media\AbstractSynchronization</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\System\Message\Media\Synchronization\Error</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\System\Message\Media\Synchronization\Success</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\ResourceModel\Inbox</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\ResourceModel\System\Message</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\ResourceModel\System\Message\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\ResourceModel\System\Message\Collection\Synchronized</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\AdminNotification\Model\ResourceModel\Inbox\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\ResourceModel\Inbox\Collection\Critical</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\ResourceModel\Inbox\Collection\Unread</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\ResourceModel\Grid\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Model\Config\Source\Frequency</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminNotification\Controller\Adminhtml\Notification</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8464,6 +11292,18 @@
     <tr>
         <td>Magento\Quote\Api\CartRepositoryInterface::getList</td>
         <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsUsedInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsVisibleInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsFilterableInGrid</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Backend\Block\Widget\Grid\ExportInterface::getExportButtonHtml</td>
@@ -8634,6 +11474,18 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsUsedInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsVisibleInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsFilterableInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_TIER_PRICE_FIELD_PERCENTAGE_VALUE</td>
         <td>Constant has been added.</td>
     </tr>
@@ -8730,6 +11582,10 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\View\TemplateEngine\Xhtml\CompilerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\View\Layout\BuilderInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -8778,11 +11634,51 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Search\RequestInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\BucketInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\FilterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Request\QueryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Dynamic\DataProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Dynamic\IntervalInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Profiler\DriverInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\ObjectManager\ContextInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Notification\MessageInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Notification\NotifierInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Model\ResourceModel\Db\TransactionManagerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Mail\MailMessageInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -8818,6 +11714,10 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Filesystem\File\WriteInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Encryption\EncryptorInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -8831,6 +11731,18 @@
     </tr>
     <tr>
         <td>Magento\Framework\Communication\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Backup\BackupInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Backup\Db\BackupDbInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Backup\Db\BackupInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -8906,11 +11818,19 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Acl\Data\CacheInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Weee\Api\Data\ProductRender\WeeeAdjustmentAttributeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Vault\Api\PaymentMethodListInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\Vault\Api\Data\PaymentTokenInterfaceFactory</td>
+        <td>Magento\Vault\Api\Data\PaymentTokenFactoryInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -8919,6 +11839,22 @@
     </tr>
     <tr>
         <td>Magento\UrlRewrite\Model\UrlFinderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\DataProvider\Modifier\ModifierInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Listing\RowInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Listing\Columns\ColumnInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\Component\Form\Element\ElementInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -8934,11 +11870,47 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Sitemap\Model\SitemapConfigReaderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\SitemapItemInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\ItemProvider\ConfigReaderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\ItemProvider\ItemProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Security\Model\ConfigInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
         <td>Magento\Security\Model\SecurityChecker\SecurityCheckerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\AutocompleteInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\QueryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\SearchCollectionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\Autocomplete\DataProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Model\Autocomplete\ItemInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -8990,6 +11962,10 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Sales\Model\Order\Reorder\OrderedProductAvailabilityCheckerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Sales\Model\Order\Creditmemo\NotifierInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -9023,6 +11999,14 @@
     </tr>
     <tr>
         <td>Magento\Rule\Model\Action\ActionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\HelperInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reports\Model\ResourceModel\Quote\CollectionFactoryInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -9070,6 +12054,10 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Msrp\Api\Data\ProductRender\MsrpPriceInfoInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\ImportExport\Model\Import\ConfigInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -9087,6 +12075,26 @@
     </tr>
     <tr>
         <td>Magento\GiftMessage\Block\Cart\Item\Renderer\Actions\LayoutProcessorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\EntityInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Increment\IncrementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Source\SourceInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\Attribute\Frontend\FrontendInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -9174,7 +12182,39 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Config\Model\Placeholder\PlaceholderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\CommentInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Config\Model\Config\Structure\ElementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\ElementVisibilityInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\MapperInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Structure\SearchInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config\Backend\File\RequestData\RequestDataInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigSet\ConfigSetProcessorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\App\Config\Source\DumpConfigSourceInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -9194,6 +12234,22 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogSearch\Model\Search\RequestGenerator\GeneratorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Search\FilterMapper\FilterStrategyInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\EngineInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\IndexSwitcherInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogInventory\Model\ResourceModel\Indexer\Stock\QueryProcessorInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -9203,6 +12259,10 @@
     </tr>
     <tr>
         <td>Magento\CatalogImportExport\Model\Export\RowCustomizerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Ui\DataProvider\Product\ProductRenderCollectorInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -9219,6 +12279,10 @@
     </tr>
     <tr>
         <td>Magento\Catalog\Pricing\Price\TierPriceInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\FrontendStorageConfigurationInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -9298,6 +12362,10 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Api\ProductRenderListInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Api\ScopedProductTierPriceManagementInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -9334,6 +12402,18 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Api\Data\ProductFrontendActionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductRenderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductRenderSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Api\Data\SpecialPriceInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -9342,7 +12422,39 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Api\Data\ProductRender\ButtonInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductRender\FormattedPriceInfoInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductRender\ImageInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductRender\PriceInfoInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Bundle\Pricing\Adjustment\SelectionPriceListProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Service\V1\ModuleServiceInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\UrlInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\ContainerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Massaction\VisibilityCheckerInterface</td>
         <td>Interface was added.</td>
     </tr>
 </tbody></table>

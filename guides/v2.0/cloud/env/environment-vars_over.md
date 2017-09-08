@@ -4,8 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Overview of environment variables
 menu_title: Overview of environment variables
-menu_order: 71
-menu_node: 
+menu_order: 91
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: vars
 version: 2.0
@@ -18,7 +18,7 @@ Magento Enterprise Cloud Edition enables you to create variables in your environ
 We support the following types of variables:
 
 *   Variables defined by Magento Enterprise Cloud Edition itself
-and that give you all the context you need about the environment (how to 
+and that give you all the context you need about the environment (how to
 connect to your database, for example).
 *   Custom environment variables you define.
 
@@ -34,9 +34,9 @@ Environment variables have an `env` {% glossarytooltip 621ef86b-7314-4fbc-a80d-a
 </div>
 
 ## List the current environment variables {#cloud-env-list}
-To list current environment variables:
+To list current environment variables using SSH:
 
-1.	Log in to your project using the CLI.
+1.	Log in to your project using the CLI. Enter the command `magento-cloud login` and provide your credentials.
 2.	List the projects:
 
 		magento-cloud project:list
@@ -57,6 +57,13 @@ To list current environment variables:
 	For example,
 
 		echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
+
+## List environment variables for a project or branch {#env-project-branch}
+To list environment variables using Magento Cloud CLI:
+
+1. Login to the Magento Cloud CLI. Enter the command `magento-cloud login` and provide your credentials.
+2. List all project variables with the command `magento-cloud project:variable:get` or `magento-cloud pvget`.
+3. List all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 #### Related topics
 *   [Magento Cloud environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
