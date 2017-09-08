@@ -9,20 +9,27 @@
   right: 0;
   z-index: 9999;
 
-  padding-left: 260px;
+  background: $light-gray-color;
   padding-right: 80px;
 
+  // TODO: get rid of the magic numbers here:
+  padding-left: 320px;
+  /*
   @media (max-width:1200px) {
-    padding-left: 160px;
+    padding-left: 240px;
   }
 
   @media ( $large-screen ) {
-    padding-left: 180px;
+    padding-left: 380px;
   }
+  */
+
+
   @media ( $small-screen ) {
     padding-left: 20px;
     z-index: 12;
   }
+
   input {
     display: block;
     background: #fff;
@@ -39,7 +46,7 @@
   }
 
   .search-active & {
-    display: block;
+    display: flex;
   }
 
 
@@ -64,8 +71,7 @@
 
 
 .algolia-autocomplete {
-  width: 100%;
-  height: 100%;
+  flex: 1 0 auto;
 }
 .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
   width: 100%;

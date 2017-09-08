@@ -18,9 +18,9 @@
 <script>
 
 app({
-  appId: '0TXGQJVHZF',
-  apiKey: '60a4902ca2720b6ba576d1c4a1ba97fe',
-  indexName: 'mcom',
+  appId: "{{ site.algolia.application_id }}",
+  apiKey: "{{ site.algolia.api_key }}",
+  indexName: "{{ site.algolia.index_name }}",
   urlSync: true
 });
 

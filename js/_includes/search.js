@@ -29,7 +29,7 @@ $(function() {
 
 
   // Algola autocomplete:
-  var client = algoliasearch("0TXGQJVHZF", "60a4902ca2720b6ba576d1c4a1ba97fe");
+  var client = algoliasearch("E642SEDTHL", "d2d0f33ab73e291ef8d88d8b565e754c");
   var index = client.initIndex('devdocs');
   //initialize autocomplete on search input (ID selector must match)
 

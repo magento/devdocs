@@ -84,9 +84,18 @@ incremental: false
 gems:
   - jekyll-redirect-from
 
+
 algolia:
-  application_id: '0TXGQJVHZF'
+  application_id: 'E642SEDTHL'
   index_name: 'devdocs'
+  api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
   lazy_update: true
+  excluded_files:
+    - german/SFS.de.md
+    - german/ReturnsProcess.de.md
+    - german/index.md
+    - german/CustomerServiceUserGuidel.de.md
+    - german/AdminUserGuide.de.md
+
 
 exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'guides/v2.2']
