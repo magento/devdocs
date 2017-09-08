@@ -11,11 +11,11 @@ github_link: cloud/before/before-workspace-php.md
 ---
 
 ## Set up PHP {#cloud-first-php}
-When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from Magento Enterprise Cloud Edition. For example, certain things (like debugging) require a larger {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} `memory_limit` than most PHP distributions provide by default.
+When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.ece}}. For example, certain things (like debugging) require a larger {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} `memory_limit` than most PHP distributions provide by default.
 
 To set `memory_limit`:
 
-Before working with your Magento Enterprise Cloud Edition project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+Before working with your {{site.data.var.ece}} project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
 1.	Find your `php.ini` file using the following command:
 
@@ -35,7 +35,7 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 
 
 ## Set up MySQL {#cloud-mysql}
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation but the Magento Enterprise Cloud Edition cluster uses a value of `3`.
+The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation but the {{site.data.var.ece}} cluster uses a value of `3`.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 
@@ -57,7 +57,7 @@ If necessary, set `auto_increment_increment` to 3:
 
 		auto_increment_increment=3
 
-		Magento Enterprise Cloud Edition supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
+		{{site.data.var.ece}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
 
 3.	Restart MySQL:
 

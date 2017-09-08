@@ -75,7 +75,7 @@ To enable and integrate Blackfire into your code, you will modify the `.magento.
 We recommend working in a branch and creating a snapshot prior to installing.
 
 1.	SSH into your local Magento workspace.
-2.	Log in to your Magento Enterprise Cloud Edition project.
+2.	Log in to your {{site.data.var.ece}} project.
 
 		magento-cloud login
 2.	List projects:

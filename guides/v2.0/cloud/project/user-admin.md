@@ -13,7 +13,7 @@ github_link: cloud/project/user-admin.md
 {{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users.
 
 ## Account owner role {#cloud-role-acct-owner}
-The account owner (that is, the person who registered the Magento Enterprise Cloud Edition account) is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it.
+The account owner (that is, the person who registered the {{site.data.var.ece}} account) is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it.
 
 ## Project-level roles {#cloud-role-project}
 You can assign users to the following roles per project:
@@ -52,7 +52,7 @@ environment to "Contributor".
 You can create and manage users using the Magento Cloud CLI or the Web Interface.
 
 ### Manage users with the CLI {#cloud-user-mg-cli}
-You can use the Magento Enterprise Cloud Edition command line client to fully manage your users
+You can use the {{site.data.var.ece}} command line client to fully manage your users
 and integrate this with any other automated system.
 
 Available commands:
@@ -93,7 +93,7 @@ Use `magento-cloud list` to get the full list of commands.
 
 To create user accounts using the Web Interface:
 
-1.  Log in to [your Magento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"}.
+1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2.  Click the **Projects** tab as the following figure shows.
 
 	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
@@ -116,7 +116,7 @@ To create user accounts using the Web Interface:
 	*	Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
 8.	Click **Add User**.
 
-The users you add receive an e-mail inviting them to join the Magento Enterprise Cloud Edition project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
+The users you add receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
 
 ## Rebuild the environment {#rebuild}
 After a new user is added to an environment, the environment must be rebuilt. Rebuilds
