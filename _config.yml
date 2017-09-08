@@ -92,15 +92,17 @@ algolia:
   application_id: 'E642SEDTHL'
   index_name: 'devdocs'
   api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
-  lazy_update: true
-  excluded_files:
-    - swagger
-    - guides/m1x
-    - vagrant
-    - common
-    - js
-    - i
-    - schemas
+  lazy_update: false
+  settings:
+    attributesToIndex:
+      - title
+      - h1
+      - h2
+      - h3
+      - h4
+      - unordered(text)
+      - unordered(tags)
+      - version
 
 
 

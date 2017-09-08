@@ -31,15 +31,17 @@ $(function() {
   // Algola autocomplete:
   var client = algoliasearch("E642SEDTHL", "d2d0f33ab73e291ef8d88d8b565e754c");
   var index = client.initIndex('devdocs');
+  var ver = $('.version-switcher').data('version');
+
   //initialize autocomplete on search input (ID selector must match)
 
   $('.quick-search input, .search-form .search-field').autocomplete(
-  {
-    hint: true,
-    debug: false,
-  }, [
     {
-      source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5 }),
+      hint: true,
+      debug: false,
+    }, [
+    {
+      source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, facetFilters: 'version:' + ver }),
       //value to be displayed in input control after user's suggestion selection
       displayKey: 'title',
       //hash of templates used when rendering dataset

@@ -17,59 +17,67 @@
 
 <script>
 
-app({
-  appId: "{{ site.algolia.application_id }}",
-  apiKey: "{{ site.algolia.api_key }}",
-  indexName: "{{ site.algolia.index_name }}",
-  urlSync: true
-});
-
-function app(opts) {
-  const search = instantsearch({
-    appId: opts.appId,
-    apiKey: opts.apiKey,
-    indexName: opts.indexName,
-    urlSync: true,
+  app({
+    appId: "{{ site.algolia.application_id }}",
+    apiKey: "{{ site.algolia.api_key }}",
+    indexName: "{{ site.algolia.index_name }}",
+    urlSync: true
   });
 
-  search.addWidget(
-    instantsearch.widgets.searchBox({
-      container: '#search-input',
-      placeholder: 'Search',
-    })
-  );
+  var switcher = document.getElementsByClassName('version-switcher')[0];
+  var ver = switcher.dataset.version;
 
-  search.addWidget(
-    instantsearch.widgets.hits({
-      container: '#hits',
-      hitsPerPage: 10,
-      templates: {
-        item: function ( item ) {
-          return '<div class="hit"><h2 class="hit-name"><a href="' + item.url + '">' + item._highlightResult.title.value + '</a></h2><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
-        },
-        empty: function ( query ) {
-          return '<div id="no-results-message"><p>No results for the search <em>"' + query.query +'"</em>.</p></div>';
+  function app(opts) {
+    const search = instantsearch({
+      appId: opts.appId,
+      apiKey: opts.apiKey,
+      indexName: opts.indexName,
+      urlSync: true,
+      searchParameters: {
+        facetsRefinements: {
+          version: ver,
         },
       },
-    })
-  );
+    });
 
-  search.addWidget(
-    instantsearch.widgets.stats({
-      container: '#stats',
-    })
-  );
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '#search-input',
+        placeholder: 'Search',
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.hits({
+        container: '#hits',
+        hitsPerPage: 10,
+        templates: {
+          item: function ( item ) {
+            return '<div class="hit"><h2 class="hit-name"><a href="' + item.url + '">' + item._highlightResult.title.value + '</a></h2><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
+          },
+          empty: function ( query ) {
+            return '<div id="no-results-message"><p>No results for the search <em>"' + query.query +'"</em>.</p></div>';
+          },
+        },
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.stats({
+        container: '#stats',
+      })
+    );
 
 
-  search.addWidget(
-    instantsearch.widgets.pagination({
-      container: '#pagination',
-      scrollTo: '#search-input',
-    })
-  );
+    search.addWidget(
+      instantsearch.widgets.pagination({
+        container: '#pagination',
+        scrollTo: '#search-input',
+      })
+    );
 
-  search.start();
-}
+    search.start();
+  }
 
 </script>
 
