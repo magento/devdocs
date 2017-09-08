@@ -2,26 +2,26 @@
 layout: default
 group: release-notes
 subgroup: 2.2.0 Release Candidate
-title: Magento Commerce 2.2 Release Candidate 2 Release Notes
-menu_title: Magento Commerce 2.2 Release Candidate 2 Release Notes
+title: Magento Commerce 2.2 Release Candidate 3 Release Notes
+menu_title: Magento Commerce 2.2 Release Candidate 3 Release Notes
 menu_order: 680
 level3_menu_node:
 level3_subgroup:
-github_link: release-notes/release-notes-2-2-RC2-EE.md
+github_link: release-notes/release-notes-2-2-RC3-EE.md
 ---
 
 *	TOC
 {:toc}
 
 
-*Release date: September 1, 2017*
+*Release date: September 12, 2017*
 
-*Notes updated: September 4, 2017*
-
-
+*Notes updated: September 12, 2017*
 
 
-Magento Commerce 2.2.0 Release Candidate 2x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
+
+
+Magento Commerce 2.2.0 Release Candidate 3x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
 
 Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information. This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
 
@@ -29,7 +29,7 @@ Looking for information about how the Magento 2.2.0 Release Candidate evaluation
 
 ## Highlights
 
-Magento Enterprise Edition 2.2.0 Release Candidate 2 includes substantial new features as well as many bug fixes. Look for the following highlights in this release:
+Magento Enterprise Edition 2.2.0 Release Candidate 3 includes substantial new features as well as many bug fixes. Look for the following highlights in this release:
 
 * **Enhanced B2B feature set** removes points of friction from the B2B purchasing process. We reduce the cost and complexity of building a B2B site on Magento by providing company account management features out-of-the-box.  B2B companies can easily view and manage all of their quotes in the Magento Admin Panel. B2B APIs enable backend integrations, too. Read more about Magento B2B in the [B2B Developer Guide]({{page.baseurl}}b2b/bk-b2b.html).
 
@@ -117,6 +117,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70987 -->* Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled. (RC22)
 
+<!--- 61018 -->*  You can now use REST to add video to a product description. [GitHub-7153](https://github.com/magento/magento2/issues/7153) (RC30)
 
 
 
@@ -199,6 +200,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71050 -->* Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error `No such entity with customerId = 0`. (RC22)
 
+<!--- 70603 -->* You can now add gift options to an order if logged in using a secure URL. (RC30)
 
 ### Reports
 
