@@ -19,7 +19,7 @@ Both Starter and Pro plan environments support continous integration for constan
 * Deploy and test in Staging
 * Deploy to Production
 
-We recommend the following best practices for {{site.data.var.<ece>}} environments.
+We recommend the following best practices for {{site.data.var.ece}} environments.
 
 ## Development best practices
 
@@ -33,7 +33,7 @@ We recommend the following best practices for {{site.data.var.<ece>}} environmen
 
 ## Deployment best practices
 
-* Fully deploy the base {{site.data.var.<ece>}} site initially to ensure all environments are stable with Magento installed. Some extensions will throw errors during build and deploy if they are added during an install. These work best during an update.
+* Fully deploy the base {{site.data.var.ece}} site initially to ensure all environments are stable with Magento installed. Some extensions will throw errors during build and deploy if they are added during an install. These work best during an update.
 * Run a local build prior to fully deploying
 * Ensure all files are correctly added to the Git branch before pushing
 

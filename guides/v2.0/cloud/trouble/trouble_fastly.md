@@ -19,14 +19,11 @@ First, check your live site to verify the response headers with `curl`. The comm
 
 If you don't have a live site set up with DNS, you can use either a static route or you can use the optional `--resolve` flag, which bypasses DNS name resolution.
 
-_Optional:_ To set up a static route only if your site isn't set up with DNS:
+Check for headers with a **dig command** to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
 
-1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
-2.  Add the static route in the format:
+    dig http[s]://<your domain>
 
-        <ip address> <url>
-
-Check your response headers on the live site URL:
+Check response headers with **curl command**:
 
 1. In a terminal, enter the following command to test your live site URL:
 
@@ -55,7 +52,7 @@ For example:
 ### curl command {#curl}
 Next, use a `curl` command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production.
 
-For more information on these commands, you bypass Fastly when you inject `-H "host:URL"`, replace with origin to connecting location (CNAME informatin from your OneDrive Spreadsheet), `-k` ignores SSL, and `-v` provides verbose responses. If headers display correctly, check the live site and verify headers again.
+For more information on these commands, you bypass Fastly when you inject `-H "host:URL"`, replace with origin to connecting location (CNAME information from your OneDrive Spreadsheet), `-k` ignores SSL, and `-v` provides verbose responses. If headers display correctly, check the live site and verify headers again.
 
 * If header issues occur when directly hitting the origin servers bypassing Fastly, you may have issues in your code, with extensions, or with the infrastructure.
 * If you encounter no errors directly hitting the origin servers, but headers are missing hitting the live domain through Fastly, you may have Fastly errors.

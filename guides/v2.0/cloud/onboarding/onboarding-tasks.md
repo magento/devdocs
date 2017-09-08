@@ -10,31 +10,31 @@ version: 2.0
 github_link: cloud/onboarding/onboarding-tasks.md
 ---
 
-After your company purchases a subscription plan for {{site.data.var.<ece>}}, the only person who initially has access to the project and code is the *Project Owner*&mdash;the person who purchased the software. The Project Owner is typically a "business user" in your business or finance organization and is your point of contact with Magento regarding the account overall. The owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
+After your company purchases a subscription plan for {{site.data.var.ece}}, the only person who initially has access to the project and code is the *Project Owner*&mdash;the person who purchased the software. The Project Owner is typically a "business user" in your business or finance organization and is your point of contact with Magento regarding the account overall. The owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
 
 To quickly onboard your project to start developing your site and going live, you need to complete specific set up steps and onboarding tasks. Typically, you need the Project Owner to start. Technical Admin(s) with super user access can continue.
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you joined us with a 30 day free trial {{site.data.var.<ece>}} account, we took care of the first steps:
+If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the first steps:
 
 * Created your account
-* Provisioned the initial environment with a cloned {{site.data.var.<ece>}} code base in a `master` branch
+* Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
 * Created an environment for the `master` branch
 * Added Magento authentication keys for the Project Owner
 </div> -->
 
 ## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
-Don't have a {{site.data.var.<ece>}} account yet? Sign up for a [free 30-day trial](https://magento.com/trial){:target="_blank"} for a Starter or Pro plan, or contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. We will create your account and send you a welcome e-mail that provides instructions to access the project.
+Don't have a {{site.data.var.ece}} account yet? Sign up for a [free 30-day trial](https://magento.com/trial){:target="_blank"} for a Starter or Pro plan, or contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. We will create your account and send you a welcome e-mail that provides instructions to access the project.
 
-The person who signs up for a {{site.data.var.<ece>}} account is referred to as the _Project Owner_. You receive a welcome e-mail that enables you to set up the project initially. You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
+The person who signs up for a {{site.data.var.ece}} account is referred to as the _Project Owner_. You receive a welcome e-mail that enables you to set up the project initially. You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
 
 ## Your welcome e-mail {#email}
-After you register for an account, Magento sends you a welcome e-mail at the address at which you registered. The e-mail contains a link to your {{site.data.var.<ece>}} project.
+After you register for an account, Magento sends you a welcome e-mail at the address at which you registered. The e-mail contains a link to your {{site.data.var.ece}} project.
 
 You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
 
 ## Get started with the Project Web Interface {#project-setup}
-<!-- When you sign up for a trial Pro or Starter subscription plan, we provisioned your initial environment with a template {{site.data.var.<ece>}} repository. This repo is called `master` with a full environment in a Platform-as-a-Servie (PaaS) environment. Each active environment includes an active Git branch of code, web server, database, and services to fully test your Magento deployments. -->
+<!-- When you sign up for a trial Pro or Starter subscription plan, we provisioned your initial environment with a template {{site.data.var.ece}} repository. This repo is called `master` with a full environment in a Platform-as-a-Servie (PaaS) environment. Each active environment includes an active Git branch of code, web server, database, and services to fully test your Magento deployments. -->
 We provide a Project Web Interface for you to create your project, add user accounts, and get started developing your store(s). This web interface is helpful for the Technical Admin and developers to manage all environments and branches, environment variables, environment settings, and routes.
 
 For details on these environments, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) and [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
@@ -54,7 +54,7 @@ For detailed instructions for setting up environments, see [Prepare project envi
 
 ## Coming soon: Onboarding Portal {#portal}
 <!-- (http://cloud.magento.com){:target="_blank"} -->
-We will provide a new Onboarding Portal to initially set up your project and get you started. The portal will be a web interface allowing the Project Owner to initially start settings up the project and understand the onboarding process for {{site.data.var.<ece>}}.
+We will provide a new Onboarding Portal to initially set up your project and get you started. The portal will be a web interface allowing the Project Owner to initially start settings up the project and understand the onboarding process for {{site.data.var.ece}}.
 
 This portal is helpful for business and technical users to review and manage a new project from creation to initial launch.
 
