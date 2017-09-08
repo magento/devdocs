@@ -4,55 +4,22 @@ group: cloud
 subgroup: 100_project
 title: Basic project information
 menu_title: Basic project information
-menu_order: 21
+menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-basic.md
 ---
 
-Projects in Magento Enterprise Cloud Edition (ECE) represent the master branch and all children branches of your Magento code, extensions, themes, and more for your store and sites. These branches are fully functional environments with direct access for testing. To manage and review your project information, branches, SSH and URL links, and more, you can use the Magento Web Interface or CLI commands.
-
-The project console enables you to:
+The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} enables you to:
 
 * Create and manage projects
-* Access up to eight active branches using SSH, CLI, and web links
+* Access active environments and branches using SSH, CLI, and URLs
 * Configure environment settings, environment variables, and routes
 * Manage users
 * Manage Git branches
 
-## Log in to your project {#project-login}
-The web console {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your project is available in the following ways:
-
-*	Your welcome e-mail to Magento ECE
-*	The Magento Enterprise Cloud Edition command-line interface (CLI)
-
-To find the project URL using the Magento CLI:
-
-1.	Log in to the machine on which your SSH keys are stored.
-2.	Log in to your project:
-
-		magento-cloud login
-3.	Enter the following command:
-
-		magento-cloud project:list
-
-	A sample result follows:
-
-		Your projects are:
-
-		+---------------+--------------+---------------------------------------------------+
-		| ID            | Title        | URL                                               |
-		+---------------+--------------+---------------------------------------------------+
-		| pwga254dhx97o | Magento 2    | https://us.magento.cloud/#/projects/pwga254dhx97o |
-		+---------------+--------------+---------------------------------------------------+
-4.	Enter the value in the URL column in a web browser.
-
-In a web browser, enter the project URL to access the console and project. When prompted, log in to your project using Bitbucket, GitHub, Google, or an e-mail address and password.
-
-![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="450px"}
-
 ## Access your project and environments {#project-access}
-The Web Interface provides several ways to access your project and environments:
+The Project Web Interface provides several ways to access your project and environments:
 
 *	Your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} URL for each active (up to eight)
 *	Secure Shell (SSH), a way to interact with services using a command terminal
@@ -62,19 +29,17 @@ The Web Interface provides several ways to access your project and environments:
 To access projects and environments through the Web Interface:
 
 1.	[Log in to your project](#project-login).
-2.	Hover the mouse pointer over **Access Project** as the following figure shows:
+2.	Click **Access Project** for a list of URLs and SSH.
 
 	![Access your project by URL or SSH]({{ site.baseurl }}common/images/cloud_project-access.png){:width="600px"}
-3.	For example, to view your storefront, click the **Web Access** link.
 
-	For more information about using SSH, see [SSH to an environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh).
-4.	To clone the project using either the Magento Enterprise Cloud Edition CLI or Git, use the links in the field under the branch name.
+For more information about using SSH, see [SSH to an environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh). To clone the project using either the Magento Enterprise Cloud Edition CLI or Git, use the links in the field under the branch name.
 
-	The following figure shows an example.
+The following figure shows an example.
 
-	![Clone the project]({{ site.baseurl }}common/images/cloud_project-clone.png){:width="600px"}
+![Clone the project]({{ site.baseurl }}common/images/cloud_project-clone.png){:width="600px"}
 
-	Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
+Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
 
 ## Get started configuring your project {#project-conf}
@@ -190,8 +155,8 @@ To view an environment's history:
 	*	Environment variable added
 	*	Environment snapshot created
 
-
 #### Related topics
-*	[Manage environments (branches)]({{page.baseurl}}cloud/project/project-webint-branch.html)
-*	[Project backup and restore (snapshot)]({{page.baseurl}}cloud/project/project-webint-snap.html)
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
+* [Project structure]({{page.baseurl}}cloud/project/project-start.html)
+* [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
+*	[Manage branches]({{page.baseurl}}cloud/project/project-webint-branch.html)
+*	[Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html)

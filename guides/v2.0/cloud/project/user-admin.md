@@ -2,17 +2,15 @@
 layout: default
 group: cloud
 subgroup: 100_project
-title: Manage users
-menu_title: Manage users
-menu_order: 5
+title: Create and manage users
+menu_title: Create and manage users
+menu_order: 15
 menu_node:
 version: 2.0
 github_link: cloud/project/user-admin.md
-redirect_from: guides/v2.0/cloud/project/user-admin.html
 ---
 
-Magento Enterprise Cloud Edition enables you to administer users by assigning them one or more roles. A *role* provides access and
-improves security in your project. Different roles are authorized to do different things with your applications, environments, and users.
+{{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users.
 
 ## Account owner role {#cloud-role-acct-owner}
 The account owner (that is, the person who registered the Magento Enterprise Cloud Edition account) is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it.
@@ -20,17 +18,15 @@ The account owner (that is, the person who registered the Magento Enterprise Clo
 ## Project-level roles {#cloud-role-project}
 You can assign users to the following roles per project:
 
--   Project administrator (also referred to as *super user*) can change settings and execute actions on any environment, including creating and restoring snapshots.
--   Project reader can view all environments in a project but cannot execute any actions on them.
+* Project administrator (also referred to as *super user*) can change settings and execute actions on any environment, including creating and restoring snapshots.
+*  Project reader can view all environments in a project but cannot execute any actions on them.
 
 ## Environment-level roles {#cloud-role-env}
 A project reader can have one of the following roles per environment:
 
--   Environment administrator can
-    change settings and execute actions on this environment, including merging with the parent environment.
--   Environment contributor can push
-    code to this environment. This role can also branch the environment.
--   Environment reader can view this environment only.
+* Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.
+*  Environment contributor can push code to this environment. This role can also branch the environment.
+* Environment reader can view this environment only.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We recommend you limit the environment administrator role to as few users as possible.</p>
@@ -61,14 +57,10 @@ and integrate this with any other automated system.
 
 Available commands:
 
-* `magento-cloud user:add`
-  * Add a user to the project
-* `magento-cloud user:delete`
-  * Delete a user
-* `magento-cloud user:list [users]`
-  * List project users
-* `magento-cloud user:role`
-  * View or change a user's role
+* `magento-cloud user:add` adds a user to the project
+* `magento-cloud user:delete` deletes a user
+* `magento-cloud user:list [users]` lists project users
+* `magento-cloud user:role` views or change a user's role
 
 For example, the following command adds the project administrator (`admin`) role to `alice@example.com` and gives her `contributor` privileges to the `development` environment:
 
@@ -126,7 +118,7 @@ To create user accounts using the Web Interface:
 
 The users you add receive an e-mail inviting them to join the Magento Enterprise Cloud Edition project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
 
-## Rebuild the environment
+## Rebuild the environment {#rebuild}
 After a new user is added to an environment, the environment must be rebuilt. Rebuilds
 are triggered when you push a new commit to an environment.
 To be able to rebuild without new code changes, use the command
