@@ -149,10 +149,10 @@ The following table lists the steps per the diagrams:
 <li>Pro: The <code>master</code> environment in Integration</li>
 </ul></li>
 <li>Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.</li>
-<li><p>Open a terminal on your local and use an SSH command to generate <code>/app/etc/config.local.php</code> on the environment:</p>
-<p><pre>ssh -k <SSH URL> "<Command>"</pre></p>
-<p>For example for Pro, to run the <code>scd-dump</code> on Integration <code>master</code>:</p>
-<p><pre>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"</pre></p>
+<li>Open a terminal on your local and use an SSH command to generate <code>/app/etc/config.local.php</code> on the environment:<br />
+<code>ssh -k <SSH URL> "<Command>"</code><br />
+For example for Pro, to run the <code>scd-dump</code> on Integration <code>master</code>:<br />
+<code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"</code>
 </li></ol>
 </td>
 </tr>
@@ -160,10 +160,10 @@ The following table lists the steps per the diagrams:
 <td >Step 2</td>
 <td>Push <code>config.local.php</code> to Git. To push this file to the <code>master</code> Git branch, you need to complete a few extra steps because this environment is read-only.</td>
 <td>
-<ol><li><p>Transfer <code>config.local.php</code> to your local system using <code>rsync</code> or <code>scp</code>. You can only add this file to the Git branch through your local.</p>
-<p><pre>rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php</pre></p></li>
-<li><p>Add and push <code>config.local.php</code> to the Git <code>master</code> branch.</p>
-<p><pre>git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master</pre></p></li>
+<ol><li>Transfer <code>config.local.php</code> to your local system using <code>rsync</code> or <code>scp</code>. You can only add this file to the Git branch through your local.<br />
+<code>rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php</code></li>
+<li>Add and push <code>config.local.php</code> to the Git <code>master</code> branch.<br />
+<code>git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master</code></li>
 </ol>
 </td>
 </tr>
