@@ -153,11 +153,11 @@ Push `config.local.php` to Git. To push this file to the `master` Git branch, yo
 
 1. Transfer `config.local.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 
-    rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
+    `rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php`
 
 2. Add and push `config.local.php` to the Git master branch.
 
-    git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
+    `git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master`
 
 ### Step 3 & 4: Push Git branch to Staging and Production
 Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.

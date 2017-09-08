@@ -74,7 +74,7 @@ When using the PayPal on-boarding tool with {{site.data.var.ece}} 2.1.8 and late
 
 If you are upgrading to {{site.data.var.ece}} 2.2, you need to add this variable to `magento.app.yaml` in the environment variables section.
 
-  # Environment variables
-  variables:
-    env:
-      CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+    # Environment variables
+    variables:
+      env:
+        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
