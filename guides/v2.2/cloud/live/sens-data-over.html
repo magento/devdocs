@@ -1670,6 +1670,10 @@
   <p>These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.</p>
 </div>
 
+<div class="bs-callout bs-callout-info">
+  <p>If you used configuration management in 2.1, this process is similar in 2.2. The name of the file has changed to <code class="highlighter-rouge">config.php</code> and updating the file changed. You can <a href="#migrate">migrate</a> your <code class="highlighter-rouge">config.local.php</code> settings to a new <code class="highlighter-rouge">config.php</code>.</p>
+</div>
+
 <h2 id="release">Feature availability</h2>
 <p>Configuration management was released in <code class="highlighter-rouge">magento-cloud-configuration</code> 101.4.1 on Magento Commerce (Cloud) 2.1.4 and later. The options and functions differ in Magento Commerce (Cloud) 2.2. We provide recommendations for Magento Commerce (Cloud) deployments in this section.</p>
 
@@ -1816,12 +1820,12 @@
   <li>
     <p>Transfer <code class="highlighter-rouge">config.php</code> to your local system using <code class="highlighter-rouge">rsync</code> or <code class="highlighter-rouge">scp</code>. You can only add this file to the Git branch through your local.</p>
 
-    <p>rsync <SSH URL="">:app/etc/config.php ./app/etc/config.php</SSH></p>
+    <p><code class="highlighter-rouge">rsync &lt;SSH URL&gt;:app/etc/config.php ./app/etc/config.php</code></p>
   </li>
   <li>
     <p>Add and push <code class="highlighter-rouge">config.php</code> to the Git master branch.</p>
 
-    <p>git add app/etc/config.php &amp;&amp; git commit -m “Add system-specific configuration” &amp;&amp; git push origin master</p>
+    <p><code class="highlighter-rouge">git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master</code></p>
   </li>
 </ol>
 
@@ -1852,6 +1856,21 @@
 <div class="bs-callout bs-callout-warning">
   <p>While you can manually edit <code class="highlighter-rouge">config.php</code> in Staging and Production, we don’t recommend it. The file helps keep all of your configurations consistent across all of your environments.</p>
 </div>
+
+<h2 id="migrate">Migrate config.local.php to config.php</h2>
+<p>If you upgrade to Magento Commerce (Cloud) 2.2 or later, you may want to migrate settings from <code class="highlighter-rouge">config.local.php</code> to your new <code class="highlighter-rouge">config.php</code> file. If the configuration settings in your Magento Admin match the contents of the file, you can follow the instructions to generate and add <code class="highlighter-rouge">config.php</code>.</p>
+
+<p>If they differ, you can append content from <code class="highlighter-rouge">config.local.php</code> to your new <code class="highlighter-rouge">config.php</code> file:</p>
+
+<ol>
+  <li>Follow instructions to generate the <code class="highlighter-rouge">config.php</code> file using the <a href="#cloud-config-specific-recomm">recommended method</a>.</li>
+  <li>Open <code class="highlighter-rouge">config.php</code>and delete the last line.</li>
+  <li>Open <code class="highlighter-rouge">config.local.php</code>and copy the contents.</li>
+  <li>Paste the contents into <code class="highlighter-rouge">config.php</code>, save, and complete adding it to Git.</li>
+  <li>Deploy across your environments.</li>
+</ol>
+
+<p>You only need to complete this migration once. When you need to update the file, you will always update the new <code class="highlighter-rouge">config.php</code>.</p>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.2/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a></p>

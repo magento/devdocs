@@ -1861,12 +1861,12 @@
   <li>
     <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local system using <code class="highlighter-rouge">rsync</code> or <code class="highlighter-rouge">scp</code>. You can only add this file to the Git branch through your local.</p>
 
-    <p>rsync <SSH URL="">:app/etc/config.local.php ./app/etc/config.local.php</SSH></p>
+    <p><code class="highlighter-rouge">rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php</code></p>
   </li>
   <li>
     <p>Add and push <code class="highlighter-rouge">config.local.php</code> to the Git master branch.</p>
 
-    <p>git add app/etc/config.local.php &amp;&amp; git commit -m “Add system-specific configuration” &amp;&amp; git push origin master</p>
+    <p><code class="highlighter-rouge">git add app/etc/config.local.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master</code></p>
   </li>
 </ol>
 

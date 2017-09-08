@@ -1730,14 +1730,16 @@
 </ul>
 
 <h2 id="deploy">PayPal variables</h2>
-<p>When using the PayPal on-boarding tool with Magento Commerce (Cloud) 2.1.8 and later 2.1.x versions, we automatically include a variable in <code class="highlighter-rouge">.magento.app.yaml</code> to correctly connect your PayPal module with PayPal services.</p>
+<p>When using the PayPal on-boarding tool with Magento Commerce (Cloud) 2.2, you need to add the following variable to <code class="highlighter-rouge">magento.app.yaml</code> in the environment variables section.</p>
 
-<p>If you are upgrading to Magento Commerce (Cloud) 2.2, you need to add this variable to <code class="highlighter-rouge">magento.app.yaml</code> in the environment variables section.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code># Environment variables
+variables:
+  env:
+    CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+</code></pre>
+</div>
 
-<p># Environment variables
-  variables:
-    env:
-      CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: ‘payment-broker.magento.com’</p>
+<p>If you are upgrading to 2.2 from 2.1.8 or later, you still need to add this variable.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1748,7 +1750,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/live/paypal-onboarding.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/live/paypal-onboarding.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
