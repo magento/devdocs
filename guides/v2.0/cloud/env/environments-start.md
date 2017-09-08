@@ -75,7 +75,7 @@ Now you can connect to services as if they were running locally.
 {% include cloud/log-in-db.md %}
 
 ## Integration environment IP addresses
-The following table lists incoming and outgoing IP addresses used by Magento Enterprise Cloud Edition [Integration environments]({{page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
+The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 

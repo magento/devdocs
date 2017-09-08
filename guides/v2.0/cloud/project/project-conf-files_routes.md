@@ -50,7 +50,7 @@ For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcs
   <p>The <code>na</code> region is shown as an example; it's not currently available. Magento plans support for <code>na</code> first, then <code>au</code> and <code>eu</code> at a later date.</p>
 </div>
 
-<!-- Magento Enterprise Cloud Edition also supports [multiple applications]({{page.baseurl}}cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
+<!-- {{site.data.var.ece}} also supports [multiple applications]({{page.baseurl}}cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
 
 ## Route options {#cloud-yaml-routes-opts}
 Each route can be configured separately with the following properties:

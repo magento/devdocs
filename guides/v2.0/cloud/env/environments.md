@@ -18,7 +18,7 @@ Each environment is a branch of the `master` environment (which is your live env
 If you use GitHub, every pull request or branch can be deployed into its own environment on Magento Enterprise Cloud.
 
 ## Master environment
-Every Magento Enterprise Cloud Edition project starts with a `master` environment that corresponds to the `master` branch in Git. The master environment is your live, production environment.
+Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. The master environment is your live, production environment.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Your project must have a <code>master</code> branch; it won't function properly without one.</p>
@@ -28,7 +28,7 @@ Every Magento Enterprise Cloud Edition project starts with a `master` environmen
 ## Inactive environments {#cloud-env-inactive}
 An *inactive* environment is an environment which doesn't run any service. You can have any number of inactive environments.
 
-By default, when you push a new branch via Git, Magento Enterprise Cloud automatically creates an inactive environment. It's referred to as *inactive* because it isn't a working environment. 
+By default, when you push a new branch via Git, Magento Enterprise Cloud automatically creates an inactive environment. It's referred to as *inactive* because it isn't a working environment.
 
 You can use the following command to create an active environment from a parent environment:
 
@@ -52,7 +52,7 @@ Likewise, a child can merge code with its parent, which ends up redeploying the 
 Child environments are typically used for development, staging, and testing.
 
 ## Workflows {#cloud-env-work}
-Magento Enterprise Cloud Edition imposes no rules on how you use branches and environments. You can use whatever workflow makes sense to you, consistent with the workflow you already use.
+{{site.data.var.ece}} imposes no rules on how you use branches and environments. You can use whatever workflow makes sense to you, consistent with the workflow you already use.
 
 For example, suppose your Agile development team needs a branch (that is, environment) for every story in a sprint and at the end of the sprint, those branches merge to another branch for testing.
 

@@ -16,7 +16,7 @@ This topic discusses how to set up {{site.data.var.ee}} to have multiple website
 To set up multiple stores, you must:
 
 1.	[Configure your local installation]({{ page.baseurl }}config-guide/multi-site/ms_over.html) and test it locally.
-2.	Configure Magento Enterprise Cloud edition routes and variables.
+2.	Configure {{site.data.var.ece}} routes and variables.
 3.	Push the changes to an [integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) and test it.
 4.	To deploy multiple stores to a [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) environment, create a support ticket.
 

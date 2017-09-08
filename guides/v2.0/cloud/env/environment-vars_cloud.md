@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 120_env
-title: Magento Enterprise Cloud Edition environment variables
-menu_title: Magento Enterprise Cloud Edition environment variables
+title: Magento Commerce (Cloud) environment variables
+menu_title: Magento Commerce (Cloud) environment variables
 menu_order: 93
 menu_node:
 level3_menu_node: level3child
@@ -12,7 +12,7 @@ version: 2.0
 github_link: cloud/env/environment-vars_cloud.md
 ---
 
-Environment variables that are specific to Magento Enterprise Cloud Edition are prefixed with `MAGENTO_CLOUD_*`.
+Environment variables that are specific to {{site.data.var.ece}} are prefixed with `MAGENTO_CLOUD_*`.
 
 -   **MAGENTO_CLOUD_APP_DIR**: The absolute path to the application directory.
 -   **MAGENTO_CLOUD_APPLICATION**: A base64-encoded JSON object that
