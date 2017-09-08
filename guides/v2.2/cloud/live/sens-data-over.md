@@ -140,7 +140,7 @@ The **Pro plan** environment high-level overview of this process:
 <tr>
 <th style="width:100px;">Step</th>
 <th style="width:250px;">Actions per diagram step</th>
-<th></th>
+<th> Detailed instructions</th>
 </tr>
 <tr>
 <td >Step 1</td>
@@ -153,7 +153,8 @@ The **Pro plan** environment high-level overview of this process:
 
 <li>Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.</li>
 
-<li>Open a terminal on your local and use an SSH command to generate <code>/app/etc/config.php</code> on the environment: <code>ssh -k <SSH URL> "<Command>"</code>
+<li>Open a terminal on your local and use an SSH command to generate <code>/app/etc/config.php</code> on the environment:
+<p><code>ssh -k <SSH URL> "<Command>"</code></p>
 <p>For example for Pro, to run the <code>scd-dump</code> on Integration <code>master</code>:</p>
 <p><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"</code></p>
 </li>
