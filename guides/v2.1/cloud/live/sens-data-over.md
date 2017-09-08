@@ -131,58 +131,39 @@ The **Pro plan** environment high-level overview of this process:
 
 ![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png)
 
-The following table lists the steps per the diagrams:
+### Step 1: Configure your store
+Complete all configurations for your stores in the Admin console:
 
-<table>
-<tr>
-<th style="width:100px;">Step</th>
-<th style="width:250px;">Actions per diagram step</th>
-<th>Detailed instructions</th>
-</tr>
+1. Log into the Magento Adming for one of the environments:
 
-<tr>
-<td >Step 1</td>
-<td >Complete all configurations for your stores in the Admin console.</td>
-<td>
-<ol>
-<li>Log into the Magento Adming for one of the environments:
-<ul><li>Starter: An active development branch</li>
-<li>Pro: The <code>master</code> environment in Integration</li></ul></li>
+  * Starter: An active development branch
+  * Pro: The `master` environment in Integration
+2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.
+3. Open a terminal on your local and use an SSH command to generate `/app/etc/config.local.php` on the environment:
 
-<li>Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.</li>
+    ssh -k <SSH URL> "<Command>"
 
-<li>Open a terminal on your local and use an SSH command to generate <code>/app/etc/config.local.php</code> on the environment</li></ol>
-<p><code>ssh -k <SSH URL> "<Command>"</code></p>
-<p>For example for Pro, to run the <code>scd-dump</code> on Integration <code>master</code>:</p>
-<p><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"</code></p>
-</td>
-</tr>
+  For example for Pro, to run the `scd-dump` on Integration `master`:
 
-<tr>
-<td >Step 2</td>
-<td>Push <code>config.local.php</code> to Git. To push this file to the <code>master</code> Git branch, you need to complete a few extra steps because this environment is read-only.</td>
-<td>
-<ol><li>Transfer <code>config.local.php</code> to your local system using <code>rsync</code> or <code>scp</code>. You can only add this file to the Git branch through your local.
-<p><code>rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php</code></p></li>
+    ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 
-<li>Add and push <code>config.local.php</code> to the Git <code>master</code> branch.
-<p><pre>git add app/etc/config.local.php
-git commit -m "Add system-specific configuration"
-git push origin master</pre></p>
-</li></ol>
-</td>
-</tr>
+### Step 2: Transfer and add the file to Git
+Push `config.local.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.
 
-<tr>
-<td >Step 3 & 4</td>
-<td>Push the Git branch to Staging and Production and complete configurations.
-</td>
-<td><p>Log into the Magento Admin in those environments to verify the settings. If you used <code>scd-dump</code>, only configured settings display. You can continue configuring the environment if needed.</p>
-<p>For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally <code>master</code> for Production. Complete any additional configurations in Staging and Production as needed.</p>
-<p>For Pro, when you push to the Git branch, the Integration <code>master</code> environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
-</td>
-</tr>
-</table>
+1. Transfer `config.local.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
+
+    rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
+
+2. Add and push `config.local.php` to the Git master branch.
+
+    git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
+
+### Step 3 & 4: Push Git branch to Staging and Production
+Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.
+
+For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.
+
+For Pro, when you push to the Git branch, the Integration `master` environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
 ## Update configuations {#update}
 If you need to change any configuration settings `config.local.php`, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration `master` environment.
