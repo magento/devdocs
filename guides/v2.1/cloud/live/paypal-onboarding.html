@@ -969,6 +969,22 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a></li>
+
+									
+
+								
+
+									
+
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -989,16 +1005,6 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
-
-
-									
-
-								
-
-									
-
-
 											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
 
 
@@ -1008,27 +1014,8 @@
 
 									
 
-										<li class="level3Parent " id="manageconfig"><a href="#">Manage the configuration</a>
 
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
 
 
 									
@@ -1790,6 +1777,16 @@
   <li><strong>Enable In-Context Checkout Experience</strong></li>
   <li><strong>Enable PayPal Credit</strong> allows customers to PayPal credit financing without additional costs. PayPal pays the order up-front, handling all repayments for the credit directly with the customer.</li>
 </ul>
+
+<h2 id="deploy">PayPal variables</h2>
+<p>When using the PayPal on-boarding tool with Magento Commerce (Cloud) 2.1.8 and later 2.1.x versions, we automatically include a variable in <code class="highlighter-rouge">.magento.app.yaml</code> to correctly connect your PayPal module with PayPal services.</p>
+
+<p>If you are upgrading to Magento Commerce (Cloud) 2.2, you need to add this variable to <code class="highlighter-rouge">magento.app.yaml</code> in the environment variables section.</p>
+
+<p># Environment variables
+  variables:
+    env:
+      CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: ‘payment-broker.magento.com’</p>
 
 		</div>
 		<!-- /.content-wrap -->

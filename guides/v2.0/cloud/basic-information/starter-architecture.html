@@ -943,7 +943,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
 
 
 									
@@ -953,7 +953,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
 
 
 									
@@ -1590,33 +1590,15 @@
 </section>
 
 
-			<p>All of your code is contained in the Magento Commerce (Cloud) Starter project. The <em>project</em> is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to four active <em>environments</em> including <code class="highlighter-rouge">master</code> with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.</p>
+			<p>All of your code is contained in the Magento Commerce (Cloud) Starter project. The <em>project</em> is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to 4 total environments including three active Integration <em>environments</em> and a Production environment using the <code class="highlighter-rouge">master</code> Git branch.</p>
 
-<p>These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.</p>
+<p>All environments are in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.</p>
 
-<p>These four environments include Production, Staging, and two remaining. Consider each of the remaining environments for development to develop and test different branches simultaneously. You can use any development and branching methodology you like.</p>
+<p>You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.</p>
 
-<h2 id="how-work">How the environments work</h2>
-<p>You have up to four full, active environments that generate in containers for your project. When we first provision your project, we create a <code class="highlighter-rouge">master</code> Git branch with a full environment. You automatically get a <code class="highlighter-rouge">master</code> branch and environment. This is your live site.</p>
-
-<p>You have up to three active Git branches you can create from <code class="highlighter-rouge">master</code>. Each Git branch has an associated environment with a web server, database, and configured services. For these three remaining active environments, we recommend creating a branch from <code class="highlighter-rouge">master</code> called <code class="highlighter-rouge">staging</code>. Create your remaining two active Git branches from <code class="highlighter-rouge">staging</code> for development.</p>
-
-<p>When you deactivate (or delete) a Git branch, you open a slot for an active Git branch. When activated, a new environment container generates for the code.</p>
-
-<p><img src="/common/images/cloud_arch-starter.png" alt="High-level view of Starter project" /></p>
-
-<p>To branch and develop your Magento store:</p>
-
-<ul>
-  <li>Set up your local environment</li>
-  <li>Clone the <code class="highlighter-rouge">master</code> branch from the Project to your local</li>
-  <li>Branch and develop in a new Git branch on your local workspace</li>
-  <li>Push code to Git that builds and deploys to an environment for testing</li>
-</ul>
-
-<p>Additional sections in this guide provide instructions and walk-throughs for setting up your <a href="/guides/v2.0/cloud/before/before-workspace.html">local workspace</a>, working with Git branches, and <a href="/guides/v2.0/cloud/live/stage-prod-live.html">deploying code</a>.</p>
-
-<p>All code in these environments is read-only, requiring deploys of Git repositories. To make changes, install extensions, and make significant changes, you need to make them on your local and push code to the remote Git branch. The changes are pushed to those environments and finally Production in the <code class="highlighter-rouge">master</code> branch.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The following architecture information uses an architecture including Production, Staging, and Integration environments.</p>
+</div>
 
 <h2 id="cloud-arch-int">Production with a master branch</h2>
 <p>The Production environment is your live store(s) and site(s). The environment includes your <code class="highlighter-rouge">master</code> Git branch, a web server, database, and configured services to fully test your site.</p>
@@ -1628,7 +1610,7 @@
 <p>We highly recommend fully testing in your Staging environment and branch prior to pushing to Production.</p>
 
 <h2 id="cloud-arch-stage">Staging branch and environment</h2>
-<p>We recommend creating a branch called <code class="highlighter-rouge">staging</code> from <code class="highlighter-rouge">master</code>. Use this Staging environment and Git branch as your pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment includes all services used in Production and <code class="highlighter-rouge">master</code> including Fastly, New Relic, Blackfire, and search.</p>
+<p>We recommend creating a branch called <code class="highlighter-rouge">staging</code> from <code class="highlighter-rouge">master</code>. Use this Staging environment and Git branch as your pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment will receive all services to match Production including Fastly, New Relic, Blackfire, and search.</p>
 
 <p>Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.</p>
 
@@ -1636,10 +1618,21 @@
 
 <p>We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.</p>
 
-<h2 id="dev">Development branches and environments</h2>
-<p>From <code class="highlighter-rouge">staging</code>, create branches for your development code. Add extensions, work in agile sprints, resolve issues all through these branches. When completed and tested, you can merge up to <code class="highlighter-rouge">staging</code>, test in Staging, then merge to <code class="highlighter-rouge">master</code> to go live.</p>
+<h2 id="cloud-arch-int">Integration environment</h2>
+<p>Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. If you created a Staging environment, you have up to two active environments on a grid for two active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.</p>
 
-<p>We do not recommend branching these environments directly from <code class="highlighter-rouge">master</code> if you have a <code class="highlighter-rouge">staging</code> branch. Having a Staging branch and environment allows you to fully test and verify every code change before pushing to Production.</p>
+<p>You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them. This environment does not support all services. For example, Fastly is not accessible in Integration.</p>
+
+<p>The process for developing in Integration requires the following process:</p>
+
+<ul>
+  <li>Branch and develop off of <code class="highlighter-rouge">staging</code></li>
+  <li>Develop all work on your local workspace in these branches</li>
+  <li>Push code to Git to build and deploy on an Integration environment for testing</li>
+  <li>As work is completed, merge to <code class="highlighter-rouge">staging</code></li>
+</ul>
+
+<p>Additional sections in this guide provide instructions and walk-throughs for setting up your <a href="/guides/v2.0/cloud/before/before-workspace.html">local workspace</a>, working with Git branches, and <a href="/guides/v2.0/cloud/live/stage-prod-live.html">deploying code</a>.</p>
 
 <h2 id="technology">Production and Staging technology stack</h2>
 <p>The Production and Staging environments include the following technologies. You can modify and configure these technologies through the <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml file</a>.</p>
@@ -1696,19 +1689,18 @@
 <ul>
   <li>Set up your local environment</li>
   <li>Clone the <code class="highlighter-rouge">master</code> branch from the Project to your local</li>
-  <li>Branch and develop in a new Git branch on your local workspace</li>
+  <li>Create a <code class="highlighter-rouge">staging</code> branch from <code class="highlighter-rouge">master</code></li>
+  <li>Create branches for development from <code class="highlighter-rouge">staging</code></li>
   <li>Push code to Git that builds and deploys to an environment for testing</li>
 </ul>
 
-<p>Additional sections in this guide provide instructions and walk-throughs for setting up your <a href="/guides/v2.0/cloud/before/before-workspace.html">local workspace</a>, working with Git branches, and <a href="/guides/v2.0/cloud/live/stage-prod-live.html">deploying code</a>.</p>
-
-<p>We walk you through the entire process from <a href="/guides/v2.0/cloud/live/stage-prod-live.html">deployment</a> to <a href="/guides/v2.0/cloud/live/live.html">going live</a> requirements and processes.</p>
+<p>Additional sections in this guide provide instructions and walk-throughs for setting up your <a href="/guides/v2.0/cloud/before/before-workspace.html">local workspace</a>, working with Git branches, <a href="/guides/v2.0/cloud/live/stage-prod-live.html">deploying code</a>, and <a href="/guides/v2.0/cloud/live/live.html">going live</a> .</p>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Starter Develop and Deploy Workflow</a></li>
   <li><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
-  <li><a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Magento Commerce (Cloud) requirements</a></li>
+  <li><a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Technologies and requirements</a></li>
 </ul>
 
 		</div>

@@ -635,6 +635,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.2/cloud/live/paypal-onboarding.html">Set up PayPal</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-multi-sites.html">Set up multiple websites or stores</a></li>
 
 									
@@ -920,6 +928,22 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a></li>
+
+									
+
+								
+
+									
+
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -940,16 +964,6 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
-
-
-									
-
-								
-
-									
-
-
 											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
 
 
@@ -959,27 +973,8 @@
 
 									
 
-										<li class="level3Parent " id="manageconfig"><a href="#">Manage the configuration</a>
 
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration management</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.2/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
 
 
 									
@@ -1668,20 +1663,13 @@
 
 <p>If you don’t have a live site set up with DNS, you can use either a static route or you can use the optional <code class="highlighter-rouge">--resolve</code> flag, which bypasses DNS name resolution.</p>
 
-<p><em>Optional:</em> To set up a static route only if your site isn’t set up with DNS:</p>
+<p>Check for headers with a <strong>dig command</strong> to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="_blank">Testing before changing DNS</a>.</p>
 
-<ol>
-  <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system" target="_blank"><code class="highlighter-rouge">hosts</code> file</a>.</li>
-  <li>
-    <p>Add the static route in the format:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;ip address&gt; &lt;url&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>dig http[s]://&lt;your domain&gt;
 </code></pre>
-    </div>
-  </li>
-</ol>
+</div>
 
-<p>Check your response headers on the live site URL:</p>
+<p>Check response headers with <strong>curl command</strong>:</p>
 
 <ol>
   <li>
@@ -1722,7 +1710,7 @@
 <h3 id="curl">curl command</h3>
 <p>Next, use a <code class="highlighter-rouge">curl</code> command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production.</p>
 
-<p>For more information on these commands, you bypass Fastly when you inject <code class="highlighter-rouge">-H "host:URL"</code>, replace with origin to connecting location (CNAME informatin from your OneDrive Spreadsheet), <code class="highlighter-rouge">-k</code> ignores SSL, and <code class="highlighter-rouge">-v</code> provides verbose responses. If headers display correctly, check the live site and verify headers again.</p>
+<p>For more information on these commands, you bypass Fastly when you inject <code class="highlighter-rouge">-H "host:URL"</code>, replace with origin to connecting location (CNAME information from your OneDrive Spreadsheet), <code class="highlighter-rouge">-k</code> ignores SSL, and <code class="highlighter-rouge">-v</code> provides verbose responses. If headers display correctly, check the live site and verify headers again.</p>
 
 <ul>
   <li>If header issues occur when directly hitting the origin servers bypassing Fastly, you may have issues in your code, with extensions, or with the infrastructure.</li>

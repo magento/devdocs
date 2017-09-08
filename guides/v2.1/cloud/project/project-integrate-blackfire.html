@@ -969,6 +969,22 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a></li>
+
+									
+
+								
+
+									
+
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -989,16 +1005,6 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
-
-
-									
-
-								
-
-									
-
-
 											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
 
 
@@ -1008,27 +1014,8 @@
 
 									
 
-										<li class="level3Parent " id="manageconfig"><a href="#">Manage the configuration</a>
 
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
 
 
 									
@@ -1718,16 +1705,16 @@
 
 			<p><a href="https://blackfire.io/profiler" target="_blank">Blackfire Profiler</a> helps you locate and investigate performance issues in your environment at the code-level. it creates a performance profile by tracking every PHP call and method and SQL queries performed by your code. Blackfire digs deeper providing granular performance analytics. You can activate and use Blackfire Profiler in all of your environments, especially helpful in Staging and Production.</p>
 
-<p>This information helps you get Blackfire installed on your local, integrated into development or Integration, and running your first profile.</p>
+<p>This information helps you get Blackfire installed on your local, integrated into Integration, and running your first profile.</p>
 
 <p>For full details on integrations, also review <a href="https://support.blackfire.io/blackfire-on-magento-cloud" target="_blank">Blackfire’s complete Magento Commerce (Cloud)</a> guide. They also include a number of <a href="#resources">incredible resources</a> to get you started.</p>
 
 <p>Blackfire includes the following <a href="https://blackfire.io/docs/reference-guide/environments" target="_blank">environments</a> through their site:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Dev: This is your Integration or development environments.</li>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Test: This is your Staging environment.</li>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Prod: This is your Production environment.</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Dev: This is your Integration environments</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Test: This is your Staging environment</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Prod: This is your Production environment</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1763,14 +1750,14 @@
 
 <ol>
   <li>Log in to <a href="https://blackfire.io/login" target="_blank">Blackfire</a>.</li>
-  <li>Select the Integration and Development environment in the <strong>Current Environment</strong> list.</li>
+  <li>Select the Integration environment in the <strong>Current Environment</strong> list.</li>
   <li>Select the Settings tab.</li>
   <li>Scroll to the bottom and locate the Server ID and Server Token for the environment. You will need these values for the instructions.</li>
   <li>Open <a href="https://blackfire.io/docs/up-and-running/installation" target="_blank">this guide</a>, select the Operating System, and follow the instructions.</li>
 </ol>
 
 <h2 id="dev">Integrate Blackfire in development</h2>
-<p>We recommend enabling Blackfire in all of your environments including development and Integration. To integrate, you begin in the Blackfire site. For full details, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">their guide.</a>. You can integrate with Pro’s Integration environment and Starter’s development branches.</p>
+<p>We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">their guide.</a>. You can integrate with Pro’s Integration environment and Starter’s development branches.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>For Starter plans, pushing your code and <code class="highlighter-rouge">.magento.app.yaml</code> file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.</p>
@@ -1892,7 +1879,7 @@ git push origin
 
 <ol>
   <li>Install the Blackfire browser extension in <a href="https://blackfire.io/docs/integrations/chrome#installing-the-companion" target="_blank">Chrome</a> or <a href="https://blackfire.io/docs/integrations/firefox#installing-the-companion" target="_blank">Firefox</a>. A new Blackfire icon displays in your browser next to the address location. If you don’t see it, you may need to display the bar.</li>
-  <li>Visit the store or site URL for your specific environment. For example, access the URL for your development or Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.</li>
+  <li>Visit the store or site URL for your specific environment. For example, access the URL for your Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.</li>
   <li>
     <p>Click the Blackfire icon to profile. For Compare with, select No Reference.</p>
 

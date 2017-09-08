@@ -969,6 +969,22 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a></li>
+
+									
+
+								
+
+									
+
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -989,16 +1005,6 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
-
-
-									
-
-								
-
-									
-
-
 											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
 
 
@@ -1008,27 +1014,8 @@
 
 									
 
-										<li class="level3Parent " id="manageconfig"><a href="#">Manage the configuration</a>
 
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
 
 
 									
@@ -1766,8 +1753,11 @@
 
 <p>For the format, we support <code class="highlighter-rouge">www.domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code>. We don’t support a domain without www: <code class="highlighter-rouge">domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code>.</p>
 
+<h3 id="fastly-dns">Configure DNS for Fastly</h3>
+<p>We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. The domain validation process is executed by Fastly. When you are ready to go, you will need to provide your domain names in a Support ticket to us. We will then provide a DNS TXT record to add to your apex domain to confirm ownership.</p>
+
 <h3 id="fastly-tls">TLS and Fastly</h3>
-<p>If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your Support ticket for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly’s TXT record file for your account. You can then send this record to your DNS provider.</p>
+<p>If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your <a href="#dns">Support ticket</a> for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly’s TXT record file for your account. You can then send this record to your DNS provider.</p>
 
 <p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="_blank">DNS TXT record validation</a>.</p>
 

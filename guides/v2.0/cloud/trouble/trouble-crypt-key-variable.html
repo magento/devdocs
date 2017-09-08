@@ -943,7 +943,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
 
 
 									
@@ -953,7 +953,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
 
 
 									
@@ -1598,14 +1598,14 @@
 
 <p>If you have imported data from an existing Magento installation into Magento Commerce (Cloud), you need to <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">copy the key</a> and <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html#cloud-import-key">deploy it</a> to the environments.</p>
 
-<h3 id="cloud-trouble-nocrypt">Ecryption key not in all environments</h3>
+<h3 id="cloud-trouble-nocrypt">Encryption key not in all environments</h3>
 <p>All Cloud environments require this encryption key in all three environments or the store will encounter authentication and authorization errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.</p>
 
 <p>To verify and update the encryption key environment variable:</p>
 
 <ol>
   <li>
-    <p>SSH to each of the Cloud environments: development or Integration, Staging, and Production.</p>
+    <p>SSH to each of the Cloud environments: Integration, Staging, and Production.</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh
 </code></pre>

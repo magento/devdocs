@@ -943,7 +943,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
 
 
 									
@@ -953,7 +953,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
 
 
 									
@@ -1908,6 +1908,18 @@ composer require fastly/magento2
   </ol>
 
   <p>Fastly also provides a series of <a href="https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features" target="_blank">geolocation-related VCL features</a> for customized geolocation coding.</p>
+
+  <h2 id="fastly-dns">Configure DNS for Fastly</h2>
+  <p>These steps you complete when going live.</p>
+
+  <p>We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. The domain validation process is executed by Fastly. When you are ready to go, you will need to provide your domain names in a Support ticket to us. We will then provide a DNS TXT record to add to your apex domain to confirm ownership.</p>
+
+  <p>For details, see <a href="/guides/v2.0/cloud/live/go-live-checklist.html">Go live checklist</a>.</p>
+
+  <h3 id="fastly-tls">TLS and Fastly</h3>
+  <p>If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your Support ticket for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly’s TXT record file for your account. You can then send this record to your DNS provider.</p>
+
+  <p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="_blank">DNS TXT record validation</a>.</p>
 
   <h4 id="related-topics">Related topics</h4>
 

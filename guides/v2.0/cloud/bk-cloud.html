@@ -943,7 +943,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
 
 
 									
@@ -953,7 +953,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
 
 
 									
@@ -1592,7 +1592,7 @@
 
 			<p>Magento Commerce (Cloud), formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines Magento Commerce, Cloud infrastructure hosting, with a few differences and added features including Git integration and key environments for development, staging, and live production.</p>
 
-<p>Code, test, and deploy across development, staging, and finally production environment for continuous integration of your store.</p>
+<p>Code, test, and deploy across Integration, Staging, and finally Production environment for continuous integration of your store.</p>
 
 <h2 id="plans">Magento Commerce (Cloud) plans</h2>
 <p>Magento Commerce (Cloud) includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our <a href="https://magento.com/trial/plans-comparison" target="_blank">Plan Comparison</a>.</p>
@@ -1644,7 +1644,6 @@
     <td class="blank"></td>
     <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
     </tr>
-
 </tbody>
 </table>
 
@@ -1654,26 +1653,27 @@
 <p>We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration.</p>
 
 <h3 id="starter">Starter environments</h3>
-<p>For Starter plan subscriptions, you receive the following <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">environments</a>:</p>
+<p>For Starter plan subscriptions, you receive four <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">environments</a> including the following:</p>
 
 <ul>
-  <li><strong>Master</strong>: The Master branch for your project is your live store(s) and Production environment. This environment includes your active <code class="highlighter-rouge">master</code> Git branch, database, web server, caching, services, environment variables, and configurations. This is a read-only environment that you deploy to.</li>
-  <li><strong>Development active branches</strong>: You have a number of active Git branches, each with a complete environment to develop and test your code. Each environment includes your active Git branch, database, web server, caching, services, environment variables, and configurations.</li>
+  <li><strong>Integration</strong>: The ultimate developer environments, Integration provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.</li>
+  <li><strong>Staging</strong>: We highly recommend you create an active <code class="highlighter-rouge">staging</code> branch as one of the three Integration environments. Create this branch directly from <code class="highlighter-rouge">master</code>. As code and extensions pass your tests, you can merge your Integration branches to <code class="highlighter-rouge">staging</code>. This Staging environment becomes your pre-Production testing environment. It includes the <code class="highlighter-rouge">staging</code> active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.</li>
+  <li><strong>Production</strong>: When code is ready and tested, all code merges to <code class="highlighter-rouge">master</code> for deployment to the Production live site. This environment includes your active <code class="highlighter-rouge">master</code> Git branch, database, web server, caching, services, environment variables, and configurations. This environment includes additional services like Fastly.</li>
 </ul>
 
 <h3 id="pro">Pro environments</h3>
 <p>For Pro subscriptions, you receive the following <a href="/guides/v2.0/cloud/reference/discover-arch.html">environments</a>:</p>
 
 <ul>
-  <li><strong>Integration</strong>: The ultimate developer environment providing eight testable environments with your active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test up to eight Git branches in this interactive environment, one per active environment.</li>
-  <li><strong>Staging</strong>: As code and extensions pass your tests, deploy the master Git branch to Staging for near-Production testing. Consider pulling your Production database into this environment for the best testing opportunity. This environment includes a database, web server, caching, services, environment variables, configurations, and Fastly for the pushed master branch of code.</li>
-  <li><strong>Production</strong>: When code is ready, deploy the master Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.</li>
+  <li><strong>Integration</strong>: The ultimate developer environment, Integration provides eight testable environments including a <code class="highlighter-rouge">master</code>. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test your code before merging to <code class="highlighter-rouge">master</code> to push to Staging.</li>
+  <li><strong>Staging</strong>: As code and extensions pass your tests, deploy the Integration <code class="highlighter-rouge">master</code> Git branch to Staging for pre-Production testing. This environment includes a database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.</li>
+  <li><strong>Production</strong>: When code is ready and testing complete, deploy the Integration <code class="highlighter-rouge">master</code> Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.</li>
 </ul>
 
 <h3 id="details">Details about the cloud</h3>
 <ul>
-  <li>The Starter plan includes four <em>active</em> environments for development, testing, and production. Additional active environments are available at additional cost. Each active environment includes a database, environment variables, and configurations.</li>
-  <li>The Pro plan includes eight <em>active</em> environments for development and integration. Additional active environments are available at additional cost. Each active environment includes a database, environment variables, and configurations.</li>
+  <li>Each plan includes Integration <em>active</em> environments for development, testing, and integrating services. Additional active environments are available at additional cost.</li>
+  <li>All environments run with active Git branches of code.</li>
   <li>You have an unlimited number of <em>inactive</em> Git branches.</li>
   <li>You can add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.</li>
   <li>We use a robust <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> build process.</li>
@@ -1687,14 +1687,14 @@
   <li><a href="https://git-scm.com/docs/user-manual.html" target="_blank">Git</a></li>
   <li><a href="https://getcomposer.org/doc" target="_blank">Composer</a></li>
   <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">Secure Shell</a> (SSH)</li>
-  <li>MySQL (including command-line interation)</li>
+  <li>MySQL (including command-line interaction)</li>
   <li>Basic linux shell usage</li>
 </ul>
 
-<p>See <a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Magento Commerce requirements</a>, <a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architechture</a>, and <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a> for details and additional technologies.</p>
+<p>See <a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Technologies and requirements</a>, <a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architechture</a>, and <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a> for details and additional technologies.</p>
 
 <h2 id="getstarted">Where do I get started?</h2>
-<p>If you have experience with Magento Commerce 2, we recommend reviewing content in these DevDocs to understand the differences between Magento Commerce and Magento Commerce (Cloud). If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, setitng up your local, continuous deployment across environments, and going live.</p>
+<p>If you have experience with Magento Commerce 2, we recommend reviewing content in these DevDocs to understand the differences between Magento Commerce and Magento Commerce (Cloud). If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, settng up your local, continuous deployment across environments, and going live.</p>
 
 <p>If you are the Product Owner, you should complete these <a href="/guides/v2.0/cloud/onboarding/onboarding-tasks.html">onboarding tasks</a> to give your technical staff and solution experts access.</p>
 

@@ -635,6 +635,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.2/cloud/live/paypal-onboarding.html">Set up PayPal</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-multi-sites.html">Set up multiple websites or stores</a></li>
 
 									
@@ -920,6 +928,22 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a></li>
+
+									
+
+								
+
+									
+
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -940,16 +964,6 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
-
-
-									
-
-								
-
-									
-
-
 											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
 
 
@@ -959,27 +973,8 @@
 
 									
 
-										<li class="level3Parent " id="manageconfig"><a href="#">Manage the configuration</a>
 
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig " data-menunode="manageconfig"><a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration management</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child manageconfig  active " data-menunode="manageconfig"><a href="/guides/v2.2/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
 
 
 									
@@ -1659,20 +1654,16 @@
 </section>
 
 
-			<p>This topic discusses how to manage default <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> and static file optimization settings in your integration system. <em>Static file optimization</em> means merging and minifying <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and Cascading Style Sheets, and minifying <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> templates.</p>
-
-<p>Static file optimization should be disabled in the Integration environment (where you’re testing) and enabled in Staging and Production environments.</p>
-
-<p>These particular settings provide an example of how the optimization procedure works. You can use the same procedure to manage and optimize any available settings.</p>
+			<p>Configuration management exports your configurations to a file for pushing across your environments. This file, <code class="highlighter-rouge">config.php</code>, keeps your configurations consistent across all environments, decreases downtime by moving static deploy to build, and much more. This information details an example for configuring your settings, exporting the file, and deploying it.</p>
 
 <p>This example shows how to use the <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a> for managing the configuration:</p>
 
 <ol>
-  <li>Change the configuration in the Integration environment Admin panel.</li>
+  <li>Enter your configurations in your Integration environment Admin panel.</li>
   <li>Create <code class="highlighter-rouge">config.php</code> and transfer it to your local system.</li>
   <li>Push <code class="highlighter-rouge">config.php</code> to the branch and Integration environment.</li>
   <li>Verify your settings are not editable in the Admin panel. Any configurations exported to <code class="highlighter-rouge">config.php</code> make those fields in the Admin panel read-only and disabled for edits.</li>
-  <li>Change settings again.
+  <li>Update and modify configurations again in Integration and recreate the file to update in Git:
     <ol>
       <li>Delete <code class="highlighter-rouge">config.php</code> on the Integration environment.</li>
       <li>Change configuration settings on the Integration environment.</li>
@@ -1684,123 +1675,44 @@
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>. For more information, see [Sensitive configuration paths](/guides/v2.2/cloud/live/config-reference-sens.html).
 </div> -->
+<p>For example, you may want to set the following settings:</p>
 
-<h2 id="required-role">Required role</h2>
-<p>To complete these configuration management tasks, you must have at a minimum a project reader role with <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-role-env">environment administrator</a> privileges.</p>
+<ul>
+  <li>Disable <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> and static file optimization settings in your Integration environment</li>
+  <li>Enable static file optimization in Staging and Production environments</li>
+  <li>Configure Fastly in Staging and Production with specific credentials for each</li>
+</ul>
 
-<h2 id="cloud-clp-settings">Configuration settings you can change</h2>
-<p>The following table shows the configuration settings affected by the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command. These are the configuration settings that you can manage in Git.</p>
+<p><em>Static file optimization</em> means merging and minifying <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and Cascading Style Sheets, and minifying <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> templates.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Path in Magento Admin (omitting <strong>Stores</strong> &gt; <strong>Configuration</strong>)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Store locale</td>
-      <td>General &gt; <strong>General</strong>, <strong>Locale Options</strong> &gt; <strong>Locale</strong></td>
-    </tr>
-    <tr>
-      <td>Static asset signing</td>
-      <td>Advanced &gt; <strong>Developer</strong>, <strong>Static Files Settings</strong> &gt; <strong>Static Files Signing</strong></td>
-    </tr>
-    <tr>
-      <td>Server-side or client-side LESS compilation</td>
-      <td>Advanced &gt; <strong>Developer</strong>, <strong>Frontend Developer Workflow</strong> &gt; <strong>Workflow type</strong></td>
-    </tr>
-    <tr>
-      <td>HTML minification</td>
-      <td>Advanced &gt; <strong>Developer</strong>, <strong>Template Settings</strong> &gt; <strong>Minify Html</strong></td>
-    </tr>
-    <tr>
-      <td>JavaScript minification</td>
-      <td>Advanced &gt; <strong>Developer</strong>, <strong>JavaScript Settings</strong> &gt; (several options)</td>
-    </tr>
-    <tr>
-      <td><span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> minification</td>
-      <td>Advanced &gt; <strong>Developer</strong>, <strong>CSS Settings</strong> &gt; <strong>Merge CSS Files</strong> and <strong>Minify CSS Files</strong></td>
-    </tr>
-    <tr>
-      <td>Disable modules output</td>
-      <td>Advanced &gt; <strong>Advanced</strong> &gt; <strong>Disable Modules Output</strong></td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="prereqs">Prerequisites</h2>
+<p>To complete these configuration management tasks, you need the following:</p>
 
-<h2 id="get-started">Get started</h2>
-<p>Complete the following instructions prior to modifying and updating configuration settings.</p>
-
-<h3 id="synchronize-your-local-with-master">Synchronize your local with master</h3>
-
-<p>The following steps use Magento and Git CLI commands. To synchronize your local system with the <code class="highlighter-rouge">master</code> branch:</p>
-
-<ol>
-  <li>On your local system, switch to the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+<ul>
+  <li>Minimum a project reader role with <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-role-env">environment administrator</a> privileges</li>
+  <li>Magento Admin panel URL and credentials for Integration, Staging, and Production environments</li>
   <li>
-    <p>Log in to your Magento Enterprise Cloud Edition project.</p>
+    <p>Push all updated code to your Integration environment:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
-</code></pre>
-    </div>
+    <ul>
+      <li>For Starter: To an Integration branch and environment</li>
+      <li>For Pro: To the Integration <code class="highlighter-rouge">master</code> branch and environment</li>
+    </ul>
   </li>
-  <li>Switch to the project root directory.</li>
-  <li>
-    <p>List branches to locate the current branch. An astericks marks the checked out branch.</p>
+</ul>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git branch
-</code></pre>
-    </div>
-  </li>
-  <li>If necessary, <a href="/guides/v2.2/cloud/howtos/environment-tutorial-env-merge.html">merge changes in the current</a> branch with the <code class="highlighter-rouge">master</code> branch.</li>
-  <li>
-    <p>Switch to the master branch locally.</p>
+<h2 id="configure">Configure Magento through the Integration Admin panel</h2>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout master
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Pull updated code.</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin master
-</code></pre>
-    </div>
-  </li>
-</ol>
-
-<h3 id="cloud-deploy-admin-login">Find Admin login information</h3>
-<p>To find login information for the Integration environment Admin panel:</p>
-
-<ol>
-  <li>Log in to your local system as the Magento file system owner.</li>
-  <li>
-    <p>Find the Integration environment URL and Admin credentials:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:url
-magento-cloud variable:list
-</code></pre>
-    </div>
-  </li>
-  <li>Using the preceding information, log in to the Integration environment Admin panel.</li>
-</ol>
-
-<h2 id="step-1-change-configurations-in-the-integration-admin-panel">Step 1: Change configurations in the Integration Admin panel</h2>
-
-<p>This section discusses how to change the locale for the Default Config and also how to change static file optimization settings in the integration server. You can change different settings if you wish; see <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-list">List of system-specific configuration settings</a> for details.</p>
+<p>Log into the Magento Admin panel in Integration to modify configurations. For a list of settings, see <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings">List of system-specific configuration settings</a> for details.</p>
 
 <p>To change locale and static file optimization settings:</p>
 
 <ol>
-  <li>Log in to the Integration environment Admin panel. For URL and credentials, see <a href="#cloud-deploy-admin-login">Find Admin login information</a>.</li>
-  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong>.</li>
+  <li>Log in to the Integration environment Admin panel. You can access this URL through the Project Web Console.</li>
+  <li>Navigate to <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong>.</li>
   <li>In the right pane, expand <strong>Locale Options</strong>.</li>
   <li>
     <p>From the <strong>Locale</strong> list, change the locale. You can change it back later.</p>
-
-    <p>The following figure shows an example.</p>
 
     <p><img src="/common/images/cloud_var_locale.png" alt="Change the locale" width="400px" /></p>
   </li>
@@ -1814,8 +1726,6 @@ magento-cloud variable:list
   <li>
     <p>From the <strong>Minify CSS Files</strong> list, click <strong>No</strong>.</p>
 
-    <p>The following figure shows an example.</p>
-
     <p><img src="/common/images/cloud_vars_set-minify.png" alt="Set static file optimization settings" width="550px" /></p>
   </li>
   <li>Click <strong>Save Config</strong>.</li>
@@ -1823,55 +1733,47 @@ magento-cloud variable:list
   <li>Log out of the Magento Admin.</li>
 </ol>
 
-<h2 id="step-2-create-configphp-and-transfer-it-to-your-local-system">Step 2: Create config.php and transfer it to your local system</h2>
-<p>This step creates the <code class="highlighter-rouge">config.php</code> configuration file on the Integration environment using a command you run on your local machine.</p>
+<h2 id="export">Export values and transfer config.php to your local system</h2>
+<p>This step creates and transfers the <code class="highlighter-rouge">config.php</code> configuration file on the Integration environment using a command you run on your local machine.</p>
 
-<p>This procedure corresponds to step B, 1–2 of our <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>. After you create <code class="highlighter-rouge">config.php</code>, transfer it to your local system so you can add it to Git.</p>
+<p>This procedure corresponds to step 2 in the <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>. After you create <code class="highlighter-rouge">config.php</code>, transfer it to your local system so you can add it to Git.</p>
 
-<p>To create <code class="highlighter-rouge">config.php</code> on the Integration environment:</p>
+<p>To create and transfer <code class="highlighter-rouge">config.php</code>:</p>
 
-<div>
+<ol>
+  <li>
+    <p>On your local system, find the integration server’s SSH URL.</p>
 
-  <ol>
-    <li>
-      <p>On your local system, find the integration server’s SSH URL.</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
 </code></pre>
-      </div>
-    </li>
-    <li>
-      <p>Create <code class="highlighter-rouge">config.local.php</code> on the integration server.</p>
+    </div>
+  </li>
+  <li>
+    <p>Create <code class="highlighter-rouge">config.php</code> on the integration server.</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
 </code></pre>
-      </div>
+    </div>
 
-      <p>For example,</p>
+    <p>For example,</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 </code></pre>
-      </div>
+    </div>
+  </li>
+  <li>If you haven’t done so already, change to the project root directory.</li>
+  <li>
+    <p>Transfer <code class="highlighter-rouge">config.php</code> to your local system.</p>
 
-      <!-- A message similar to the following displays if you have any sensitive settings configured in your system:
+    <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.php ./app/etc/config.php
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>The following snippet from <code class="highlighter-rouge">config.php</code> shows an example of changing the default locale to <code class="highlighter-rouge">en_GB</code> and changing static file optimization settings:</p>
 
 <pre class="no-copy">
-The configuration file doesn't contain the sensitive data by security reason. The sensitive data can be stored in the next environment variables:
-CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
-    </li>
-    <li>If you haven’t done so already, change to the project root directory.</li>
-    <li>
-      <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local system.</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
-</code></pre>
-      </div>
-    </li>
-  </ol>
-
-  <p>The following snippet from <code class="highlighter-rouge">config.php</code> shows an example of changing the default locale to <code class="highlighter-rouge">en_GB</code> and changing static file optimization settings:</p>
-
-  <pre class="no-copy">
  'general' =&gt;
       array (
         'locale' =&gt;
@@ -1904,168 +1806,154 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
         ),
 </pre>
 
-  <h2 id="step-3-push-configphp-to-integration">Step 3: Push config.php to Integration</h2>
-  <p>Now that you’ve created <code class="highlighter-rouge">config.php</code> and transferred it to your local system, commit it to Git and push it to your integration server. This procedure corresponds to step B, 3—4 of our <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>.</p>
+<h2 id="deploy">Push and deploy config.php to environments</h2>
+<p>Now that you’ve created <code class="highlighter-rouge">config.php</code> and transferred it to your local system, commit it to Git and push it to your environments. This procedure corresponds to step 3 and 4 in the <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>.</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
+<p>The following command adds, commits, and pushes to master:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
 </code></pre>
-  </div>
+</div>
 
-  <p>Wait for deployment to complete.</p>
+<p>Complete code deployment to Staging and Production. For Starter, you push to <code class="highlighter-rouge">staging</code> and <code class="highlighter-rouge">master</code> branches. For Production, you will need to SSH into your environments and push. For details on deployment commands, see <a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
 
-  <h2 id="cloud-set-verify">Step 4: Verify your configuration changes</h2>
-  <p>After you push <code class="highlighter-rouge">config.php</code> to your Integration environment, any values you changed should be unavailable in the Magento Admin.</p>
+<p>Wait for deployment to complete in all environments.</p>
 
-  <p>In this example, the modified default locale and static file optimization settings should not be editable in the Admin. These configuration settings are set in <code class="highlighter-rouge">config.php</code>.</p>
+<h2 id="cloud-set-verify">Verify your configuration changes</h2>
+<p>After you push <code class="highlighter-rouge">config.php</code> to your environments, any values you changed should be read-only in the Magento Admin. In this example, the modified default locale and static file optimization settings should not be editable in the Magento Admin. These configuration settings are set in <code class="highlighter-rouge">config.php</code>.</p>
 
-  <p>To verify your configuration changes:</p>
+<p>To verify your configuration changes:</p>
 
-  <ol>
-    <li>If you haven’t done so already, log out of the Integration Admin.</li>
-    <li>
-      <p>Log back in to the Integration Admin.</p>
+<ol>
+  <li>If you haven’t done so already, log out of the Magento Admin in one of the environments.</li>
+  <li>Log back in to the Magento Admin.</li>
+  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong>.</li>
+  <li>
+    <p>In the right pane, expand <strong>Locale Options</strong>.</p>
 
-      <p>For URL and credentials, see <a href="#cloud-deploy-admin-login">Find Admin login information</a>.</p>
-    </li>
-    <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong>.</li>
-    <li>
-      <p>In the right pane, expand <strong>Locale Options</strong>.</p>
+    <p>Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by <code class="highlighter-rouge">config.php</code>.</p>
 
-      <p>Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by <code class="highlighter-rouge">config.php</code>.</p>
+    <p><img src="/common/images/cloud_var_not-editable.png" alt="Can't edit certain values in the Admin" width="550px" /></p>
+  </li>
+  <li>In the left navigation pane, click Advanced &gt; <strong>Developer</strong>.</li>
+  <li>
+    <p>In the right pane, expand <strong>Template Settings</strong>, <strong>JavaScript Settings</strong>, and <strong>CSS Settings</strong>.</p>
 
-      <p><img src="/common/images/cloud_var_not-editable.png" alt="Can't edit certain values in the Admin" width="550px" /></p>
-    </li>
-    <li>In the left navigation pane, click Advanced &gt; <strong>Developer</strong>.</li>
-    <li>
-      <p>In the right pane, expand <strong>Template Settings</strong>, <strong>JavaScript Settings</strong>, and <strong>CSS Settings</strong>.</p>
+    <p>Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by <code class="highlighter-rouge">config.php</code>.</p>
 
-      <p>Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by <code class="highlighter-rouge">config.php</code>.</p>
+    <p><img src="/common/images/cloud_var_not-editable2.png" alt="Can't edit certain values in the Admin " width="550px" /></p>
+  </li>
+  <li>Log out of the Magento Admin.</li>
+</ol>
 
-      <p><img src="/common/images/cloud_var_not-editable2.png" alt="Can't edit certain values in the Admin " width="550px" /></p>
-    </li>
-    <li>Log out of the Magento Admin.</li>
-  </ol>
+<h2 id="modify">Change and update system-specific configuration settings</h2>
+<p>If you need to modify any of these settings and update <code class="highlighter-rouge">config.php</code>, you will need to delete the file, update configurations, generate the file, and push it to Git following the previous steps. For an overvidew, see the <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>.</p>
 
-  <h2 id="step-5-change-system-specific-configuration-settings">Step 5: Change system-specific configuration settings</h2>
-  <p>This section discusses how to change system-specific settings. Our <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a> is to make the changes on the Integration environment and repeat the process of creating <code class="highlighter-rouge">config.php</code> and pushing it back to Integration.</p>
+<p>For this example, we’ll modify static file optimization settings.</p>
 
-  <p>For this example, we’ll use static file optimization settings.</p>
+<h3 id="delete-file">Delete config.php on the Integration environment</h3>
+<p>Before you can change settings on the Integration environment, delete <code class="highlighter-rouge">app/etc/config.php</code> from that environment. With this file removed, all configuration settings are available to modify in the Admin.</p>
 
-  <h3 id="delete-configphp-on-integration">Delete config.php on Integration</h3>
-  <p>Before you can change settings on the Integration environment, delete <code class="highlighter-rouge">app/etc/config.php</code>. With this file removed, all configuration settings are available to modify in the Admin. Any non-default setting in <code class="highlighter-rouge">config.php</code> is uneditable in the Admin.</p>
+<p>To delete <code class="highlighter-rouge">config.php</code>:</p>
 
-  <p>To delete <code class="highlighter-rouge">config.php</code>:</p>
+<ol>
+  <li>On your local system, make sure you’re on the <code class="highlighter-rouge">master</code> branch.</li>
+  <li>
+    <p>SSH to the integration server:</p>
 
-  <ol>
-    <li>On your local system, make sure you’re on the <code class="highlighter-rouge">master</code> branch.</li>
-    <li>
-      <p>SSH to the integration server:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud ssh
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud ssh
 </code></pre>
-      </div>
-    </li>
-    <li>
-      <p>Delete <code class="highlighter-rouge">config.php</code>.</p>
+    </div>
+  </li>
+  <li>
+    <p>Delete <code class="highlighter-rouge">config.php</code>.</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>rm app/etc/config.php
+    <div class="highlighter-rouge"><pre class="highlight"><code>rm app/etc/config.php
 </code></pre>
-      </div>
-    </li>
-    <li>
-      <p>Close the SSH tunnel.</p>
+    </div>
+  </li>
+  <li>
+    <p>Close the SSH tunnel.</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>exit
+    <div class="highlighter-rouge"><pre class="highlight"><code>exit
 </code></pre>
-      </div>
-    </li>
-  </ol>
+    </div>
+  </li>
+</ol>
 
-  <h3 id="change-configuration-values-in-integration">Change configuration values in Integration</h3>
-  <p>To change values in the Integration environment Admin:</p>
+<h3 id="change-settings">Change configuration values in Integration</h3>
+<p>To change values in the Integration environment Magento Admin:</p>
 
-  <ol>
-    <li>If you haven’t done so already, log out of the Integration Admin.</li>
-    <li>
-      <p>Log in to the Integration Admin.</p>
+<ol>
+  <li>If you haven’t done so already, log out of the Integration Admin.</li>
+  <li>
+    <p>Log in to the Integration Admin.</p>
 
-      <p>For URL and credentials, see <a href="#cloud-deploy-admin-login">Find Admin login information</a>.</p>
-    </li>
-    <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Developer</strong>.</li>
-    <li>In the right pane, expand <strong>Template Settings</strong>.</li>
-    <li>Clear the <strong>Use default value</strong> check box next to the <strong>Minify Html</strong> list.</li>
-    <li>From the <strong>Minify Html</strong> list, click <strong>Yes</strong>.</li>
-    <li>In the right pane, expand <strong>CSS Settings</strong>.</li>
-    <li>From the <strong>Merge CSS Files</strong> list, click <strong>Yes</strong>.</li>
-    <li>
-      <p>From the <strong>Minify CSS Files</strong> list, click <strong>Yes</strong>.</p>
+    <p>For URL and credentials, see <a href="#cloud-deploy-admin-login">Find Admin login information</a>.</p>
+  </li>
+  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Developer</strong>.</li>
+  <li>In the right pane, expand <strong>Template Settings</strong>.</li>
+  <li>Clear the <strong>Use default value</strong> check box next to the <strong>Minify Html</strong> list.</li>
+  <li>From the <strong>Minify Html</strong> list, click <strong>Yes</strong>.</li>
+  <li>In the right pane, expand <strong>CSS Settings</strong>.</li>
+  <li>From the <strong>Merge CSS Files</strong> list, click <strong>Yes</strong>.</li>
+  <li>
+    <p>From the <strong>Minify CSS Files</strong> list, click <strong>Yes</strong>.</p>
 
-      <p>The following figure shows an example.</p>
+    <p><img src="/common/images/cloud_vars_reset-minify.png" alt="Set static file optimization settings" width="550px" /></p>
+  </li>
+  <li>Click <strong>Save Config</strong>.</li>
+  <li>If prompted, <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">flush the Magento cache</a>.</li>
+  <li>Log out of the Magento Admin.</li>
+</ol>
 
-      <p><img src="/common/images/cloud_vars_reset-minify.png" alt="Set static file optimization settings" width="550px" /></p>
-    </li>
-    <li>Click <strong>Save Config</strong>.</li>
-    <li>If prompted, <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">flush the Magento cache</a>.</li>
-    <li>Log out of the Magento Admin.</li>
-  </ol>
+<h3 id="regenerate">Generate a new version of config.php</h3>
+<ol>
+  <li>
+    <p>On your local system, find the integration server’s SSH URL.</p>
 
-  <h3 id="add-the-changes-to-a-new-version-of-configphp">Add the changes to a new version of config.php</h3>
-  <div>
-
-    <ol>
-      <li>
-        <p>On your local system, find the integration server’s SSH URL.</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
 </code></pre>
-        </div>
-      </li>
-      <li>
-        <p>Create <code class="highlighter-rouge">config.local.php</code> on the integration server.</p>
+    </div>
+  </li>
+  <li>
+    <p>Create <code class="highlighter-rouge">config.php</code> on the integration server.</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
-</code></pre>
-        </div>
-
-        <p>For example,</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
-</code></pre>
-        </div>
-
-        <!-- A message similar to the following displays if you have any sensitive settings configured in your system:
-
-<pre class="no-copy">
-The configuration file doesn't contain the sensitive data by security reason. The sensitive data can be stored in the next environment variables:
-CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
-      </li>
-      <li>If you haven’t done so already, change to the project root directory.</li>
-      <li>
-        <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local system.</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
-</code></pre>
-        </div>
-      </li>
-    </ol>
-
-    <h3 id="push-the-changes-to-git">Push the changes to Git</h3>
-    <p>To push your changes, enter the following command:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
 </code></pre>
     </div>
 
-    <p>Wait for deployment to complete.</p>
+    <p>For example,</p>
 
-    <p>Optionally <a href="#cloud-set-verify">verify the changes</a>, and verify that configuration values are not editable in the Admin.</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+</code></pre>
+    </div>
+  </li>
+  <li>If you haven’t done so already, change to the project root directory.</li>
+  <li>
+    <p>Transfer <code class="highlighter-rouge">config.php</code> to your local system.</p>
 
-    <h4 id="related-topics">Related topics</h4>
-    <ul>
-      <li><a href="/guides/v2.2/cloud/live/sens-data-over.html">Overview of configuration management</a></li>
-    </ul>
-  </div>
+    <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.php ./app/etc/config.php
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="push-again">Push the changes to Git</h3>
+<p>To push your changes, enter the following command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
+</code></pre>
 </div>
+
+<p>Wait for deployment to complete.</p>
+
+<p>Repeat the deployment process for pushing the code to all environments.</p>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.2/cloud/live/sens-data-over.html">Overview of configuration management</a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
