@@ -136,12 +136,13 @@ Complete all configurations for your stores in the Admin console:
 
 1. Log into the Magento Adming for one of the environments:
 
-  * Starter: An active development branch
-  * Pro: The `master` environment in Integration
+    * Starter: An active development branch
+    * Pro: The `master` environment in Integration
+
 2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.
 3. Open a terminal on your local and use an SSH command to generate `/app/etc/config.local.php` on the environment:
 
-    ssh -k <SSH URL> "<Command>"
+    `ssh -k <SSH URL> "<Command>"`
 
   For example for Pro, to run the `scd-dump` on Integration `master`:
 

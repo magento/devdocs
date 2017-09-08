@@ -140,12 +140,13 @@ Complete all configurations for your stores in the Admin console:
 
 1. Log into the Magento Adming for one of the environments:
 
-  * Starter: An active development branch
-  * Pro: The `master` environment in Integration
+    * Starter: An active development branch
+    * Pro: The `master` environment in Integration
+
 2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.
 3. Open a terminal on your local and use an SSH command to generate `/app/etc/config.php` on the environment:
 
-    ssh -k <SSH URL> "<Command>"
+    `ssh -k <SSH URL> "<Command>"`
 
   For example for Pro, to run the `scd-dump` on Integration `master`:
 
@@ -160,10 +161,7 @@ Push `config.php` to Git. To push this file to the `master` Git branch, you need
 
 2. Add and push `config.php` to the Git master branch.
 
-    git add app/etc/config.php
-    git commit -m "Add system-specific configuration"
-    git push origin master
-
+    git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
 
 ### Step 3 & 4: Push Git branch to Staging and Production
 Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.
