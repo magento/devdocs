@@ -70,4 +70,11 @@ With the account configured and authenticated, you can enable and disable PayPal
 * __Enable PayPal Credit__ allows customers to PayPal credit financing without additional costs. PayPal pays the order up-front, handling all repayments for the credit directly with the customer.
 
 ## PayPal variables {#deploy}
-When using the PayPal on-boarding tool with {{site.data.var.ece}} 2.1.8 and later 2.1.x versions, we automatically include a variable in `.magento.app.yaml` to correctly connect your PayPal module with PayPal services.
+When using the PayPal on-boarding tool with {{site.data.var.ece}} 2.2, you need to add the following variable to `magento.app.yaml` in the environment variables section.
+
+    # Environment variables
+    variables:
+      env:
+        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+
+If you are upgrading to 2.2 from 2.1.8 or later, you still need to add this variable.
