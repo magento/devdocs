@@ -1912,10 +1912,12 @@
 
 <p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
 
-<h3 id="block-ip">Create a whitelist VCL</h3>
+<h3 id="whitelist-ip">Create a whitelist VCL</h3>
 <p>You may want to create a whitelist of IPs to allow accessing your Magento Admin console. You can create an Edge ACL list of the whitelisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is allowed access. All other IPs receive a 403 Forbidden error.</p>
 
 <p>Of note for this snippet, you want to set the priority to 5 to immediately run and check for whitelisted IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also <code class="highlighter-rouge">whitelist</code>. If the domain matches the dictionary, it is allowed access to a path of <code class="highlighter-rouge">/admin</code>. If you changed your Magento Admin path, use that value in this code example.</p>
+
+<p>In the code sample, the condition <code class="highlighter-rouge">!req.http.Fastly-FF</code> is important when using Origin Shielding.</p>
 
 <ul>
   <li>Name: <code class="highlighter-rouge">whitelist_admin</code></li>
@@ -1924,7 +1926,7 @@
   <li>
     <p>Content:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>      if (req.url ~ "^/admin" &amp;&amp; ! (client.ip ~ whitelist)) {
+    <div class="highlighter-rouge"><pre class="highlight"><code>      if ((req.url ~ "^/admin") &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) {
           error 403 "Forbidden";
           }
 </code></pre>
@@ -1934,7 +1936,7 @@
 
 <p>The curl command would look like the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if (req.url ~ "^/admin" &amp;&amp; ! (client.ip ~ whitelist)) { error 403 "Forbidden"; }"}
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ((req.url ~ "^/admin") &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) { error 403 "Forbidden"; }"}
 </code></pre>
 </div>
 
