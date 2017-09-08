@@ -219,6 +219,8 @@ You may want to create a whitelist of IPs to allow accessing your Magento Admin 
 
 Of note for this snippet, you want to set the priority to 5 to immediately run and check for whitelisted IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also `whitelist`. If the domain matches the dictionary, it is allowed access to a path of `/admin`. If you changed your Magento Admin path, use that value in this code example.
 
+In the code sample, the condition `!req.http.Fastly-FF` is important when using Origin Shielding.
+
 * Name: `whitelist_admin`
 * Type: `recv`, puts the code in the subroutine vcl_recv
 * Priority: 5
