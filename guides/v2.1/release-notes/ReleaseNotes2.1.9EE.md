@@ -13,9 +13,9 @@ github_link: release-notes/ReleaseNotes2.1.9EE.md
 *	TOC
 {:toc}
 
-*Code released: , 2017*
+*Code released:  September 14, 2017*
 
-*Page updated: , 2017*
+*Page updated:  September 14, 2017*
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.9. This release includes important enhancements to your Magento software.
 
@@ -29,15 +29,15 @@ While there are no confirmed attacks related to these vulnerabilities to date, c
 
 Magento 2.1.8 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:
 
+* enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution vulnerabilities. See [Magento 2.0.16 and 2.1.9 Security Patches](https://magento.com/security/patches/magento-2016-and-219-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
-* reduced opportunities for remote code execution (RCE), Cross-Site Request Forgery (CSRF), and Cross-Site Scripting (XSS) attacks. 
-
-* minimized data leaks, including the unintentional disclosure of pathways that unauthorized users could exploit to launch malicious attacks. 
-
-
-See [Magento 2.0.16 and 2.1.9 Security Patches](https://magento.com/security/patches/magento-2016-and-219-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
+* support for changes to the USPS API that USPS implemented on September 1, 2017.
 
 
+
+## Fixed issue
+
+We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). 
 
 
 ## System requirements
