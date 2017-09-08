@@ -4,7 +4,7 @@ group: cloud
 subgroup: 120_env
 title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
-menu_order: 92
+menu_order: 72
 menu_node:
 level3_menu_node:
 level3_subgroup:

@@ -4,7 +4,7 @@ group: cloud
 subgroup: 120_env
 title: Configuration management
 menu_title: Configuration management
-menu_order:  90
+menu_order:  70
 menu_node:
 level3_menu_node:
 level3_subgroup:
