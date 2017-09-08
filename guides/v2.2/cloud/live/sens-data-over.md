@@ -140,7 +140,7 @@ The **Pro plan** environment high-level overview of this process:
 <tr>
 <th style="width:100px;">Step</th>
 <th style="width:250px;">Actions per diagram step</th>
-<th> Detailed instructions</th>
+<th>Detailed instructions</th>
 </tr>
 <tr>
 <td >Step 1</td>
@@ -169,8 +169,10 @@ The **Pro plan** environment high-level overview of this process:
 <p><code>rsync <SSH URL>:app/etc/config.php ./app/etc/config.php</code></p></li>
 
 <li>Add and push <code>config.php</code> to the Git <code>master</code> branch.
-<p><code>git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master</code></p></li>
-</ol>
+<p><pre>git add app/etc/config.php 
+git commit -m "Add system-specific configuration"
+git push origin master</pre></p>
+</li></ol>
 </td>
 </tr>
 <tr>

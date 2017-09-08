@@ -139,6 +139,7 @@ The following table lists the steps per the diagrams:
 <th style="width:250px;">Actions per diagram step</th>
 <th>Detailed instructions</th>
 </tr>
+
 <tr>
 <td >Step 1</td>
 <td >Complete all configurations for your stores in the Admin console.</td>
@@ -156,17 +157,22 @@ The following table lists the steps per the diagrams:
 <p><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"</code></p>
 </td>
 </tr>
+
 <tr>
 <td >Step 2</td>
 <td>Push <code>config.local.php</code> to Git. To push this file to the <code>master</code> Git branch, you need to complete a few extra steps because this environment is read-only.</td>
 <td>
 <ol><li>Transfer <code>config.local.php</code> to your local system using <code>rsync</code> or <code>scp</code>. You can only add this file to the Git branch through your local.
-<p><code>rsync <SSH URL>:app/etc/config.php ./app/etc/config.php</code></p></li>
+<p><code>rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php</code></p></li>
 
-<li>Add and push <code>config.local.php</code> to the Git <code>master</code> branch.</li></ol>
-<p><code>git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master</code></p>
+<li>Add and push <code>config.local.php</code> to the Git <code>master</code> branch.
+<p><pre>git add app/etc/config.local.php
+git commit -m "Add system-specific configuration"
+git push origin master</pre></p>
+</li></ol>
 </td>
 </tr>
+
 <tr>
 <td >Step 3 & 4</td>
 <td>Push the Git branch to Staging and Production and complete configurations.
