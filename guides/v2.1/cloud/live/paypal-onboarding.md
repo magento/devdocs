@@ -71,10 +71,3 @@ With the account configured and authenticated, you can enable and disable PayPal
 
 ## PayPal variables {#deploy}
 When using the PayPal on-boarding tool with {{site.data.var.ece}} 2.1.8 and later 2.1.x versions, we automatically include a variable in `.magento.app.yaml` to correctly connect your PayPal module with PayPal services.
-
-If you are upgrading to {{site.data.var.ece}} 2.2, you need to add this variable to `magento.app.yaml` in the environment variables section.
-
-  # Environment variables
-  variables:
-    env:
-      CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'

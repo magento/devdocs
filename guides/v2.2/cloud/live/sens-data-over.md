@@ -26,6 +26,10 @@ It provides the following benefits:
 These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
 </div>
 
+<div class="bs-callout bs-callout-info" markdown="1">
+If you used configuration management in 2.1, this process is similar in 2.2. The name of the file has changed to `config.php` and updating the file changed. You can [migrate](#migrate) your `config.local.php` settings to a new `config.php`.
+</div>
+
 ## Feature availability {#release}
 Configuration management was released in `magento-cloud-configuration` 101.4.1 on {{site.data.var.ece}} 2.1.4 and later. The options and functions differ in {{site.data.var.ece}} 2.2. We provide recommendations for {{site.data.var.ece}} deployments in this section.
 
@@ -157,11 +161,11 @@ Push `config.php` to Git. To push this file to the `master` Git branch, you need
 
 1. Transfer `config.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 
-    rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+    `rsync <SSH URL>:app/etc/config.php ./app/etc/config.php`
 
 2. Add and push `config.php` to the Git master branch.
 
-    git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
+    `git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master`
 
 ### Step 3 & 4: Push Git branch to Staging and Production
 Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.
@@ -186,6 +190,19 @@ To complete extensive changes:
 <div class="bs-callout bs-callout-warning" markdown="1">
 While you can manually edit `config.php` in Staging and Production, we don't recommend it. The file helps keep all of your configurations consistent across all of your environments.
 </div>
+
+## Migrate config.local.php to config.php {#migrate}
+If you upgrade to {{site.data.var.ece}} 2.2 or later, you may want to migrate settings from `config.local.php` to your new `config.php` file. If the configuration settings in your Magento Admin match the contents of the file, you can follow the instructions to generate and add `config.php`.
+
+If they differ, you can append content from `config.local.php` to your new `config.php` file:
+
+1. Follow instructions to generate the `config.php` file using the [recommended method](#cloud-config-specific-recomm).
+2. Open `config.php`and delete the last line.
+3. Open `config.local.php`and copy the contents.
+4. Paste the contents into `config.php`, save, and complete adding it to Git.
+5. Deploy across your environments.
+
+You only need to complete this migration once. When you need to update the file, you will always update the new `config.php`.
 
 #### Next step
 [Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
