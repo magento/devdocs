@@ -135,7 +135,7 @@ The **Pro plan** environment high-level overview of this process:
 
 ![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png)
 
-<!--
+
 <table>
 <tbody>
 <tr>
@@ -151,10 +151,10 @@ The **Pro plan** environment high-level overview of this process:
 <ul><li>Starter: An active development branch</li>
 <li>Pro: The <code>master</code> environment in Integration</li></ul></li>
 <li>Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.</li>
-<li><p>Open a terminal on your local and use an SSH command to generate <code>/app/etc/config.php</code> on the environment:</p>
-<pre>ssh -k <SSH URL> "<Command>"</pre>
-<p>For example for Pro, to run the <code>scd-dump</code> on Integration <code>master</code>:</p>
-<pre>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"</pre>
+<li>Open a terminal on your local and use an SSH command to generate <code>/app/etc/config.php</code> on the environment:<br />
+<code>ssh -k <SSH URL> "<Command>"</code>
+<br />For example for Pro, to run the <code>scd-dump</code> on Integration <code>master</code>:<br />
+<code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"</code>
 </li></ol>
 </td>
 </tr>
@@ -162,10 +162,10 @@ The **Pro plan** environment high-level overview of this process:
 <td >Step 2</td>
 <td>Push <code>config.php</code> to Git. To push this file to the <code>master</code> Git branch, you need to complete a few extra steps because this environment is read-only.</td>
 <td>
-<ol><li><p>Transfer <code>config.php</code> to your local system using <code>rsync</code> or <code>scp</code>. You can only add this file to the Git branch through your local.</p>
-<pre>rsync <SSH URL>:app/etc/config.php ./app/etc/config.php</pre></li>
-<li><p>Add and push <code>config.php</code> to the Git <code>master</code> branch.</p>
-<pre>git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master</pre></li>
+<ol><li>Transfer <code>config.php</code> to your local system using <code>rsync</code> or <code>scp</code>. You can only add this file to the Git branch through your local.<br />
+<code>rsync <SSH URL>:app/etc/config.php ./app/etc/config.php</code></li>
+<li>Add and push <code>config.php</code> to the Git <code>master</code> branch.<br />
+<code>git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master</code></li>
 </ol>
 </td>
 </tr>
@@ -179,7 +179,7 @@ The **Pro plan** environment high-level overview of this process:
 </td>
 </tr>
 </tbody>
-</table> -->
+</table>
 
 ## Update configuations {#update}
 If you need to change any configuration settings `config.php`, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration `master` environment.
