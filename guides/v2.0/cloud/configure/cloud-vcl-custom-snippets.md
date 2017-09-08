@@ -214,23 +214,25 @@ The curl command would look like the following:
 
 [Validate and activate](#validate) the version to activate the snippet.
 
-### Create a whitelist VCL {#block-ip}
+### Create a whitelist VCL {#whitelist-ip}
 You may want to create a whitelist of IPs to allow accessing your Magento Admin console. You can create an Edge ACL list of the whitelisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is allowed access. All other IPs receive a 403 Forbidden error.
 
 Of note for this snippet, you want to set the priority to 5 to immediately run and check for whitelisted IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also `whitelist`. If the domain matches the dictionary, it is allowed access to a path of `/admin`. If you changed your Magento Admin path, use that value in this code example.
+
+In the code sample, the condition `!req.http.Fastly-FF` is important when using Origin Shielding.
 
 * Name: `whitelist_admin`
 * Type: `recv`, puts the code in the subroutine vcl_recv
 * Priority: 5
 * Content:
 
-			if (req.url ~ "^/admin" && ! (client.ip ~ whitelist)) {
+			if ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) {
 				error 403 "Forbidden";
 				}
 
 The curl command would look like the following:
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if (req.url ~ "^/admin" && ! (client.ip ~ whitelist)) { error 403 "Forbidden"; }"}
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 "Forbidden"; }"}
 
 [Validate and activate](#validate) the version to activate the snippet.
 
