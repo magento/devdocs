@@ -15,7 +15,7 @@ github_link: cloud/project/new-relic.md
 You can mix the higher level data captured by New Relic APM with the deeper method and call dive data from [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). Using these two tools together in Staging and Production environments, you gain a better view into your store performance.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You receiv New Relic APM with your {{site.data.var.ece}} subscription. You do not need to purchase or install install the New Relic extension (different than the APM service).
+You receive New Relic APM with your {{site.data.var.ece}} subscription. You do not need to purchase or install install the New Relic extension (different than the APM service).
 </div>
 
 ## Key features {#features}
@@ -55,7 +55,7 @@ Add New Relic to `.magento.app.yaml`:
 
     runtime:
       extensions:
-          - newrelic
+        - newrelic
 3. Save and push the changes to deploy across Staging and Production.
 
 You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access both environments via SSH and install the agent.
