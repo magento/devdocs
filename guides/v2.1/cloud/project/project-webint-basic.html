@@ -614,7 +614,7 @@
 									
 
 
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Commerce (Cloud)</a>
 
 
 									
@@ -829,52 +829,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
 									<li class="level-2  active "><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Create and manage users</a></li>
 
 									
 
@@ -890,7 +861,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
 
 									
 
@@ -901,14 +888,6 @@
 
 											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
 
@@ -1015,7 +994,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
 
 									
@@ -1320,42 +1299,12 @@
 
 
 								
-
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/howtos/how-to.html">Tutorials</a></li>
 									
-
-										<li class="levela1"><span class="nav-header">How To</span></li>
-
-									
-
-
 								
 
 									
 
-										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.1/cloud/howtos/upgrade-magento.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.1/cloud/howtos/patch-magento.html">Patch and test Magento Commerce</a>
-
-
-									
 
 								
 
@@ -1703,65 +1652,18 @@
 </section>
 
 
-			<p>Projects in Magento Enterprise Cloud Edition (ECE) represent the master branch and all children branches of your Magento code, extensions, themes, and more for your store and sites. These branches are fully functional environments with direct access for testing. To manage and review your project information, branches, SSH and URL links, and more, you can use the Magento Web Interface or CLI commands.</p>
-
-<p>The project console enables you to:</p>
+			<p>The Magento Commerce (Cloud) <a href="https://accounts.magento.cloud" target="_blank">Project Web Interface</a> enables you to:</p>
 
 <ul>
   <li>Create and manage projects</li>
-  <li>Access up to eight active branches using SSH, CLI, and web links</li>
+  <li>Access active environments and branches using SSH, CLI, and URLs</li>
   <li>Configure environment settings, environment variables, and routes</li>
   <li>Manage users</li>
   <li>Manage Git branches</li>
 </ul>
 
-<h2 id="project-login">Log in to your project</h2>
-<p>The web console <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> for your project is available in the following ways:</p>
-
-<ul>
-  <li>Your welcome e-mail to Magento ECE</li>
-  <li>The Magento Enterprise Cloud Edition command-line interface (CLI)</li>
-</ul>
-
-<p>To find the project URL using the Magento CLI:</p>
-
-<ol>
-  <li>Log in to the machine on which your SSH keys are stored.</li>
-  <li>
-    <p>Log in to your project:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Enter the following command:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
-</code></pre>
-    </div>
-
-    <p>A sample result follows:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>Your projects are:
-
-+---------------+--------------+---------------------------------------------------+
-| ID            | Title        | URL                                               |
-+---------------+--------------+---------------------------------------------------+
-| pwga254dhx97o | Magento 2    | https://us.magento.cloud/#/projects/pwga254dhx97o |
-+---------------+--------------+---------------------------------------------------+
-</code></pre>
-    </div>
-  </li>
-  <li>Enter the value in the URL column in a web browser.</li>
-</ol>
-
-<p>In a web browser, enter the project URL to access the console and project. When prompted, log in to your project using Bitbucket, GitHub, Google, or an e-mail address and password.</p>
-
-<p><img src="/common/images/cloud_project-login.png" alt="Log in to a project" width="450px" /></p>
-
 <h2 id="project-access">Access your project and environments</h2>
-<p>The Web Interface provides several ways to access your project and environments:</p>
+<p>The Project Web Interface provides several ways to access your project and environments:</p>
 
 <ul>
   <li>Your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> URL for each active (up to eight)</li>
@@ -1775,25 +1677,19 @@
 <ol>
   <li><a href="#project-login">Log in to your project</a>.</li>
   <li>
-    <p>Hover the mouse pointer over <strong>Access Project</strong> as the following figure shows:</p>
+    <p>Click <strong>Access Project</strong> for a list of URLs and SSH.</p>
 
     <p><img src="/common/images/cloud_project-access.png" alt="Access your project by URL or SSH" width="600px" /></p>
   </li>
-  <li>
-    <p>For example, to view your storefront, click the <strong>Web Access</strong> link.</p>
-
-    <p>For more information about using SSH, see <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-ssh">SSH to an environment</a>.</p>
-  </li>
-  <li>
-    <p>To clone the project using either the Magento Enterprise Cloud Edition CLI or Git, use the links in the field under the branch name.</p>
-
-    <p>The following figure shows an example.</p>
-
-    <p><img src="/common/images/cloud_project-clone.png" alt="Clone the project" width="600px" /></p>
-
-    <p>Click either <strong>CLI</strong> or <strong>Git</strong> to display the appropriate clone command. Use the <img src="/common/images/cloud_copy-to-clipboard.png" alt="Copy to clipboard" /> (Copy to clipboard) button to copy the command to the clipboard.</p>
-  </li>
 </ol>
+
+<p>For more information about using SSH, see <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-ssh">SSH to an environment</a>. To clone the project using either the Magento Commerce (Cloud) CLI or Git, use the links in the field under the branch name.</p>
+
+<p>The following figure shows an example.</p>
+
+<p><img src="/common/images/cloud_project-clone.png" alt="Clone the project" width="600px" /></p>
+
+<p>Click either <strong>CLI</strong> or <strong>Git</strong> to display the appropriate clone command. Use the <img src="/common/images/cloud_copy-to-clipboard.png" alt="Copy to clipboard" /> (Copy to clipboard) button to copy the command to the clipboard.</p>
 
 <h2 id="project-conf">Get started configuring your project</h2>
 <p>Configuring a project means:</p>
@@ -1939,9 +1835,10 @@
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
-  <li><a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage environments (branches)</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Project backup and restore (snapshot)</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a></li>
+  <li><a href="/guides/v2.1/cloud/project/user-admin.html">Create and manage users</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage branches</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
 </ul>
 
 		</div>

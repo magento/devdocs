@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>routes.yaml | Magento 2 Developer Documentation</title>
+	<title>Tutorials | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/project/project-conf-files_routes.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/howtos/how-to.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-conf-files_routes.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/howtos/how-to.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-conf-files_routes.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/howtos/how-to.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/project/project-conf-files_routes.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/howtos/how-to.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -669,7 +669,7 @@
 									
 
 
-											<li class="level3Child routes  active " data-menunode="routes"><a href="/guides/v2.2/cloud/project/project-conf-files_routes.html">routes.yaml</a>
+											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.2/cloud/project/project-conf-files_routes.html">routes.yaml</a>
 
 
 									
@@ -1258,7 +1258,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/cloud/howtos/how-to.html">Tutorials</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.2/cloud/howtos/how-to.html">Tutorials</a></li>
 									
 								
 
@@ -1572,7 +1572,7 @@
 
           
 
-          <span property="name">routes.yaml</span>
+          <span property="name">Tutorials</span>
 
         
 
@@ -1595,7 +1595,7 @@
 
 	
 
-	<h1 class="page-heading">routes.yaml</h1>
+	<h1 class="page-heading">Tutorials</h1>
 
   
 
@@ -1603,162 +1603,33 @@
 </section>
 
 
-			<h2 id="cloud-yaml-routes-over"><code class="highlighter-rouge">routes.yaml</code> overview</h2>
-<p>A <em>route</em> describes how an incoming <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> is processed by Magento Commerce.</p>
+			<p>These topics are intended to get you up to speed quickly using Magento Commerce (Cloud). These are step-by-step instructions that provide instructions about specific tasks or that explain how to achieve a goal.</p>
 
-<p><code class="highlighter-rouge">routes.yaml</code> defines routes for development, integration, staging, and production systems. This one configuration file handles routes for all systems.</p>
+<p>Have suggestions? Open <a href="https://github.com/magento/devdocs/issues" target="_blank">an issue</a> or click the <strong>Edit this page on GitHub</strong> link and give us feedback directly.</p>
 
-<p>This file is located at <code class="highlighter-rouge">.magento/routes.yaml</code> in your project.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
-</div>
-
-<p><a href="https://github.com/magento/magento-cloud/blob/master/.magento/routes.yaml" target="_blank">Sample <code class="highlighter-rouge">routes.yaml</code></a></p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Changes you make using <code>.yaml</code> files affect your <a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="/guides/v2.2/cloud/welcome/get-help.html">Support issue</a>.</p>
-</div>
-
-<h2 id="cloud-yaml-routes-default">Defaults</h2>
-<p>If you do not have a <code class="highlighter-rouge">routes.yaml</code> file, the following default is used:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>"http://{default}/":
-    type: upstream
- 	   upstream: "mymagento:php"
-</code></pre>
-</div>
-
-<h2 id="cloud-yaml-routes-temp">Route templates</h2>
-<p><code class="highlighter-rouge">routes.yaml</code> is a list of templated routes and their configurations. A route  template can look like this: <code class="highlighter-rouge">http://www.{default}/</code> or <code class="highlighter-rouge">https://{default}/blog</code>, where <code class="highlighter-rouge"><span class="p">{</span><span class="err">default</span><span class="p">}</span></code> is the fully qualified domain name configured for the project.</p>
-
-<p>If the domain is <code class="highlighter-rouge">example.com</code>, these routes resolve: <code class="highlighter-rouge">http://www.example.com/</code> and <code class="highlighter-rouge">https://example.com/blog</code> for the live environment (that is, the Master).</p>
-
-<p>Magento Commerce also generates URLs for every active environment that enable you to test that system. In a test system, <code class="highlighter-rouge"><span class="p">{</span><span class="err">default</span><span class="p">}</span></code> is replaced with <code class="highlighter-rouge">[branch]-[project-id].[region].magentosite.cloud</code>.</p>
-
-<p>For example, if the project ID is <code class="highlighter-rouge">mswy7hzcuhcjw</code> on a branch called <code class="highlighter-rouge">refactorcss</code> hosted in the <code class="highlighter-rouge">na</code> cluster, the domains are: <code class="highlighter-rouge">http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/</code> and <code class="highlighter-rouge">https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog</code></p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>na</code> region is shown as an example; it's not currently available. Magento plans support for <code>na</code> first, then <code>au</code> and <code>eu</code> at a later date.</p>
-</div>
-
-<!-- Magento Commerce (Cloud) also supports [multiple applications](/guides/v2.2/cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
-
-<h2 id="cloud-yaml-routes-opts">Route options</h2>
-<p>Each route can be configured separately with the following properties:</p>
+<p>Current topics:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> can be:
+  <li>
+    <p>Install components, upgrade, update</p>
+
     <ul>
-      <li><code class="highlighter-rouge">upstream</code> serves an application
-        <ul>
-          <li>It also has an <code class="highlighter-rouge">upstream</code> property that specifies the name of
-the application (as defined in <code class="highlighter-rouge">.magento.app.yaml</code>) followed by <code class="highlighter-rouge">:php</code> (see
- the following examples.</li>
-        </ul>
-      </li>
-      <li><code class="highlighter-rouge">redirect</code> redirects to another route
-        <ul>
-          <li>It is followed by <code class="highlighter-rouge">to</code> property, which is an HTTP redirection to
-another route that will be identified by its template (see the following examples.</li>
-        </ul>
-      </li>
+      <li><a href="/guides/v2.2/cloud/howtos/install-components.html">Install components</a></li>
+      <li><a href="/guides/v2.2/cloud/howtos/update-components.html">Update components</a></li>
+      <li><a href="/guides/v2.2/cloud/howtos/upgrade-magento.html">Test a Magento patch before deploying it</a></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">cache</code> controls <a href="/guides/v2.2/cloud/project/project-routes-more-cache.html">caching for the route</a>.</li>
-  <li><code class="highlighter-rouge">ssi</code> controls whether <a href="http://httpd.apache.org/docs/current/howto/ssi.html" target="_blank">Server Side Includes</a> are enabled.</li>
-  <li><code class="highlighter-rouge">redirects</code> controls <a href="/guides/v2.2/cloud/project/project-routes-more-redir.html">redirect rules</a> associated with the route.</li>
-</ul>
+  <li>
+    <p>Environments</p>
 
-<h2 id="cloud-yaml-routes-sample-simple">Simple routes</h2>
-<p>Following is a sample <code class="highlighter-rouge">routes.yaml</code> file:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>"http://{default}/":
-  type: upstream
-  upstream: "frontend:php"
-"http://www.{default}/":
-  type: redirect
-  to: "http://{default}/"
-</code></pre>
-</div>
-
-<p>The preceding sample routes both the naked domain and the <code class="highlighter-rouge">www</code> subdomain to an application named <code class="highlighter-rouge">frontend</code>. This route does not redirect HTTPS.</p>
-
-<p>The following route does not redirect from the <code class="highlighter-rouge">www</code> to the naked domain; instead, it serves from both:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>"http://{default}/":
-    type: upstream
-    upstream: "php:php"
-
-"http://www.{default}/":
-    type: upstream
-    upstream: "php:php"
-</code></pre>
-</div>
-
-<p>The difference between the two preceding examples is that for the first one the server responds directly to a request of the form <code class="highlighter-rouge">http://example.com/hello</code>, but it will issue a 301 redirect for <code class="highlighter-rouge">http://www.example.com/mypath</code> (to <code class="highlighter-rouge">http://example.com/mypath</code>).</p>
-
-<h2 id="cloud-yaml-routes-sample-wild">Wildcard routes</h2>
-<p>Magento Commerce supports wildcard routes, so you can map multiple subdomains to the same application. This works both for <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> and upstream routes. You can simply prefix the route with a star (<code class="highlighter-rouge">*</code>), for example <code class="highlighter-rouge">*.example.com</code>, and <code class="highlighter-rouge">www.example.com</code>, <code class="highlighter-rouge">blog.example.com</code>, and <code class="highlighter-rouge">us.example.com</code> all get routed to the same application.</p>
-
-<p>For your live environment, this functions as a catch-all domain.</p>
-
-<h3 id="routing-a-non-mapped-domain">Routing a non-mapped domain</h3>
-<p>You can also route to a system that is not mapped to a domain (basically anything other than
-a live master).</p>
-
-<p>Suppose your project on the EU cluster has an ID <code class="highlighter-rouge">vmwklxcpbi6zq</code> and a branch named <code class="highlighter-rouge">add-theme</code>. Magento Commerce automatically routes the URL <code class="highlighter-rouge">http://add-theme-vmwklxcpbi6zq.na.magento.com/</code> to this environment. If, for example, you also defined a <code class="highlighter-rouge">http://www.{default}/</code> route, you could visit <code class="highlighter-rouge">http://www---add-theme-vmwklxcpbi6zq.na.magento.com/</code> to see the same environment.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The triple dash (<code>---</code>) is used as a separator for the subdomain. This is what replaces the dot (<code>.</code>).</p>
-</div>
-
-<p>You can put anything before the triple dashes and the route resolves. In this example, the route is defined as <code class="highlighter-rouge">http://*.{default}/</code> route, so both <code class="highlighter-rouge">http://foo---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/</code> and <code class="highlighter-rouge">http://bar---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/</code> would work just fine.</p>
-
-<p>If you examine the routes of your application (for example by running <code class="highlighter-rouge">echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp</code> in an SSH session on your environment), you will see a route such as <code class="highlighter-rouge">https://*---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/</code></p>
-
-<p><a href="/guides/v2.2/cloud/project/project-routes-more-cache.html">More information about caching</a>.</p>
-
-<h2 id="cloud-yaml-routes-sample-redirects">Redirects</h2>
-<p>As discussed in more detail in <a href="/guides/v2.2/cloud/project/project-routes-more-redir.html">redirects</a>, you can set up complex redirection rules including <em>partial redirects</em> like the following:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>http://www.{default}/:
-  to: https://{default}/
-  	type: redirect
-http://{default}/:
-  to: https://{default}/
-  type: redirect
-https://{default}/:
-  cache:
-    cookies:
-    - '*'
-    default_ttl: 0
-    enabled: true
-	headers:
-    - Accept
-    - Accept-Language
-  ssi:
-    enabled: false
-  type: upstream
-  upstream: php:php
-</code></pre>
-</div>
-
-<h2 id="cloud-yaml-routes-setup">List routes</h2>
-<p>You can get a list of the configured routes for an environment by using the following command:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:routes
-</code></pre>
-</div>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.2/cloud/project/project-start.html">Get started with a project</a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-routes-more-cache.html">Caching</a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-routes-more-redir.html">Redirects</a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-routes-more-ssi.html">Server side includes</a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+    <ul>
+      <li><a href="/guides/v2.2/cloud/howtos/environment-tutorial-set-mage-vars.html">Set Magento environment variables</a></li>
+      <li><a href="/guides/v2.2/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/cloud/howtos/sample-data.html">Install optional sample data</a></p>
+  </li>
 </ul>
 
 		</div>
@@ -1770,14 +1641,14 @@ https://{default}/:
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-conf-files_routes.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/howtos/how-to.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/project/project-conf-files_routes.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/howtos/how-to.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

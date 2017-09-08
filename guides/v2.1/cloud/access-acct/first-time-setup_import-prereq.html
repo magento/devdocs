@@ -614,7 +614,7 @@
 									
 
 
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Commerce (Cloud)</a>
 
 
 									
@@ -829,52 +829,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Create and manage users</a></li>
 
 									
 
@@ -890,7 +861,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
 
 									
 
@@ -901,14 +888,6 @@
 
 											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
 
@@ -1015,7 +994,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
 
 									
@@ -1320,42 +1299,12 @@
 
 
 								
-
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/howtos/how-to.html">Tutorials</a></li>
 									
-
-										<li class="levela1"><span class="nav-header">How To</span></li>
-
-									
-
-
 								
 
 									
 
-										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.1/cloud/howtos/upgrade-magento.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.1/cloud/howtos/patch-magento.html">Patch and test Magento Commerce</a>
-
-
-									
 
 								
 
@@ -1703,14 +1652,14 @@
 </section>
 
 
-			<p>This topic discusses how to find the information necessary to import Magento EE into Magento Enterprise Cloud Edition.</p>
+			<p>This topic discusses how to find the information necessary to import Magento EE into Magento Commerce (Cloud).</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You must enter all Magento Enterprise Cloud Edition commands on the machine on which your Cloud SSH keys are stored. For more information, see <a href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Step 4, Enable Secure Shell (SSH)</a>.</p>
+  <p>You must enter all Magento Commerce (Cloud) commands on the machine on which your Cloud SSH keys are stored. For more information, see <a href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Step 4, Enable Secure Shell (SSH)</a>.</p>
 </div>
 
 <h2 id="cloud-import-pre-sshurl">Cloud SSH URL</h2>
-<p>To transfer the database dump and files to Magento Enterprise Cloud Edition, you must know its SSH <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>.</p>
+<p>To transfer the database dump and files to Magento Commerce (Cloud), you must know its SSH <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>.</p>
 
 <p>You can find it using:</p>
 
@@ -1731,7 +1680,7 @@
 <p>You must know the name of the Magento EE database as well as the database user’s user name and password.</p>
 
 <h2 id="cloud-import-pre-cloudb">Cloud database login information</h2>
-<p>To import the Magento EE database dump into Magento Enterprise Cloud Edition, you must know the Cloud database login information.</p>
+<p>To import the Magento EE database dump into Magento Commerce (Cloud), you must know the Cloud database login information.</p>
 
 <p>The name of the database can be found in the <code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable. Display the variable with the following command. The database name is stored under <code class="highlighter-rouge">databases-&gt;path</code>. The password is found under <code class="highlighter-rouge">databases-&gt;password</code>.</p>
 
@@ -1774,7 +1723,7 @@
 <p>In the preceding example, the database name is <code class="highlighter-rouge">main</code>, its listen port is <code class="highlighter-rouge">3306</code>, its host name is <code class="highlighter-rouge">database.internal</code>, its root user name is <code class="highlighter-rouge">user</code> and the user has no password.</p>
 
 <h2 id="cloud-import-pre-baseurl">Cloud integration system’s unsecure base URL</h2>
-<p>After you import the Magento EE database into Magento Enterprise Cloud Edition, you must change the base URL so you can access the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> and <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
+<p>After you import the Magento EE database into Magento Commerce (Cloud), you must change the base URL so you can access the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> and <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
 
 <p>You can find it using:</p>
 

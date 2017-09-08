@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Get started with a project | Magento 2 Developer Documentation</title>
+	<title>Project structure | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -576,7 +576,7 @@
 									
 
 
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Commerce (Cloud)</a>
 
 
 									
@@ -783,52 +783,23 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a></li>
 
 									
 
@@ -844,7 +815,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
 
 									
 
@@ -855,14 +842,6 @@
 
 											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
 
@@ -953,7 +932,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
 
 									
@@ -1227,42 +1206,12 @@
 
 
 								
-
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/howtos/how-to.html">Tutorials</a></li>
 									
-
-										<li class="levela1"><span class="nav-header">How To</span></li>
-
-									
-
-
 								
 
 									
 
-										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.0/cloud/howtos/upgrade-magento.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.0/cloud/howtos/patch-magento.html">Patch and test Magento Commerce</a>
-
-
-									
 
 								
 
@@ -1559,7 +1508,7 @@
 
           
 
-          <span property="name">Get started with a project</span>
+          <span property="name">Project structure</span>
 
         
 
@@ -1582,7 +1531,7 @@
 
 	
 
-	<h1 class="page-heading">Get started with a project</h1>
+	<h1 class="page-heading">Project structure</h1>
 
   
 
@@ -1590,7 +1539,7 @@
 </section>
 
 
-			<p>This topic shows how to get started working on a project.</p>
+			<p>When you create your project, you receive a cloned repository of Magento Commerce (Cloud) code.</p>
 
 <h2 id="cloud-structure-local">Local project directory structure</h2>
 <p>Not including the Magento application itself, your local project has the following structure:</p>
@@ -1612,19 +1561,25 @@
   <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
 </div>
 
-<h2 id="cloud-structure-cloud">Magento Commerce directories</h2>
-<p>The following sections discuss information you need to know about directories in the systems deployed to Magento Commerce.</p>
+<h2 id="magento-application-root-directory">Magento application root directory</h2>
+<p>The Magento application root directory is located in different locations depending on the environment.</p>
 
-<h3 id="magento-application-root-directory">Magento application root directory</h3>
-<p>The Magento application root directory is located in different locations depending on the environment:</p>
+<p>For Starter:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-int">Integration environment</a>: the Magento application is located in the <code class="highlighter-rouge">/app</code> directory.</li>
-  <li><a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-stage">Staging environment</a>: the Magento application is located in the <code class="highlighter-rouge">/&lt;project code&gt;_stg</code> directory.</li>
-  <li><a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-prod">production</a>: the Magento application is located in the ` /<project code="">` directory.</project></li>
+  <li><a href="/guides/v2.0/cloud/basic-information/starter-architecture.html#cloud-arch-int">Integration environment</a>: the Magento application is located in the <code class="highlighter-rouge">/app</code> directory.</li>
+  <li><a href="/guides/v2.0/cloud/basic-information/starter-architecture.html#cloud-arch-prod">Production environment</a>: the Magento application is located in the <code class="highlighter-rouge">/&lt;project code&gt;</code> directory.</li>
 </ul>
 
-<h3 id="writable-directories">Writable directories</h3>
+<p>For Pro:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-int">Integration environment</a> the Magento application is located in the <code class="highlighter-rouge">/app</code> directory.</li>
+  <li><a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-stage">Staging environment</a> the Magento application is located in the <code class="highlighter-rouge">/&lt;project code&gt;_stg</code> directory.</li>
+  <li><a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-prod">Production environment</a> the Magento application is located in the ` /<project code="">` directory.</project></li>
+</ul>
+
+<h2 id="write-dir">Writable directories</h2>
 <p>In Integration, Staging, and Production, <em>only</em> the following directories are writable due to security reasons:</p>
 
 <ul>
@@ -1639,14 +1594,14 @@
   <p>In Production, each node in the three-node cluster has a <code>/tmp</code> directory that is not shared with the other nodes.</p>
 </div>
 
-<h3 id="logs">Logs</h3>
-<p>Logs for the integration, staging, and production environments are located under the <code class="highlighter-rouge">/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code class="highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
+<h2 id="logs">Logs</h2>
+<p>Logs for all environments are located under the <code class="highlighter-rouge">/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code class="highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
 
-<p>In staging and production environments, the deployment log is located in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
+<p>For Pro, the deployment log for Staging and Production is located in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
 
 <p>Magento logs are located in the <code class="highlighter-rouge">&lt;magento root dir&gt;/var/log</code> directory.</p>
 
-<h2 id="cloud-proj-start-summ">Command summary</h2>
+<h2 id="cloud-proj-start-summ">Cloud CLI summary</h2>
 <p>The following commands can be run from any directory. However, it’s simpler to run them from a project directory. If so, you can omit the <code class="highlighter-rouge">-p &lt;project ID&gt;</code> parameter.</p>
 
 <p>All commands are shown with required options only. Get help for any <code class="highlighter-rouge">magento-cloud</code> command by appending <code class="highlighter-rouge">--help</code>. For more commands, see <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a>.</p>

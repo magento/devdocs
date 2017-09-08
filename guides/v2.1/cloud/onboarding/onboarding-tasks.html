@@ -614,7 +614,7 @@
 									
 
 
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Commerce (Cloud)</a>
 
 
 									
@@ -829,52 +829,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/user-admin.html">Create and manage users</a></li>
 
 									
 
@@ -890,7 +861,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
 
 									
 
@@ -901,14 +888,6 @@
 
 											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
 
@@ -1015,7 +994,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
 
 									
@@ -1320,42 +1299,12 @@
 
 
 								
-
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/howtos/how-to.html">Tutorials</a></li>
 									
-
-										<li class="levela1"><span class="nav-header">How To</span></li>
-
-									
-
-
 								
 
 									
 
-										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.1/cloud/howtos/upgrade-magento.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.1/cloud/howtos/patch-magento.html">Patch and test Magento Commerce</a>
-
-
-									
 
 								
 
@@ -1703,9 +1652,14 @@
 </section>
 
 
-			<p>After your company purchases a subscription plan for Magento Commerce (Cloud), the only person who initially has access to the project and code is the <em>Project Owner</em>—the person who purchased the software. The Project Owner is typically a “business user” in your business or finance organization and is your point of contact with Magento regarding the account overall. The owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.</p>
+			<p>After your company purchases a subscription plan for Magento Commerce (Cloud), the only person who initially has access to the project and code is the Project Owner.</p>
 
 <p>To quickly onboard your project to start developing your site and going live, you need to complete specific set up steps and onboarding tasks. Typically, you need the Project Owner to start. Technical Admin(s) with super user access can continue.</p>
+
+<h2 id="users">Project access and users</h2>
+<p>The <em>Project Owner</em> is typically a “business user” in your business or finance organization that purchased the subscription and is your point of contact with Magento regarding the account overall. The owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.</p>
+
+<p>Typically, the only user the Project Owner must create is the <em>Technical Admin</em>. This user should have a user account with the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments. Typically, the Technical Admin is a developer, consultant, a <a href="https://magento.com/find-a-partner" target="_blank">Magento Solution Partner</a>, or yourself.</p>
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you joined us with a 30 day free trial Magento Commerce (Cloud) account, we took care of the first steps:
@@ -1743,9 +1697,16 @@ If you joined us with a 30 day free trial Magento Commerce (Cloud) account, we t
 
 <p>We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.</p>
 
-<p>For detailed instructions for setting up environments, see <a href="/guides/v2.1/cloud/before/before-project-owner.html">Prepare project environments</a>.</p>
+<p>For detailed instructions for setting up environments, see <a href="/guides/v2.1/cloud/before/before-project-owner.html">Prepare project environments</a>. For more information on the interface, see <a href="/guides/v2.1/cloud/project/projects.html">Manage your project</a>.</p>
 
 <p><img src="/common/images/cloud_project-access.png" alt="Use the Project Web Interface to manage environments" /></p>
+
+<h2 id="admin">Access your Magento Admin panel</h2>
+<p>When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. URLs to access your store are available through <a href="/guides/v2.1/cloud/project/projects.html">Project Web Interface</a>.</p>
+
+<p>For the store URL, add /admin at the end. A login panel displays. We provide an general Admin account to initially login. The default username is admin and password is admin12. You should immediately change the password.</p>
+
+<p>These values are controlled through the Admin Panel and the environment application variables for ADMIN_USERNAME and ADMIN_PASSWORD. For details, see <a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a>.</p>
 
 <h2 id="portal">Coming soon: Onboarding Portal</h2>
 <!-- (http://cloud.magento.com){:target="_blank"} -->

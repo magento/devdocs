@@ -576,7 +576,7 @@
 									
 
 
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Commerce (Cloud)</a>
 
 
 									
@@ -783,52 +783,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a></li>
 
 									
 
@@ -844,7 +815,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
 
 									
 
@@ -855,14 +842,6 @@
 
 											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
 
@@ -953,7 +932,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
 
 									
@@ -1227,42 +1206,12 @@
 
 
 								
-
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/howtos/how-to.html">Tutorials</a></li>
 									
-
-										<li class="levela1"><span class="nav-header">How To</span></li>
-
-									
-
-
 								
 
 									
 
-										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.0/cloud/howtos/upgrade-magento.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.0/cloud/howtos/patch-magento.html">Patch and test Magento Commerce</a>
-
-
-									
 
 								
 
@@ -1590,30 +1539,53 @@
 </section>
 
 
-			<p>A Magento Enterprise Cloud Edition <em>project</em> is a container for your <em>applications</em>. Applications have <em>environments</em> and <em>services</em> that run on them. (Examples of services include database, web server, and caching server.)</p>
+			<p>The Magento Commerce (Cloud) <em>project</em> includes all code in Git branches, associated  environments, and <em>applications</em>. Applications have <em>environments</em> and <em>services</em> that run on them including a database, web server, and caching server.</p>
 
-<p>The project’s <code class="highlighter-rouge">master</code> branch corresponds to your live Magento store; that is, you work in Git branches (each branch corresponds on an environment) and, when you’re done, you merge with the <code class="highlighter-rouge">master</code> branch, which is deployed to the live cloud.</p>
+<p>We provide a Project Web Interface to fully manage all aspects of your project. For Starter, you have access to all environments and branches. For Pro, you have access to Integration environments, but use CLI to manage Staging and Production environments.</p>
 
-<h2 id="quick-tour">Quick tour</h2>
-<p>This section provides a quick tour of your project using the Web Interface. For more detailed information about the Web Interface, see:</p>
+<p>For more detailed information about actions and the Project Web Interface, see:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage environments (branches)</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Project backup and restore (snapshot)</a></li>
   <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a></li>
+  <li><a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
 </ul>
 
-<h3 id="login">Login</h3>
-<p>Log in to your project using Bitbucket, GitHub, Google, or a e-mail address and password.</p>
+<h2 id="login">Access the Project Web Interface</h2>
+<p>With your Magento Commerce (Cloud) account created, you can log into the Project Web Interface at <a href="https://accounts.magento.cloud" target="_blank">https://accounts.magento.cloud</a>.</p>
 
 <p><img src="/common/images/cloud_project-login.png" alt="Log in to a project" width="450px" /></p>
 
-<h3 id="access-the-project">Access the project</h3>
-<p>Hovering the mouse pointer over <strong>Access Site</strong> shows how to access your site using a <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> or SSH.</p>
+<h2 id="project">Access the project and environments</h2>
+<p>When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company’s project. A Magento Solution Partner may see multiple projects for all of the clients they support.</p>
+
+<p>Click on a project to access branches and more. On the page, you will see a series of branches of Git code and associated branches.</p>
+
+<p>To access an environment store and admin, select a branch and click <strong>Access Site</strong>. A list of store URL and SSH command display. Select the URL to view the store in that environment.</p>
 
 <p><img src="/common/images/cloud_project-access.png" alt="Access your project" width="450px" /></p>
 
-<h3 id="configure-environments">Configure environments</h3>
+<p>For Pro, to view Staging and Production, you need to use a URL or SSH commands:</p>
+
+<ul>
+  <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;domain&gt;.&lt;project ID&gt;.ent.magento.cloud</code></li>
+  <li>
+    <p>Production:</p>
+
+    <ul>
+      <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
+    </ul>
+
+    <p>The production URL is used by the content delivery network (CDN).</p>
+  </li>
+</ul>
+
+<h2 id="configure-environments">Configure environments</h2>
 <p>Click <strong>Configure environment</strong> to create and manage <a href="/guides/v2.0/cloud/env/environments.html"><em>environments</em></a>, each of which corresponds to a Git branch.</p>
 
 <p><img src="/common/images/cloud_project-env.png" alt="Access your project" width="450px" /></p>
@@ -1622,33 +1594,15 @@
 
 <p><img src="/common/images/cloud_project-conf-env.png" alt="configure environments" width="450px" /></p>
 
-<h3 id="configure-the-project">Configure the project</h3>
+<h2 id="configure-the-project">Configure the project</h2>
 <p>Click <img src="/common/images/cloud_edit-project.png" alt="edit project" /> (edit) to display <a href="/guides/v2.0/cloud/project/user-admin.html">users</a>, and <a href="/guides/v2.0/cloud/project/project-priv-repos.html">deploy keys</a> associated with the project.</p>
 
 <p><img src="/common/images/cloud_project-config.png" alt="configure project" width="450px" /></p>
 
-<h3 id="manage-users">Manage users</h3>
-<p>The <strong>Users</strong> tab page enables you to add users to the project and to give them <a href="/guides/v2.0/cloud/project/user-admin.html">privileges to access the project and environments</a>.</p>
-
-<p><img src="/common/images/cloud_project-config.png" alt="Manage users" width="450px" /></p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Currently, permissions changes that grant or revoke SSH access to an environment take effect only after the next time that environment is deployed.</p>
-</div>
-
-<p>Click <strong>Add User</strong>. The following page displays.</p>
-
-<p><img src="/common/images/cloud_project-user-add.png" alt="Add users" width="450px" /></p>
-
-<p>Selecting the <strong>Super user</strong> check box grants project administrator privileges to the user.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Account owner is locked; you can't change its permissions.</p>
-</div>
-
 <h4 id="related-topics">Related topics</h4>
 <ul>
-  <li><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
+  <li><a href="/guides/v2.0/cloud/configure/configuration-overview.html">Configure Magento Commerce</a></li>
+  <li><a href="/guides/v2.0/cloud/env/environments.html">Manage your environments</a></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>

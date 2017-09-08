@@ -576,7 +576,7 @@
 									
 
 
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Commerce (Cloud)</a>
 
 
 									
@@ -783,52 +783,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a></li>
 
 									
 
@@ -844,7 +815,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
 
 									
 
@@ -855,14 +842,6 @@
 
 											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
 
@@ -953,7 +932,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
 
 									
@@ -1227,42 +1206,12 @@
 
 
 								
-
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/howtos/how-to.html">Tutorials</a></li>
 									
-
-										<li class="levela1"><span class="nav-header">How To</span></li>
-
-									
-
-
 								
 
 									
 
-										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.0/cloud/howtos/upgrade-magento.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.0/cloud/howtos/patch-magento.html">Patch and test Magento Commerce</a>
-
-
-									
 
 								
 
@@ -1590,7 +1539,7 @@
 </section>
 
 
-			<p>This topic discusses tasks you must perform in your existing Magento EE installation to prepare it to be imported into a Magento Enterprise Cloud Edition project.</p>
+			<p>This topic discusses tasks you must perform in your existing Magento EE installation to prepare it to be imported into a Magento Commerce (Cloud) project.</p>
 
 <p>Before you continue, push all pending changes to Git.</p>
 
@@ -1606,7 +1555,7 @@
 </ul>
 
 <h2 id="cloud-import-prepare-files">Prepare Magento EE files</h2>
-<p>For your Magento EE code to import to a Magento Enterprise Cloud Edition project, you must have a directory and some files required by Cloud. Following is the list of those files:</p>
+<p>For your Magento EE code to import to a Magento Commerce (Cloud) project, you must have a directory and some files required by Cloud. Following is the list of those files:</p>
 
 <ul>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a></li>
@@ -1619,7 +1568,7 @@
 <p>To add required files to your Magento EE code:</p>
 
 <ol>
-  <li>Go to the <a href="https://github.com/magento/magento-cloud" target="_blank">Magento Enterprise Cloud Edition GitHub</a>.</li>
+  <li>Go to the <a href="https://github.com/magento/magento-cloud" target="_blank">Magento Commerce (Cloud) GitHub</a>.</li>
   <li>
     <p>Select the branch corresponding to the Magento EE version you currently have.</p>
 
@@ -1639,7 +1588,7 @@ mkdir .magento
     </div>
   </li>
   <li>
-    <p>One at a time, create the following files in your Magento EE system using the contents of the files in the Magento Enterprise Cloud Edition GitHub:</p>
+    <p>One at a time, create the following files in your Magento EE system using the contents of the files in the Magento Commerce (Cloud) GitHub:</p>
 
     <ul>
       <li><code class="highlighter-rouge">&lt;Magento EE install dir&gt;/.magento.app.yaml</code></li>
@@ -1651,7 +1600,7 @@ mkdir .magento
     <p>For example, to create <code class="highlighter-rouge">&lt;Magento EE install dir&gt;/.magento.app.yaml</code> from the 2.1.4 branch:</p>
 
     <ol>
-      <li>In the  Magento Enterprise Cloud Edition GitHub, click <a href="https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml" target="_blank"><strong>.magento.app.yaml</strong></a>.</li>
+      <li>In the  Magento Commerce (Cloud) GitHub, click <a href="https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml" target="_blank"><strong>.magento.app.yaml</strong></a>.</li>
       <li>
         <p>In the upper right, click <strong>Raw</strong>, as the following figure shows.</p>
 
@@ -1680,7 +1629,7 @@ mkdir .magento
 </ul>
 
 <h3 id="cloud-import-authjson">Add or update <code class="highlighter-rouge">auth.json</code></h3>
-<p>To enable you to install and update Magento Enterprise Cloud Edition, you must have an <code class="highlighter-rouge">auth.json</code> file in your project’s root directory. <code class="highlighter-rouge">auth.json</code> contains your Magento EE <a href="http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a> for Magento Enterprise Cloud Edition.</p>
+<p>To enable you to install and update Magento Commerce (Cloud), you must have an <code class="highlighter-rouge">auth.json</code> file in your project’s root directory. <code class="highlighter-rouge">auth.json</code> contains your Magento EE <a href="http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a> for Magento Commerce (Cloud).</p>
 
 <p>In some cases, you might already have <code class="highlighter-rouge">auth.json</code> so check to see if it exists and has your authentication credentials before you create a new one. It’s located in your Magento root directory.</p>
 
@@ -1710,14 +1659,14 @@ mkdir .magento
 </ol>
 
 <h3 id="cloud-import-composer">Edit <code class="highlighter-rouge">composer.json</code></h3>
-<p>Before you push code to the Magento Enterprise Cloud Edition Git repository, you must change your <code class="highlighter-rouge">composer.json</code> so it meets Cloud requirements.</p>
+<p>Before you push code to the Magento Commerce (Cloud) Git repository, you must change your <code class="highlighter-rouge">composer.json</code> so it meets Cloud requirements.</p>
 
 <p><a href="https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json" target="_blank">View a sample <code class="highlighter-rouge">composer.json</code></a></p>
 
 <p>To edit <code class="highlighter-rouge">composer.json</code>:</p>
 
 <ol>
-  <li>If you haven’t done so already, log in to your Magento Enterprise Cloud Edition server as, or switch to, the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>If you haven’t done so already, log in to your Magento Commerce (Cloud) server as, or switch to, the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>In a text editor, open <code class="highlighter-rouge">composer.json</code> in the project root directory.</li>
   <li>
     <p>Substitute the following value in the <code class="highlighter-rouge">require</code> section:</p>
@@ -1787,7 +1736,7 @@ mkdir .magento
     <p>The backup is stored in the <code class="highlighter-rouge">&lt;Magento EE install dir&gt;/var/backups</code> directory.</p>
   </li>
   <li>
-    <p>Transfer the media file to your Magento Enterprise Cloud Edition system:</p>
+    <p>Transfer the media file to your Magento Commerce (Cloud) system:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;Magento EE install dir&gt;/var/backups/&lt;backup file name&gt; &lt;cloud ssh url&gt;:var/media.tgz
 </code></pre>
@@ -1810,7 +1759,7 @@ mkdir .magento
   <li>
     <p>Copy the value to the clipboard and save it.</p>
 
-    <p>You must paste the encryption key into your Magento Enterprise Cloud Edition <code class="highlighter-rouge">env.php</code> file in each environment in a later step.</p>
+    <p>You must paste the encryption key into your Magento Commerce (Cloud) <code class="highlighter-rouge">env.php</code> file in each environment in a later step.</p>
   </li>
 </ol>
 
@@ -1837,7 +1786,7 @@ mkdir .magento
 </div>
 
 <h3 id="transfer-the-database-dump-from-magento-ee-to-cloud">Transfer the database dump from Magento EE to Cloud</h3>
-<p>Use the <code class="highlighter-rouge">rsync</code> command as follows to transfer the database dump from your Magento EE system to the Magento Enterprise Cloud Edition environment.</p>
+<p>Use the <code class="highlighter-rouge">rsync</code> command as follows to transfer the database dump from your Magento EE system to the Magento Commerce (Cloud) environment.</p>
 
 <p>Now that you have created the dump, move it to the var directory of the application you are importing into:</p>
 
@@ -1848,7 +1797,7 @@ mkdir .magento
 <p>To find <code class="highlighter-rouge">&lt;cloud SSH URL&gt;</code>, see <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl">Find the information you need for your import</a>.</p>
 
 <h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a></p>
+<p><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Commerce (Cloud)</a></p>
 
 		</div>
 		<!-- /.content-wrap -->

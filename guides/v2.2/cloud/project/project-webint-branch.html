@@ -581,7 +581,7 @@
 									
 
 
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
+											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Commerce (Cloud)</a>
 
 
 									
@@ -796,52 +796,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.2/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-start.html">Project structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/user-admin.html">Create and manage users</a></li>
 
 									
 
@@ -857,7 +828,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
 
 									
 
@@ -868,14 +855,6 @@
 
 											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
 
@@ -974,7 +953,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
 
 									
@@ -1279,42 +1258,12 @@
 
 
 								
-
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/cloud/howtos/how-to.html">Tutorials</a></li>
 									
-
-										<li class="levela1"><span class="nav-header">How To</span></li>
-
-									
-
-
 								
 
 									
 
-										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.2/cloud/howtos/upgrade-magento.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.2/cloud/howtos/patch-magento.html">Patch and test Magento Commerce</a>
-
-
-									
 
 								
 
@@ -1654,7 +1603,7 @@
 </section>
 
 
-			<p>A Magento Enterprise Cloud Edition <em>environment</em> is a Git <em>branch</em>. You can manage your environments using either the Web Interface, the Magento Enterprise Cloud Edition CLI, or Git commands. Managing branches/environments uses <a href="https://git-scm.com/doc">Git</a>.</p>
+			<p>Every Magento Commerce (Cloud) <em>environment</em> has an associated active Git <em>branch</em>. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see <a href="https://git-scm.com/doc">Git documentation</a>.</p>
 
 <p>For more information about managing environments using the CLI, see <a href="/guides/v2.2/cloud/env/environments-start.html">Get started with an environment</a>.</p>
 
@@ -1667,10 +1616,13 @@
 </ul>
 
 <h2 id="project-branch-add">Add or delete an environment</h2>
-<p>To best manage your code development, work in branches created from the project master. Complete development of code and added extensions in a branch and, when complete, merge (<code class="highlighter-rouge">git push</code>) the branch with its parent or master. Select and use a branching strategy best for your development efforts. For example, you may create a branch for a specific feature (Feature ABC). Multiple developers could create branches from parent branch Feature ABC, merging their work into the parent when complete. This branch can then merge with the project master branch for deployment.</p>
+<p>Complete development of code and added extensions in a branch and, when complete, merge (<code class="highlighter-rouge">git push</code>) the branch with its parent or master. For Starter, you want to create your development branches from <code class="highlighter-rouge">staging</code> using our recommended architecture structure. For Pro, you want to branch from Integration <code class="highlighter-rouge">master</code>.</p>
 
-<p>Your account supports up to eight active branches with full environment access for testing and an unlimited number of inactive branches. You manage active and inactive branches by deleting a branch. When deleted, it is deactivated and available from the project branches list. You can either activate the branch later or you can <a href="/guides/v2.2/cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete">delete it entirely</a> using the CLI.</p>
+<p>For branching strategies, review <a href="/guides/v2.2/cloud/basic-information/starter-architecture.html">Start</a> and <a href="/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html">Pro</a> architecture overviews.</p>
 
+<p>Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and available from the project branches list. You can either activate the branch later or you can <a href="/guides/v2.2/cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete">delete it entirely</a> using the CLI.</p>
+
+<h2 id="add">Add a branch</h2>
 <p>To add a branch:</p>
 
 <ol>
@@ -1711,6 +1663,7 @@
   </li>
 </ol>
 
+<h2 id="inactive">Delete to make a branch inactive</h2>
 <p>To delete an environment and make it inactive:</p>
 
 <ol>
@@ -1763,12 +1716,72 @@
   <li>Click <strong>Merge</strong> to confirm the action.</li>
 </ol>
 
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Project backup and restore (snapshot)</a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-start.html">Get started with a project</a></li>
-</ul>
+<h2 id="private">Pull code from a private Git repository</h2>
+<p>Your Magento Commerce (Cloud) project can include code located in a private Git repository. For example, a you may have code for a custom module or theme in a private repo. To do so, you must add your project’s public SSH key to your private Git repository and update your project’s <code class="highlighter-rouge">composer.json</code>.</p>
+
+<p>To add a deployment key to your private GitHub repository, you must be the administrator of that repository. GitHub allows you to use a deploy key for one repository only.</p>
+
+<p>If your project needs to access multiple repositories, you can choose to
+attach an SSH key to an automated user account. Because this account won’t
+be used by a human, it’s referred to as a <a href="https://developer.github.com/guides/managing-deploy-keys/" target="_blank"><em>machine user</em></a>. You can then add the
+machine account as collaborator or add the machine user to a team with
+access to the repositories it needs to manipulate.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+We highly recommend adding and merging this code to your project Git repositories. If you do not configure the connection, you will have build issues.
+</div>
+
+<h3 id="ssh">Find your deploy key</h3>
+<p>To find your project SSH public key (also referred to as a <em>deploy key</em>):</p>
+
+<ol>
+  <li>Log in to your project using the Web Interface.</li>
+  <li>Click <strong>Configure Project</strong>.</li>
+  <li>
+    <p>Click <strong>Deploy Key</strong>.</p>
+
+    <p>The following figure shows an example.</p>
+
+    <p><img src="/common/images/cloud_deploy-key.png" alt="Deploy Key" width="500px" /></p>
+  </li>
+  <li>Copy the deploy key to the clipboard.</li>
+  <li>See <a href="#cloud-deploykey-github">Enter your GitHub deploy key</a>.</li>
+</ol>
+
+<h3 id="cloud-deploykey-github">Enter your GitHub deploy key</h3>
+<p>On GitHub, deploy keys are read-only by default. Your Magento project won’t push code to the private repository.</p>
+
+<p>To enter your project’s public key as a GitHub deploy key:</p>
+
+<ol>
+  <li>Log in to your GitHub repository as its administrator.</li>
+  <li>
+    <p>Click <strong>Settings</strong> as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud_gh-settings.png" alt="GitHub settings" width="650px" /></p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+  		<p>If you don't see this option, you're not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.</p>
+</div>
+  </li>
+  <li>
+    <p>On the Settings page, in the left navigation bar, click <strong>Deploy Keys</strong> as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud_gh-deploy-key.png" alt="GitHub deploy key" width="200px" /></p>
+  </li>
+  <li>Click <strong>Add deploy key</strong>.</li>
+  <li>Follow the prompts on your screen to complete the task.</li>
+</ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>In <code>composer.json</code>, use the <code>&lt;user&gt;@&lt;host&gt;:&lt;<path>.git&lt;/code&gt; format, or <code>ssh://&lt;user&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;.git</code> if using a non-standard port.&lt;/p&gt;
+&lt;/div&gt;
+
+#### Related topics
+*	[Basic project information](/guides/v2.2/cloud/project/project-webint-basic.html)
+*	[Project backup and restore (snapshot)](/guides/v2.2/cloud/project/project-webint-snap.html)
+*	[Get started with a project](/guides/v2.2/cloud/project/project-start.html)
+</path></code></p></div>
 
 		</div>
 		<!-- /.content-wrap -->

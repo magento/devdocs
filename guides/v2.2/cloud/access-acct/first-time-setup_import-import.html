@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Import Magento EE into Magento Enterprise Cloud Edition | Magento 2 Developer Documentation</title>
+	<title>Import Magento EE into Magento Commerce (Cloud) | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -581,7 +581,7 @@
 									
 
 
-											<li class="level3Child import  active " data-menunode="import"><a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
+											<li class="level3Child import  active " data-menunode="import"><a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Commerce (Cloud)</a>
 
 
 									
@@ -796,52 +796,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.2/cloud/project/project-patch.html">Patch and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-start.html">Project structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/user-admin.html">Create and manage users</a></li>
 
 									
 
@@ -857,7 +828,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
 
 									
 
@@ -868,14 +855,6 @@
 
 											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
 
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
 
@@ -974,7 +953,7 @@
 									
 
 
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
+											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.2/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
 
 									
@@ -1279,42 +1258,12 @@
 
 
 								
-
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/cloud/howtos/how-to.html">Tutorials</a></li>
 									
-
-										<li class="levela1"><span class="nav-header">How To</span></li>
-
-									
-
-
 								
 
 									
 
-										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.2/cloud/howtos/upgrade-magento.html">Upgrade and test Magento Commerce</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.2/cloud/howtos/patch-magento.html">Patch and test Magento Commerce</a>
-
-
-									
 
 								
 
@@ -1623,7 +1572,7 @@
 
           
 
-          <span property="name">Import Magento EE into Magento Enterprise Cloud Edition</span>
+          <span property="name">Import Magento EE into Magento Commerce (Cloud)</span>
 
         
 
@@ -1646,7 +1595,7 @@
 
 	
 
-	<h1 class="page-heading">Import Magento EE into Magento Enterprise Cloud Edition</h1>
+	<h1 class="page-heading">Import Magento EE into Magento Commerce (Cloud)</h1>
 
   
 
@@ -1654,12 +1603,12 @@
 </section>
 
 
-			<p>This topic discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition’s Git repository <code class="highlighter-rouge">master</code> branch.</p>
+			<p>This topic discusses how to import code from your existing Magento EE project to your Magento Commerce (Cloud)’s Git repository <code class="highlighter-rouge">master</code> branch.</p>
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <p>The procedure discussed in this topic replaces your new Magento Enterprise Cloud Edition project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.</p>
+  <p>The procedure discussed in this topic replaces your new Magento Commerce (Cloud) project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.</p>
 
-  <p>Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.</p>
+  <p>Before you continue, make sure there is nothing in your Magento Commerce (Cloud) project you want to keep.</p>
 </div>
 
 <h2 id="required-information">Required information</h2>
@@ -1673,7 +1622,7 @@
 <p>To create a remote Git reference:</p>
 
 <ol>
-  <li>Log in to your local Magento Enterprise Cloud Edition development machine as, or switch to, the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>Log in to your local Magento Commerce (Cloud) development machine as, or switch to, the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>
     <p>Make a copy of <code class="highlighter-rouge">composer.json</code> <em>in a non-tracked directory</em> so it doesn’t get overwritten.</p>
 
@@ -1749,7 +1698,7 @@ git branch -u cloud-project/master
     </div>
   </li>
   <li>
-    <p>Push code from your Magento EE project to your Magento Enterprise Cloud Edition project, overwriting the previous contents and commit history with that of your project:</p>
+    <p>Push code from your Magento EE project to your Magento Commerce (Cloud) project, overwriting the previous contents and commit history with that of your project:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>git push -f cloud-project master
 </code></pre>
@@ -1773,12 +1722,12 @@ Environment routes:
 </div>
 
 <h2 id="cloud-import-db">Import the Magento database</h2>
-<p>Before you can use your existing Magento EE code in Magento Enterprise Cloud Edition, you must import the database.</p>
+<p>Before you can use your existing Magento EE code in Magento Commerce (Cloud), you must import the database.</p>
 
-<p>To import the Magento database in Magento Enterprise Cloud Edition, you must know:</p>
+<p>To import the Magento database in Magento Commerce (Cloud), you must know:</p>
 
 <ul>
-  <li>The Magento Enterprise Cloud Edition environment’s <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-sshurl">SSH URL</a></li>
+  <li>The Magento Commerce (Cloud) environment’s <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-sshurl">SSH URL</a></li>
   <li>The database name, user name, and password of the <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-cloudb">Cloud database</a></li>
 </ul>
 
