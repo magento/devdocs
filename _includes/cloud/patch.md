@@ -36,7 +36,7 @@ Back up your Integration environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
 
-        magento-cloud environment:mysql-dump
+        magento-cloud db:dump
 2.  Enter the following command to back up code and media:
 
         php bin/magento setup:backup --code [--media]
