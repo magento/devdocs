@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 2.2.0 Release Candidate
 title: Magento Open Source 2.2 Release Candidate 3 Release Notes
 menu_title: Magento Open Source 2.2 Release Candidate 3 Release Notes
-menu_order: 480
+menu_order: 460
 level3_menu_node:
 level3_subgroup:
 github_link: release-notes/release-notes-2-2-RC3-CE.md
@@ -49,7 +49,7 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 
 
-### Installation and Configuration 
+### Installation, configuration, and deployment
 
 <!--- 70705 -->* The installation process no longer stops when loading the Magento_Tax module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
 
@@ -70,6 +70,7 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 71551 -->* Inconsistencies in the database tables that contain quote information no longer result when you upgrade from Magento 2.1.8 to 2.2. (RC23)
 
+<!--- 71890 -->* Magento no longer throws an exception when the configuration checksum is absent on a new installation. (RC30) 
 
 
 
@@ -100,6 +101,11 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 ### Checkout
 
 <!--- 70846 -->* Magento now displays white space after the first address field of the customer address field during checkout. (RC21)
+
+
+### Configurable products
+
+<!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**. (RC30)
 
 
 ### Email

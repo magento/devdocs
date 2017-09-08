@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 2.2.0 Release Candidate
 title: Magento Commerce 2.2 Release Candidate 3 Release Notes
 menu_title: Magento Commerce 2.2 Release Candidate 3 Release Notes
-menu_order: 680
+menu_order: 660
 level3_menu_node:
 level3_subgroup:
 github_link: release-notes/release-notes-2-2-RC3-EE.md
@@ -58,7 +58,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 The following fixed and open issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
 
-### Installation and Configuration 
+### Installation, configuration, and deployment
 
 <!--- 70705 -->* The installation process no longer stops when loading the `Magento_Tax` module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
 
@@ -85,7 +85,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71551 -->* Inconsistencies in the database tables that contain quote information no longer result when you upgrade from Magento 2.1.8 to 2.2. (RC23)
 
-
+<!--- 71890 -->* Magento no longer throws an exception when the configuration checksum is absent on a new installation. (RC30) 
 
 
 
@@ -120,6 +120,11 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 61018 -->*  You can now use REST to add video to a product description. [GitHub-7153](https://github.com/magento/magento2/issues/7153) (RC30)
 
 
+
+
+### Configurable products
+
+<!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**. (RC30)
 
 
 ### Checkout
@@ -200,7 +205,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71050 -->* Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error `No such entity with customerId = 0`. (RC22)
 
-<!--- 70603 -->* You can now add gift options to an order if logged in using a secure URL. (RC30)
 
 ### Reports
 
@@ -229,7 +233,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71708 -->* You can now create a staging update for a product that contains a unique attribute in its attribute set. Previously, under these conditions, Magento displayed this error: `The value of attribute "test" must be unique’`. (RC23)
 
-
+<!--- 71215 -->* Magento no longer creates extraneous database values when you schedule new Staging updates. (RC30)
 
 
 ### URL rewrites
@@ -237,8 +241,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70663 -->* You can now assign products to a category when **Match Products by rule** is enabled. (RC2.0)
 
 <!--- 70779 -->* Magento now saves Category URL rewrites as expected. (RC2.0)
-
-
 
 
 
