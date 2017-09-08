@@ -25,7 +25,7 @@ where
 
 `--cache-backend=redis` enables Redis default caching. If this feature has already been enabled, omit this parameter.
 
-`--cache-backend-redis-<parameter_name>=<parameter_value>` refers to any number of the following parameters that can be used to configure default caching:
+`--cache-backend-redis-<parameter_name>=<parameter_value>` is a list of parameter/value pairs that configure default caching:
 
 <table>
 <tbody>
@@ -52,7 +52,7 @@ where
 <td>database</td>
 <td>
 <p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
-<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</p>
+<p><strong>Important</strong>: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2. </p>
 </td>
 <td>0</td>
 </tr>
@@ -61,9 +61,9 @@ where
 
 ## Example command
 
-The following example enables Redis default caching, sets the host to `redis.example.com` and assigns the database number to 1. All other parameters are set to the default value.
+The following example enables Redis default caching, sets the host to `redis.example.com` and assigns the database number to 0. All other parameters are set to the default value.
 
-`bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis.example.com --cache-backend-redis-db=1`
+`bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis.example.com --cache-backend-redis-db=0`
 
 
 ## Configure Redis page caching
@@ -76,7 +76,7 @@ where
 
 `--page-cache=redis` enables Redis page caching. If this feature has already been enabled, omit this parameter.
 
-`--page-cache-redis-<parameter_name>=<parameter_value>` refers to any number of the following parameters that can be used to configure page caching:
+`--page-cache-redis-<parameter_name>=<parameter_value>` is a list of parameter/value pairs that configure page caching:
 
 <table>
 <tbody>
@@ -103,7 +103,7 @@ where
 <td>database</td>
 <td>
 <p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
-<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</p>
+<p><strong>Important</strong>: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2. </p>
 </td>
 <td>0</td>
 </tr>
@@ -118,9 +118,9 @@ where
 
 ## Example command
 
-The following example enables Redis page caching, sets the host to `redis.example.com` and assigns the database number to 2. All other parameters are set to the default value.
+The following example enables Redis page caching, sets the host to `redis.example.com` and assigns the database number to 1. All other parameters are set to the default value.
 
-`bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=redis.example.com --page-cache-redis-db=2`
+`bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=redis.example.com --page-cache-redis-db=1`
 
 ## Results
 
@@ -137,7 +137,7 @@ As a result of the two example commands, Magento adds lines similar to the follo
             'backend_options' =>
               array(
                 'server' => 'redis.example.com',
-                'database' => '1',
+                'database' => '0',
                 'port' => '6379'
               ),
         ),
@@ -148,7 +148,7 @@ As a result of the two example commands, Magento adds lines similar to the follo
               array(
                 'server' => 'redis.example.com',
                 'port' => '6379',
-                'database' => '2',
+                'database' => '1',
                 'compress_data' => '0'
               )
         )

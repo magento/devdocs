@@ -40,9 +40,9 @@ The following results provides an example of variables:
 	+----------------+---------------+-----------+------+
 
 ## Set the docroot
-Set the docroot to the /magento directory until you complete all setup. If you change the DOCROOT to /magento/pub prior to completion, you will encounter issues running the Web Setup Wizard.
+Set the docroot to the `/magento` directory until you complete all setup. If you change the docroot to `/magento/pub` prior to completion, you will encounter issues running the Web Setup Wizard.
 
-For the Production environment, you should set the docroot to /magento/pub, which helps restrict access to vulnerable areas of the system. The webserver DOCROOT should be set to /magento/pub only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in /magento/pub. Alternatively, you could also create a subdomain (for example, install.domain.com) and configure your webserver's DOCROOT to the Magento installed root folder.
+For the Production environment, you should set the docroot to `/magento/pub`, which helps restrict access to vulnerable areas of the system. The webserver docroot should be set to `/magento/pub` only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in `/magento/pub`. Alternatively, you could also create a subdomain (for example, `install.domain.com`) and configure your webserver's docroot to the Magento installed root folder.
 
 ## Install Magento
 
@@ -59,10 +59,10 @@ For example, using the command line method:
 
 1. Switch to the user:
 
-		sudo su - magento
+    sudo su - magento
 2. Change directories for the installation:
 
-		cd /app/bin
+    cd /app/bin
 3. Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
     php magento setup:install \
@@ -71,22 +71,22 @@ For example, using the command line method:
       --admin-email=jsmith@mail.com \
       --admin-user=admin \
       --admin-password=password1 \
-		  --base-url=http://magento.local/ \
-		  --db-host=localhost \
-		  --db-name=magento \
-		  --db-user=magento \
-		  --db-password=magento \
-		  --currency=USD \
-		  --timezone=America/Chicago \
-		  --language=en_US \
-		  --use-rewrites=1
+      --base-url=http://magento.local/ \
+      --db-host=localhost \
+      --db-name=magento \
+      --db-user=magento \
+      --db-password=magento \
+      --currency=USD \
+      --timezone=America/Chicago \
+      --language=en_US \
+      --use-rewrites=1
 
 ## Post-install configurations
 After installing Magento, run the commands for [compile]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html) for the code:
 
 1. If you are not in the correct Magento user, switch:
 
-	sudo su - magento
+    sudo su - magento
 2. Change directory to `app/bin`.
 3. Run the compile command:
 
@@ -140,8 +140,7 @@ With these steps completed, you should have:
 * Your initial code branch
 * Magento authentication keys set up and configured in the project and local
 
-## Next steps
-We strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production.
+## Next steps:
+For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html).
 
-#### Next step:
-[First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html)
+For Starter accounts, you are ready to start developing.

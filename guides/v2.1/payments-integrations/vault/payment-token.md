@@ -19,7 +19,7 @@ To retrieve and store token details, you need to implement a [response handler](
 
 Following sample is an example of the response handler implementation:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class VaultDetailsHandler implements HandlerInterface
 {
     /**
@@ -66,7 +66,7 @@ class VaultDetailsHandler implements HandlerInterface
         return $paymentToken;
     }
 }
-{% endhighlight %}
+```
 
 There are two types of `paymentTokenFactory`: 
 

@@ -18,7 +18,7 @@ During the standard checkout process, Magento refreshes and recalculates all pro
 
 The same rule is applied when the quote has the proposed shipping price and the shipping taxes change on the checkout. The buyer pays the updated price, but this does not affect the other quote amounts.
 
-The following diagram illustrates the workflow for B2B negotiable quote checkouts:
+The following diagram illustrates the workflow for {{site.data.var.b2b}} negotiable quote checkouts:
 
 ![Checkout process]({{page.baseurl}}b2b/images/quote-checkout-process.png)
 

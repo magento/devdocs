@@ -57,10 +57,12 @@ Change was done in order to add default values to customer attributes.
 
 **Description:** Retrieve and set default values to customer attributes<br/>
 
+
 ### Wishlist module
 
 **Class:** [`Magento\Wishlist\Model\Wishlist`]({{site.mage2200url}}app/code/Magento/Wishlist/Model/Wishlist.php){:target="_blank"}<br/>
 **Action:** The format of the string for the `buyRequest` parameter in the `addNewItem` method changed from serialized to JSON.<br/>
+
 
 ### Recently Viewed and Recently Compared Widgets
 
@@ -74,6 +76,10 @@ Change was done in order to add default values to customer attributes.
 **Action:** Removed <br/>
 
 Please note, that all inheritance of old widget.xml file will break Magento. Use `Magento/Catalog/etc/widget.xml` instead of `Magento/Reports/etc/widget.xml`.
+
+### Eav Module Changes
+
+The class `\Magento\Eav\Model\Entity\Attribute\Backend\Serialized` has been marked as deprecated, `Magento\Eav\Model\Entity\Attribute\Backend\JsonEncoded` can be used instead. 
 
 ### MessageQueue Module API
 
@@ -125,7 +131,7 @@ In Magento 2.2 the behavior of repositories regarding the Filters added to Searc
 
  In the scope of this work, the following repositories were affected.
 
-### Affected CE repositories
+### Affected {{site.data.var.ce}} repositories
 
 - `\Magento\Catalog\Api\AttributeSetRepositoryInterface `
 - `\Magento\Catalog\Api\CategoryAttributeRepositoryInterface`
@@ -154,7 +160,7 @@ In Magento 2.2 the behavior of repositories regarding the Filters added to Searc
 - `\Magento\Ui\Api\BookmarkRepositoryInterface`
 - `\Magento\Vault\Api\PaymentTokenRepositoryInterface`
 
-### Affected EE repositories
+### Affected {{site.data.var.ee}} repositories
 
 - `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface `
 - `\Magento\GiftWrapping\Api\WrappingRepositoryInterface`
@@ -179,7 +185,7 @@ was changed to
 These changes won't affect the clients that use these interfaces, but this will affect the extensions that implemented these interfaces.
 In oder to adopt custom implementations of these interfaces, please, change method signature from `\Magento\Framework\Api\SearchCriteria` to `\Magento\Framework\Api\SearchCriteriaInterface` in your implementations.
 
-### Affected CE repositories
+### Affected {{site.data.var.ce}} repositories
 
 - `\Magento\Vault\Api\PaymentTokenRepositoryInterface::getList`
 - `\Magento\Tax\Api\TaxRuleRepositoryInterface::getList`
@@ -213,7 +219,7 @@ In oder to adopt custom implementations of these interfaces, please, change meth
 - `\Magento\Quote\Model\QuoteRepository::getList`
 
 
-### Affected EE repositories
+### Affected {{site.data.var.ee}} repositories
 
 - `\Magento\Signifyd\Api\CaseRepositoryInterface::getList`
 - `\Magento\Rma\Api\CommentRepositoryInterface::getList`

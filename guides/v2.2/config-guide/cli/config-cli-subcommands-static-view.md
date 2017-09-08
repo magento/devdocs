@@ -166,8 +166,7 @@ The following table discusses the meanings of this command's parameters and valu
           Themes to exclude when deploying static content.
         </p>
         <p>
-          For example, <code>--exclude-theme Magento/blank --theme
-          Magento/luma</code>
+          For example, <code>--exclude-theme Magento/blank</code>
         </p>
       </td>
       <td>
@@ -384,12 +383,17 @@ The following table discusses the meanings of this command's parameters and valu
       </td>
       <td>
         Define the deployment strategy. Use these options only if you have more than one locale.
-        <p>
-          Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a>. To conserve disk space on the server, use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a>.</p>
-        <p>
-          By default, the quick strategy is used.
-        </p>
-
+				<ul>
+					<li>
+						Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-standard">standard strategy</a> to deploy all static view files for all packages.
+					</li>
+					<li>
+	          Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a> to minimize deployment time. This is the default command option if not specified.
+					</li>
+					<li>
+						Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a> to conserve disk space on the server.
+					</li>
+				</ul>
       </td>
       <td>
         <p>

@@ -49,10 +49,10 @@ To clone the project's `master` environment to your local:
 
 8.	Fetch origin branches:
 
-		git fetch origin
+		git fetch magento
 9.	Pull updated code:
 
-		git pull origin <environment ID>
+		git pull magento <environment ID>
 
 ## Change the Magento Admin URL, user name, and password on master {#setvariables}
 Change the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} parameters for security reasons prior to branching from master. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.
@@ -91,9 +91,8 @@ To set variables (with example values used):
 
 	The simplest way to do that is to use the environment routes that display when you redeploy the `master` branch. The following example uses these values:
 
-	<pre class="no-copy">Waiting for the activity ksvciptnzxfto (John Smith added variable ADMIN_URL):
 
-		Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
+		<pre class="no-copy">Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
 		Slug already built for this tree id, skipping.
 
 		Re-deploying environment k4wtvm7ogzr5s-master.
@@ -105,8 +104,7 @@ To set variables (with example values used):
 			solr (type: solr:4.10, size: S, disk: 1024)
 
 		Environment routes:
-			http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
-			https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`</pre>
+			http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`</pre>
 
 	In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
 

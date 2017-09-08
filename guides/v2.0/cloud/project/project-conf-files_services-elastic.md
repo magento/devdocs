@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 100_project
+subgroup: 090_configure
 title: Set up Elasticsearch
 menu_title: Set up Elasticsearch
-menu_order: 85
+menu_order: 70
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: services

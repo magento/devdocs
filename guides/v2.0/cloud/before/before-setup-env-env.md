@@ -69,11 +69,9 @@ To add your local authentication keys:
 
 2.	Create a file named `auth.json` in the Magento project root directory and add your authentication keys to it.
 
-		<div class="bs-callout bs-callout-info" markdown="1">
-		If you have an `auth.json` file already, contact your project administrator to make sure a project variable has been defined. If there is no project variable that defines authentication keys, skip this step and continue with [Step 7: Set file system permissions and ownership](#setup-env-perms).
-		</div>
+	If you have an `auth.json` file already, contact your project administrator to make sure a project variable has been defined.
 
-		A sample `auth.json` follows. Replace the same values with your keys.
+	A sample `auth.json` follows. Replace the same values with your keys.
 
 			``` json
 			{
@@ -91,7 +89,6 @@ To add your local authentication keys:
 
 	A snippet from `.gitignore` follows:
 
-			<pre class="no-copy">
 			/.buildpath
 			/.cache
 			/.metadata
@@ -103,7 +100,7 @@ To add your local authentication keys:
 			/.idea
 			/.gitattributes
 			auth.json
-			</pre>
+
 5.	Save your changes to `.gitignore` and exit the text editor.
 
 #### Next step

@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 010_welcome
-title: Requirements for Cloud
-menu_title: Requirements for Cloud
+subgroup: 020_tech
+title: Technologies and requirements
+menu_title: Technologies and requirements
 menu_order: 40
-menu_node:
+menu_node: parent
 version: 2.0
 github_link: cloud/cloud-requirements.md
 redirect from:
@@ -20,44 +20,59 @@ redirect from:
   -  /guides/v2.1/cloud/reference/git-integration.html
 ---
 
-The following requirements detail technologies, knowledges, accounts, and steps to complete when working with your Magento Commerce code and store in the Cloud.
+The following information detail technologiess, knowledges, accounts, and steps to complete when working with your {{site.data.var.<ece>}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.
 
-## Prerequisite technologies and knowledges {#cloud-req-pre}
+## Technologies and knowledges {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
 
-*	Experienced with [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
-*	Experienced with [Composer](https://getcomposer.org/doc){:target="_blank"}. For info on how we use Composer, see [Compose for Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
-*	Familiar with [Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
-*	Familiar with [Continuous Integration Best Practices](https://www.google.com/search?q=Continuous+Integration+Best+Practices){:target="_blank"}
-*	Understand [cloud architecture]({{ page.baseurl }}cloud/reference/discover-arch.html) for Magento Commerce
-*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. Develop in branches to add modules, extensions, 3rd party integrations, and configurations.
-*	Obtain [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
-*	Obtain an invite by the Account Owner or a super user to the project
+*	[Git](#git)
+*	[Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)
+*	[Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
+*	[Continuous Integration]({{ page.baseurl }}cloud/deploy/continuous-deployment.html)
+*	Architectures including [Starter]({{ page.baseurl }}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}cloud/reference/discover-arch.html) architecture
+
+Here are some advanced technologies we recommend getting familiar with:
+
+* [Fastly]({{ page.baseurl }}cloud/basic-information/cloud-fastly.html) for CDN and caching (based on Varnish)
+* [Blackfire Profiler]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html) for performance testing
+* [New Relic APM]({{ page.baseurl }}cloud/project/new-relic.html) for performance testing
+* [GitHub]({{ page.baseurl }}cloud/project/project-integrate-github.html) if you need a Git repo
 
 {% include cloud/split-db-nosupport.md %}
 
-### Git knowledge {#git}
-We assume you have a good working knowledge of Git. If not, consult the following resources:
+### What is Git {#git}
+Git is the heart of all your code in repositories. It acts as a version control system through branches from a parent. Multiple developers can work together in personal branches all merging into the same parent. You can also work on features at the same time in multiple branches.
 
-*	[Git documentation](https://git-scm.com/documentation){:target="_blank"}
-*	[Git reference](https://git-scm.com/docs){:target="_blank"}
-*	[Git tutorial](http://git-scm.com/docs/gittutorial){:target="_blank"}
-*	[Git videos](https://git-scm.com/videos){:target="_blank"}
+We hope you have a good working knowledge of Git. Need some help? Don't worry, we have you covered with some of our favorite links and information. We'll also include a Git guide to branching and developing soon.
 
-Before getting started, make sure you have a <a href="https://git-scm.com/downloads" target="_blank">Git client</a> installed on your computer to be able to interact with Magento Commerce.
+*	[Git documentation](https://git-scm.com/documentation){:target="_blank"} and [videos](https://git-scm.com/videos){:target="_blank"} from the makers of Git
+*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf){:target="_blank"} and [quick guide](http://rogerdudler.github.io/git-guide/){:target="_blank"} from Roger Dudler
+*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="_blank"} with DevForge to understand how people use the repo and commands with a fun story
+
+To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="_blank"} on your local.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, Magento Commerce adds two additional requirements:</p>
+  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, {{site.data.var.<ee>}} adds two additional requirements:</p>
   <ul><li>The <code>/</code> character isn't allowed.</li>
   	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
 </div>
 
-You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. For more information, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a>.
+You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.
+
+## Requirements to get started {#requirements}
+To get started as a developer in a {{site.data.var.<ece>}} project, you need to set up the following:
+
+*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}cloud/welcome/discover-workflow.html) plan.
+*	Get [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
+*	Get a [project invite]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-admins) by the Project Owner or a super user to the project
+*	Get [Magento authentication keys]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-keys) from the Project Owner
+
+We walk you through everything you need to do and know.
 
 ## Testing configurations {#cloud-req-test}
-Before you test any custom code in your local Magento Commerce environment, you must do all of the following:
+Before you test any custom code in your local {{site.data.var.<ee>}} environment, you must do all of the following:
 
-*	Set the database [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html#database)
+*	For Pro, set the database [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html#database)
 *	Test with the correct file permissions in [PRODUCTION mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
@@ -82,7 +97,7 @@ For development and testing, we recommend the following:
 *	Profile key flows and customizations using Blackfire.io
 
 ## License and authentication requirements
-The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) creates the initial Magento Commerce (Cloud) account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
+The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) creates the initial {{site.data.var.<ece>}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
 
 To work with and deploy stores, you need the following:
 
@@ -90,7 +105,7 @@ To work with and deploy stores, you need the following:
 *	[Project invitiation]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct##cloud-owner-admins) for contributing developers from the Account Owner or a super user
 *	Magento [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
 
-Your Magento Commerce account must *authenticate* using any of the following:
+Your {{site.data.var.<ee>}} account must *authenticate* using any of the following:
 
 *	GitHub
 *	Bitbucket

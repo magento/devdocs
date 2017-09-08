@@ -31,7 +31,7 @@ Basic interface for a response handler is [`Magento\Payment\Gateway\Response\Han
 
 Example of a simple response handler ([`app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php`]({{site.mage2100url}}app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php)):
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class PayPalDetailsHandler implements HandlerInterface
 {
     const PAYMENT_ID = 'paymentId';
@@ -71,6 +71,6 @@ class PayPalDetailsHandler implements HandlerInterface
         $payment->setAdditionalInformation(self::PAYER_EMAIL, $payPal[self::PAYER_EMAIL]);
     }
 }
-{% endhighlight %}
+```
 
 (the code sample is from Magento CE v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)

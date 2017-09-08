@@ -3,14 +3,14 @@ layout: default
 group: mrg
 subgroup: 20_Enterprise Edition
 ee_only: true
-title: Module Reference Guide
+title: Magento_Signifyd module
 menu_title: Signifyd
 menu_order: 2
 version: 2.2
+ee_only: true
 github_link: mrg/ee/Signifyd.md
 ---
 
-## Overview
 
 The Magento_Signifyd module provides integration with the [Signifyd](https://www.signifyd.com/) fraud protection system. The integration is based on the Signifyd API; see the [Signifyd API docs](https://www.signifyd.com/docs/api/#/introduction/) for technical details.
 

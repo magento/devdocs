@@ -109,7 +109,7 @@ But if some entity doesn't have implementation to fetch extension attributes, we
 
 Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might looks like this:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 use Magento\Catalog\Api\Data\ProductExtensionInterface;
 use Magento\Catalog\Api\Data\ProductInterface;
@@ -149,7 +149,7 @@ class ProductAttributesLoad
     }
 }
 
-{% endhighlight %}
+```
 
 And now need to bind our plugin to `ProductInterface`:
 
