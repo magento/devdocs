@@ -1,39 +1,35 @@
 ---
 layout: default
 group: styleguide
-subgroup: Style Guide
-title: Admin Style Guide
-menu_title: Page Grid
+subgroup: Admin Style Guide
+title: Admin Page Grids
+menu_title: Page Grids
 menu_order: 3
 menu_node:
 version: 2.0
 github_link: design-styleguide/pagegrid/pagegrid.md
 ---
 
-
-<h2 id="page-grid">Page Grid</h2>
-
-<h3 id="page">Page</h3>
+<h2 id="page">Page grid</h2>
 
 <ul>
-	<il>A 12-column fluid-width content grid is placed next to the page’s 1-column fixed-width left navigation</il>
-	<il>The 12-column grid’s minimum width spans 984px. The grid expands its layout across larger screens.</il>
-	<il>For views smaller than 984px, a page’s layout doesn’t change as the page shrinks to fit smaller screen widths.</il>
+	<li>A 12-column fluid-width content grid is placed next to the page’s 1-column fixed-width left navigation</li>
+	<li>The 12-column grid’s minimum width spans 984px. The grid expands its layout across larger screens.</li>
+	<li>For views smaller than 984px, a page’s layout doesn’t change as the page shrinks to fit smaller screen widths.</li>
 </ul>
-
 
 <img src="img/PageGrid.png">
 
 
-<h3 id="slide-out">Slide-outs Grid</h3>
+<h2 id="slide-out">Slide-out grid</h2>
 
 A Slide-out panel, similar to a modal window, breaks apart and simplifies a complex subtask that is included within a primary task.
 
 For example:
 <ul>
-	<il>On a product details form page, a user clicks "Add Attribute".</il>
-	<il>A panel slides over the parent page and shows "Add Attribute" functionality.</il>
-	<il>When the user finishes adding attributes, the panel disappears, and the user returns the 		product details form page.</il>
+	<li>On a product details form page, a user clicks "Add Attribute".</li>
+	<li>A panel slides over the parent page and shows "Add Attribute" functionality.</li>
+	<li>When the user finishes adding attributes, the panel disappears, and the user returns the 		product details form page.</li>
 </ul>
 
 <b>Layout and behavior:</b> When a panel spawns, it slides from right to left atop and almost completely over the parent page. A narrow gutter of space remains at left, showing the left navigation and a small sliver of the parent page.
@@ -49,7 +45,6 @@ Standard {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endg
 <img src="img/slideout-panel8.png">
 
 (Nested page-grid with additional padding)
-
 
 <b>Nested Slide-outs:</b> For multiple panels displayed, additional gutter space is used at left to show a small sliver of a Slide-out below another Slide-out.
 

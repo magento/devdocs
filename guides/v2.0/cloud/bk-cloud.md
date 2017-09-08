@@ -21,12 +21,12 @@ redirect_from:
   - /guides/v2.2/cloud/welcome/10000-ft-overview.html
 ---
 
-{{site.data.var.<ece>}}, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines {{site.data.var.<ee>}}, Cloud infrastructure hosting, with a few differences and added features including Git integration and key environments for development, staging, and live production.
+{{site.data.var.ece}}, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines {{site.data.var.ee}}, Cloud infrastructure hosting, with a few differences and added features including Git integration and key environments for development, staging, and live production.
 
-Code, test, and deploy across development, staging, and finally production environment for continuous integration of your store.
+Code, test, and deploy across Integration, Staging, and finally Production environment for continuous integration of your store.
 
-## {{site.data.var.<ece>}} plans {#plans}
-{{site.data.var.<ece>}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}.
+## {{site.data.var.ece}} plans {#plans}
+{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}.
 
 <table>
     <tbody>
@@ -75,7 +75,6 @@ Code, test, and deploy across development, staging, and finally production envir
     <td class="blank"></td>
     <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
     </tr>
-
 </tbody>
 </table>
 
@@ -85,21 +84,22 @@ Fully access your Magento development and deployment through a UI console or CLI
 We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration.
 
 ### Starter environments {#starter}
-For Starter plan subscriptions, you receive the following [environments]({{page.baseurl}}cloud/basic-information/starter-architecture.html):
+For Starter plan subscriptions, you receive four [environments]({{page.baseurl}}cloud/basic-information/starter-architecture.html) including the following:
 
-* **Master**: The Master branch for your project is your live store(s) and Production environment. This environment includes your active `master` Git branch, database, web server, caching, services, environment variables, and configurations. This is a read-only environment that you deploy to.
-* **Development active branches**: You have a number of active Git branches, each with a complete environment to develop and test your code. Each environment includes your active Git branch, database, web server, caching, services, environment variables, and configurations.
+* **Integration**: The ultimate developer environments, Integration provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.
+* **Staging**: We highly recommend you create an active `staging` branch as one of the three Integration environments. Create this branch directly from `master`. As code and extensions pass your tests, you can merge your Integration branches to `staging`. This Staging environment becomes your pre-Production testing environment. It includes the `staging` active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.
+* **Production**: When code is ready and tested, all code merges to `master` for deployment to the Production live site. This environment includes your active `master` Git branch, database, web server, caching, services, environment variables, and configurations. This environment includes additional services like Fastly.
 
 ### Pro environments {#pro}
 For Pro subscriptions, you receive the following [environments]({{page.baseurl}}cloud/reference/discover-arch.html):
 
-* **Integration**: The ultimate developer environment providing eight testable environments with your active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test up to eight Git branches in this interactive environment, one per active environment.
-* **Staging**: As code and extensions pass your tests, deploy the master Git branch to Staging for near-Production testing. Consider pulling your Production database into this environment for the best testing opportunity. This environment includes a database, web server, caching, services, environment variables, configurations, and Fastly for the pushed master branch of code.
-* **Production**: When code is ready, deploy the master Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
+* **Integration**: The ultimate developer environment, Integration provides eight testable environments including a `master`. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test your code before merging to `master` to push to Staging.
+* **Staging**: As code and extensions pass your tests, deploy the Integration `master` Git branch to Staging for pre-Production testing. This environment includes a database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.
+* **Production**: When code is ready and testing complete, deploy the Integration `master` Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
 
 ### Details about the cloud {#details}
-* The Starter plan includes four _active_ environments for development, testing, and production. Additional active environments are available at additional cost. Each active environment includes a database, environment variables, and configurations.
-* The Pro plan includes eight _active_ environments for development and integration. Additional active environments are available at additional cost. Each active environment includes a database, environment variables, and configurations.
+* Each plan includes Integration _active_ environments for development, testing, and integrating services. Additional active environments are available at additional cost.
+* All environments run with active Git branches of code.
 * You have an unlimited number of *inactive* Git branches.
 * You can add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.
 * We use a robust {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} build process.
@@ -111,13 +111,13 @@ You should become familiar with the following technologies:
 * [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
 *	[Composer](https://getcomposer.org/doc){:target="_blank"}
 *	[Secure Shell]({{page.baseurl}}cloud/env/environments-ssh.html) (SSH)
-* MySQL (including command-line interation)
+* MySQL (including command-line interaction)
 * Basic linux shell usage
 
-See [{{site.data.var.<ee>}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html) for details and additional technologies.
+See [Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html) for details and additional technologies.
 
 ## Where do I get started? {#getstarted}
-If you have experience with {{site.data.var.<ee>}} 2, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.<ee>}} and {{site.data.var.<ece>}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, setitng up your local, continuous deployment across environments, and going live.
+If you have experience with {{site.data.var.ee}} 2, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, settng up your local, continuous deployment across environments, and going live.
 
 If you are the Product Owner, you should complete these [onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) to give your technical staff and solution experts access.
 
@@ -156,8 +156,8 @@ If you would like to learn more about Magento 2, see the following resources:
 * **Project**: The project contains all of your code branches, environments from development to Production, and allows you to manage access and configurations. Initially only the Project Owner has access to the project. To gain access to the project, you must receive a user account, with permissions, and a Magento authentication key from the Project Owner.
 * **Project Owner**: Typically a "business user" in your business or finance organization, they are the point of contact with Magento regarding the account overall. They purchased the subscription plan, create the project, and add users to develop and deploy stores and sites.
 * **Active Environment**: An active environment is a fully accessible environment in the Integration enviornment. Each active environment provides a database, environment variables, routes, configurations, and one associated Git branch of code. You can access the Magento Admin and store to test as a merchant and customer for each of these environments, allowing you to develop custom code, add extensions, and integrate 3rd party systems in multiple environments for testing.
-* **Inactive Environment**: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for {{site.data.var.<ee>}}. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
-* **Branch**: {{site.data.var.<ee>}} is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.
+* **Inactive Environment**: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for {{site.data.var.ee}}. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
+* **Branch**: {{site.data.var.ee}} is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.
 * **Local**: Your local is a workspace for developing Magento code including added extensions and 3rd party integrations. The local is typically a Virtual Machine (VM) with an entire environment of software, packages, database, web server, and more prerequisites to support an installed Magento and cloned Git branches. We provide full details on how to [set up your local for Magento development]({{ page.baseurl }}cloud/before/before-workspace.html).
 * **Project Web Interface**: The Web Interface is a [console for accessing your project](https://accounts.magento.cloud){:target="_blank"}, user accounts, and your Integration enviornment. You can modify environment settings, environment variables, routes, and manage environments. Links (store URL, SSH, Git) are provided for the eight active environments through the active Git branches.
 
