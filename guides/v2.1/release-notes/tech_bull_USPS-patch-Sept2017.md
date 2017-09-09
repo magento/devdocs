@@ -39,7 +39,6 @@ If you are running a different shipping extension, contact your extension provid
 We've provided the following workaround to address this change the USPS API. Additionally, we will release the `SUPEE-10336 for 1.x` patch for this issue in the near future. If you implement the following workaround, note that you must undo the workaround before installing the patch. 
 
 
-
 ### Workaround for Magento 1.x 
 Follow this procedure to edit the `Usps.php` file to use the new shipping method name: 
 
@@ -62,7 +61,9 @@ Follow this procedure to edit the `Usps.php` file to use the new shipping method
 Fixes for this issue will be included in the Magento 2.1.9 and 2.0.16 releases, which are scheduled for release on September 14. We strongly recommend that you install or upgrade to these versions as soon as they are available.
 </div>
 
-If you cannot upgrade to or install Magento 2.1.9 and 2.0.16 (scheduled for release on September 14), or need a temporary workaround until these releases are available, follow this procedure:
+### Workaround for Magento 2.x
+
+Follow this procedure to edit the `Carrier.php` file to use the new shipping method name:
 
 1) Navigate to `vendor/magento/module-usps/Model/Carrier.php`. 
 
