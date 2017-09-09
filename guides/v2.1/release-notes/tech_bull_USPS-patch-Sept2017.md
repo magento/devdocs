@@ -70,7 +70,7 @@ If you cannot upgrade to or install Magento 2.1.9 and 2.0.16 (scheduled for rele
 
 3) Replace all the occurrences of `First-Class Mail Parcel` with `First-Class Package Service - Retail`.
 
-4) Save your changes to `Usps.php`. 
+4) Save your changes to `Carrier.php`. 
 
 5) Flush the Magento cache. 
 
