@@ -26,7 +26,7 @@ If you do not take action, your store will not support checkout using the First-
 
 Users of any version of Magento Open Source 1.x and Magento Commerce 1.x are affected by this change. 
 
-Users of any version of Magento Open Source and Magento Commerce earlier than 2.1.9 or 2.0.16 (expected to be released next week) are affected by this change, too. If you are running a store on any version of Magento 2.x prior to 2.1.9 or 2.0.16, you must follow the workaround detailed below.
+Users of any version of Magento Open Source and Magento Commerce earlier than 2.1.9 or 2.0.16 (expected to be released within the next week) are affected by this change, too. If you are running a store on any version of Magento 2.x prior to 2.1.9 or 2.0.16, you must follow the workaround detailed below.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you are running a different shipping extension, contact your extension provider to determine whether you're affected, and if so, the remedial action to take.
@@ -36,7 +36,7 @@ If you are running a different shipping extension, contact your extension provid
 
 ### Recommended Magento 1.x actions
 
-We've provided the following workaround to address this change the USPS API. Additionally, we will release the `SUPEE-10336 for 1.x` patch for this issue in the near future. If you implement the following workaround, note that you must undo the workaround before installing the patch. 
+We've provided the following workaround to address this change to the USPS API. Additionally, we will release the `SUPEE-10336 for 1.x` patch for this issue in the near future. If you implement the following workaround, note that you must undo the workaround before installing the patch. 
 
 
 ### Workaround for Magento 1.x 
