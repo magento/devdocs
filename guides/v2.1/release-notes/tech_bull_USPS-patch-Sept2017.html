@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.1.5 Release Notes | Magento 2 Developer Documentation</title>
+	<title>USPS Service Name Change | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/release-notes/ReleaseNotes2.1.5EE.html">
+	<link rel="canonical" href="//guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.1.5EE.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/tech_bull_USPS-patch-Sept2017.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.1.5EE.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/ReleaseNotes2.1.5EE.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/tech_bull_USPS-patch-Sept2017.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -407,7 +407,7 @@
 									
 
 
-											<li class="level3Child ee21-relnotes  active " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.5EE.html">Magento Commerce 2.1.5 Release Notes</a>
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.5EE.html">Magento Commerce 2.1.5 Release Notes</a>
 
 
 									
@@ -572,7 +572,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html">USPS Service Name Change (September 10, 2017)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html">USPS Service Name Change (September 10, 2017)</a></li>
 
 									
 
@@ -865,7 +865,7 @@
 
           
 
-          <span property="name">Magento Commerce 2.1.5 Release Notes</span>
+          <span property="name">USPS Service Name Change</span>
 
         
 
@@ -888,7 +888,7 @@
 
 	
 
-	<h1 class="page-heading">Magento Commerce 2.1.5 Release Notes</h1>
+	<h1 class="page-heading">USPS Service Name Change</h1>
 
   
 
@@ -896,115 +896,69 @@
 </section>
 
 
-			<ul id="markdown-toc">
-  <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
-  <li><a href="#install-the-magento-software" id="markdown-toc-install-the-magento-software">Install the Magento software</a></li>
-  <li><a href="#upgrade-from-an-earlier-version" id="markdown-toc-upgrade-from-an-earlier-version">Upgrade from an earlier version</a></li>
-  <li><a href="#migration-toolkits" id="markdown-toc-migration-toolkits">Migration toolkits</a></li>
-  <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
-</ul>
+			<p><em>Technical Bulletin published on September 10, 2017.</em></p>
 
-<p>We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.5.</p>
+<p>On September 1, USPS changed their First-Class Mail Parcel Service to First-Class Package Service – Retail. Because the First-Class Mail Parcel is no longer available after September 1,  Magento 1.x and 2.x merchants offering this service must change this service name in the <code class="highlighter-rouge">Usps.php</code> file as soon as possible.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.</p>
+<p>If you do not take action, your store will not support checkout using the First-Class Package Service - Retail mailing option.</p>
+
+<h3 id="who-is-affected-by-this-issue">Who is affected by this issue?</h3>
+
+<p>Users of any version of Magento Open Source 1.x and Magento Commerce 1.x are affected by this change.</p>
+
+<p>Users of any version of Magento Open Source and Magento Commerce earlier than 2.1.9 or 2.0.16 (expected to be released within the next week) are affected by this change, too. If you are running a store on any version of Magento 2.x prior to 2.1.9 or 2.0.16, you must follow the workaround detailed below.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you are running a different shipping extension, contact your extension provider to determine whether you’re affected, and if so, the remedial action to take.</p>
 </div>
 
-<p>Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?</p>
+<h3 id="recommended-magento-1x-actions">Recommended Magento 1.x actions</h3>
 
-<h2 id="system-requirements">System requirements</h2>
-<p>Our technology stack is built on <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and MySQL. For more information, see
-<a href="/guides/v2.1/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
+<p>We’ve provided the following workaround to address this change to the USPS API. Additionally, we will release the <code class="highlighter-rouge">SUPEE-10336 for 1.x</code> patch for this issue in the near future. If you implement the following workaround, note that you must undo the workaround before installing the patch.</p>
 
-<div>
+<h3 id="workaround-for-magento-1x">Workaround for Magento 1.x</h3>
+<p>Follow this procedure to edit the <code class="highlighter-rouge">Usps.php</code> file to use the new shipping method name:</p>
 
-  <h2 id="install-the-magento-software">Install the Magento software</h2>
-  <p>See one of the following sections:</p>
+<p>1) Navigate to <code class="highlighter-rouge">app/code/core/Mage/Usa/Model/Shipping/Carrier/Usps.php</code>.</p>
 
-  <ul>
-    <li><a href="#install-rc-composer">Get Magento Commerce using Composer</a></li>
-    <li><a href="#get-zip">Get Magento Commerce using a compressed archive</a></li>
-    <li><a href="#install-complete">Complete the installation</a></li>
-  </ul>
+<p>2) Search for the string <code class="highlighter-rouge">First-Class Mail Parcel</code>. This files by default contains two occurrences of this string.</p>
 
-  <h3 id="install-rc-composer" class="no_toc">Get Magento Commerce using Composer</h3>
+<p>3) Replace all the occurrences of <code class="highlighter-rouge">First-Class Mail Parcel</code> with <code class="highlighter-rouge">First-Class Package Service - Retail</code>.</p>
 
-  <p>Magento Commerce (formerly Enterprise Edition) is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+<p>4) Save your changes to <code class="highlighter-rouge">Usps.php</code>.</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
-</code></pre>
-  </div>
+<p>5) Flush the Magento cache.</p>
 
-  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
+<p><strong>If you’ve implemented the temporary workaround, you’ll need to delete it before you can install the patch.</strong></p>
 
-  <p>For example, to install 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+<h3 id="recommended-magento-2x-actions">Recommended Magento 2.x actions</h3>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
-</code></pre>
-  </div>
-
-  <h3 id="get-zip" class="no_toc">Get Magento Commerce using a compressed archive</h3>
-
-  <div>
-
-    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
-
-    <ul>
-      <li>Magento Commerce software only</li>
-      <li>Magento Commerce software with sample data (designed to help you learn Magento faster)</li>
-    </ul>
-
-    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
-
-    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
-
-    <p>To get the Magento Commerce archive:</p>
-
-    <ol>
-      <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
-      <li>Log in with your Magento user name and password.</li>
-      <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-      <li>In the right pane, click <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
-      <li>
-        <p>Follow the instructions on your screen to complete the Magento Commerce download:</p>
-
-        <ul>
-          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
-        </ul>
-      </li>
-      <li>Transfer the installation package to your development system.</li>
-    </ol>
-
-    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
-
-    <p>After you get the Commerce software:</p>
-
-    <ol>
-      <li><a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
-      <li>
-        <p>Install the software:</p>
-
-        <ul>
-          <li><a href="/guides/v2.1/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
-          <li><a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Command line</a></li>
-        </ul>
-      </li>
-    </ol>
-
-    <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
-    <p>To upgrade to Magento Commerce 2.1 from an earlier version, see <a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
-
-    <h2 id="migration-toolkits">Migration toolkits</h2>
-    <p>The <a href="/guides/v2.1/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.1/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
-
-    <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
-
-    <h2 id="credits">Credits</h2>
-    <p>Dear community members, thank you for your suggestions and bug reports.</p>
-
-  </div>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Fixes for this issue will be included in the Magento 2.1.9 and 2.0.16 releases, which are scheduled for release on September 14. We strongly recommend that you install or upgrade to these versions as soon as they are available.</p>
 </div>
+
+<h3 id="workaround-for-magento-2x">Workaround for Magento 2.x</h3>
+
+<p>Follow this procedure to edit the <code class="highlighter-rouge">Carrier.php</code> file to use the new shipping method name:</p>
+
+<p>1) Navigate to <code class="highlighter-rouge">vendor/magento/module-usps/Model/Carrier.php</code>.</p>
+
+<p>2) Search for the string <code class="highlighter-rouge">First-Class Mail Parcel</code>. This file by default contains the two occurrences of this string.</p>
+
+<p>3) Replace all the occurrences of <code class="highlighter-rouge">First-Class Mail Parcel</code> with <code class="highlighter-rouge">First-Class Package Service - Retail</code>.</p>
+
+<p>4) Save your changes to <code class="highlighter-rouge">Carrier.php</code>.</p>
+
+<p>5) Flush the Magento cache.</p>
+
+<h3 id="more-information">More information</h3>
+
+<p>See <a href="http://www.pitneybowes.com/us/blog/usps-announces-september-rate-change-first-class-mail-parcels.html">USPS® Announces September Rate Change, Reclassification for First-Class Mail Parcels</a> for more information on this and other recent USPS rate and classification changes.</p>
+
+<h3 id="acknowlegments">Acknowlegments</h3>
+
+<p>Thanks to @shipperhq for bringing this issue to our attention!</p>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1015,14 +969,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/ReleaseNotes2.1.5EE.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/ReleaseNotes2.1.5EE.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
