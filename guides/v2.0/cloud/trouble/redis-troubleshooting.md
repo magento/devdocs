@@ -49,11 +49,11 @@ See the following instructions based on your {{site.data.var.ece}} version:
 <td><p>Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.</p>
 <p>According to your {{site.data.var.ece}} version, verify the following `magento/magento-cloud-configuration` version displays in `composer.lock` after the composer update completes:</p>
 <ul>
-<li>2.1.4: magento/magento-cloud-configuration 101.4.5</li>
-<li>2.1.5: magento/magento-cloud-configuration 101.5.4</li>
-<li>2.1.6: magento/magento-cloud-configuration 101.6.6</li>
-<li>2.1.7: magento/magento-cloud-configuration 101.7.6</li>
-<li>2.1.8: magento/magento-cloud-configuration 101.8.1</li>
+<li>2.1.4: `magento/magento-cloud-configuration 101.4.5`</li>
+<li>2.1.5: `magento/magento-cloud-configuration 101.5.4`</li>
+<li>2.1.6: `magento/magento-cloud-configuration 101.6.6`</li>
+<li>2.1.7: `magento/magento-cloud-configuration 101.7.6`</li>
+<li>2.1.8: `magento/magento-cloud-configuration 101.8.1`</li>
 </ul>
 <p>For details, see [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 </td>
