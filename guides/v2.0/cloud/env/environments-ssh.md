@@ -4,7 +4,7 @@ group: cloud
 subgroup: 120_env
 title: SSH into your environment
 menu_title: SSH into your environment
-menu_order: 4
+menu_order: 15
 menu_node:
 version: 2.0
 github_link: cloud/env/environments-ssh.md

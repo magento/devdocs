@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/reference/cli-ref-topic.md
 ---
 
-The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. This reference lists all available commands, and a list of commonly used commands, for Magento cloud.
+The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. This reference lists all available commands, and a list of commonly used commands, for {{site.data.var.ece}}.
 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -30,7 +30,7 @@ All listed commands include only the required information and options. These com
 :  Push an empty commit to force a redeployment. Some actions, like adding a user for example, don't result in deployment.
 
 `magento-cloud login`
-:	Log in to the project
+:	Log in to the project.
 
 `magento-cloud project:get <project ID> <directory> -e <environment ID>`
 :	Clone a project to a directory. To clone the `master` environment, omit `-e <environment ID>`.
@@ -43,7 +43,7 @@ All listed commands include only the required information and options. These com
 </div>
 
 `magento-cloud environment:branch <name> <parent branch>`
-:	Create a new branch; the environment has both a name and an ID
+:	Create a new branch; the environment has both a name and an ID.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.
@@ -52,19 +52,19 @@ An environment name _cannot_ include characters reserved for your Linux shell or
 </div>
 
 `magento-cloud environment:checkout <environment ID>`
-:	Check out an existing environment
+:	Check out an existing environment.
 
 `magento-cloud environment:merge -p <project ID> -e <environment ID>`
 :	Merge changes in this environment with its parent.
 
 `magento-cloud environment:synchronize -p <project ID> -e <environment ID> {code|data}`
-:	Synchronize (that is, `git pull`) code and/or data from the parent to this environment
+:	Synchronize (that is, `git pull`) code and/or data from the parent to this environment.
 
 `magento-cloud variable:list`
-:	List variables in this environment
+:	List variables in this environment.
 
 `magento-cloud variable:set <name> <value>`
-:	Set a value for an environment variable in this environment
+:	Set a value for an environment variable in this environment.
 
 ## Display all commands {#all}
 

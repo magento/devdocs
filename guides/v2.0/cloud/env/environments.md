@@ -10,75 +10,73 @@ version: 2.0
 github_link: cloud/env/environments.md
 ---
 
-## Overview of environments {#cloud-env-over}
-A Magento Enterprise Cloud *environment* consists of a running Magento instance. It includes your Magento application (codebase and files) and the services required to run it (*Services* include the web server, database, search engine, caching server, and so on).
+Environments in {{site.data.var.ece}} include containers with applications, services, a database, and much more to provide a complete system for your Magento application (codebase and files). For Integration, you have a number of active environments for associated active Git branches of code. The number of environments differs between Starter and Pro plans.
 
-Each environment is a branch of the `master` environment (which is your live environment). Every Cloud project has at least one environment, the `master`, which cannot be removed or renamed. You can create up to 6 additional environments. Typically, these environments are used for development and testing.
+## Environments and branches {#env-branches}
+Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. Each environment has an associated active Git branch of code.
 
-If you use GitHub, every pull request or branch can be deployed into its own environment on Magento Enterprise Cloud.
+* For [Pro]({{page.baseurl}}cloud/welcome/discover-workflow.html), we recommend branching from Integration `master`.
+* For [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html), we recommend creating a `staging` branch, then creating additional code branches from `staging`.
 
-## Master environment
-Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. The master environment is your live, production environment.
+We recommend using GitHub for maintaining your code branches.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Your project must have a <code>master</code> branch; it won't function properly without one.</p>
 </div>
 
+You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or [Magento Cloud CLI]({{page.baseurl}}cloud/reference/cli-ref-topic.html) commands.
 
-## Inactive environments {#cloud-env-inactive}
-An *inactive* environment is an environment which doesn't run any service. You can have any number of inactive environments.
 
-By default, when you push a new branch via Git, Magento Enterprise Cloud automatically creates an inactive environment. It's referred to as *inactive* because it isn't a working environment.
+## Active and inactive branches {#active-inactive}
+You have access to a limited number of _active_ Git branches per plan. When you push this branch, an active environment is provisioned as a container, updating when you push per the configurations of .magento.app.yaml, services.yaml, and routes.yaml.
 
-You can use the following command to create an active environment from a parent environment:
+You begin by creating active branches and pushing code. You can use the following command to create an active branch from a parent branch:
 
 	magento-cloud environment:branch
 
-You can use the following command to create an active environment from an inactive one:
+You have unlimited inactive Git branches. These branches do not receive an environment until it is made active. You can use the following command to activate an inactive branch:
 
 	magento-cloud environment:activate
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This command will deploy the web server and the services from the parent environment.</p>
-</div>
+When you activate an inactive branch, or create a new active branch, the command deploys a new active environment with a web server and services.
 
-## Environment hierarchy {#cloud-env-hier}
-The `master` environment is ultimately the parent of all other environments. Every time you branch it or any other environment, you create a parent-child relationship between them.
+## Branch hierarchy {#hierarchy}
+For Starter and Pro plans, the `master` environment is ultimately the source or parent for all code in {{site.data.var.ece}}.
 
-Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
+* For Starter, `master` is your Production environment and branch. You create branches from `master` as your Integration environment.
+* For Pro, you have a `master` branch in Integration for creating your code branches. You deploy this branch to a matching `master` branch in Staging and Production environments.
 
-Likewise, a child can merge code with its parent, which ends up redeploying the parent environment with the code changes of the child environment.
+In your Integration, you have a number of branches and environments available to you per plan. When you branch from `master`, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
 
-Child environments are typically used for development, staging, and testing.
+When you merge code from a child branch to its parent, the parent environment is redeployed with the code changes of the child environment. Child environments are typically used for development, staging, and testing.
 
-## Workflows {#cloud-env-work}
-{{site.data.var.ece}} imposes no rules on how you use branches and environments. You can use whatever workflow makes sense to you, consistent with the workflow you already use.
+## Branches and development workflows {#workflow}
+{{site.data.var.ece}} imposes no rules on how you use branches and environments. You can use any branching methodology or development workflow you like for Starter and Pro plans. We do recommend specific formats
 
-For example, suppose your Agile development team needs a branch (that is, environment) for every story in a sprint and at the end of the sprint, those branches merge to another branch for testing.
+For **Starter plan**, the following diagram details the branch and environment relationships:
 
-Following is one way to set up the environments:
+![High-level view of Starter project]({{ site.baseurl }}common/images/cloud_arch-starter.png)
 
-	Master
-		Sprint-X
-		   Story1
-		   Story2
-		   Story3
-		   QA
+For **Pro plan**, the following diagram details the branch and environment relationships:
 
-In this example, the following can happen:
+![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
 
-1.	To start, a project administrator either:
+### Example development process {#example}
+For example, your Agile development team creates three branches to work on three stories in a sprint. At the end of the sprint, they merge into a single branch for testing.
 
-	*	Creates the Sprint-X environments and grants contributor privileges to developers to create the story environments.
-	*	Creates all the environments and grants contributor privileges to developers.
+1.	To start, a Project Admin helps create the branches or gives priviledges to developers:
 
-2.	When the sprint is finished (or when the story is closed), the administrator can review the work by accessing the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} of the feature environment. The new feature is then merged back to the Sprint-X environment.
-3.	The administrator synchronizes Sprint-X with QA so all features can be tested.
-3.	The administrator backs up the live site, then merges the Sprint-X environment into the `master` environment, making it live.
-4.	The administrator synchronizes the next sprint's environment with data from the `master` environment to repeat and continue the development process.
+	*	Create the Sprint-X environments and grants contributor privileges to developers to create the story environments.
+	*	Create all the environments and grants contributor privileges to developers.
+2.	When the sprint is finished (or when the story is closed), the Project Admin and developers can review the code and test the work directly in an active environment. When accepted, all branches are merged for testing together.
+3.	Complete testing of all features and code merged into a single environment.
+4.	Depending on your plan and environment set up, deploy to Staging for pre-production testing.
+5.	Deploy to production when complete to go live.
 
-### Commands used in the example
-The following table lists the commands used in the preceding example.
+When the code is live, make the branches used to work on the sprint in Integration as inactive. This frees up active environments and branch slots for the next sprint of work.
+
+## Helpful CLI commands {#commands}
+The following table lists the commands used in the preceding example. For a full list of all CLI commands, see [Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html).
 
 <table>
 	<tbody>
@@ -108,4 +106,9 @@ The following table lists the commands used in the preceding example.
 
 #### Related topics
 *	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
+*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
+*	[SSH into environment]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
 *	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)

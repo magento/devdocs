@@ -4,10 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Overview of environment variables
 menu_title: Overview of environment variables
-menu_order: 91
+menu_order: 20
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: vars
 version: 2.0
 github_link: cloud/env/environment-vars_over.md
 ---
@@ -66,8 +64,9 @@ To list environment variables using Magento Cloud CLI:
 3. List all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 #### Related topics
-*   [Magento Cloud environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*   [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*   [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*   [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+* [Magento Cloud environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
+* [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
+* [Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
 *	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

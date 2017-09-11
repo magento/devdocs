@@ -4,10 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Magento Commerce (Cloud) environment variables
 menu_title: Magento Commerce (Cloud) environment variables
-menu_order: 93
+menu_order: 30
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: vars
 version: 2.0
 github_link: cloud/env/environment-vars_cloud.md
 ---
@@ -57,7 +55,9 @@ For example, we use the **MAGENTO_CLOUD_RELATIONSHIPS** variable to retrieve env
 {% endhighlight %}
 
 #### Related topics
-*   [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*   [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*   [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-*   [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+* [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
