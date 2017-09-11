@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up Elasticsearch | Magento 2 Developer Documentation</title>
+	<title>Redis troubleshooting | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/project/project-conf-files_services-elastic.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/trouble/redis-troubleshooting.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/redis-troubleshooting.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/redis-troubleshooting.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/trouble/redis-troubleshooting.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -748,7 +748,7 @@
 									
 
 
-											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
 
 
 									
@@ -1208,7 +1208,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/trouble/redis-troubleshooting.html">Redis troubleshooting</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/cloud/trouble/redis-troubleshooting.html">Redis troubleshooting</a></li>
 
 									
 
@@ -1576,7 +1576,7 @@
 
           
 
-          <span property="name">Set up Elasticsearch</span>
+          <span property="name">Redis troubleshooting</span>
 
         
 
@@ -1599,7 +1599,7 @@
 
 	
 
-	<h1 class="page-heading">Set up Elasticsearch</h1>
+	<h1 class="page-heading">Redis troubleshooting</h1>
 
   
 
@@ -1607,103 +1607,88 @@
 </section>
 
 
-			<p><a href="https://www.elastic.co" target="_blank">Elasticsearch</a> is an open source product that enables you to take data from any source, any format, and search, and visualize it in real time.</p>
+			<p>Redis is an optional backend cache solution for Magento Commerce (Cloud). This information helps you troubleshoot errors and issues you encounter with Redis. These issues and resolutions affect Starter and Pro plans.</p>
 
-<ul>
-  <li>Elasticsearch performs quick and advanced searches on products in the product catalog</li>
-  <li>Elasticsearch analyzers support multiple languages</li>
-  <li>Supports stop words and synonyms</li>
-  <li>Indexing does not impact customers until reindex is completed</li>
-</ul>
+<h2 id="update">Redis error on deploy</h2>
+<p>You may receive the following error when deploying your Git branch:</p>
 
-<p>We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7.</p>
-
-<p><img src="/common/images/2.1-only_small.png" alt="This feature is supported in Magento 2.1 only" /> We support Elasticsearch for all environments starting with Magento Commerce (Cloud) 2.1 and later.</p>
-
-<p>We recommend installing and configuring Elasticsearch in all of your environments: Integration, Staging, and Production. All configuration settings should be in the following files in your branch then deployed. The following sections provide configuration information and supported plugins.</p>
-
-<p>For full documentation to install and configure Elasticsearch per web server, see <a href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Elasticsearch information</a>.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you’re upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in <a href="/guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es">the 2.1.3 Release Notes</a>.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Redis::pipeline(): Already in pipeline mode in /var/www/html/magento2ce/vendor/colinmollenhour/credis/Client.php on line 1037
+</code></pre>
 </div>
 
-<h2 id="relationship">Relationship</h2>
-<p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.2/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
-
-<p>The following is the Elasticsearch information:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s2">"elasticsearch"</span> : <span class="o">[</span>
-      <span class="o">{</span>
-         <span class="s2">"host"</span> : <span class="s2">"elasticsearch.internal"</span>,
-         <span class="s2">"ip"</span> : <span class="s2">"250.0.97.96"</span>,
-         <span class="s2">"scheme"</span> : <span class="s2">"http"</span>,
-         <span class="s2">"port"</span> : <span class="s2">"9200"</span>
-      <span class="o">}</span>
-   <span class="o">]</span>,</code></pre></figure>
-
-<h2 id="configure">Configure service settings</h2>
-<p>Configure the Elasticsearch version and additional values in <code class="highlighter-rouge">.magento/services.yaml</code>. The following example is the default version setting for Elasticsearch.</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">elasticsearch</span><span class="pi">:</span>
-   <span class="s">type</span><span class="pi">:</span> <span class="s">elasticsearch:1.7</span>
-   <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span></code></pre></figure>
-
-<p>To configure the relationships for environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
-    <span class="s">elasticsearch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">elasticsearch:elasticsearch"</span></code></pre></figure>
-
-<p>Merge and deploy the code to set the configurations for Elasticsearch.</p>
-
-<h2 id="add-elasticsearch-to-your-site">Add Elasticsearch to your site</h2>
-<p>Add the service in a configuration file of your application. For example:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">&lt;?php</span>
-<span class="s">if (isset($_ENV['MAGENTO_CLOUD_RELATIONSHIPS'])) {</span>
-  <span class="s">$relationships = json_decode(base64_decode($_ENV['MAGENTO_CLOUD_RELATIONSHIPS']), TRUE);</span>
-
-  <span class="s">foreach ($relationships['elasticsearch'] as $endpoint) {</span>
-    <span class="s">$container-&gt;setParameter('elasticsearch_host', $endpoint['host']);</span>
-    <span class="s">$container-&gt;setParameter('elasticsearch_port', $endpoint['port']);</span>
-  <span class="s">}</span>
-<span class="err">}</span></code></pre></figure>
-
-<p>When you create an index on Elasticsearch, you should not specify <code class="highlighter-rouge">number_of_shards</code> and <code class="highlighter-rouge">number_of_replicas</code> settings in your Elasticsearch API call. These values will be set automatically based on available resources.</p>
-
-<h2 id="plugins">Supported plugins</h2>
-<p>The following are supported Elasticsearch plugins for version 2.4:</p>
+<p>Your Cloud systems and services have been updated to the latest Redis and PHP-Redis 3.1.3. Due to the upgrade, we have provided a patch to upgrade your PHP-Redis code to 3.1.3. You just need to <a href="/guides/v2.2/cloud/project/project-patch.html">patch and test</a> this general patch according to your Magento Commerce (Cloud) version.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">analysis-icu</code>: ICU Analysis Plugin, Support ICU Unicode text analysis</li>
-  <li><code class="highlighter-rouge">analysis-kuromoji</code>: Japanese (kuromoji) Analysis Plugin, Japanese language support</li>
-  <li><code class="highlighter-rouge">analysis-phonetic</code>: Phonetic Analysis Plugin, Phonetic analysis</li>
-  <li><code class="highlighter-rouge">analysis-smartcn</code>: Smart Chinese Analysis Plugins</li>
-  <li><code class="highlighter-rouge">analysis-stempel</code>: Stempel Polish Analysis Plugin</li>
-  <li><code class="highlighter-rouge">cloud-aws</code>: AWS Cloud Plugin, allows storing indices on AWS S3</li>
-  <li><code class="highlighter-rouge">cloud-azure</code>: Azure Cloud Plugin</li>
-  <li><code class="highlighter-rouge">cloud-gce</code>: GCE Cloud Plugin</li>
-  <li><code class="highlighter-rouge">delete-by-query</code>: Support for deleting documents matching a given query</li>
-  <li><code class="highlighter-rouge">discovery-multicast</code>: Ability to form a cluster using TCP/IP multicast messages</li>
-  <li><code class="highlighter-rouge">lang-javascript</code>: Javascript language plugin, allows the use of Javascript in Elasticsearch scripts</li>
-  <li><code class="highlighter-rouge">lang-python</code>: Python language plugin, allows the use of Python in Elasticsearch scripts</li>
-  <li><code class="highlighter-rouge">mapper-attachments</code>: Mapper attachments plugin for indexing common file types</li>
-  <li><code class="highlighter-rouge">mapper-murmur3</code>: Murmur3 mapper plugin for computing hashes at index-time</li>
-  <li><code class="highlighter-rouge">mapper-size</code>: Size mapper plugin, enables the <code class="highlighter-rouge">_size</code> meta field</li>
+  <li>Use an Integration branch to add the code through your local.</li>
+  <li>Patch using the CLI command <code class="highlighter-rouge">composer update</code> in a terminal.</li>
+  <li>Push your code to deploy and test in an Intergration environment.</li>
+  <li>After testing completes, deploy your code to Staging and Production environments. For more information on deployments, see <a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a>.</li>
 </ul>
 
-<p>For full documentation on these plugins, see <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html" target="_blank">Elasticsearch plugin documentation</a>.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We strongly recommend patching to update your PHP-Redis version. Your build and deploy will continue to encounter issues until updated to PHP-Redis 3.1.3.</p>
+</div>
 
-<p>You can add the plugins through the <code class="highlighter-rouge">.magento/services.yaml</code> file using the codes above. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:</p>
+<p>See the following instructions based on your Magento Commerce (Cloud) version:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">elasticsearch</span><span class="pi">:</span>
-   <span class="s">type</span><span class="pi">:</span> <span class="s">elasticsearch:1.7</span>
-   <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span>
-   <span class="s">configuration</span><span class="pi">:</span>
-    <span class="s">plugins</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">analysis-icu</span>
-      <span class="pi">-</span> <span class="s">lang-python</span></code></pre></figure>
+<table>
+<tbody>
+<tr>
+<th>Version</th>
+<th>Action</th>
+</tr>
+<tr>
+<td>2.0.x</td>
+<td>Apply the [patch and test](/guides/v2.2/cloud/project/project-patch.html) the deployment in your Integration environment.</td>
+</tr>
+<tr>
+<td>2.1.0 – 2.1.3</td>
+<td>Apply the [patch and test](/guides/v2.2/cloud/project/project-patch.html) the deployment in your Integration environment.</td>
+</tr>
+<tr>
+<td>2.1.4 and later merchants</td>
+<td><p>Apply the [patch and test](/guides/v2.2/cloud/project/project-patch.html) the deployment in your Integration environment.</p>
+<p>According to your Magento Commerce (Cloud) version, verify the following `magento/magento-cloud-configuration` version displays in `composer.lock` after the composer update completes:</p>
+<ul>
+<li>2.1.4: `magento/magento-cloud-configuration 101.4.5`</li>
+<li>2.1.5: `magento/magento-cloud-configuration 101.5.4`</li>
+<li>2.1.6: `magento/magento-cloud-configuration 101.6.6`</li>
+<li>2.1.7: `magento/magento-cloud-configuration 101.7.6`</li>
+<li>2.1.8: `magento/magento-cloud-configuration 101.8.1`</li>
+</ul>
+<p>For details, see [Composer](/guides/v2.2/cloud/reference/cloud-composer.html).
+&lt;/td&gt;
+&lt;/tr&gt;
+<tr>
+<td>2.2</td>
+<td>This PHP-Redis upgrade is already included. v2.2 is coming soon for Magento Commerce (Cloud).</td>
+</tr>
+&lt;/tbody&gt;
+&lt;/table&gt;
 
+## Redis and static-content deployment {#static-content}
+This information helps if you receive a number of Redis connection errors in your production logs during static content deployment.
+
+    Error: RedisException: read error on connection
+
+To resolve, we recommend enabling and using Configuration Management options to move your static content deployment from the Deploy to Build phase.
+
+1. Remove all static content first from `pub/static/frontend/*` and also from `var/view_preprocessed`.
+2. Enable and use the recommended [`scd-dump` command](/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm) for Configuration Management (Pipeline Deployment). Remember, you will need to add and push the file generated to Git: `config.local.php` for 2.1.X or `config.php` for 2.2.X.
+
+If you continue to encounter these issues after using this method of deployment, you can attempt the following work-around. However, this method will dramatically increase the static content deployment time as it reduces deployment to a single thread.
+
+1. Remove all static content first from `pub/static/frontend/*` and also from `var/view_preprocessed`.
+2. SSH to the server after deployment completes.
+3. Run the following command to reduce deployment threads: `php bin/magento setup:static-content:deploy -j 1`
+
+You can also set an environment variable for single thread deployment by default: `STATIC_CONTENT_THREADS = 1`.
+
+#### Related topics
+* [Set up the Redis service](/guides/v2.2/cloud/project/project-conf-files_services-redis.html)
+* [Patch and test Magento Commerce (Cloud)](/guides/v2.2/cloud/project/project-patch.html)
+* [Composer](/guides/v2.2/cloud/reference/cloud-composer.html)
+</p></td></tr></tbody></table>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1714,14 +1699,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-conf-files_services-elastic.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/redis-troubleshooting.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/project/project-conf-files_services-elastic.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/trouble/redis-troubleshooting.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
