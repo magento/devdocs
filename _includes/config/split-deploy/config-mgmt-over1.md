@@ -1,8 +1,8 @@
 <div markdown="1">
 
-*	_Shared configuration_, which is all settings that are neither system-specific nor sensitive. 
+*	_Shared configuration_, which is all settings that are neither system-specific nor sensitive.
 
-	Shared settings are settings you want to be consistent on development and production systems. Set the shared configuration in the Magento Admin in your development (or Magento Enterprise Cloud Edition _integration_) system.
+	Shared settings are settings you want to be consistent on development and production systems. Set the shared configuration in the Magento Admin in your development (or {{site.data.var.ece}} _integration_) system.
 
 	The shared configuration file, `app/etc/config.php`, should be included in source control so it can be shared between development, build, and production systems.
 

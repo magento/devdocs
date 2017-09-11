@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 100_project
-title: Snapshots and Backup management
-menu_title: Snapshots and Backup management
+title: Snapshots and backup management
+menu_title: Snapshots and backup management
 menu_order: 25
 menu_node:
 version: 2.0
@@ -13,7 +13,7 @@ redirect_from:
   - /guides/v2.1/cloud/admin/admin-snap.html
 ---
 
-You can back up and restore an environment at any time using a *snapshot*. Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.
+You can back up and restore an environment at any time using a snapshot. Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.
 
 A *snapshot* is a complete backup of an environment. It includes all
 persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.

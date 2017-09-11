@@ -10,9 +10,14 @@ version: 2.0
 github_link: cloud/onboarding/onboarding-tasks.md
 ---
 
-After your company purchases a subscription plan for {{site.data.var.ece}}, the only person who initially has access to the project and code is the *Project Owner*&mdash;the person who purchased the software. The Project Owner is typically a "business user" in your business or finance organization and is your point of contact with Magento regarding the account overall. The owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
+After your company purchases a subscription plan for {{site.data.var.ece}}, the only person who initially has access to the project and code is the Project Owner.
 
 To quickly onboard your project to start developing your site and going live, you need to complete specific set up steps and onboarding tasks. Typically, you need the Project Owner to start. Technical Admin(s) with super user access can continue.
+
+## Project access and users {#users}
+The _Project Owner_ is typically a "business user" in your business or finance organization that purchased the subscription and is your point of contact with Magento regarding the account overall. The owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
+
+Typically, the only user the Project Owner must create is the _Technical Admin_. This user should have a user account with the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments. Typically, the Technical Admin is a developer, consultant, a [Magento Solution Partner](https://magento.com/find-a-partner){:target="_blank"}, or yourself.
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the first steps:
@@ -48,9 +53,16 @@ To access and manage your project environments, the Project Owner needs to:
 
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
-For detailed instructions for setting up environments, see [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html).
+For detailed instructions for setting up environments, see [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html). For more information on the interface, see [Manage your project]({{page.baseurl}}cloud/project/projects.html).
 
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}common/images/cloud_project-access.png)
+
+## Access your Magento Admin panel {#admin}
+When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. URLs to access your store are available through [Project Web Interface]({{page.baseurl}}cloud/project/projects.html).
+
+For the store URL, add /admin at the end. A login panel displays. We provide an general Admin account to initially login. The default username is admin and password is admin12. You should immediately change the password.
+
+These values are controlled through the Admin Panel and the environment application variables for ADMIN_USERNAME and ADMIN_PASSWORD. For details, see [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
 
 ## Coming soon: Onboarding Portal {#portal}
 <!-- (http://cloud.magento.com){:target="_blank"} -->
