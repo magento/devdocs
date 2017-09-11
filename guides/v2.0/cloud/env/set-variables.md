@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/env/set-variables.md
 ---
 
-## Tutorial: change the Magento Admin URI, user name, and password {#cloud-env-vars-magento-admin-tut}
 For security reasons, we strongly recommend you change the Magento Admin URI, administrator user name, and the administrator's password. This makes it harder for someone else to log in to the Magento Admin and change settings.
 
 Environment variables are inherited from the parent environment to child environments. You should make these changes in the `master` environment so all other environments start with the same values.
@@ -40,11 +39,11 @@ To change the Admin URI and administrator password:
 
     The simplest way to do that is to use the environment routes that display when you redeploy the `master` branch. An example follows:
 
-        Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
+        Waiting for the activity ksvciptxnzfto (Bob Smith added variable ADMIN_URL):
             Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
             Slug already built for this tree id, skipping.
 
-        Re-deploying environment k4wtvm7ogzr5s-master.
+        Re-deploying environment k4wtvm7zogr5s-master.
         Environment configuration:
             mymagento (type: php:7.0, size: S, disk: 2048)
             mysql (type: mysql:10.0, size: S, disk: 2048)
@@ -52,10 +51,10 @@ To change the Admin URI and administrator password:
             solr (type: solr:4.10, size: S, disk: 1024)
 
         Environment routes:
-            http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
-            https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+            http://master-k4wtvm7zogr5s.us.magentosite.cloud/ is served by application `mymagento`
+            https://master-k4wtvm7zogr5s.us.magentosite.cloud/ is served by application `mymagento`
 
-    In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_g8v10` and log in using the user name `admin` and password `admin_A456`
+    In the preceding example, go to `http://master-k4wtvm7zogr5s.us.magentosite.cloud/magento_g8v10` and log in using the user name `admin` and password `admin_A456`
 8.  (Optional.) Create an environment and list the environment variables.
 
         magento-cloud environment:branch <new branch name>
