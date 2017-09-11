@@ -30,40 +30,18 @@ We strongly recommend patching to update your PHP-Redis version. Your build and 
 
 See the following instructions based on your {{site.data.var.ece}} version:
 
-<table>
-<tbody>
-<tr>
-<th>Version</th>
-<th>Action</th>
-</tr>
-<tr>
-<td>2.0.x</td>
-<td>Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.</td>
-</tr>
-<tr>
-<td>2.1.0 – 2.1.3</td>
-<td>Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.</td>
-</tr>
-<tr>
-<td>2.1.4 and later merchants</td>
-<td><p>Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.</p>
-<p>According to your {{site.data.var.ece}} version, verify the following `magento/magento-cloud-configuration` version displays in `composer.lock` after the composer update completes:</p>
-<ul>
-<li>2.1.4: `magento/magento-cloud-configuration 101.4.5`</li>
-<li>2.1.5: `magento/magento-cloud-configuration 101.5.4`</li>
-<li>2.1.6: `magento/magento-cloud-configuration 101.6.6`</li>
-<li>2.1.7: `magento/magento-cloud-configuration 101.7.6`</li>
-<li>2.1.8: `magento/magento-cloud-configuration 101.8.1`</li>
-</ul>
-<p>For details, see [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
-</td>
-</tr>
-<tr>
-<td>2.2</td>
-<td>This PHP-Redis upgrade is already included. v2.2 is coming soon for {{site.data.var.ece}}.</td>
-</tr>
-</tbody>
-</table>
+* 2.0.x: Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.
+* 2.1.0 – 2.1.3: Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.
+* 2.1.4 and later merchants: Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment. According to your {{site.data.var.ece}} version, verify the following `magento/magento-cloud-configuration` version displays in `composer.lock` after the composer update completes:
+
+  * 2.1.4: `magento/magento-cloud-configuration 101.4.5`
+  * 2.1.5: `magento/magento-cloud-configuration 101.5.4`
+  * 2.1.6: `magento/magento-cloud-configuration 101.6.6`
+  * 2.1.7: `magento/magento-cloud-configuration 101.7.6`
+  * 2.1.8: `magento/magento-cloud-configuration 101.8.1`
+* 2.2: his PHP-Redis upgrade is already included. v2.2 is coming soon for {{site.data.var.ece}}.
+
+For details, see [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
 ## Redis and static-content deployment {#static-content}
 This information helps if you receive a number of Redis connection errors in your production logs during static content deployment.
