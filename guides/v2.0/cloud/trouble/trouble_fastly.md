@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 170_trouble
-title: Troubleshoot Fastly
-menu_title: Troubleshoot Fastly
+title: Fastly troubleshooting
+menu_title: Fastly troubleshooting
 menu_order: 20
 menu_node:
 version: 2.0
