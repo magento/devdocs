@@ -4,12 +4,14 @@ group: cloud
 subgroup: 100_project
 title: Patch and test Magento Commerce
 menu_title: Patch and test Magento Commerce
-menu_order: 17
+menu_order: 35
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: patch-upgrade
 version: 2.0
 github_link: cloud/project/project-patch.md
+redirect from:
+  -  /guides/v2.0/cloud/howtos/patch-magent.html
+  -  /guides/v2.1/cloud/howtos/patch-magent.html
+  -  /guides/v2.1/cloud/howtos/patch-magent.html
 ---
 
 {% include cloud/patch.md %}

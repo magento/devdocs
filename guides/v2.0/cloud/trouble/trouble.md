@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/trouble/trouble.md
 ---
 
-The following topics discuss solutions to common issues with {{site.data.var.<ece>}}:
+The following topics discuss solutions to common issues with {{site.data.var.ece}}:
 
 *	[Troubleshoot your deployment]({{ page.baseurl }}cloud/access-acct/trouble.html)
 *	[Use logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html)
@@ -22,3 +22,4 @@ The following topics discuss solutions to common issues with {{site.data.var.<ec
 *	[Resolve issues with encryption key]({{ page.baseurl }}cloud/trouble/trouble-crypt-key-variable.html)
 *	[Resolve issues with HTML minification]({{ page.baseurl }}cloud/trouble/trouble-error-html-minification.html)
 *	[Resolve issues with Google Analytics during deployment]({{ page.baseurl }}cloud/trouble/trouble-google-analytics-deploy.html)
+*	[Add sitemap and robots.txt]({{ page.baseurl }}cloud/trouble/robots-sitemap.html)

@@ -2,7 +2,7 @@
 
 This information details how to upgrade Magento Commerce (Cloud) from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
 
-When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already. 
+When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
 
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
@@ -18,7 +18,7 @@ Back up your integration system database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
 
-        magento-cloud environment:sql-dump
+        magento-cloud db:dump
 2.  Enter the following command to back up code and media:
 
         php bin/magento setup:backup --code [--media]

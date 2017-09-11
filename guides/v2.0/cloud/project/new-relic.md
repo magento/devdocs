@@ -15,7 +15,7 @@ github_link: cloud/project/new-relic.md
 You can mix the higher level data captured by New Relic APM with the deeper method and call dive data from [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). Using these two tools together in Staging and Production environments, you gain a better view into your store performance.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You receiv New Relic APM with your {{site.data.var.<ece>}} subscription. You do not need to purchase or install install the New Relic extension (different than the APM service).
+You receive New Relic APM with your {{site.data.var.ece}} subscription. You do not need to purchase or install install the New Relic extension (different than the APM service).
 </div>
 
 ## Key features {#features}
@@ -28,7 +28,7 @@ New Relic APM provides the following [key features](https://newrelic.com/php/mag
 * Follow Apdex scores to evaluate slow downs and bottlenecks. Create alerts to watch for these slumps to identify and notify you when an issues is occuring. For example, site slow downs due to a flash sale or web event.
 
 ## New Relic APM credentials {#credentials}
-When you sign up for a {{site.data.var.<ece>}} account, you will receive an email of credentials to your account. The agent software for New Relic is already installed to capture data for review through the service.
+When you sign up for a {{site.data.var.ece}} account, you will receive an email of credentials to your account. The agent software for New Relic is already installed to capture data for review through the service.
 
 You will need these credentials and the license associated to them. You receive this information by email and in your [project details]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-creds).
 
@@ -55,7 +55,7 @@ Add New Relic to `.magento.app.yaml`:
 
     runtime:
       extensions:
-          - newrelic
+        - newrelic
 3. Save and push the changes to deploy across Staging and Production.
 
 You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access both environments via SSH and install the agent.
