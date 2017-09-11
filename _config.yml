@@ -93,17 +93,8 @@ algolia:
   index_name: 'devdocs'
   api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
   lazy_update: false
-  settings:
-    attributesToIndex:
-      - title
-      - h1
-      - h2
-      - h3
-      - h4
-      - unordered(text)
-      - unordered(tags)
-      - version
-
-
+  excluded_files:
+    - guides/m1x
+    - swagger
 
 exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea' ]

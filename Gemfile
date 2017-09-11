@@ -6,5 +6,5 @@ gem 'wdm' if Gem.win_platform?
 
 
 group :jekyll_plugins do
-  gem 'algoliasearch-jekyll', '1.0.0.beta.pre.1'
+  gem 'algoliasearch-jekyll', '~> 0.8.2'
 end

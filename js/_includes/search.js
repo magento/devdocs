@@ -1,4 +1,5 @@
 // Clicking on search icon triggers the search form in header
+
 $(function() {
 
   var $quickSearchInput = $('.quick-search input');
@@ -41,7 +42,7 @@ $(function() {
       debug: false,
     }, [
     {
-      source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, facetFilters: 'version:' + ver }),
+      source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5, facetFilters: 'guide_version:' + ver }),
       //value to be displayed in input control after user's suggestion selection
       displayKey: 'title',
       //hash of templates used when rendering dataset

@@ -24,9 +24,11 @@
     urlSync: true
   });
 
+  /*
   var switcher = document.getElementsByClassName('version-switcher')[0];
-  var ver = switcher.dataset.version;
-
+  var ver = String( switcher.dataset.version );
+  */
+  
   function app(opts) {
     const search = instantsearch({
       appId: opts.appId,
@@ -34,10 +36,12 @@
       indexName: opts.indexName,
       urlSync: true,
       searchParameters: {
+
         facetsRefinements: {
-          version: ver,
+          guide_version: [ '2.1' ],
         },
-      },
+        facets: ['guide_version'],
+      }
     });
 
     search.addWidget(
@@ -53,7 +57,20 @@
         hitsPerPage: 10,
         templates: {
           item: function ( item ) {
-            return '<div class="hit"><h2 class="hit-name"><a href="' + item.url + '">' + item._highlightResult.title.value + '</a></h2><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
+            var title_highlighted = item._highlightResult.title;
+            var title_plain = item.title;
+            var url = item.url;
+            // Check if we can show title, if not - at least show URL
+            if (typeof title_highlighted !== 'undefined') {
+              title = title_highlighted.value;
+            } else if (typeof title_plain !== 'undefined') {
+              title = title_plain;
+            } else {
+              title = url;
+            }
+            var link = '<a href="' + url + '">' + title +'</a>';
+
+            return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
           },
           empty: function ( query ) {
             return '<div id="no-results-message"><p>No results for the search <em>"' + query.query +'"</em>.</p></div>';
@@ -67,6 +84,8 @@
         container: '#stats',
       })
     );
+
+
 
 
     search.addWidget(
