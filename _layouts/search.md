@@ -24,12 +24,11 @@
     urlSync: true
   });
 
-  /*
-  var switcher = document.getElementsByClassName('version-switcher')[0];
-  var ver = String( switcher.dataset.version );
-  */
-  
+
+
   function app(opts) {
+    var switcher = document.getElementsByClassName('version-switcher')[0];
+    var ver = String( switcher.dataset.version );
     const search = instantsearch({
       appId: opts.appId,
       apiKey: opts.apiKey,
@@ -38,7 +37,7 @@
       searchParameters: {
 
         facetsRefinements: {
-          guide_version: [ '2.1' ],
+          guide_version: [ ver ],
         },
         facets: ['guide_version'],
       }
