@@ -107,6 +107,10 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**. (RC30)
 
+<!--- 71656 -->* Configurable products no longer show up on category page when all children are set to "enable product" = "No" and "display out-of-stock products" = "Off". (RC30)
+
+<!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**. (RC30)
+
 
 ### Email
 
@@ -145,7 +149,12 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 71415 -->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)
 
+<!--- 70377 -->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833) (RC30)
 
+<!--- 72112 -->* Subcategories no longer show up in the menu when the parent category is disabled or hidden from the menu. [GitHub-10064](https://github.com/magento/magento2/issues/10664) (RC30)
+
+
+<!--- 59810 -->* Showing reports on the **Reports > Coupons** page no longer throws an error when the user is in a non-default Admin locale. [GitHub-7037](https://github.com/magento/magento2/issues/7037) (RC30)
 
 ### Payment methods
 
@@ -161,6 +170,8 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 
 ### Shipping
+
+<!--- 72305 -->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). (RC30)
 
 <!--- 67283 -->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column. (RC2.0)
 
