@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 170_trouble
-title: Add sitemap and robots.txt
-menu_title: Add sitemap and robots.txt
+title: Redis troubleshooting
+menu_title: Redis troubleshooting
 menu_order: 23
 menu_node:
 version: 2.0
