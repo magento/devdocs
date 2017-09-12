@@ -33,15 +33,19 @@ Magento 2.1.8 contains almost 40 security fixes and enhancements.  Look for the 
 
 * enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution vulnerabilities. See [Magento 2.0.16 and 2.1.9 Security Patches](https://magento.com/security/patches/magento-2016-and-219-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
-* support for changes to the USPS API that USPS implemented on September 1, 2017.
+* support for changes to the USPS API that USPS implemented on September 1, 2017
+
+* fixed issue with logging information about exceptions caused by payment failures.
 
 
 
-## Fixed issue
+## Fixed issues
 
-We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). 
+<!--- 72306 -->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). 
 
 
+<!--- 55065 -->* Magento now logs all expected exception information in the `exception.log` file when a payment transaction fails. 
+Previously, Magento did not log all exception information when a payment transaction failed, and this lack of full exception information, undermined debugging attempts.  [GitHub-6246](https://github.com/magento/magento2/issues/6246)
 
 
 ## System requirements
