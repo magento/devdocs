@@ -22,7 +22,7 @@ Each status color indicates the severity and amount of 2.2-related issues for a 
 The issues used to generate the status of these components come from verified internal and GitHub reports for Magento 2.2 that are planned to be fixed prior to the General Availability release.
 Issues that are not related to the 2.2 release are not part of this report.
 
-## CE Modules
+## Open Source Modules
 
 | Name                                   | Status                                    |
 | -------------------------------------- | ----------------------------------------- |
@@ -143,7 +143,7 @@ Issues that are not related to the 2.2 release are not part of this report.
 | Module/ Wishlist                       | <span class="status green">Green</span>   |
 | Tools/ MediaStorage                    | <span class="status green">Green</span>   |
 
-## CE Modules 
+## Commerce Modules 
 
 | Name                               | Status                                    |
 | ---------------------------------- | ----------------------------------------- |
