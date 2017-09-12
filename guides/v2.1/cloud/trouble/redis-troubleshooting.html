@@ -1684,20 +1684,22 @@
   <li>2.0.x: Apply the <a href="/guides/v2.1/cloud/project/project-patch.html">patch and test</a> the deployment in your Integration environment.</li>
   <li>2.1.0 – 2.1.3: Apply the <a href="/guides/v2.1/cloud/project/project-patch.html">patch and test</a> the deployment in your Integration environment.</li>
   <li>
-    <p>2.1.4 and later merchants: Apply the <a href="/guides/v2.1/cloud/project/project-patch.html">patch and test</a> the deployment in your Integration environment. According to your Magento Commerce (Cloud) version, verify the following <code class="highlighter-rouge">magento/magento-cloud-configuration</code> version displays in <code class="highlighter-rouge">composer.lock</code> after the composer update completes:</p>
+    <p>2.1.4 and later merchants: Upgrade <a href="/guides/v2.1/cloud/reference/cloud-composer.html#magento-commerce-cloud-packages">MCC</a> to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run <code class="highlighter-rouge">composer update</code> in a terminal.</p>
+
+    <p>If you hardcoded or modified your MCC, run <code class="highlighter-rouge">composer update</code> in a terminal. After the composer update complees, verify following <code class="highlighter-rouge">magento/magento-cloud-configuration</code> version displays in <code class="highlighter-rouge">composer.lock</code>:</p>
 
     <ul>
-      <li>2.1.4: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.4.5</code></li>
-      <li>2.1.5: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.5.4</code></li>
-      <li>2.1.6: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.6.6</code></li>
-      <li>2.1.7: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.7.6</code></li>
-      <li>2.1.8: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.8.1</code></li>
+      <li>2.1.4: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.4.5</code> or later</li>
+      <li>2.1.5: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.5.4</code> or later</li>
+      <li>2.1.6: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.6.6</code> or later</li>
+      <li>2.1.7: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.7.6</code> or later</li>
+      <li>2.1.8: <code class="highlighter-rouge">magento/magento-cloud-configuration 101.8.1</code> or later</li>
     </ul>
   </li>
-  <li>2.2: his PHP-Redis upgrade is already included. v2.2 is coming soon for Magento Commerce (Cloud).</li>
+  <li>2.2: This PHP-Redis upgrade is already included. v2.2 is coming soon for Magento Commerce (Cloud).</li>
 </ul>
 
-<p>For details, see <a href="/guides/v2.1/cloud/reference/cloud-composer.html">Composer</a>.</p>
+<p>For details on MCC and the update command, see <a href="/guides/v2.1/cloud/reference/cloud-composer.html">Composer</a>.</p>
 
 <h2 id="static-content">Redis and static-content deployment</h2>
 <p>This information helps if you receive a number of Redis connection errors in your production logs during static content deployment.</p>
