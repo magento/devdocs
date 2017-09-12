@@ -27,7 +27,7 @@ While there are no confirmed attacks related to these vulnerabilities to date, c
 
 ## Highlights
 
-Magento 2.1.8 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:
+Magento 2.1.8 contains almost 40 security fixes and enhancements. Look for the following highlights in this release:
 
 * enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution vulnerabilities. See [Magento 2.0.16 and 2.1.9 Security Patches](https://magento.com/security/patches/magento-2016-and-219-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
