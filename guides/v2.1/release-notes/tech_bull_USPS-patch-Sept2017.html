@@ -894,9 +894,11 @@
 
 			<p><em>Technical Bulletin published on September 10, 2017.</em></p>
 
+<p><em>last revised: September 12, 2017</em></p>
+
 <p>On September 1, USPS changed their First-Class Mail Parcel Service to First-Class Package Service – Retail. Because the First-Class Mail Parcel is no longer available after September 1,  Magento 1.x and 2.x merchants offering this service must change this service name in the <code class="highlighter-rouge">Usps.php</code> file as soon as possible.</p>
 
-<p>If you do not take action, your store will not support checkout using the First-Class Package Service - Retail mailing option.</p>
+<p>After installing or upgrading to this release, or applying the suggested workaround, the discontinued First-Class Mail Parcel service will change to First-Class Package Service – Retail. If you do not take action, your store will not support checkout using the First-Class Package Service - Retail mailing option.</p>
 
 <h3 id="who-is-affected-by-this-issue">Who is affected by this issue?</h3>
 
@@ -910,7 +912,29 @@
 
 <h3 id="recommended-magento-1x-actions">Recommended Magento 1.x actions</h3>
 
-<p>We’ve provided the following workaround to address this change to the USPS API. Additionally, we will release the <code class="highlighter-rouge">SUPEE-10336 for 1.x</code> patch for this issue in the near future. If you implement the following workaround, note that you must undo the workaround before installing the patch.</p>
+<p>Users of Magento 1.x can either apply the <code class="highlighter-rouge">SUPEE-10336 for 1.x</code> patch or implement the workaround described below. If you implemented the temporary workaround, you’ll need to delete it before you can install the patch.</p>
+
+<h4 id="access-magento-1x-patches">Access Magento 1.x patches</h4>
+
+<p>To get patches for Magento 1.x Commerce or Open Source</p>
+
+<ol>
+  <li>
+    <p>Log in to <a href="http://magentocommerce.com" target="_blank">www.magento.com</a></p>
+  </li>
+  <li>
+    <p>In the left pane, click Downloads.</p>
+  </li>
+  <li>
+    <p>In the right pane, click either Magento Commerce or Magento Open Source.</p>
+  </li>
+  <li>
+    <p>Follow the prompts on your screen to download the SUPEE-10336 for 1.x for your version of Magento Commerce or Open Source.</p>
+  </li>
+  <li>
+    <p>Apply the patch as discussed in <a href="http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</p>
+  </li>
+</ol>
 
 <h3 id="workaround-for-magento-1x">Workaround for Magento 1.x</h3>
 <p>Follow this procedure to edit the <code class="highlighter-rouge">Usps.php</code> file to use the new shipping method name:</p>
@@ -953,7 +977,7 @@
 
 <h3 id="acknowlegments">Acknowlegments</h3>
 
-<p>Thanks to @shipperhq for bringing this issue to our attention!</p>
+<p>Thanks to <a href="https://shipperhq.com/">ShipperHQ</a> for bringing this issue to our attention!</p>
 
 
 		</div>
