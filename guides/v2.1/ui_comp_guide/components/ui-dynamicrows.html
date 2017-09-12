@@ -62,7 +62,7 @@
 			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
 
 			
-<div class="version-switcher dropdown">
+<div class="version-switcher dropdown" data-version="2.1">
 	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Magento 2.1
 	</button>
@@ -164,7 +164,7 @@
 			</div>
 
 			<form class="quick-search" action="/search.html" method="get">
-				<input type="search" name="q" placeholder="Search" />
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
 				<a href="#" class="quick-search-close">&times;</a>
 			</form>
 
@@ -1521,6 +1521,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="/common/js/app.min.js"></script>
 
 <!-- Glossary integration -->

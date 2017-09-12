@@ -62,18 +62,18 @@
 			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
 
 			
-<div class="version-switcher dropdown">
+<div class="version-switcher dropdown" data-version="2.1">
 	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Magento 2.1
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/search.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/search.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/search.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -164,7 +164,7 @@
 			</div>
 
 			<form class="quick-search" action="/search.html" method="get">
-				<input type="search" name="q" placeholder="Search" />
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
 				<a href="#" class="quick-search-close">&times;</a>
 			</form>
 
@@ -182,25 +182,108 @@
 	<div class="main-container">
 		<a id="main-content"></a>
 
-<div class="search container">
-	<h1 class="page-heading">Search Results</h1>
-	<div id="search-results">
-  <!--Google Custom Search-->
-  <script>
-    (function() {
-      var cx = '006011020849936972588:wcszftq1p64';
-      var gcse = document.createElement('script');
-      gcse.type = 'text/javascript';
-      gcse.async = true;
-      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(gcse, s);
-    })();
-  </script>
-  <gcse:search></gcse:search>
+
+<div class="search-results-header">
+  <div id="search-input"></div>
 </div>
 
+<div class="search-results container">
+
+  <div id="stats"></div>
+  <div id="hits"></div>
+  <div id="pagination"></div>
+
 </div><!-- container -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+
+<script>
+
+  app({
+    appId: "E642SEDTHL",
+    apiKey: "d2d0f33ab73e291ef8d88d8b565e754c",
+    indexName: "devdocs",
+    urlSync: true
+  });
+
+
+
+  function app(opts) {
+    var switcher = document.getElementsByClassName('version-switcher')[0];
+    var ver = String( switcher.dataset.version );
+    const search = instantsearch({
+      appId: opts.appId,
+      apiKey: opts.apiKey,
+      indexName: opts.indexName,
+      urlSync: true,
+      searchParameters: {
+
+        facetsRefinements: {
+          guide_version: [ ver ],
+        },
+        facets: ['guide_version'],
+      }
+    });
+
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '#search-input',
+        placeholder: 'Search',
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.hits({
+        container: '#hits',
+        hitsPerPage: 10,
+        templates: {
+          item: function ( item ) {
+            var title_highlighted = item._highlightResult.title;
+            var title_plain = item.title;
+            var url = item.url;
+            // Check if we can show title, if not - at least show URL
+            if (typeof title_highlighted !== 'undefined') {
+              title = title_highlighted.value;
+            } else if (typeof title_plain !== 'undefined') {
+              title = title_plain;
+            } else {
+              title = url;
+            }
+            var link = '<a href="' + url + '">' + title +'</a>';
+
+            return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
+          },
+          empty: function ( query ) {
+            return '<div id="no-results-message"><p>No results for the search <em>"' + query.query +'"</em>.</p></div>';
+          },
+        },
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.stats({
+        container: '#stats',
+      })
+    );
+
+
+
+
+    search.addWidget(
+      instantsearch.widgets.pagination({
+        container: '#pagination',
+        scrollTo: '#search-input',
+      })
+    );
+
+    search.start();
+  }
+
+</script>
+
+
+
 
 	</div>
 	<!-- /.main-container -->
@@ -232,6 +315,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="/common/js/app.min.js"></script>
 
 <!-- Glossary integration -->
