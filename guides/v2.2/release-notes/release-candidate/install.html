@@ -714,7 +714,7 @@
 </section>
 
 
-			<p>We now offer <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackages</span> for installing the latest release candidate code using <a href="https://getcomposer.org/">Composer</a>. Contact Mark Brinton at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#098;&#114;&#105;&#110;&#116;&#111;&#110;&#064;&#109;&#097;&#103;&#101;&#110;&#116;&#111;&#046;&#099;&#111;&#109;">&#109;&#098;&#114;&#105;&#110;&#116;&#111;&#110;&#064;&#109;&#097;&#103;&#101;&#110;&#116;&#111;&#046;&#099;&#111;&#109;</a> to request access to our pre-release Composer repositories.</p>
+			<p>We now offer <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackages</span> for installing the latest release candidate code for Magento Open Source and Magento Commerce using <a href="https://getcomposer.org/">Composer</a>. Contact Mark Brinton at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#098;&#114;&#105;&#110;&#116;&#111;&#110;&#064;&#109;&#097;&#103;&#101;&#110;&#116;&#111;&#046;&#099;&#111;&#109;">&#109;&#098;&#114;&#105;&#110;&#116;&#111;&#110;&#064;&#109;&#097;&#103;&#101;&#110;&#116;&#111;&#046;&#099;&#111;&#109;</a> to request access to our pre-release Composer repositories.</p>
 
 <div class="bs-callout bs-callout-tip">
   <p>You can still install release candidate code by <a href="#install-with-github">cloning Github repositories</a>, but we recommend using Composer.</p>
@@ -725,13 +725,13 @@
 
 <ul>
   <li>
-    <p>Get the Composer metapackage</p>
+    <p>Get the Magento Open Source or Magento Commerce Composer metapackage</p>
   </li>
   <li>
-    <p>Install the Magento Commerce for B2B extension (optional)</p>
+    <p>Complete the Magento installation</p>
   </li>
   <li>
-    <p>Complete the installation</p>
+    <p>Install the Magento Commerce for B2B extension (optional) on top of an existing Magento Commerce installation</p>
   </li>
   <li>
     <p>Install sample data (optional)</p>
@@ -742,7 +742,7 @@
 </ul>
 
 <div class="bs-callout bs-callout-warning">
-  <p>The Magento Commerce for B2B extension is only available for Magento Commerce v2.2.0. You can install it after installing Magento Commerce.</p>
+  <p>The Magento Commerce for B2B extension is only available for Magento Commerce v2.2.0. You must install it after installing Magento Commerce.</p>
 </div>
 
 <h3 id="get-the-composer-metapackage">Get the Composer metapackage</h3>
@@ -766,14 +766,14 @@
       <li>
         <p>Enter the following command for Magento Open Source:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;install-directory-name&gt; 2.2.0-rc23
+        <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;install-directory-name&gt; 2.2.0-rc30
 </code></pre>
         </div>
       </li>
       <li>
         <p>Enter the following command for Magento Commerce:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;install-directory-name&gt; 2.2.0-rc23
+        <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;install-directory-name&gt; 2.2.0-rc30
 </code></pre>
         </div>
       </li>
@@ -791,27 +791,6 @@
   <p>If the following error displays, see <a href="/guides/v2.2/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
 
   <div class="highlighter-rouge"><pre class="highlight"><code>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
-</code></pre>
-  </div>
-</div>
-
-<h3 id="install-the-b2b-extension-optional">Install the B2B extension (optional)</h3>
-<p>Change to your installation directory and enter the following command to update your <code class="highlighter-rouge">composer.json</code> file and install the Magento Commerce for B2B extension:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/extension-b2b
-</code></pre>
-</div>
-
-<p>When prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
-
-<div class="bs-callout bs-callout-info">
-  <p>If you installed EE prior to installing B2B, run the following commands after Composer finishes updating modules:</p>
-
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento setup:upgrade
-
-bin/magento setup:di:compile
-
-bin/magento setup:static-content:deploy
 </code></pre>
   </div>
 </div>
@@ -845,7 +824,34 @@ chmod u+x bin/magento
   <p>You can also install using the <a href="/guides/v2.2/install-gde/install/cli/install-cli.html">command line</a>.</p>
 </div>
 
-<p>After completing the installation, you must follow the <a href="#b2b-post-install-steps-and-configuration">B2B post-install steps and configuration</a>.</p>
+<h3 id="install-the-b2b-extension-optional">Install the B2B extension (optional)</h3>
+<div class="bs-callout bs-callout-warning">
+  <p>The Magento Commerce for B2B extension is only available for Magento Commerce v2.2.0. You must install it after installing Magento Commerce.</p>
+</div>
+
+<ol>
+  <li>
+    <p>Change to your installation directory and enter the following command to update your <code class="highlighter-rouge">composer.json</code> file and install the Magento Commerce for B2B extension:</p>
+
+    <p>composer require magento/extension-b2b</p>
+  </li>
+  <li>
+    <p>When prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
+  </li>
+  <li>
+    <p>Run the following commands after Composer finishes updating modules:</p>
+
+    <p>bin/magento setup:upgrade</p>
+
+    <p>bin/magento setup:di:compile</p>
+
+    <p>bin/magento setup:static-content:deploy</p>
+  </li>
+</ol>
+
+<div class="bs-callout bs-callout-info">
+  <p>After completing the installation, you must follow the <a href="#b2b-post-install-steps-and-configuration">B2B post-install steps and configuration</a>.</p>
+</div>
 
 <h2 id="install-with-github">Install with Github</h2>
 <p>The Github installation process is the same for Magento Open Source and Magento Commerce:</p>
@@ -1026,7 +1032,7 @@ chmod u+x bin/magento
 <h3 id="message-queues">Message queues</h3>
 
 <h4 id="start-message-consumers">Start message consumers</h4>
-<p>The Magento Commerce for B2B extension uses MySQL for message queue management. To succesfully launch the Magento Commerce for B2B extension, start the message consumer services after installation.</p>
+<p>The Magento Commerce for B2B extension uses MySQL for message queue management. If you want to enable the B2B shared catalogs feature, you must start the corresponding message consumers after installation.</p>
 
 <ol>
   <li>
@@ -1040,13 +1046,11 @@ chmod u+x bin/magento
 
     <div class="highlighter-rouge"><pre class="highlight"><code>sharedCatalogUpdatePrice
 sharedCatalogUpdateCategoryPermissions
-quoteItemCleaner
-inventoryQtyCounter
 </code></pre>
     </div>
   </li>
   <li>
-    <p>Start each service separately:</p>
+    <p>Start each consumer separately:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento queue:consumers:start &lt;consumer_name&gt;
 </code></pre>
@@ -1059,6 +1063,10 @@ inventoryQtyCounter
     </div>
   </li>
 </ol>
+
+<div class="bs-callout bs-callout-tip">
+  <p>Append <code class="highlighter-rouge">&amp;</code> to the command to run it in the background to return to a prompt and continue running commands (e.g., <code class="highlighter-rouge">bin/magento queue:consumers:start sharedCatalogUpdatePrice &amp;</code>).</p>
+</div>
 
 <p>Refer to <a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a> for more information.</p>
 
@@ -1073,10 +1081,10 @@ inventoryQtyCounter
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">--max-messages</code>: manages the consumer’s lifetime and allows to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart the long-running processes to prevent possible memory leaks</p>
+    <p><code class="highlighter-rouge">--max-messages</code>: manages the consumer’s lifetime and allows you to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart the long-running processes to prevent possible memory leaks</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">--batch-size</code>: allows to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing</p>
+    <p><code class="highlighter-rouge">--batch-size</code>: allows you to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing</p>
   </li>
 </ul>
 
