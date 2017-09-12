@@ -117,18 +117,17 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70987 -->* Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled. (RC22)
 
-<!--- 61018 -->*  You can now use REST to add video to a product description. [GitHub-7153](https://github.com/magento/magento2/issues/7153) (RC30)
+<!--- 61018 -->*  You can now use REST to add video to a product. [GitHub-7153](https://github.com/magento/magento2/issues/7153) (RC30)
 
 
 
 
 ### Configurable products
 
-<!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**. (RC30)
+<!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **Display Out of Stock Products** setting is set to **No**. (RC30)
 
 <!--- 71656 -->* Configurable products no longer show up on category page when all children are set to **enable product = No** and **display out-of-stock products = Off**. (RC30)
 
-<!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**. (RC30)
 
 
 ### Checkout
