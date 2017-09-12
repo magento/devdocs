@@ -12,13 +12,9 @@ github_link: cloud/reference/discover-arch.md
 
 {{site.data.var.ece}} Pro _projects_ provide three complete environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace. You can use any development and branching methodology you like.
 
-All of your code is contained in the {{site.data.var.ece}} Starter project. The project is your Magento store code, extensions, and integrations in a `master` Git branch. Each project supports up to eight active Integration *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
+All of your code is contained in the {{site.data.var.ece}} project. Each project supports up to eight active Integration *environments* with an associated active Git branch in PAAS (Platform as a Service) containers, including `master`. These containers are deployed inside highly restricted containers on a grid of servers.
 
 Pro also provides a dedicated Infrastructure-as-a-Service (IaaS) for Production and Staging. You deploy the Integration `master` Git branch to these dedicated environments. Production includes a three-node high availability infrastructure to ensure your site is always available. When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
-
-All environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.
-
-You can use any development and branching methodology you like.
 
 ![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
 

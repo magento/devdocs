@@ -10,23 +10,22 @@ version: 2.0
 github_link: cloud/project/project-webint-basic.md
 ---
 
-The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} enables you to:
+The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} enables you to do the following for all Starter and Pro environments:
 
-* Create and manage projects
+* Create and manage projects, environments, and branches
 * Access active environments and branches using SSH, CLI, and URLs
 * Configure environment settings, environment variables, and routes
 * Manage users
-* Manage Git branches
+* Deploy to Staging and Production
 
 ## Access your project and environments {#project-access}
 The Project Web Interface provides several ways to access your project and environments:
 
-*	Your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} URL for each active (up to eight)
-*	Secure Shell (SSH), a way to interact with services using a command terminal
-*	Clone the project using the Magento ECE CLI
-*	Clone the project using Git
+*	Storefront URL for each active environment
+*	Secure Shell (SSH) link for SSH access via terminal application
+*	Clone the project using the Magento Cloud CLI or Git
 
-To access projects and environments through the Web Interface:
+To access projects and environments through the Project Web Interface:
 
 1.	[Log in to your project](#project-login).
 2.	Click **Access Project** for a list of URLs and SSH.
@@ -41,11 +40,10 @@ The following figure shows an example.
 
 Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
-
 ## Get started configuring your project {#project-conf}
 Configuring a project means:
 
-*	Managing users
+*	Managing users and permissions across the project or per branch
 *	Using a deploy key to pull code from a private repository
 
 To configure your project:
@@ -55,13 +53,13 @@ To configure your project:
 3.	See one of the following for more information:
 
 	*	[Manage users]({{page.baseurl}}cloud/project/user-admin.html)
-	*	[Pull code from a private Git repository]({{page.baseurl}}cloud/project/project-priv-repos.html)
+	*	[Pull code from a private Git repository]({{page.baseurl}}cloud/project/project-webint-branch.html#private)
 
 
 ## Get started configuring an environment {#project-conf-env}
 Configuring an environment means:
 
-*	Environment settings
+*	Configuring environment settings
 *	Configuring environment variables
 *	Configuring routes
 *	Managing users
@@ -85,7 +83,7 @@ The following table shows available environment settings.
 <table>
 	<tbody>
 		<tr>
-			<th>Option</th>
+			<th style="width= 300px;">Option</th>
 			<th>Description</th>
 		</tr>
 	<tr>
@@ -103,15 +101,15 @@ The following table shows available environment settings.
 </table>
 
 ### Set environment variables {#project-conf-env-var}
-As discussed in [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html), environment variables are settings specific to an environment. Variables can be either text or JSON format.
+As discussed in [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html), environment variables are settings specific to an environment. Variables can be either text or JSON format. For additional information configuring variables via CLI commands, see [Example setting variables]({{page.baseurl}}cloud/env/set-variables.html).
 
 To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
 
 For example, you can change the Magento Admin administrative password using environment variables as follows:
 
 1.	Click **Add Variable**.
-2.	In the **Name** field, enter `ADMIN_PASSWORD`.
-3.	In the **Value** field, enter the administrator's password.
+2.	In the **Name** field, enter a variable name. For example, `ADMIN_PASSWORD` to set the Magento Admin account password for the Admin panel. You can also add `env:` to the beginning of the variable.
+3.	In the **Value** field, enter the value for the variable. For example, enter the administrator's password.
 
 	The following figure shows an example.
 
@@ -135,25 +133,22 @@ An environment's history includes:
 *	Syncs and merges
 *	Code pushes
 
-To view an environment's history:
+To view an environment's history, log into your project and select an environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. For more information on logs, see [Use logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html).
 
-1.	[Log in to your project](#project-login).
-2.	In the left pane, click the name of an environment.
+The following figure shows a sample history.
 
-	The following figure shows a sample history.
+![Sample environment history]({{ site.baseurl }}common/images/cloud_environment-history.png){:width="600px"}
 
-	![Sample environment history]({{ site.baseurl }}common/images/cloud_environment-history.png){:width="600px"}
+The history shows, from oldest to newest:
 
-	The history shows, from oldest to newest:
+*	Environment branched from `FeatureX`
+*	Environment sync'd with the parent
+*	Environment snapshot created
 
-	*	Environment branched from `FeatureX`
-	*	Environment sync'd with the parent
-	*	Environment snapshot created
+We recommend [creating a snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) before you make any code changes.
 
-		We recommend [creating a snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) before you make any code changes.
-
-	*	Environment variable added
-	*	Environment snapshot created
+*	Environment variable added
+*	Environment snapshot created
 
 #### Related topics
 * [Project structure]({{page.baseurl}}cloud/project/project-start.html)

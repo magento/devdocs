@@ -40,35 +40,32 @@ For Starter, you will see a hierarchy of branches starting from Master. Any bran
 
 For Pro, you will see a hierarchy of branches starting from Production to Staging to Integration Master. Any branches you create display as children from Integration Master.
 
-![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-starter.png)
+![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
 
 To access an environment store and admin, select a branch and click **Access Site**. A list of store URLs and SSH command display. Select the URL to view the store in that environment.
 
-![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png){:width="450px"}
+![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png)
 
 For Pro, the Production environment includes three nodes that you can access using the following links:
 
-* Staging: `http[s]://staging.<domain>.<project ID>.ent.magento.cloud`
-* Production:
-
-  * Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
-  * Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+* Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+* Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
   The production URL is used by the content delivery network (CDN).
 
 ## Configure environments
-Click **Configure environment** to create and manage [*environments*]({{page.baseurl}}cloud/env/environments.html), each of which corresponds to a Git branch.
+You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{page.baseurl}}cloud/env/environments.html), each of which corresponds to a Git branch.
 
-![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png){:width="450px"}
+![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png)
 
 This displays the following page, which enables you to configure settings, [variables]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel), [routes]({{page.baseurl}}cloud/project/project-conf-files_routes.html), and [users]({{page.baseurl}}cloud/project/user-admin.html).
 
-![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png){:width="450px"}
+![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png)
 
 ## Configure the project
-Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/project/user-admin.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project.
+Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/project/user-admin.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
 
-![configure project]({{ site.baseurl }}common/images/cloud_project-config.png){:width="450px"}
+![configure project]({{ site.baseurl }}common/images/cloud_project-config.png)
 
 #### Related topics
 *	[Configure Magento Commerce]({{page.baseurl}}cloud/configure/configuration-overview.html)
