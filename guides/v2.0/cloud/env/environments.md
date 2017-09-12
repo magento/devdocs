@@ -112,3 +112,5 @@ The following table lists the commands used in the preceding example. For a full
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
 *	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)

@@ -27,15 +27,15 @@ To change the Admin URI and administrator password:
 
         magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
 3.  Wait for the project to redeploy.
-2.  To set the administrator's password to `admin_A456`, enter:
+4.  To set the administrator's password to `admin_A456`, enter:
 
         magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
-6.  Wait while the project redeploys.
-7.  To set the Admin URI to `magento_A8v10`, enter:
+5.  Wait while the project redeploys.
+6.  To set the Admin URI to `magento_A8v10`, enter:
 
         magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
-6.  Wait while the project redeploys.
-7.  Log in to the Magento Admin using the values you just changed.
+7.  Wait while the project redeploys.
+8.  Log in to the Magento Admin using the values you just changed.
 
     The simplest way to do that is to use the environment routes that display when you redeploy the `master` branch. An example follows:
 
@@ -54,27 +54,28 @@ To change the Admin URI and administrator password:
             http://master-k4wtvm7zogr5s.us.magentosite.cloud/ is served by application `mymagento`
             https://master-k4wtvm7zogr5s.us.magentosite.cloud/ is served by application `mymagento`
 
-    In the preceding example, go to `http://master-k4wtvm7zogr5s.us.magentosite.cloud/magento_g8v10` and log in using the user name `admin` and password `admin_A456`
-8.  (Optional.) Create an environment and list the environment variables.
+    In this example, go to `http://master-k4wtvm7zogr5s.us.magentosite.cloud/magento_g8v10` and log in using the user name `admin` and password `admin_A456`
 
-        magento-cloud environment:branch <new branch name>
+Optional: You can also create an environment and list the environment variables.
 
-    After the environment deploys, enter
+    magento-cloud environment:branch <new branch name>
 
-    	magento-cloud variable:get -e <environment ID>
+After the environment deploys, enter
 
-    A sample result follows:
+  	magento-cloud variable:get -e <environment ID>
 
-    +----------------+---------------+-----------+------+
-		| ID             | Value         | Inherited | JSON |
-		+----------------+---------------+-----------+------+
-		| ADMIN_PASSWORD | admin_A456    | Yes       | No   |
-    | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
-		| ADMIN_URL      | magento_A8v10 | Yes       | No   |
-		+----------------+---------------+-----------+------+
+A sample result follows:
+
+ID|Value|Inherited|JSON
+---------|-----------|----------|--------
+ADMIN_PASSWORD|admin_A456|Yes|No
+ADMIN_USERNAME|meister_x2U8|Yes|No
+ADMIN_URL|magento_A8v10|Yes|No
 
 #### Related topic
 * [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
 *	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)

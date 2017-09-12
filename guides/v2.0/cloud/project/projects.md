@@ -32,13 +32,21 @@ With your {{site.data.var.ece}} account created, you can log into the Project We
 ## Access the project and environments {#project}
 When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
 
-Click on a project to access branches and more. On the page, you will see a series of branches of Git code and associated branches.
+Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 
-To access an environment store and admin, select a branch and click **Access Site**. A list of store URL and SSH command display. Select the URL to view the store in that environment.
+For Starter, you will see a hierarchy of branches starting from Master. Any branches you create display as children from Integration Master. We recommend creating a Staging branch, then branching from that for Integration development.
+
+![Starter branch hierarchy]({{ site.baseurl }}common/images/cloud_project-starter.png)
+
+For Pro, you will see a hierarchy of branches starting from Production to Staging to Integration Master. Any branches you create display as children from Integration Master.
+
+![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-starter.png)
+
+To access an environment store and admin, select a branch and click **Access Site**. A list of store URLs and SSH command display. Select the URL to view the store in that environment.
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png){:width="450px"}
 
-For Pro, to view Staging and Production, you need to use a URL or SSH commands:
+For Pro, the Production environment includes three nodes that you can access using the following links:
 
 * Staging: `http[s]://staging.<domain>.<project ID>.ent.magento.cloud`
 * Production:
