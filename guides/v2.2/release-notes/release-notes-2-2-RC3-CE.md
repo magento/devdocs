@@ -107,7 +107,7 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 <!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**. (RC30)
 
-<!--- 71656 -->* Configurable products no longer show up on category page when all children are set to "enable product" = "No" and "display out-of-stock products" = "Off". (RC30)
+<!--- 71656 -->* Configurable products no longer show up on category page when all children are set to **enable product = No** and **display out-of-stock products = Off**. (RC30)
 
 <!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**. (RC30)
 
