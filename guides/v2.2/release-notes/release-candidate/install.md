@@ -11,7 +11,7 @@ version: 2.2
 github_link: release-notes/release-candidate/install.md
 ---
 
-We now offer {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackages{% endglossarytooltip %} for installing the latest release candidate code using [Composer](https://getcomposer.org/){:target="&#95;blank">}. Contact Mark Brinton at [mbrinton@magento.com](mailto:mbrinton@magento.com) to request access to our pre-release Composer repositories.
+We now offer {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackages{% endglossarytooltip %} for installing the latest release candidate code for {{site.data.var.ce}} and {{site.data.var.ee}} using [Composer](https://getcomposer.org/){:target="&#95;blank">}. Contact Mark Brinton at [mbrinton@magento.com](mailto:mbrinton@magento.com) to request access to our pre-release Composer repositories.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
 You can still install release candidate code by [cloning Github repositories](#install-with-github), but we recommend using Composer.
@@ -20,18 +20,18 @@ You can still install release candidate code by [cloning Github repositories](#i
 ## Install with Composer
 The Composer installation process is the same for {{site.data.var.ce}} and {{site.data.var.ee}}:
 
--   Get the Composer metapackage
+-   Get the {{site.data.var.ce}} or {{site.data.var.ee}} Composer metapackage
 
--   Install the {{site.data.var.b2b}} extension (optional)
+-   Complete the Magento installation
 
--   Complete the installation
+-   Install the {{site.data.var.b2b}} extension (optional) on top of an existing  installation {{site.data.var.ee}}
 
 -   Install sample data (optional)
 
 -   Complete {{site.data.var.b2b}} post-installation configuration
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0. You can install it after installing {{site.data.var.ee}}.
+The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0. You must install it after installing {{site.data.var.ee}}.
 </div>
 
 ### Get the Composer metapackage
@@ -65,23 +65,6 @@ If the following error displays, see [troubleshooting]({{page.baseurl}}install-g
     file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
   </div>
 
-### Install the B2B extension (optional)
-Change to your installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
-
-    composer require magento/extension-b2b
-
-When prompted, enter your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
-
-<div class="bs-callout bs-callout-info" markdown="1">
-If you installed EE prior to installing B2B, run the following commands after Composer finishes updating modules:
-
-    bin/magento setup:upgrade
-
-    bin/magento setup:di:compile
-
-    bin/magento setup:static-content:deploy
-</div>
-
 ### Complete the installation
 Now that you've downloaded all dependencies, proceed with the installation:
 
@@ -106,7 +89,25 @@ Now that you've downloaded all dependencies, proceed with the installation:
 You can also install using the [command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html).
 </div>
 
+### Install the B2B extension (optional)
+1.  Change to your installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
+
+    composer require magento/extension-b2b
+
+2.  When prompted, enter your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
+
+
+3.  Run the following commands after Composer finishes updating modules:
+
+    bin/magento setup:upgrade
+
+    bin/magento setup:di:compile
+
+    bin/magento setup:static-content:deploy
+
+<div class="bs-callout bs-callout-info" markdown="1">
 After completing the installation, you must follow the [B2B post-install steps and configuration](#b2b-post-install-steps-and-configuration).
+</div>
 
 ## Install with Github
 The Github installation process is the same for {{site.data.var.ce}} and {{site.data.var.ee}}:
@@ -261,7 +262,7 @@ After installing the {{site.data.var.b2b}} extension, follow these instructions 
 ### Message queues
 
 #### Start message consumers
-The {{site.data.var.b2b}} extension uses MySQL for message queue management. To succesfully launch the {{site.data.var.b2b}} extension, start the message consumer services after installation.
+The {{site.data.var.b2b}} extension uses MySQL for message queue management. If you want to enable the B2B shared catalogs feature, you must start the corresponding message consumers after installation.
 
 1.  List the available message consumers:
 
@@ -274,11 +275,9 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. To 
     ```
     sharedCatalogUpdatePrice
     sharedCatalogUpdateCategoryPermissions
-    quoteItemCleaner
-    inventoryQtyCounter
     ```
 
-2.  Start each service separately:
+2.  Start each consumer separately:
 
     ```
     bin/magento queue:consumers:start <consumer_name>
