@@ -12,11 +12,13 @@ github_link: release-notes/tech_bull_USPS-patch-Sept2017.md
 
 *Technical Bulletin published on September 10, 2017.*
 
+*last revised: September 12, 2017* 
+
 
 
 On September 1, USPS changed their First-Class Mail Parcel Service to First-Class Package Service – Retail. Because the First-Class Mail Parcel is no longer available after September 1,  Magento 1.x and 2.x merchants offering this service must change this service name in the `Usps.php` file as soon as possible. 
 
-If you do not take action, your store will not support checkout using the First-Class Package Service - Retail mailing option. 
+After installing or upgrading to this release, or applying the suggested workaround, the discontinued First-Class Mail Parcel service will change to First-Class Package Service – Retail. If you do not take action, your store will not support checkout using the First-Class Package Service - Retail mailing option. 
 
 
 
@@ -36,7 +38,22 @@ If you are running a different shipping extension, contact your extension provid
 
 ### Recommended Magento 1.x actions
 
-We've provided the following workaround to address this change to the USPS API. Additionally, we will release the `SUPEE-10336 for 1.x` patch for this issue in the near future. If you implement the following workaround, note that you must undo the workaround before installing the patch. 
+Users of Magento 1.x can either apply the `SUPEE-10336 for 1.x` patch or implement the workaround described below. If you implemented the temporary workaround, you'll need to delete it before you can install the patch.
+
+
+#### Access Magento 1.x patches
+
+To get patches for Magento 1.x Commerce or Open Source
+
+1.	Log in to [www.magento.com](http://magentocommerce.com){:target="_blank"}
+
+2.	In the left pane, click Downloads.
+
+3.	In the right pane, click either Magento Commerce or Magento Open Source.
+
+4.	Follow the prompts on your screen to download the SUPEE-10336 for 1.x for your version of Magento Commerce or Open Source.
+
+5.	Apply the patch as discussed in [How to Apply and Revert Magento Patches](http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html){:target="_blank"}.
 
 
 ### Workaround for Magento 1.x 
@@ -84,7 +101,7 @@ See [USPS® Announces September Rate Change, Reclassification for First-Class Ma
 
 ### Acknowlegments
 
-Thanks to @shipperhq for bringing this issue to our attention!
+Thanks to [ShipperHQ](https://shipperhq.com/) for bringing this issue to our attention!
 
 
 
