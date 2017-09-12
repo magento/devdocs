@@ -137,7 +137,7 @@ To view an environment's history, log into your project and select an environmen
 
 The following figure shows a sample history.
 
-![Sample environment history]({{ site.baseurl }}common/images/cloud_environment-history.png){:width="600px"}
+![Sample environment history]({{ site.baseurl }}common/images/cloud_environment-history.png)
 
 The history shows, from oldest to newest:
 

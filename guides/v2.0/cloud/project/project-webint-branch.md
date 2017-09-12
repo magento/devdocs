@@ -92,7 +92,7 @@ To sync an environment with its parent:
 4.	Select the check box next to each item to sync and click **Sync**.
 
 ## Merge with the environment's parent {#project-branch-merge}
-Merging an environment is the same as `git push origin`. You merge to push updated code from an environment to its parent environment (that is, a Git branch).
+Merging an environment is the same as `git push origin`. You merge to push updated code from an environment to its parent environment (that is, a Git branch). You can merge this code up through the parent-child relationships to `master`. You can also deploy to Staging and Production using the merge command.
 
 To merge an environment with its parent:
 
@@ -133,10 +133,6 @@ To find your project SSH public key (also referred to as a *deploy key*):
 ### Enter your GitHub deploy key {#cloud-deploykey-github}
 On GitHub, deploy keys are read-only by default. Your Magento project won't push code to the private repository.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In <code>composer.json</code>, use the <code>&lt;user>@&lt;host>:&lt;<path>.git</code> format, or <code>ssh://&lt;user>@&lt;host>:&lt;port>/&lt;path>.git</code> if using a non-standard port.</p>
-</div>
-
 To enter your project's public key as a GitHub deploy key:
 
 1.	Log in to your GitHub repository as its administrator.
@@ -154,6 +150,8 @@ To enter your project's public key as a GitHub deploy key:
 
 4.	Click **Add deploy key**.
 5.	Follow the prompts on your screen to complete the task.
+
+In `composer.json`, use the `<user>@<host>:<.git</code>` format, or `ssh://<user>@<host>:<port>/<path>.git` if using a non-standard port.
 
 #### Related topics
 *	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
