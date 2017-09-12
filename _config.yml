@@ -78,7 +78,7 @@ defaults:
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
+highlighter: pygments
 kramdown:
   toc_levels: 2..3
 
@@ -87,4 +87,14 @@ incremental: false
 gems:
   - jekyll-redirect-from
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea']
+
+algolia:
+  application_id: 'E642SEDTHL'
+  index_name: 'devdocs'
+  api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
+  lazy_update: false
+  excluded_files:
+    - guides/m1x
+    - swagger
+
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea' ]
