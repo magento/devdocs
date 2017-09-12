@@ -2,26 +2,26 @@
 layout: default
 group: release-notes
 subgroup: 2.2.0 Release Candidate
-title: Magento Commerce 2.2 Release Candidate 2 Release Notes
-menu_title: Magento Commerce 2.2 Release Candidate 2 Release Notes
-menu_order: 680
+title: Magento Commerce 2.2 Release Candidate 3 Release Notes
+menu_title: Magento Commerce 2.2 Release Candidate 3 Release Notes
+menu_order: 480
 level3_menu_node:
 level3_subgroup:
-github_link: release-notes/release-notes-2-2-RC2-EE.md
+github_link: release-notes/release-notes-2-2-RC3-EE.md
 ---
 
 *	TOC
 {:toc}
 
 
-*Release date: September 1, 2017*
+*Release date: September 12, 2017*
 
-*Notes updated: September 4, 2017*
-
-
+*Notes updated: September 12, 2017*
 
 
-Magento Commerce 2.2.0 Release Candidate 2x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
+
+
+Magento Commerce 2.2.0 Release Candidate 3x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
 
 Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information. This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
 
@@ -29,7 +29,7 @@ Looking for information about how the Magento 2.2.0 Release Candidate evaluation
 
 ## Highlights
 
-Magento Enterprise Edition 2.2.0 Release Candidate 2 includes substantial new features as well as many bug fixes. Look for the following highlights in this release:
+Magento Enterprise Edition 2.2.0 Release Candidate 3 includes substantial new features as well as many bug fixes. Look for the following highlights in this release:
 
 * **Enhanced B2B feature set** removes points of friction from the B2B purchasing process. We reduce the cost and complexity of building a B2B site on Magento by providing company account management features out-of-the-box.  B2B companies can easily view and manage all of their quotes in the Magento Admin Panel. B2B APIs enable backend integrations, too. Read more about Magento B2B in the [B2B Developer Guide]({{page.baseurl}}b2b/bk-b2b.html).
 
@@ -58,7 +58,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 The following fixed and open issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
 
-### Installation and Configuration 
+### Installation, configuration, and deployment
 
 <!--- 70705 -->* The installation process no longer stops when loading the `Magento_Tax` module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
 
@@ -85,7 +85,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71551 -->* Inconsistencies in the database tables that contain quote information no longer result when you upgrade from Magento 2.1.8 to 2.2. (RC23)
 
-
+<!--- 71890 -->* Magento no longer throws an exception when the configuration checksum is absent on a new installation. (RC30) 
 
 
 
@@ -117,7 +117,16 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70987 -->* Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled. (RC22)
 
+<!--- 61018 -->*  You can now use REST to add video to a product. [GitHub-7153](https://github.com/magento/magento2/issues/7153) (RC30)
 
+
+
+
+### Configurable products
+
+<!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **Display Out of Stock Products** setting is set to **No**. (RC30)
+
+<!--- 71656 -->* Configurable products no longer show up on category page when all children are set to **enable product = No** and **display out-of-stock products = Off**. (RC30)
 
 
 
@@ -189,6 +198,13 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71415 -->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)
 
+<!--- 70377 -->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833)(RC30)
+
+<!--- 72112 -->*  Subcategories no longer show up in the menu when the parent category is disabled or hidden from the menu. [GitHub-10064](https://github.com/magento/magento2/issues/10664)(RC30)
+
+<!--- 59810 -->* Showing reports on the **Reports > Coupons** page no longer throws an error when the user is in a non-default Admin locale. [GitHub-7037](https://github.com/magento/magento2/issues/7037) (RC30)
+
+
 ### Payment methods
 
 <!--- 70500 -->* Fixed issue related to incorrect stock quantity calculation for bundle and configurable products during the place order flow with PayPal Express Checkout. (RC22)
@@ -207,6 +223,9 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 ### Shipping
+
+<!--- 72305 -->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). (RC30)
+
 
 <!--- 67283 -->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column. (RC2.0)
 
@@ -227,7 +246,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71708 -->* You can now create a staging update for a product that contains a unique attribute in its attribute set. Previously, under these conditions, Magento displayed this error: `The value of attribute "test" must be unique’`. (RC23)
 
-
+<!--- 71215 -->* Magento no longer creates extraneous database values when you schedule new Staging updates. (RC30)
 
 
 ### URL rewrites
@@ -235,8 +254,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70663 -->* You can now assign products to a category when **Match Products by rule** is enabled. (RC2.0)
 
 <!--- 70779 -->* Magento now saves Category URL rewrites as expected. (RC2.0)
-
-
 
 
 
