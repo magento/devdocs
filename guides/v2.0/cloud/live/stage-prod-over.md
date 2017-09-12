@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/live/stage-prod-over.md
 ---
 
-As discussed in more detail in [Cloud Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html), Magento Enterprise Cloud Edition has three types of environments:
+As discussed in more detail in [Cloud Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html), {{site.data.var.ece}} has three types of environments:
 
 *	*Integration*: provides eight active environments, including your project's `master` branch, for your developers to code, build, and test. You merge all of your final code to the `master` and deploy to Staging for extensive production-like testing.
 
@@ -74,7 +74,7 @@ With SSH keys added, you can access the environments to complete CLI commands wi
 {% include cloud/hooks.md %}
 
 ### Git and SSH URLs
-Locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Enterprise Cloud Edition.
+Locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for {{site.data.var.ece}}.
 
 After you know these URLs, you can access those environments without further intervention.
 * Use the URLs to access the store as a customer.
