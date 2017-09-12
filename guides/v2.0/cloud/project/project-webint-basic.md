@@ -27,7 +27,7 @@ The Project Web Interface provides several ways to access your project and envir
 
 To access projects and environments through the Project Web Interface:
 
-1.	[Log in to your project](#project-login).
+1.	[Log in to your project](https://accounts.magento.cloud).
 2.	Click **Access Project** for a list of URLs and SSH.
 
 	![Access your project by URL or SSH]({{ site.baseurl }}common/images/cloud_project-access.png){:width="600px"}
@@ -48,7 +48,7 @@ Configuring a project means:
 
 To configure your project:
 
-1.	[Log in to your project](#project-login).
+1.	[Log in to your project](https://accounts.magento.cloud).
 2.	Click ![configure your project]({{ site.baseurl }}common/images/cloud_edit-project.png) (Configure project) next to the project name.
 3.	See one of the following for more information:
 
@@ -66,7 +66,7 @@ Configuring an environment means:
 
 To configure an environment:
 
-1.	[Log in to your project](#project-login).
+1.	[Log in to your project](https://accounts.magento.cloud).
 2.	Click **Configure environment** under the project name, as the following figure shows.
 
 	![Configure environment]({{ site.baseurl }}common/images/cloud_project-conf-env.png){:width="500px"}
