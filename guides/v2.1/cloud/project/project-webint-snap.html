@@ -1782,12 +1782,20 @@ persistent data from all running services (for example, your MySQL database, Red
   </li>
   <li>
     <p>Create a database dump:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
-</code></pre>
-    </div>
   </li>
 </ol>
+
+<p>For Starter environments and Pro Integration environments:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
+</code></pre>
+</div>
+
+<p>For Pro Staging and Production environments, the name of the database is in the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable (typically the same as the application name and user name):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
+</code></pre>
+</div>
 
 <p>If you want to push this data into an environment, see <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate data and static files</a>.</p>
 

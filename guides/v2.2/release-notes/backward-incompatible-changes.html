@@ -731,41 +731,41 @@
 
 <p>Magento no longer supports custom config file pools</p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/Reader.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\App\DeploymentConfig\Reader</code></a><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/DeploymentConfig/Reader.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\App\DeploymentConfig\Reader</code></a><br />
 <strong>Action:</strong> Deprecated the method <code class="highlighter-rouge">loadConfigFile</code><br /></p>
 
 <h3 id="store-module">Store module</h3>
 
 <p>The Store <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> management has been updated to allow the retrieval of a store by its <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> id.</p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Store\Api\StoreWebsiteRelationInterface</code></a><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Store\Api\StoreWebsiteRelationInterface</code></a><br />
 <strong>Action:</strong> New interface added with method <code class="highlighter-rouge">getStoreByWebsiteId($websiteId)</code></p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Model/StoreManager.php" target="_blank"><code class="highlighter-rouge">Magento\Store\Model\StoreManager</code></a><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Store/Model/StoreManager.php" target="_blank"><code class="highlighter-rouge">Magento\Store\Model\StoreManager</code></a><br />
 <strong>Action:</strong> Implemented <code class="highlighter-rouge">StoreWebsiteRelationInterface</code> and added the inherited method <code class="highlighter-rouge">getStoreByWebsiteId($websiteId)</code><br /></p>
 
 <p><strong>Description:</strong> Retrieves a store by website id<br /></p>
 
 <p>New unique and required field <code class="highlighter-rouge">code</code> was added to the Store Group.</p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Api/Data/GroupInterface.php"><code class="highlighter-rouge">Magento\Store\Api\Data\GroupInterface</code></a><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Store/Api/Data/GroupInterface.php"><code class="highlighter-rouge">Magento\Store\Api\Data\GroupInterface</code></a><br />
 <strong>Action:</strong> Added two methods <code class="highlighter-rouge">getCode()</code> and <code class="highlighter-rouge">setCode($code)</code><br /></p>
 
 <h3 id="customer-module">Customer module</h3>
 
 <p>Change was done in order to add default values to customer attributes.</p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Eav/Api/Data/AttributeDefaultValueInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Eav\Api\Data\AttributeDefaultValueInterface</code></a><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Eav/Api/Data/AttributeDefaultValueInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Eav\Api\Data\AttributeDefaultValueInterface</code></a><br />
 <strong>Action:</strong> New interface added with methods <code class="highlighter-rouge">getDefaultValue()</code> and <code class="highlighter-rouge">setDefaultValue($defaultValue)</code><br /></p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/Data/AttributeMetadata.php" target="_blank"><code class="highlighter-rouge">Magento\Customer\Model\Data\AttributeMetadata</code></a><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Customer/Model/Data/AttributeMetadata.php" target="_blank"><code class="highlighter-rouge">Magento\Customer\Model\Data\AttributeMetadata</code></a><br />
 <strong>Action:</strong> Implemented <code class="highlighter-rouge">AttributeDefaultValueInterface</code> and added the getter <code class="highlighter-rouge">getDefaultValue()</code> and setter <code class="highlighter-rouge">setDefaultValue($defaultValue)</code> methods<br /></p>
 
 <p><strong>Description:</strong> Retrieve and set default values to customer attributes<br /></p>
 
 <h3 id="wishlist-module">Wishlist module</h3>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Wishlist/Model/Wishlist.php" target="_blank"><code class="highlighter-rouge">Magento\Wishlist\Model\Wishlist</code></a><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Wishlist/Model/Wishlist.php" target="_blank"><code class="highlighter-rouge">Magento\Wishlist\Model\Wishlist</code></a><br />
 <strong>Action:</strong> The format of the string for the <code class="highlighter-rouge">buyRequest</code> parameter in the <code class="highlighter-rouge">addNewItem</code> method changed from serialized to JSON.<br /></p>
 
 <h3 id="recently-viewed-and-recently-compared-widgets">Recently Viewed and Recently Compared Widgets</h3>
@@ -873,13 +873,13 @@ The following table lists the deprecated methods and their replacements.</p>
 
 <h3 id="braintree-module">Braintree module</h3>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Braintree/Model/Ui/ConfigProvider.php" target="_blank"><code class="highlighter-rouge">Magento\Braintree\Model\Ui\ConfigProvider</code></a><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Braintree/Model/Ui/ConfigProvider.php" target="_blank"><code class="highlighter-rouge">Magento\Braintree\Model\Ui\ConfigProvider</code></a><br />
 <strong>Action:</strong> The deprecated constant <code class="highlighter-rouge">PAYPAL_CODE</code> has been removed<br />
 <strong>Description</strong> Use <code class="highlighter-rouge">\Magento\Braintree\Model\Ui\PayPal\ConfigProvider::PAYPAL_CODE</code> instead.<br /></p>
 
 <h3 id="paypal-module">PayPal module</h3>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Paypal/Cron/FetchReports.php" target="_blank"><code class="highlighter-rouge">Magento\Paypal\Cron\FetchReports</code></a><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Paypal/Cron/FetchReports.php" target="_blank"><code class="highlighter-rouge">Magento\Paypal\Cron\FetchReports</code></a><br />
 <strong>Action:</strong></p>
 
 <ul>

@@ -1032,7 +1032,7 @@
     <tr>
       <td><code>items</code></td>
       <td>An array of order items that will be included to invoice. By default, the invoice will contain all order items.</td>
-      <td>Array of items with a format according to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
+      <td>Array of items with a format according to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
       <td>
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">      </span><span class="p">[</span><span class="w">
@@ -1078,7 +1078,7 @@
     <tr>
       <td><code>comment</code></td>
       <td>The comment to add to an invoice. Specify a comment if <code>appendComment</code> is set to <code>true</code>.</td>
-      <td>A format according to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
+      <td>A format according to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
       <td>
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">      </span><span class="p">{</span><span class="w">
@@ -1094,7 +1094,7 @@
     <tr>
       <td><code>arguments</code></td>
       <td>Additional arguments. Reserved for use by extension modules.</td>
-      <td>A format according to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/InvoiceCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</code></a>.</td>
+      <td>A format according to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/InvoiceCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</code></a>.</td>
       <td>&nbsp;</td>
       <td>Optional</td>
       <td><code>null</code></td>
@@ -1390,31 +1390,31 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Orders.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
       <td>An interface which provides a correct state of an Order according to performed operation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\InvoiceRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\InvoiceRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Shipments.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/InvoiceDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\InvoiceDocumentFactory</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/InvoiceDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\InvoiceDocumentFactory</code></a></td>
       <td>A factory for creating an Invoice data object. The factory uses the <code class="highlighter-rouge">arguments</code> parameter to process the extension attributes of a new Invoice.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/Invoice/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Invoice\NotifierInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/Invoice/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Invoice\NotifierInterface</code></a></td>
       <td>An interface for sending notifications about new Invoice creation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface</code></a></td>
       <td>An interface for validating service parameters and Invoice data object.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\PaymentAdapterInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\PaymentAdapterInterface</code></a></td>
       <td>An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.</td>
     </tr>
   </tbody>
@@ -1491,7 +1491,7 @@
         invoice items.
       </td>
       <td>
-        Array of items with a format according to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
+        Array of items with a format according to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
       <td>
@@ -1595,7 +1595,7 @@
         A comment to Credit Memo.
       </td>
       <td>
-        A format according to the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
+        A format according to the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
       <td>
@@ -1623,7 +1623,7 @@
         extension modules.
       </td>
       <td>
-        A format according to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
+        A format according to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
       <td>
@@ -1948,35 +1948,35 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Orders.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
       <td>An interface providing a correct state of an Order according to performed operation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\InvoiceRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\InvoiceRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Invoices.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\CreditmemoRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\CreditmemoRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Credit Memos.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\CreditmemoDocumentFactory</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\CreditmemoDocumentFactory</code></a></td>
       <td>A factory for creating an Credit Memo data object. The factory uses the <code class="highlighter-rouge">arguments</code> parameter to process the extension attributes of a new Credit Memo.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Creditmemo\NotifierInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Creditmemo\NotifierInterface</code></a></td>
       <td>An interface for sending notifications about new Credit Memo creation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/Validation/RefundInvoiceInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\RefundInvoiceInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/Validation/RefundInvoiceInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\RefundInvoiceInterface</code></a></td>
       <td>An interface for validating service parameters and Credit Memo data object.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\RefundAdapterInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\RefundAdapterInterface</code></a></td>
       <td>An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.</td>
     </tr>
   </tbody>
@@ -2049,7 +2049,7 @@
         Order items.
       </td>
       <td>
-        Array of items with a format according to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
+        Array of items with a format according to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
       <td>
@@ -2128,7 +2128,7 @@
         A comment to Credit Memo.
       </td>
       <td>
-        A format according to the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
+        A format according to the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
       <td>
@@ -2156,7 +2156,7 @@
         extension modules.
       </td>
       <td>
-        A format according to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
+        A format according to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
       <td>
@@ -2459,31 +2459,31 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Orders.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
       <td>An interface providing a correct state of an Order according to performed operation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\CreditmemoRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\CreditmemoRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Credit Memos.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\CreditmemoDocumentFactory</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\CreditmemoDocumentFactory</code></a></td>
       <td>A factory for creating an Credit Memo data object. The factory uses the <code class="highlighter-rouge">arguments</code> parameter to process the extension attributes of a new Credit Memo.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Creditmemo\NotifierInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Creditmemo\NotifierInterface</code></a></td>
       <td>An interface for sending notifications about new Credit Memo creation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/Validation/RefundOrderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\RefundOrderInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/Validation/RefundOrderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\RefundOrderInterface</code></a></td>
       <td>An interface for validating service parameters and Credit Memo data object.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\RefundAdapterInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\RefundAdapterInterface</code></a></td>
       <td>An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.</td>
     </tr>
   </tbody>
@@ -2525,7 +2525,7 @@
     <tr>
       <td><code>items</code></td>
       <td>An array of order items included to a shipment. By default, the service will create a shipment for all order items.</td>
-      <td>Array of items with a format according to <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
+      <td>Array of items with a format according to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
       <td>
         
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">        </span><span class="p">[</span><span class="w">
@@ -2564,7 +2564,7 @@
       <td><code>comment</code></td>
       <td>A comment about a shipment.</td>
       <td>A format according to the
-        <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
+        <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
         interface.</td>
       <td>
       
@@ -2582,7 +2582,7 @@
       <td> <code>tracks</code> </td>
       <td> A list of track numbers attached to a shipment. </td>
       <td> Array of objects with a format according to
-        <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface&gt;</code></a>. </td>
+        <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface&gt;</code></a>. </td>
       <td>
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">      </span><span class="p">[</span><span class="w">
@@ -2602,7 +2602,7 @@
       <td> <code>packages</code> </td>
       <td> A list of packages attached to a shipment. </td>
       <td> Array of objects with a format according to
-        <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
+        <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
       <td>
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">      </span><span class="p">[</span><span class="w">
@@ -2629,7 +2629,7 @@
       <td>Additional arguments for the service. Can be used by
         extension modules.</td>
       <td>A format according to the
-        <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>
+        <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>
         interface.</td>
       <td>&nbsp;</td>
       <td>Optional</td>
@@ -2928,31 +2928,31 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/OrderRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\OrderRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Orders.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\OrderStateResolverInterface</code></a></td>
       <td>An interface providing a correct state of an Order according to performed operation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Api/ShipmentRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\ShipmentRepositoryInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Api/ShipmentRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Api\ShipmentRepositoryInterface</code></a></td>
       <td>An interface for saving and retrieving Shipments.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/ShipmentDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\ShipmentDocumentFactory</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/ShipmentDocumentFactory.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\ShipmentDocumentFactory</code></a></td>
       <td>A factory creating a Shipment data object. The factory uses the <code class="highlighter-rouge">arguments</code> parameter to process the extension attributes of a new shipment document.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Shipment\NotifierInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Shipment\NotifierInterface</code></a></td>
       <td>An interface for sending notifications about new Shipment creation.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/Validation/ShipOrderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\ShipOrderInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/Validation/ShipOrderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Validation\ShipOrderInterface</code></a></td>
       <td>An interface for validating the service parameters and created Shipment data object.</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/Model/Order/Shipment/OrderRegistrarInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Shipment\OrderRegistrarInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/Model/Order/Shipment/OrderRegistrarInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Sales\Model\Order\Shipment\OrderRegistrarInterface</code></a></td>
       <td>An interface for registering a Shipment in Order to update amount of shipped items in a given Order according to Shipment. The <code class="highlighter-rouge">execute</code> method returns an updated Order.</td>
     </tr>
   </tbody>
