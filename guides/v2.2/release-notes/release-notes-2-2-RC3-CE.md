@@ -2,48 +2,38 @@
 layout: default
 group: release-notes
 subgroup: 2.2.0 Release Candidate
-title: Magento Commerce 2.2 Release Candidate 2 Release Notes
-menu_title: Magento Commerce 2.2 Release Candidate 2 Release Notes
-menu_order: 680
+title: Magento Open Source 2.2 Release Candidate 3 Release Notes
+menu_title: Magento Open Source 2.2 Release Candidate 3 Release Notes
+menu_order: 460
 level3_menu_node:
 level3_subgroup:
-github_link: release-notes/release-notes-2-2-RC2-EE.md
+github_link: release-notes/release-notes-2-2-RC3-CE.md
 ---
 
 *	TOC
 {:toc}
 
+*Release date: September 12, 2017*
 
-*Release date: September 1, 2017*
-
-*Notes updated: September 4, 2017*
-
+*Notes updated: September 12, 2017*
 
 
+Magento Open Source 2.2.0 Release Candidate 3.x (formerly Community Edition) includes significant new features as well as many bug fixes.
 
-Magento Commerce 2.2.0 Release Candidate 2x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
-
-Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information. This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
+Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information.  This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
 
 
 
 ## Highlights
 
-Magento Enterprise Edition 2.2.0 Release Candidate 2 includes substantial new features as well as many bug fixes. Look for the following highlights in this release:
-
-* **Enhanced B2B feature set** removes points of friction from the B2B purchasing process. We reduce the cost and complexity of building a B2B site on Magento by providing company account management features out-of-the-box.  B2B companies can easily view and manage all of their quotes in the Magento Admin Panel. B2B APIs enable backend integrations, too. Read more about Magento B2B in the [B2B Developer Guide]({{page.baseurl}}b2b/bk-b2b.html).
+Look for the following highlights in this release:
 
 
-* **Signifyd fraud protection** is now integrated with Magento. Signifyd identifies and rejects potential fraudulent orders and provides
-100% chargeback protection. We provide an introduction to Signifyd integration with Magento [here]({{page.baseurl}}mrg/ee/Signifyd.html).
+* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.
 
 
 
-* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging. We've introduced **Mass Asynchronous Operations as a framework feature** that leverages our queueing system to provide increased scalability for long running business processes.
-
-
-
-* **Upgraded technology stack.** Magento has dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, Varnish 5 support. All third-party libraries have been upgraded to the latest stable version.
+* **Upgraded technology stack.**  We've dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, and Varnish 5 support. All third-party libraries have been upgraded to the latest stable version.
 
 
 * **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/).
@@ -53,30 +43,25 @@ Magento Enterprise Edition 2.2.0 Release Candidate 2 includes substantial new fe
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
 
+## Issues fixed in this Release Candidate (RC 2x)
+The following fixed issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
-## Issues fixed in Release Candidate (RC 2x)
-The following fixed and open issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
 
-### Installation and Configuration 
 
-<!--- 70705 -->* The installation process no longer stops when loading the `Magento_Tax` module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
+### Installation, configuration, and deployment
 
-<!--- 70571 -->* You can now activate DEBUG logging while running Magento in production mode. (This feature is available, but disabled by default.) (RC21)
+<!--- 70705 -->* The installation process no longer stops when loading the Magento_Tax module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
+
+<!--- 70571 -->* You can now activate DEBUG logging while running Magento in production mode. (This feature is available, but disabled by default.) (RC21) 
 
 <!--- 71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}config-guide/config/disable-module-output.html) for details. (RC21)
-
-
-<!--- 70516 -->* Magento no longer indicates errors when you install without AMQP. Previously, Magento displayed the following error: (RC21)
-
-	`report.CRITICAL: Error Connecting to server (0): Failed to parse address ":" {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at /vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} []`
 
 
 <!--- 70573 -->* It is now possible to configure Redis settings for session storage, default cache, and full page cache from the command line. (RC22)
 
 
 <!--- 64351 -->* Magento now correctly generates URL rewrites when you save a product. (RC22)
-
 
 <!--- 67037 -->* The `core_config_data.value` of the `core_config_data` table is now populated consistently when you upgrade to or freshly install  Magento 2.2. (RC23)
 
@@ -85,8 +70,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71551 -->* Inconsistencies in the database tables that contain quote information no longer result when you upgrade from Magento 2.1.8 to 2.2. (RC23)
 
-
-
+<!--- 71890 -->* Magento no longer throws an exception when the configuration checksum is absent on a new installation. (RC30) 
 
 
 
@@ -96,26 +80,19 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70806 -->* The Persistent Shopping Cart feature now works as expected when enabled. This feature (**Store > Configurations > CUSTOMERS > Persistent Shopping Cart > General Options > Enable Persistence = Yes**) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)
 
 
-
 ### Catalog
 
 <!--- 69717 -->* Custom option IDs no longer change during import. Previously, custom option ID values were deleted, and new values were added. (RC2.0)
 
 <!--- 70877 -->* You can now successfully add a product to the compare list. Previously, when you tried to add a product to a compare list, Magento displayed an error. (RC2.0)
 
-<!--- 67618 -->* View permissions to high-level product categories now work as expected. Previously,  a user restricted to browse a category could still see the category in the top-level navigation menu if the page were previously cached in FPC. (RC2.0)
-
-<!--- 70750 -->* Magento now displays an accurate view of high-level product categories based on viewer permission. Previously, Magento displayed only the product categories that users who belonged to the NOT_LOGGED_IN customer group were permitted to view, no matter which user logged in. (RC2.0)
-
-
 <!--- 71242 -->* We’ve resolved failures with indexing in installations that implemented catalogs containing at least 5,000 - 6,000 SKUs. (RC21)
-
-
-<!--- 70619 -->* You can now successfully filter category products using the scope selector. (RC21)
 
 <!--- 69967 -->* Magento no longer indexes configurable products multiple times. Previously,  when you enabled break point activation on a configurable product, configurable products were indexed twice. (RC22)
 
 <!--- 70987 -->* Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled. (RC22)
+
+<!--- 61018 -->*  You can now use REST to add video to a product. [GitHub-7153](https://github.com/magento/magento2/issues/7153) (RC30)
 
 
 
@@ -126,24 +103,19 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70846 -->* Magento now displays white space after the first address field of the customer address field during checkout. (RC21)
 
 
-### Elasticsearch
+### Configurable products
 
-<!--- 71562 -->* The Elasticsearch indexer search-by-attribute functionality now works as expected. (RC23)
+<!--- 70346 -->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **Display Out of Stock Products** setting is set to **No**. (RC30)
+
+<!--- 71656 -->* Configurable products no longer show up on category page when all children are set to **enable product = No** and **display out-of-stock products = Off**. (RC30)
+
 
 
 ### Email
 
 <!--- 71349 -->* You can now configure an email return-path. (RC21)
 
-<!--- 65631 -->* Magento now sends email that provides updates on the status of RMA authorization. (RC21)
 
-
-
-
-
-### Gift wrap
-
-<!--- 70603 -->* You can now add gift options to an order if logged in using a secure URL. (RC23)
 
 
 ### Import and Export
@@ -164,30 +136,24 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71173 -->* You can now enable JavaScript minification without error. Previously, after enabling JS minification, the Magento  Admin displayed 404 errors when accessing JavaScript elements. (RC2.0)
 
-
-<!--- 70517 -->* You can now successfully check out when the **Deferred Stock Update** option is enabled, and the AMQP connection is not configured. Previously, checkout failed, and Magento displayed this message: 
-`Error Connecting to server (0): Failed to parse address ":" {"exception":"[object](PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"}` (RC2.0)
-
 <!--- 70816 -->* The WSDL listing now lists all available methods at all times without requiring authorization. (RC21)
 
 <!--- 71030 -->* Magento now plays the sound from only the video you’ve selected. Previously, when you clicked on a video associated with a configurable product, Magento played the soundtrack from both the selected video and the video of its parent. (RC21)
 
-<!--- 71434 -->* Varnish now caches pages with `.html` extensions. (RC21)
-
-<!--- 69757 -->* Magento now displays uncorrupted information in the shared catalogs  bulk operations  report. Previously, error information was corrupted. (RC21)
-
-<!--- 70853 -->* We’ve fixed an SQL error that previously caused a logical error during the creation of a TargetRule. (This issue affected the `modifyConditionByCategoryIdsAttribute` function.) (RC21)
-
-<!--- 71179 -->* Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account. 
-
-<!--- 71230 -->* The Firefox browser now correctly displays the Hierarchy Tree in **Admin Panel > Content > Hierarchy**.  (RC22)
-
+<!--- 71179 -->* Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account. (RC22)
 
 <!--- 70540 -->* You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product in the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)
 
 <!--- 64085 -->* Fixed HTML inline style used when sending emails that implement the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241) (RC23)
 
 <!--- 71415 -->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)
+
+<!--- 70377 -->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833) (RC30)
+
+<!--- 72112 -->* Subcategories no longer show up in the menu when the parent category is disabled or hidden from the menu. [GitHub-10064](https://github.com/magento/magento2/issues/10664) (RC30)
+
+
+<!--- 59810 -->* Showing reports on the **Reports > Coupons** page no longer throws an error when the user is in a non-default Admin locale. [GitHub-7037](https://github.com/magento/magento2/issues/7037) (RC30)
 
 ### Payment methods
 
@@ -200,32 +166,17 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 71050 -->* Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error `No such entity with customerId = 0`. (RC22)
 
 
-### Reports
-
-<!--- 69757 -->* Magento now displays uncorrupted information in the shared catalogs bulk operations report. Previously, error information was corrupted. (RC23)
-
 
 
 ### Shipping
+
+<!--- 72305 -->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). (RC30)
 
 <!--- 67283 -->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column. (RC2.0)
 
 <!--- 70861-->* Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)
 
 <!--- 71749-->* Magento now displays tracking information when selected for the second shipping label created for the DHL shipping method. Previously, when you tried to display a completed DHL  shipping label, Magento displayed an exception. (RC23)
-
-
-### Staging
-
-<!--- 70671 -->*  You can now preview an update from the dashboard and click on links and see how the entire instance would look like for a store between some dates. Previously, the links from the Preview page were broken. (RC2.0)
-
-<!--- 70708 -->* You can now change the Start Date for a campaign. (RC2.0)
-
-<!--- 71373 -->* You can now install Magento Commerce without Staging modules. (RC21)
-
-<!--- 71289 -->* Magento now saves scheduled updates for products with custom options as expected. (RC22)
-
-<!--- 71708 -->* You can now create a staging update for a product that contains a unique attribute in its attribute set. Previously, under these conditions, Magento displayed this error: `The value of attribute "test" must be unique’`. (RC23)
 
 
 
@@ -241,7 +192,14 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
+
+
+
+
+
 ## Issues resolved in Release Candidate 1.x
+
+The following fixed issues have been logged against the Magento 2.2.0 RC1.x release and documented in previously released release notes. 
 
 ### Installation and Configuration 
 
@@ -261,12 +219,10 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 67020 -->* Magento now handles the `catalog_product_entity_media_gallery_value.position`  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code. (RC1.5)
 
+
 <!--- 70869 -->* Magento no longer displays console errors after CSS merging and minification is enabled. Previously, when CSS merging and minification was enabled, the storefront was not displayed as expected, and the `styles-l.min.css` and `print.min.css` files could not be found. (RC1.8)
 
 <!--- 68969 -->* The contents of the `sales_sequence_meta` table is the same whether you install or upgrade Magento. (RC1.8)
-
-
-
 
 
 
@@ -304,6 +260,9 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
+
+
+
 ### Magento Business Intelligence
 
 <!--- 69615 -->* Requests for data transfer from Magento to MBI data now complete successfully. 
@@ -327,9 +286,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 69750 -->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute. 
 
 
-<!--- 70628 -->* The Forgot Your Password? email now contains a link to reset your password. Previously, this link was missing from the Forgot Your Password? email. (RC1.5)
-
-
 
 
 
@@ -340,13 +296,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
-<!--- 70642 -->* You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento crashed after you tried to save changes you may have made to this feature. (RC1.6)
-
-
-
-<!--- 70517 -->* You can now successfully check out when the **Deferred Stock Update** option is enabled, and the AMQP connection  is not configured. Previously, checkout failed, and Magento displayed this message:  
-	Error Connecting to server (0): Failed to parse address ":" {"exception":"[object](PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} []
-(RC1.6)
+<!--- 70642 -->* You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento displayed an error after you tried to save changes you may have made to this feature. (RC1.6)
 
 
 <!--- 70628 -->* The Forgot Your Password? email now includes an active link to reset your password. (RC1.6)
@@ -356,26 +306,24 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 64901 -->* Magento now supports new top level domains for email addresses. [GitHub-4547](https://github.com/magento/magento2/issues/4547) (RC1.6)
 
-<!--- 70518 -->* You can now override publishers configuration through the `env.php` file. (RC1.6)
-
 
 <!--- 67296 -->* String localizations now works as expected when  phrases include text wrapped with single quotation marks. (RC1.6)
 
 
-<!--- 70473 -->* Magento now displays company information on the Account Information section of the  Invoice, CreditMemo and Shipment pages. (RC1.8)
+<!--- 70473 -->* Magento now displays company information in the Account Information section of the Invoice, CreditMemo and Shipment pages. (RC1.8)
+
+
 
 
 <!--- 70683 -->* Magento now displays newly registered customers in the Admin customer list as expected. (RC1.8)
 
-<!--- 69606 -->* We’ve resolved a conflict that occurred after you changed a base URL. Previously, after you changed a `base_url` value (**Stores->Configuration->General->Web-> Base URLs (Secure)**), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure `base_url` call. 
+<!--- 70741 -->* You can now successfully add a related product to a configurable product. Previously, Magento displayed an error when you tried to edit a configurable product by adding a related, simple product.  (RC1.8)
+
 
 
 ### Performance
 
-<!--- 69904 -->* We’ve fixed an issue where errors occurred  in foreign keys after Magento added a message to the message queue. Previously, when a user configured a shared catalog, Magento front-end performance was detrimentally affected. (RC1.8)
-
 <!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)
-
 
 
 ### REST API
@@ -389,6 +337,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 ### Search
 
+
 <!--- 63249 -->* ElasticSearch now includes data about composite products in its search index. Previously, search results did not include data about composite products. 
 
 <!--- 59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020) (RC1.5)
@@ -401,16 +350,10 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70844 -->* The DHL provider option is now available. (RC1.8)
 
 
-### Staging
-
-<!--- 70922 -->* Magento now applies all scheduled product changes to all scopes.  (RC1.8)
-
-<!--- 70656 -->* Magento now displays the correct content on the preview page for a scheduled update.  (RC1.8)
-
 
 ### Tax rules
 
-<!--- 70641 -->* You can now create a tax rule when running Magento in Mozilla Firefox and Internet Explorer. Previously, you could not select a tax rate, and Magento displayed an error.  (RC1.8)
+<!--- 70641 -->* You can now create a tax rule when running Magento in Mozilla Firefox and Internet Explorer. Previously, you could not select a tax rate, and Magento displayed an error. (RC1.8)
 
 <!--- 59801 -->* We’ve improved the performance of the Tax Rules form in installations containing many tax rates. 
 
@@ -424,14 +367,11 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70651 -->* URL rewrites now occur as expected when category or products are saved. Previously, URLs rewrites did not occur for all categories. (RC1.6)
 
 
-### Visual Merchandiser
-
-<!--- 70896 -->* The Add products by SKU option now works as expected. Previously, if you entered a product SKU, Magento deleted that product from the product list. (RC1.8)
-
 
 
 
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html).
 
 ## Installation
