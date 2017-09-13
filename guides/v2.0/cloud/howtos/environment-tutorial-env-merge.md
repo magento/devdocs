@@ -1,7 +1,7 @@
 ---
 layout: default
-group: cloud
-subgroup: 
+group: 
+subgroup:
 title: Merge and delete an environment
 menu_title: Merge and delete an environment
 menu_order:

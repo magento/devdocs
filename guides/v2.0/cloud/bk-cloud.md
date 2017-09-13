@@ -126,12 +126,12 @@ We recommend the following starting points:
 *	[Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
 *	Starter information:
 
-	* [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
-	*	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
+	* [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
+	*	[Starter develop and deploy workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
 *	Pro information:
 
-	* [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-	*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+	* [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+	*	[Pro develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 * [Set up a project and dev workspace]({{page.baseurl}}cloud/before/before-workspace.html)
 

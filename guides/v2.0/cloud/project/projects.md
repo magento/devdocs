@@ -24,6 +24,8 @@ For more detailed information about actions and the Project Web Interface, see:
 *	[Upgrade and test Magento Commerce]({{page.baseurl}}cloud/project/project-upgrade.html)
 *	[Patch and test Magento Commerce]({{page.baseurl}}cloud/project/project-patch.html)
 
+{% include cloud/wings-management.md %}
+
 ## Access the Project Web Interface {#login}
 With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
 
@@ -34,11 +36,11 @@ When you first login, a list of projects you have access to displays. As a Proje
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 
-For Starter, you will see a hierarchy of branches starting from Master. Any branches you create display as children from Integration Master. We recommend creating a Staging branch, then branching from that for Integration development.
+For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html).
 
 ![Starter branch hierarchy]({{ site.baseurl }}common/images/cloud_project-starter.png)
 
-For Pro, you will see a hierarchy of branches starting from Production to Staging to Integration Master. Any branches you create display as children from Integration Master.
+For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration Master. Any branches you create display as children from Integration Master. For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
 
@@ -46,12 +48,16 @@ To access an environment store and admin, select a branch and click **Access Sit
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png)
 
-For Pro, the Production environment includes three nodes that you can access using the following links:
+The Pro plan Production environment includes three nodes that you can access using the following links:
 
 * Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 * Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
   The production URL is used by the content delivery network (CDN).
+
+If you have inactive Git branches of code, you can toggle displaying the branches in the hierarchy.
+
+![Show or hide inactive branches]({{ site.baseurl }}common/images/cloud_show-inactive.png)
 
 ## Configure environments
 You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{page.baseurl}}cloud/env/environments.html), each of which corresponds to a Git branch.
