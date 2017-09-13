@@ -1,1 +1,0 @@
-../../v2.0/architecture/logical_view.md

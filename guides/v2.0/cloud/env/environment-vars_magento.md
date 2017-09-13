@@ -4,7 +4,7 @@ group: cloud
 subgroup: 120_env
 title: Magento application environment variables
 menu_title: Magento application environment variables
-menu_order: 80
+menu_order: 92
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: vars

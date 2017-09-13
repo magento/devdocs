@@ -44,13 +44,17 @@ To set up authentication keys in the project:
 		       }
 		    }
 		}
-9.	For the checkbox options, only select the **Visible during build** check box. You should not select JSON value or Visible agt runtime. Depending on your user role or permissions, you may only see one option for Visible during build.
+9.	For the checkbox options, you should not select JSON value. Depending on your user role or permissions, you may only see one option.
+
+	![Set up authentication keys as project variables]({{ site.baseurl }}common/images/cloud_project-var3.png)
+
+	If you have edit access to the branch, you will see three options. Select only the **Visible during build** check box.
 
 	The following figure shows an example with all options.
 
 	![Set up authentication keys as project variables]({{ site.baseurl }}common/images/cloud_project-vars2.png)
 10.	Click **Add Variable**.
-11.	Remove `auth.json` from the Git repository from every environment currently configured for the project. 
+11.	Remove `auth.json` from the Git repository from every environment currently configured for the project.
 
 	Use the following command to list currently configured environments:
 
