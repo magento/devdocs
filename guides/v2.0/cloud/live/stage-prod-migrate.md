@@ -88,7 +88,7 @@ To migrate a database:
 
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
 
-	For Pro Staging and Production environments, the name of the database is in the MAGENTO_CLOUD_RELATIONSHIPS variable (typically the same as the application name and user name):
+	For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and user name):
 
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
 
