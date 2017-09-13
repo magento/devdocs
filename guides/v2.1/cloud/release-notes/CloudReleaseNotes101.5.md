@@ -10,11 +10,16 @@ version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.5.md
 ---
  
-These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.5, `magento-cloud-configuration` release 101.5.2 and release 101.5.3.
+These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Commerce (Cloud) version 2.1.5, `magento-cloud-configuration` release 101.5.2, 101.5.3, and 101.5.4.
+
+## 101.5.4 changes
+In `magento-cloud-configuration` release 101.5.4 on Magento Commerce (Cloud) 2.1.5, we provide the following improvements:
+
+<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on Magento Commerce (Cloud), see [Redis troubleshooting](http://devdocs.magento.com/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
 
 
 ## 101.5.3 changes
-In `magento-cloud-configuration` release 101.5.3 on Magento Enterprise Cloud Edition 2.1.5, we provide the following improvements:
+In `magento-cloud-configuration` release 101.5.3 on Magento Commerce (Cloud) 2.1.5, we provide the following improvements:
 
 
 <!--- MAGECLOUD-870 -->* Magento no longer automatically disables Google Analytics when deployed in the master branch.
@@ -33,9 +38,9 @@ In `magento-cloud-configuration` release 101.5.2 on Magento Enterprise Cloud Edi
 
 
 ## How to get `magento-cloud-configuration` release 101.5.x
-Magento Enterprise Cloud Edition periodically provides patch releases in components like `magento-cloud-configuration`.
+Magento  Commerce (Cloud) periodically provides patch releases in components like `magento-cloud-configuration`.
 
 To test and apply the patch, see [Test general patches]({{ site.gdeurl21 }}cloud/project/project-patch.html#cloud-patch-gen).
 
-### Magento EE Release Notes
-This Magento Enterprise Cloud Edition release corresponds to Magento Enterprise Edition 2.1.5.
+### Magento Commerce Release Notes
+This Magento Commerce (Cloud) release corresponds to Magento Commerce 2.1.5.
