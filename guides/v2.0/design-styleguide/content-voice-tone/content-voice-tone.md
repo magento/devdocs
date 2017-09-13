@@ -43,7 +43,7 @@ To ensure that users with special needs – including the use of screen readers 
 
 For more guidance, see this summary of [Web Content Accessibility Guidelines (WCAG) 2.0 standards](https://www.w3.org/WAI/WCAG20/glance/).
 
-Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php), Magento Admin content should score above 50 (high-school level).
+Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php), Magento Admin content should score above 50, which is approximately high-school level.
 <br><br>
 
 **Use correct terms and content style.**
@@ -56,11 +56,16 @@ When uncertain about using a correct term or style, consult the following docume
 
 * [Admin Design Pattern Library]({{page.baseurl}}pattern-library/bk-pattern.html)
 
-For standards not included in those documents, we refer to the following stylebooks:
+For standards not included in those documents, we use the following stylebooks:
 
-1.	The Associated Press (AP) Stylebook
-2.	Microsoft Manual of Style — Content for a worldwide audience (Ch. 3), Accessible content (Ch. 4), Procedures and technical content (Ch. 6)
-<br><br>
+* *First reference:* The Associated Press (AP) Stylebook
+
+* *Second reference:* Microsoft Manual of Style, specifically these chapters:
+
+  - Content for a worldwide audience (Ch. 3)
+  - Accessible content (Ch. 4)
+  - Procedures and technical content (Ch. 6)
+<br>
 
 **Avoid jargon, slang, and acronyms.**
 
@@ -154,7 +159,7 @@ Most websites have eliminated personal pronouns because using pronouns like “y
 
 The tone in UI content – including navigation, tables, forms, and calls to action – is usually more focused on accuracy and conciseness, but the same standards apply: Use clear, plain language and consult global conventions to ensure content is understood by all.
 
-Consistency is critical. For example, wherever content is displayed in [Data Tables]({{page.baseurl}}pattern-library/displaying-data/datatable/datatable.html) or [Form Elements]({{page.baseurl}}pattern-library/displaying-data/datatable/datatable.html), it should use Magento standard or global conventions.
+Consistency is critical. For example, wherever content is displayed in [Data Tables]({{page.baseurl}}pattern-library/displaying-data/datatable/datatable.html) or [Form Elements]({{page.baseurl}}pattern-library/getting-user-input/form_elements/form_elements.html), it should use Magento standard or global conventions.
 <br>
 
 *Correct example of button-label consistency, in a task flow:*

@@ -75,7 +75,7 @@ Links can be used as content links (for site navigation) and non-primary CTAs. W
   <li><strong>PDFs and other file formats.</strong>
     <ul>
       <li>Append the document-type acronym after the link label and link only the document title.</li>
-      <li>Use all caps case and do not add a period to the acronym. See <span markdown="1">[All Caps case standards]({{page.baseurl}}design-styleguide/capitalization/capitalization.html#all-caps) in Capitalization.</span></li>
+      <li>Use all caps case and do not add a period to the acronym. See <span markdown="1">[All Caps case standards]({{page.baseurl}}design-styleguide/capitalization/capitalization.html#all-caps)</span> in Capitalization.</li>
       <li>Do not use the file name or URL in the content &#8212; use the title of the document.</li>
     </ul>
     <em>Example:</em>
@@ -92,26 +92,26 @@ Links can be used as content links (for site navigation) and non-primary CTAs. W
 
 For actions like “Delete” and “Cancel”, always consider the possibility that the user took the action by mistake.
 
-If the user will lose a lot of work — or if the user's task is not easily recoverable — after taking the action, then create a verify step when the action is selected.
+If the user will lose a lot of work — or if the user's task is not easily recoverable — after taking the action, create an interstitial verify step that happens first when the action is selected.
 
 ### Label and Content Format
 
 Use the following template to create content for a verify step:
 
-* **Title:** Before you [ Action Label ]
+* **Title:** Before you [ Task Label ]
 
-* **Explainer content:** [ Specify the full implications that the action the user wants to take. ]
+* **Explainer content:** [ Specify the full implications for the action the user wants to take. ]
 
 * **Verification content:** Are you sure you want to continue?
 
-* **Calls to action:** [ Action Label ], Cancel ... *Note:* The "Action Label" uses the primary call to action and matches the Title Label.
+* **Calls to action:** [ Task Label ], Cancel ... *Note:* The "Task Label" is the primary call to action and matches the Title's Task Label.
 
 
 ## Button Labels Used in Admin
 
-**The importance of button labels:** Appending a specific label to a call to action’s verb clarifies the action that the user is taking.
+**Specify actions in buttons:** Appending a specific label to a call to action’s verb clarifies the action that the user is taking. ... *Example:* "Add Row" is more contextual and understandable than "Add".
 
-Refer to these footnotes for call-to-action hierarchy:
+The following labels are the standards for Admin labels. Refer to these footnotes for call-to-action hierarchy:
 <ul style="list-style-type:none">
   <li><strong>*</strong> — A primary call to action.</li>
   <li><strong>**</strong> — In specific contexts, can be used as a primary call to action.</li>
@@ -165,7 +165,7 @@ Refer to these footnotes for call-to-action hierarchy:
       <td>Use for a task-entry step (setting expectations and providing prerequisites), before a user has entered a task.</td>
     </tr>
     <tr>
-      <td>Reset [ + Label ]/td>
+      <td>Reset [ + Label ]</td>
       <td>Indicate to users what data is being reset and how the data will reset.
       <br><br>For actions that are not easily recoverable, include a verify step.<br><br>
       <em>Example:</em> “Reset to Defaults”. Do not confuse with “Clear Form”. </td>

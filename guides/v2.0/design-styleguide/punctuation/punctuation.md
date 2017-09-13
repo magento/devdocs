@@ -15,7 +15,17 @@ The following section surfaces either exceptions to the Associated Press (AP) St
 
 All grammatically correct sentences end in punctuation, usually a period. When introducing a series or a list, end sentences with a colon.
 
-## Punctuation Details
+## Punctuation to Avoid
+
+* (;) **Semicolons.** Often, these awkwardly break sentences, and many users will find difficulty in understanding. Usually, a writer can simplify the sentence rather than use semicolons. Do not use in place of a conjunction.
+
+* **Never use these punctuation types,** unless they are included as part of a brand name:
+
+  - (&) **Ampersands** – international users don't understand what ampersands mean
+
+  - (!) **Exclamation points**
+
+## Rules For ...
 
 ### Commas
 
@@ -27,8 +37,8 @@ All grammatically correct sentences end in punctuation, usually a period. When i
     </ul>
   </li>
   <li><strong>Use Oxford comma.</strong> Different from AP. We always use the Oxford or "serial" comma, which is the final comma in a list of items. <em>Correct example:</em> “Retain customers with custom registries, gift cards, and store credit.”</li>
-  <li><strong>Parenthesis.</strong> For details, jump to the <span markdown="1">[Parenthesis]({{page.baseurl}}design-styleguide/punctuation/punctuation.html#parenthesis) section.</li>
-  <li><strong>Numbers, dates, addresses.</strong> For details, see [Number Formats]({{page.baseurl}}design-styleguide/number-formats/number-formats.html).</li>
+  <li><strong>Parenthesis.</strong> For details, jump to the <span markdown="1">[Parenthesis]({{page.baseurl}}design-styleguide/punctuation/punctuation.html#parenthesis)</span> section.</li>
+  <li><strong>Numbers, dates, addresses.</strong> For details, see <span markdown="1">[Number Formats]({{page.baseurl}}design-styleguide/number-formats/number-formats.html).</span></li>
   <li><strong>Introductory phrases.</strong> Use commas to set off introductory phrases. ... Commas can be omitted after short phrases as long as the meaning, transitioning between phrase and sentence, is clear. <em>Correct example:</em> "(After <em>-or-</em> Following <em>-or-</em> To follow) this section, read the Associated Press (AP) Stylebook’s commas entry."</li>
   <li><strong>Non-essential phrases.</strong> A non-essential phrase is a phrase that can be removed from a sentence without adversely affecting its meaning. "Which" is used for non-essential phrases, and "that" is used for essential phrases. <em>See correct examples:</em>
   <ul style="list-style-type:none">
@@ -43,7 +53,7 @@ All grammatically correct sentences end in punctuation, usually a period. When i
 Use to end a sentence before:
 
 <ul>
-  <li>A complex series of items. Don't use a colon with a simple series. Also, consider using a list (see Lists in Content Formats) for a complex series of items. <em>See examples:</em>
+  <li>A complex series of items. Don't use a colon with a simple series. Also, consider using a list for a complex series of items. For details, see <span markdown="1">[Lists]({{page.baseurl}}design-styleguide/content-formats/content-formats.html#lists)</span> section in Content Formats. <em>See examples:</em>
     <ul style="list-style-type:none">
       <li><strong>No</strong> – “A shopping cart may include: pants, hats, and scarves."</li>
       <li>Yes – “A shopping cart may include pants, hats, and scarves.”</li>
@@ -113,7 +123,14 @@ For details, see the [Money]({{page.baseurl}}design-styleguide/number-formats/nu
 
 ### Parenthesis
 
-Avoid using. Use commas to set off parenthetical expressions or content. ... *Correct example:* "However, ..." *–or–* "For example, ..."
+Avoid using. Instead, use commas to set off parenthetical expressions or content.
+
+*Example:*
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – Magento publishes User Guides (used primarily by Merchants).</li>
+  <li>Yes – Magento publishes User Guides, used primarily by Merchants.</li>
+</ul>
 
 For acronyms that aren't referenced on first use, append them at the end of the term. ... *Correct example:* World Wide Web Consortium (W3C)
 
@@ -135,13 +152,3 @@ For acronyms that aren't referenced on first use, append them at the end of the 
 ### Slashes
 
 ( / ) Use only when space is constrained – in a form or a data table. Otherwise, spell out "and" or "or", instead.
-
-## Punctuation to Avoid
-
-* (;) **Semicolons.** Often, these awkwardly break sentences, and many users will find difficulty in understanding. Usually, a writer can simplify the sentence rather than use semicolons. Do not use in place of a conjunction.
-
-* **Never use these punctuation types,** unless they are included as part of a brand name:
-
-  - (&) **Ampersands** – international users don't understand what ampersands mean
-
-  - (!) **Exclamation points**

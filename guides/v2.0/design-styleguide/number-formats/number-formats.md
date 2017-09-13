@@ -14,15 +14,13 @@ For more number formats, use the Associated Press (AP) Stylebook on first refere
 ## Basic Standards
 
 <ul>
-  <li>For numbers 10 and higher, use numerals. For numbers lower than 10, spell out numbers.<br><br>
-  <em>Correct examples:</em>
+  <li>For numbers 10 and higher, use numerals. For numbers lower than 10, spell out numbers. <em>See correct examples:</em>
     <ul style="list-style-type:none">
       <li>Yes – “We offer this service in nine countries.”</li>
       <li>Yes – “Over 200 companies use this service.”</li>
     </ul>
   </li>
-  <li>In headlines and "pull quotes", where the number is the focus, use numerals.<br><br>
-  <em>Correct examples:</em>
+  <li>In headlines and "pull quotes", where the number is the focus, use numerals. <em>See correct examples:</em>
     <ul style="list-style-type:none">
       <li>Yes – “1 in 3 shoppers ...”</li>
       <li>Yes – “We’re #1”</li>
@@ -107,7 +105,9 @@ This is how we write about money:
 
   - Years ... *Correct example:* Use "2017", not "'17".
 
-* *Correct examples:* The conference begins ...
+**Correct Examples**
+
+* The conference begins ...
 
   - In September
 
@@ -119,7 +119,7 @@ This is how we write about money:
 
   - Friday, Sept. 8, 2017
 
-* *Correct example, in a sentence:* The conference runs Sept. 8-12, 2017.
+* *Date-range format, in a sentence:* The conference runs Sept. 8-12, 2017.
 
 ### Times
 
