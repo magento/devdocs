@@ -731,7 +731,7 @@
     <p>Complete the Magento installation</p>
   </li>
   <li>
-    <p>Install the Magento Commerce for B2B extension (optional) on top of an existing Magento Commerce installation</p>
+    <p>Install the Magento Commerce for B2B extension on top of an existing Magento Commerce installation (optional)</p>
   </li>
   <li>
     <p>Install sample data (optional)</p>
@@ -841,11 +841,13 @@ chmod u+x bin/magento
   <li>
     <p>Run the following commands after Composer finishes updating modules:</p>
 
-    <p>bin/magento setup:upgrade</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento setup:upgrade
 
-    <p>bin/magento setup:di:compile</p>
+bin/magento setup:di:compile
 
-    <p>bin/magento setup:static-content:deploy</p>
+bin/magento setup:static-content:deploy
+</code></pre>
+    </div>
   </li>
 </ol>
 
@@ -1065,7 +1067,7 @@ sharedCatalogUpdateCategoryPermissions
 </ol>
 
 <div class="bs-callout bs-callout-tip">
-  <p>Append <code class="highlighter-rouge">&amp;</code> to the command to run it in the background to return to a prompt and continue running commands (e.g., <code class="highlighter-rouge">bin/magento queue:consumers:start sharedCatalogUpdatePrice &amp;</code>).</p>
+  <p>Append <code class="highlighter-rouge">&amp;</code> to the command to run it in the background, return to a prompt, and continue running commands (e.g., <code class="highlighter-rouge">bin/magento queue:consumers:start sharedCatalogUpdatePrice &amp;</code>).</p>
 </div>
 
 <p>Refer to <a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a> for more information.</p>
