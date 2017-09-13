@@ -47,5 +47,5 @@ Magento Commerce (Cloud) periodically provides patch releases in components like
 To test and apply the patch, see [Test general patches]({{ site.gdeurl21 }}cloud/project/project-patch.html#cloud-patch-gen).
 
 ### Magento Commerce Release Notes
-This Magento Commerce (Cloud) release has no corresponding Magento EE release.
+This Magento Commerce (Cloud) release has no corresponding Magento Commerce release.
 
