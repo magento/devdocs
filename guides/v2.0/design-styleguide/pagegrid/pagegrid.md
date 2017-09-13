@@ -1,7 +1,7 @@
 ---
 layout: default
 group: styleguide
-subgroup: Admin Style Guide
+subgroup: Design
 title: Admin Page Grids
 menu_title: Page Grids
 menu_order: 3
@@ -10,7 +10,7 @@ version: 2.0
 github_link: design-styleguide/pagegrid/pagegrid.md
 ---
 
-<h2 id="page">Page grid</h2>
+<h2 id="page">Page Grid</h2>
 
 <ul>
 	<li>A 12-column fluid-width content grid is placed next to the page’s 1-column fixed-width left navigation</li>
@@ -20,8 +20,7 @@ github_link: design-styleguide/pagegrid/pagegrid.md
 
 <img src="img/PageGrid.png">
 
-
-<h2 id="slide-out">Slide-out grid</h2>
+<h2 id="slide-out">Slide-Out Grid</h2>
 
 A Slide-out panel, similar to a modal window, breaks apart and simplifies a complex subtask that is included within a primary task.
 
