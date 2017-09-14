@@ -29,11 +29,16 @@ Magento 2.0.16 contains almost 40 security fixes and enhancements.  Look for the
 * enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution 
 vulnerabilities. See [Magento 2.0.16 and 2.1.9 Security Patches](https://magento.com/security/patches/magento-2016-and-219-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
-* support for changes to the USPS API that USPS implemented on September 1, 2017.
+* support for changes to the USPS API that USPS implemented on September 1, 2017
+
+* change to how Magento displays status updates during upgrade.
+
 
 ## Fixed issue
 
-We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, the discontinued First-Class Mail Parcel service will change to First-Class Package Service – Retail. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html).
+* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, the discontinued First-Class Mail Parcel service will change to First-Class Package Service – Retail. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html).
+
+<!--- 60835 -->* We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.
 
 
 ## System requirements
