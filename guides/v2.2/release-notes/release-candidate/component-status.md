@@ -143,7 +143,7 @@ Issues that are not related to the 2.2 release are not part of this report.
 | Module/ Wishlist                       | <span class="status green">Green</span>   |
 | Tools/ MediaStorage                    | <span class="status green">Green</span>   |
 
-## CE Modules 
+## EE Modules 
 
 | Name                               | Status                                    |
 | ---------------------------------- | ----------------------------------------- |
