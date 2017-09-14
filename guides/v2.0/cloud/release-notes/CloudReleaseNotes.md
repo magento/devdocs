@@ -24,7 +24,7 @@ The following Release Notes are available:
 *	[Magento Enterprise Cloud Edition version 2.1.3 and 2.0.11]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.3.html)
 *	[Magento Enterprise Cloud Edition version 2.1.2 and 2.0.10]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.2.html)
 
-{% include cloud/split-db-nosupport.md %}
+
 
 ## Test your upgrade locally
 To test and implement your Magento Commerce (Cloud) upgrade, see [Test a Magento upgrade]({{ page.baseurl }}cloud/project/project-upgrade.html).
