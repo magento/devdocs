@@ -18,6 +18,14 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Updated backward incompatible changes after 2.2.0 RC3.0 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Sep 14
+[Added a rule set for the PHP_CodeSniffer](http://devdocs.magento.com/guides/v2.2/coding-standards/code-standard-sniffers.html)|2.2.x|Updated|Sep 13
+[Added troubleshooting information for Redis.](http://devdocs.magento.com/guides/v2.1/cloud/trouble/redis-troubleshooting.html)|2.0.x, 2.1.x, 2.2.x, 2.x|New|Sep 11
+Updated database dump commands for [patching](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html) and [upgrading](http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html) Magento Commerce Cloud, and for [Migrate and deploy](http://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html) content.|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Sep 08
+[Updated custom Fastly VCL snippet information](http://devdocs.magento.com/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Sep 08
+[Added troubleshooting information for generating and adding sitemap.xml and robots.txt.](http://devdocs.magento.com/guides/v2.2/cloud/trouble/robots-sitemap.html)|2.0.x, 2.1.x, 2.2.x, 2.x|New|Sep 08
+Updated content for [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) and [corresponding examples](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-initial.html) for in Magento Commerce (Cloud).|2.2.x|Updated|Sep 08
+[Versioning](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/versioning/)<br/>[Codebase Changes](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/versioning/codebase-changes.html)<br/>[Module version dependency](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/versioning/dependencies.html)|2.x|New and Updated|Sep 05
 Updated backward incompatible changes after 2.2.0 RC2.3 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Sep 04
 
 
