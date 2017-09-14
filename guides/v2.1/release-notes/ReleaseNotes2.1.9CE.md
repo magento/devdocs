@@ -35,7 +35,10 @@ Magento 2.1.9 contains almost 40 security fixes and enhancements.  Look for the 
 
 * support for changes to the USPS API that USPS implemented on September 1, 2017
 
-* fixed issue with logging information about exceptions caused by payment failures.
+* fixed issue with logging information about exceptions caused by payment failures
+
+* change to how Magento displays status updates during upgrade.
+
 
 
 
@@ -46,6 +49,8 @@ Magento 2.1.9 contains almost 40 security fixes and enhancements.  Look for the 
 
 <!--- 55065 -->* Magento now logs all expected exception information in the `exception.log` file when a payment transaction fails. 
 Previously, Magento did not log all exception information when a payment transaction failed, and this lack of full exception information, undermined debugging attempts.  [GitHub-6246](https://github.com/magento/magento2/issues/6246)
+
+<!--- 60835 -->* We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.   
 
 
 ## System requirements
