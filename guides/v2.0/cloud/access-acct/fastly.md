@@ -31,6 +31,8 @@ We'll provide you with the following credentials for your Staging and Production
 *	Fastly Service ID
 *	Fastly API token
 
+You can also locate these credentials in your Staging and Production systems in `/mnt/shared/fastly_tokens.txt`. You can SSH into the servers to verify the file in that location. If you do not locate this file, please enter a ticket for [Support]]({{ page.baseurl}}cloud/bk-cloud.html#gethelp) asking to have the file added. We can help provide this credentials file. 
+
 <div class="bs-callout bs-callout-warning" markdown="1">
 Make note of which environment each set of credentials is used for. If you use the wrong credentials in an environment, you'll encounter issues with Fastly.
 </div>

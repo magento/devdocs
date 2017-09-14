@@ -20,6 +20,8 @@ You can use any development and branching methodology you like. We strongly reco
 The following architecture information uses an architecture including Production, Staging, and Integration environments.
 </div>
 
+![High-level view of Starter project]({{ site.baseurl }}common/images/cloud_arch-starter.png)
+
 ## Production with a master branch {#cloud-arch-prod}
 The Production environment is your live store(s) and site(s). The environment includes your `master` Git branch, a web server, database, and configured services to fully test your site.
 
