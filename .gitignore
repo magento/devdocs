@@ -38,4 +38,4 @@ Rakefile
 /vendor/
 /Gemfile.lock
 /node_modules/
-/package-lock.json
+_algolia_api_key

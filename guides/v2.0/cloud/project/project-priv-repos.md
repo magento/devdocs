@@ -1,22 +1,22 @@
 ---
 layout: default
-group: cloud
-subgroup: 100_project
+group:
+subgroup:
 title: Pull code from a private Git repository
 menu_title: Pull code from a private Git repository
-menu_order: 600
-menu_node: 
-version: 2.0
+menu_order:
+menu_node:
+version:
 github_link: cloud/project/project-priv-repos.md
 ---
 
-Your Magento Enterprise Cloud Edition project can include code located in a private Git repository (for example, a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme). To do so, you must add your project's public SSH key to your private Git repository and update your project's `composer.json`.
+Your {{site.data.var.ece}} project can include code located in a private Git repository (for example, a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme). To do so, you must add your project's public SSH key to your private Git repository and update your project's `composer.json`.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>To add a deployment key to your private GitHub repository, you must be the administrator of that repository.</p>
 </div>
 
-GitHub allows you to use a deploy key for one repository only. 
+GitHub allows you to use a deploy key for one repository only.
 
 If your project needs to access multiple repositories, you can choose to
 attach an SSH key to an automated user account. Because this account won't
@@ -80,5 +80,3 @@ TBD -->
 <div class="bs-callout bs-callout-info" id="info">
   <p>In <code>composer.json</code>, use the <code>&lt;user>@&lt;host>:&lt;<path>.git</code> format, or <code>ssh://&lt;user>@&lt;host>:&lt;port>/&lt;path>.git</code> if using a non-standard port.</p>
 </div>
-
-

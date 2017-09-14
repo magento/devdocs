@@ -1,6 +1,6 @@
 <div markdown="1">
 
-You must create an SSH key pair on every machine and workspace you and your team expect to work with and access Magento Enterprise Cloud Edition and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.
+You must create an SSH key pair on every machine and workspace you and your team expect to work with and access {{site.data.var.ece}} and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.
 
 The SSH keys require the following:
 
@@ -92,8 +92,8 @@ After adding the SSH keys, test the SSH connection to GitHub:
 ### Add a public SSH key to your Magento account {#ssh-add-to-account}
 You can add SSH keys to your account in any of the following ways:
 
-*	Using the [Magento Enterprise Cloud Edition CLI](#add-key-cli)
-*	Using the [Magento Enterprise Cloud Edition Web Interface](#add-key-web)
+*	Using the [{{site.data.var.ece}} CLI](#add-key-cli)
+*	Using the [{{site.data.var.ece}} Web Interface](#add-key-web)
 
 #### Add a key using the CLI {#add-key-cli}
 To add an SSH key using the CLI:
@@ -114,7 +114,7 @@ To add an SSH key using the Web Interface:
 1.	Copy your SSH public key to the clipboard.
 
 	If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key){:target="_blank"} to create them.
-2.	Using the link in your welcome e-mail, access your Magento Enterprise Cloud Edition account.
+2.	Using the link in your welcome e-mail, access your {{site.data.var.ece}} account.
 
 3.	Log in to your project using Bitbucket, GitHub, Google, or a user name and password.
 

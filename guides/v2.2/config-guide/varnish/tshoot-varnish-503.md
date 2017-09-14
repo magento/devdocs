@@ -55,6 +55,7 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
              -p thread_pool_max=${VARNISH_MAX_THREADS} \
              -p http_resp_hdr_len=65536 \
              -p http_resp_size=98304 \
+	     -p workspace_backend=98304 \
              -S ${VARNISH_SECRET_FILE} \
              -s ${VARNISH_STORAGE}"
 
