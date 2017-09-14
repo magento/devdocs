@@ -68,3 +68,6 @@ With the account configured and authenticated, you can enable and disable PayPal
 * __Enable this Solution__ displays the PayPal payment method to customers through the website.
 * __Enable In-Context Checkout Experience__
 * __Enable PayPal Credit__ allows customers to PayPal credit financing without additional costs. PayPal pays the order up-front, handling all repayments for the credit directly with the customer.
+
+## PayPal variables {#deploy}
+When using the PayPal on-boarding tool with {{site.data.var.ece}} 2.1.8 and later 2.1.x versions, we automatically include a variable in `.magento.app.yaml` to correctly connect your PayPal module with PayPal services.

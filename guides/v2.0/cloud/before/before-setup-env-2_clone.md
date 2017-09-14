@@ -49,10 +49,10 @@ To clone the project's `master` environment to your local:
 
 8.	Fetch origin branches:
 
-		git fetch magento
+		git fetch origin
 9.	Pull updated code:
 
-		git pull magento <environment ID>
+		git pull origin <environment ID>
 
 ## Change the Magento Admin URL, user name, and password on master {#setvariables}
 Change the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} parameters for security reasons prior to branching from master. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.

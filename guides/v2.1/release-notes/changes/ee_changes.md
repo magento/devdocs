@@ -20,6 +20,10 @@ where each change is displayed in a separate row in the table, with the followin
 - **Class** or **Interface** with the name of an affected class or interface
 - **What changed** with the description of a backward incompatible change
 
+## 2.1.9 - 2.1.8    {#delta-219-218}
+
+{% include changes/ee/219-218.html %}
+
 ## 2.1.8 - 2.1.7 {#delta-218-217}
 
 {% include changes/ee/218-217.html %}

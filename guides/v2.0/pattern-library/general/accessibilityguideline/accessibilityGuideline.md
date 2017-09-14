@@ -3,9 +3,9 @@ layout: default
 group: pattern
 subgroup: General
 title: Admin Design Pattern Library
-menu_title: Accessibility Guideline
-menu_order: 
-menu_node: 
+menu_title: Accessibility Guidelines
+menu_order:
+menu_node:
 version: 2.0
 github_link: pattern-library/general/accessibilityguideline/accessibilityGuideline.md
 redirect_from: /guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html
@@ -21,7 +21,7 @@ Don't make textual content too long or too short.
 
 **2. Provide adequate contrast**
 
-Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here: 
+Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here:
 <a href="http://webaim.org/resources/contrastchecker/" target="blank">http://webaim.org/resources/contrastchecker/ </a>
 or here:
 <a href="http://www.paciellogroup.com/resources/contrastAnalyser" target="blank">http://www.paciellogroup.com/resources/contrastAnalyser</a>

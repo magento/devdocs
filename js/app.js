@@ -2,6 +2,7 @@
 //= include _vendor/affix.js
 //= include _vendor/scrollspy.js
 //= include _vendor/clipboard.min.js
+//= include _vendor/autocomplete.jquery.js
 
 // This is what happens on document.ready
 $(function() {

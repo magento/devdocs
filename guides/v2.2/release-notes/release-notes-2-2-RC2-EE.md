@@ -53,13 +53,14 @@ Magento Enterprise Edition 2.2.0 Release Candidate 2 includes substantial new fe
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
 
-## Issues fixed in this Release Candidate (RC 2x)
+
+## Issues fixed in Release Candidate (RC 2x)
 The following fixed and open issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
 
 ### Installation and Configuration 
 
-<!--- 70705 -->* The installation process no longer stops when loading the Magento_Tax module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
+<!--- 70705 -->* The installation process no longer stops when loading the `Magento_Tax` module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
 
 <!--- 70571 -->* You can now activate DEBUG logging while running Magento in production mode. (This feature is available, but disabled by default.) (RC21)
 
@@ -115,7 +116,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 69967 -->* Magento no longer indexes configurable products multiple times. Previously,  when you enabled break point activation on a configurable product, configurable products were indexed twice. (RC22)
 
 <!--- 70987 -->* Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled. (RC22)
-
 
 
 
@@ -198,7 +198,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 71371 -->* Merchants can now accept payment on a Suspected Fraud order without Magento altering the amount in Total Paid. Previously,  when a merchant accepted payment for an order with a  status  of Suspected Fraud, Magento doubled the payment amount. (RC22)
 
 <!--- 71050 -->* Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error `No such entity with customerId = 0`. (RC22)
-
 
 
 ### Reports

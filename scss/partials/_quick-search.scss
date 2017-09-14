@@ -7,22 +7,29 @@
   height: $header-height;
   top: 0;
   right: 0;
-  z-index: 10;
+  z-index: 9999;
 
-  padding-left: 260px;
+  background: $light-gray-color;
   padding-right: 80px;
 
+  // TODO: get rid of the magic numbers here:
+  padding-left: 320px;
+  /*
   @media (max-width:1200px) {
-    padding-left: 174px;
+    padding-left: 240px;
   }
 
   @media ( $large-screen ) {
-    padding-left: 320px;
+    padding-left: 380px;
   }
+  */
+
+
   @media ( $small-screen ) {
     padding-left: 20px;
     z-index: 12;
   }
+
   input {
     display: block;
     background: #fff;
@@ -39,7 +46,7 @@
   }
 
   .search-active & {
-    display: block;
+    display: flex;
   }
 
 
@@ -60,4 +67,42 @@
 }
 .search-active .site-header .menu-btn {
   z-index: 1;
+}
+
+
+.algolia-autocomplete {
+  flex: 1 0 auto;
+}
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 100%;
+}
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #9B9B9B;
+  margin-top: 2px;
+  border-radius: 2px;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion a {
+  display: block;
+  padding: 10px 15px;
+  color: $body-font-color;
+  text-decoration: none;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion a:hover {
+  color: $body-font-color;
+  background: $dropdown-link-hover-bg;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background: $dropdown-link-hover-bg;;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
 }
