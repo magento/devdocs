@@ -1,7 +1,7 @@
 ---
 layout: default
 group: styleguide
-subgroup:
+subgroup: Admin Style Guide
 title: Admin Style Guide
 landing-page: Admin Style Guide
 menu_title: Introduction
