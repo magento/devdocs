@@ -44,13 +44,13 @@ mage2100url: "https://github.com/magento/magento2/blob/2.1/"
 # 2.2.0 variables
 gdeurl22: "/guides/v2.2/"
 githuburl22: "https://github.com/magento/devdocs/tree/develop/guides/v2.2/"
-mage2200url: "https://github.com/magento/magento2/blob/develop/"
+mage2200url: "https://github.com/magento/magento2/blob/2.2/"
 
 # 2.3.0 variables
 
 gdeurl23: "/guides/v2.3/"
 githuburl23: "https://github.com/magento/devdocs/tree/develop/guides/v2.3/"
-mage2300url: "https://github.com/magento/magento2/blob/2.3/"
+mage2300url: "https://github.com/magento/magento2/blob/develop/"
 
 # Other variables
 namem2fedg: "Magento 2 Frontend Developer's Guide"
