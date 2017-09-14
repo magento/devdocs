@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Admin Buttons and Links Usage | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.1">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Admin Style Guide</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Introduction</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Design</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/color/color.html">Color</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/iconography/iconography.html">Iconography</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/pagegrid/pagegrid.html">Page Grids</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/typography/typography.html">Typography</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Writing and Content</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/content-voice-tone/content-voice-tone.html">Voice and Tone</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/errors-and-messages/errors-and-messages.html">Errors and Messages Writing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html">Buttons and Links Usage</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/capitalization/capitalization.html">Capitalization</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/headings-and-organization/headings-and-organization.html">Headings and Organization</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/punctuation/punctuation.html">Punctuation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/content-formats/content-formats.html">Content Formats</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/number-formats/number-formats.html">Number Formats</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.1/design-styleguide/bk-styleguide.html">
+            <span property="name">Admin Style Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Admin Buttons and Links Usage</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Admin Buttons and Links Usage</h1>
+
+  
+
+
+</section>
+
+
+			<p>Buttons are primarily used for task-based navigation, and links are primarily used for site navigation.</p>
+
+<p>However, both buttons and links can function as calls to action (CTAs). Whether button or link, a CTA is used to encourage a user to take an action. CTA labels use title case and active verbs, should be short, and should use labels consistently across the Admin panel.</p>
+
+<p>For more details, see <a href="/guides/v2.1/design-styleguide/capitalization/capitalization.html#title-case">Title Case standards</a> in Capitalization.</p>
+
+<p><em>Examples:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “Free Demo”</li>
+  <li>Yes – “Sign Up for Free Demo”</li>
+</ul>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “New Rule”</li>
+  <li>Yes – “Add Rule”</li>
+</ul>
+
+<h2 id="buttons">Buttons</h2>
+
+<p>Buttons are calls to action, and their labels should be limited to three words (four words maximum, if including a short verb or word).</p>
+
+<p>Buttons can be used for:</p>
+
+<ul>
+  <li>
+    <p>Calls to action for task flows: to begin, continue, or submit a task</p>
+  </li>
+  <li>
+    <p>Navigation in featured modules of content, like banners and content teasers</p>
+  </li>
+</ul>
+
+<p>Button types are primary, secondary, and tertiary. Each page should have a maximum limit of one primary button. Split buttons include multiple actions. Button counts in a Button Bar or any array of buttons should be limited to four buttons, maximum.</p>
+
+<p><strong>For design specs,</strong> see <a href="/guides/v2.1/pattern-library/controls/buttons/buttons.html">Buttons</a> and <a href="/guides/v2.1/pattern-library/controls/button-bar/button-bar.html">Button Bar</a> patterns.</p>
+
+<h2 id="links">Links</h2>
+
+<p>Minimize the amount of words — within 2-5 words, ideally — in a link label and use best practices in finding optimal keywords.</p>
+
+<p>Other links guidance includes:</p>
+
+<ul>
+  <li>
+    <p><strong>Avoid spawning new windows / tabs.</strong> As a general rule, new tabs and windows can confuse users and cause them to close their browser windows. However, exceptions for usage do exist.</p>
+  </li>
+  <li>
+    <p><strong>External-link icon.</strong> Only use when linking to a non-Magento page. … <em>Correct example:</em> Go to <a href="https://www.wikipedia.org/">Wikipedia</a></p>
+  </li>
+</ul>
+
+<p>Links can be used as content links (for site navigation) and non-primary CTAs. When used as CTAs, link labels should be long enough to be understood, but as short as possible. However, a link CTA’s label may sometimes stretch a few words longer than a button label.</p>
+
+<p><strong>For link typography specs,</strong> see <a href="/guides/v2.1/design-styleguide/typography/typography.html#legal-and-link-text">Legal and Link Text</a> in Typography standards.</p>
+
+<h2 id="accessibility">Accessibility</h2>
+
+<ul>
+  <li>
+    <p><strong>Never use “click here” as a label.</strong> Labels should identify and describe the target of the link.</p>
+  </li>
+  <li>
+    <p><strong>Avoid using file names or URLs as link labels.</strong></p>
+  </li>
+  <li>
+    <p><strong>Clearly identify file download links.</strong> Indicate in the label that the user is about to “download” a file.</p>
+  </li>
+  <li>
+    <p><strong>For anchor links, use “Jump to” before the link.</strong> This identifies the link as an anchor and that it won’t navigate users to another page.</p>
+  </li>
+  <li>
+    <p><strong>Use linked icons with care.</strong> Users may not know what the icon means, so for icons that aren’t globally recognized, pair a linked label with a linked icon. See <a href="/guides/v2.1/design-styleguide/iconography/iconography.html">Iconography standards</a>.</p>
+  </li>
+</ul>
+
+<h2 id="labels-best-practices">Labels Best Practices</h2>
+
+<ul>
+  <li><strong>Parallelism.</strong> When linking to a page with a direct reference, match the exact wording of the page title or, for anchor tags, the section heading title.</li>
+  <li><strong>PDFs and other file formats.</strong>
+    <ul>
+      <li>Append the document-type acronym after the link label and link only the document title.</li>
+      <li>Use all caps case and do not add a period to the acronym. See <span><a href="/guides/v2.1/design-styleguide/capitalization/capitalization.html#all-caps">All Caps case standards</a></span> in Capitalization.</li>
+      <li>Do not use the file name or URL in the content &#8212; use the title of the document.</li>
+    </ul>
+    <em>Example:</em>
+      <ul style="list-style-type:none">
+        <li><strong>No</strong> – “<a href="javascript:void(0);">Download FAQs (.PDF)</a>”</li>
+        <li><strong>No</strong> – “<a href="javascript:void(0);">Download FAQs (.pdf)</a>”</li>
+        <li><strong>No</strong> – “<a href="javascript:void(0);">Download faqs-bh-v1.pdf</a>”</li>
+        <li>Yes – “<a href="javascript:void(0);">Download FAQs (PDF)</a>”</li>
+      </ul>
+  </li>
+</ul>
+
+<h2 id="when-to-verify-a-call-to-action">When to Verify a Call to Action</h2>
+
+<p>For actions like “Delete” and “Cancel”, always consider the possibility that the user took the action by mistake.</p>
+
+<p>If the user will lose a lot of work — or if the user’s task is not easily recoverable — after taking the action, create an interstitial verify step that happens first when the action is selected.</p>
+
+<h3 id="label-and-content-format">Label and Content Format</h3>
+
+<p>Use the following template to create content for a verify step:</p>
+
+<ul>
+  <li>
+    <p><strong>Title:</strong> Before you [ Task Label ]</p>
+  </li>
+  <li>
+    <p><strong>Explainer content:</strong> [ Specify the full implications for the action the user wants to take. ]</p>
+  </li>
+  <li>
+    <p><strong>Verification content:</strong> Are you sure you want to continue?</p>
+  </li>
+  <li>
+    <p><strong>Calls to action:</strong> [ Task Label ], Cancel … <em>Note:</em> The “Task Label” is the primary call to action and matches the Title’s Task Label.</p>
+  </li>
+</ul>
+
+<h2 id="button-labels-used-in-admin">Button Labels Used in Admin</h2>
+
+<p><strong>Specify actions in buttons:</strong> Appending a specific label to a call to action’s verb clarifies the action that the user is taking. … <em>Example:</em> “Add Row” is more contextual and understandable than “Add”.</p>
+
+<p>The following labels are the standards for Admin labels. Refer to these footnotes for call-to-action hierarchy:</p>
+<ul style="list-style-type:none">
+  <li><strong>*</strong> — A primary call to action.</li>
+  <li><strong>**</strong> — In specific contexts, can be used as a primary call to action.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <th style="width:30%">Label</th>
+      <th style="width:70%">Usage Guideline</th>
+    </tr>
+    <tr>
+      <td>Add<strong>*</strong><br />Add [ + Label ]<strong>*</strong></td>
+      <td>Use to create a new object or to add an existing object. As a primary call to action, the label usually matches the page title.<br /><br />   
+      “Create [ + Label ]” is also used, but only as an action for creating a new object, not adding an existing one.</td>
+    </tr>
+    <tr>
+      <td>Cancel<br />Cancel [ + Label ]</td>
+      <td>In Admin, "Cancel" is used as a link in the Button Bar. Use "Cancel" to end a task flow, with changes unsaved. If the cancellation is not easily recoverable, then include a verify step.</td>
+    </tr>
+    <tr>
+      <td>Clear Form</td>
+      <td>Use to erase all entries on a form, not to be confused with “Reset [ + Label ]”.
+      <br /><br />For actions that are not easily recoverable, include a verify step.</td>
+    </tr>
+    <tr>
+      <td>Delete<br />Delete [ + Label ]</td>
+      <td>Use to permanently remove an object.<br /><br />
+      If the removal is not easily recoverable, then include a verify step.</td>
+    </tr>
+    <tr>
+      <td>Edit<br />Edit [ + Label ]</td>
+      <td>When to use "Edit" vs. "Change":<br /><br />
+        <ul>
+          <li>Use "Edit" when an object's information is edited.</li>
+          <li>Use “Change” when switching from one object to another.</li>
+          <li><em>What's the difference?</em> When users want to change a payment method, they don’t want to “Edit” the information for the specified payment method.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Continue<strong>*</strong></td>
+      <td>Use to navigate linear task flows.</td>
+    </tr>
+    <tr>
+      <td>Filter<br />Apply Filter</td>
+      <td>For “Filter”, use to select categories to narrow a data set. For “Apply Filter”, use to activate the selected filters in the data set. Do not confuse with “Sort”.</td>
+    </tr>
+    <tr>
+      <td>Get Started<strong>*</strong></td>
+      <td>Use for a task-entry step (setting expectations and providing prerequisites), before a user has entered a task.</td>
+    </tr>
+    <tr>
+      <td>Reset [ + Label ]</td>
+      <td>Indicate to users what data is being reset and how the data will reset.
+      <br /><br />For actions that are not easily recoverable, include a verify step.<br /><br />
+      <em>Example:</em> “Reset to Defaults”. Do not confuse with “Clear Form”. </td>
+    </tr>
+    <tr>
+      <td>Save<strong>**</strong><br />Save [ + Label ]<strong>**</strong></td>
+      <td>Use to capture changes or to submit an entry. "Save" is usually use a secondary task, when a user wants to save changes and not continue, but “Save” can be used as a primary call to action, in Admin.</td>
+    </tr>
+    <tr>
+      <td>Search<strong>*</strong></td>
+      <td>Use for search tasks, not filter tasks.</td>
+    </tr>
+    <tr>
+      <td>Sort</td>
+      <td>Use to select a category from which to sort data, not to be confused with “Filter”.</td>
+    </tr>
+    <tr>
+      <td>Submit<strong>*</strong><br />Submit [ + Label ]<strong>*</strong></td>
+      <td>Use to complete a task or to submit it for completion. Insert the specific name of task as the label to clarify for users what they are submitting.</td>
+    </tr>
+  </tbody>
+</table>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

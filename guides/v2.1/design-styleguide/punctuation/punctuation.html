@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Admin Punctuation | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/design-styleguide/punctuation/punctuation.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.1">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/design-styleguide/punctuation/punctuation.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/design-styleguide/punctuation/punctuation.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/design-styleguide/punctuation/punctuation.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Admin Style Guide</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Introduction</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Design</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/color/color.html">Color</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/iconography/iconography.html">Iconography</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/pagegrid/pagegrid.html">Page Grids</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/typography/typography.html">Typography</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Writing and Content</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/content-voice-tone/content-voice-tone.html">Voice and Tone</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/errors-and-messages/errors-and-messages.html">Errors and Messages Writing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html">Buttons and Links Usage</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/capitalization/capitalization.html">Capitalization</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/headings-and-organization/headings-and-organization.html">Headings and Organization</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/design-styleguide/punctuation/punctuation.html">Punctuation</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/content-formats/content-formats.html">Content Formats</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/design-styleguide/number-formats/number-formats.html">Number Formats</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.1/design-styleguide/bk-styleguide.html">
+            <span property="name">Admin Style Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Admin Punctuation</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Admin Punctuation</h1>
+
+  
+
+
+</section>
+
+
+			<p>The following section surfaces either exceptions to the Associated Press (AP) Stylebook or summarized key elements from the stylebook to keep handy when writing content.</p>
+
+<h2 id="sentences">Sentences</h2>
+
+<p>All grammatically correct sentences end in punctuation, usually a period. When introducing a series or a list, end sentences with a colon.</p>
+
+<h2 id="punctuation-to-avoid">Punctuation to Avoid</h2>
+
+<ul>
+  <li>
+    <p>(;) <strong>Semicolons.</strong> Often, these awkwardly break sentences, and many users will find difficulty in understanding. Usually, a writer can simplify the sentence rather than use semicolons. Do not use in place of a conjunction.</p>
+  </li>
+  <li>
+    <p><strong>Never use these punctuation types,</strong> unless they are included as part of a brand name:</p>
+
+    <ul>
+      <li>
+        <p>(&amp;) <strong>Ampersands</strong> – international users don’t understand what ampersands mean</p>
+      </li>
+      <li>
+        <p>(!) <strong>Exclamation points</strong></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="rules-for-">Rules For …</h2>
+
+<h3 id="commas">Commas</h3>
+
+<ul>
+  <li><strong>Conjunctions.</strong> Use a comma before a conjunction to separate independent clauses (note: clauses have a subject and predicate) joined by conjunctions, including and, but, for, or, nor, so, and yet. <em>See example:</em>
+    <ul style="list-style-type:none">
+      <li><strong>No</strong> – “Users go to the Cart and review their items. (No comma's needed, since no subject follows “and”.)"</li>
+      <li>Yes – “Users go to the Cart, and they review their items.”</li>
+    </ul>
+  </li>
+  <li><strong>Use Oxford comma.</strong> Different from AP. We always use the Oxford or "serial" comma, which is the final comma in a list of items. <em>Correct example:</em> “Retain customers with custom registries, gift cards, and store credit.”</li>
+  <li><strong>Parenthesis.</strong> For details, jump to the <span><a href="/guides/v2.1/design-styleguide/punctuation/punctuation.html#parenthesis">Parenthesis</a></span> section.</li>
+  <li><strong>Numbers, dates, addresses.</strong> For details, see <span><a href="/guides/v2.1/design-styleguide/number-formats/number-formats.html">Number Formats</a>.</span></li>
+  <li><strong>Introductory phrases.</strong> Use commas to set off introductory phrases. ... Commas can be omitted after short phrases as long as the meaning, transitioning between phrase and sentence, is clear. <em>Correct example:</em> "(After <em>-or-</em> Following <em>-or-</em> To follow) this section, read the Associated Press (AP) Stylebook’s commas entry."</li>
+  <li><strong>Non-essential phrases.</strong> A non-essential phrase is a phrase that can be removed from a sentence without adversely affecting its meaning. "Which" is used for non-essential phrases, and "that" is used for essential phrases. <em>See correct examples:</em>
+  <ul style="list-style-type:none">
+    <li>Non-essential – "Promotions, which are set up with cart and catalog rules, are created in the Admin panel."</li>
+    <li>Essential – "Promotions that are set up with catalog rules do not display in Cart."</li>
+  </ul>
+  </li>
+</ul>
+
+<h3 id="colon">Colon</h3>
+
+<p>Use to end a sentence before:</p>
+
+<ul>
+  <li>A complex series of items. Don't use a colon with a simple series. Also, consider using a list for a complex series of items. For details, see <span><a href="/guides/v2.1/design-styleguide/content-formats/content-formats.html#lists">Lists</a></span> section in Content Formats. <em>See examples:</em>
+    <ul style="list-style-type:none">
+      <li><strong>No</strong> – “A shopping cart may include: pants, hats, and scarves."</li>
+      <li>Yes – “A shopping cart may include pants, hats, and scarves.”</li>
+    </ul>
+  </li>
+  <li>A bulleted list</li>
+  <li>A long quotation</li>
+  <li>An introductory, independent clause ... *Correct example:* "Here's an idea: Add a clause to a sentence."</li>
+</ul>
+
+<p>Use between a title and a description or subtitle … <em>Correct example:</em> “Magento Live: Take Your Business to the Next Level”</p>
+
+<p><strong>Capitalization after a colon.</strong> When a complete sentence follows a colon, capitalize the first word of the following sentence. When a series or partial sentence follows a colon, do not capitalize.</p>
+
+<p><em>Correct examples:</em></p>
+
+<ul style="list-style-type:none">
+  <li>Complete sentence – "The company makes the following promise: This solution will improve your bottom line.”</li>
+  <li>Series – “There are three considerations: expense, time, and feasibility.”</li>
+</ul>
+
+<h3 id="ellipsis">Ellipsis</h3>
+
+<p>(…) Use with one space before and one space after. … Example: “The user will … complete a sentence.”</p>
+
+<p>Use in:</p>
+
+<ul>
+  <li>
+    <p>Headers or sentences to introduce a bulleted list, when the preceding text and items complete a sentence.</p>
+  </li>
+  <li>
+    <p>Data labels to introduce a data field that completes a sentence.</p>
+  </li>
+  <li>
+    <p>Field labels to introduce a variable entry field that can be customized.</p>
+  </li>
+</ul>
+
+<h3 id="em-dashes">Em Dashes</h3>
+
+<p>(—) Use an em dash with a space on either side, as a longer breather between ideas. Do not use for ranges of numbers.</p>
+
+<p><em>Correct example:</em> The em dash — as noted in the stylebook — should have spaces before and after its placement.</p>
+
+<h3 id="hyphens">Hyphens</h3>
+
+<p>(-) Use for:</p>
+
+<ul>
+  <li>
+    <p>Compound modifiers, but not common prefixes. … <em>Correct examples:</em> high-value item, hard-to-find item</p>
+  </li>
+  <li>
+    <p>Multiple modifiers. … <em>Correct example:</em> “high- and low-value items”</p>
+  </li>
+  <li>
+    <p>Exceptions include:</p>
+
+    <ul>
+      <li>
+        <p>Adverbs … <em>Incorrect example:</em> “highly-valued item”</p>
+      </li>
+      <li>
+        <p>When not paired with a noun … <em>Incorrect example:</em> “The item is high-value.”</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Do not use as a dash. See em dashes in previous entry.</p>
+  </li>
+</ul>
+
+<h3 id="footnotes">Footnotes</h3>
+
+<p>(reference<sup>1</sup>) Should use a number – not an asterisk or other symbols – here<sup>1</sup> and here<sup>2</sup>, and the legal content that it references should be placed in the footer.</p>
+
+<h3 id="money">Money</h3>
+
+<p>For details, see the <a href="/guides/v2.1/design-styleguide/number-formats/number-formats.html#money">Money</a> section in Number Formats.</p>
+
+<h3 id="percentages">Percentages</h3>
+
+<p>(%) Spell out “percent” unless space is constrained, as in a form or a data table. … <em>Correct example:</em> 23 percent</p>
+
+<h3 id="parenthesis">Parenthesis</h3>
+
+<p>Avoid using. Instead, use commas to set off parenthetical expressions or content.</p>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – Magento publishes User Guides (used primarily by Merchants).</li>
+  <li>Yes – Magento publishes User Guides, used primarily by Merchants.</li>
+</ul>
+
+<p>For acronyms that aren’t referenced on first use, append them at the end of the term. … <em>Correct example:</em> World Wide Web Consortium (W3C)</p>
+
+<h3 id="question-marks">Question Marks</h3>
+
+<p>(?) Generally avoid questions in content – use declarations.</p>
+
+<h3 id="quotation-marks">Quotation Marks</h3>
+
+<p>(“) Always use double quotation marks when someone is speaking. Avoid “that” before quotes.</p>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – Mark Lavelle said that “the winners of the 2015 Imagine Excellence Awards embody the relentless commitment of our clients.”</li>
+  <li>Yes – “The winners of the 2016 Imagine Excellence Awards embody the relentless commitment of our clients and partners,” said Mark Lavelle.</li>
+</ul>
+
+<h3 id="slashes">Slashes</h3>
+
+<p>( / ) Use only when space is constrained – in a form or a data table. Otherwise, spell out “and” or “or”, instead.</p>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/design-styleguide/punctuation/punctuation.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/design-styleguide/punctuation/punctuation.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
