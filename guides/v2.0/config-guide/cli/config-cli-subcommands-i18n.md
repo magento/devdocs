@@ -16,7 +16,7 @@ Magento translations enable you to customize and localize your store for multipl
 
 This topic discusses how to generate:
 
-*	Translation dictionaries, which are a convenient way to translate *some* words and phrases, such as those for a custom module or theme.
+*	Translation dictionaries, which are a convenient way to translate *some* words and phrases, such as those for a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 *	Language packages, which enable you to translate *any or all* words and phrases in the Magento application.
 
 For more information, see <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html">Translation</a>.
@@ -26,7 +26,7 @@ For more information, see <a href="{{page.baseurl}}frontend-dev-guide/translatio
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
   
 <h2 id="config-cli-subcommands-xlate-dict">Generate a translation dictionary</h2>
-You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a language package. See one of the following sections:
+You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %}. See one of the following sections:
 
 *	<a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a>
 *	<a href="#config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</a>
@@ -76,7 +76,7 @@ The following table discusses the meanings of this command's parameters and valu
 </tr>
 <tr>
 		<td><p>-o|--output="&lt;path>"</p></td>
-		<td><p>Specifies the absolute file system path and file name of the translation dictionary .csv file to create. <em>The value you enter is case-sensitive</em>. The name of the .csv vile must <em>exactly match</em> the locale name, including the characters' case.</p>
+		<td><p>Specifies the absolute file system path and file name of the translation dictionary .csv file to create. <em>The value you enter is case-sensitive</em>. The name of the .csv file must <em>exactly match</em> the locale name, including the characters' case.</p>
 			<p>If you omit this parameter, the output is directed to stdout.</p>
 		</td>
 		<td>
@@ -201,7 +201,7 @@ To create these files:
 <h4 id="config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</h4>
 When declaring a language package in the `language.xml` configuration file, you must specify the sequence of the language inheritance for this package.
 
-Language inheritance enables you to create a new translation based on an existing one (the existing translation is referred to as the _parent_). The child translations override the parent. However, if the child translation fails to upload or display, the parent is used instead. If some child translation lacks a phrase or a word, this phrase or word is taken from the parent locale. <a href="#m2devgde-xlate-inheritancework">Examples of language package inheritance</a>.
+Language inheritance enables you to create a new translation based on an existing one (the existing translation is referred to as the _parent_). The child translations override the parent. However, if the child translation fails to upload or display, the parent is used instead. If some child translation lacks a phrase or a word, this phrase or word is taken from the parent {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}. <a href="#m2devgde-xlate-inheritancework">Examples of language package inheritance</a>.
 
 To declare a package, specify the following information:
 

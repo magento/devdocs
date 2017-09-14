@@ -1,13 +1,11 @@
 ---
 layout: default
-group: cloud
-subgroup: 15_howto
+group:
+subgroup:
 title: Test a Magento patch or upgrade
 menu_title: Test a Magento patch or upgrade
-menu_order: 25
+menu_order:
 menu_node: 
-level3_menu_node: level3parent
-level3_subgroup: patch-upgrade2
 version: 2.0
 github_link: cloud/howtos/howto-upgrade-parent.md
 ---

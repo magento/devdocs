@@ -11,9 +11,9 @@ github_link: comp-mgr/module-man/compman-start.md
 ---
 
 <h2 id="compman-access">Start the Module Manager from the Magento Admin</h2>
-To run the Module Manager:
+To run the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} Manager:
 
-1.	Log in to the Magento Admin as an administrator.
+1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
 3.	Click **Module Manager** and continue with <a href="{{page.baseurl}}comp-mgr/module-man/compman-main-pg.html">Manage your modules</a>.
 

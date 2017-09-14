@@ -70,7 +70,7 @@ like this:
     </tr>
     <tr>
         <td>
-{%highlight php startinline=1%}
+{% highlight php %}
 class Config
 {
     private $data;
@@ -85,10 +85,10 @@ class Config
         return $this->data[$key];
     }
 }
-{%endhighlight%}
+{% endhighlight %}
         </td>
         <td>
-{%highlight php startinline=1%}
+{% highlight php %}
 class Config
 {
     private $data;
@@ -100,7 +100,7 @@ class Config
         }
     }
 }
-{%endhighlight%}
+{% endhighlight %}
         </td>
     </tr>
 </table>
@@ -113,7 +113,7 @@ class Config
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
-{%highlight php startinline=1%}
+``` php?start_inline=1
 class Composite
 {
     /**
@@ -137,7 +137,7 @@ class Composite
         $this->renderers = $renderers;
     }
 }
-{%endhighlight%}
+```
 {% endcollapsible %}
 ---
 
@@ -152,7 +152,7 @@ class Composite
     </tr>
     <tr>
         <td>
-{%highlight php startinline=1%}
+{% highlight php %}
 
 class Config
 {
@@ -164,10 +164,10 @@ class Config
         $eventManager->dispatch('config_read_after');
     }
 }
-{%endhighlight%}
+{% endhighlight %}
         </td>
         <td>
-{%highlight php startinline=1%}
+{% highlight php %}
 class Config
 {
     private $fileReader;
@@ -189,7 +189,7 @@ class Config
         return $this->data[$key];
     }
 }
-{%endhighlight%}
+{% endhighlight %}
         </td>
     </tr>
 </table>
@@ -240,7 +240,7 @@ class Config
 
 3.1. There SHOULD be no circular dependencies between objects.
 
-3.2. The `app/etc/di.xml` file MUST contain only framework-level Dependency Injection (DI) settings.
+3.2. The `app/etc/di.xml` file MUST contain only framework-level {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}Dependency Injection{% endglossarytooltip %} (DI) settings.
 
 3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in `<module_dir>/etc/di.xml`.
 
@@ -250,7 +250,7 @@ class Config
 
 4.1. Around-plugins SHOULD only be used when behavior of an original method is supposed to be substituted in certain scenarios.
 
-4.2. Plugins SHOULD NOT be used within own module.
+4.2. Plugins SHOULD NOT be used within own {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 4.3. Plugins SHOULD NOT be added to data objects.
 
@@ -269,7 +269,7 @@ class Config
 {:start="5.2"}
 5.2. Exceptions MUST NOT be handled in the same function where they are thrown.
 
-5.3. If a function A calls function B, and function B might throw an exception, this exception MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.
+5.3. If a function A calls function B, and function B might throw an exception, this {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.
 
 5.4. Exceptions MUST NOT handle message output. It is the processing code that decides how to process an exception.
 
@@ -281,7 +281,7 @@ class Config
 
 5.8. All direct communications with third-party libraries MUST be wrapped with a try/catch statement.
 
-5.9. `\Exception` SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the library.
+5.9. `\Exception` SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
 
 5.10. `\Exception` SHOULD NOT be thrown in Front Controller and Action Controllers.
 
@@ -313,7 +313,7 @@ class Config
 
 * **Command** for Actions
 
-* **Query** for Layout and its elements (Blocks and UI Components)
+* **Query** for {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} and its elements (Blocks and UI Components)
 
 6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.
 
@@ -349,9 +349,9 @@ We are reviewing this section and will publish it soon.
 
 * application codebase
 
-* XML configuration
+* {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration
 
-* generated code and static files
+* generated code and {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %}
 
 * database structure
 
@@ -359,11 +359,11 @@ We are reviewing this section and will publish it soon.
 
 * configuration scopes (stores/store groups/websites)
 
-* CMS entities
+* {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} entities
 
 7.3. Environment Configuration includes information about application services connection.
 
-7.4. Data includes the business entity data.
+7.4. Data includes the business {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} data.
 
 7.5. Code and Environment Configuration MUST not be stored in Data Storage.
 
@@ -385,7 +385,7 @@ We are reviewing this section and will publish it soon.
 
 8.5. Only the `@api` code of any module can be referenced by other modules.
 
-8.6. A module MUST NOT contain references to theme resources.
+8.6. A module MUST NOT contain references to {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} resources.
 
 8.7. A component MUST NOT rely neither on dependencies of dependencies nor on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
 
@@ -393,15 +393,15 @@ We are reviewing this section and will publish it soon.
 
 9.1. All Client-Server calls must follow the [HTTP Protocol].
 
-9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public cache server (Varnish).
+9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} server (Varnish).
 
-9.3. All customer-specific data MUST be rendered on the browser side using a JavaScript (JS) application.
+9.3. All customer-specific data MUST be rendered on the browser side using a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} (JS) application.
 
-9.4. HTML markup generated on server MUST NOT contain user-specific data.
+9.4. {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} generated on server MUST NOT contain user-specific data.
 
 9.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. a form element with a CSRF token).
 
-9.6. A JS application MAY receive customer-specific data using the CustomerData JS API.
+9.6. A JS application MAY receive customer-specific data using the CustomerData JS {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
 
 9.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.
 
@@ -415,7 +415,7 @@ We are reviewing this section and will publish it soon.
 
 ## 10. JavaScript (JS) application
 
-10.1. The Magento 2 UI Component framework MUST be used to build front-end applications.
+10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build front-end applications.
 
 10.2. Only private content SHOULD be rendered in browser.
 
@@ -423,23 +423,21 @@ We are reviewing this section and will publish it soon.
 
 10.4. The [W3C Content Security Policy] MUST be followed.
 
-10.5. The [Airbnb JS Style Guide] SHOULD BE followed.
+10.5. ESLint [rules][rules] SHOULD BE followed.
 
-10.5.1. ES2015 SHOULD be used as a JS standard.
+10.5.1. ES5 SHOULD be used as a JS standard.
 
 10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
 
-10.5.3. All asynchronous operations MUST be represented with ES2015 Promises.
+10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.
 
 10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
 
 10.5.5. Modules MUST NOT have external side effects.
 
-10.5.6. Every ES2015 module MUST declare a default value.
+10.5.6. Function declarations MUST be used for private functions instead of function expressions.
 
-10.5.7. Function declarations MUST be used for private functions instead of function expressions.
-
-10.5.8. Re-declaration of function names MUST NOT be used.
+10.5.7. Re-declaration of function names MUST NOT be used.
 
 ## 11. Testing
 
@@ -459,7 +457,7 @@ We are reviewing this section and will publish it soon.
 
 12.1. Both REST and SOAP API's MUST be exposed.
 
-12.2. All Web API GET endpoints MUST return lists of entities.
+12.2. All {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} GET endpoints MUST return lists of entities.
 
 ## 13. Command line interface (CLI)
 
@@ -471,6 +469,38 @@ We are reviewing this section and will publish it soon.
 
 13.4. Exception in a single CLI command SHOULD NOT break the CLI framework; running other commands SHOULD still be possible.
 
+## 14. Events
+
+14.1. All values (including objects) passed to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
+
+{% collapsible Example: %}
+``` php?start_inline=1
+class SampleEventObserverThatModifiesInputs
+{
+    /**
+     * @param \Magento\Framework\Event\Observer $observer
+     */
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        /** @var \Magento\Framework\App\DataObject $transport */
+        $transport = $observer->getData('transport');
+
+        if ($transport->getData('some_value') === true) {
+            /**
+             * Expecting this value to go back to the original event dispatcher violates
+             * this rule. Other observers could change the data, or Magento could make
+             * architectural changes always sending immutable objects.
+             */
+            $transport->setData('output_return_value', true);
+        }
+    }
+}
+```
+{% endcollapsible %}
+---
+
+{:start="14.2"}
+14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
@@ -482,5 +512,5 @@ We are reviewing this section and will publish it soon.
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[Airbnb JS Style Guide]: https://github.com/airbnb/javascript
+[rules]: https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{page.baseurl}}extension-dev-guide/cli-cmds/cli-naming-guidelines.html

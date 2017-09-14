@@ -11,7 +11,7 @@ github_link: mtf/mtf_entities/mtf_testcase.md
 
 The Magento Functional Testing Framework supports two types of functional tests:
 
-- Injectable test: the main type of the FTF test that uses XML [data set][] files as inputs
+- Injectable test: the main type of the FTF test that uses {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} [data set][] files as inputs
 - [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
 
 This topic discusses the injectable test only. 
@@ -31,13 +31,13 @@ The `__prepare()` method can be useful to prepare the unchangeable data that is 
 
 This method is called one time only during the test launch and is optional to use. `__prepare` can return an array of arguments which can be used as arguments in the `test()` method of a test case and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture. 
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 public function __prepare(Customer $customer)
 {
     $customer->persist();
     return ['customer' => $customer];
 }
-{%endhighlight%}
+```
 
 A returned argument `$customer` is available in the test and in [constraints][].
 
@@ -45,7 +45,7 @@ A returned argument `$customer` is available in the test and in [constraints][].
 
 The `__inject()` method is used to inject data in a test (usually to initialize a page). For an example:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 public function __inject(
     CatalogProductIndex $productGrid,
     CatalogProductEdit $editProductPage
@@ -53,7 +53,7 @@ public function __inject(
     $this->productGrid = $productGrid;
     $this->editProductPage = $editProductPage;
 }
-{%endhighlight%}
+```
 
  This method is run before each [variation][] test started. Returned arguments from this method are available in [constraints][] and in the test as well.
 
@@ -61,7 +61,7 @@ public function __inject(
 
 The `test()` method must contain the test steps described in a [docblock](#docblock). The returned arguments from this method are available in [constraints][]. This method is run for each variation in a [data set][]. The `test()` method is required.
 
-In the following example, the test includes preconditions and test steps. Preconditions contain a logic of different scenarios about creating a product (depending on the category state). Test steps are the following:
+In the following example, the test includes preconditions and test steps. Preconditions contain a logic of different scenarios about creating a product (depending on the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} state). Test steps are the following:
 
 - opening of the product creation grid page
 - searching by the `sku` parameter and opening of the product
@@ -113,7 +113,7 @@ When [constraints][] of the variation have been performed, you can use the `tear
 
 For example, the following code deletes a sales rule after each variation:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 public function tearDown()
 {
     $this->promoQuoteIndex->open();
@@ -121,7 +121,7 @@ public function tearDown()
     $this->promoQuoteEdit->getFormPageActions()->delete();
     $this->promoQuoteEdit->getModalBlock()->acceptAlert();
 }
-{%endhighlight%}
+```
 
 ## Test case flow {#flow}
 
@@ -133,7 +133,7 @@ All data required for the test are stored in variations of a data set. A `__prep
 
 __Step 1.__ Create a [data set][]
 
-__Step 2.__ Create a PHP class in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/<module>/TestCase` directory
+__Step 2.__ Create a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/<module>/TestCase` directory
 
 __Step 3.__ Give it a name using the following format:
 

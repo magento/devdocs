@@ -1,236 +1,185 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 99_Module Development
-title: Versioning and compatibility
-menu_title: Versioning and compatibility
+subgroup: Versioning
+title: Versioning
+menu_title: Versioning
 menu_order: 1000
+menu_node: parent
 version: 2.0
 github_link: extension-dev-guide/versioning/index.md
+redirect_from: 
+  - /guides/v2.0/architecture/versioning.html
+  - /guides/v2.1/architecture/versioning.html
+  - /guides/v2.2/architecture/versioning.html
 ---
 
-The Magento Platform and Magento Module releases have their own unique version number.
+Magento software and Magento module releases have their own unique version number.
 
-A change in the version for the Magento Platform indicates a patch or feature release.
+## Software version format
+
+A change in the version for the Magento software indicates a patch or feature release.
 This version change does not reflect the nature of the changes in the code base.
 
-Magento Modules follow Magento's Module Versioning Policy.
-The policy itself follows [Semantic Versioning][0]{:target="_blank"} standards.
+## Module version format
 
-The `version` field in the module's [composer.json][1] file specifies the module version and consists of three numbers in the following format:
+The `version` field in a modules [`composer.json`][composer-json] file specifies the module version and consists of three numbers in the following format:
 
-    MAJOR.MINOR.PATCH
+`MAJOR.MINOR.PATCH`
 
-## Public vs private code changes
+The format follows [Semantic Versioning][semantic-versioning] rules:
 
-A Magento Module's codebase consists of public and private code.
+* The MAJOR version increments when incompatible API changes are made.
+* The MINOR version increments when backward-compatible functionality has been added.
+* The PATCH version increments when backward-compatible bug fixes occur.
 
-Changes in public code always trigger MINOR or MAJOR version bumps.
+### Pre-release versions
 
-In most cases, modifications to private code will trigger PATCH version bumps.
-On rare occasions, if the Magento development team made significant modifications to private code, they will bump the MINOR or MAJOR version.
+For pre-release versions, the format is: 
 
-Third-party modules should not use or modify private code.
-If this is unavoidable, you must depend on the patch version of the core modules used.
+`MAJOR.MINOR.PATCH-<alpha | beta | rc>n`
 
-## API and customization points
+| `alpha`, `beta` or `rc` | Stability indicators, as described in the [`version_compare()`][php-version-compare]{:target="_blank"} specification|
+| `n` | An increment number to distinguish releases of the non-stable versions |
 
-Public code includes Public API (Application Programming Interface) and Public Customization Points.
+Magento's module versioning policy complies with the following specifications:
 
-Modules call APIs to create new application scenarios.
-Modifications that break the API will trigger a bump in a module's MAJOR version.
+* [Semantic Versioning][semantic-versioning]{:target="_blank"}
+* [Composer version specification][composer-versioning]{:target="_blank"}
+* [PHP `version_compare()` specification][php-version-compare]{:target="_blank"}
 
-Modules customize or replace Customization Points to customize existing application scenarios.
-Modifications that break Customization Points will trigger a bump in a module's MINOR version.
+## Where versioning is used
 
-An interface or a virtual type can represent both API and Customization Point.
+The software version can be found in the source code of any {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} or bundle, inside the `composer.json` file.
 
-This policy allows third-party module developers to declare more granular dependencies depending on their module's interaction with Magento modules.
+It can be declared as the version of the component:
 
-### Version dependencies 
+{% highlight JSON %}
+"name": "acme/foo",
+"version": 1.2.0
+{% endhighlight %}
 
-The following table lists common use cases for API/customization points and the version dependency for each use case.
-Use this table to set the appropriate version dependency on a module based on how you use its API/customization points.
+Or it can be used to declare a dependency on a particular version of a component:
 
-| API/Customization Point                                     | Third-party Use Case                                                | Version Dependency |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **PHP Interface** (marked with `@api`)                      | Inject in a constructor and/or call methods                         | MAJOR              |
-|                                                             | Implement the interface                                             | MINOR              |
-|                                                             | Re-define the interface preference in `di.xml`                      | MINOR              |
-|                                                             | Add a plugin to the interface                                       | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **PHP Class** (marked with `@api`)                          | Inject in a constructor                                             | MAJOR              |
-|                                                             | Extend from an abstract class                                       | MAJOR              |
-|                                                             | Add a plugin to the class                                           | MAJOR              |
-|                                                             | Configure class preference in `di.xml`                              | MAJOR              |
-|                                                             | Configure constructor argument in `di.xml`                          | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **JavaScript Interface** (marked with `@api`)               | Inject in a constructor and/or call methods                         | MAJOR              |
-|                                                             | Implement the interface                                             | MINOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **Javascript class** (marked with `@api`)                   | Inject in a constructor                                             | MAJOR              |
-|                                                             | Extend from a class                                                 | MINOR              |
-|                                                             | Override a method                                                   | MINOR              |
-|                                                             | Subscribe to an event                                               | MINOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **Virtual Type**                                            | Configure a virtual type in the `di.xml` file as a class dependency | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **URL Paths**                                               | Link to from custom pages                                           | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **Console commands and their arguments**                    | Called in custom shell scripts                                      | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **Less variables and mixins**                               | Use in LESS declarations                                            | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **Message queue topics and data types**                     | Consume a topic/message                                             | MINOR              |
-|                                                             | Publish an existing topic                                           | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **Layout handles declared by modules**                      | Instance blocks added                                               | MAJOR              |
-|                                                             | Blocks and containers moved/removed                                 | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **Static and dynamic events triggered by a component**      | Subscribing to event                                                | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **XML configuration type**                                  | Provide additional configuration to the configuration type          | MAJOR              |
-|                                                             | Extend existing XSD                                                 | MINOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **Structure of System Configuration fields used by module** | Configure module through System Configuration values                | MAJOR              |
-|                                                             | Read system configuration using config path                         | MAJOR              |
-| ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
-| **Database structure**                                      | Read/write to a table                                               | MAJOR              |
-|                                                             | Add a column to a table                                             | MINOR              |
-|                                                             | Declare a foreign key on a module table                             | MAJOR              |
-|                                                             | Declare a trigger on a module table                                 | MAJOR              |
-|                                                             | Read from table or write to table from a temporary table            | PATCH              |
-
-### Version bump scenarios
-
-This table lists code change scenarios and which version number it affects.
-Use this table to understand what changes Magento can make and what version number gets bumped for that change.
-
-| API/Customization Point                                     | Code Change                                                                                          | Version Change |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **PHP Interface** (marked with `@api`)                      | New interface                                                                                        | MINOR          |
-|                                                             | New method added                                                                                     | MINOR          |
-|                                                             | Interface removed                                                                                    | MAJOR          |
-|                                                             | Method removed                                                                                       | MAJOR          |
-|                                                             | New required method argument                                                                         | MAJOR          |
-|                                                             | Removed the last argument for a method                                                               | MINOR          |
-|                                                             | Changed a method signature (excluding last argument removal)                                         | MAJOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **PHP Class** (marked with `@api`)                          | New Class                                                                                            | MINOR          |
-|                                                             | New method added                                                                                     | MINOR          |
-|                                                             | Class removed                                                                                        | MAJOR          |
-|                                                             | Method removed                                                                                       | MAJOR          |
-|                                                             | New required method argument                                                                         | MAJOR          |
-|                                                             | Removed a non-last argument                                                                          | MAJOR          |
-|                                                             | New required constructor object argument                                                             | MINOR          |
-|                                                             | New required constructor scalar argument (without pre-configured value)                              | MAJOR          |
-|                                                             | Removed a non-last constructor argument                                                              | MAJOR          |
-|                                                             | Removed a last constructor argument                                                                  | PATCH          |
-|                                                             | Changed format of the returned method result                                                         | MAJOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **JavaScript Interface** (marked with `@api`)               | New interface                                                                                        | MINOR          |
-|                                                             | New method added                                                                                     | MINOR          |
-|                                                             | Interface removed                                                                                    | MAJOR          |
-|                                                             | Method removed                                                                                       | MAJOR          |
-|                                                             | New required method argument                                                                         | MAJOR          |
-|                                                             | Changed method signature                                                                             | MAJOR          |
-|                                                             | Last argument added                                                                                  | MINOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Javascript class** (marked with `@api`                    | New class                                                                                            | MINOR          |
-|                                                             | New method added                                                                                     | MINOR          |
-|                                                             | Class removed                                                                                        | MAJOR          |
-|                                                             | Method removed                                                                                       | MAJOR          |
-|                                                             | New required method argument                                                                         | MAJOR          |
-|                                                             | New last method argument                                                                             | MINOR          |
-|                                                             | New event                                                                                            | MINOR          |
-|                                                             | Renamed event                                                                                        | MAJOR          |
-|                                                             | Removed event                                                                                        | MAJOR          |
-|                                                             | New event property                                                                                   | MINOR          |
-|                                                             | Changed event property                                                                               | MAJOR          |
-|                                                             | Removed event property                                                                               | MAJOR          |
-|                                                             | Changed event ordering                                                                               | MAJOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Virtual Type**                                            | Virtual type removed                                                                                 | MAJOR          |
-|                                                             | Virtual type added                                                                                   | MINOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **URL Paths**                                               | Path removed                                                                                         | MAJOR          |
-|                                                             | Removed/renamed a request parameter                                                                  | MAJOR          |
-|                                                             | New required request parameter                                                                       | MAJOR          |
-|                                                             | New optional request parameter                                                                       | MINOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Console commands and their arguments**                    | Command removed                                                                                      | MAJOR          |
-|                                                             | New required argument                                                                                | MAJOR          |
-|                                                             | Removed/renamed argument                                                                             | MAJOR          |
-|                                                             | New command exit code                                                                                | MINOR          |
-|                                                             | New command                                                                                          | MINOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Less variables and mixins**                               | Removed variable                                                                                     | MAJOR          |
-|                                                             | Removed mixin                                                                                        | MAJOR          |
-|                                                             | New required mixin argument                                                                          | MAJOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Message queue topics and data types**                     | Topic removed                                                                                        | MAJOR          |
-|                                                             | Topic arguments modified                                                                             | MAJOR          |
-|                                                             | Consumer removed                                                                                     | MINOR          |
-|                                                             | New topic published                                                                                  | MINOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Layout handles declared by modules**                      | New layout page handle                                                                               | MINOR          |
-|                                                             | New container/block added to handle                                                                  | MINOR          |
-|                                                             | Removed/renamed container/block                                                                      | MAJOR          |
-|                                                             | Removed layout handle                                                                                | MAJOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Static and dynamic events triggered by a component**      | Event argument removed                                                                               | MAJOR          |
-|                                                             | Event removed                                                                                        | MAJOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Schema of configuration types introduced by module**      | Schema file or configuration type renamed/removed                                                    | MAJOR          |
-|                                                             | Obligatory node/attribute added                                                                      | MAJOR          |
-|                                                             | Node/attribute removed                                                                               | MAJOR          |
-|                                                             | New optional node/attribute added                                                                    | MINOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Structure of System Configuration fields used by module** | Config path removed/renamed                                                                          | MAJOR          |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Database structure**                                      | Table removed                                                                                        | MAJOR          |
-|                                                             | Table added                                                                                          | MINOR          |
-|                                                             | Column removed                                                                                       | MAJOR          |
-|                                                             | Column added                                                                                         | MINOR          |
-|                                                             | Compatible changes in column configuration (soften column constraints: increase size, make optional) | PATCH          |
-|                                                             | Incompatible changes in column configuration                                                         | MAJOR          |
-|                                                             | Primary key column added/removed                                                                     | MAJOR          |
-|                                                             | Added column to unique key                                                                           | MAJOR          |
-|                                                             | Removed column from unique key                                                                       | MAJOR          |
-|                                                             | Unique key added/removed                                                                             | MAJOR          |
-|                                                             | Index added/changed                                                                                  | PATCH          |
-|                                                             | Foreign key added                                                                                    | MAJOR          |
-|                                                             | Temporary tables added/removed/changed                                                               | PATCH          |
-
-## Core module dependency rules
-
-Magento platform clients need notifications about breaking changes for their installed extensions and customizations when they upgrade their Magento installation.
-
-To achieve this, all third-party modules must obey the following rules:
-
-1. You must specify the dependency on all modules listed in the 'require' section of your module's `composer.json` file.
-2. Do not specify a dependency on meta packages (e.g. 'product-community-edition').
-3. Specify a module's MAJOR and/or MINOR version number if you use any of that module's customization points.
-4. Specify a module's MAJOR, MINOR, and PATCH versions if you call or customize a module's private code.
-
-## Deprecation
-
-Marking public code with `@deprecated` on a MINOR release indicates that Magento plans to remove that code in a future MINOR release.
-
-When Magento deprecates the API or customization point in favor of a new implementation, the `@see` annotation points to the new implementation.
-
-**Deprecated Code Example**
-
-{% highlight php startinline %}
-/**
- * @deprecated since 2.1.0
- * @see \Magento\Framework\Model\ResourceModel\Db\AbstractDb::save()
- */
-public function save()
-{
-    // ...
+{% highlight JSON %}
+"require": {
+    "acme/foo": "1.2.*",
+    "acme/bar": "2.2.0"
 }
 {% endhighlight %}
 
-[0]: http://semver.org/
-[1]: {{page.baseurl}}extension-dev-guide/build/composer-integration.html
+### Version usage example
+
+The following example shows how versions are used with composer to install software and third-party extensions.
+
+This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.
+
+<ol>
+<li>Start by cloning the master branch from github.
+
+
+  This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
+
+{% highlight JSON %}
+{
+  "name": "myexamplestore/sample-site",
+  "description": "A sample site",
+  "type": "project",
+  "version": "1.0.0",
+  "require": {
+    "myexamplestore/product-bundle": "2.0.0-RC1"
+    }
+}
+{% endhighlight %}
+</li>
+
+<li>Run the <code>composer update</code> command. Core modules a & b are pulled down from the repository.</li>
+
+<li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
+
+{% highlight JSON %}
+{
+  "name": "myexamplestore/sample-site",
+  "description": "A sample site",
+  "type": "project",
+  "version": "1.0.0",
+  "require": {
+    "myexamplestore/product-bundle": "2.0.0-RC1",
+    "myexamplestore/acme-extension": "~1.0"
+    }
+}
+{% endhighlight %}
+</li>
+
+<li>Run <code>composer update</code> and see the new extension downloaded.</li>
+
+<li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
+
+{% highlight JSON %}{
+  "name": "myexamplestore/sample-site",
+  "description": "A sample site",
+  "type": "project",
+  "version": "1.0.0",
+  "require": {
+    "myexamplestore/product-bundle": "2.0.0",
+    "myexamplestore/acme-extension": "~1.0"
+    }
+}
+{% endhighlight %}
+</li>
+
+<li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy.
+
+   This step repeats with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
+</li>
+
+<li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
+
+   {% highlight JSON %}
+{
+  "name": "myexamplestore/sample-site",
+  "description": "A sample site",
+  "type": "project",
+  "version": "1.0.0",
+  "require": {
+    "myexamplestore/product-bundle": "2.4.0-RC1",
+    "myexamplestore/acme-extension": "~1.0"
+    }
+}
+{% endhighlight %}
+</li>
+
+<li>Run <code>composer update</code> and notice that <code>acme-extension</code> is marked as incompatible. </li>
+
+<li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
+
+{% highlight JSON %}
+{
+  "name": "myexamplestore/sample-site",
+  "description": "A sample site",
+  "type": "project",
+  "version": "1.0.0",
+  "require": {
+    "myexamplestore/product-bundle": "2.4.0-RC1",
+    "myexamplestore/acme-extension": "~2.0"
+    }
+}
+{% endhighlight %}
+</li>
+
+<li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
+
+</ol>
+
+## Related Topics
+
+[Module version dependencies][version-dependencies] - Information about how your module can depend on the version of other modules.
+
+[Codebase changes][codebase-changes] - Information on how changes in a Magento module's codebase affect versions.
+
+[version-dependencies]: {{page.baseurl}}extension-dev-guide/versioning/dependencies.html
+[codebase-changes]: {{page.baseurl}}extension-dev-guide/versioning/codebase-changes.html
+[semantic-versioning]: http://semver.org/
+[composer-versioning]: https://getcomposer.org/doc/04-schema.md#version
+[php-version-compare]: http://php.net/version_compare
+[composer-json]: {{page.baseurl}}extension-dev-guide/build/composer-integration.html

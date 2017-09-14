@@ -11,14 +11,13 @@ version: 2.0
 github_link: coding-standards/bk-coding-standards.md
 redirect_from: /guides/v1.0/coding-standards/bk-coding-standards.html
 ---
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- This topic is referred to from Magento 2 code! Don't change the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} without informing engineering! -->
 <!-- Referring file: contributing.md owned by core -->
 
 
-Like many large projects, Magento has coding standards.
+Like many large projects, Magento has coding standards. 
 
-To code extensions, follow the Magento standards for code:
-
+Use Magento's coding standards when you contribute to Magento's codebase or create extensions.
 
 - [Code demarcation standard]({{page.baseurl}}coding-standards/code-standard-demarcation.html)
 - [PHP coding standard]({{page.baseurl}}coding-standards/code-standard-php.html)

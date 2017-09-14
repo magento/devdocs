@@ -2,7 +2,7 @@
 
 To access your project for the first time:
 
-1.  Log in to [your Magento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"}.
+1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2.  Click the **Projects** tab as the following figure shows.
 
 	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
@@ -26,9 +26,8 @@ To access your project for the first time:
 
 7.  After the project deploys, **Success** displays next to the name of your project.
 
-	The following figure shows an example. 
+	The following figure shows an example.
 
 	![You can now visit your site or configure your project]({{ site.baseurl }}common/images/cloud_project-options.png){:width="650px"}
 
 	You can now visit your site or configure your project.
-  

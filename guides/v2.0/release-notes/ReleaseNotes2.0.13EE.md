@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.0.13 Release Notes
-menu_title: Magento EE 2.0.13 Release Notes
+title: Magento Commerce 2.0.13 Release Notes
+menu_title: Magento Commerce 2.0.13 Release Notes
 menu_order: 266
 version: 2.0
 level3_menu_node: level3child
@@ -11,18 +11,18 @@ level3_subgroup: ee20-relnotes
 github_link: release-notes/ReleaseNotes2.0.13EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.0.13. 
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.13. 
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.
 </div>
 
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
 
 
 ## System requirements
-Our technology stack is built on PHP and MySQL. See
+Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. See
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 

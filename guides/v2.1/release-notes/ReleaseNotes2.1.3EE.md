@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1.3 Release Notes
-menu_title: Magento EE 2.1.3 Release Notes
+title: Magento Commerce 2.1.3 Release Notes
+menu_title: Magento Commerce 2.1.3 Release Notes
 menu_order: 269
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
@@ -11,7 +11,7 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.3EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.1.3. This release includes many functional fixes and enhancements.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.3. This release includes many functional fixes and enhancements.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
@@ -37,15 +37,15 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 	* Simplify the process of configuring payments for your store with a redesigned Payment Methods page in the Admin interface.
 
 
-* **Increased storefront performance** by removing excessive and slow SQL media queries.
+* **Increased {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance** by removing excessive and slow SQL media queries.
 
-* **Management of configurable products with many variations** in the Admin interface without degrading performance.
+* **Management of configurable products with many variations** in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface without degrading performance.
 
 * **Upgrade to Magento 2.1.3 without issue** when using multiple master databases for checkout, order management, and product data.
 
-* **Successful import or export CSV files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
+* **Successful import or export {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
 
-* The Sales module provides **two new web API endpoints that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from Admin. After you install this patch, you can:
+* The Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} provides **two new web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} endpoints that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
 	* Create a credit memo (complete or partial) for a particular invoice or order.
 
@@ -71,22 +71,22 @@ We address the following functional fixes and enhancements in this release.
 ### Cart and checkout
 {:.no_toc} 
 
-<!---58036-->* You can now reload a page during checkout without unintentionally changing shipping information. 
+<!---58036-->* You can now reload a page during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} without unintentionally changing shipping information. 
 
 <!---58902-->* Custom address attributes now appear in the Checkout summary.  
 
-<!---57497-->* Lengthy Order Status tables are now paginated as expected. 
+<!---57497-->* Lengthy {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}Order Status{% endglossarytooltip %} tables are now paginated as expected. 
 
 <!---56956-->* Magento now displays the product add validation message ("Product was added to the cart") only after you have successfully added a product to your cart.
 
-<!---58057-->* We've resolved an issue that prevented you from adding more than one product to a shopping cart from a wishlist. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
+<!---58057-->* We've resolved an issue that prevented you from adding more than one product to a {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} from a wishlist. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
 
 <!---59209-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
 
 
-<!---57062-->* The minicart now performs as expected in deployments that span multiple websites. Previously, in a Magento installation that had multiple websites, products that you added to one website appeared in the other websites' minicarts.
+<!---57062-->* The minicart now performs as expected in deployments that span multiple websites. Previously, in a Magento installation that had multiple websites, products that you added to one {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} appeared in the other websites' minicarts.
 
-<!---57843-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple cart rules are applied. Previously, when you created two cart rules and applied them to a cart,  the rule with a coupon was applied, but the second rule was not.<a href="https://github.com/magento/magento2/issues/7171" target="_blank"> (GITHUB-6294)</a> 
+<!---57843-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple {% glossarytooltip b3292cb5-4262-4914-a258-efac79ac8b99 %}cart rules{% endglossarytooltip %} are applied. Previously, when you created two cart rules and applied them to a cart,  the rule with a coupon was applied, but the second rule was not.<a href="https://github.com/magento/magento2/issues/7171" target="_blank"> (GITHUB-6294)</a> 
 
 <!---59024-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process. 
 
@@ -95,7 +95,7 @@ We address the following functional fixes and enhancements in this release.
 <!---58090-->* We've corrected a problem with Magento throwing an HTTP ERROR 500 intermittently during checkout. 
 
 
-<!---57168-->* We fixed a JavaScript error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
+<!---57168-->* We fixed a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
 
 
 ### Configurable products
@@ -103,21 +103,21 @@ We address the following functional fixes and enhancements in this release.
 
 We've enhanced the performance of configurable products in several ways:
 
-<!---57055-->*  You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price.
+<!---57055-->*  You can now successfully disable the lowest price of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price.
 
 
 
-<!---56998 -->* Magento no longer applies one simple product's special price to another simple product of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a>
+<!---56998 -->* Magento no longer applies one simple product's special price to another {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a>
 
 
 
 <!---54808 -->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, and then incorrectly tell you that the products had been edited.
 
 
-<!---60605-->* Magento no longer throws an exception when you add a configurable product by SKU if an associated simple product is out-of-stock. 
+<!---60605-->* Magento no longer throws an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} when you add a configurable product by {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %} if an associated simple product is out-of-stock. 
 
 
-<!---61055-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the category page failed to list the product at all, rather than listing it as out-of-stock. 
+<!---61055-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page failed to list the product at all, rather than listing it as out-of-stock. 
 
 
 <!---57044-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products.  <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>,  <a href="https://github.com/magento/magento2/issues/5798" target="_blank">(GITHUB-5798)</a>, <a href="https://github.com/magento/magento2/issues/6041" target="_blank">(GITHUB-6041)</a>, <a href="https://github.com/magento/magento2/issues/6097" target="_blank">(GITHUB-6097)</a> 
@@ -142,20 +142,20 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 55184 -->* You can now select and add a category to a Cart Price rule. Previously, Magento displayed this error: "Uncaught ReferenceError: sales_rule_form is not defined", and did not add the selected category to the condition. <a href="https://github.com/magento/magento2/issues/5526" target="_blank">(GITHUB-5526)</a>
 
 
-<!---55662-->* We've removed the duplicated PHP settings from the sample web server configuration files. 
+<!---55662-->* We've removed the duplicated {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} settings from the sample web server configuration files. 
 
 <!---58465-->* The order of products in a category display no longer changes when you add a new product to the category. 
 
-<!--- 59581-->* We've improved and streamlined the Magento Admin PayPal configuration interface. 
+<!--- 59581-->* We've improved and streamlined the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} PayPal configuration interface. 
 
 
 <!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a>
 
 <!---56961-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
-<!---57383-->* You can now make Return Merchandise Authorization (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**.
+<!---57383-->* You can now make Return Merchandise {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**.
 
-<!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when Layout is set to empty. 
+<!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} is set to empty. 
 
 <!---57035-->* You can now upload changes to the `robots.txt` file from the Admin panel. 
 
@@ -182,17 +182,17 @@ We've enhanced the performance of configurable products in several ways:
 <!---57197-->* We've eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users. 
 
 
-<!---59397-->* Custom themes now inherit parent XML configuration information as expected.  
+<!---59397-->* Custom themes now inherit parent {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration information as expected.  
 
 
 ### Gift cards
 {:.no_toc} 
 
-<!---57054 -->* Order emails now specify the amount of the gift card that you have purchased. 
+<!---57054 -->* Order emails now specify the amount of the {% glossarytooltip f5cdf732-d644-4bd5-9f75-53b01401b7e7 %}gift card{% endglossarytooltip %} that you have purchased. 
 
 <!---56932 -->* The Checkout page no longer freezes when you order a virtual gift card using the Authorize.net Payment Action value set to **Authorize and Capture**.
 
-<!---57512-->*  You can now complete the purchase of a gift card in environments where you have set the Braintree payment method Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage. 
+<!---57512-->*  You can now complete the purchase of a gift card in environments where you have set the Braintree {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage. 
 
 
 
@@ -205,10 +205,10 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---55447-->* Magento no longer encounters an error when it cannot find a product image file. <a href="https://github.com/magento/magento2/issues/5184" target="_blank">(GITHUB-5184)</a>, <a href="https://github.com/magento/magento2/issues/5497" target="_blank">(GITHUB-5497)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5871" target="_blank">(GITHUB-5871)</a>
 
-<!---56944-->*  Magento now successfully saves images that you edit in a WYSIWYG editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes. 
+<!---56944-->*  Magento now successfully saves images that you edit in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes. 
 
 <!---58335-->* You can now preview uploaded images.
-
+ 
 
 <!---56972-->* You can now set an image size for product watermarks. <a href="https://github.com/magento/magento2/issues/5270" target="_blank">(GITHUB-5270)</a> 
 
@@ -226,7 +226,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---58977-->* You can now successfully import multiselect attributes that contain special symbols or delimiters. Previously, when you tried to import attributes containing delimiters, data validation (and the import) failed.  
 
 
-<!---56804-->* We've fixed an issue with the correct representation of date and time zones of items in a product catalog during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard. 
+<!---56804-->* We've fixed an issue with the correct representation of date and time zones of items in a product {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard. 
 
 
 <!---57052-->* You can now import negative quantities. Previously, when importing a product quantity  of '-1',  Magento returned an error. 
@@ -239,7 +239,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---57490-->* Magento now removes category URL keys from the `url_rewrite` table as expected during import. Previously, Magento did not remove these keys, which triggered a failure during import. This subsequently caused Magento to quickly reach the maximum error count, returning this error: "Maximum error count has been reached or system error is occurred!".  <a href="https://github.com/magento/magento2/issues/1471" target="_blank">(GITHUB-1471)</a> 
 
 
-<!---57981-->* You can now export a bundle product that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
+<!---57981-->* You can now export a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
 
 
 
@@ -299,7 +299,7 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-<!--- 61268, 59424, 56433, 59422--> * We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
+<!--- 61268, 59424, 56433, 59422--> * We’ve added PHP interfaces that add the ability to change the status of a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %}. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
 
 	* support returning multiple units of a configurable product. Previously, when you tried to refund an order, you could refund only one unit of a configurable product, not the amount in the original order. 
 
@@ -346,7 +346,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 59124-->* Fixed issue with credit card capture information failing to remain associated with its first authorization. <a href="https://github.com/magento/magento2/issues/6716" target="_blank">(GITHUB-6716)</a> 
 
-<!---57086-->* You can now successfully place orders with Braintree when using an alternative merchant account ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a> 
+<!---57086-->* You can now successfully place orders with Braintree when using an alternative {% glossarytooltip 5ac2d367-070a-474c-badf-df2b84fe3b09 %}merchant account{% endglossarytooltip %} ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a> 
 
 <!---59637-->*  Braintree no longer encounters an error during checkout when you apply a 100% discount coupon to a product and enable free shipping. Previously, Magento  displayed a spinning loader widget, and your screen froze. The Developer console displayed this error:
 `Uncaught Error: [paypal-container] is not a valid DOM Element`. 
@@ -375,12 +375,12 @@ We've improved the performance of these tasks:
 <!---56927-->* Opening many products from the Admin interface
 
 
-<!---59708-->* Creating many (2500 - 5000) product variants, both simple and complex product types
+<!---59708-->* Creating many (2500 - 5000) product variants, both simple and complex {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %}
 
 
 <!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
 
-<!---60041-->* Resizing images on the frontend
+<!---60041-->* Resizing images on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %}
 
 <!---57905-->We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) command). 
 
@@ -410,7 +410,7 @@ We've improved the performance of these tasks:
 
 ### Scope
 {:.no_toc} 
-<!---54704-->* Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the store view level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)
+<!---54704-->* Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)
 
 
 <!---56936 -->*  The list of allowed countries is now configured as part of website scope, not store view scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
@@ -428,15 +428,15 @@ We've improved the performance of these tasks:
 ### Staging
 {:.no_toc} 
 
-<!---57346-->*  The CMS page now refreshes as expected after an update. 
+<!---57346-->*  The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page now refreshes as expected after an update. 
 
 
 
 ### Static file processing
 {:.no_toc} 
-<!---60603-->* We've corrected a problem with `_requirejs` asset retrieval via `static.php` in static content versioning. 
+<!---60603-->* We've corrected a problem with `_requirejs` asset retrieval via `static.php` in {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} versioning. 
 
-<!---56914-->* Versioning of static files (including CSS, JS, font, and image files) is now enabled by default. 
+<!---56914-->* Versioning of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} (including CSS, JS, font, and image files) is now enabled by default. 
 
 <!---57904-->* We've improved the speed of static asset deployment. See <a href="http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
 
@@ -444,7 +444,7 @@ We've improved the performance of these tasks:
 ### Tier pricing
 {:.no_toc} 
 
-<!---57625-->* Magento no longer resets the tier price during quote recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database had values for `row_id` and `entity_id` that didn't match.)
+<!---57625-->* Magento no longer resets the tier price during {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database had values for `row_id` and `entity_id` that didn't match.)
 
 
 <!---56922-->*  Magento no longer adds a thousands separator ( , ) to representations of quantities that exceed 1000.  <a href="https://github.com/magento/magento2/issues/5745" target="_blank">(GITHUB-5745)</a> 
@@ -479,7 +479,7 @@ We've improved the performance of these tasks:
 
 
 ## Breaking changes
-We've introduced a backward-incompatible change to the `Magento_Vault` module. We've bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with Composer configuration.
+We've introduced a backward-incompatible change to the `Magento_Vault` module. We've bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} configuration.
 
 
 
@@ -571,7 +571,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 <!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
 
-<!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after purging the cache. 
+<!---60781-->* **Issue**: Installing with Varnish results in products not appearing on the frontend even after purging the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. 
 
 <!---60680-->* **Issue**: You cannot successfully edit and save a gift card product. 
 

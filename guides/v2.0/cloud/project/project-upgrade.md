@@ -1,15 +1,17 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
-title: Test a Magento upgrade
-menu_title: Test a Magento upgrade
-menu_order: 16
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: patch-upgrade
+subgroup: 100_project
+title: Upgrade and test Magento Commerce
+menu_title: Upgrade and test Magento Commerce
+menu_order: 30
+menu_node:
 version: 2.0
 github_link: cloud/project/project-upgrade.md
+redirect from:
+  -  /guides/v2.0/cloud/howtos/upgrade-magento.html
+  -  /guides/v2.1/cloud/howtos/upgrade-magento.html
+  -  /guides/v2.1/cloud/howtos/upgrade-magento.html
 ---
 
 {% include cloud/upgrade.md %}

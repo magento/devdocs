@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 170_trouble
 title: Troubleshoot deployment
 menu_title: Troubleshoot deployment
-menu_order: 700
-menu_node: 
+menu_order: 3
+menu_node:
 version: 2.0
 github_link: cloud/access-acct/trouble.md
 ---
@@ -21,7 +21,7 @@ If you used the incorrect keys, deployment fails; to recover, you must clone the
 
 To redeploy with the correct authentication keys:
 
-1.	Log in to the machine that has your Magento Enterprise Cloud Edition SSH keys.
+1.	Log in to the machine that has your {{site.data.var.ece}} SSH keys.
 2.	Log in to the project:
 
 		magento-cloud login

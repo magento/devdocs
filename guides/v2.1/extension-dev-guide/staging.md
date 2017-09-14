@@ -2,18 +2,17 @@
 layout: default
 group: extension-dev-guide
 subgroup: 7_Staging
-title: Staging (Enterprise Edition only)
-menu_title: Staging (Enterprise Edition only)
+title: Staging (Magento Commerce only)
+menu_title: Staging (Magento Commerce only)
 version: 2.1
 menu_node: parent
+ee_only: true
 github_link: extension-dev-guide/staging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
+Staging functionality enables you to create scheduled campaigns, manage campaigns on dashboard and manipulate each future store object update. Moreover, you can preview a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} during the future campaign.
 
-Staging functionality enables you to create scheduled campaigns, manage campaigns on dashboard and manipulate each future store object update. Moreover, you can preview a storefront during the future campaign.
-
-The functionality is distributed between staging modules. The [Magento_Staging module]({{page.baseurl}}mrg/ee/Staging.html) is a framework for the staging functionality, and other staging modules are extensions for the existing Magento modules. You can read about each staging module in a corresponding topic:
+The functionality is distributed between staging modules. The [Magento_Staging module]({{page.baseurl}}mrg/ee/Staging.html) is a framework for the staging functionality, and other staging modules are extensions for the existing Magento modules. You can read about each staging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} in a corresponding topic:
 
 - [Magento_BundleStaging module]({{page.baseurl}}mrg/ee/BundleStaging.html)
 - [Magento_CatalogImportExportStaging module]({{page.baseurl}}mrg/ee/CatalogImportExportStaging.html)

@@ -1,11 +1,11 @@
 ---
 layout: default
-group: cloud
-subgroup: 08_setup
+group: 
+subgroup:
 title: Create a new Magento project
 menu_title: Create a new Magento project
-menu_order: 100
-menu_node: 
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_template.md
 ---
@@ -21,8 +21,6 @@ When you initially set up a project from a template, we retrieve the code from t
 </div>
 
 {% include cloud/new-project-from-template.md %}
-	
+
 #### Next step
 [Step 1, Get started setting up an environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-start.html)
-
-

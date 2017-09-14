@@ -10,7 +10,7 @@ menu_order: 1
 
 We encourage our community members to add content; either by writing a full topic, adding new sections to existing topic, or even just a few sentences about something you know of this topic. Don't worry about perfect grammar or form; just get your brilliance down!!
 
-To get started, edit your local version of this file, using the markdown language (and HTML where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
+To get started, edit your local version of this file, using the {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} language (and {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
 
 Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!
 
@@ -47,7 +47,7 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 
 ### Examples
 {% collapsible Click to show/hide content %}
-To use the collapsible content functionality, you can use the `collapsible` block tag. Any content inside this block will be hidden until the header text is clicked.
+To use the collapsible content functionality, use the `collapsible` block tag. Any content inside this block will be hidden until the header text is clicked.
 
 See the markdown version of this file for examples.
 {% endcollapsible %}

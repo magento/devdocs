@@ -9,7 +9,7 @@ version: 2.1
 github_link: payments-integrations/base-integration/get-payment-info.md
 ---
 
-To implement transaction authorization our payment should receive some payment details from payment form, like credit card details,
+To implement transaction {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} our payment should receive some payment details from payment form, like credit card details,
 and send received details to payment processor.
 
 Depends on your payment integration payment details might be different, but, usually, it's credit card details, tokenized cards, payment nonce, etc.
@@ -24,7 +24,7 @@ The Braintree payment provider requires the [payment method nonce](https://devel
 to process transactions, and our builder should send it for each authorization transaction. 
 Here is how the Braintree payment builder looks:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class PaymentDataBuilder implements BuilderInterface
 {
     /**
@@ -50,7 +50,7 @@ class PaymentDataBuilder implements BuilderInterface
         return $result;
     }
 }
-{% endhighlight %}
+```
 
 As you can see, we get the payment nonce from payment additional information. And so any specific data (like credit card information) can be retrieved.
 
@@ -61,10 +61,10 @@ As you can see, we get the payment nonce from payment additional information. An
 
 ## Getting payment information from frontend to backend 
 
-In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on checkout payment form.
-So our payment method implementation should provide the ability to display and process payment form on checkout step. 
+In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} payment form.
+So our {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} implementation should provide the ability to display and process payment form on checkout step. 
 
-We can send to backend any specific data, just need to override `getData()` method in
+We can send to {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} any specific data, just need to override `getData()` method in
 [payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):
  
 {% highlight javascript %}
@@ -108,7 +108,7 @@ define(
 {% endhighlight %}
  
 The `getData()` method returns data what we need and depending on payment integration the returned data can be more
-complicated. we need last step to retrieve data from storefront in the backend. Magento provides some
+complicated. we need last step to retrieve data from {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in the backend. Magento provides some
 mechanisms called [Observers]({{site.gdeurl21}}extension-dev-guide/events-and-observers.html).
  
 #### Read additional data
@@ -119,7 +119,7 @@ in the payment additional information. In most cases it will be enough to extend
 
 That's how observer might looks:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class DataAssignObserver extends AbstractDataAssignObserver
 {
     const PAYMENT_METHOD_NONCE = 'payment_method_nonce';
@@ -156,7 +156,7 @@ class DataAssignObserver extends AbstractDataAssignObserver
         }
     }
 }
-{% endhighlight %}
+```
 
 And this observer should be added to list of events (`Module_Name/etc/events.xml`):
 
@@ -168,9 +168,9 @@ And this observer should be added to list of events (`Module_Name/etc/events.xml
 </config>
 {% endhighlight %}
 
-This event will be triggered in [Adapter::assignData()]({{site.mage2100url}}app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
+This {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} will be triggered in [Adapter::assignData()]({{site.mage2100url}}app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 public function assignData(\Magento\Framework\DataObject $data)
 {
     $this->eventManager->dispatch(
@@ -193,7 +193,7 @@ public function assignData(\Magento\Framework\DataObject $data)
 
     return $this;
 }
-{% endhighlight %}
+```
 
 There are two events:
 

@@ -1,25 +1,25 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Find the information you need for your import
 menu_title: Find the information you need for your import
 menu_order: 152
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import-prereq.md
 ---
- 
-This topic discusses how to find the information necessary to import Magento EE into Magento Enterprise Cloud Edition. 
+
+This topic discusses how to find the information necessary to import Magento EE into {{site.data.var.ece}}.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must enter all Magento Enterprise Cloud Edition commands on the machine on which your Cloud SSH keys are stored. For more information, see [Step 4, Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html).
+You must enter all {{site.data.var.ece}} commands on the machine on which your Cloud SSH keys are stored. For more information, see [Step 4, Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html).
 </div>
 
 ## Cloud SSH URL {#cloud-import-pre-sshurl}
-To transfer the database dump and files to Magento Enterprise Cloud Edition, you must know its SSH URL.
+To transfer the database dump and files to {{site.data.var.ece}}, you must know its SSH {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
 You can find it using:
 
@@ -33,7 +33,7 @@ You can find it using:
 You must know the name of the Magento EE database as well as the database user's user name and password.
 
 ## Cloud database login information {#cloud-import-pre-cloudb}
-To import the Magento EE database dump into Magento Enterprise Cloud Edition, you must know the Cloud database login information.
+To import the Magento EE database dump into {{site.data.var.ece}}, you must know the Cloud database login information.
 
 The name of the database can be found in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable. Display the variable with the following command. The database name is stored under `databases->path`. The password is found under `databases->password`.
 
@@ -66,7 +66,7 @@ The database connection information is displayed:
 In the preceding example, the database name is `main`, its listen port is `3306`, its host name is `database.internal`, its root user name is `user` and the user has no password.
 
 ## Cloud integration system's unsecure base URL {#cloud-import-pre-baseurl}
-After you import the Magento EE database into Magento Enterprise Cloud Edition, you must change the base URL so you can access the Magento Admin and storefront.
+After you import the Magento EE database into {{site.data.var.ece}}, you must change the base URL so you can access the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
 You can find it using:
 

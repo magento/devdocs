@@ -11,7 +11,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-practice.html
 ---
 
 <h2>What's in this topic</h2>
-This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
+This article features a step-by-step illustration of how a real-life {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
 <h2>Moving customer account links</h2>
 In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
@@ -22,7 +22,7 @@ In their Orange theme, OrangeCo wants to transform the header links block to a d
 
 To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list. 
 
-The Orange theme [inherits]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links markup in Orange looks like following:
+The Orange {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} [inherits]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} in Orange looks like following:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{ site.baseurl }}common/images/layout_code_before1.png">
@@ -105,7 +105,7 @@ defines the template which is used for rearranging the links:
 
 <h4>Step 3: Extend the base layout to add a block</h4>
 
-OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` module.
+OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 So the following <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:
 

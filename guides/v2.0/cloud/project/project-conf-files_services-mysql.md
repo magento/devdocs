@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
-title: Set up the mysql service
-menu_title: Set up the mysql service
-menu_order: 82
-menu_node: 
+subgroup: 090_configure
+title: Set up the MySQL service
+menu_title: Set up the MySQL service
+menu_order: 60
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
 version: 2.0
@@ -18,7 +18,7 @@ engine (equivalent to MySQL with InnoDB).
 We support MariaDB version 10.0, which includes reimplemented features from MySQL 5.6 and 5.7.
 
 To access the MariaDB database directly, [open an SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and use the
-following command: 
+following command:
 
     mysql -h database.internal -u user
 
@@ -28,15 +28,15 @@ You can optionally set up multiple databases as well as multiple users with diff
 To set up multiple databases and users, you must specify multiple endpoints. An _endpoint_ is a user who has privileges you specify.
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-You can't use multiple _databases_ with Magento Enterprise Cloud Edition at this time. You can, however, create multiple endpoints to restrict access to the `main` database.
+You can't use multiple _databases_ with {{site.data.var.ee}} at this time. You can, however, create multiple endpoints to restrict access to the `main` database.
 </div>
 
 To specify user access, use the `endpoints` nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.
 
-The valid permission levels are: 
+The valid permission levels are:
 
-*   `ro`: Only SELECT queries are allowed. 
-*   `rw`: SELECT queries as well as INSERT/UPDATE/DELETE queries are allowed. 
+*   `ro`: Only SELECT queries are allowed.
+*   `rw`: SELECT queries as well as INSERT/UPDATE/DELETE queries are allowed.
 *   `admin`: All queries are allowed, including DDL queries (CREATE TABLE, DROP TABLE, and so on).
 
 If no endpoints are defined, a single endpoint named `mysql` has `admin` access to the `main` database.
@@ -108,33 +108,7 @@ relationships:
     database: "mydatabase:mysql"
 {% endhighlight %}
 
-You can use the preceding service in a configuration file of your application as follows:
-
-{% highlight php startinline=true %}
-$relationships = getenv("MAGENTO_CLOUD_RELATIONSHIPS");
-if (!$relationships) {
-  return;
-}
-
-$relationships = json_decode(base64_decode($relationships), TRUE);
-
-foreach ($relationships['database'] as $endpoint) {
-  if (empty($endpoint['query']['is_master'])) {
-    continue;
-  }
-  $container->setParameter('database_driver', 'pdo_' . $endpoint['scheme']);
-  $container->setParameter('database_host', $endpoint['host']);
-  $container->setParameter('database_port', $endpoint['port']);
-  $container->setParameter('database_name', $endpoint['path']);
-  $container->setParameter('database_user', $endpoint['username']);
-  $container->setParameter('database_password', $endpoint['password']);
-  $container->setParameter('database_path', '');
-}
-{% endhighlight %}
-
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 *   If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
 *   MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
 </div>
-
-  

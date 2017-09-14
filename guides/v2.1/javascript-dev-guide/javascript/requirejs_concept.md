@@ -12,9 +12,9 @@ redirect_from: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
 
 ## Overview
 
-This topic discusses JavaScript modules and describes the role which RequireJS plays in Magento.
+This topic discusses {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} modules and describes the role which RequireJS plays in Magento.
 
-Magento uses AMD (asynchronous module definition) approach for JavaScript modules loading. Namely, Magento uses RequireJS and its [standard syntax](http://requirejs.org/docs/api.html#config).
+Magento uses AMD (asynchronous {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} definition) approach for JavaScript modules loading. Namely, Magento uses RequireJS and its [standard syntax](http://requirejs.org/docs/api.html#config).
 
 ## RequireJS configuration location {#config}
 
@@ -62,10 +62,10 @@ Example of how aliases can be used. Open a browser console on any Magento page a
 
 {%highlight js%}
 
-	require(['productGallery']); // load the module on the page
-	var gallery1 = require('productGallery');
+    require(['productGallery']); // load the module on the page
+    var gallery1 = require('productGallery');
     var gallery2 = require('Magento_Catalog/js/product-gallery');
-	console.log(gallery1); // it does not return a simple type
+    console.log(gallery1); // it does not return a simple type
     console.log(gallery1 === gallery2); // they are the same
 
 {%endhighlight%}
@@ -73,4 +73,4 @@ Example of how aliases can be used. Open a browser console on any Magento page a
 
 Tip: One more way that you can use `require` object is to retrieve a current configuration during runtime. Just type in a browser console:
 
-	require.s.contexts._.config;
+    require.s.contexts._.config;

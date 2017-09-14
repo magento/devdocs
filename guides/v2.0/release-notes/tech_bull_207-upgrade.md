@@ -10,9 +10,9 @@ version: 2.0
 github_link: release-notes/tech_bull_207-upgrade.md
 ---
 
-This bulletin informs you of a known issue updating from Magento EE and CE environments that run the following:   
+This bulletin informs you of a known issue updating from Magento Commerce (formerly Enterprise Edition) and Open Source (formerly Community Edition)  environments that run the following:   
 
-* PHP 5.5.x
+* {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.5.x
 
 	**and**
 
@@ -24,7 +24,7 @@ Patch `MDVA-449` supplies the fix for this potential upgrade issue.
 
 <h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1</h3>
 
-Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Setup application (also referred to as the <i>Updater application</i>) version 10.0.1 and you  try to upgrade to a later version of Magento.
+Magento Open Source  and Commerce upgrades fail if your server runs PHP 5.5.x and Setup application (also referred to as the <i>Updater application</i>) version 10.0.1 and you  try to upgrade to a later version of Magento.
 
 
 Magento 2.0.7 by default ships with Setup application version 10.0.1.  If you have not changed the default Setup application version that shipped with 2.0.7 and are running PHP 5.5.x, you must follow this bulletin. Failure to install patch `MDVA-449` will complicate attempts to upgrade from this version of Magento to any future versions, including 2.1. Installations using PHP 5.6.x and 7.0.x do not need this patch.
@@ -67,7 +67,7 @@ The following table summarizes what you need to do.
 </table>
 
 <h4>How to determine which version of Updater application you are running</h4> 
-1. Log in to your Magento server as, or switch to, the Magento file system owner.
+1. Log in to your Magento server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 
 2. Open the following file in a text editor:
 
@@ -108,17 +108,17 @@ To apply this patch:
 		<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
 		<li>Log in with your Magento user name and password.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-		<li>Click <strong>Magento Enterprise Edition</strong> <strong>2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong></li>
+		<li>Click <strong>Magento Commerce</strong> <strong>2.X</strong> > <strong>Magento Commerce 2.x Release</strong> > <strong>Support Patches</strong></li>
 		<li>Follow the instructions on your screen to download patch <code>MDVA-449</code>.</li></ul>
 
 	</li>
 	<li>Transfer the patch to your development system.</li></ol></td>
 	</tr>
 	<tr>
-		<td>Magento EE partner portal</td>
+		<td>Magento Commerce partner portal</td>
 		<td>Use the following steps:
 		<ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a></li>
-		<li>Click <strong>Magento Enterprise Edition</strong> > <strong>Magento Enterprise Edition 2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong>.</li>
+		<li>Click <strong>Magento Commerce</strong> > <strong>Magento Commerce 2.X</strong> > <strong>Magento Commerce 2.x Release</strong> > <strong>Support Patches</strong>.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 		<li>Follow the instructions on your screen to download patch <code>MDVA-449</code>.</li>
 	<li>Transfer the patch to your development system.</li></ol></td>

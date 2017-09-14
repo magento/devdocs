@@ -14,18 +14,18 @@ github_link: contributor-guide/tutorial-template-first.md
 
 A tutorial provides procedurial information spread across multiple pages. It contains several design elements that differ from standard topics:
 
-* When a user clicks on a tutorial title from the left navigation area, the Devdocs website replaces the navigation with a table of contents that is specific to the tutorial.
+* When a user clicks on a tutorial title from the left navigation area, the Devdocs {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} replaces the navigation with a table of contents that is specific to the tutorial.
 * **Next** and **Previous** buttons are displayed at the bottom of each topic.
 
 ## Metadata parameters
 
-The following table lists the metadata parameters that are used in a tutorial.
+The following table lists the {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} parameters that are used in a tutorial.
 
 Parameter | Description
 --- | ---
 `layout:` | Must be `tutorial`.
 `group:` | The group, or book, to which the topic belongs.
-`subgroup:`| First page only. Places a link with the specified text to the sidebar
+`subgroup:`| First page only. Places a link with the specified text to the {% glossarytooltip 31751771-8163-434b-88bc-c5f94d859fc3 %}sidebar{% endglossarytooltip %}
 `level3_subgroup:` | A group name that binds the tutorial topics together. This value must be specified on each topic in the tutorial.
 `title:` | The title of the tutorial.  On the first pageFor all other topics in the tutorial, this value should be in the form _Step X. Perform this task_. (For example, `Step 1. Configure the Store`)
 `subtitle` | Displays the tutorial name. The value must be specified on each topic in the tutorial.
