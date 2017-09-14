@@ -10,11 +10,11 @@ version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes.md
 ---
 
-Release Notes provide important information about changes, fixes, and known issues in Magento Enterprise Cloud Edition releases.
+Release Notes provide important information about changes, fixes, and known issues in Magento Commerce (Cloud) releases.
 
 The following Release Notes are available:
 
-
+*	[magento-cloud-configuration release 101.9.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.9.html)
 *	[magento-cloud-configuration release 101.8.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.8.html)
 *	[magento-cloud-configuration release 101.7.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.7.html)
 *	[magento-cloud-configuration release 101.6.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.6.html)
@@ -24,11 +24,11 @@ The following Release Notes are available:
 *	[Magento Enterprise Cloud Edition version 2.1.3 and 2.0.11]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.3.html)
 *	[Magento Enterprise Cloud Edition version 2.1.2 and 2.0.10]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.2.html)
 
-{% include cloud/split-db-nosupport.md %}
+
 
 ## Test your upgrade locally
-To test and implement your Magento Enterprise Cloud Edition upgrade, see [Test a Magento upgrade]({{ page.baseurl }}cloud/project/project-upgrade.html).
+To test and implement your Magento Commerce (Cloud) upgrade, see [Test a Magento upgrade]({{ page.baseurl }}cloud/project/project-upgrade.html).
 
 ## Magento Enterprise Edition Release Notes
-For information about Magento Enterprise Edition, see [Magento 2.1 Release Notes]({{ site.gdeurl21 }}release-notes/release-notes.html). 
+For information about Magento Commerce, see [Magento 2.1 Release Notes]({{ site.gdeurl21 }}release-notes/release-notes.html). 
 
