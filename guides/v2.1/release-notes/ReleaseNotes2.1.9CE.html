@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.1.4 Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento Open Source 2.1.9 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html">
+	<link rel="canonical" href="//guides/v2.1/release-notes/ReleaseNotes2.1.9CE.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.1.4EE.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.1.9CE.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.1.9CE.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/ReleaseNotes2.1.4EE.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/ReleaseNotes2.1.9CE.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -278,7 +278,7 @@
 									
 
 
-											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.9CE.html">Magento Open Source 2.1.9 Release Notes</a>
+											<li class="level3Child ce21-relnotes  active " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.9CE.html">Magento Open Source 2.1.9 Release Notes</a>
 
 
 									
@@ -437,7 +437,7 @@
 									
 
 
-											<li class="level3Child ee21-relnotes  active " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html">Magento Commerce 2.1.4 Release Notes</a>
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html">Magento Commerce 2.1.4 Release Notes</a>
 
 
 									
@@ -881,7 +881,7 @@
 
           
 
-          <span property="name">Magento Commerce 2.1.4 Release Notes</span>
+          <span property="name">Magento Open Source 2.1.9 Release Notes</span>
 
         
 
@@ -904,7 +904,7 @@
 
 	
 
-	<h1 class="page-heading">Magento Commerce 2.1.4 Release Notes</h1>
+	<h1 class="page-heading">Magento Open Source 2.1.9 Release Notes</h1>
 
   
 
@@ -914,18 +914,7 @@
 
 			<ul id="markdown-toc">
   <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
-  <li><a href="#security-enhancement" id="markdown-toc-security-enhancement">Security enhancement</a></li>
-  <li><a href="#functional-fixes-and-enhancements" id="markdown-toc-functional-fixes-and-enhancements">Functional fixes and enhancements</a>    <ul>
-      <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
-      <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
-      <li><a href="#indexers" id="markdown-toc-indexers">Indexers</a></li>
-      <li><a href="#installation-configuration-and-deployment" id="markdown-toc-installation-configuration-and-deployment">Installation, configuration, and deployment</a></li>
-      <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
-      <li><a href="#payment-methods" id="markdown-toc-payment-methods">Payment methods</a></li>
-      <li><a href="#travis-builds" id="markdown-toc-travis-builds">Travis builds</a></li>
-    </ul>
-  </li>
-  <li><a href="#known-issues" id="markdown-toc-known-issues">Known issues</a></li>
+  <li><a href="#fixed-issues" id="markdown-toc-fixed-issues">Fixed issues</a></li>
   <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
   <li><a href="#install-the-magento-software" id="markdown-toc-install-the-magento-software">Install the Magento software</a></li>
   <li><a href="#upgrade-from-an-earlier-version" id="markdown-toc-upgrade-from-an-earlier-version">Upgrade from an earlier version</a></li>
@@ -933,374 +922,121 @@
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p>We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.4. This release includes many functional fixes and enhancements, plus one important security fix.</p>
+<p><em>Code released:  September 14, 2017</em></p>
 
-<p>Looking for the <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Commerce (Cloud)  2.1.4 and 2.0.12 Release Notes</a>?</p>
+<p><em>Page updated:  September 14, 2017</em></p>
+
+<p>We are pleased to present Magento Open Source (formerly Community Edition) 2.1.9. This release includes important enhancements to your Magento software.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
+</div>
 
 <h2 id="highlights">Highlights</h2>
 
-<p>Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one security enhancement. Look for the following highlights in this release:</p>
+<p>Magento 2.1.9 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:</p>
 
 <ul>
   <li>
-    <p><strong>Removal of vulnerability with the Zend framework <code class="highlighter-rouge">Zend_Mail</code> library</strong>. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.</p>
+    <p>enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution vulnerabilities. See <a href="https://magento.com/security/patches/magento-2016-and-219-security-update" target="_blank">Magento 2.0.16 and 2.1.9 Security Patches</a> for a comprehensive discussion of these issues.</p>
   </li>
   <li>
-    <p><strong>Updates to the catalog, payment, and sales modules</strong></p>
+    <p>support for changes to the USPS API that USPS implemented on September 1, 2017</p>
   </li>
-</ul>
-
-<h2 id="security-enhancement">Security enhancement</h2>
-
-<p>This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework <code class="highlighter-rouge">Zend_Mail</code> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
-
-<h2 id="functional-fixes-and-enhancements">Functional fixes and enhancements</h2>
-
-<p>We address the following functional issues in this release.</p>
-
-<h3 id="catalog">Catalog</h3>
-
-<!--- 58437-->
-<ul>
-  <li>The <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> gallery now displays all the images associated with a <span term-uuid="2fd4d100-28d2-45ca-bec1-128444ea98e6" class="glossary-term" data-toggle="popover">configurable product</span>. Previously, when you clicked on the swatches associated with a configurable product, the gallery displayed only one of several possible images.  <a href="https://github.com/magento/magento2/issues/6195" target="_blank">(GITHUB-6195)</a>, <a href="https://github.com/magento/magento2/issues/4101" target="_blank">(GITHUB-4101)</a></li>
-</ul>
-
-<!---57832 -->
-<ul>
-  <li>Magento now displays the <strong>This is a required field</strong> message immediately adjacent to the product options as needed during <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>. Previously, Magento displayed this message at the bottom of the checkout form.</li>
-</ul>
-
-<h3 id="checkout">Checkout</h3>
-
-<!---60293 -->
-<ul>
-  <li>Magento now successfully estimates shipping costs. Previously, when you tried to estimate shipping costs, the load indicator would spin indefinitely, and Magento displayed this exception,<code class="highlighter-rouge">Object doesn't support this action</code>. <a href="https://github.com/magento/magento2/issues/5358" target="_blank">(GITHUB-5358)</a>, <a href="https://github.com/magento/magento2/issues/7051" target="_blank">(GITHUB-7051)</a></li>
-</ul>
-
-<h3 id="indexers">Indexers</h3>
-
-<!--- 58893-->
-<ul>
-  <li><code class="highlighter-rouge">IndexerHandlerFactory</code> no longer tries to cast the <code class="highlighter-rouge">$indexer</code> object to a String if an error occurs. Since <code class="highlighter-rouge">$indexer</code> is an object of type <code class="highlighter-rouge">IndexerInterface</code> and does not have a <code class="highlighter-rouge">__toString()</code> method, attempting to cast the <code class="highlighter-rouge">$indexer</code> object to a String previously resulted in an error. <a href="https://github.com/magento/magento2/issues/5155" target="_blank">(GITHUB-5155)</a></li>
-</ul>
-
-<!--- 59853-->
-<ul>
-  <li>The Magento flat indexer now collects correct product data for <code class="highlighter-rouge">ROW_ID</code>.</li>
-</ul>
-
-<!--- 58559-->
-<ul>
-  <li>The Magento flat indexer no longer throws an error after flat tables are enabled and reindexed. This fix applies to both product and <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span> tables.</li>
-</ul>
-
-<h3 id="installation-configuration-and-deployment">Installation, configuration, and deployment</h3>
-
-<!--- 62400-->
-<ul>
-  <li>Third-party command line tools no longer fail when you run <code class="highlighter-rouge">setup:di:compile</code>.</li>
-</ul>
-
-<!--- 62648-->
-<ul>
-  <li>Magento now correctly applies <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> configuration parameters to the corresponding <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>. <a href="https://github.com/magento/magento2/issues/7943" target="_blank">(GITHUB-7943)</a></li>
-</ul>
-
-<h3 id="miscellaneous">Miscellaneous</h3>
-
-<!--- 62229-->
-<ul>
-  <li>Magento now displays the price of out-of-stock products on the product page.</li>
-</ul>
-
-<!--- 62721-->
-<ul>
-  <li>The <strong>Allow Gift Wrapping for Order Items</strong> setting now works as expected. Previously, when <strong>Stores &gt; Configuration &gt; Sales &gt; Gift Options</strong> was set to <strong>No</strong>, users  saw the Gift Option link under each product in their <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span>.</li>
-</ul>
-
-<!--- 60248-->
-<ul>
-  <li>Information set by the <strong>Default Billing Address</strong> and <strong>Default Shipping Address</strong> checkboxes on the Customer page are now saved correctly.</li>
-</ul>
-
-<!---59416 -->
-<ul>
-  <li><span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> users with appropriate permissions can now reset the passwords of more than one customer at a time. <a href="https://github.com/magento/magento2/issues/5260" target="_blank">(GITHUB-5260)</a></li>
-</ul>
-
-<!---59142 -->
-<ul>
-  <li>Admin interface forms now load data as expected after initializing all components. Previously, under certain conditions, the load indicator would spin indefinitely, and Magento would not load data.</li>
-</ul>
-
-<!--- 58895-->
-<ul>
-  <li>If you remove an item from the Compare Items list that is displayed on any <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">Category</span> page, Magento no longer redirects you to the Compare Products page.</li>
-</ul>
-
-<!--- 58832-->
-<ul>
-  <li>The order comments history no longer duplicates the time that a comment was made. Previously, the time that a comment was made was listed twice.</li>
-</ul>
-
-<h3 id="payment-methods">Payment methods</h3>
-
-<!--- 56695-->
-<ul>
-  <li>You can now successfully complete Paypal checkout with products that have custom options.  <a href="https://github.com/magento/magento2/issues/5938" target="_blank">(GITHUB-5938)</a></li>
-</ul>
-
-<!--- 58376-->
-<ul>
-  <li>PayPal Payflow Pro now uses the currency you’ve specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings.</li>
-</ul>
-
-<!--- 55612-->
-<ul>
-  <li>Magento no longer displays the <strong>No <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">Payment method</span> available</strong> message when a customer tries to ship items to a billing-restricted country.</li>
-</ul>
-
-<!--- 62669-->
-<ul>
-  <li>Third-party payment gateways are now visible from the Admin.  <a href="https://github.com/magento/magento2/issues/7891" target="_blank">(GITHUB-7891)</a></li>
-</ul>
-
-<!--- 62428-->
-<ul>
-  <li>Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked the <strong>Refund</strong> button (to initiate a refund), Magento did not <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> you to order comments and history information.</li>
-</ul>
-
-<!--- 59036-->
-<ul>
-  <li>We’ve fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span>. <a href="https://github.com/magento/magento2/issues/5434" target="_blank">(GITHUB-5434)</a></li>
-</ul>
-
-<h3 id="travis-builds">Travis builds</h3>
-
-<!--- 62388-->
-<ul>
-  <li>We’ve fixed a fatal issue that occurred if you executed the CatalogImportExport test before running a subsequent test. Previously, you’d receive this error: <code class="highlighter-rouge">Failed asserting that false is true</code>.</li>
-</ul>
-
-<!--- 59680-->
-<ul>
   <li>
-    <p>We’ve fixed a fatal issue that occurred if you ran Travis builds on <code class="highlighter-rouge">imagettfbbox 2.1.2</code>. Previously, you’d receive this error:</p>
-
-    <p><code class="highlighter-rouge">PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php</code></p>
+    <p>fixed issue with logging information about exceptions caused by payment failures</p>
   </li>
-</ul>
-
-<!-- NOT A BUG -->
-<!--- 62239-->
-
-<!--- 62527-->
-
-<!--- 62281-->
-
-<!-- CANNOT REPRODUCE -->
-
-<!--- 62257-->
-
-<!--- 62479-->
-
-<!--- 62256-->
-
-<!--- 62476-->
-
-<!--- 62585-->
-
-<!--- 62524-->
-
-<!-- DUPLICATE -->
-
-<!--- 62664-->
-
-<!--- 62442-->
-
-<!-- WON'T FIX -->
-
-<!--- 62429-->
-
-<!--- 62135-->
-
-<!-- INTERNAL ONLY -->
-
-<!--- 62136-->
-
-<!--- 60718-->
-
-<!--- 60590 -->
-
-<!--- 60145-->
-
-<!--- 61950 -->
-
-<!--- 63329-->
-
-<!--- 63168-->
-
-<!--- 60364-->
-
-<h2 id="known-issues">Known issues</h2>
-
-<!---62083-->
-<ul>
   <li>
-    <p><strong>Issue</strong>: You receive the following fatal error while installing 2.1.3 from <code class="highlighter-rouge">repo.magento.com</code>.</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>&gt; Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
-</code></pre>
-    </div>
-
-    <p><strong>Workaround</strong>:  You can avoid this fatal error by taking one of these actions:</p>
-
-    <ul>
-      <li>
-        <p>If your Magento root directory is <code class="highlighter-rouge">&lt;Magento install dir&gt;/pub</code>,  then start the Web Setup Wizard from <code class="highlighter-rouge">http://&lt;Magento host or IP&gt;/setup</code> instead of from <code class="highlighter-rouge">http://&lt;Magento host or IP&gt;</code></p>
-      </li>
-      <li>
-        <p>Install Magento using the <a href="/guides/v2.1/comp-mgr/cli/cli-upgrade.html">command line</a>.</p>
-      </li>
-    </ul>
+    <p>change to how Magento displays status updates during upgrade.</p>
   </li>
 </ul>
 
-<!---60616-->
+<h2 id="fixed-issues">Fixed issues</h2>
+
+<!--- 72306 -->
 <ul>
-  <li><strong>Issue</strong>: Magento fails to validate a customer address or customer attributes as expected during checkout.</li>
+  <li>We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html">here</a>.</li>
 </ul>
 
-<!---60781-->
+<!--- 55065 -->
 <ul>
-  <li><strong>Issue</strong>: Installing with Varnish can result in products not appearing on the <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> even after you purge the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>.</li>
+  <li>Magento now logs all expected exception information in the <code class="highlighter-rouge">exception.log</code> file when a payment transaction fails. 
+Previously, Magento did not log all exception information when a payment transaction failed, and this lack of full exception information, undermined debugging attempts.  <a href="https://github.com/magento/magento2/issues/6246">GitHub-6246</a></li>
 </ul>
 
-<!---60553-->
+<!--- 60835 -->
 <ul>
-  <li><strong>Issue</strong>: When editing a product, you cannot edit customizable options on the storeview level. Consequently, a change to one option affects products on all stores. Also, the <strong>Use Default Value</strong> check box for the option title does not work. Clearing this check box, and then changing the option title affects all storeviews.</li>
-</ul>
-
-<!---60599-->
-<ul>
-  <li><strong>Issue</strong>: You cannot use a negative value in the <strong>Quantity</strong> field for a product, even when you activate back orders (<strong>Stores &gt; Configuration &gt; Catalog &gt; Inventory &gt; Product Stock Options &gt; Backorders = Allow Qty Below 0</strong>) <a href="https://github.com/magento/magento2/issues/7401" target="_blank">(GITHUB-7401)</a></li>
-</ul>
-
-<!---61349-->
-<ul>
-  <li><strong>Issue</strong>: When you upgrade your Magento installation from the command line, the <code class="highlighter-rouge">bin/magento</code> commands do not skip the <code class="highlighter-rouge">var/session</code> folder, as expected. (The <code class="highlighter-rouge">bin/magento</code> commands include <code class="highlighter-rouge">setup:cron:run</code>, <code class="highlighter-rouge">setup:upgrade</code>, and <code class="highlighter-rouge">setup:uninstall</code>.) <strong>Workaround</strong>: Make <code class="highlighter-rouge">var/session</code> writeable before you run the <code class="highlighter-rouge">bin/magento</code> commands.</li>
-</ul>
-
-<!---60947-->
-<ul>
-  <li><strong>Issue</strong>: The Low Stock Products report (<strong>Admin &gt; Reports &gt; Products &gt; Low Stock</strong>) is not working correctly.</li>
-</ul>
-
-<!---60902-->
-<ul>
-  <li>
-    <p><strong>Issue</strong>: You cannot re-enable a previously disabled <code class="highlighter-rouge">Magento_AdminGws</code> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> without causing a range of <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> errors. Here is a sample error:</p>
-
-    <p><code class="highlighter-rouge">[PDOException] 
-  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist</code></p>
-  </li>
-</ul>
-
-<!---60408-->
-<ul>
-  <li><strong>Issue</strong>: If you move a product update from one scheduled update to another, Magento will no longer track <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> changes.</li>
-</ul>
-
-<!---59775-->
-<ul>
-  <li>
-    <p><strong>Issue</strong>: You cannot generate secure content if you deploy <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> under these conditions:</p>
-
-    <ul>
-      <li>
-        <p><code class="highlighter-rouge">pub/static</code> is in read-only mode</p>
-      </li>
-      <li>
-        <p>Magento is in production mode</p>
-      </li>
-    </ul>
-
-    <p>Requests to <code class="highlighter-rouge">pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-config.js</code>, and consequently the frontend code,  will fail under these conditions.</p>
-  </li>
-</ul>
-
-<!---60705-->
-<ul>
-  <li><strong>Issue</strong>: Client-side LESS compilation is not working properly. Consequently, page load performance is not optimal.</li>
+  <li>We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.</li>
 </ul>
 
 <h2 id="system-requirements">System requirements</h2>
-<p>Our technology stack is built on <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and MySQL. For more information, see
+<p>Our technology stack is built on PHP and MySQL. For more information, see
 <a href="/guides/v2.1/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <div>
 
   <h2 id="install-the-magento-software">Install the Magento software</h2>
-  <p>See one of the following sections:</p>
+
+  <p>You can get Magento Open Source (formerly Community Edition) 2.1 from Github, Composer, or using a compressed archive.</p>
+
+  <p>See one of the following sections for more information:</p>
 
   <ul>
-    <li><a href="#install-rc-composer">Get Magento Commerce using Composer</a></li>
-    <li><a href="#get-zip">Get Magento Commerce using a compressed archive</a></li>
-    <li><a href="#install-complete">Complete the installation</a></li>
+    <li><a href="#install-rc-composer">Get the Magento Open Source software using Composer</a></li>
+    <li><a href="#install-archive">Get a compressed archive</a></li>
+    <li><a href="#install-finish">Complete the installation</a></li>
   </ul>
 
-  <h3 id="install-rc-composer" class="no_toc">Get Magento Commerce using Composer</h3>
+  <h3 id="install-rc-composer" class="no_toc">Get the Magento Open Source software using Composer</h3>
 
-  <p>Magento Commerce (formerly Enterprise Edition) is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+  <p>The Open Source software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before getting the Open Source software, familiarize yourself with the Composer metapackage  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
   </div>
 
   <p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
 
-  <p>For example, to install 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+  <p>For example, to install Magento Open Source 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 </code></pre>
   </div>
 
-  <h3 id="get-zip" class="no_toc">Get Magento Commerce using a compressed archive</h3>
+  <h3 id="install-archive" class="no_toc">Get a compressed archive</h3>
 
   <div>
 
     <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
 
     <ul>
-      <li>Magento Commerce software only</li>
-      <li>Magento Commerce software with sample data (designed to help you learn Magento faster)</li>
+      <li>Magento Open Source software only</li>
+      <li>Magento Open Source software with sample data (designed to help you learn Magento faster)</li>
     </ul>
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
     <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
-    <p>To get the Magento Commerce archive:</p>
+    <p>To get the Magento Open Source software archive:</p>
 
     <ol>
-      <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
-      <li>Log in with your Magento user name and password.</li>
-      <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-      <li>In the right pane, click <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
+      <li>Go to <a href="http://magento.com/download" target="_blank">http://magento.com/download</a>.</li>
       <li>
-        <p>Follow the instructions on your screen to complete the Magento Commerce download:</p>
+        <p>Choose either the software or the software and sample data:</p>
 
         <ul>
-          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
+
+        <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
       </li>
-      <li>Transfer the installation package to your development system.</li>
     </ol>
 
-    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
+    <h3 id="install-finish" class="no_toc">Complete the installation</h3>
 
-    <p>After you get the Commerce software:</p>
+    <p>After you get the Open Source software:</p>
 
     <ol>
       <li><a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
@@ -1315,10 +1051,29 @@
     </ol>
 
     <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
-    <p>To upgrade to Magento Commerce 2.1 from an earlier version, see <a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
+    <p>See the following sections for more information.</p>
+
+    <h3 id="upgrade-github" class="no_toc">Upgrade an existing installation from the GitHub repository</h3>
+
+    <p>Developers who contribute to the Open Source codebase can <a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.</p>
+
+    <ol>
+      <li>
+        <p>Go to the <a href="/guides/v2.1/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.</p>
+      </li>
+      <li>
+        <p>Follow the instructions to pull the updates from the repository and update using Composer.</p>
+      </li>
+    </ol>
+
+    <h3 id="upgrade-other" class="no_toc">Other upgrades</h3>
+
+    <p>Other types of upgrades are discussed in <a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
     <h2 id="migration-toolkits">Migration toolkits</h2>
     <p>The <a href="/guides/v2.1/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.1/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+
+    <p>An updated version of this toolkit is typically available several days after the patch release.</p>
 
     <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
 
@@ -1337,14 +1092,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/ReleaseNotes2.1.4EE.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/release-notes/ReleaseNotes2.1.9CE.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/ReleaseNotes2.1.9CE.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

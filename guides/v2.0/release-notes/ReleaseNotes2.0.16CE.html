@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source 2.0.7 Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento Open Source 2.0.16 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.16CE.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.0.16CE.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.0.7CE.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.0.16CE.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/ReleaseNotes2.0.7CE.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/ReleaseNotes2.0.16CE.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -276,7 +276,7 @@
 									
 
 
-											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.16CE.html">Magento Open Source 2.0.16 Release Notes</a>
+											<li class="level3Child ce20-relnotes  active " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.16CE.html">Magento Open Source 2.0.16 Release Notes</a>
 
 
 									
@@ -366,7 +366,7 @@
 									
 
 
-											<li class="level3Child ce20-relnotes  active " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento Open Source 2.0.7 Release Notes</a>
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento Open Source 2.0.7 Release Notes</a>
 
 
 									
@@ -1004,7 +1004,7 @@
 
           
 
-          <span property="name">Magento Open Source 2.0.7 Release Notes</span>
+          <span property="name">Magento Open Source 2.0.16 Release Notes</span>
 
         
 
@@ -1027,7 +1027,7 @@
 
 	
 
-	<h1 class="page-heading">Magento Open Source 2.0.7 Release Notes</h1>
+	<h1 class="page-heading">Magento Open Source 2.0.16 Release Notes</h1>
 
   
 
@@ -1035,126 +1035,140 @@
 </section>
 
 
-			<p>We are pleased to present Magento Open Source (formerly Community Edition) 2.0.7. This release includes one functional fix.</p>
+			<p><em>Patch code and release notes were published on September 14, 2017.</em></p>
 
-<p>Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
+<p>We are pleased to present Magento Open Source (formerly Community Edition) 2.0.16. This release includes almost 40 security fixes and enhancements to your Magento software.</p>
 
-<h3>Fixed issue</h3>
+<div class="bs-callout bs-callout-warning">
+  <p>While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
+</div>
 
-<p>The <span term-uuid="5b963536-8f03-45c4-963b-688021f4eea7" class="glossary-term" data-toggle="popover">payment gateway</span> now works as expected in a Magento installation running <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 7.0.3. Previously, when you would place an order in an installation running PHP 7.0.3, the <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> page would become unresponsive, and the transaction would not appear in the payment gateway. <a href="https://github.com/magento/magento2/issues/2984" target="_blank">(GITHUB-2984</a>, <a href="https://github.com/magento/magento2/issues/2878" target="_blank">GITHUB-2878</a>, <a href="https://github.com/magento/magento2/issues/3305" target="_blank">GITHUB-3305</a>, <a href="https://github.com/magento/magento2/issues/4076" target="_blank">GITHUB-4076)</a>.</p>
+<h2 id="highlights">Highlights</h2>
 
-<h3>System requirements</h3>
-<p>Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-<a href="/magento-system-requirements.html" target="_blank">System Requirements</a>.</p>
+<p>Magento 2.0.16 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:</p>
 
-<h3>Installation instructions</h3>
-
-<h4>New installations</h4>
-<p>New users can now complete a full installation of Magento Open Source 2.0.7 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.</p>
-
-<h5 id="bdownload-a-new-installationb"><b>Download a new installation</b></h5>
-
-<ol>
+<ul>
   <li>
-    <p>Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Open Source Download</a> page.</p>
+    <p>enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution 
+vulnerabilities. See <a href="https://magento.com/security/patches/magento-2016-and-219-security-update" target="_blank">Magento 2.0.16 and 2.1.9 Security Patches</a> for a comprehensive discussion of these issues.</p>
   </li>
   <li>
-    <p>Under Full Release, select a format for the download archive file. Then, click <strong>Download</strong>.</p>
+    <p>support for changes to the USPS API that USPS implemented on September 1, 2017</p>
   </li>
   <li>
-    <p>Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.</p>
+    <p>change to how Magento displays status updates during upgrade.</p>
   </li>
-</ol>
+</ul>
 
-<h5 id="binstall-a-new-installation-with-composerb"><b>Install a new installation with Composer</b></h5>
+<h2 id="fixed-issue">Fixed issue</h2>
 
-<ol>
-  <li>
-    <p>Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Open Source Download</a> page.</p>
-  </li>
-  <li>
-    <p>Under <strong>Download with Composer</strong>, click <strong>Download</strong>.</p>
-  </li>
-  <li>
-    <p>Follow the instructions to download Composer, and get the Magento Open Source <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>.</p>
-  </li>
-</ol>
+<ul>
+  <li>We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, the discontinued First-Class Mail Parcel service will change to First-Class Package Service – Retail. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html">here</a>.</li>
+</ul>
 
-<h4><b>Upgrade existing installations</b></h4>
+<!--- 60835 -->
+<ul>
+  <li>We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.</li>
+</ul>
 
-<p>This section discusses how to upgrade to 2.0.7.</p>
+<h2 id="system-requirements">System requirements</h2>
+<p>Our technology stack is built on PHP and MySQL. For more information, see
+<a href="/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
 
-<h5 id="bupgrade-using-the-setup-wizardb"><b>Upgrade using the Setup Wizard</b></h5>
-<p>Use the instructions in <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a>. When prompted to choose a version, choose 2.0.7.</p>
+<div>
 
-<h5 id="bupgrade-an-existing-installation-from-the-github-repositoryb"><b>Upgrade an existing installation from the GitHub repository</b></h5>
-<p>Developers who contribute to the Open Source codebase can <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.</p>
+  <h2 id="install-the-magento-software">Install the Magento software</h2>
+  <p>See one of the following sections:</p>
 
-<ol>
-  <li>
-    <p>Go to the <a href="/guides/v2.0/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.</p>
-  </li>
-  <li>
-    <p>Follow the instructions to pull the updates from the repository and update using <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>.</p>
-  </li>
-</ol>
+  <ul>
+    <li><a href="#install-ce-composer">Get Magento Open Source using Composer</a></li>
+    <li><a href="#get-zip">Get Magento Open Source using a compressed archive</a></li>
+    <li><a href="#install-complete">Complete the installation</a></li>
+  </ul>
 
-<h5 id="bupgrade-using-the-command-lineb"><b>Upgrade using the command line</b></h5>
-<p>To upgrade to 2.0.7 using the command line:</p>
+  <h3 id="install-ce-composer" class="no_toc">Get the Magento Open Source software using Composer</h3>
 
-<ol>
-  <li>Log in to your Magento server as, or switch to, the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
-  <li>
-    <p>Change to the directory in which you installed the Magento software.</p>
+  <p>This software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Open Source software using Composer, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
-    <p>For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></p>
-  </li>
-  <li>
-    <p>Enter the following command to disable the cache:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cache:disable
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Enter the following commands in the order shown:</p>
+  </div>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require &lt;product&gt; 2.0.7 --no-update
-composer update
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> matches the version you want (for example, <code class="highlighter-rouge">2.0.10</code>)</p>
+
+  <p>For example, to install Magento CE 2.0.10 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
 </code></pre>
-    </div>
+  </div>
 
-    <p>To upgrade to Magento CE 2.0.7, enter:</p>
+  <h3 id="get-zip" class="no_toc">Get Magento Open Source using a compressed archive</h3>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/product-community-edition 2.0.7 --no-update
-composer update
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>If prompted, enter your <a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a>.</p>
-  </li>
-  <li>
-    <p>Update the <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data:</p>
+  <div>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento setup:upgrade
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Enter the following command to enable the cache:</p>
+    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cache:enable
-</code></pre>
-    </div>
-  </li>
-</ol>
+    <ul>
+      <li>Magento Open Source software only</li>
+      <li>Magento Open Source software with sample data (designed to help you learn Magento faster)</li>
+    </ul>
 
-<h3>Migration toolkits</h3>
-<p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-<p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
+    <p>To get the Magento Open Source software archive:</p>
+
+    <ol>
+      <li>Go to <a href="http://magento.com/download" target="_blank">http://magento.com/download</a>.</li>
+      <li>
+        <p>Choose either the software or the software and sample data:</p>
+
+        <ul>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+        </ul>
+
+        <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
+      </li>
+    </ol>
+
+    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
+
+    <p>After you get the Open Source software:</p>
+
+    <ol>
+      <li><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
+      <li>
+        <p>Install the Magento software:</p>
+
+        <ul>
+          <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
+          <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2 id="upgrade">Upgrade from an earlier version</h2>
+    <p>To upgrade to version 2.0.x from an earlier version:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Web Setup Wizard (System Upgrade)</a></li>
+      <li><a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a></li>
+    </ul>
+
+    <h2 id="migration-toolkits">Migration toolkits</h2>
+    <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+
+    <p>An updated version of this toolkit is typically available several days after the patch release.</p>
+
+    <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+
+    <h2 id="credits">Credits</h2>
+
+    <p>Dear community members, thank you for your suggestions and bug reports.</p>
+  </div>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1165,14 +1179,14 @@ composer update
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.0.16CE.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.16CE.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
