@@ -24,7 +24,7 @@ The Composer installation process is the same for {{site.data.var.ce}} and {{sit
 
 -   Complete the Magento installation
 
--   Install the {{site.data.var.b2b}} extension (optional) on top of an existing {{site.data.var.ee}} installation
+-   Install the {{site.data.var.b2b}} extension on top of an existing {{site.data.var.ee}} installation (optional)
 
 -   Install sample data (optional)
 
@@ -102,11 +102,13 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 
 3.  Run the following commands after Composer finishes updating modules:
 
+    ```
     bin/magento setup:upgrade
 
     bin/magento setup:di:compile
 
     bin/magento setup:static-content:deploy
+    ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
 After completing the installation, you must follow the [B2B post-install steps and configuration](#b2b-post-install-steps-and-configuration).
@@ -293,7 +295,7 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
     ```
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-Append `&` to the command to run it in the background to return to a prompt and continue running commands (e.g., `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`).
+Append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`).
 </div>
 
 Refer to [Manage message queues with MySQL]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
