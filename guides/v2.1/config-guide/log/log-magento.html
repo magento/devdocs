@@ -1607,7 +1607,7 @@
 <p>Other channels can have a different set of handlers and logic.</p>
 
 <h2 id="config-log-start">Get started with logging</h2>
-<p>To start working with a logger, you must get a <code class="highlighter-rouge">\Psr\Logger\LoggerInterface</code> instance. One way to do that is illustrated in our <a href="/guides/v2.1/config-guide/log/log-db.html">database logging example</a>.</p>
+<p>To start working with a logger, you must get a <code class="highlighter-rouge">\Psr\Log\LoggerInterface</code> instance. One way to do that is illustrated in our <a href="/guides/v2.1/config-guide/log/log-db.html">database logging example</a>.</p>
 
 <p>Another way follows:</p>
 
@@ -1615,7 +1615,7 @@
  {
      private $logger;
 
-     public function __construct(\Psr\Logger\LoggerInterface $logger)
+     public function __construct(\Psr\Log\LoggerInterface $logger)
      {
          $this-&gt;logger = $logger;
      }
@@ -1630,7 +1630,7 @@
      }
  }</code></pre></figure>
 
-<p>The preceding example shows that <code class="highlighter-rouge">SomeModel</code> receives a <code class="highlighter-rouge">\Psr\Logger\LoggerInterface</code> object using constructor injection. In a method <code class="highlighter-rouge">doSomething</code>, if some error occurred, it’s logged to a method <code class="highlighter-rouge">critical</code> (<code class="highlighter-rouge">$this-&gt;logger-&gt;critical($e);</code>).</p>
+<p>The preceding example shows that <code class="highlighter-rouge">SomeModel</code> receives a <code class="highlighter-rouge">\Psr\Log\LoggerInterface</code> object using constructor injection. In a method <code class="highlighter-rouge">doSomething</code>, if some error occurred, it’s logged to a method <code class="highlighter-rouge">critical</code> (<code class="highlighter-rouge">$this-&gt;logger-&gt;critical($e);</code>).</p>
 
 <p><a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC 5424</a> defines eight log levels (debug, info, notice, warning, error, critical, alert, and emergency).</p>
 
