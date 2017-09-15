@@ -1252,20 +1252,23 @@
 
 <p>To create a new cache type:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class %Namespace%_%Module%_Model_Cache_Type extends \Magento\Cache\Frontend\Decorator\TagScope
+<figure class="highlight"><pre><code class="language-php" data-lang="php">class %Namespace%\%Module%\Model\Cache\Type extends \Magento\Framework\Cache\Frontend\Decorator\TagScope
 {
+  const TYPE_IDENTIFIER = '%cache_type_id%';
+  const CACHE_TAG = '%CACHE_TYPE_TAG%';
+  
   public function __construct(\Magento\Framework\App\Cache\Type\FrontendPool $cacheFrontendPool)
   {
-    parent::__construct($cacheFrontendPool-&gt;get('%cache_type_id%'), '%cache_type_tag%');
+    parent::__construct($cacheFrontendPool-&gt;get(self::TYPE_IDENTIFIER), self::CACHE_TAG);
   }
 }</code></pre></figure>
 
 <p>You must specify the following parameters:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Namespace_Module</code> defines the name of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that uses a cache type. A module can use several cache types and a cache type can be used in several modules.</li>
+  <li><code class="highlighter-rouge">Namespace\Module</code> defines the name of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that uses a cache type. A module can use several cache types and a cache type can be used in several modules.</li>
   <li><code class="highlighter-rouge">%cache_type_id%</code> defines unique identifier of a cache type.</li>
-  <li><code class="highlighter-rouge">%cache_type_tag%</code> defines unique tag to be used in the cache type scoping.</li>
+  <li><code class="highlighter-rouge">%CACHE_TYPE_TAG%</code> defines unique tag to be used in the cache type scoping.</li>
 </ul>
 
 <h2 id="more-information-about-caching">More information about caching</h2>
