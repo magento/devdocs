@@ -12,6 +12,9 @@ redirect from:
   -  /guides/v2.0/cloud/before/integration-ip-addr.html
   -  /guides/v2.1/cloud/before/integration-ip-addr.html
   -  /guides/v2.1/cloud/before/integration-ip-addr.html
+  -  /guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html
+  -  /guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html
+  -  /guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html
 ---
 
 When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
