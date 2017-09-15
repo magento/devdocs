@@ -51,13 +51,19 @@
 <h2 id="ee114-11436">Magento Commerce 1.14.3.6 Release Notes</h2>
 <p>This patch (SUPEE-10266) provides resolution of multiple critical security issues and several functional fixes. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10266" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
 
- <p>Update: The fix for MPERF-9685, previously reported as included in this release, is included in <a href="https://magento.com/security/patches/supee-10266" target="_blank">SUPEE-10226</a>. It will be included in Magento Commerce 1.14.3.7.</p>
- 
- <p>This release also provides support for the following functional issues: </p>
+
+<p><a href="https://magento.com/security/patches/supee-10266" target="_blank">SUPEE-10226</a> includes a fix for MPERF-9685. This fix is not included in release 1.14.3.6. However, in some cases,  SUPEE-10266 can cause issues in the checkout process. Specifically, if a customer enables the  Add gift options checkbox during checkout, the checkout process will not progress beyond the payments step. </p>
+
+<p>We are working on fixing this issue, and will release patch SUPEE-10266v2 shortly to address this issue. </p>
+
+<p>If you are currently affected by this issue, you can workaround this issue by restore these two files to the pre-patch versions:</p>
+ 
+<p><code>app/design/frontend/enterprise/default/template/giftcardaccount/onepage/payment/scripts.phtml</code></p>
+
+<p><code>app/design/frontend/rwd/enterprise/template/giftcardaccount/onepage/payment/scripts.phtml</code></p>
 
 
-
-<!-- <a href="https://jira.corp.magento.com/browse/MPERF-9726" target="_blank">MPERF-9726</a>.-->We’ve fixed an issue where uploaded images were twice their original size after you applied SUPEE-9767 v2.
+<!-- <a href="https://jira.corp.magento.com/browse/MPERF-9726" target="_blank">MPERF-9726</a>.-->We’ve also fixed an issue where uploaded images were twice their original size after you applied SUPEE-9767 v2.
 
 
 <h2 id="ee114-11435">Magento Commerce 1.14.3.5 Release Notes</h2>
