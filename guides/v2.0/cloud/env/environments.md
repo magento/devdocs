@@ -1,16 +1,21 @@
 ---
 layout: default
-group: cloud
-subgroup: 120_env
-title: Manage your environments
-menu_title: Manage your environments
-menu_order: 1
-menu_node: parent
+group:
+subgroup:
+title: Configure your environments
+menu_title: Configure your environments
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/env/environments.md
 ---
 
-Environments in {{site.data.var.ece}} include containers with applications, services, a database, and much more to provide a complete system for your Magento application (codebase and files). For Integration, you have a number of active environments for associated active Git branches of code. The number of environments differs between Starter and Pro plans.
+Environments in {{site.data.var.ece}} include containers with applications, services, a database, and much more to provide a complete system for your Magento application (codebase and files). You can configure environment variables, settings, routes, and more to support your code branches per project environment.
+
+We provide options to:
+
+* Export configuration settings to a file for cross-environment deployment
+* Set environment variables per environment
 
 ## Environments and branches {#env-branches}
 Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. Each environment has an associated active Git branch of code.
@@ -105,7 +110,7 @@ The following table lists the commands used in the preceding example. For a full
 </table>
 
 #### Related topics
-*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
+*	[Manage your project]({{page.baseurl}}cloud/project/projects.html)
 *	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
 *	[SSH into environment]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
 *	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)

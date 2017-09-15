@@ -2,16 +2,21 @@
 layout: default
 group: cloud
 subgroup: 120_env
-title: Overview of environment variables
-menu_title: Overview of environment variables
-menu_order: 20
-menu_node:
+title: Manage variables
+menu_title: Manage variables
+menu_order: 1
+menu_node: parent
 version: 2.0
 github_link: cloud/env/environment-vars_over.md
+redirect from:
+  -  /guides/v2.0/cloud/env/environments.html
+  -  /guides/v2.1/cloud/env/environments.html
+  -  /guides/v2.1/cloud/env/environments.html
 ---
+(add overview information here)
 
 ## Environment variables {#cloud-env-set-vars}
-{{site.data.var.ece}} enables you to create variables in your environment that override configuration options. For example, we strongly recommend you *immediately* change your {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} URI and administrative user's password to prevent someone guessing your login and changing settings without your knowledge.
+{{site.data.var.ece}} enables you to create variables in your environment that override configuration options. For example, we strongly recommend you *immediately* change your Magento Admin URI and administrative user's password to prevent someone guessing your login and changing settings without your knowledge.
 
 We support the following types of variables:
 

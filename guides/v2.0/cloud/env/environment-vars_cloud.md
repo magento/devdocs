@@ -4,7 +4,7 @@ group: cloud
 subgroup: 120_env
 title: Magento Commerce (Cloud) environment variables
 menu_title: Magento Commerce (Cloud) environment variables
-menu_order: 30
+menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/env/environment-vars_cloud.md

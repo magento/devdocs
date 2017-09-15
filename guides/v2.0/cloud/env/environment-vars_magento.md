@@ -4,7 +4,7 @@ group: cloud
 subgroup: 120_env
 title: Magento application environment variables
 menu_title: Magento application environment variables
-menu_order: 25
+menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md

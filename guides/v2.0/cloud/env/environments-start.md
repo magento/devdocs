@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
-title: Get started with an environment
-menu_title: Get started with an environment
-menu_order: 5
+subgroup: 100_project
+title: Manage branches with the CLI
+menu_title: Manage branches with the CLI
+menu_order: 25
 menu_node:
 version: 2.0
 github_link: cloud/env/environments-start.md
@@ -18,6 +18,8 @@ redirect from:
 ---
 
 When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
+
+To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html).
 
 ## Common Magento CLI commands {#env-start-comm}
 The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage integration environments. You may notice these commands are similar to Git commands. The `magento-cloud` versions directly connect with Magento Git, the Magento ECE project, and provide Git features.
@@ -191,11 +193,5 @@ The following steps provide an example of accessing a database:
 {% include cloud/log-in-db.md %}
 
 #### Related topics
-*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
+*	[Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html)
 *	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)

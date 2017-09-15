@@ -4,7 +4,7 @@ group: cloud
 subgroup: 100_project
 title: Patch and test Magento Commerce
 menu_title: Patch and test Magento Commerce
-menu_order: 35
+menu_order: 40
 menu_node:
 version: 2.0
 github_link: cloud/project/project-patch.md

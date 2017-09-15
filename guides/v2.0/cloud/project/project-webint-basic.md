@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 100_project
-title: Basic project information
-menu_title: Basic project information
+title: Project Web Interface
+menu_title: Project Web Interface
 menu_order: 5
 menu_node:
 version: 2.0

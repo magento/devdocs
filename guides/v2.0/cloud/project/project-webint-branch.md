@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 100_project
-title: Manage branches
-menu_title: Manage branches
+title: Manage branches with the Project Web Interface
+menu_title: Manage branches with the Interface
 menu_order: 20
 menu_node:
 version: 2.0
@@ -16,7 +16,7 @@ redirect_from:
 
 Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see [Git documentation](https://git-scm.com/doc).
 
-For more information about managing environments using the CLI, see [Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html).
+For more information about managing environments using the CLI, see [Manage branches with the CLI]({{page.baseurl}}cloud/env/environments-start.html).
 
 This topic discusses how to use the Web Interface to:
 

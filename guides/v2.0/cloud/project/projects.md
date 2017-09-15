@@ -12,19 +12,33 @@ github_link: cloud/project/projects.md
 
 The {{site.data.var.ece}} *project* includes all code in Git branches, associated  environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
 
-We provide a Project Web Interface to fully manage all aspects of your project. For Starter, you have access to all environments and branches. For Pro, you have access to Integration environments, but use CLI to manage Staging and Production environments.
+We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. For Starter, you have access to all environments and branches. For Pro, you have access to Integration environments, but use CLI to manage Staging and Production environments.
 
-For more detailed information about actions and the Project Web Interface, see:
+{% include cloud/wings-management.md %}
+
+To manage your project, environment, and branches, see:
 
 * [Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
 * [Project structure]({{page.baseurl}}cloud/project/project-start.html)
 * [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
-*	[Manage branches]({{page.baseurl}}cloud/project/project-webint-branch.html)
+*	Manage branches with the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html) or [CLI commands]({{page.baseurl}}cloud/env/environments-start.html)
 *	[Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html)
+
+### Project and environment variables {#variables}
+The following sections detail more about project and environment variables:
+
+*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
+
+### Upgrade and patch {#upgrade}
+To upgrade and patch Magento, see:
+
 *	[Upgrade and test Magento Commerce]({{page.baseurl}}cloud/project/project-upgrade.html)
 *	[Patch and test Magento Commerce]({{page.baseurl}}cloud/project/project-patch.html)
-
-{% include cloud/wings-management.md %}
 
 ## Access the Project Web Interface {#login}
 With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.

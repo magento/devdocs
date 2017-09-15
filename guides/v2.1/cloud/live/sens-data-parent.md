@@ -1,10 +1,10 @@
 ---
 layout: default
-group: 
+group:
 subgroup:
 title: Manage the configuration
 menu_title: Manage the configuration
-menu_order: 90
+menu_order: 
 menu_node:
 level3_menu_node:
 level3_subgroup:

@@ -4,7 +4,7 @@ group: cloud
 subgroup: 100_project
 title: Snapshots and backup management
 menu_title: Snapshots and backup management
-menu_order: 25
+menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-snap.md
