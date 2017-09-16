@@ -17,6 +17,9 @@ You may need to specify your component's dependency on other components or files
 
 If you know that your component's logic depends on something in another component then you should add it to `require` in `composer.json` and `<sequence>` in `module.xml`.
 
+You can check your module load order from config.php file at `<your Magento install dir>/app/etc/config.php` file.
+After Magento setup successfully you can check file inside `app/etc` folder with module load order. This file create dynamically at run time when you setup your magento2 instance.
+
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
 	<p>If you change the component load order using <code>&lt;sequence></code>, you must regenerate the component list in <code>config.php</code>; otherwise, the load order does not take effect.</p>
