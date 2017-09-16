@@ -26,7 +26,7 @@ The Magento application is made up of *Modules*, *Themes*, and *Language Package
 
 * <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">*Modules*</a> interact with other parts of the application to accomplish a particular business function or provide a feature. A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} can contain a user interface for displaying information or interacting with the user. It can also contain application interfaces that another Magento module or code chunk might call.
 
-* <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html">*Themes*</a> provide a personalized touch for each Magento installation by changing the look and feel of the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+* <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html">*Themes*</a> provide a personalized touch for each Magento installation by changing the look and feel of the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.There are two themes are already available for magento 2 default code structure. Blank and Luma Themes are installed with magento 2 instance. You can refer these themes to create your own theme.
 
 * <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html">*Language packages*</a> assist in internationalization(i18n) and localization by providing translations for strings that display on the storefront and Admin.
 
