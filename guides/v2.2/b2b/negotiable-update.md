@@ -47,10 +47,12 @@ Name | Description | Format | Requirements
 
 In every successful negotiate quote, the merchant must set the negotiated price.
 
-The `negotiated_price_value` can have one of the following values:
+The `negotiated_price_type` can have one of the following values:
 
 `1` - Apply a percentage discount to the quote. The `negotiated_price_value`parameter indicates the percentage.
+
 `2` - Apply a fixed amount as a discount for the quote. The `negotiated_price_value`parameter specifies the amount of the discount.
+
 `3` - Set a proposed price for the entire quote. The `negotiated_price_value`parameter specifies the proposed price.
 
 **Service Name**
