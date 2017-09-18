@@ -7,6 +7,7 @@ menu_title: Install the B2B extension
 menu_order: 1
 version: 2.2
 github_link: comp-mgr/b2b-installation.md
+ee_only: true
 ---
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -14,7 +15,6 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 </div>
 
 ## Installation
-
 1.  Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
     ```
@@ -41,7 +41,7 @@ After completing the installation, you must follow the [post-installation steps]
 After installing the {{site.data.var.b2b}} extension, follow these instructions to launch {{site.data.var.b2b}}.
 
 ### Start message consumers
-The {{site.data.var.b2b}} extension uses MySQL for message queue management. If you want to enable the B2B shared catalogs feature, you must start the corresponding message consumers after installation.
+The {{site.data.var.b2b}} extension uses MySQL for message queue management. If you want to enable the B2B **Shared Catalog** feature, you must start the corresponding message consumers after installation.
 
 1.  List the available message consumers:
 
@@ -89,7 +89,13 @@ Depending on your system configuration, to prevent possible issues, you may also
 
 -   `--batch-size`: allows you to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing
 
-### Enable B2B Features in Magento Admin
+### Enable B2B features in Magento Admin
+After installing the {{site.data.var.b2b}} extension and starting message consumers (if you want to enable the **Shared Catalog** module), you must also enable B2B modules in Magento Admin.
+
+<div class="bs-callout bs-callout-info" markdown="1">
+If you enable the **Shared Catalog** module, you must also enable the **Company** module. The **Quick Order** module can be enabled/disabled independently.
+</div>
+
 1.  Access the Magento Admin and click **Stores** > **Configuration** > **General** > **B2B Features**.
 
 2.  Select **Yes** from the drop-down menus to enable B2B features:
