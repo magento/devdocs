@@ -34,9 +34,11 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 #### Possible solutions
 
-* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}
+* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"&#95;blank"}
 
     If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
+
+* Use the `-a` argument when executing the tool to auto resolve errors and prevent migration from stopping.
 
 * Configure the Tool to ignore the problematic data
 
