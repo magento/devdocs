@@ -60,7 +60,7 @@ Add the `github-oauth` entry as the following:
 
 And paste your [personal access token].
 
-## Step 4. Install dependencies from `composer.json`
+## Step 4. Install dependencies from `magento2ce/dev/tests/acceptance/composer.json` (NOT AVAILABLE, NO SUCH DIRECTORY)
 
 ```bash
 $ cd magento2ce/dev/tests/acceptance
