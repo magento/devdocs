@@ -32,16 +32,18 @@ See the following instructions based on your {{site.data.var.ece}} version:
 
 * 2.0.x: Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.
 * 2.1.0 – 2.1.3: Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.
-* 2.1.4 and later merchants: Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment. According to your {{site.data.var.ece}} version, verify the following `magento/magento-cloud-configuration` version displays in `composer.lock` after the composer update completes:
+* 2.1.4 and later merchants: Upgrade [MCC]({{ page.baseurl }}cloud/reference/cloud-composer.html#magento-commerce-cloud-packages) to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run `composer update` in a terminal.
 
-  * 2.1.4: `magento/magento-cloud-configuration 101.4.5`
-  * 2.1.5: `magento/magento-cloud-configuration 101.5.4`
-  * 2.1.6: `magento/magento-cloud-configuration 101.6.6`
-  * 2.1.7: `magento/magento-cloud-configuration 101.7.6`
-  * 2.1.8: `magento/magento-cloud-configuration 101.8.1`
-* 2.2: his PHP-Redis upgrade is already included. v2.2 is coming soon for {{site.data.var.ece}}.
+  If you hardcoded or modified your MCC, run `composer update` in a terminal. After the composer update complees, verify following `magento/magento-cloud-configuration` version displays in `composer.lock`:
 
-For details, see [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+  * 2.1.4: `magento/magento-cloud-configuration 101.4.5` or later
+  * 2.1.5: `magento/magento-cloud-configuration 101.5.4` or later
+  * 2.1.6: `magento/magento-cloud-configuration 101.6.6` or later
+  * 2.1.7: `magento/magento-cloud-configuration 101.7.6` or later
+  * 2.1.8: `magento/magento-cloud-configuration 101.8.1` or later
+* 2.2: This PHP-Redis upgrade is already included. v2.2 is coming soon for {{site.data.var.ece}}.
+
+For details on MCC and the update command, see [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
 ## Redis and static-content deployment {#static-content}
 This information helps if you receive a number of Redis connection errors in your production logs during static content deployment.
