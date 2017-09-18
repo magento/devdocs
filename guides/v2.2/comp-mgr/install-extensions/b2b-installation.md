@@ -104,4 +104,4 @@ If you enable the **Shared Catalog** module, you must also enable the **Company*
 
 3.  Click **Save Config**.
 
-Looking for more documentation? Checkout the [B2B Developer Guide]({{page.baseurl}}b2b/bk-b2b.html) and [User Guide]().
+Looking for more documentation? Checkout the [B2B Developer Guide]({{page.baseurl}}b2b/bk-b2b.html) and [User Guide](//docs.magento.com/m2/b2b/user_guide/getting-started.html).
