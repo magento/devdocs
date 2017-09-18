@@ -32,7 +32,7 @@ Log messages can be processed in many different ways. For example, you can store
 Other channels can have a different set of handlers and logic.
 
 ## Get started with logging {#config-log-start}
-To start working with a logger, you must get a `\Psr\Logger\LoggerInterface` instance. One way to do that is illustrated in our [database logging example]({{ page.baseurl }}config-guide/log/log-db.html).
+To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instance. One way to do that is illustrated in our [database logging example]({{ page.baseurl }}config-guide/log/log-db.html).
 
 Another way follows:
 
@@ -41,7 +41,7 @@ class SomeModel
  {
      private $logger;
 
-     public function __construct(\Psr\Logger\LoggerInterface $logger)
+     public function __construct(\Psr\Log\LoggerInterface $logger)
      {
          $this->logger = $logger;
      }
@@ -57,7 +57,7 @@ class SomeModel
  }
 {% endhighlight %}
 
-The preceding example shows that `SomeModel` receives a `\Psr\Logger\LoggerInterface` object using constructor injection. In a method `doSomething`, if some error occurred, it's logged to a method `critical` (`$this->logger->critical($e);`).
+The preceding example shows that `SomeModel` receives a `\Psr\Log\LoggerInterface` object using constructor injection. In a method `doSomething`, if some error occurred, it's logged to a method `critical` (`$this->logger->critical($e);`).
 
 [RFC 5424](https://tools.ietf.org/html/rfc5424){:target="_blank"} defines eight log levels (debug, info, notice, warning, error, critical, alert, and emergency).
 
