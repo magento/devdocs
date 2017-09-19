@@ -10,7 +10,9 @@ github_link: magento-functional-testing-framework/getting-started/installation.m
 ---
 
 <div class="bs-callout bs-callout-info" markdown="1">
-A dependency for the framework is located in the [magento2ee] repository. This solution is temporary, until we are ready to push the framework in a public repository.
+The framework and tests are still in development and located in the [magento-pangolin] organization.
+A dependency for the framework is located in the `magento2ee` repository.<br/>
+This solution is temporary.
 </div>
 
 ## Step 1. Clone the magento2 source code repositories into one directory
@@ -18,9 +20,8 @@ A dependency for the framework is located in the [magento2ee] repository. This s
 ```bash
 $ mkdir mftf
 $ cd mftf
-$ git clone https://github.com/magento/magento2ce.git
-$ git clone https://github.com/magento/magento2ee.git
-$ git clone https://github.com/magento/magento2b2b.git
+$ git clone -b sprint-develop https://github.com/magento-pangolin/magento2ce.git
+$ git clone -b sprint-develop https://github.com/magento-pangolin/magento2ee.git
 ```
 
 ## Step 2. Link the repositories to make `magento2ee` work properly
@@ -33,43 +34,40 @@ $ cd ..
 
 ## Step 3. Setup your authorization file in the `magento2ce` repository
 
-This step enables you to configure your credentials to run Composer commands under the `dev/tests/acceptance` directory.
+This step enables you to configure [HTTP basic authentication] for Composer.
 
-Create the `auth.json` file from the `auth.json.sample`:
+Create the `auth.json` file:
 
 ```bash
-$ cd magento2ce
-$ cp auth.json.sample auth.json
-$ cd ..
+$ touch magento2ce/dev/tests/acceptance/auth.json
 ```
 
-Add the `github-oauth` entry as the following:
+In the `auth.json`, add the `github-oauth` entry:
 
 ```json
 {  "github-oauth": {
-      "github.com": "<your personal access token>"
-   }
-   ,"http-basic": {
-      "repo.magento.com": {
-         "username": "<public-key>",
-         "password": "<private-key>"
-      }
+      "github.com": "<personal access token>"
    }
 }
 ```
 
-And paste your [personal access token].
+Replace `<personal access token>` with your [personal access token]. The token must have a scope `repo`.
 
-## Step 4. Install dependencies (NOT AVAILABLE, NO SUCH DIRECTORY)
+## Step 4. Install dependencies
 
 ```bash
 $ cd magento2ce/dev/tests/acceptance
 $ composer install
 ```
 
+<div class="bs-callout bs-callout-tip" markdown="1">
+If you see an error like `404 Not Found`, update of your Composer can help.<br/>
+`$ composer selfupdate`
+</div>
 
 <!-- LINKS -->
 
-[magento2ee]: https://github.com/magento/magento2ee
+[HTTP basic authentication]: https://getcomposer.org/doc/articles/http-basic-authentication.md#http-basic-authentication
+[magento-pangolin]: https://github.com/magento-pangolin/
 [personal access token]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token
 
