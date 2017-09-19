@@ -17,6 +17,24 @@ We are pleased to present Magento Enterprise Edition 2.2.0 General Availability.
 ## Highlights
 Magento Enterprise Edition 2.2.0 includes several new and exciting features:
 
+Look for the following highlights in this release:
+
+
+* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.
+
+
+
+* **Upgraded technology stack.**  We've dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, and Varnish 5 support. All third-party libraries have been upgraded to the latest stable version.
+
+
+* **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/).
+
+
+* **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
+buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
+
+* ** Bundled extensions**. 
+
 
 ## Security enhancements
 Magento 2.2.0 includes over 100 security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
