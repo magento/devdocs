@@ -15,6 +15,8 @@ A dependency for the framework is located in the `magento2ee` repository.<br/>
 This solution is temporary.
 </div>
 
+If you visit the the [magento-pangolin] organization the first time, you may see the `View invitation` button on top of the page. Just press the button to be able to open the repositories of the organisation.
+
 ## Step 1. Clone the magento2 source code repositories into one directory
 
 ```bash
