@@ -683,15 +683,16 @@ Authorization Bearer <admin token>
 
 **Payload**
 
+{% highlight json %}
 {
   "quoteId": 5,
   "comment": "We have applied a 2.5% discount to your order."
 }
+{% endhighlight %}
 
 **Response**
 
 `true`
-
 
 ### Get the quote with the new amounts
 
