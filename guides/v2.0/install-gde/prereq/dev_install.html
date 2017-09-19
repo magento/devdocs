@@ -962,11 +962,10 @@
 <p>The audience for this topic is anyone who contributes to the Magento CE codebase. You should be highly technical, understand <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn’t you, go back and <a href="/guides/v2.0/install-gde/bk-install-guide.html">choose another starting point</a>.</p>
 
 <div class="bs-callout bs-callout-warning">
-    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+  <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
 </div>
 
 <h2 id="prerequisites">Prerequisites</h2>
-
 <div>
 
   <p>Before you continue, make sure you’ve done all of the following:</p>
@@ -1004,7 +1003,6 @@
     </ul>
 
     <h2 id="instgde-prereq-compose-install">Install Composer</h2>
-
     <div>
 
       <p>First, check  if Composer is already installed:</p>
@@ -1057,79 +1055,19 @@ mv composer.phar /usr/local/bin/composer
       <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
       <p>The Magento 2 GitHub repository requires you to authenticate. The <code class="highlighter-rouge">composer install</code> commands fails if you do not. To authenticate, <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an <code class="highlighter-rouge">auth.json</code> file in the home directory of the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</p>
 
-      <h4 id="generate-authentication-tokens">Generate authentication tokens</h4>
-
+      <h4 id="create-authjson">Create <code class="highlighter-rouge">auth.json</code></h4>
       <div>
 
-        <h2 id="auth-overview">Overview of Magento authentication</h2>
-        <p>The <code class="highlighter-rouge">repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.</p>
-
-        <p>To get your authentication keys:</p>
+        <p>To create <code class="highlighter-rouge">auth.json</code>:</p>
 
         <ol>
-          <li>Go to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a>.</li>
+          <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
           <li>
-            <p>Click <strong>Sign In</strong> and enter your login credentials.</p>
+            <p>Edit or create <code class="highlighter-rouge">auth.json</code> in the user’s home directory.</p>
 
-            <p>If you don’t have a free account, click <strong>Create an Account</strong>.</p>
-          </li>
-          <li>
-            <p>After you log in, click <strong>My Access Keys</strong> as the following figure shows.</p>
+            <p>The following example shows how to add <code class="highlighter-rouge">repo.magento.com</code> authentication to an existing file:</p>
 
-            <p><img src="/common/images/install_mkpl_access-keys.png" alt="Get your secure access keys on Magento Marketplace" width="500px" /></p>
-          </li>
-          <li>If you already have keys, use the <strong>Public Key</strong> as your user name and the <strong>Private Key</strong> as your password.</li>
-          <li>
-            <p>To create a new key pair, click <strong>Create a New Access Key</strong>.</p>
-
-            <p>The following figure shows an example.</p>
-
-            <p><img src="/common/images/install_mkpl_access-keys-detail.png" alt="" width="500px" /></p>
-          </li>
-          <li>When prompted, enter a descriptive name to identify the key pair.</li>
-          <li>
-            <p>Click <strong>Generate New</strong>.</p>
-
-            <p>Use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</p>
-          </li>
-        </ol>
-
-        <h4 id="manage-your-authentiation-keys">Manage your authentiation keys</h4>
-        <p>You can optionally disable or delete authentication keys you created. For example, you can disable or delete keys for security reasons after someone left your organization.</p>
-
-        <ul>
-          <li>To disable keys: Click <strong>Disable</strong>. You can do this if you want to suspend use of your keys.</li>
-          <li>To enable a previously disabled key: Click <strong>Enable</strong>.</li>
-          <li>To delete keys: Click <strong>Delete</strong>.</li>
-        </ul>
-
-        <p>You cannot delete or disable keys you created by signing in to <code class="highlighter-rouge">magento.com</code>. To manage those keys:</p>
-
-        <ol>
-          <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code class="highlighter-rouge">magento.com</code> account.</li>
-          <li>In the top navigation bar, click <strong>Connect</strong>.</li>
-          <li>
-            <p>In the left pane, click <strong>Secure keys</strong>.</p>
-
-            <p><img src="/common/images/connect_keys1.png" alt="Access your keys" width="200px" /></p>
-          </li>
-          <li>Enable or disable the desired keys.</li>
-        </ol>
-
-        <h4 id="create-authjson">Create <code class="highlighter-rouge">auth.json</code></h4>
-
-        <div>
-
-          <p>To create <code class="highlighter-rouge">auth.json</code>:</p>
-
-          <ol>
-            <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-            <li>
-              <p>Edit or create <code class="highlighter-rouge">auth.json</code> in the user’s home directory.</p>
-
-              <p>The following example shows how to add <code class="highlighter-rouge">repo.magento.com</code> authentication to an existing file:</p>
-
-              <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+            <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
    </span><span class="nt">"github-oauth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
      </span><span class="nt">"github.com"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your github oauth id&gt;"</span><span class="w">
    </span><span class="p">},</span><span class="w">
@@ -1141,145 +1079,143 @@ mv composer.phar /usr/local/bin/composer
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-              </div>
+            </div>
 
    	For example, if your user name is <code class="highlighter-rouge">magento_user</code>, create or edit <code class="highlighter-rouge">/home/magento_user/.composer/auth.json</code>
-            </li>
-          </ol>
+          </li>
+        </ol>
 
-          <h3 id="instgde-prereq-compose-clone-ways">How to clone the Magento 2 GitHub repository</h3>
-          <p>You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:</p>
+        <h3 id="instgde-prereq-compose-clone-ways">How to clone the Magento 2 GitHub repository</h3>
+        <p>You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:</p>
 
-          <ul>
-            <li>Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.</li>
-            <li>Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).</li>
-          </ul>
+        <ul>
+          <li>Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="&#95;blank">share a public key</a> with GitHub.</li>
+          <li>Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).</li>
+        </ul>
 
-          <p>See one of the following section:</p>
+        <p>See one of the following section:</p>
 
-          <ul>
-            <li><a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a></li>
-            <li><a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a></li>
-          </ul>
+        <ul>
+          <li><a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a></li>
+          <li><a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a></li>
+        </ul>
 
-          <h4 id="instgde-prereq-compose-clone-ssh">Clone with SSH</h4>
+        <h4 id="instgde-prereq-compose-clone-ssh">Clone with SSH</h4>
 
-          <p>To clone the Magento GitHub repository using the SSH protocol:</p>
+        <p>To clone the Magento GitHub repository using the SSH protocol:</p>
 
-          <ol>
-            <li>
-              <p>Copy to the clipboard the Magento GitHub repository SSH clone <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>.</p>
+        <ol>
+          <li>
+            <p>Copy to the clipboard the Magento GitHub repository SSH clone <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>.</p>
 
-              <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.</p>
+            <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="&#95;blank">the Magento GitHub repository</a>.</p>
 
-              <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>SSH</strong>.</p>
+            <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>SSH</strong>.</p>
 
-              <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
+            <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
 
-              <p>The following figure shows an example.</p>
+            <p>The following figure shows an example.</p>
 
-              <p><img src="/common/images/install_mage2_clone-ssh.png" width="650px" alt="Clone the Magento GitHub repository using SSH" /></p>
-            </li>
-            <li>
-              <p>Change to your web server’s docroot directory.
+            <p><img src="/common/images/install_mage2_clone-ssh.png" width="650px" alt="Clone the Magento GitHub repository using SSH" /></p>
+          </li>
+          <li>
+            <p>Change to your web server’s docroot directory.
 Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> or <code class="highlighter-rouge">/var/www/html</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
 
-              <p>Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here.</a></p>
-            </li>
-            <li>
-              <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
+            <p>Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here.</a></p>
+          </li>
+          <li>
+            <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
 
-              <p>An example follows:</p>
+            <p>An example follows:</p>
 
-              <div class="highlighter-rouge"><pre class="highlight"><code>git clone git@github.com:magento/magento2.git
+            <div class="highlighter-rouge"><pre class="highlight"><code>git clone git@github.com:magento/magento2.git
 </code></pre>
-              </div>
-            </li>
-            <li>
-              <p>Wait for the repository to clone on your server.</p>
+            </div>
+          </li>
+          <li>
+            <p>Wait for the repository to clone on your server.</p>
 
-              <div class="bs-callout bs-callout-info" id="info">
-    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
+            <div class="bs-callout bs-callout-info" id="info">
+    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="&#95;blank">shared your SSH key</a> with GitHub: </p>
         <pre>Cloning into 'magento2'...
 Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
 </div>
-            </li>
-            <li>
-              <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:</p>
+          </li>
+          <li>
+            <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="&#95;blank">release tag</a> as follows:</p>
 
-              <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
+            <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
 </code></pre>
-              </div>
+            </div>
 
-              <p>For example, to check out the 2.1.0 release tag in a new branch named <code class="highlighter-rouge">2.1.0</code>, enter</p>
+            <p>For example, to check out the 2.1.0 release tag in a new branch named <code class="highlighter-rouge">2.1.0</code>, enter</p>
 
-              <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/2.1.0 -b 2.1.0
+            <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/2.1.0 -b 2.1.0
 </code></pre>
-              </div>
-            </li>
-            <li>
-              <p>Continue with <a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
-            </li>
-          </ol>
+            </div>
+          </li>
+          <li>
+            <p>Continue with <a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
+          </li>
+        </ol>
 
-          <h4 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h4>
+        <h4 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h4>
 
-          <p>To clone the Magento GitHub repository using the HTTPS protocol:</p>
+        <p>To clone the Magento GitHub repository using the HTTPS protocol:</p>
 
-          <ol>
-            <li>
-              <p>Copy to the clipboard the Magento GitHub repository HTTPS clone URL.</p>
+        <ol>
+          <li>
+            <p>Copy to the clipboard the Magento GitHub repository HTTPS clone URL.</p>
 
-              <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.</p>
+            <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="&#95;blank">the Magento GitHub repository</a>.</p>
 
-              <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>HTTPS</strong>.</p>
+            <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>HTTPS</strong>.</p>
 
-              <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
+            <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
 
-              <p>The following figure shows an example.</p>
+            <p>The following figure shows an example.</p>
 
-              <p><img src="/common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS" /></p>
-            </li>
-            <li>
-              <p>Change to your web server’s docroot directory.</p>
+            <p><img src="/common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS" /></p>
+          </li>
+          <li>
+            <p>Change to your web server’s docroot directory.</p>
 
-              <p>Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> or <code class="highlighter-rouge">/var/www/html</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
-            </li>
-            <li>
-              <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
+            <p>Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> or <code class="highlighter-rouge">/var/www/html</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
+          </li>
+          <li>
+            <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
 
-              <p>An example follows</p>
+            <p>An example follows</p>
 
-              <div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/magento/magento2.git
+            <div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/magento/magento2.git
 </code></pre>
-              </div>
-            </li>
-            <li>
-              <p>Wait for the repository to clone on your server.</p>
-            </li>
-            <li>
-              <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:</p>
+            </div>
+          </li>
+          <li>
+            <p>Wait for the repository to clone on your server.</p>
+          </li>
+          <li>
+            <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="&#95;blank">release tag</a> as follows:</p>
 
-              <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
+            <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
 </code></pre>
-              </div>
+            </div>
 
-              <p>For example, to check out the 2.1.0 release tag in a branch named <code class="highlighter-rouge">2.1.0</code>, enter</p>
+            <p>For example, to check out the 2.1.0 release tag in a branch named <code class="highlighter-rouge">2.1.0</code>, enter</p>
 
-              <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/2.1.0 -b 2.1.0
+            <div class="highlighter-rouge"><pre class="highlight"><code>git checkout tags/2.1.0 -b 2.1.0
 </code></pre>
-              </div>
-            </li>
-          </ol>
+            </div>
+          </li>
+        </ol>
 
-          <h4 id="next-step">Next step</h4>
+        <h4 id="next-step">Next step</h4>
+        <p>After completing the tasks discussed on this page, see <a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
 
-          <p>After completing the tasks discussed on this page, see <a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
+        <!-- ABBREVIATIONS -->
 
-          <!-- ABBREVIATIONS -->
-
-        </div>
       </div>
     </div>
   </div>
