@@ -34,10 +34,12 @@ Fastly supports two types of snippets. We recommend and document how to create a
 ## The VCL snippet process {#process}
 How do you create and add snippets? Here's the process:
 
-1. [Get a service version](#version-number) number for Fastly
-2. [Create VCL snippets](#create-snippet) for that version number
+1. Get the [list](#list) of all VCL snippet versions and look for active version
+2. [Clone] the currently active VCL snippet version. When you clone, a new version is generated.
+3. [Modify](#update) snippets in the cloned version or [add VCL snippets](#create-snippet)
 3. [Validate](#validate) all VCL snippets for the version number
 4. [Activate](#validate) all VCL snippets for the version number
+
 
 We provide more information on [Edge Dictionaries](#edge-dictionary), [Edge ACLs](#edge-acl), and [custom VCL snippets](#examples) to get you started.
 
@@ -50,7 +52,7 @@ What you should know about the `curl` command and JSON values:
 
 * `Service ID`: The ID indicates the specific Staging or Production service/environment. We provide this value.
 * `FASTLY_API_TOKEN`: The API Key for your Fastly account. We provide this value.
-* `Editable Version #`: The version of the service you add snippets to for validating and activating
+* `Editable Version #`: The version of the service you add snippets to for validating and activating. We also use the description of `Cloned Version #` in the examples.
 * `type`: Specifies the location to place the generated snippet such as `init` (above subroutines) and within subroutines like `recv`. See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="_blank"} for information on these values.
 * `content`: The snippet of VCL code to run
 * `priority`: Determines the order VCL snippets call. Lower values run first, from 1 to 100. All Magento module uploaded snippets are 50. If you want an action to occur last or override Magento default VCL snippets, enter a higher number like 100. To have code occur immediately, enter a lower value like 5.
@@ -58,6 +60,19 @@ What you should know about the `curl` command and JSON values:
 
 All default VCL snippets have a priority of 50. Priorities will call VCL snippets starting from 1 to 100. Any VCL snippet at priority 5 will run immediately, best for blacklists, whitelists, and redirects. Priority 100 is best for overriding default VCL snippet code and values, best for extending timeouts. If you do not set a priority with your `curl` command, the default value set is 100.
 
+### Locate the currently active VCL snippet version {#list}
+To view an entire list of all VCL snippets by version, use the following command:
+
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key:FASTLY_API_TOKEN"
+
+From the returned list, determine the currently active version. This is the version you will clone in the next section.
+
+### Clone the active VCL snippet {#clone}
+Clone the version using the active version number. This creates a copy of all existing VCL snippets for that version with a new version number. After you clone the version, you can [add](#create-snippet) more VCL snippets or [modify](#update) current snippets.
+
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Current Active Version #}/clone
+
+<!-- They should clone then edit. Saving this info just in case.
 ### Get a service version number {#version-number}
 When creating a new regular VCL snippet, or updating a current one, you need a new version number. This version is a new service configuration version number for your Fastly service. When adding VCL snippets, you add them all to a specific version of the service. You may have noticed the versioning when you upload VCLs during Fastly configuration through the Fastly module.
 
@@ -74,16 +89,18 @@ Fastly returns the editable version number and Service ID. You use the version n
 		"service_id": "SU1Z0isxPaozGVKXdv0eY"
 	}
 
-When reviewing a list of VCL snippets, you will also note the snippets have a specific version number in the JSON output.
+When reviewing a list of VCL snippets, you will also note the snippets have a specific version number in the JSON output. -->
 
-### Create the regular VCL snippet for a version {#create-snippet}
-Create one or more VCL snippets on the new version numbers. We recommend typing out your `curl` command in a text editor to make sure everything is correct before entering it in a terminal. You can always copy and paste the command when ready to enter it.
+### Add new regular VCL snippets for the cloned version {#create-snippet}
+Create one or more VCL snippets for the cloned version using `curl` commands.
 
-When you assign VCL snippets to the version, you can then validate and activate all snippets for that version. When activated, that new service number is active.
+We recommend typing out your `curl` command in a text editor to make sure everything is correct before entering it in a terminal. You can always copy and paste the command when ready to enter it.
+
+When you assign VCL snippets to the version, you can then [validate and activate](#validate) all snippets for that version. When activated, all snippets for that new version are active.
 
 Use the following command as a template:
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "{VCL Name}", "type": "Type", "dynamic": 0, "priority": 100, "content": "{VCL snippet code}"}
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "{VCL Name}", "type": "Type", "dynamic": 0, "priority": 100, "content": "{VCL snippet code}"}'
 
 After you run the `curl` command, Fastly returns a JSON response with the data. For example:
 
@@ -100,6 +117,17 @@ After you run the `curl` command, Fastly returns a JSON response with the data. 
 	  "updated_at": "2016-08-15T09:37:10+00:00",
 	  "deleted_at": null
 	}
+
+### Update an existing VCL snippet {#update}
+Locate the snippet you want to update from the list of snippets included in the cloned version. You can use the following command to list the snippets:
+
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Cloned version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+
+Copy the data and build a `curl` command with the cloned version number, name, and edits. The following is an example template for the update command. You would enter the cloned version number for `Editable Version #` and data for the command in `--data`.
+
+	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
+
+If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults).
 
 ### Validate and activate snippets for a version {#validate}
 When you add the VCL snippet(s) to the version, Fastly creates and assigns it to your service per that version number. Next, you should verify the entered VCL snippet(s) validates with Fastly. Use the following command to validate all snippets for the version:
@@ -123,7 +151,7 @@ To review an individual snippet, enter the following API call in a terminal:
 
 To list all regular VCL snippets attached to a service, enter the following API call in a terminal:
 
-	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key:FASTLY_API_TOKEN"
 
 To update a custom VCL snippet using the API, list the snippet then enter a `curl` command with the specific snippet version, name, and edits:
 
@@ -190,7 +218,7 @@ The following is an example of this VCL code from Fastly:
 
 The curl command would look like the following:
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_referers", "type": "recv", "dynamic": 0, "priority": 5, "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }"}
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_referers", "type": "recv", "dynamic": 0, "priority": 5, "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }"}'
 
 [Validate and activate](#validate) the version to activate the snippet.
 
@@ -210,7 +238,7 @@ Of note for this snippet, you want to set the priority to 5 to immediately run a
 
 The curl command would look like the following:
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }"}
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }"}'
 
 [Validate and activate](#validate) the version to activate the snippet.
 
@@ -232,7 +260,7 @@ In the code sample, the condition `!req.http.Fastly-FF` is important when using 
 
 The curl command would look like the following:
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 "Forbidden"; }"}
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 "Forbidden"; }"}'
 
 [Validate and activate](#validate) the version to activate the snippet.
 
@@ -253,7 +281,7 @@ For this snippet, modify the `set bereq.first_byte_timeout` with a higher value.
 
 To create a new snippet, use the following `curl` command. This version sets the timeout to 600s (ten minutes).
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 600s; }"}
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "pass", "dynamic": 0, "priority": 5, "content": "if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 600s; }"}'
 
 [Validate and activate](#validate) the version to activate the snippet.
 
