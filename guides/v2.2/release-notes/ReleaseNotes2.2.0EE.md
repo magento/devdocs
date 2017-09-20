@@ -251,6 +251,16 @@ or
 
 <!--- 56866-->* The prices you assign to custom options no longer change unexpectedly after you save them. [GitHub-6116](https://github.com/magento/magento2/issues/6116)
 
+<!--- 50123-->* You can now create a blank attribute option using the drop-down input option on products that do not require an attribute. [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5485](https://github.com/magento/magento2/issues/5485), [GitHub-4910](https://github.com/magento/magento2/issues/4910)
+
+<!--- 54718-->* Magento no longer encounters an error when it cannot find a product image file. [GitHub-5184](https://github.com/magento/magento2/issues/5184), [GitHub-5497](https://github.com/magento/magento2/issues/5497), [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5871](https://github.com/magento/magento2/issues/5871)
+
+
+### Cloud 
+
+<!--- 58265-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
+
+
 
 ### Configurable products
 We've enhanced the performance of configurable products in several ways:
@@ -429,6 +439,8 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58299 -->* Magento now maintains super attribute ordering of configurable products with multiple super attributes after export or import. Previously, after import or export, the ordering of super attributes was not maintained. [GitHub-6079](https://github.com/magento/magento2/issues/6079)
 
+<!--- 55237 -->* Magento now correctly displays both configurable and simple products, their attribute values, and visibility values after import if SKU is an integer. [GitHub-5547](https://github.com/magento/magento2/issues/5547)
+
 
 #### Integration
 
@@ -550,6 +562,7 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 59086-->* Fixed issue with credit card capture information failing to remain associated with its first authorization. [GitHub-6716](https://github.com/magento/magento2/issues/6716)
 
 <!--- 58676-->* PayPal Express payments no longer fail when there is adequate product inventory to cover your order. Previously, you'd receive this error message: `We can't place the order`. [GitHub-6296](https://github.com/magento/magento2/issues/6296)
+
 
 ### Performance
 
