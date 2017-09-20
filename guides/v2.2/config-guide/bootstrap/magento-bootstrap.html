@@ -1775,7 +1775,7 @@
 <p>To run the Magento application, the following actions are implemented in <a href="https://github.com/magento/magento2/blob/2.0/index.php" target="_blank">index.php</a>:</p>
 
 <ul>
-  <li>Include <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/bootstrap.php</code> which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.</li>
+  <li>Include <a href="https://github.com/magento/magento2/blob/2.0/app/bootstrap.php" target="_blank">app/bootstrap.php</a> which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.</li>
   <li>Create an instance of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Bootstrap.php" target="_blank">\Magento\Framework\App\Bootstrap</a>. <!-- It requires initialization parameters to be specified in constructor.  Normally, the $_SERVER super-global variable is supposed to be passed there. --></li>
   <li>Create a Magento application instance (<a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/AppInterface.php" target="_blank">\Magento\Framework\AppInterface</a>).</li>
   <li>Run Magento</li>
