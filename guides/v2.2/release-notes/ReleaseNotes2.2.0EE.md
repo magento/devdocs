@@ -317,6 +317,12 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---59146 -->* Magento no longer sends email when the **Disable email communication** setting is set to **yes**. Previously, Magento sent email even when this setting was enabled. [GitHub-5988](https://github.com/magento/magento2/issues/5988)
 
+### Framworks
+
+#### JavaScript framework
+
+<!---59146 -->*
+
 
 ### General fixes
 
