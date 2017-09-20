@@ -142,7 +142,13 @@ The following issue affects the Commerce edition of Magento 2.2.0:
 
 <!--- 71890-->* Magento no longer throws an exception when the configuration checksum is absent on a new installation.
 
+<!--- 64085-->* Fixed HTML inline style used when sending emails when implementing the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
 
+<!--- 60835-->* We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.
+
+<!--- 70314-->* The `cron:install` command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for `crontab` commands contained double quotes that were not escaped, which caused invalid commands to be written to the `crontab` file. [GitHub-10040](https://github.com/magento/magento2/issues/10040)
+
+<!--- 63637-->* Magento now moves the `sequence_*` table to the correct database after implementing a split database.
 
 
 ### AMQP framework
@@ -185,6 +191,8 @@ The following issue affects the Commerce edition of Magento 2.2.0:
 
 
 <!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. [GitHub-5279](https://github.com/magento/magento2/issues/5279) 
+
+<!--- -->*
 
 
 
@@ -235,6 +243,13 @@ or
 
 <!--- 72112-->* Subcategories no longer show up in the menu when the parent category is disabled or hidden from the menu. [GitHub-10664](https://github.com/magento/magento2/issues/10664) 
 
+<!--- 57719-->* We've corrected a problem with Magento throwing an HTTP ERROR 500 intermittently during checkout.
+
+<!--- 63561-->* The product attribute `category_ids` can have only **Global** scope. Previously, you could change the scope value of `category_ids` to **Store**.
+
+<!--- 53135-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products. [GitHub-4588](https://github.com/magento/magento2/issues/4588), [GitHub-5798](https://github.com/magento/magento2/issues/5798), [GitHub-6041](https://github.com/magento/magento2/issues/6041),  [GitHub-6097](https://github.com/magento/magento2/issues/6097)
+
+<!--- 56866-->* The prices you assign to custom options no longer change unexpectedly after you save them. [GitHub-6116](https://github.com/magento/magento2/issues/6116)
 
 
 ### Configurable products
@@ -278,6 +293,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---59879-->* Magento no longer displays the "as low as" label for a disabled price on the Category page.
 
+<!---60098-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
+
+
 
 ### Email
 
@@ -286,6 +304,8 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!---57204 -->* The **Send Welcome Email From** field now identifies the store that the customer is associated with. 
+
+<!---59146 -->* Magento no longer sends email when the **Disable email communication** setting is set to **yes**. Previously, Magento sent email even when this setting was enabled. [GitHub-5988](https://github.com/magento/magento2/issues/5988)
 
 
 ### General fixes
@@ -328,11 +348,17 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---59810 -->* 59810 Showing reports on the **Reports > Coupons** page no longer throws an error when the user is in a non-default Admin locale.  [GitHub-7037](https://github.com/magento/magento2/issues/7037) 
 
+<!---56941 -->* The list of allowed countries is now configured as part of website scope, not store view scope. [GitHub-2946](https://github.com/magento/magento2/issues/2946)
 
+<!---70318 -->* You can now generate static content without a database connection. [GitHub-10041](https://github.com/magento/magento2/issues/10041) 
 
+<!---61596 -->* Magento no longer removes the simple products associated with a configurable product if you click on the **Save** button more than once while saving the configurable product. Previously, if you clicked on **Save** more than once during an attempt to save a configurable product, Magento removed the simple products that were assigned to it.
 
+<!---58182 -->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. [GitHub-6487](https://github.com/magento/magento2/issues/6487)
 
+<!--- 60185 -->* Static content deployment now generates secure content, whether content included secure or non-secure URLs.
 
+<!--- 57210 -->* The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} gallery now displays all the images associated with a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}. Previously, when you clicked on the swatches associated with a configurable product, the gallery displayed only one of several possible images. [GitHub-6195](https://github.com/magento/magento2/issues/6195), [GitHub-4101](https://github.com/magento/magento2/issues/4101)
 
 
 
@@ -401,7 +427,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 64856 -->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images.
 
-
+<!--- 58299 -->* Magento now maintains super attribute ordering of configurable products with multiple super attributes after export or import. Previously, after import or export, the ordering of super attributes was not maintained. [GitHub-6079](https://github.com/magento/magento2/issues/6079)
 
 
 #### Integration
@@ -429,6 +455,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 65362 -->* Magento now runs a selective partial re-indexing operation after import if you enable **Update on Schedule**. Previously, Magento ran a full reindex no matter which index mode was set. 
 
+
 ### Orders
 
 <!--- 61268, 59424, 56433, 59422--> * We’ve added PHP interfaces that add the ability to change the status of a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %}. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
@@ -453,6 +480,8 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!--- 58832-->* The order comments history no longer duplicates the time that a comment was made. Previously, the time that a comment was made was listed twice.
+
+<!--- 62783-->* Magento now uses the address template from store view level of the placed order (similar to how order confirmation email works). Previously, Magento used the wrong address template for order e-mails.
 
 
 
@@ -514,10 +543,13 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 59581-->* We've improved and streamlined the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} PayPal configuration interface. 
 
+<!--- 70500-->* Fixed issue related to incorrect stock quantity calculation for bundle and configurable products during place order flow with PayPal Express Checkout.
 
+<!--- 62667-->* Third-party payment gateways are now visible from the Admin. [GitHub-7891](https://github.com/magento/magento2/issues/7891)
 
+<!--- 59086-->* Fixed issue with credit card capture information failing to remain associated with its first authorization. [GitHub-6716](https://github.com/magento/magento2/issues/6716)
 
-
+<!--- 58676-->* PayPal Express payments no longer fail when there is adequate product inventory to cover your order. Previously, you'd receive this error message: `We can't place the order`. [GitHub-6296](https://github.com/magento/magento2/issues/6296)
 
 ### Performance
 
@@ -583,7 +615,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 <!--- 55184 -->* You can now select and add a category to a Cart Price rule. Previously, Magento displayed this error: "Uncaught ReferenceError: sales_rule_form is not defined", and did not add the selected category to the condition.  [GitHub-5526](https://github.com/magento/magento2/issues/5526) 
 
-
+<!--- 55433 -->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple {% glossarytooltip b3292cb5-4262-4914-a258-efac79ac8b99 %}cart rules{% endglossarytooltip %} are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. [GitHub-6294](https://github.com/magento/magento2/issues/6294) 
 
 
 ### Scope
@@ -600,6 +632,9 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 <!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
 
+
+### Search
+<!---59088-->*  Out-of-stock items no longer erroneously appear in results of layered navigation if that product option is out-of-stock.
 
 #### Shipping
 
@@ -639,7 +674,14 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 <!--- 65248 -->* Magento now caches swatch data in the block cache, which improves the responsiveness of the configurable product pages. 
 
+### TargetRule
 
+<!--- 59689 -->* Magento now displays Up-sells on the Product page.
+
+
+### Tax
+
+<!--- 61120 -->* Magento now correctly calculates tax and order totals when a discount is used for prices that include tax and catalog prices excluding tax. Please note this is not a valid tax configuration and can introduce rounding errors. 
 
 
 ### Testing
@@ -662,7 +704,9 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 <!---56922-->*  Magento no longer adds a thousands separator ( , ) to representations of quantities that exceed 1000. [GitHub-5745](https://github.com/magento/magento2/issues/5745) 
 
 
+### URL rewrites
 
+<!---66480-->* You can now successfully create a product and assign it to a store without encountering the following error: `Unique constraint violation found`. [GitHub-6671](https://github.com/magento/magento2/issues/6671)
 
 
 ### Varnish
