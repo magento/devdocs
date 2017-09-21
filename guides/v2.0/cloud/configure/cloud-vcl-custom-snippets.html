@@ -1576,7 +1576,7 @@
 
 <ol>
   <li>Get the <a href="#list">list</a> of all VCL snippet versions and look for active version</li>
-  <li>[Clone] the currently active VCL snippet version. When you clone, a new version is generated.</li>
+  <li><a href="#clone">Clone</a> the currently active VCL snippet version. When you clone, a new version is generated.</li>
   <li><a href="#update">Modify</a> snippets in the cloned version or <a href="#create-snippet">add VCL snippets</a></li>
   <li><a href="#validate">Validate</a> all VCL snippets for the version number</li>
   <li><a href="#validate">Activate</a> all VCL snippets for the version number</li>
@@ -1612,6 +1612,8 @@
 
 <p>From the returned list, determine the currently active version. This is the version you will clone in the next section.</p>
 
+<p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987" target="_blank">get version command</a>.</p>
+
 <h3 id="clone">Clone the active VCL snippet</h3>
 <p>Clone the version using the active version number. This creates a copy of all existing VCL snippets for that version with a new version number. After you clone the version, you can <a href="#create-snippet">add</a> more VCL snippets or <a href="#update">modify</a> current snippets.</p>
 
@@ -1619,24 +1621,29 @@
 </code></pre>
 </div>
 
-<!-- They should clone then edit. Saving this info just in case.
+<p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709" target="_blank">clone command</a>.
+&lt;!– They should clone then edit. Saving this info just in case.
 ### Get a service version number {#version-number}
-When creating a new regular VCL snippet, or updating a current one, you need a new version number. This version is a new service configuration version number for your Fastly service. When adding VCL snippets, you add them all to a specific version of the service. You may have noticed the versioning when you upload VCLs during Fastly configuration through the Fastly module.
+When creating a new regular VCL snippet, or updating a current one, you need a new version number. This version is a new service configuration version number for your Fastly service. When adding VCL snippets, you add them all to a specific version of the service. You may have noticed the versioning when you upload VCLs during Fastly configuration through the Fastly module.</p>
 
-When you validate and activate your snippets, you actually activate a version. All snippets assigned to the version activate.
+<p>When you validate and activate your snippets, you actually activate a version. All snippets assigned to the version activate.</p>
 
-To generate the version, use the following command with your Service ID and API key in the command:
+<p>To generate the version, use the following command with your Service ID and API key in the command:</p>
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version
+</code></pre>
+</div>
 
-Fastly returns the editable version number and Service ID. You use the version number when creating, calling, and managing VCL snippets. For example:
+<p>Fastly returns the editable version number and Service ID. You use the version number when creating, calling, and managing VCL snippets. For example:</p>
 
-	{
-		"number":1,
-		"service_id": "SU1Z0isxPaozGVKXdv0eY"
-	}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nt">"number"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+	</span><span class="nt">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SU1Z0isxPaozGVKXdv0eY"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-When reviewing a list of VCL snippets, you will also note the snippets have a specific version number in the JSON output. -->
+<p>When reviewing a list of VCL snippets, you will also note the snippets have a specific version number in the JSON output. –&gt;</p>
 
 <h3 id="create-snippet">Add new regular VCL snippets for the cloned version</h3>
 <p>Create one or more VCL snippets for the cloned version using <code class="highlighter-rouge">curl</code> commands.</p>
@@ -1704,6 +1711,8 @@ When reviewing a list of VCL snippets, you will also note the snippets have a sp
 <div class="highlighter-rouge"><pre class="highlight"><code>curl -X PUT -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
 </code></pre>
 </div>
+
+<p>For more information on these Fastly APIs, see <a href="https://docs.fastly.com/api/config#version_97f8cf7bfd5dc2e5ea1933d94dc5a9a6" target="_blank">validate</a> and <a href="https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5" target="_blank">activate</a> commands.</p>
 
 <h2 id="manage-vcl">Manage regular VCL snippets with curl</h2>
 <p>To review an individual snippet, enter the following API call in a terminal:</p>
