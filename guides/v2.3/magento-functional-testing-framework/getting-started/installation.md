@@ -15,7 +15,8 @@ A dependency for the framework is located in the `magento2ee` repository.<br/>
 This solution is temporary.
 </div>
 
-If you visit the [magento-pangolin] organization the first time, you may see the `View invitation` button on top of the page. Just press the button to be able to open the repositories of the organisation.
+If you visit the [magento-pangolin] organization the first time, you may see the `View invitation` button on top of the page.
+Just press the button to be able to open the repositories of the organisation.
 
 ## Step 1. Clone the magento2 source code repositories into one directory
 
@@ -85,23 +86,32 @@ In the `magento2ce/dev/tests/acceptance`, create a configuration file `.env` fro
 $ cp .env.example .env
 ```
 
-Open `.env` and add values that correspond to your system. The following list describes parameters, required to launch tests.
+Open `.env` and add values that correspond to your system.
+The following list describes parameters, required to launch tests.
 
-* `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested. Example: `MAGENTO_BASE_URL=http`
+* `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
+Example: `MAGENTO_BASE_URL=http://magento.test`
 
-* `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area. Example: `MAGENTO_BACKEND_NAME=admin`
+* `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area.
+Example: `MAGENTO_BACKEND_NAME=admin`
 
-* `MAGENTO_ADMIN_USERNAME` must contain a user name required for authorization in the Admin area. Example: `MAGENTO_ADMIN_USERNAME=admin`
+* `MAGENTO_ADMIN_USERNAME` must contain a user name required for authorization in the Admin area.
+Example: `MAGENTO_ADMIN_USERNAME=admin`
 
-* `MAGENTO_ADMIN_PASSWORD` must contain a user password required for authorization in the Admin area. Example: `MAGENTO_ADMIN_PASSWORD=123123q`
+* `MAGENTO_ADMIN_PASSWORD` must contain a user password required for authorization in the Admin area. 
+Example: `MAGENTO_ADMIN_PASSWORD=123123q`
 
-* `DB_USERNAME` must contain a user name required for authorization in the Magento database. Example: `DB_USERNAME=root`
+* `DB_USERNAME` must contain a user name required for authorization in the Magento database. 
+Example: `DB_USERNAME=root`
 
-* `TESTS_BP` must contain a base path to a directory that contains this configuration file. Example: `TESTS_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance`
+* `TESTS_BP` must contain a base path to a directory that contains this configuration file. 
+Example: `TESTS_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance`
 
-* `FW_BP` must contain a base path to a directory with the MFTF framework. Example: `FW_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework`
+* `FW_BP` must contain a base path to a directory with the MFTF framework. 
+Example: `FW_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework`
 
-* `TESTS_MODULE_PATH` must contain a base path to functional tests. Example: `TESTS_MODULE_PATH=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
+* `TESTS_MODULE_PATH` must contain a base path to functional tests. 
+Example: `TESTS_MODULE_PATH=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
 
 ## Step 7. Generate existing tests
 
@@ -110,8 +120,6 @@ In the `magento2ce/dev/tests/acceptance`, run the following command to generate 
 ```bash
 $ vendor/bin/robo generate:tests
 ```
-
-
 
 <!-- LINKS -->
 
