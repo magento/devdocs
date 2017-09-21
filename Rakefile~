@@ -1,0 +1,28 @@
+require "rubygems"
+require "tmpdir"
+
+require "bundler/setup"
+require "jekyll"
+
+
+# Change your GitHub reponame
+GITHUB_REPONAME = "Magento/devdocs_internal"
+
+
+namespace :site do
+  desc "Generate blog files"
+  task :generate do
+    Jekyll::Site.new(Jekyll.configuration({
+      "source"      => ".",
+      "destination" => "_site",
+#      "baseurl"     => ENV['baseurl'],
+#      "gdeurl"      => ENV['baseurl'] + 'guides/v1.0/',
+#      "toc_baseurl" => ENV['baseurl'],
+#      "m1xgdeurl"   => ENV['baseurl'] + 'guides/m1x/'
+    })).process
+  end
+
+  desc "Generate and publish blog to gh-pages"
+  task :publish => [:generate] do
+  end
+end
