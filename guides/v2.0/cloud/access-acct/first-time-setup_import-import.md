@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: Import Magento EE into Magento Enterprise Cloud Edition
-menu_title: Import Magento EE into Magento Enterprise Cloud Edition
+title: Import Magento EE into Magento Commerce (Cloud)
+menu_title: Import Magento EE into Magento Commerce (Cloud)
 menu_order: 154
 menu_node:
 level3_menu_node: level3child
@@ -13,12 +13,12 @@ github_link: cloud/access-acct/first-time-setup_import-import.md
 ---
 
 
-This topic discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
+This topic discusses how to import code from your existing Magento EE project to your {{site.data.var.ece}}'s Git repository `master` branch.
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-The procedure discussed in this topic replaces your new Magento Enterprise Cloud Edition project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
+The procedure discussed in this topic replaces your new {{site.data.var.ece}} project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
 
-Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.
+Before you continue, make sure there is nothing in your {{site.data.var.ece}} project you want to keep.
 </div>
 
 ## Required information
@@ -31,7 +31,7 @@ Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c
 
 To create a remote Git reference:
 
-1.  Log in to your local Magento Enterprise Cloud Edition development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+1.  Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  Make a copy of `composer.json` _in a non-tracked directory_ so it doesn't get overwritten.
 
         cp composer.json ../composer.json.cloud
@@ -72,7 +72,7 @@ To import your Magento EE code to Cloud:
 3.  Reset your Cloud `master` branch to contain the code and the commit history of your Magento EE branch:
 
         git reset --hard prev-project/<branch name>
-4.  Push code from your Magento EE project to your Magento Enterprise Cloud Edition project, overwriting the previous contents and commit history with that of your project:
+4.  Push code from your Magento EE project to your {{site.data.var.ece}} project, overwriting the previous contents and commit history with that of your project:
 
         git push -f cloud-project master
 
@@ -90,11 +90,11 @@ As the project builds and deploys, many messages are displayed on the screen. A 
        https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
 
 ## Import the Magento database {#cloud-import-db}
-Before you can use your existing Magento EE code in Magento Enterprise Cloud Edition, you must import the database.
+Before you can use your existing Magento EE code in {{site.data.var.ece}}, you must import the database.
 
-To import the Magento database in Magento Enterprise Cloud Edition, you must know:
+To import the Magento database in {{site.data.var.ece}}, you must know:
 
-*   The Magento Enterprise Cloud Edition environment's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-sshurl)
+*   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-sshurl)
 *   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-cloudb)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

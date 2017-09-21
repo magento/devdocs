@@ -78,7 +78,7 @@ $ ../../../vendor/bin/phpunit --filter 'testOnlyThisOneIsExecuted' ../../../app/
 
 This happens if the integration tests are executed from a wrong directory.  
 
-`Could not read "dev/tests/integration/phpunit.xml".`
+#### Could not read "dev/tests/integration/phpunit.xml"
 
 This error happens if the integration tests are executed from a different directory then `dev/tests/integration`.  
 To fix the issue, change into the directory `dev/tests/integration` and run the tests from there with any relative paths adjusted accordingly.

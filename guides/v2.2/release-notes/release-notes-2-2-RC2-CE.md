@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 2.2.0 Release Candidate
 title: Magento Open Source 2.2 Release Candidate 2 Release Notes
 menu_title: Magento Open Source 2.2 Release Candidate 2 Release Notes
-menu_order: 480
+menu_order: 490
 level3_menu_node:
 level3_subgroup:
 github_link: release-notes/release-notes-2-2-RC2-CE.md

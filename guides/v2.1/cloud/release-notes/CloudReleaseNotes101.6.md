@@ -10,12 +10,14 @@ version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.6.md
 ---
  
-These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.6, `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, and 101.6.5. 
+These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Commerce (Cloud) version 2.1.6, `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, 101.6.5, and 101.6.6. 
 
 ## Changes and enhancements in this release
-In `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, and 101.6.5 on Magento Enterprise Edition 2.1.6, we provide the following improvements:
+In `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, 101.6.5, and 101.6.6 on Magento Commerce 2.1.6, we provide the following improvements:
 
+### 101.6.6 changes
 
+<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on Magento Commerce (Cloud), see [Redis troubleshooting](http://devdocs.magento.com/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
 
 ### 101.6.5 changes
 
@@ -57,10 +59,10 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, and 101.6.5
 
 
 ## How to get `magento-cloud-configuration` releases 101.6.x
-Magento Enterprise Cloud Edition periodically provides patch releases in components like `magento-cloud-configuration`.
+Magento Commerce (Cloud)  periodically provides patch releases in components like `magento-cloud-configuration`.
 
 To test and apply these patches, see [Test general patches]({{ site.gdeurl21 }}cloud/project/project-patch.html#cloud-patch-gen).
 
-### Magento EE Release Notes
-These Magento Enterprise Cloud Edition releases correspond to Magento Enterprise Edition 2.1.6.
+### Magento Commerce Release Notes
+These Magento Commerce (Cloud)  releases correspond to Magento Commerce 2.1.6.
 
