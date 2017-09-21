@@ -30,7 +30,7 @@ Magento Enterprise Edition 2.2.0 includes a wealth of new, exciting features, an
 * **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
-* ** Bundled extensions**. This release of Magento Commerce includes the first third-party extension that we are bundling with Magento Commerce -- Shopial. 
+* ** Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store.
 
 * ** Improvements to the Magento Commerce Cloud deployment process and introduction of Magento Commerce Starter.** In addition to our Pro version, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. This subscription plan differs from our Enterprise Cloud version in some key ways. For an overview of these versions, see [Welcome to Magento Commerce Cloud](http://devdocs.magento.com/guides/v2.1/cloud/bk-cloud.html).
 
@@ -79,20 +79,14 @@ The following issue affects the Commerce edition of Magento 2.2.0:
 **Issue**: Store website doesn't work when Redis cache is installed and the PhpRedis extension is enabled.
 **Workaround**: Contact Support for a patch (when will this patch be available?)
 
-
-### Magento Commerce and Cloud-only issues
-
 **Issue**: Magento does not apply the Catalog Price Rule as expected when Persistent Shopping Cart is enabled in installations running Fastly cache. 
 
 **Issue**: Magento displays an error (`“Error 503 Service Unavailable”`) when you try to save a newly-added Catalog Price rule. 
 
 
-
-
 ### Commerce (Cloud)-only issues
 
 **Issue**: You cannot export Advanced Pricing information to a CSV file on a server running xxx.  Instead, the export will fail due to a time out. 
-
 
 
 
