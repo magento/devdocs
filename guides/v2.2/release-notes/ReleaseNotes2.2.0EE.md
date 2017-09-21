@@ -30,7 +30,7 @@ Magento Enterprise Edition 2.2.0 includes a wealth of new, exciting features, an
 * **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
-* ** Bundled extensions**. This release of Magento Commerce includes the first third-party extension that we are bundling with  extension -- Shopial. 
+* ** Bundled extensions**. This release of Magento Commerce includes the first third-party extension that we are bundling with Magento Commerce -- Shopial. 
 
 * ** Improvements to the Magento Commerce Cloud deployment process and introduction of Magento Commerce Starter.** In addition to our Pro version, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. This subscription plan differs from our Enterprise Cloud version in some key ways. For an overview of these versions, see [Welcome to Magento Commerce Cloud](http://devdocs.magento.com/guides/v2.1/cloud/bk-cloud.html).
 
