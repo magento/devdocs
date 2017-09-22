@@ -190,6 +190,14 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 57799-->* You can now upgrade Magento 2.0 to version 2.1.x when the `auto_increment` setting in the database is greater than 1. Previously, when the `auto_increment` value exceeded 1, upgrade failed with this error: "The page URL key contains capital letters or disallowed symbols.
 
+<!--- 69544-->* We’ve added a CLI command to enable and disable template hints. *Fix submitted by community member <a href="https://github.com/miguelbalparda" target="_blank">Miguel Balparda</a> in pull request <a href="https://github.com/magento/magento2/pull/9778" target="_blank">9778</a>.* 
+
+
+<!--- 67501-->* We’ve added console commands for enabling and disabling database query logging.  *Fix submitted by community member <a href="https://github.com/federivo" target="_blank">Federico Rivollier</a> in pull request <a href="https://github.com/magento/magento2/pull/9264" target="_blank">9264</a>.* 
+
+
+<!---67537 -->* We’ve added a new CLI command that allows generation of Varnish VCL configuration. *Fix submitted by community member <a href="https://github.com/piotrkwiecinski" target="_blank">Piotr Kwiecinski</a> in pull request <a href="https://github.com/magento/magento2/pull/9286" target="_blank">9286</a>.* 
+
 
 ### AMQP framework
 
@@ -419,6 +427,7 @@ Previously, Magento displayed only the product categories that users who belonge
 
 
 
+
 ### Configurable products
 We've enhanced the performance of configurable products in several ways:
 
@@ -488,9 +497,13 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}config-guide/config/disable-module-output.html) for details.
 
+
+<!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member <a href="https://github.com/barbazul" target="_blank">Barbazul</a> in pull request <a href="https://github.com/magento/magento2/pull/9902" target="_blank">9902</a>.*
+
 #### Admin framework
 
 <!--- 57805 -->* You can no longer delete a currently logged-in user.
+
 
 #### Application framework
 
@@ -498,6 +511,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 70010 -->* Page titles in layout files are not translatable. *Fix submitted by community member <a href="https://github.com/ajpevers" target="_blank">Anton Evers</a> in pull request <a href="https://github.com/magento/magento2/pull/9992" target="_blank">9992</a>.*
 
+<!--- 67500 -->* The `setup:static-content:deploy`, `setup:di:compile` and `deploy:mode:set` commands now return non-zero exit code if an error occurs. *Fix submitted by community member <a href="https://github.com/pivulic" target="_blank">Pablo Ivulic</a> in pull request <a href="https://github.com/magento/magento2/pull/7780" target="_blank">7780</a>.*
+
+<!--- 67408-->* We've changed the `select `protected property to `query` in the AbstractSearchResult class. *Fix submitted by community member <a href="https://github.com/flancer64" target="_blank">Alex Gusev</a> in pull request <a href="https://github.com/magento/magento2/pull/5043" target="_blank">5043</a>.* 
 
 
 #### Configuration framework
@@ -508,11 +524,15 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
+
 #### JavaScript framework
 
 <!--- 71180 -->*  Customers can now place orders as expected when Magento is running a French locale in production mode. Previously, customers could not complete a transaction in a storefront running a French locale, although they could if they switched to the storefront running the English locale. 
 
 <!--- 58285 -->* Magento now displays server-side Ajax error messages.
+
+<!--- 69674 -->* *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
+
 
 
 
@@ -644,28 +664,34 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 56982-->* You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute. 
 
-<!--- 70267-->* We’ve fixed an issue with fetching quote item by ID. <a href="https://github.com/mladenilic" target="_blank">Mladen Ilic</a> in pull request <a href="https://github.com/magento/magento2/pull/10059" target="_blank">10059</a>.*
+<!--- 70267-->* We’ve fixed an issue with fetching quote item by ID. *Fix submitted by community member  <a href="https://github.com/mladenilic" target="_blank">Mladen Ilic</a> in pull request <a href="https://github.com/magento/magento2/pull/10059" target="_blank">10059</a>.*
 
 
-<!--- 70466-->* We’ve corrected the ACL for the Developer Section resource. <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/10149" target="_blank">10149</a>.*
+<!--- 70466-->* We’ve corrected the ACL for the Developer Section resource. *Fix submitted by community member  <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/10149" target="_blank">10149</a>.*
 
 
-<!--- 70469-->* Layout merging no longer fails when you save a widget that contains  ` ` characters in the data. <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/10151" target="_blank">10151</a>.*
+<!--- 70469-->* Layout merging no longer fails when you save a widget that contains  ` ` characters in the data. *Fix submitted by community member  <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/10151" target="_blank">10151</a>.*
 
 
-<!--- 70419 -->* Magento now uses the correct order when uploading image to the Admin using  **Content > Design**.<a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10126" target="_blank">10126</a>.*
+<!--- 70419 -->* Magento now uses the correct order when uploading image to the Admin using  **Content > Design**. *Fix submitted by community member  <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10126" target="_blank">10126</a>.*
 
 
-<!--- -->* <a href="https://github.com/naouibelgacem" target="_blank">Belgacem Naoui</a> in pull request <a href="https://github.com/magento/magento2/pull/9780" target="_blank">9780</a>.*
+<!--- -->* 
+
+
+
+<!--- 69153-->* We’ve fixed inconsistent gift options checkbox labels in  both the both CSV file ("app\code\Magento\GiftMessage\i18n\en_US.csv") and phtml file ("app\code\Magento\GiftMessage\view\frontend\templates\inline.phtml”). <a href="https://github.com/vpiyappan" target="_blank">vpiyappan</a> in pull request <a href="https://github.com/magento/magento2/pull/9421" target="_blank">9421</a>.*
 
 
 ### Google Analytics
 
-<!--- 67427-->* We’ve added the missing single quote (‘) to the Google API Tracking code. <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9084" target="_blank">9084</a>.*
+<!--- 67427-->* We’ve added the missing single quote (‘) to the Google API Tracking code. *Fix submitted by community member  <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9084" target="_blank">9084</a>.*
 
-<!--- 69374-->* Google Analytics tracking is now works when Cookie Restriction is enabled. <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9713" target="_blank">9713</a>.*
+<!--- 69374-->* Google Analytics tracking is now works when Cookie Restriction is enabled. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9713" target="_blank">9713</a>.*
 
+### HTML
 
+<!--- 67487-->*  The CSS minify option no longer removes the whitespace around the minus (-) sign. Also this option is now compatible with the `calc()` CSS function.  *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9027" target="_blank">9027</a>.*
 
 ### Images
 
@@ -778,7 +804,8 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 54795-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
-<!--- -->*
+<!--- 69610-->* You can now edit `authentication_lock` from the Admin. *Fix submitted by community member <a href="https://github.com/EliasKotlyar" target="_blank">Elias Kotlyar</a> in pull request <a href="https://github.com/magento/magento2/pull/9820" target="_blank">9820</a>.*
+
 
 
 <!--- -->*
@@ -863,11 +890,11 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58074-->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the "Shipping and Tracking" block did not work properly.
 
-<!---66428 -->* You can now create an order through Admin  if there is a `translate csv` for order-header. <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/6856" target="_blank">6856</a>.*
+<!---66428 -->* You can now create an order through Admin  if there is a `translate csv` for order-header. *Fix submitted by community member  <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/6856" target="_blank">6856</a>.*
 
-<!---69378 -->* You can now use a second credit memo to successfully issue a full refund for a credit memo with adjustment fees. <a href="https://github.com/mcspronko" target="_blank">Max Pronko</a> in pull request <a href="https://github.com/magento/magento2/pull/9715" target="_blank">9715</a>.*
+<!---69378 -->* You can now use a second credit memo to successfully issue a full refund for a credit memo with adjustment fees. *Fix submitted by community member  <a href="https://github.com/mcspronko" target="_blank">Max Pronko</a> in pull request <a href="https://github.com/magento/magento2/pull/9715" target="_blank">9715</a>.*
 
-<!---69551 -->* Coupon codes are now included in  invoice print outs. <a href="https://github.com/naouibelgacem" target="_blank">Belgacem Naoui</a> in pull request <a href="https://github.com/magento/magento2/pull/9780" target="_blank">9780</a>.*
+<!---69551 -->* Coupon codes are now included in  invoice print outs. *Fix submitted by community member  <a href="https://github.com/naouibelgacem" target="_blank">Belgacem Naoui</a> in pull request <a href="https://github.com/magento/magento2/pull/9780" target="_blank">9780</a>.*
 
 
 
@@ -896,7 +923,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 69750-->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.
 
-<!--- 66959-->* Removed a duplicate method call to the `getLinkField` method in the `Magento\Catalog\Model\ResourceModel\Category` class. <a href="https://github.com/will-b" target="_blank">will-b</a> in pull request <a href="https://github.com/magento/magento2/pull/9057" target="_blank">9057</a>.*
+<!--- 66959-->* Removed a duplicate method call to the `getLinkField` method in the `Magento\Catalog\Model\ResourceModel\Category` class. *Fixed by <a href="https://github.com/will-b" target="_blank">will-b</a> in pull request <a href="https://github.com/magento/magento2/pull/9057" target="_blank">9057</a>.*
 
 
 #### Braintree
@@ -1130,9 +1157,9 @@ Affected Component(s):
 
 ### Sitemap
 
-<!--- 70056-->* Sitemap image URLs now match the URLs on product pages. <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9082" target="_blank">9082</a>.*
+<!--- 70056-->* Sitemap image URLs now match the URLs on product pages. *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9082" target="_blank">9082</a>.*
 
-<!--- 70056-->* `sitemap` is no longer generates in the wrong folder when `vhost` is connected to `/pub`. <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.*
+<!--- 70056-->* `sitemap` is no longer generates in the wrong folder when `vhost` is connected to `/pub`. *Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.*
 
 
 ### Staging
@@ -1245,6 +1272,9 @@ Affected Component(s):
 <!--- 59680-->* We've fixed a fatal issue that occurred if you ran Travis builds on `imagettfbbox 2.1.2`. Previously, you'd receive this error: 
 
 	```PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php```
+
+
+<!--- 64462-->* `StdoTest` is now marked as skipped. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/8487" target="_blank">8487</a>.*
 
 
 ### Tier pricing
