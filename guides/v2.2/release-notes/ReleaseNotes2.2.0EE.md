@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.2.0 Release Notes
-menu_title: Magento EE 2.2.0 Release Notes
+title: Magento Commerce 2.2.0 Release Notes
+menu_title: Magento Commerce 2.2.0 Release Notes
 menu_order: 299
 level3_menu_node: level3
 level3_subgroup: ee22-relnotes
@@ -11,12 +11,12 @@ version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
+We are pleased to present Magento Commerce 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
 ## Highlights
 
-Magento Enterprise Edition 2.2.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. Look for the following highlights in this release:
+Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. Look for the following highlights in this release:
 
 * **Magento Commerce for B2B** is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. Magento Commerce for B2B also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. See [Magento Commerce for B2B roadmap](http://docs.magento.com/m2/b2b/user_guide/quick-tour/b2b-roadmap.html) for an overview of the rich B2B feature set we're introducing in this release. 
 
