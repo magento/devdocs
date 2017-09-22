@@ -18,24 +18,32 @@ We are pleased to present Magento Enterprise Edition 2.2.0 General Availability.
 
 Magento Enterprise Edition 2.2.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. Look for the following highlights in this release:
 
-* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.
+* **Magento Commerce for B2B** is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. Magento Commerce for B2B also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. See [Magento Commerce for B2B roadmap](http://docs.magento.com/m2/b2b/user_guide/quick-tour/b2b-roadmap.html) for an overview of the rich B2B feature set we're introducing in this release. 
+
+* **Magento Commerce Starter.** In addition to our Pro version, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. This subscription plan differs from our Enterprise Cloud version in some key ways. For an overview of these versions, see [Welcome to Magento Commerce Cloud](http://devdocs.magento.com/guides/v2.1/cloud/bk-cloud.html).
+
+* **Improvements to the Magento Commerce (Cloud) deployment process**. This release includes new build and deployment variables. Users of earlier versions of Magento Commerce (Cloud) will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your Magento Commerce (Cloud) without requiring a full installation of base code and the patch. 
+
+* **Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your corporate Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store. 
 
 
-* **Upgraded technology stack.**  We've dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, and Varnish 5 support. All third-party libraries have been upgraded to the latest stable version.
+* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate additional improvements in debugging, customizations, and logging.
 
 
-* **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/).
+* **Upgraded technology stack.**  We've dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All third-party libraries have been upgraded to the latest stable version.
+
+
+* **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/). Magento Commerce (Cloud) now fully implements pipeline deployment. 
 
 
 * **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
-* ** Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store.
 
-* ** Improvements to the Magento Commerce Cloud deployment process and introduction of Magento Commerce Starter.** In addition to our Pro version, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. This subscription plan differs from our Enterprise Cloud version in some key ways. For an overview of these versions, see [Welcome to Magento Commerce Cloud](http://devdocs.magento.com/guides/v2.1/cloud/bk-cloud.html).
 
-* ** Substantial contributions from our Community members**. Our Community Engineering Team has been working with skilled and enthusiastic community members, and together they've added hundreds of pull requests to the Magento code base. For more information about our Community Engineering Team. see [Magento Community Engineering](https://github.com/magento-engcom). 
+* **Substantial contributions from our Community members**. Our Community Engineering Team has been working with skilled and enthusiastic community members, and together they've added hundreds of pull requests to the Magento code base. For more information about our Community Engineering Team. see [Magento Community Engineering](https://github.com/magento-engcom). 
 
+Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/).
 
 
 ## Security enhancements
@@ -45,9 +53,12 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 
 [Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
 
+
+
 ## Known issues
 
-Magento 2.2.0 GA includes the following known issues. Fixes for these issues are scheduled for upcoming patch releases. 
+Magento 2.2.0 GA includes the following known issues. Fixes for these issues are scheduled for  patch releases in the near future. 
+
 
 ### General Issues
 
@@ -59,11 +70,11 @@ If you have set your product filter to a store view you’ve deleted, when you o
 
 * spinner widget spins indefinitely
 
-* error message: `A technical problem with the If the problem server created an error. Try again to continue what you were doing. persists, try again later."
+* error message: `A technical problem with the server created an error. Try again to continue what you were doing. If the problem  persists, try again later."
 
 **Issue**: Errors result when a deleted customer tries to log in or register for new account. When you delete a customer from the  Admin panel, a fatal error occurs if someone tries to log in or register using that deleted customer account.
 
-**Issue**: A mistake entering credit card information during an  order for a new customer can cause subsequent errors even after the user has corrected the  credit card information.  (need JIRA issue to rewrite)
+**Issue**: A mistake entering credit card information during an  order for a new customer can cause subsequent errors even after the user has corrected the  credit card information.  
 
 **Issue**: Failure to specify a `– base_url` during installation when using custom server ports results in corrupted static content. 
 **Workaround**: You can use the CLI command `config:set web/secure/base_url <base_url>` to set the `base_url` parameter.
@@ -77,7 +88,7 @@ If you have set your product filter to a store view you’ve deleted, when you o
 The following issue affects the Commerce edition of Magento 2.2.0:
 
 **Issue**: Store website doesn't work when Redis cache is installed and the PhpRedis extension is enabled.
-**Workaround**: Contact Support for a patch (when will this patch be available?)
+**Workaround**: Contact Support for a patch.
 
 **Issue**: Magento does not apply the Catalog Price Rule as expected when Persistent Shopping Cart is enabled in installations running Fastly cache. 
 
@@ -94,9 +105,9 @@ The following issue affects the Commerce edition of Magento 2.2.0:
 
 **Issue**: Resubmitting an order that contains an out-of-stock product causes an error.  Instead of displaying a message that indicates that a product is out-of-stock, Magento displays this exception: `Warning: Division by zero in \/usr\/share\/nginx\/html\/vendor\/magento\/module-tax\/Model\/Calculation\/AbstractAggregateCalculator.php`
 
-**Issue**: You cannot save a custom shared catalog when the  indexer state table contains duplicates.
+**Issue**: You cannot save a customized shared catalog when the  indexer state table contains duplicates.
 
-**Workaround**: You can remove the duplicate record from the database. 
+**Workaround**: Remove the duplicate record from the database. 
 
 
 
@@ -105,6 +116,7 @@ The following issue affects the Commerce edition of Magento 2.2.0:
 This release contains hundreds of fixes and enhancements. 
 
 ### Installation, upgrade, deployment
+
 <!--- 55357/53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795) 
 
 <!--- 56974-->* You can now upgrade 2.0.9 with sample data to 2.1.1. 
@@ -383,13 +395,29 @@ Previously, Magento displayed only the product categories that users who belonge
 
 <!---69308 -->* 
 
-<!--- -->* 
+
+<!--- 64250-->* Fixed an issue that occurred in the Catalog Gallery on mobile displays when the `allowfullscreen` setting is enabled. *Fix submitted by community member <a href="https://github.com/Crossmotion" target="_blank">Dennis van Schaik</a> in pull request <a href="https://github.com/magento/magento2/pull/8434" target="_blank">8434</a>.* 
 
 
-<!--- -->* 
+<!--- 64403-->* Magento now successfully loads re-ordered related products when Edge-Mode is activated. *Fix submitted by community member <a href="https://github.com/kirashet666" target="_blank">@kirashet666</a> in pull request <a href="https://github.com/magento/magento2/pull/8467" target="_blank">8467</a>.*
+
+<!--- 64999 -->* Magento now displays crosssells as expected when you use the product/list/items.phtml template. *Fix submitted by community member <a href="https://github.com/koenner01" target="_blank">Koen V</a> in pull request <a href="https://github.com/magento/magento2/pull/9662" target="_blank">8602</a>.*
 
 
-<!--- -->* 
+<!--- 65364-->* Magento now displays the **Yes** or **No ** attribute value on Product pages. *Fix submitted by community member <a href="https://github.com/TKlement" target="_blank">Timo Klement</a> in pull request <a href="https://github.com/magento/magento2/pull/8623" target="_blank">8623</a>.*
+
+<!--- 65334-->*  Setting the **show_out_of_stock** attribute to **No** now works as expected. *Fix submitted by community member <a href="https://github.com/Corefix" target="_blank">Theis Corfixen</a> in pull request <a href="https://github.com/magento/magento2/pull/8736" target="_blank">8736</a>.*
+
+
+<!--- 69297-->* Magento now uses parent name (instead of SKU-based names) when creating configurable products. *Fix submitted by community member <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/9681" target="_blank">9681</a>.*
+
+
+<!---70256 -->* You can now create an `etc/view.xml` file containing an `images` tag with an attribute `module`. *Fix submitted by community member <a href="https://github.com/tzyganu" target="_blank">Marius Strajeru</a> in pull request <a href="https://github.com/magento/magento2/pull/10052" target="_blank">10052</a>.*
+
+
+<!--- 70345-->* Magento now displays the Category selection UI under Conditions when you select a rule for editing. *Fix submitted by community member <a href="https://github.com/duckchip" target="_blank">duckchip</a> in pull request <a href="https://github.com/magento/magento2/pull/10094" target="_blank">10094</a>.*
+
+
 
 ### Cloud 
 
@@ -485,9 +513,17 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 64901 -->* Magento now supports new top level domains for email addresses. [GitHub-4547](https://github.com/magento/magento2/issues/4547)
 
+<!--- 70010 -->* Page titles in layout files are not translatable. *Fix submitted by community member <a href="https://github.com/ajpevers" target="_blank">Anton Evers</a> in pull request <a href="https://github.com/magento/magento2/pull/9992" target="_blank">9992</a>.*
+
+
+
 #### Configuration framework
 
 <!--- 69894 -->* Configuration values no longer return NULL when Redis reaches the limit set in the `max_memory` setting. Previously, when Redis met the limit specified in this setting, `ScopeConfig` returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).
+
+<!--- 65003 -->* The currency setup in Admin no longer throws an in_array error when a single value is selected. *Fix submitted by community member <a href="https://github.com/deriknel" target="_blank">Derik Nel</a> in pull request <a href="https://github.com/magento/magento2/pull/8077" target="_blank">8077</a>.*
+
+
 
 #### JavaScript framework
 
@@ -589,6 +625,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58298-->* Only users with permission to view a store can view or process the orders placed on it.
 
+
+
+
 #### Gift cards
 
 <!---57054 -->* Order emails now specify the amount of the {% glossarytooltip f5cdf732-d644-4bd5-9f75-53b01401b7e7 %}gift card{% endglossarytooltip %} that you have purchased. 
@@ -619,6 +658,29 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 59948-->* Magento no longer displays the gift wrap tax when no gift wrap is selected.
 
 <!--- 56982-->* You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute. 
+
+<!--- 70267-->* We’ve fixed an issue with fetching quote item by ID. <a href="https://github.com/mladenilic" target="_blank">Mladen Ilic</a> in pull request <a href="https://github.com/magento/magento2/pull/10059" target="_blank">10059</a>.*
+
+
+<!--- 70466-->* We’ve corrected the ACL for the Developer Section resource. <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/10149" target="_blank">10149</a>.*
+
+
+<!--- 70469-->* Layout merging no longer fails when you save a widget that contains  ` ` characters in the data. <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/10151" target="_blank">10151</a>.*
+
+
+<!--- 70419 -->* Magento now uses the correct order when uploading image to the Admin using  **Content > Design**.<a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10126" target="_blank">10126</a>.*
+
+
+<!--- -->* <a href="https://github.com/naouibelgacem" target="_blank">Belgacem Naoui</a> in pull request <a href="https://github.com/magento/magento2/pull/9780" target="_blank">9780</a>.*
+
+
+### Google Analytics
+
+<!--- 67427-->* We’ve added the missing single quote (‘) to the Google API Tracking code. <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9084" target="_blank">9084</a>.*
+
+<!--- 69374-->* Google Analytics tracking is now works when Cookie Restriction is enabled. <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9713" target="_blank">9713</a>.*
+
+
 
 ### Images
 
@@ -701,6 +763,18 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!--- 60067-->* We've improved the import speed of advanced pricing data. Previously, the import process for this information frequently stopped after the import of approximately 300 rows of data, and Magento displayed this message: `Please Wait`.
+
+<!--- 64902 -->* The CatalogImportExport uploader now handles HTTPS images as expected. *Fix submitted by community member <a href="https://github.com/clementbeudot" target="_blank">Clement Beudot</a> in pull request <a href="https://github.com/magento/magento2/pull/8278" target="_blank">8278</a>.*
+
+<!--- -->*
+
+<!--- -->*
+
+<!--- -->*
+
+<!--- -->*
+
+
 
 <!--- -->*
 
@@ -799,6 +873,11 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58074-->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the "Shipping and Tracking" block did not work properly.
 
+<!---66428 -->* You can now create an order through Admin  if there is a `translate csv` for order-header. <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/6856" target="_blank">6856</a>.*
+
+<!---69378 -->* You can now use a second credit memo to successfully issue a full refund for a credit memo with adjustment fees. <a href="https://github.com/mcspronko" target="_blank">Max Pronko</a> in pull request <a href="https://github.com/magento/magento2/pull/9715" target="_blank">9715</a>.*
+
+<!---69551 -->* Coupon codes are now included in  invoice print outs. <a href="https://github.com/naouibelgacem" target="_blank">Belgacem Naoui</a> in pull request <a href="https://github.com/magento/magento2/pull/9780" target="_blank">9780</a>.*
 
 
 
@@ -827,7 +906,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 69750-->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.
 
-<!--- -->*
+<!--- 66959-->* Removed a duplicate method call to the `getLinkField` method in the `Magento\Catalog\Model\ResourceModel\Category` class. <a href="https://github.com/will-b" target="_blank">will-b</a> in pull request <a href="https://github.com/magento/magento2/pull/9057" target="_blank">9057</a>.*
 
 
 #### Braintree
@@ -1052,13 +1131,18 @@ Affected Component(s):
 
 <!--- 70646-->* You can now save the settings you enter when creating a shipping label on an existing shipment. Previously, clicking the Save button resulted in an error, and the shipping label was not saved.
 
-<!--- -->*
+<!--- 67053 -->* Added missing translation to label argument xml.  *Fix submitted by community member <a href="https://github.com/mrkhoa99" target="_blank">Mr Khoa</a> in pull request <a href="https://github.com/magento/magento2/pull/9095" target="_blank">9095</a>.*
 
 <!--- -->*
 
 
 <!--- -->*
 
+### Sitemap
+
+<!--- 70056-->* Sitemap image URLs now match the URLs on product pages. <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9082" target="_blank">9082</a>.*
+
+<!--- 70056-->* `sitemap` is no longer generates in the wrong folder when `vhost` is connected to `/pub`. <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.*
 
 
 ### Staging
@@ -1123,6 +1207,9 @@ Affected Component(s):
 
 <!---57904-->* We've improved the speed of static asset deployment. See <a href="http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
 
+
+
+
 ### Swatches
 
 
@@ -1136,6 +1223,11 @@ Affected Component(s):
 <!--- 65248 -->* Magento now caches swatch data in the block cache, which improves the responsiveness of the configurable product pages. 
 
 <!--- 60045 -->* Magento now correctly matches images to products. Previously, after you selected a configurable product, Magento displayed the images for another product. 
+
+<!--- 66417 -->* Magento no longer displays a notice error when you create a text swatch attribute while the **update product preview image** setting  is set to **Yes**. *Fix submitted by community member <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/6707" target="_blank">6707</a>.*
+
+
+
 
 ### TargetRule
 
@@ -1195,9 +1287,24 @@ Affected Component(s):
 
 <!---58796-->* You no longer need to delete the URL rewrite to force Magento to display links after adding pages to the CMS hierarchy. Previously, when you added new pages to the CMS hierarchy, Magento did not show the links to the new pages until you deleted the URL rewrites. 
 
+<!---70255 -->* We've fixed several issues with how Magento processes URLs with trailing slashes. *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10043" target="_blank">10043</a>.*
+
+
+<!--- -->*
+
+<!--- -->*
+
+
+
+
 ### Varnish
 
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
+
+<!--- 69374-->* Google Universal Analytics now tracks when Cookie Restriction is enabled. *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/9713" target="_blank">9713</a>.*
+
+<!--- 69372-->* Varnish no longer caches Cookie Restriction Mode Overlay. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
+
 
 
 ### Visual merchandiser
@@ -1232,7 +1339,27 @@ Affected Component(s):
 
 <!--- -->*
 
+### Zend framework
 
+<!--- 67511-->* We’ve removed  `Zend_Json` from Magento Theme and replaced it with a new serializer class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9262" target="_blank">9262</a>.*
+
+<!--- 67510-->* We’ve removed `Zend_Json` from the Weee module. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> We’ve removed pull request <a href="https://github.com/magento/magento2/pull/9261" target="_blank">9261</a>.*
+
+<!--- 69369-->* We’ve replaced the direct usage of Zend_Json with a call to the `Json_Help` class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9344" target="_blank">9344</a>.*
+
+<!--- 69451-->* We’ve replaced  `Zend_Json` in the configurable product block test. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9753" target="_blank">9753</a>.*
+
+<!--- 69452-->* We’ve removed `Zend_Json` from form elements. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9754" target="_blank">9754</a>.*
+
+<!--- 69371-->* We’ve replaced the Magento Framework's Zend_Session interface usage with SessionHandlerInterface. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
+
+<!--- 69157-->* We’ve removed `Zend_Wildfire` and `Zend_Controller` from the codebase. *Fix submitted by community member <a href="https://github.com/SolsWebdesign" target="_blank">Isolde</a> in pull request <a href="https://github.com/magento/magento2/pull/9622" target="_blank">9622</a>.*
+
+<!--- 69152-->* We’ve replaced `Zend_Log` with `Psr\Log\LoggerInterface`. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
+
+<!--- 69591-->* We’ve replaced Zend_Log with Psr\Log\LoggerInterface. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
+
+<!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member <a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a> in pull request <a href="https://github.com/magento/magento2/pull/9400" target="_blank">9400</a>.*
 
 
 ### System requirements
