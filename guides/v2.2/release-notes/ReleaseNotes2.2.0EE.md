@@ -24,10 +24,10 @@ Magento Enterprise Edition 2.2.0 includes a wealth of new, exciting features, an
 
 * **Improvements to the Magento Commerce (Cloud) deployment process**. This release includes new build and deployment variables. Users of earlier versions of Magento Commerce (Cloud) will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your Magento Commerce (Cloud) without requiring a full installation of base code and the patch. 
 
-* **Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your corporate Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store. 
+* **Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your corporate Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store.
 
 
-* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate additional improvements in debugging, customizations, and logging.
+* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls to improve security for sensitive values. Developers will appreciate additional improvements in debugging, customizations, and logging.
 
 
 * **Upgraded technology stack.**  We've dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All third-party libraries have been upgraded to the latest stable version.
@@ -37,7 +37,7 @@ Magento Enterprise Edition 2.2.0 includes a wealth of new, exciting features, an
 
 
 * **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
-buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
+buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items. Varnish cache configuration now includes saint and grace mode to ensure Varnish is always presenting a cached page to a shop’s customers.  Enhancements to cache invalidation logic and optimization of edge side include blocks for frequently changing data that significantly boost cache hit ratios.
 
 
 
@@ -81,7 +81,7 @@ If you have set your product filter to a store view you’ve deleted, when you o
 
 **Issue**: Magento does not correctly calculate the Catalog Price rule for bundle products with custom options. 
 
-**Issue**: Visual Merchandiser performance is degraded when Category contains an many products.
+**Issue**: Visual Merchandiser performance is degraded when Category contains  many products.
 
 ### Magento Commerce-only issues
 
@@ -95,11 +95,6 @@ The following issue affects the Commerce edition of Magento 2.2.0:
 **Issue**: Magento displays an error (`“Error 503 Service Unavailable”`) when you try to save a newly-added Catalog Price rule. 
 
 
-### Commerce (Cloud)-only issues
-
-**Issue**: You cannot export Advanced Pricing information to a CSV file on a server running xxx.  Instead, the export will fail due to a time out. 
-
-
 
 ### B2B-only issues
 
@@ -109,6 +104,7 @@ The following issue affects the Commerce edition of Magento 2.2.0:
 
 **Workaround**: Remove the duplicate record from the database. 
 
+**Issue**: You cannot export Advanced Pricing information to a CSV file on a server running xxx.  Instead, the export will fail due to a time out. 
 
 
 
