@@ -993,7 +993,7 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 57410-->* You can now quickly generate or preview multiple variations of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
 
-<!--- 52660 -->* We've improved the speed of static asset deployment. 
+<!--- 52660 -->* We've improved the speed of static asset deployment and now support a variety of asset deployment strategies that can be used to optimize speed and size of assets deployed. Indexers can now be run with 256M of PHP RAM and default MySQL configuration settings.  Developers can further tune memory usage to improve indexer performance (in some cases up to 100% improvement).  Please see our optimization guide for further details
 
 <!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
 
@@ -1301,7 +1301,7 @@ Affected Component(s):
 
 <!--- 69372-->* Varnish no longer caches Cookie Restriction Mode Overlay. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
 
-
+* Varnish now supports `grace` and `saint` mode to ensure that customers always see cached pages.
 
 ### Visual merchandiser
 
@@ -1341,7 +1341,7 @@ Affected Component(s):
 
 <!--- 67510-->* We’ve removed `Zend_Json` from the Weee module. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> We’ve removed pull request <a href="https://github.com/magento/magento2/pull/9261" target="_blank">9261</a>.*
 
-<!--- 69369-->* We’ve replaced the direct usage of Zend_Json with a call to the `Json_Help` class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9344" target="_blank">9344</a>.*
+<!--- 69369-->* We’ve replaced the direct usage of Zend_Json with a call to the `Json_Help` class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull r equest <a href="https://github.com/magento/magento2/pull/9344" target="_blank">9344</a>.*
 
 <!--- 69451-->* We’ve replaced  `Zend_Json` in the configurable product block test. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9753" target="_blank">9753</a>.*
 
