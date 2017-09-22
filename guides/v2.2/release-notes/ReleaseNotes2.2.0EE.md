@@ -82,6 +82,9 @@ If you have set your product filter to a store view you’ve deleted, when you o
 
 **Issue**: Visual Merchandiser performance is degraded when Category contains  many products.
 
+**Issue**: 
+
+
 ### Magento Commerce-only issues
 
 The following issue affects the Commerce edition of Magento 2.2.0:
@@ -103,7 +106,7 @@ The following issue affects the Commerce edition of Magento 2.2.0:
 
 **Workaround**: Remove the duplicate record from the database. 
 
-**Issue**: You cannot export Advanced Pricing information to a CSV file on a server running xxx.  Instead, the export will fail due to a time out. 
+**Issue**: You cannot export Advanced Pricing information to a CSV file on a server running a medium-sized Magento installation (that is, one that supports approximately 40,000 SKUs, 300 shared catalogs, and three store views).  Instead, the export will fail due to a time out. 
 
 
 
