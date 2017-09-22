@@ -415,26 +415,7 @@ Previously, Magento displayed only the product categories that users who belonge
 
 <!--- 70345-->* Magento now displays the Category selection UI under Conditions when you select a rule for editing. *Fix submitted by community member <a href="https://github.com/duckchip" target="_blank">duckchip</a> in pull request <a href="https://github.com/magento/magento2/pull/10094" target="_blank">10094</a>.*
 
-
-
-### Cloud 
-
-<!--- 58265-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
-
-<!---58976 -->* You can now successfully import multiselect attributes that contain special symbols or delimiters. Previously, when you tried to import attributes containing delimiters, data validation (and the import) failed.
-
-<!--- 63736-->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
-
-
 <!--- 63062-->* Magento now displays the correct image when you switch between a configurable product's options. Previously, Magento loaded product images from a different product.
-
-
-<!---61104 -->* When you delete an image in Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for`).
-
-<!--- 60611-->* Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.
-
-<!--- 59966-->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include header empty of real content in the response.
-
 
 
 
@@ -487,6 +468,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---60483-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page failed to list the product at all, rather than listing it as out-of-stock.
 
+<!--- 58265-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
 
 
 ### Email
@@ -500,6 +482,9 @@ We've enhanced the performance of configurable products in several ways:
 <!---59146 -->* Magento no longer sends email when the **Disable email communication** setting is set to **yes**. Previously, Magento sent email even when this setting was enabled. [GitHub-5988](https://github.com/magento/magento2/issues/5988)
 
 ### Frameworks
+
+<!--- 60611-->* Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.
+
 
 <!---71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}config-guide/config/disable-module-output.html) for details.
 
@@ -623,7 +608,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58298-->* Only users with permission to view a store can view or process the orders placed on it.
 
+<!--- 63736-->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
+<!--- 59966-->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include header empty of real content in the response.
 
 
 #### Gift cards
@@ -763,6 +750,11 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 60067-->* We've improved the import speed of advanced pricing data. Previously, the import process for this information frequently stopped after the import of approximately 300 rows of data, and Magento displayed this message: `Please Wait`.
 
 <!--- 64902 -->* The CatalogImportExport uploader now handles HTTPS images as expected. *Fix submitted by community member <a href="https://github.com/clementbeudot" target="_blank">Clement Beudot</a> in pull request <a href="https://github.com/magento/magento2/pull/8278" target="_blank">8278</a>.*
+
+<!---58976 -->* You can now successfully import multiselect attributes that contain special symbols or delimiters. Previously, when you tried to import attributes containing delimiters, data validation (and the import) failed.
+
+<!---61104 -->* When you delete an image in Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for`).
+
 
 <!--- -->*
 
@@ -995,7 +987,7 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 57410-->* You can now quickly generate or preview multiple variations of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
 
-<!--- 52660 -->* We've improved the speed of static asset deployment and now support a variety of asset deployment strategies that can be used to optimize speed and size of assets deployed. Indexers can now be run with 256M of PHP RAM and default MySQL configuration settings.  Developers can further tune memory usage to improve indexer performance (in some cases up to 100% improvement).  Please see our optimization guide for further details
+<!--- 52660 -->* We've improved the speed of static asset deployment and now support a variety of asset deployment strategies that can be used to optimize speed and size of assets deployed. Indexers can now be run with 256M of PHP RAM and default MySQL configuration settings.  Developers can further tune memory usage to improve indexer performance (in some cases up to 100% improvement).  Please see [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.0/config-guide/prod/prod_perf-optimize.html)  for further details.
 
 <!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
 
