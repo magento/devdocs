@@ -261,10 +261,22 @@ This release contains hundreds of fixes and enhancements.
 <!--- 64544-->* You can complete your order after entering a new shipping address during checkout. Previously, Magento would not let you place an order if you entered a new shipping address during checkout.
 
 
-<!--- -->*
+<!--- 64399-->* Magento no longer throws an exception when a customer updates their shopping cart after you've enabled the Minimum Order setting. *Fix submitted by community member <a href="https://github.com/ericrisler" target="_blank">Eric Risler
+</a> in pull request <a href="https://github.com/magento/magento2/pull/8474" target="_blank">8474</a>.* 
 
-<!--- -->*
+<!--- 67323-->* You can now translate the  FPT label on the checkout page. *Fix submitted by community member <a href="https://github.com/okorshenko" target="_blank">Oleksii Korshenko</a> in pull request <a href="https://github.com/magento/magento2/pull/9204" target="_blank">9204</a>.* 
 
+<!--- 69230-->* Magento no longer truncates bill-to names and shio-to names to 20 characters in the Admin.  *Fix submitted by community member <a href="https://github.com/SolsWebdesign" target="_blank">Isolde</a> in pull request <a href="https://github.com/magento/magento2/pull/9654" target="_blank">9654</a>.* 
+
+<!--- 69375-->* You can now delete the last item in your cart when the Minimum Order setting is enabled. *Fix submitted by community member <a href="https://github.com/storbahn" target="_blank">storbahn</a> in pull request <a href="https://github.com/magento/magento2/pull/9714" target="_blank">9714</a>.* 
+
+<!--- 69379-->* You can now create unique checkbox IDs for the Terms and Conditions part of the checkout process. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9717" target="_blank">9717</a>.* 
+
+<!--- 69533-->* Magento now correctly displays the coupon label in the shopping cart during checkout. *Fix submitted by community member <a href="https://github.com/diglin" target="_blank">Sylvain Rayé</a> in pull request <a href="https://github.com/magento/magento2/pull/9721" target="_blank">9721</a>.* 
+
+<!--- 69848-->* Magento now pre-fills prefixes and suffixes in the quote shipping address *Fix submitted by community member <a href="https://github.com/ajpevers" target="_blank">Anton Evers</a> in pull request <a href="https://github.com/magento/magento2/pull/9925" target="_blank">9925</a>.* 
+
+<!--- 70052-->* The country drop-down box now correctly shows the countries for which the current store and customer account are configured. *Fix submitted by community member <a href="https://github.com/mimarcel" target="_blank">Marcel</a> in pull request <a href="https://github.com/magento/magento2/pull/9429" target="_blank">9429</a>.* 
 
 
 
@@ -536,6 +548,8 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
+
+
 ### General fixes
 
 <!--- 56892-->*  You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute. 
@@ -631,6 +645,25 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 63736-->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
 <!--- 59966-->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include header empty of real content in the response.
+
+
+<!--- 65000-->* Fixed the location of the wishlist.js file. *Fix submitted by community member <a href="https://github.com/koenner01" target="_blank">Koen V.</a> in pull request <a href="https://github.com/magento/magento2/pull/8633" target="_blank">8633</a>.* 
+
+<!--- 66506-->* You can download products even after you’ve set order state to `STATE_CANCELED`.  *Fix submitted by community member <a href="https://github.com/nazarpadalka" target="_blank">nazarpadalka</a> in pull request <a href="https://github.com/magento/magento2/pull/8917" target="_blank">8917</a>.* 
+
+<!--- 66232-->* Fixed a typo in the Pull Request Template. *Fix submitted by community member <a href="https://github.com/tomislavsantek" target="_blank">tomislavsantek</a> in pull request <a href="https://github.com/magento/magento2/pull/8908" target="_blank">8908</a>.* 
+
+<!--- 66694-->* You now receive an error message as expected if you try to submit a product review while not logged in. *Fix submitted by community member <a href="https://github.com/quienti" target="_blank">quienti</a> in pull request <a href="https://github.com/magento/magento2/pull/9001" target="_blank">9001</a>.* 
+
+<!--- 67042-->* Fixed grammar error in the customer dashboard. *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9080" target="_blank">9080</a>.* 
+
+<!--- 67320-->* The popup window in the Safari browser now closes properly. *Fix submitted by community member <a href="https://github.com/HansSchouten" target="_blank">Hans Schouten
+</a> in pull request <a href="https://github.com/magento/magento2/pull/8824" target="_blank">8824</a>.* 
+
+<!--- 67054-->* We’ve fixed minor performance issues when you use `/pub `as `docroot`. *Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell
+</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.* 
+
+
 
 
 #### Gift cards
@@ -896,6 +929,8 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---69551 -->* Coupon codes are now included in  invoice print outs. *Fix submitted by community member  <a href="https://github.com/naouibelgacem" target="_blank">Belgacem Naoui</a> in pull request <a href="https://github.com/magento/magento2/pull/9780" target="_blank">9780</a>.*
 
+
+<!---69909 -->* The Orders grid now displays correct order dates. *Fix submitted by community member  <a href="https://github.com/ajpevers" target="_blank">Anton Evers</a> in pull request <a href="https://github.com/magento/magento2/pull/9941" target="_blank">9941</a>.*
 
 
 ### Payment methods
@@ -1293,6 +1328,9 @@ Affected Component(s):
 
 <!---67296-->* String localizations now works as expected when  phrases include text wrapped with single quotation marks.
 
+<!---69728-->* Translations now work for layered navigation attribute options. *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9873" target="_blank">9873</a>.*
+
+
 ### URL rewrites
 
 <!---66480-->* You can now successfully create a product and assign it to a store without encountering the following error: `Unique constraint violation found`. [GitHub-6671](https://github.com/magento/magento2/issues/6671)
@@ -1375,7 +1413,7 @@ Affected Component(s):
 
 <!--- 69157-->* We’ve removed `Zend_Wildfire` and `Zend_Controller` from the codebase. *Fix submitted by community member <a href="https://github.com/SolsWebdesign" target="_blank">Isolde</a> in pull request <a href="https://github.com/magento/magento2/pull/9622" target="_blank">9622</a>.*
 
-<!--- 69152-->* We’ve replaced `Zend_Log` with `Psr\Log\LoggerInterface`. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
+<!--- 69152-->* We've resolved issues with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fixes submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9540" target="_blank">9540</a> and community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
 
 <!--- 69591-->* We’ve replaced Zend_Log with Psr\Log\LoggerInterface. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
 
