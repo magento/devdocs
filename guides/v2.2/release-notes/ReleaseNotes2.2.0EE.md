@@ -664,6 +664,16 @@ We've enhanced the performance of configurable products in several ways:
 </a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.* 
 
 
+<!--- 70310-->* The Actions dropdown menu is now properly aligned in the Admin when the action column is not the last column. *Fix submitted by community member <a href="https://github.com/tzyganu" target="_blank">Marius Strajeru</a> in pull request <a href="https://github.com/magento/magento2/pull/10082" target="_blank">10082</a>.* 
+
+<!--- 70029-->* Magento now deletes pending entries in `cron_schedule` when you reconfigure a cron job. *Fix submitted by community member <a href="https://github.com/ajpevers" target="_blank">Anton Evers</a> in pull request <a href="https://github.com/magento/magento2/pull/9957" target="_blank">9957</a>.* 
+
+<!--- 69886-->* We’ve fixed the cron timestamp method. *Fix submitted by community member <a href="https://github.com/ajpevers" target="_blank">Anton Evers</a> in pull request <a href="https://github.com/magento/magento2/pull/9943" target="_blank">9943</a>.* 
+
+<!--- 69373-->* You can now save customers with unique attributes. *Fix submitted by community member <a href="https://github.com/storbahn" target="_blank">storbahn</a> in pull request <a href="https://github.com/magento/magento2/pull/9712" target="_blank">9712</a>.* 
+
+<!--- 69555-->* The `Magento_Framework/View/Layout/etc/elements.xsd` file `blockReferenceType` definition now allows for the optional argument template. *Fix submitted by community member <a href="https://github.com/jissereitsma" target="_blank">jissereitsma</a> in pull request <a href="https://github.com/magento/magento2/pull/9772" target="_blank">9772</a>.* 
+
 
 
 #### Gift cards
