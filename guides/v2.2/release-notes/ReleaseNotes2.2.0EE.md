@@ -190,13 +190,29 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 57799-->* You can now upgrade Magento 2.0 to version 2.1.x when the `auto_increment` setting in the database is greater than 1. Previously, when the `auto_increment` value exceeded 1, upgrade failed with this error: "The page URL key contains capital letters or disallowed symbols.
 
-<!--- 69544-->* We’ve added a CLI command to enable and disable template hints. *Fix submitted by community member <a href="https://github.com/miguelbalparda" target="_blank">Miguel Balparda</a> in pull request <a href="https://github.com/magento/magento2/pull/9778" target="_blank">9778</a>.* 
+<!--- 69544-->* We’ve added a CLI command to enable and disable template hints. *Fix submitted by community member <a href="https://github.com/miguelbalparda" target="_blank">Miguel Balparda</a> in pull request <a href="https://github.com/magento/magento2/pull/9778" target="_blank">9778</a>.
 
+<!--- 57820-->* 
 
 <!--- 67501-->* We’ve added console commands for enabling and disabling database query logging.  *Fix submitted by community member <a href="https://github.com/federivo" target="_blank">Federico Rivollier</a> in pull request <a href="https://github.com/magento/magento2/pull/9264" target="_blank">9264</a>.* 
 
 
 <!---67537 -->* We’ve added a new CLI command that allows generation of Varnish VCL configuration. *Fix submitted by community member <a href="https://github.com/piotrkwiecinski" target="_blank">Piotr Kwiecinski</a> in pull request <a href="https://github.com/magento/magento2/pull/9286" target="_blank">9286</a>.* 
+
+<!--- -->* You can now deploy build processes on a different staging machine than the one you're running your production environment on.
+
+<!--- 62660 -->*  [GitHub-7862](https://github.com/magento/magento2/issues/7862)
+
+
+
+
+<!--- 57820 -->* The installation script no longer creates files in the root directory for missing modules when you install a community-created language pack. Translation packs created by the community often include translations for Magento Commerce modules. When you install these translation packs on an Open Source installation, the Commerce modules are missing. Previously, the installation script creates a file in the root directory for these Commerce modules instead of skipping them. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
+
+<!--- 53232 -->* We’ve resolved issues with customer data missing after upgrading Magento 2.0.2 to 2.0.4.  [GitHub-3951](https://github.com/magento/magento2/issues/3951), [GitHub-3964](https://github.com/magento/magento2/issues/3964), [GitHub-4054](https://github.com/magento/magento2/issues/4054)
+
+<!--- 56743 -->*  We've fixed issues with upgrading installations with split databases. 
+
+
 
 
 ### AMQP framework
@@ -209,6 +225,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 70518-->* You can now override queue publishers configuration through the `env.php` file.
 
+<!--- 66993-->* Magento now re-processes queue messages if the consumer process is terminated. 
 
 ### Cart and checkout
 
@@ -278,7 +295,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 70052-->* The country drop-down box now correctly shows the countries for which the current store and customer account are configured. *Fix submitted by community member <a href="https://github.com/mimarcel" target="_blank">Marcel</a> in pull request <a href="https://github.com/magento/magento2/pull/9429" target="_blank">9429</a>.* 
 
-
+<!--- 56411-->* The shopping cart now handles products with custom options. [GitHub-5612](https://github.com/magento/magento2/issues/5612)
 
 ### Catalog
 
@@ -437,7 +454,19 @@ Previously, Magento displayed only the product categories that users who belonge
 
 <!--- 63062-->* Magento now displays the correct image when you switch between a configurable product's options. Previously, Magento loaded product images from a different product.
 
+<!--- 66885-->* The Magento WYSIWYG  editor now handles special characters such as percentage mark ( %).  [GitHub-9452](https://github.com/magento/magento2/issues/9452)
 
+
+<!---63667 -->* You can now use the Catalog API to retrieve store-specific data. [GitHub-9452](https://github.com/magento/magento2/issues/9452)
+
+
+<!--- 63601-->*  The `indexer:reindex catalog_category_product` process can now handle more than 500 products in a category.
+
+<!--- 62426-->* Magento now displays  the price set at store view-level for a product that has different prices set on the global and store view level. 
+
+<!--- 71445-->*  Out-of-stock options for configurable products still show up in search and layered navigation results. 
+
+<!--- 67628-->*  You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
 
 ### Configurable products
@@ -491,6 +520,12 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58265-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
 
+<!--- 61058-->* Magento now displays the correct drop-down option labels for configurable products when using attributes with custom source.
+
+<!--- 63014-->* Magento now shows the correct price of a configurable product based in installations that run multiple websites.
+
+<!--- 54653-->* We’ve improved the performance of Magento installations that contain configurable products with many (1600+) options.
+
 
 ### Email
 
@@ -511,6 +546,9 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member <a href="https://github.com/barbazul" target="_blank">Barbazul</a> in pull request <a href="https://github.com/magento/magento2/pull/9902" target="_blank">9902</a>.*
+
+<!---63154 -->* Magento now displays special characters in store names in email subject lines. Previously, Special characters in store name were converted to numerical character references in the email subject field. [GitHub-8094](https://github.com/magento/magento2/issues/8094) 
+
 
 #### Admin framework
 
@@ -674,6 +712,10 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 69555-->* The `Magento_Framework/View/Layout/etc/elements.xsd` file `blockReferenceType` definition now allows for the optional argument template. *Fix submitted by community member <a href="https://github.com/jissereitsma" target="_blank">jissereitsma</a> in pull request <a href="https://github.com/magento/magento2/pull/9772" target="_blank">9772</a>.* 
 
+<!--- 59135-->*  Customer sessions for different customers are no longer shared on installations on multiple websites. [GitHub-4842](https://github.com/magento/magento2/issues/4842), [GitHub-6468](https://github.com/magento/magento2/issues/6468)
+
+<!--- 63116-->* Magento now handles quotation marks in product names. Previously,  quotation marks in product names caused a JSON error on the Product page.  [GitHub-8059](https://github.com/magento/magento2/issues/8059)
+
 
 
 #### Gift cards
@@ -720,6 +762,10 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!--- -->* 
+
+### Gift registry
+
+<!--- 59159 -->* The State/Province dropdown menu now works as expected in the frontend gift registry.
 
 
 
@@ -825,7 +871,8 @@ We've enhanced the performance of configurable products in several ways:
 <!---61104 -->* When you delete an image in Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for`).
 
 
-<!--- -->*
+<!---66270 -->* The exported sheet now generates or renders data for columns that indicate associations for configurable products.
+
 
 <!--- -->*
 
@@ -942,6 +989,18 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---69909 -->* The Orders grid now displays correct order dates. *Fix submitted by community member  <a href="https://github.com/ajpevers" target="_blank">Anton Evers</a> in pull request <a href="https://github.com/magento/magento2/pull/9941" target="_blank">9941</a>.*
 
+<!---68795 -->*  Magento now displays the correct order time in the Sales Order grid in the Admin panel. [GitHub-9426](https://github.com/magento/magento2/issues/9426)
+
+<!---54787 -->* The Paypal Website Payments Standard module now works as expected. [GitHub-4785](https://github.com/magento/magento2/issues/4785)
+
+
+<!--- 60587 -->* We’ve increased the size of the `sales_order_payment.cc_number_enc` field. [GitHub-7334](https://github.com/magento/magento2/issues/7334)
+
+<!--- 57312-->* We’ve fixed an issue with an undefined offset in the order\config.php file. [GitHub-6111](https://github.com/magento/magento2/issues/6111)
+
+<!--- 59905-->* The Create Order page now works as expected after you select **Update items and quantities**.
+
+
 
 ### Payment methods
 
@@ -969,6 +1028,11 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 69750-->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.
 
 <!--- 66959-->* Removed a duplicate method call to the `getLinkField` method in the `Magento\Catalog\Model\ResourceModel\Category` class. *Fixed by <a href="https://github.com/will-b" target="_blank">will-b</a> in pull request <a href="https://github.com/magento/magento2/pull/9057" target="_blank">9057</a>.*
+
+<!--- 54412-->* During order creation, you can now continue with a payment after clicking the Back button to the payment selection window. [GitHub-4580](https://github.com/magento/magento2/issues/4580)
+
+<!--- 64413-->* The expiration year validator now works as expected. [GitHub-8482](https://github.com/magento/magento2/issues/8482)
+
 
 
 #### Braintree
@@ -1011,9 +1075,12 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 59573-->* Braintree no longer encounters an error during checkout when you apply a 100% discount coupon to a product and enable free shipping. Previously, Magento displayed a spinning loader widget, and your screen froze. The Developer console displayed this error: 
 `Uncaught Error: [paypal-container] is not a valid DOM Element`.
 
-<!--- -->*
 
-<!--- -->*
+
+<!--- 69340-->* The Braintree PayPal locale now has its own setting. [GitHub-9639](https://github.com/magento/magento2/issues/9639) 
+
+<!--- 63460 -->* You can now modify the product quantities  of a previous order and re-order it using the saved credit card information from the first order. 
+
 <!--- -->*
 
 
@@ -1034,9 +1101,13 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58162-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings.
 
-<!--- 63551-->*
+<!--- 63551-->* When refunding an order from PayPal, Magento now creates a credit memo  with the correct status.
 
-<!--- -->*
+
+<!---  -->* The exported sheet now generates or renders data for columns that indicate associations for configurable products.
+
+
+<!--- 68833 -->* We’ve fixed errors in processing valid orders using a PayPal account that had been previously used to pay for a valid order that had problems during checkout. 
 
 
 ### Performance
@@ -1090,7 +1161,17 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---60041-->* Resizing images on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} 
 
-<!---57905-->We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) command). 
+<!---57905-->* We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) command). 
+
+<!---60589-->* We’ve resolved a loader issue with Payflow Pro. The loader image is now invisible after redirecting to the payment page/success page or error page. [GitHub-7159](https://github.com/magento/magento2/issues/7159),  [GitHub-9296](https://github.com/magento/magento2/issues/9296)
+
+<!---67260-->* `\Magento\Framework\Interception\Code\Generator\Interceptor` now supports interceptors for generating for methods that return references. [GitHub-9167](https://github.com/magento/magento2/issues/9167)
+
+<!--- 66855-->* We’v improved the the performance of the Display Time for Category Edit page for catalogs with many products or categories.  [GitHub-7469](https://github.com/magento/magento2/issues/7469) 
+
+<!--- 58277 -->* We’ve improved the speed of the category URL rewrite regeneration process for catalogs containing more than 20,000 products. 
+
+
 
 
 ### PHP
@@ -1138,6 +1219,10 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 60756 -->* Customers can no longer apply a coupon code twice. Previously, the "Uses per Coupon" limit did not work for auto-generated coupons.
 
+<!--- 58334 -->* Magento now implements free shipping is now  be available if there is a Cart Price Rule match. [GitHub-6584](https://github.com/magento/magento2/issues/6584) 
+
+<!--- 63403 -->* SalesRule now applies to auto-generated coupon codes as expected.
+
 
 ### Scope
 
@@ -1178,6 +1263,10 @@ We've enhanced the performance of configurable products in several ways:
 <!---56356 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
 
 
+<!---58964 -->* Magento now implements the Attribute Weight Boosting Function for Elasticsearch. 
+
+
+
 #### Shipping
 
 <!---57037-->* UPS now generates shipping rates for Puerto Rico postal codes.
@@ -1195,7 +1284,7 @@ Affected Component(s):
 
 <!--- 67053 -->* Added missing translation to label argument xml.  *Fix submitted by community member <a href="https://github.com/mrkhoa99" target="_blank">Mr Khoa</a> in pull request <a href="https://github.com/magento/magento2/pull/9095" target="_blank">9095</a>.*
 
-<!--- -->*
+<!--- 64909-->* Magento no longer throws a fatal error when you create a new shipment for a placed order.
 
 
 <!--- -->*
@@ -1205,6 +1294,8 @@ Affected Component(s):
 <!--- 70056-->* Sitemap image URLs now match the URLs on product pages. *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9082" target="_blank">9082</a>.*
 
 <!--- 70056-->* `sitemap` is no longer generates in the wrong folder when `vhost` is connected to `/pub`. *Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.*
+
+<!--- 47607-->* We’ve corrected the location of sitemap generation when `vhost` is connected to `/pub`. [GitHub-2802](https://github.com/magento/magento2/issues/2802) 
 
 
 ### Staging
@@ -1253,12 +1344,17 @@ Affected Component(s):
 <!--- 65540-->* Magento now correctly assigns images to duplicated products.
 
 
-<!--- 58651-->*
-
-<!--- -->*
+<!--- 58651-->* Scheduled Update no longer removes simple variations from Configurable products. Previously, if you set up a Scheduled Update to toggle the **New** setting on a configurable product, Magento removes all simple variations from the configurable product once the update takes effect.
 
 
+<!--- 63159 -->* Content staging values for fields are not saved in database. 
 
+
+<!--- 64461 -->*  When you import products  that exist in the CSV file, but not on the store (including categories), Magento now populates the categories as expected. 
+
+<!--- 67754 -->* Magento no longer deletes images associated with categories scheduled for update after you modify the image. 
+
+<!--- 62646 -->* You can now save simple products created in 2.0.x environments after upgrading to environments running Magento 2.1.x. Previously, you could not successfully save the opened product after upgrading. 
 
 
 ### Static file processing
@@ -1375,6 +1471,10 @@ Affected Component(s):
 
 * Varnish now supports `grace` and `saint` mode to ensure that customers always see cached pages.
 
+
+<!--- 52923-->* Viewing the page with HTTPS instead of HTTP no longer causes the Category menu to disappear in installations using Varnish cache.  [GitHub-4540](https://github.com/magento/magento2/issues/4540)
+
+
 ### Visual merchandiser
 
 <!---58465-->* The order of products in a category display no longer changes when you add a new product to the category. 
@@ -1405,7 +1505,7 @@ Affected Component(s):
 
 <!--- 70743-->* You can now use a REST request to retrieve a shopping cart that contained a product with custom options. Previously, you could not use a REST request to retrieve a shopping cart that contained a product with custom options.
 
-<!--- -->*
+<!--- 60908-->* You can now us the REST API to update image roles.
 
 ### Zend framework
 
