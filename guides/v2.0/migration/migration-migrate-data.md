@@ -22,7 +22,7 @@ See the [First steps]({{page.baseurl}}migration/migration-migrate.html#migration
 ## Run the data migration command {#migrate-data-cmd}
 To start migrating data, run:
 
-    bin/magento migrate:data [-r|--reset] {<path to config.xml>}
+    bin/magento migrate:data [-r|--reset] [-a|--auto] {<path to config.xml>}
 
 where:
 
