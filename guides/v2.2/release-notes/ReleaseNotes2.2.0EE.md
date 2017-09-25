@@ -80,6 +80,7 @@ If you have set your product filter to a store view you’ve deleted, when you o
 
 **Issue**: Visual Merchandiser performance is degraded when Category contains  many products.
 
+**Issue**: The Performance Toolkit does not currently work.
 
 
 ### Magento Commerce-only issues
@@ -202,6 +203,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 63295 -->* The `DOCUMENT_ROOT` directory is now writable. Previously, installation failed because this directory was not writable.
 
+<!--- 67082-->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.
 
 
 ### AMQP 
@@ -464,7 +466,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---60483-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page failed to list the product at all, rather than listing it as out-of-stock.
 
-<!--- 58265-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
 
 <!--- 61058-->* Magento now displays the correct drop-down option labels for configurable products when using attributes with custom source.
 
@@ -475,6 +476,7 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 56591-->* We’ve resolved some issues with the display of configurable products on the Magento frontend after product creation. 
 
 <!--- 59307-->* Magento now displays only the set price for a configurable product, not its set price and “as low as” price. Previously, Magento showed both prices if a minimum price was not configured. 
+
 
 ### Email
 
@@ -514,7 +516,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 67408-->* We've changed the `select `protected property to `query` in the AbstractSearchResult class. *Fix submitted by community member <a href="https://github.com/flancer64" target="_blank">Alex Gusev</a> in pull request <a href="https://github.com/magento/magento2/pull/5043" target="_blank">5043</a>.* 
 
-<!--- 61531-->* 
+
+<!---67260-->* `\Magento\Framework\Interception\Code\Generator\Interceptor` now supports interceptors for generating for methods that return references. [GitHub-9167](https://github.com/magento/magento2/issues/9167)
+
 
 
 #### Configuration framework
@@ -632,7 +636,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 
 
-<!--- 67082-->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.
 
 <!--- 59785-->* Magento no longer generates incorrect URLs in the site map when the **Use Secure URLs in Admin** setting is set to **Yes**. [GitHub-8644](https://github.com/magento/magento2/issues/8644) 
 
@@ -655,7 +658,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 65000-->* Fixed the location of the wishlist.js file. *Fix submitted by community member <a href="https://github.com/koenner01" target="_blank">Koen V.</a> in pull request <a href="https://github.com/magento/magento2/pull/8633" target="_blank">8633</a>.* 
 
-<!--- 66506-->* You can download products even after you’ve set order state to `STATE_CANCELED`.  *Fix submitted by community member <a href="https://github.com/nazarpadalka" target="_blank">nazarpadalka</a> in pull request <a href="https://github.com/magento/magento2/pull/8917" target="_blank">8917</a>.* 
+<!--- 66506-->* You can no longer download products  after you’ve set order state to `STATE_CANCELED`.  *Fix submitted by community member <a href="https://github.com/nazarpadalka" target="_blank">nazarpadalka</a> in pull request <a href="https://github.com/magento/magento2/pull/8917" target="_blank">8917</a>.* 
 
 <!--- 66232-->* Fixed a typo in the Pull Request Template. *Fix submitted by community member <a href="https://github.com/tomislavsantek" target="_blank">tomislavsantek</a> in pull request <a href="https://github.com/magento/magento2/pull/8908" target="_blank">8908</a>.* 
 
@@ -684,7 +687,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 
 
-#### Gift cards
+### Gift cards
 
 <!---57054 -->* Order emails now specify the amount of the {% glossarytooltip f5cdf732-d644-4bd5-9f75-53b01401b7e7 %}gift card{% endglossarytooltip %} that you have purchased. 
 
@@ -700,10 +703,18 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---61013-->* You can now save the configuration settings of a gift card product.
 
-<!---61353-->* Gift card accounts are now automatically generated after an invoice is created, when the Auth&Capture payment action on Authorize.net Direct Post is enabled.
+<!---61353-->* Gift card accounts are now automatically generated after an invoice is created, when the Authorize and Capture payment action on Authorize.net Direct Post is enabled.
 
 
-#### Gift wrapping
+### Gift registry
+
+<!--- 59159 -->* The State/Province dropdown menu now works as expected in the frontend gift registry.
+
+
+
+<!--- 69153-->* We’ve fixed inconsistent gift options checkbox labels in  both the  CSV file (`app\code\Magento\GiftMessage\i18n\en_US.csv`) and PHTML file (`app\code\Magento\GiftMessage\view\frontend\templates\inline.phtml`). *Fix submitted by community member <a href="https://github.com/vpiyappan" target="_blank">vpiyappan</a> in pull request <a href="https://github.com/magento/magento2/pull/9421" target="_blank">9421</a>.*
+
+### Gift wrapping
 
 <!--- 70603-->* You can now add gift options to an order if logged in using a secure URL. 
 
@@ -730,13 +741,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 70419 -->* Magento now uses the correct order when uploading image to the Admin using  **Content > Design**. *Fix submitted by community member  <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10126" target="_blank">10126</a>.*
 
 
-### Gift registry
-
-<!--- 59159 -->* The State/Province dropdown menu now works as expected in the frontend gift registry.
-
-
-
-<!--- 69153-->* We’ve fixed inconsistent gift options checkbox labels in  both the  CSV file (`app\code\Magento\GiftMessage\i18n\en_US.csv`) and PHTML file (`app\code\Magento\GiftMessage\view\frontend\templates\inline.phtml`). *Fix submitted by community member <a href="https://github.com/vpiyappan" target="_blank">vpiyappan</a> in pull request <a href="https://github.com/magento/magento2/pull/9421" target="_blank">9421</a>.*
 
 
 ### Google Analytics
@@ -772,18 +776,14 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 #### Import/Export
 
-<!---58977-->* You can now successfully import multiselect attributes that contain special symbols or delimiters. Previously, when you tried to import attributes containing delimiters, data validation (and the import) failed.  
-
-
-<!---56804-->* We've fixed an issue with the correct representation of date and time zones of items in a product {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard. 
-
+<!---58977-->* You can now successfully import multiselect attributes that contain special symbols or delimiters. Previously, when you tried to import attributes containing delimiters, data validation (and the import) failed.   
 
 <!---57052-->* You can now import negative quantities. Previously, when importing a product quantity  of '-1',  Magento returned an error. 
 
 <!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento displayed this error: `Javascript Error: Uncaught RangeError: Maximum call stack size exceeded`. [GitHub-5573](https://github.com/magento/magento2/issues/5573)
 
 
-<!---57438-->* We’ve added a new way to import images: You can now successfully import images when you set your document root to <your Magento install dir>/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. [GitHub-5359](https://github.com/magento/magento2/issues/5359) 
+<!---57438-->* We’ve added a new way to import images: You can now successfully import images when you set your document root to `your_Magento_install_dir/pub`. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. [GitHub-5359](https://github.com/magento/magento2/issues/5359) 
 
 
 <!---57490-->* Magento now removes category URL keys from the `url_rewrite` table as expected during import. Previously, Magento did not remove these keys, which triggered a failure during import. This subsequently caused Magento to quickly reach the maximum error count, returning this error: "Maximum error count has been reached or system error is occurred!". [GitHub-1471](https://github.com/magento/magento2/issues/1471) 
@@ -791,8 +791,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---57981-->* You can now export a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
 
-
-<!--- 64856 -->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images.
 
 <!--- 58299 -->* Magento now maintains super attribute ordering of configurable products with multiple super attributes after export or import. Previously, after import or export, the ordering of super attributes was not maintained. [GitHub-6079](https://github.com/magento/magento2/issues/6079)
 
@@ -804,13 +802,13 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 71013-->* The export process now populates values in the configurable variations column for configurable products as expected. Previously, when exporting more than one product, the values for the configurable variations column for configurable products were not included. 
 
-<!--- 64643-->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images. 
+<!--- 64643, 64856-->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images. 
 
 <!--- 56588-->* Magento now runs a selective partial re-indexing operation after import if you enable **Update on Schedule**. Previously, Magento ran a full reindex no matter which index mode was set.
 
 <!--- 52728-->* You can now import negative quantities. Previously, when importing a product quantity of '-1', Magento returned an error.
 
-<!--- 53428-->* We've fixed an issue with the correct representation of date and time zones of items in a product {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard.
+<!--- 53428, 56804-->* We've fixed an issue with the correct representation of date and time zones of items in a product {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard.
 
 <!--- 65667-->*  Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option's ID numbers or the option's values, Magento returned an error.
 
@@ -832,13 +830,11 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!---66270 -->* The exported sheet now generates or renders data for columns that indicate associations for configurable products.
 
 
-#### Integration
+#### Integrations
 
-<!---56961-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
+<!---56961, 54795-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
 <!--- 61867-->* Web API tokens now have a default expiration period: 4 hours for Admin tokens and 1 hour for Customer tokens. This can be changed in the [Admin Panel configuration settings](http://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-token.html#admin-and-customer-access-tokens)
-
-<!--- 54795-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
 <!--- 69610-->* You can now edit `authentication_lock` from the Admin. *Fix submitted by community member <a href="https://github.com/EliasKotlyar" target="_blank">Elias Kotlyar</a> in pull request <a href="https://github.com/magento/magento2/pull/9820" target="_blank">9820</a>.*
 
@@ -945,21 +941,14 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 56695-->* You can now successfully complete Paypal checkout with products that have custom options. [GitHub-5938](https://github.com/magento/magento2/issues/5938)
 
+<!--- 62669-->* Third-party payment gateways are now visible from the Admin. [GitHub-7891](https://github.com/magento/magento2/issues/7891)
 
-<!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings. 
 
 <!--- 55612-->* Magento no longer displays the **No {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}Payment method{% endglossarytooltip %} available** message when a customer tries to ship items to a billing-restricted country. 
 
-<!--- 62669-->* Third-party payment gateways are now visible from the Admin. [GitHub-7891](https://github.com/magento/magento2/issues/7891)
 
-<!--- 62428-->* Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked the **Refund** button (to initiate a refund), Magento did not {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} you to order comments and history information.
-
-<!--- 59036-->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %}. [GitHub-5434](https://github.com/magento/magento2/issues/5434)
 
 <!--- 57923-->* Magento no longer displays the **No {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}Payment method{% endglossarytooltip %} available** message when a customer tries to ship items to a billing-restricted country.
-
-
-<!--- 59033 -->* You can now use JCB and Diners Club credit cards with the Authorize.net payment method.
 
 
 <!--- 69750-->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.
@@ -970,18 +959,12 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 64413-->* The expiration year validator now works as expected. [GitHub-8482](https://github.com/magento/magento2/issues/8482)
 
+* We've introduced the `Magento\Vault\Block\TokenRendererInterface::getToken` method. This method provides details about payment tokens to renderer components, such as public hash and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations. 
 
 
 #### Braintree
 
-<!--- 56940-->* Kount and 3D Secure now work as expected for Braintree Vault. 
-
-<!--- 54721-->* You can now use Braintree as a payment method when applying reward points or store credit to an order. 
-
-<!---56910-->* The Braintree payment method now works as expected with Vault table prefixing.  
-
-<!---57426-->* Magento no longer encounters an error when using the Braintree Vault payment GET order API call. [GitHub-6215](https://github.com/magento/magento2/issues/6215)
-
+<!--- 55530 -->* You can now place orders from the Admin using the Braintree payment method.
 
 
 <!---59578 -->* We've enhanced our PayPal and Braintree implementations so that merchants can now:
@@ -989,9 +972,18 @@ Thanks to our hardworking Magento Open Source community members for the followin
 	* Save customer PayPal account information in the Braintree Vault when using Braintree as a service. This enhancement provides a secure method for charging my customers without prompting them to enter a payment information for multiple purchases or for purchases from multiple devices. We've also added support for Maestro and Discover bins added to the credit card form both for Braintree and PayPal solutions. 
 
 
-
-
 	* Configure dynamic descriptors (Company Name, Phone and URL) for Braintree.  This enhancement supports customers easily identifying a source of transactions in their bank statements. (This will potential simplify the resolution of disputed transactions by supporting the display of the Kount status for Braintree in the Admin interface.) 
+
+<!--- 56940-->* Kount and 3D Secure now work as expected for Braintree Vault. 
+
+<!--- 62428-->* Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked the **Refund** button (to initiate a refund), Magento did not {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} you to order comments and history information.
+
+
+<!--- 54721-->* You can now use Braintree as a payment method when applying reward points or store credit to an order. 
+
+<!---56910-->* The Braintree payment method now works as expected with Vault table prefixing.  
+
+<!---57426-->* Magento no longer encounters an error when using the Braintree Vault payment GET order API call. [GitHub-6215](https://github.com/magento/magento2/issues/6215)
 
 
 <!---59353-->* You can now use JCB and Diners Club credit cards with the Authorize.net payment method.
@@ -1018,13 +1010,17 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 63460 -->* You can now modify the product quantities  of a previous order and re-order it using the saved credit card information from the first order. 
 
-<!--- 55530 -->* You can now place orders from the Admin using the Braintree payment method.
 
 
 
 #### PayPal
 
 <!--- 59581-->* We've improved and streamlined the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} PayPal configuration interface. 
+
+<!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings. 
+
+<!--- 59036-->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %}. [GitHub-5434](https://github.com/magento/magento2/issues/5434)
+
 
 <!--- 70500-->* Fixed issue related to incorrect stock quantity calculation for bundle and configurable products during place order flow with PayPal Express Checkout.
 
@@ -1046,25 +1042,12 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 68833 -->* We’ve fixed errors in processing valid orders using a PayPal account that had been previously used to pay for a valid order that had problems during checkout. 
 
+<!---60589-->* We’ve resolved a loader issue with Payflow Pro. The loader image is now invisible after redirecting to the payment page/success page or error page. [GitHub-7159](https://github.com/magento/magento2/issues/7159),  [GitHub-9296](https://github.com/magento/magento2/issues/9296)
+
 
 ### Performance
 
-<!---56927-->* Opening many products from the Admin interface
-
-
-<!---59708-->* Creating many (2500 - 5000) product variants, both simple and complex {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %}
-
-
-<!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) [GitHub-6979](https://github.com/magento/magento2/issues/6979)
-
-
-
-<!---60041-->* Resizing images on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %}
-
-<!---57905-->We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) command). 
-
-
-<!--- 57410-->* You can now quickly generate or preview multiple variations of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
+This release includes substantial improvements to Magento caching, image processing, and re-indexing, among other enhancements. 
 
 
 <!--- 52660 -->* We've improved the speed of static asset deployment and now support a variety of asset deployment strategies that can be used to optimize speed and size of assets deployed. Indexers can now be run with 256M of PHP RAM and default MySQL configuration settings.  Developers can further tune memory usage to improve indexer performance (in some cases up to 100% improvement).  Please see [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.0/config-guide/prod/prod_perf-optimize.html)  for further details.
@@ -1073,45 +1056,50 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 
 
+
+
 <!--- 55300, 55620, 54682-->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when creating 2500 or more product variants. 
 
 
-<!--- 65484 -->* Magento now caches attribute options for the layered navigation feature. This reduces the number of queries to the database, and consequently improves performance.
+
+<!--- 58277 -->* The processing speed of category URL rewrites for catalogs containing more than 20,000 products has greatly improved. 
+
+<<!---56927-->* Opening many products from the Admin interface is now faster. 
+
+<!---59708-->* Creating many (2500 - 5000) product variants, both simple and complex {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %} is more efficient. 
+
+
+<!--- 57410-->* You can now quickly generate or preview multiple variations of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
 
 <!--- 65483 -->* Magento no longer performs unnecessary file check operations (for example, `file_exists`, `is_file`), which improves the performance of the category and product pages. 
 
 
-<!--- 65480 -->* Magento now caches image metadata, which avoids the time-consuming need to read images for {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} loading.
-
-<!--- 55594 -->* We've improved the performance of these tasks: 
-
-<!---56927-->* Opening many products from the Admin interface 
-
-
-<!---59708-->* Creating many (2500 - 5000) product variants, both simple and complex {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %} 
-
-
-<!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
-
-<!---60041-->* Resizing images on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} 
 
 <!---57905-->* We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) command). 
 
-<!---60589-->* We’ve resolved a loader issue with Payflow Pro. The loader image is now invisible after redirecting to the payment page/success page or error page. [GitHub-7159](https://github.com/magento/magento2/issues/7159),  [GitHub-9296](https://github.com/magento/magento2/issues/9296)
+<!--- 66855-->* We’ve improved the performance of the Display Time for Category Edit page for catalogs with many products or categories.  [GitHub-7469](https://github.com/magento/magento2/issues/7469) 
 
-<!---67260-->* `\Magento\Framework\Interception\Code\Generator\Interceptor` now supports interceptors for generating for methods that return references. [GitHub-9167](https://github.com/magento/magento2/issues/9167)
 
-<!--- 66855-->* We’v improved the the performance of the Display Time for Category Edit page for catalogs with many products or categories.  [GitHub-7469](https://github.com/magento/magento2/issues/7469) 
+#### Image processing
 
-<!--- 58277 -->* We’ve improved the speed of the category URL rewrite regeneration process for catalogs containing more than 20,000 products. 
+<!---60041-->* We've improved the process of resizing images on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %}
+
+<!--- 59806 -->* The process of loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) is more efficient. <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
+
+
+
+#### Caching
+
+<!--- 65480 -->* Magento now caches image metadata, which avoids the time-consuming need to read images for {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} loading.
+
+<!--- 65484 -->* Magento now caches attribute options for the layered navigation feature. This reduces the number of queries to the database, and consequently improves performance.
 
 <!--- 62691 -->* We’ve optimized and streamlined how we cache EAV attributes by removing unnecessary SQL queries.
 
 
-### PHP
 
-* We've introduced the `Magento\Vault\Block\TokenRendererInterface::getToken` method. This method provides details about payment tokens to renderer components, such as public hash and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations. 
+### PHP
 
 <!--- 69964 -->* PHPCS can now correctly parse the syntax of PHP 7.x return types.
 
@@ -1122,7 +1110,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 54320 -->* The {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} page now displays current, rather than outdated,  product prices.
 
 
-<!--- 55055 -->* Tier pricing now works correctly with full page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. [GitHub-5364](https://github.com/magento/magento2/issues/5364) 
 
 
 <!--- 45339 -->* Cart Price rules are now applied as expected to {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} conditions. Previously, discounts set in Cart Price rules were not applied during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}.
@@ -1146,8 +1133,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 62405 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule.
 
-<!--- 62405 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule.
-
 <!--- 58677 -->* The Cart Price rule nows affects coupon life as expected. Previously, coupons did not persist longer than the current date if they did not have a designated end-date.
 
 <!--- 60756 -->* Customers can no longer apply a coupon code twice. Previously, the "Uses per Coupon" limit did not work for auto-generated coupons.
@@ -1165,15 +1150,11 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!---56936 -->*  The list of allowed countries is now configured as part of website scope, not store view scope. [GitHub-2946](https://github.com/magento/magento2/issues/2946)  
 
 
-<!---57001-->* A restricted user can now change storeview- or website- level attributes that are defined within his scope. 
+<!---57001, 54460-->* A restricted user can now change storeview- or website- level attributes that are defined within his scope. 
 
-<!---59284-->* You can now select the scope for an action that you are running from the Catalog page's product table. 
+<!---59284, 59282-->* You can now select the scope for an action that you are running from the Catalog page's product table. 
 
 <!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
-
-<!--- 59282-->* You can now select the scope for an action that you are running from the Catalog page's product table.
-
-<!--- 54460-->*  A restricted user can now change storeview- or website- level attributes that are defined within his scope.
 
 
 
@@ -1195,7 +1176,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 
 
-#### Shipping
+### Shipping
 
 <!---57037-->* UPS now generates shipping rates for Puerto Rico postal codes.
 
@@ -1232,7 +1213,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 ### Staging
 
-<!---57346-->*  The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page now refreshes as expected after an update. 
+<!---57346, 53078-->*  The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page now refreshes as expected after an update. 
 
 <!---71215-->* Magento no longer creates extraneous database values when you schedule new Staging updates.
 
@@ -1241,18 +1222,12 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 55524/48429-->* You can now delete updates from a campaign's page {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} grid. 
 
-<!--- 71215 -->* Magento no longer creates extraneous database values when you schedule new staging updates.
-
 <!--- 71708-->* You can now create a staging update for a product that contains a unique attribute in its attribute set. Previously, under these conditions, Magento displayed this error: `The value of attribute "test" must be unique’`.
 
 <!---71373 -->* You can now install Magento Commerce without staging modules.
 
 
-<!---56065 -->* The Magento flat indexer no longer throws an error after flat tables are enabled and reindexed. This fix applies to both product and {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} tables.
-
-<!--- 59851-->* The Magento flat indexer now collects correct product data for `ROW_ID`.
-
-<!--- 53078-->*  The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page now refreshes as expected after an update.
+<!---56065, 59851-->* The Magento flat indexer no longer throws an error after flat tables are enabled and reindexed. This fix applies to both product and {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} tables. It also now collects correct product data for `ROW_ID`
 
 <!--- 68998-->* The staging dashboard now loads without error when you sort by status on the dashboard. Previously, the staging dashboard broke and remained in an infinite loop when you attempted to sort by status on the dashboard. 
 
@@ -1279,14 +1254,12 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 58651-->* Scheduled Update no longer removes simple variations from Configurable products. Previously, if you set up a scheduled update to toggle the **New** setting on a configurable product, Magento removes all simple variations from the configurable product once the update takes effect.
 
 
-<!--- 63159 -->* Content staging values for fields are not saved in database. 
+<!--- 63159 -->* Content staging values for fields are now saved in database. 
 
 
 <!--- 64461 -->*  When you import products  that exist in the CSV file, but not on the store (including categories), Magento now populates the categories as expected. 
 
 <!--- 67754 -->* Magento no longer deletes images associated with categories scheduled for update after you modify the image. 
-
-<!--- 62646 -->* You can now save simple products created in 2.0.x environments after upgrading to environments running Magento 2.1.x. Previously, you could not successfully save the opened product after upgrading. 
 
 <!--- 59687 -->*  Once the time frame for the scheduled update has passed, Magento removes the special price and displays the original price.
 
@@ -1316,7 +1289,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 65403 -->* You can now disable swatches for both the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page and search results (quick or advanced). To disable swatches from these requests, disable **Stores > Configuration > Catalog > Storefront > Show Swatches in Product List**.
 
-<!--- 65402 -->* The logic that Magento uses to validate swatch attributes has been optimized. 
+<!--- 65402 -->* We've optimized the logic that Magento uses to validate swatch attributes. 
 
 <!--- 65248 -->* Magento now caches swatch data in the block cache, which improves the responsiveness of the configurable product pages. 
 
@@ -1372,7 +1345,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 ### Translation and locales
 
-<!---67296-->* String localizations now works as expected when  phrases include text wrapped with single quotation marks.
+<!---67296-->* String localizations now work as expected when phrases include text wrapped with single quotation marks.
 
 <!---69728-->* Translations now work for layered navigation attribute options. *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9873" target="_blank">9873</a>.*
 
@@ -1407,7 +1380,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 52923-->* Viewing the page with HTTPS instead of HTTP no longer causes the Category menu to disappear in installations using Varnish cache.  [GitHub-4540](https://github.com/magento/magento2/issues/4540)
 
 
-### Visual merchandiser
+### Visual Merchandiser
 
 <!---58465, 56775-->* The order of products in a category display no longer changes when you add a new product to the category. 
 
