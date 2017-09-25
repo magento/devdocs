@@ -26,8 +26,7 @@ Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds
 
 * **Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your corporate Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store.
 
-* **Integrated Signifyd fraud protection**. 
-
+* **Integrated Signifyd fraud protection**. You can learn more about this fraud protection service, which can help merchants eliminate liability for any losses or fees from fraudulent orders, in [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html). 
 
 * **Significant enhancements in platform security and developer experience**. Security improvements include the removal of unserialize calls and protection of this functionality to increase resilence against dangerous code execution attacks. We have also continued to review and improve our protection against Cross-Site Scripting (XSS) attacs. 
 
