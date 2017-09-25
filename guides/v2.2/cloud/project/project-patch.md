@@ -6,7 +6,7 @@ title: Patch Magento Commerce (Cloud)
 menu_title: Patch Magento Commerce (Cloud)
 menu_order: 20
 menu_node:
-version: 2.0
+version: 2.2
 github_link: cloud/project/project-patch.md
 redirect from:
   -  /guides/v2.0/cloud/howtos/patch-magent.html
@@ -16,9 +16,9 @@ redirect from:
 
 You can apply patches as they are available to update {{site.data.var.ece}}. We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
-When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html).
+When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html). Starting with 2.2.0, we use `ece-patches` for updating Magento with fixes, new features, and more. We also use `ece-tools` for keeping build and deploy processes updated.
 
-To check for patches, you can check the `vendor/magento/magento-cloud-configuration/patches` folder.
+Available patches are in the `vendor/ece-patches` folder.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
@@ -100,7 +100,7 @@ Verify other changes you're going to submit to source control before you start t
 *General patches* are provided for all Magento Commerce customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.
 
 ### Get started {#gen-getstarted}
-We recommend testing patches in an active branch, prior to deploying to Staging and Production environments.
+We recommend testing patches in an active branch, prior to deploying to Staging and Production environment.
 
 {% include cloud/cli-get-started.md %}
 
@@ -129,7 +129,7 @@ To test a general patch on your local system, you create a branch from the Pro I
 		git push origin <branch name>
 
 ### Push a general patch to Staging or Production environments {#gen-pushpatch}
-After you've successfully tested a patch locally and on your integration environment, you can push the patch to Staging or Production environment:
+After you've successfully tested a patch locally and on your Integration environment, you can push the patch to Staging or Production environment:
 
 1.  Open an SSH connection to your Staging or Production environment. For Starter, see the Project Web Interface for the SSH links. Your Production environment is the Master. For Pro, the SSH access is one of the following:
 
