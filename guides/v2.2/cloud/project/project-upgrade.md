@@ -20,13 +20,25 @@ When you upgrade {{site.data.var.ece}}, you also upgrade with patches and availa
 
 Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
+When upgrading to 2.2.X from 2.1.X using Configuration Management with a config.local.php file, you must complete an additional step to upgrade. See [Configuration Management](#config).
+
 <div class="bs-callout bs-callout-warning" markdown="1">
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
 </div>
 
-We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
+## Configuration Management and upgrading {#config}
+If you are upgrading from 2.1.X to 2.2.X and use Configuration Management, you need to add another configuration file to your branch. Previous versions with Configuration Management uses a `config.local.php` file. Starting with 2.2.0, [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) use a different file name: `config.php`. When you upgrade without having this file prepared, you will receive an error and a list of steps to complete prior to upgrade.
+
+We recommend completing the following steps to upgrade without errors:
+1. Create a copy of `config.local.php` and name it `config.php`. You should add this file in the `app/etc` folder.
+2. Git add and commit the file to your branch.
+3. Push the file to your Integration branch and environment.
+
+You can now upgrade to 2.2.X. After upgrading, you can remove the `config.php` file and regenerate it correctly for your implementation. This file works exactly as `config.local.php`, with supportive additions and a different name.
 
 ## Back up the database {#backup-db}
+We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
+
 Back up your Integration environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
