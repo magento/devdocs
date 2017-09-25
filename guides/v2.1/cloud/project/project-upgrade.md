@@ -6,7 +6,7 @@ title: Upgrade Magento Commerce (Cloud)
 menu_title: Upgrade Magento Commerce (Cloud)
 menu_order: 10
 menu_node:
-version: 2.0
+version: 2.1
 github_link: cloud/project/project-upgrade.md
 redirect from:
   -  /guides/v2.0/cloud/howtos/upgrade-magento.html
@@ -14,7 +14,7 @@ redirect from:
   -  /guides/v2.1/cloud/howtos/upgrade-magento.html
 ---
 
-This information details how to upgrade {{site.data.var.ece}} from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4]({{ page.baseurl }}cloud/upgrade/upgrade-from-2-0-4.html).
+This information details how to upgrade {{site.data.var.ece}} from any version to 2.1.X.
 
 When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
 
@@ -24,7 +24,7 @@ Our upgrades are Composer driven. For more information on Composer, see [Compose
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
 </div>
 
-We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
+We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your integration, staging, and production systems.
 
 ## Back up the database {#backup-db}
 Back up your integration system database and code:

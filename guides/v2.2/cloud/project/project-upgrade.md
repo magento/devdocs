@@ -16,7 +16,7 @@ redirect from:
 
 This information details how to upgrade {{site.data.var.ece}} to 2.2.X from any version, and upgrading to new 2.2.X versions.
 
-When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already. 
+When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
 
 Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
@@ -24,10 +24,10 @@ Our upgrades are Composer driven. For more information on Composer, see [Compose
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
 </div>
 
-We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your integration, staging, and production systems.
+We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
 ## Back up the database {#backup-db}
-Back up your integration system database and code:
+Back up your Integration environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
 
