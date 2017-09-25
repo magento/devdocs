@@ -5,7 +5,7 @@ title: Magento Commerce 2.2.0 Release Notes
 menu_title: Magento Commerce 2.2.0 Release Notes
 menu_order: 299
 level3_menu_node:
-level3_subgroup: 
+level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0EE.md
 ---
@@ -80,7 +80,6 @@ If you have set your product filter to a store view you’ve deleted, when you o
 
 **Issue**: Visual Merchandiser performance is degraded when Category contains  many products.
 
-**Issue**: 
 
 
 ### Magento Commerce-only issues
@@ -173,8 +172,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 71173-->* You can now enable JavaScript minification without error. Previously, after enabling JS minification, the Magento Admin displayed 404 errors when accessing JavaScript elements. 
 
-<!--- 56989-->*
-
 <!--- 70869-->* Magento no longer displays console errors after CSS merging and minification is enabled. Previously, when CSS merging and minification was enabled, the storefront was not displayed as expected, and the `styles-l.min.css` and `print.min.css` files could not be found.
 
 
@@ -182,7 +179,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 69854-->* You can now successfully use the `config:set` command to set allowed or default currencies.
 
-<!--- 67246-->* 
 
 <!--- 46636-->* Nginx now redirects to the setup page when using port 81.
 
@@ -190,7 +186,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 69544-->* We’ve added a CLI command to enable and disable template hints. *Fix submitted by community member <a href="https://github.com/miguelbalparda" target="_blank">Miguel Balparda</a> in pull request <a href="https://github.com/magento/magento2/pull/9778" target="_blank">9778</a>.
 
-<!--- 57820-->* 
 
 <!--- 67501-->* We’ve added console commands for enabling and disabling database query logging.  *Fix submitted by community member <a href="https://github.com/federivo" target="_blank">Federico Rivollier</a> in pull request <a href="https://github.com/magento/magento2/pull/9264" target="_blank">9264</a>.* 
 
@@ -224,7 +219,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!---58654-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
 
-<!--- 70516-->* Magento no longer indicates errors when you install without AMQP. Previously, Magento displayed the following error: (RC21) 
+<!--- 70516-->* Magento no longer indicates errors when you install without AMQP. Previously, Magento displayed the following error: 
 
 `report.CRITICAL: Error Connecting to server (0): Failed to parse address ":" {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at /vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} []`
 
@@ -311,7 +306,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 65251 -->* The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
 Users have encountered problems displaying images after upgrading their software to Magento 2.1.6. These problems range from incomplete loading to the total inability to load images.  Consequently, if you saved a product and didn't open it on the storefront before upgrading to 2.1.6, you'll need to apply a workaround. 
 
 **Workaround**: To correct problems with image loading, choose one of these two workarounds:
@@ -321,7 +315,7 @@ Users have encountered problems displaying images after upgrading their software
 or 
 
 * Save (or resave) the product with the associated image in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel.
-</div>
+
 
 
 <!--- 66366 -->* The `\Magento\CatalogInventory\Model\Stock\Status\getStockId()` method now returns the correct values.
@@ -378,24 +372,8 @@ or
 
 <!--- 57023-->* Sorting configurable products by price now works as expected when a simple product has a special price. [GitHub-4778](https://github.com/magento/magento2/issues/4778)
 
-<!---62426 -->*
-
 <!--- 70987 -->* Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled.
 
-
-<!--- 56072-->* 
-The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`, and during save operations, Magento resized images for images the default store only. 
-<div class="bs-callout bs-callout-info" id="info" markdown="1"> 
-Users have encountered problems displaying images after upgrading their software to Magento 2.1.6. These problems range from incomplete loading to the total inability to load images. Consequently, if you saved a product and didn't open it on the storefront before upgrading to 2.1.6, you'll need to apply a workaround. 
-
-**Workaround**: To correct problems with image loading, choose one of these two workarounds: 
-
-* Run `php bin/magento catalog:images:resize` 
-
-or 
-
-* Save (or resave) the product with the associated image in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel. 
-</div> 
 
 <!--- 66829-->*  Magento no longer locks the `category_product_entity` table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the `category_product_entity` table. 
 
@@ -419,8 +397,6 @@ Previously, Magento displayed only the product categories that users who belonge
 
 <!--- 67618-->* View permissions to high-level product categories now work as expected. Previously, a user restricted to browse a category could still see the category in the top-level navigation menu if the page were previously cached in FPC.
 
-<!--- 71030 -->*
-
 <!--- 54320-->* The category page now shows the current price after Magento runs a scheduled update. Previously, the category page would not update the price after running a scheduled update.	[GitHub-4945](https://github.com/magento/magento2/issues/4945)
 
 
@@ -433,9 +409,6 @@ Previously, Magento displayed only the product categories that users who belonge
 <!--- 62637-->* You can now successfully set the **Enable Product** attribute to **no**.
 
 <!--- 61095-->* Magento no longer permits a shopper to place a re-order once you've disabled one of items in the order.
-
-
-<!---69308 -->* 
 
 
 <!--- 64250-->* Fixed an issue that occurred in the Catalog Gallery on mobile displays when the `allowfullscreen` setting is enabled. *Fix submitted by community member <a href="https://github.com/Crossmotion" target="_blank">Dennis van Schaik</a> in pull request <a href="https://github.com/magento/magento2/pull/8434" target="_blank">8434</a>.* 
@@ -451,7 +424,7 @@ Previously, Magento displayed only the product categories that users who belonge
 <!--- 65334-->*  Setting the **show_out_of_stock** attribute to **No** now works as expected. *Fix submitted by community member <a href="https://github.com/Corefix" target="_blank">Theis Corfixen</a> in pull request <a href="https://github.com/magento/magento2/pull/8736" target="_blank">8736</a>.*
 
 
-<!--- 69297-->* Magento now uses parent name (instead of SKU-based names) when creating configurable products. *Fix submitted by community member <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/9681" target="_blank">9681</a>.*
+<!--- 69297-->* Magento now uses parent names (instead of SKU-based names) when creating configurable products. *Fix submitted by community member <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/9681" target="_blank">9681</a>.*
 
 
 <!---70256 -->* You can now create an `etc/view.xml` file containing an `images` tag with an attribute `module`. *Fix submitted by community member <a href="https://github.com/tzyganu" target="_blank">Marius Strajeru</a> in pull request <a href="https://github.com/magento/magento2/pull/10052" target="_blank">10052</a>.*
@@ -667,13 +640,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 71415-->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time.
 
-<!--- 62302-->*
-
 <!--- 71179 -->* Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account.
 
 <!---56314 -->* Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.
-
-<!--- 68976-->*
 
 <!--- 56778 -->* You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute.
 
@@ -691,7 +660,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 67619-->* The Customer Segment page no longer shows non-matching customers when a customer logs in and you refresh the Customer Segment page.
 
-<!--- 67048-->* You can now add a `translate` attribute to any String argument in the `di.xml` file for any class. This attribute provides an ability on the level of dependency injection configuration to specify that an argument can be translated. The actual translation of strings is handled by another Magento component.]\\
+<!--- 67048-->* You can now add a `translate` attribute to any String argument in the `di.xml` file for any class. This attribute provides an ability on the level of dependency injection configuration to specify that an argument can be translated. The actual translation of strings is handled by another Magento component. 
 
 <!--- 59322-->* Magento front-end scope filters now work as expected. Previously, Magento did not reload product information correctly when you applied a filter using **Catalog > Product**.
 
@@ -712,11 +681,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 67042-->* Fixed grammar error in the customer dashboard. *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9080" target="_blank">9080</a>.* 
 
-<!--- 67320-->* The popup window in the Safari browser now closes properly. *Fix submitted by community member <a href="https://github.com/HansSchouten" target="_blank">Hans Schouten
-</a> in pull request <a href="https://github.com/magento/magento2/pull/8824" target="_blank">8824</a>.* 
+<!--- 67320-->* The popup window in the Safari browser now closes properly. *Fix submitted by community member <a href="https://github.com/HansSchouten" target="_blank">Hans Schouten</a> in pull request <a href="https://github.com/magento/magento2/pull/8824" target="_blank">8824</a>.* 
 
-<!--- 67054-->* We’ve fixed minor performance issues when you use `/pub `as `docroot`. *Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell
-</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.* 
+<!--- 67054-->* We’ve fixed minor performance issues when you use `/pub `as `docroot`. *Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.* 
 
 
 <!--- 70310-->* The Actions dropdown menu is now properly aligned in the Admin when the action column is not the last column. *Fix submitted by community member <a href="https://github.com/tzyganu" target="_blank">Marius Strajeru</a> in pull request <a href="https://github.com/magento/magento2/pull/10082" target="_blank">10082</a>.* 
@@ -781,8 +748,6 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 70419 -->* Magento now uses the correct order when uploading image to the Admin using  **Content > Design**. *Fix submitted by community member  <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10126" target="_blank">10126</a>.*
 
 
-<!--- -->* 
-
 ### Gift registry
 
 <!--- 59159 -->* The State/Province dropdown menu now works as expected in the frontend gift registry.
@@ -800,7 +765,7 @@ We've enhanced the performance of configurable products in several ways:
 
 ### HTML
 
-<!--- 67487-->*  The CSS minify option no longer removes the whitespace around the minus (-) sign. Also this option is now compatible with the `calc()` CSS function.  *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9027" target="_blank">9027</a>.*
+<!--- 67487-->*  The CSS minify option no longer removes the whitespace around the minus (-) sign. Also, this option is now compatible with the `calc()` CSS function.  *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9027" target="_blank">9027</a>.*
 
 ### Images
 
@@ -819,17 +784,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---42954-->*  You can now preview uploaded images.
 
 <!--- 55234-->* Magento now successfully saves images that you edit in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.
-
-
-<!--- -->*
-
-
-<!--- -->*
-
-
-<!--- -->*
-
-
 
 
 #### Import/Export
@@ -894,32 +848,15 @@ We've enhanced the performance of configurable products in several ways:
 <!---66270 -->* The exported sheet now generates or renders data for columns that indicate associations for configurable products.
 
 
-<!--- -->*
-
-<!--- -->*
-
-<!--- -->*
-
-
-
-<!--- -->*
-
-
-
 #### Integration
 
 <!---56961-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
-<!--- 61867-->* Web API tokens now have a default expiration period: 4 hours for Admin tokens and 1 hour for Customer tokens. This can be changed in the Admin Panel configuration settings (http://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-token.html#admin-and-customer-access-tokens)
+<!--- 61867-->* Web API tokens now have a default expiration period: 4 hours for Admin tokens and 1 hour for Customer tokens. This can be changed in the [Admin Panel configuration settings](http://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-token.html#admin-and-customer-access-tokens)
 
 <!--- 54795-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
 <!--- 69610-->* You can now edit `authentication_lock` from the Admin. *Fix submitted by community member <a href="https://github.com/EliasKotlyar" target="_blank">Elias Kotlyar</a> in pull request <a href="https://github.com/magento/magento2/pull/9820" target="_blank">9820</a>.*
-
-
-
-<!--- -->*
-
 
 
 ### Indexing
@@ -954,10 +891,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 60824-->* Reindexing no longer results in an SQL error that prevents bundle products as well as wrong product prices.  reindexing of the page to reindex the products and most of the prices are calculated wrong.
 
-
-<!--- -->*
-
-<!--- -->*
 
 
 ### Migration tool
@@ -1225,8 +1158,6 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 70299 -->* You can now successfully install Magento with sample data when **auto_increment_increment** is set to **3** in the `options` file. Previously, installation completed successfully, but Magento displayed this error: `Something went wrong while installing sample data. Please check var/log/system.log for details. You can retry installing the data now or just start using Magento.` 
 
 
-<!--- 70852 -->* 
-
 
 ### SalesRule
 
@@ -1268,9 +1199,6 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 54460-->*  A restricted user can now change storeview- or website- level attributes that are defined within his scope.
 
 
-<!--- -->*
-
-
 
 ### Search
 <!---59088-->*  Out-of-stock items no longer erroneously appear in results of layered navigation if that product option is out-of-stock.
@@ -1278,8 +1206,6 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 71562 -->* The Elasticsearch indexer search-by-attribute functionality now works as expected.
 
 <!--- 57868 -->* Elasticsearch does not throw errors when there are more than 100 searchable attributes or when user-defined price attributes are marked searchable.
-
-<!---63175 -->*
 
 <!---63249 -->* ElasticSearch now includes data about composite products in its search index. Previously, search results did not include data about composite products.
 
@@ -1311,8 +1237,6 @@ Affected Component(s):
 
 <!--- 64909-->* Magento no longer throws a fatal error when you create a new shipment for a placed order.
 
-
-<!--- -->*
 
 ### Sitemap
 
@@ -1486,12 +1410,6 @@ Affected Component(s):
 <!---70255 -->* We've fixed several issues with how Magento processes URLs with trailing slashes. *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10043" target="_blank">10043</a>.*
 
 
-<!--- -->*
-
-<!--- -->*
-
-
-
 
 ### Varnish
 
@@ -1531,7 +1449,6 @@ Affected Component(s):
 
 <!---52340 -->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
 
-<!--- 70816-->*
 
 <!--- 59871-->* You can now use REST to successfully update customer information without unintentionally deleting default billing and shipping address information.
 
@@ -1566,9 +1483,9 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member <a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a> in pull request <a href="https://github.com/magento/magento2/pull/9400" target="_blank">9400</a>.*
 
- ## Community contributions
+## Community contributions
 
- We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can about the community contributions to our current releases:
+ We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
 
 
 * If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*". 
