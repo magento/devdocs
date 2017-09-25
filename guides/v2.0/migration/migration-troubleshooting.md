@@ -38,8 +38,6 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
     If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
 
-* Use the `-a` argument when executing the tool to auto resolve errors and prevent migration from stopping.
-
 * Configure the Tool to ignore the problematic data
 
 To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
@@ -51,7 +49,7 @@ To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml
 {% endhighlight %}
 
 <div class="bs-callout bs-callout-warning">
-   <p>Before ignoring entities by map file or using the `-a` option, make sure you do not need the affected data in your Magento 2 store.</p>
+   <p>Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.</p>
 </div>
 
 ### Class does not exist but mentioned
