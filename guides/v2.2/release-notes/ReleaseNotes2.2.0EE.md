@@ -329,7 +329,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 50123-->* You can now create a blank attribute option using the drop-down input option on products that do not require an attribute. [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5485](https://github.com/magento/magento2/issues/5485), [GitHub-4910](https://github.com/magento/magento2/issues/4910)
 
-<!--- 54718-->* Magento no longer encounters an error when it cannot find a product image file. [GitHub-5184](https://github.com/magento/magento2/issues/5184), [GitHub-5497](https://github.com/magento/magento2/issues/5497), [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5871](https://github.com/magento/magento2/issues/5871)
+<!--- 54718-->* Magento no longer encounters an error when it cannot find a product image file. [GitHub-5184](https://github.com/magento/magento2/issues/5184), [GitHub-5497](https://github.com/magento/magento2/issues/5497), [GitHub-5871](https://github.com/magento/magento2/issues/5871)
 
 <!---55346 -->* You can now successfully set an SKU mask to empty. Previously, when a product SKU mask was set to empty, Magento experienced problems loading the Product Add page. [GitHub-5618](https://github.com/magento/magento2/issues/5618)
 
@@ -337,9 +337,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!---54648 -->* Magento now provides swatch input for the Admin Scope, and the attribute fall back mechanism now reverts to the default option value 
  if no values are specified for specific store view. [GitHub-5143](https://github.com/magento/magento2/issues/5143), [GitHub-5142](https://github.com/magento/magento2/issues/5142)
-
-<!---56370 -->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %}. [GitHub-5434](https://github.com/magento/magento2/issues/5434)
-
 
 <!--- 57989 -->* You can now create a custom attribute for a category that successfully uploads a custom image. Previously, you could create the attribute, but could not save the image.
 
@@ -422,7 +419,6 @@ This release contains hundreds of fixes and enhancements.
 We've enhanced the performance of configurable products in several ways:
 
 <!---57055-->*  You can now successfully disable the lowest price of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price.
-
 
 
 <!---56998 -->* Magento no longer applies one simple product's special price to another {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. [GitHub-4442](https://github.com/magento/magento2/issues/4442), [GitHub-5097](https://github.com/magento/magento2/issues/5097), [GitHub-6645](https://github.com/magento/magento2/issues/6645) 
@@ -1052,15 +1048,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 52660 -->* We've improved the speed of static asset deployment and now support a variety of asset deployment strategies that can be used to optimize speed and size of assets deployed. Indexers can now be run with 256M of PHP RAM and default MySQL configuration settings.  Developers can further tune memory usage to improve indexer performance (in some cases up to 100% improvement).  Please see [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.0/config-guide/prod/prod_perf-optimize.html)  for further details.
 
-<!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
-
-
-
-
-
 <!--- 55300, 55620, 54682-->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when creating 2500 or more product variants. 
-
-
 
 <!--- 58277 -->* The processing speed of category URL rewrites for catalogs containing more than 20,000 products has greatly improved. 
 
@@ -1279,6 +1267,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---57904-->* We've improved the speed of static asset deployment. See <a href="http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
 
+<!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
 
 
 ### Swatches
