@@ -184,7 +184,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 57799-->* You can now upgrade Magento 2.0 to version 2.1.x when the `auto_increment` setting in the database is greater than 1. Previously, when the `auto_increment` value exceeded 1, upgrade failed with this error: "The page URL key contains capital letters or disallowed symbols.
 
-<!--- 69544-->* We’ve added a CLI command to enable and disable template hints. *Fix submitted by community member <a href="https://github.com/miguelbalparda" target="_blank">Miguel Balparda</a> in pull request <a href="https://github.com/magento/magento2/pull/9778" target="_blank">9778</a>.
+<!--- 69544-->* We’ve added a CLI command to enable and disable template hints. *Fix submitted by community member <a href="https://github.com/miguelbalparda" target="_blank">Miguel Balparda</a> in pull request <a href="https://github.com/magento/magento2/pull/9778" target="_blank">9778</a>.*
 
 
 <!--- 67501-->* We’ve added console commands for enabling and disabling database query logging.  *Fix submitted by community member <a href="https://github.com/federivo" target="_blank">Federico Rivollier</a> in pull request <a href="https://github.com/magento/magento2/pull/9264" target="_blank">9264</a>.* 
@@ -383,7 +383,6 @@ or
 
 <!---54361 -->* Magento no longer lets you add a product variation to your shopping cart if the item is out of stock. Previously, Magento permitted you to select an out-of-stock item and when you added it to your cart, displayed the "Product is out of stock" message. 
 
-<!--- 71030-->*
 
 <!---57564 -->* You can no longer change or fake a product price from the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and then complete an order with that faked price.
 
@@ -416,10 +415,10 @@ Previously, Magento displayed only the product categories that users who belonge
 
 <!--- 64403-->* Magento now successfully loads re-ordered related products when Edge-Mode is activated. *Fix submitted by community member <a href="https://github.com/kirashet666" target="_blank">@kirashet666</a> in pull request <a href="https://github.com/magento/magento2/pull/8467" target="_blank">8467</a>.*
 
-<!--- 64999 -->* Magento now displays crosssells as expected when you use the product/list/items.phtml template. *Fix submitted by community member <a href="https://github.com/koenner01" target="_blank">Koen V</a> in pull request <a href="https://github.com/magento/magento2/pull/9662" target="_blank">8602</a>.*
+<!--- 64999 -->* Magento now displays cross-sells as expected when you use the product/list/items.phtml template. *Fix submitted by community member <a href="https://github.com/koenner01" target="_blank">Koen V</a> in pull request <a href="https://github.com/magento/magento2/pull/9662" target="_blank">8602</a>.*
 
 
-<!--- 65364-->* Magento now displays the **Yes** or **No ** attribute value on Product pages. *Fix submitted by community member <a href="https://github.com/TKlement" target="_blank">Timo Klement</a> in pull request <a href="https://github.com/magento/magento2/pull/8623" target="_blank">8623</a>.*
+<!--- 65364-->* Magento now displays the **Yes** or **No** attribute value on Product pages. *Fix submitted by community member <a href="https://github.com/TKlement" target="_blank">Timo Klement</a> in pull request <a href="https://github.com/magento/magento2/pull/8623" target="_blank">8623</a>.*
 
 <!--- 65334-->*  Setting the **show_out_of_stock** attribute to **No** now works as expected. *Fix submitted by community member <a href="https://github.com/Corefix" target="_blank">Theis Corfixen</a> in pull request <a href="https://github.com/magento/magento2/pull/8736" target="_blank">8736</a>.*
 
@@ -491,7 +490,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 70346-->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**.
 
-<!--- 71656-->* Configurable products no longer show up on category page when all children are set to "enable product" = "No" and "display out-of-stock products" = "Off".
+<!--- 71656-->* Configurable products no longer show up on category page when all children are set to **enable product = No** and **display out-of-stock products = Off**.
 
 <!--- 70346-->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**.
 
@@ -501,7 +500,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---52717-->*  You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled the price. [GitHub-4419](https://github.com/magento/magento2/issues/4419)
 
-<!---71656-->* Configurable products no longer show up on category page when all children are set to "enable product" = "No" and "display out-of-stock products" = "Off".
 
 <!---60483-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page failed to list the product at all, rather than listing it as out-of-stock.
 
@@ -742,7 +740,7 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 70466-->* We’ve corrected the ACL for the Developer Section resource. *Fix submitted by community member  <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/10149" target="_blank">10149</a>.*
 
 
-<!--- 70469-->* Layout merging no longer fails when you save a widget that contains  ` ` characters in the data. *Fix submitted by community member  <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/10151" target="_blank">10151</a>.*
+<!--- 70469-->* Layout merging no longer fails when you save a widget that contains the grave accent character in the data. *Fix submitted by community member  <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/10151" target="_blank">10151</a>.*
 
 
 <!--- 70419 -->* Magento now uses the correct order when uploading image to the Admin using  **Content > Design**. *Fix submitted by community member  <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10126" target="_blank">10126</a>.*
@@ -754,14 +752,14 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-<!--- 69153-->* We’ve fixed inconsistent gift options checkbox labels in  both the both CSV file ("app\code\Magento\GiftMessage\i18n\en_US.csv") and phtml file ("app\code\Magento\GiftMessage\view\frontend\templates\inline.phtml”). <a href="https://github.com/vpiyappan" target="_blank">vpiyappan</a> in pull request <a href="https://github.com/magento/magento2/pull/9421" target="_blank">9421</a>.*
+<!--- 69153-->* We’ve fixed inconsistent gift options checkbox labels in  both the  CSV file (`app\code\Magento\GiftMessage\i18n\en_US.csv`) and PHTML file (`app\code\Magento\GiftMessage\view\frontend\templates\inline.phtml`). *Fix submitted by community member <a href="https://github.com/vpiyappan" target="_blank">vpiyappan</a> in pull request <a href="https://github.com/magento/magento2/pull/9421" target="_blank">9421</a>.*
 
 
 ### Google Analytics
 
 <!--- 67427-->* We’ve added the missing single quote (‘) to the Google API Tracking code. *Fix submitted by community member  <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9084" target="_blank">9084</a>.*
 
-<!--- 69374-->* Google Analytics tracking is now works when Cookie Restriction is enabled. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9713" target="_blank">9713</a>.*
+<!--- 69374-->* Google Analytics tracking now works when Cookie Restriction is enabled. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9713" target="_blank">9713</a>.*
 
 ### HTML
 
@@ -773,7 +771,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---56944-->*  Magento now successfully saves images that you edit in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes. 
 
-<!---58335-->* You can now preview uploaded images.
+<!---58335, 42954-->* You can now preview uploaded images.
  
 
 <!---56972-->* You can now set an image size for product watermarks. [GitHub-5270](https://github.com/magento/magento2/issues/5270)
@@ -781,7 +779,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---55608-->*  Graphics now scroll as expected on mobile devices. [GitHub-5302](https://github.com/magento/magento2/issues/5302)
 
-<!---42954-->*  You can now preview uploaded images.
 
 <!--- 55234-->* Magento now successfully saves images that you edit in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.
 
@@ -950,7 +947,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 60587 -->* We’ve increased the size of the `sales_order_payment.cc_number_enc` field. [GitHub-7334](https://github.com/magento/magento2/issues/7334)
 
-<!--- 57312-->* We’ve fixed an issue with an undefined offset in the order\config.php file. [GitHub-6111](https://github.com/magento/magento2/issues/6111)
+<!--- 57312-->* We’ve fixed an issue with an undefined offset in the `order\config.php` file. [GitHub-6111](https://github.com/magento/magento2/issues/6111)
 
 <!--- 59905-->* The Create Order page now works as expected after you select **Update items and quantities**.
 
@@ -1134,7 +1131,7 @@ We've enhanced the performance of configurable products in several ways:
 
 ### PHP
 
-* This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToken` method. This method provides details about payment tokens to renderer components, such as public hash and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations. 
+* We've introduced the `Magento\Vault\Block\TokenRendererInterface::getToken` method. This method provides details about payment tokens to renderer components, such as public hash and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations. 
 
 <!--- 69964 -->* PHPCS can now correctly parse the syntax of PHP 7.x return types.
 
@@ -1376,7 +1373,7 @@ Affected Component(s):
 
 ### Tier pricing
 
-<!---70377--> Magento now correctly calculates the tier price percentage when displayed prices include tax. https://github.com/magento/magento2/issues/8833
+<!---70377-->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833)
 
 <!---57625-->* Magento no longer resets the tier price during {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database had values for `row_id` and `entity_id` that didn't match.)
 
@@ -1479,7 +1476,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 69152-->* We've resolved issues with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fixes submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9540" target="_blank">9540</a> and community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
 
-<!--- 69591-->* We’ve replaced Zend_Log with Psr\Log\LoggerInterface. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
+<!--- 69591-->* We’ve replaced `Zend_Log` with `Psr\Log\LoggerInterface`. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
 
 <!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member <a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a> in pull request <a href="https://github.com/magento/magento2/pull/9400" target="_blank">9400</a>.*
 
