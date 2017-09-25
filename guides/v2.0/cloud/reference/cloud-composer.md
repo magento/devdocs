@@ -71,6 +71,8 @@ MCC versions are specified as: `<100 + x>.<y>.*`. For example, Magento EE 2.1.4 
 
 We release updated MCC code to add a new patch or to improve the build and deploy hooks.
 
+To check for patches, you can check the `vendor/magento/magento-cloud-configuration/patches` folder.
+
 ### magento/product-enterprise-edition {#cloud-composer-prodee}
 This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on.
 

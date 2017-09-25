@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 010_welcome
-title: Composer in Cloud
-menu_title: Composer in Cloud
+subgroup: 020_tech
+title: Composer
+menu_title: Composer
 menu_node:
-menu_order: 45
+menu_order: 5
 version: 2.2
 github_link: cloud/reference/cloud-composer.md
 ---
@@ -13,6 +13,8 @@ github_link: cloud/reference/cloud-composer.md
 We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in Magento Commerce and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
 The following sections detail the specifics of Magento Commerce composer packages, how they work, and what they do within the code base.
+
+For {{site.data.var.ece}} 2.2, the `magento/magento-cloud-configuration (MCC)` has been replaced by `magento/ece-patches` and `magento/ece-tools`. These packages decouple a patch update from a full product upgrade, allowing you to fully apply a patch without a full product installation or upgrade.
 
 ## Your project's Composer files
 Your project root directory contains `composer.json` and `composer.lock`.
@@ -44,32 +46,38 @@ During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html)
 The following sections discuss the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages used by Magento Commerce:
 
 *	[`magento/magento-cloud-metapackage`](#cloud-composer-cloudmeta)
-*	[`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig)
+*	[`magento/ece-patches`](#ece-patches)
+*	[`magento/ece-tools`](#ece-tools)
 *	[`magento/product-enterprise-edition`](#cloud-composer-prodee)
 
 ### magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
 `magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"} and does not contain any code.
 
-The metapackage depends on the appropriate versions of [`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig) and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. Therefore, to use Magento EE version 2.1.4, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.1.4.
+The metapackage depends on the appropriate versions of [`magento/ece-patches`](#ece-patches), [`magento/ece-tools`](#ece-tools), and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
 
 This package depends on a floating version of `magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified Magento EE version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
-### magento/magento-cloud-configuration (MCC) {#cloud-composer-cloudconfig}
+### magento/ece-patches {#ece-patches}
+This package contains patch files that are specific to Cloud. Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Cloud code and the patch. Using `compuser update` automatically runs tools to check for available patches and to run them with build and deploy scripts.
+
+For {{site.data.var.ee}}, versions are specified as `2.<x>.<y>`.
+
+Patch versions are specified as: `<100 + x>.<y>.*`. For example, {{site.data.var.ee}} 2.2.0 is associated with `ece-patches` 102.0.0. Subsequently, a new patch will be released that corresponds to the same {{site.data.var.ee}} version, and it would be 102.0.1.
+
+Code released in `ece-patches` is strictly for updates to {{site.data.var.ece}}. Patches are available in the `vendor/ece-patches` folder.
+
+To check for available patches, you can check in the `vendor/ece-patches` folder. 
+
+### magento/ece-tools {#ece-tools}
 This package contains the following scripts and `magento` commands that automatically perform building and deployment of the codebase on the cloud environment:
 
  * `pre-deploy.php`
  * `bin/magento magento-cloud:deploy`
  * `bin/magento magento-cloud:build`
 
-`magento/magento-cloud-configuration` also contains patch files that are specific to Cloud.
+For {{site.data.var.ee}}, versions are specified as `2.<x>.<y>`. The versioning for `ece-tools` will then be `<200 + x>.<y>.*`. For example, {{site.data.var.ee}} 2.2.0 is associated with 202.0.0.
 
-There is a many-to-one relationship between the MCC version and Magento versions.
-
-For Magento EE, versions are specified as `2.<x>.<y>`.
-
-MCC versions are specified as: `<100 + x>.<y>.*`. For example, Magento EE 2.1.4 is associated with MCC 101.4.0. Subsequently, a new version of MCC could be released that corresponds to the same Magento EE version, and it would be 101.4.1.
-
-We release updated MCC code to add a new patch or to improve the build and deploy hooks.
+We release updated `ece-tools` code strictly includes improvements for tools, including the build and deploy hooks. These tools are updated as needed through patching and product upgrades, managed by the `magento-cloud-metapackage`.
 
 ### magento/product-enterprise-edition {#cloud-composer-prodee}
 This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on.
@@ -90,8 +98,12 @@ Therefore, when upgrading to a new Cloud version or adding, removing, or changin
 	File marshaling works on your local system but _not_ on the Cloud server.
 
 2.	Add and commit these updated files to your Cloud Git repository.
-3.	Push the changes to your Cloud integration environment.
+3.	Push the changes to your Cloud Integration environment.
 
-For more information, see [Test a Magento patch]({{ page.baseurl }}cloud/project/project-upgrade.html).
+For more information, see [Patch Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-patch.html).
 
 This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check should be whether all of the base package files were added to source control.
+
+#### Related topics
+* [Patch Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-patch.html)
+* [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html)
