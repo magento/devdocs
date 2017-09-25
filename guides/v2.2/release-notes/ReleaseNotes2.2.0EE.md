@@ -17,7 +17,7 @@ We are pleased to present Magento Commerce 2.2.0 General Availability. This rele
 
 Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. Look for the following highlights in this release:
 
-* **B2B Commerce Functionality** is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. Magento Commerce for B2B also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. See [Magento Commerce for B2B roadmap](http://docs.magento.com/m2/b2b/user_guide/quick-tour/b2b-roadmap.html) for an overview of the rich B2B feature set we're introducing in this release. 
+* **B2B Commerce Functionality** is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. Magento Commerce for B2B also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. See [B2B Quick Tour](http://docs.magento.com/m2/ce/user_guide/getting-started/quick-tour.html) for an overview of the rich B2B feature set we're introducing in this release. 
 
 * **Magento Commerce Starter.** In addition to our Pro version, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. This subscription plan differs from our Enterprise Cloud version in some key ways. For an overview of these versions, see [Welcome to Magento Commerce Cloud](http://devdocs.magento.com/guides/v2.1/cloud/bk-cloud.html).
 
@@ -29,7 +29,7 @@ Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds
 
 * **Significant enhancements in platform security and developer experience**. Security improvements include the removal of unserialize calls and protection of this functionality to increase resilence against dangerous code execution attacks. We have also continued to review and improve our protection against Cross-Site Scripting (XSS) attacs. 
 
-* **Upgraded technology stack.**  We've dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All third-party libraries have been upgraded to the latest stable version.
+* **Upgraded technology stack.**  We've dropped support for PHP 5.6, Varnish 3, and Solr.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All third-party libraries have been upgraded to the latest stable version. Note: Although we’ve dropped support for Solr with this release, Solr code will remain in the Magento code base until a later release.  
 
 
 * **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/).  
@@ -73,7 +73,7 @@ If you have set your product filter to a store view you’ve deleted, when you o
 
 **Issue**: A mistake entering credit card information during an  order for a new customer can cause subsequent errors even after the user has corrected the  credit card information.  
 
-**Issue**: Failure to specify a `– base_url` during installation when using custom server ports results in corrupted static content. 
+**Issue**: Failure to specify a `– base_url` during installation when using custom server ports results in unresolved static content. 
 **Workaround**: You can use the CLI command `config:set web/secure/base_url <base_url>` to set the `base_url` parameter.
 
 **Issue**: Magento does not correctly calculate the Catalog Price rule for bundle products with custom options. 
@@ -112,31 +112,23 @@ This release contains hundreds of fixes and enhancements.
 
 ### Installation, upgrade, deployment
 
-<!--- 55357/53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795) 
+<!--- 55357/53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling dependency injection. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795) 
 
-<!--- 56974-->* You can now upgrade 2.0.9 with sample data to 2.1.1. 
 
 <!---56397, 58064-->* You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data.
 
-
-<!---58742-->* We've resolved multiple issues with the upgrade process from 2.0.7 to 2.1.x (for example, editing a category post-upgrade no longer results in a 500 error). 
 
 
 
 <!---56977-->* We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete. 
 
 
-<!---60559-->* Magento now successfully updates the queue table during upgrade. Previously, Magento omitted the  `catalog_product_removed_queue` row of the queue table during upgrade from Magento 2.0.x to 2.1.x. 
 
 <!---57343-->*  You can now deploy build processes on a different staging machine than the one you're running your production environment on. 
 
-<!---58312-->* Magento no longer incorrectly shows products as "out of stock" after you update your installation from 2.0.7 to 2.1.0. [GitHub-5222](https://github.com/magento/magento2/issues/5222)
 
-<!---57943-->* Magento 2.0.x and 2.1.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error:   "Duplicate key on write or update". [GitHub-5688](https://github.com/magento/magento2/issues/5688)
+<!---57943-->* Magento 2.0.x and 2.1.x now support the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error:   "Duplicate key on write or update". [GitHub-5688](https://github.com/magento/magento2/issues/5688)
 
-
-
-<!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
 
 
 <!--- 62400-->* Third-party command line tools no longer fail when you run `setup:di:compile`.
@@ -150,11 +142,10 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 60835-->* We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.
 
-<!--- 70314-->* The `cron:install` command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for `crontab` commands contained double quotes that were not escaped, which caused invalid commands to be written to the `crontab` file. [GitHub-10040](https://github.com/magento/magento2/issues/10040)
+<!--- 70314-->* The `cron:install` command now works as expected in Magento 2.2.0. Previously, the configuration for `crontab` commands contained double quotes that were not escaped, which caused invalid commands to be written to the `crontab` file. [GitHub-10040](https://github.com/magento/magento2/issues/10040)
 
 <!--- 63637-->* Magento now moves the `sequence_*` table to the correct database after implementing a split database.
 
-<!--- 57755-->* Magento 2.0.x and 2.1.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". [GitHub-5688](https://github.com/magento/magento2/issues/5688)
 
 <!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795)
 
@@ -162,7 +153,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 70573-->* It is now possible to configure Redis settings for session storage, default cache, and full page cache from the command line.
 
-<!---66343 -->* Magento now shows a significant decrease in Redis traffic after upgrading 2.1.2 to 2.1.4. 
 
 <!--- 54716-->*  We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete.
 
@@ -175,22 +165,19 @@ This release contains hundreds of fixes and enhancements.
 <!--- 70869-->* Magento no longer displays console errors after CSS merging and minification is enabled. Previously, when CSS merging and minification was enabled, the storefront was not displayed as expected, and the `styles-l.min.css` and `print.min.css` files could not be found.
 
 
-<!--- 69675-->* We’ve fixed problems with the upgrade process from 2.1.7 EE to 2.2.0 EE.
 
 <!--- 69854-->* You can now successfully use the `config:set` command to set allowed or default currencies.
 
 
 <!--- 46636-->* Nginx now redirects to the setup page when using port 81.
 
-<!--- 57799-->* You can now upgrade Magento 2.0 to version 2.1.x when the `auto_increment` setting in the database is greater than 1. Previously, when the `auto_increment` value exceeded 1, upgrade failed with this error: "The page URL key contains capital letters or disallowed symbols.
-
-<!--- 69544-->* We’ve added a CLI command to enable and disable template hints. *Fix submitted by community member <a href="https://github.com/miguelbalparda" target="_blank">Miguel Balparda</a> in pull request <a href="https://github.com/magento/magento2/pull/9778" target="_blank">9778</a>.*
+<!--- 69544-->* We've added the `dev:template-hints:enable` and `dev:template-hints:disable` commands to manage template hints. *Fix submitted by community member <a href="https://github.com/miguelbalparda" target="_blank">Miguel Balparda</a> in pull request <a href="https://github.com/magento/magento2/pull/9778" target="_blank">9778</a>.*
 
 
-<!--- 67501-->* We’ve added console commands for enabling and disabling database query logging.  *Fix submitted by community member <a href="https://github.com/federivo" target="_blank">Federico Rivollier</a> in pull request <a href="https://github.com/magento/magento2/pull/9264" target="_blank">9264</a>.* 
+<!--- 67501-->* We've added the `dev:query-log:enable` and  `dev:query-log:disable ` to manage database query logging.  *Fix submitted by community member <a href="https://github.com/federivo" target="_blank">Federico Rivollier</a> in pull request <a href="https://github.com/magento/magento2/pull/9264" target="_blank">9264</a>.* 
 
 
-<!---67537 -->* We’ve added a new CLI command that allows generation of Varnish VCL configuration. *Fix submitted by community member <a href="https://github.com/piotrkwiecinski" target="_blank">Piotr Kwiecinski</a> in pull request <a href="https://github.com/magento/magento2/pull/9286" target="_blank">9286</a>.* 
+<!---67537 -->* We've added the `varnish:vcl:generate` command to create the Varnish VCL file. *Fix submitted by community member <a href="https://github.com/piotrkwiecinski" target="_blank">Piotr Kwiecinski</a> in pull request <a href="https://github.com/magento/magento2/pull/9286" target="_blank">9286</a>.* 
 
 <!--- -->* You can now deploy build processes on a different staging machine than the one you're running your production environment on.
 
@@ -203,7 +190,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 57820 -->* The installation script no longer creates files in the root directory for missing modules when you install a community-created language pack. Translation packs created by the community often include translations for Magento Commerce modules. When you install these translation packs on an Open Source installation, the Commerce modules are missing. Previously, the installation script creates a file in the root directory for these Commerce modules instead of skipping them. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
 
-<!--- 53232 -->* We’ve resolved issues with customer data missing after upgrading Magento 2.0.2 to 2.0.4.  [GitHub-3951](https://github.com/magento/magento2/issues/3951), [GitHub-3964](https://github.com/magento/magento2/issues/3964), [GitHub-4054](https://github.com/magento/magento2/issues/4054)
 
 <!--- 56743 -->*  We've fixed issues with upgrading installations with split databases. 
 
@@ -216,9 +202,11 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 63295 -->* The `DOCUMENT_ROOT` directory is now writable. Previously, installation failed because this directory was not writable.
 
+
+
 ### AMQP framework
 
-<!---58654-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
+<!---58654, 57177-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
 
 <!--- 70516-->* Magento no longer indicates errors when you install without AMQP. Previously, Magento displayed the following error: 
 
@@ -228,7 +216,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 66993-->* Magento now re-processes queue messages if the consumer process is terminated. 
 
-<!--- 57177-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
 
 ### Cart and checkout
 
@@ -268,11 +255,6 @@ This release contains hundreds of fixes and enhancements.
 <!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. [GitHub-5279](https://github.com/magento/magento2/issues/5279) 
 
 <!---53793 -->* Magento now implements the minicart maximum display recently added item setting to your shopping cart. Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. [GitHub-4750](https://github.com/magento/magento2/issues/4750)
-
-
-<!--- 54846-->* You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data.
-
-<!--- 52449-->*  The minicart now performs as expected in deployments that span multiple websites. Previously, in a Magento installation that had multiple websites, products that you added to one {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} appeared in the other websites' minicarts. 
 
 
 <!--- 69657-->* Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, After an user enters credit card information, then discount code and then press "Place Order". The credit card information fields are emptied and user has to enter the credit card information again to proceed with the order transaction.
@@ -366,8 +348,6 @@ or
 <!---54648 -->* Magento now provides swatch input for the Admin Scope, and the attribute fall back mechanism now reverts to the default option value 
  if no values are specified for specific store view. [GitHub-5143](https://github.com/magento/magento2/issues/5143), [GitHub-5142](https://github.com/magento/magento2/issues/5142)
 
-<!---58134 -->*  Magento no longer incorrectly shows products as "out of stock" after you update your installation from 2.0.7 to 2.1.0. [GitHub-5222](https://github.com/magento/magento2/issues/5222)
-
 <!---56370 -->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %}. [GitHub-5434](https://github.com/magento/magento2/issues/5434)
 
 
@@ -380,11 +360,8 @@ or
 
 <!--- 66829-->*  Magento no longer locks the `category_product_entity` table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the `category_product_entity` table. 
 
-<!---57397 -->* You can now update a product's media gallery through the REST API.
 
 <!--- 59315-->* We've improved the process of using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
-
-<!---54361 -->* Magento no longer lets you add a product variation to your shopping cart if the item is out of stock. Previously, Magento permitted you to select an out-of-stock item and when you added it to your cart, displayed the "Product is out of stock" message. 
 
 
 <!---57564 -->* You can no longer change or fake a product price from the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and then complete an order with that faked price.
@@ -394,12 +371,7 @@ or
 
 <!--- 56868 -->* You can now save a product with images multiple times.
 
-<!--- 70750-->* View permissions to high-level product categories now work as expected. 
-Previously, Magento displayed only the product categories that users who belonged to the NOT_LOGGED_IN customer group were permitted to view, no matter which user logged in.
-
-<!--- 67618-->* View permissions to high-level product categories now work as expected. Previously, a user restricted to browse a category could still see the category in the top-level navigation menu if the page were previously cached in FPC.
-
-<!--- 54320-->* The category page now shows the current price after Magento runs a scheduled update. Previously, the category page would not update the price after running a scheduled update.	[GitHub-4945](https://github.com/magento/magento2/issues/4945)
+<!--- 70750, 67618-->* View permissions to high-level product categories now work as expected. Previously, Magento displayed only the product categories that users who belonged to the NOT_LOGGED_IN customer group were permitted to view, no matter which user logged in. Additionally, a user restricted to browse a category could still see the category in the top-level navigation menu if the page were previously cached in FPC.
 
 
 
@@ -418,7 +390,7 @@ Previously, Magento displayed only the product categories that users who belonge
 
 <!--- 64403-->* Magento now successfully loads re-ordered related products when Edge-Mode is activated. *Fix submitted by community member <a href="https://github.com/kirashet666" target="_blank">@kirashet666</a> in pull request <a href="https://github.com/magento/magento2/pull/8467" target="_blank">8467</a>.*
 
-<!--- 64999 -->* Magento now displays cross-sells as expected when you use the product/list/items.phtml template. *Fix submitted by community member <a href="https://github.com/koenner01" target="_blank">Koen V</a> in pull request <a href="https://github.com/magento/magento2/pull/9662" target="_blank">8602</a>.*
+<!--- 64999 -->* Magento now displays cross-sells as expected when you use the `product/list/items.phtml` template. *Fix submitted by community member <a href="https://github.com/koenner01" target="_blank">Koen V</a> in pull request <a href="https://github.com/magento/magento2/pull/9662" target="_blank">8602</a>.*
 
 
 <!--- 65364-->* Magento now displays the **Yes** or **No** attribute value on Product pages. *Fix submitted by community member <a href="https://github.com/TKlement" target="_blank">Timo Klement</a> in pull request <a href="https://github.com/magento/magento2/pull/8623" target="_blank">8623</a>.*
@@ -436,17 +408,13 @@ Previously, Magento displayed only the product categories that users who belonge
 
 <!--- 63062-->* Magento now displays the correct image when you switch between a configurable product's options. Previously, Magento loaded product images from a different product.
 
-<!--- 66885-->* The Magento WYSIWYG  editor now handles special characters such as percentage mark ( %).  [GitHub-9452](https://github.com/magento/magento2/issues/9452)
-
-
-<!---63667 -->* You can now use the Catalog API to retrieve store-specific data. [GitHub-9452](https://github.com/magento/magento2/issues/9452)
-
+<!--- 66885-->* The Magento WYSIWYG editor now handles special characters such as percent sign (%).  [GitHub-9452](https://github.com/magento/magento2/issues/9452)
 
 <!--- 63601-->*  The `indexer:reindex catalog_category_product` process can now handle more than 500 products in a category.
 
 <!--- 62426-->* Magento now displays  the price set at store view-level for a product that has different prices set on the global and store view level. 
 
-<!--- 71445-->*  Out-of-stock options for configurable products still show up in search and layered navigation results. 
+<!--- 71445-->*  Out-of-stock options for configurable products no longer show up in search and layered navigation results. 
 
 <!--- 67628-->*  You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
@@ -456,6 +424,8 @@ Previously, Magento displayed only the product categories that users who belonge
 <!--- 61826-->*  Magento no longer throws an error when you try to save a product with imported custom options.
 
 <!--- 62468-->*  Magento now displays the product price even when the product is out-of-stock.
+
+<!--- 64710-->*  `productWebsiteLink` no longer deletes a product’s custom origins.
 
 
 ### Configurable products
@@ -898,11 +868,6 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-### Migration tool
-
-<!--- 56063-->* We've resolved multiple issues with the upgrade process from 2.0.7 to 2.1.x (for example, editing a category post-upgrade no longer results in a 500 error).
-
-
 ### Orders
 
 <!--- 61268, 59424, 56433, 59422--> * We’ve added PHP interfaces that add the ability to change the status of a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %}. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:
@@ -1101,8 +1066,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 55300, 55620, 54682-->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when creating 2500 or more product variants. 
 
-<!--- 66400 -->*  Magento now shows a significant decrease in Redis traffic after upgrading 2.1.2 to 2.1.4. 
-
 
 <!--- 65484 -->* Magento now caches attribute options for the layered navigation feature. This reduces the number of queries to the database, and consequently improves performance.
 
@@ -1212,7 +1175,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 57868 -->* Elasticsearch does not throw errors when there are more than 100 searchable attributes or when user-defined price attributes are marked searchable.
 
-<!---63249 -->* ElasticSearch now includes data about composite products in its search index. Previously, search results did not include data about composite products.
+<!---63249 -->* ElasticSearch now includes data about composite products in its search index. Previously, search results did not include this data.
 
 <!---65245 -->* Magento now sends the `parent_id` of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information to the ElasticSearch server if the simple product associated with a configurable product were changed.
 
@@ -1231,14 +1194,13 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!--- 58062-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process.
-Affected Component(s):
 
 
 <!--- 57992-->* You can now reload a page during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} without unintentionally changing shipping information.
 
 <!--- 70646-->* You can now save the settings you enter when creating a shipping label on an existing shipment. Previously, clicking the Save button resulted in an error, and the shipping label was not saved.
 
-<!--- 67053 -->* Added missing translation to label argument xml.  *Fix submitted by community member <a href="https://github.com/mrkhoa99" target="_blank">Mr Khoa</a> in pull request <a href="https://github.com/magento/magento2/pull/9095" target="_blank">9095</a>.*
+<!--- 67053 -->* Added missing translation to label `argument xml`.  *Fix submitted by community member <a href="https://github.com/mrkhoa99" target="_blank">Mr Khoa</a> in pull request <a href="https://github.com/magento/magento2/pull/9095" target="_blank">9095</a>.*
 
 <!--- 64909-->* Magento no longer throws a fatal error when you create a new shipment for a placed order.
 
@@ -1252,7 +1214,7 @@ Affected Component(s):
 
 <!--- 70056-->* Sitemap image URLs now match the URLs on product pages. *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9082" target="_blank">9082</a>.*
 
-<!--- 70056-->* `sitemap` is no longer generates in the wrong folder when `vhost` is connected to `/pub`. *Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.*
+<!--- 70056-->* The sitemap is no longer generated in the wrong folder when `vhost` is connected to `/pub`. *Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.*
 
 <!--- 47607-->* We’ve corrected the location of sitemap generation when `vhost` is connected to `/pub`. [GitHub-2802](https://github.com/magento/magento2/issues/2802) 
 
@@ -1270,11 +1232,11 @@ Affected Component(s):
 
 <!--- 55524/48429-->* You can now delete updates from a campaign's page {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} grid. 
 
-<!--- 71215 -->* Magento no longer creates extraneous database values when you schedule new Staging updates.
+<!--- 71215 -->* Magento no longer creates extraneous database values when you schedule new staging updates.
 
 <!--- 71708-->* You can now create a staging update for a product that contains a unique attribute in its attribute set. Previously, under these conditions, Magento displayed this error: `The value of attribute "test" must be unique’`.
 
-<!---71373 -->* You can now install Magento Commerce without Staging modules.
+<!---71373 -->* You can now install Magento Commerce without staging modules.
 
 
 <!---56065 -->* The Magento flat indexer no longer throws an error after flat tables are enabled and reindexed. This fix applies to both product and {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} tables.
@@ -1305,7 +1267,7 @@ Affected Component(s):
 <!--- 65540-->* Magento now correctly assigns images to duplicated products.
 
 
-<!--- 58651-->* Scheduled Update no longer removes simple variations from Configurable products. Previously, if you set up a Scheduled Update to toggle the **New** setting on a configurable product, Magento removes all simple variations from the configurable product once the update takes effect.
+<!--- 58651-->* Scheduled Update no longer removes simple variations from Configurable products. Previously, if you set up a scheduled update to toggle the **New** setting on a configurable product, Magento removes all simple variations from the configurable product once the update takes effect.
 
 
 <!--- 63159 -->* Content staging values for fields are not saved in database. 
@@ -1410,9 +1372,7 @@ Affected Component(s):
 
 <!---66480-->* You can now successfully create a product and assign it to a store without encountering the following error: `Unique constraint violation found`. [GitHub-6671](https://github.com/magento/magento2/issues/6671)
 
-<!---67315-->* The `catalog_url_rewrite_product_category` table is the same whether you’ve freshly installed or updated Magento 2.2.
-
-<!---67299-->* The `catalog_url_rewrite_product_category` table is the same whether you’ve freshly installed or updated Magento 2.2.
+<!---67315, 67299 -->* The `catalog_url_rewrite_product_category` table is the same whether you’ve freshly installed or updated Magento 2.2.
 
 <!---70663-->* You can now assign products to a category when **Match Products by rule** is enabled.
 
@@ -1440,9 +1400,8 @@ Affected Component(s):
 
 ### Visual merchandiser
 
-<!---58465-->* The order of products in a category display no longer changes when you add a new product to the category. 
+<!---58465, 56775-->* The order of products in a category display no longer changes when you add a new product to the category. 
 
-<!---56775-->* The order of products in a category display no longer changes when you add a new product to the category.
 
 <!---54491-->* Visual Merchandiser `Match products by rule` now works as expected.
 
@@ -1451,14 +1410,10 @@ Affected Component(s):
 
 <!---61018-->* You can now use REST to add video to a product description. [GitHub-7153](https://github.com/magento/magento2/issues/7153)
 
-<!--- 57066-->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
 
-<!---59874-->* We've improved the process of using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently.
+<!---57039-->* The `PUT /V1/products/:sku/media/:entryId` correctly updates a product's media gallery and image role. 
 
-
-<!---57039-->* You can now update a product's media gallery through the REST API. 
-
-<!---64047-->* A null value may now be specified to unset the special_price attribute.
+<!---64047-->* A null value may now be specified to unset the `special_price` attribute.
 
 <!---52340 -->* The Swagger documentation erroneously indicated that search queries can return detailed information about multiple objects. The description of these APIs now state which API to use to return detailed information about a single object.
 
@@ -1467,9 +1422,9 @@ Affected Component(s):
 
 <!--- 70743-->* You can now use a REST request to retrieve a shopping cart that contained a product with custom options. Previously, you could not use a REST request to retrieve a shopping cart that contained a product with custom options.
 
-<!--- 60908-->* You can now us the REST API to update image roles.
+<!--- 60908-->* The `PUT /V1/products/:sku/media/:entryId` correctly updates a product's media gallery and image role.
 
-<!--- 64710-->*  productWebsiteLink no longer deletes a product’s custom origins.
+<!---63667 -->* Searching for products via REST API using a store code in the URL returns products from all stores. [GitHub-8121](https://github.com/magento/magento2/issues/8121)
 
 
 
