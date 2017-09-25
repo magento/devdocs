@@ -18,7 +18,7 @@ We are pleased to present Magento Commerce 2.2.0 General Availability. This rele
 
 Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. Look for the following highlights in this release:
 
-* **Magento Commerce for B2B** is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. Magento Commerce for B2B also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. See [Magento Commerce for B2B roadmap](http://docs.magento.com/m2/b2b/user_guide/quick-tour/b2b-roadmap.html) for an overview of the rich B2B feature set we're introducing in this release. 
+* **B2B Commerce Functionality** is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. Magento Commerce for B2B also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. See [Magento Commerce for B2B roadmap](http://docs.magento.com/m2/b2b/user_guide/quick-tour/b2b-roadmap.html) for an overview of the rich B2B feature set we're introducing in this release. 
 
 * **Magento Commerce Starter.** In addition to our Pro version, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. This subscription plan differs from our Enterprise Cloud version in some key ways. For an overview of these versions, see [Welcome to Magento Commerce Cloud](http://devdocs.magento.com/guides/v2.1/cloud/bk-cloud.html).
 
@@ -26,18 +26,18 @@ Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds
 
 * **Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your corporate Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store.
 
+* **Integrated Signifyd fraud protection**. 
+
 
 * **Significant enhancements in platform security and developer experience**. Security improvements include the removal of unserialize calls and protection of this functionality to increase resilence against dangerous code execution attacks. We have also continued to review and improve our protection against Cross-Site Scripting (XSS) attacs. 
 
 * **Upgraded technology stack.**  We've dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All third-party libraries have been upgraded to the latest stable version.
 
 
-* **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/). Magento Commerce (Cloud) now fully implements pipeline deployment. 
+* **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/).  
 
 
-* **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
-buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items. Varnish cache configuration now includes saint and grace mode to ensure Varnish is always presenting a cached page to a shop’s customers.  Enhancements to cache invalidation logic and optimization of edge side include blocks for frequently changing data that significantly boost cache hit ratios.
-
+* **Performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running with no visible impact to their experience. Additionally, long-running indexers operate in batches to better manage memory and run times. Cart improvements enable abuyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items. Varnish cache configuration now includes saint and grace mode to ensure Varnish is always presenting a cached page to a shop’s customers.  Enhancements to cache invalidation logic and optimization of edge side include blocks for frequently changing data that significantly boost cache hit ratios.
 
 
 * **Substantial contributions from our Community members**. Our Community Engineering Team has been working with skilled and enthusiastic community members, and together they've added hundreds of pull requests to the Magento code base. For more information about our Community Engineering Team. see [Magento Community Engineering](https://github.com/magento-engcom). 
@@ -203,6 +203,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 62660 -->*  [GitHub-7862](https://github.com/magento/magento2/issues/7862)
 
+<!--- 69524 -->* Magento now adds a new record to the quote table and adds the  current date and time to the ”created_at" field. Previously, this field was not updated. 
 
 
 
@@ -212,8 +213,14 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 56743 -->*  We've fixed issues with upgrading installations with split databases. 
 
+<!--- 63022 -->* Static content deployment (SCD) now works when multiple languages are specified. Previously, Magento displayed an error if you tried to deploy static content in more than one language (for example, `bin/magento setup:static-content:deploy en_CA fr_CA de_DE`).
+
+<!--- 57656 -->* The import URL directive now contains base URL and locale placeholders instead of the real URL. 
 
 
+<!--- 55757 -->* Magento now works as expected on an Apache `php-fpm` environment.
+
+<!--- 63295 -->* The `DOCUMENT_ROOT` directory is now writable. Previously, installation failed because this directory was not writable.
 
 ### AMQP framework
 
@@ -296,6 +303,8 @@ This release contains hundreds of fixes and enhancements.
 <!--- 70052-->* The country drop-down box now correctly shows the countries for which the current store and customer account are configured. *Fix submitted by community member <a href="https://github.com/mimarcel" target="_blank">Marcel</a> in pull request <a href="https://github.com/magento/magento2/pull/9429" target="_blank">9429</a>.* 
 
 <!--- 56411-->* The shopping cart now handles products with custom options. [GitHub-5612](https://github.com/magento/magento2/issues/5612)
+
+<!--- 63200-->* Magento now requires completion of the State field during the check out process if this field has been configured as required.
 
 ### Catalog
 
@@ -469,6 +478,13 @@ Previously, Magento displayed only the product categories that users who belonge
 <!--- 67628-->*  You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
 
+<!--- 63320-->* If you’ve enabled persistent shopping cart, you can now check out even after your session has expired.
+
+<!--- 61826-->*  Magento no longer throws an error when you try to save a product with imported custom options.
+
+<!--- 62468-->*  Magento now displays the product price even when the product is out-of-stock.
+
+
 ### Configurable products
 We've enhanced the performance of configurable products in several ways:
 
@@ -525,6 +541,9 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 63014-->* Magento now shows the correct price of a configurable product based in installations that run multiple websites.
 
 <!--- 54653-->* We’ve improved the performance of Magento installations that contain configurable products with many (1600+) options.
+
+<!--- 56591-->* We’ve resolved some issues with the display of configurable products on the Magento frontend after product creation. 
+
 
 
 ### Email
@@ -734,6 +753,9 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---61013-->* You can now save the configuration settings of a gift card product.
 
+<!---61353-->* Gift card accounts are now automatically generated after an invoice is created, when the Auth&Capture payment action on Authorize.net Direct Post is enabled.
+
+
 #### Gift wrapping
 
 <!--- 70603-->* You can now add gift options to an order if logged in using a secure URL. 
@@ -932,7 +954,8 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 55589-->* We've improved the performance of the algorithm that Magento uses to calculate batch sizes while indexing categories.
 
-<!--- -->*
+<!--- 60824-->* Reindexing no longer results in an SQL error that prevents bundle products as well as wrong product prices.  reindexing of the page to reindex the products and most of the prices are calculated wrong.
+
 
 <!--- -->*
 
@@ -999,6 +1022,10 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 57312-->* We’ve fixed an issue with an undefined offset in the order\config.php file. [GitHub-6111](https://github.com/magento/magento2/issues/6111)
 
 <!--- 59905-->* The Create Order page now works as expected after you select **Update items and quantities**.
+
+
+<!--- 59586-->* Magento no longer creates unnecessary  loaders during checkout with an order that contains virtual products. 
+
 
 
 
@@ -1081,7 +1108,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 63460 -->* You can now modify the product quantities  of a previous order and re-order it using the saved credit card information from the first order. 
 
-<!--- -->*
+<!--- 55530 -->* You can now place orders from the Admin using the Braintree payment method.
 
 
 
@@ -1298,6 +1325,8 @@ Affected Component(s):
 <!--- 47607-->* We’ve corrected the location of sitemap generation when `vhost` is connected to `/pub`. [GitHub-2802](https://github.com/magento/magento2/issues/2802) 
 
 
+
+
 ### Staging
 
 <!---57346-->*  The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page now refreshes as expected after an update. 
@@ -1356,6 +1385,11 @@ Affected Component(s):
 
 <!--- 62646 -->* You can now save simple products created in 2.0.x environments after upgrading to environments running Magento 2.1.x. Previously, you could not successfully save the opened product after upgrading. 
 
+<!--- 59687 -->*  Once the time frame for the scheduled update has passed, Magento removes the special price and displays the original price.
+
+<!--- 54512 -->* You can now remove a product or category from a campaign.
+
+<!--- 65657 -->* You can now preview a scheduled update for a category that contains a recently viewed block. 
 
 ### Static file processing
 
@@ -1506,6 +1540,10 @@ Affected Component(s):
 <!--- 70743-->* You can now use a REST request to retrieve a shopping cart that contained a product with custom options. Previously, you could not use a REST request to retrieve a shopping cart that contained a product with custom options.
 
 <!--- 60908-->* You can now us the REST API to update image roles.
+
+<!--- 64710-->*  productWebsiteLink no longer deletes a product’s custom origins.
+
+
 
 ### Zend framework
 
