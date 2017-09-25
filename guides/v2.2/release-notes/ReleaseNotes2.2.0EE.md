@@ -194,7 +194,8 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- -->* You can now deploy build processes on a different staging machine than the one you're running your production environment on.
 
-<!--- 62660 -->*  [GitHub-7862](https://github.com/magento/magento2/issues/7862)
+<!--- 62660 -->*  JavaScript translations of warning messages no longer appear in the language of the primary locale  only. Previously, optimizations that we made to static content deployment inadvertently generated the content only in the language of the primary locale,  and then copied that directory to the other requested locales. 
+[GitHub-7862](https://github.com/magento/magento2/issues/7862)
 
 <!--- 69524 -->* Magento now adds a new record to the quote table and adds the  current date and time to the ”created_at" field. Previously, this field was not updated. 
 
@@ -226,6 +227,8 @@ This release contains hundreds of fixes and enhancements.
 <!--- 70518-->* You can now override queue publishers configuration through the `env.php` file.
 
 <!--- 66993-->* Magento now re-processes queue messages if the consumer process is terminated. 
+
+<!--- 57177-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
 
 ### Cart and checkout
 
@@ -513,7 +516,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 56591-->* We’ve resolved some issues with the display of configurable products on the Magento frontend after product creation. 
 
-
+<!--- 59307-->* Magento now displays only the set price for a configurable product, not its set price and “as low as” price. Previously, Magento showed both prices if a minimum price was not configured. 
 
 ### Email
 
@@ -535,7 +538,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member <a href="https://github.com/barbazul" target="_blank">Barbazul</a> in pull request <a href="https://github.com/magento/magento2/pull/9902" target="_blank">9902</a>.*
 
-<!---63154 -->* Magento now displays special characters in store names in email subject lines. Previously, Special characters in store name were converted to numerical character references in the email subject field. [GitHub-8094](https://github.com/magento/magento2/issues/8094) 
+<!---63154 -->* Magento now displays special characters in store names in email subject lines. Previously, special characters in the store name were converted to numerical character references in the email subject field. [GitHub-8094](https://github.com/magento/magento2/issues/8094) 
 
 
 #### Admin framework
@@ -553,6 +556,8 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 67408-->* We've changed the `select `protected property to `query` in the AbstractSearchResult class. *Fix submitted by community member <a href="https://github.com/flancer64" target="_blank">Alex Gusev</a> in pull request <a href="https://github.com/magento/magento2/pull/5043" target="_blank">5043</a>.* 
 
+<!--- 61531-->* 
+
 
 #### Configuration framework
 
@@ -560,7 +565,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 65003 -->* The currency setup in Admin no longer throws an in_array error when a single value is selected. *Fix submitted by community member <a href="https://github.com/deriknel" target="_blank">Derik Nel</a> in pull request <a href="https://github.com/magento/magento2/pull/8077" target="_blank">8077</a>.*
 
-
+<!--- 65422 -->* Magento now writes all default configuration values to the `config.php` file. 
 
 
 #### JavaScript framework
@@ -781,6 +786,9 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!--- 55234-->* Magento now successfully saves images that you edit in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.
+
+<!--- 58031-->*  Inserted images on the content block of Category no longer reference the Admin URL. Previously, when you used the Wysiwyg editor to insert an image into the Content block of a Category, the image URL on the front end would reference the Admin location. When you subsequently logged out of the Admin panel, and refreshed the Category page, the image is no longer available. 
+
 
 
 #### Import/Export
@@ -1126,7 +1134,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58277 -->* We’ve improved the speed of the category URL rewrite regeneration process for catalogs containing more than 20,000 products. 
 
-
+<!--- 62691 -->* We’ve optimized and streamlined how we cache EAV attributes by removing unnecessary SQL queries.
 
 
 ### PHP
@@ -1235,6 +1243,11 @@ Affected Component(s):
 <!--- 64909-->* Magento no longer throws a fatal error when you create a new shipment for a placed order.
 
 
+<!--- 62276-->* The State/Province field now changes to an input field as expected after you select United Kingdom when filling out the shipping address during checkout 
+
+
+
+
 ### Sitemap
 
 <!--- 70056-->* Sitemap image URLs now match the URLs on product pages. *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9082" target="_blank">9082</a>.*
@@ -1310,6 +1323,10 @@ Affected Component(s):
 
 <!--- 65657 -->* You can now preview a scheduled update for a category that contains a recently viewed block. 
 
+<!---60534-->* We’ve resolved a scheduling issue that previously resulted in Magento displaying a 404 error on most frontend pages. This occurred if you deleted a Catalog Rule with an end date, then ran an update. 
+
+
+
 ### Static file processing
 
 <!---60603-->* We've corrected a problem with `_requirejs` asset retrieval via `static.php` in {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} versioning. 
@@ -1317,7 +1334,6 @@ Affected Component(s):
 <!---56914-->* Versioning of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} (including CSS, JS, font, and image files) is now enabled by default. 
 
 <!---57904-->* We've improved the speed of static asset deployment. See <a href="http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
-
 
 
 
