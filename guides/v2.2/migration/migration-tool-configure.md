@@ -6,7 +6,7 @@ title: Configure migration
 menu_title: Configure migration
 menu_node:
 menu_order: 4
-version: 2.2
+version: 2.0
 github_link: migration/migration-tool-configure.md
 redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 ---
@@ -82,6 +82,26 @@ For example, if your database owner's user name is `root` with password `pass` a
 {% endhighlight %}
 
 When finished, save your changes to `config.xml` and exit the text editor.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You can also connect to a database using the TLS protocol (i.e., using public/private cryptographic keys). Add the following optional attributes to the `database` element:
+
+-   `ssl_ca`
+-   `ssl_cert`
+-   `ssl_key`
+
+For example:
+
+{% highlight xml %}
+<source>
+    <database host="localhost" name="magento1" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
+</source>
+<destination>
+    <database host="localhost" name="magento2" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
+</destination>
+{% endhighlight %}
+
+</div>
 
 ## Work with configuration and mapping files {#migration-config}
 

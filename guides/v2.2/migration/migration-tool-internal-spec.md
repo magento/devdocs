@@ -168,6 +168,26 @@ Change prefix option in case Magento was installed with prefix in database table
 
 Configuration data is accessible via \Migration\Config class.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You can also connect to a database using the TLS protocol (i.e., using public/private cryptographic keys). Add the following optional attributes to the `database` element:
+
+-   `ssl_ca`
+-   `ssl_cert`
+-   `ssl_key`
+
+For example:
+
+{% highlight xml %}
+<source>
+    <database host="localhost" name="magento1" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
+</source>
+<destination>
+    <database host="localhost" name="magento2" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
+</destination>
+{% endhighlight %}
+
+</div>
+
 ## Step internals {#step-internals}
 
 The migration process consists of steps.
