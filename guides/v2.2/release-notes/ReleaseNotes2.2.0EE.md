@@ -204,7 +204,7 @@ This release contains hundreds of fixes and enhancements.
 
 
 
-### AMQP framework
+### AMQP 
 
 <!---58654, 57177-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
 
@@ -290,18 +290,6 @@ This release contains hundreds of fixes and enhancements.
 
 
 <!--- 65251 -->* The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
-
-Users have encountered problems displaying images after upgrading their software to Magento 2.1.6. These problems range from incomplete loading to the total inability to load images.  Consequently, if you saved a product and didn't open it on the storefront before upgrading to 2.1.6, you'll need to apply a workaround. 
-
-**Workaround**: To correct problems with image loading, choose one of these two workarounds:
-
-* Run `php bin/magento catalog:images:resize`
-
-or 
-
-* Save (or resave) the product with the associated image in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel.
-
-
 
 <!--- 66366 -->* The `\Magento\CatalogInventory\Model\Stock\Status\getStockId()` method now returns the correct values.
 
@@ -546,8 +534,29 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 69674 -->* *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
 
+#### Zend framework
 
+Thanks to our hardworking Magento Open Source community members for the following contributions!
 
+<!--- 67511-->* We’ve removed  `Zend_Json` from Magento Theme and replaced it with a new serializer class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9262" target="_blank">9262</a>.*
+
+<!--- 67510-->* We’ve removed `Zend_Json` from the Weee module. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> We’ve removed pull request <a href="https://github.com/magento/magento2/pull/9261" target="_blank">9261</a>.*
+
+<!--- 69369-->* We’ve replaced the direct usage of Zend_Json with a call to the `Json_Help` class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull r equest <a href="https://github.com/magento/magento2/pull/9344" target="_blank">9344</a>.*
+
+<!--- 69451-->* We’ve replaced  `Zend_Json` in the configurable product block test. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9753" target="_blank">9753</a>.*
+
+<!--- 69452-->* We’ve removed `Zend_Json` from form elements. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9754" target="_blank">9754</a>.*
+
+<!--- 69371-->* We’ve replaced the Magento Framework's Zend_Session interface usage with SessionHandlerInterface. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
+
+<!--- 69157-->* We’ve removed `Zend_Wildfire` and `Zend_Controller` from the codebase. *Fix submitted by community member <a href="https://github.com/SolsWebdesign" target="_blank">Isolde</a> in pull request <a href="https://github.com/magento/magento2/pull/9622" target="_blank">9622</a>.*
+
+<!--- 69152-->* We've resolved issues with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fixes submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9540" target="_blank">9540</a> and community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
+
+<!--- 69591-->* We’ve replaced `Zend_Log` with `Psr\Log\LoggerInterface`. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
+
+<!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member <a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a> in pull request <a href="https://github.com/magento/magento2/pull/9400" target="_blank">9400</a>.*
 
 
 
@@ -589,7 +598,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---59142 -->* Admin interface forms now load data as expected after initializing all components. Previously, under certain conditions, the load indicator would spin indefinitely, and Magento would not load data. 
 
-<!---59810 -->* 59810 Showing reports on the **Reports > Coupons** page no longer throws an error when the user is in a non-default Admin locale.  [GitHub-7037](https://github.com/magento/magento2/issues/7037) 
+<!---59810 -->* Showing reports on the **Reports > Coupons** page no longer throws an error when the user is in a non-default Admin locale.  [GitHub-7037](https://github.com/magento/magento2/issues/7037) 
 
 <!---56941 -->* The list of allowed countries is now configured as part of website scope, not store view scope. [GitHub-2946](https://github.com/magento/magento2/issues/2946)
 
@@ -615,7 +624,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 71179 -->* Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account.
 
-<!---56314 -->* Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.
+<!---56314 -->* Fixed issue with using the Magento Commerce invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.
 
 <!--- 56778 -->* You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute.
 
@@ -1428,28 +1437,6 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-### Zend framework
-Thanks to our hardworking Magento Open Source community members for the following contributions!
-
-<!--- 67511-->* We’ve removed  `Zend_Json` from Magento Theme and replaced it with a new serializer class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9262" target="_blank">9262</a>.*
-
-<!--- 67510-->* We’ve removed `Zend_Json` from the Weee module. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> We’ve removed pull request <a href="https://github.com/magento/magento2/pull/9261" target="_blank">9261</a>.*
-
-<!--- 69369-->* We’ve replaced the direct usage of Zend_Json with a call to the `Json_Help` class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull r equest <a href="https://github.com/magento/magento2/pull/9344" target="_blank">9344</a>.*
-
-<!--- 69451-->* We’ve replaced  `Zend_Json` in the configurable product block test. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9753" target="_blank">9753</a>.*
-
-<!--- 69452-->* We’ve removed `Zend_Json` from form elements. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9754" target="_blank">9754</a>.*
-
-<!--- 69371-->* We’ve replaced the Magento Framework's Zend_Session interface usage with SessionHandlerInterface. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
-
-<!--- 69157-->* We’ve removed `Zend_Wildfire` and `Zend_Controller` from the codebase. *Fix submitted by community member <a href="https://github.com/SolsWebdesign" target="_blank">Isolde</a> in pull request <a href="https://github.com/magento/magento2/pull/9622" target="_blank">9622</a>.*
-
-<!--- 69152-->* We've resolved issues with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fixes submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9540" target="_blank">9540</a> and community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
-
-<!--- 69591-->* We’ve replaced `Zend_Log` with `Psr\Log\LoggerInterface`. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
-
-<!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member <a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a> in pull request <a href="https://github.com/magento/magento2/pull/9400" target="_blank">9400</a>.*
 
 ## Community contributions
 
@@ -1471,7 +1458,7 @@ For more information, [System Requirements]({{ site.baseurl }}magento-system-req
 
 ### Installation and upgrade instructions
 
-You can install Magento Enterprise Edition 2.2 General Availability (GA) using Composer.
+You can install Magento Commerce 2.2 General Availability (GA) using Composer.
 
 
 {% include install/releasenotes/ee_install_21.md %}
