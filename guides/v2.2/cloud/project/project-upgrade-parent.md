@@ -5,7 +5,7 @@ subgroup: 130_upgrades
 title: Upgrades and Patches
 menu_title: Upgrades and Patches
 menu_order: 1
-menu_node:
+menu_node: parent
 version: 2.2
 github_link: cloud/project/project-upgrade-parent.md
 ---

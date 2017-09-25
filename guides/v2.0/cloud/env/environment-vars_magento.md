@@ -14,7 +14,7 @@ github_link: cloud/env/environment-vars_magento.md
 
 <!-- The Magento application enables you to customize the values of many settings, including payment processors, shipping methods, and so on.
  -->
-These sections list the environment variables for general Magento, build, and deployment. You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
+These sections list the environment variables for [general Magento](#application), [build](#build), and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
 
 ## Magento application variables {#application}
 
@@ -84,6 +84,8 @@ The following table lists variables that you can override using environment vari
 ## Magento build variables {#build}
 The following variables are options available during the build process of build and deploy. The variables help prepare the codebase before it is moved to the server and then built.
 
+You can use these options as part of a `build_options.ini` file for customizing the build process. This file is located in the Magento root directory.
+
 <table>
 <tbody>
 <tr>
@@ -94,21 +96,21 @@ The following variables are options available during the build process of build 
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_DI_COMPILATION</code></td>
-<td>skips di-compilation</td>
-<td>value</td>
-<th>all versions</th>
+<td>If you are needing to quickly debug a set of code in developer mode, you can enable this option to skip compilation and before a build immediately. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing in developer mode. You should always run di_compilation.</td>
+<td><code>skip_di_compilation</code></td>
+<th>2.1.X, 2.2.X</th>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_DI_CLEARING</code></td>
-<td>skips di-clearing</td>
-<td>value</td>
-<th>all versions</th>
+<td>Before di_generation runs, the build process clears the existing build to rebuild before deploying. If you are simply redeploying without needing to fully rebuild, you can use this option to skip the deletion of the existing built files. The deploy phase will reuse the existing build files.</td>
+<td><code>skip_di_clearing</code></td>
+<th>2.1.X, 2.2.X</th>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SCD_EXCLUDE_THEMES</code></td>
-<td>When enabled, this option does not deploy theme files during the build process. This is extremely helpful when static content deployment occurs during the build phase. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. </td>
-<td>value</td>
-<th>all versions</th>
+<td>When enabled, this option does not generate static content for an entered theme location. This is extremely helpful when static content deployment occurs during the build phase. For example, the Luma theme is included with all {{site.data.var.ece}} projects. You may not need to constantly generate static content for this theme, which adds time to your build. </td>
+<td><code>exclude_themes = Magento/luma</code></td>
+<th>2.1.X, 2.2.X</th>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SCD_THREADS</code></td>
@@ -116,14 +118,15 @@ The following variables are options available during the build process of build 
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p></td>
 <td><p>1 for Starter environments and Pro Integration environments</p>
 <p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.
-<p>3 for Pro Staging and Production environments</p></td>
-<th>all versions</th>
+<p>3 for Pro Staging and Production environments</p>
+<p>For example: <code>scd_threads = 8</code></p></td>
+<th>2.1.X, 2.2.X</th>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_SCD</code></td>
-<td>skip the scd processes</td>
-<td>value</td>
-<th>all versions</th>
+<td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site.</td>
+<td><code>skip_scd</code></td>
+<th>2.1.X, 2.2.X</th>
 </tr>
 </tbody>
 </table>
@@ -141,7 +144,7 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
-<p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can't change.</p></td>
+<p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p></td>
 <td>enabled</td>
 <td>2.0.10, 2.1.2</td>
 </tr>
@@ -154,7 +157,7 @@ The following variables are available during the deploy process of build and dep
 <td>all versions</td>
 </tr>
 <tr>
-<td>STATIC_CONTENT_EXCLUDE_THEMES</code></td>
+<td><code>STATIC_CONTENT_EXCLUDE_THEMES</code></td>
 <td>Themes can include numerous files. If you want to skip copying over theme files during deployment, you can set this environment variable. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. </td>
 <td>admin</td>
 <td>all versions</td>
@@ -175,8 +178,21 @@ The following variables are available during the deploy process of build and dep
 <td>all versions</td>
 </tr>
 <tr>
+<td><code>DO_DEPLOY_STATIC_CONTENT</code></td>
+<td>You can forcefully enable or disable the deployment of static content during the deploy phase with this variable. If you already completed static content deployment in the build phase, and this variable is enabled, it will be overridden to ensure static content deployment occurs only once. We strongly recommend always deploying static content during the build phase.</td>
+<td>disabled</td>
+<td>all versions</td>
+</tr>
+<tr>
 <td><code>MAGENTO_CLOUD_MODE</code></td>
-<td>This mode is equivalent to the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html"><code>APPLICATION_MODE</code></code>.</td>
+<td>We manage the values and setting of this variable. It identifies the type of environment as part of Integration, Staging, or Production. This is highly important for Pro plans Production, which has a three node high availability architecture with a very different technology stack.</td>
+<td>production</td>
+<td>all versions</td>
+</tr>
+<tr><td><code>APPLICATION_MODE</code></td>
+<td><p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
+<p>The variable supports the following values: <code>production</code> and <code>developer</code>. You cannot set this value to <code>default</code> mode. After you have changed the mode with an environment variable, it can only be set to <code>production</code> or <code>developer</code>.</p>
+<p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p></td>
 <td>production</td>
 <td>all versions</td>
 </tr>
@@ -213,7 +229,7 @@ The following variables are available during the deploy process of build and dep
 <td>all versions</td>
 </tr>
 <tr><td><code>ADMIN_URL</code></td>
-<td>Enter the relative URL by which to access the Magento Admin. For security reasons, we recommend you choose a value other than <code>admin</code> or <code>backend</code> or another term that is easy to guess.</td>
+<td>Enter the relative URL by which to access the Magento Admin. For security reasons, we recommend you choose a value other than <code>admin</code> or <code>backend</code> or another term that is easy to guess. If you set this value through a variable and the Admin Panel in Starter environments, the variable overrides the Admin Panel (or database value). For Pro, the Admin Panel (database value) overrides the variable. The values are also managed by <code>UPDATE_URLS</code>. </td>
 <td>admin</td>
 <td>all versions</td>
 </tr>
