@@ -1,12 +1,11 @@
 ---
 layout: default
 group: release-notes
-subgroup: 02_rel-notes
 title: Magento Commerce 2.2.0 Release Notes
 menu_title: Magento Commerce 2.2.0 Release Notes
 menu_order: 299
-level3_menu_node: level3
-level3_subgroup: ee22-relnotes
+level3_menu_node:
+level3_subgroup: 
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0EE.md
 ---
@@ -1545,6 +1544,7 @@ Affected Component(s):
 
 
 ### Zend framework
+Thanks to our hardworking Magento Open Source community members for the following contributions!
 
 <!--- 67511-->* We’ve removed  `Zend_Json` from Magento Theme and replaced it with a new serializer class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9262" target="_blank">9262</a>.*
 
@@ -1565,6 +1565,16 @@ Affected Component(s):
 <!--- 69591-->* We’ve replaced Zend_Log with Psr\Log\LoggerInterface. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
 
 <!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member <a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a> in pull request <a href="https://github.com/magento/magento2/pull/9400" target="_blank">9400</a>.*
+
+ ## Community contributions
+
+ We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can about the community contributions to our current releases:
+
+
+* If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*". 
+
+* The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of  top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub. 
+
 
 
 ### System requirements
