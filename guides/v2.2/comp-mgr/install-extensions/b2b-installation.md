@@ -75,7 +75,7 @@ Append `&` to the command to run it in the background, return to a prompt, and c
 Refer to [Manage message queues with MySQL]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
 
 ### Add message consumers to cron
-You may also add these two message consumers to the cron job. For this, add these lines in your `crontab.xml`:
+You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab.xml`:
 
 {%highlight xml%}
 * * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions &
@@ -85,15 +85,15 @@ You may also add these two message consumers to the cron job. For this, add thes
 ### Specify parameters for message consumers
 Depending on your system configuration, to prevent possible issues, you may also need to specify the following parameters when starting the services:
 
--   `--max-messages`: manages the consumer's lifetime and allows you to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart the long-running processes to prevent possible memory leaks
+-   `--max-messages`: manages the consumer's lifetime and allows you to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart long-running processes to prevent possible memory leaks.
 
--   `--batch-size`: allows you to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing
+-   `--batch-size`: allows you to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing.
 
 ### Enable B2B features in Magento Admin
 After installing the {{site.data.var.b2b}} extension and starting message consumers (if you want to enable the **Shared Catalog** module), you must also enable B2B modules in Magento Admin.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-If you enable the **Shared Catalog** module, you must also enable the **Company** module. The **Quick Order** module can be enabled/disabled independently.
+If you enable the **Shared Catalog** module, you must also enable the **Company** module. The **Quick Order** and **Requisition Lists** modules can be enabled/disabled independently.
 </div>
 
 1.  Access the Magento Admin and click **Stores** > **Configuration** > **General** > **B2B Features**.
