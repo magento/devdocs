@@ -484,13 +484,13 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 67510-->* We’ve removed `Zend_Json` from the Weee module. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> We’ve removed pull request <a href="https://github.com/magento/magento2/pull/9261" target="_blank">9261</a>.*
 
-<!--- 69369-->* We’ve replaced the direct usage of Zend_Json with a call to the `Json_Help` class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull r equest <a href="https://github.com/magento/magento2/pull/9344" target="_blank">9344</a>.*
+<!--- 69369-->* We’ve replaced the direct usage of `Zend_Json` with a call to the `Json_Help` class. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9344" target="_blank">9344</a>.*
 
 <!--- 69451-->* We’ve replaced  `Zend_Json` in the configurable product block test. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9753" target="_blank">9753</a>.*
 
 <!--- 69452-->* We’ve removed `Zend_Json` from form elements. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/9754" target="_blank">9754</a>.*
 
-<!--- 69371-->* We’ve replaced the Magento Framework's Zend_Session interface usage with SessionHandlerInterface. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
+<!--- 69371-->* We’ve replaced the Magento Framework's `Zend_Session` interface usage with SessionHandlerInterface. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
 
 <!--- 69157-->* We’ve removed `Zend_Wildfire` and `Zend_Controller` from the codebase. *Fix submitted by community member <a href="https://github.com/SolsWebdesign" target="_blank">Isolde</a> in pull request <a href="https://github.com/magento/magento2/pull/9622" target="_blank">9622</a>.*
 
@@ -570,7 +570,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 59785-->* Magento no longer generates incorrect URLs in the site map when the **Use Secure URLs in Admin** setting is set to **Yes**. [GitHub-8644](https://github.com/magento/magento2/issues/8644) 
 
-<!--- 69606-->* We’ve resolved a conflict that occurred after you changed a base URL. Previously, after you changed a `base_url` value (**Stores->Configuration->General->Web-> Base URLs (Secure)**), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure `base_url` call.
+<!--- 69606-->* We’ve resolved a conflict that occurred after you changed a base URL. Previously, after you changed a `base_url` value (**Stores->Configuration > General > Web > Base URLs (Secure)**), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure `base_url` call.
 
 <!--- 70683-->* Magento now displays newly registered customers in the Admin customer list as expected.
 
