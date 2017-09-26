@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: Third-party licenses
-menu_title: Magento EE third-party licenses
-title: Magento EE third-party licenses
+menu_title: Magento Commerce third-party licenses
+title: Magento Commerce third-party licenses
 menu_order: 2
 version: 2.2
 github_link: release-notes/thirdparty_ee.md
