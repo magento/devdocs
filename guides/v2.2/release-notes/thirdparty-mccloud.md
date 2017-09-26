@@ -9,11 +9,16 @@ version: 2.2
 github_link: release-notes/thirdparty-mccloud.md
 ---
 
-This page contains links to license agreements of the third party components used within Magento Commerce.  Click the **License** links to view the end user license agreement for the corresponding software.
+This page contains links to license agreements of the third party components used within {{site.data.var.ece}}.  Click the **License** links to view the end user license agreement for the corresponding software.
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
-elasticsearch/elasticsearch |2.0| Apache 2.0/GNU LGPL-2.1|[Source](https://github.com/elastic/elasticsearch-php)|[License](https://github.com/elastic/elasticsearch-php/blob/master/LICENSE)
+fastly |1.2.28|[Source](https://github.com/fastly/fastly-magento2)|[License](https://github.com/fastly/fastly-magento2/blob/master/LICENSE_FASTLY_CDN.txt)
+new relic apm ||[Source](https://docs.newrelic.com/apm)|[License](https://rpm.newrelic.com/licenses)
+glusterfs ||[Source](https://github.com/gluster/glusterfs)|[License](https://github.com/gluster/glusterfs#license)
+mariadb ||[Source](https://mariadb.com/downloads/mariadb-tx)|[License](https://mariadb.com/kb/en/library/mariadb-license/)
+elasticsearch/elasticsearch |1.4, 1.7, 2.4| Apache 2.0/GNU LGPL-2.1|[Source](https://github.com/elastic/elasticsearch-php)|[License](https://github.com/elastic/elasticsearch-php/blob/master/LICENSE)
+rabbitmq |3.5|[Source](https://github.com/rabbitmq)|[License](https://www.rabbitmq.com/mpl.html)
 guzzlehttp/ringphp |1.1.0| MIT|[Source](https://github.com/guzzle/RingPHP)|[License](https://github.com/guzzle/RingPHP/blob/master/LICENSE)
 guzzlehttp/streams |3.0.0| MIT|[Source](https://github.com/guzzle/streams)|[License](https://github.com/guzzle/streams/blob/master/LICENSE)
 solarium/solarium |3.8.1| BSD-3-Clause|[Source](https://github.com/solariumphp/solarium)|[License](https://github.com/solariumphp/solarium/blob/master/COPYING)
