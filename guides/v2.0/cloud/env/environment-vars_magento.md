@@ -19,13 +19,12 @@ These sections list the environment variables for [general Magento](#application
 The following table lists variables that you can override using environment variables.
 
 <table>
-<tbody>
-<tr>
+<thead><tr>
 <th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-</tr>
-<tr>
+</tr></thead>
+<tbody><tr>
 <td><code>ADMIN_USERNAME</code></td>
 <td>User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users.</td>
 <td>admin</td>
@@ -72,8 +71,7 @@ The following table lists variables that you can override using environment vari
 <p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can't change.</p>
 <p>Available in {{site.data.var.ece}} 2.0.10 and later, and 2.1.2 and later.</p></td>
 <td>enabled</td>
-</tr>
-</tbody>
+</tr></tbody>
 </table>
 
 <!-- <tr><td>RECOMPILE_DI</td>
@@ -85,13 +83,13 @@ The following variables are options available during the build process of build 
 
 You can use these options as part of a `build_options.ini` file for customizing the build process. This file is located in the Magento root directory.
 
-<table><tbody>
-<tr>
+<table>
+<thead><tr>
 <th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-</tr>
-<tr>
+</tr></thead>
+<tbody><tr>
 <td><code>BUILD_OPT_SKIP_DI_COMPILATION</code></td>
 <td>If you are needing to quickly debug a set of code in developer mode, you can enable this option to skip compilation and before a build immediately. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing in developer mode. You should always run di_compilation. Available in versions 2.1.X, 2.2.X.</td>
 <td><code>skip_di_compilation = disabled</code></td>
@@ -119,8 +117,8 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <td><code>BUILD_OPT_SKIP_SCD</code></td>
 <td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in versions 2.1.X, 2.2.X.</td>
 <td><code>skip_scd = disabled</code></td>
-</tr>
-</tbody></table>
+</tr></tbody>
+</table>
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
@@ -141,13 +139,14 @@ For information on the build and deploy process, see [Deployment process]({{page
 ## Magento deploy variables {#deploy}
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
 
-<table><tbody>
+<table>
+<thead>
 <tr>
 <th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-</tr>
-<tr><td><code>UPDATE_URLS</code></td>
+</tr></thead>
+<tbody><tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 <p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p>
 <p>This is available in versions 2.0.10 and later, 2.1.2 and later, and 2.2 and later.</td>
@@ -233,8 +232,8 @@ The following variables are available during the deploy process of build and dep
 <p>This setting is vital for Pro Production environment for the three node cluster. If disabled, every file will be copied during deployment without automated symlinks generated. If disabled, this will increase deployment time.</p>
 <p>This is available in all versions.</p></td>
 <td>enabled</td>
-</tr>
-</tbody></table>
+</tr></tbody>
+</table>
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
