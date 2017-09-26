@@ -671,7 +671,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 56588-->* Magento now runs a selective partial re-indexing operation after import if you enable **Update on Schedule**. Previously, Magento ran a full reindex no matter which index mode was set.
 
-<!--- 52728-->* You can now import negative quantities. Previously, when importing a product quantity of '-1', Magento returned an error.
 
 <!--- 53428, 56804-->* We've fixed an issue with the correct representation of date and time zones of items in a product {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard.
 
