@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 090_configure
-title: Set up the Redis service
-menu_title: Set up the Redis service
+title: Set up Redis service
+menu_title: Set up Redis service
 menu_order: 65
 menu_node:
 level3_menu_node: level3child
@@ -79,3 +79,8 @@ if (getenv('MAGENTO_CLOUD_RELATIONSHIPS')) {
 Assuming your Redis relationship is named `redis`, you can access it by opening an [SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) to a host named `redis.internal` using the redis-cli tool.
 
     redis-cli -h redis.internal
+
+#### Related topics
+*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

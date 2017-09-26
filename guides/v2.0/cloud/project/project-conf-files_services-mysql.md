@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 090_configure
-title: Set up the MySQL service
-menu_title: Set up the MySQL service
+title: Set up MySQL service
+menu_title: Set up MySQL service
 menu_order: 60
 menu_node:
 level3_menu_node: level3child

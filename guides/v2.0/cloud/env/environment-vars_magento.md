@@ -45,8 +45,8 @@ The following table lists variables that you can override using environment vari
 <td>john@example.com</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
-<td>Administrative user's password.</td>
-<td>Not set. This value is hard-coded as admin12.</td>
+<td>Administrative user's password. Initially, we have hardcoded this value to admin12. You should immediately change this password. </td>
+<td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_URL</code></td>
 <td>Enter the relative URL by which to access the Magento Admin. For security reasons, we recommend you choose a value other than <code>admin</code> or <code>backend</code> or another term that is easy to guess.</td>
@@ -68,10 +68,11 @@ The following table lists variables that you can override using environment vari
 <p>Because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
 <td>enable</td>
 </tr>
-<tr><td><code>UPDATE_URLS</code></td>
+<tr>
+<td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 <p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can't change.</p>
-<p>Available in {{site.data.var.ece}} 2.0.10 and later, and 2.1.2 and later.</td>
+<p>Available in {{site.data.var.ece}} 2.0.10 and later, and 2.1.2 and later.</p></td>
 <td>enabled</td>
 </tr>
 </tbody>
@@ -125,6 +126,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 </tbody>
 </table>
 
+For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 <!-- <tr>
 <td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
@@ -223,7 +225,7 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
 <td>Administrative user's password. Initially, we have hardcoded this value to admin12. You should immediately change this password. This is available in all versions.</td>
-<td>Not set.</td>
+<td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_URL</code></td>
 <td>Enter the relative URL by which to access the Magento Admin. For security reasons, we recommend you choose a value other than <code>admin</code> or <code>backend</code> or another term that is easy to guess. If you set this value through a variable and the Admin Panel in Starter environments, the variable overrides the Admin Panel (or database value). For Pro, the Admin Panel (database value) overrides the variable. The values are also managed by <code>UPDATE_URLS</code>. This is available in all versions.</td>
@@ -239,6 +241,7 @@ The following variables are available during the deploy process of build and dep
 </tbody>
 </table>
 
+For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 <!-- <tr><td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
 <p>Use these options only if you have more than one locale.</p>
