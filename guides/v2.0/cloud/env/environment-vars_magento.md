@@ -92,41 +92,35 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-<th>Version</th>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_DI_COMPILATION</code></td>
-<td>If you are needing to quickly debug a set of code in developer mode, you can enable this option to skip compilation and before a build immediately. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing in developer mode. You should always run di_compilation.</td>
-<td><code>skip_di_compilation</code></td>
-<th>2.1.X, 2.2.X</th>
+<td>If you are needing to quickly debug a set of code in developer mode, you can enable this option to skip compilation and before a build immediately. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing in developer mode. You should always run di_compilation. Available in versions 2.1.X, 2.2.X.</td>
+<td><code>skip_di_compilation = disabled</code></td>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_DI_CLEARING</code></td>
-<td>Before di_generation runs, the build process clears the existing build to rebuild before deploying. If you are simply redeploying without needing to fully rebuild, you can use this option to skip the deletion of the existing built files. The deploy phase will reuse the existing build files.</td>
-<td><code>skip_di_clearing</code></td>
-<th>2.1.X, 2.2.X</th>
+<td>Before di_generation runs, the build process clears the existing build to rebuild before deploying. If you are simply redeploying without needing to fully rebuild, you can use this option to skip the deletion of the existing built files. The deploy phase will reuse the existing build files. Available in versions 2.1.X, 2.2.X.</td>
+<td><code>skip_di_clearing = disabled</code></td>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SCD_EXCLUDE_THEMES</code></td>
-<td>When enabled, this option does not generate static content for an entered theme location. This is extremely helpful when static content deployment occurs during the build phase. For example, the Luma theme is included with all {{site.data.var.ece}} projects. You may not need to constantly generate static content for this theme, which adds time to your build. </td>
+<td>When enabled, this option does not generate static content for an entered theme location. This is extremely helpful when static content deployment occurs during the build phase. For example, the Luma theme is included with all {{site.data.var.ece}} projects. You may not need to constantly generate static content for this theme, which adds time to your build. Available in versions 2.1.X, 2.2.X. </td>
 <td><code>exclude_themes = Magento/luma</code></td>
-<th>2.1.X, 2.2.X</th>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SCD_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. These threads are used The higher amount of threads increasing the amount of files processed during the deployment of static content during the build phase. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
-<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p></td>
-<td><p>1 for Starter environments and Pro Integration environments</p>
-<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.
-<p>3 for Pro Staging and Production environments</p>
-<p>For example: <code>scd_threads = 8</code></p></td>
-<th>2.1.X, 2.2.X</th>
+<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
+<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+<p>Available in versions 2.1.X, 2.2.X.</p></td>
+<td><p><code>scd_threads = 1</code> for all Starter and Pro Integration environments</p>
+<p><code>scd_threads = 3</code> for Pro Staging and Production environments</p></td>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_SCD</code></td>
-<td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site.</td>
-<td><code>skip_scd</code></td>
-<th>2.1.X, 2.2.X</th>
+<td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in versions 2.1.X, 2.2.X.</td>
+<td><code>skip_scd = disabled</code></td>
 </tr>
 </tbody>
 </table>
@@ -154,111 +148,98 @@ The following variables are available during the deploy process of build and dep
 <th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-<th>Version</th>
 </tr>
 <tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
-<p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p></td>
+<p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p>
+<p>This is available in versions 2.0.10 and later, 2.1.2 and later, and 2.2 and later.</td>
 <td>enabled</td>
-<td>2.0.10, 2.1.2</td>
 </tr>
 <tr>
 <td><code>CLEAN_STATIC_FILES</code></td>
 <td><p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
 <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
-<p>Because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
-<td>enable</td>
-<td>all versions</td>
+<p>Because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+<p>This is available in all versions.</p></td>
+<td>enabled</td>
 </tr>
 <tr>
 <td><code>STATIC_CONTENT_EXCLUDE_THEMES</code></td>
-<td>Themes can include numerous files. If you want to skip copying over theme files during deployment, you can set this environment variable. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. </td>
-<td>admin</td>
-<td>all versions</td>
+<td>Themes can include numerous files. If you want to skip copying over theme files during deployment, you can set this environment variable. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. To exclude, you would add the theme, for example: <code>Magento/luma</code>. This is available in all versions.</td>
+<td>not set</td>
 </tr>
 <tr>
 <td><code>ADMIN_LOCALE</code></td>
-<td>Specifies the default locale used by the Magento Admin.</td>
-<td><code>en_US</code></td>
-<td>all versions</td>
+<td>Specifies the default locale used by the Magento Admin. This is available in all versions.</td>
+<td>en_US</td>
 </tr>
 <tr>
 <td><code>STATIC_CONTENT_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. The higher amount of threads increasing the amount of files processed during the deployment. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
-<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p></td>
+<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
+<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+<p>This is available in all versions.</p></td>
 <td><p>1 for Starter environments and Pro Integration environments</p>
-<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.
 <p>3 for Pro Staging and Production environments</p></td>
-<td>all versions</td>
 </tr>
 <tr>
 <td><code>DO_DEPLOY_STATIC_CONTENT</code></td>
-<td>You can forcefully enable or disable the deployment of static content during the deploy phase with this variable. If you already completed static content deployment in the build phase, and this variable is enabled, it will be overridden to ensure static content deployment occurs only once. We strongly recommend always deploying static content during the build phase.</td>
+<td>You can forcefully enable or disable the deployment of static content during the deploy phase with this variable. If you already completed static content deployment in the build phase, and this variable is enabled, it will be overridden to ensure static content deployment occurs only once. We strongly recommend always deploying static content during the build phase.  This is available in all versions.</td>
 <td>disabled</td>
-<td>all versions</td>
 </tr>
 <tr>
 <td><code>MAGENTO_CLOUD_MODE</code></td>
-<td>We manage the values and setting of this variable. It identifies the type of environment as part of Integration, Staging, or Production. This is highly important for Pro plans Production, which has a three node high availability architecture with a very different technology stack.</td>
-<td>production</td>
-<td>all versions</td>
+<td>We manage the values and setting of this variable. It identifies the type of environment as part of Integration, Staging, or Production. For example, for Pro, this value may be <code>enterprise</code> indicating Staging and Production. For <code>enterprise</code>, it sets the <code>STATIC_CONTENT_THREADS</code> to 3, otherwise sets it to 1 for Integration. This is highly important for Pro plans Production, which has a three node high availability architecture with a very different technology stack. This is available in all versions.</td>
+<td>enterprise</td>
 </tr>
 <tr><td><code>APPLICATION_MODE</code></td>
 <td><p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
 <p>The variable supports the following values: <code>production</code> and <code>developer</code>. You cannot set this value to <code>default</code> mode. After you have changed the mode with an environment variable, it can only be set to <code>production</code> or <code>developer</code>.</p>
-<p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p></td>
+<p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p>
+<p>This is available in all versions.</p></td>
 <td>production</td>
-<td>all versions</td>
 </tr>
 <tr>
 <td><code>VERBOSE_COMMANDS</code></td>
-<td>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html">Symfony</a> debug verbosity level for your logs. Be aware, if you enable this verbosity, the logs will be deeply detailed.</td>
+<td>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html">Symfony</a> debug verbosity level for your logs. Be aware, if you enable this verbosity, the logs will be deeply detailed. This is available in all versions.</td>
 <td>disabled</td>
-<td>all versions</td>
 </tr>
 <tr>
 <td><code>ADMIN_USERNAME</code></td>
-<td>User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users.</td>
+<td>User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users. This is available in all versions.</td>
 <td>admin</td>
-<td>all versions</td>
 </tr>
 <tr><td><code>ADMIN_FIRSTNAME</code></td>
-<td>Administrative user's first name.</td>
+<td>Administrative user's first name. This is available in all versions.</td>
 <td>John</td>
-<td>all versions</td>
 </tr>
 <tr><td><code>ADMIN_LASTNAME</code></td>
-<td>Administrative user's last name.</td>
+<td>Administrative user's last name. This is available in all versions.</td>
 <td>Doe</td>
-<td>all versions</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address.</td>
+<td>Administrative user's e-mail address. This is available in all versions.</td>
 <td>john@example.com</td>
-<td>all versions</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
-<td>Administrative user's password.</td>
-<td>Not set. This value is hard-coded as admin12.</td>
-<td>all versions</td>
+<td>Administrative user's password. Initially, we have hardcoded this value to admin12. You should immediately change this password. This is available in all versions.</td>
+<td>Not set.</td>
 </tr>
 <tr><td><code>ADMIN_URL</code></td>
-<td>Enter the relative URL by which to access the Magento Admin. For security reasons, we recommend you choose a value other than <code>admin</code> or <code>backend</code> or another term that is easy to guess. If you set this value through a variable and the Admin Panel in Starter environments, the variable overrides the Admin Panel (or database value). For Pro, the Admin Panel (database value) overrides the variable. The values are also managed by <code>UPDATE_URLS</code>. </td>
+<td>Enter the relative URL by which to access the Magento Admin. For security reasons, we recommend you choose a value other than <code>admin</code> or <code>backend</code> or another term that is easy to guess. If you set this value through a variable and the Admin Panel in Starter environments, the variable overrides the Admin Panel (or database value). For Pro, the Admin Panel (database value) overrides the variable. The values are also managed by <code>UPDATE_URLS</code>. This is available in all versions.</td>
 <td>admin</td>
-<td>all versions</td>
 </tr>
 <tr>
 <td><code>STATIC_CONTENT_SYMLINK</code></td>
 <td><p>Generates symlinks for static content. By default, symlinks are always generated unless you disable it using this environment variable.</p>
-<p>This setting is vital for Pro Production environment for the three node cluster. If disabled, every file will be copied during deployment without automated symlinks generated. If disabled, this will increase deployment time.</p></td>
+<p>This setting is vital for Pro Production environment for the three node cluster. If disabled, every file will be copied during deployment without automated symlinks generated. If disabled, this will increase deployment time.</p>
+<p>This is available in all versions.</p></td>
 <td>enabled</td>
-<td>all versions</td>
 </tr>
-<tr>
 </tbody>
 </table>
 
-<!-- <td><code>SCD_STRATEGY</code></td>
+<!-- <tr><td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
 <p>Use these options only if you have more than one locale.</p>
 <ul>
