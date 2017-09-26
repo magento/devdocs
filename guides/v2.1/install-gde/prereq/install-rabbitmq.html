@@ -980,12 +980,11 @@
 
 <ol>
   <li>Install RabbitMQ and any prerequisites.</li>
-  <li>Configure RabbitMQ.</li>
-  <li>Configure your message queue topology.</li>
+  <li>Connect RabbitMQ and Magento.</li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>A basic message queue system can be implemented on EE without using RabbitMQ. See <a href="/guides/v2.1/config-guide/mq/manage-mysql.html">Configure message queues</a> for more information.</p>
+  <p>A basic message queue system can be implemented on Magento Commerce using cron instead of RabbitMQ. See <a href="/guides/v2.1/config-guide/mq/manage-mysql.html">Configure message queues</a> for more information.</p>
 </div>
 
 <h2 id="ubuntu-install">Install RabbitMQ on Ubuntu</h2>
@@ -1010,6 +1009,7 @@
 <h2 id="centos-install">Install RabbitMQ on CentOS</h2>
 
 <h3 id="install-erlang">Install Erlang</h3>
+
 <p>RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ.</p>
 
 <p>See <a href="https://www.erlang-solutions.com/resources/download.html" target="&#95;blank">Manual installation</a> for more information.</p>
@@ -1022,6 +1022,7 @@
 </ol>
 
 <h3 id="install-rabbitmq">Install RabbitMQ</h3>
+
 <p>The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.</p>
 
 <ol>
@@ -1035,6 +1036,7 @@
 <p>Refer to <a href="https://www.rabbitmq.com/install-rpm.html" target="&#95;blank">Installing on RPM-based Linux</a> for more information.</p>
 
 <h2 id="config">Configure RabbitMQ</h2>
+
 <p>Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay attention to the following items:</p>
 
 <ul>
@@ -1045,8 +1047,9 @@
   <li>System limits</li>
 </ul>
 
-<h2 id="install-rabbitmq-on-magento-ee">Install RabbitMQ on Magento EE</h2>
-<p>Add the following command line parameters when you install Magento EE:</p>
+<h2 id="connect-rabbitmq-to-magento-commerce">Connect RabbitMQ to Magento Commerce</h2>
+
+<p>Add the following command line parameters when you install Magento Commerce:</p>
 
 <p><code class="highlighter-rouge">--amqp-host="&lt;hostname&gt;" --amqp-port="5672" --amqp-user="&lt;user_name&gt;" --amqp-password="&lt;password&gt;" --amqp-virtualhost="/"</code></p>
 
@@ -1081,6 +1084,10 @@
 </tr>
 </table>
 
+<h2 id="start-the-message-queue-consumers">Start the message queue consumers</h2>
+
+<p>After you have connected Magento Commerce and RabbitMQ, you must start the message queue consumers. See <a href="/guides/v2.1/config-guide/mq/manage-mysql.html">Configure message queues</a> for details.</p>
+
 <h4 id="related-topics">Related topics</h4>
 <ul>
   <li><a href="/guides/v2.1/install-gde/prereq/optional.html">Installing optional software</a></li>
@@ -1090,7 +1097,7 @@
   <li><a href="/guides/v2.1/install-gde/prereq/security.html">Configuring security options</a></li>
   <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">How to get the Magento software</a></li>
   <li><a href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">Message queue overview</a></li>
-  <li><a href="/guides/v2.1/config-guide/mq/config-mq.html">Configure message queues</a></li>
+  <li><a href="/guides/v2.1/config-guide/mq/manage-mysql.html">Manage message queues</a></li>
 </ul>
 
 		</div>
