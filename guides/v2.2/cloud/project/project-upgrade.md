@@ -20,13 +20,19 @@ When you upgrade {{site.data.var.ece}}, you also upgrade with patches and availa
 
 Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
-When upgrading to 2.2.X from 2.1.X using Configuration Management with a config.local.php file, you must complete an additional step to upgrade. See [Configuration Management](#config).
+When upgrading  from 2.1.X to 2.2.X, please see [Upgrade from 2.1.X](#2-1-X).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
 </div>
 
-## Configuration Management and upgrading {#config}
+## Upgrade from 2.1.X {#2-1-X}
+When upgrading from 2.1.X, you need to complete additional preparation steps. These include:
+
+* [Configuration Management](#config): Create a new `config.php` using the `config.local.php` to properly upgrade
+* [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
+
+### Configuration Management and upgrading {#config}
 If you are upgrading from 2.1.X to 2.2.X and use Configuration Management, you need to add another configuration file to your branch. Previous versions with Configuration Management uses a `config.local.php` file. Starting with 2.2.0, [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) use a different file name: `config.php`. When you upgrade without having this file prepared, you will receive an error and a list of steps to complete prior to upgrade.
 
 We recommend completing the following steps to upgrade without errors:
@@ -35,6 +41,30 @@ We recommend completing the following steps to upgrade without errors:
 3. Push the file to your Integration branch and environment.
 
 You can now upgrade to 2.2.X. After upgrading, you can remove the `config.php` file and regenerate it correctly for your implementation. This file works exactly as `config.local.php`, with supportive additions and a different name.
+
+### Update .magento.app.yaml {#magento-app-yaml}
+If you are upgrading from 2.1.X to 2.2.X, you need to also update your [.magento.app.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you will encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
+
+1. Locate and edit your `.magento.app.yaml` in your Git branch.
+2. For the PHP version, make sure it is 7.0: `type: php:7.0`
+3. We have updated our build and deploy hooks. Locate the `hooks` section, and update the following:
+
+        hooks:
+          # We run build hooks before your application has been packaged.
+          build: |
+              php ./vendor/bin/m2-ece-build
+          # We run deploy hook after your application has been deployed and started.
+          deploy: |
+              php ./vendor/bin/m2-ece-deploy
+4. Enter the following environment variables to the end of your file:
+
+        variables:
+          env:
+            CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+            CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+            CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+5. Save the file and push to your Git branch.
+
 
 ## Back up the database {#backup-db}
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
@@ -93,32 +123,8 @@ Verify other changes you're going to submit to source control before you start t
     The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.
 
 5.  Wait for deployment to complete.
-6. If you are upgrading from 2.1.X to 2.2.X, also [update .magento.app.yaml](#magento-app-yaml).
 
 6.  [Verify your upgrade](#upgrade-verify).
-
-## Update .magento.app.yaml {#magento-app-yaml}
-If you are upgrading from 2.1.X to 2.2.X, you need to also update your [.magento.app.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you will encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
-
-1. Locate and edit your `.magento.app.yaml` in your Git branch.
-2. For the PHP version, make sure it is 7.0: `type: php:7.0`
-3. We have updated our build and deploy hooks. Locate the `hooks` section, and update the following:
-
-      hooks:
-        # We run build hooks before your application has been packaged.
-        build: |
-            php ./vendor/bin/m2-ece-build
-        # We run deploy hook after your application has been deployed and started.
-        deploy: |
-            php ./vendor/bin/m2-ece-deploy
-4. Enter the following environment variables to the end of your file:
-
-      variables:
-        env:
-          CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-          CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-          CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
-5. Save the file and push to your Git branch. 
 
 ## Verify your upgrade {#upgrade-verify}
 This section discusses how to verify your upgrade and to troubleshoot any issues you might find.

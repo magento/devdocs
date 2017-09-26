@@ -89,10 +89,10 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <table>
 <tbody>
 <tr>
-<th style="width: 400px;">Variable name</th>
+<th style="width: 200px;">Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-<th>Version</th>
+<th style="width: 50px;">Version</th>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_DI_COMPILATION</code></td>
@@ -128,6 +128,9 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <td><code>skip_scd</code></td>
 <th>2.1.X, 2.2.X</th>
 </tr>
+</tbody>
+</table>
+
 <!-- <tr>
 <td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
@@ -141,8 +144,6 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <td><code>scd_strategy = standard</code>, <code>scd_strategy = quick</code>, <code>scd_strategy = compact</code></td>
 <td>2.2.X</td>
 </tr> -->
-</tbody>
-</table>
 
 ## Magento deploy variables {#deploy}
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
@@ -150,10 +151,10 @@ The following variables are available during the deploy process of build and dep
 <table>
 <tbody>
 <tr>
-<th style="width: 400px;">Variable name</th>
+<th style="width: 200px;">Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-<th>Version</th>
+<th style="width: 50px;">Version</th>
 </tr>
 <tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
@@ -254,6 +255,9 @@ The following variables are available during the deploy process of build and dep
 <td>all versions</td>
 </tr>
 <tr>
+</tbody>
+</table>
+
 <!-- <td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
 <p>Use these options only if you have more than one locale.</p>
@@ -266,8 +270,6 @@ The following variables are available during the deploy process of build and dep
 <td><code>standard</code>, <code>quick</code>, <code>compact</code></td>
 <td>2.2.X</td>
 </tr> -->
-</tbody>
-</table>
 
 ## Add environment variables {#addvariables}
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
