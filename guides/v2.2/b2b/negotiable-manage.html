@@ -512,6 +512,16 @@
 
 								
 
+									
+
+
+											<li class="level3Child nq " data-menunode="nq"><a href="/guides/v2.2/b2b/negotiable-order-workflow.html">Place a negotiable quote order</a>
+
+
+									
+
+								
+
 								
 								
 
@@ -831,7 +841,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
   </tbody>
 </table>
 
-<p>The customer or the merchant can optinally attach up to 10 files to provide details about the quote. Each file must be converted into base64.</p>
+<p>The buyer or the seller can optinally attach up to 10 files to provide details about the quote. Each file must be converted into base64.</p>
 
 <p>The <code class="highlighter-rouge">files</code> array contains the following parameters</p>
 
@@ -909,11 +919,11 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p>Magento creates a negotiable quote in the <code class="highlighter-rouge">Created</code> state.</p>
 
-<h3 id="submit-a-negotiable-quote-to-a-customer">Submit a negotiable quote to a customer</h3>
+<h3 id="submit-a-negotiable-quote-to-a-buyer">Submit a negotiable quote to a buyer</h3>
 
-<p>When you submit a negotiable quote to the customer, the status for the customer changes to “Updated”. The customer can subsequently edit or update the quote.</p>
+<p>When you submit a negotiable quote to the buyer, the status for the buyer changes to “Updated”. The buyer can subsequently edit or update the quote.</p>
 
-<p>The merchant can send a request to submit the quote to the customer. The request can be submitted only for quotes in the following system states:</p>
+<p>The seller can send a request to submit the quote to the buyer. The request can be submitted only for quotes in the following system states:</p>
 
 <ul>
   <li>Created</li>
@@ -921,11 +931,11 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
   <li>Submitted by customer</li>
 </ul>
 
-<p>When the quote is submitted to the customer:</p>
+<p>When the quote is submitted to the buyer:</p>
 
 <ul>
   <li>Magento checks catalog prices (price per item), cart rules, and discounts then recalculates the prices and taxes. The shipping price and the negotiated price are not affected (if they are entered into the quote).</li>
-  <li>Items that are no longer active or available for this customer are removed from quote and prices are recalculated.</li>
+  <li>Items that are no longer active or available for this buyer are removed from quote and prices are recalculated.</li>
   <li>The quote state is changed to Submitted by admin.</li>
 </ul>
 
@@ -954,7 +964,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <h3 id="recalculate-prices">Recalculate prices</h3>
 
-<p>The process of completing a negotiable quote can take days, or even longer. During that time, the prices for the items in the quote may have changed directly or indirectly.  For example, someone could have changed prices in the shared catalogs or adjusted price rules, and the prices in the negotiable quote are stale. This call refreshes item prices, taxes, discounts, cart rules in the negotiable quote. Quotes that are locked for the merchant will not be updated.</p>
+<p>The process of completing a negotiable quote can take days, or even longer. During that time, the prices for the items in the quote may have changed directly or indirectly.  For example, someone could have changed prices in the shared catalogs or adjusted price rules, and the prices in the negotiable quote are stale. This call refreshes item prices, taxes, discounts, cart rules in the negotiable quote. Quotes that are locked for the seller will not be updated.</p>
 
 <p>The request can be applied to one or more quotes at the same time.</p>
 
@@ -990,7 +1000,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <h3 id="decline-a-quote">Decline a quote</h3>
 
-<p>The merchant can send a request to decline the quote. The request can be submitted only for quotes in the following system states:</p>
+<p>The seller can send a request to decline the quote. The request can be submitted only for quotes in the following system states:</p>
 
 <ul>
   <li>Created</li>
@@ -1025,7 +1035,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <h3 id="list-all-comments-for-a-quote">List all comments for a quote</h3>
 
-<p>Magento returns all the comments associated with the specified quote ID. The comments are listed in chronological order, with the oldest comment listed first. A <code class="highlighter-rouge">creator_type</code> value of <code class="highlighter-rouge">3</code> indicates the customer made the comment. If the value is <code class="highlighter-rouge">2</code>, the merchant commented.</p>
+<p>Magento returns all the comments associated with the specified quote ID. The comments are listed in chronological order, with the oldest comment listed first. A <code class="highlighter-rouge">creator_type</code> value of <code class="highlighter-rouge">3</code> indicates the buyer made the comment. If the value is <code class="highlighter-rouge">2</code>, the seller commented.</p>
 
 <p><strong>Sample Usage</strong></p>
 
@@ -1147,6 +1157,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
   <li><a href="/guides/v2.2/b2b/negotiable-quote.html">Integrate with the NegotiableQuote module</a></li>
   <li><a href="/guides/v2.2/b2b/negotiable-update.html">Update a negotiable quote</a></li>
   <li><a href="/guides/v2.2/b2b/negotiable-checkout.html">Negotiable quote checkout</a></li>
+  <li><a href="/guides/v2.2/b2b/negotiable-order-workflow.html">Place a negotiable quote order</a></li>
 </ul>
 
 		</div>

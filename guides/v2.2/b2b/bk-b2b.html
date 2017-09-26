@@ -512,6 +512,16 @@
 
 								
 
+									
+
+
+											<li class="level3Child nq " data-menunode="nq"><a href="/guides/v2.2/b2b/negotiable-order-workflow.html">Place a negotiable quote order</a>
+
+
+									
+
+								
+
 								
 								
 
@@ -774,22 +784,22 @@
 </section>
 
 
-			<p>Unlike the standard business-to-consumer model, Magento Commerce for B2B (Business to Business) is designed to meet the needs of merchants whose customers are primarily companies—possibly with complex organizational structures and multiple users with various roles and levels of permission.</p>
+			<p>Unlike the standard business-to-consumer model, Magento Commerce for B2B (Business to Business) is designed to meet the needs of sellers (Magento merchants) whose customers are primarily companies—possibly with complex organizational structures and multiple users with various roles and levels of permission.</p>
 
 <p>There are two basic actors in B2B model:</p>
 
 <ul>
-  <li>A <strong>merchant</strong> is an admin user that accesses the system from the Magento Admin panel.</li>
+  <li>A <strong>seller</strong> is an admin user that accesses the system from the Magento Admin panel.</li>
   <li>A <strong>buyer</strong> is any customer associated with a company account who accesses the system from the storefront.</li>
 </ul>
 
-<p>The Company component is the key entity within B2B on which all other features are in some way dependent. It allows joining multiple customers that belong to the same company into a single company account (or corporate account). The company admin is able to build the company structure (divisions, subdivisions and users) in the appropriate hierarchy and provide different user roles and permissions to the company members. Such a hierarchy allows the company admin to control user activity within an account: ordering, quoting, purchasing, access to company credit info or profile, etc. In addition, merchant can configure how the buying company operates at the website: including the payment methods, pricing levels, the ability to negotiate over prices, and the ability to create requisition lists.</p>
+<p>The Company component is the key entity within B2B on which all other features are in some way dependent. It allows joining multiple buyers that belong to the same company into a single company account (or corporate account). The company admin is able to build the company structure (divisions, subdivisions and users) in the appropriate hierarchy and provide different user roles and permissions to the company members. Such a hierarchy allows the company admin to control user activity within an account: ordering, quoting, purchasing, access to company credit info or profile, etc. In addition, a seller can configure how the buying company operates at the website: including the payment methods, pricing levels, the ability to negotiate over prices, and the ability to create requisition lists.</p>
 
-<p>Companies have an option to Pay on Account, or in other words make purchases in credit. The merchant allocates credit for a company account and manages credit settings for a company as well as credit reimbursement.</p>
+<p>Companies have an option to Pay on Account, or in other words make purchases in credit. The seller allocates credit for a company account and manages credit settings for a company as well as credit reimbursement.</p>
 
-<p>Shared catalogs are the pricing levels that allow setting custom prices per product for different companies on one or multiple websites. By using shared catalogs, a merchant can sell this product with applying different pricing levels for different customer groups.</p>
+<p>Shared catalogs are the pricing levels that allow setting custom prices per product for different companies on one or multiple websites. By using shared catalogs, a seller can sell this product with applying different pricing levels for different customer groups.</p>
 
-<p>The merchant and a buyer representing a company can negotiate the price of an order prior to order placement. This functionality is supported within the Negotiable Quote module. It means that before making an order, the buyer can initiate negotiations with the merchant on prices and discounts. Negotiations suggest that the created quote may be submitted, reviewed and modified several times before it is converted into order.</p>
+<p>The seller and a buyer representing a company can negotiate the price of an order prior to order placement. This functionality is supported within the Negotiable Quote module. It means that before making an order, the buyer can initiate negotiations with the seller on prices and discounts. Negotiations suggest that the created quote may be submitted, reviewed and modified several times before it is converted into order.</p>
 
 <h2 id="b2b-modules">B2B Modules</h2>
 
@@ -826,7 +836,7 @@
     </tr>
     <tr>
       <td>Company</td>
-      <td>Allows a merchant to create a company account and assign multiple members of the company to the account.</td>
+      <td>Allows a seller to create a company account and assign multiple members of the company to the account.</td>
       <td>Yes</td>
     </tr>
     <tr>
@@ -836,7 +846,7 @@
     </tr>
     <tr>
       <td>CompanyPayment</td>
-      <td>Allows a merchant to configure which payment methods are available for B2B companies.</td>
+      <td>Allows a seller to configure which payment methods are available for B2B companies.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -876,7 +886,7 @@
     </tr>
     <tr>
       <td>NegotiableQuote</td>
-      <td>Allows a customer and a merchant (admin user) to negotiate product and/or shipping prices before the customer places an order.</td>
+      <td>Allows a buyer and a seller (admin user) to negotiate product and/or shipping prices before the buyer places an order.</td>
       <td>Yes</td>
     </tr>
     <tr>
@@ -886,12 +896,12 @@
     </tr>
     <tr>
       <td>QuickOrder</td>
-      <td>Allows customers to create a new order from a list of multiple SKUs.</td>
+      <td>Allows buyers to create a new order from a list of multiple SKUs.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>RequisitionList</td>
-      <td>Allows a customer to create multiple lists of frequently-purchased items and use those lists for order placement.</td>
+      <td>Allows a buyer to create multiple lists of frequently-purchased items and use those lists for order placement.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -901,6 +911,12 @@
     </tr>
   </tbody>
 </table>
+
+<h2 id="related-information">Related information</h2>
+<ul>
+  <li><a href="/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html">Install the B2B extension</a></li>
+  <li><a href="http://docs.magento.com/m2/b2b/user_guide/getting-started.html">Getting started with Magento Commerce for B2B</a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->

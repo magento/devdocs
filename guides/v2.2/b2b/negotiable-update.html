@@ -512,6 +512,16 @@
 
 								
 
+									
+
+
+											<li class="level3Child nq " data-menunode="nq"><a href="/guides/v2.2/b2b/negotiable-order-workflow.html">Place a negotiable quote order</a>
+
+
+									
+
+								
+
 								
 								
 
@@ -774,7 +784,7 @@
 </section>
 
 
-			<p>Merchants and buyers can edit a negotiable quote at various times during the quote’s lifecycle. Both use the <code class="highlighter-rouge">PUT /V1/negotiableQuote/:quoteId</code> call to update the quote. This call is defined in the
+			<p>Sellers and buyers can edit a negotiable quote at various times during the quote’s lifecycle. Both use the <code class="highlighter-rouge">PUT /V1/negotiableQuote/:quoteId</code> call to update the quote. This call is defined in the
 <code class="highlighter-rouge">quoteCartRepositoryV1</code> service and is functionally similar to the
 <code class="highlighter-rouge">PUT /V1/carts/mine</code> call.</p>
 
@@ -816,13 +826,13 @@
     </tr>
     <tr>
       <td><code class="highlighter-rouge">negotiated_price_value</code></td>
-      <td>Discount amount defined by the merchant</td>
+      <td>Discount amount defined by the seller</td>
       <td>number</td>
       <td>Required to set a negotiated price</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">shipping_price</code></td>
-      <td>Custom price for shipping defined by the merchant</td>
+      <td>Custom price for shipping defined by the seller</td>
       <td>number</td>
       <td>Optional</td>
     </tr>
@@ -927,13 +937,15 @@
 
 <h3 id="set-a-negotiated-price">Set a negotiated price</h3>
 
-<p>In every successful negotiate quote, the merchant must set the negotiated price.</p>
+<p>In every successful negotiate quote, the seller must set the negotiated price.</p>
 
-<p>The <code class="highlighter-rouge">negotiated_price_value</code> can have one of the following values:</p>
+<p>The <code class="highlighter-rouge">negotiated_price_type</code> can have one of the following values:</p>
 
-<p><code class="highlighter-rouge">1</code> - Apply a percentage discount to the quote. The <code class="highlighter-rouge">negotiated_price_value</code>parameter indicates the percentage.
-<code class="highlighter-rouge">2</code> - Apply a fixed amount as a discount for the quote. The <code class="highlighter-rouge">negotiated_price_value</code>parameter specifies the amount of the discount.
-<code class="highlighter-rouge">3</code> - Set a proposed price for the entire quote. The <code class="highlighter-rouge">negotiated_price_value</code>parameter specifies the proposed price.</p>
+<p><code class="highlighter-rouge">1</code> - Apply a percentage discount to the quote. The <code class="highlighter-rouge">negotiated_price_value</code>parameter indicates the percentage.</p>
+
+<p><code class="highlighter-rouge">2</code> - Apply a fixed amount as a discount for the quote. The <code class="highlighter-rouge">negotiated_price_value</code>parameter specifies the amount of the discount.</p>
+
+<p><code class="highlighter-rouge">3</code> - Set a proposed price for the entire quote. The <code class="highlighter-rouge">negotiated_price_value</code>parameter specifies the proposed price.</p>
 
 <p><strong>Service Name</strong></p>
 
@@ -1029,6 +1041,7 @@
   <li><a href="/guides/v2.2/b2b/negotiable-quote.html">Integrate with the NegotiableQuote module</a></li>
   <li><a href="/guides/v2.2/b2b/negotiable-manage.html">Manage negotiable quotes</a></li>
   <li><a href="/guides/v2.2/b2b/negotiable-checkout.html">Negotiable quote checkout</a></li>
+  <li><a href="/guides/v2.2/b2b/negotiable-order-workflow.html">Place a negotiable quote order</a></li>
 </ul>
 
 		</div>

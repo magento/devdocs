@@ -512,6 +512,16 @@
 
 								
 
+									
+
+
+											<li class="level3Child nq " data-menunode="nq"><a href="/guides/v2.2/b2b/negotiable-order-workflow.html">Place a negotiable quote order</a>
+
+
+									
+
+								
+
 								
 								
 
@@ -782,7 +792,7 @@
   <li>Outstanding balance</li>
 </ul>
 
-<p>The credit limit is allocated by merchant, while available credit and outstanding balance are automatically calculated by the system based on the customer transactions (place an order, return) and merchant’s transactions (refund, reimburse, update credit limit, cancel order).</p>
+<p>The credit limit is allocated by seller, while available credit and outstanding balance are automatically calculated by the system based on the buyer transactions (place an order, return) and seller’s transactions (refund, reimburse, update credit limit, cancel order).</p>
 
 <h2 id="manage-company-credit-limits">Manage company credit limits</h2>
 
@@ -827,7 +837,7 @@
     </tr>
     <tr>
       <td><code class="highlighter-rouge">balance</code></td>
-      <td>The amount the company currently owes the merchant</td>
+      <td>The amount the company currently owes the seller</td>
       <td>Number</td>
       <td>Optional</td>
     </tr>
@@ -949,7 +959,7 @@
   </span><span class="nt">"available_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<h3 id="search--credit-ids">Search  credit IDs</h3>
+<h3 id="search-credit-ids">Search credit IDs</h3>
 
 <p>The following call returns information for all companies whose credit balance is 0.</p>
 
@@ -1013,7 +1023,7 @@
 
 <h2 id="balance-operations">Balance operations</h2>
 
-<p>The company’s outstanding balance can be updated as the merchant makes payments, purchases, and other transactions.</p>
+<p>The company’s outstanding balance can be updated as the buyer makes payments, purchases, and other transactions.</p>
 
 <p><strong>Service Name</strong></p>
 
