@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 090_configure
-title: Set up Elasticsearch
-menu_title: Set up Elasticsearch
+title: Set up Elasticsearch service
+menu_title: Set up Elasticsearch service
 menu_order: 70
 menu_node:
 level3_menu_node: level3child
@@ -21,7 +21,7 @@ github_link: cloud/project/project-conf-files_services-elastic.md
 
 We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7.
 
-![This feature is supported in Magento 2.1 only]({{ site.baseurl }}common/images/2.1-only_small.png) We support Elasticsearch for all environments starting with Magento Commerce (Cloud) 2.1 and later.
+We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. For {{site.data.var.ece}} 2.0.X, you can use [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html).
 
 We recommend installing and configuring Elasticsearch in all of your environments: Integration, Staging, and Production. All configuration settings should be in the following files in your branch then deployed. The following sections provide configuration information and supported plugins.
 
@@ -32,7 +32,7 @@ If you're upgrading to Magento Commerce 2.1.3, you must change your configuratio
 </div>
 
 ## Relationship {#relationship}
-We use the Magento Commerce (Cloud) environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
+We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 The following is the Elasticsearch information:
 
@@ -101,8 +101,11 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
 * `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
+If using `smile-es`, the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
+
 For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="_blank"}.
 
+## Add Elasticsearch plugins {#addplugins}
 You can add the plugins through the `.magento/services.yaml` file using the codes above. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:
 
 {% highlight yaml %}
@@ -114,3 +117,21 @@ elasticsearch:
       - analysis-icu
       - lang-python
 {% endhighlight %}
+
+For example, if you are using `smile-es`, you should add the following plugins:
+
+{% highlight yaml %}
+elasticsearch:
+   type: elasticsearch:1.7
+   disk: 1024
+   configuration:
+    plugins:
+      - analysis-icu
+      - analysis-phonetic
+      - lang-python
+{% endhighlight %}
+
+#### Related topics
+*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
