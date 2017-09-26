@@ -13,10 +13,10 @@ This page contains links to license agreements of the third party components use
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
 fastly |1.2.27|[Source](https://github.com/fastly/fastly-magento2)|[License](https://github.com/fastly/fastly-magento2/blob/master/LICENSE_FASTLY_CDN.txt)
-new relic apm ||[Source](https://docs.newrelic.com/apm)|[License](https://rpm.newrelic.com/licenses)
-glusterfs ||[Source](https://github.com/gluster/glusterfs)|[License](https://github.com/gluster/glusterfs#license)
-mariadb ||[Source](https://mariadb.com/downloads/mariadb-tx)|[License](https://mariadb.com/kb/en/library/mariadb-license/)
-rabbitmq |3.5|[Source](https://github.com/rabbitmq)|[License](https://www.rabbitmq.com/mpl.html)
+new relic apm || MIT/Apache|[Source](https://docs.newrelic.com/apm)|[License](https://rpm.newrelic.com/licenses)
+glusterfs || GPLV2/LGPLV3+|[Source](https://github.com/gluster/glusterfs)|[License](https://github.com/gluster/glusterfs#license)
+mariadb || GPL|[Source](https://mariadb.com/downloads/mariadb-tx)|[License](https://mariadb.com/kb/en/library/mariadb-license/)
+rabbitmq |3.5| MPL|[Source](https://github.com/rabbitmq)|[License](https://www.rabbitmq.com/mpl.html)
 braintree/braintree_php || MIT|[Source](https://github.com/braintree/braintree_php)|[License](https://github.com/braintree/braintree_php/blob/master/LICENSE)
 colinmollenhour/credis || MIT|[Source](https://github.com/colinmollenhour/credis)|[License](https://github.com/colinmollenhour/credis/blob/master/LICENSE)
 colinmollenhour/php-redis-session-abstract || BSD-3-Clause|[Source](https://github.com/colinmollenhour/php-redis-session-abstract)|[License](https://github.com/colinmollenhour/php-redis-session-abstract#license)
