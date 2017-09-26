@@ -1,6 +1,7 @@
 ---
 layout: default
 group: release-notes
+subgroup: Release notes
 title: Magento Commerce 2.2.0 Release Notes
 menu_title: Magento Commerce 2.2.0 Release Notes
 menu_order: 299
@@ -529,7 +530,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58285 -->* Magento now displays server-side Ajax error messages.
 
-<!--- 69674 -->* *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
+<!--- 69674 -->* JavaScript mixins now work when you add a `urlArgs` argument to a `require_js` file. *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
 
 #### Zend framework
 

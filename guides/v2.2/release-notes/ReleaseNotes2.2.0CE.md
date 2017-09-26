@@ -1,6 +1,7 @@
 ---
 layout: default
 group: release-notes
+subgroup: Release notes
 title: Magento Open Source 2.2.0 Release Notes
 menu_title: Magento Open Source 2.2.0 Release Notes
 menu_order: 289
@@ -156,8 +157,6 @@ This release contains hundreds of fixes and enhancements.
 
 
 <!--- 56743 -->*  We've fixed issues with upgrading installations with split databases. 
-
-<!--- 63022 -->* Static content deployment (SCD) now works when multiple languages are specified. Previously, Magento displayed an error if you tried to deploy static content in more than one language (for example, `bin/magento setup:static-content:deploy en_CA fr_CA de_DE`).
 
 <!--- 57656 -->* The import URL directive now contains base URL and locale placeholders instead of the real URL. 
 
@@ -353,10 +352,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 71445-->*  Out-of-stock options for configurable products no longer show up in search and layered navigation results. 
 
-<!--- 67628-->*  You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
-
-
-<!--- 63320-->* If you’ve enabled persistent shopping cart, you can now check out even after your session has expired.
 
 <!--- 61826-->*  Magento no longer throws an error when you try to save a product with imported custom options.
 
@@ -445,8 +440,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member <a href="https://github.com/barbazul" target="_blank">Barbazul</a> in pull request <a href="https://github.com/magento/magento2/pull/9902" target="_blank">9902</a>.*
 
-<!---63154 -->* Magento now displays special characters in store names in email subject lines. Previously, special characters in the store name were converted to numerical character references in the email subject field. [GitHub-8094](https://github.com/magento/magento2/issues/8094) 
-
 
 #### Admin framework
 
@@ -474,7 +467,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 65003 -->* The currency setup in Admin no longer throws an `in_array` error when a single value is selected. *Fix submitted by community member <a href="https://github.com/deriknel" target="_blank">Derik Nel</a> in pull request <a href="https://github.com/magento/magento2/pull/8077" target="_blank">8077</a>.*
 
-<!--- 65422 -->* Magento now writes all default configuration values to the `config.php` file. 
 
 
 #### JavaScript framework
@@ -483,7 +475,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 58285 -->* Magento now displays server-side Ajax error messages.
 
-<!--- 69674 -->* *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
+<!--- 69674 -->* JavaScript mixins now work when you add a `urlArgs` argument to a `require_js` file. *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
 
 #### Zend framework
 
@@ -948,9 +940,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---  -->* The exported sheet now generates or renders data for columns that indicate associations for configurable products.
 
-
-<!--- 68833 -->* We’ve fixed errors in processing valid orders using a PayPal account that had been previously used to pay for a valid order that had problems during checkout. 
-
 <!---60589-->* We’ve resolved a loader issue with Payflow Pro. The loader image is now invisible after redirecting to the payment page/success page or error page. [GitHub-7159](https://github.com/magento/magento2/issues/7159),  [GitHub-9296](https://github.com/magento/magento2/issues/9296)
 
 
@@ -963,7 +952,6 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 55300, 55620, 54682-->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when creating 2500 or more product variants. 
 
-<!--- 58277 -->* The processing speed of category URL rewrites for catalogs containing more than 20,000 products has greatly improved. 
 
 <!---56927-->* Opening many products from the Admin interface is now faster. 
 
@@ -1269,10 +1257,10 @@ For more information, [System Requirements]({{ site.baseurl }}magento-system-req
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.2 General Availability (GA) using Composer.
+You can install Magento Open Source 2.2 General Availability (GA) using Composer.
 
 
-{% include install/releasenotes/ee_install_21.md %}
+{% include install/releasenotes/ce_install_21.md %}
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
