@@ -6,7 +6,7 @@ title: .magento.app.yaml
 menu_title: .magento.app.yaml
 menu_order: 20
 menu_node:
-version: 2.0
+version: 2.2
 github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
@@ -47,8 +47,6 @@ The `type`  and `build` properties are used to build and run the project. The on
 
 Supported versions:
 
-    type: php:5.5
-    type: php:5.6
     type: php:7.0
 
 The `build` determines what happens by default when building the project. The only value currently supported is `composer`.
@@ -160,19 +158,19 @@ To add additional hooks (such as CLI commands that are offered by a custom exten
 
 {% highlight yaml %}
 hooks:
+    # We run build hooks before your application has been packaged.
     build: |
-        php ./bin/magento magento-cloud:build
-        php ./bin/magento additional:build:hook
+        php ./vendor/bin/m2-ece-build
+    # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./bin/magento magento-cloud:deploy
-        php ./bin/magento additional:deploy:hook
+        php ./vendor/bin/m2-ece-deploy
 {% endhighlight %}
 
 The home directory, where your application is mounted, is `/app`, and that is the directory from which hooks will be run unless you `cd` somewhere else.
 
 The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### [Example] Compile SASS files using grunt
+### Example: Compile SASS files using grunt
 For example, to compile SASS files using grunt:
 
 {% highlight xml %}
@@ -187,6 +185,17 @@ hooks:
     cd public/profiles/project_name/themes/custom/theme_name
     npm install
     grunt
+{% endhighlight %}
+
+## Environment variables {#variables}
+The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
+
+{% highlight xml %}
+variables:
+    env:
+        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
 {% endhighlight %}
 
 ## `crons` {#cloud-yaml-platform-cron}
@@ -212,10 +221,10 @@ You can choose which version of PHP you want to run in your `.magento.app.yaml` 
 
 {% highlight yaml %}
 name: myphpapp
-type: php:5.6
+type: php:7.0
 {% endhighlight %}
 
-We support PHP versions 5.5, 5.6, and 7.0. The default is 7.0.
+We support PHP versions 7.0. The default is 7.0.
 
 See one of the following sections for more information:
 

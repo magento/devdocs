@@ -128,7 +128,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <td><code>skip_scd</code></td>
 <th>2.1.X, 2.2.X</th>
 </tr>
-<tr>
+<!-- <tr>
 <td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
 <p>Use these options only if you have more than one locale.</p>
@@ -140,7 +140,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 </td>
 <td><code>scd_strategy = standard</code>, <code>scd_strategy = quick</code>, <code>scd_strategy = compact</code></td>
 <td>2.2.X</td>
-</tr>
+</tr> -->
 </tbody>
 </table>
 
@@ -254,7 +254,7 @@ The following variables are available during the deploy process of build and dep
 <td>all versions</td>
 </tr>
 <tr>
-<td><code>SCD_STRATEGY</code></td>
+<!-- <td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
 <p>Use these options only if you have more than one locale.</p>
 <ul>
@@ -265,7 +265,7 @@ The following variables are available during the deploy process of build and dep
 </td>
 <td><code>standard</code>, <code>quick</code>, <code>compact</code></td>
 <td>2.2.X</td>
-</tr>
+</tr> -->
 </tbody>
 </table>
 

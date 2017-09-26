@@ -98,11 +98,27 @@ Verify other changes you're going to submit to source control before you start t
 6.  [Verify your upgrade](#upgrade-verify).
 
 ## Update .magento.app.yaml {#magento-app-yaml}
-If you are upgrading from 2.1.X to 2.2.X, you need to also complete a series of updates in .magento.app.yaml or you will encounter errors.
+If you are upgrading from 2.1.X to 2.2.X, you need to also update your [.magento.app.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you will encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
 
-ADD INFO HERE .magento.app.yaml needs to be updated after upgrading from 2.1.X to 2.2.X
-in this file it’s lines 76,79 and then 87 to the end - otherwise they will get nasty errors
-https://github.com/magento/magento-cloud-template/blob/2.2/.magento.app.yaml
+1. Locate and edit your `.magento.app.yaml` in your Git branch.
+2. For the PHP version, make sure it is 7.0: `type: php:7.0`
+3. We have updated our build and deploy hooks. Locate the `hooks` section, and update the following:
+
+      hooks:
+        # We run build hooks before your application has been packaged.
+        build: |
+            php ./vendor/bin/m2-ece-build
+        # We run deploy hook after your application has been deployed and started.
+        deploy: |
+            php ./vendor/bin/m2-ece-deploy
+4. Enter the following environment variables to the end of your file:
+
+      variables:
+        env:
+          CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+          CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+          CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+5. Save the file and push to your Git branch. 
 
 ## Verify your upgrade {#upgrade-verify}
 This section discusses how to verify your upgrade and to troubleshoot any issues you might find.

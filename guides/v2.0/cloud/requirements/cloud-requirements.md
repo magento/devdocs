@@ -59,6 +59,29 @@ To get started with Git, you should have [Git installed](https://git-scm.com/dow
 
 You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.
 
+## Supported software versions {#cloud-arch-software}
+{{site.data.var.ece}} uses:
+
+*	Operating system: Debian GNU/Linux 8 (jessie)
+*	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
+
+This software is *not* upgradable but versions for the following software is configurable:
+
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X we support 7.0.
+* [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
+* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
+* [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
+* [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
+* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
+
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
+
+For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
+
+*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
@@ -69,7 +92,7 @@ To get started as a developer in a {{site.data.var.ece}} project, you need to se
 
 We walk you through everything you need to do and know.
 
-## Testing configurations {#cloud-req-test}
+## Magento configurations {#cloud-req-test}
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *	For Pro, set the database [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html#database)
