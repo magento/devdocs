@@ -84,7 +84,7 @@ The following issues affect all editions of Magento 2.2.0:
 
 ### Magento Commerce-only issues
 
-The following issue affects the Commerce edition of Magento 2.2.0:
+The following issues affect the Commerce edition of Magento 2.2.0:
 
 **Issue**: Store website doesn't work when Redis cache is installed and the PhpRedis extension is enabled.
 **Workaround**: Contact Support for a patch.

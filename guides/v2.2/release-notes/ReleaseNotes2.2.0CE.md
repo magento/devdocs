@@ -49,7 +49,7 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 
 ## Known issues
 
-Magento 2.2.0 GA includes the following known issues. Fixes for these issues are scheduled for  patch releases in the near future. 
+Magento 2.2.0 GA includes the following known issues. Fixes for these issues are scheduled for patch releases in the near future. 
 
 
 **Issue**:  This issue affects Magento installations that include multiple store views. If you delete a store view, any product grid filtered to that Store View does not load. If you've set your product filter to a store view you’ve deleted, when you open **Catalog > Products**, Magento displays the following behavior: 
