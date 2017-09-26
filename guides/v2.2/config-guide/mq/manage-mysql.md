@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 15_RabbitMQ
+subgroup: 24_RabbitMQ
 title: Manage message queues
 menu_title: Manage message queues
 menu_order: 3

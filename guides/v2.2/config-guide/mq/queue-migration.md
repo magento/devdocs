@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 15_RabbitMQ
+subgroup: 24_RabbitMQ
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
 menu_order: 3
