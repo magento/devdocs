@@ -413,7 +413,6 @@ This release contains hundreds of fixes and enhancements.
 
 
 ### Configurable products
-We've enhanced the performance of configurable products in several ways:
 
 <!---57055-->*  You can now successfully disable the lowest price of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price.
 
