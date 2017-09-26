@@ -10,6 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: services
 version: 2.0
 github_link: cloud/project/project-conf-files_services-solr.md
+redirect_from:
+  - /guides/v2.1/project/project-conf-files_services-solr.html
+  - /guides/v2.2/project/project-conf-files_services-solr.html
 ---
 
 Solr is highly reliable, scalable and fault tolerant, providing distributed

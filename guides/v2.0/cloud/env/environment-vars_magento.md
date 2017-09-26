@@ -75,6 +75,8 @@ The following table lists variables that you can override using environment vari
 </tr></tbody>
 </table>
 
+For additional build and deploy variables, continue to the following sections.
+
 <!-- <tr><td>RECOMPILE_DI</td>
     <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
     <td>true</td>
