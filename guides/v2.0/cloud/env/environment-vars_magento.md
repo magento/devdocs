@@ -81,6 +81,7 @@ For additional build and deploy variables, continue to the following sections.
     <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
     <td>true</td>
     </tr> -->
+    
 ## Magento build variables {#build}
 The following variables are options available during the build process of build and deploy. The variables help prepare the codebase before it is moved to the server and then built.
 
