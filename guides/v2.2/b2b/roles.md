@@ -501,6 +501,8 @@ This example call adds access to all Negotiable Quote resources except "View quo
 
 ### Return all information about a role
 
+This call returns the `id`, role name, and set of permissions defined within the specified `role_id`.
+
 **Sample Usage**
 
 `GET /V1/company/role/6`
