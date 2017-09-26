@@ -93,6 +93,7 @@ The following issue affects the Commerce edition of Magento 2.2.0:
 
 **Issue**: Magento displays an error (`“Error 503 Service Unavailable”`) when you try to save a newly-added Catalog Price rule. 
 
+**Issue**: This issue affects the default configuration of category permissions. When the **use category path in product URL** value  is set to **false**, and the user navigates to the product page for a product contained in that category, he is redirected to a 404 error page.  We will issue a hot fix for this issue in the near future.
 
 
 ### B2B-only issues
