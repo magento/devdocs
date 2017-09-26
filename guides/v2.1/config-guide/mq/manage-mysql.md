@@ -47,7 +47,7 @@ Where `<consumer_name>` is the consumer to start and `--max-messages=<value>` sp
 If the number of queued messages is less than the specified max, the consumer polls for new messages until it has processed the max. If you don't specify `--max-messages`, the process runs continuously.
 </div>
 
-After consuming all available messages, the command terminates. You can run the command again manually or with a cron job.
+After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the `magento queue:consumers:start` command to process large message queues. For example, you can append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start <consumer_name> &`).
 
 ### List consumers
 Use the following command to return a list of message queue consumers:

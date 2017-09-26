@@ -25,11 +25,10 @@ Message queues provide an asynchronous communications mechanism in which the sen
 The message queue system must be established before you install Magento. The basic sequence is
 
 1. Install RabbitMQ and any prerequisites.
-2. Configure RabbitMQ.
-3. Configure your message queue topology.
+2. Connect RabbitMQ and Magento.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-A basic message queue system can be implemented on EE without using RabbitMQ. See [Configure message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
+A basic message queue system can be implemented on EE without using cron instead of RabbitMQ. See [Configure message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
 </div>
 
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
@@ -79,7 +78,7 @@ Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay
 * Starting and stopping the broker
 * System limits
 
-## Install RabbitMQ on Magento EE
+## Connect RabbitMQ to {{site.data.var.ee}}
 
 Add the following command line parameters when you install Magento EE:
 
@@ -146,6 +145,10 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
 
 {% endhighlight %}
 
+## Start the message queue consumers
+
+After you have connected {{site.data.var.ee}} and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for details.
+
 #### Related topics
 *	[Installing optional software]({{page.baseurl}}install-gde/prereq/optional.html)
 *	[Apache]({{page.baseurl}}install-gde/prereq/apache.html)
@@ -154,4 +157,4 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
 *	[Configuring security options]({{page.baseurl}}install-gde/prereq/security.html)
 *	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
 *	[Message queue overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-*	[Configure message queues]({{page.baseurl}}config-guide/mq/config-mq.html)
+*	[Manage message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html)
