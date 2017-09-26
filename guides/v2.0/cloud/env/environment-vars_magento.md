@@ -24,7 +24,8 @@ The following table lists variables that you can override using environment vari
 <th>Description</th>
 <th>Default value</th>
 </tr></thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>ADMIN_USERNAME</code></td>
 <td>User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users.</td>
 <td>admin</td>
@@ -68,7 +69,7 @@ The following table lists variables that you can override using environment vari
 <tr>
 <td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
-<p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can't change.</p>
+<p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production, where the base URLs can't change.</p>
 <p>Available in {{site.data.var.ece}} 2.0.10 and later, and 2.1.2 and later.</p></td>
 <td>enabled</td>
 </tr></tbody>
@@ -110,8 +111,8 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
 <p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>Available in versions 2.1.X, 2.2.X.</p></td>
-<td><p><code>scd_threads = 1</code> for all Starter and Pro Integration environments</p>
-<p><code>scd_threads = 3</code> for Pro Staging and Production environments</p></td>
+<td><code>scd_threads = 1</code> for all Starter and Pro Integration environments<br />
+<code>scd_threads = 3</code> for Pro Staging and Production environments</td>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_SCD</code></td>
@@ -149,7 +150,7 @@ The following variables are available during the deploy process of build and dep
 <tbody><tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 <p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p>
-<p>This is available in versions 2.0.10 and later, 2.1.2 and later, and 2.2 and later.</td>
+<p>This is available in versions 2.0.10 and later, 2.1.2 and later, and 2.2 and later.</p></td>
 <td>enabled</td>
 </tr>
 <tr>
@@ -176,8 +177,8 @@ The following variables are available during the deploy process of build and dep
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
 <p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>This is available in all versions.</p></td>
-<td><p>1 for Starter environments and Pro Integration environments</p>
-<p>3 for Pro Staging and Production environments</p></td>
+<td>1 for Starter environments and Pro Integration environments<br />
+3 for Pro Staging and Production environments</td>
 </tr>
 <tr>
 <td><code>DO_DEPLOY_STATIC_CONTENT</code></td>
@@ -228,9 +229,7 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr>
 <td><code>STATIC_CONTENT_SYMLINK</code></td>
-<td><p>Generates symlinks for static content. By default, symlinks are always generated unless you disable it using this environment variable.</p>
-<p>This setting is vital for Pro Production environment for the three node cluster. If disabled, every file will be copied during deployment without automated symlinks generated. If disabled, this will increase deployment time.</p>
-<p>This is available in all versions.</p></td>
+<td>Generates symlinks for static content. By default, symlinks are always generated unless you disable it using this environment variable. This setting is vital for Pro Production environment for the three node cluster. If disabled, every file will be copied during deployment without automated symlinks generated. If disabled, this will increase deployment time. This is available in all versions.</td>
 <td>enabled</td>
 </tr></tbody>
 </table>
