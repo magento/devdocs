@@ -12,8 +12,6 @@ version: 2.0
 github_link: cloud/env/environment-vars_magento.md
 ---
 
-<!-- The Magento application enables you to customize the values of many settings, including payment processors, shipping methods, and so on.
- -->
 These sections list the environment variables for [general Magento](#application), [build](#build), and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
 
 ## Magento application variables {#application}
@@ -87,8 +85,7 @@ The following variables are options available during the build process of build 
 
 You can use these options as part of a `build_options.ini` file for customizing the build process. This file is located in the Magento root directory.
 
-<table>
-<tbody>
+<table><tbody>
 <tr>
 <th>Variable name</th>
 <th>Description</th>
@@ -123,8 +120,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in versions 2.1.X, 2.2.X.</td>
 <td><code>skip_scd = disabled</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
@@ -145,8 +141,7 @@ For information on the build and deploy process, see [Deployment process]({{page
 ## Magento deploy variables {#deploy}
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
 
-<table>
-<tbody>
+<table><tbody>
 <tr>
 <th>Variable name</th>
 <th>Description</th>
@@ -239,8 +234,7 @@ The following variables are available during the deploy process of build and dep
 <p>This is available in all versions.</p></td>
 <td>enabled</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
