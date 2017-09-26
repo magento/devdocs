@@ -65,6 +65,11 @@ If you are upgrading from 2.1.X to 2.2.X, you need to also update your [.magento
             CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
 5. Save the file and push to your Git branch.
 
+**For Pro plan merchants:** When you are ready to deploy to Pro Staging and Production environments, you must enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) advising you need your hooks updated for {{site.data.var.ece}} 2.2.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+**For Pro: **You may encounter deployment errors for Pro to your Staging and Production environments if the hooks are not updated. Please enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
+</div>
 
 ## Back up the database {#backup-db}
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
@@ -165,8 +170,11 @@ To resolve the error:
 
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
+### Deployment error {#deploy-error}
+If you encounter a deployment error to Pro Staging and Production environments, you need to have us update your `.magento.app.yaml` hooks. Please enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
+
 ## Additional upgrades
-We strongly recommend upgrading yoru Fastly module to v1.2.28 or later. 
+We strongly recommend upgrading yoru Fastly module to v1.2.28 or later.
 
 #### Related topic
 * [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)

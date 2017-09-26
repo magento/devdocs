@@ -23,7 +23,7 @@ The following table lists variables that you can override using environment vari
 <table>
 <tbody>
 <tr>
-<th style="width: 300px;">Variable name</th>
+<th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
 </tr>
@@ -89,10 +89,10 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <table>
 <tbody>
 <tr>
-<th style="width: 200px;">Variable name</th>
+<th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-<th style="width: 50px;">Version</th>
+<th>Version</th>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_DI_COMPILATION</code></td>
@@ -151,10 +151,10 @@ The following variables are available during the deploy process of build and dep
 <table>
 <tbody>
 <tr>
-<th style="width: 200px;">Variable name</th>
+<th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-<th style="width: 50px;">Version</th>
+<th>Version</th>
 </tr>
 <tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
