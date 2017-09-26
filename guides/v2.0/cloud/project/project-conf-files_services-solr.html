@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up the solr service | Magento 2 Developer Documentation</title>
+	<title>Set up Solr service | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -714,7 +714,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
 
 
 									
@@ -724,7 +724,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
 
 
 									
@@ -734,7 +734,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
 
 
 									
@@ -744,7 +744,17 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up Solr service</a>
 
 
 									
@@ -815,32 +825,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
 
 									
 
@@ -933,6 +917,59 @@
 
 											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/upgrade/upgrade-from-2-0-4.html">Upgrade from 2.0.4</a></li>
 
 									
 
@@ -1511,7 +1548,7 @@
 
           
 
-          <span property="name">Set up the solr service</span>
+          <span property="name">Set up Solr service</span>
 
         
 
@@ -1534,7 +1571,7 @@
 
 	
 
-	<h1 class="page-heading">Set up the solr service</h1>
+	<h1 class="page-heading">Set up Solr service</h1>
 
   
 
@@ -1542,9 +1579,11 @@
 </section>
 
 
-			<p>Solr is highly reliable, scalable and fault tolerant, providing distributed 
-indexing, replication and load-balanced querying, automated failover and 
+			<p>Solr is highly reliable, scalable and fault tolerant, providing distributed
+indexing, replication and load-balanced querying, automated failover and
 recovery, centralized configuration, and more.</p>
+
+<p>**Limited Support: **We only support Solr in Magento Commerce (Cloud) 2.0.X. You should move to <a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Elasticsearch</a> for Magento Commerce (Cloud) 2.1 and later, 2.2 and later.</p>
 
 <p>Solr uses the Lucene Java search <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> for full-text indexing and search. Your applications interact with Solr using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">HTTP POST</a> (in JSON, <a href="http://wiki.apache.org/solr/UpdateXmlMessages" target="_blank">XML</a>, CSV, or binary formats) to index documents and using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">HTTP GET</a> to retrieve search results back as <a href="http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29" target="_blank">JSON</a>, XML, or a variety of other formats (Python, Ruby, <a href="http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29" target="_blank">PHP</a>, <a href="http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29" target="_blank">CSV</a>, binary, and so on). If you’re a programmer, try the <a href="https://lucene.apache.org/solr/4_10_0/tutorial.html" target="_blank">Solr tutorial</a>. Whether you’re a programmer or not, read the <a href="http://wiki.apache.org/solr/FAQ" target="_blank">Solr FAQ</a>.</p>
 
@@ -1602,6 +1641,13 @@ foreach ($relationships['solr'] as $endpoint) {
         <span class="s">core_config</span><span class="pi">:</span> <span class="kt">!archive</span> <span class="s2">"</span><span class="s">&lt;directory&gt;"</span></code></pre></figure>
 
 <p>The <code class="highlighter-rouge">directory</code> parameter points to the Magento <code class="highlighter-rouge">vendor/magento/module-solr/conf</code> directory, relative to the <code class="highlighter-rouge">.magento</code> directory, in the Git repository. This directory contains the Magento schema.</p>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->

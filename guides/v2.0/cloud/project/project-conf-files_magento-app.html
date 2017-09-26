@@ -714,7 +714,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
 
 
 									
@@ -724,7 +724,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
 
 
 									
@@ -734,7 +734,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
 
 
 									
@@ -744,7 +744,17 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up Solr service</a>
 
 
 									
@@ -815,32 +825,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
 
 									
 
@@ -933,6 +917,59 @@
 
 											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/upgrade/upgrade-from-2-0-4.html">Upgrade from 2.0.4</a></li>
 
 									
 
@@ -1545,9 +1582,7 @@
 			<h2 id="cloud-yaml-platform">About <code class="highlighter-rouge">.magento.app.yaml</code></h2>
 <p>Magento Commerce supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a <code class="highlighter-rouge">.magento.app.yaml</code> at the root of your repository.</p>
 
-<p>This file controls the application and the way it is built and deployed on Magento Commerce.</p>
-
-<p><a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank">Sample <code class="highlighter-rouge">.magento.app.yaml</code></a></p>
+<p>This file controls the application and the way it is built and deployed on Magento Commerce (Cloud). To see a sample of the file, see <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank"><code class="highlighter-rouge">.magento.app.yaml</code></a>. Make sure to review the <code class="highlighter-rouge">.magento.app.yaml</code> for your installed version. This file can differ across Magento Commerce (Cloud) versions.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Changes you make using <code>.yaml</code> files affect your <a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="/guides/v2.0/cloud/bk-cloud.html#gethelp">Support ticket</a>.</p>
@@ -1842,6 +1877,10 @@ cronrun:
   <li><a href="http://php.net/manual/en/book.xhprof.php" target="_blank">xhprof</a></li>
   <li><a href="http://php.net/manual/en/book.xmlrpc.php" target="_blank">xmlrpc</a></li>
 </ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.</p>
+</div>
 
 <h3 id="cloud-yaml-platform-php-set">Customize <code class="highlighter-rouge">php.ini</code> settings</h3>
 <p>You can also create and push a <code class="highlighter-rouge">php.ini</code> file that is appended to the configuration maintained by Magento Commerce.</p>

@@ -275,14 +275,6 @@
 
 								
 
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer in Cloud</a></li>
-
-									
-
-								
-
 								
 								
 
@@ -346,6 +338,14 @@
 
 									
 
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a></li>
+
+									
 
 								
 
@@ -724,7 +724,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
 
 
 									
@@ -734,7 +734,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
 
 
 									
@@ -744,7 +744,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
 
 
 									
@@ -754,7 +754,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
 
 
 									
@@ -825,32 +825,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
 
 									
 
@@ -990,6 +964,51 @@
 
 											<li class="level3Child configreference " data-menunode="configreference"><a href="/guides/v2.2/cloud/live/config-reference-sens.html">Sensitive configuration paths reference</a>
 
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
 
 									
 
@@ -1637,7 +1656,7 @@
 
 <ul>
   <li>Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.</li>
-  <li>Environment contributor can push code to this environment. This role can also branch the environment.</li>
+  <li>Environment contributor can push code to this environment and branch the environment.</li>
   <li>Environment reader can view this environment only.</li>
 </ul>
 
@@ -1646,15 +1665,9 @@
 </div>
 
 <h2 id="role-management-best-practices">Role management best practices</h2>
-<p>When a development team works on a project, the team leader can be the
-project administrator and decide which roles to give his team members.
-One team member can contribute to one environment, another member can
-administer a different environment, and the customer can be a reader of
-the <code class="highlighter-rouge">master</code> environment.</p>
+<p>When a development team works on a project, the team leader can be the project administrator and decide which roles to give his team members. One team member can contribute to one environment, another member can administer a different environment, and the customer can be a reader of the <code class="highlighter-rouge">master</code> environment.</p>
 
-<p>For your users to be able to see everything but only
-commit to a specific branch, change their permission level on that
-environment to “Contributor”.</p>
+<p>For your users to be able to see everything but only commit to a specific branch, change their permission level on that environment to “Contributor”.</p>
 
 <div class="bs-callout bs-callout-warning">
     <p>An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in <code>.magento.app.yaml</code> by specifying <code>ssh: contributor</code>.</p>
@@ -1664,8 +1677,7 @@ environment to “Contributor”.</p>
 <p>You can create and manage users using the Magento Cloud CLI or the Web Interface.</p>
 
 <h3 id="cloud-user-mg-cli">Manage users with the CLI</h3>
-<p>You can use the Magento Commerce (Cloud) command line client to fully manage your users
-and integrate this with any other automated system.</p>
+<p>You can use the Magento Commerce (Cloud) command line client to fully manage your users and integrate this with any other automated system.</p>
 
 <p>Available commands:</p>
 
@@ -1730,9 +1742,7 @@ her details and register an account name and a password.</p>
   <li>
     <p>Click <strong>Add User</strong>.</p>
 
-    <p>The page displays as follows.</p>
-
-    <p><img src="/common/images/cloud_project-add-superuser.png" alt="" width="500px" /></p>
+    <p><img src="/common/images/cloud_project-add-superuser.png" alt="Add users" width="500px" /></p>
   </li>
   <li>Enter the user’s e-mail address.</li>
   <li>
@@ -1749,14 +1759,9 @@ her details and register an account name and a password.</p>
 <p>The users you add receive an e-mail inviting them to join the Magento Commerce (Cloud) project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.</p>
 
 <h2 id="rebuild">Rebuild the environment</h2>
-<p>After a new user is added to an environment, the environment must be rebuilt. Rebuilds
-are triggered when you push a new commit to an environment.
-To be able to rebuild without new code changes, use the command
-<code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code>
-to create an empty commit and “force” rebuilding the environment.</p>
+<p>After a new user is added to an environment, the environment must be rebuilt. Rebuilds are triggered when you push a new commit to an environment. To be able to rebuild without new code changes, use the command <code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code> to create an empty commit and “force” rebuilding the environment.</p>
 
-<p>When the environment rebuild is complete, allow a short time for the routes to
-update fully and for the new user to be able to use SSH access.</p>
+<p>When the environment rebuild is complete, allow a short time for the routes to update fully and for the new user to be able to use SSH access.</p>
 
 		</div>
 		<!-- /.content-wrap -->

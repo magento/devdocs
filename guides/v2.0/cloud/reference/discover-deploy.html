@@ -714,7 +714,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
 
 
 									
@@ -724,7 +724,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
 
 
 									
@@ -734,7 +734,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
 
 
 									
@@ -744,7 +744,17 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up Solr service</a>
 
 
 									
@@ -815,32 +825,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
 
 									
 
@@ -933,6 +917,59 @@
 
 											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
 
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/upgrade/upgrade-from-2-0-4.html">Upgrade from 2.0.4</a></li>
 
 									
 
@@ -1586,6 +1623,13 @@
   <li><a href="#cloud-deploy-over-phases-hook">Phase 5: Deployment hooks</a></li>
   <li><a href="#cloud-deploy-over-phases-route">Post-deployment: configure routing</a></li>
 </ol>
+
+<p>For full details on build and deploy hooks and variables, see:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> for build and deploy hooks</li>
+  <li><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
+</ul>
 
 <h3 id="cloud-deploy-over-phases-conf">Phase 1: Code and configuration validation</h3>
 <p>When you initially set up a project from a template, we retrieve the code from the <a href="https://github.com/magento/magento-cloud" target="_blank">the Magento Commerce template</a>. This code repo is cloned to your project as the <code class="highlighter-rouge">master</code> branch.</p>

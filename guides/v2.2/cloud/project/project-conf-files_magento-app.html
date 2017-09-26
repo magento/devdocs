@@ -275,14 +275,6 @@
 
 								
 
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer in Cloud</a></li>
-
-									
-
-								
-
 								
 								
 
@@ -346,6 +338,14 @@
 
 									
 
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a></li>
+
+									
 
 								
 
@@ -724,7 +724,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
 
 
 									
@@ -734,7 +734,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
 
 
 									
@@ -744,7 +744,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
 
 
 									
@@ -754,7 +754,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
 
 
 									
@@ -825,32 +825,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
 
 									
 
@@ -990,6 +964,51 @@
 
 											<li class="level3Child configreference " data-menunode="configreference"><a href="/guides/v2.2/cloud/live/config-reference-sens.html">Sensitive configuration paths reference</a>
 
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
 
 									
 
@@ -1620,11 +1639,9 @@
 
 
 			<h2 id="cloud-yaml-platform">About <code class="highlighter-rouge">.magento.app.yaml</code></h2>
-<p>Magento Commerce supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a <code class="highlighter-rouge">.magento.app.yaml</code> at the root of your repository.</p>
+<p>Magento Commerce (Cloud) supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a <code class="highlighter-rouge">.magento.app.yaml</code> at the root of your repository.</p>
 
-<p>This file controls the application and the way it is built and deployed on Magento Commerce.</p>
-
-<p><a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank">Sample <code class="highlighter-rouge">.magento.app.yaml</code></a></p>
+<p>This file controls the application and the way it is built and deployed on Magento Commerce (Cloud). To see a sample of the file, see <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="_blank"><code class="highlighter-rouge">.magento.app.yaml</code></a>. Make sure to review the <code class="highlighter-rouge">.magento.app.yaml</code> for your installed version. This file can differ across Magento Commerce (Cloud) versions.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Changes you make using <code>.yaml</code> files affect your <a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="/guides/v2.2/cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">Support ticket</a>.</p>
@@ -1651,9 +1668,7 @@
 
 <p>Supported versions:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>type: php:5.5
-type: php:5.6
-type: php:7.0
+<div class="highlighter-rouge"><pre class="highlight"><code>type: php:7.0
 </code></pre>
 </div>
 
@@ -1777,18 +1792,18 @@ nodejs:
 <code class="highlighter-rouge">deploy</code> sections as follows:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">hooks</span><span class="pi">:</span>
+    <span class="c1"># We run build hooks before your application has been packaged.</span>
     <span class="s">build</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">php ./bin/magento magento-cloud:build</span>
-        <span class="no">php ./bin/magento additional:build:hook</span>
+        <span class="no">php ./vendor/bin/m2-ece-build</span>
+    <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
     <span class="s">deploy</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">php ./bin/magento magento-cloud:deploy</span>
-        <span class="no">php ./bin/magento additional:deploy:hook</span></code></pre></figure>
+        <span class="no">php ./vendor/bin/m2-ece-deploy</span></code></pre></figure>
 
 <p>The home directory, where your application is mounted, is <code class="highlighter-rouge">/app</code>, and that is the directory from which hooks will be run unless you <code class="highlighter-rouge">cd</code> somewhere else.</p>
 
 <p>The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add <code class="highlighter-rouge">set -e</code> to the beginning of the hook.</p>
 
-<h4 id="example-compile-sass-files-using-grunt">[Example] Compile SASS files using grunt</h4>
+<h3 id="example-compile-sass-files-using-grunt">Example: Compile SASS files using grunt</h3>
 <p>For example, to compile SASS files using grunt:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">dependencies:
@@ -1802,6 +1817,15 @@ hooks:
     cd public/profiles/project_name/themes/custom/theme_name
     npm install
     grunt</code></pre></figure>
+
+<h2 id="variables">Environment variables</h2>
+<p>The following environment variables are included in <code class="highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce (Cloud) 2.2.X.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">variables:
+    env:
+        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'</code></pre></figure>
 
 <h2 id="cloud-yaml-platform-cron"><code class="highlighter-rouge">crons</code></h2>
 <p><code class="highlighter-rouge">crons</code> describes processes that are triggered on a schedule. We recommend you run cron as the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do not run cron as <code class="highlighter-rouge">root</code>. We also recommend against running cron as the web server user.</p>
@@ -1828,9 +1852,9 @@ cronrun:
 <p>You can choose which version of PHP you want to run in your <code class="highlighter-rouge">.magento.app.yaml</code> file.:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">name</span><span class="pi">:</span> <span class="s">myphpapp</span>
-<span class="s">type</span><span class="pi">:</span> <span class="s">php:5.6</span></code></pre></figure>
+<span class="s">type</span><span class="pi">:</span> <span class="s">php:7.0</span></code></pre></figure>
 
-<p>We support PHP versions 5.5, 5.6, and 7.0. The default is 7.0.</p>
+<p>We support PHP versions 7.0. The default is 7.0.</p>
 
 <p>See one of the following sections for more information:</p>
 
@@ -1920,6 +1944,10 @@ cronrun:
   <li><a href="http://php.net/manual/en/book.xmlrpc.php" target="_blank">xmlrpc</a></li>
 </ul>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.</p>
+</div>
+
 <h3 id="cloud-yaml-platform-php-set">Customize <code class="highlighter-rouge">php.ini</code> settings</h3>
 <p>You can also create and push a <code class="highlighter-rouge">php.ini</code> file that is appended to the configuration maintained by Magento Commerce.</p>
 
@@ -1959,7 +1987,7 @@ cronrun:
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-conf-files_magento-app.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/project/project-conf-files_magento-app.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

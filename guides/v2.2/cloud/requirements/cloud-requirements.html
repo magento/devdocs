@@ -275,14 +275,6 @@
 
 								
 
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer in Cloud</a></li>
-
-									
-
-								
-
 								
 								
 
@@ -346,6 +338,14 @@
 
 									
 
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a></li>
+
+									
 
 								
 
@@ -724,7 +724,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
 
 
 									
@@ -734,7 +734,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
 
 
 									
@@ -744,7 +744,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
 
 
 									
@@ -754,7 +754,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
 
 
 									
@@ -825,32 +825,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
 
 									
 
@@ -990,6 +964,51 @@
 
 											<li class="level3Child configreference " data-menunode="configreference"><a href="/guides/v2.2/cloud/live/config-reference-sens.html">Sensitive configuration paths reference</a>
 
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
 
 									
 
@@ -1666,6 +1685,35 @@
 
 <p>You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.</p>
 
+<h2 id="cloud-arch-software">Supported software versions</h2>
+<p>Magento Commerce (Cloud) uses:</p>
+
+<ul>
+  <li>Operating system: Debian GNU/Linux 8 (jessie)</li>
+  <li>Web server: <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span> 1.8</li>
+</ul>
+
+<p>This software is <em>not</em> upgradable but versions for the following software is configurable:</p>
+
+<ul>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html">PHP</a> - For Magento Commerce (Cloud) 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For Magento Commerce (Cloud) 2.2.X we support 7.0.</li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">MySQL</a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_services-solr.html">Solr</a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Redis</a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">RabbitMQ</a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Elasticsearch</a></li>
+</ul>
+
+<p>For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.28 or later. For details, see <a href="/guides/v2.2/cloud/basic-information/cloud-fastly.html">Fastly in Cloud</a>.</p>
+
+<p>For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.</p>
+
+<ul>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+</ul>
+
 <h2 id="requirements">Requirements to get started</h2>
 <p>To get started as a developer in a Magento Commerce (Cloud) project, you need to set up the following:</p>
 
@@ -1678,7 +1726,7 @@
 
 <p>We walk you through everything you need to do and know.</p>
 
-<h2 id="cloud-req-test">Testing configurations</h2>
+<h2 id="cloud-req-test">Magento configurations</h2>
 <p>Before you test any custom code in your local Magento Commerce environment, you must do all of the following:</p>
 
 <ul>

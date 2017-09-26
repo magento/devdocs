@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Composer in Cloud | Magento 2 Developer Documentation</title>
+	<title>Composer | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -275,14 +275,6 @@
 
 								
 
-									
-
-									<li class="level-2  active "><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer in Cloud</a></li>
-
-									
-
-								
-
 								
 								
 
@@ -346,6 +338,14 @@
 
 									
 
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a></li>
+
+									
 
 								
 
@@ -724,7 +724,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
 
 
 									
@@ -734,7 +734,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
 
 
 									
@@ -744,7 +744,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
 
 
 									
@@ -754,7 +754,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
 
 
 									
@@ -825,32 +825,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.2/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
 
 									
 
@@ -990,6 +964,51 @@
 
 											<li class="level3Child configreference " data-menunode="configreference"><a href="/guides/v2.2/cloud/live/config-reference-sens.html">Sensitive configuration paths reference</a>
 
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
 
 									
 
@@ -1588,7 +1607,7 @@
 
           
 
-          <span property="name">Composer in Cloud</span>
+          <span property="name">Composer</span>
 
         
 
@@ -1611,7 +1630,7 @@
 
 	
 
-	<h1 class="page-heading">Composer in Cloud</h1>
+	<h1 class="page-heading">Composer</h1>
 
   
 
@@ -1622,6 +1641,8 @@
 			<p>We use <a href="https://getcomposer.org/doc" target="_blank">Composer</a> to manage dependencies and upgrades in Magento Commerce and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
 
 <p>The following sections detail the specifics of Magento Commerce composer packages, how they work, and what they do within the code base.</p>
+
+<p>For Magento Commerce (Cloud) 2.2, the <code class="highlighter-rouge">magento/magento-cloud-configuration (MCC)</code> has been replaced by <code class="highlighter-rouge">magento/ece-patches</code> and <code class="highlighter-rouge">magento/ece-tools</code>. These packages decouple a patch update from a full product upgrade, allowing you to fully apply a patch without a full product installation or upgrade.</p>
 
 <h2 id="your-projects-composer-files">Your project’s Composer files</h2>
 <p>Your project root directory contains <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code>.</p>
@@ -1661,18 +1682,30 @@
 
 <ul>
   <li><a href="#cloud-composer-cloudmeta"><code class="highlighter-rouge">magento/magento-cloud-metapackage</code></a></li>
-  <li><a href="#cloud-composer-cloudconfig"><code class="highlighter-rouge">magento/magento-cloud-configuration</code></a></li>
+  <li><a href="#ece-patches"><code class="highlighter-rouge">magento/ece-patches</code></a></li>
+  <li><a href="#ece-tools"><code class="highlighter-rouge">magento/ece-tools</code></a></li>
   <li><a href="#cloud-composer-prodee"><code class="highlighter-rouge">magento/product-enterprise-edition</code></a></li>
 </ul>
 
 <h3 id="cloud-composer-cloudmeta">magento/magento-cloud-metapackage</h3>
 <p><code class="highlighter-rouge">magento/magento-cloud-metapackage</code> should be the only package in the <code class="highlighter-rouge">require</code> section of your <code class="highlighter-rouge">composer.json</code>. This is a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank"><em>metapackage</em></a> and does not contain any code.</p>
 
-<p>The metapackage depends on the appropriate versions of <a href="#cloud-composer-cloudconfig"><code class="highlighter-rouge">magento/magento-cloud-configuration</code></a> and <a href="#cloud-composer-prodee"><code class="highlighter-rouge">magento/product-enterprise-edition</code></a>. At any given version, this package requires the same version of <code class="highlighter-rouge">magento/product-enterprise-edition</code>. Therefore, to use Magento EE version 2.1.4, for example, <code class="highlighter-rouge">composer.json</code> must specify a requirement for <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version 2.1.4.</p>
+<p>The metapackage depends on the appropriate versions of <a href="#ece-patches"><code class="highlighter-rouge">magento/ece-patches</code></a>, <a href="#ece-tools"><code class="highlighter-rouge">magento/ece-tools</code></a>, and <a href="#cloud-composer-prodee"><code class="highlighter-rouge">magento/product-enterprise-edition</code></a>. At any given version, this package requires the same version of <code class="highlighter-rouge">magento/product-enterprise-edition</code>. For example, to use Magento Commerce version 2.2.0, for example, <code class="highlighter-rouge">composer.json</code> must specify a requirement for <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version 2.2.0.</p>
 
 <p>This package depends on a floating version of <code class="highlighter-rouge">magento/magento-cloud-configuration</code> (abbreviated <em>MCC</em>). It depends on the major and minor version of MCC that correspond to the specified Magento EE version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running <code class="highlighter-rouge">composer update</code>.</p>
 
-<h3 id="cloud-composer-cloudconfig">magento/magento-cloud-configuration (MCC)</h3>
+<h3 id="ece-patches">magento/ece-patches</h3>
+<p>This package contains patch files that are specific to Cloud. Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Cloud code and the patch. Using <code class="highlighter-rouge">compuser update</code> automatically runs tools to check for available patches and to run them with build and deploy scripts.</p>
+
+<p>For Magento Commerce, versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>.</p>
+
+<p>Patch versions are specified as: <code class="highlighter-rouge">&lt;100 + x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with <code class="highlighter-rouge">ece-patches</code> 102.0.0. Subsequently, a new patch will be released that corresponds to the same Magento Commerce version, and it would be 102.0.1.</p>
+
+<p>Code released in <code class="highlighter-rouge">ece-patches</code> is strictly for updates to Magento Commerce (Cloud). Patches are available in the <code class="highlighter-rouge">vendor/ece-patches</code> folder.</p>
+
+<p>To check for available patches, you can check in the <code class="highlighter-rouge">vendor/ece-patches</code> folder.</p>
+
+<h3 id="ece-tools">magento/ece-tools</h3>
 <p>This package contains the following scripts and <code class="highlighter-rouge">magento</code> commands that automatically perform building and deployment of the codebase on the cloud environment:</p>
 
 <ul>
@@ -1681,15 +1714,9 @@
   <li><code class="highlighter-rouge">bin/magento magento-cloud:build</code></li>
 </ul>
 
-<p><code class="highlighter-rouge">magento/magento-cloud-configuration</code> also contains patch files that are specific to Cloud.</p>
+<p>For Magento Commerce, versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>. The versioning for <code class="highlighter-rouge">ece-tools</code> will then be <code class="highlighter-rouge">&lt;200 + x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with 202.0.0.</p>
 
-<p>There is a many-to-one relationship between the MCC version and Magento versions.</p>
-
-<p>For Magento EE, versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>.</p>
-
-<p>MCC versions are specified as: <code class="highlighter-rouge">&lt;100 + x&gt;.&lt;y&gt;.*</code>. For example, Magento EE 2.1.4 is associated with MCC 101.4.0. Subsequently, a new version of MCC could be released that corresponds to the same Magento EE version, and it would be 101.4.1.</p>
-
-<p>We release updated MCC code to add a new patch or to improve the build and deploy hooks.</p>
+<p>We release updated <code class="highlighter-rouge">ece-tools</code> code strictly includes improvements for tools, including the build and deploy hooks. These tools are updated as needed through patching and product upgrades, managed by the <code class="highlighter-rouge">magento-cloud-metapackage</code>.</p>
 
 <h3 id="cloud-composer-prodee">magento/product-enterprise-edition</h3>
 <p>This <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span> requires Magento application components, including modules, frameworks, themes, and so on.</p>
@@ -1712,12 +1739,18 @@
     <p>File marshaling works on your local system but <em>not</em> on the Cloud server.</p>
   </li>
   <li>Add and commit these updated files to your Cloud Git repository.</li>
-  <li>Push the changes to your Cloud integration environment.</li>
+  <li>Push the changes to your Cloud Integration environment.</li>
 </ol>
 
-<p>For more information, see <a href="/guides/v2.2/cloud/project/project-upgrade.html">Test a Magento patch</a>.</p>
+<p>For more information, see <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>.</p>
 
 <p>This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check should be whether all of the base package files were added to source control.</p>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
+  <li><a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->

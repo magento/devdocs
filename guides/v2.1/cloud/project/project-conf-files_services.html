@@ -768,7 +768,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
 
 
 									
@@ -778,7 +778,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
 
 
 									
@@ -788,7 +788,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
 
 
 									
@@ -798,7 +798,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
 
 
 									
@@ -869,32 +869,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
 
 									
 
@@ -1042,6 +1016,51 @@
 
 											<li class="level3Child configreference " data-menunode="configreference"><a href="/guides/v2.1/cloud/live/config-reference-sens.html">Sensitive configuration paths reference</a>
 
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
 
 									
 
@@ -1705,7 +1724,7 @@ solr:
 
 <p><code class="highlighter-rouge">disk</code> specifies the size of the persistent disk storage (in MB) allocated to the service.</p>
 
-<p>For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. (See <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>.)</p>
+<p>For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. See <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>.</p>
 
 <h2 id="using-the-services">Using the services</h2>
 <p>For services to be available to an application in your project, you must specify <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel"><em>relationships</em></a> between applications and services in <code class="highlighter-rouge">.magento.app.yaml</code>.</p>
@@ -1714,11 +1733,11 @@ solr:
 <ul>
   <li><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the mysql service</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up the redis service</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up the elasticsearch service</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up the rabbitmq service</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a></li>
+  <li><a href="http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up Solr service</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
 </ul>
 

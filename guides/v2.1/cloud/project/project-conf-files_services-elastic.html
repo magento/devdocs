@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up Elasticsearch | Magento 2 Developer Documentation</title>
+	<title>Set up Elasticsearch service | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -768,7 +768,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the MySQL service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
 
 
 									
@@ -778,7 +778,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up the Redis service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
 
 
 									
@@ -788,7 +788,7 @@
 									
 
 
-											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch</a>
+											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
 
 
 									
@@ -798,7 +798,7 @@
 									
 
 
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up the RabbitMQ service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
 
 
 									
@@ -869,32 +869,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
 
 									
 
@@ -1042,6 +1016,51 @@
 
 											<li class="level3Child configreference " data-menunode="configreference"><a href="/guides/v2.1/cloud/live/config-reference-sens.html">Sensitive configuration paths reference</a>
 
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a></li>
 
 									
 
@@ -1616,7 +1635,7 @@
 
           
 
-          <span property="name">Set up Elasticsearch</span>
+          <span property="name">Set up Elasticsearch service</span>
 
         
 
@@ -1639,7 +1658,7 @@
 
 	
 
-	<h1 class="page-heading">Set up Elasticsearch</h1>
+	<h1 class="page-heading">Set up Elasticsearch service</h1>
 
   
 
@@ -1658,7 +1677,7 @@
 
 <p>We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7.</p>
 
-<p><img src="/common/images/2.1-only_small.png" alt="This feature is supported in Magento 2.1 only" /> We support Elasticsearch for all environments starting with Magento Commerce (Cloud) 2.1 and later.</p>
+<p>We support Elasticsearch for all environments starting with Magento Commerce (Cloud) 2.1 and later. For Magento Commerce (Cloud) 2.0.X, you can use <a href="http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Solr</a>.</p>
 
 <p>We recommend installing and configuring Elasticsearch in all of your environments: Integration, Staging, and Production. All configuration settings should be in the following files in your branch then deployed. The following sections provide configuration information and supported plugins.</p>
 
@@ -1732,8 +1751,11 @@
   <li><code class="highlighter-rouge">mapper-size</code>: Size mapper plugin, enables the <code class="highlighter-rouge">_size</code> meta field</li>
 </ul>
 
+<p>If using <code class="highlighter-rouge">smile-es</code>, the required plugins are <code class="highlighter-rouge">analysis-icu</code> and <code class="highlighter-rouge">analysis-phonetic</code>. Make sure to add these to the plugins section of <code class="highlighter-rouge">services.yaml.</code> See <a href="#addplugins">Add Elasticsearch plugins</a>.</p>
+
 <p>For full documentation on these plugins, see <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html" target="_blank">Elasticsearch plugin documentation</a>.</p>
 
+<h2 id="addplugins">Add Elasticsearch plugins</h2>
 <p>You can add the plugins through the <code class="highlighter-rouge">.magento/services.yaml</code> file using the codes above. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">elasticsearch</span><span class="pi">:</span>
@@ -1744,6 +1766,23 @@
       <span class="pi">-</span> <span class="s">analysis-icu</span>
       <span class="pi">-</span> <span class="s">lang-python</span></code></pre></figure>
 
+<p>For example, if you are using <code class="highlighter-rouge">smile-es</code>, you should add the following plugins:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">elasticsearch</span><span class="pi">:</span>
+   <span class="s">type</span><span class="pi">:</span> <span class="s">elasticsearch:1.7</span>
+   <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span>
+   <span class="s">configuration</span><span class="pi">:</span>
+    <span class="s">plugins</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">analysis-icu</span>
+      <span class="pi">-</span> <span class="s">analysis-phonetic</span>
+      <span class="pi">-</span> <span class="s">lang-python</span></code></pre></figure>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
