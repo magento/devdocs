@@ -49,6 +49,11 @@ Deployment consists of the following phases:
 5.	[Phase 5: Deployment hooks](#cloud-deploy-over-phases-hook)
 6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
+For full details on build and deploy hooks and variables, see:
+
+*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) for build and deploy hooks
+*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
+
 ### Phase 1: Code and configuration validation {#cloud-deploy-over-phases-conf}
 When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud){:target="_blank"}. This code repo is cloned to your project as the `master` branch.
 
