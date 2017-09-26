@@ -128,6 +128,19 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <td><code>skip_scd</code></td>
 <th>2.1.X, 2.2.X</th>
 </tr>
+<tr>
+<td><code>SCD_STRATEGY</code></td>
+<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
+<p>Use these options only if you have more than one locale.</p>
+<ul>
+<li>Use the standard strategy to deploy all static view files for all packages.</li>
+<li>Use the quick strategy to minimize deployment time. This is the default command option if not specified.</li>
+<li>Use the compact strategy to conserve disk space on the server.</li>
+</ul>
+</td>
+<td><code>scd_strategy = standard</code>, <code>scd_strategy = quick</code>, <code>scd_strategy = compact</code></td>
+<td>2.2.X</td>
+</tr>
 </tbody>
 </table>
 
@@ -239,6 +252,19 @@ The following variables are available during the deploy process of build and dep
 <p>This setting is vital for Pro Production environment for the three node cluster. If disabled, every file will be copied during deployment without automated symlinks generated. If disabled, this will increase deployment time.</p></td>
 <td>enabled</td>
 <td>all versions</td>
+</tr>
+<tr>
+<td><code>SCD_STRATEGY</code></td>
+<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
+<p>Use these options only if you have more than one locale.</p>
+<ul>
+<li>Use the standard strategy to deploy all static view files for all packages.</li>
+<li>Use the quick strategy to minimize deployment time. This is the default command option if not specified.</li>
+<li>Use the compact strategy to conserve disk space on the server.</li>
+</ul>
+</td>
+<td><code>standard</code>, <code>quick</code>, <code>compact</code></td>
+<td>2.2.X</td>
 </tr>
 </tbody>
 </table>

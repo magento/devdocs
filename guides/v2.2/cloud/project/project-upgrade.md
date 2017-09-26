@@ -93,8 +93,16 @@ Verify other changes you're going to submit to source control before you start t
     The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.
 
 5.  Wait for deployment to complete.
+6. If you are upgrading from 2.1.X to 2.2.X, also [update .magento.app.yaml](#magento-app-yaml).
 
 6.  [Verify your upgrade](#upgrade-verify).
+
+## Update .magento.app.yaml {#magento-app-yaml}
+If you are upgrading from 2.1.X to 2.2.X, you need to also complete a series of updates in .magento.app.yaml or you will encounter errors.
+
+ADD INFO HERE .magento.app.yaml needs to be updated after upgrading from 2.1.X to 2.2.X
+in this file it’s lines 76,79 and then 87 to the end - otherwise they will get nasty errors
+https://github.com/magento/magento-cloud-template/blob/2.2/.magento.app.yaml
 
 ## Verify your upgrade {#upgrade-verify}
 This section discusses how to verify your upgrade and to troubleshoot any issues you might find.
