@@ -165,6 +165,9 @@ To resolve the error:
 
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
+## Additional upgrades
+We strongly recommend upgrading yoru Fastly module to v1.2.28 or later. 
+
 #### Related topic
 * [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
 * [Install components]({{page.baseurl}}cloud/howtos/install-components.html)
