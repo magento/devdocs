@@ -19,6 +19,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
 [Updated Fastly snippet examples and process for adding new VCL snippets](http://devdocs.magento.com/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Sep 20
+HHVM compatibility removed in [tech-stack](http://devdocs.magento.com/guides/v2.2/architecture/tech-stack.html).|2.2.x|Updated|Sep 14
 Updated backward incompatible changes after 2.2.0 RC3.0 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Sep 14
 [Added a rule set for the PHP_CodeSniffer](http://devdocs.magento.com/guides/v2.2/coding-standards/code-standard-sniffers.html)|2.2.x|Updated|Sep 13
 [Added troubleshooting information for Redis.](http://devdocs.magento.com/guides/v2.1/cloud/trouble/redis-troubleshooting.html)|2.0.x, 2.1.x, 2.2.x, 2.x|New|Sep 11
