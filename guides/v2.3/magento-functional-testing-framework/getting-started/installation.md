@@ -2,7 +2,7 @@
 layout: default
 group: mftf
 subgroup: 20 Getting started
-title: Installation of the the Magento Functional Testing Framework
+title: Installation of the Magento Functional Testing Framework
 menu_title: Installation
 menu_order: 1
 version: 2.3
@@ -10,24 +10,61 @@ github_link: magento-functional-testing-framework/getting-started/installation.m
 ---
 
 <div class="bs-callout bs-callout-info" markdown="1">
-The framework and tests are still in development and located in the [magento-pangolin] organization.
 A dependency for the framework is located in the `magento2ee` repository.<br/>
 This solution is temporary.
 </div>
 
-If you visit the [magento-pangolin] organization the first time, you may see the `View invitation` button on top of the page.
-Just press the button to be able to open the repositories of the organisation.
+## PREPARE ENVIRONMENT
 
-## Step 1. Clone the magento2 source code repositories into one directory
+### PHP
+
+[PHP 7]
+
+### Selenium Server
+
+[Download the latest Selenium Server][selenium server].
+
+Into the same directory where the Selenium server is located, [download a web driver for your web browser][selenium web driver] .
+
+### Allure
+
+[Install Allure] that is a tool that generates testing reports in HTML.
+
+<div class="bs-callout bs-callout-tip" markdown="1">
+For Windows users: use **Manual installation** to be able to run Allure in non-PowerShell terminals)
+</div>
+
+## PREPARE MAGENTO
+
+### WYSIWYG settings
+
+A Selenium web driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}. This option disables the WYSIWYG and enables the web driver to process these fields as simple text areas.
+
+1. Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
+2. Follow **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
+3. Set **Enable WYSIWYG Editor** to **Disabled Completely**.
+4. Click **Save Config**.
+
+### Security settings
+
+Enable the **Admin Account Sharing** setting to avoid unpredictable logout during testing session. And disable the **Add Secret Key in URLs** setting to open pages using direct URLs.
+
+1. Follow **Stores &gt; Configuration &gt; Advanced &gt; {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} &gt; Security**.
+2. Set **Admin Account Sharing** to **Yes**.
+3. Set **Add Secret Key to URLs** to **No**.
+
+## SETUP THE MFTF
+
+### Step 1. Clone the magento2 source code repositories into one directory
 
 ```bash
 $ mkdir mftf
 $ cd mftf
-$ git clone -b sprint-develop https://github.com/magento-pangolin/magento2ce.git
-$ git clone -b sprint-develop https://github.com/magento-pangolin/magento2ee.git
+$ git clone https://github.com/magento/magento2ce.git
+$ git clone https://github.com/magento/magento2ee.git
 ```
 
-## Step 2. Link the repositories to make `magento2ee` work properly
+### Step 2. Link the repositories to make `magento2ee` work properly
 
 ```bash
 $ cd magento2ee
@@ -35,7 +72,7 @@ $ php -f dev/tools/build-ee.php -- --command=link --exclude=true
 $ cd ..
 ```
 
-## Step 3. Setup your authorization file in the `magento2ce` repository
+### Step 3. Setup your authorization file in the `magento2ce` repository
 
 This step enables you to configure [HTTP basic authentication] for Composer.
 
@@ -56,7 +93,12 @@ In the `auth.json`, add the `github-oauth` entry:
 
 Replace `<personal access token>` with your [personal access token]. The token must have a scope `repo`.
 
-## Step 4. Install dependencies
+### Step 4. Install dependencies
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+There is a temporary issue with the `"allure-framework/allure-codeception"` dependency. To fix it, find the dependency in `composer.json` and replace with
+`"allure-framework/allure-codeception": "dev-master#af40af5ae2b717618a42fe3e137d75878508c75d"`
+</div>
 
 ```bash
 $ cd magento2ce/dev/tests/acceptance
@@ -64,21 +106,27 @@ $ composer install
 ```
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-If you see an error like `404 Not Found`, update of your Composer can help.<br/>
+If you see an error like `404 Not Found`, try to [update your Composer].<br/>
 `$ composer selfupdate`
 </div>
 
-## Step 5. Install Robo
+### Step 5. Install Robo
 
 In `magento2ce/dev/tests/acceptance`, run the following command:
 
 ```bash
-vendor/bin/robo setup
+$ vendor/bin/robo setup
 ```
 
 [Learn more about Robo][robo]
 
-## Step 6. Edit environment settings
+### Step 6. Build the project
+
+```bash
+$ vendor/bin/robo build:project
+```
+
+### Step 7. Edit environment settings
 
 In the `magento2ce/dev/tests/acceptance`, create a configuration file `.env` from `.env.example`:
 
@@ -113,12 +161,34 @@ Example: `FW_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/vendor/mag
 * `TESTS_MODULE_PATH` must contain a base path to functional tests. 
 Example: `TESTS_MODULE_PATH=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
 
-## Step 7. Generate existing tests
+### Step 8. Generate existing tests
 
 In the `magento2ce/dev/tests/acceptance`, run the following command to generate tests as PHP classes from XML files:
 
 ```bash
 $ vendor/bin/robo generate:tests
+```
+
+## RUN TESTS
+
+### Run the Selenium server
+
+Run the Selenium server in the terminal:
+
+```bash
+$ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
+```
+
+### Run all tests
+
+```bash
+$ vendor/bin/codecept run
+```
+
+## READ REPORTS
+
+```bash
+$ vendor/bin/robo allure2:report
 ```
 
 <!-- LINKS -->
@@ -127,4 +197,9 @@ $ vendor/bin/robo generate:tests
 [magento-pangolin]: https://github.com/magento-pangolin/
 [personal access token]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token
 [robo]: http://robo.li/
+[update your Composer]: https://getcomposer.org/doc/03-cli.md#self-update-selfupdate-
+[selenium server]: http://www.seleniumhq.org/download/
+[selenium web driver]: http://docs.seleniumhq.org/about/platforms.jsp
+[Install Allure]: https://docs.qameta.io/allure/latest/
+[PHP 7]: http://php.net/downloads.php
 

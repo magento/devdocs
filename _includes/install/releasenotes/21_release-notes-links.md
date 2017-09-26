@@ -16,9 +16,9 @@
 
 
 {% collapsibleh2 Magento Commerce 2.1 Release Notes %}
-*	[Version 2.1.9]({{page.baseurl}}release-notes/ReleaseNotes2.1.9CE.html){:target="_blank"}
-*	[Version 2.1.8]({{page.baseurl}}release-notes/ReleaseNotes2.1.8CE.html){:target="_blank"}
-*	[Version 2.1.7]({{page.baseurl}}release-notes/ReleaseNotes2.1.7CE.html){:target="_blank"}
+*	[Version 2.1.9]({{page.baseurl}}release-notes/ReleaseNotes2.1.9EE.html){:target="_blank"}
+*	[Version 2.1.8]({{page.baseurl}}release-notes/ReleaseNotes2.1.8EE.html){:target="_blank"}
+*	[Version 2.1.7]({{page.baseurl}}release-notes/ReleaseNotes2.1.7EE.html){:target="_blank"}
 *	[Version 2.1.6]({{page.baseurl}}release-notes/ReleaseNotes2.1.6EE.html){:target="_blank"} 
 *	[Version 2.1.5]({{page.baseurl}}release-notes/ReleaseNotes2.1.5EE.html){:target="_blank"} 
 *	[Version 2.1.4]({{page.baseurl}}release-notes/ReleaseNotes2.1.4EE.html){:target="_blank"} 

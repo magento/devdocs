@@ -9,7 +9,7 @@ menu_node:
 version: 2.0
 github_link: design-styleguide/punctuation/punctuation.md
 ---
-The following section surfaces either exceptions to the Associated Press (AP) Stylebook or summarized key elements from the stylebook to keep handy when writing content.
+The following sections surface exceptions to the Associated Press (AP) Stylebook and summarize key stylebook elements to keep handy when writing content.
 
 ## Sentences
 
