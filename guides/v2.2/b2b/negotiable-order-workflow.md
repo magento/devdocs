@@ -18,7 +18,7 @@ This topic describes how REST calls can be used to place items in a shopping car
 
 * You have [installed]({{page.baseurl}}comp-mgr/install-extensions.html) and [enabled]({{page.baseurl}}comp-mgr/b2b-installation.html) {{site.data.var.b2b}}.
 * You have [created a company]({{page.baseurl}}b2b/company-object.html) and a [company user]({{page.baseurl}}b2b/company-object.html).
-* You have an integration or [admin authorization token]({{page.baseurl}}get-started/order-tutorial/order-admin-token.html) to make calls on behalf of merchant, and a [customer token]({{page.baseurl}}get-started/order-tutorial/order-create-customer.html#get-token) to make calls on behalf of the company user.
+* You have an integration or [admin authorization token]({{page.baseurl}}get-started/order-tutorial/order-admin-token.html) to make calls on behalf of seller, and a [customer token]({{page.baseurl}}get-started/order-tutorial/order-create-customer.html#get-token) to make calls on behalf of the company user.
 
 ## Prepare the order
 
@@ -26,7 +26,7 @@ The steps in this section are similar to those [Order Processing with REST APIs 
 
 ### Create a shopping cart
 
-In this example, the customer is a company user.
+In this example, the customer is a company user (buyer).
 
 **Endpoint**
 
@@ -592,7 +592,7 @@ None
 
 ## Complete a Negotiable Quote
 
-In this example, the buyer requests a negotiable quote. The merchant applies a discount to the quote and returns the quote to the buyer. The buyer accepts the discount and completes the order.
+In this example, the buyer requests a negotiable quote. The seller applies a discount to the quote and returns the quote to the buyer. The buyer accepts the discount and completes the order.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 All negotiable quote calls require an admin authorization token.
@@ -631,7 +631,7 @@ Authorization Bearer <admin token>
 
 ### Adjust the negotiable quote
 
-The merchant accepts the buyer's request for a 2.5% discount. The `negotiated_price_type` value of `1` indicates a percentage discount.
+The seller accepts the buyer's request for a 2.5% discount. The `negotiated_price_type` value of `1` indicates a percentage discount.
 
 **Headers**
 
@@ -664,9 +664,9 @@ Authorization Bearer <admin token>
 
 `[]`
 
-### Return the negotiable quote to the customer
+### Return the negotiable quote to the buyer
 
-Now that the merchant has updated the quote, it must be returned to the customer. The customer will then be able to either accept the offer and begin the checkout process, or request further negotiations.
+Now that the seller has updated the quote, it must be returned to the buyer. The buyer will then be able to either accept the offer and begin the checkout process, or request further negotiations.
 
 This call places the quote in the `submitted_by_admin` state.
 
