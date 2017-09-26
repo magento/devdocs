@@ -26,7 +26,7 @@ When upgrading  from 2.1.X to 2.2.X, please see [Upgrade from 2.1.X](#2-1-X).
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
 </div>
 
-## Upgrade from 2.1.X {#2-1-X}
+## Upgrade from 2.1.X {#old-version}
 When upgrading from 2.1.X, you need to complete additional preparation steps. These include:
 
 * [Configuration Management](#config): Create a new `config.php` using the `config.local.php` to properly upgrade
