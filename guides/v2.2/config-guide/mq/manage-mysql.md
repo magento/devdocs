@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 15_RabbitMQ
+subgroup: 24_RabbitMQ
 title: Manage message queues
 menu_title: Manage message queues
 menu_order: 3
@@ -50,7 +50,7 @@ Where:
 
 *   `--batch-size=<value>` specifies the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only. If `--batch-size` is not defined, the batch consumer receives all available messages in a queue.
 
-After consuming all available messages, the command terminates. You can run the command again manually or with a cron job.
+After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the `magento queue:consumers:start` command to process large message queues. For example, you can append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start <consumer_name> &`).
 
 ### List consumers
 Use the following command to return a list of message queue consumers:
