@@ -127,6 +127,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 </table>
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+
 <!-- <tr>
 <td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
@@ -242,6 +243,7 @@ The following variables are available during the deploy process of build and dep
 </table>
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+
 <!-- <tr><td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
 <p>Use these options only if you have more than one locale.</p>
