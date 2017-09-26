@@ -57,7 +57,7 @@ tedivm/jshrink |1.1.0| BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)
 sjparkinson/static-review |4.1.1| MIT|[Source](https://github.com/sjparkinson/static-review)|[License](https://github.com/sjparkinson/static-review/blob/master/LICENSE)
 ramsey/uuid|3.6.1|MIT|[Source](https://github.com/ramsey/uuid) | [License](https://github.com/ramsey/uuid/blob/master/LICENSE)
 phpunit/phpunit |4.1.0| BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpunit)|[License](https://github.com/sebastianbergmann/phpunit/blob/master/LICENSE)
-squizlabs/php_codesniffer |1.5.3| BSD-3-Clause|[Source](https://github.com/squizlabs/PHP_CodeSniffer)|[License](https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt).6
+squizlabs/php_codesniffer |1.5.3| BSD-3-Clause|[Source](https://github.com/squizlabs/PHP_CodeSniffer)|[License](https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt)
 phpmd/phpmd |2.6.0| BSD-3-Clause|[Source](https://github.com/phpmd/phpmd)|[License](https://github.com/phpmd/phpmd/blob/master/LICENSE)
 pdepend/pdepend |2.5.0| BSD-3-Clause|[Source](https://github.com/pdepend/pdepend)|[License](https://github.com/pdepend/pdepend/blob/master/LICENSE)
 friendsofphp/php-cs-fixer |2.1.3| MIT|[Source](https://github.com/FriendsOfPHP/PHP-CS-Fixer)|[License](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/LICENSE)
