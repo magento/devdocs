@@ -12,7 +12,7 @@ github_link: release-notes/bk-release-notes.md
 
 
 
-## Magento 2.2.0 Release Candidate 
+## Magento 2.2.0 Release Notes
 
 
 * [Magento 2.2.0 Open Source Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.0CE.html)
