@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release notes
+subgroup: Release Notes
 title: Magento Open Source 2.2.0 Release Notes
 menu_title: Magento Open Source 2.2.0 Release Notes
 menu_order: 289
@@ -24,7 +24,7 @@ Magento Open Source 2.2.0 includes a wealth of new, exciting features, and hundr
 
 * **Significant enhancements in platform security and developer experience**. Security improvements include the removal of unserialize calls and protection of this functionality to increase resilence against dangerous code execution attacks. We have also continued to review and improve our protection against Cross-Site Scripting (XSS) attacks. 
 
-* **Upgraded technology stack.**  We've dropped support for PHP 5.6, Varnish 3, and Solr.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All third-party libraries have been upgraded to the latest stable version. Note: Although we’ve dropped support for Solr with this release, Solr code will remain in the Magento code base until a later release.  
+* **Upgraded technology stack.**  We've dropped support for PHP 5.6, and Varnish 3.  We now support PHP 7.1 Varnish 5, and MySQL 5.7. All third-party libraries have been upgraded to the latest stable version.   
 
 
 * **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipeline deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/).  
@@ -64,8 +64,6 @@ Magento 2.2.0 GA includes the following known issues. Fixes for these issues are
 
 **Issue**: Failure to specify a `– base_url` during installation when using custom server ports results in unresolved static content. 
 **Workaround**: You can use the CLI command `config:set web/secure/base_url <base_url>` to set the `base_url` parameter.
-
-**Issue**: Magento does not correctly calculate the Catalog Price rule for bundle products with custom options. 
 
 
 **Issue**: The Performance Toolkit does not currently work.
@@ -115,8 +113,6 @@ This release contains hundreds of fixes and enhancements.
 <!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795)
 
 <!---71890 -->* Magento no longer throws an exception when the configuration checksum is absent on a new installation.
-
-<!--- 70573-->* It is now possible to configure Redis settings for session storage, default cache, and full page cache from the command line.
 
 
 <!--- 54716-->*  We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete.
@@ -462,8 +458,6 @@ This release contains hundreds of fixes and enhancements.
 
 #### Configuration framework
 
-<!--- 69894 -->* Configuration values no longer return NULL when Redis reaches the limit set in the `max_memory` setting. Previously, when Redis met the limit specified in this setting, `ScopeConfig` returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).
-
 <!--- 65003 -->* The currency setup in Admin no longer throws an `in_array` error when a single value is selected. *Fix submitted by community member <a href="https://github.com/deriknel" target="_blank">Derik Nel</a> in pull request <a href="https://github.com/magento/magento2/pull/8077" target="_blank">8077</a>.*
 
 
@@ -514,7 +508,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---55662-->* We've removed the duplicated {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} settings from the sample web server configuration files. 
 
-<!---57383-->* You can now make Return Merchandise {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**.
 
 <!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} is set to empty. 
 
@@ -554,7 +547,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 52850-->* Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9333" target="_blank">9333</a>.*
 
-<!---65631 -->* Magento now sends email that provides updates on the status of RMA authorization.
 
 <!--- 71415-->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time.
 
@@ -583,8 +575,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 58298-->* Only users with permission to view a store can view or process the orders placed on it.
 
 <!--- 63736-->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
-
-<!--- 59966-->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include header empty of real content in the response.
 
 
 <!--- 65000-->* Fixed the location of the `wishlist.js` file. *Fix submitted by community member <a href="https://github.com/koenner01" target="_blank">Koen V.</a> in pull request <a href="https://github.com/magento/magento2/pull/8633" target="_blank">8633</a>.* 
@@ -615,33 +605,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 59135-->*  Customer sessions for different customers are no longer shared on installations on multiple websites. [GitHub-4842](https://github.com/magento/magento2/issues/4842), [GitHub-6468](https://github.com/magento/magento2/issues/6468)
 
 <!--- 63116-->* Magento now handles quotation marks in product names. Previously,  quotation marks in product names caused a JSON error on the Product page.  [GitHub-8059](https://github.com/magento/magento2/issues/8059)
-
-
-### Gift wrapping
-
-<!--- 70603-->* You can now add gift options to an order if logged in using a secure URL. 
-
-<!--- 62721-->*  The **Allow Gift Wrapping for Order Items** setting now works as expected. Previously, when **Stores > Configuration > Sales > Gift Options** was set to **No**, users  saw the Gift Option link under each product in their {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}.  
-
-<!--- 70603-->* You can now add gift options to an order if logged in using a secure URL
-
-
-<!--- 59821-->* Your gift wrapping selection now appears in the shopping cart regardless of whether you've selected a shipping method. Previously, Magento did not display your gift wrapping choice until you selected a shipping method.
-
-<!--- 59948-->* Magento no longer displays the gift wrap tax when no gift wrap is selected.
-
-<!--- 56982-->* You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute. 
-
-<!--- 70267-->* We’ve fixed an issue with fetching quote item by ID. *Fix submitted by community member  <a href="https://github.com/mladenilic" target="_blank">Mladen Ilic</a> in pull request <a href="https://github.com/magento/magento2/pull/10059" target="_blank">10059</a>.*
-
-
-<!--- 70466-->* We’ve corrected the ACL for the Developer Section resource. *Fix submitted by community member  <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/10149" target="_blank">10149</a>.*
-
-
-<!--- 70469-->* Layout merging no longer fails when you save a widget that contains the grave accent character in the data. *Fix submitted by community member  <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/10151" target="_blank">10151</a>.*
-
-
-<!--- 70419 -->* Magento now uses the correct order when uploading image to the Admin using  **Content > Design**. *Fix submitted by community member  <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10126" target="_blank">10126</a>.*
 
 
 
@@ -746,8 +709,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!---56928-->* We've improved the performance of the algorithm that Magento uses to calculate batch sizes while indexing categories.  
 
 
-<!---57470 -->* Magento no longer displays an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
-
 <!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error:  "Error 1114: Table is full".
 
 
@@ -805,7 +766,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 56150-->* The order comments history no longer duplicates the time that a comment was made. Previously, the time that a comment was made was listed twice.
 
-<!--- 54813 -->* You can now add a gift card with an undefined amount to the Items Ordered table. Previously, Magento did not permit you to add a gift card of an open value to this table.
 
 <!--- 58074-->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the Shipping and Tracking block did not work properly.
 
@@ -1049,18 +1009,8 @@ This release includes substantial improvements to Magento caching, image process
 ### Search
 <!---59088-->*  Out-of-stock items no longer erroneously appear in results of layered navigation if that product option is out-of-stock.
 
-<!--- 71562 -->* The Elasticsearch indexer search-by-attribute functionality now works as expected.
-
-<!--- 57868 -->* Elasticsearch does not throw errors when there are more than 100 searchable attributes or when user-defined price attributes are marked searchable.
-
-<!---63249 -->* ElasticSearch now includes data about composite products in its search index. Previously, search results did not include this data.
-
-<!---65245 -->* Magento now sends the `parent_id` of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information to the ElasticSearch server if the simple product associated with a configurable product were changed.
-
 <!---56356 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
 
-
-<!---58964 -->* Magento now implements the Attribute Weight Boosting Function for Elasticsearch. 
 
 
 
@@ -1188,11 +1138,8 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---67315, 67299 -->* The `catalog_url_rewrite_product_category` table is the same whether you’ve freshly installed or updated Magento 2.2.
 
-<!---70663-->* You can now assign products to a category when **Match Products by rule** is enabled.
 
 <!---61549-->* The **Use default URL Key** setting now works on the store-view level.
-
-<!---58796-->* You no longer need to delete the URL rewrite to force Magento to display links after adding pages to the CMS hierarchy. Previously, when you added new pages to the CMS hierarchy, Magento did not show the links to the new pages until you deleted the URL rewrites. 
 
 <!---70255 -->* We've fixed several issues with how Magento processes URLs with trailing slashes. *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10043" target="_blank">10043</a>.*
 
