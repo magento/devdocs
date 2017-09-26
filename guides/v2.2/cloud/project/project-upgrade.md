@@ -36,6 +36,7 @@ When upgrading from 2.1.X, you need to complete additional preparation steps. Th
 If you are upgrading from 2.1.X to 2.2.X and use Configuration Management, you need to add another configuration file to your branch. Previous versions with Configuration Management uses a `config.local.php` file. Starting with 2.2.0, [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) use a different file name: `config.php`. When you upgrade without having this file prepared, you will receive an error and a list of steps to complete prior to upgrade.
 
 We recommend completing the following steps to upgrade without errors:
+
 1. Create a copy of `config.local.php` and name it `config.php`. You should add this file in the `app/etc` folder.
 2. Git add and commit the file to your branch.
 3. Push the file to your Integration branch and environment.
