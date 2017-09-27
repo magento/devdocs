@@ -1,12 +1,16 @@
 ---
 layout: default
-group: config-guide
-subgroup: 24_RabbitMQ
+group: extension-dev-guide
+subgroup: 99_Module Development
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
-menu_order: 3
+menu_order: 27
+ee_only: true
+level3_menu_node: level3child
+level3_subgroup: mq
 version: 2.2
-github_link: config-guide/mq/queue-migration.md
+github_link: extension-dev-guide/message-queues/queue-migration.md
+redirect_from: /guides/v2.2/config-guide/mq/queue-migration.html
 ---
 
 ### Migrate from Magento 2.1 to 2.2 ###

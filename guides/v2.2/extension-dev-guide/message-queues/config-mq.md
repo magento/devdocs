@@ -1,12 +1,17 @@
 ---
 layout: default
-group: config-guide
-subgroup: 24_RabbitMQ
-title: Configure 2.2 message queues
-menu_title: Configure 2.2 message queues
-menu_order: 2
+group: extension-dev-guide
+subgroup: 99_Module Development
+title: Configure message queues
+menu_title: Configure message queues
+menu_order: 26
+ee_only: true
 version: 2.2
-github_link: config-guide/mq/config-mq22.md
+level3_menu_node: level3child
+level3_subgroup: mq
+github_link: extension-dev-guide/message-queues/config-mq.md
+redirect_from: /guides/v2.2/extension-dev-guide/bulk-operations.html
+
 ---
 
 The message queue topology is a {{site.data.var.ee}} feature. It can be included as part of {{site.data.var.ee}} installation, or you can add it existing modules.

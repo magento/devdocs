@@ -3,10 +3,14 @@ layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Example bulk operations implementation
-menu_title: Example bulk operations implementation (Enterprise Edition Only)
-menu_order: 21
+menu_title: Example bulk operations implementation
+menu_order: 29
+ee_only: true
+level3_menu_node: level3child
+level3_subgroup: mq
 version: 2.2
-github_link: extension-dev-guide/implement-bulk.md
+github_link: extension-dev-guide/message-queues/implement-bulk.md
+redirect_from: /guides/v2.2/extension-dev-guide/implement-bulk.html
 
 ---
 

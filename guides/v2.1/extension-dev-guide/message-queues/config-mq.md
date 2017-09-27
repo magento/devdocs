@@ -1,12 +1,17 @@
 ---
 layout: default
-group: config-guide
-subgroup: 15_RabbitMQ
+group: extension-dev-guide
+subgroup: 99_Module Development
 title: Configure message queues
 menu_title: Configure message queues
-menu_order: 2
+menu_order: 18
 version: 2.1
-github_link: config-guide/mq/config-mq.md
+ee_only: true
+level3_menu_node: level3child
+level3_subgroup: mq
+github_link: extension-dev-guide/message-queues/config-mq.md
+redirect_from: /guides/v2.1/extension-dev-guide/bulk-operations.html
+
 ---
 Any module can be configured to send and receive messages to the message queue. To do this, you must create the following files in the `<module>/etc` directory:
 
@@ -73,7 +78,7 @@ The `queue` element defines the module's queues.
 Parameter | Description
 --- | ---
 name (required) | Defines the queue name to send the message to.
-consumer (required) | The name of the consumer.  
+consumer (required) | The name of the consumer.
 consumerInstance | The path to a Magento class that consumes the message.
 handler | Specifies the class and method that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`.
 maxMessages | Specifies the maximum number of messages to consume.
@@ -94,4 +99,5 @@ maxMessages | Specifies the maximum number of messages to consume.
 #### Related Topics
 *	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
 *	<a href="{{page.baseurl}}config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
+*	<a href="{{page.baseurl}}extension-dev-guide/message-queues/queue-migration.html">Migrate message queue configuration</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
