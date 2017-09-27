@@ -1,12 +1,17 @@
 ---
 layout: default
-group: config-guide
-subgroup: 15_RabbitMQ
+group: extension-dev-guide
+subgroup: 99_Module Development
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
-menu_order: 3
+menu_order: 19
+ee_only: true
+level3_menu_node: level3child
+level3_subgroup: mq
 version: 2.1
-github_link: config-guide/mq/queue-migration.md
+github_link: extension-dev-guide/message-queues/queue-migration.md
+redirect_from: /guides/v2.1/config-guide/mq/queue-migration.html
+
 ---
 
 ### Migrate from Magento 2.0 to 2.1 ###
@@ -29,5 +34,5 @@ The structure of the `queue.xml` file is substantially different in Magento. 2.1
 `<broker>/<queue>/maxMessages` | `<consumer>/max_messages`
 
 #### Related topics
-*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
-*	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a>
+*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
+*	<a href="{{page.baseurl}}extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>

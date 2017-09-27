@@ -3,10 +3,14 @@ layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Bulk Operations
-menu_title: Bulk Operations (Enterprise Edition Only)
-menu_order: 20
+menu_title: Bulk Operations
+menu_order: 28
 version: 2.2
-github_link: extension-dev-guide/bulk-operations.md
+ee_only: true
+level3_menu_node: level3child
+level3_subgroup: mq
+github_link: extension-dev-guide/message-queues/bulk-operations.md
+redirect_from: /guides/v2.2/extension-dev-guide/bulk-operations.html
 
 ---
 
@@ -61,7 +65,7 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 <td>The Admin user ID that executes this bulk operation.</td></tr>
 </table>
 
-See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createpublisher) for a detailed example of a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}.
+See [Create a publisher]( {{page.baseurl}}extension-dev-guide/message-queues/implement-bulk.html#createpublisher) for a detailed example of a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}.
 
 ### Consume messages
 
@@ -95,7 +99,7 @@ try {
 {% endhighlight %}
 
 
-See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createconsumer) for a detailed example of a consumer.
+See [Create a publisher]( {{page.baseurl}}extension-dev-guide/message-queues/implement-bulk.html#createconsumer) for a detailed example of a consumer.
 
 ### Get the status of operations
 
@@ -110,5 +114,5 @@ Value | Constant
 
 #### Related Topic
 
-* [RabbitMQ Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-* [Example bulk operations implementation]({{page.baseurl}}extension-dev-guide/implement-bulk.html)
+* [Message Queues Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
+* [Example bulk operations implementation]({{page.baseurl}}extension-dev-guide/message-queues/implement-bulk.html)

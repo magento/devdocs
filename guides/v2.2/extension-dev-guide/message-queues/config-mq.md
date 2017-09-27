@@ -1,12 +1,17 @@
 ---
 layout: default
-group: config-guide
-subgroup: 24_RabbitMQ
-title: Configure 2.2 message queues
-menu_title: Configure 2.2 message queues
-menu_order: 2
+group: extension-dev-guide
+subgroup: 99_Module Development
+title: Configure message queues
+menu_title: Configure message queues
+menu_order: 26
+ee_only: true
 version: 2.2
-github_link: config-guide/mq/config-mq22.md
+level3_menu_node: level3child
+level3_subgroup: mq
+github_link: extension-dev-guide/message-queues/config-mq.md
+redirect_from: /guides/v2.2/config-guide/mq/config-mq.html
+
 ---
 
 The message queue topology is a {{site.data.var.ee}} feature. It can be included as part of {{site.data.var.ee}} installation, or you can add it existing modules.
@@ -232,9 +237,9 @@ The `connection` element is a subnode of the `publisher` element. There must not
 
 ### Updating `queue.xml` {#updatequeuexml}
 
-See [Migrate message queue configuration]({{page.baseurl}}config-guide/mq/queue-migration.html) for information about upgrading from Magento 2.0 or 2.1.
+See [Migrate message queue configuration]({{page.baseurl}}extension-dev-guide/message-queues/queue-migration.html) for information about upgrading from Magento 2.0 or 2.1.
 
 ### Related Topics
-*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
+*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
 *	<a href="{{page.baseurl}}config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

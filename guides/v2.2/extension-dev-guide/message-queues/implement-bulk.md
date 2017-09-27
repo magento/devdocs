@@ -3,10 +3,14 @@ layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Example bulk operations implementation
-menu_title: Example bulk operations implementation (Enterprise Edition Only)
-menu_order: 21
+menu_title: Example bulk operations implementation
+menu_order: 29
+ee_only: true
+level3_menu_node: level3child
+level3_subgroup: mq
 version: 2.2
-github_link: extension-dev-guide/implement-bulk.md
+github_link: extension-dev-guide/message-queues/implement-bulk.md
+redirect_from: /guides/v2.2/extension-dev-guide/implement-bulk.html
 
 ---
 
@@ -288,7 +292,7 @@ The message queue topology must be configured to implement bulk operations. Crea
 * `queue_publisher.xml`
 * `queue_topology.xml`
 
-For more information about the `di.xml` file, see [Dependency Injection]({{page.baseurl}}extension-dev-guide/depend-inj.html). For information the other files, see [Configure message queues]({{page.baseurl}}/config-guide/mq/config-mq.html).
+For more information about the `di.xml` file, see [Dependency Injection]({{page.baseurl}}extension-dev-guide/depend-inj.html). For information the other files, see [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html).
 
 #### Create `communication.xml`
 
@@ -349,6 +353,6 @@ The `queuetopology.xml` file defines the message routing rules and declares queu
 
 #### Related Topics
 
-* [RabbitMQ Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-* [Bulk Operations]({{page.baseurl}}extension-dev-guide/bulk-operations.html)
-* [Configure message queues]({{page.baseurl}}/config-guide/mq/config-mq.html)
+* [Message Queues Overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
+* [Bulk Operations]({{page.baseurl}}extension-dev-guide/message-queues/bulk-operations.html)
+* [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html)
