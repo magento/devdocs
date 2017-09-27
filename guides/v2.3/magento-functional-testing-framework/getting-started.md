@@ -22,16 +22,18 @@ This solution is temporary.
 
 ### Selenium Server
 
-[Download the latest Selenium Server][selenium server].
+1. [Download the latest Selenium Server][selenium server].
 
-Into the same directory where the Selenium server is located, [download a web driver for your web browser][selenium web driver] .
+2. Into the same directory where the Selenium server is located, [download a web driver for your web browser][selenium web driver].
+
+3. Add the directory with the web driver to PATH.
 
 ### Allure
 
 [Install Allure] that is a tool that generates testing reports in HTML.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-For Windows users: use **Manual installation** to be able to run Allure in non-PowerShell terminals)
+**For Windows users**: use *Manual installation* to be able to run Allure using non-PowerShell terminals.
 </div>
 
 ## PREPARE MAGENTO
@@ -60,8 +62,8 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 ```bash
 $ mkdir mftf
 $ cd mftf
-$ git clone https://github.com/magento/magento2ce.git
-$ git clone https://github.com/magento/magento2ee.git
+$ git clone git@github.com:magento/magento2ce.git
+$ git clone git@github.com:magento/magento2ee.git
 ```
 
 ### Step 2. Link the repositories to make `magento2ee` work properly
@@ -96,7 +98,7 @@ Replace `<personal access token>` with your [personal access token]. The token m
 ### Step 4. Install dependencies
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-There is a temporary issue with the `"allure-framework/allure-codeception"` dependency. To fix it, find the dependency in `composer.json` and replace with
+There is a temporary issue with the `"allure-framework/allure-codeception"` dependency. To fix it, find the dependency in `magento2ee/dev/tests/acceptance/composer.json` and replace with
 `"allure-framework/allure-codeception": "dev-master#af40af5ae2b717618a42fe3e137d75878508c75d"`
 </div>
 
@@ -106,11 +108,23 @@ $ composer install
 ```
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-If you see an error like `404 Not Found`, try to [update your Composer].<br/>
+If you see an error like `404 Not Found`, [update your Composer] and try again.<br/>
 `$ composer selfupdate`
 </div>
 
 ### Step 5. Install Robo
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+**For Windows users**
+<p markdown="1">
+There is a temporary issue with a directory separators in the `magento2ce/dev/tests/acceptance/RoboFile.php` file. To fix it, open the file, replace a character `/` with a PHP constant `DIRECTORY_SEPARATOR` for all string values that contain path.
+</p>
+<p>Example:</p>
+<p markdown="1">
+WRONG: `$this->_exec('vendor/bin/robo clone:files');`<br/>
+CORRECT: `$this->_exec('vendor'.DIRECTORY_SEPARATOR.'bin'.DIRECTORY_SEPARATOR.'robo clone:files');`
+</p>
+</div>
 
 In `magento2ce/dev/tests/acceptance`, run the following command:
 
@@ -120,13 +134,11 @@ $ vendor/bin/robo setup
 
 [Learn more about Robo][robo]
 
-### Step 6. Build the project
+<div class="bs-callout bs-callout-tip" markdown="1">
+To avoid typing evey time `vendor/bin`, add to *PATH* your `<absolute path to acceptance dir>/vendor/bin` value. When added, you should be able to run commands: `robo`, `codecept`, and `phpunit`. 
+</div>
 
-```bash
-$ vendor/bin/robo build:project
-```
-
-### Step 7. Edit environment settings
+### Step 6. Edit environment settings
 
 In the `magento2ce/dev/tests/acceptance`, create a configuration file `.env` from `.env.example`:
 
@@ -161,7 +173,7 @@ Example: `FW_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/vendor/mag
 * `TESTS_MODULE_PATH` must contain a base path to functional tests. 
 Example: `TESTS_MODULE_PATH=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
 
-### Step 8. Generate existing tests
+### Step 7. Generate existing tests
 
 In the `magento2ce/dev/tests/acceptance`, run the following command to generate tests as PHP classes from XML files:
 
@@ -185,11 +197,13 @@ $ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.ja
 $ vendor/bin/codecept run
 ```
 
-## READ REPORTS
+## GENERATE REPORTS
 
 ```bash
 $ vendor/bin/robo allure2:report
 ```
+
+[Learn about report structure.][allure reports] 
 
 <!-- LINKS -->
 
@@ -202,4 +216,5 @@ $ vendor/bin/robo allure2:report
 [selenium web driver]: http://docs.seleniumhq.org/about/platforms.jsp
 [Install Allure]: https://docs.qameta.io/allure/latest/
 [PHP 7]: http://php.net/downloads.php
+[allure reports]: https://docs.qameta.io/allure/latest/#_report_structure
 

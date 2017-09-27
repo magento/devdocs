@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 2.2.0 Release Candidate
+subgroup: 2.2.x_Release_Information
 title: Component Status
 menu_title: Component Status
 menu_order: 6000
@@ -11,7 +11,7 @@ github_link: release-notes/release-candidate/component-status.md
 
 **Last Updated:** September 12, 2017
 
-This page shows the ongoing status of each component during the Magento 2.2 Release Candidate period and is intended to show you the readiness of different components.
+This page shows the status of each component for the Magento 2.2.0 release and is intended to show you the readiness of different components.
 
 Each status color indicates the severity and amount of 2.2-related issues for a particular component.
 
@@ -19,7 +19,7 @@ Each status color indicates the severity and amount of 2.2-related issues for a 
 * <span class="status yellow">Yellow</span> - The module has some issues that may cause problems, but it is still functional.
 * <span class="status green">Green</span> - The module has no significant or outstanding issues.
 
-The issues used to generate the status of these components come from verified internal and GitHub reports for Magento 2.2 that are planned to be fixed prior to the General Availability release.
+The issues used to generate the status of these components come from verified internal and GitHub reports for Magento 2.2.
 Issues that are not related to the 2.2 release are not part of this report.
 
 ## Magento Open Source Modules

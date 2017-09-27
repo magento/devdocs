@@ -67,7 +67,7 @@ We support and deploy the following services for you:
 
 `disk` specifies the size of the persistent disk storage (in MB) allocated to the service.
 
-For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. (See [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html).)
+For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. See [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html).
 
 ## Using the services
 For services to be available to an application in your project, you must specify [*relationships*]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel) between applications and services in `.magento.app.yaml`.
@@ -75,9 +75,9 @@ For services to be available to an application in your project, you must specify
 #### Related topics
 *	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
 *	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[Set up the mysql service]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
-*	[Set up the redis service]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
-*	[Set up the solr service]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
-*	[Set up the elasticsearch service]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
-*	[Set up the rabbitmq service]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
+*	[Set up MySQL service]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
+*	[Set up Redis service]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
+*	[Set up Solr service](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
+*	[Set up Elasticsearch service]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
+*	[Set up RabbitMQ service]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
 *	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
