@@ -1,16 +1,18 @@
 ---
 layout: default
-group: cloud
-subgroup: 030_ReleaseNotes
+group: release-notes
+subgroup: 02_rel-notes
 title: magento-cloud-configuration release 101.9.x Release Notes
 menu_title: magento-cloud-configuration release 101.9.x Release Notes
-menu_order: 40
-menu_node: 
+menu_order: 5
+menu_node:
+level3_menu_node:
+level3_subgroup: mccloud-relnotes
 version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.9.md
 ---
- 
-These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Commerce (Cloud) version 2.1.9, `magento-cloud-configuration` release 101.9.0. 
+
+These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Commerce (Cloud) version 2.1.9, `magento-cloud-configuration` release 101.9.0.
 
 ## Changes and enhancements in this release
 In `magento-cloud-configuration` release 101.9.0, we provide the following improvement:
@@ -28,4 +30,3 @@ To test and apply these patches, see [Test general patches]({{ site.gdeurl21 }}c
 
 ### Magento Commerce Release Notes
 This Magento Commerce (Cloud) release corresponds to Magento Commerce 2.1.9.
-

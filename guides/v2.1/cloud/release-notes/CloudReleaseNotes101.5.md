@@ -1,15 +1,17 @@
 ---
 layout: default
-group: cloud
-subgroup: 030_ReleaseNotes
+group: release-notes
+subgroup: 02_rel-notes
 title: magento-cloud-configuration release 101.5.x Release Notes
 menu_title: magento-cloud-configuration release 101.5.x Release Notes
-menu_order: 48
-menu_node: 
+menu_order: 25
+menu_node:
+level3_menu_node:
+level3_subgroup: mccloud-relnotes
 version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.5.md
 ---
- 
+
 These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Commerce (Cloud) version 2.1.5, `magento-cloud-configuration` release 101.5.2, 101.5.3, and 101.5.4.
 
 ## 101.5.4 changes
@@ -24,7 +26,7 @@ In `magento-cloud-configuration` release 101.5.3 on Magento Commerce (Cloud) 2.1
 
 <!--- MAGECLOUD-870 -->* Magento no longer automatically disables Google Analytics when deployed in the master branch.
 
-<!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud. 
+<!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud.
 
 ## 101.5.2 changes
 In `magento-cloud-configuration` release 101.5.2 on Magento Enterprise Cloud Edition 2.1.5, we provide the following improvements:
@@ -32,7 +34,7 @@ In `magento-cloud-configuration` release 101.5.2 on Magento Enterprise Cloud Edi
 
 <!--- MAGECLOUD-792 -->* Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.
 
-<!--- MAGECLOUD-771 -->* You can now successfully deploy your Cloud installation with multiple locales to staging after upgrading to `magento-cloud-configuration` 101.5.1. 
+<!--- MAGECLOUD-771 -->* You can now successfully deploy your Cloud installation with multiple locales to staging after upgrading to `magento-cloud-configuration` 101.5.1.
 
 <!--- MAGECLOUD-587 -->* Magento now automatically sets the cookie domain to reflect the new domain when branching an environment in a PAAS environment. Previously, the Admin panel was inaccessible until the value of the `cookie_domain` is changed at the database level to the current domain.
 

@@ -7,7 +7,7 @@ menu_title: magento-cloud-configuration release 101.7.x Release Notes
 menu_order: 30
 menu_node:
 level3_menu_node:
-level3_subgroup: mccloud20-relnotes
+level3_subgroup: mccloud-relnotes
 version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.7.md
 ---
