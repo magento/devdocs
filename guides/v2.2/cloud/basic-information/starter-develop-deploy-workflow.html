@@ -1085,7 +1085,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a></li>
 
 									
 
@@ -1830,88 +1830,98 @@ git pull origin &lt;environment ID&gt;
 <p><img src="/common/images/cloud_workflow-sample-data.png" alt="Install optional sample data" /></p>
 
 <h3 id="prod-data">Optional: Pull production data</h3>
-<p>We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. Why in Production? By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.</p>
+<p>We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.</p>
 
-<p>As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and other development environments as you like.</p>
+<p>As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and possibly Integration environments as you like.</p>
 
-<p>To learn more about database dumps, see <a href="/guides/v2.2/cloud/project/project-webint-snap.html#db-dump">Snapshots and Backup management</a>.</p>
+<div>
 
-<p><img src="/common/images/cloud_workflow-data-code-process.png" alt="Pull and sanitize production data" /></p>
+  <p>To help export Production data as test data to use in Staging and Integration environments, <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities</a>:</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including how you dump your database or developing a script to scrub out customer data.</p>
+  <ul>
+    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html#config-cli-spt-utils-db">CLI commands</a> (Recommended) to export a protected backup of customer and store data using your Magento encryption key</li>
+    <li><a href="http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html" target="_blank">Data Collection</a> tool for generating and exporting data</li>
+  </ul>
+
+  <p>To migrate this data, see <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
+
+  <p><img src="/common/images/cloud_workflow-data-code-process.png" alt="Pull and sanitize production data" /></p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">using support utilities</a> or developing a script to scrub out customer data.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning">
+    <p>Important: We don’t recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.</p>
+  </div>
+
+  <h2 id="deploy">Deployment workflow</h2>
+  <p>As we detailed in the architecture information, Magento Commerce (Cloud) is Git driven. Deploying Magento Commerce (Cloud) is part of your Git push processes for branches.</p>
+
+  <p>When you push branched code from your local to the remote Git branch, a series of build and deploy scripts begin.</p>
+
+  <p>Build scripts:</p>
+
+  <ul>
+    <li>Your site on the target environment continue running during a build</li>
+    <li>Check and run Magento Commerce (Cloud) patches and hotfixes</li>
+    <li>Compile your code with a build and deploy log</li>
+    <li>Check for Configuration Management, if there static content deploy occurs during this phase</li>
+    <li>Create or use a slug of unchanged code to speed up the process</li>
+    <li>Provision all backend services and applications</li>
+  </ul>
+
+  <p>Deploy scripts:</p>
+
+  <ul>
+    <li>Puts your site on the target environment in Maintenance mode</li>
+    <li>Deploys static content if not completed during Build</li>
+    <li>Installs or updates Magento Commerce (Cloud)</li>
+    <li>Configure routing for traffic</li>
+  </ul>
+
+  <p>When fully completed, your store comes back online, live, with all of your updated code and configurations.</p>
+
+  <p>To learn more, see <a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a>.</p>
+
+  <h3 id="staging">Push to Staging and test</h3>
+  <p>You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including <a href="/guides/v2.2/cloud/basic-information/cloud-fastly.html">Fastly</a>, <a href="/guides/v2.2/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a>, and <a href="/guides/v2.2/cloud/project/new-relic.html">New Relic APM</a>. We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.</p>
+
+  <p>Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.</p>
+
+  <p>To learn more, see <a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
+
+  <h3 id="pro">Push to Master / Production</h3>
+  <p>When you push to the <code class="highlighter-rouge">master</code> branch, you are pushing to Production. Treat configuration and testing of Production much as your Staging environment. The important difference in this environment is using live credentials. The moment you go live and launch, customers must be able to complete purchases and administrators should be able to manage your live store.</p>
+
+  <p>To learn more, see <a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
+
+  <h3 id="go-live">Go live</h3>
+  <p>We provide a clear walk-through for going live and launching. It requires more steps than pressing a button. But when complete, your store can serve up products in your customized theme for sale immediately.</p>
+
+  <p>To learn more, check out <a href="/guides/v2.2/cloud/live/live.html">Go live and launch</a>.</p>
+
+  <h2 id="continuous-integration">Continuous integration</h2>
+  <p>Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.</p>
+
+  <p>Magento Commerce (Cloud) environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.</p>
+
+  <ul>
+    <li>Create development branches with future features and changes</li>
+    <li>Test the code in your development environments</li>
+    <li>Deploy and test in Staging</li>
+    <li>Deploy to Production</li>
+  </ul>
+
+  <p>For more information, see <a href="/guides/v2.2/cloud/deploy/continuous-deployment.html">Continuous integration</a>.</p>
+
+  <h4 id="related-topics">Related topics</h4>
+  <ul>
+    <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time development setup</a></li>
+    <li><a href="/guides/v2.2/cloud/basic-information/starter-architecture.html">Starter architecture</a></li>
+    <li><a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a></li>
+  </ul>
 </div>
-
-<div class="bs-callout bs-callout-warning">
-  <p>Important: We don’t recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.</p>
-</div>
-
-<h2 id="deploy">Deployment workflow</h2>
-<p>As we detailed in the architecture information, Magento Commerce (Cloud) is Git driven. Deploying Magento Commerce (Cloud) is part of your Git push processes for branches.</p>
-
-<p>When you push branched code from your local to the remote Git branch, a series of build and deploy scripts begin.</p>
-
-<p>Build scripts:</p>
-
-<ul>
-  <li>Your site on the target environment continue running during a build</li>
-  <li>Check and run Magento Commerce (Cloud) patches and hotfixes</li>
-  <li>Compile your code with a build and deploy log</li>
-  <li>Check for Configuration Management, if there static content deploy occurs during this phase</li>
-  <li>Create or use a slug of unchanged code to speed up the process</li>
-  <li>Provision all backend services and applications</li>
-</ul>
-
-<p>Deploy scripts:</p>
-
-<ul>
-  <li>Puts your site on the target environment in Maintenance mode</li>
-  <li>Deploys static content if not completed during Build</li>
-  <li>Installs or updates Magento Commerce (Cloud)</li>
-  <li>Configure routing for traffic</li>
-</ul>
-
-<p>When fully completed, your store comes back online, live, with all of your updated code and configurations.</p>
-
-<p>To learn more, see <a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a>.</p>
-
-<h3 id="staging">Push to Staging and test</h3>
-<p>You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including <a href="/guides/v2.2/cloud/basic-information/cloud-fastly.html">Fastly</a>, <a href="/guides/v2.2/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a>, and <a href="/guides/v2.2/cloud/project/new-relic.html">New Relic APM</a>. We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.</p>
-
-<p>Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.</p>
-
-<p>To learn more, see <a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
-
-<h3 id="pro">Push to Master / Production</h3>
-<p>When you push to the <code class="highlighter-rouge">master</code> branch, you are pushing to Production. Treat configuration and testing of Production much as your Staging environment. The important difference in this environment is using live credentials. The moment you go live and launch, customers must be able to complete purchases and administrators should be able to manage your live store.</p>
-
-<p>To learn more, see <a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
-
-<h3 id="go-live">Go live</h3>
-<p>We provide a clear walk-through for going live and launching. It requires more steps than pressing a button. But when complete, your store can serve up products in your customized theme for sale immediately.</p>
-
-<p>To learn more, check out <a href="/guides/v2.2/cloud/live/live.html">Go live and launch</a>.</p>
-
-<h2 id="continuous-integration">Continuous integration</h2>
-<p>Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.</p>
-
-<p>Magento Commerce (Cloud) environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.</p>
-
-<ul>
-  <li>Create development branches with future features and changes</li>
-  <li>Test the code in your development environments</li>
-  <li>Deploy and test in Staging</li>
-  <li>Deploy to Production</li>
-</ul>
-
-<p>For more information, see <a href="/guides/v2.2/cloud/deploy/continuous-deployment.html">Continuous integration</a>.</p>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time development setup</a></li>
-  <li><a href="/guides/v2.2/cloud/basic-information/starter-architecture.html">Starter architecture</a></li>
-  <li><a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a></li>
-</ul>
 
 		</div>
 		<!-- /.content-wrap -->
