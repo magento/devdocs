@@ -65,7 +65,7 @@ The `BulkManagementInterface::scheduleBulk` is responsible for publishing bulk o
 <td>The Admin user ID that executes this bulk operation.</td></tr>
 </table>
 
-See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createpublisher) for a detailed example of a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}.
+See [Create a publisher]( {{page.baseurl}}extension-dev-guide/message-queues/implement-bulk.html#createpublisher) for a detailed example of a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}.
 
 ### Consume messages
 
@@ -99,7 +99,7 @@ try {
 {% endhighlight %}
 
 
-See [Create a publisher]( {{page.baseurl}}extension-dev-guide/implement-bulk.html#createconsumer) for a detailed example of a consumer.
+See [Create a publisher]( {{page.baseurl}}extension-dev-guide/message-queues/implement-bulk.html#createconsumer) for a detailed example of a consumer.
 
 ### Get the status of operations
 
@@ -115,4 +115,4 @@ Value | Constant
 #### Related Topic
 
 * [RabbitMQ Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-* [Example bulk operations implementation]({{page.baseurl}}extension-dev-guide/implement-bulk.html)
+* [Example bulk operations implementation]({{page.baseurl}}extension-dev-guide/message-queues/implement-bulk.html)
