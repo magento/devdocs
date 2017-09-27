@@ -114,5 +114,5 @@ Value | Constant
 
 #### Related Topic
 
-* [RabbitMQ Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
+* [Message Queues Overview]( {{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
 * [Example bulk operations implementation]({{page.baseurl}}extension-dev-guide/message-queues/implement-bulk.html)

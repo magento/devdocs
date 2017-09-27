@@ -2,7 +2,7 @@
 layout: default
 group: config-guide
 subgroup: 24_RabbitMQ
-title: Message Queues
+title: Message Queues Overview
 menu_title: Message Queues (Magento Commerce only)
 menu_order: 1
 menu_node: parent
