@@ -179,7 +179,9 @@ We recommend adding all of your products, catalogs, site content, and so on (not
 
 As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and other development environments as you like.
 
-To learn more about database dumps, see [Snapshots and Backup management]({{page.baseurl}}cloud/project/project-webint-snap.html#db-dump).
+{% include cloud/data-collection.md %}
+
+To learn more about database dumps, see [Migrate and deploy static files and data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html).
 
 ![Pull and sanitize production data]({{ site.baseurl }}common/images/cloud_workflow-data-code-process.png)
 
