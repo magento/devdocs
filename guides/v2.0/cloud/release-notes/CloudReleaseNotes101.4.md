@@ -2,14 +2,14 @@
 layout: default
 group: cloud
 subgroup: 030_ReleaseNotes
-title: magento-cloud-configuration release 101.4.x Release Notes
-menu_title: magento-cloud-configuration release 101.4.x Release Notes
+title: magento-cloud-configuration release 101.7.x Release Notes
+menu_title: magento-cloud-configuration release 101.7.x Release Notes
 menu_order: 50
-menu_node: 
+menu_node:
 version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.4.md
 ---
- 
+
 These Release Notes provide up-to-date information about changes, additions, and fixes to the  Magento Commerce (Cloud) version 2.1.4, `magento-cloud-configuration` release 101.4.1, 101.4.4, and 101.4.5.
 
 ## 101.4.5 changes
@@ -24,7 +24,7 @@ In `magento-cloud-configuration` release 101.4.4 on Magento Commerce (Cloud) 2.1
 
 <!--- MAGECLOUD-870 -->* Magento no longer automatically disables Google Analytics when deployed in the master branch.
 
-<!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud. 
+<!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud.
 
 
 
@@ -48,4 +48,3 @@ To test and apply the patch, see [Test general patches]({{ site.gdeurl21 }}cloud
 
 ### Magento Commerce Release Notes
 This Magento Commerce (Cloud) release has no corresponding Magento Commerce release.
-
