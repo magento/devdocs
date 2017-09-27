@@ -18,7 +18,7 @@ We are pleased to present Magento Commerce 2.2.0 General Availability. This rele
 
 Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. Look for the following highlights in this release:
 
-* **B2B Commerce functionality** is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. B2B Commerce functionality also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. See [B2B Quick Tour](http://docs.magento.com/m2/ce/user_guide/getting-started/quick-tour.html) for an overview of the rich B2B feature set we're introducing in this release. 
+* **B2B Commerce functionality** is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. B2B Commerce functionality also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. See [B2B Quick Tour](http://docs.magento.com/m2/ce/user_guide/getting-started/quick-tour.html) for an overview of the rich B2B feature set we're introducing in this release, and [Getting Started with Magento Commerce for B2B](http://docs.magento.com/m2/b2b/user_guide/getting-started.html) for a more complete exploration of these new features. 
 
 * **Magento Commerce Starter.** In addition to our Pro version, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. This subscription plan differs from our Enterprise Cloud version in some key ways. For an overview of these versions, see [Welcome to Magento Commerce Cloud](http://devdocs.magento.com/guides/v2.1/cloud/bk-cloud.html).
 
@@ -93,7 +93,7 @@ The following issues affect the Commerce edition of Magento 2.2.0:
 
 **Issue**: Magento displays an error (`“Error 503 Service Unavailable”`) when you try to save a newly-added Catalog Price rule. 
 
-**Issue**: This issue affects the default configuration of category permissions. When the **use category path in product URL** value  is set to **false**, and the user navigates to the product page for a product contained in that category, he is redirected to a 404 error page.  We will issue a hot fix for this issue in the near future.
+**Issue**: This issue affects the default configuration of category permissions in a multi-storeview environment. When the **use category path in product URL** value  is set to **false**, and the user navigates to the product page for a product contained in that category, he is redirected to a 404 error page.  We will issue a hot fix for this issue in the near future.
 
 
 ### B2B-only issues
