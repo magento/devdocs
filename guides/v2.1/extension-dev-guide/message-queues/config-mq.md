@@ -10,7 +10,7 @@ ee_only: true
 level3_menu_node: level3child
 level3_subgroup: mq
 github_link: extension-dev-guide/message-queues/config-mq.md
-redirect_from: /guides/v2.1/extension-dev-guide/bulk-operations.html
+redirect_from: /guides/v2.1/config-guide/mq/config-mq.html
 
 ---
 Any module can be configured to send and receive messages to the message queue. To do this, you must create the following files in the `<module>/etc` directory:

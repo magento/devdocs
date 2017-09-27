@@ -9,7 +9,8 @@ ee_only: true
 level3_menu_node: level3child
 level3_subgroup: mq
 version: 2.0
-github_link: config-guide/mq/config-mq.md
+github_link: extension-dev-guide/message-queues/config-mq.md
+redirect_from: /guides/v2.0/config-guide/mq/config-mq.html
 ---
 
 <div class="bs-callout bs-callout-warning">

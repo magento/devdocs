@@ -10,7 +10,7 @@ version: 2.2
 level3_menu_node: level3child
 level3_subgroup: mq
 github_link: extension-dev-guide/message-queues/config-mq.md
-redirect_from: /guides/v2.2/extension-dev-guide/config-mq.html
+redirect_from: /guides/v2.2/config-guide/mq/config-mq.html
 
 ---
 
