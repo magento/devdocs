@@ -163,22 +163,20 @@ For instructions, see [Install optional sample data]({{page.baseurl}}cloud/howto
 ![Install optional sample data]({{ site.baseurl }}common/images/cloud_workflow-sample-data.png)
 
 ### Optional: Pull production data {#prod-data}
-We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. Why in Production? By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.
+We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.
 
-As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and other development environments as you like.
+As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, possibly Integration environments as you like.
 
 {% include cloud/data-collection.md %}
-
-To learn more about database dumps, see [Migrate and deploy static files and data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html).
 
 ![Pull and sanitize production data]({{ site.baseurl }}common/images/cloud_workflow-pro-data-code-process.png)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including how you dump your database or developing a script to scrub out customer data.
+Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.
 </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Important: We don't recommend pushing a database from a development or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.
+Important: We don't recommend pushing a database from the Integration or Staging environment to Production. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.
 </div>
 
 ## Deployment workflow {#deploy}
