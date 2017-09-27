@@ -1,11 +1,13 @@
-/---
+---
 layout: default
-group: cloud
-subgroup: 030_ReleaseNotes
+group: release-notes
+subgroup: 02_rel-notes
 title: Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
 menu_title: Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
-menu_order: 99
-menu_node: 
+menu_order: 45
+menu_node:
+level3_menu_node:
+level3_subgroup: mccloud20-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.2.md
 ---
@@ -13,7 +15,7 @@ github_link: cloud/release-notes/CloudReleaseNotes2.1.2.md
 ### Changes
 We made the following change in this release:
 
-Added a new environment variable, `UPDATE_URLS`, which if set to `enabled` causes Magento base URLs in the database with to be replaced with Cloud project URLs. 
+Added a new environment variable, `UPDATE_URLS`, which if set to `enabled` causes Magento base URLs in the database with to be replaced with Cloud project URLs.
 
 By default, `UPDATE_URLS` is set to `enabled`. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
 

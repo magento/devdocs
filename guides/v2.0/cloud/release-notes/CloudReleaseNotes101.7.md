@@ -1,11 +1,13 @@
 ---
 layout: default
-group: cloud
-subgroup: 030_ReleaseNotes
-title: magento-cloud-configuration release 101.4.x Release Notes
-menu_title: magento-cloud-configuration release 101.4.x Release Notes
-menu_order: 50
+group: release-notes
+subgroup: 02_rel-notes
+title: magento-cloud-configuration release 101.7.x Release Notes
+menu_title: magento-cloud-configuration release 101.7.x Release Notes
+menu_order: 30
 menu_node:
+level3_menu_node:
+level3_subgroup: mccloud20-relnotes
 version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.7.md
 ---
