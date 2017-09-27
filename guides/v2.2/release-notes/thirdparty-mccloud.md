@@ -13,8 +13,10 @@ This page contains links to license agreements of the third party components use
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
+github |||[Source](https://github.com)|[Terms of Service](https://help.github.com/articles/github-terms-of-service/)
 fastly |1.2.28||[Source](https://github.com/fastly/fastly-magento2)|[License](https://github.com/fastly/fastly-magento2/blob/master/LICENSE_FASTLY_CDN.txt)
 new relic apm || MIT/Apache|[Source](https://docs.newrelic.com/apm)|[License](https://rpm.newrelic.com/licenses)
+blackfire profiler |||[Source](https://blackfire.io)|[Terms of Use](https://blackfire.io/terms-of-use)
 glusterfs || GPLV2/LGPLV3+|[Source](https://github.com/gluster/glusterfs)|[License](https://github.com/gluster/glusterfs#license)
 mariadb || GPL|[Source](https://mariadb.com/downloads/mariadb-tx)|[License](https://mariadb.com/kb/en/library/mariadb-license/)
 elasticsearch/elasticsearch |1.4, 1.7, 2.4| Apache 2.0/GNU LGPL-2.1|[Source](https://github.com/elastic/elasticsearch-php)|[License](https://github.com/elastic/elasticsearch-php/blob/master/LICENSE)

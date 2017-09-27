@@ -13,8 +13,10 @@ This page contains links to license agreements of the third party components use
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
+github |||[Source](https://github.com)|[Terms of Service](https://help.github.com/articles/github-terms-of-service/)
 fastly |1.2.26||[Source](https://github.com/fastly/fastly-magento2)|[License](https://github.com/fastly/fastly-magento2/blob/master/LICENSE_FASTLY_CDN.txt)
 new relic apm || MIT/Apache|[Source](https://docs.newrelic.com/apm)|[License](https://rpm.newrelic.com/licenses)
+blackfire profiler |||[Source](https://blackfire.io)|[Terms of Use](https://blackfire.io/terms-of-use)
 glusterfs || GPLV2/LGPLV3+|[Source](https://github.com/gluster/glusterfs)|[License](https://github.com/gluster/glusterfs#license)
 mariadb || GPL|[Source](https://mariadb.com/downloads/mariadb-tx)|[License](https://mariadb.com/kb/en/library/mariadb-license/)
 solr |4.10| Apache|[Source](https://github.com/apache/lucene-solr)|[License](https://github.com/apache/lucene-solr/blob/master/solr/LICENSE.txt)
