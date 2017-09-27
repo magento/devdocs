@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 160_deploy
-title: Migrate and deploy
-menu_title: Migrate and deploy
+title: Migrate and deploy static files and data
+menu_title: Migrate and deploy static files and data
 menu_order: 50
 menu_node:
 version: 2.0
