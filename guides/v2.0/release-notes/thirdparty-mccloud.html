@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.0.9 Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento Commerce (Cloud) third-party licenses | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.9EE.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/thirdparty-mccloud.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.0.9EE.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/thirdparty-mccloud.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.0.9EE.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/thirdparty-mccloud.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/ReleaseNotes2.0.9EE.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/thirdparty-mccloud.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -494,7 +494,7 @@
 									
 
 
-											<li class="level3Child ee20-relnotes  active " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.9EE.html">Magento Commerce 2.0.9 Release Notes</a>
+											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.9EE.html">Magento Commerce 2.0.9 Release Notes</a>
 
 
 									
@@ -791,7 +791,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/release-notes/thirdparty-mccloud.html">Magento Commerce (Cloud) third-party licenses</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/release-notes/thirdparty-mccloud.html">Magento Commerce (Cloud) third-party licenses</a></li>
 
 									
 
@@ -1011,7 +1011,7 @@
 
           
 
-          <span property="name">Magento Commerce 2.0.9 Release Notes</span>
+          <span property="name">Magento Commerce (Cloud) third-party licenses</span>
 
         
 
@@ -1034,7 +1034,7 @@
 
 	
 
-	<h1 class="page-heading">Magento Commerce 2.0.9 Release Notes</h1>
+	<h1 class="page-heading">Magento Commerce (Cloud) third-party licenses</h1>
 
   
 
@@ -1042,176 +1042,588 @@
 </section>
 
 
-			<p>We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.9. This release includes several functional fixes.</p>
+			<p>This page contains links to license agreements of the third party components used within Magento Commerce (Cloud) (formerly Enterprise Cloud Edition).  Click the <strong>License</strong> links to view the end user license agreement for the corresponding software.</p>
 
-<p>Backward-incompatible changes are documented in <a href="/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
-
-<h3 id="fixed-issues">Fixed issues</h3>
-
-<h4 id="shopping-cart">Shopping cart</h4>
-
-<!--- 56019/49716 -->
-<ul>
-  <li>Magento no longer displays an incorrect price in the <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span> when using multiple shipping addresses.</li>
-</ul>
-
-<!--- 55464/53793 -->
-<ul>
-  <li>The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a></li>
-</ul>
-
-<h4 id="performance">Performance</h4>
-
-<!--- 54682 -->
-<ul>
-  <li>We’ve improved <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> performance when you use many variations of a <span term-uuid="2fd4d100-28d2-45ca-bec1-128444ea98e6" class="glossary-term" data-toggle="popover">configurable product</span>.</li>
-</ul>
-
-<h4 id="miscellaneous">Miscellaneous</h4>
-
-<!--- 55362/45339 -->
-<ul>
-  <li>
-    <p>Cart Price Rules are now applied as expected to <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">Payment method</span> conditions. Previously, discounts set in Cart Price Rules were not applied during <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>.</p>
-  </li>
-  <li>
-    <p>You can now select Gift Wrapping when purchasing a <span term-uuid="47841e42-b8b3-4030-9eb1-286137065be2" class="glossary-term" data-toggle="popover">Grouped product</span>. Previously, Magento did not permit you to select Gift Wrapping for a Grouped product.  <a href="https://github.com/magento/magento2/issues/4852" target="_blank">(GITHUB-4852)</a></p>
-  </li>
-</ul>
-
-<!--- 55513/51015 -->
-<ul>
-  <li>You can now save a product for which you’ve entered no Swatch attribute value when this attribute is not required.  Previously, during product creation, Magento would not save the product unless you added a value to the swatch attribute even with “Values Required” set to No.</li>
-</ul>
-
-<!--- 55465/50026 -->
-<ul>
-  <li>Attributes of the <code class="highlighter-rouge">salesInvoiceRepository</code> methods are now correctly type cast. (The datatype is now a float – not nullable float.)  Previously, due to the use of an incorrect data type cast, Magento would produce an error when calling the <code class="highlighter-rouge">salesInvoiceRepositoryV1GetList</code> methods. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a></li>
-</ul>
-
-<!--- 55461/54224 -->
-<ul>
-  <li>We’ve renamed the Tier Price option on the Advanced Pricing tab to Customer Group Price option.</li>
-</ul>
-
-<!--- 55441/55055 -->
-<ul>
-  <li>Tier pricing now works correctly with full page <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a></li>
-</ul>
-
-<!--- Omitted (can't be reproduced or won't fix) 48425, 53777, 54721, 54804, 54718, 54647-->
-
-<h3 id="known-issue">Known issue</h3>
-
-<!--- 52805 -->
-<p>The Sales <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> does not currently support all the update operations on objects that you can execute from the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)</p>
-
-<p>The Sales API</p>
-
-<ul>
-  <li>
-    <p>supports create, read, delete, and search operations on objects</p>
-  </li>
-  <li>
-    <p>does not support updates to <span term-uuid="ab517fb3-c9ff-4da8-b7f9-00337c57b3a5" class="glossary-term" data-toggle="popover">order status</span> or payment status. (<i>Order status</i> includes change to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)</p>
-  </li>
-</ul>
-
-<p>You can run these operations from the Admin panel.</p>
-
-<h3 id="system-requirements">System requirements</h3>
-<p>Our technology stack is built on <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and MySQL. For details, see <a href="/magento-system-requirements.html" target="_blank">Technology stack requirements</a>.</p>
-
-<div>
-
-  <h2 id="install-the-magento-software">Install the Magento software</h2>
-  <p>See one of the following sections:</p>
-
-  <ul>
-    <li><a href="#install-rc-composer">Get Magento Commerce using Composer</a></li>
-    <li><a href="#get-zip">Get Magento Commerce using a compressed archive</a></li>
-    <li><a href="#install-complete">Complete the installation</a></li>
-  </ul>
-
-  <h3 id="install-rc-composer" class="no_toc">Get Magento Commerce using Composer</h3>
-
-  <p>This software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
-
-  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
-</code></pre>
-  </div>
-
-  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> matches the version you want (for example, <code class="highlighter-rouge">2.0.10</code>)</p>
-
-  <p>For example, to install 2.0.10 in the <code class="highlighter-rouge">magento2</code> directory:</p>
-
-  <div class="highlighter-rouge"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.0.10 magento2
-</code></pre>
-  </div>
-
-  <h3 id="get-zip" class="no_toc">Get Magento Commerce using a compressed archive</h3>
-
-  <div>
-
-    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
-
-    <ul>
-      <li>Magento Commerce software only</li>
-      <li>Magento Commerce software with sample data (designed to help you learn Magento faster)</li>
-    </ul>
-
-    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
-
-    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
-
-    <p>To get the Magento Commerce archive:</p>
-
-    <ol>
-      <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
-      <li>Log in with your Magento user name and password.</li>
-      <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-      <li>In the right pane, click <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
-      <li>
-        <p>Follow the instructions on your screen to complete the Magento Commerce download:</p>
-
-        <ul>
-          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
-        </ul>
-      </li>
-      <li>Transfer the installation package to your development system.</li>
-    </ol>
-
-    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
-
-    <p>After you get the Commerce software:</p>
-
-    <ol>
-      <li><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
-      <li>
-        <p>Install the Magento software:</p>
-
-        <ul>
-          <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
-          <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
-        </ul>
-      </li>
-    </ol>
-
-    <h2 id="upgrade">Upgrade from an earlier version</h2>
-    <p>To upgrade to version 2.0.x from an earlier version:</p>
-
-    <ul>
-      <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Web Setup Wizard (System Upgrade)</a></li>
-      <li><a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a></li>
-    </ul>
-
-    <h2 id="migration-toolkits">Migration toolkits</h2>
-    <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
-
-    <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
-  </div>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Version</th>
+      <th>License Name</th>
+      <th>Available From</th>
+      <th>Link to License</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fastly</td>
+      <td>1.2.26</td>
+      <td> </td>
+      <td><a href="https://github.com/fastly/fastly-magento2">Source</a></td>
+      <td><a href="https://github.com/fastly/fastly-magento2/blob/master/LICENSE_FASTLY_CDN.txt">License</a></td>
+    </tr>
+    <tr>
+      <td>new relic apm</td>
+      <td> </td>
+      <td>MIT/Apache</td>
+      <td><a href="https://docs.newrelic.com/apm">Source</a></td>
+      <td><a href="https://rpm.newrelic.com/licenses">License</a></td>
+    </tr>
+    <tr>
+      <td>glusterfs</td>
+      <td> </td>
+      <td>GPLV2/LGPLV3+</td>
+      <td><a href="https://github.com/gluster/glusterfs">Source</a></td>
+      <td><a href="https://github.com/gluster/glusterfs#license">License</a></td>
+    </tr>
+    <tr>
+      <td>mariadb</td>
+      <td> </td>
+      <td>GPL</td>
+      <td><a href="https://mariadb.com/downloads/mariadb-tx">Source</a></td>
+      <td><a href="https://mariadb.com/kb/en/library/mariadb-license/">License</a></td>
+    </tr>
+    <tr>
+      <td>solr</td>
+      <td>4.10</td>
+      <td>Apache</td>
+      <td><a href="https://github.com/apache/lucene-solr">Source</a></td>
+      <td><a href="https://github.com/apache/lucene-solr/blob/master/solr/LICENSE.txt">License</a></td>
+    </tr>
+    <tr>
+      <td>rabbitmq</td>
+      <td>3.5</td>
+      <td>MPL</td>
+      <td><a href="https://github.com/rabbitmq">Source</a></td>
+      <td><a href="https://www.rabbitmq.com/mpl.html">License</a></td>
+    </tr>
+    <tr>
+      <td>braintree/braintree_php</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/braintree/braintree_php">Source</a></td>
+      <td><a href="https://github.com/braintree/braintree_php/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>colinmollenhour/credis</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/colinmollenhour/credis">Source</a></td>
+      <td><a href="https://github.com/colinmollenhour/credis/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>colinmollenhour/php-redis-session-abstract</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/colinmollenhour/php-redis-session-abstract">Source</a></td>
+      <td><a href="https://github.com/colinmollenhour/php-redis-session-abstract#license">License</a></td>
+    </tr>
+    <tr>
+      <td>composer/composer</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/composer/composer">Source</a></td>
+      <td><a href="https://github.com/composer/composer/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>doctrine/instantiator</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/doctrine/instantiator">Source</a></td>
+      <td><a href="https://github.com/doctrine/instantiator/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>fabpot/php-cs-fixer</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://www.versioneye.com/php/fabpot:php-cs-fixer/dev-master">Source</a></td>
+      <td><a href="http://spdx.org/licenses/MIT.html">License</a></td>
+    </tr>
+    <tr>
+      <td>justinrainbow/json-schema</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/justinrainbow/json-schema">Source</a></td>
+      <td><a href="https://github.com/justinrainbow/json-schema/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>league/climate</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/thephpleague/climate">Source</a></td>
+      <td><a href="https://github.com/thephpleague/climate/blob/master/LICENSE.md">License</a></td>
+    </tr>
+    <tr>
+      <td>lusitanian/oauth</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/Lusitanian/PHPoAuthLib">Source</a></td>
+      <td><a href="https://github.com/Lusitanian/PHPoAuthLib/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>monolog/monolog</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/Seldaek/monolog">Source</a></td>
+      <td><a href="https://github.com/Seldaek/monolog/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>oyejorge/less.php</td>
+      <td> </td>
+      <td>Apache-2.0</td>
+      <td><a href="https://github.com/oyejorge/less.php">Source</a></td>
+      <td><a href="https://github.com/oyejorge/less.php/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>pdepend/pdepend</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/pdepend/pdepend">Source</a></td>
+      <td><a href="https://github.com/pdepend/pdepend/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>pelago/emogrifier</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/jjriv/emogrifier">Source</a></td>
+      <td><a href="https://github.com/jjriv/emogrifier/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>phpmd/phpmd</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/phpmd/phpmd">Source</a></td>
+      <td><a href="https://github.com/phpmd/phpmd/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>phpseclib/phpseclib</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/phpseclib/phpseclib">Source</a></td>
+      <td><a href="https://github.com/phpseclib/phpseclib/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>phpunit/php-code-coverage</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/php-code-coverage">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/php-code-coverage/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>phpunit/php-file-iterator</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/php-file-iterator">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/php-file-iterator/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>phpunit/php-text-template</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/php-text-template">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/php-text-template/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>phpunit/php-timer</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/php-timer">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/php-timer/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>phpunit/php-token-stream</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/php-token-stream">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/php-token-stream/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>phpunit/phpunit-mock-objects</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/phpunit-mock-objects">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/phpunit-mock-objects/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>phpunit/phpunit</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/phpunit">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/phpunit/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>psr/log</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/php-fig/log">Source</a></td>
+      <td><a href="https://github.com/php-fig/log/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>sebastian/comparator</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/comparator">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/comparator/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>sebastian/diff</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/diff">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/diff/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>sebastian/environment</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/environment">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/environment/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>sebastian/exporter</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/exporter">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/exporter/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>sebastian/recursion-context</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/recursion-context">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/recursion-context/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>sebastian/version</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/sebastianbergmann/version">Source</a></td>
+      <td><a href="https://github.com/sebastianbergmann/version/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>seld/jsonlint</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/Seldaek/jsonlint">Source</a></td>
+      <td><a href="https://github.com/Seldaek/jsonlint/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>sjparkinson/static-review</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/sjparkinson/static-review">Source</a></td>
+      <td><a href="https://github.com/sjparkinson/static-review/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>squizlabs/php_codesniffer</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/squizlabs/PHP_CodeSniffer">Source</a></td>
+      <td><a href="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt">License</a></td>
+    </tr>
+    <tr>
+      <td>symfony/config</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/symfony/config">Source</a></td>
+      <td><a href="https://github.com/symfony/config/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>symfony/dependency-injection</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/symfony/dependency-injection">Source</a></td>
+      <td><a href="https://github.com/symfony/dependency-injection/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>symfony/event-dispatcher</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/symfony/event-dispatcher">Source</a></td>
+      <td><a href="https://github.com/symfony/event-dispatcher/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>symfony/filesystem</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/symfony/filesystem">Source</a></td>
+      <td><a href="https://github.com/symfony/filesystem/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>symfony/finder</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/symfony/finder">Source</a></td>
+      <td><a href="https://github.com/symfony/finder/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>symfony/process</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/symfony/process">Source</a></td>
+      <td><a href="https://github.com/symfony/process/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>symfony/stopwatch</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/symfony/stopwatch">Source</a></td>
+      <td><a href="https://github.com/symfony/stopwatch/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>symfony/yaml</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/symfony/yaml">Source</a></td>
+      <td><a href="https://github.com/symfony/yaml/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>tedivm/jshrink</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/tedious/Jshrink">Source</a></td>
+      <td><a href="https://github.com/tedious/JShrink/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>tubalmartin/cssmin</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port">Source</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Zend Framework</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="http://framework.zend.com/">Source</a></td>
+      <td><a href="https://framework.zend.com/license">License</a></td>
+    </tr>
+    <tr>
+      <td>Cm</td>
+      <td> </td>
+      <td>BSD-3-Clause</td>
+      <td><a href="https://github.com/colinmollenhour/Cm_RedisSession">Source</a></td>
+      <td><a href="https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml">License 1</a> <a href="http://opensource.org/licenses/BSD-3-Clause">License 2</a></td>
+    </tr>
+    <tr>
+      <td>elasticsearch/elasticsearch</td>
+      <td> </td>
+      <td>Apache-2.0</td>
+      <td><a href="https://github.com/elastic/elasticsearch-php">Source</a></td>
+      <td><a href="https://github.com/elastic/elasticsearch-php/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>guzzlehttp/ringphp</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/guzzle/RingPHP">Source</a></td>
+      <td><a href="https://github.com/guzzle/RingPHP/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>guzzlehttp/streams</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/guzzle/streams">Source</a></td>
+      <td><a href="https://github.com/guzzle/streams/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>solarium/solarium</td>
+      <td> </td>
+      <td>NewBSD</td>
+      <td><a href="https://github.com/solariumphp/solarium">Source</a></td>
+      <td><a href="https://github.com/solariumphp/solarium/blob/master/COPYING">License</a></td>
+    </tr>
+    <tr>
+      <td>php-amqplib/php-amqplib”</td>
+      <td>2.5.*</td>
+      <td>LGPL-2.1</td>
+      <td><a href="https://github.com/php-amqplib/php-amqplib">Source</a></td>
+      <td><a href="https://github.com/php-amqplib/php-amqplib/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>react/promise</td>
+      <td> </td>
+      <td>MIT</td>
+      <td><a href="https://github.com/reactphp/promise">Source</a></td>
+      <td><a href="https://github.com/reactphp/promise/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>extjs</td>
+      <td>1.0.1</td>
+      <td>Open GPL 3.0 (when was included)</td>
+      <td><a href="https://www.sencha.com/">Source</a></td>
+      <td><a href="https://www.gnu.org/licenses/lgpl.html">License</a></td>
+    </tr>
+    <tr>
+      <td>fotorama</td>
+      <td>4.6.4</td>
+      <td>MIT</td>
+      <td><a href="https://github.com/artpolikarpov/fotorama">Source</a></td>
+      <td><a href="https://github.com/artpolikarpov/fotorama/blob/master/MIT-LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>jquery</td>
+      <td>1.11.0</td>
+      <td>MIT</td>
+      <td><a href="https://jquery.com/">Source</a></td>
+      <td><a href="https://jquery.org/license/">License</a></td>
+    </tr>
+    <tr>
+      <td>knockoutjs</td>
+      <td>3.3.0</td>
+      <td>MIT</td>
+      <td><a href="http://knockoutjs.com/downloads/index.html">Source</a></td>
+      <td><a href="https://github.com/knockout/knockout/blob/master/LICENSE">Source</a></td>
+    </tr>
+    <tr>
+      <td>less</td>
+      <td>2.3.1</td>
+      <td>Apache License Version 2.0</td>
+      <td><a href="https://github.com/less/less.js">Source</a></td>
+      <td><a href="https://github.com/less/less.js/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>modernizr</td>
+      <td>2.6.1</td>
+      <td>MIT</td>
+      <td><a href="https://github.com/Modernizr/Modernizr">Source</a></td>
+      <td><a href="https://github.com/Modernizr/Modernizr/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>prototype</td>
+      <td>1.7</td>
+      <td>MIT</td>
+      <td><a href="http://prototypejs.org">Source</a></td>
+      <td><a href="https://github.com/sstephenson/prototype/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>requirejs</td>
+      <td>2.1.11</td>
+      <td>new BSD or MIT licensed</td>
+      <td><a href="https://github.com/requirejs/requirejs">Source</a></td>
+      <td><a href="https://github.com/requirejs/requirejs/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>scriptaculous</td>
+      <td>1.8.2</td>
+      <td>MIT</td>
+      <td><a href="http://script.aculo.us">Source</a></td>
+      <td><a href="http://madrobby.github.io/scriptaculous/license/">License</a></td>
+    </tr>
+    <tr>
+      <td>tiny_mce</td>
+      <td>major: 3; minor: 4.7</td>
+      <td>GNU LGPL 2.1</td>
+      <td><a href="https://www.tinymce.com">Source</a></td>
+      <td><a href="https://github.com/tinymce/tinymce/blob/master/LICENSE.TXT">License</a></td>
+    </tr>
+    <tr>
+      <td>angular</td>
+      <td>1.2.16</td>
+      <td>MIT</td>
+      <td><a href="https://github.com/angular/angular.js">Source</a></td>
+      <td><a href="https://github.com/angular/angular.js/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>angular-clickout</td>
+      <td>1.0.2</td>
+      <td>MIT</td>
+      <td><a href="https://github.com/neoziro/angular-clickout">Source</a></td>
+      <td><a href="https://github.com/neoziro/angular-clickout#license">License</a></td>
+    </tr>
+    <tr>
+      <td>angular-ng-dialog</td>
+      <td>0.4.0</td>
+      <td>MIT</td>
+      <td><a href="https://github.com/likeastore/ngDialog">Source</a></td>
+      <td><a href="https://github.com/neoziro/angular-clickout#license">License</a></td>
+    </tr>
+    <tr>
+      <td>angular-ng-storage</td>
+      <td>0.3.0</td>
+      <td>MIT</td>
+      <td><a href="https://github.com/gsklee/ngStorage">Source</a></td>
+      <td><a href="https://github.com/gsklee/ngStorage/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>angular-sanitize</td>
+      <td>1.2.14</td>
+      <td>MIT</td>
+      <td><a href="https://code.angularjs.org/1.2.14/angular-sanitize.min.js">Source</a></td>
+      <td><a href="https://code.angularjs.org/1.2.14/angular-sanitize.min.js">License</a></td>
+    </tr>
+    <tr>
+      <td>angular-ui-bootstrap</td>
+      <td>0.11.0</td>
+      <td>MIT</td>
+      <td><a href="http://angular-ui.github.io/bootstrap">Source</a></td>
+      <td><a href="https://github.com/angular-ui/bootstrap/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>angular-ui-router</td>
+      <td>0.2.10</td>
+      <td>MIT</td>
+      <td><a href="http://angular-ui.github.com/">Source</a></td>
+      <td><a href="http://www.opensource.org/licenses/MIT">License</a></td>
+    </tr>
+    <tr>
+      <td>bootstrap</td>
+      <td>3.1.1</td>
+      <td>MIT</td>
+      <td><a href="http://getbootstrap.com">Source</a></td>
+      <td><a href="https://github.com/twbs/bootstrap/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>FormData for XMLHttpRequest 2</td>
+      <td>-</td>
+      <td>MIT</td>
+      <td><a href="https://gist.github.com/Rob--W/8b5adedd84c0d36aba64">Source</a></td>
+      <td><a href="https://gist.github.com/Rob--W/8b5adedd84c0d36aba64">License</a></td>
+    </tr>
+    <tr>
+      <td>matchMedia</td>
+      <td>-</td>
+      <td>MIT/BSD</td>
+      <td><a href="https://github.com/paulirish/matchMedia.js/">Source</a></td>
+      <td><a href="https://github.com/paulirish/matchMedia.js/blob/master/LICENSE.txt">License</a></td>
+    </tr>
+    <tr>
+      <td>moment.js</td>
+      <td>2.8.1</td>
+      <td>MIT</td>
+      <td><a href="http://momentjs.com">Source</a></td>
+      <td><a href="http://momentjs.com/downloads/moment.js">License</a></td>
+    </tr>
+    <tr>
+      <td>MutationObserver</td>
+      <td>-</td>
+      <td>BSD</td>
+      <td><a href="http://polymer.github.io">Source</a></td>
+      <td><a href="http://polymer.github.io/LICENSE.txt">License</a></td>
+    </tr>
+    <tr>
+      <td>Underscore</td>
+      <td>1.8.2</td>
+      <td>MIT</td>
+      <td><a href="http://underscorejs.org">Source</a></td>
+      <td><a href="https://github.com/jashkenas/underscore/blob/master/LICENSE">License</a></td>
+    </tr>
+    <tr>
+      <td>LinLibertineFont</td>
+      <td>-</td>
+      <td>GPL 2.0 and the Open Fonts License 1.0</td>
+      <td><a href="http://www.linuxlibertine.org">Source</a></td>
+      <td><a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">License 1</a> <a href="http://scripts.sil.org/cms/scripts/page.php">License 2</a></td>
+    </tr>
+    <tr>
+      <td>Swagger</td>
+      <td>2.0</td>
+      <td>Apache 2</td>
+      <td><a href="https://github.com/swagger-api/swagger-ui">Source</a></td>
+      <td><a href="http://swagger.io/license/">License</a></td>
+    </tr>
+  </tbody>
+</table>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1222,14 +1634,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.0.9EE.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/thirdparty-mccloud.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.9EE.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/thirdparty-mccloud.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
