@@ -1688,9 +1688,24 @@ If you joined us with a 30 day free trial Magento Commerce (Cloud) account, we t
 <p><img src="/common/images/cloud_project-access.png" alt="Use the Project Web Interface to manage environments" /></p>
 
 <h2 id="admin">Access your Magento Admin panel</h2>
-<p>When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. URLs to access your store are available through <a href="/guides/v2.2/cloud/project/projects.html">Project Web Interface</a>.</p>
+<p>When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. To initially access the Magento Admin, you have a couple of options.</p>
 
-<p>For the store URL, add /admin at the end. A login panel displays. We provide an general Admin account to initially login. The default username is admin and password is admin12. You should immediately change the password.</p>
+<ol>
+  <li>Access the Admin panel to change the password:</li>
+</ol>
+
+<ul>
+  <li>
+    <p>We send an email to the Project Owner with the link to your Magento Admin panel with instructions to click the Forgot Password link.</p>
+  </li>
+  <li>
+    <p>Or you can access a store URL available through the <a href="/guides/v2.2/cloud/project/projects.html">Project Web Interface</a>. For the store URL, add /admin at the end. A login panel displays.</p>
+    <ol>
+      <li>Click the forgot Password link and complete the process to change the password.</li>
+      <li>Login to the Admin panel using the username Admin and newly changed password.</li>
+    </ol>
+  </li>
+</ul>
 
 <p>These values are controlled through the Admin Panel and the environment application variables for ADMIN_USERNAME and ADMIN_PASSWORD. For details, see <a href="/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a>.</p>
 
