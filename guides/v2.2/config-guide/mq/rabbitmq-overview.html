@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Message Queues | Magento 2 Developer Documentation</title>
+	<title>Message Queues Overview | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -1468,23 +1468,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/config-guide/mq/config-mq.html">Configure 2.2 message queues</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/config-guide/mq/queue-migration.html">Migrate message queue configuration</a></li>
 
 									
 
@@ -1749,7 +1733,7 @@
 
           
 
-          <span property="name">Message Queues</span>
+          <span property="name">Message Queues Overview</span>
 
         
 
@@ -1772,7 +1756,7 @@
 
 	
 
-	<h1 class="page-heading">Message Queues</h1>
+	<h1 class="page-heading">Message Queues Overview</h1>
 
   
 
@@ -1807,11 +1791,10 @@
 
 <p>A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span> stores messages in the database. Three database tables (<code class="highlighter-rouge">queue</code>, <code class="highlighter-rouge">queue_message</code>, and <code class="highlighter-rouge">queue_message_status</code>) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.</p>
 
-<p>See <a href="/guides/v2.2/config-guide/mq/config-mq.html">Configure message queues</a> for information about setting up the message queue system.</p>
-
 <h4 id="related-topics">Related Topics</h4>
+
 <ul>
-  <li><a href="/guides/v2.2/config-guide/mq/config-mq.html">Configure message queues</a></li>
+  <li><a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues</a></li>
   <li><a href="/guides/v2.2/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a></li>
 </ul>
 
