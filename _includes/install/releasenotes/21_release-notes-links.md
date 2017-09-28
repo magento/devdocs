@@ -29,7 +29,7 @@
 
 {% endcollapsibleh2 %}
 
-{% collapsibleh2 Magento Commerce (Cloud) 2.1 Release Notes %} 
+{% collapsibleh2 Magento Commerce (Cloud) 2.1 Release Notes %}
 
 *	[magento-cloud-configuration release 101.9.x Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes101.9.html){:target="_blank"}
 *	[magento-cloud-configuration release 101.8.x Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes101.8.html){:target="_blank"}
@@ -37,8 +37,9 @@
 *	[magento-cloud-configuration release 101.6.x Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes101.6.html){:target="_blank"}
 *	[magento-cloud-configuration release 101.5.x Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes101.5.html){:target="_blank"}
 *	[magento-cloud-configuration release 101.4.x Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes101.4.html){:target="_blank"}
-*	[Magento Enterprise Cloud Edition version 2.1.4 and 2.0.12]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.4.html){:target="_blank"}
-*	[Magento Enterprise Cloud Edition version 2.1.3 and 2.0.11]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.3.html){:target="_blank"}
-*	[Magento Enterprise Cloud Edition version 2.1.2 and 2.0.10]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.2.html){:target="_blank"}
+*	[Magento Commerce (Cloud) version 2.1.5 and 2.0.13 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.5.html){:target="_blank"}
+*	[Magento Commerce (Cloud) version 2.1.4 and 2.0.12]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.4.html){:target="_blank"}
+*	[Magento Commerce (Cloud) version 2.1.3 and 2.0.11]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.3.html){:target="_blank"}
+*	[Magento Commerce (Cloud) version 2.1.2 and 2.0.10]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.2.html){:target="_blank"}
 
 {% endcollapsibleh2 %}
