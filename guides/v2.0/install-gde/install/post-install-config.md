@@ -79,7 +79,6 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 *	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
 
 <h2 id="post-install-ee">Settings for {{site.data.var.ee}} only</h2>
-<img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 You can configure the following only if you use Magento EE:
 

@@ -7,10 +7,9 @@ menu_title: Set up optional database replication
 menu_order: 10
 menu_node: 
 version: 2.0
+ee_only: true
 github_link: config-guide/multi-master/multi-master_slavedb.md
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 Setting up database replication provides the following benefits:
 

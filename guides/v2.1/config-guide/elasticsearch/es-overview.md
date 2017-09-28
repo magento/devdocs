@@ -7,11 +7,9 @@ menu_title: Install and configure Elasticsearch (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.1
+ee_only: true
 github_link: config-guide/elasticsearch/es-overview.md
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
-
 
 #### Contents
 
