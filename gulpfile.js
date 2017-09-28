@@ -164,7 +164,9 @@ gulp.task('browser-sync', function () {
    browsersync(bsconfig);
 });
 
-// Rerun the task when a file changes
+/*
+* Rerun the task and reload the browser when changing, adding, or removing a file. Uses the gulp.watch API.
+*/
 gulp.task('watch', function () {
   browsersync(bsconfig);
   var watcher =
