@@ -20,7 +20,7 @@ In `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6
 
 ### 101.7.6 changes {#changes}
 
-* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see Redis troubleshooting.
+* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting](http://devdocs.magento.com/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
 
 ### 101.7.5 changes {#changes-1}
 
