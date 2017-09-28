@@ -304,21 +304,15 @@ pages:
       url: config-guide/mq/rabbitmq-overview.html
       children:
 
-        - label: Configure message queues
-          url: config-guide/mq/config-mq.html
-
         - label: Manage message queues
           url: config-guide/mq/manage-mysql.html
 
-        - label: Migrate message queue configuration
-          versions: ["2.1","2.2"]
-          url: config-guide/mq/queue-migration.html
 
     - label: Install and configure Solr (Magento Commerce only)
       versions: ["2.0","2.1"]
       url: config-guide/solr/solr-overview.html
       children:
-        
+
         - label: Configure Solr and Magento
           url: config-guide/solr/solr-magento.html
 
@@ -358,7 +352,7 @@ pages:
       url: config-guide/prod/prod.html
       versions: ["2.0","2.1"]
       children:
-        
+
         - label: Magento ownership and permissions in development and production
           url: config-guide/prod/prod_file-sys-perms.html
 

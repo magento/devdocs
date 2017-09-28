@@ -65,6 +65,8 @@ pages:
                 - label: Negotiable quote checkout
                   url: b2b/negotiable-checkout.html
 
+                - label: Place a negotiable quote order
+                  url: b2b/negotiable-order-workflow.md
+
     - label: Develop B2B extensions
       url: b2b/extensions.html
-

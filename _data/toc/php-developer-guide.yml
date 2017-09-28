@@ -160,7 +160,7 @@ pages:
 
             - label: Indexing overview
               url: extension-dev-guide/indexing.html
-            
+
             - label: Indexer optimization
               versions: ["2.2"]
               url: extension-dev-guide/indexer-batch.html
@@ -169,18 +169,29 @@ pages:
               url: extension-dev-guide/indexing-custom.html
 
         - label: Message Queues (Enterprise Edition Only)
-          url: extension-dev-guide/message-queues.html
+          children:
+
+            - label: Message queues overview
+              url: extension-dev-guide/message-queues/message-queues.html
+
+            - label: Configure message Queues
+              url: extension-dev-guide/message-queues/config-mq.html
+
+            - label: Migrate message queue configuration
+              versions: ["2.1", "2.2"]
+              url: extension-dev-guide/message-queues/queue-migration.html
+
+            - label: Bulk operations
+              versions: ["2.2"]
+              url: extension-dev-guide/message-queues/bulk-operations.html
+
+            - label: Example bulk operations implementation
+              versions: ["2.2"]
+              url: extension-dev-guide/message-queues/implement-bulk.html
+
 
         - label: Adding extension attributes to entity
           url: extension-dev-guide/extension_attributes/adding-attributes.html
-
-        - label: Bulk Operations (Enterprise Edition)
-          versions: ["2.2"]
-          url: extension-dev-guide/bulk-operations.html
-
-        - label: Example bulk operations implementation (Enterprise Edition)
-          versions: ["2.2"]
-          url: extension-dev-guide/implement-bulk.html
 
         - label: Searching with repositories
           versions: ["2.2"]
@@ -194,7 +205,7 @@ pages:
 
         - label: Adapters
           url: extension-dev-guide/adapters.html
-    
+
     - label: Configuration
       versions: ["2.2"]
       children:
