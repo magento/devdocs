@@ -99,7 +99,3 @@ The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details
 To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html).
 
 If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time development setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html).
-
-You can install Magento Commerce 2.2 General Availability (GA) using Composer.
-
-{% include install/releasenotes/ee_install_21.md %}
