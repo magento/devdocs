@@ -167,12 +167,15 @@ gulp.task('browser-sync', function () {
 // Rerun the task when a file changes
 gulp.task('watch', function () {
   browsersync(bsconfig);
-  gulp.watch(paths.html, ['jekyll']);
-  gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.images, ['images']);
-  gulp.watch(paths.styles, ['styles']);
+  var watcher =
+    gulp.watch(paths.html, ['jekyll']);
+    gulp.watch(paths.scripts, ['scripts']);
+    gulp.watch(paths.images, ['images']);
+    gulp.watch(paths.styles, ['styles']);
+    watcher.on('change', function(event) {
+      gutil.log(gutil.colors.bgYellow.black('File: ' + event.path + ' was ' + event.type + ', running tasks...'));
+  });
 });
-
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default',
