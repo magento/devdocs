@@ -46,6 +46,6 @@ This is a known issue with Magento core software; we're actively working to addr
     <p>This issue affects staging and production environments only. There are no issues in an integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch.html">Architecture</a>.</p>
 </div>
 
-### Magento EE Release Notes
-*	[Magento EE 2.0.10 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html)
-*	[Magento EE 2.1.2 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2EE.html)
+### {{site.data.var.ee}} Release Notes
+*	[{{site.data.var.ee}} 2.0.10 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html)
+*	[{{site.data.var.ee}} 2.1.2 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2EE.html)

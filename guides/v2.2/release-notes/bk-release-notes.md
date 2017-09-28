@@ -27,8 +27,8 @@ github_link: release-notes/bk-release-notes.md
 
 ## Third-party license agreements
 
-*	[Magento CE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
-*	[Magento EE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
+*	[{{site.data.var.ce}} third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
+*	[{{site.data.var.ee}} third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
 
 
 

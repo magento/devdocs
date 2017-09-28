@@ -33,7 +33,7 @@ On POST and PUT requests, Magento ignores the `fields` parameter as input, but t
 {:.no_toc}
 
 
-All examples use Magento CE sample data.
+All examples use {{site.data.var.ce}} sample data.
 
 ### Simple fields
 

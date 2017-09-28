@@ -80,7 +80,7 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 
 <h2 id="post-install-ee">Settings for {{site.data.var.ee}} only</h2>
 
-You can configure the following only if you use Magento EE:
+You can configure the following only if you use {{site.data.var.ee}}:
 
 *	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Apache Solr search</a>
 *	<a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>
