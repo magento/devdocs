@@ -72,7 +72,7 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
 Append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`).
 </div>
 
-Refer to [Manage message queues with MySQL]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
+Refer to [Manage message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
 
 ### Add message consumers to cron
 You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab.xml`:

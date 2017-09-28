@@ -2,7 +2,7 @@
 layout: default
 group: cloud
 subgroup: 090_configure
-title: Set up RabbitmMQ service
+title: Set up RabbitMQ service
 menu_title: Set up RabbitMQ service
 menu_order: 75
 menu_node:
