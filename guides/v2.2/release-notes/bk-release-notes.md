@@ -30,3 +30,4 @@ github_link: release-notes/bk-release-notes.md
 
 *	[Magento CE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
 *	[Magento EE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
+*	[Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}release-notes/thirdparty-mccloud.html)
