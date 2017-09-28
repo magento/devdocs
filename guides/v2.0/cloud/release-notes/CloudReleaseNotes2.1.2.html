@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento Commerce (Cloud) 2.1.2 and 2.0.10 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -31,6 +31,23 @@
 	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 	</script>
 
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
 </head>
 <body>
 
@@ -45,9 +62,9 @@
 			<a class="logo" href="/guides/v2.0/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
 
 			
-<div class="version-switcher dropdown">
+<div class="version-switcher dropdown" data-version="2.0">
 	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		Magento 2.0
+        Magento 2.0
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
@@ -55,6 +72,8 @@
 		<li><a class="dropdown-item" href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.2.html">Magento 2.0</a></li>
 	
 		<li><a class="dropdown-item" href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.2.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.2.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -68,14 +87,13 @@
     <li class="first">
       <a href="#">Setup and Deployment</a>
         <ul class="menu nav">
-          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
-            <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
           
           <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
           
           <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
           <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
         </ul>
     </li>
@@ -86,6 +104,7 @@
           <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Architecture Guide</a></li>
           <li class="leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
           <li class="leaf"><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          
           <li><a href="/guides/v2.0/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
           <li class="leaf"><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
           <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
@@ -140,11 +159,11 @@
 
 
 			<div class="search-btn">
-				<a class="search-trigger search-icon" href="//search.html"></a>
+				<a class="search-trigger search-icon" href="/search.html"></a>
 			</div>
 
 			<form class="quick-search" action="/search.html" method="get">
-				<input type="search" name="q" placeholder="Search" />
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
 				<a href="#" class="quick-search-close">&times;</a>
 			</form>
 
@@ -171,1403 +190,747 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Magento Enterprise Cloud Guide</h4>
 
-
-
-
-
-		<ul>
-
-		
-
-		
-
-				
-
-			
-
-				
-
-			
-
-				
-
-					
-					
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/bk-cloud.html">Welcome to Magento Enterprise Cloud Edition</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/discover-arch.html">Architecture</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/discover-workflow.html">Workflow</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/discover-deploy.html">Deployment process</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/discover-tools.html">Tooling</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/cloud-composer.html">How Cloud Uses Composer</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/get-help.html">Get help with your deployment</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/cloud-requirements.html">Magento Enterprise Cloud Edition requirements</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/cloud-requirements-license.html">License and authentication requirements</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/cloud-requirements-git.html">Git requirements</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html">Magento Enterprise Cloud Edition Release Notes</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.html">magento-cloud-configuration release 101.4.1 Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html">Magento Enterprise Cloud Edition 2.1.3 and 2.0.11 Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2  active "><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.2.html">Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/before/before.html">Before you get started</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/before/terms.html">Common terms</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/before/before-repos.html">Magento Enterprise Cloud Edition repositories</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/before/before-project-owner.html">Account owner tasks</a></li>
-									
-								
-
-									
-
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time setup (developers)</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-										<li class="level3Parent " id="workspace"><a href="#">Set up a Magento workspace</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace.html">Overview of a Magento workspace</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-cloud-account.html">Step 1, Set up an account</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-cli.html">Step 2, Install the CLI</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-ssh.html">Step 3, Enable Secure Shell (SSH)</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html">Step 4, Install Magento prerequisites</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-php.html">Step 5, Set up PHP and MySQL</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Step 6, Set up the Magento file system owner</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/first-time-setup_template.html">Create a new Magento project</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="import"><a href="#">Import an existing Magento project</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento EE</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html">Find the information you need for your import</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento EE system</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child import " data-menunode="import"><a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento EE into Magento Enterprise Cloud Edition</a>
-
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="setupenv"><a href="#">Set up an environment and install Magento locally</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-1_get-start.html">Step 1, Get started setting up an environment</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html">Step 2, Clone the project</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-keys.html">Step 3, Set up authentication keys</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-cron.html">Step 4, Set up cron</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-env.html">Step 5, Clone or branch an environment</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-install.html">Step 6, Install Magento</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-perms.html">Step 7, Set file system permissions and ownership</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/fastly.html">Set up Fastly</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/resources.html">Magento 2 resources</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html">Project directory structure</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/access-acct/trouble.html">Troubleshoot deployment</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/before/integration-ip-addr.html">Public IP addresses for integration environments</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/project/projects.html">Manage your project</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/user-admin.html">Manage users</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.0/cloud/project/project-upgrade.html">Test a Magento upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade " data-menunode="patch-upgrade"><a href="/guides/v2.0/cloud/project/project-patch.html">Test a Magento patch</a>
-
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="project"><a href="#">Use the project Web Interface</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage environments (branches)</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Backup and restore (snapshot)</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="routes"><a href="#">Configure routes</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes.yaml</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-routes-more-cache.html">Caching</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-routes-more-redir.html">Redirects</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-routes-more-ssi.html">Server side includes</a>
-
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="services"><a href="#">Configure services</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services.html">services.yaml</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Set up the mysql service</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Set up the redis service</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up the solr service</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Set up the elasticsearch service</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">Set up the rabbitmq service</a>
-
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="integrate"><a href="#">Integrations</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child integrate " data-menunode="integrate"><a href="/guides/v2.0/cloud/project/project-integrate-blackfire.html">Blackfire integration</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child integrate " data-menunode="integrate"><a href="/guides/v2.0/cloud/project/project-integrate-github.html">GitHub integration</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/env/environments.html">Manage your environments</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-start.html">Get started with an environment</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH into your environment</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_over.html">Overview of environment variables</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Enterprise Cloud Edition environment variables</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child vars " data-menunode="vars"><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
-
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/howtos/how-to.html">Tutorials</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-										<li class="level3Parent " id="patch-upgrade2"><a href="#">Test a Magento patch or upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.0/cloud/howtos/upgrade-magento.html">Test a Magento upgrade</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child patch-upgrade2 " data-menunode="patch-upgrade2"><a href="/guides/v2.0/cloud/howtos/patch-magento.html">Test a Magento patch</a>
-
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="update-extensions"><a href="#">Install and update extensions</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child update-extensions " data-menunode="update-extensions"><a href="/guides/v2.0/cloud/howtos/install-components.html">Install extensions</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child update-extensions " data-menunode="update-extensions"><a href="/guides/v2.0/cloud/howtos/update-components.html">Update extensions</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment (tutorial)</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/howtos/custom-theme.html">Install a theme</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/howtos/sample-data.html">Install optional sample data</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/howtos/debug.html">Run a PHP debugger</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/live/stage-prod-live.html">From integration to live</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy before pushing to staging or production</a></li>
-
-									
-
-								
-
-									
-
-										<li class="level3Parent " id="stage-prod"><a href="#">Migrate to staging and production</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">Prepare to migrate data</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-test.html">Testing</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child stage-prod " data-menunode="stage-prod"><a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate data</a>
-
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/live/live.html">Go live</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/live/live-prot.html">Protective block</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/trouble/trouble.html">Troubleshooting</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_ce-creds.html">Incorrect credentials</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_fastly.html">Troubleshoot Fastly</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-		</ul>
+<h4>Release Information</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.0/release-notes/bk-release-notes.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+    
+    
+
+    
+    
+<li class="nav-level1  " id="magento-2.0-release-notes">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.0/release-notes/release-notes.html">Magento 2.0 Release Notes</a>
+    
+
+    
+    <ul>
+        
+        
+        <li class="nav-level2  " id="magento-open-source-2.0.x-release-notes">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Magento Open Source 2.0.x Release Notes</span>
+            
+
+            
+            <ul>
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.16-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.16CE.html">Magento Open Source 2.0.16 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.15-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.15CE.html">Magento Open Source 2.0.15 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.14-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.14CE.html">Magento Open Source 2.0.14 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.13-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.13CE.html">Magento Open Source 2.0.13 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.12-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.12CE.html">Magento Open Source 2.0.12 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.11-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.11CE.html">Magento Open Source 2.0.11 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.10-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html">Magento Open Source 2.0.10 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.9-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.9CE.html">Magento Open Source 2.0.9 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.8-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.8CE.html">Magento Open Source 2.0.8 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.7-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento Open Source 2.0.7 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.6-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.6CE.html">Magento Open Source 2.0.6 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.5-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.5CE.html">Magento Open Source 2.0.5 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.4-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.4CE.html">Magento Open Source 2.0.4 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.0.3-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.3CE.html">Magento Open Source 2.0.3 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-2.0.x-release-notes">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Magento Commerce 2.0.x Release Notes</span>
+            
+
+            
+            <ul>
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.16-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.16EE.html">Magento Commerce 2.0.16 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.15-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.15EE.html">Magento Commerce 2.0.15 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.14-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.14EE.html">Magento Commerce 2.0.14 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.13-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.13EE.html">Magento Commerce 2.0.13 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.12-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.12EE.html">Magento Commerce 2.0.12 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.11-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.11EE.html">Magento Commerce 2.0.11 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.10-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.10EE.html">Magento Commerce 2.0.10 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.9-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.9EE.html">Magento Commerce 2.0.9 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.8-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.8EE.html">Magento Commerce 2.0.8 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.7-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.7EE.html">Magento Commerce 2.0.7 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.6-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.6EE.html">Magento Commerce 2.0.6 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.5-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.5EE.html">Magento Commerce 2.0.5 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.4-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html">Magento Commerce 2.0.4 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.0.3-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html">Magento Commerce 2.0.3 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-(cloud)-2.0.x-release-notes">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Magento Commerce (Cloud) 2.0.x Release Notes</span>
+            
+
+            
+            <ul>
+                
+
+                
+                <li class="nav-level3  " id="magento-cloud-configuration-release-101.5.x-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.5.html">magento-cloud-configuration release 101.5.x Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-cloud-configuration-release-101.4.x-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.html">magento-cloud-configuration release 101.4.x Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-enterprise-cloud-edition-version-2.1.4-and-2.0.12">
+                    
+
+                    
+                    <a  href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html">Magento Enterprise Cloud Edition version 2.1.4 and 2.0.12</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-enterprise-cloud-edition-version-2.1.3-and-2.0.11">
+                    
+
+                    
+                    <a  href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html">Magento Enterprise Cloud Edition version 2.1.3 and 2.0.11</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3 active " id="magento-enterprise-cloud-edition-version-2.1.2-and-2.0.10">
+                    
+
+                    
+                    <a  href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.2.html">Magento Enterprise Cloud Edition version 2.1.2 and 2.0.10</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        <li class="nav-level2  " id="magento-release-candidate-notes">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Magento Release Candidate Notes</span>
+            
+
+            
+            <ul>
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.1-release-candidate-3-(rc3)-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3CE.html">Magento Open Source 2.1 Release Candidate 3 (RC3) Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.1-release-candidate-3-(rc3)-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3EE.html">Magento Commerce 2.1 Release Candidate 3 (RC3) Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.1-release-candidate-2-(rc2)-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2CE.html">Magento Open Source 2.1 Release Candidate 2 (RC2) Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.1-release-candidate-2-(rc2)-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2EE.html">Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-open-source-2.1-release-candidate-1-(rc1)-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1CE.html">Magento Open Source 2.1 Release Candidate 1 (RC1) Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                <li class="nav-level3  " id="magento-commerce-2.1-release-candidate-1-(rc1)-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1EE.html">Magento Commerce 2.1 Release Candidate 1 (RC1) Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+<li class="nav-level1  " id="backward-incompatible-changes">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.0/release-notes/backward-incompatible-changes.html">Backward incompatible changes</a>
+    
+
+    
+    <ul>
+        
+        
+        <li class="nav-level2  " id="magento-open-source-changes">
+            
+            
+        
+            
+            <a href="/guides/v2.0/release-notes/changes/ce_changes.html">Magento Open Source changes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-changes">
+            
+            
+        
+            
+            <a href="/guides/v2.0/release-notes/changes/ee_changes.html">Magento Commerce changes</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+<li class="nav-level1  " id="third-party-licenses">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Third-party licenses</span>
+    
+
+    
+    <ul>
+        
+        
+        <li class="nav-level2  " id="magento-open-source-third-party-licenses">
+            
+            
+        
+            
+            <a href="/guides/v2.0/release-notes/thirdparty_ce.html">Magento Open Source third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        <li class="nav-level2  " id="magento-ee-third-party-licenses">
+            
+            
+        
+            
+            <a href="/guides/v2.0/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        <li class="nav-level2  " id="magento-ee-third-party-licenses">
+            
+            
+        
+            
+            <a href="/guides/v2.0/release-notes/thirdparty-mccloud.html">Magento EE third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
 
 	</div>
+
 </aside>
+
+
 <!-- /sidebar -->
 
 
@@ -1598,39 +961,17 @@
       <!-- SEO data -->
       
 
-      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-
-        
-          <a property="item" typeof="WebPage" href="/guides/v2.0/cloud/bk-cloud.html">
-            <span property="name">Welcome to Magento Enterprise Cloud Edition</span>
-          </a>
-        
-
-        <meta property="position" content="1" />
-      </li>
-
-    
-
-      <!-- Skip if root -->
-      
-
-      <!-- Get breadcrumb title -->
-      
-
-      <!-- SEO data -->
-      
-
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
 
         
 
           
 
-          <span property="name">Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes</span>
+          <span property="name">Magento Commerce (Cloud) 2.1.2 and 2.0.10 Release Notes</span>
 
         
 
-        <meta property="position" content="2" />
+        <meta property="position" content="1" />
       </li>
 
     
@@ -1649,21 +990,22 @@
 
 	
 
-	<h1 class="page-heading">Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes</h1>
+	<h1 class="page-heading">Magento Commerce (Cloud) 2.1.2 and 2.0.10 Release Notes</h1>
 
   
 
 
 </section>
 
+
 			<h3 id="changes">Changes</h3>
 <p>We made the following change in this release:</p>
 
-<p>Added a new environment variable, <code>UPDATE_URLS</code>, which if set to <code>enabled</code> causes Magento base URLs in the database with to be replaced with Cloud project URLs.</p>
+<p>Added a new environment variable, <code class="highlighter-rouge">UPDATE_URLS</code>, which if set to <code class="highlighter-rouge">enabled</code> causes Magento base URLs in the database with to be replaced with Cloud project URLs.</p>
 
-<p>By default, <code>UPDATE_URLS</code> is set to <code>enabled</code>. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
+<p>By default, <code class="highlighter-rouge">UPDATE_URLS</code> is set to <code class="highlighter-rouge">enabled</code>. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 
-<p>You should set this variable to <code>disabled</code> <em>only</em> in staging or production, where the base URLs can’t change.</p>
+<p>You should set this variable to <code class="highlighter-rouge">disabled</code> <em>only</em> in staging or production, where the base URLs can’t change.</p>
 
 <h3 id="functional-fixes-and-enhancements">Functional fixes and enhancements</h3>
 <p>We made the following fixes in this release:</p>
@@ -1671,15 +1013,15 @@
 <ul>
   <li>Improved the performance of static file deployment.</li>
   <li>You can now upgrade to version 2.1.2 if you enabled <a href="http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html" target="_blank">static file signatures</a>.</li>
-  <li>You no longer need a <code>pub/front-static.php</code> in your template.</li>
-  <li>We now back up <code>env.php</code> before disabling the Redis cache during deployment.</li>
+  <li>You no longer need a <code class="highlighter-rouge">pub/front-static.php</code> in your template.</li>
+  <li>We now back up <code class="highlighter-rouge">env.php</code> before disabling the Redis cache during deployment.</li>
   <li>Patches are now applied in alphabetical order.</li>
 </ul>
 
 <h3 id="known-issues">Known issues</h3>
 <p>Note the following issue in this release:</p>
 
-<p>The <code>magento setup:install</code> command (used for deployment) fails in either a staging or production environment if a Magento database already exists in the following scenario:</p>
+<p>The <code class="highlighter-rouge">magento setup:install</code> command (used for deployment) fails in either a staging or production environment if a Magento database already exists in the following scenario:</p>
 
 <ul>
   <li>You installed or updated a component in your integration environment that modifies the database (especially if the component adds tables).</li>
@@ -1695,7 +1037,7 @@
 </ol>
 
 <div class="bs-callout bs-callout-warning">
-    <p>This issue affects staging and production environments only. There are no issues in an integration environment. For a discussion of these terms, see <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch.html">Architecture</a>.</p>
+    <p>This issue affects Staging and Production environments only. There are no issues in an Integration environment. For a discussion of these terms, see <a href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a>.</p>
 </div>
 
 <h3 id="magento-ee-release-notes">Magento EE Release Notes</h3>
@@ -1762,6 +1104,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="/common/js/app.min.js"></script>
 
 <!-- Glossary integration -->
