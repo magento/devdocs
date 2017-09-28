@@ -1,0 +1,295 @@
+label: Magento Enterprise Cloud Guide
+pages:
+    - label: Welcome to Magento Commerce (Cloud)
+      url: cloud/bk-cloud.html
+      children:
+        - label: Cloud Architecture
+          url: cloud/reference/discover-arch.html
+
+        - label: Develop and Deploy Workflow
+          url: cloud/welcome/discover-workflow.html
+
+        - label: Requirements for Cloud
+          url: cloud/requirements/cloud-requirements.html
+
+        - label: Composer in Cloud
+          url: cloud/reference/cloud-composer.html
+
+    - label: Magento Enterprise Cloud Edition Release Notes
+      url: cloud/release-notes/CloudReleaseNotes.html
+      children:
+        - label: magento-cloud-configuration release 101.4.x Release Notes
+          url: cloud/release-notes/CloudReleaseNotes101.4.html
+
+        - label: Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes
+          url: cloud/release-notes/CloudReleaseNotes2.1.4.html
+
+        - label: Magento Enterprise Cloud Edition 2.1.3 and 2.0.11 Release Notes
+          url: cloud/release-notes/CloudReleaseNotes2.1.3.html
+
+    - label: Account owner tasks
+      url: cloud/before/before-project-owner.html
+
+    - label: First-time development setup
+      url: cloud/access-acct/first-time-setup.html
+      children:
+        - label: Set up a project and dev workspace
+          url: cloud/before/before-workspace.html
+
+        - label: Install Magento prerequisites
+          url: cloud/before/before-workspace-magento-prereqs.html
+
+        - label: Enable SSH keys
+          url: cloud/before/before-workspace-ssh.html
+
+        - label: Set up the Magento file system owner
+          url: cloud/before/before-workspace-file-sys-owner.html
+
+        - label: Clone the project
+          url: cloud/before/before-setup-env-2_clone.html
+
+        - label: Set up Magento authentication keys
+          url: cloud/before/before-setup-env-keys.html
+
+        - label: Branch an environment
+          url: cloud/before/before-setup-env-env.html
+
+        - label: Install Magento
+          url: cloud/before/before-setup-env-install.html
+
+        - label: First time deployment
+          url: cloud/access-acct/first-time-deploy.html
+
+        - label: Import an existing Magento project
+          children:
+            - label: First steps for importing Magento EE
+              url: cloud/access-acct/first-time-setup_import-first-steps.html
+
+            - label: Find the information you need for your import
+              url: cloud/access-acct/first-time-setup_import-prereq.html
+
+            - label: Prepare your existing Magento EE system
+              url: cloud/access-acct/first-time-setup_import-prepare.html
+
+            - label: Import Magento EE into Magento Enterprise Cloud Edition
+              url: cloud/access-acct/first-time-setup_import-import.html
+
+    - label: Manage your project
+      url: cloud/project/projects.html
+      children:
+        - label: Get started with a project
+          url: cloud/project/project-start.html
+
+        - label: Manage users
+          url: cloud/project/user-admin.html
+
+        - label: Test a Magento patch or upgrade
+          children:
+          
+            - label: Upgrade and test Magento Commerce
+              url: cloud/project/project-upgrade.html
+
+            - label: Patch and test Magento Commerce
+              url: cloud/project/project-patch.html
+
+        - label: Basic project information
+          url: cloud/project/project-webint-basic.html
+
+        - label: Manage branches
+          url: cloud/project/project-webint-branch.html
+
+        - label: Snapshots and Backup management
+          url: cloud/project/project-webint-snap.html
+
+        - label: Set up Fastly
+          url: cloud/access-acct/fastly.html
+
+        - label: Set up PayPal
+          url: cloud/live/paypal-onboarding.html
+
+        - label: Set up multiple Cloud websites or stores
+          url: cloud/project/project-multi-sites.html
+
+        - label: .magento.app.yaml
+          url: cloud/project/project-conf-files_magento-app.html
+
+        - label: Configure routes
+          children:
+            - label: routes.yaml
+              url: cloud/project/project-conf-files_routes.html
+
+            - label: Caching
+              url: cloud/project/project-routes-more-cache.html
+
+            - label: Redirects
+              url: cloud/project/project-routes-more-redir.html
+
+            - label: Server side includes
+              url: cloud/project/project-routes-more-ssi.html
+
+        - label: Configure services
+          children:
+            - label: services.yaml
+              url: cloud/project/project-conf-files_services.html
+
+            - label: Set up the mysql service
+              url: cloud/project/project-conf-files_services-mysql.html
+
+            - label: Set up the redis service
+              url: cloud/project/project-conf-files_services-redis.html
+
+            - label: Set up the solr service
+              url: cloud/project/project-conf-files_services-solr.html
+
+            - label: Set up Elasticsearch
+              url: cloud/project/project-conf-files_services-elastic.html
+
+            - label: Set up the rabbitmq service
+              url: cloud/project/project-conf-files_services-rabbit.html
+
+        - label: Integrations
+          children:
+            
+            - label: Blackfire integration
+              url: cloud/project/project-integrate-blackfire.html
+
+            - label: GitHub integration
+              url: cloud/project/project-integrate-github.html
+
+        - label: Pull code from a private Git repository
+          url: cloud/project/project-priv-repos.html
+
+    - label: Manage your environments
+      url: cloud/env/environments.html
+      children:
+        - label: Get started with an environment
+          url: cloud/env/environments-start.html
+
+        - label: Magento Cloud CLI
+          url: cloud/reference/cli-ref-topic.html
+
+        - label: Environment variables
+          children:
+            - label: Overview of environment variables
+              url: cloud/env/environment-vars_over.html
+
+            - label: Magento Enterprise Cloud Edition environment variables
+              url: cloud/env/environment-vars_cloud.html
+
+            - label: Magento application environment variables
+              url: cloud/env/environment-vars_magento.html
+
+        - label: Manage the configuration
+          children:
+          
+            - label: Configuration management
+              url: cloud/live/sens-data-over.html
+
+            - label: Example of managing system-specific settings
+              url: cloud/live/sens-data-initial.html
+
+        - label: Configuration reference
+          children:
+            
+            - label: All configuration paths except payments reference
+              url: cloud/live/config-reference-most.html
+
+            - label: Payment configuration paths reference
+              url: cloud/live/config-reference-payment.html
+
+            - label: Sensitive configuration paths reference
+              url: cloud/live/config-reference-sens.html
+
+    - label: Deploy your store
+      url: cloud/live/stage-prod-live.html
+      children:
+        - label: Deployment process
+          url: cloud/reference/discover-deploy.html
+
+        - label: Protective block
+          url: cloud/live/live-prot.html
+
+        - label: Build and deploy on local
+          url: cloud/live/live-sanity-check.html
+
+        - label: Prepare to deploy to Staging and Production
+          url: cloud/live/stage-prod-migrate-prereq.html
+
+        - label: Migrate and deploy
+          url: cloud/live/stage-prod-migrate.html
+
+        - label: Test deployment
+          url: cloud/live/stage-prod-test.html
+
+    - label: Go live and launch
+      url: cloud/live/live.html
+      children:
+        - label: Go live checklist
+          url: cloud/live/go-live-checklist.html
+
+        - label: Launch steps
+          url: cloud/live/launch-steps.html
+
+    - label: Troubleshooting
+      url: cloud/trouble/trouble.html
+      children:
+        - label: Troubleshoot deployment
+          url: cloud/access-acct/trouble.html
+
+        - label: View logs for troubleshooting
+          url: cloud/trouble/environments-logs.html
+
+        - label: Incorrect credentials
+          url: cloud/trouble/trouble_ce-creds.html
+
+        - label: Resolve issues with a new project
+          url: cloud/trouble/trouble_proj-startover.html
+
+        - label: Component deployment failure
+          url: cloud/trouble/trouble_comp-deploy-fail.html
+
+        - label: Troubleshoot Fastly
+          url: cloud/trouble/trouble_fastly.html
+
+        - label: Resolve issues with encryption key
+          url: cloud/trouble/trouble-crypt-key-variable.html
+
+        - label: Resolve issues with HTML minification
+          url: cloud/trouble/trouble-error-html-minification.html
+
+        - label: Resolve issues with Google Analytics during deployment
+          url: cloud/trouble/trouble-google-analytics-deploy.html
+
+        - label: Resolve a broken branch
+          url: cloud/trouble/trouble-broken-branch.html
+
+    - label: How To
+      children:
+        - label: Test a Magento patch or upgrade
+          children:
+            - label: Upgrade and test Magento Commerce
+              url: cloud/howtos/upgrade-magento.html
+
+            - label: Patch and test Magento Commerce
+              url: cloud/howtos/patch-magento.html
+
+        - label: Install and update extensions
+          children:
+            - label: Install extensions
+              url: cloud/howtos/install-components.html
+
+            - label: Update extensions
+              url: cloud/howtos/update-components.html
+
+        - label: Merge and delete an environment (tutorial)
+          url: cloud/howtos/environment-tutorial-env-merge.html
+
+        - label: Install a theme
+          url: cloud/howtos/custom-theme.html
+
+        - label: Install optional sample data
+          url: cloud/howtos/sample-data.html
+
+        - label: Run a PHP debugger
+          url: cloud/howtos/debug.html
+
