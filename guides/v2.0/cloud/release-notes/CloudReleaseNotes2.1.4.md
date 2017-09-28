@@ -2,14 +2,16 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes
-menu_title: Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes
+title: Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes
+menu_title: Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes
 menu_order: 35
 menu_node:
 level3_menu_node:
 level3_subgroup: mccloud-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.4.md
+redirect_from:
+  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.4.html
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.4 and 2.0.12.

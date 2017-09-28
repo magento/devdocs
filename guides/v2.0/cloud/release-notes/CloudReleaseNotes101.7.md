@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.7.md
 ---
 
-These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Commerce (Cloud) version 2.1.7, `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6.
+These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}} version 2.1.7, `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6.
 
 ## Changes and enhancements in this release {#changes-and-enhancements-in-this-release}
 
@@ -20,7 +20,7 @@ In `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6
 
 ### 101.7.6 changes {#changes}
 
-* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on Magento Commerce (Cloud), see Redis troubleshooting.
+* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see Redis troubleshooting.
 
 ### 101.7.5 changes {#changes-1}
 
@@ -44,10 +44,10 @@ We've reverted the changes to image resizing that we introduced in 2.1.6. Unfort
 
 ## How to get magento-cloud-configuration release 101.7.x
 
-Magento Commerce (Cloud) periodically provides patch releases in components like `magento-cloud-configuration`.
+{{site.data.var.ece}} periodically provides patch releases in components like `magento-cloud-configuration`.
 
-To test and apply these patches, see [Test general patches](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html).
+To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}cloud/project/project-upgrade.html).
 
 ## Magento Commerce Release Notes
 
-These Magento Commerce (Cloud) releases correspond to [Magento Commerce 2.1.7](http://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.7EE.html).
+These {{site.data.var.ece}} releases correspond to [Magento Commerce 2.1.7](http://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.7EE.html).
