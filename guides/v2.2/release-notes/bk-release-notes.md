@@ -19,6 +19,7 @@ github_link: release-notes/bk-release-notes.md
 
 * [Magento 2.2.0 Commerce Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.0EE.html)
 
+* [Magento 2.2.0 Commerce (Cloud) Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.2.html)
 
 
 ## Backward-incompatible changes
@@ -29,6 +30,4 @@ github_link: release-notes/bk-release-notes.md
 
 *	[Magento CE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
 *	[Magento EE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
-
-
-
+*	[Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}release-notes/thirdparty-mccloud.html)

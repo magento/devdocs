@@ -1,13 +1,17 @@
 ---
 layout: default
-group: cloud
-subgroup: 030_ReleaseNotes
-title: Magento Enterprise Cloud Edition 2.1.3 and 2.0.11 Release Notes
-menu_title: Magento Enterprise Cloud Edition 2.1.3 and 2.0.11 Release Notes
-menu_order: 54
-menu_node: 
+group: release-notes
+subgroup: 02_rel-notes
+title: Magento Commerce (Cloud) 2.1.3 and 2.0.11 Release Notes
+menu_title: Magento Commerce (Cloud) 2.1.3 and 2.0.11 Release Notes
+menu_order: 385
+menu_node:
+level3_menu_node: level3child
+level3_subgroup: mccloud-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.3.md
+redirect_from:
+  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.3.html
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.3 and 2.0.11.
@@ -34,7 +38,7 @@ Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to ver
 
 		^/static/version\d+/(?<resource>.*)$:
              passthru: "/static/$resource"
-    
+
     The `/static` location should look like this after the change:
 
     ~~~
@@ -54,7 +58,7 @@ Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to ver
 {% endcollapsible %}
 
 ## Update your Elasticsearch configuration {#cloud-rn-213-es}
-This section discusses how to update your [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition upgrades to 2.1.3 must perform these tasks. 
+This section discusses how to update your [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition upgrades to 2.1.3 must perform these tasks.
 
 Elasticsearch is supported by Magento Cloud Enterprise Edition 2.1.x only.
 
@@ -176,7 +180,7 @@ This section discusses how to get connection information for Elasticsearch so yo
         | ADMIN_URL      | magento_A8v10 | Yes       | No   |
         | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
         +----------------+---------------+-----------+------+
-    
+
 5.  Continue with the next section.
 
 {% endcollapsible %}
