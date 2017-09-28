@@ -10,7 +10,6 @@ pages:
       url: ui_comp_guide/ui_comp_outline_proposed.html
 
     - label: Components
-      url: ui_comp_guide/components/components-intro.html
       children:
 
         - label: ActionsColumn component
@@ -154,7 +153,7 @@ pages:
         - label: Wysiwyg component
           url: ui_comp_guide/components/ui-wysiwyg.html
 
-    - label: concepts
+    - label: Concepts
       children:
 
         - label: Configuration flow of UI components
@@ -193,13 +192,13 @@ pages:
         - label: uiRegistry
           url: ui_comp_guide/concepts/ui_comp_uiregistry.html
 
-    - label: how tos
+    - label: How Tos
       children:
 
         - label: Creating and displaying a category attribute with UI Components
           url: ui_comp_guide/howto/add_category_attribute.html
 
-    - label: troubleshoot
+    - label: Troubleshoot
       children:
 
         - label: Debug UI components JavaScript
