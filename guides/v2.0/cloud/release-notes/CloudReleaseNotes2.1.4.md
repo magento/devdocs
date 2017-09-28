@@ -6,7 +6,7 @@ title: Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes
 menu_title: Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes
 menu_order: 35
 menu_node:
-level3_menu_node:
+level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.4.md
