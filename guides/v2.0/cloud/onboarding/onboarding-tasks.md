@@ -58,9 +58,15 @@ For detailed instructions for setting up environments, see [Prepare project envi
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}common/images/cloud_project-access.png)
 
 ## Access your Magento Admin panel {#admin}
-When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. URLs to access your store are available through [Project Web Interface]({{page.baseurl}}cloud/project/projects.html).
+When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. To initially access the Magento Admin, you have a couple of options.
 
-For the store URL, add /admin at the end. A login panel displays. We provide an general Admin account to initially login. The default username is admin and password is admin12. You should immediately change the password.
+1. Access the Admin panel to change the password:
+
+  * We send an email to the Project Owner with the link to your Magento Admin panel with instructions to click the Forgot Password link.
+
+  * Or you can access a store URL available through the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html). For the store URL, add /admin at the end. A login panel displays.
+2. Click the forgot Password link and complete the process to change the password.
+3. Login to the Admin panel using the username Admin and newly changed password.
 
 These values are controlled through the Admin Panel and the environment application variables for ADMIN_USERNAME and ADMIN_PASSWORD. For details, see [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
 

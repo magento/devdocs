@@ -25,7 +25,7 @@ You can assign users to the following roles per project:
 A project reader can have one of the following roles per environment:
 
 * Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.
-*  Environment contributor can push code to this environment. This role can also branch the environment.
+* Environment contributor can push code to this environment and branch the environment.
 * Environment reader can view this environment only.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -33,15 +33,9 @@ A project reader can have one of the following roles per environment:
 </div>
 
 ## Role management best practices
-When a development team works on a project, the team leader can be the
-project administrator and decide which roles to give his team members.
-One team member can contribute to one environment, another member can
-administer a different environment, and the customer can be a reader of
-the `master` environment.
+When a development team works on a project, the team leader can be the project administrator and decide which roles to give his team members. One team member can contribute to one environment, another member can administer a different environment, and the customer can be a reader of the `master` environment.
 
-For your users to be able to see everything but only
-commit to a specific branch, change their permission level on that
-environment to "Contributor".
+For your users to be able to see everything but only commit to a specific branch, change their permission level on that environment to "Contributor".
 
 
 <div class="bs-callout bs-callout-warning">
@@ -52,8 +46,7 @@ environment to "Contributor".
 You can create and manage users using the Magento Cloud CLI or the Web Interface.
 
 ### Manage users with the CLI {#cloud-user-mg-cli}
-You can use the {{site.data.var.ece}} command line client to fully manage your users
-and integrate this with any other automated system.
+You can use the {{site.data.var.ece}} command line client to fully manage your users and integrate this with any other automated system.
 
 Available commands:
 
@@ -106,9 +99,7 @@ To create user accounts using the Web Interface:
 	![Start creating users]({{ site.baseurl }}common/images/cloud_project-config.png){:width="500px"}
 6.	Click **Add User**.
 
-	The page displays as follows.
-
-	![]({{ site.baseurl }}common/images/cloud_project-add-superuser.png){:width="500px"}
+	![Add users]({{ site.baseurl }}common/images/cloud_project-add-superuser.png){:width="500px"}
 7.	Enter the user's e-mail address.
 8.	Select the access for the account:
 
@@ -119,11 +110,6 @@ To create user accounts using the Web Interface:
 The users you add receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
 
 ## Rebuild the environment {#rebuild}
-After a new user is added to an environment, the environment must be rebuilt. Rebuilds
-are triggered when you push a new commit to an environment.
-To be able to rebuild without new code changes, use the command
-`git commit --allow-empty -m "redeploy" && git push <branch name>`
-to create an empty commit and "force" rebuilding the environment.
+After a new user is added to an environment, the environment must be rebuilt. Rebuilds are triggered when you push a new commit to an environment. To be able to rebuild without new code changes, use the command `git commit --allow-empty -m "redeploy" && git push <branch name>` to create an empty commit and "force" rebuilding the environment.
 
-When the environment rebuild is complete, allow a short time for the routes to
-update fully and for the new user to be able to use SSH access.
+When the environment rebuild is complete, allow a short time for the routes to update fully and for the new user to be able to use SSH access.

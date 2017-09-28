@@ -12,7 +12,7 @@ baseurl: "/"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Version Switcher. Version numbers should be STRING
-version: "2.1"
+version: "2.2"
 versions:
    -
       name: "2.0"
@@ -72,7 +72,7 @@ defaults:
       type: videos
     values:
       layout: video
-      guide_version: "2.1"
+      guide_version: "2.2"
 
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
 
