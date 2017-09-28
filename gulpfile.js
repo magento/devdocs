@@ -26,7 +26,6 @@ var gulp = require('gulp'),
    consolidate = require('gulp-consolidate'),
    browsersync = require('browser-sync'),
    reload = browsersync.reload,
-   runSequence  = require('run-sequence');
 
 
 //
