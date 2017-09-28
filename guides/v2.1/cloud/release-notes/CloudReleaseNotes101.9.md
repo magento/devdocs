@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: magento-cloud-configuration release 101.9.x Release Notes
 menu_title: magento-cloud-configuration release 101.9.x Release Notes
-menu_order: 5
+menu_order: 355
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes

@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento Commerce (Cloud) 2.1.3 and 2.0.11 Release Notes
 menu_title: Magento Commerce (Cloud) 2.1.3 and 2.0.11 Release Notes
-menu_order: 40
+menu_order: 385
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes

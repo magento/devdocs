@@ -1,10 +1,10 @@
 ---
 layout: default
-group: release-notes
-subgroup: Release Notes
+group:
+subgroup:
 title: Magento Commerce (Cloud) 2.2 Release Notes
 menu_title: Magento Commerce (Cloud) 2.2 Release Notes
-menu_order: 400
+menu_order: 
 level3_menu_node:
 level3_subgroup:
 version: 2.2
