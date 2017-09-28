@@ -26,6 +26,8 @@ var gulp = require('gulp'),
    consolidate = require('gulp-consolidate'),
    browsersync = require('browser-sync'),
    reload = browsersync.reload,
+   runSequence  = require('run-sequence');
+
 
 //
 //  Paths
@@ -142,7 +144,7 @@ gulp.task('styles', function () {
 
 });
 
-// Compile html files. Use _config.yml
+// Compile html files. Use _config.yml and _config.local.yml.
 gulp.task('jekyll', function (gulpCallBack) {
 
    var jekyll = spawn('bundle', ['exec','jekyll','build', '--config', '_config.yml,_config.local.yml'], {stdio: 'inherit'});
@@ -187,29 +189,8 @@ gulp.task('default',
 *********************
 * Local development *
 *********************
+
+/*
+* Use `gulp dev` to run local development tasks (e.g., compile HTML, watch source files for changes, recompile HTML, start local web server, and auto reload page after recompiling HTML).
 */
-
-// Compile HTML, watch files for changes, and only recompile files that change; not the entire site:
-gulp.task('build', shell.task(['jekyll build --config _config.yml,_config.local.yml --watch']));
-
-// Start a local webserver and launch the site in a browser.
-gulp.task('serve', function () {
-    browsersync.init({
-        port: 4000,
-        open: true,
-        // Defines time window to minimize reloading of pages when multiple changes occur almost simultaneously.
-        reloadThrottle: 500,
-        reloadDebounce: 500,
-        server: {
-            baseDir: '_site/'
-        }
-    });
-
-    // Auto refresh the browser whenever a file in the _site directory changes, but give jekyll some time to generate the output before reloading:
-    setTimeout(function () {
-        gulp.watch('_site/**/*.*').on('change', browsersync.reload);
-    }, 5000);
-});
-
-// Local development task
-gulp.task('dev', ['build', 'serve'], function () {});
+gulp.task('dev', ['jekyll', 'watch']);
