@@ -6,7 +6,7 @@ title: Magento Enterprise Cloud Edition 2.1.5 and 2.0.13 Release Notes
 menu_title: Magento Enterprise Cloud Edition 2.1.5 and 2.0.13 Release Notes
 menu_order: 20
 menu_node:
-level3_menu_node:
+level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.5.md
