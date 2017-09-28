@@ -25,7 +25,7 @@ redirect_from:
 
 Code, test, and deploy across Integration, Staging, and finally Production environment for continuous integration of your store.
 
-For full release notes, see [Release Information]({{page.baseurl}}release-notes/bk-release-notes.html).
+For full release notes, see [Release Information]({{page.baseurl}}release-notes/bk-release-notes.html) and [Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}release-notes/thirdparty-mccloud.html).
 
 ## {{site.data.var.ece}} plans {#plans}
 {{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}.
