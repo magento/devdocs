@@ -94,7 +94,7 @@ pages:
 
         - label: Set up PayPal
           url: cloud/live/paypal-onboarding.html
-          versions: ["2.1","2.2"]
+          versions: ["2.1","2.2", "2.3"]
 
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html

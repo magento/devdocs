@@ -12,7 +12,7 @@ pages:
           url: http://devdocs.magento.com/swagger/index_21.html
 
         - label: REST APIs
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           url: http://devdocs.magento.com/swagger/index_22.html
 
         - label: List of REST endpoints by module
@@ -31,7 +31,7 @@ pages:
           url: rest/notes.html
 
     - label: Modules
-      versions: ["2.2"]
+      versions: ["2.2", "2.3"]
       children:
 
         - label: Catalog

@@ -1,0 +1,1 @@
+../../../v2.2/config-guide/redis/config-redis.md

@@ -32,7 +32,7 @@ pages:
           url: config-guide/bootstrap/mage-profiler.html
 
     - label: Pipeline Deployment
-      versions: ["2.2"]
+      versions: ["2.2", "2.3"]
       url: config-guide/deployment/
       children:
 
@@ -70,7 +70,7 @@ pages:
               url: config-guide/deployment/pipeline/example/rsync.html
 
     - label: Single machine deployment
-      versions: ["2.2"]
+      versions: ["2.2", "2.3"]
       url: config-guide/deployment/single-machine.html
 
     - label: Command line configuration
@@ -102,7 +102,7 @@ pages:
           url: config-guide/cli/config-cli-subcommands-depen.html
 
         - label: Configuration management
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           children:
 
             - label: Export the configuration
@@ -121,7 +121,7 @@ pages:
           children:
 
             - label: Static files deployment strategies
-              versions: ["2.2"]
+              versions: ["2.2", "2.3"]
               url: config-guide/cli/config-cli-subcommands-static-deploy-strategies.html
 
             - label: Deploy static view files
@@ -156,11 +156,11 @@ pages:
           url: config-guide/config/config-create.html
 
         - label: Disable module output
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           url: config-guide/config/disable-module-output.html
 
         - label: Configuration reference
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           children:
 
             - label: Sensitive and system-specific
@@ -198,7 +198,7 @@ pages:
           url: config-guide/cache/cache-options.html
 
         - label: Static content signing
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           url: config-guide/cache/static-content-signing.html
 
     - label: Configure Redis
@@ -225,11 +225,11 @@ pages:
           url: config-guide/varnish/config-varnish-magento.html
 
         - label: Advanced Varnish configuration
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           url: config-guide/varnish/config-varnish-advanced.html
 
         - label: How Magento cache clearing works with multiple Varnish instances
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           url: config-guide/varnish/use-multiple-varnish-cache.html
 
         - label: Final verification
@@ -284,7 +284,7 @@ pages:
       url: config-guide/db-profiler/db-profiler.html
 
     - label: Install and configure Elasticsearch (Magento Commerce only)
-      versions: ["2.1","2.2"]
+      versions: ["2.1","2.2", "2.3"]
       url: config-guide/elasticsearch/es-overview.html
       children:
 
