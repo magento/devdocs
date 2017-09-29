@@ -60,7 +60,7 @@ pages:
           url: comp-mgr/module-man/compman-uninst-final.html
 
     - label: Run the Module Manager
-      versions: ["2.2"]
+      versions: ["2.2", "2.3"]
       url: comp-mgr/module-man/compman-checklist.html
       children:
 
@@ -77,7 +77,7 @@ pages:
           url: comp-mgr/module-man/modman-enable-disable.html
 
     - label: Run the Extension Manager
-      versions: ["2.2"]
+      versions: ["2.2", "2.3"]
       url: comp-mgr/extens-man/extensman-checklist.html
       children:
 
@@ -164,7 +164,7 @@ pages:
           url: comp-mgr/trouble/cman/gitignore.html
 
         - label: Troubleshoot upgrade issues
-          versions: ["2.1", "2.2"]
+          versions: ["2.1", "2.2", "2.3"]
           url: comp-mgr/trouble/cman/upgrade_51431.html
 
         - label: Troubleshoot cron

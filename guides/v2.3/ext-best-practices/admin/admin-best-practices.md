@@ -1,0 +1,1 @@
+../../../v2.2/ext-best-practices/admin/admin-best-practices.md
