@@ -1,19 +1,23 @@
-/---
+---
 layout: default
-group: cloud
-subgroup: 030_ReleaseNotes
-title: Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
-menu_title: Magento Enterprise Cloud Edition 2.1.2 and 2.0.10 Release Notes
-menu_order: 99
-menu_node: 
+group: release-notes
+subgroup: 02_rel-notes
+title: Magento Commerce (Cloud) 2.1.2 and 2.0.10 Release Notes
+menu_title: Magento Commerce (Cloud) 2.1.2 and 2.0.10 Release Notes
+menu_order: 388
+menu_node:
+level3_menu_node: level3child
+level3_subgroup: mccloud-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.2.md
+redirect_from:
+  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.2.html
 ---
 
 ### Changes
 We made the following change in this release:
 
-Added a new environment variable, `UPDATE_URLS`, which if set to `enabled` causes Magento base URLs in the database with to be replaced with Cloud project URLs. 
+Added a new environment variable, `UPDATE_URLS`, which if set to `enabled` causes Magento base URLs in the database with to be replaced with Cloud project URLs.
 
 By default, `UPDATE_URLS` is set to `enabled`. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
 
@@ -43,7 +47,7 @@ This is a known issue with Magento core software; we're actively working to addr
 3.  Follow the prompts to open an issue with Support.
 
 <div class="bs-callout bs-callout-warning">
-    <p>This issue affects staging and production environments only. There are no issues in an integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch.html">Architecture</a>.</p>
+    <p>This issue affects Staging and Production environments only. There are no issues in an Integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/reference/discover-arch.html">Architecture</a>.</p>
 </div>
 
 ### {{site.data.var.ee}} Release Notes

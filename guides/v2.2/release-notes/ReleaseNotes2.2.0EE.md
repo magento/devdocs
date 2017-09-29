@@ -93,7 +93,8 @@ The following issues affect the Commerce edition of Magento 2.2.0:
 
 **Issue**: Magento displays an error (`“Error 503 Service Unavailable”`) when you try to save a newly-added Catalog Price rule. 
 
-**Issue**: This issue affects the default configuration of category permissions in a multi-storeview environment. When the **use category path in product URL** value  is set to **false**, and the user navigates to the product page for a product contained in that category, he is redirected to a 404 error page.  We will issue a hot fix for this issue in the near future.
+**Issue**: This issue affects the default configuration of category permissions in a multi-storeview environment. When the **use category path in product URL** value  is set to **false**, and the user navigates to the product page for a product contained in that category, he is redirected to a 404 error page.  **Workaround:** [Log in to your account](https://account.magento.com/customer/account/login), then download and apply `MDVA-6272_EE_2.2.0_composer.patch`. 
+
 
 
 ### B2B-only issues
