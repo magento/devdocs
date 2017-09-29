@@ -26,13 +26,13 @@ Once the system is prepared, the tests can be executed using either the command 
 In order to run the integration tests, a test database has to be created and configured.  
 Besides this, you might also want to adjust the PHPUnit configuration, depending on your requirements.
 
-Please refer to [Preparing Integration Test Execution](#setup) for further information on setting up the test environment.
+Please refer to [Preparing Integration Test Execution][setup] for further information on setting up the test environment.
 
 ### Command Line Interface (CLI)  
 
 This option can be used for running the tests locally during development or on remote servers during Continuous Integration.  
 
-Please refer to [Running Integration Tests in the CLI]([cli-run]) for further information.
+Please refer to [Running Integration Tests in the CLI][cli run] for further information.
 
 ### PHPStorm IDE
 
@@ -40,7 +40,7 @@ Running the integration tests inside an IDE like PHPStorm IDE is convenient duri
 
 Other then convenience there is no benefit over running the tests on the console.
 
-Please refer to [Running Integration Tests in PHPStorm](#phpstorm-run) for further information.
+Please refer to [Running Integration Tests in PHPStorm][phpstorm run] for further information.
 
 ## Preparing Integration Test Execution {#setup}
 
@@ -113,7 +113,7 @@ When making adjustments to the configuration, copy the default file to `dev/test
 
 There are many settings in the file.  
 This guide will only describes three common adjustments.  
-Please refer to the [PHPUnit documentation](https://phpunit.de/manual/4.1/en/appendixes.configuration.html) and the comments in the default file for more information on the available configuration settings.
+Please refer to the [PHPUnit documentation] and the comments in the default file for more information on the available configuration settings.
 
 #### The TESTS_CLEANUP Constant
 
@@ -187,7 +187,7 @@ $ php ../../../vendor/bin/phpunit --testsuite "Third Party Integration Tests"
 
 Probably the most common way to execute integration tests is using the command line.  
 
-Please ensure you have [prepared the integration test environment]({{page.baseurl}}test/integration/integration_test_setup.html) before starting.
+Please ensure you have [prepared the integration test environment][setup] before starting.
 
 The integration tests have to be executed with the current working directory being `dev/tests/integration`.  
 The test configuration resides in that directory and will be picked up by `phpunit` automatically, without the need to specify it as a command line option.
@@ -275,17 +275,25 @@ There are many ways this problem can be resolved, but the easiest is to run the 
 
 When writing new integration tests or during debugging, it is convenient to execute tests from within the the PHPStorm IDE.
 
-Please ensure you have [prepared the integration test environment]({{page.baseurl}}test/integration/integration_test_setup.html) before starting.
+Please ensure you have [prepared the integration test environment][setup] before starting.
 
 ### Creating an integration test run configuration
 
 Setting up a run configuration for integration tests is very similar to creating a run configuration for unit tests.  
 
-Please refer to [Running Unit Tests in PHPStorm]({{page.baseurl}}test/unit/unit_test_execution_phpstorm.html) for instructions on how to create a basic run configuration.  
+Please refer to [Running Unit Tests in PHPStorm][phpstorm run] for instructions on how to create a basic run configuration.  
 Then configure the integration test configuration file to be used.
 
 #### Using the integration test configuration file
 
 The only difference in the run configuration is the integration test `phpunit.xml.dist` or `phpunit.xml` configuration file from the directory `dev/tests/integration` has to be selected.  
 
-<img src="{{ site.baseurl }}common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration">{:width="600px"} 
+<img src="{{ site.baseurl }}common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration">{:width="600px"}
+
+<!-- LINK DEFINITIONS -->
+
+[setup]: #setup
+[cli run]: #cli-run
+[phpstorm run]: #phpstorm-run
+
+[PHPUnit documentation]: https://phpunit.de/manual/4.1/en/appendixes.configuration.html
