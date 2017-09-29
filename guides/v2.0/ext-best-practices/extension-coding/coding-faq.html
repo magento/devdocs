@@ -548,8 +548,8 @@
 
 <p>The correct edition can be obtained through <code class="highlighter-rouge">\Magento\Framework\App\ProductMetadataInterface::getEdition</code>.</p>
 
-<p>In Magento CE that interface maps to the concrete implementation <code class="highlighter-rouge">Magento\Framework\AppInterface\ProductMetadata</code>.
-However, in Magento EE, the Enterprise <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> will override that mapping and the interface will be implemented by <code class="highlighter-rouge">\Magento\Enterprise\Model\ProductMetadata</code>.</p>
+<p>In Magento Open Source that interface maps to the concrete implementation <code class="highlighter-rouge">Magento\Framework\AppInterface\ProductMetadata</code>.
+However, in Magento Commerce, the Commerce <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> will override that mapping and the interface will be implemented by <code class="highlighter-rouge">\Magento\Enterprise\Model\ProductMetadata</code>.</p>
 
 <p>Just relying on the interface through <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> will get you the right class, and calling “getEdition” will return the right answer.</p>
 

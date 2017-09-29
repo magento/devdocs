@@ -280,7 +280,7 @@
   <p><abbr title="Developers who contribute code to the Magento 2 CE codebase">Contributing developers</abbr> can use this method of installing sample data <em>only</em> if all of the following are true:</p>
 
   <ul>
-    <li>You use Magento CE</li>
+    <li>You use Magento Open Source</li>
     <li>You <a href="/guides/v2.0/install-gde/prereq/dev_install.html">cloned the Magento 2 repository</a>.</li>
   </ul>
 
@@ -347,7 +347,7 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
+      <div class="highlighter-rouge"><pre class="highlight"><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento Open Source install dir&gt;"
 </code></pre>
       </div>
     </li>
@@ -389,7 +389,7 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
+      <div class="highlighter-rouge"><pre class="highlight"><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento Open Source install dir&gt;"
 </code></pre>
       </div>
 
@@ -441,7 +441,7 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Clear static files:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento CE install dir&gt;/var
+      <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento Open Source install dir&gt;/var
 rm -rf cache/* page_cache/* generation/*
 </code></pre>
       </div>

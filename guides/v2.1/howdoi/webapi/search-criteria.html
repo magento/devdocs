@@ -909,10 +909,10 @@ searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<s
   <li>You can only search top-level attributes.</li>
 </ul>
 
-<p>The following sections provide examples of each type of search. These examples use the Magento CE sample data.</p>
+<p>The following sections provide examples of each type of search. These examples use the Magento Open Source sample data.</p>
 
 <h3 id="simple-search">Simple search</h3>
-<p>The Magento CE sample data uses the <code class="highlighter-rouge">category_gear</code> field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.</p>
+<p>The Magento Open Source sample data uses the <code class="highlighter-rouge">category_gear</code> field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/rest/V1/products/?
 searchCriteria[filter_groups][0][filters][0][field]=category_gear<span class="err">&amp;</span>
