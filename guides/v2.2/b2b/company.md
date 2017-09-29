@@ -12,7 +12,7 @@ level3_subgroup: company
 github_link: b2b/company.md
 ---
 
-The `Company` module allows multiple customers that belong to the same company to view product prices and make purchases based on the shared catalog assigned to this company. A company can contain a hierarchy of users and teams, with roles and permisions assigned at any level.
+The `Company` module allows multiple buyers that belong to the same company to view product prices and make purchases based on the shared catalog assigned to this company. A company can contain a hierarchy of users and teams, with roles and permisions assigned at any level.
 
 ## Related information
 

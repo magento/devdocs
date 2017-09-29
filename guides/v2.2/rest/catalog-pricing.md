@@ -14,7 +14,7 @@ github_link: rest/catalog-pricing.md
 
 Magento provides REST endpoints that allow you to update multiple special prices, tier prices, base prices, or cost values with a single call.
 
-The calls that update special and tier prices mimic the options available on a product's **Advanced Pricing** screen in Admin. 
+The calls that update special and tier prices mimic the options available on a product's **Advanced Pricing** screen in Admin.
 
 ## Manage special prices
 
@@ -47,12 +47,12 @@ Name | Description | Format | Requirements
 `store_id` | The store ID  to apply the special price | integer | Required for setting or deleting a special price
 `sku` | The SKU of the product | string | Required for setting or deleting a special price
 `skus` | An array of SKU values that is specified when retrieving a list of special prices | array | Required for retrievals
-`price_from` | The date and time the special price goes into effect. The date/time format is `YYYY-MM-DD hh:mm:ss`. The specified time must be later than the current time.  | string | Required in Enterprise Edition. Optional in Community Edition.
+`price_from` | The date and time the special price goes into effect. The date/time format is `YYYY-MM-DD hh:mm:ss`. The specified time must be later than the current time.  | string | Required in {{site.data.var.ee}}. Optional in {{site.data.var.ce}}.
 `price_to` | The date and time the special price ends. The date/time format is `YYYY-MM-DD hh:mm:ss` If no value is specified, the special price does not expire. | string | Optional
 
 ### Set special prices
 
-All calls to set special prices must include the `store_id`, `sku`, and `price` parameters. If the call is sent to an Enterprise Edition installation, the call must also include the `price_from` parameter. If the call is sent to a Community Edition installation, then the `price_from` parameter is optional.
+All calls to set special prices must include the `store_id`, `sku`, and `price` parameters. If the call is sent to an {{site.data.var.ee}} installation, the call must also include the `price_from` parameter. If the call is sent to a {{site.data.var.ce}} installation, then the `price_from` parameter is optional.
 
 For bundled products, the value of the `price` parameter must be expressed as a discount percentage.
 

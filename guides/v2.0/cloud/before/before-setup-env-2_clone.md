@@ -91,9 +91,8 @@ To set variables (with example values used):
 
 	The simplest way to do that is to use the environment routes that display when you redeploy the `master` branch. The following example uses these values:
 
-	<pre class="no-copy">Waiting for the activity ksvciptnzxfto (John Smith added variable ADMIN_URL):
 
-		Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
+		<pre class="no-copy">Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
 		Slug already built for this tree id, skipping.
 
 		Re-deploying environment k4wtvm7ogzr5s-master.
@@ -105,8 +104,7 @@ To set variables (with example values used):
 			solr (type: solr:4.10, size: S, disk: 1024)
 
 		Environment routes:
-			http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
-			https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`</pre>
+			http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`</pre>
 
 	In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
 

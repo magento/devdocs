@@ -10,12 +10,15 @@ version: 2.0
 github_link: cloud/trouble/trouble-crypt-key-variable.md
 ---
 
-## Resolve issues with encryption key
 This topic discusses solutions to typical issues you might experience with Magento EE encryption key in your environments.
 
-### Encryption key not in all environments {#cloud-trouble-nocrypt}
-When creating and setting up your ECE project, as a best practice you should install and deploy Magento across all environments starting with Integration to Staging to Production. During this process, the Magento EE encryption key should have been added as an environment variable to `env.php` per environment.
+For a new Starter project, the Magento encryption key is on your `master` branch Production environment. When you branch to other environments, the key travels with the code and database.
 
+For a new Pro project starting with a "blank site" {{site.data.var.ece}} template, the Magento encryption key is on the Integration `master` branch and environment until you [initially deploy]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html) across all environments.
+
+If you have imported data from an existing Magento installation into {{site.data.var.ece}}, you need to [copy the key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey) and [deploy it]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html#cloud-import-key) to the environments.
+
+### Encryption key not in all environments {#cloud-trouble-nocrypt}
 All Cloud environments require this encryption key in all three environments or the store will encounter authentication and authorization errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.
 
 To verify and update the encryption key environment variable:

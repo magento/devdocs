@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 090_configure
-title: Set up the RabbitmMQ service
-menu_title: Set up the RabbitMQ service
+title: Set up RabbitMQ service
+menu_title: Set up RabbitMQ service
 menu_order: 75
 menu_node:
 level3_menu_node: level3child
@@ -109,3 +109,8 @@ command available to manage your queues.
 ### Connect from your PHP application {#cloud-rabbitmq-conn-php}
 To connect to RabbitMQ using your PHP application, add a PHP {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} (like
 [PHP AMQPlib](https://github.com/videlalvaro/php-amqplib){:target="_blank"}) to your source tree.
+
+#### Related topics
+*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

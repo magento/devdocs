@@ -278,7 +278,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 <tr>
 <td><p>--amqp-host</p></td>
-<td><p>{{site.data.var.ee}} only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<td><p>{{site.data.var.ee}} only. Do not use the` --amqp` options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about installing and configuring RabbitMQ..</p>
 <p>The host name where RabbitMQ is installed.</p></td>
 <td><p>No</p></td>
 </tr>
@@ -295,6 +295,16 @@ The following table discusses the meanings of installation option names and valu
 <tr>
 <td><p>--amqp-password</p></td>
 <td><p>{{site.data.var.ee}} only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-virtualhost</p></td>
+<td><p>{{site.data.var.ee}} only. The virtual host for connecting to RabbitMQ. The default is <code>/</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-ssl</p></td>
+<td><p>{{site.data.var.ee}} only. Indicates whether to connect to RabbitMQ. The default is <code>false</code>. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ</a> for information about setting up SSL for RabbitMQ. </p></td>
 <td><p>No</p></td>
 </tr>
 	</tbody>

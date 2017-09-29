@@ -27,6 +27,7 @@ var gulp = require('gulp'),
    browsersync = require('browser-sync'),
    reload = browsersync.reload,
 
+
 //
 //  Paths
 //  ---------------------------------------------
@@ -142,7 +143,7 @@ gulp.task('styles', function () {
 
 });
 
-// Compile html files. Use _config.yml
+// Compile html files. Use _config.yml and _config.local.yml.
 gulp.task('jekyll', function (gulpCallBack) {
 
    var jekyll = spawn('bundle', ['exec','jekyll','build', '--config', '_config.yml,_config.local.yml'], {stdio: 'inherit'});
@@ -162,15 +163,20 @@ gulp.task('browser-sync', function () {
    browsersync(bsconfig);
 });
 
-// Rerun the task when a file changes
+/*
+* Rerun the task and reload the browser when changing, adding, or removing a file. Uses the gulp.watch API.
+*/
 gulp.task('watch', function () {
   browsersync(bsconfig);
-  gulp.watch(paths.html, ['jekyll']);
-  gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.images, ['images']);
-  gulp.watch(paths.styles, ['styles']);
+  var watcher =
+    gulp.watch(paths.html, ['jekyll']);
+    gulp.watch(paths.scripts, ['scripts']);
+    gulp.watch(paths.images, ['images']);
+    gulp.watch(paths.styles, ['styles']);
+    watcher.on('change', function(event) {
+      gutil.log(gutil.colors.bgYellow.black('File: ' + event.path + ' was ' + event.type + ', running tasks...'));
+  });
 });
-
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default',
@@ -187,29 +193,8 @@ gulp.task('default',
 *********************
 * Local development *
 *********************
+
+/*
+* Use `gulp dev` to run local development tasks (e.g., compile HTML, watch source files for changes, recompile HTML, start local web server, and auto reload page after recompiling HTML).
 */
-
-// Compile HTML, watch files for changes, and only recompile files that change; not the entire site:
-gulp.task('build', shell.task(['jekyll build --watch --incremental']));
-
-// Start a local webserver and launch the site in a browser.
-gulp.task('serve', function () {
-    browsersync.init({
-        port: 4000,
-        open: true,
-        // Defines time window to minimize reloading of pages when multiple changes occur almost simultaneously.
-        reloadThrottle: 500,
-        reloadDebounce: 500,
-        server: {
-            baseDir: '_site/'
-        }
-    });
-
-    // Auto refresh the browser whenever a file in the _site directory changes, but give jekyll some time to generate the output before reloading:
-    setTimeout(function () {
-        gulp.watch('_site/**/*.*').on('change', browsersync.reload);
-    }, 5000);
-});
-
-// Local development task
-gulp.task('dev', ['build', 'serve'], function () {});
+gulp.task('dev', ['jekyll', 'watch']);

@@ -12,7 +12,7 @@ level3_subgroup: company
 github_link: b2b/company-structures.md
 ---
 
-B2B allows company users to be assigned to company teams and hierarchies.
+{{site.data.var.b2b}} allows company users to be assigned to company teams and hierarchies.
 
 ## Manage company teams
 
@@ -177,8 +177,7 @@ Not applicable
 
 In the B2B storefront, a buyer can view the company structure represented as a hierarchy tree. The tree can display multiple levels of company subdivisions (teams) as well as company users. The company hierarchy can have any number of items and levels.
 
-You can use REST endpoints to retrieve the current structure and move teams and customers within the hierarchy. You cannot delete  teams or customers.
-
+You can use REST endpoints to retrieve the current structure and move teams and buyers within the hierarchy. You cannot delete teams or buyers.
 
 **Service name**
 

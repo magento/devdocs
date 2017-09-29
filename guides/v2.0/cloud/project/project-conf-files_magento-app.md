@@ -15,11 +15,9 @@ redirect_from:
 ---
 
 ## About `.magento.app.yaml` {#cloud-yaml-platform}
-{{site.data.var.<ee>}} supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
+{{site.data.var.ee}} supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
 
-This file controls the application and the way it is built and deployed on {{site.data.var.<ee>}}.
-
-[Sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}
+This file controls the application and the way it is built and deployed on {{site.data.var.ece}}. To see a sample of the file, see [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions. 
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/bk-cloud.html#gethelp">Support ticket</a>.</p>
@@ -31,7 +29,7 @@ The following sections discuss properties in `.magento.app.yaml`.
 `.magento.app.yaml` has many default values; see the [sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}.
 
 ## `name` property {#name}
-`name` identifies the application in the project. {{site.data.var.<ee>}} supports multiple applications in a project, so each application must have a *unique name* in a project.
+`name` identifies the application in the project. {{site.data.var.ee}} supports multiple applications in a project, so each application must have a *unique name* in a project.
 
 `name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name` is used in the [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) to define the HTTP upstream (by default, `php:php`).
 
@@ -127,7 +125,7 @@ The format is:
 `dependencies` enables you to specify dependencies that your application might need during the build process.
 
 
-{{site.data.var.<ee>}} supports dependencies on the following
+{{site.data.var.ee}} supports dependencies on the following
 languages:
 
 *	PHP
@@ -293,8 +291,12 @@ Other PHP extensions you can optionally install:
 *	[xhprof](http://php.net/manual/en/book.xhprof.php){:target="_blank"}
 *	[xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="_blank"}
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
+</div>
+
 ### Customize `php.ini` settings {#cloud-yaml-platform-php-set}
-You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.<ee>}}.
+You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
 

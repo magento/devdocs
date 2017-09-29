@@ -41,7 +41,7 @@ For your VM, we recommend installing one of the following:
 When using Vagrant, we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager){:target="_blank"} and using [VirtualBox](https://www.virtualbox.org/wiki/Documentation){:target="_blank"} to manage the environment. VirtualBox extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
 
 ## Development tools {#devtools}
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing {{site.data.var.<ee>}} and your code respositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing {{site.data.var.ee}} and your code respositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
 	For more information, see [How Cloud uses Git]({{ page.baseurl }}cloud/reference/git-integration.html).
 * [Composer](https://getcomposer.org/download/){:target="_blank"} - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
 	For more information, see [How Cloud uses Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
@@ -65,11 +65,11 @@ The following packages may also be helpful for your PHP installation:
 * [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 
 ### Set up PHP memory limit {#cloud-first-php}
-When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.<ee>}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
+When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.ee}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
 
 To set `memory_limit`:
 
-Before working with your {{site.data.var.<ece>}} project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+Before working with your {{site.data.var.ece}} project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
 1.	Find your `php.ini` file using the following command:
 
@@ -90,10 +90,13 @@ Before working with your {{site.data.var.<ece>}} project, make sure you set the 
 We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server.
 
 ## Database (local) {#database}
-You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.<ee>}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galera Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
+
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.ee}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galera Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment.
+
+Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-The Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
+For **Pro plans**, tye Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
 </div>
 
 These example instructions detail how to install and create a MariaDB database for Magento on your local:
@@ -114,15 +117,15 @@ These example instructions detail how to install and create a MariaDB database f
 		use magento;
 6. Exit when done.
 
-### Set up the auto-increment for MariaDB {#cloud-mysql}
+### Pro: Set up the auto-increment for MariaDB {#cloud-mysql}
 You need to set an auto-increment value for the MariaDB installation.
 
 1.	As a user with `root` privileges, open `/etc/mysql/mariadb.conf.d/50-server.cnf` in a text editor.
 2.	In the Basic Settings section, add `auto_increment_increment = 3`.
 3.	Restart the service: `service mysql restart`.
 
-### Set up the auto-increment for MySQL {#cloud-mysql}
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.<ee>}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
+### Pro: Set up the auto-increment for MySQL {#cloud-mysql}
+The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.ee}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 
@@ -142,14 +145,14 @@ If necessary, set `auto_increment_increment` to 3:
 
 		auto_increment_increment=3
 
-	{{site.data.var.<ee>}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
+	{{site.data.var.ece}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
 
 3.	Restart MySQL:
 
 		service mysqld restart
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
-The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.<ece>}}. This tool has different commands than the CLI for {{site.data.var.<ece>}}. For a list of available commands, see [Common Magento Cloud CLI commands]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/){:target="_blank"} or Git Bash.
 
@@ -167,9 +170,9 @@ To install the Magento Cloud CLI:
 
 	For example, on Ubuntu and CentOS, the command is similar to:
 
-		<pre class="no-copy">source /home/magento_user/.bashrc</pre>
+		source /home/magento_user/.bashrc
 
-	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}
+	For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc){:target="_blank"}
 
 	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the user name is `magento_user`, the command is similar to the following:
 

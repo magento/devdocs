@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 090_configure
-title: Set up the MySQL service
-menu_title: Set up the MySQL service
+title: Set up MySQL service
+menu_title: Set up MySQL service
 menu_order: 60
 menu_node:
 level3_menu_node: level3child
@@ -28,7 +28,7 @@ You can optionally set up multiple databases as well as multiple users with diff
 To set up multiple databases and users, you must specify multiple endpoints. An _endpoint_ is a user who has privileges you specify.
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-You can't use multiple _databases_ with {{site.data.var.<ee>}} at this time. You can, however, create multiple endpoints to restrict access to the `main` database.
+You can't use multiple _databases_ with {{site.data.var.ee}} at this time. You can, however, create multiple endpoints to restrict access to the `main` database.
 </div>
 
 To specify user access, use the `endpoints` nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.

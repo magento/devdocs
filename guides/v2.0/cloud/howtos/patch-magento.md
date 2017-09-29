@@ -1,13 +1,11 @@
 ---
 layout: default
-group: cloud
-subgroup: How To
+group: 
+subgroup:
 title: Patch and test Magento Commerce
 menu_title: Patch and test Magento Commerce
-menu_order: 27
+menu_order:
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: patch-upgrade2
 version: 2.0
 github_link: cloud/howtos/patch-magento.md
 ---

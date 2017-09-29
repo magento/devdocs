@@ -10,7 +10,9 @@ version: 2.0
 github_link: cloud/howtos/sample-data.md
 ---
 
-This topic discusses how to install optional Magento sample data. Sample data simulates an active Magento store, including customers, products, and other data.
+If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.ece}} template installation when creating your project.
+
+We recommend installing sample data in your local Integration branches and environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.
 
 ### Get started
 
@@ -20,7 +22,7 @@ This topic discusses how to install optional Magento sample data. Sample data si
 To install sample data:
 
 1.	If you have not done so already, check out the environment in which to install sample data.
-2.	Enter the following commands at a terminal prompt:
+2.	In a terminal, enter the following commands:
 
 		<Magento root dir>/bin/magento sampledata:deploy
 3.	Wait for components to update.
@@ -35,6 +37,8 @@ To install sample data:
 7.	Take a snapshot of your environment:
 
 		magento-cloud snapshot:create -e <environment ID>
+
+You can start testing your development with live data!
 
 #### Related topics
 *	[Install components]({{page.baseurl}}cloud/howtos/install-components.html)
