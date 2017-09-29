@@ -6,10 +6,16 @@ menu_title: Running Integration Tests
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 github_link: test/integration/integration_test_execution.md
-redirect_link:
-    - test/integration/integration_test_setup.html
-    - test/integration/integration_test_execution_cli.html
-    - test/integration/integration_test_execution_phpstorm.html
+redirect_from:
+    - guides/v2.0/test/integration/integration_test_setup.html
+    - guides/v2.1/test/integration/integration_test_setup.html
+    - guides/v2.2/test/integration/integration_test_setup.html
+    - guides/v2.0/test/integration/integration_test_execution_cli.html
+    - guides/v2.1/test/integration/integration_test_execution_cli.html
+    - guides/v2.2/test/integration/integration_test_execution_cli.html
+    - guides/v2.0/test/integration/integration_test_execution_phpstorm.html
+    - guides/v2.1/test/integration/integration_test_execution_phpstorm.html
+    - guides/v2.2/test/integration/integration_test_execution_phpstorm.html
 ---
 
 Integration tests require the Magento runtime environment, so they need a little preparation before they can be executed.
