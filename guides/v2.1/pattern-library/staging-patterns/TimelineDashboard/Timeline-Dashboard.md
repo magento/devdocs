@@ -7,9 +7,9 @@ menu_title: Timeline Dashboard
 menu_order: 1
 menu_node: 
 version: 2.1
+ee_only: true
 github_link: pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.md
 ---
-<img src="img/ee-only_large.png">
 
 <h2> Timeline Dashboard </h2>
 

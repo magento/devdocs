@@ -7,10 +7,9 @@ menu_title: Install and configure Solr (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.0
+ee_only: true
 github_link: config-guide/solr/solr-overview.md
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Solr is deprecated in Magento 2.1 and will not be supported in 2.2.

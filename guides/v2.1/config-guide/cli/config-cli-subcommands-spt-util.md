@@ -7,10 +7,9 @@ menu_title: Run the support utilities (Magento Commerce only)
 menu_node:
 menu_order: 900
 version: 2.1
+ee_only: true
 github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 #### Contents
 *	[Overview of the support utilities](#config-cli-spt-utils-over)

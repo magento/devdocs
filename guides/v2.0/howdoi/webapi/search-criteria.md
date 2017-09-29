@@ -60,10 +60,10 @@ When constructing a search, keep the following in mind:
 * You cannot perform a logical OR across different `filter_groups`, such as `(A AND B) OR (X AND Y)`. ORs can be performed only within the context of a single `filter_groups`.
 * You can only search top-level attributes.
 
-The following sections provide examples of each type of search. These examples use the Magento CE sample data.
+The following sections provide examples of each type of search. These examples use the {{site.data.var.ce}} sample data.
 
 ### Simple search ###
-The Magento CE sample data uses the `category_gear` field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.
+The {{site.data.var.ce}} sample data uses the `category_gear` field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.
 
 {% highlight html %}
 GET http://<magento_host>/rest/V1/products/?

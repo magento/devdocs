@@ -7,10 +7,9 @@ menu_title: Split database performance solution (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.0
+ee_only: true
 github_link: config-guide/multi-master/multi-master.md
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 <h2 id="config-ee-multidb-over">Overview of the split database solution</h2>
 *This feature is available in {{site.data.var.ee}} only.*
