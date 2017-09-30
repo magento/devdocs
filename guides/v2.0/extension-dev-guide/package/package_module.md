@@ -51,7 +51,6 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 <td><code>autoload </code></td>
 <td>Specify necessary information to be loaded, such as [registration.php]({{page.baseurl}}extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
 
-</tr>
 </tbody>
 </table>
 
