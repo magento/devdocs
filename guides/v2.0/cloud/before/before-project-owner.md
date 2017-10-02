@@ -87,11 +87,11 @@ Before you start, create a list of e-mail address for the users you want to add.
 To create user accounts:
 
 1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2.  Click the **Projects** tab as the following figure shows.
+2.  Click the **Projects** tab.
 
 	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
 3.	Click the name of your project. If you have not named your project, click **Continue Later** to bypass and create a user.
-4.	Click the configure project button next to project name in the top navigation bar as the following figure shows.
+4.	Click the configure project button next to project name in the top navigation bar.
 
 	![Configure the project]({{ site.baseurl }}common/images/cloud_project_gear.png){:width="184px"}
 5.	In the right pane, click **Add Users**.
@@ -115,12 +115,16 @@ The users you add receive an e-mail inviting them to join the {{site.data.var.ec
 Prior to accessing the Magento Admin panel, you need to add Admin variables to the project.
 
 1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2.  Open your project and select Master branch.
-3. Click the Configure environment gear.
+2.  Open your project and select a parent branch, for example `master`.
+3. Click the Configure environment gear icon.
+
+	![Configure the environment]({{ site.baseurl }}common/images/cloud_project_gear.png){:width="184px"}
 4. Select the Variables tab.
 5. Click Add Variable.
 6. For the Name, enter ADMIN_EMAIL. For the value, enter your Project Owner email address.
-7. Save the variable.
+7. Click **Add variable**.
+
+After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 Optionally, you can also add variables for ADMIN_USERNAME and ADMIN_PASSWORD. By default, the admin username is `admin`. You should have changed the admin password as an onboarding task, using an email link the Project Owner received.
 
