@@ -10,6 +10,8 @@ level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0CE.md
 ---
+* Release notes updated October 1.* 
+
 
 We are pleased to present Magento Open Source 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
 
@@ -83,7 +85,7 @@ This release contains hundreds of fixes and enhancements.
 
 
 
-<!---56977-->* We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete. 
+<!---56977, 54716-->* We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete. 
 
 
 
@@ -99,8 +101,6 @@ This release contains hundreds of fixes and enhancements.
 <!--- 62648-->* Magento now correctly applies {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} configuration parameters to the corresponding {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}. [GitHub-7943](https://github.com/magento/magento2/issues/7943)
 
 
-<!--- 71890-->* Magento no longer throws an exception when the configuration checksum is absent on a new installation.
-
 <!--- 64085-->* Fixed HTML inline style used when sending emails when implementing the upgraded `emorgifier` library. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
 
 <!--- 60835-->* We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.
@@ -114,8 +114,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!---71890 -->* Magento no longer throws an exception when the configuration checksum is absent on a new installation.
 
-
-<!--- 54716-->*  We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete.
 
 <!--- 59342-->* Custom themes now inherit parent {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration information as expected.
 
@@ -139,8 +137,6 @@ This release contains hundreds of fixes and enhancements.
 
 
 <!---67537 -->* We've added the `varnish:vcl:generate` command to create the Varnish VCL file. *Fix submitted by community member <a href="https://github.com/piotrkwiecinski" target="_blank">Piotr Kwiecinski</a> in pull request <a href="https://github.com/magento/magento2/pull/9286" target="_blank">9286</a>.* 
-
-<!--- -->* You can now deploy build processes on a different staging machine than the one you're running your production environment on.
 
 <!--- 62660 -->*  JavaScript translations of warning messages no longer appear in the language of the primary locale  only. Previously, optimizations that we made to static content deployment inadvertently generated the content only in the language of the primary locale,  and then copied that directory to the other requested locales. 
 [GitHub-7862](https://github.com/magento/magento2/issues/7862)
@@ -201,8 +197,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. [GitHub-5279](https://github.com/magento/magento2/issues/5279) 
 
-<!---53793 -->* Magento now implements the minicart maximum display recently added item setting to your shopping cart. Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. [GitHub-4750](https://github.com/magento/magento2/issues/4750)
-
 
 <!--- 69657-->* Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, After an user enters credit card information, then discount code and then click **Place Order**. The credit card information fields are emptied and user has to enter the credit card information again to proceed with the order transaction.
 
@@ -233,7 +227,7 @@ This release contains hundreds of fixes and enhancements.
 
 ### Catalog
 
-<!--- 65324 -->*  Magento no longer locks the `category_product_entity` table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the `category_product_entity` table. 
+<!--- 65324, 66829 -->*  Magento no longer locks the `category_product_entity` table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the `category_product_entity` table. 
 
 
 <!--- 65251 -->* The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
@@ -247,7 +241,7 @@ This release contains hundreds of fixes and enhancements.
 <!---57832 -->* Magento now displays the **This is a required field** message immediately adjacent to the product options as needed during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. Previously, Magento displayed this message at the bottom of the checkout form. 
 
 
-<!--- 56582-->* You can now save a product with images multiple times. 
+<!--- 56582, 56868-->* You can now save a product with images multiple times. 
 
 <!--- 57420/54320-->* The category page now shows the current price after Magento runs a scheduled update.  Previously, the category page would not update the  price after running a scheduled update.	[GitHub-4945](https://github.com/magento/magento2/issues/4945)
 
@@ -290,18 +284,11 @@ This release contains hundreds of fixes and enhancements.
 <!--- 70987 -->* Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled.
 
 
-<!--- 66829-->*  Magento no longer locks the `category_product_entity` table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the `category_product_entity` table. 
-
-
 <!--- 59315-->* We've improved the process of using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently. 
 
 
 <!---57564 -->* You can no longer change or fake a product price from the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and then complete an order with that faked price.
 
-<!---54320 -->* The category page now shows the current price after Magento runs a scheduled update. Previously, the category page would not update the price after running a scheduled update.	[GitHub-4945](https://github.com/magento/magento2/issues/4945)
-
-
-<!--- 56868 -->* You can now save a product with images multiple times.
 
 <!--- 70750, 67618-->* View permissions to high-level product categories now work as expected. Previously, Magento displayed only the product categories that users who belonged to the NOT_LOGGED_IN customer group were permitted to view, no matter which user logged in. Additionally, a user restricted to browse a category could still see the category in the top-level navigation menu if the page were previously cached in FPC.
 
@@ -390,8 +377,6 @@ This release contains hundreds of fixes and enhancements.
 <!--- 70346-->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**.
 
 <!--- 71656-->* Configurable products no longer show up on category page when all children are set to **enable product = No** and **display out-of-stock products = Off**.
-
-<!--- 70346-->* Magento no longer displays a configurable product on the storefront when its child products are deleted and the **show out-of-stock** setting is set to **No**.
 
 <!---59879-->* Magento no longer displays the **as low as** label for a disabled price on the Category page.
 
@@ -779,8 +764,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---68795 -->*  Magento now displays the correct order time in the Sales Order grid in the Admin panel. [GitHub-9426](https://github.com/magento/magento2/issues/9426)
 
-<!---54787 -->* The Paypal Website Payments Standard module now works as expected. [GitHub-4785](https://github.com/magento/magento2/issues/4785)
-
 
 <!--- 60587 -->* We’ve increased the size of the `sales_order_payment.cc_number_enc` field. [GitHub-7334](https://github.com/magento/magento2/issues/7334)
 
@@ -952,13 +935,6 @@ This release includes substantial improvements to Magento caching, image process
 
 
 
-
-### Pricing
-<!--- 54320 -->* The {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} page now displays current, rather than outdated,  product prices.
-
-
-
-
 <!--- 45339 -->* Cart Price rules are now applied as expected to {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} conditions. Previously, discounts set in Cart Price rules were not applied during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}.
 
 
@@ -1042,8 +1018,6 @@ This release includes substantial improvements to Magento caching, image process
 <!--- 70056-->* Sitemap image URLs now match the URLs on product pages. *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9082" target="_blank">9082</a>.*
 
 <!--- 70056-->* The sitemap is no longer generated in the wrong folder when `vhost` is connected to `/pub`. *Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.*
-
-<!--- 47607-->* We’ve corrected the location of sitemap generation when `vhost` is connected to `/pub`. [GitHub-2802](https://github.com/magento/magento2/issues/2802) 
 
 
 
@@ -1148,7 +1122,6 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
 
-<!--- 69374-->* Google Universal Analytics now tracks when Cookie Restriction is enabled. *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/9713" target="_blank">9713</a>.*
 
 <!--- 69372-->* Varnish no longer caches Cookie Restriction Mode Overlay. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
 
