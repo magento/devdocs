@@ -10,22 +10,22 @@ version: 2.0
 github_link: cloud/trouble/pro-env-management.md
 ---
 
-For existing Pro plans, you had to use SSH access to enter CLI commands for deploying and managing your Staging and Production dedicated environments. We provide new functionality to provide direct environment management through the [Project Web Interface].
+For existing Pro plans, you previously had to access Staging and Production environments using SSH access to enter CLI commands. We have added additional features to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) to directly manage these environments without SSH. To add these environments to the Project Web Interface, you need to complete a few preparation steps and enter a ticket.
 
-To access environment settings through the Project Web Interface, you need to complete a few steps to convert.
+All new projects already include these features.
 
-## Wings features {#features}
-Wings provides the following features for Staging and Production for Pro plans:
+## New features {#features}
+The new Project Web Interface provides the following features for Pro plan Staging and Production environments:
 
 * Add and manage user access to the environments
 * Merge / deploy Integration `master` to Staging and Production
 * Add and manage environment variables
 * Access the environments by SSH and URL. These links and commands are provided through the Access Links.
 
-This access does not provide the following options:
+As an important note, while you can manage Staging and Production environments, you **cannot**:
 
-* You cannot branch from these environments. Staging and Production only have a single `master` branch for syncing and receiving code from Integration.
-* You cannot create snapshots through the interface. You can use SSH access with CLI commands as needed.
+* Branch from these environments. Staging and Production only have a single `master` branch for syncing and receiving code from Integration.
+* Create snapshots through the interface. You can use SSH access with CLI commands as needed.
 
 You will need to enter support tickets to update and modify the following in Staging and Production:
 
@@ -33,7 +33,7 @@ You will need to enter support tickets to update and modify the following in Sta
 * Cron jobs via .magento.app.yaml/.platform.app.yaml in doc?
 * Redirects from routes.yaml
 
-## Prepare for Staging and Production {#prepare}
+## Prepare for adding Staging and Production {#prepare}
 When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts and permissions and environment variables from your Integration Master environment.
 
 To prepare, ensure you have all settings and environment variables set correctly.
@@ -51,26 +51,43 @@ We recommend verifying your user account access and permissions set in the Maste
 
 These user accounts and settings are included with Staging and Production. You can modify these account settings for these environments after they are created.
 
-### Verify environment variables {#prep-variables}
-Check over your environment variables. Modify or add environment variables as needed
-(will this overwrite variables? will it ignore env variables on the server directly/env.php file?)
+### Prepare variables {#prep-variables}
+When we convert your project to the new Project Web Interface, we add variables from Integration `master` to Staging and Production. You can review, modify, and add variables through the current Project Web Interface prior to conversion.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the **Projects** tab and the name of your project.
-3. Click Master to open the environment information and settings.
+3. Click the Integration Master branch to open the environment information and settings.
 4. Click the **Variables** tab and review the environment variables.
 5. If you need to update variables, click ![edit variable]({{ site.baseurl }}common/images/cloud_edit-variable.png) and modify the variable and value.
 6. To create a new variable, click **Add Variable**, enter the variable name and value.
 
-### Save environment settings {#prep-save-variables}
-If you have specific variable settings for Staging and Production, we recommend saving that information.
+For environment specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.
 
-(will they need to enter env variables through the UI? will it recognize env.php?)
-
-## Enter a ticket for enabling "Wings" {#enable}
+## Enter a ticket for updating the Project Web Interface {#enable}
 Enter a Support ticket requesting to have your project enabled with Wings. We will review the infrastructure and settings, create user and environment variables for Staging and Production environments.
 
-## Verify the managable environments {#verify}
+## Optional, move environment variables {#move-variables}
+Optionally, after conversion you can also migrate specific environment variables manually into the Project Web Interface for Staging and Production. This is not required, but supported.
+
+First, SSH into the Staging or Production environment to use CLI commands to list your variables:
+
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+2. Click the **Projects** tab and the name of your project.
+3. Click the Staging or Production environment and click Access Site for the SSH link.
+4. Use a terminal application to SSH into Staging or Production.
+5. Enter this CLI command to list all environment variables: `magento-cloud variable:list`
+
+Second, add the variables from the CLI list through the Project Web Interface:
+
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+2. Click the **Projects** tab and the name of your project.
+3. Click the Staging or Production environment to add variables.
+4. Click the **Variables** tab.
+5. If you need to update variables, click ![edit variable]({{ site.baseurl }}common/images/cloud_edit-variable.png) and modify the variable and value.
+6. To add a variable from the CLI list, click **Add Variable**, enter the variable name and value, and select the Override checkbox. This uses the variables from the Project Web Interface over the local CLI or database values.
+
+You can use CLI commands to remove the variables if you want while still accessing the environment using SSH.
+
 When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration Master and so on. Any branches you create display as children from Integration Master. For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
