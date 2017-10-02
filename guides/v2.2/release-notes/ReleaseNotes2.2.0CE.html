@@ -482,7 +482,9 @@
 </section>
 
 
-			<p>We are pleased to present Magento Open Source 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.</p>
+			<p><em>Release notes updated October 1.</em></p>
+
+<p>We are pleased to present Magento Open Source 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.</p>
 
 <h2 id="highlights">Highlights</h2>
 
@@ -557,7 +559,7 @@
   <li>You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data.</li>
 </ul>
 
-<!---56977-->
+<!---56977, 54716-->
 <ul>
   <li>We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete.</li>
 </ul>
@@ -580,11 +582,6 @@
 <!--- 62648-->
 <ul>
   <li>Magento now correctly applies <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> configuration parameters to the corresponding <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>. <a href="https://github.com/magento/magento2/issues/7943">GitHub-7943</a></li>
-</ul>
-
-<!--- 71890-->
-<ul>
-  <li>Magento no longer throws an exception when the configuration checksum is absent on a new installation.</li>
 </ul>
 
 <!--- 64085-->
@@ -615,11 +612,6 @@
 <!---71890 -->
 <ul>
   <li>Magento no longer throws an exception when the configuration checksum is absent on a new installation.</li>
-</ul>
-
-<!--- 54716-->
-<ul>
-  <li>We fixed an issue that blocked using the web installer to successfully set up Magento. Previously, if you tried to install Magento with the web installer, Magento would indicate that the readiness check failed, and installation would not complete.</li>
 </ul>
 
 <!--- 59342-->
@@ -665,11 +657,6 @@
 <!---67537 -->
 <ul>
   <li>We’ve added the <code class="highlighter-rouge">varnish:vcl:generate</code> command to create the Varnish VCL file. <em>Fix submitted by community member <a href="https://github.com/piotrkwiecinski" target="_blank">Piotr Kwiecinski</a> in pull request <a href="https://github.com/magento/magento2/pull/9286" target="_blank">9286</a>.</em></li>
-</ul>
-
-<!--- -->
-<ul>
-  <li>You can now deploy build processes on a different staging machine than the one you’re running your production environment on.</li>
 </ul>
 
 <!--- 62660 -->
@@ -790,11 +777,6 @@
   <li>Magento now displays the <strong>State/Province</strong> field on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279">GitHub-5279</a></li>
 </ul>
 
-<!---53793 -->
-<ul>
-  <li>Magento now implements the minicart maximum display recently added item setting to your shopping cart. Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750">GitHub-4750</a></li>
-</ul>
-
 <!--- 69657-->
 <ul>
   <li>Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, After an user enters credit card information, then discount code and then click <strong>Place Order</strong>. The credit card information fields are emptied and user has to enter the credit card information again to proceed with the order transaction.</li>
@@ -858,7 +840,7 @@
 
 <h3 id="catalog">Catalog</h3>
 
-<!--- 65324 -->
+<!--- 65324, 66829 -->
 <ul>
   <li>Magento no longer locks the <code class="highlighter-rouge">category_product_entity</code> table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the <code class="highlighter-rouge">category_product_entity</code> table.</li>
 </ul>
@@ -883,7 +865,7 @@
   <li>Magento now displays the <strong>This is a required field</strong> message immediately adjacent to the product options as needed during <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>. Previously, Magento displayed this message at the bottom of the checkout form.</li>
 </ul>
 
-<!--- 56582-->
+<!--- 56582, 56868-->
 <ul>
   <li>You can now save a product with images multiple times.</li>
 </ul>
@@ -984,11 +966,6 @@
   <li>Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled.</li>
 </ul>
 
-<!--- 66829-->
-<ul>
-  <li>Magento no longer locks the <code class="highlighter-rouge">category_product_entity</code> table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the <code class="highlighter-rouge">category_product_entity</code> table.</li>
-</ul>
-
 <!--- 59315-->
 <ul>
   <li>We’ve improved the process of using the WebAPI interface to save a product stock item. Previously, this type of save action worked inconsistently.</li>
@@ -997,16 +974,6 @@
 <!---57564 -->
 <ul>
   <li>You can no longer change or fake a product price from the Magento <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> and then complete an order with that faked price.</li>
-</ul>
-
-<!---54320 -->
-<ul>
-  <li>The category page now shows the current price after Magento runs a scheduled update. Previously, the category page would not update the price after running a scheduled update.	<a href="https://github.com/magento/magento2/issues/4945">GitHub-4945</a></li>
-</ul>
-
-<!--- 56868 -->
-<ul>
-  <li>You can now save a product with images multiple times.</li>
 </ul>
 
 <!--- 70750, 67618-->
@@ -1174,11 +1141,6 @@
 <!--- 71656-->
 <ul>
   <li>Configurable products no longer show up on category page when all children are set to <strong>enable product = No</strong> and <strong>display out-of-stock products = Off</strong>.</li>
-</ul>
-
-<!--- 70346-->
-<ul>
-  <li>Magento no longer displays a configurable product on the storefront when its child products are deleted and the <strong>show out-of-stock</strong> setting is set to <strong>No</strong>.</li>
 </ul>
 
 <!---59879-->
@@ -1943,11 +1905,6 @@
   <li>Magento now displays the correct order time in the Sales Order grid in the Admin panel. <a href="https://github.com/magento/magento2/issues/9426">GitHub-9426</a></li>
 </ul>
 
-<!---54787 -->
-<ul>
-  <li>The Paypal Website Payments Standard module now works as expected. <a href="https://github.com/magento/magento2/issues/4785">GitHub-4785</a></li>
-</ul>
-
 <!--- 60587 -->
 <ul>
   <li>We’ve increased the size of the <code class="highlighter-rouge">sales_order_payment.cc_number_enc</code> field. <a href="https://github.com/magento/magento2/issues/7334">GitHub-7334</a></li>
@@ -2257,12 +2214,6 @@
   <li>PHPCS can now correctly parse the syntax of PHP 7.x return types.</li>
 </ul>
 
-<h3 id="pricing">Pricing</h3>
-<!--- 54320 -->
-<ul>
-  <li>The <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">Category</span> page now displays current, rather than outdated,  product prices.</li>
-</ul>
-
 <!--- 45339 -->
 <ul>
   <li>Cart Price rules are now applied as expected to <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> conditions. Previously, discounts set in Cart Price rules were not applied during <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>.</li>
@@ -2412,11 +2363,6 @@
 <!--- 70056-->
 <ul>
   <li>The sitemap is no longer generated in the wrong folder when <code class="highlighter-rouge">vhost</code> is connected to <code class="highlighter-rouge">/pub</code>. <em>Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.</em></li>
-</ul>
-
-<!--- 47607-->
-<ul>
-  <li>We’ve corrected the location of sitemap generation when <code class="highlighter-rouge">vhost</code> is connected to <code class="highlighter-rouge">/pub</code>. <a href="https://github.com/magento/magento2/issues/2802">GitHub-2802</a></li>
 </ul>
 
 <h3 id="static-file-processing">Static file processing</h3>
@@ -2589,11 +2535,6 @@
 <!---58362-->
 <ul>
   <li>We’ve changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list – not the SKUs of all child products. <a href="https://github.com/magento/magento2/issues/6401">GitHub-6401</a></li>
-</ul>
-
-<!--- 69374-->
-<ul>
-  <li>Google Universal Analytics now tracks when Cookie Restriction is enabled. <em>Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/9713" target="_blank">9713</a>.</em></li>
 </ul>
 
 <!--- 69372-->
