@@ -10,7 +10,7 @@ level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0EE.md
 ---
-*Release notes updated October 1.* 
+*Release notes updated October 2.* 
 
 
 We are pleased to present Magento Commerce 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
@@ -175,9 +175,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!---67537 -->* We've added the `varnish:vcl:generate` command to create the Varnish VCL file. *Fix submitted by community member <a href="https://github.com/piotrkwiecinski" target="_blank">Piotr Kwiecinski</a> in pull request <a href="https://github.com/magento/magento2/pull/9286" target="_blank">9286</a>.* 
 
-
-<!--- 62660 -->*  JavaScript translations of warning messages no longer appear in the language of the primary locale  only. Previously, optimizations that we made to static content deployment inadvertently generated the content only in the language of the primary locale,  and then copied that directory to the other requested locales. 
-[GitHub-7862](https://github.com/magento/magento2/issues/7862)
 
 <!--- 69524 -->* Magento now adds a new record to the quote table and adds the  current date and time to the `created_at` field. Previously, this field was not updated. 
 
