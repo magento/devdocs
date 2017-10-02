@@ -116,9 +116,7 @@ Prior to accessing the Magento Admin panel, you need to add Admin variables to t
 
 1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2.  Open your project and select a parent branch, for example `master`.
-3. Click the Configure environment gear icon.
-
-	![Configure the environment]({{ site.baseurl }}common/images/cloud_project_gear.png){:width="184px"}
+3. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the branch name.
 4. Select the Variables tab.
 5. Click Add Variable.
 6. For the Name, enter ADMIN_EMAIL. For the value, enter your Project Owner email address.
