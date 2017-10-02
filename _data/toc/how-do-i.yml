@@ -57,18 +57,6 @@ pages:
         - label: Reset the theme to default
           url: howdoi/troubleshoot/reset_theme.html
 
-    - label: Web APIs
-      children:
-
-        - label: Create an integration
-          url: howdoi/webapi/integration.html
-
-        - label: Search using REST
-          url: howdoi/webapi/search-criteria.html
-
-        - label: Retrieve filtered responses
-          url: howdoi/webapi/filter-response.html
-
     - label: Customize checkout
       url: howdoi/checkout/checkout_overview.html
       children:

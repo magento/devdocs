@@ -1,16 +1,14 @@
 ---
 layout: default
-group: howdoi
+group: rest
 subgroup: Web APIs
 title: Retrieve filtered responses for REST APIs
 menu_title: Retrieve filtered responses
 menu_order: 3
 version: 2.0
-github_link: howdoi/webapi/filter-response.md
+github_link: rest/retrieve-filtered-responses.md
+redirect_from: /guides/v2.0/howdoi/webapi/filter-response.html
 ---
-
-## Retrieving filtered responses
-{:.no_toc}
 
 Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magneto provides a query parameter-based syntax for REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} requests that return partial responses.
 
@@ -29,13 +27,13 @@ Separate each field or object with a comma.
 
 On POST and PUT requests, Magento ignores the `fields` parameter as input, but the response includes only the requested fields and objects.
 
-## Examples
+# Examples
 {:.no_toc}
 
 
 All examples use {{site.data.var.ce}} sample data.
 
-### Simple fields
+## Simple fields
 
 The following example returns only the `sku`, `price`, and `name` for the specified product:
 
@@ -51,7 +49,7 @@ The following example returns only the `sku`, `price`, and `name` for the specif
 {% endhighlight %}
 {% endcollapsible %}
 
-### Simple fields and top-level objects with all fields
+## Simple fields and top-level objects with all fields
 
 The following example returns only the customer first name, last name, and the entire `billing_address` object from a specified order. Do not include brackets `[]` after an object name when you want to return all of the object's contents.
 
@@ -83,7 +81,7 @@ The following example returns only the customer first name, last name, and the e
 {% endhighlight %}
 {% endcollapsible %}
 
-### Top-level object with selected fields
+## Top-level object with selected fields
 
 The following example returns only the `name`, `qty`, and `sku` fields defined in an `items` object from a specified shipment:
 
@@ -101,7 +99,7 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
  {% endhighlight %}
  {% endcollapsible %}
 
-### Nested objects
+## Nested objects
 
 This example returns only the following:
 
@@ -130,7 +128,7 @@ This example returns only the following:
 {% endhighlight %}
 {% endcollapsible %}
 
-### POST operation
+## POST operation
 
 The following POST operation and payload creates a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} category named `New Category`. Magento returns only the `id`, `parent_id`, and `name` attributes
 
@@ -155,7 +153,7 @@ The following POST operation and payload creates a {% glossarytooltip 8d40d668-4
 {% endhighlight %}
 {% endcollapsible %}
 
-### Using with searchCriteria
+## Using with searchCriteria
 
 The [`searchCriteria` query parameter]({{page.baseurl}}rest/performing-searches.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
 
