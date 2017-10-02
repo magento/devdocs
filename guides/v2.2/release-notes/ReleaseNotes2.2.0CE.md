@@ -10,7 +10,7 @@ level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0CE.md
 ---
-* Release notes updated October 1.* 
+*Release notes updated October 1.* 
 
 
 We are pleased to present Magento Open Source 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
