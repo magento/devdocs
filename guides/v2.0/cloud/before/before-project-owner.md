@@ -24,6 +24,7 @@ As the Project Owner, you must complete the following, required by development a
 * Generate Magento authentication keys
 * Create the project
 * Add a project admin account
+* Add admin variables
 
 After you have completed those tasks, the project admin can manage development and deployments for you.
 
@@ -109,6 +110,22 @@ To create user accounts:
 8.	Click **Add User**.
 
 The users you add receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
+
+## Add admin variables for Admin access {#variables}
+Prior to accessing the Magento Admin panel, you need to add Admin variables to the project.
+
+1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+2.  Open your project and select Master branch.
+3. Click the Configure environment gear.
+4. Select the Variables tab.
+5. Click Add Variable.
+6. For the Name, enter ADMIN_EMAIL. For the value, enter your Project Owner email address.
+7. Save the variable.
+
+Optionally, you can also add variables for ADMIN_USERNAME and ADMIN_PASSWORD. By default, the admin username is `admin`. You should have changed the admin password as an onboarding task, using an email link the Project Owner received.
+
+* Name: ADMIN_USERNAME, Value: admin
+* Name: ADMIN_PASSWORD, Value: a password of your choice
 
 ## Blackfire and New Relic {#cloud-owner-creds}
 Your project includes [Blackfire]({{ site.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ site.baseurl }}cloud/project/project-integrate-github.html) services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.

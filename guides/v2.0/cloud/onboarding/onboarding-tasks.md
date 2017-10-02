@@ -49,7 +49,10 @@ To access and manage your project environments, the Project Owner needs to:
 * Create the project
 * Add user accounts to invite developers to the project
 * Generate and provide Magento authentication keys to added accounts
+* Add admin variables to the Project
 * Review credentials for integrated services
+
+<!--  Remove the admin variable bullet from this section when auto provisioning is added!  -->
 
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
@@ -68,7 +71,7 @@ When you initially create your project, you can access the Magento Admin panel t
 2. Click the forgot Password link and complete the process to change the password.
 3. Login to the Admin panel using the username Admin and newly changed password.
 
-These values are controlled through the Admin Panel and the environment application variables for ADMIN_USERNAME and ADMIN_PASSWORD. For details, see [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
+If you receive an error, you may need to add admin variables for ADMIN_EMAIL, ADMIN_USERNAME, and ADMIN_PASSWORD. For details, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables) or [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
 
 ## Coming soon: Onboarding Portal {#portal}
 <!-- (http://cloud.magento.com){:target="_blank"} -->
