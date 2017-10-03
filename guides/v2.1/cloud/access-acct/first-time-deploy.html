@@ -1191,14 +1191,14 @@
     
     
 
-<li class="nav-level1  " id="test-a-magento-patch-or-upgrade">
+<li class="nav-level1  " id="upgrades-and-patches">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <span>Test a Magento patch or upgrade</span>
+    <a href="/guides/v2.1/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
     
 
     
@@ -1230,6 +1230,8 @@
 
             
         </li>
+        
+        
         
         
     </ul>
@@ -1840,7 +1842,7 @@
 <p>To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you do not have these environments provisioned, create any code in a branch but do not merge it to <code class="highlighter-rouge">master</code>. Only merge after you have fully deployed across the provisioned environments.</p>
+  <p>If you are on a Pro trial and do not have Staging and Production environments provisioned, you cannot complete an initial deployment. To continue developing, create a branch from Integration <code class="highlighter-rouge">master</code>. Do not merge this code to your <code class="highlighter-rouge">master</code> branch until you have deployed it to your provisioned Staging and Production environments.</p>
 </div>
 
 <p>To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.</p>
@@ -1893,7 +1895,7 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 </div>
 
 <h3 id="cloud-live-migrate-agent">Set up your SSH agent</h3>
-<p>You can use any SSH client you prefer or see our <a href="/guides/v2.1/cloud/before/before-workspace.html#recommended-tools">Recommendeds tools</a>. For these examples, we use the OpenSSH client.</p>
+<p>You can use any SSH client you prefer or see our <a href="/guides/v2.1/cloud/before/before-workspace.html#recommended-tools">Recommended tools</a>. For these examples, we use the OpenSSH client.</p>
 
 <p>The SSH agent forwards authentication requests from Staging or Production to your working Magento system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.</p>
 
