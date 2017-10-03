@@ -8,11 +8,11 @@ menu_order: 55
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
-version: 2.0
+version: 2.2
 github_link: cloud/project/project-conf-files_services.md
 ---
 
-We provide a `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, PHP, Redis, Solr (for 2.0.X), and so on. You don't need to subscribe to external service providers.
+We provide a `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, PHP, Redis, ElasticSearch (for 2.1.X and later), and so on. You don't need to subscribe to external service providers.
 
 This file is located at `.magento/services.yaml` in your project.
 
@@ -27,7 +27,7 @@ This file is located at `.magento/services.yaml` in your project.
 
 The following sections discuss properties in `services.yaml`.
 
-## Default services {#cloud-yaml-services-default}
+## Default and supported services {#cloud-yaml-services-default}
 Your Git branch includes the following default `services.yaml` file:
 
 	mysql:
@@ -36,10 +36,6 @@ Your Git branch includes the following default `services.yaml` file:
 
 	redis:
 	   type: redis:3.0
-
-	solr:
-	   type: solr:4.10
-	   disk: 1024
 
 Modify this file to use specific and additional services in your deployment. See the [`type`](#cloud-yaml-services-type) section to see the services we support and deploy for you if you add them to the file.
 
@@ -81,12 +77,12 @@ We support and deploy the following services for you:
 
 *	[`mysql`]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html) version `10.0`
 *	[`redis`]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html) versions `2.8` and `3.0`
-*	[`solr`](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html) version `4.1`
+*	[`elasticsearch`]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) version `1.4`, `1.7`, and `2.4`
 *	[`rabbitmq`]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html) version `3.5`
 
 ### `disk` {#cloud-yaml-services-disk}
 
-`disk` specifies the size of the persistent disk storage in MB allocated to the service.
+`disk` specifies the size of the persistent disk storage (in MB) allocated to the service.
 
 For example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services. See [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel).
 
@@ -98,6 +94,6 @@ For services to be available to an application in your project, you must specify
 *	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
 *	[Set up MySQL service]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
 *	[Set up Redis service]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
-*	[Set up Solr service](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
+*	[Set up Elasticsearch service]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
 *	[Set up RabbitMQ service]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
 *	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

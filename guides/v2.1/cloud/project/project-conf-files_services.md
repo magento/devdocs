@@ -27,8 +27,8 @@ This file is located at `.magento/services.yaml` in your project.
 
 The following sections discuss properties in `services.yaml`.
 
-## Defaults {#cloud-yaml-services-default}
-If you do not provide a `services.yaml` file, the following defaults are used:
+## Default services {#cloud-yaml-services-default}
+Your Git branch includes the following default `services.yaml` file:
 
 	mysql:
 	   type: mysql:10.0
@@ -41,31 +41,54 @@ If you do not provide a `services.yaml` file, the following defaults are used:
 	   type: solr:4.10
 	   disk: 1024
 
-## `name` {#cloud-yaml-services-name}
-`name` identifies the service in the project. `name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`.
+Modify this file to use specific and additional services in your deployment. See the [`type`](#cloud-yaml-services-type) section to see the services we support and deploy for you if you add them to the file.
 
-Usually you will see in our examples that we simply call the mysql: `mysql`. Note that you can have multiple instances of each service.
+## Service values {#services}
+To add a service, you add the following data to services.yaml:
 
-<div class="bs-callout bs-callout-warning">
-    <p>Because we support multiple services of the same type (for example, multiple databases), changing the name of a service in <code>services.yaml</code> causes the existing service to be <em>permanently removed</em> before creating a new service with the new name you specify. <em>Renaming a service results in the loss of all of that service's data</em>. We strongly recommend you <a href="{{page.baseurl}}cloud/admin/admin-snap.html">snapshot your environment</a> before you change the name of an existing service.</p>
-</div>
+  name:
+     type: name:version
+     disk: value
+
+For example:
+
+  mysql:
+     type: mysql:10.0
+     disk: 2048
+
+### `name` {#cloud-yaml-services-name}
+`name` identifies the service in the project. The `name` can consist only of lower case alphanumeric characters: `a`&ndash;`z` and `0`&ndash;`9`. For example, MySQL is entered as mysql.
+
+You can have multiple instances of each service type. For example, you could have multiple MySQL databases:
+
+  mysql:
+     type: mysql:10.0
+     disk: 2048
+
+  mysql2:
+     type: mysql:10.0
+     disk: 2048
+
+Be aware, if you rename a service in `services.yaml`, the following is **permanently removed**:
+
+* The existing service before creating a new service with the new name you specify.
+* All existing data for the service is removed. We strongly recommend you [snapshot your environment]({{page.baseurl}}cloud/project/project-webint-snap.html) before you change the name of an existing service.
 
 ### `type` {#cloud-yaml-services-type}
 The `type` of your service in the format `type:version`
 
-We support and deploy the following services for you:
+We support and deploy the following services:
 
-*	`mysql` version `10.0`
-*	`redis` versions `2.8` and `3.0`
-*	`solr` version `4.0`
-*	`elasticsearch` version `1.7`
-*	`rabbitmq` version `3.5`
+*	[`mysql`]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html) version `10.0`
+*	[`redis`]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html) versions `2.8` and `3.0`
+*	[`elasticsearch`]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) version `1.4`, `1.7`, and `2.4`
+*	[`rabbitmq`]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html) version `3.5`
 
 ### `disk` {#cloud-yaml-services-disk}
 
 `disk` specifies the size of the persistent disk storage (in MB) allocated to the service.
 
-For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. See [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html).
+FFor example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services. See [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel).
 
 ## Using the services
 For services to be available to an application in your project, you must specify [*relationships*]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel) between applications and services in `.magento.app.yaml`.
