@@ -12,19 +12,17 @@ version: 2.0
 github_link: cloud/project/project-conf-files_services.md
 ---
 
-We provide a `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, PHP, Redis, Solr, and so on. You don't need to subscribe to external service providers.
+We provide a `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, PHP, Redis, Solr (for 2.0.X), ElasticSearch (for 2.1.X and later), and so on. You don't need to subscribe to external service providers.
 
 This file is located at `.magento/services.yaml` in your project.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+  <p>When you push your Git branch, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory. After deployment, the script deletes the directory and its contents. Your local development environment isn't affected.</p>
 </div>
 
 [Sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/bk-cloud.html#gethelp">Support issue</a>.</p>
-</div>
+**For Pro:** Changes you make using `.yaml` files affect your [Integration environment]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int) only. For technical reasons, neither [Staging]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage) nor <[Production]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod) environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a [Support issue]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
 
 
 The following sections discuss properties in `services.yaml`.
