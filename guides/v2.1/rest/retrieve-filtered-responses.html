@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Retrieve filtered responses for REST APIs | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/rest/retrieve-filtered-responses.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.1/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.1">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/rest/retrieve-filtered-responses.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/rest/retrieve-filtered-responses.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/rest/retrieve-filtered-responses.html">Magento 2.2</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>REST API Reference</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="overview">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.1/rest/bk-rest.html">Overview</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="rest-apis-(swagger)">
+            
+            
+        
+            
+            <a href="http://devdocs.magento.com/swagger/index_21.html">REST APIs (Swagger)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="list-of-rest-endpoints-by-module">
+            
+            
+        
+            
+            <a href="/guides/v2.1/rest/list.html">List of REST endpoints by module</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="list-of-service-names-per-module">
+            
+            
+        
+            
+            <a href="/guides/v2.1/rest/rest_endpoints.html">List of service names per module</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="generate-a-local-api-reference">
+            
+            
+        
+            
+            <a href="/guides/v2.1/rest/generate-local.html">Generate a local API reference</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="search-using-rest">
+            
+            
+        
+            
+            <a href="/guides/v2.1/rest/performing-searches.html">Search using REST</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="retrieve-filtered-search-responses">
+            
+            
+        
+            
+            <a href="/guides/v2.1/rest/retrieve-filtered-responses.html">Retrieve filtered search responses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="restricting-access-to-anonymous-web-apis">
+            
+            
+        
+            
+            <a href="/guides/v2.1/rest/anonymous-api-security.html">Restricting access to anonymous web APIs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="rest-usage-notes">
+            
+            
+        
+            
+            <a href="/guides/v2.1/rest/notes.html">REST usage notes</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.1/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.1/rest/bk-rest.html">
+            <span property="name">Overview</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Retrieve filtered responses for REST APIs</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Retrieve filtered responses for REST APIs</h1>
+
+  
+
+
+</section>
+
+
+			<p>Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magneto provides a query parameter-based syntax for REST <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> requests that return partial responses.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This feature is not available for SOAP, because SOAP does not allow partial responses. </p>
+</div>
+
+<p>You can append <code class="highlighter-rouge">?fields=&lt;field_or_object1&gt;,&lt;field_or_object2&gt;,...</code> to any GET, POST, or PUT operation to filter unimportant information from the response. <code class="highlighter-rouge">&lt;field_or_object&gt;</code> can be any of the following:</p>
+
+<ul>
+  <li>Simple top-level field</li>
+  <li>Top-level object that includes all fields</li>
+  <li>Top-level object with selected fields</li>
+  <li>Nested objects</li>
+</ul>
+
+<p>Separate each field or object with a comma.</p>
+
+<p>On POST and PUT requests, Magento ignores the <code class="highlighter-rouge">fields</code> parameter as input, but the response includes only the requested fields and objects.</p>
+
+<h1 class="no_toc" id="examples">Examples</h1>
+
+<p>All examples use Magento Open Source sample data.</p>
+
+<h2 id="simple-fields">Simple fields</h2>
+
+<p>The following example returns only the <code class="highlighter-rouge">sku</code>, <code class="highlighter-rouge">price</code>, and <code class="highlighter-rouge">name</code> for the specified product:</p>
+
+<p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/products/24-MB01?fields=sku,price,name</code></p>
+
+<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w">
+  </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Joust Duffle Bag"</span><span class="w">
+  </span><span class="s2">"price"</span><span class="err">:</span><span class="w"> </span><span class="mf">24.99</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="simple-fields-and-top-level-objects-with-all-fields">Simple fields and top-level objects with all fields</h2>
+
+<p>The following example returns only the customer first name, last name, and the entire <code class="highlighter-rouge">billing_address</code> object from a specified order. Do not include brackets <code class="highlighter-rouge">[]</code> after an object name when you want to return all of the object’s contents.</p>
+
+<p><code class="highlighter-rouge">GET http:/&lt;host&gt;/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname</code></p>
+
+<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+</span><span class="nt">"customer_firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="w">
+</span><span class="s2">"customer_lastname"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="w">
+</span><span class="s2">"billing_address"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"address_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"billing"</span><span class="w">
+  </span><span class="s2">"city"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Calder"</span><span class="w">
+  </span><span class="s2">"country_id"</span><span class="err">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+  </span><span class="s2">"customer_address_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="s2">"email"</span><span class="err">:</span><span class="w"> </span><span class="s2">"roni_cost@example.com"</span><span class="w">
+  </span><span class="s2">"entity_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+  </span><span class="s2">"firstname"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="w">
+  </span><span class="s2">"lastname"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="w">
+  </span><span class="s2">"parent_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="s2">"postcode"</span><span class="err">:</span><span class="w"> </span><span class="s2">"49628-7978"</span><span class="w">
+  </span><span class="s2">"region"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Michigan"</span><span class="w">
+  </span><span class="s2">"region_code"</span><span class="err">:</span><span class="w"> </span><span class="s2">"MI"</span><span class="w">
+  </span><span class="s2">"region_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+  </span><span class="s2">"street"</span><span class="err">:</span><span class="w"> </span><span class="s2">"6146 Honey Bluff Parkway"</span><span class="w">
+  </span><span class="s2">"telephone"</span><span class="err">:</span><span class="w"> </span><span class="s2">"(555) 229-3326"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="top-level-object-with-selected-fields">Top-level object with selected fields</h2>
+
+<p>The following example returns only the <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">qty</code>, and <code class="highlighter-rouge">sku</code> fields defined in an <code class="highlighter-rouge">items</code> object from a specified shipment:</p>
+
+<p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/shipment/2?fields=items[name,qty,sku]</code></p>
+
+<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"items"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Minerva LumaTech&amp;trade; V-Tee-XS-Blue"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WS08-XS-Blue"</span><span class="p">,</span><span class="w">
+   </span><span class="err">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+ </span></code></pre></figure>
+</div></div>
+
+<h2 id="nested-objects">Nested objects</h2>
+
+<p>This example returns only the following:</p>
+
+<ul>
+  <li>The product’s <code class="highlighter-rouge">sku</code> and <code class="highlighter-rouge">name</code></li>
+  <li>The entire <code class="highlighter-rouge">category_links</code> object, which is defined in <code class="highlighter-rouge">extension_attributes</code></li>
+  <li>The <code class="highlighter-rouge">item_id</code> and <code class="highlighter-rouge">qty</code> fields of the <code class="highlighter-rouge">stock_item</code> object, which is also defined in <code class="highlighter-rouge">extension_attributes</code></li>
+</ul>
+
+<p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]</code></p>
+
+<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MT12"</span><span class="w">
+  </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Cassius Sparring Tank"</span><span class="w">
+  </span><span class="s2">"extension_attributes"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"category_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="s2">"category_id"</span><span class="err">:</span><span class="w"> </span><span class="s2">"18"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"stock_item"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">732</span><span class="w">
+      </span><span class="s2">"qty"</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="post-operation">POST operation</h2>
+
+<p>The following POST operation and payload creates a <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span> category named <code class="highlighter-rouge">New Category</code>. Magento returns only the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">parent_id</code>, and <code class="highlighter-rouge">name</code> attributes</p>
+
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/V1/categories?fields=id,parent_id,name</code></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Category"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
+</span><span class="s2">"parent_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"New Category"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="using-with-searchcriteria">Using with searchCriteria</h2>
+
+<p>The <a href="/guides/v2.1/rest/performing-searches.html"><code class="highlighter-rouge">searchCriteria</code> query parameter</a> allows you to search across multiple objects in a collection. You can use the <code class="highlighter-rouge">fields</code> query parameter in conjunction with <code class="highlighter-rouge">searchCriteria</code> to limit the output. The question mark (?) that precedes <code class="highlighter-rouge">fields</code> in all the other examples in this document is replaced with an ampersand (&amp;).</p>
+
+<p>The following query returns only the <code class="highlighter-rouge">sku</code> and <code class="highlighter-rouge">name</code> parameters for product items whose <code class="highlighter-rouge">category_gear</code> attribute includes the value <code class="highlighter-rouge">86</code>.</p>
+
+<p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/V1/products/?searchCriteria[filter_groups][0][filters][0][field]=category_gear&amp;searchCriteria[filter_groups][0][filters][0][value]=86&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=finset&amp;fields=items[sku,name]</code></p>
+
+<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+</span><span class="nt">"items"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG04"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Aim Analog Watch"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG01"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Endurance Watch"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG03"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Summit Watch"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG05"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Cruise Dual Analog Watch"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG02"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Dash Digital Watch"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG09"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Luma Analog Watch"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG01"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Bolo Sport Watch"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG03"</span><span class="w">
+      </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Clamber Watch"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG02"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Didi Sport Watch"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 class="no_toc" id="related-topics">Related topics</h2>
+<ul>
+  <li><a href="/guides/v2.1/rest/performing-searches.html">Search using REST APIs</a></li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/retrieve-filtered-responses.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/rest/retrieve-filtered-responses.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

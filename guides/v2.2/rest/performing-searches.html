@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Search using REST APIs | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/rest/performing-searches.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.2">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/rest/performing-searches.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/rest/performing-searches.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/rest/performing-searches.html">Magento 2.2</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>REST API Reference</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="overview">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/rest/bk-rest.html">Overview</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="rest-apis-(swagger)">
+            
+            
+        
+            
+            <a href="http://devdocs.magento.com/swagger/index_22.html">REST APIs (Swagger)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="list-of-rest-endpoints-by-module">
+            
+            
+        
+            
+            <a href="/guides/v2.2/rest/list.html">List of REST endpoints by module</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="list-of-service-names-per-module">
+            
+            
+        
+            
+            <a href="/guides/v2.2/rest/rest_endpoints.html">List of service names per module</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="generate-a-local-api-reference">
+            
+            
+        
+            
+            <a href="/guides/v2.2/rest/generate-local.html">Generate a local API reference</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="search-using-rest">
+            
+            
+        
+            
+            <a href="/guides/v2.2/rest/performing-searches.html">Search using REST</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="retrieve-filtered-search-responses">
+            
+            
+        
+            
+            <a href="/guides/v2.2/rest/retrieve-filtered-responses.html">Retrieve filtered search responses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="restricting-access-to-anonymous-web-apis">
+            
+            
+        
+            
+            <a href="/guides/v2.2/rest/anonymous-api-security.html">Restricting access to anonymous web APIs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="rest-usage-notes">
+            
+            
+        
+            
+            <a href="/guides/v2.2/rest/notes.html">REST usage notes</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="modules">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Modules</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="catalog">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Catalog</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="manage-prices-for-multiple-products">
+                    
+
+                    
+                    <a  href="/guides/v2.2/rest/catalog-pricing.html">Manage prices for multiple products</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="usage-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.2/rest/catalog-notes.html">Usage notes</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/rest/bk-rest.html">
+            <span property="name">Overview</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Search using REST APIs</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Search using REST APIs</h1>
+
+  
+
+
+</section>
+
+
+			<p>POST, PUT, and DELETE requests to the REST Web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> structure) in the body of the message.</p>
+
+<p>For search APIs that invoke a <code class="highlighter-rouge">*Repository::getList(SearchCriteriaInterface *)</code> call, the searchCriteria must be specified in the <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> of the GET request. The basic pattern for specifying the criteria is</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][field]=<span class="nt">&lt;field</span><span class="na">_name</span><span class="nt">&gt;</span>
+searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][value]=<span class="nt">&lt;search</span><span class="na">_value</span><span class="nt">&gt;</span>
+searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][condition_type]=<span class="nt">&lt;operator&gt;</span></code></pre></figure>
+
+<p>where:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">field</code> is an attribute name.</li>
+  <li><code class="highlighter-rouge">value</code> specifies the value to search for.</li>
+  <li><code class="highlighter-rouge">condition_type</code> is one of the following values:</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Condition</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">eq</code></td>
+      <td>Equals.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">finset</code></td>
+      <td>A value within a set of values</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">from</code></td>
+      <td>The beginning of a range. Must be used with <code class="highlighter-rouge">to</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">gt</code></td>
+      <td>Greater than</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">gteq</code></td>
+      <td>Greater than or equal</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">in</code></td>
+      <td>In. The <code class="highlighter-rouge">value</code> can contain a comma-separated list of values.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">like</code></td>
+      <td>Like. The <code class="highlighter-rouge">value</code> can contain the SQL wildcard characters when <code class="highlighter-rouge">like</code> is specified.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">lt</code></td>
+      <td>Less than</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">lteq</code></td>
+      <td>Less than or equal</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">moreq</code></td>
+      <td>More or equal</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">neq</code></td>
+      <td>Not equal</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">nin</code></td>
+      <td>Not in. The <code class="highlighter-rouge">value</code> can contain a comma-separated list of values.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">notnull</code></td>
+      <td>Not null</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">null</code></td>
+      <td>Null</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">to</code></td>
+      <td>The end of a range. Must be used with <code class="highlighter-rouge">from</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p><code>condition_type</code> is optional if the operator is <code>eq</code>.</p>
+</div>
+
+<p>The <code class="highlighter-rouge">filter_groups</code> array defines one or more <code class="highlighter-rouge">filters</code>. Each filter defines a search term, and the <code class="highlighter-rouge">field</code>, <code class="highlighter-rouge">value</code>, and <code class="highlighter-rouge">condition_type</code> of a search term must be assigned the same index number, starting with 0. Increment additional terms as needed.</p>
+
+<p>When constructing a search, keep the following in mind:</p>
+
+<ul>
+  <li>To perform a logical OR, specify multiple <code class="highlighter-rouge">filters</code> within a <code class="highlighter-rouge">filter_groups</code>.</li>
+  <li>To perform a logical AND, specify multiple <code class="highlighter-rouge">filter_groups</code>.</li>
+  <li>You cannot perform a logical OR across different <code class="highlighter-rouge">filter_groups</code>, such as <code class="highlighter-rouge">(A AND B) OR (X AND Y)</code>. ORs can be performed only within the context of a single <code class="highlighter-rouge">filter_groups</code>.</li>
+  <li>You can only search top-level attributes.</li>
+</ul>
+
+<p>The following sections provide examples of each type of search. These examples use the Magento Open Source sample data.</p>
+
+<h2 id="simple-search">Simple search</h2>
+<p>The Magento Open Source sample data uses the <code class="highlighter-rouge">category_gear</code> field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/rest/V1/products/?
+searchCriteria[filter_groups][0][filters][0][field]=category_gear<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][value]=86<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][condition_type]=finset</code></pre></figure>
+
+<p>The system creates an array, as shown in the following pseudo-code.</p>
+
+<pre class="no-copy">
+searchCriteria =&gt; [
+  'filterGroups' =&gt; [
+    0 =&gt; [
+      'filters' =&gt; [
+         0 =&gt; [
+           'field' =&gt; 'category_gear',
+           'value' =&gt; '86',
+           'condition_type' =&gt; 'finset'
+         ]
+      ]
+    ]
+  ]
+</pre>
+
+<p>The query returns 9 items.</p>
+
+<h2 id="simple-search-using-a-timestamp">Simple search using a timestamp</h2>
+<p>The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/rest/V1/invoices?
+searchCriteria[filter_groups][0][filters][0][field]=created_at<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][condition_type]=gt</code></pre></figure>
+
+<h3 id="logical-or-search">Logical OR search</h3>
+<p>The following example searches for all products whose names contain the string <code class="highlighter-rouge">Leggings</code> or <code class="highlighter-rouge">Parachute</code>. The instances of <code class="highlighter-rouge">%25</code> in the example are converted into the SQL wildcard character <code class="highlighter-rouge">%</code>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/index.php/rest/V1/products?
+searchCriteria[filter_groups][0][filters][0][field]=name<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][value]=%25Leggings%25<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][condition_type]=like<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][1][field]=name<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][1][value]=%25Parachute%25<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][1][condition_type]=like</code></pre></figure>
+
+<p>The system creates an array, as shown in the following pseudo-code.</p>
+
+<pre class="no-copy">
+searchCriteria =&gt; [
+  'filterGroups' =&gt; [
+    0 =&gt; [
+      'filters' =&gt; [
+         0 =&gt; [
+           'field' =&gt; 'name',
+           'value' =&gt; '%25Leggings%25',
+           'condition_type' =&gt; 'like'
+         ]
+         1 =&gt; [
+           'field' =&gt; 'name',
+           'value' =&gt; '%25Parachute%25',
+           'condition_type' =&gt; 'like'
+         ]
+      ]
+    ]
+  ]
+</pre>
+
+<p>The search returns 14 products that contain the string <code class="highlighter-rouge">Leggings</code> in the <code class="highlighter-rouge">name</code> field and 14 products that contain the string <code class="highlighter-rouge">Parachute</code>.</p>
+
+<h3 id="logical-and-search">Logical AND search</h3>
+<p>This sample searches for women’s shorts that are size 31 and costs less than $30. In the CE sample data, women’s shorts have a <code class="highlighter-rouge">sku</code> value that begins with <code class="highlighter-rouge">WSH</code>. The <code class="highlighter-rouge">sku</code> also contains the size and color, such as <code class="highlighter-rouge">WSH02-31-Yellow</code>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/rest/V1/products?
+searchCriteria[filter_groups][0][filters][0][field]=sku<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][value]=WSH%2531%25<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][condition_type]=like<span class="err">&amp;</span>
+searchCriteria[filter_groups][1][filters][0][field]=price<span class="err">&amp;</span>
+searchCriteria[filter_groups][1][filters][0][value]=30<span class="err">&amp;</span>
+searchCriteria[filter_groups][1][filters][0][condition_type]=lt</code></pre></figure>
+
+<p>The system creates an array, as shown in the following pseudo-code.</p>
+
+<pre class="no-copy">
+searchCriteria =&gt; [
+  'filterGroups' =&gt; [
+    0 =&gt; [
+      'filters' =&gt; [
+         0 =&gt; [
+           'field' =&gt; 'sku',
+           'value' =&gt; 'WSH%31%',
+           'condition_type' =&gt; 'like'
+         ]
+    1 =&gt; [
+      'filters' =&gt; [
+         0 =&gt; [
+           'field' =&gt; 'price',
+           'value' =&gt; '30',
+           'condition_type' =&gt; 'lt'
+         ]
+      ]
+    ]
+  ]
+</pre>
+<p>The query returns 9 items.</p>
+
+<h3 id="logical-and-and-or-search">Logical AND and OR search</h3>
+
+<p>This sample is similar the Logical AND sample. It searches the <code class="highlighter-rouge">sku</code>s for women’s shorts (WSH%) or pants (WP%)in size 29. The system performs two logical ANDs to restrict the results to those that cost from $40 to $49.99</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/rest/V1/products?
+searchCriteria[filter_groups][0][filters][0][field]=sku<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][value]=WSH%2529%25<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][condition_type]=like<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][1][field]=sku<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][1][value]=WP%2529%25<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][1][condition_type]=like<span class="err">&amp;</span>
+searchCriteria[filter_groups][1][filters][0][field]=price<span class="err">&amp;</span>
+searchCriteria[filter_groups][1][filters][0][value]=40<span class="err">&amp;</span>
+searchCriteria[filter_groups][1][filters][0][condition_type]=from<span class="err">&amp;</span>
+searchCriteria[filter_groups][2][filters][0][field]=price<span class="err">&amp;</span>
+searchCriteria[filter_groups][2][filters][0][value]=49.99<span class="err">&amp;</span>
+searchCriteria[filter_groups][2][filters][0][condition_type]=to</code></pre></figure>
+
+<p>The query returns 37 items.</p>
+
+<h2 id="other-search-criteria">Other search criteria</h2>
+<p>The following searchCriteria can be used to determine the sort order and the number of items to return.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">searchCriteria[sortOrders][&lt;index&gt;][field]=&lt;field-name&gt;</code> - Specifies the field to sort on. By default, search results are returned in descending order. You can sort on multiple fields. For example, to sort on <code class="highlighter-rouge">price</code> first and then by <code class="highlighter-rouge">name</code>, call <code class="highlighter-rouge">searchCriteria[sortOrders][0][field]=price&amp;searchCriteria[sortOrders][1][field]=name</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">searchCriteria[sortOrders][&lt;index&gt;][direction]=ASC | DESC</code> - Specifies whether to return results in ascending (ASC) or descending (DESC) order. To expand the previous example and sort the <code class="highlighter-rouge">price</code> fields in descending order and the <code class="highlighter-rouge">name</code> fields in ascending order, call <code class="highlighter-rouge">searchCriteria[sortOrders][0][field]=price&amp;searchCriteria[sortOrders][1][field]=name&amp;searchCriteria[sortOrders][1][direction]=ASC</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">searchCriteria[pageSize]</code> - Specifies the maximum number of items to return. The value must be an integer. If the <code class="highlighter-rouge">pageSize</code> is not specified, the system returns all matches.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">searchCriteria[currentPage]</code> - Returns the current page.</p>
+  </li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/performing-searches.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/rest/performing-searches.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
