@@ -8,11 +8,11 @@ menu_order: 55
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
-version: 2.0
+version: 2.1
 github_link: cloud/project/project-conf-files_services.md
 ---
 
-We provide a `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, PHP, Redis, Solr (for 2.0.X), and so on. You don't need to subscribe to external service providers.
+We provide a `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, PHP, Redis, ElasticSearch (for 2.1.X and later), and so on. You don't need to subscribe to external service providers.
 
 This file is located at `.magento/services.yaml` in your project.
 
@@ -75,6 +75,6 @@ For services to be available to an application in your project, you must specify
 *	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
 *	[Set up MySQL service]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
 *	[Set up Redis service]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
-*	[Set up Solr service](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
+*	[Set up Elasticsearch service]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
 *	[Set up RabbitMQ service]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
 *	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
