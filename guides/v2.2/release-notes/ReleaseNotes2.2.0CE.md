@@ -110,8 +110,6 @@ This release contains hundreds of fixes and enhancements.
 <!--- 63637-->* Magento now moves the `sequence_*` table to the correct database after implementing a split database.
 
 
-<!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795)
-
 <!---71890 -->* Magento no longer throws an exception when the configuration checksum is absent on a new installation.
 
 
@@ -516,7 +514,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!---56973-->* You can now assign open-ended start and complete dates for product rules. Previously, if you left the start and end date field blanks when creating a rule, Magento would supply the start and end dates based on the save date. 
 
 
-<!---58500-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`.  
+<!---58500, 58394-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`.  
 [GitHub-6442](https://github.com/magento/magento2/issues/6442)
 
 
@@ -606,6 +604,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 63116-->* Magento now handles quotation marks in product names. Previously,  quotation marks in product names caused a JSON error on the Product page.  [GitHub-8059](https://github.com/magento/magento2/issues/8059)
 
+<!--- 60962-->* When you add an address, new custom attributes are now displayed together, along with other address details. 
 
 
 
@@ -692,6 +691,12 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 
 <!---66270 -->* The exported sheet now generates or renders data for columns that indicate associations for configurable products.
+
+<!---59743 -->* Magento no longer deletes a product after you select the Replace option while importing a product. Previously, Magento deleted the product rather than replacing it.
+
+<!---59715 -->* Magento can now import `additional_images` that are tagged with labels that contain a comma separator.
+
+<!---58289 -->* We've fixed an issue where product URL keys (for SKUs) were not auto-generated as expected during import. [GitHub-5188](https://github.com/magento/magento2/issues/5188)
 
 
 #### Integrations
@@ -791,6 +796,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 59586-->* Magento no longer creates unnecessary  loaders during checkout with an order that contains virtual products. 
 
+<!--- 57846-->* New orders no longer stay in the processing state after you click the Place Order button. Previously, new orders stayed in the processing state even after you clicked Place Order. [GitHub-5860](https://github.com/magento/magento2/issues/5860) 
 
 
 
@@ -1004,12 +1010,15 @@ This release includes substantial improvements to Magento caching, image process
 <!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
 
 
+<!---54458, 57003-->* The Product page scope selector now displays all related websites associated with a restricted user. 
+
 
 ### Search
 <!---59088-->*  Out-of-stock items no longer erroneously appear in results of layered navigation if that product option is out-of-stock.
 
 <!---56356 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
 
+<!---52905-->*  Magento now factors in the Weight attribute as expected when you use advanced search on grouped products.
 
 
 
@@ -1033,6 +1042,8 @@ This release includes substantial improvements to Magento caching, image process
 
 
 <!--- 62276-->* The State/Province field now changes to an input field as expected after you select United Kingdom when filling out the shipping address during checkout 
+
+<!--- 58664-->* The Free Shipping rule now works as expected with table rate shipping. [GitHub-6346](https://github.com/magento/magento2/issues/6346)
 
 
 
@@ -1142,6 +1153,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---70255 -->* We've fixed several issues with how Magento processes URLs with trailing slashes. *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10043" target="_blank">10043</a>.*
 
+!---60037 -->* Admin users can no longer create an empty URL key for a category. Previously, Magento let Admin users create an empty URL key, which lead to category-related errors.
 
 
 ### Varnish
@@ -1179,7 +1191,9 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---63667 -->* Searching for products via REST API using a store code in the URL returns products from all stores. [GitHub-8121](https://github.com/magento/magento2/issues/8121)
 
+<!---58348 -->* You can now use the REST API to create a configurable product with a linked child product. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a> 
 
+<!---58338 -->* The REST API now successfully handles attribute options that start with a number. [GitHub-5715](https://github.com/magento/magento2/issues/5715)
 
 
 ## Community contributions
@@ -1198,7 +1212,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 
 
-For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html).
 
 ### Installation and upgrade instructions
 

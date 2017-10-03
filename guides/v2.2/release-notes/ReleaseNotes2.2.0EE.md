@@ -49,8 +49,7 @@ Magento 2.2.0 includes multiple security enhancements. Although this release inc
 
 In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks. 
 
-[Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
-
+[Contact us](https://magento.com/company/contact-us) for more information.
 
 
 ## Known issues
@@ -112,7 +111,7 @@ This release contains hundreds of fixes and enhancements.
 
 ### Installation, upgrade, deployment
 
-<!--- 55357/53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling dependency injection. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795) 
+<!--- 55357/53777/45357-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling dependency injection. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795) 
 
 
 <!---56397, 58064-->* You can now upgrade your Magento installation when using multiple master databases for checkout, order management, and product data.
@@ -146,8 +145,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 63637-->* Magento now moves the `sequence_*` table to the correct database after implementing a split database.
 
-
-<!--- 53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) [GitHub-4795](https://github.com/magento/magento2/issues/4795)
 
 <!---71890 -->* Magento no longer throws an exception when the configuration checksum is absent on a new installation.
 
@@ -455,7 +452,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!---60098-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
 
-<!---52717-->*  You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled the price. [GitHub-4419](https://github.com/magento/magento2/issues/4419)
+<!---52717, 59649-->*  You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled the price. [GitHub-4419](https://github.com/magento/magento2/issues/4419)
 
 
 <!---60483-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page failed to list the product at all, rather than listing it as out-of-stock.
@@ -580,7 +577,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!---56973-->* You can now assign open-ended start and complete dates for product rules. Previously, if you left the start and end date field blanks when creating a rule, Magento would supply the start and end dates based on the save date. 
 
 
-<!---58500-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`.  
+<!---58500, 58394-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`.  
 [GitHub-6442](https://github.com/magento/magento2/issues/6442)
 
 
@@ -674,6 +671,9 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 63116-->* Magento now handles quotation marks in product names. Previously,  quotation marks in product names caused a JSON error on the Product page.  [GitHub-8059](https://github.com/magento/magento2/issues/8059)
 
+<!--- 59590-->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
+
+<!--- 60962-->* When you add an address, new custom attributes are now displayed together, along with other address details. 
 
 
 ### Gift cards
@@ -815,6 +815,14 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---66270 -->* The exported sheet now generates or renders data for columns that indicate associations for configurable products.
 
+<!---59743 -->* Magento no longer deletes a product after you select the Replace option while importing a product. Previously, Magento deleted the product rather than replacing it.
+
+<!---59715 -->* Magento can now import `additional_images` that are tagged with labels that contain a comma separator.
+
+
+<!---58289 -->* We've fixed an issue where product URL keys (for SKUs) were not auto-generated as expected during import. [GitHub-5188](https://github.com/magento/magento2/issues/5188)
+
+
 
 #### Integrations
 
@@ -830,7 +838,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!---56928-->* We've improved the performance of the algorithm that Magento uses to calculate batch sizes while indexing categories.  
 
 
-<!---57470 -->* Magento no longer displays an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
+<!---57470, 56097 -->* Magento no longer displays an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
 
 <!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error:  "Error 1114: Table is full".
 
@@ -916,7 +924,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 59586-->* Magento no longer creates unnecessary  loaders during checkout with an order that contains virtual products. 
 
-
+<!--- 57846-->* New orders no longer stay in the processing state after you click the Place Order button. Previously, new orders stayed in the processing state even after you clicked Place Order. [GitHub-5860](https://github.com/magento/magento2/issues/5860) 
 
 
 ### Payment methods
@@ -1132,10 +1140,14 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
 
+<!---54458, 57003-->* The Product page scope selector now displays all related websites associated with a restricted user. 
 
 
 ### Search
 <!---59088-->*  Out-of-stock items no longer erroneously appear in results of layered navigation if that product option is out-of-stock.
+
+<!---52905-->*  Magento now factors in the Weight attribute as expected when you use advanced search on grouped products.
+
 
 <!--- 71562 -->* The Elasticsearch indexer search-by-attribute functionality now works as expected.
 
@@ -1172,6 +1184,8 @@ This release includes substantial improvements to Magento caching, image process
 
 
 <!--- 62276-->* The State/Province field now changes to an input field as expected after you select United Kingdom when filling out the shipping address during checkout 
+
+<!--- 58664-->* The Free Shipping rule now works as expected with table rate shipping. [GitHub-6346](https://github.com/magento/magento2/issues/6346)
 
 
 
@@ -1242,6 +1256,9 @@ This release includes substantial improvements to Magento caching, image process
 <!--- 65657 -->* You can now preview a scheduled update for a category that contains a recently viewed block. 
 
 <!---60534-->* We’ve resolved a scheduling issue that previously resulted in Magento displaying a 404 error on most frontend pages. This occurred if you deleted a Catalog Rule with an end date, then ran an update. 
+
+<!---62646-->* You can now save simple products created in 2.0.x environments after upgrading to environments running Magento 2.1.x. Previously, you could not successfully save the opened product after upgrading.
+
 
 
 
@@ -1339,6 +1356,13 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---70255 -->* We've fixed several issues with how Magento processes URLs with trailing slashes. *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10043" target="_blank">10043</a>.*
 
+<!---60037 -->* Admin users can no longer create an empty URL key for a category. Previously, Magento let Admin users create an empty URL key, which lead to category-related errors.
+
+<!---56862 -->* Magento now rewrites URLs as expected when you save a product while running Magento in single-store mode. [GitHub-5929](https://github.com/magento/magento2/issues/5929)
+
+<!---56863 -->* Magento now rewrites URLs as expected when you save a CMS page while running Magento in single-store mode. [GitHub-5923](https://github.com/magento/magento2/issues/5923) 
+
+
 
 
 ### Varnish
@@ -1383,6 +1407,12 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---63667 -->* Searching for products via REST API using a store code in the URL returns products from all stores. [GitHub-8121](https://github.com/magento/magento2/issues/8121)
 
+<!---58348 -->* You can now use the REST API to create a configurable product with a linked child product. <a href="https://github.com/magento/magento2/issues/5243" target="_blank">(GITHUB-5243)</a> 
+
+<!---58338 -->* The REST API now successfully handles attribute options that start with a number. [GitHub-5715](https://github.com/magento/magento2/issues/5715)
+
+<!---56347 -->* We’ve fixed an issue with the REST API that previously resulted in the PayPal gateway rejecting requests. [GitHub-10410](https://github.com/magento/magento2/issues/10410)
+
 
 
 
@@ -1402,7 +1432,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 
 
-For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html).
 
 ### Installation and upgrade instructions
 
