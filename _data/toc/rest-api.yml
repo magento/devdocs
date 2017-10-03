@@ -3,17 +3,21 @@ pages:
     - label: Overview
       url: rest/bk-rest.html
       children:
-        - label: REST APIs
+        - label: REST APIs (Swagger)
           versions: ["2.0"]
           url: http://devdocs.magento.com/swagger/index_20.html
 
-        - label: REST APIs
+        - label: REST APIs (Swagger)
           versions: ["2.1"]
           url: http://devdocs.magento.com/swagger/index_21.html
 
-        - label: REST APIs
-          versions: ["2.2", "2.3"]
+        - label: REST APIs (Swagger)
+          versions: ["2.2"]
           url: http://devdocs.magento.com/swagger/index_22.html
+
+        - label: REST APIs (Swagger)
+          versions: ["2.3"]
+          url: http://devdocs.magento.com/swagger/index_23.html
 
         - label: List of REST endpoints by module
           url: rest/list.html
@@ -23,6 +27,13 @@ pages:
 
         - label: Generate a local API reference
           url: rest/generate-local.html
+
+
+        - label: Search using REST
+          url: rest/performing-searches.html
+
+        - label: Retrieve filtered search responses
+          url: rest/retrieve-filtered-responses.html
 
         - label: Restricting access to anonymous web APIs
           url: rest/anonymous-api-security.html
@@ -42,4 +53,3 @@ pages:
 
             - label: Usage notes
               url: rest/catalog-notes.html
-

@@ -39,5 +39,8 @@ pages:
         - label: Session-based authentication
           url: get-started/authentication/gs-authentication-session.html
 
+    - label: Create an integration
+      url: get-started/create-integration.html
+
     - label: Web API functional testing
       url: get-started/web-api-functional-testing.html
