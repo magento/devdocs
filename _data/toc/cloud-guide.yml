@@ -196,7 +196,7 @@ pages:
               url: cloud/live/config-reference-sens.html
 
     - label: Upgrades and Patches
-      url:cloud/project/project-upgrade-parent.html
+      url: cloud/project/project-upgrade-parent.html
       children:
         - label: Upgrade Magento Commerce (Cloud)
           url: cloud/project/project-upgrade.html
