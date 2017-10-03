@@ -591,6 +591,9 @@
     <p>If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.</p>
   </li>
   <li>
+    <p>Use the <code class="highlighter-rouge">-a</code> argument when executing the tool to auto resolve errors and prevent migration from stopping.</p>
+  </li>
+  <li>
     <p>Configure the Tool to ignore the problematic data</p>
   </li>
 </ul>
@@ -602,7 +605,7 @@
 <span class="nt">&lt;/ignore&gt;</span></code></pre></figure>
 
 <div class="bs-callout bs-callout-warning">
-   <p>Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.</p>
+   <p>Before ignoring entities by map file or using the `-a` option, make sure you do not need the affected data in your Magento 2 store.</p>
 </div>
 
 <h3 id="class-does-not-exist-but-mentioned">Class does not exist but mentioned</h3>
@@ -687,7 +690,7 @@ Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12</co
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-troubleshooting.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/migration/migration-troubleshooting.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

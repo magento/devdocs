@@ -570,11 +570,11 @@
 
 <h3 id="repositories">Repositories</h3>
 
-<p>Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a></p>
+<p>Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="&#95;blank">migration-tool</a></p>
 
 <h3 id="system-requirements">System requirements</h3>
 
-<p>Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="_blank">Magento 2</a></p>
+<p>Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a></p>
 
 <h2 id="migrate-is">Internal structure</h2>
 
@@ -585,7 +585,7 @@
 <pre>
 
 ├── etc                                    --- all configuration files
-│   ├── ce-to-ce                           --- configuration files for migration from Magento Open Source 1 to Magento Open Source 2
+│   ├── opensource-to-opensourc            --- configuration files for migration from Magento Open Source 1 to Magento Open Source 2
 │   │   ├── 1.9.1.1
 │   │   │   ├── config.xml.dist
 │   │   │   └── map.xml.dist
@@ -597,8 +597,8 @@
 │   │   ├── deltalog.xml.dist
 │   │   └── settings.xml.dist
 │   │   ├── ........
-│   ├── ce-to-ee                            --- configuration files for migration from Magento Open Source 1 to Magento Commerce 2
-│   ├── ee-to-ee                            --- configuration files for migration from Magento Commerce 1 to Magento Commerce 2
+│   ├── opensource-to-commerce              --- configuration files for migration from Magento Open Source 1 to Magento Commerce 2
+│   ├── commerce-to-commerce                --- configuration files for migration from Magento Commerce 1 to Magento Commerce 2
 │   ├── class-map.xsd
 │   ├── config.xsd
 │   ├── map.xsd
@@ -726,6 +726,26 @@
 <p>Change prefix option in case Magento was installed with prefix in database tables. It can be set for Magento 1 and Magento 2 databases. Use the “source_prefix” and “dest_prefix” configuration options accordingly.</p>
 
 <p>Configuration data is accessible via \Migration\Config class.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You can also connect to a database using the TLS protocol (i.e., using public/private cryptographic keys). Add the following optional attributes to the <code class="highlighter-rouge">database</code> element:</p>
+
+  <ul>
+    <li><code class="highlighter-rouge">ssl_ca</code></li>
+    <li><code class="highlighter-rouge">ssl_cert</code></li>
+    <li><code class="highlighter-rouge">ssl_key</code></li>
+  </ul>
+
+  <p>For example:</p>
+
+  <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">name=</span><span class="s">"magento1"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">ssl_ca=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_cert=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_key=</span><span class="s">"/path/to/file"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">name=</span><span class="s">"magento2"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">ssl_ca=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_cert=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_key=</span><span class="s">"/path/to/file"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/destination&gt;</span></code></pre></figure>
+
+</div>
 
 <h2 id="step-internals">Step internals</h2>
 
@@ -1098,7 +1118,7 @@ PHPUnit 4.1.0 by Sebastian Bergmann.
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-tool-internal-spec.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/migration/migration-tool-internal-spec.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

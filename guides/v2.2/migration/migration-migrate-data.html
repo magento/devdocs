@@ -580,7 +580,7 @@
 <h2 id="migrate-data-cmd">Run the data migration command</h2>
 <p>To start migrating data, run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento migrate:data [-r|--reset] {&lt;path to config.xml&gt;}
+<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento migrate:data [-r|--reset] [-a|--auto] {&lt;path to config.xml&gt;}
 </code></pre>
 </div>
 
@@ -588,7 +588,10 @@
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration</p>
+    <p><code class="highlighter-rouge">[-a|--auto]</code> is an optional argument that prevents migration from stopping when it encounters integrity check errors.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
   </li>
   <li>
     <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">&lt;path</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">config.xml&gt;</span><span class="p">}</span></code> is the absolute file system path to <code class="highlighter-rouge">config.xml</code>; this argument is required</p>
@@ -658,7 +661,7 @@ To know if the issues have been resolved successfully, run the Data Migration To
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-migrate-data.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/migration/migration-migrate-data.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

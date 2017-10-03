@@ -658,6 +658,26 @@
 
 <p>When finished, save your changes to <code class="highlighter-rouge">config.xml</code> and exit the text editor.</p>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You can also connect to a database using the TLS protocol (i.e., using public/private cryptographic keys). Add the following optional attributes to the <code class="highlighter-rouge">database</code> element:</p>
+
+  <ul>
+    <li><code class="highlighter-rouge">ssl_ca</code></li>
+    <li><code class="highlighter-rouge">ssl_cert</code></li>
+    <li><code class="highlighter-rouge">ssl_key</code></li>
+  </ul>
+
+  <p>For example:</p>
+
+  <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">name=</span><span class="s">"magento1"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">ssl_ca=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_cert=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_key=</span><span class="s">"/path/to/file"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">name=</span><span class="s">"magento2"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">ssl_ca=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_cert=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_key=</span><span class="s">"/path/to/file"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/destination&gt;</span></code></pre></figure>
+
+</div>
+
 <h2 id="migration-config">Work with configuration and mapping files</h2>
 
 <p>The Data Migration Tool uses <em>mapping files</em> to enable you to perform custom database mapping between your Magento 1 and Magento 2 databases, including:</p>
