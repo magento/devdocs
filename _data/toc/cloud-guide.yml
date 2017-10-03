@@ -195,8 +195,8 @@ pages:
             - label: Sensitive configuration paths reference
               url: cloud/live/config-reference-sens.html
 
-    - label: Test a Magento patch or upgrade
-      url:
+    - label: Upgrades and Patches
+      url:cloud/project/project-upgrade-parent.html
       children:
         - label: Upgrade Magento Commerce (Cloud)
           url: cloud/project/project-upgrade.html
