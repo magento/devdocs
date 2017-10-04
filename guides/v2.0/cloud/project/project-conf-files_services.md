@@ -57,17 +57,15 @@ For example:
      disk: 2048
 
 ### `name` {#cloud-yaml-services-name}
-`name` identifies the service in the project. The `name` can consist only of lower case alphanumeric characters: `a`&ndash;`z` and `0`&ndash;`9`. For example, MySQL is entered as mysql.
+`name` identifies the service in the project. The `name` can consist only of lower case alphanumeric characters: `a`&ndash;`z` and `0`&ndash;`9`. For example, Redis is entered as redis.
 
-You can have multiple instances of each service type. For example, you could have multiple MySQL databases:
+You can have multiple instances of each service type. For example, you could have multiple Redis instances:
 
-  mysql:
-     type: mysql:10.0
-     disk: 2048
+  redis:
+     type: redis:3.0
 
-  mysql2:
-     type: mysql:10.0
-     disk: 2048
+  redis2:
+     type: redis:3.0
 
 Be aware, if you rename a service in `services.yaml`, the following is **permanently removed**:
 
