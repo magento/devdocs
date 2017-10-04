@@ -80,7 +80,7 @@ foreach ($relationships['mq'] as $endpoint) {
 ## Connect to RabbitMQ
 For debugging purposes, it's sometimes useful to directly connect to a service instance in one of the following ways:
 
-*   [From your local development environment](#cloud-rabbitmq-conn-loc)
+*   [Connect from your local development environment](#cloud-rabbitmq-conn-loc)
 *   [Connect from the application](#cloud-rabbitmq-conn-cont)
 *   [Connect from your PHP application](#cloud-rabbitmq-conn-php)
 
