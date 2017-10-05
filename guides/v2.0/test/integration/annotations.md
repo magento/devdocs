@@ -13,12 +13,12 @@ The following annotations are available in integration tests:
 
 Name|Annotation|Format|Description
 ---|---|---|---
-Application Isolation|[`@magentoAppIsolation`]|`@magentoAppIsolation enabled|disabled`|Many integration tests rely on application state, which can be altered during execution of some tests. Such changes to the environment may cause a failure of other tests. The integration testing framework keeps tests relatively isolated and provides optimal performance simultaneously. Isolation can be controlled using this annotation.
-Configuration Fixture|[`@magentoConfigFixture`]|`@magentoConfigFixture [<store_code>_store] <config_path> <config_value>`|Allows Magento configuration values to be set for individual tests, then reverted to their original state following test execution.
-Database Isolation|[`@magentoDbIsolation`]| `@magentoDbIsolation enabled|disabled`|Isolates database changes, utilizing database transaction mechanism: a transaction must be started before the test, transaction commit must be avoided during the test, and the transaction must be rolled back after the test.
-Data Fixture|[`@magentoDataFixture`]|`@magentoDataFixture <script_filename>|<method_name>`|Makes available to prepare database data as a precondition for a specific test or test case and then revert it automatically.
+Application Isolation|[`@magentoAppIsolation`]|`@magentoAppIsolation enabled|disabled`|Enables or disables application isolation when you run tests. When enabled, an application state after a test run will be the same as before the test run. For example, you should enable it, when you want to create sessions in a test, but you don't want them to affect other tests.
+Configuration Fixture|[`@magentoConfigFixture`]|`@magentoConfigFixture [<store_code>_store] <config_path> <config_value>`|Sets up configuration settings for a particular test. The list of settings is stored in the `core_config_data` database table. After the test execution, the settings are reverted to their original state.
+Database Isolation|[`@magentoDbIsolation`]|`@magentoDbIsolation enabled|disabled`|Enables or disables database isolation. Enabled by default. All data, required for a test, live during transaction only. Any test results won't be written in a database.
+Data Fixture|[`@magentoDataFixture`]|`@magentoDataFixture <script_filename>|<method_name>`|Файлы в котороых мы создаем тестовые сущности на которых будет ранится тест. Фикстуры хранятся помодульно в интеграционных тестах. Makes available to prepare database data as a precondition for a specific test or test case and then revert it automatically.
 Application Area|[`@magentoAppArea`]|`@magentoAppArea adminhtml|frontend|global`|Configures test environment in the context of specified application area.
-Enable/Disable Cache|[`@magentoCache`]|`@magentoCache <type>|all enabled|disabled`|Some integration tests introduce fixtures that may leave residue in cache. The cache may carry over into other tests, thus corrupting them. Using this directive, it is possible to disable certain cache segment (or all of them), thus preventing isolation problems.
+Enable/Disable Cache|[`@magentoCache`]|`@magentoCache <type>|all enabled|disabled`|Если не нужен кэш, это может влиять на другие тесты. Some integration tests introduce fixtures that may leave residue in cache. The cache may carry over into other tests, thus corrupting them. Using this directive, it is possible to disable certain cache segment (or all of them), thus preventing isolation problems.
 Register Components|[`@magentoComponentsDir`]|`@magentoComponentsDir <dir_path>`|Registers fixture components from specified directory (recursively). Unregisters the components after the test is finished.
 
 ### Applying annotations
@@ -175,7 +175,7 @@ class Some_Class_ToTest extends PHPUnit_Framework_TestCase
 
 ## `@magentoAppIsolation`
 
-Many integration tests rely on application state, which can be altered during execution of some tests. Such changes to the environment may cause the failure of other tests. The integration testing framework uses default policies that keep tests relatively isolated and provide optimal performance simultaneously. Isolation can be controlled using the @magentoAppIsolation annotation.
+Many integration tests rely on application state, which can be altered during execution of some tests. Such changes to the environment may cause the failure of other tests. The integration testing framework uses default policies that keep tests relatively isolated and provide optimal performance simultaneously. Isolation can be controlled using the `@magentoAppIsolation` annotation.
 
 ``` php?start_inline=1
 /**
@@ -297,6 +297,7 @@ class BarTest extends \PHPUnit_Framework_TestCase
 ```
 
 Note:
+
 - The class annotation (`"@magentoCache all enabled"`) will cause every test method to run with all cache types enabled, unless a method defines own "@magentoCache"
 - If a method defines own "@magentoCache", it will completely override the value that may have been set for class. `The values between class and method are not combined in any way.`
 - There may be multiple "@magentoCache" directives specified and their order matters:
@@ -647,7 +648,7 @@ This restriction is necessitated by the way PHPUnit backs up global variables, i
 
 ## `@magentoDbIsolation`
 
-Sometimes integration tests make changes in the database. To isolate these changes, database transaction mechanism is utilized: a transaction must be started before the test, transaction commit must be avoided during the test, and the transaction must be rolled back after the test. Annotation @magentoDbIsolation is used for that purpose.
+Sometimes integration tests make changes in the database. To isolate these changes, database transaction mechanism is utilized: a transaction must be started before the test, transaction commit must be avoided during the test, and the transaction must be rolled back after the test. Annotation `@magentoDbIsolation` is used for that purpose.
 
 
 **Database Isolation Annotation Synopsis**
