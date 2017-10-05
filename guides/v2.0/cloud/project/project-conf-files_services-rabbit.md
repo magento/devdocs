@@ -26,7 +26,7 @@ To get this information used for configurations and settings:
 1. SSH into the Integration environment with RabbitMQ installed and configured.
 2. Enter the following command to pretty-print connection information for RabbitMQ:
 
-    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
 
 The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for RabbitMQ:
 
