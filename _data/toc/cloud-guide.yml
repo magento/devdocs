@@ -84,7 +84,7 @@ pages:
               url: cloud/access-acct/first-time-setup_import-import.html
 
     - label: Configure Magento Commerce (Cloud)
-      url: cloud/access-acct/first-time-setup.html
+      url: cloud/configure/configuration-overview.html
       children:
         - label: Set up Fastly
           url: cloud/access-acct/fastly.html
