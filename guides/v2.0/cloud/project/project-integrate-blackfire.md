@@ -112,14 +112,14 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 Next, modify the `.magento.app.yaml` file:
 
 1.	Use a text editor to locate and edit `<project root dir>/.magento.app.yaml` in your branch.
-2.	Add the following values to the `extensions` block under `runtime`. You can click the copy button in the Blackfire Magento Cloud integration page.
+2.	Enter the following code in the `extensions` block under `runtime`.
 
 		    - name: blackfire
 		      configuration:
 		         server_id: "<blackfire Server ID>"
 		         server_token: "<blackfire Server token>"
 
-	Change `<blackfire Server ID>` and `<blackfire Server token>` to the values from your Blackfire account.
+	Change `<Blackfire Server ID>` and `<Blackfire Server token>` to the values from your Blackfire account.
 
 	For example:
 
@@ -131,8 +131,8 @@ Next, modify the `.magento.app.yaml` file:
 		    - json
 		    - name: blackfire
 		      configuration:
-		         server_id: "<blackfire Server ID>"
-		         server_token: "<blackfire Server token>"
+		         server_id: "12345677890123456789012345678901234567890"
+		         server_token: "abcdefghi123456-12345667788-odjfvfuvfjvf-29847r87:19283475y6576"
 3.	Save your changes to `.magento.app.yaml` and exit the text editor.
 4.	Add, commit, and push your changes to the environment:
 
@@ -149,7 +149,8 @@ Add project variables for Blackfire for the server ID and token. You can add the
 2.	Log in to your {{site.data.var.ece}} project.
 
 		magento-cloud login
-3. Copy and enter commands for creating the project variables. Copy these commands directly from the Blackfire Magento Cloud integration page. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:
+3. Copy the commands from step 3 on the Blackfire Magento Cloud integration page.
+4. Paste and enter the commands in the Magento Cloud CLI. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:
 
 		magento-cloud --project='<Project ID>' project:variable:set env:BLACKFIRE_SERVER_ID <Blackfire Server ID>
 		magento-cloud --project='<Project ID>' project:variable:set env:BLACKFIRE_SERVER_TOKEN <Blackfire Server Token>
