@@ -1,0 +1,1 @@
+../../../v2.2/mrg/b2b/b2b-intro.md

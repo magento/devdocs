@@ -16,8 +16,6 @@ github_link: release-notes/bk-release-notes.md
 
 Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-notes.html)?
 
-Looking for [Magento Commerce (Cloud) Release Notes]({{ site.gdeurl }}cloud/release-notes/CloudReleaseNotes.html)?
-
 
 ## Backward-incompatible changes
 
@@ -27,3 +25,4 @@ Looking for [Magento Commerce (Cloud) Release Notes]({{ site.gdeurl }}cloud/rele
 
 * [Magento Open Source third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
 * [Magento Commerce third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
+* [Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}release-notes/thirdparty-mccloud.html)

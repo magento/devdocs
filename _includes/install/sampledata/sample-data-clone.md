@@ -7,7 +7,7 @@ If you're not a contributing developer, choose one of the other options displaye
 
 Contributing developers can use this method of installing sample data *only* if all of the following are true:
 
-*   You use Magento CE
+*   You use {{site.data.var.ce}}
 *   You <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">cloned the Magento 2 repository</a>.
 
 <div class="bs-callout bs-callout-warning">
@@ -57,7 +57,7 @@ fatal: The remote end hung up unexpectedly</pre>
 7.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
         
-        php -f build-sample-data.php -- --ce-source="<your Magento CE install dir>"
+        php -f build-sample-data.php -- --ce-source="<your {{site.data.var.ce}} install dir>"
 9.  Wait for the command to complete.
 
 10. See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.
@@ -84,7 +84,7 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 5.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
 
-        php -f build-sample-data.php -- --ce-source="<your Magento CE install dir>"
+        php -f build-sample-data.php -- --ce-source="<your {{site.data.var.ce}} install dir>"
 
     For example,
 
@@ -120,7 +120,7 @@ To set file system permissions and ownership on the sample data repository:
         find . -type d -exec chmod g+ws {} \;
 3.  Clear static files:
 
-        cd <your Magento CE install dir>/var
+        cd <your {{site.data.var.ce}} install dir>/var
         rm -rf cache/* page_cache/* generation/*
  
 <!-- ABBREVIATIONS -->

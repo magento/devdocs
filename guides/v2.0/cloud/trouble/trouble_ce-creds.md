@@ -26,7 +26,7 @@ To see the error log:
 	![View the log for a failed deployment]({{ site.baseurl }}common/images/cloud_deploy-failure-creds.png){:width="600px"}
 
 ### Solution
-To resolve this issue, you must clone the project locally and update `auth.json` with the correct Magento EE [authorization keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
+To resolve this issue, you must clone the project locally and update `auth.json` with the correct {{site.data.var.ee}} [authorization keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
 
 Make sure you're using your own keys, and *not* [shared account keys](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){:target="_blank"}.
 
@@ -52,8 +52,8 @@ To resolve the issue with credentials:
 
 1.	If you haven't done so already, change to the project root directory.
 2.	Open `auth.json` in a text editor.
-3.	Change the value of `username` to your Magento EE public key.
-4.	Change the value of `password` to your Magento EE private key.
+3.	Change the value of `username` to your {{site.data.var.ee}} public key.
+4.	Change the value of `password` to your {{site.data.var.ee}} private key.
 5.	Save your changes to `auth.json` and exit the text editor.
 6.	Update project dependencies:
 

@@ -6,10 +6,9 @@ title: RabbitMQ
 menu_title: RabbitMQ (Magento Commerce only)
 menu_order: 50
 version: 2.0
+ee_only: true
 github_link: install-gde/prereq/install-rabbitmq.md
 ---
-
-![EE]({{ site.baseurl }}common/images/ee-only_large.png)
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 You must install and configure [RabbitMQ](http://rabbitmq.com){:target="&#95;blank"} _after_ installing {{site.data.var.ce}} or _before_ installing {{site.data.var.ee}}.

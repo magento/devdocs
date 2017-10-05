@@ -55,4 +55,4 @@ For complete steps, see [Set up a project and dev workspace]({{ page.baseurl }}c
 * [Branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
 * [Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
 * [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html)
-* [First steps for importing Magento EE]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)
+* [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)

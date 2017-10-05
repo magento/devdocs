@@ -13,7 +13,7 @@ redirect_from:
   - guides/v2.1/install-gde/install/dev_updater.html
 ---
 
-The following topics apply to you *only* if you used `git clone` to install the Magento CE GitHub repository. This usually means you contribute code to the Magento CE codebase.
+The following topics apply to you *only* if you used `git clone` to install the {{site.data.var.ce}} GitHub repository. This usually means you contribute code to the {{site.data.var.ce}} codebase.
 
 <div class="bs-callout bs-callout-warning">
     <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>

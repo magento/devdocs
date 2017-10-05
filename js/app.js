@@ -18,6 +18,7 @@ $(function() {
   //= include _includes/search.js
   //= include _includes/tutorial.js
   //= include _includes/videos.js
+  //= include _includes/left-navigation.js
 
 });
 // END document ready

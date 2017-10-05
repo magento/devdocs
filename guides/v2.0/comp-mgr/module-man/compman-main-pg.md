@@ -62,7 +62,7 @@ To choose whether to upgrade or uninstall components:
 <h2 id="compman-access-new">Install new purchases</h2>
 A *new purchase* can be any of the following:
 
-*	Magento CE or EE sample data if it hasn't been installed yet.
+*	{{site.data.var.ce}} or {{site.data.var.ee}} sample data if it hasn't been installed yet.
 
 	You don't need to go to Magento Marketplace and request sample data; you can install it at any time.
 

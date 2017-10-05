@@ -46,6 +46,9 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 * [Composer](https://getcomposer.org/download/){:target="_blank"} - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
 	For more information, see [How Cloud uses Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
+## Web server (local) {#webserver}
+We strongly recommend installing [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}install-gde/prereq/apache.html), {{site.data.var.ece}} uses nginx. To have your local as close to cloud installations as possible, install and configure nginx.
+
 ## PHP (local) {#php}
 Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php){:target="_blank"}.
 
@@ -85,9 +88,6 @@ Before working with your {{site.data.var.ece}} project, make sure you set the PH
 		*	CentOS: `service httpd restart`
 		*	Ubuntu: `service apache2 restart`
 	*	nginx: `service nginx restart`
-
-## Web server (local) {#webserver}
-We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server.
 
 ## Database (local) {#database}
 

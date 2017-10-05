@@ -1,16 +1,18 @@
 ---
 layout: default
-group: cloud
-subgroup: 030_ReleaseNotes
-title: Magento Enterprise Cloud Edition Release Notes
-menu_title: Magento Enterprise Cloud Edition Release Notes
-menu_order: 1
-menu_node: parent
+group: release-notes
+subgroup: 02_rel-notes
+title: Magento Commerce (Cloud) 2.0.x Release Notes
+menu_title: Magento Commerce (Cloud) 2.0.x Release Notes
+menu_order: 325
+menu_node:
+level3_menu_node: level3parent
+level3_subgroup: mccloud-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes.md
 ---
 
-Release Notes provide important information about changes, fixes, and known issues in Magento Commerce (Cloud) releases.
+Release Notes provide important information about changes, fixes, and known issues in {{site.data.var.ece}} releases.
 
 The following Release Notes are available:
 
@@ -27,8 +29,7 @@ The following Release Notes are available:
 
 
 ## Test your upgrade locally
-To test and implement your Magento Commerce (Cloud) upgrade, see [Test a Magento upgrade]({{ page.baseurl }}cloud/project/project-upgrade.html).
+To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}cloud/project/project-upgrade.html).
 
 ## Magento Enterprise Edition Release Notes
-For information about Magento Commerce, see [Magento 2.1 Release Notes]({{ site.gdeurl21 }}release-notes/release-notes.html). 
-
+For information about Magento Commerce, see [Magento 2.1 Release Notes]({{ site.gdeurl21 }}release-notes/release-notes.html).

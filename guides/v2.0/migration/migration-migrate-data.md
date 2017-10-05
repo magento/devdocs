@@ -26,7 +26,7 @@ To start migrating data, run:
 
 where:
 
-* `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration
+* `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required
 

@@ -42,7 +42,7 @@ This release includes enhancements to improve the security of your Magento appli
 ### Known issues
 Magento 2.1.0 GA includes the following known issues:
 
-<!--- 54447-->* A developer who attempts to upgrade the Magento EE software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
+<!--- 54447-->* A developer who attempts to upgrade the {{site.data.var.ee}} software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
 
 To work around this issue, run the following commands in the order shown:
 
@@ -1122,7 +1122,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 48079-->* Resolved issues with shipping providers for one-page checkout.
 
-<!--- 48094-->* Updated packages on repo.magento.com to remove conflicts between Magento CE and EE components.
+<!--- 48094-->* Updated packages on repo.magento.com to remove conflicts between {{site.data.var.ce}} and {{site.data.var.ee}} components.
 
 <!--- 48171-->* User notifications work as expected.
 

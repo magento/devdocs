@@ -58,8 +58,7 @@ Use the following command to return a list of message queue consumers:
     ./bin/magento queue:consumers:list
 
 #### Related Topics
-*   [RabbitMQ Overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-*   [Configure message queues]({{page.baseurl}}config-guide/mq/config-mq.html)
+*   [Message Queues Overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
 *   [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html)
 *   [Command-line configuration]({{page.baseurl}}config-guide/cli/config-cli-subcommands.html)
-*   [Message Queues]({{page.baseurl}}extension-dev-guide/message-queues.html)
+*   [Message Queues]({{page.baseurl}}extension-dev-guide/message-queues/message-queues.html)
