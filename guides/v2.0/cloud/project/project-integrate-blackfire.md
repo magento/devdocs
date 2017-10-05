@@ -55,7 +55,7 @@ We recommend using their installation guide to walk you through the process:
 4. Scroll to the bottom and locate the Server ID and Server Token for the environment. You will need these values for the instructions.
 5. Open [this guide](https://blackfire.io/docs/up-and-running/installation){:target="_blank"}, select the Operating System, and follow the instructions.
 
-## Integrate Blackfire in development {#dev}
+## Integrate Blackfire in Integration {#dev}
 We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see [their guide.](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud){:target="_blank"}. You can integrate with Pro's Integration environment and Starter's development branches.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -68,11 +68,24 @@ These instructions assume you have fully set up your [local workspace]({{page.ba
 2. Select the Integration and Development environment in the **Current Environment** list.
 3. Select the Builds tab. In the Builds side panel, click the info icon next to Magento Cloud. This opens a list of commands you will need to execute in order to enable the Blackfire integration.
 
-	![Promote an admin]({{ site.baseurl }}common/images/cloud_blackfire-builds.png)
+	![Click info icon]({{ site.baseurl }}common/images/cloud_blackfire-builds.png)
 
+	A page like the following opens with additional steps to complete the integration. The marked out content is your Project ID.
+
+	![Blackfire Magento Cloud integragtion]({{ site.baseurl }}common/images/cloud_blackfire-integration.png)
+
+The following sections include instructions for completing this list of integration tasks. You can keep this page open to follow and copy information direcrtly.
+
+* [Add Blackfire to .magento.app.yaml](#magentoappyaml)
+* [Add project variables](#variables)
+* [Add Blackfire integration to the project](#integration)
+* [Add a default route](#route)
+* [Save changes in Blackfire](#save)
+
+### Add Blackfire to .magento.app.yaml {#magentoappyaml}
 To enable and integrate Blackfire into your code, you will modify the `.magento.app.yaml` file. You can push these settings into your remote Git branch, merge, and deploy across all environments including Staging and Production.
 
-We recommend working in a branch and creating a snapshot prior to installing.
+We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the `.magento.app.yaml` file. If you need instructions creating a branch, complete the following:
 
 1.	SSH into your local Magento workspace.
 2.	Log in to your {{site.data.var.ece}} project.
@@ -99,14 +112,14 @@ We recommend working in a branch and creating a snapshot prior to installing.
 Next, modify the `.magento.app.yaml` file:
 
 1.	Use a text editor to locate and edit `<project root dir>/.magento.app.yaml` in your branch.
-2.	Add the following values to the `extensions` block under `runtime:`
+2.	Enter the following code in the `extensions` block under `runtime`.
 
 		    - name: blackfire
 		      configuration:
 		         server_id: "<blackfire Server ID>"
 		         server_token: "<blackfire Server token>"
 
-	Change `<blackfire Server ID>` and `<blackfire Server token>` to the values from your Blackfire account.
+	Change `<Blackfire Server ID>` and `<Blackfire Server token>` to the values from your Blackfire account.
 
 	For example:
 
@@ -118,8 +131,8 @@ Next, modify the `.magento.app.yaml` file:
 		    - json
 		    - name: blackfire
 		      configuration:
-		         server_id: "<blackfire Server ID>"
-		         server_token: "<blackfire Server token>"
+		         server_id: "12345677890123456789012345678901234567890"
+		         server_token: "abcdefghi123456-12345667788-odjfvfuvfjvf-29847r87:19283475y6576"
 3.	Save your changes to `.magento.app.yaml` and exit the text editor.
 4.	Add, commit, and push your changes to the environment:
 
@@ -128,6 +141,85 @@ Next, modify the `.magento.app.yaml` file:
 		git push origin
 
 	If errors display during deployment, open `.magento.app.yaml` and check the syntax. Check indentation and spelling and try again.
+
+### Add project variables {#variables}
+Add project variables for Blackfire for the server ID and token. You can add these using the Magento Cloud CLI or the Project Web Interface. The following instructions walk through adding them using CLI commands.
+
+1.	SSH into your local Magento workspace.
+2.	Log in to your {{site.data.var.ece}} project.
+
+		magento-cloud login
+3. Copy the commands from step 3 on the Blackfire Magento Cloud integration page.
+4. Paste and enter the commands in the Magento Cloud CLI. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:
+
+		magento-cloud --project='<Project ID>' project:variable:set env:BLACKFIRE_SERVER_ID <Blackfire Server ID>
+		magento-cloud --project='<Project ID>' project:variable:set env:BLACKFIRE_SERVER_TOKEN <Blackfire Server Token>
+
+### Add Blackfire integration to the project {#integration}
+Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{page.baseurl}}cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
+
+1.	SSH into your local Magento workspace.
+2.	Log in to your {{site.data.var.ece}} project.
+
+		magento-cloud login
+3. Copy and enter the integration commands from the Blackfire Magento Cloud integration page.
+
+		magento-cloud integration:add \
+		--project='<Project ID>' \
+		--type=webhook \
+		--url='<Blackfire provided URL>'
+4. A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the {{site.data.var.ece}} project. Either request your permission be upgraded or have someone else who is an admin run this command.
+
+### Add a default route {#route}
+If you do not have a default route specified in `routes.yaml`, or want to define which route to use instead of the default route, you will add it to Blackfire and `routes.yaml`.
+
+Add route information on the Blackfire Magento Cloud integration page:
+
+1. Locate step 5 and enter the default route. It should look like `https://example.com/` or `http://*.{default}/`. If you leave this field blank, we will try the following keys in this order: `https://{default}/`, `https://www.{default}/`, `http://{default}/`, `http://www.{default}/`.
+2. If you use a wildcard `*` in step 5 for the default rote, you need to enter a resolved value for the `*` value in step 6. Otherwise, leave step 6 empty. For example, if you specified the route key `https://*.{default}` in step 5, you would need you to specify a route placeholder in step 6.
+
+If adding a route to Blackfire, make sure to add the default route to `routes.yaml`:
+
+1. SSH into your local Magento workspace.
+2.	Log in to your {{site.data.var.ece}} project.
+
+		magento-cloud login
+3.	List projects:
+
+		magento-cloud project:list
+4.	List environments in the project:
+
+		magento-cloud environment:list -p <project ID>
+5.	See what branch you're currently in, if any.
+
+		git branch
+6.	If necessary, check out an existing branch:
+
+		magento-cloud environment:checkout <environment ID>
+
+	You can also create a new branch using the `magento-cloud environment:branch` command.
+7.	Back up the environment using a snapshot:
+
+		magento-cloud snapshot:create -e <environment ID>
+
+8.	Use a text editor to locate and edit `<project root dir>/magento/routes.yaml` in your branch.
+9.	Add the route the file. For details, see [`routes.yaml`](({{page.baseurl}}cloud/project/project-conf-files_routes.html)). Here's an example:
+
+		"http://{default}/":
+		type: upstream
+		upstream: "blackfire:php"
+10.	Save your changes to `routes.yaml` and exit the text editor. It should look like `https://example.com/` or `http://*.{default}/`.
+If you leave this field blank, we will try the following keys in this order: `https://{default}/`, `https://www.{default}/`, `http://{default}/`, `http://www.{default}/`.
+11.	Add, commit, and push your changes to the environment:
+
+		git add -A
+		git commit -m "<message>"
+		git push origin
+
+	If errors display during deployment, open `routes.yaml` and check the syntax. Check indentation and spelling and try again.
+
+### Save changes in Blackfire {#save}
+With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and conncetions with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
 
 ## Profile your store {#profile}
 To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see [Blackfire's resources](#resources).
