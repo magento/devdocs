@@ -192,7 +192,7 @@ All features available in the [Project Web Interface]({{ page.baseurl }}cloud/pr
 1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.	In a terminal, enter the command:
 
-		<pre>curl -sS https://platform.sh/cli/installer | php</pre>
+		curl -sS https://platform.sh/cli/installer | php
 
 For full installation and usage information, see Platform.sh [CLI (Command Line Interface)](https://docs.platform.sh/gettingstarted/cli.html){:target="_blank"} and their [GitHub content](https://github.com/platformsh/platformsh-cli/blob/master/README.md#installation){:target="_blank"}.
 
