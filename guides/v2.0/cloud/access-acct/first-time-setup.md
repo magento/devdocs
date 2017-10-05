@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: Set up local development environment
-menu_title: Set up local development environment
+title: First-time local development setup
+menu_title: First-time local development setup
 menu_order: 1
 menu_node: parent
 version: 2.0
