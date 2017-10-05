@@ -55,7 +55,7 @@ We recommend using their installation guide to walk you through the process:
 4. Scroll to the bottom and locate the Server ID and Server Token for the environment. You will need these values for the instructions.
 5. Open [this guide](https://blackfire.io/docs/up-and-running/installation){:target="_blank"}, select the Operating System, and follow the instructions.
 
-## Integrate Blackfire in development {#dev}
+## Integrate Blackfire in Integration {#dev}
 We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see [their guide.](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud){:target="_blank"}. You can integrate with Pro's Integration environment and Starter's development branches.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -78,7 +78,9 @@ The following sections include instructions for completing this list of integrat
 
 * [Add Blackfire to .magento.app.yaml](#magentoappyaml)
 * [Add project variables](#variables)
-*
+* [Add Blackfire integration to the project](#integration)
+* [Add a default route](#route)
+* [Save changes in Blackfire](#save)
 
 ### Add Blackfire to .magento.app.yaml {#magentoappyaml}
 To enable and integrate Blackfire into your code, you will modify the `.magento.app.yaml` file. You can push these settings into your remote Git branch, merge, and deploy across all environments including Staging and Production.
@@ -167,7 +169,7 @@ Using the Magento Cloud CLI, you will enter an integration command to connect Bl
 		--url='<Blackfire provided URL>'
 4. A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the {{site.data.var.ece}} project. Either request your permission be upgraded or have someone else who is an admin run this command.
 
-## Add a default route {#route}
+### Add a default route {#route}
 If you do not have a default route specified in `routes.yaml`, or want to define which route to use instead of the default route, you will add it to Blackfire and `routes.yaml`.
 
 Add route information on the Blackfire Magento Cloud integration page:
