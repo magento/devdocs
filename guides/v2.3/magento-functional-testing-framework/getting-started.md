@@ -1,11 +1,7 @@
 ---
 layout: default
 group: mftf
-subgroup: 20 Getting started
 title: Getting started with the Magento Functional Testing Framework
-menu_title: Getting started
-menu_node: parent
-version: 2.3
 github_link: magento-functional-testing-framework/running-tests.md
 ---
 
@@ -129,7 +125,7 @@ CORRECT: `$this->_exec('vendor'.DIRECTORY_SEPARATOR.'bin'.DIRECTORY_SEPARATOR.'r
 In `magento2ce/dev/tests/acceptance`, run the following command:
 
 ```bash
-$ vendor/bin/robo setup
+$ vendor/bin/robo build:project
 ```
 
 [Learn more about Robo][robo]
@@ -160,9 +156,6 @@ Example: `MAGENTO_ADMIN_USERNAME=admin`
 
 * `MAGENTO_ADMIN_PASSWORD` must contain a user password required for authorization in the Admin area. 
 Example: `MAGENTO_ADMIN_PASSWORD=123123q`
-
-* `DB_USERNAME` must contain a user name required for authorization in the Magento database. 
-Example: `DB_USERNAME=root`
 
 * `TESTS_BP` must contain a base path to a directory that contains this configuration file. 
 Example: `TESTS_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance`
