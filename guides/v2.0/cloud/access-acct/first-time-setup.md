@@ -17,10 +17,10 @@ redirect_from:
   - /guides/v2.1/cloud/access-acct/admin-env-vars.html
 ---
 
-To create an account and start developing Magento, you need a configured local developer workspace, base Magento Commerce (Cloud) code, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local.
+To create an account and start developing Magento, you need a configured local developer workspace, base {{site.data.var.ece}} code, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local.
 
 ## Project user account {#account}
-Depending on the [Project Owner]({{ page.baseurl }}cloud/onboarding/onboarding-tasks.html), you may need to be invited by the owner to the project. This account gives you participation to the project and connects your local, credentials, and access to your company's Magento Commerce account. The account includes all source code and deployment environments.
+Depending on the [Project Owner]({{ page.baseurl }}cloud/onboarding/onboarding-tasks.html), you may need to be invited by the owner to the project. This account gives you participation to the project and connects your local, credentials, and access to your company's {{site.data.var.ece}} account. The account includes all source code and deployment environments.
 
 After you receive an invitation, you can complete tasks to create your local, pull code, and deploy your store.
 
