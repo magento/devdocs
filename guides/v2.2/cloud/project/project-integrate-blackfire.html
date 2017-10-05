@@ -1858,7 +1858,7 @@
   <li>Open <a href="https://blackfire.io/docs/up-and-running/installation" target="_blank">this guide</a>, select the Operating System, and follow the instructions.</li>
 </ol>
 
-<h2 id="dev">Integrate Blackfire in development</h2>
+<h2 id="dev">Integrate Blackfire in Integration</h2>
 <p>We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">their guide.</a>. You can integrate with Pro’s Integration environment and Starter’s development branches.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1873,13 +1873,28 @@
   <li>
     <p>Select the Builds tab. In the Builds side panel, click the info icon next to Magento Cloud. This opens a list of commands you will need to execute in order to enable the Blackfire integration.</p>
 
-    <p><img src="/common/images/cloud_blackfire-builds.png" alt="Promote an admin" /></p>
+    <p><img src="/common/images/cloud_blackfire-builds.png" alt="Click info icon" /></p>
+
+    <p>A page like the following opens with additional steps to complete the integration. The marked out content is your Project ID.</p>
+
+    <p><img src="/common/images/cloud_blackfire-integration.png" alt="Blackfire Magento Cloud integragtion" /></p>
   </li>
 </ol>
 
+<p>The following sections include instructions for completing this list of integration tasks. You can keep this page open to follow and copy information direcrtly.</p>
+
+<ul>
+  <li><a href="#magentoappyaml">Add Blackfire to .magento.app.yaml</a></li>
+  <li><a href="#variables">Add project variables</a></li>
+  <li><a href="#integration">Add Blackfire integration to the project</a></li>
+  <li><a href="#route">Add a default route</a></li>
+  <li><a href="#save">Save changes in Blackfire</a></li>
+</ul>
+
+<h3 id="magentoappyaml">Add Blackfire to .magento.app.yaml</h3>
 <p>To enable and integrate Blackfire into your code, you will modify the <code class="highlighter-rouge">.magento.app.yaml</code> file. You can push these settings into your remote Git branch, merge, and deploy across all environments including Staging and Production.</p>
 
-<p>We recommend working in a branch and creating a snapshot prior to installing.</p>
+<p>We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the <code class="highlighter-rouge">.magento.app.yaml</code> file. If you need instructions creating a branch, complete the following:</p>
 
 <ol>
   <li>SSH into your local Magento workspace.</li>
@@ -1934,7 +1949,7 @@
 <ol>
   <li>Use a text editor to locate and edit <code class="highlighter-rouge">&lt;project root dir&gt;/.magento.app.yaml</code> in your branch.</li>
   <li>
-    <p>Add the following values to the <code class="highlighter-rouge">extensions</code> block under <code class="highlighter-rouge">runtime:</code></p>
+    <p>Enter the following code in the <code class="highlighter-rouge">extensions</code> block under <code class="highlighter-rouge">runtime</code>.</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>    - name: blackfire
       configuration:
@@ -1943,7 +1958,7 @@
 </code></pre>
     </div>
 
-    <p>Change <code class="highlighter-rouge">&lt;blackfire Server ID&gt;</code> and <code class="highlighter-rouge">&lt;blackfire Server token&gt;</code> to the values from your Blackfire account.</p>
+    <p>Change <code class="highlighter-rouge">&lt;Blackfire Server ID&gt;</code> and <code class="highlighter-rouge">&lt;Blackfire Server token&gt;</code> to the values from your Blackfire account.</p>
 
     <p>For example:</p>
 
@@ -1955,8 +1970,8 @@
     - json
     - name: blackfire
       configuration:
-         server_id: "&lt;blackfire Server ID&gt;"
-         server_token: "&lt;blackfire Server token&gt;"
+         server_id: "12345677890123456789012345678901234567890"
+         server_token: "abcdefghi123456-12345667788-odjfvfuvfjvf-29847r87:19283475y6576"
 </code></pre>
     </div>
   </li>
@@ -1973,6 +1988,140 @@ git push origin
     <p>If errors display during deployment, open <code class="highlighter-rouge">.magento.app.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
   </li>
 </ol>
+
+<h3 id="variables">Add project variables</h3>
+<p>Add project variables for Blackfire for the server ID and token. You can add these using the Magento Cloud CLI or the Project Web Interface. The following instructions walk through adding them using CLI commands.</p>
+
+<ol>
+  <li>SSH into your local Magento workspace.</li>
+  <li>
+    <p>Log in to your Magento Commerce (Cloud) project.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
+</code></pre>
+    </div>
+  </li>
+  <li>Copy the commands from step 3 on the Blackfire Magento Cloud integration page.</li>
+  <li>
+    <p>Paste and enter the commands in the Magento Cloud CLI. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud --project='&lt;Project ID&gt;' project:variable:set env:BLACKFIRE_SERVER_ID &lt;Blackfire Server ID&gt;
+ magento-cloud --project='&lt;Project ID&gt;' project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Server Token&gt;
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="integration">Add Blackfire integration to the project</h3>
+<p>Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
+
+<ol>
+  <li>SSH into your local Magento workspace.</li>
+  <li>
+    <p>Log in to your Magento Commerce (Cloud) project.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Copy and enter the integration commands from the Blackfire Magento Cloud integration page.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud integration:add \
+ --project='&lt;Project ID&gt;' \
+ --type=webhook \
+ --url='&lt;Blackfire provided URL&gt;'
+</code></pre>
+    </div>
+  </li>
+  <li>A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the Magento Commerce (Cloud) project. Either request your permission be upgraded or have someone else who is an admin run this command.</li>
+</ol>
+
+<h3 id="route">Add a default route</h3>
+<p>If you do not have a default route specified in <code class="highlighter-rouge">routes.yaml</code>, or want to define which route to use instead of the default route, you will add it to Blackfire and <code class="highlighter-rouge">routes.yaml</code>.</p>
+
+<p>Add route information on the Blackfire Magento Cloud integration page:</p>
+
+<ol>
+  <li>Locate step 5 and enter the default route. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>. If you leave this field blank, we will try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
+  <li>If you use a wildcard <code class="highlighter-rouge">*</code> in step 5 for the default rote, you need to enter a resolved value for the <code class="highlighter-rouge">*</code> value in step 6. Otherwise, leave step 6 empty. For example, if you specified the route key <code class="highlighter-rouge">https://*.{default}</code> in step 5, you would need you to specify a route placeholder in step 6.</li>
+</ol>
+
+<p>If adding a route to Blackfire, make sure to add the default route to <code class="highlighter-rouge">routes.yaml</code>:</p>
+
+<ol>
+  <li>SSH into your local Magento workspace.</li>
+  <li>
+    <p>Log in to your Magento Commerce (Cloud) project.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>List projects:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>List environments in the project:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project ID&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>See what branch you’re currently in, if any.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>git branch
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>If necessary, check out an existing branch:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre>
+    </div>
+
+    <p>You can also create a new branch using the <code class="highlighter-rouge">magento-cloud environment:branch</code> command.</p>
+  </li>
+  <li>
+    <p>Back up the environment using a snapshot:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>Use a text editor to locate and edit <code class="highlighter-rouge">&lt;project root dir&gt;/magento/routes.yaml</code> in your branch.</li>
+  <li>
+    <p>Add the route the file. For details, see <a href="(/guides/v2.2/cloud/project/project-conf-files_routes.html)"><code class="highlighter-rouge">routes.yaml</code></a>. Here’s an example:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>"http://{default}/":
+type: upstream
+upstream: "blackfire:php"
+</code></pre>
+    </div>
+  </li>
+  <li>Save your changes to <code class="highlighter-rouge">routes.yaml</code> and exit the text editor. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>.
+If you leave this field blank, we will try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
+  <li>
+    <p>Add, commit, and push your changes to the environment:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
+git commit -m "&lt;message&gt;"
+git push origin
+</code></pre>
+    </div>
+
+    <p>If errors display during deployment, open <code class="highlighter-rouge">routes.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
+  </li>
+</ol>
+
+<h3 id="save">Save changes in Blackfire</h3>
+<p>With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and conncetions with changes entered to your Magento Commerce (Cloud) project. Continue to the next section to begin profiling your store to verify the integration.</p>
 
 <h2 id="profile">Profile your store</h2>
 <p>To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see <a href="#resources">Blackfire’s resources</a>.</p>
