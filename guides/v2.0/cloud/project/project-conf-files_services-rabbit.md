@@ -12,11 +12,11 @@ version: 2.0
 github_link: cloud/project/project-conf-files_services-rabbit.md
 ---
 
-The Message Queue Framework (MQF) is a system within Magento Enterprise Edition that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also defines the consumers that will receive the messages asynchronously. The MQF uses [RabbitMQ](http://www.rabbitmq.com){:target="_blank"} as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
+The [Message Queue Framework (MQF)]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
+
+The MQF uses [RabbitMQ](http://www.rabbitmq.com){:target="_blank"} as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
 We support RabbitMQ version 3.5.
-
-[More information about RabbitMQ]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
 
 ## Get environment-related relationships {#cloud-es-config-mg}
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
@@ -61,6 +61,7 @@ relationships:
     mq: "myrabbitmq:rabbitmq"
 {% endhighlight %}
 
+<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
 You can use the preceding service in a configuration file of your application as follows:
 
 {% highlight php startinline=true %}
@@ -75,7 +76,7 @@ foreach ($relationships['mq'] as $endpoint) {
   $container->setParameter('rabbitmq_host', $endpoint['host']);
   $container->setParameter('rabbitmq_port', $endpoint['port']);
 }
-{% endhighlight %}
+{% endhighlight %} -->
 
 ## Connect to RabbitMQ
 For debugging purposes, it's sometimes useful to directly connect to a service instance in one of the following ways:
