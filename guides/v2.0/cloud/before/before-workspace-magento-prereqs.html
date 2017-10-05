@@ -400,14 +400,14 @@
     
     
 
-<li class="nav-level1  " id="first-time-development-setup">
+<li class="nav-level1  " id="first-time-local-development-setup">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time development setup</a>
+    <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time local development setup</a>
     
 
     
@@ -630,7 +630,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">Configure Magento Commerce (Cloud)</a>
+    <a href="/guides/v2.0/cloud/configure/configuration-overview.html">Configure Magento Commerce (Cloud)</a>
     
 
     
@@ -2047,6 +2047,24 @@
     </div>
   </li>
 </ol>
+
+<h2 id="platformcli">Platform.sh CLI (local)</h2>
+<p>All Magento Commerce (Cloud) project environments are hosted by <a href="https://platform.sh/" target="_blank">Platform.sh</a> on AWS instances. For additional environment management features, you can optionally install the Platform.sh CLI on your local. This CLI is entirely optional, but does include helpful commands for your environment management.</p>
+
+<p>All features available in the <a href="/guides/v2.0/cloud/project/projects.html">Project Web Interface</a> and additional options including <a href="https://docs.platform.sh/administration/integrations/notifications.html#health-notifications" target="_blank">Health Notifications</a>. You can use these commands for PaaS environments, including Pro Integration environments and all Starter environments.</p>
+
+<ol>
+  <li>Log in to your local development machine or switch to the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>
+    <p>In a terminal, enter the command:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>curl -sS https://platform.sh/cli/installer | php
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>For full installation and usage information, see Platform.sh <a href="https://docs.platform.sh/gettingstarted/cli.html" target="_blank">CLI (Command Line Interface)</a> and their <a href="https://github.com/platformsh/platformsh-cli/blob/master/README.md#installation" target="_blank">GitHub content</a>.</p>
 
 <h2 id="additional-options">Additional options</h2>
 <p>You can also install additional <a href="/guides/v2.0/install-gde/prereq/optional.html">optional software</a>. These packages should be installed on the local VM.</p>
