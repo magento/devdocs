@@ -76,6 +76,9 @@ If you are upgrading from 2.1.X to 2.2.X, you need to also update your [.magento
 **For Pro:** You may encounter deployment errors for Pro to your Staging and Production environments if the hooks are not updated. Please enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
 </div>
 
+## Verify or set the ADMIN_EMAIL variable {#variable}
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
+
 ## Back up the database {#backup-db}
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 

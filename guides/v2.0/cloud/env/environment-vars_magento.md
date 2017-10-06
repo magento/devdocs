@@ -39,8 +39,8 @@ The following table lists variables that you can override using environment vari
 <td>Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address.</td>
-<td>john@example.com</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
 <td>Administrative user's password. Initially, we have hardcoded this value to admin12. You should immediately change this password. </td>
