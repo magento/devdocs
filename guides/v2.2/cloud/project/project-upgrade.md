@@ -41,7 +41,11 @@ We recommend completing the following steps to upgrade without errors:
 2. Git add and commit the file to your branch.
 3. Push the file to your Integration branch and environment.
 
-You can now upgrade to 2.2.X. After upgrading, you can remove the `config.php` file and regenerate it correctly for your implementation. This file works exactly as `config.local.php`, with supportive additions and a different name.
+You can now upgrade to 2.2.X. After upgrading, you can remove the `config.php` file and regenerate it correctly for your implementation. This file works exactly as `config.local.php`, with additional informatio including a list of your enabled modules, supportive additions, and a different name.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+You can only delete this file to replace it this one time. After generating a correct config.php file, you cannot delete the file to generate a new one. For more information, see [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html).
+</div>
 
 ### Update .magento.app.yaml {#magento-app-yaml}
 If you are upgrading from 2.1.X to 2.2.X, you need to also update your [.magento.app.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you will encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
