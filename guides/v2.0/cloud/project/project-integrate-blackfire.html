@@ -2012,10 +2012,10 @@ git push origin
   </li>
   <li>Copy the commands from step 3 on the Blackfire Magento Cloud integration page.</li>
   <li>
-    <p>Paste and enter the commands in the Magento Cloud CLI. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:</p>
+    <p>Paste and enter the commands in the Magento Cloud CLI. Since you are already in your project, remove the <code class="highlighter-rouge">--project='&lt;Project ID&gt;'</code> content from the command. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud --project='&lt;Project ID&gt;' project:variable:set env:BLACKFIRE_SERVER_ID &lt;Blackfire Server ID&gt;
- magento-cloud --project='&lt;Project ID&gt;' project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Server Token&gt;
+    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud project:variable:set env:BLACKFIRE_SERVER_ID &lt;Blackfire Server ID&gt;
+ magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Server Token&gt;
 </code></pre>
     </div>
   </li>
