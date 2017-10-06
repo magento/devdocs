@@ -45,7 +45,7 @@ relationships:
     elasticsearch: "elasticsearch:elasticsearch"
 {% endhighlight %}
 
-Merge and deploy the code to set the configurations for Elasticsearch.
+Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html).
 
 ### Add Elasticsearch plugins {#addplugins}
 Optionally, you can add the plugins through the `.magento/services.yaml` file. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:
