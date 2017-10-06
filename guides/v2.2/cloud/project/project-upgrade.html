@@ -1881,6 +1881,9 @@
   <p><strong>For Pro:</strong> You may encounter deployment errors for Pro to your Staging and Production environments if the hooks are not updated. Please enter a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">Support ticket</a> advising you need your hooks updated in Staging and Production for Magento Commerce (Cloud) 2.2.</p>
 </div>
 
+<h2 id="variable">Verify or set the ADMIN_EMAIL variable</h2>
+<p>The environment variable <code class="highlighter-rouge">ADMIN_EMAIL</code> is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating Magento Commerce (Cloud). To set, see <a href="/guides/v2.2/cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</p>
+
 <h2 id="backup-db">Back up the database</h2>
 <p>We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.</p>
 
