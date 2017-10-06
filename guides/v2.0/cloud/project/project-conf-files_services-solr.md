@@ -34,31 +34,6 @@ For more information about Solr, see the following:
 * [Solr tutorial](https://lucene.apache.org/solr/4_10_0/tutorial.html){:target="_blank"}
 * [Solr FAQ](http://wiki.apache.org/solr/FAQ){:target="_blank"}
 
-## Get environment-related relationships {#cloud-es-config-mg}
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
-
-To get this information used for configurations and settings:
-
-1. SSH into the Integration environment with Solr installed and configured.
-2. Enter the following command to pretty-print connection information for Solr:
-
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-
-The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Solr:
-
-{% highlight bash %}
-{
-    "solr": [
-        {
-            "path": "solr",
-            "host": "192.0.2.55",
-            "scheme": "solr",
-            "port": 8080
-        }
-    ]
-}
-{% endhighlight %}
-
 ## Add Solr in services.yaml and .magento.app.yaml {#settings}
 To enable Solr, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
@@ -88,6 +63,31 @@ relationships:
 {% endhighlight %}
 
 Merge and deploy the code to set the configurations for Solr.
+
+## Verify environment-related relationships {#cloud-es-config-mg}
+We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
+
+To verify this information used for configurations and settings:
+
+1. SSH into the Integration environment with Solr installed and configured.
+2. Enter the following command to pretty-print connection information for Solr:
+
+        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+
+The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Solr:
+
+{% highlight bash %}
+{
+    "solr": [
+        {
+            "path": "solr",
+            "host": "192.0.2.55",
+            "scheme": "solr",
+            "port": 8080
+        }
+    ]
+}
+{% endhighlight %}
 
 <!-- The following info is from Platform.sh and may not be required for Magento Cloud:
 You can then use the service in a configuration file similar to the following:

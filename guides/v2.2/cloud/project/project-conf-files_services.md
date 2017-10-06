@@ -20,12 +20,21 @@ This file is located at `.magento/services.yaml` in your project.
   <p>When you push your Git branch, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory. After deployment, the script deletes the directory and its contents. Your local development environment isn't affected.</p>
 </div>
 
-[Sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}
+To see an example, see this [sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}.
 
 **For Pro:** Changes you make using `.yaml` files affect your [Integration environment]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int) only. For technical reasons, your [Staging]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage) and [Production]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod) environments do not use `.yaml` files. To make these changes in these environments, you must create a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
 
-
 The following sections discuss properties in `services.yaml`.
+
+## How this file works {#howitworks}
+The `.magento.app.yaml` and `services.yaml` files set the services, applications, and configurations to build and include in an environment. If you add services with specific versions, the initial push and deployment of your branches with these updated files directs the PaaS environment to provision the environment with those services. When you make changes to the services, the environment updates.
+
+This affects the following environments:
+
+* All Starter environments including Production `master`
+* Pro Integration environments
+
+To install and update services in Pro Staging and Production environments (IaaS), you must enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp). Indicate the service changes needed and your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
 
 ## Default and supported services {#cloud-yaml-services-default}
 Your Git branch includes the following default `services.yaml` file:

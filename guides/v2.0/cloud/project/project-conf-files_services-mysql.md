@@ -70,10 +70,31 @@ In the preceding example, the endpoint (that is, user) `reporter` has `ro` privi
 *   The `repoter` user has SELECT privileges only.
 *   The `importer` user has SELECT, INSERT, UPDATE, and DELETE privileges.
 
-## Get environment-related relationships {#cloud-es-config-mg}
+## Add MySQL in services.yaml and .magento.app.yaml {#settings}
+To enable MySQL, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
+
+{% highlight yaml %}
+mysql:
+    type: mysql:10.0
+    disk: 2048
+{% endhighlight %}
+
+To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` in the Git branch. For example:
+
+{% highlight yaml %}
+relationships:
+    database: "mydatabase:mysql"
+{% endhighlight %}
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+* If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
+* MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
+</div>
+
+## Verify environment-related relationships {#cloud-es-config-mg}
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
-To get this information used for configurations and settings:
+To verify this information used for configurations and settings:
 
 1. SSH into the Integration environment with MySQL installed and configured.
 2. Enter the following command to pretty-print connection information for MySQL:
@@ -101,23 +122,7 @@ The response includes all relationships for services and configuration data for 
 }
 {% endhighlight %}
 
-## Add MySQL in services.yaml and .magento.app.yaml {#settings}
-To enable MySQL, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
-
-{% highlight yaml %}
-mysql:
-    type: mysql:10.0
-    disk: 2048
-{% endhighlight %}
-
-To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` in the Git branch. For example:
-
-{% highlight yaml %}
-relationships:
-    database: "mydatabase:mysql"
-{% endhighlight %}
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-* If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
-* MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
-</div>
+#### Related topics
+*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
