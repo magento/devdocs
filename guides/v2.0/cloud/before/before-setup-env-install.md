@@ -59,13 +59,13 @@ For example, using the command line method:
 
 1. Switch to the user:
 
-    sudo su - magento
+    <pre>sudo su - magento</pre>
 2. Change directories for the installation:
 
-    cd /app/bin
+    <pre>cd /app/bin</pre>
 3. Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
-    php magento setup:install \
+    <pre>php magento setup:install \
       --admin-firstname=John \
       --admin-lastname=Smith \
       --admin-email=jsmith@mail.com \
@@ -79,14 +79,14 @@ For example, using the command line method:
       --currency=USD \
       --timezone=America/Chicago \
       --language=en_US \
-      --use-rewrites=1
+      --use-rewrites=1</pre>
 
 ## Post-install configurations
 After installing Magento, run the commands for [compile]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html) for the code:
 
 1. If you are not in the correct Magento user, switch:
 
-    sudo su - magento
+    <pre>sudo su - magento</pre>
 2. Change directory to `app/bin`.
 3. Run the compile command:
 
