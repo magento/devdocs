@@ -19,7 +19,7 @@ Solr is highly reliable, scalable and fault tolerant, providing distributed
 indexing, replication and load-balanced querying, automated failover and
 recovery, centralized configuration, and more.
 
-**Limited Support: **We only support Solr in {{site.data.var.ece}} 2.0.X. You should move to [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) for {{site.data.var.ece}} 2.1 and later, 2.2 and later.
+**Limited Support:** We only support Solr in {{site.data.var.ece}} 2.0.X. You should move to [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) for {{site.data.var.ece}} 2.1 and later, 2.2 and later.
 
 Solr uses the Lucene Java search {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} for full-text indexing and search. Your applications interact with Solr using:
 
