@@ -64,7 +64,7 @@ For example:
 ### `name` {#cloud-yaml-services-name}
 `name` identifies the service in the project. The `name` can consist only of lower case alphanumeric characters: `a`&ndash;`z` and `0`&ndash;`9`. For example, Redis is entered as redis.
 
-You can have multiple instances of each service type. For example, you could have multiple Redis instances:
+You can have multiple instances of each service type. For example, you could have multiple Redis instances. For example, we use multiple Redis instances, one for session and one for cache.
 
   redis:
      type: redis:3.0
