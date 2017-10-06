@@ -1811,10 +1811,47 @@
 
 <p>We support Redis versions 2.8 and 3.0.</p>
 
-<p>Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database</p>
+<p>Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database.</p>
 
-<h2 id="relationship">Relationship</h2>
-<p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
+<h2 id="settings">Add Redis in services.yaml and .magento.app.yaml</h2>
+<p>To enable Redis, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">myredis</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">redis:3.0</span></code></pre></figure>
+
+<p>If you want to provide your own Redis configuration, you can add a <code class="highlighter-rouge">core_config</code> key in your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">cache</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">redis:3.0</span></code></pre></figure>
+
+<p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">runtime</span><span class="pi">:</span>
+    <span class="s">extensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">redis</span>
+
+<span class="s">relationships</span><span class="pi">:</span>
+    <span class="s">redis</span><span class="pi">:</span> <span class="s2">"</span><span class="s">myredis:redis"</span></code></pre></figure>
+
+<p>Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see <a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
+
+<h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
+<p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
+
+<p>To verify this information used for configurations and settings:</p>
+
+<ol>
+  <li>SSH into the Integration environment with Redis installed and configured.</li>
+  <li>
+    <p>Enter the following command to pretty-print connection information for Redis:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Redis:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
     <span class="s2">"redis"</span>: <span class="o">[</span>
@@ -1826,27 +1863,9 @@
     <span class="o">]</span>
 <span class="o">}</span></code></pre></figure>
 
-<h2 id="usage-example">Usage example</h2>
-<p>In your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
+<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
+You can then use the service in a configuration file of your application as follows:
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">myredis</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">redis:3.0</span></code></pre></figure>
-
-<p>You can also use the following:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">cache</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">redis:3.0</span></code></pre></figure>
-
-<p>In your <code class="highlighter-rouge">.magento.app.yaml</code>, configure the relationship and enable the <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-php">PHP redis extension</a> if you are using PHP:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">runtime</span><span class="pi">:</span>
-    <span class="s">extensions</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">redis</span>
-
-<span class="s">relationships</span><span class="pi">:</span>
-    <span class="s">redis</span><span class="pi">:</span> <span class="s2">"</span><span class="s">myredis:redis"</span></code></pre></figure>
-
-<p>You can then use the service in a configuration file of your application as follows:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">if (getenv('MAGENTO_CLOUD_RELATIONSHIPS')) {
     $relationships = json_decode(base64_decode(getenv('MAGENTO_CLOUD_RELATIONSHIPS')), true);
@@ -1856,14 +1875,22 @@
         $container-&gt;setParameter('redis_port', $endpoint['port']);
     }
 }</code></pre></figure>
+ -->
 
 <h2 id="using-redis-cli-to-access-your-redis-service">Using <code class="highlighter-rouge">redis-cli</code> to access your Redis service</h2>
 
-<p>Assuming your Redis relationship is named <code class="highlighter-rouge">redis</code>, you can access it by opening an <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">SSH tunnel</a> to a host named <code class="highlighter-rouge">redis.internal</code> using the redis-cli tool.</p>
+<p>Assuming your Redis relationship is named <code class="highlighter-rouge">redis</code>, you can access it by opening an SSH tunnel to a host named <code class="highlighter-rouge">redis.internal</code> using the redis-cli tool.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>redis-cli -h redis.internal
+<ol>
+  <li>SSH into the Integration environment with RabbitMQ installed and configured.</li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> redis-cli -h redis.internal
 </code></pre>
-</div>
+    </div>
+  </li>
+</ol>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

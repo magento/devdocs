@@ -1866,8 +1866,44 @@ following command:</p>
   <li>The <code class="highlighter-rouge">importer</code> user has SELECT, INSERT, UPDATE, and DELETE privileges.</li>
 </ul>
 
-<h2 id="relationship">Relationship</h2>
-<p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
+<h2 id="settings">Add MySQL in services.yaml and .magento.app.yaml</h2>
+<p>To enable MySQL, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysql</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
+    <span class="s">disk</span><span class="pi">:</span> <span class="s">2048</span></code></pre></figure>
+
+<p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
+    <span class="s">database</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mydatabase:mysql"</span></code></pre></figure>
+
+<p>Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see <a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <ul>
+    <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code class="highlighter-rouge">DEFINER</code></a> access control mechanism for stored procedures and views.</li>
+    <li>MySQL errors such as <code class="highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code class="highlighter-rouge">.magento/services.yaml</code></a>.</li>
+  </ul>
+</div>
+
+<h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
+<p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
+
+<p>To verify this information used for configurations and settings:</p>
+
+<ol>
+  <li>SSH into the Integration environment with MySQL installed and configured.</li>
+  <li>
+    <p>Enter the following command to pretty-print connection information for MySQL:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for MySQL:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
   <span class="s2">"database"</span>: <span class="o">[</span>
@@ -1886,24 +1922,12 @@ following command:</p>
   <span class="o">]</span>
 <span class="o">}</span></code></pre></figure>
 
-<h2 id="usage-example">Usage example</h2>
-<p>In your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysql</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
-    <span class="s">disk</span><span class="pi">:</span> <span class="s">2048</span></code></pre></figure>
-
-<p>In your <code class="highlighter-rouge">.magento.app.yaml</code>:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
-    <span class="s">database</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mydatabase:mysql"</span></code></pre></figure>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <ul>
-    <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code class="highlighter-rouge">DEFINER</code></a> access control mechanism for stored procedures and views.</li>
-    <li>MySQL errors such as <code class="highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code class="highlighter-rouge">.magento/services.yaml</code></a>.</li>
-  </ul>
-</div>
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->

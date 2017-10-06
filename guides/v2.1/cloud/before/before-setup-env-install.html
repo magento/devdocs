@@ -1861,31 +1861,31 @@
   <li>
     <p>Switch to the user:</p>
 
-    <p>sudo su - magento</p>
+    <pre>sudo su - magento</pre>
   </li>
   <li>
     <p>Change directories for the installation:</p>
 
-    <p>cd /app/bin</p>
+    <pre>cd /app/bin</pre>
   </li>
   <li>
     <p>Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds">Installer help commands</a>.</p>
 
-    <p>php magento setup:install \
-   –admin-firstname=John \
-   –admin-lastname=Smith \
-   –admin-email=jsmith@mail.com \
-   –admin-user=admin \
-   –admin-password=password1 \
-   –base-url=http://magento.local/ \
-   –db-host=localhost \
-   –db-name=magento \
-   –db-user=magento \
-   –db-password=magento \
-   –currency=USD \
-   –timezone=America/Chicago \
-   –language=en_US \
-   –use-rewrites=1</p>
+    <pre>php magento setup:install \
+   --admin-firstname=John \
+   --admin-lastname=Smith \
+   --admin-email=jsmith@mail.com \
+   --admin-user=admin \
+   --admin-password=password1 \
+   --base-url=http://magento.local/ \
+   --db-host=localhost \
+   --db-name=magento \
+   --db-user=magento \
+   --db-password=magento \
+   --currency=USD \
+   --timezone=America/Chicago \
+   --language=en_US \
+   --use-rewrites=1</pre>
   </li>
 </ol>
 
@@ -1896,7 +1896,7 @@
   <li>
     <p>If you are not in the correct Magento user, switch:</p>
 
-    <p>sudo su - magento</p>
+    <pre>sudo su - magento</pre>
   </li>
   <li>Change directory to <code class="highlighter-rouge">app/bin</code>.</li>
   <li>

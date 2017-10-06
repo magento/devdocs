@@ -1820,14 +1820,64 @@ recovery, centralized configuration, and more.</p>
 
 <p>**Limited Support: **We only support Solr in Magento Commerce (Cloud) 2.0.X. You should move to <a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Elasticsearch</a> for Magento Commerce (Cloud) 2.1 and later, 2.2 and later.</p>
 
-<p>Solr uses the Lucene Java search <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> for full-text indexing and search. Your applications interact with Solr using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">HTTP POST</a> (in JSON, <a href="http://wiki.apache.org/solr/UpdateXmlMessages" target="_blank">XML</a>, CSV, or binary formats) to index documents and using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">HTTP GET</a> to retrieve search results back as <a href="http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29" target="_blank">JSON</a>, XML, or a variety of other formats (Python, Ruby, <a href="http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29" target="_blank">PHP</a>, <a href="http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29" target="_blank">CSV</a>, binary, and so on). If you’re a programmer, try the <a href="https://lucene.apache.org/solr/4_10_0/tutorial.html" target="_blank">Solr tutorial</a>. Whether you’re a programmer or not, read the <a href="http://wiki.apache.org/solr/FAQ" target="_blank">Solr FAQ</a>.</p>
+<p>Solr uses the Lucene Java search <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> for full-text indexing and search. Your applications interact with Solr using:</p>
 
-<p><a href="/guides/v2.0/config-guide/solr/solr-overview.html">More information about Solr</a>.</p>
+<ul>
+  <li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">HTTP POST</a> in JSON, <a href="http://wiki.apache.org/solr/UpdateXmlMessages" target="_blank">XML</a>, CSV, or binary formats to index documents</li>
+  <li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">HTTP GET</a> to retrieve search results back as &gt;<a href="http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29" target="_blank">JSON</a>, XML, or a variety of other formats including Python, Ruby, <a href="http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29" target="_blank">PHP</a>, <a href="http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29" target="_blank">CSV</a>, binary, and so on</li>
+</ul>
 
-<p>We support Solr version 4.10.</p>
+<p>We support Solr version 4.10 for Magento Commerce (Cloud).</p>
 
-<h2 id="relationship">Relationship</h2>
-<p>The format exposed in the <a href="/guides/v2.0/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
+<p>For more information about Solr, see the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/config-guide/solr/solr-overview.html">More information about Solr</a></li>
+  <li><a href="https://lucene.apache.org/solr/4_10_0/tutorial.html" target="_blank">Solr tutorial</a></li>
+  <li><a href="http://wiki.apache.org/solr/FAQ" target="_blank">Solr FAQ</a></li>
+</ul>
+
+<h2 id="settings">Add Solr in services.yaml and .magento.app.yaml</h2>
+<p>To enable Solr, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysearch</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">solr:4.10</span>
+    <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span></code></pre></figure>
+
+<p>If you want to provide your own Solr configuration, you can add a <code class="highlighter-rouge">core_config</code> key in your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysearch</span><span class="pi">:</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s">solr:4.10</span>
+    <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span>
+    <span class="s">configuration</span><span class="pi">:</span>
+        <span class="s">core_config</span><span class="pi">:</span> <span class="kt">!archive</span> <span class="s2">"</span><span class="s">&lt;directory&gt;"</span></code></pre></figure>
+
+<p>The <code class="highlighter-rouge">directory</code> parameter points to the Magento <code class="highlighter-rouge">vendor/magento/module-solr/conf</code> directory, relative to the <code class="highlighter-rouge">.magento</code> directory, in the Git repository. This directory contains the Magento schema.</p>
+
+<p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
+    <span class="s">solr</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mysearch:solr"</span></code></pre></figure>
+
+<p>Merge and deploy the code to set the configurations for Solr. For information on how these changes affect your environments, see <a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
+
+<h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
+<p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.0/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
+
+<p>To verify this information used for configurations and settings:</p>
+
+<ol>
+  <li>SSH into the Integration environment with Solr installed and configured.</li>
+  <li>
+    <p>Enter the following command to pretty-print connection information for Solr:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Solr:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
     <span class="s2">"solr"</span>: <span class="o">[</span>
@@ -1840,19 +1890,9 @@ recovery, centralized configuration, and more.</p>
     <span class="o">]</span>
 <span class="o">}</span></code></pre></figure>
 
-<h2 id="usage-example">Usage example</h2>
-<p>In your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
+<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
+You can then use the service in a configuration file similar to the following:
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysearch</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">solr:4.10</span>
-    <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span></code></pre></figure>
-
-<p>In your <code class="highlighter-rouge">.magento.app.yaml</code>:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
-    <span class="s">solr</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mysearch:solr"</span></code></pre></figure>
-
-<p>You can then use the service in a configuration file similar to the following:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">$relationships = getenv("MAGENTO_CLOUD_RELATIONSHIPS");
 if (!$relationships) {
@@ -1865,17 +1905,7 @@ foreach ($relationships['solr'] as $endpoint) {
   $container-&gt;setParameter('solr_host', $endpoint['host']);
   $container-&gt;setParameter('solr_port', $endpoint['port']);
 }</code></pre></figure>
-
-<h2 id="configuration">Configuration</h2>
-<p>If you want to provide your own Solr configuration, you can add a <code class="highlighter-rouge">core_config</code> key in your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysearch</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">solr:4.10</span>
-    <span class="s">disk</span><span class="pi">:</span> <span class="s">1024</span>
-    <span class="s">configuration</span><span class="pi">:</span>
-        <span class="s">core_config</span><span class="pi">:</span> <span class="kt">!archive</span> <span class="s2">"</span><span class="s">&lt;directory&gt;"</span></code></pre></figure>
-
-<p>The <code class="highlighter-rouge">directory</code> parameter points to the Magento <code class="highlighter-rouge">vendor/magento/module-solr/conf</code> directory, relative to the <code class="highlighter-rouge">.magento</code> directory, in the Git repository. This directory contains the Magento schema.</p>
+ -->
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

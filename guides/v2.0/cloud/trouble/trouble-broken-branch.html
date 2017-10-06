@@ -1854,7 +1854,9 @@
 
 <p>When you want to build and deploy the code to the Integration environment, you should not force the build using the Magento Cloud CLI commands to initiate a build command. This can cause the build to break. The command may check for specific variables and settings not in your local but in the remote environment. The automated build process also runs a specific series of scripts and commands when you push your code to your remote Git branch and environment.</p>
 
-<p>If your build broke in this situation, we recommend force resetting the code from the remote and following build and deploy processes. The branch could have inaccurate files, incomplete steps, that require fully resetting the code and building normally.</p>
+<p>For example, when using the Magento Cloud CLI commands, you may have received the error during a build: <code class="highlighter-rouge">E: Error building project: The build hook failed with status code 255. Build aborted</code>.</p>
+
+<p>If your build broke in this situation, we recommend force resetting the code from the remote and following normal <a href="/guides/v2.0/cloud/live/live-sanity-check.html#push">build and deploy</a> processes. The branch could have inaccurate files, incomplete steps, that require fully resetting the code and building normally.</p>
 
 <ol>
   <li>
