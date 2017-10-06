@@ -527,18 +527,17 @@
 
 <p>Looking for more information on these new features as well as many others? Check out  <a href="http://devdocs.magento.com/guides/v2.2/">Magento 2.2 Developer Documentation</a>.</p>
 
-<h2 id="security-enhancements">Security enhancements</h2>
+<h2 id="security">Security enhancements</h2>
 <p>Magento 2.2.0 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.</p>
 
 <p>In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks.</p>
 
 <p><a href="https://magento.com/company/contact-us" target="_blank">Contact us</a> for more information.</p>
 
-<h2 id="known-issues">Known issues</h2>
-
+<h2 id="known">Known issues</h2>
 <p>For all known Magento Commerce 2.2.0 GA issues, see <a href="http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html">Magento Commerce 2.2.0 Release Notes</a>.</p>
 
-<h2 id="fixed-issues">Fixed issues</h2>
+<h2 id="fixed">Fixed issues</h2>
 <p>This release contains numerous fixes and enhancements. This section includes only fixes for Magento Commerce (Cloud). For all known Magento Commerce 2.2.0 GA issues, see <a href="http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html">Magento Commerce 2.2.0 Release Notes</a>.</p>
 
 <!-- 57167 -->
@@ -582,7 +581,25 @@
   <li>We’ve fixed errors in processing valid orders using a PayPal account that had been previously used to pay for a valid order that had problems during checkout.</li>
 </ul>
 
-<h2 id="community-contributions">Community contributions</h2>
+<h2 id="deploy">Changes in Deployment</h2>
+<p>When upgrading to Magento Commerce (Cloud) 2.2, consider the following changes in deployment:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">ADMIN_EMAIL</code> variable must be set. We require the <code class="highlighter-rouge">ADMIN_EMAIL</code> environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</p>
+  </li>
+  <li>
+    <p>Update and include <code class="highlighter-rouge">config.php</code> and add a list of all modules. If you use Configuration Management with a <code class="highlighter-rouge">config.local.php</code> file, you must create a <code class="highlighter-rouge">config.php</code> and add it to your code. For instructions, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html#config">Configuration Management and upgrading</a>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">.magento.app.yaml</code> has new build and deploy hooks. As part of your upgrade, you should update the <code class="highlighter-rouge">.magento.app.yaml</code> file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html#magento-app-yaml">Update .magento.app.yaml</a>. For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.</p>
+  </li>
+  <li>
+    <p>Modified and updated available build and deploy variables. For a full list, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a>. For 2.2, we have removed <code class="highlighter-rouge">skip_di_compilation</code> and <code class="highlighter-rouge">skip_di_clearing</code> from <code class="highlighter-rouge">build-options.ini</code>. These cannot be run for 2.2 in the build phase.</p>
+  </li>
+</ul>
+
+<h2 id="community">Community contributions</h2>
 
 <p>We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:</p>
 
@@ -595,12 +612,12 @@
   </li>
 </ul>
 
-<h2 id="system-requirements">System requirements</h2>
+<h2 id="requirements">System requirements</h2>
 <p>For Magento Commerce (Cloud) requirements, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html">Technologies and Requirements</a>.</p>
 
 <p>The Magento Commerce technology stack is built on PHP and MySQL. For details, see <a href="/guides/v2.2/install-gde/system-requirements-tech.html">Technology stack requirements</a> and <a href="/magento-system-requirements.html" target="_blank">System Requirements</a>.</p>
 
-<h2 id="installation-and-upgrade-instructions">Installation and upgrade instructions</h2>
+<h2 id="install-upgrade">Installation and upgrade instructions</h2>
 
 <p>To test and implement your Magento Commerce (Cloud) upgrade, see <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>.</p>
 

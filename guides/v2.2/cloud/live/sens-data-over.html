@@ -1822,7 +1822,12 @@
 </div>
 
 <div class="bs-callout bs-callout-info">
-  <p>If you used configuration management in 2.1, this process is similar in 2.2. The name of the file has changed to <code class="highlighter-rouge">config.php</code> and updating the file changed. You can <a href="#migrate">migrate</a> your <code class="highlighter-rouge">config.local.php</code> settings to a new <code class="highlighter-rouge">config.php</code>.</p>
+  <p>If you used configuration management in 2.1, this process is similar in 2.2. The name of the file has changed to <code class="highlighter-rouge">config.php</code> and updating the file changed. You can <a href="#migrate">migrate</a> your <code class="highlighter-rouge">config.local.php</code> settings to a new <code class="highlighter-rouge">config.php</code>. This file includes a number of changes including:</p>
+
+  <ul>
+    <li>A list of modules</li>
+    <li>Should not be deleted to regenerate</li>
+  </ul>
 </div>
 
 <h2 id="release">Feature availability</h2>
@@ -1844,7 +1849,7 @@
   <p>For Magento Commerce (Cloud), we <strong>do not recommend</strong> app:config:dump as this command pulls and locks all values as read-only. This will affect Fastly and other important modules.</p>
 </div>
 
-<p>Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments.</p>
+<p>Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments. And every time you run this command, any new configurations are appended to your config.php file. If you need to modify or delete an existing configuration, you must edit the file manually.</p>
 
 <p>By using the <code class="highlighter-rouge">scd-dump</code> command, you can configure only the settings you want copied across all environments. After you merge the code, you can configure additional settings in Staging and Production. For sensitive configurations, you can also add those settings to environment variables. For example, you may want to add different PayPal merchant account credentials for Staging (sandbox) and Production (live).</p>
 
@@ -1980,6 +1985,8 @@
   </li>
 </ol>
 
+<p>Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.</p>
+
 <h3 id="step-3--4-push-git-branch-to-staging-and-production">Step 3 &amp; 4: Push Git branch to Staging and Production</h3>
 <p>Log into the Magento Admin in those environments to verify the settings. If you used <code class="highlighter-rouge">scd-dump</code>, only configured settings display. You can continue configuring the environment if needed.</p>
 
@@ -1988,24 +1995,14 @@
 <p>For Pro, when you push to the Git branch, the Integration <code class="highlighter-rouge">master</code> environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
 
 <h2 id="update">Update configuations</h2>
-<p>If you need to change any configuration settings <code class="highlighter-rouge">config.php</code>, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration <code class="highlighter-rouge">master</code> environment.</p>
+<p>If you need to modify or remove any existing configuration settings in <code class="highlighter-rouge">config.php</code>, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git to update.</p>
 
-<p>If you only need to make a small change, you can edit <code class="highlighter-rouge">config.php</code> in a local Git branch and redeploy across environments.</p>
-
-<p>To complete extensive changes:</p>
-
-<ol>
-  <li>
-    <p>Delete <code class="highlighter-rouge">config.php</code> in your Integration environment.</p>
-
-    <p>You must delete the file to change settings. All of your configurations still exist in the database, displaying as editable in your Magento Admin. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can’t edit it until this file is removed.</p>
-  </li>
-  <li>Make configuration changes in the Admin on the Integration environment.</li>
-  <li>Repeat the process to re-create <code class="highlighter-rouge">config.php</code> and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those enviornment specific settings.</li>
-</ol>
+<p>To add new configurations, modify your environment through the Magento Admin panel and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git to update.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>While you can manually edit <code class="highlighter-rouge">config.php</code> in Staging and Production, we don’t recommend it. The file helps keep all of your configurations consistent across all of your environments.</p>
+
+  <p>You should never delete <code class="highlighter-rouge">config.php</code> to rebuild it.</p>
 </div>
 
 <h2 id="migrate">Migrate config.local.php to config.php</h2>

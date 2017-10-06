@@ -1888,12 +1888,12 @@
 </tr></thead>
 <tbody><tr>
 <td><code>BUILD_OPT_SKIP_DI_COMPILATION</code></td>
-<td>If you are needing to quickly debug a set of code in developer mode, you can enable this option to skip compilation and before a build immediately. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing in developer mode. You should always run di_compilation. Available in versions 2.1.X, 2.2.X.</td>
+<td>If you are needing to quickly debug a set of code in developer mode, you can enable this option to skip compilation and before a build immediately. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing in developer mode. You should always run di_compilation. Available in versions 2.1.X, 2.2.X. For 2.2.X, we have removed `skip_di_compilation` from `build-options.ini` as it cannot be skipped during the build phase.</td>
 <td>skip_di_compilation = disabled</td>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_DI_CLEARING</code></td>
-<td>Before di_generation runs, the build process clears the existing build to rebuild before deploying. If you are simply redeploying without needing to fully rebuild, you can use this option to skip the deletion of the existing built files. The deploy phase will reuse the existing build files. Available in versions 2.1.X, 2.2.X.</td>
+<td>Before di_generation runs, the build process clears the existing build to rebuild before deploying. If you are simply redeploying without needing to fully rebuild, you can use this option to skip the deletion of the existing built files. The deploy phase will reuse the existing build files. Available in versions 2.1.X, 2.2.X. For 2.2.X, we have removed `skip_di_clearing` from `build-options.ini` as it cannot be skipped during the build phase.</td>
 <td>skip_di_clearing = disabled</td>
 </tr>
 <tr>
