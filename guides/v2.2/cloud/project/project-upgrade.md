@@ -185,15 +185,16 @@ To verify the upgrade in your integration, staging, or production system:
         php bin/magento --version
 
 ## Create a new config.php file {#configphp}
-After fully upgrading, you need to create an updated `config.php` file. You will only complete these instructions once.
+After fully upgrading, you need to create an updated `config.php` file. You will only complete these instructions once. Complete any additional configuration changes through the Magento Admin in your Integration environment.
 
 1. Open a terminal on your local and use an SSH command to generate `/app/etc/config.php` on the environment:
 
     `ssh -k <SSH URL> "<Command>"`
 
-  For example for Pro, to run the `scd-dump` on Integration `master`:
+    For example for Pro, to run the `scd-dump` on Integration `master`:
 
-    ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+      ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+
 2. Transfer `config.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 
     `rsync <SSH URL>:app/etc/config.php ./app/etc/config.php`
@@ -201,6 +202,8 @@ After fully upgrading, you need to create an updated `config.php` file. You will
 3. Add and push `config.php` to the Git master branch.
 
     `git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master`
+
+An updated file is generated with a module list and configuration settings at `/app/etc/config.php`.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Important: For an upgrade, you will delete `config.php`. Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
