@@ -1932,6 +1932,26 @@ git push origin &lt;branch name&gt;
   </li>
 </ol>
 
+<h2 id="extensions">Verify and upgrade your extensions</h2>
+<p>You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce (Cloud) v2.2.</p>
+
+<p>We recommend <a href="/guides/v2.1/cloud/project/project-webint-snap.html#db-dump">backing up your database</a> prior to installing a number of extensions on your local and Integration environments.</p>
+
+<ol>
+  <li>Create a new branch on your local.</li>
+  <li>Disable your extensions as needed.</li>
+  <li>As available, download extension upgrades.</li>
+  <li>Install the upgrade on your local in the Git branch as documented by the third-party documentation.</li>
+  <li>Enable and test the extension locally.</li>
+  <li>Push the code to test in your Integration environment.</li>
+  <li>Push to Staging to test in a pre-production environment.</li>
+</ol>
+
+<p>Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.</p>
+
+<h3 id="moreextensions">Additional extension upgrades</h3>
+<p>We strongly recommend upgrading your Fastly module to v1.2.27 or later for Magento Commerce (Cloud) 2.1.X.</p>
+
 <h2 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h2>
 <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
 

@@ -597,6 +597,12 @@
   <li>
     <p>Modified and updated available build and deploy variables. For a full list, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a>. For 2.2, we have removed <code class="highlighter-rouge">skip_di_compilation</code> and <code class="highlighter-rouge">skip_di_clearing</code> from <code class="highlighter-rouge">build-options.ini</code>. These cannot be run for 2.2 in the build phase.</p>
   </li>
+  <li>
+    <p>The build variable <code class="highlighter-rouge">GENERATED_CODE_SYMLINKS</code> has been removed. The generated folders <code class="highlighter-rouge">var/generation</code> and <code class="highlighter-rouge">var/di</code> have been moved to a <code class="highlighter-rouge">generated/</code> read-only directory. The folder <code class="highlighter-rouge">var/generation</code> is now <code class="highlighter-rouge">generated/code</code> and <code class="highlighter-rouge">var/di</code> is now <code class="highlighter-rouge">generated/metapackage</code>.</p>
+  </li>
+  <li>
+    <p>With the removal of <code class="highlighter-rouge">GENERATED_CODE_SYMLINKS</code>, you cannot execute <code class="highlighter-rouge">setup:di:compile</code> directly on a server.</p>
+  </li>
 </ul>
 
 <h2 id="community">Community contributions</h2>
@@ -619,7 +625,7 @@
 
 <h2 id="install-upgrade">Installation and upgrade instructions</h2>
 
-<p>To test and implement your Magento Commerce (Cloud) upgrade, see <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>.</p>
+<p>To test and implement your Magento Commerce (Cloud) upgrade, see <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>. We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.</p>
 
 <p>If installing and working with Magento Commerce (Cloud) for the first time, we recommend <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time development setup</a>.</p>
 
