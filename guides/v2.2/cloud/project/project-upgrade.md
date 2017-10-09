@@ -27,7 +27,7 @@ Always apply and test a patch your local system in an active branch. You can pus
 </div>
 
 ## Supported upgrade paths to 2.2 {#upgradepaths}
-We have heavily tested and verifed the latest three versions to directly upgrade to {{site.data.var.ece}} 2.2:
+We have heavily tested and verifed the latest three versions of 2.0.X and 2.1.X to directly upgrade to {{site.data.var.ece}} 2.2:
 
 * 2.0.14, 2.0.15, 2.0.16
 * 2.1.7, 2.1.8, 2.1.9
@@ -39,11 +39,14 @@ If you prefer a secured and verified upgrade path, you can upgrade to one of the
 When upgrading from any version to 2.2, please review the following sections to update your settings, make changes, and upgrade required software prior to upgrading Magento.
 
 ## Upgrade from 2.0.X or 2.1.X {#old-version}
-When upgrading from **2.0.X**, you need to complete additional preparation steps. These include:
+To upgrade from **2.0.X**:
 
+* [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
+* [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
 
-When upgrading from **2.1.X**, you need to complete additional preparation steps. These include:
+
+To upgrade from **2.1.X**:
 
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [Configuration Management](#config): Create a new `config.php` using the `config.local.php` to properly upgrade
@@ -60,17 +63,20 @@ With v2.2, we only support PHP 7.0 and later. Make sure to upgrade your local de
 * [Magento 2.2.x technology stack requirements](http://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html#php)
 
 ### Configuration Management and upgrading {#config}
-If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to add another configuration file to your branch. Previous versions with Configuration Management uses a `config.local.php` file. Starting with 2.2.0, [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) use a different file name: `config.php`. When you upgrade without having this file prepared, you will receive an error and a list of steps to complete prior to upgrade.
+If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you may want to create and add a new config.php file to your Git branch.
 
-We recommend completing the following steps to upgrade without errors:
+Previous versions with Configuration Management use a `config.local.php` file for Configuration Management. Starting with 2.2.0, [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) use a different file name: `config.php`. When you upgrade without having this file prepared, you could encounter an error with a list of steps to complete prior to upgrading.
+
+We recommend creating a temporary `config.php` file for your Git branch prior to upgrading:
 
 1. Create a copy of `config.local.php` and name it `config.php`. You should add this file in the `app/etc` folder.
 2. Git add and commit the file to your branch.
 3. Push the file to your Integration branch and environment.
-
-You can now upgrade to 2.2.X. After upgrading, you can remove the `config.php` file and regenerate it correctly for your implementation. This file works exactly as `config.local.php`, with additional informatio including a list of your enabled modules, supportive additions, and a different name.
+4. Continue preparing and upgrade to 2.2.X.
 
 For more information, see [Migrate config.local.php to config.php](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#migrate).
+
+After you finish upgrading, you can remove `config.php` and create a new, complete file. For more information, see [Create a new config.php file](#configphp). This file works exactly as `config.local.php`, with additional settings including a list of your enabled modules, supportive additions, and a different name.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 You can only delete this file to replace it this one time. After generating a correct config.php file, you cannot delete the file to generate a new one. For more information, see [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html).
@@ -177,6 +183,28 @@ To verify the upgrade in your integration, staging, or production system:
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version
+
+## Create a new config.php file {#configphp}
+After fully upgrading, you need to create an updated `config.php` file. You will only complete these instructions once.
+
+1. Open a terminal on your local and use an SSH command to generate `/app/etc/config.php` on the environment:
+
+    `ssh -k <SSH URL> "<Command>"`
+
+  For example for Pro, to run the `scd-dump` on Integration `master`:
+
+    ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+2. Transfer `config.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
+
+    `rsync <SSH URL>:app/etc/config.php ./app/etc/config.php`
+
+3. Add and push `config.php` to the Git master branch.
+
+    `git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master`
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Important: For an upgrade, you will delete `config.php`. Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
+</div>
 
 ## Verify and upgrade your extensions {#extensions}
 You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.

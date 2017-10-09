@@ -12,15 +12,15 @@ version: 2.2
 github_link: cloud/live/sens-data-over.md
 ---
 
-Configuration management, or [Pipeline Deployment]({{ page.baseurl }}config-guide/deployment/pipeline/), provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments to keep consistent settings and reduce downtime.
+Configuration management, or [Pipeline Deployment]({{ page.baseurl }}config-guide/deployment/pipeline/), provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments. to keep consistent settings and reduce downtime.
 
 For extensive technical information, see [Pipeline Deployment]({{ page.baseurl }}config-guide/deployment/pipeline/). This section provides specific walk-throughs for {{site.data.var.ece}} Starter and Pro environments.
 
 It provides the following benefits:
 
 *	Better way to [manage and synchronize](#cloud-confman-over) the configuration across your development or Integration, Staging, and Production environments.
-*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build process.
-*	Sensitive data is pushed into environment variables file (`/app/etc/env.php`) or manually added using either environment variables or using the Magento Admin only. For example, payment processor passwords and API keys.
+*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build phase. Your site is in maintenance mode until deployment completes.
+*	Sensitive data is automatically added into and environment variables file (`/app/etc/env.php`). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
@@ -187,7 +187,7 @@ To add new configurations, modify your environment through the Magento Admin pan
 <div class="bs-callout bs-callout-warning" markdown="1">
 While you can manually edit `config.php` in Staging and Production, we don't recommend it. The file helps keep all of your configurations consistent across all of your environments.
 
-You should never delete `config.php` to rebuild it. 
+You should never delete `config.php` to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
 </div>
 
 ## Migrate config.local.php to config.php {#migrate}
