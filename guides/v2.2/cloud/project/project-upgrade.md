@@ -63,9 +63,9 @@ With v2.2, we only support PHP 7.0 and later. Make sure to upgrade your local de
 * [Magento 2.2.x technology stack requirements](http://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html#php)
 
 ### Configuration Management and upgrading {#config}
-If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you may want to create and add a new config.php file to your Git branch.
+If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to migrate `config.local.php` to a temporary `config.php` file to your Git branch. When you upgrade without having this file prepared, you will encounter an error with a list of steps to complete prior to upgrading.
 
-Previous versions with Configuration Management use a `config.local.php` file for Configuration Management. Starting with 2.2.0, [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) use a different file name: `config.php`. When you upgrade without having this file prepared, you could encounter an error with a list of steps to complete prior to upgrading.
+Previous versions with Configuration Management use a `config.local.php` file for Configuration Management. Starting with 2.2.0, [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) uses a different file name of `config.php`.
 
 We recommend creating a temporary `config.php` file for your Git branch prior to upgrading:
 
@@ -76,7 +76,7 @@ We recommend creating a temporary `config.php` file for your Git branch prior to
 
 For more information, see [Migrate config.local.php to config.php](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#migrate).
 
-After you finish upgrading, you can remove `config.php` and create a new, complete file. For more information, see [Create a new config.php file](#configphp). This file works exactly as `config.local.php`, with additional settings including a list of your enabled modules, supportive additions, and a different name.
+After you finish upgrading, you can remove `config.php` and create a new, complete file. For more information, see [Create a new config.php file](#configphp). This file works exactly as `config.local.php`, with additional settings including a list of your enabled modules, additional configurations, and a different name.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 You can only delete this file to replace it this one time. After generating a correct config.php file, you cannot delete the file to generate a new one. For more information, see [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html).
