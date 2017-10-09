@@ -27,12 +27,14 @@ Always apply and test a patch your local system in an active branch. You can pus
 </div>
 
 ## Supported upgrade paths to 2.2 {#upgradepaths}
-We have heavily tested and verifed the latest three versions of 2.0.X and 2.1.X to directly upgrade to {{site.data.var.ece}} 2.2:
+You can directly upgrade to {{site.data.var.ece}} 2.2 from the following versions:
 
-* 2.0.14, 2.0.15, 2.0.16
-* 2.1.7, 2.1.8, 2.1.9
+* 2.0.X versions: 2.0.14, 2.0.15, 2.0.16
+* 2.1.X versions: 2.1.7, 2.1.8, 2.1.9
 
-While you can attempt to upgrade from any version directly to {{site.data.var.ece}} 2.2, we cannot guarantee the results. For example, you should be able to upgrade from 2.0.10 or 2.1.4 directly to 2.2.
+We have heavily tested and verifed upgrades to 2.2 from the latest three versions of 2.0.X and 2.1.X.
+
+You can attempt to upgrade from any version directly to {{site.data.var.ece}} 2.2. We cannot guarantee the results. For example, you should be able to upgrade from 2.0.10 or 2.1.4 directly to 2.2.
 
 If you prefer a secured and verified upgrade path, you can upgrade to one of the verified and tested versions, then directly upgrade to 2.2. For example, you could upgrade from 2.0.10 to 2.0.14, then upgrade to 2.2.
 
