@@ -48,4 +48,4 @@ Following is an example of the command pool configuring for the Braintree paymen
 ...
 {% endhighlight %}
 
-(The code sample is from Magento CE v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1.)
+(The code sample is from {{site.data.var.ce}} v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1.)

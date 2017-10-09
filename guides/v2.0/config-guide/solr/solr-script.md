@@ -7,10 +7,9 @@ menu_title: Prepare Solr for production
 menu_order: 3
 menu_node:
 version: 2.0
+ee_only: true
 github_link: config-guide/solr/solr-script.md
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Solr is deprecated in Magento 2.1 and will not be supported in 2.2.

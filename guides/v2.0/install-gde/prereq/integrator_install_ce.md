@@ -2,15 +2,15 @@
 layout: default
 group: install_pre
 subgroup: S_Integrator
-title: Get the Magento CE metapackage
-menu_title: Get the Magento CE metapackage
+title: Get the Magento Open Source metapackage
+menu_title: Get the Magento Open Source metapackage
 menu_order: 3
 menu_node: 
 version: 2.0
 github_link: install-gde/prereq/integrator_install_ce.md
 ---
 
-To get the Magento CE metapackage:
+To get the {{site.data.var.ce}} metapackage:
 
 1.	See [(Integrator) Integrator installation]({{ page.baseurl }}install-gde/prereq/integrator_install.html) first.
 1.	If you haven't done so already, <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">get your authentication keys</a>.

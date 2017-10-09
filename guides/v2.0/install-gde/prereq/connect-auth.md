@@ -15,6 +15,6 @@ github_link: install-gde/prereq/connect-auth.md
 #### Related topics:
 *	Use your authentication keys to:
 
-	*	<a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Get the Magento CE or EE metapackage (integrators, packagers)</a>
+	*	<a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Get the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage (integrators, packagers)</a>
 	*	<a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub</a> (contributing developers only)
 	*	<a href="{{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html">Update components, upgrade the Magento software</a>

@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/trouble/trouble-crypt-key-variable.md
 ---
 
-This topic discusses solutions to typical issues you might experience with Magento EE encryption key in your environments.
+This topic discusses solutions to typical issues you might experience with {{site.data.var.ee}} encryption key in your environments.
 
 For a new Starter project, the Magento encryption key is on your `master` branch Production environment. When you branch to other environments, the key travels with the code and database.
 
@@ -27,7 +27,7 @@ To verify and update the encryption key environment variable:
 
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
-3.  Verify the existing value of `key` for `crypt`. The value should be your [Magento EE key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey).
+3.  Verify the existing value of `key` for `crypt`. The value should be your [{{site.data.var.ee}} key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey).
 
         {% highlight php startinline=true %}
         return array (

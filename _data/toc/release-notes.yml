@@ -273,8 +273,8 @@ pages:
         - label: Magento Open Source third-party licenses
           url: release-notes/thirdparty_ce.html
 
-        - label: Magento EE third-party licenses
+        - label: Magento Commerce third-party licenses
           url: release-notes/thirdparty_ee.html
 
-        - label: Magento EE third-party licenses
+        - label: Magento Commerce (Cloud) third-party licenses
           url: release-notes/thirdparty-mccloud.html

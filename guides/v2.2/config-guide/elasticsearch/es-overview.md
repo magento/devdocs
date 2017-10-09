@@ -7,14 +7,10 @@ menu_title: Install and configure Elasticsearch (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.2
+ee_only: true
 github_link: config-guide/elasticsearch/es-overview.md
 ---
 
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
-
-*	[Overview of Elasticsearch](#overview){:target="_blank"}
-*	[Install prerequisites and Elasticsearch](#es-prereq){:target="_blank"}
-*	[Additional resources](#es-resources){:target="_blank"}
 *	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
 *	[Configure Elasticsearch stopwords]({{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html)

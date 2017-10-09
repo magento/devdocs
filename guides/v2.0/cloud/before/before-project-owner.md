@@ -24,6 +24,7 @@ As the Project Owner, you must complete the following, required by development a
 * Generate Magento authentication keys
 * Create the project
 * Add a project admin account
+* Add admin variables
 
 After you have completed those tasks, the project admin can manage development and deployments for you.
 
@@ -86,11 +87,11 @@ Before you start, create a list of e-mail address for the users you want to add.
 To create user accounts:
 
 1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2.  Click the **Projects** tab as the following figure shows.
+2.  Click the **Projects** tab.
 
 	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
 3.	Click the name of your project. If you have not named your project, click **Continue Later** to bypass and create a user.
-4.	Click the configure project button next to project name in the top navigation bar as the following figure shows.
+4.	Click the configure project button next to project name in the top navigation bar.
 
 	![Configure the project]({{ site.baseurl }}common/images/cloud_project_gear.png){:width="184px"}
 5.	In the right pane, click **Add Users**.
@@ -109,6 +110,24 @@ To create user accounts:
 8.	Click **Add User**.
 
 The users you add receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
+
+## Add admin variables for Admin access {#variables}
+Prior to accessing the Magento Admin panel, you need to add Admin variables to the project.
+
+1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+2.  Open your project and select a parent branch, for example `master`.
+3. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the branch name.
+4. Select the Variables tab.
+5. Click Add Variable.
+6. For the Name, enter ADMIN_EMAIL. For the value, enter your Project Owner email address.
+7. Click **Add variable**.
+
+After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
+
+Optionally, you can also add variables for ADMIN_USERNAME and ADMIN_PASSWORD. By default, the admin username is `admin`. You should have changed the admin password as an onboarding task, using an email link the Project Owner received.
+
+* Name: ADMIN_USERNAME, Value: admin
+* Name: ADMIN_PASSWORD, Value: a password of your choice
 
 ## Blackfire and New Relic {#cloud-owner-creds}
 Your project includes [Blackfire]({{ site.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ site.baseurl }}cloud/project/project-integrate-github.html) services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.

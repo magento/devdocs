@@ -7,7 +7,7 @@ Several Magento features require at least one cron job, which schedules activiti
 *	Generating Google sitemaps
 *	Customer Alerts/Notifications (product price change, product back in stock)
 *	Reindexing
-*	Private sales (Magento EE only)
+*	Private sales ({{site.data.var.ee}} only)
 *	Automatic updating of currency rates
 *	All Magento e-mails (including order confirmation and transactional)
 

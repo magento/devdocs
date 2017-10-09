@@ -37,7 +37,7 @@ pages:
           url: extension-dev-guide/build/di-xml-file.html
 
         - label: Optimal development environment
-          versions: ["2.1","2.2"]
+          versions: ["2.1","2.2", "2.3"]
           url: extension-dev-guide/build/optimal-dev-environment.html
 
         - label: The composer.json file
@@ -112,7 +112,7 @@ pages:
           url: extension-dev-guide/cli-cmds/cli-howto.html
 
     - label: Staging (Enterprise Edition only)
-      versions: ["2.1","2.2"]
+      versions: ["2.1","2.2", "2.3"]
       url: extension-dev-guide/staging.html
 
     - label: Component development
@@ -162,7 +162,7 @@ pages:
               url: extension-dev-guide/indexing.html
 
             - label: Indexer optimization
-              versions: ["2.2"]
+              versions: ["2.2", "2.3"]
               url: extension-dev-guide/indexer-batch.html
 
             - label: Adding a custom indexer
@@ -178,15 +178,15 @@ pages:
               url: extension-dev-guide/message-queues/config-mq.html
 
             - label: Migrate message queue configuration
-              versions: ["2.1", "2.2"]
+              versions: ["2.1", "2.2", "2.3"]
               url: extension-dev-guide/message-queues/queue-migration.html
 
             - label: Bulk operations
-              versions: ["2.2"]
+              versions: ["2.2", "2.3"]
               url: extension-dev-guide/message-queues/bulk-operations.html
 
             - label: Example bulk operations implementation
-              versions: ["2.2"]
+              versions: ["2.2", "2.3"]
               url: extension-dev-guide/message-queues/implement-bulk.html
 
 
@@ -194,7 +194,7 @@ pages:
           url: extension-dev-guide/extension_attributes/adding-attributes.html
 
         - label: Searching with repositories
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           url: extension-dev-guide/searching-with-repositories.html
 
         - label: Configure services as web APIs
@@ -207,7 +207,7 @@ pages:
           url: extension-dev-guide/adapters.html
 
     - label: Configuration
-      versions: ["2.2"]
+      versions: ["2.2", "2.3"]
       children:
         - label: Sensitive Environemnt Settings
           url: extension-dev-guide/configuration/sensitive-and-environment-settings.html
@@ -216,7 +216,7 @@ pages:
           url: extension-dev-guide/configuration/importers.html
 
     - label: Framework
-      versions: ["2.2"]
+      versions: ["2.2", "2.3"]
       children:
         - label: Serialize Library
           url: extension-dev-guide/framework/serializer.html
@@ -225,7 +225,7 @@ pages:
       children:
 
         - label: XSS Prevention
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           url: extension-dev-guide/xss-protection.html
 
         - label: Non-secure functions

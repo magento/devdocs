@@ -39,7 +39,7 @@ pages:
         - label: Blackfire Profiler
           url: cloud/project/project-integrate-blackfire.html
 
-    - label: First-time development setup
+    - label: First-time local development setup
       url: cloud/access-acct/first-time-setup.html
       children:
         - label: Set up a project and dev workspace
@@ -84,7 +84,7 @@ pages:
               url: cloud/access-acct/first-time-setup_import-import.html
 
     - label: Configure Magento Commerce (Cloud)
-      url: cloud/access-acct/first-time-setup.html
+      url: cloud/configure/configuration-overview.html
       children:
         - label: Set up Fastly
           url: cloud/access-acct/fastly.html
@@ -94,7 +94,7 @@ pages:
 
         - label: Set up PayPal
           url: cloud/live/paypal-onboarding.html
-          versions: ["2.1","2.2"]
+          versions: ["2.1","2.2","2.3"]
 
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html
@@ -195,14 +195,18 @@ pages:
             - label: Sensitive configuration paths reference
               url: cloud/live/config-reference-sens.html
 
-    - label: Test a Magento patch or upgrade
-      url:
+    - label: Upgrades and Patches
+      url: cloud/project/project-upgrade-parent.html
       children:
         - label: Upgrade Magento Commerce (Cloud)
           url: cloud/project/project-upgrade.html
 
         - label: Patch Magento Commerce (Cloud)
           url: cloud/project/project-patch.html
+
+        - label: Patch Magento Commerce (Cloud)
+          url: cloud/upgrade/upgrade-from-2-0-4.html
+          versions: ["2.0"]
 
     - label: Deploy your store
       url: cloud/live/stage-prod-live.html

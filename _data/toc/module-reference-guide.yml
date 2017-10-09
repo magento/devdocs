@@ -12,7 +12,7 @@ pages:
 
     - label: Commerce
       url: mrg/ee/ee-intro.html
-      versions: ["2.1","2.2"]
+      versions: ["2.1","2.2", "2.3"]
       children:
 
         - label: BundleStaging
@@ -95,7 +95,7 @@ pages:
 
     - label: B2B
       url: mrg/b2b/b2b-intro.html
-      versions: ["2.2"]
+      versions: ["2.2", "2.3"]
       children:
 
         - label: B2b

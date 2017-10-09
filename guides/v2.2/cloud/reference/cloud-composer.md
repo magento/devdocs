@@ -55,7 +55,7 @@ The following sections discuss the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0c
 
 The metapackage depends on the appropriate versions of [`magento/ece-patches`](#ece-patches), [`magento/ece-tools`](#ece-tools), and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
 
-This package depends on a floating version of `magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified Magento EE version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
+This package depends on a floating version of `magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
 ### magento/ece-patches {#ece-patches}
 This package contains patch files that are specific to Cloud. Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Cloud code and the patch. Using `compuser update` automatically runs tools to check for available patches and to run them with build and deploy scripts.
