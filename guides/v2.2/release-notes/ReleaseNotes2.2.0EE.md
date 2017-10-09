@@ -196,6 +196,13 @@ This release contains hundreds of fixes and enhancements.
 <!--- 67082-->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.
 
 
+<!--- 62655-->* Command-line users now have read and write permissions to the  `var/generation` directory. [GitHub-7933](https://github.com/magento/magento2/issues/7933)
+
+<!--- 61431-->* The Magento command-line interface now sets the correct exit codes when an upgrade task fails. [GitHub-7576](https://github.com/magento/magento2/issues/7576)
+
+<!--- 58849-->* You can now disable the Review module without incurring an error in the Product Edit page. Previously, if you tired to edit a product after disabling the review module, Magento displayed this error: "Something went wrong". [GitHub-6704](https://github.com/magento/magento2/issues/6704)
+
+
 ### AMQP 
 
 <!---58654, 57177-->* The `magento queue:consumers:start` command now works correctly when you provide the `max-messages` argument.
@@ -273,6 +280,21 @@ This release contains hundreds of fixes and enhancements.
 <!--- 56411-->* The shopping cart now handles products with custom options. [GitHub-5612](https://github.com/magento/magento2/issues/5612)
 
 <!--- 63200-->* Magento now requires completion of the State field during the check out process if this field has been configured as required.
+
+<!--- 63635-->* Checkout now loads as expected in Safari private mode. [GitHub-7942](https://github.com/magento/magento2/issues/7942), [GitHub-7329](https://github.com/magento/magento2/issues/7329), [GitHub-8358](https://github.com/magento/magento2/issues/8358)
+
+<!--- 61368-->* Minicart now shows all products you’ve added, whether you added them while signed-in or not. Previously, the minicar contained only products that you added while signed in. [GitHub-7500](https://github.com/magento/magento2/issues/7500)
+
+<!--- 59807-->* Magento now displays the ”Thank you for your purchase!" on the checkout success page.
+
+<!--- 60352-->* Magento now displays the correct error message when you enter an invalid discount code when making a payment. [GitHub-7230](https://github.com/magento/magento2/issues/7230)
+
+<!--- 47017-->* You can now directly add a configurable product to your shopping cart from category page. [GitHub-2574](https://github.com/magento/magento2/issues/2574), [GitHub-5850](https://github.com/magento/magento2/issues/5850), [GitHub-5882](https://github.com/magento/magento2/issues/5882), [GitHub-6572](https://github.com/magento/magento2/issues/6572), [GitHub-5558](https://github.com/magento/magento2/issues/5558), [GitHub-4184](https://github.com/magento/magento2/issues/4184)
+
+
+<!--- 58345-->* Magento now displays out-of-stock products in the shopping cart. Previously, if a product’s status changed between the time you added it to the cart and you proceeded to check out, Magento removed the product from your cart. [GitHub-6583](https://github.com/magento/magento2/issues/6583)
+
+
 
 ### Catalog
 
@@ -395,6 +417,23 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 64710-->*  `productWebsiteLink` no longer deletes a product’s custom origins.
 
+<!--- 56943-->*  Magento now successfully handles purchases of product with minimum quantities of less than one. [GitHub-5570](https://github.com/magento/magento2/issues/5570)
+
+<!--- 52577-->* Magento no longer pre-fills the **Set Product as New From Date** field when you set a special price for a product. [GitHub-4387](https://github.com/magento/magento2/issues/4387)
+
+<!--- 60613-->* When you edit a widget’s  existing condition, Magento now loads the SKU grid with all available SKUs. [GitHub-6985](https://github.com/magento/magento2/issues/6985)
+
+<!--- 56978-->*  Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the store view level overrode the price set in website scope. [GitHub-5133](https://github.com/magento/magento2/issues/5133), [GitHub-7251](https://github.com/magento/magento2/issues/7251)
+
+<!--- 60602-->* Combine rule conditions now work as expected for product list  widgets. [GitHub-7274](https://github.com/magento/magento2/issues/7274)
+
+<!--- 59256-->* Component Manager now handles custom Composer modules. Previously, when you tried to install a custom extension using **System > Tools > Web Setup > Component Manager**, Magento displayed the spinning widget indefinitely. [GitHub-6718](https://github.com/magento/magento2/issues/6718)
+
+<!--- 59234-->* We’ve fixed an issue with sorting products by tier price. Previously, if you enabled the Used for Sorting in Product Listing field in the Edit Tier Price Attribute page. and then selected sort by tier price on the storefront, Magento displayed an error message. [GitHub-6751](https://github.com/magento/magento2/issues/6751)
+
+
+
+
 
 ### Configurable products
 
@@ -453,6 +492,14 @@ This release contains hundreds of fixes and enhancements.
 <!--- 59307-->* Magento now displays only the set price for a configurable product, not its set price and “as low as” price. Previously, Magento showed both prices if a minimum price was not configured. 
 
 <!---61596 -->* Magento no longer removes the simple products associated with a configurable product if you click on the **Save** button more than once while saving the configurable product. Previously, if you clicked on **Save** more than once during an attempt to save a configurable product, Magento removed the simple products that were assigned to it.
+
+<!---64221 -->* Special prices now display correctly for future discounts [GitHub-8375](https://github.com/magento/magento2/issues/8375)
+
+<!---52925 -->* Magento no longer applies one simple product's special price to another simple product of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. [GitHub-4442](https://github.com/magento/magento2/issues/4442), [GitHub-5097](https://github.com/magento/magento2/issues/5097), [GitHub-6645](https://github.com/magento/magento2/issues/6645)
+
+<!---59512 -->* Magento now shows the correct product price for products that you add to the wish list from the category page. [GitHub-6866](https://github.com/magento/magento2/issues/6866)
+
+
  
 ### Email
 
@@ -513,6 +560,8 @@ This release contains hundreds of fixes and enhancements.
 <!--- 58285 -->* Magento now displays server-side Ajax error messages.
 
 <!--- 69674 -->* JavaScript mixins now work when you add a `urlArgs` argument to a `require_js` file. *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
+
+
 
 #### Zend framework
 
@@ -658,6 +707,18 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 59590-->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
 
 <!--- 60962-->* When you add an address, new custom attributes are now displayed together, along with other address details. 
+
+<!--- 60746-->* You can now edit the default store view and save it under a different name. [GitHub-7349](https://github.com/magento/magento2/issues/7349)
+
+<!--- 57553-->* You can now reset a customer password if **website restrictions** is enabled. Previously, you were redirected to `customer/account/login/` with no possibility to reset the password.
+
+<!--- 59258-->* When you override `module-directory/etc/zip_codes.xml` from a local module, all country codes  are now included as expected. Previously, only the last country code was included, which affected the custom  check out process. [GitHub-6694](https://github.com/magento/magento2/issues/6694)
+
+<!--- 60633-->* `.htaccess` deny code execution now works as expected for  Apache and  php-fpm. [GitHub-6766](https://github.com/magento/magento2/issues/6766)
+
+<!--- 57675-->* Magento now displays the WYSIWYG editor as expected. [GitHub-6222](https://github.com/magento/magento2/issues/6222), [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6815](https://github.com/magento/magento2/issues/6815)
+
+
 
 
 ### Gift cards
@@ -805,6 +866,9 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---58289 -->* We've fixed an issue where product URL keys (for SKUs) were not auto-generated as expected during import. [GitHub-5188](https://github.com/magento/magento2/issues/5188)
 
+<!---58385 -->* Magento now updates attribute sets as expected when importing  products from CSV. [GitHub-5498](https://github.com/magento/magento2/issues/5498)
+
+<!---63835 -->* The CatalogImportExport uploader can now handle HTTPS images. Previously, if the URL of a file contained HTTPS, the uploader  still used the HTTP provider to retrieve the image, which lead to an error. [GitHub-8277](https://github.com/magento/magento2/issues/8277)
 
 
 #### Integrations
@@ -906,6 +970,9 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 59586-->* Magento no longer creates unnecessary  loaders during checkout with an order that contains virtual products. 
 
 <!--- 57846-->* New orders no longer stay in the processing state after you click the Place Order button. Previously, new orders stayed in the processing state even after you clicked Place Order. [GitHub-5860](https://github.com/magento/magento2/issues/5860) 
+
+
+<!--- 60692-->*  You can now use either the parent order item ID or child product order item ID when using  the REST API (`/V1/order/:orderId/invoice : POST method API`)  to create an invoice for an order containing bundle products. [GitHub-6988](https://github.com/magento/magento2/issues/6988)
 
 
 ### Payment methods
@@ -1017,6 +1084,11 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---60589-->* We’ve resolved a loader issue with Payflow Pro. The loader image is now invisible after redirecting to the payment page/success page or error page. [GitHub-7159](https://github.com/magento/magento2/issues/7159),  [GitHub-9296](https://github.com/magento/magento2/issues/9296)
 
+<!---64833-->* PayPal Express checkout no longer discards address line 2 for billing and shipping addresses. [GitHub-8313](https://github.com/magento/magento2/issues/8313)
+
+
+<!---60572-->* The checkout page no longer freezes when you try to use PayPal to pay for a purchase that contains a downloadable product. Previously, a `PayPal.js` error occurred. [GitHub-7000](https://github.com/magento/magento2/issues/7000)
+
 
 ### Performance
 
@@ -1098,6 +1170,8 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 63403 -->* SalesRule now applies to auto-generated coupon codes as expected.
 
+<!--- 59047 -->* You can now create a cart price rule  without any date range restrictions. Previously, if you left the **From** and **To** dates empty, Magento filled them in with the current date. [GitHub-6762](https://github.com/magento/magento2/issues/6762), [GitHub-6122](https://github.com/magento/magento2/issues/6122)
+
 
 ### Scope
 
@@ -1135,6 +1209,9 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---58964 -->* Magento now implements the Attribute Weight Boosting Function for Elasticsearch. 
 
+<!---64367 -->* Magento now handles special characters in an Elasticsearch request as expected. Previously, Magento displayed a MySQL syntax error in search requests that contained special characters. [GitHub-8335](https://github.com/magento/magento2/issues/8335)
+
+<!---59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
 
 
 ### Shipping
@@ -1158,8 +1235,15 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 62276-->* The State/Province field now changes to an input field as expected after you select United Kingdom when filling out the shipping address during checkout 
 
-<!--- 58664-->* The Free Shipping rule now works as expected with table rate shipping. [GitHub-6346](https://github.com/magento/magento2/issues/6346)
+<!--- 58664-->* The Free Shipping rule now works as expected with table rate shipping.[GitHub-6346](https://github.com/magento/magento2/issues/6346)
 
+<!--- 62662-->* Magento now passes the correct object to the  `\Magento\Shipping\Model\Shipping::collectRatesByAddress` method. [GitHub-7309](https://github.com/magento/magento2/issues/7309)
+
+<!--- 60523-->* Magento now displays the checkout page or cart as expected when you try to edit a virtual item from the multi shipping page. Previously, Magento displayed a 404 error page instead of redirecting to checkout age or shopping cart. [GitHub-7257](https://github.com/magento/magento2/issues/7257)
+
+<!--- 58730-->* Magento now displays UPS rates on the initial load of the checkout page. Previously, although shipping rates showed up properly at the cart level, the payment page did not load the correct shipping options. [GitHub-6564](https://github.com/magento/magento2/issues/6564)
+
+<!--- 59149-->* We've resolved an issue where Magento did not display applicable flat-rate USPS box methods during checkout. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
 
 
 
@@ -1333,7 +1417,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---56863 -->* Magento now rewrites URLs as expected when you save a CMS page while running Magento in single-store mode. [GitHub-5923](https://github.com/magento/magento2/issues/5923) 
 
-
+<!---64295 -->* URL rewrites are now correctly generated for multiple store views during product import.  [GitHub-8396](https://github.com/magento/magento2/issues/8396)
 
 
 ### Varnish
@@ -1383,7 +1467,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---56347 -->* We’ve fixed an issue with the REST API that previously resulted in the PayPal gateway rejecting requests. [GitHub-10410](https://github.com/magento/magento2/issues/10410)
 
-
+<!---58269 -->* You can now save a billing address using the REST  ’useForShipping' parameter. Previously use of the parameter resulted in a Rest API V1 error. [GitHub-6557](https://github.com/magento/magento2/issues/6557), [GitHub-5180](https://github.com/magento/magento2/issues/5180)
 
 
 ## Community contributions
