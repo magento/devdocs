@@ -121,7 +121,13 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 <td><code>BUILD_OPT_SKIP_SCD</code></td>
 <td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in versions 2.1.4 and later, 2.2.X.</td>
 <td>skip_scd = disabled</td>
-</tr></tbody>
+</tr>
+<td><code>GENERATED_CODE_SYMLINKS</code></td>
+<td><p>This variable enables the <code>var/generation</code> and <code>var/di</code> generated folders to be writable. Available in versions 2.1.X.</p>
+<p>This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>var/di</code> content is moved to <code>generated/</code>. This folder is removed after guild and deploy completes.</p></td>
+<td>skip_scd = disabled</td>
+</tr>
+</tbody>
 </table>
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
