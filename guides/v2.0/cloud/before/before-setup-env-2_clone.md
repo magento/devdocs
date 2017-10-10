@@ -8,6 +8,13 @@ menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/before/before-setup-env-2_clone.md
+redirect_from:
+  - /guides/v2.0/cloud/before/before-setup-env-keys.html
+  - /guides/v2.1/cloud/before/before-setup-env-keys.html
+  - /guides/v2.2/cloud/before/before-setup-env-keys.html
+  - /guides/v2.0/cloud/before/before-setup-env-env.html
+  - /guides/v2.1/cloud/before/before-setup-env-env.html
+  - /guides/v2.2/cloud/before/before-setup-env-env.html
 ---
 
 #### Previous step:
@@ -55,7 +62,7 @@ To clone the project's `master` environment to your local:
 		git pull origin <environment ID>
 
 ## Change the Magento Admin URL, user name, and password on master {#setvariables}
-Change the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} parameters for security reasons prior to branching from master. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.
+Change the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} parameters for security reasons prior to branching from `master`. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Make note of any changes you make. You may need them when installing Magento with the command line and when verifying the installation.
@@ -77,7 +84,7 @@ To set variables (with example values used):
 
 1.  To set the administrator's user name to `meister_x2U8` in the `master` environment, enter:
 
-		magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
+		magento-cloud variable:set ADMIN_USERNAME admin_A456 -e master
 2.  Wait for the project to redeploy.
 3.  To set the administrator's password to `admin_A456`, enter:
 

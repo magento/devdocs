@@ -21,8 +21,9 @@ You can branch according to your own branching strategies. For example, you coul
 * Create custom code and front end themes
 * Modify and export configurations
 
-After you create the branch, update project dependencies so you can install the Magento software locally. You should also [Add your local authentication keys to the project](#add-keys-project).
+After you [create the branch](#branch), update project dependencies so you can install the Magento software locally. You should also [Add your local authentication keys to the project](#add-keys-project).
 
+## Branch an environment {#branch}
 To branch from master:
 
 1.	Do any of the following:
@@ -45,35 +46,26 @@ To branch from master:
 
 		magento-cloud snapshot:create -e <environment ID>
 
-## Add your local authentication keys to the project {#add-keys-project}
-Before you can upgrade the Magento software or install extensions, you must have authentication keys in the `auth.json` file in the Magento root directory. Contact the project administrator or the account owner for the authentication keys. You need these keys to add them locally.
-
-These authentication keys don't need to be in the Git repository. You can add `auth.json` to `.gitignore`.
+## Add authentication keys to auth.json {#add-keys-project}
+Contact the Project Owner or Tech Admin for a set of authentication keys. You will add the keys to `auth.json` locally and update the branch. You need `auth.json` updated before you can upgrade Magento software or install extensions.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Ensure your project administrator has added authentication keys to the project as discussed in the preceding section.
+Ensure your Project Owner or Tech Admin has [added authentication keys to the project]({{ page.baseurl }}cloud/before/before-setup-env-keys.html).
 </div>
 
 These instructions require having a cloned branch for development locally.
 
 To add your local authentication keys:
 
-1.	If you haven't done so already, log in to your Magento Commerce project, check out an environment, and pull updated code from the server. For additional information, see [Step 5, Clone or branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
+1.	Use the Git branch you created.
 
-		Use the following commands:
-
-				magento-cloud login
-				magento-cloud environment:list
-				magento-cloud environment:checkout <env ID>
-				git pull origin <branch name>
-
-2.	Create a file named `auth.json` in the Magento project root directory and add your authentication keys to it.
+2.	Locate or create a file named `auth.json` in the Magento project root directory and add your authentication keys to it.
 
 	If you have an `auth.json` file already, contact your project administrator to make sure a project variable has been defined.
 
 	A sample `auth.json` follows. Replace the same values with your keys.
 
-			``` json
+			{% highlight json %}
 			{
 			   "http-basic": {
 			      "repo.magento.com": {
@@ -82,10 +74,13 @@ To add your local authentication keys:
 			      }
 			   }
 			}
-			```
+			{% endhighlight %}
 3.	Save your changes to `auth.json` and exit the text editor.
-2.	Open `.gitignore` in a text editor.
-4.	Add `auth.json` to it anywhere.
+
+For Starter plans, you can also add auth.json to your Git ignore list.
+
+1.	Open `.gitignore` in a text editor.
+2.	Add `auth.json` to it anywhere.
 
 	A snippet from `.gitignore` follows:
 
@@ -101,7 +96,9 @@ To add your local authentication keys:
 			/.gitattributes
 			auth.json
 
-5.	Save your changes to `.gitignore` and exit the text editor.
+3.	Save your changes to `.gitignore` and exit the text editor.
+
+Commit and push your changes to the Git branch.
 
 #### Next step
 [Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)

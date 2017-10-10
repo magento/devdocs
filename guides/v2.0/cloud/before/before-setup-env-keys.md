@@ -17,11 +17,15 @@ Magento authentication keys provide authentication between Git and Magento for y
 _Only a [project administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-project) with Super User access can perform this task._ If you do not have Super User access to the project, have the project administrator add the keys using these instructions.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-All developers working in code branches will need to add [Magento authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html) locally to update Magento dependencies and install {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extensions{% endglossarytooltip %}. We recommend you add the authentication keys locally after you branch from the master branch. Those instructions are included in a [later step]({{ page.baseurl }}cloud/before/before-setup-env-env.html).
+All developers working in code branches will need to add [Magento authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html) locally to update Magento dependencies and install {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extensions{% endglossarytooltip %}. We recommend you add the authentication keys locally after you branch from the master branch. You will add the keys to `auth.json` in the [next step]({{ page.baseurl }}cloud/before/before-setup-env-env.html).
 </div>
 
-## Add authentication keys to the project
-To set up authentication keys in the project:
+## Add authentication keys in the project {#projectkeys}
+To set up authentication keys in the project as variables:
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This variable works for all Starter environments including Production `master`. For Pro plans, this variable is only available in the Integration environments. 
+</div>
 
 1.	Log in to your Magento Commerce account at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
 2.	If necessary, click the **Projects** tab.
@@ -54,22 +58,8 @@ To set up authentication keys in the project:
 
 	![Set up authentication keys as project variables]({{ site.baseurl }}common/images/cloud_project-vars2.png)
 10.	Click **Add Variable**.
-11.	Remove `auth.json` from the Git repository from every environment currently configured for the project.
 
-	Use the following command to list currently configured environments:
-
-		magento-cloud environment:list
-
-	For every environment ID, check out the environment and delete `auth.json` as follows:
-
-		magento-cloud environment:checkout <environment ID>
-		git rm auth.json
-		git add -A && git commit -m "Remove auth.json" && git push origin <branch name>
-12.	Wait for the project to build and deploy.
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Save these authentication keys. You will need to add them to your branch in a [later step]({{ page.baseurl }}cloud/before/before-setup-env-env.html).
-</div>
+After you [branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html), you will also update `auth.json` with these authentication keys.
 
 #### Next step:
 [Branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
