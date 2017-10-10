@@ -1,10 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 03_BC
 title: Magento Commerce Backward Incompatible Changes
-menu_title: Magento Commerce changes
-version: 2.0
 github_link: release-notes/changes/ee_changes.md
 ---
 
@@ -19,6 +16,10 @@ where each change is displayed in a separate row in the table, with the followin
 
 - **Class** or **Interface** with the name of an affected class or interface
 - **What changed** with the description of a backward incompatible change
+
+## 2.0.15 - 2.0.16
+
+{% include changes/ee/2_0_15-2_0_16.html %}
 
 ## 2.0.14 - 2.0.15
 
