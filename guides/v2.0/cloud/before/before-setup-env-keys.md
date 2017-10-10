@@ -1,10 +1,10 @@
 ---
 layout: default
-group: cloud
-subgroup: 080_setup
+group:
+subgroup:
 title: Set up Magento authentication keys
 menu_title: Set up Magento authentication keys
-menu_order: 35
+menu_order: 
 version: 2.0
 github_link: cloud/before/before-setup-env-keys.md
 ---
@@ -24,7 +24,7 @@ All developers working in code branches will need to add [Magento authentication
 To set up authentication keys in the project as variables:
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This variable works for all Starter environments including Production `master`. For Pro plans, this variable is only available in the Integration environments. 
+This variable works for all Starter environments including Production `master`. For Pro plans, this variable is only available in the Integration environments.
 </div>
 
 1.	Log in to your Magento Commerce account at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.

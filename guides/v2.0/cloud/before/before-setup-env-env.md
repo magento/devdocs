@@ -1,10 +1,10 @@
 ---
 layout: default
-group: cloud
-subgroup: 080_setup
+group:
+subgroup:
 title: Branch an environment
 menu_title: Branch an environment
-menu_order: 45
+menu_order: 
 menu_node:
 version: 2.0
 github_link: cloud/before/before-setup-env-env.md
