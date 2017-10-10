@@ -484,7 +484,7 @@
 
 			<p>We are pleased to present Magento Commerce (Cloud) 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.</p>
 
-<p>To fully upgrade Magento Commerce (Cloud), see <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>. Specific steps and vital information for upgrading from 2.1.X are included.</p>
+<p>To fully upgrade Magento Commerce (Cloud), see <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>. Specific steps and vital information for upgrading from 2.0.X and 2.1.X are included. For specific changes for deployments, see <a href="#deploy">Changes in Deployment</a>.</p>
 
 <h2 id="highlights">Highlights</h2>
 
@@ -497,10 +497,10 @@
     <p><strong>B2B Commerce functionality</strong> is designed to meet the needs of merchants whose primary customers are companies, rather than consumers. Companies can create and maintain their own accounts, each with teams of buyers with various roles and levels of permission. B2B Commerce functionality also includes a flexible API that integrates with a variety of ERP solutions from Magento partners. B2B is supported for Magento Commerce (Cloud) Pro subscriptions. See <a href="http://docs.magento.com/m2/ce/user_guide/getting-started/quick-tour.html">B2B Quick Tour</a> for an overview of the rich B2B feature set we’re introducing in this release, and <a href="http://docs.magento.com/m2/b2b/user_guide/getting-started.html">Getting Started with Magento Commerce for B2B</a> for a more complete exploration of these new features.</p>
   </li>
   <li>
-    <p><strong>Magento Commerce Starter</strong>. In addition to our Pro plan, Magento Cloud (Commerce) now comes in a smaller, platform-as-a-service version — Magento Commerce Starter. For an overview of these plans, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html">Welcome to Magento Commerce Cloud</a>.</p>
+    <p><strong>Magento Commerce Starter</strong>. In addition to our Pro plan, Magento Cloud (Commerce) now comes in a smaller, Platform-as-a-Service version — Magento Commerce Starter. For an overview of these plans, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html">Welcome to Magento Commerce Cloud</a>. For specific information on Starter, see Starter <a href="http://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-architecture.html">architecture</a> and <a href="http://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html">develop and deploy workflow</a>.</p>
   </li>
   <li>
-    <p><strong>Improvements to the Magento Commerce (Cloud) deployment process</strong>. This release includes new build and deployment variables. Users of earlier versions of Magento Commerce (Cloud) will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your Magento Commerce (Cloud) without requiring a full installation of base code and the patch. For more information, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a> and <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a>.</p>
+    <p><strong>Improvements to the Magento Commerce (Cloud) deployment process</strong>. This release includes new build and deployment variables. Users of earlier versions of Magento Commerce (Cloud) will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your Magento Commerce (Cloud) without requiring a full installation of base code and the patch. For more information, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a>, <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a>, and <a href="#deploy">Changes in Deployment</a>.</p>
   </li>
   <li>
     <p><strong>Upgraded technology stack.</strong>  Magento Commerce (Cloud) recommends Fastly 1.2.28 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All <a href="http://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html">third-party libraries</a> have been upgraded to the latest stable version.</p>
@@ -595,13 +595,13 @@
     <p><code class="highlighter-rouge">.magento.app.yaml</code> has new build and deploy hooks. As part of your upgrade, you should update the <code class="highlighter-rouge">.magento.app.yaml</code> file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html#magento-app-yaml">Update .magento.app.yaml</a>. For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.</p>
   </li>
   <li>
-    <p>Modified and updated available build and deploy variables. For a full list, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a>. For 2.2, we have removed <code class="highlighter-rouge">skip_di_compilation</code> and <code class="highlighter-rouge">skip_di_clearing</code> from <code class="highlighter-rouge">build-options.ini</code>. These cannot be run for 2.2 in the build phase.</p>
-  </li>
-  <li>
     <p>The build variable <code class="highlighter-rouge">GENERATED_CODE_SYMLINKS</code> has been removed. The generated folders <code class="highlighter-rouge">var/generation</code> and <code class="highlighter-rouge">var/di</code> have been moved to a <code class="highlighter-rouge">generated/</code> read-only directory. The folder <code class="highlighter-rouge">var/generation</code> is now <code class="highlighter-rouge">generated/code</code> and <code class="highlighter-rouge">var/di</code> is now <code class="highlighter-rouge">generated/metapackage</code>.</p>
   </li>
   <li>
     <p>With the removal of <code class="highlighter-rouge">GENERATED_CODE_SYMLINKS</code>, you cannot execute <code class="highlighter-rouge">setup:di:compile</code> directly on a server.</p>
+  </li>
+  <li>
+    <p>Modified and updated available build and deploy variables. For a full list, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a>. For 2.2, we have removed <code class="highlighter-rouge">skip_di_compilation</code> and <code class="highlighter-rouge">skip_di_clearing</code> from <code class="highlighter-rouge">build-options.ini</code>. These cannot be run for 2.2 in the build phase.</p>
   </li>
 </ul>
 
@@ -624,10 +624,22 @@
 <p>The Magento Commerce technology stack is built on PHP and MySQL. For details, see <a href="/guides/v2.2/install-gde/system-requirements-tech.html">Technology stack requirements</a> and <a href="/magento-system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <h2 id="install-upgrade">Installation and upgrade instructions</h2>
+<p>If installing and working with Magento Commerce (Cloud) for the first time, we recommend <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time development setup</a>.</p>
 
 <p>To test and implement your Magento Commerce (Cloud) upgrade, see <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>. We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.</p>
 
-<p>If installing and working with Magento Commerce (Cloud) for the first time, we recommend <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time development setup</a>.</p>
+<p>You can directly upgrade to Magento Commerce (Cloud) 2.2 from the following versions:</p>
+
+<ul>
+  <li>2.0.X versions: 2.0.14, 2.0.15, 2.0.16</li>
+  <li>2.1.X versions: 2.1.7, 2.1.8, 2.1.9</li>
+</ul>
+
+<p>We have heavily tested and verified upgrades to 2.2 from the latest three versions of 2.0.X and 2.1.X.</p>
+
+<p>You can attempt to upgrade from any version directly to Magento Commerce (Cloud) 2.2. We cannot guarantee the results. For example, you should be able to upgrade from 2.0.10 or 2.1.4 directly to 2.2.</p>
+
+<p>If you prefer a secured and verified upgrade path, you can upgrade to one of the verified and tested versions, then directly upgrade to 2.2. For example, you could upgrade from 2.0.10 to 2.0.14, then upgrade to 2.2.</p>
 
 		</div>
 		<!-- /.content-wrap -->
