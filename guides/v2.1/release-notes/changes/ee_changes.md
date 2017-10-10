@@ -1,10 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 05_BC
 title: Magento Commerce Backward Incompatible Changes
-menu_title: Magento Commerce changes
-version: 2.1
 github_link: release-notes/changes/ee_changes.md
 ---
 
