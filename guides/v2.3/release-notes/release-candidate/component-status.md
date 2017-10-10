@@ -1,1 +1,0 @@
-../../../v2.2/release-notes/release-candidate/component-status.md
