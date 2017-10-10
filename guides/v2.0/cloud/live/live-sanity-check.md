@@ -27,6 +27,16 @@ We highly recommend completing your testing in an Integration active environment
 ## Update composer if you add extensions {#composer}
 If you modified your [composer.json]({{ page.baseurl }}cloud/cloud-composer.html) to add modules, we recommend running the `composer update` command in a terminal. This command updates any dependencies in the `composer.lock`. During the build phase, we run `composer install` on a fresh clone of your Git branch of code to retrieve the latest dependencies.
 
+## Verify all required files in Git {#files}
+Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
+
+* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}cloud/access-acct/trouble.html).
+* `config.local.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) for 2.1.X
+* `config.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) for 2.2.X
+* [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
+* [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
+* [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
+
 ## Test build your code locally before pushing {#test-build}
 Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. The generated build files from this test build **should not be pushed** into Git. This is just a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins.
 

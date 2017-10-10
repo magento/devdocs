@@ -165,7 +165,7 @@ To branch from master:
 
 	For example, to create a new branch named `sprint1` from master, enter:
 
-			magento-cloud environment:branch sprint1 master
+		magento-cloud environment:branch sprint1 master
 
 2.	After the command completes, update dependencies:
 

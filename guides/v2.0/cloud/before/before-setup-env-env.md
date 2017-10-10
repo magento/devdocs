@@ -4,7 +4,7 @@ group:
 subgroup:
 title: Branch an environment
 menu_title: Branch an environment
-menu_order: 
+menu_order:
 menu_node:
 version: 2.0
 github_link: cloud/before/before-setup-env-env.md
@@ -47,7 +47,7 @@ To branch from master:
 		magento-cloud snapshot:create -e <environment ID>
 
 ## Add authentication keys to auth.json {#add-keys-project}
-Contact the Project Owner or Tech Admin for a set of authentication keys. You will add the keys to `auth.json` locally and update the branch. You need `auth.json` updated before you can upgrade Magento software or install extensions.
+Contact the Project Owner or Tech Admin for the Magento authentication keys. You will add the keys to `auth.json` locally and update the branch. You need `auth.json` updated before you can upgrade Magento software or install extensions.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Ensure your Project Owner or Tech Admin has [added authentication keys to the project]({{ page.baseurl }}cloud/before/before-setup-env-keys.html).
@@ -76,27 +76,6 @@ To add your local authentication keys:
 			}
 			{% endhighlight %}
 3.	Save your changes to `auth.json` and exit the text editor.
-
-For Starter plans, you can also add auth.json to your Git ignore list.
-
-1.	Open `.gitignore` in a text editor.
-2.	Add `auth.json` to it anywhere.
-
-	A snippet from `.gitignore` follows:
-
-			/.buildpath
-			/.cache
-			/.metadata
-			/.project
-			/.settings
-			atlassian*
-			/nbproject
-			/sitemap
-			/.idea
-			/.gitattributes
-			auth.json
-
-3.	Save your changes to `.gitignore` and exit the text editor.
 
 Commit and push your changes to the Git branch.
 
