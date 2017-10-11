@@ -28,10 +28,10 @@ To redeploy with the correct authentication keys:
 
   1.	List project IDs:
 
-  		magento-cloud project:list
+  		  magento-cloud project:list
   2.	Clone the project:
 
-  		magento-cloud project:get <project ID>
+  		  magento-cloud project:get <project ID>
   3.	Wait for the project to clone.
 6.	Create a branch to update code with the name `auth`:
 
