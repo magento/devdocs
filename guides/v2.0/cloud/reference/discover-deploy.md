@@ -39,7 +39,7 @@ If you intend to make changes, modify the YAML files in your Git branch of code.
 
 We also recommend configuring your [system-specific settings]({{page.baseurl}}cloud/live/sens-data-over.html) into a `config.local.php` file. This file captures your configuration settings. You add and push this file into your Git branch, deploying it across all environments. If the file is found in the deployed code, all static file deployment occurs during the Build phase, not Deploy. Static file deployment takes a long time to complete, reducing deployment and site downtime if done in the Build phase.
 
-## Required files for your Git branch {#required}
+## Required files for your Git branch {#requiredfiles}
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
 
 * `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}cloud/access-acct/trouble.html).
