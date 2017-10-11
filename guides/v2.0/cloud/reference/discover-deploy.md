@@ -137,6 +137,10 @@ There are two default deploy hooks. `pre-deploy.php` completes necessary cleanup
   <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
 </div>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The deployment phase may seem to get stuck or take a long time. If cron jobs are running, the hooks wait until the cron jobs complete before completion of the deployment.</p>
+</div>
+
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
 While the deployment is running, we freeze the incoming traffic at the entry point for 60 seconds. We are now ready to configure routing so your web traffic will arrive at your newly created cluster.
 
