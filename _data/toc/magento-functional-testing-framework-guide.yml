@@ -3,3 +3,9 @@ pages:
   - label: Getting Started
     url: magento-functional-testing-framework/getting-started.html
     versions: 2.3
+  - label: Commands
+    versions: 2.3
+    children:
+
+      - label: Robo
+        url: magento-functional-testing-framework/robo.html
