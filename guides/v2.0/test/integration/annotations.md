@@ -35,18 +35,6 @@ The Magento-specific annotations for integration tests are applied in the follow
 
 This order is necessary to meet the requirement of setting up the store-scoped configuration values for fixture stores (stores that are created by data fixtures).
 
-### Reverting annotation
-
-The Magento annotations for integration tests are reverted in exactly the reverse of the order in which they are applied:
-
-1. `@magentoConfigFixture`
-1. `@magentoCache`
-1. `@magentoComponentsDir`
-1. `@magentoAppArea`
-1. `@magentoDataFixture`
-1. `@magentoDbIsolation`
-1. `@magentoAppIsolation`
-
 <!-- LINK DEFINITIONS -->
 
 [PHPUnit annotations]: https://wiki.corp.magento.com/display/MAGE2/Custom+DocBlock+Annotations#CustomDocBlockAnnotations-RevertingAnnotation
