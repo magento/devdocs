@@ -88,7 +88,7 @@ To set Admin variables, you will use this command format:
 
 	magento-cloud variable:set <name> <value> -e <environment ID>
 
-You can also [log into your project](https://accounts.magento.cloud){:target="_blank"} in the Project Web Interface to review project variables entered there. Select the Configure gear icon for the project, next to the project name. Click the Variables tab and review any configured variables there.
+You can also [log into your project](https://accounts.magento.cloud){:target="_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
@@ -138,7 +138,7 @@ To set variables using the CLI (with example values used):
 To set variables using the Project Web Interface:
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click Continue Later.
+2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click **Continue Later**.
 
 	![Project without code]({{ site.baseurl }}common/images/cloud_project_empty.png)
 
@@ -152,9 +152,9 @@ To set variables using the Project Web Interface:
 
 Repeat to optionally add the following variables using the examples above:
 
-* Name: ADMIN_USERNAME, Value: admin_A456
-* Name: ADMIN_PASSWORD, Value: admin_A456
-* Name: ADMIN_URL, Value: magento_A8v10
+* Name: `ADMIN_USERNAME`, Value: admin_A456
+* Name: `ADMIN_PASSWORD`, Value: admin_A456
+* Name: `ADMIN_URL`, Value: magento_A8v10
 
 ## Branch an environment {#branch}
 With your project Git cloned and Magento administrator account configured, you can branch from `master`.

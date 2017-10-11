@@ -45,9 +45,9 @@ Before creating the project, you must add a project variable for `ADMIN_EMAIL`. 
 
 You can set up the following variables:
 
-* ADMIN_EMAIL: Required. You must enter an accessible email address for the default Magento Admin administrator account.
-* ADMIN_USERNAME: The default hardcoded value is `admin`. You can optionally add a variable to change this username.
-* ADMIN_PASSWORD: We generate a random password you are prompted to reset by email. You can optionally change the password by variable or use the Forgot Password? link on the Magento Admin for the store.
+* `ADMIN_EMAIL`: Required. You must enter an accessible email address for the default Magento Admin administrator account.
+* `ADMIN_USERNAME`: The default hardcoded value is `admin`. You can optionally add a variable to change this username.
+* `ADMIN_PASSWORD`: We generate a random password you are prompted to reset by email. You can optionally change the password by variable or use the _Forgot Password?_ link on the Magento Admin for the store.
 
 To add project variables for the administrator account:
 
@@ -66,8 +66,8 @@ To add project variables for the administrator account:
 
 Optionally, you can also add variables for ADMIN_USERNAME and ADMIN_PASSWORD. By default, the admin username is `admin`. You should have changed the admin password as an onboarding task, using an email link the Project Owner received.
 
-* Name: ADMIN_USERNAME, Value: admin username of your choice
-* Name: ADMIN_PASSWORD, Value: a password of your choice
+* Name: `ADMIN_USERNAME`, Value: admin username of your choice
+* Name: `ADMIN_PASSWORD`, Value: a password of your choice
 
 ## Step 3: Create the project {#create-project}
 The project contains all of your code branches, environments from development to Production, and allows you to manage access and configurations. After the Project Owner has signed up for a plan and logged in from the email, they can begin creating and managing the project.
