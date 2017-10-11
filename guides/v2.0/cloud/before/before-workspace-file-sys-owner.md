@@ -82,4 +82,4 @@ To complete the task, restart the web server:
 *	CentOS: `service httpd restart`
 
 #### Next step:
-[Clone the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)
+[Clone and branch the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)

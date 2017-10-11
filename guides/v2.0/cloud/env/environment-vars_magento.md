@@ -43,7 +43,7 @@ The following table lists variables that you can override using environment vari
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
-<td>Administrative user's password. Initially, we have hardcoded this value to admin12. You should immediately change this password. </td>
+<td>Administrative user's password. Initially, we generate a random password and provide an email directing the Project Owner to reset the password. You should immediately change this password.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_URL</code></td>
@@ -88,12 +88,15 @@ The following variables are options available during the build process of build 
 You can use these options as part of a `build_options.ini` file for customizing the build process. This file is located in the Magento root directory.
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-</tr></thead>
-<tbody><tr>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td><code>BUILD_OPT_SKIP_DI_COMPILATION</code></td>
 <td>If you are needing to quickly debug a set of code in developer mode, you can enable this option to skip compilation and before a build immediately. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing in developer mode. You should always run di_compilation. Available in versions 2.1.2 and later, 2.2.X. For 2.2.X, we have removed `skip_di_compilation` from `build-options.ini` as it cannot be skipped during the build phase.</td>
 <td>skip_di_compilation = disabled</td>
@@ -122,6 +125,7 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 <td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in versions 2.1.4 and later, 2.2.X.</td>
 <td>skip_scd = disabled</td>
 </tr>
+<tr>
 <td><code>GENERATED_CODE_SYMLINKS</code></td>
 <td>This variable enables the <code>var/generation</code> and <code>var/di</code> generated folders to be writable. Available in versions 2.1.X.<br />
 This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>var/di</code> content is moved to <code>generated/</code>. This folder is removed after guild and deploy completes.</td>
@@ -156,7 +160,8 @@ The following variables are available during the deploy process of build and dep
 <th>Description</th>
 <th>Default value</th>
 </tr></thead>
-<tbody><tr><td><code>UPDATE_URLS</code></td>
+<tbody>
+<tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 <p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p>
 <p>This is available in versions 2.0.10 and later, 2.1.2 and later, and 2.2 and later.</p></td>
@@ -218,18 +223,18 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr><td><code>ADMIN_FIRSTNAME</code></td>
 <td>Administrative user's first name. This is available in all versions.</td>
-<td>John</td>
+<td>Not set, example: John</td>
 </tr>
 <tr><td><code>ADMIN_LASTNAME</code></td>
 <td>Administrative user's last name. This is available in all versions.</td>
-<td>Doe</td>
+<td>Not set, example: Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This is available in all versions.</td>
-<td>john@example.com</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
-<td>Administrative user's password. Initially, we have hardcoded this value to admin12. You should immediately change this password. This is available in all versions.</td>
+<td>Administrative user's password. Initially, we generate a random password and provide an email directing the Project Owner to reset the password. You should immediately change this password.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_URL</code></td>
