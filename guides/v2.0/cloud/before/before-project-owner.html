@@ -471,40 +471,12 @@
         
         
         
-        <li class="nav-level2  " id="clone-the-project">
+        <li class="nav-level2  " id="clone-and-branch-the-project">
             
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html">Clone the project</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="set-up-magento-authentication-keys">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/before/before-setup-env-keys.html">Set up Magento authentication keys</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="branch-an-environment">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/before/before-setup-env-env.html">Branch an environment</a>
+            <a href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html">Clone and branch the project</a>
             
 
             
@@ -1822,24 +1794,19 @@ This information details the manually steps for setting up your project, account
 
 <p>To initially set up your Magento Commerce (Cloud) project, you need the Project Owner to create the project, add a super user, and generate Magento Commerce authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.</p>
 
-<p>As the Project Owner, you must complete the following, required by development and technical resources:</p>
+<p><strong>Important:</strong> The Project Owner is required to complete the following steps:</p>
 
 <ul>
-  <li>Access to the Magento Commerce (Cloud) project through added user accounts</li>
-  <li>Generate Magento authentication keys</li>
-  <li>Create the project</li>
-  <li>Add a project admin account</li>
-  <li>Add admin variables</li>
+  <li>Step 1: Generate Magento authentication keys</li>
+  <li>Step 2: Add admin variables</li>
+  <li>Step 3: Create the project</li>
+  <li>Step 4: Add a project admin account</li>
 </ul>
 
-<p>After you have completed those tasks, the project admin can manage development and deployments for you.</p>
+<p>After you have completed those tasks, the Technical Admin can manage development and deployments for you.</p>
 
-<h2 id="cloud-owner-keys">Generate Magento authentication keys</h2>
-<p><strong>Important:</strong> This step is required for the Project Owner.</p>
-
-<p>Any developers or users that want to access the project require Magento authentication keys. The Project Owner needs to generate Magento authentication keys (includes 1 public and 1 private) through a Magento Marketplace account for themselves and any other user. Only the Project Owner can create these keys. When you first create your project, you will be prompted to add them.</p>
-
-<p>You must create one set of keys for each technical person you expect will work on Magento Commerce. Each user must add these keys to their <code class="highlighter-rouge">auth.json</code> file, which is located in the project root directory. We recommend against providing the keys over e-mail because it isn’t secure. Please find a secure method, working with your IT staff, for distributing the keys.</p>
+<h2 id="cloud-owner-keys">Step 1: Generate Magento authentication keys</h2>
+<p>Any developers or users that want to access the project require Magento authentication keys. The Project Owner needs to generate Magento authentication keys (includes 1 public and 1 private) through a Magento Marketplace account for the project. When you first create your project, you will be prompted to add them.</p>
 
 <p>To create authentication keys through the Magento Marketplace:</p>
 
@@ -1855,46 +1822,91 @@ This information details the manually steps for setting up your project, account
   <li>The keys generate a Public and Private key you can click to copy. Save this information or keep the page open when creating your project.</li>
 </ol>
 
-<h2 id="create-project">Create the project</h2>
-<!-- If the Project Owner did not have their account provisioned through the free trial subscription plan, you may need to create the project manually.-->
-<p>The project contains all of your code branches, environments from development to Production, and allows you to manage access and configurations. After the Project Owner has signed up for a plan and logged in from the email, they can begin creating and managing the project.</p>
+<h2 id="variables">Step 2: Add admin variables for Admin access</h2>
+<p>Before creating the project, you must add a project variable for <code class="highlighter-rouge">ADMIN_EMAIL</code>. This sets the Magento Admin administrator account email. We use this email when resetting the administrator account password. The variable is added to the entire project and saved with every branch and environment.</p>
 
-<p>The Project Owner creates the project, selecting the option for a blank site, which is a fully functional Magento template of a store and code. When created, we generate a <code class="highlighter-rouge">master</code> branch of Git code from repo.magento.com and add it to a development environment. This environment is <code class="highlighter-rouge">master</code> production for Starter and <code class="highlighter-rouge">master</code> Integration for Pro.</p>
+<p>You can set up the following variables:</p>
 
-<p>If you are concerned with creating the Project, you can create a Technical Admin and have them create the project.</p>
+<ul>
+  <li><code class="highlighter-rouge">ADMIN_EMAIL</code>: Required. You must enter an accessible email address for the default Magento Admin administrator account.</li>
+  <li><code class="highlighter-rouge">ADMIN_USERNAME</code>: The default hardcoded value is <code class="highlighter-rouge">admin</code>. You can optionally add a variable to change this username.</li>
+  <li><code class="highlighter-rouge">ADMIN_PASSWORD</code>: We generate a random password you are prompted to reset by email. You can optionally change the password by variable or use the <em>Forgot Password?</em> link on the Magento Admin for the store.</li>
+</ul>
+
+<p>To add project variables for the administrator account:</p>
 
 <ol>
-  <li>Access your account. You can open the email you received from Magento Cloud, accounts@magento.cloud, and click the Access your project now link. Or you can log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce account</a>.</li>
-  <li>Click the <strong>Projects</strong> tab. You should see an untitled new project.</li>
+  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
   <li>
-    <p>Click the name of your <strong>[Untitled Project]</strong> project and enter a name. Click <strong>Next</strong>.</p>
+    <p>Click the Configure environment gear icon <img src="/common/images/cloud_edit-project.png" alt="Configure your environment" /> next to the Project name. If you are asked to create the project, click Continue Later.</p>
 
-    <p><img src="/common/images/cloud_project_name.png" alt="Enter a name for your project" width="550px" /></p>
+    <p><img src="/common/images/cloud_project_empty.png" alt="Project without code" /></p>
+  </li>
+  <li>Select the <strong>Variables</strong> tab.</li>
+  <li>Click <strong>Add Variable</strong>.</li>
+  <li>
+    <p>For the <strong>Name</strong>, enter <code class="highlighter-rouge">ADMIN_EMAIL</code>. For the <strong>Value</strong>, enter your Project Owner email address or another accessible email for resetting the password for the default admin account.</p>
+
+    <p><img src="/common/images/cloud_project_variable.png" alt="Project variable" /></p>
+  </li>
+  <li>Click <strong>Add variable</strong>. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.</li>
+</ol>
+
+<p>Optionally, you can also add variables for ADMIN_USERNAME and ADMIN_PASSWORD. By default, the admin username is <code class="highlighter-rouge">admin</code>. You should have changed the admin password as an onboarding task, using an email link the Project Owner received.</p>
+
+<ul>
+  <li>Name: <code class="highlighter-rouge">ADMIN_USERNAME</code>, Value: admin username of your choice</li>
+  <li>Name: <code class="highlighter-rouge">ADMIN_PASSWORD</code>, Value: a password of your choice</li>
+</ul>
+
+<h2 id="create-project">Step 3: Create the project</h2>
+<p>The project contains all of your code branches, environments from development to Production, and allows you to manage access and configurations. After the Project Owner has signed up for a plan and logged in from the email, they can begin creating and managing the project.</p>
+
+<p>The Project Owner creates the project, selecting the option for a blank site, which is a fully functional Magento template of a store and code. When created, we do the following:</p>
+
+<ul>
+  <li>Generate a <code class="highlighter-rouge">master</code> branch of Git code from the Magento template at <a href="https://github.com/magento/magento-cloud-configuration" target="_blank"><code class="highlighter-rouge">magento-cloud-configuration</code> repository</a></li>
+  <li>Add the authentication key information to <code class="highlighter-rouge">auth.json</code> in your <code class="highlighter-rouge">master</code> Git branch. When you clone and branch from <code class="highlighter-rouge">master</code>, the Magento authentication keys are carried over in <code class="highlighter-rouge">auth.json</code>.</li>
+  <li>For Starter, add it to a Production environment for <code class="highlighter-rouge">master</code></li>
+  <li>For Pro, add it to an Integration environment for <code class="highlighter-rouge">master</code></li>
+</ul>
+
+<p>If you are concerned with creating the Project, you can create a <a href="#cloud-owner-admins">Technical Admin</a> and have them create the project. These instructions are for an account with one project. If you are a Magento Solution Partner,</p>
+
+<ol>
+  <li>Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the <em>Access your project now</em> link. Or you can log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce account</a>.</li>
+  <li>
+    <p>Click the <em>This project has no code yet</em> link next to the Project name.</p>
+
+    <p><img src="/common/images/cloud_project_empty.png" alt="Project without code" /></p>
   </li>
   <li>
-    <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend always starting with the blank site from a template as your initial project option. You will deploy this code across all environments including Staging and Production as part of your <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time development setup</a>. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.</p>
+    <p>Enter a name for the project.</p>
 
-    <p>When you initially set up a project from a template, we retrieve the code from the <a href="https://github.com/magento/magento-cloud-configuration" target="_blank"><code class="highlighter-rouge">magento-cloud-configuration</code> repository</a>, build and deploy it as your Master branch.</p>
+    <p><img src="/common/images/cloud_project_name.png" alt="Project name" /></p>
+  </li>
+  <li>
+    <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.</p>
 
     <p><img src="/common/images/cloud_project_template.png" alt="Create a site using the sample Magento project" width="650px" /></p>
   </li>
   <li>
-    <p>When prompted, enter your Magento Commerce <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a> in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the keys and click <strong>Finish</strong>.</p>
+    <p>When prompted, enter your Magento Commerce <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Magento authentication keys</a> in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click <strong>Finish</strong>.</p>
 
     <p><img src="/common/images/cloud-project-magento-auth-creds.png" alt="Enter your authentication keys" width="650px" /></p>
+
+    <p>The keys are added to the <code class="highlighter-rouge">auth.json</code> file in the repository <code class="highlighter-rouge">master</code> branch, required for all created branches and deployments.</p>
   </li>
   <li>
-    <p>Wait a few minutes while the project deploys. A status of pending displays until completed, similar to the following:</p>
+    <p>Wait a few minutes while the project deploys. A status of <em>Pending</em> displays until completed, similar to the following:</p>
 
     <p><img src="/common/images/cloud_project_template2.png" alt="Your sample Magento project" width="650px" /></p>
   </li>
   <li>After the project deploys, <strong>Success</strong> displays next to the name of your project.</li>
 </ol>
 
-<p>You should create user accounts to this project for each developer, administrator, and consultant that needs access to the code.</p>
-
-<h2 id="cloud-owner-admins">Create project admins and user accounts</h2>
-<p>As discussed in more detail in <a href="/guides/v2.0/cloud/project/user-admin.html">Manage users</a>, Magento Commerce (Cloud) has a number of user roles and permissions available project-wide or per environment.</p>
+<h2 id="cloud-owner-admins">Step 4: Create project admins and user accounts</h2>
+<p>You can now create user accounts to this project for a Technical Admin (super user), developers, administrators, and consultants that need access to the code. As discussed in more detail in <a href="/guides/v2.0/cloud/project/user-admin.html">Manage users</a>, Magento Commerce (Cloud) has a number of user roles and permissions available project-wide or per environment.</p>
 
 <p>Typically, the only user the Project Owner must create is the Technical Admin. This user should have the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments.</p>
 
@@ -1904,12 +1916,6 @@ This information details the manually steps for setting up your project, account
 
 <ol>
   <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
-  <li>
-    <p>Click the <strong>Projects</strong> tab.</p>
-
-    <p><img src="/common/images/cloud_account_project.png" alt="Click the projects tab to access your Cloud project" width="550px" /></p>
-  </li>
-  <li>Click the name of your project. If you have not named your project, click <strong>Continue Later</strong> to bypass and create a user.</li>
   <li>
     <p>Click the configure project button next to project name in the top navigation bar.</p>
 
@@ -1923,8 +1929,6 @@ This information details the manually steps for setting up your project, account
   <li>
     <p>Click <strong>Add User</strong>.</p>
 
-    <p>The page displays as follows.</p>
-
     <p><img src="/common/images/cloud_project-add-superuser.png" alt="Create the account" width="500px" /></p>
   </li>
   <li>Enter the user’s e-mail address.</li>
@@ -1933,35 +1937,21 @@ This information details the manually steps for setting up your project, account
 
     <ul>
       <li>For a project administrator account, select the <strong>Super User</strong> check box. This provides Admin rights for all settings and environments, including creating the project. If not selected, the account has only view options for all environments on a project and requires branch specific permissions.</li>
-      <li>Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.</li>
+      <li>
+        <p>Select permissions per specific environment (or branch):</p>
+
+        <ul>
+          <li>No access</li>
+          <li>Admin (change settings, execute action, merge code)</li>
+          <li>Contributor (push code), or Reader (view only)</li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>Click <strong>Add User</strong>.</li>
 </ol>
 
-<p>The users you add receive an e-mail inviting them to join the Magento Commerce (Cloud) project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.</p>
-
-<h2 id="variables">Add admin variables for Admin access</h2>
-<p>Prior to accessing the Magento Admin panel, you need to add Admin variables to the project.</p>
-
-<ol>
-  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
-  <li>Open your project and select a parent branch, for example <code class="highlighter-rouge">master</code>.</li>
-  <li>Click the Configure environment gear icon <img src="/common/images/cloud_edit-project.png" alt="Configure your environment" /> next to the branch name.</li>
-  <li>Select the Variables tab.</li>
-  <li>Click Add Variable.</li>
-  <li>For the Name, enter ADMIN_EMAIL. For the value, enter your Project Owner email address.</li>
-  <li>Click <strong>Add variable</strong>.</li>
-</ol>
-
-<p>After you add the variable, the environment will deploy. Wait until deployment completes before more edits.</p>
-
-<p>Optionally, you can also add variables for ADMIN_USERNAME and ADMIN_PASSWORD. By default, the admin username is <code class="highlighter-rouge">admin</code>. You should have changed the admin password as an onboarding task, using an email link the Project Owner received.</p>
-
-<ul>
-  <li>Name: ADMIN_USERNAME, Value: admin</li>
-  <li>Name: ADMIN_PASSWORD, Value: a password of your choice</li>
-</ul>
+<p>As you add environments and branches, you can modify user permissions as needed. Added users receive an e-mail inviting them to join the Magento Commerce (Cloud) project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.</p>
 
 <h2 id="cloud-owner-creds">Blackfire and New Relic</h2>
 <p>Your project includes <a href="/cloud/project/project-integrate-blackfire.html">Blackfire</a> and <a href="/cloud/project/project-integrate-github.html">New Relic</a> services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.</p>

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Clone the project | Magento 2 Developer Documentation</title>
+	<title>Clone and branch the project | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -473,40 +473,12 @@
         
         
         
-        <li class="nav-level2 active " id="clone-the-project">
+        <li class="nav-level2 active " id="clone-and-branch-the-project">
             
             
         
             
-            <a href="/guides/v2.1/cloud/before/before-setup-env-2_clone.html">Clone the project</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="set-up-magento-authentication-keys">
-            
-            
-        
-            
-            <a href="/guides/v2.1/cloud/before/before-setup-env-keys.html">Set up Magento authentication keys</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="branch-an-environment">
-            
-            
-        
-            
-            <a href="/guides/v2.1/cloud/before/before-setup-env-env.html">Branch an environment</a>
+            <a href="/guides/v2.1/cloud/before/before-setup-env-2_clone.html">Clone and branch the project</a>
             
 
             
@@ -1774,7 +1746,7 @@
 
           
 
-          <span property="name">Clone the project</span>
+          <span property="name">Clone and branch the project</span>
 
         
 
@@ -1797,7 +1769,7 @@
 
 	
 
-	<h1 class="page-heading">Clone the project</h1>
+	<h1 class="page-heading">Clone and branch the project</h1>
 
   
 
@@ -1814,7 +1786,15 @@
 
 <p>The commands in these instructions use Magento CLI commands and Git commands to access the <code class="highlighter-rouge">master</code> environment. For a full list of Magento Cloud CLI commands, enter <code class="highlighter-rouge">magento-cloud list</code> or see the <a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento CLI reference</a>.</p>
 
-<h2 id="clonemaster">Clone the project master Branch</h2>
+<p>You should complete these instructions in the following order:</p>
+
+<ul>
+  <li><a href="#clonemaster">Clone the project master branch</a></li>
+  <li><a href="#setvariables">Change the Magento Admin URL, user name, and password on master</a></li>
+  <li><a href="#branch">Branch an environment</a></li>
+</ul>
+
+<h2 id="clonemaster">Clone the project master branch</h2>
 
 <p>To clone the project’s <code class="highlighter-rouge">master</code> environment to your local:</p>
 
@@ -1877,35 +1857,46 @@
 </ol>
 
 <h2 id="setvariables">Change the Magento Admin URL, user name, and password on master</h2>
-<p>Change the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> parameters for security reasons prior to branching from master. If you change the variables in the <code class="highlighter-rouge">master</code> branch, you only have to make these changes once. All branches inherit the variables from <code class="highlighter-rouge">master</code>.</p>
+<p>We recommend changing the following variables for the Magento Admin URL and administrator account. You should configure these settings for security reasons prior to branching from the cloned <code class="highlighter-rouge">master</code>. If you change the variables in the <code class="highlighter-rouge">master</code> branch, you only have to make these changes once. All branches inherit the variables from <code class="highlighter-rouge">master</code>.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">ADMIN_EMAIL</code>: Administrative user’s e-mail address. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.</li>
+  <li><code class="highlighter-rouge">ADMIN_USERNAME</code>: User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users. The default hardcoded username is <code class="highlighter-rouge">admin</code>. You can use <code class="highlighter-rouge">admin</code> or change it to another secure username.</li>
+  <li><code class="highlighter-rouge">ADMIN_PASSWORD</code>: Administrative user’s password. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You may need to contact the Project Owner for the updated password.</li>
+  <li><code class="highlighter-rouge">ADMIN_URL</code>: The relative URL by which to access the Magento Admin. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.</domain></li>
+</ul>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Make note of any changes you make. You may need them when installing Magento with the command line and when verifying the installation.</p>
 </div>
 
-<p>If you’re not sure whether or not the master branch has been configured, enter the following command:</p>
+<h3 id="variablelist">List and review variables</h3>
+<p>If you’re not sure whether or not the <code class="highlighter-rouge">master</code> branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables. The Project Owner may have already set some or all of the variables during <a href="/guides/v2.1/cloud/before/before-project-owner.html">project creation</a>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	magento-cloud variable:get -e &lt;environment ID&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:get -e &lt;environment ID&gt;
 </code></pre>
 </div>
 
 <p>To set Admin variables, you will use this command format:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	magento-cloud variable:set &lt;name&gt; &lt;value&gt; -e &lt;environment ID&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set &lt;name&gt; &lt;value&gt; -e &lt;environment ID&gt;
 </code></pre>
 </div>
+
+<p>You can also <a href="https://accounts.magento.cloud" target="_blank">log into your project</a> in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon <img src="/common/images/cloud_edit-project.png" alt="Configure your environment" /> next to the Project name. Click the <strong>Variables</strong> tab and review any configured variables there.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.</p>
 </div>
 
-<p>To set variables (with example values used):</p>
+<h3 id="cli">Add variables using the CLI</h3>
+<p>To set variables using the CLI (with example values used):</p>
 
 <ol>
   <li>
-    <p>To set the administrator’s user name to <code class="highlighter-rouge">meister_x2U8</code> in the <code class="highlighter-rouge">master</code> environment, enter:</p>
+    <p>To set the administrator’s user name to <code class="highlighter-rouge">admin_A456</code> in the <code class="highlighter-rouge">master</code> environment, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_USERNAME admin_A456 -e master
 </code></pre>
     </div>
   </li>
@@ -1947,12 +1938,93 @@ Environment routes:
 </code></pre>
     </div>
 
-    <p>In the preceding example, go to <code class="highlighter-rouge">http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10</code> and log in using the user name <code class="highlighter-rouge">meister_x2U8</code> and password <code class="highlighter-rouge">admin_A456</code></p>
+    <p>In the preceding example, go to <code class="highlighter-rouge">http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10</code> and log in using the user name <code class="highlighter-rouge">admin_A456</code> and password <code class="highlighter-rouge">admin_A456</code></p>
   </li>
   <li>
     <p>After the project redeploys, take a snapshot of the master branch:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>    magento-cloud snapshot:create -e master
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="web">Add variables using the Project Web Interface</h3>
+<p>To set variables using the Project Web Interface:</p>
+
+<ol>
+  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
+  <li>
+    <p>Click the Configure environment gear icon <img src="/common/images/cloud_edit-project.png" alt="Configure your environment" /> next to the Project name. If you are asked to create the project, click <strong>Continue Later</strong>.</p>
+
+    <p><img src="/common/images/cloud_project_empty.png" alt="Project without code" /></p>
+  </li>
+  <li>Select the <strong>Variables</strong> tab.</li>
+  <li>Click <strong>Add Variable</strong>.</li>
+  <li>
+    <p>For the <strong>Name</strong>, enter <code class="highlighter-rouge">ADMIN_EMAIL</code>. For the <strong>Value</strong>, enter your Project Owner email address or another accessible email for resetting the password for the default admin account.</p>
+
+    <p><img src="/common/images/cloud_project_variable.png" alt="Project variable" /></p>
+  </li>
+  <li>Click <strong>Add variable</strong>. After you add the variable, the environment will deploy. Wait until deployment completes.</li>
+</ol>
+
+<p>Repeat to optionally add the following variables using the examples above:</p>
+
+<ul>
+  <li>Name: <code class="highlighter-rouge">ADMIN_USERNAME</code>, Value: admin_A456</li>
+  <li>Name: <code class="highlighter-rouge">ADMIN_PASSWORD</code>, Value: admin_A456</li>
+  <li>Name: <code class="highlighter-rouge">ADMIN_URL</code>, Value: magento_A8v10</li>
+</ul>
+
+<h2 id="branch">Branch an environment</h2>
+<p>With your project Git cloned and Magento administrator account configured, you can branch from <code class="highlighter-rouge">master</code>.</p>
+
+<ul>
+  <li>For <a href="/guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch">Starter</a>, consider creating a branch for <code class="highlighter-rouge">staging</code>, than branch from <code class="highlighter-rouge">staging</code> for development.</li>
+  <li>For <a href="/guides/v2.1/cloud/welcome/discover-workflow.html#clone-branch">Pro</a>, create branches from <code class="highlighter-rouge">master</code> as needed for your development. These are environments in Integration.</li>
+</ul>
+
+<p>To branch from master:</p>
+
+<ol>
+  <li>
+    <p>Do any of the following:</p>
+
+    <ul>
+      <li>
+        <p>To create a new environment, enter the following command:</p>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>To check out an existing environment, enter the following command:</p>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout
+</code></pre>
+        </div>
+      </li>
+    </ul>
+
+    <p>For example, to create a new branch named <code class="highlighter-rouge">sprint1</code> from master, enter:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch sprint1 master
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>After the command completes, update dependencies:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Create a <a href="/guides/v2.1/cloud/project/project-webint-snap.html">snapshot</a> of the environment.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
     </div>
   </li>
