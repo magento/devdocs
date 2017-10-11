@@ -31,7 +31,7 @@ We'll provide you with the following credentials for your Staging and Production
 *	Fastly Service ID
 *	Fastly API token
 
-You can also locate these credentials in your Staging and Production systems in `/mnt/shared/fastly_tokens.txt`. You can SSH into the servers to verify the file in that location. If you do not locate this file, please enter a ticket for [Support]]({{ page.baseurl}}cloud/bk-cloud.html#gethelp) asking to have the file added. We can help provide this credentials file. 
+You can also locate these credentials in your Staging and Production systems in `/mnt/shared/fastly_tokens.txt`. You can SSH into the servers to verify the file in that location. If you do not locate this file, please enter a ticket for [Support]]({{ page.baseurl}}cloud/bk-cloud.html#gethelp) asking to have the file added. We can help provide this credentials file.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Make note of which environment each set of credentials is used for. If you use the wrong credentials in an environment, you'll encounter issues with Fastly.
@@ -50,7 +50,7 @@ You should install the Fastly module on your local, pushing the code to Integrat
 <div class="bs-callout bs-callout-warning" markdown="1">
 Don't configure the module in your local before building and deploying. You'll configure the module in those environments.
 
-We recommend using the `bin/magento magento-cloud:scd-dump` command for [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). If you use the `app:config;dump` command, all configuration options for Fastly will be locked from editing in Staging and Production.
+We recommend using the `bin/magento magento-cloud:scd-dump` command for [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). If you use the `app:config:dump` command, all configuration options for Fastly will be locked from editing in Staging and Production.
 </div>
 
 

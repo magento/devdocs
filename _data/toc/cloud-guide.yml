@@ -54,14 +54,8 @@ pages:
         - label: Set up the Magento file system owner
           url: cloud/before/before-workspace-file-sys-owner.html
 
-        - label: Clone the project
+        - label: Clone and branch the project
           url: cloud/before/before-setup-env-2_clone.html
-
-        - label: Set up Magento authentication keys
-          url: cloud/before/before-setup-env-keys.html
-
-        - label: Branch an environment
-          url: cloud/before/before-setup-env-env.html
 
         - label: Install Magento
           url: cloud/before/before-setup-env-install.html
