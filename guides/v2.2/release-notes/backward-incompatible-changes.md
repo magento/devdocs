@@ -1,11 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Backward Incompatibility
 title: Magento 2.2 backward incompatible changes
-menu_title: Magento 2.2 backward incompatible changes
-version: 2.2
-menu_node: parent
 github_link: release-notes/backward-incompatible-changes.md
 ---
 

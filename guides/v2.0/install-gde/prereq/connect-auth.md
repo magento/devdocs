@@ -17,4 +17,5 @@ github_link: install-gde/prereq/connect-auth.md
 
 	*	<a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Get the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage (integrators, packagers)</a>
 	*	<a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub</a> (contributing developers only)
-	*	<a href="{{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html">Update components, upgrade the Magento software</a>
+	*	<a href="{{page.baseurl}}comp-mgr/extens-man/extensman-main-pg.html">Start the Extension Manager</a>
+	*	<a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-checklist.html"> Upgrade Magento</a>

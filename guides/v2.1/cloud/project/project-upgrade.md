@@ -26,6 +26,9 @@ Always apply and test a patch your local system in an active branch. You can pus
 
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your integration, staging, and production systems.
 
+## Verify or set the ADMIN_EMAIL variable {#variable}
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
+
 ## Back up the database {#backup-db}
 Back up your integration system database and code:
 
@@ -93,6 +96,24 @@ To verify the upgrade in your integration, staging, or production system:
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version
+
+## Verify and upgrade your extensions {#extensions}
+You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
+
+We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
+
+1. Create a new branch on your local.
+2. Disable your extensions as needed.
+3. As available, download extension upgrades.
+4. Install the upgrade on your local in the Git branch as documented by the third-party documentation.
+5. Enable and test the extension locally.
+6. Push the code to test in your Integration environment.
+7. Push to Staging to test in a pre-production environment.
+
+Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.
+
+### Additional extension upgrades {#moreextensions}
+We strongly recommend upgrading your Fastly module to v1.2.27 or later for {{site.data.var.ece}} 2.1.X.
 
 ## Troubleshoot your upgrade {#upgrade-verify-tshoot}
 In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:

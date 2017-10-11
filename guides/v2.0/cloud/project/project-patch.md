@@ -44,6 +44,9 @@ Always apply and test a patch your local system in an active branch. You can pus
 
 Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 
+## Verify or set the ADMIN_EMAIL variable {#variable}
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
+
 ## Back up the database {#backup-db}
 Back up your Integration environment database and code:
 
