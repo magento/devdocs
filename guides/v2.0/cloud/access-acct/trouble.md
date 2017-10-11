@@ -24,20 +24,11 @@ To redeploy with the correct authentication keys:
 2.	Log in to the project:
 
 		magento-cloud login
-3.	If you need to clone a project:
+3.	Create a branch to update code with the name `auth`:
 
-  1.	List project IDs:
-
-  		magento-cloud project:list
-  2.	Clone the project:
-
-  		magento-cloud project:get <project ID>
-  3.	Wait for the project to clone.
-6.	Create a branch to update code with the name `auth`:
-
-    magento-cloud environment:branch auth master
-7.	Change to the project root directory.
-7.	Open `auth.json` in a text editor.
+      magento-cloud environment:branch auth master
+4.	Change to the project root directory.
+5.	Open `auth.json` in a text editor.
 
     {% highlight json %}
     {
@@ -50,13 +41,13 @@ To redeploy with the correct authentication keys:
     }
     {% endhighlight %}
 
-8.	Add the correct authentication keys.
-9.	Save your changes and exit the text editor.
-10.	Commit and merge your changes.
+6.	Add the correct authentication keys.
+7.	Save your changes and exit the text editor.
+8.	Commit and merge your changes.
 
 		git add -A
 		git commit -m "<description of change>"
 		git push origin master
-11.	Wait for the deployment to complete.
+9.	Wait for the deployment to complete.
 
 Messages indicate whether deployment was successful. You can confirm a successful deployment by going to one of the **Environment routes** displayed on your screen.
