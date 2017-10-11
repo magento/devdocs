@@ -26,16 +26,16 @@ To redeploy with the correct authentication keys:
 		magento-cloud login
 3.	If you need to clone a project:
 
-  1.	List project IDs:
+    1.	List project IDs:
 
   		  magento-cloud project:list
-  2.	Clone the project:
+    2.	Clone the project:
 
   		  magento-cloud project:get <project ID>
-  3.	Wait for the project to clone.
+    3.	Wait for the project to clone.
 6.	Create a branch to update code with the name `auth`:
 
-    magento-cloud environment:branch auth master
+      magento-cloud environment:branch auth master
 7.	Change to the project root directory.
 7.	Open `auth.json` in a text editor.
 
