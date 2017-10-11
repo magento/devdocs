@@ -96,7 +96,7 @@ You have multiple options for databases to use for your local. One database opti
 Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-For **Pro plans**, tye Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
+For **Pro plans**, the Production environment has a three node infrastructure that uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
 </div>
 
 These example instructions detail how to install and create a MariaDB database for Magento on your local:
