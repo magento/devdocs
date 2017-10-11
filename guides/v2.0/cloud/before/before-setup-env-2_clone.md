@@ -22,7 +22,7 @@ redirect_from:
 
 The Magento Commerce project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
 
-To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation).
+To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation){:target="_blank"}.
 
 The commands in these instructions use Magento CLI commands and Git commands to access the `master` environment. For a full list of Magento Cloud CLI commands, enter `magento-cloud list` or see the [Magento CLI reference]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
@@ -185,4 +185,4 @@ To branch from master:
 		magento-cloud snapshot:create -e <environment ID>
 
 #### Next step:
-[Set up authentication keys]({{ page.baseurl }}cloud/before/before-setup-env-keys.html)
+[Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
