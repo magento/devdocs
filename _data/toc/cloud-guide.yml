@@ -33,6 +33,9 @@ pages:
         - label: Fastly
           url: cloud/basic-information/cloud-fastly.html
 
+        - label: SSH and SFTP
+          url: cloud/env/environments-ssh.html
+
         - label: New Relic APM
           url: cloud/project/new-relic.html
 
@@ -157,9 +160,6 @@ pages:
       children:
         - label: Get started with an environment
           url: cloud/env/environments-start.html
-
-        - label: SSH into your environment
-          url: cloud/env/environments-ssh.html
 
         - label: Magento Cloud CLI
           url: cloud/reference/cli-ref-topic.html
