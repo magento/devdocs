@@ -8,4 +8,6 @@ pages:
     children:
 
       - label: Robo
-        url: magento-functional-testing-framework/robo.html
+        url: magento-functional-testing-framework/commands/robo.html
+      - label: Codeception
+        url: magento-functional-testing-framework/commands/codeception.html
