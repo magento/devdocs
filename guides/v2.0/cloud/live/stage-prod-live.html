@@ -366,6 +366,20 @@
         
         
         
+        <li class="nav-level2  " id="ssh-and-sftp">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH and sFTP</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="new-relic-apm">
             
             
@@ -654,6 +668,20 @@
         
         
         
+        <li class="nav-level2  " id="set-up-cron-jobs">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id=".magento.app.yaml">
             
             
@@ -869,12 +897,12 @@
         
         
         
-        <li class="nav-level2  " id="get-started-with-a-project">
+        <li class="nav-level2  " id="project-structure">
             
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a>
+            <a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a>
             
 
             
@@ -883,12 +911,12 @@
         
         
         
-        <li class="nav-level2  " id="manage-users">
+        <li class="nav-level2  " id="create-and-manage-users">
             
             
         
             
-            <a href="/guides/v2.0/cloud/project/user-admin.html">Manage users</a>
+            <a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a>
             
 
             
@@ -930,7 +958,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and Backup management</a>
+            <a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a>
             
 
             
@@ -966,20 +994,6 @@
         
             
             <a href="/guides/v2.0/cloud/env/environments-start.html">Get started with an environment</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="ssh-into-your-environment">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH into your environment</a>
             
 
             
@@ -1203,12 +1217,12 @@
         
         
         
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+        <li class="nav-level2  " id="upgrade-from-2.0.4-(cloud)">
             
             
         
             
-            <a href="/guides/v2.0/cloud/upgrade/upgrade-from-2-0-4.html">Patch Magento Commerce (Cloud)</a>
+            <a href="/guides/v2.0/cloud/upgrade/upgrade-from-2-0-4.html">Upgrade from 2.0.4 (Cloud)</a>
             
 
             
@@ -1791,7 +1805,6 @@
 <p>This information provides a depth of information on the actual actions in code when you build and deploy, migrating data and content, and testing.</p>
 
 <h2 id="starter">Starter plan deployment</h2>
-
 <p>We recommend creating a Staging branch from the <code class="highlighter-rouge">master</code> to best support your Starter plan development and deployment. With this in place, you have two of your four active environments ready: <code class="highlighter-rouge">master</code> for Production and <code class="highlighter-rouge">staging</code> for Staging.</p>
 
 <p>Now you are ready to develop and deploy:</p>
@@ -1808,7 +1821,6 @@
 <p>For detailed information of the process, see <a href="/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Starter Develop and Deploy Workflow</a>.</p>
 
 <h2 id="pro">Pro plan deployment</h2>
-
 <p>Pro comes with a large Integration environment with eight active branches and environments including <code class="highlighter-rouge">master</code>, Staging, and Production. When you create your project, code is ready to branch, develop, and push for building and deploying your site. Although the Integration environment can have many branches, Staging and Production have only one branch: the deployed Git <code class="highlighter-rouge">master</code>.</p>
 
 <ol>
@@ -1823,12 +1835,14 @@
 
 <p>For detailed information of the process, see <a href="/guides/v2.0/cloud/welcome/discover-workflow.html">Pro Develop and Deploy Workflow</a>.</p>
 
-<h3 id="assisted-deployment">Assisted deployment</h3>
-<p>For Pro, the Staging and Production environments require <em>assisted deployment</em>. These environments are not accessible through the Enterprise Cloud Edition Web Interface to add SSH keys or to modify environment variables, routes, or settings. You must enter a <a href="/guides/v2.0/cloud/bk-cloud.html#gethelp">support ticket</a> to deploy code, add SSH keys, and go live.</p>
+<h3 id="assist">Assisted deployment for Pro</h3>
+<p>For Pro, the Staging and Production environments only supports deployments for code using SSH to the environments and Git CLI commands. These environments are not currently accessible through the Project Web Interface.</p>
 
-<p>With SSH keys added, you can access the environments to complete CLI commands without requiring tickets.</p>
+<p>If you do not want to deploy using CLI commands, you can enter a <a href="/guides/v2.0/cloud/bk-cloud.html#gethelp">Support ticket</a> for assistance.</p>
 
-<h3 id="enter-a-ticket-to-deploy">Enter a ticket to deploy</h3>
+<p>If you do plan on using SSH access to those environments, you need to enter a ticket providing your SSH public keys. We will add these keys to your environment.</p>
+
+<h3 id="hooks">Enter a ticket for deploying hooks</h3>
 <div>
 
   <p>For technical reasons, Magento Commerce staging and production systems don’t implement any deployment hooks automatically. These hooks, defined in the <code class="highlighter-rouge">hooks</code> section of your <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-hooks"><code class="highlighter-rouge">.magento.app.yaml</code> file</a>, must be manually migrated to staging or production.</p>
@@ -1843,7 +1857,7 @@
   <p>You can optionally replace the <code>hooks</code> section with a shell script that you can maintain without intervention. You need only to create a support ticket the first time you'd like to use the shell script.</p>
 </div>
 
-  <h3 id="git-and-ssh-urls">Git and SSH URLs</h3>
+  <h3 id="git-ssh">Git and SSH URLs</h3>
   <p>For Pro, locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Commerce.</p>
 
   <p>After you know these URLs, you can access those environments without further intervention.</p>
@@ -1854,7 +1868,9 @@
     <li>Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.</li>
   </ul>
 
-  <h2 id="read-only-environments">Read-only environments</h2>
+  <p>For more information, see <a href="/guides/v2.0/cloud/env/environments-ss.html">SSH and sFTP</a>.</p>
+
+  <h2 id="read-only">Read-only environments</h2>
   <p>You should always deploy code by pushing your local Git branch to your environments. You should only directly modify configurations for a few key extensions directly in your Staging and Production environments. If you need to fix issues, fix them in local development, push to Git, and complete the full deployment.</p>
 
   <h2 id="next-steps">Next steps</h2>
