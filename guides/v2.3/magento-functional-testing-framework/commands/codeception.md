@@ -9,13 +9,13 @@ The following list contains commands and options available in __Codeception 2.3.
 
 ## Usage
 
-Assuming that you're working in the `magento2ce/dev/tests/acceptance` directory in your terminal, run Robo commands using the following format:
+Assuming that you're working in the `magento2ce/dev/tests/acceptance` directory in your terminal, run Codeception commands using the following format:
 
 ```bash
 $ vendor/bin/codecept command [options] [arguments]
 ```
 
-Or, if you added path of the Robo executable file to the system *PATH*, then run Robo commands using the following format:
+Or, if you added path of the Codeception executable file to the system *PATH*, then run Codeception commands using the following format:
 
 ```bash
 $ codecept command [options] [arguments]
