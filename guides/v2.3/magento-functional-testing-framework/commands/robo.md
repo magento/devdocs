@@ -9,8 +9,16 @@ The following list contains commands and options available in __Robo 1.1.3__.
 
 ## Usage
 
+Assuming that you're working in the `magento2ce/dev/tests/acceptance` directory in your terminal, run Robo commands using the following format:
+
 ```bash
-$ command [options] [arguments]
+$ vendor/bin/robo command [options] [arguments]
+```
+
+Or, if you added path of the Robo executable file to the system *PATH*, then run Robo commands using the following format:
+
+```bash
+$ robo command [options] [arguments]
 ```
 
 ## Options
