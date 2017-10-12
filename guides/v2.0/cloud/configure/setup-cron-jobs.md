@@ -105,13 +105,13 @@ You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}clo
 
     For example, you could add a reindexer cron job to run every three hours, 20 minutes after the hour (such as 12:20 am, 3:20 am, and so on):
 
-      crons:
-          magento:
-              spec: '*/5 * * * *'
-              cmd: 'php bin/magento cron:run && php bin/magento cron:run'
-          productcatalog:
-              spec: '20 */3 * * *'
-              cmd: 'bin/magento indexer:reindex catalog_product_category'
+        crons:
+            magento:
+                spec: '*/5 * * * *'
+                cmd: 'php bin/magento cron:run && php bin/magento cron:run'
+            productcatalog:
+                spec: '20 */3 * * *'
+                cmd: 'bin/magento indexer:reindex catalog_product_category'
 
 4. Save the file and push updates to the Git branch.
 
