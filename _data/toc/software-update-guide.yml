@@ -114,6 +114,14 @@ pages:
         - label: Step 4. Uninstall
           url: comp-mgr/extens-man/extensman-uninst-final.html
 
+    - label: Install extensions from the command line
+      versions: ["2.2", "2.3"]
+      url: comp-mgr/install-extensions.html
+      children:
+
+        - label: Install the B2B extension
+          url: comp-mgr/install-extensions/b2b-installation.html
+
     - label: Upgrade from CE to EE
       url: comp-mgr/upgrader/ce-ee-upgrade-start.html
 
@@ -197,4 +205,3 @@ pages:
 
         - label: magento/theme-doc-blank failure
           url: comp-mgr/trouble/cman/doc.html
-

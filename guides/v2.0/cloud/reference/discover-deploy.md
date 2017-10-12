@@ -39,6 +39,16 @@ If you intend to make changes, modify the YAML files in your Git branch of code.
 
 We also recommend configuring your [system-specific settings]({{page.baseurl}}cloud/live/sens-data-over.html) into a `config.local.php` file. This file captures your configuration settings. You add and push this file into your Git branch, deploying it across all environments. If the file is found in the deployed code, all static file deployment occurs during the Build phase, not Deploy. Static file deployment takes a long time to complete, reducing deployment and site downtime if done in the Build phase.
 
+## Required files for your Git branch {#requiredfiles}
+Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
+
+* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}cloud/access-acct/trouble.html).
+* `config.local.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) for 2.1.X
+* `config.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) for 2.2.X
+* [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
+* [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
+* [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
+
 ## Five phases of deployment {#cloud-deploy-over-phases}
 Deployment consists of the following phases:
 
@@ -125,6 +135,10 @@ There are two default deploy hooks. `pre-deploy.php` completes necessary cleanup
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+</div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The deployment phase may seem to get stuck or take a long time. If cron jobs are running, the hooks wait until the cron jobs complete before completion of the deployment.</p>
 </div>
 
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}

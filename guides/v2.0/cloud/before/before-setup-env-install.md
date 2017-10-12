@@ -14,7 +14,7 @@ redirect_from:
 ---
 
 #### Previous step:
-[Branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
+[Clone and branch the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)
 
 With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section includes the installation prep, options, and post-installation configuration you should complete.
 
@@ -59,13 +59,13 @@ For example, using the command line method:
 
 1. Switch to the user:
 
-    sudo su - magento
+    <pre>sudo su - magento</pre>
 2. Change directories for the installation:
 
-    cd /app/bin
+    <pre>cd /app/bin</pre>
 3. Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
-    php magento setup:install \
+    <pre>php magento setup:install \
       --admin-firstname=John \
       --admin-lastname=Smith \
       --admin-email=jsmith@mail.com \
@@ -79,14 +79,14 @@ For example, using the command line method:
       --currency=USD \
       --timezone=America/Chicago \
       --language=en_US \
-      --use-rewrites=1
+      --use-rewrites=1</pre>
 
 ## Post-install configurations
 After installing Magento, run the commands for [compile]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html) for the code:
 
 1. If you are not in the correct Magento user, switch:
 
-    sudo su - magento
+    <pre>sudo su - magento</pre>
 2. Change directory to `app/bin`.
 3. Run the compile command:
 
@@ -115,7 +115,7 @@ After you have installed Magento, you need to set the file system permissions an
 {% include install/file-system-perms-twouser_cmds-only.md %}
 
 ## Additional software and services
-For Integration development, you may also want to install additional tools, software, and services.
+For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html).
 
 * [Redis]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html)
 * [ElasticSearch]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html)
@@ -143,4 +143,4 @@ With these steps completed, you should have:
 ## Next steps:
 For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html).
 
-For Starter accounts, you are ready to start developing.
+For **Starter projects**, you are ready to start developing.

@@ -11,8 +11,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 ## Installation part 1: Getting started
 {% collapsible Topics include: %}
 
-*	<a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation overview</a>
-*	[Choose how to get the Magento software]({{ page.baseurl }}install-gde/continue.html)
+*	[Choose how to get the Magento software]({{page.baseurl}}install-gde/bk-install-guide.html)
 *	<a href="{{page.baseurl}}install-gde/system-requirements.html">System requirements</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Prerequisites</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">The Magento file system owner</a>

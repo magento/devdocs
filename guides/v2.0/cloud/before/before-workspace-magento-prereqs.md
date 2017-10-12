@@ -46,6 +46,9 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 * [Composer](https://getcomposer.org/download/){:target="_blank"} - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
 	For more information, see [How Cloud uses Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
+## Web server (local) {#webserver}
+We strongly recommend installing [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}install-gde/prereq/apache.html), {{site.data.var.ece}} uses nginx. To have your local as close to cloud installations as possible, install and configure nginx.
+
 ## PHP (local) {#php}
 Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php){:target="_blank"}.
 
@@ -86,9 +89,6 @@ Before working with your {{site.data.var.ece}} project, make sure you set the PH
 		*	Ubuntu: `service apache2 restart`
 	*	nginx: `service nginx restart`
 
-## Web server (local) {#webserver}
-We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server.
-
 ## Database (local) {#database}
 
 You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.ee}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galera Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment.
@@ -96,7 +96,7 @@ You have multiple options for databases to use for your local. One database opti
 Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-For **Pro plans**, tye Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
+For **Pro plans**, the Production environment has a three node infrastructure that uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
 </div>
 
 These example instructions detail how to install and create a MariaDB database for Magento on your local:
@@ -183,6 +183,18 @@ To install the Magento Cloud CLI:
 5.	Verify the `magento-cloud` command is in your path by entering the following command:
 
 		magento-cloud list
+
+## Platform.sh CLI (local) {#platformcli}
+All {{site.data.var.ece}} project environments are hosted by [Platform.sh](https://platform.sh/){:target="_blank"} on AWS instances. For additional environment management features, you can optionally install the Platform.sh CLI on your local. This CLI is entirely optional, but does include helpful commands for your environment management.
+
+All features available in the [Project Web Interface]({{ page.baseurl }}cloud/project/projects.html) and additional options including [Health Notifications](https://docs.platform.sh/administration/integrations/notifications.html#health-notifications){:target="_blank"}. You can use these commands for PaaS environments, including Pro Integration environments and all Starter environments.
+
+1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+2.	In a terminal, enter the command:
+
+		curl -sS https://platform.sh/cli/installer | php
+
+For full installation and usage information, see Platform.sh [CLI (Command Line Interface)](https://docs.platform.sh/gettingstarted/cli.html){:target="_blank"} and their [GitHub content](https://github.com/platformsh/platformsh-cli/blob/master/README.md#installation){:target="_blank"}.
 
 ## Additional options
 You can also install additional [optional software]({{ page.baseurl }}install-gde/prereq/optional.html). These packages should be installed on the local VM.

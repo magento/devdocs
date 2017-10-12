@@ -21,6 +21,6 @@ What you need:
 
 For detailed instructions:
 
-* [Upgrade Magento Commerce (Cloud)]
-* [Patch Magento Commerce (Cloud)]
-* Specifics for [upgrading from Magento Commerce (Cloud) 2.0.4]
+* [Upgrade Magento Commerce (Cloud)]({{page.baseurl}}cloud/project/project-upgrade.html)
+* [Patch Magento Commerce (Cloud)]({{page.baseurl}}cloud/project/project-patch.html)
+* Specifics for [upgrading from Magento Commerce (Cloud) 2.0.4]({{page.baseurl}}cloud/upgrade/upgrade-from-2-0-4.html)

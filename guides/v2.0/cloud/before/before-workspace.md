@@ -26,11 +26,13 @@ To begin working with a project and develop your store, you should have received
 
 You should receive an e-mail invitation to verify and access the project. If you don't see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your project account.
 
-When logged in, you should see a named project to select.
+When logged in, your project should open with a `master` branch to work with.
 
-If the project name is **[UntitledProject]**, the project administrator (Super User admin) or the account owner needs to create the project, which sets up a master Git repository on the Integration environment. Only one of these users can create the project. For instructions, see [Create the Project]({{ page.baseurl }}cloud/before/cloud/before/before-project-owner.html#create-project).
+If your Cloud account has access to multiple projects, you should see a list of projects. Select the specific project you are preparing to access and work on.
 
-![Project owner needs to create the project]({{ site.baseurl }}common/images/cloud_project_new.png){:width="440px"}
+If the project has no code, the Project Owner or Technical Lead needs to complete creating the project. The project must be set up prior to cloning and branching the Git code. For instructions, see [Prepare project environments]({{ page.baseurl }}cloud/before/cloud/before/before-project-owner.html).
+
+![Project not created]({{ site.baseurl }}common/images/cloud_project_empty.png){:width="440px"}
 
 ## Magento specific tools
 When working on your local, you will be accessing the [Magento Cloud CLI]({{ page.baseurl }}cloud/reference/cli-ref-topic.html) to issue commands and programmatically complete tasks and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} for the store UI and configurations.
@@ -56,13 +58,13 @@ You should be ready to go! The following sections provide a link to the previous
 * Install all prerequisite software and tools on your host system (laptop, desktop, etc) and local workspace (VM)
 * Install Magento Cloud CLI
 * Set up SSH keys
-* Configure the Magento file system owner
-* Clone the project, create a branch
-* Set up Magento authentication keys (encryption keys)
+* Configure the Magento file system owner (optional)
+* Clone and branch the project
 * Install Magento
 * Complete configurations and file/folder permissions
 * Verify install, branches, and get to coding!
 
+For Pro projects, you also should deploy across to Staging and Production as part of your set up.
 
 #### Next step:
 [Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)

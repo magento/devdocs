@@ -172,7 +172,7 @@ To verify cron is secure:
 
 	For example,
 
-		http://magento.example.com/cron.php?group=defaul
+		http://magento.example.com/cron.php?group=default
 
 5.  When prompted, enter an authorized user's name and password. The following figure shows an example.
 
