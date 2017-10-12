@@ -33,7 +33,7 @@ pages:
         - label: Fastly
           url: cloud/basic-information/cloud-fastly.html
 
-        - label: SSH and SFTP
+        - label: SSH and sFTP
           url: cloud/env/environments-ssh.html
 
         - label: New Relic APM
