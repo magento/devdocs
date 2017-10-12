@@ -47,15 +47,17 @@ Pro comes with a large Integration environment with eight active branches and en
 
 For detailed information of the process, see [Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html).
 
-### Assisted deployment
-For Pro, the Staging and Production environments require *assisted deployment*. These environments are not accessible through the Enterprise Cloud Edition Web Interface to add SSH keys or to modify environment variables, routes, or settings. You must enter a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to deploy code, add SSH keys, and go live.
+### Assisted deployment for Pro {#assist}
+For Pro, the Staging and Production environments only supports deployments for code using SSH to the environments and Git CLI commands. These environments are not currently accessible through the Project Web Interface.
 
-With SSH keys added, you can access the environments to complete CLI commands without requiring tickets.
+If you do not want to deploy using CLI commands, you can enter a [Support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) for assistance.
 
-### Enter a ticket to deploy
+If you do plan on using SSH access to those environments, you need to enter a ticket providing your SSH public keys. We will add these keys to your environment.
+
+### Enter a ticket for deploying hooks {#hooks}
 {% include cloud/hooks.md %}
 
-### Git and SSH URLs
+### Git and SSH URLs {#git-ssh}
 For Pro, locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Commerce.
 
 After you know these URLs, you can access those environments without further intervention.
@@ -64,14 +66,16 @@ After you know these URLs, you can access those environments without further int
 * Use the URL /admin to access the Admin panel.
 * Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
 
-## Read-only environments
+For more information, see [SSH and sFTP]({{ page.baseurl }}cloud/env/environments-ss.html).
+
+## Read-only environments {#read-only}
 You should always deploy code by pushing your local Git branch to your environments. You should only directly modify configurations for a few key extensions directly in your Staging and Production environments. If you need to fix issues, fix them in local development, push to Git, and complete the full deployment.
 
 ## Next steps
 To learn more, check the following:
 
 * [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html)
-* [Continuous integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html)
+* [Continuous integration]({{ page.baseurl }}cloud/deploy/continuous-deployment.html)
 * [Protective block]({{ page.baseurl }}cloud/live/live-prot.html)
 *	[Build and deploy to your local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
 *	[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
