@@ -7,7 +7,7 @@ pages:
     versions: 2.3
     children:
 
-      - label: Robo
+      - label: robo
         url: magento-functional-testing-framework/commands/robo.html
-      - label: Codeception
+      - label: codecept
         url: magento-functional-testing-framework/commands/codeception.html
