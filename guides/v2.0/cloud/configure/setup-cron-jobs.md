@@ -58,6 +58,7 @@ For example:
 * `00 */3 * * *` runs every 3 hours at the first minute (12:00 am, 3:00 am, 6:00 am, and so on)
 * `20 */3 * * *` runs every 3 hours at minute 20 (12:20 am, 3:20 am, 6:20 am, and so on)
 * `00 00 * * *` runs once a day at midnight
+* `00 * * * 1` runs once a week on Monday at midnight
 
 When determining the scheduling of your cron jobs based on the time it takes to complete the task. For example, if you run a job every three hours and the task takes 40 minutes to complete, you may want to change the scheduled timing.
 
@@ -67,8 +68,9 @@ For the command script, the format includes:
 
 The following is an example cron job:
 
-    spec: "00 */3 * * *"
-    cmd: "/usr/bin/php /app/abc123edf890/bin/magento indexer:reindex catalog_category_product"
+    crons:
+        spec: "00 */3 * * *"
+        cmd: "/usr/bin/php /app/abc123edf890/bin/magento indexer:reindex catalog_category_product"
 
 With the settings:
 
@@ -80,7 +82,7 @@ With the settings:
 Due to the minimum allowed frequency of five minutes for Starter and Pro Integration environments, you need to change the cron settings defaulted at two minutes in the Magento Admin. If you don't change the settings, crons will never run.
 
 1. Log into the Magento Admin in your deployed environment: all Starter and Pro Integration environments.
-2. Navigate to Store > Configuration > System. Expand the Cron sections.
+2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Expand the **Cron (Scheduled Tasks)** section.
 3. Expand the **Cron configuration options for group: index** section.
 4. For the **Missed if Not Run Within** setting, deselect the checkbox for Use system value. Change the value from 2 to 10 minutes.
 5. Expand the **Cron configuration options for group: staging** section.
@@ -101,15 +103,15 @@ You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}clo
 1. Edit `.magento.app.yaml` in the root directory of the Magento code in the Git branch.
 2. Locate the `crons` section in the file and add your custom cron code.
 
-  For example, you could add a reindexer cron job to run every three hours, 20 minutes after the hour (such as 12:20 am, 3:20 am, and so on):
+    For example, you could add a reindexer cron job to run every three hours, 20 minutes after the hour (such as 12:20 am, 3:20 am, and so on):
 
-    crons:
-        magento:
-            spec: '*/5 * * * *'
-            cmd: 'php bin/magento cron:run && php bin/magento cron:run'
-        productcatalog:
-            spec: '20 */3 * * *'
-            cmd: 'bin/magento indexer:reindex catalog_product_category'
+      crons:
+          magento:
+              spec: '*/5 * * * *'
+              cmd: 'php bin/magento cron:run && php bin/magento cron:run'
+          productcatalog:
+              spec: '20 */3 * * *'
+              cmd: 'bin/magento indexer:reindex catalog_product_category'
 
 4. Save the file and push updates to the Git branch.
 
