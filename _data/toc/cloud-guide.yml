@@ -201,7 +201,7 @@ pages:
         - label: Patch Magento Commerce (Cloud)
           url: cloud/project/project-patch.html
 
-        - label: Patch Magento Commerce (Cloud)
+        - label: Upgrade from 2.0.4 (Cloud)
           url: cloud/upgrade/upgrade-from-2-0-4.html
           versions: ["2.0"]
 
