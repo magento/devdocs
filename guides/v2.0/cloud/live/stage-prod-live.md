@@ -19,7 +19,6 @@ The process for deploying and going live begins with development, continues to S
 This information provides a depth of information on the actual actions in code when you build and deploy, migrating data and content, and testing.
 
 ## Starter plan deployment {#starter}
-
 We recommend creating a Staging branch from the `master` to best support your Starter plan development and deployment. With this in place, you have two of your four active environments ready: `master` for Production and `staging` for Staging.
 
 Now you are ready to develop and deploy:
@@ -34,7 +33,6 @@ Now you are ready to develop and deploy:
 For detailed information of the process, see [Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html).
 
 ## Pro plan deployment {#pro}
-
 Pro comes with a large Integration environment with eight active branches and environments including `master`, Staging, and Production. When you create your project, code is ready to branch, develop, and push for building and deploying your site. Although the Integration environment can have many branches, Staging and Production have only one branch: the deployed Git `master`.
 
 1. Create development branches from the Integration `master` branch
