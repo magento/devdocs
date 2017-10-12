@@ -33,6 +33,9 @@ pages:
         - label: Fastly
           url: cloud/basic-information/cloud-fastly.html
 
+        - label: SSH and sFTP
+          url: cloud/env/environments-ssh.html
+
         - label: New Relic APM
           url: cloud/project/new-relic.html
 
@@ -93,6 +96,9 @@ pages:
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html
 
+        - label: Set up cron jobs
+          url: cloud/configure/setup-cron-jobs.html
+
         - label: .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
 
@@ -134,10 +140,10 @@ pages:
     - label: Manage your project
       url: cloud/project/projects.html
       children:
-        - label: Get started with a project
+        - label: Project structure
           url: cloud/project/project-start.html
 
-        - label: Manage users
+        - label: Create and manage users
           url: cloud/project/user-admin.html
 
         - label: Basic project information
@@ -146,7 +152,7 @@ pages:
         - label: Manage branches
           url: cloud/project/project-webint-branch.html
 
-        - label: Snapshots and Backup management
+        - label: Snapshots and backup management
           url: cloud/project/project-webint-snap.html
 
     - label: Manage your environments
@@ -154,9 +160,6 @@ pages:
       children:
         - label: Get started with an environment
           url: cloud/env/environments-start.html
-
-        - label: SSH into your environment
-          url: cloud/env/environments-ssh.html
 
         - label: Magento Cloud CLI
           url: cloud/reference/cli-ref-topic.html
@@ -198,7 +201,7 @@ pages:
         - label: Patch Magento Commerce (Cloud)
           url: cloud/project/project-patch.html
 
-        - label: Patch Magento Commerce (Cloud)
+        - label: Upgrade from 2.0.4 (Cloud)
           url: cloud/upgrade/upgrade-from-2-0-4.html
           versions: ["2.0"]
 
