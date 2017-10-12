@@ -140,10 +140,10 @@ pages:
     - label: Manage your project
       url: cloud/project/projects.html
       children:
-        - label: Get started with a project
+        - label: Project structure
           url: cloud/project/project-start.html
 
-        - label: Manage users
+        - label: Create and manage users
           url: cloud/project/user-admin.html
 
         - label: Basic project information
@@ -152,7 +152,7 @@ pages:
         - label: Manage branches
           url: cloud/project/project-webint-branch.html
 
-        - label: Snapshots and Backup management
+        - label: Snapshots and backup management
           url: cloud/project/project-webint-snap.html
 
     - label: Manage your environments
