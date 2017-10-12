@@ -1980,7 +1980,7 @@ Values in <code class="highlighter-rouge">env.php</code> override values in <cod
 <h3 id="configuration-settings-locked-in-the-magento-admin">Configuration settings locked in the Magento Admin</h3>
 
 <p>Any configuration settings in <code class="highlighter-rouge">config.php</code> or <code class="highlighter-rouge">env.php</code> are locked in the Magento Admin; that is, those settings cannot be changed in the Admin.
-Use the <a href="/guides/v2.2/"><code class="highlighter-rouge">magento config:set</code> or <code class="highlighter-rouge">magento config:set --lock</code></a> command to change the settings in the <code class="highlighter-rouge">config.php</code> or <code class="highlighter-rouge">env.php</code> files.</p>
+Use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set"><code class="highlighter-rouge">magento config:set</code> or <code class="highlighter-rouge">magento config:set --lock</code></a> command to change the settings in the <code class="highlighter-rouge">config.php</code> or <code class="highlighter-rouge">env.php</code> files.</p>
 
 <h2 id="config-deploy-admin">Changes in the Magento Admin</h2>
 
@@ -2007,7 +2007,7 @@ Use the <a href="/guides/v2.2/"><code class="highlighter-rouge">magento config:s
     <p><img src="/common/images/config_split-deploy_admin-locale.png" alt="You can change the Admin locale only to deployed locales" width="450px" /></p>
   </li>
   <li>
-    <p>You cannot change locale configurations for any scope using the Admin Panel. 
+    <p>You cannot change locale configurations for any scope using the Admin Panel.
 We recommend making these changes before switching to Production mode.</p>
 
     <p>You can still configure the locale using <a href="#config-deploy-configman">environment variables</a> or the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set">config:set</a> CLI command with the path <code class="highlighter-rouge">general/locale/code</code>.</p>
