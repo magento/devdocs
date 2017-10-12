@@ -629,11 +629,15 @@ Displays help for a command
 
 The help command displays help for a given command:
 
-  php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo help list
+```bash
+php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo help list
+```
 
 You can also output the help in other formats by using the --format option:
 
-  php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo help --format=xml list
+```bash
+php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo help --format=xml list
+```
 
 To display the list of available commands, please use the list command.
 
@@ -770,19 +774,27 @@ Lists commands
 
 The list command lists all commands:
 
-  php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo list
+```bash
+$ php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo list
+```
 
 You can also display the commands for a specific namespace:
 
-  php .../repos/mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo list test
+```bash
+$ php .../repos/mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo list test
+```
 
 You can also output the information in other formats by using the --format option:
 
-  php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo list --format=xml
+```bash
+$ php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo list --format=xml
+```
 
 It's also possible to get raw list of commands (useful for embedding command runner):
 
-  php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo list --raw
+```bash
+$ php .../mftf/magento2ce/dev/tests/acceptance/vendor/consolidation/robo/robo list --raw
+```
 
 #### Arguments
 
