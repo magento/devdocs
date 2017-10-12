@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/env/environments-ssh.md
 ---
 
-SSH, or Secure Shell, is a protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter [CLI commands]({{page.baseurl}}cloud/reference/cli-ref-topic.html) for managing your branching, creating variables, and much more. We also support [sFTP](#sftp) (Secure FTP) using your SSH public key.
+SSH, or Secure Shell, is a common protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter [CLI commands]({{page.baseurl}}cloud/reference/cli-ref-topic.html) for managing your branching, creating variables, and much more. We also support [sFTP](#sftp) (Secure FTP) using your SSH public key.
 
 To use SSH, you need to:
 
@@ -18,7 +18,7 @@ To use SSH, you need to:
 * Add your SSH public key to your remote server either through CLI commands or the Project Web Interface
 * Use Magento Cloud CLI or Git commands to [SSH](#ssh) to an environment
 
-You always create a key pair for SSH including a public and private key.
+You create an SSH key pair including a public and private key:
 
 * The _public key_ is safe to provide for accessing a site, [SSH](#ssh), and [sFTP](#sftp).
 * The _private key_ should remain private on your workspace that you use for remote accessing environments. **Never share your private key.** Don't add it to a ticket, copy it to a chat, or attach it to emails.
