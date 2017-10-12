@@ -10,7 +10,7 @@ level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0CE.md
 ---
-*Release notes updated October 2.* 
+*Release notes updated October 10.* 
 
 
 We are pleased to present Magento Open Source 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
@@ -161,6 +161,13 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58849-->* You can now disable the Review module without incurring an error in the Product Edit page. Previously, if you tired to edit a product after disabling the review module, Magento displayed this error: "Something went wrong". [GitHub-6704](https://github.com/magento/magento2/issues/6704)
 
+<!--- 56816-->* You can now use Component Manager to enable a previously disabled module. Previously, when you ran `bin/magento module:disable Magento_AnyModule`, then tried to re-enable  that module, Magento fails to enable it and any previously enabled cache types, and module installation fails. [GitHub-6078](https://github.com/magento/magento2/issues/6078) 
+
+<!--- 58081-->*  Magento no longer inserts HTTPSS:// for HTTPS in a store address when you install Magento using an HTTPS address over SSL. [GitHub-6262](https://github.com/magento/magento2/issues/6262)
+
+<!--- 58132-->* We’ve fixed problems with the uninstall process. Previously, when Magento tries to uninstall a module using composer, it simultaneously tried to update the `symfony/process` version. However,  because the `module:uninstall`  command uses   `symfony/process`, the command stopped running. [GitHub-5797](https://github.com/magento/magento2/issues/5797)
+
+
 
 ### Cart and checkout
 
@@ -238,6 +245,13 @@ This release contains hundreds of fixes and enhancements.
 <!--- 47017-->* You can now directly add a configurable product to your shopping cart from category page. [GitHub-2574](https://github.com/magento/magento2/issues/2574), [GitHub-5850](https://github.com/magento/magento2/issues/5850), [GitHub-5882](https://github.com/magento/magento2/issues/5882), [GitHub-6572](https://github.com/magento/magento2/issues/6572), [GitHub-5558](https://github.com/magento/magento2/issues/5558), [GitHub-4184](https://github.com/magento/magento2/issues/4184)
 
 <!--- 58345-->* Magento now displays out-of-stock products in the shopping cart. Previously, if a product’s status changed between the time you added it to the cart and you proceeded to check out, Magento removed the product from your cart. [GitHub-6583](https://github.com/magento/magento2/issues/6583)
+
+<!--- 60110-->* When you select `New Address` while reviewing order information during check out, Magento now profiles the user name and country fields, but leaves the address fields empty. Previously, Magento did not leave the address fields empty, and the checkout process failed. [GitHub-6869](https://github.com/magento/magento2/issues/6869)
+
+<!--- 57682-->* Checkout agreement validation now works as expected after you change payment method. [GitHub-6224](https://github.com/magento/magento2/issues/6224)
+
+<!--- 58059-->* The shopping cart now displays a shipping rate that reflects tax settings. Previously, the prices displayed in your shopping cart were not adjusted to include these settings. [GitHub-6166](https://github.com/magento/magento2/issues/6166)
+
 
 
 ### Catalog
@@ -369,6 +383,11 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 59234-->* We’ve fixed an issue with sorting products by tier price. Previously, if you enabled the Used for Sorting in Product Listing field in the Edit Tier Price Attribute page. and then selected sort by tier price on the storefront, Magento displayed an error message. [GitHub-6751](https://github.com/magento/magento2/issues/6751)
 
+<!--- 59130 -->* Products returned by an API product paginated search now include `category_ids` as a member of `custom_attributes`. [GitHub-6127](https://github.com/magento/magento2/issues/6127)
+
+<!--- 58053 -->* Product images in Magento installations with multiple store views are now assigned as expected to each store view. [GitHub-6259](https://github.com/magento/magento2/issues/6259)
+
+<!--- 58290 -->* Magento no longer adds an empty product option to each PUT request. Previously, Magento added an empty option even when the options array was empty. [GitHub-5963](https://github.com/magento/magento2/issues/5963)
 
 
 ### Configurable products
@@ -434,6 +453,11 @@ This release contains hundreds of fixes and enhancements.
 
 <!---59512 -->* Magento now shows the correct product price for products that you add to the wish list from the category page. [GitHub-6866](https://github.com/magento/magento2/issues/6866)
 
+<!---57279 -->* Users no longer lose configurable product data when you change the interface locale to Chinese (China) or Arabic (Egypt). 
+
+<!---59649-->*  You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled the price. [GitHub-4419](https://github.com/magento/magento2/issues/4419)
+
+
 
 ### Email
 
@@ -454,10 +478,18 @@ This release contains hundreds of fixes and enhancements.
 
 <!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member <a href="https://github.com/barbazul" target="_blank">Barbazul</a> in pull request <a href="https://github.com/magento/magento2/pull/9902" target="_blank">9902</a>.*
 
+<!---56947 -->* You can now link a simple product to a configurable one. Previously, when you tried to use REST to link a simple product  to a configurable one, the products were not linked even though Magento responded, `Status Code: 200 OK`.  
+
+<!---57995 -->* Videos now play as expected on simple products as they do  for configurable products. Previously, simple product videos were displayed as thumbnail images only.[GitHub-6360](https://github.com/magento/magento2/issues/6360)
+
+
 
 #### Admin framework
 
 <!--- 57805 -->* You can no longer delete a currently logged-in user.
+
+<!--- 57629 -->* Inline editing in Admin now includes ACL checks. Previously, the Quick Edit editor did not respect permissions. 
+
 
 
 #### Application framework
@@ -488,6 +520,10 @@ This release contains hundreds of fixes and enhancements.
 <!--- 58285 -->* Magento now displays server-side Ajax error messages.
 
 <!--- 69674 -->* JavaScript mixins now work when you add a `urlArgs` argument to a `require_js` file. *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
+
+#### Session framework
+<!--- 57118 -->* The Magento storefront and Admin panel no longer share form keys. Previously if a user were navigating both a storefront and in the Admin simultaneously,  he would be unexpectedly redirected to the Admin dashboard. [GitHub-6201](https://github.com/magento/magento2/issues/6201)
+
 
 #### Zend framework
 
@@ -632,6 +668,13 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 60633-->* `.htaccess` deny code execution now works as expected for  Apache and  php-fpm. [GitHub-6766](https://github.com/magento/magento2/issues/6766)
 
 <!--- 57675-->* Magento now displays the WYSIWYG editor as expected. [GitHub-6222](https://github.com/magento/magento2/issues/6222), [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6815](https://github.com/magento/magento2/issues/6815)
+
+<!--- 56014-->* The Admin’s Most Viewed Products tab now displays correct product prices. Previously, prices for products in Most Viewed Products tab were incorrectly listed as $0. [GitHub-5660](https://github.com/magento/magento2/issues/5660)
+
+<!--- 57796-->* Magento now renders images as expected in the product description area. Previously, Magento did not render images in this area, and would display a broken link. [GitHub-6138](https://github.com/magento/magento2/issues/6138)
+
+<!--- 59258-->* When you override `module-directory/etc/zip_codes.xml` from a local module, all country codes  are now included as expected. Previously, only the last country code was included, which affected the custom  check out process. [GitHub-6694](https://github.com/magento/magento2/issues/6694)
+
 
 
 ### Google Analytics
@@ -826,6 +869,12 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 57846-->* New orders no longer stay in the processing state after you click the Place Order button. Previously, new orders stayed in the processing state even after you clicked Place Order. [GitHub-5860](https://github.com/magento/magento2/issues/5860) 
 
+<!--- 56938-->* Magento now creates the shipping address as expected when you  use REST to create an order.  Previously, when you used REST to create an order, then subsequently viewed the order from the Admin, Magento threw an error. 
+
+<!--- 53005-->* Magento now displays all tax details as expected on the Admin order page. Previously, Magento did not save the order tax rate information, and the full tax summary was incomplete. 
+
+<!--- 60692-->*  You can now use either the parent order item ID or child product order item ID when using  the REST API (`/V1/order/:orderId/invoice : POST method API`)  to create an invoice for an order containing bundle products. [GitHub-6988](https://github.com/magento/magento2/issues/6988)
+
 
 
 ### Payment methods
@@ -853,6 +902,13 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 64413-->* The expiration year validator now works as expected. [GitHub-8482](https://github.com/magento/magento2/issues/8482)
 
 * We've introduced the `Magento\Vault\Block\TokenRendererInterface::getToken` method. This method provides details about payment tokens to renderer components, such as public hash and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations. 
+
+<!---56347 -->* We’ve fixed an issue with the REST API that previously resulted in the PayPal gateway rejecting requests. [GitHub-10410](https://github.com/magento/magento2/issues/10410)
+
+<!--- 56345-->*  56345 Error messages associated with the `Authorize.net` payment method are now translated to fit the configured locale. [GitHub-5934](https://github.com/magento/magento2/issues/5934)
+
+<!--- 58722-->* We’ve increased the size of the `shipping_method` column in the `sales_order` and `quote_address` tables. [GitHub-6475](https://github.com/magento/magento2/issues/6475)
+
 
 
 #### Braintree
@@ -1020,6 +1076,10 @@ This release includes substantial improvements to Magento caching, image process
 <!--- 63403 -->* SalesRule now applies to auto-generated coupon codes as expected.
 
 <!--- 59047 -->* You can now create a cart price rule  without any date range restrictions. Previously, if you left the **From** and **To** dates empty, Magento filled them in with the current date. [GitHub-6762](https://github.com/magento/magento2/issues/6762), [GitHub-6122](https://github.com/magento/magento2/issues/6122)
+
+<!--- 59089 -->* When you change the currency associated with store, Magento also adjusts the currency in all product listings. [GitHub-6746](https://github.com/magento/magento2/issues/6746)
+
+<!--- 56871 -->* Non-administrative users with access rights to Products, Marketing, Promotions, and Cart Price rules can now search for categories in Cart Price rules. GitHub-6168](https://github.com/magento/magento2/issues/6168)
 
 
 
@@ -1189,6 +1249,12 @@ This release includes substantial improvements to Magento caching, image process
 !---60037 -->* Admin users can no longer create an empty URL key for a category. Previously, Magento let Admin users create an empty URL key, which lead to category-related errors.
 
 <!---64295 -->* URL rewrites are now correctly generated for multiple store views during product import.  [GitHub-8396](https://github.com/magento/magento2/issues/8396)
+
+
+<!---56862 -->* Magento now rewrites URLs as expected when you save a product while running Magento in single-store mode. [GitHub-5929](https://github.com/magento/magento2/issues/5929)
+
+<!---56863 -->* Magento now rewrites URLs as expected when you save a CMS page while running Magento in single-store mode. [GitHub-5923](https://github.com/magento/magento2/issues/5923) 
+
 
 
 
