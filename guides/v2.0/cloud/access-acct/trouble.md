@@ -30,7 +30,6 @@ To redeploy with the correct authentication keys:
 4.	Change to the project root directory.
 5.	Open `auth.json` in a text editor.
 
-    {% highlight json %}
     {
        "http-basic": {
           "repo.magento.com": {
@@ -39,7 +38,6 @@ To redeploy with the correct authentication keys:
           }
        }
     }
-    {% endhighlight %}
 
 6.	Add the correct authentication keys.
 7.	Save your changes and exit the text editor.

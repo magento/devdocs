@@ -93,6 +93,9 @@ pages:
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html
 
+        - label: Set up cron jobs
+          url: cloud/configure/setup-cron-jobs.html
+
         - label: .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
 
