@@ -1896,6 +1896,42 @@ search: "searchengine:solr"
   <li>From the <code class="highlighter-rouge">/pub/static</code> and <code class="highlighter-rouge">/pub/media</code> paths, any file can be accessed</li>
 </ul>
 
+<p>The following displays the default set of web accessible locations associated with an entry in <a href="#cloud-yaml-platform-mounts"><code class="highlighter-rouge">mounts</code></a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># The configuration of app when it is exposed to the web.
+web:
+locations:
+    "/":
+        # The public directory of the app, relative to its root.
+        root: "pub"
+        # The front-controller script to send non-static requests to.
+        passthru: "/index.php"
+        index:
+            - index.php
+        expires: -1
+        scripts: true
+        allow: false
+        rules:
+            \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
+                allow: true
+            /robots\.txt$:
+                allow: true
+    "/media":
+        root: "pub/media"
+        allow: true
+        scripts: false
+        passthru: "/index.php"
+    "/static":
+        root: "pub/static"
+        allow: true
+        scripts: false
+        passthru: "/front-static.php"
+        rules:
+            ^/static/version\d+/(?&lt;resource&gt;.*)$:
+                  passthru: "/static/$resource"
+</code></pre>
+</div>
+
 <h2 id="cloud-yaml-platform-disk"><code class="highlighter-rouge">disk</code></h2>
 <p><code class="highlighter-rouge">disk</code> defines the size of the persistent disk size of the
 application in MB.</p>
@@ -1905,17 +1941,35 @@ application in MB.</p>
 </div>
 
 <h2 id="cloud-yaml-platform-mounts"><code class="highlighter-rouge">mounts</code></h2>
-<p><code class="highlighter-rouge">mounts</code> is an object whose keys are paths relative to the root of the application. It’s in the form <code class="highlighter-rouge">volume_id[/subpath]</code>.</p>
+<p><code class="highlighter-rouge">mounts</code> is an object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It’s in the form <code class="highlighter-rouge">volume_id[/subpath]</code>.</p>
 
-<p>The format is:</p>
+<p>We include a list of default list of mounts configured in <code class="highlighter-rouge">magento.app.yaml</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># The mounts that will be performed when the package is deployed.
+mounts:
+    "var": "shared:files/var"
+    "app/etc": "shared:files/etc"
+    "pub/media": "shared:files/media"
+    "pub/static": "shared:files/static"
+</code></pre>
+</div>
+
+<p>The format for adding your mount to this list is as follows:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>"/public/sites/default/files": "shared:files/files"
 </code></pre>
 </div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>shared</code> means that the volume is shared between your applications inside an environment. The <code>disk</code> key defines the size available for that <code>shared</code> volume.</p>
+<ul>
+  <li><code class="highlighter-rouge">shared</code> means that the volume is shared between your applications inside an environment.</li>
+  <li><code class="highlighter-rouge">disk</code> key defines the size available for that <code class="highlighter-rouge">shared</code> volume</li>
+</ul>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.</p>
 </div>
+
+<p>If you also want the mount web accessible, you must add it to the <a href="#cloud-yaml-platform-web"><code class="highlighter-rouge">web</code></a> block of locations.</p>
 
 <h2 id="cloud-yaml-platform-dep"><code class="highlighter-rouge">dependencies</code></h2>
 <p><code class="highlighter-rouge">dependencies</code> enables you to specify dependencies that your application might need during the build process.</p>

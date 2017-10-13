@@ -1809,7 +1809,7 @@
 </ul>
 
 <h2 id="work">How SSH keys work</h2>
-<p>When you enter an SSH command to connect your client to the remote host, the SSH key authentication requests access to the server indicating the public key to use. The server checks for authorized keys for the public key, generates a message, and encrypts it with the public key. Your system receives the message, decrypts it using the private key, and merges the message with a session ID. A generated MD5 has of the value is sent back to the server. This passes the connection test and completes full SSH access to the host.</p>
+<p>When you enter an SSH command to connect your client to the remote host, the host and your workspace begin tests back and forth to verify and allow access. These tests use the public and private keys you generated. Your entered command initiates SSH key authentication to request access to the server, indicating the public key to use. The server checks for authorized keys in its list for your public key. When found, it generates a message string and encrypts it with the public key the host has for you. Your system receives the message, decrypts it using your local private key, and merges the message with a session ID. Your system generates an MD5 of the message and session ID, sending it back to the host. If everything checks out, this passes the connection test and completes full SSH access to the host.</p>
 
 <div>
 
@@ -2106,21 +2106,43 @@ git config --global user.email &lt;your e-mail address&gt;
   </ul>
 
   <h2 id="sftp">sFTP to environments</h2>
-  <p>Typically, you want to use SSH for secure access to your environments. We also support accessing your environments using sFTP (secure FTP). You will use your SSH public key to access via sFTP.</p>
+  <p>Typically, you want to use SSH for secure access to your environments and <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">migrate files</a> with <code class="highlighter-rouge">rsync</code> commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.</p>
 
-  <p>When configuring sFTP with the command line or application of your choice, use your SSH public key and the following information for access:</p>
+  <p>You need the following requirements to sFTP into cloud environments:</p>
+
+  <ul>
+    <li>You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.</li>
+    <li>Your public SSH key must be added to the target environment. For Starter and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production environments, you need to enter a ticket with the public key attached. Never provide your private SSH key.</li>
+  </ul>
+
+  <p>When configuring sFTP, use your SSH public key and the following information for access:</p>
 
   <ul>
     <li>Username: All content before the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
-    <li>Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
-, so you would need to use the same ssh key for sFTP that you use to connect via SSH to an environment.</li>
+    <li>Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.</li>
     <li>Host: All content after the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
     <li>Port: 22, which is the default SSH port.</li>
   </ul>
 
+  <p>To add your SSH public key information to your client:</p>
+
+  <ol>
+    <li>Use a text editor to open your generated SSH public key. Locate and edit the file in the directory location you generated it into.</li>
+    <li>Copy and paste all content before the <code class="highlighter-rouge">@</code> in the file for the client Username.</li>
+    <li>Leave Password empty.</li>
+    <li>Copy and paste all content after the <code class="highlighter-rouge">@</code> in the file for the client Host.</li>
+    <li>For the Port, enter 22.</li>
+  </ol>
+
+  <p>Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.</p>
+
+  <p>You may also want to consider <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts">adding a <code class="highlighter-rouge">mount</code></a> for access to a specific directory. You would add the mount to your <code class="highlighter-rouge">.magento.app.yaml</code> file. For a list of writable directories, see <a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a>.</p>
+
   <h4 id="related-topics">Related topics</h4>
   <ul>
     <li><a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a></li>
+    <li><a href="/guides/v2.1/cloud/before/before-workspace.html">Set up a project and dev workspace</a></li>
+    <li><a href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a></li>
   </ul>
 </div>
 
