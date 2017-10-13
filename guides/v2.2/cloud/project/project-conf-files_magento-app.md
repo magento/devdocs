@@ -17,7 +17,7 @@ redirect_from:
 ## About `.magento.app.yaml` {#cloud-yaml-platform}
 {{site.data.var.ece}} supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
 
-This file controls the application and the way it is built and deployed on {{site.data.var.ece}}. To see a sample of the file, see [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions. 
+This file controls the application and the way it is built and deployed on {{site.data.var.ece}}. To see a sample of the file, see [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/bk-cloud.html#gethelp">Support ticket</a>.</p>
@@ -99,6 +99,40 @@ Our default configuration allows the following:
 *   From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
 *   From the `/pub/static` and `/pub/media` paths, any file can be accessed
 
+The following displays the default set of web accessible locations associated with an entry in [`mounts`](#cloud-yaml-platform-mounts):
+
+    # The configuration of app when it is exposed to the web.
+    web:
+    locations:
+        "/":
+            # The public directory of the app, relative to its root.
+            root: "pub"
+            # The front-controller script to send non-static requests to.
+            passthru: "/index.php"
+            index:
+                - index.php
+            expires: -1
+            scripts: true
+            allow: false
+            rules:
+                \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
+                    allow: true
+                /robots\.txt$:
+                    allow: true
+        "/media":
+            root: "pub/media"
+            allow: true
+            scripts: false
+            passthru: "/index.php"
+        "/static":
+            root: "pub/static"
+            allow: true
+            scripts: false
+            passthru: "/front-static.php"
+            rules:
+                ^/static/version\d+/(?<resource>.*)$:
+                      passthru: "/static/$resource"
+
 ## `disk` {#cloud-yaml-platform-disk}
 `disk` defines the size of the persistent disk size of the
 application in MB.
@@ -108,16 +142,29 @@ application in MB.
 </div>
 
 ## `mounts` {#cloud-yaml-platform-mounts}
-`mounts` is an object whose keys are paths relative to the root of the application. It's in the form `volume_id[/subpath]`.
+`mounts` is an object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It's in the form `volume_id[/subpath]`.
 
-The format is:
+We include a list of default list of mounts configured in `magento.app.yaml`:
+
+    # The mounts that will be performed when the package is deployed.
+    mounts:
+        "var": "shared:files/var"
+        "app/etc": "shared:files/etc"
+        "pub/media": "shared:files/media"
+        "pub/static": "shared:files/static"
+
+The format for adding your mount to this list is as follows:
 
 	"/public/sites/default/files": "shared:files/files"
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>shared</code> means that the volume is shared between your applications inside an environment. The <code>disk</code> key defines the size available for that <code>shared</code> volume.</p>
+* `shared` means that the volume is shared between your applications inside an environment.
+* `disk` key defines the size available for that `shared` volume
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
 </div>
 
+If you also want the mount web accessible, you must add it to the [`web`](#cloud-yaml-platform-web) block of locations.
 
 ## `dependencies` {#cloud-yaml-platform-dep}
 `dependencies` enables you to specify dependencies that your application might need during the build process.
@@ -203,7 +250,7 @@ More information about crons:
 
 `crons` supports the following:
 
-*	`spec`: The cron specification. The minimum interval is once per 5 minutes.
+*	`spec`: The cron specification. For Starter and Pro Integration environments, the minimum interval is once per 5 minutes. You will need to complete [additional configurations]({{page.baseurl}}cloud/configure/setup-cron-jobs.html#admin) for crons in those environments.
 *	`cmd`: The command to execute.
 
 A sample Magento cron job follows:
@@ -213,6 +260,7 @@ A sample Magento cron job follows:
         spec: "*/5 * * * *"
         cmd: "php bin/magento cron:run"
 
+For more information, see [Set up cron jobs]({{page.baseurl}}cloud/configure/setup-cron-jobs.html).
 
 ## Configure PHP options {#cloud-yaml-platform-php}
 You can choose which version of PHP you want to run in your `.magento.app.yaml` file.:
