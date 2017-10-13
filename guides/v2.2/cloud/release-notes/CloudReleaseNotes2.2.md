@@ -87,9 +87,9 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 
 * `.magento.app.yaml` has new build and deploy hooks. As part of your upgrade, you should update the `.magento.app.yaml` file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see [Update .magento.app.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html#magento-app-yaml). For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.
 
-* The build variable `GENERATED_CODE_SYMLINKS` has been removed. The generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. The folder `var/generation` is now `generated/code` and `var/di` is now `generated/metapackage`.
+* The build variable `GENERATED_CODE_SYMLINK` has been removed. The generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. The folder `var/generation` is now `generated/code` and `var/di` is now `generated/metapackage`.
 
-* With the removal of `GENERATED_CODE_SYMLINKS`, you cannot execute `setup:di:compile` directly on a server.
+* With the removal of `GENERATED_CODE_SYMLINK`, you cannot execute `setup:di:compile` directly on a server.
 
 * Modified and updated available build and deploy variables. For a full list, see [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html). For 2.2, we have removed `skip_di_compilation` and `skip_di_clearing` from `build-options.ini`. These cannot be run for 2.2 in the build phase.
 
