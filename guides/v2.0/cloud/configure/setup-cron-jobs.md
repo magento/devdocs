@@ -79,7 +79,11 @@ With the settings:
 * `bin/magento indexer:reindex catalog_category_product` is the script actions
 
 ## Configure cron settings in the Magento Admin {#admin}
-Due to the minimum allowed frequency of five minutes for Starter and Pro Integration environments, you need to change the cron settings defaulted at two minutes in the Magento Admin. If you don't change the settings, crons will never run.
+Due to the minimum allowed frequency of **five minutes for Starter and Pro Integration environments**, you need to change the cron settings defaulted at two minutes in the Magento Admin. If you don't change the settings, crons will never run.
+
+You do not need to set this for Pro Staging and Production environments.
+
+To configure:
 
 1. Log into the Magento Admin in your deployed environment: all Starter and Pro Integration environments.
 2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Expand the **Cron (Scheduled Tasks)** section.

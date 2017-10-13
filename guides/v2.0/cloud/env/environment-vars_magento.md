@@ -128,7 +128,7 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 <tr>
 <td><code>GENERATED_CODE_SYMLINK</code></td>
 <td><p>This variable enables the <code>var/generation</code> and <code>var/di</code> generated folders to be writable. Available in versions 2.1.X.</p>
-This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>var/di</code> content is moved to <code>generated/</code>. This folder is removed after guild and deploy completes.</p></td>
+This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>var/di</code> content is moved to <code>generated/</code>. This folder is removed after build and deploy completes.</p></td>
 <td>GENERATED_CODE_SYMLINK = disabled</td>
 </tr>
 </tbody>
