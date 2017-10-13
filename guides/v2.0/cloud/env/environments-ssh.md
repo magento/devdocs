@@ -88,15 +88,18 @@ For the URLs, see the following:
 	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
 ## sFTP to environments {#sftp}
-Typically, you want to use SSH for secure access to your environments. We also support accessing your environments using sFTP (secure FTP). You will use your SSH public key to access via sFTP.
+Typically, you want to use SSH for secure access to your environments and [migrate files]({{page.baseurl}}cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP). You need to use a client that supports SSH key access for sFTP and use your SSH public key. Your public key must be added to the target environment.
 
-When configuring sFTP with the command line or application of your choice, use your SSH public key and the following information for access:
+When configuring sFTP, use your SSH public key and the following information for access:
 
 * Username: All content before the `@` in your public SSH key.
 * Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
-, so you would need to use the same ssh key for sFTP that you use to connect via SSH to an environment.
 * Host: All content after the `@` in your public SSH key.
 * Port: 22, which is the default SSH port.
 
+You may also want to consider [adding a `mount`]({{page.baseurl}}project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{page.baseurl}}cloud/project/project-start.html).
+
 #### Related topics
 *	[Project structure]({{page.baseurl}}cloud/project/project-start.html)
+*	[Set up a project and dev workspace]({{page.baseurl}}cloud/before/before-workspace.html)
+*	[Prepare to deploy to Staging and Production]({{page.baseurl}}cloud/live/stage-prod-migrate-prereq.html)
