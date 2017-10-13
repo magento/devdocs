@@ -93,7 +93,8 @@ Typically, you want to use SSH for secure access to your environments and [migra
 You need the following requirements to sFTP into cloud environments:
 
 * You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.
-* Your public SSH key must be added to the target environment. For Starter and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production environments, you need to enter a ticket with the public key attached. Never provide your private SSH key.
+* Your public SSH key must be added to the target environment. For Starter and Pro Integration environments, you can add it through the Project Web Interface.
+
 
 When configuring sFTP, use your SSH public key and the following information for access:
 
@@ -101,6 +102,7 @@ When configuring sFTP, use your SSH public key and the following information for
 * Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
 * Host: All content after the `@` in your public SSH key.
 * Port: 22, which is the default SSH port.
+
 
 To add your SSH public key information to your client:
 
@@ -112,7 +114,9 @@ To add your SSH public key information to your client:
 
 Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.
 
-You may also want to consider [adding a `mount`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{page.baseurl}}cloud/project/project-start.html).
+For **Starter and Pro Integration environments**, you may also want to consider [adding a `mount`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{page.baseurl}}cloud/project/project-start.html). This mount point will only work in those environments. 
+
+For **Pro Staging and Production environments**, you need to enter a Support ticket to request sFTP access in those environments. We can then create a mount point and provide access to the specific `pub/media` folder.
 
 #### Related topics
 *	[Project structure]({{page.baseurl}}cloud/project/project-start.html)
