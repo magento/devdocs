@@ -146,7 +146,7 @@ application in MB.
 ## `mounts` {#cloud-yaml-platform-mounts}
 `mounts` is an object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It's in the form `volume_id[/subpath]`.
 
-We include a list of default list of mounts configured in `magento.app.yaml`:
+The following is a default list of mounts configured in `magento.app.yaml`:
 
     # The mounts that will be performed when the package is deployed.
     mounts:
