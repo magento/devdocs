@@ -14,6 +14,6 @@
 ## Non-cacheable page checklist
 -   Use POST requests to modify Magento state (e.g., adding to shopping cart, wishlist, etc.)
 
--   Blocks that can't be cached should be marked as non-cacheable in the layout
+-   Blocks that can't be cached should be marked as non-cacheable in the layout. However be aware that if you add a non-cacheable block to a page, that page will no longer be able to be cached in the full page cache.
 
 -   Controllers that don't use layouts should set `no-cache` HTTP headers
