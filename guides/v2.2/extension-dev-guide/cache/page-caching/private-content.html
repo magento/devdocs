@@ -1579,7 +1579,7 @@
     <p>Use POST requests to modify Magento state (e.g., adding to shopping cart, wishlist, etc.)</p>
   </li>
   <li>
-    <p>Blocks that can’t be cached should be marked as non-cacheable in the layout</p>
+    <p>Blocks that can’t be cached should be marked as non-cacheable in the layout. However, be aware that adding a non-cacheable block to a page prevents the full page cache from caching that page.</p>
   </li>
   <li>
     <p>Controllers that don’t use layouts should set <code class="highlighter-rouge">no-cache</code> HTTP headers</p>
