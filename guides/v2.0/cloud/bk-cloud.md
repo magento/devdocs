@@ -39,8 +39,11 @@ For full release notes, see [Release Information]({{page.baseurl}}release-notes/
         <th>Pro</th>
     </tr>
     <tr><td>Core features</td>
-    <td>All Magento 2 core features</td>
-    <td>All Magento 2 core features</td>
+    <td><li>All Magento 2 core features</li>
+    <li>PayPal Onboarding Tool</li></td>
+    <td><li>All Magento 2 core features</li>
+    <li>PayPal Onboarding Tool</li>
+    <li>[B2B](http://docs.magento.com/m2/b2b/user_guide/getting-started.html?_ga=2.224194642.873591803.1508170413-1275475817.1497300109)</li></td>
     </tr>
     <tr><td>Infrastructure and deployment</td>
     <td>

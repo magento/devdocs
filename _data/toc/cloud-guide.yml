@@ -141,7 +141,7 @@ pages:
       url: cloud/project/projects.html
       children:
 
-        - label: Project Web Interface
+        - label: Configure your project
           url: cloud/project/project-webint-basic.html
 
         - label: Project structure

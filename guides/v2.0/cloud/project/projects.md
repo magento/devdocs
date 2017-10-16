@@ -16,7 +16,7 @@ We provide a Project Web Interface to fully manage all aspects of your project. 
 
 For more detailed information about actions and the Project Web Interface, see:
 
-* [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html)
+* [Configure your project]({{page.baseurl}}cloud/project/project-webint-basic.html)
 * [Project structure]({{page.baseurl}}cloud/project/project-start.html)
 * [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
 *	[Manage branches]({{page.baseurl}}cloud/project/project-webint-branch.html)
