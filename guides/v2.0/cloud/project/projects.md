@@ -18,7 +18,7 @@ We provide a Project Web Interface and CLI commands to fully manage all aspects 
 
 To manage your project, environment, and branches, see:
 
-* [Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
+* [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html)
 * [Project structure]({{page.baseurl}}cloud/project/project-start.html)
 * [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
 *	Manage branches with the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html) or [CLI commands]({{page.baseurl}}cloud/env/environments-start.html)
