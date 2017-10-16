@@ -34,7 +34,7 @@ To apply a theme:
 
 
 ## Add a design exception {#theme-apply-except}
-Design expressions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
+Design exceptions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
 To add a design exception:
 
 2. In Admin, go to **Stores** > **Configuration** > **Design**.
