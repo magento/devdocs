@@ -117,7 +117,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
 <p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>Available in versions 2.1.4 and later, 2.2.X.</p></td>
-<td>scd_threads = 1 for all Starter and Pro Integration environments<br />
+<td>scd_threads = 1 for all Starter environments and Pro Integration environments<br />
 scd_threads = 3 for Pro Staging and Production environments</td>
 </tr>
 <tr>

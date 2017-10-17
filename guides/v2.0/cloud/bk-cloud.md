@@ -43,7 +43,7 @@ For full release notes, see [Release Information]({{page.baseurl}}release-notes/
     <li>PayPal Onboarding Tool</li></td>
     <td><li>All Magento 2 core features</li>
     <li>PayPal Onboarding Tool</li>
-    <li>[B2B](http://docs.magento.com/m2/b2b/user_guide/getting-started.html)</li></td>
+    <li>[B2B](http://docs.magento.com/m2/b2b/user_guide/getting-started.html) module</li></td>
     </tr>
     <tr><td>Infrastructure and deployment</td>
     <td>
@@ -138,7 +138,7 @@ We recommend the following starting points:
 	* [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 	*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-* [Prepare for local environment setup]({{page.baseurl}}cloud/before/before-workspace.html)
+* [First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 
 ## Magento 2 resources {#magento2}
 If you would like to learn more about Magento 2, see the following resources:
@@ -155,6 +155,7 @@ If you would like to learn more about Magento 2, see the following resources:
 	*	[Customizing the Magento software]({{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html){:target="_blank"}
 	*	[Installation]({{page.baseurl}}install-gde/bk-install-guide.html), though we recommend following [Prepare for local environment setup]({{page.baseurl}}cloud/before/before-workspace.html){:target="_blank"}
 	*	[Configuration]({{page.baseurl}}config-guide/bk-config-guide.html){:target="_blank"}
+  *	[B2B user guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html)
 
 ## Helpful terms {#terms}
 
