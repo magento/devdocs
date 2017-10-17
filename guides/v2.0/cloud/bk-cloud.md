@@ -43,7 +43,7 @@ For full release notes, see [Release Information]({{page.baseurl}}release-notes/
     <li>PayPal Onboarding Tool</li></td>
     <td><li>All Magento 2 core features</li>
     <li>PayPal Onboarding Tool</li>
-    <li>[B2B](http://docs.magento.com/m2/b2b/user_guide/getting-started.html?_ga=2.224194642.873591803.1508170413-1275475817.1497300109)</li></td>
+    <li>[B2B](http://docs.magento.com/m2/b2b/user_guide/getting-started.html)</li></td>
     </tr>
     <tr><td>Infrastructure and deployment</td>
     <td>
