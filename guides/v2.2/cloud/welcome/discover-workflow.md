@@ -2,12 +2,12 @@
 layout: default
 group: cloud
 subgroup: 010_welcome
-title: Starter develop and deploy workflow
-menu_title: Starter develop and deploy workflow
-menu_order: 25
+title: Pro develop and deploy workflow
+menu_title: Pro develop and deploy workflow
+menu_order: 35
 menu_node:
 version: 2.0
-github_link: cloud/basic-information/starter-develop-deploy-workflow.md
+github_link: cloud/welcome/discover-workflow.md
 ---
 
 Everything in {{site.data.var.ece}} is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.ece}} plan subscription, your deployment workflow may differ.
@@ -18,47 +18,35 @@ The general workflow for all development and deployment includes:
 * Build and deploy processes run
 * The environments updated with code, services, and configurations
 
-The Starter plan gives you four active environments, including a `master` environment for your Production server. You have the option to use the remaining three active branches any way you want.
+The Pro plan gives you a large Integration environment for your development across eight active branches, a Staging environment, and a Production environment. For full details, see [Pro architecture]({{ page.baseurl }}cloud/reference/discover-arch.html).
 
-We **recommend creating a Staging branch** for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create from `staging` and use for all development, easily merging work up through `staging` then `master`.
+The following figure shows how it works at a high level:
 
-Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. Only the Production and Staging environments have full services including Fastly and New Relic.
+![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
 
-The following diagram details the branch and environment relationships:
+You can manage all of Integration environments directly through the [Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). Access and manage all Integration, Staging, and Production environments  through the store and Admin panel using provided URLs and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
-![High-level view of Starter project]({{ site.baseurl }}common/images/cloud_arch-starter.png)
+### Pro environments and branches {#env-branches}
+For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These enviornments are not public facing. Finally, Production is your live, public environment.
 
-You can manage all of your environments including Production and Staging directly through the [Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html), through the store and Admin panel using provided URLs, and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-The following workflow and examples uses a Production, Staging, and Integration architecture.
-</div>
-
-## Starter environments and branches {#env-branches}
-For your environments, we recommend deploying and testing following a Development > Staging > Production workflow.
-
-* Production environment (live site) is your `master` Git branch with an associated full environment with all services
-* Staging environment is a Git branch we recommend you create called `staging`, to receive full services matching Production
-* Integration environments include two active branches we recommend created from `staging`
-
-For your branches, you can follow any methodology. One example follows Agile such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
+For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
 
 From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.
 
-For detailed information, see [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html).
+For detailed information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
 
 ## Development workflow {#development}
-Development and deployment on Starter plans begins with your initial project. You create your project with the "blank site", which is a {{site.data.var.ece}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Production environment.
+Development and deployment on Pro plans begins with your initial project. You create your project with the "blank site", which is a {{site.data.var.ece}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Integration environment.
 
 The full process involves:
 
-* [Clone and branch](#clone-branch) from Master for Staging and development branches
+* [Clone and branch](#clone-branch) from Master to local for development
 * [Develop code](#dev-code) and install extensions locally in a branch
 * [Configure](#configure-store) your store and extension settings
 * [Generate configuration](#config-management) management files
-* [Push code](#push-code) and configuration to build and deploy to an environment
+* [Push code](#push-code) and configuration to build and deploy to an Integration environment
 
-![Develop and deploy workflow]({{ site.baseurl }}common/images/cloud_workflow-starter.png)
+![Develop and deploy workflow]({{ site.baseurl }}common/images/cloud_workflow-pro.png)
 
 You also have a few optional steps to help develop and test your code and store data:
 
@@ -66,6 +54,10 @@ You also have a few optional steps to help develop and test your code and store 
 * [Pull production store data](#prod-data) down to environments
 
 This process assumes you would have your [local developer workspace]({{page.baseurl}}cloud/access-acct/first-time-setup.html) set up. Feel free to read over this process even if your local isn't ready.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The following information assumes you have provisioned Staging and Production environments.
+</div>
 
 ### Clone and branch {#clone-branch}
 When you created your project, a `master` branch was cloned using the {{site.data.var.ece}} Git repository. To start branching and working with code, you will need to clone the `master` to your local.
@@ -75,11 +67,9 @@ The format of the Git clone command is:
     git fetch origin
     git pull origin <environment ID>
 
-The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production `master` branch and environment.
+You can create a developer branch from `master`, which is an active branch in Integration. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch. You will have up to seven active Git branches available. When you create and push your branch, a full environment is automatically available to test your code.
 
-Next, create branches from `staging` to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from `staging`. You will have four active Integration environments available. When you push your an active branch of Git code, one of these Integration environments automatically deploys your code to test.
-
-We walk you through the process when you [set up your local]({{page.baseurl}}cloud/access-acct/first-time-setup.html).
+When you [set up your local]({{page.baseurl}}cloud/access-acct/first-time-setup.html) developer environment, we walk-through the software and tools you should install, including Git and the Magento Cloud CLI (a bit more robust than Git).
 
 The format of the Git branch command is:
 
@@ -90,10 +80,10 @@ The format of the Magento Cloud CLI branch command is:
     magento-cloud environment:branch <environment name> <parent environment ID>
 
 
-![Branch from Master]({{ site.baseurl }}common/images/cloud_workflow-branching.png)
+![Branch from Master]({{ site.baseurl }}common/images/cloud_workflow-pro-branching.png)
 
 ### Develop code {#dev-code}
-It's the time you have been waiting for...writing code. Using this base branch of {{site.data.var.ece}} code, you can start installing extensions, developing custom code, adding themes, and much more.
+It's the time you have been waiting for...writing code. Using this base branch of {{site.data.var.ece}} code, you can start installing extensions, configuring extension settings and your store options, creating multi-sites and stores, adding themes, and much more.
 
 We recommend using a branching strategy with your development work. Using one branch to do all of your work all at once might make testing difficult. For example, you could follow continuous integration and sprint methodologies to work:
 
@@ -104,13 +94,11 @@ We recommend using a branching strategy with your development work. Using one br
 * Integrate with a 3rd party service
 * Push this code, test, and merge to Staging then Production
 
+Do not complete any configurations on your local yet.
+
 And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Do not complete any configurations on your local yet.
-</div>
-
-![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-push-code.png)
+![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-pro-push-code.png)
 
 ### Configure store {#configure-store}
 When you are ready to configure your store, have all code pushed to your Integration environment and access the Magento Admin. You should fully configure all store settings in the Integration environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.
@@ -127,17 +115,14 @@ Beyond just store settings, you can further configure multiple sites and stores,
 Now you need to get these settings into your code. We have a helpful command to do this, keep reading.
 
 ### Generate configuration management files {#config-management}
-If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or a file all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
+If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or Excel all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
 
-{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later** (not 2.2).
+{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.2 and later**.
 
-* `php bin/magento magento-cloud:scd-dump`: Recommended. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
+* `php vendor/bin/m2-ece-scd-dump`: **Recommended**. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
 
-The generated file is located in `app/etc/`:
-
-* For 2.1.4 and later: `config.local.php`
-* For 2.2 and later: `config.php`
+The generated file is `app/etc/config.php`.
 
 You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
 
@@ -148,11 +133,11 @@ You will generate the file in the Integration environment where you configured M
   For example, we will have you install a module for Fastly in your development environment. You will only configure this module in Staging and Production. Using `scd-dump` keeps those default fields editable.
 * This file can be long depending on the size of your deployment. The `scd-dump` command generates a far small file than `app:config:dump`.
 
-![Generate configuration management file]({{ site.baseurl }}common/images/cloud_workflow-config-mgmt.png)
+![Generate configuration management file]({{ site.baseurl }}common/images/cloud_workflow-pro-config-mgmt.png)
 
 An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called `env.php` in `app/etc/`. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository. You can also create environment variables with CLI commands in all {{site.data.var.ece}} versions.
 
-![Environment variables generate]({{ site.baseurl }}common/images/cloud_workflow-env-variables.png)
+![Environment variables generate]({{ site.baseurl }}common/images/cloud_workflow-pro-env-variables.png)
 
 For more information, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).
 
@@ -168,7 +153,7 @@ For more information, see [Deployment workflow](#deploy).
 ### Optional: Install sample data {#sample-data}
 If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.ece}} template installation when creating your project.
 
-We recommend installing sample data in your local installation and Integration environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.
+We recommend installing sample data in your local Integration branches and environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.
 
 For instructions, see [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html).
 
@@ -177,18 +162,18 @@ For instructions, see [Install optional sample data]({{page.baseurl}}cloud/howto
 ### Optional: Pull production data {#prod-data}
 We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.
 
-As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and possibly Integration environments as you like.
+As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, possibly Integration environments as you like.
 
 {% include cloud/data-collection.md %}
 
-![Pull and sanitize production data]({{ site.baseurl }}common/images/cloud_workflow-data-code-process.png)
+![Pull and sanitize production data]({{ site.baseurl }}common/images/cloud_workflow-pro-data-code-process.png)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.
 </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Important: We don't recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.
+Important: We don't recommend pushing a database from the Integration or Staging environment to Production. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.
 </div>
 
 ## Deployment workflow {#deploy}
@@ -224,7 +209,7 @@ Staging is a pre-production environment, providing all services and settings as 
 To learn more, see [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html).
 
 ### Push to Master / Production {#pro}
-When you push to the `master` branch, you are pushing to Production. Treat configuration and testing of Production much as your Staging environment. The important difference in this environment is using live credentials. The moment you go live and launch, customers must be able to complete purchases and administrators should be able to manage your live store.
+When ready to start launching or to push iterations of code live, push to Production. Treat configuration and testing of Production much as your Staging environment. The important difference in this environment is using live credentials. The moment you go live and launch, customers must be able to complete purchases and administrators should be able to manage your live store.
 
 To learn more, see [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html).
 
@@ -247,5 +232,5 @@ For more information, see [Continuous integration]({{page.baseurl}}cloud/deploy/
 
 #### Related topics
 *	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
-*	[Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
+*	[Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
