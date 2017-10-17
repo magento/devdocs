@@ -273,9 +273,9 @@ Foo.prototype = {
     }
 };
 
-Assignment operations to constructor prototypes creating temporal coupling and sometimes other unwanted side effects.
-
 {% endhighlight %}
+
+Assignment operations to constructor prototypes creating temporal coupling and sometimes other unwanted side effects.
 
 ### Closures
 
