@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage branches | Magento 2 Developer Documentation</title>
+	<title>Manage branches with the Project Web Interface | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -193,7 +193,7 @@
 
 
 
-<h4>Magento Commerce (Cloud) Guide</h4>
+<h4></h4>
 <div class="left-navigation">
     <ul>
     
@@ -416,14 +416,14 @@
     
     
 
-<li class="nav-level1  " id="first-time-local-development-setup">
+<li class="nav-level1  " id="first-time-local-environment-setup">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">First-time local development setup</a>
+    <a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">First-time local environment setup</a>
     
 
     
@@ -431,12 +431,12 @@
         
         
         
-        <li class="nav-level2  " id="set-up-a-project-and-dev-workspace">
+        <li class="nav-level2  " id="prepare-for-local-environment-setup">
             
             
         
             
-            <a href="/guides/v2.1/cloud/before/before-workspace.html">Set up a project and dev workspace</a>
+            <a href="/guides/v2.1/cloud/before/before-workspace.html">Prepare for local environment setup</a>
             
 
             
@@ -900,6 +900,20 @@
         
         
         
+        <li class="nav-level2  " id="configure-your-project">
+            
+            
+        
+            
+            <a href="/guides/v2.1/cloud/project/project-webint-basic.html">Configure your project</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="project-structure">
             
             
@@ -928,12 +942,12 @@
         
         
         
-        <li class="nav-level2  " id="basic-project-information">
+        <li class="nav-level2 active " id="manage-branches-with-the-interface">
             
             
         
             
-            <a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a>
+            <a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
             
 
             
@@ -942,12 +956,12 @@
         
         
         
-        <li class="nav-level2 active " id="manage-branches">
+        <li class="nav-level2  " id="manage-branches-with-the-cli">
             
             
         
             
-            <a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage branches</a>
+            <a href="/guides/v2.1/cloud/env/environments-start.html">Manage branches with the CLI</a>
             
 
             
@@ -988,20 +1002,6 @@
 
     
     <ul>
-        
-        
-        
-        <li class="nav-level2  " id="get-started-with-an-environment">
-            
-            
-        
-            
-            <a href="/guides/v2.1/cloud/env/environments-start.html">Get started with an environment</a>
-            
-
-            
-        </li>
-        
         
         
         
@@ -1760,7 +1760,7 @@
 
           
 
-          <span property="name">Manage branches</span>
+          <span property="name">Manage branches with the Project Web Interface</span>
 
         
 
@@ -1783,7 +1783,7 @@
 
 	
 
-	<h1 class="page-heading">Manage branches</h1>
+	<h1 class="page-heading">Manage branches with the Project Web Interface</h1>
 
   
 
@@ -1793,9 +1793,9 @@
 
 			<p>Every Magento Commerce (Cloud) <em>environment</em> has an associated active Git <em>branch</em>. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see <a href="https://git-scm.com/doc">Git documentation</a>.</p>
 
-<p>For more information about managing environments using the CLI, see <a href="/guides/v2.1/cloud/env/environments-start.html">Get started with an environment</a>.</p>
+<p>For more information about managing environments using the CLI, see <a href="/guides/v2.1/cloud/env/environments-start.html">Manage branches with the CLI</a>.</p>
 
-<p>This topic discusses how to use the Web Interface to:</p>
+<p>This topic discusses how to use the Project Web Interface to:</p>
 
 <ul>
   <li>Add or delete an environment</li>
@@ -1808,7 +1808,7 @@
 
 <p>For branching strategies, review <a href="/guides/v2.1/cloud/basic-information/starter-architecture.html">Start</a> and <a href="/guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html">Pro</a> architecture overviews.</p>
 
-<p>Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and available from the project branches list. You can either activate the branch later or you can <a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete">delete it entirely</a> using the CLI.</p>
+<p>Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can <a href="/guides/v2.1/cloudenv/environments-start.html#env-delete">delete it entirely</a> using the CLI.</p>
 
 <h2 id="add">Add a branch</h2>
 <p>To add a branch:</p>

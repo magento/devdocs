@@ -193,7 +193,7 @@
 
 
 
-<h4>Magento Commerce (Cloud) Guide</h4>
+<h4></h4>
 <div class="left-navigation">
     <ul>
     
@@ -416,14 +416,14 @@
     
     
 
-<li class="nav-level1  " id="first-time-local-development-setup">
+<li class="nav-level1  " id="first-time-local-environment-setup">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time local development setup</a>
+    <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time local environment setup</a>
     
 
     
@@ -431,12 +431,12 @@
         
         
         
-        <li class="nav-level2  " id="set-up-a-project-and-dev-workspace">
+        <li class="nav-level2  " id="prepare-for-local-environment-setup">
             
             
         
             
-            <a href="/guides/v2.2/cloud/before/before-workspace.html">Set up a project and dev workspace</a>
+            <a href="/guides/v2.2/cloud/before/before-workspace.html">Prepare for local environment setup</a>
             
 
             
@@ -900,6 +900,20 @@
         
         
         
+        <li class="nav-level2  " id="configure-your-project">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Configure your project</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="project-structure">
             
             
@@ -928,12 +942,12 @@
         
         
         
-        <li class="nav-level2  " id="basic-project-information">
+        <li class="nav-level2  " id="manage-branches-with-the-interface">
             
             
         
             
-            <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a>
+            <a href="/guides/v2.2/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
             
 
             
@@ -942,12 +956,12 @@
         
         
         
-        <li class="nav-level2  " id="manage-branches">
+        <li class="nav-level2  " id="manage-branches-with-the-cli">
             
             
         
             
-            <a href="/guides/v2.2/cloud/project/project-webint-branch.html">Manage branches</a>
+            <a href="/guides/v2.2/cloud/env/environments-start.html">Manage branches with the CLI</a>
             
 
             
@@ -988,20 +1002,6 @@
 
     
     <ul>
-        
-        
-        
-        <li class="nav-level2  " id="get-started-with-an-environment">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/env/environments-start.html">Get started with an environment</a>
-            
-
-            
-        </li>
-        
         
         
         
@@ -1913,19 +1913,14 @@ git pull origin &lt;environment ID&gt;
 <h3 id="config-management">Generate configuration management files</h3>
 <p>If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or Excel all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.</p>
 
-<p>Magento Commerce (Cloud) provides a set of two <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> commands that export configuration settings from your environment into a file. These commands are only available for <strong>Magento Commerce (Cloud) 2.1.4 and later</strong>.</p>
+<p>Magento Commerce (Cloud) provides a set of two <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> commands that export configuration settings from your environment into a file. These commands are only available for <strong>Magento Commerce (Cloud) 2.2 and later</strong>.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code>: <strong>Recommended</strong>. Exports only the configuration settings you have entered or modified from defaults into a configuration file.</li>
+  <li><code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code>: <strong>Recommended</strong>. Exports only the configuration settings you have entered or modified from defaults into a configuration file.</li>
   <li><code class="highlighter-rouge">php bin/magento app:config:dump</code>: Exports every configuration setting, including modified and default, into a configuration file.</li>
 </ul>
 
-<p>The generated file is located in <code class="highlighter-rouge">app/etc/</code>:</p>
-
-<ul>
-  <li>For 2.1.4 and later: <code class="highlighter-rouge">config.app.php</code></li>
-  <li>For 2.2 and later: <code class="highlighter-rouge">config.php</code></li>
-</ul>
+<p>The generated file is <code class="highlighter-rouge">app/etc/config.php</code>.</p>
 
 <p>You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.</p>
 
@@ -1951,7 +1946,7 @@ git pull origin &lt;environment ID&gt;
 <p>For more information, see <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a>.</p>
 
 <h3 id="push-code">Push code and test</h3>
-<p>At this point, you should have a developed code branch with a configuration file (<code class="highlighter-rouge">config.app.php</code> or <code class="highlighter-rouge">config.php</code>) ready to test.</p>
+<p>At this point, you should have a developed code branch with a configuration file (<code class="highlighter-rouge">config.local.php</code> or <code class="highlighter-rouge">config.php</code>) ready to test.</p>
 
 <p>Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.</p>
 
@@ -2056,7 +2051,7 @@ git pull origin &lt;environment ID&gt;
 
   <h4 id="related-topics">Related topics</h4>
   <ul>
-    <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time development setup</a></li>
+    <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time local environment setup</a></li>
     <li><a href="/guides/v2.2/cloud/reference/discover-arch.html">Pro architecture</a></li>
     <li><a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a></li>
   </ul>

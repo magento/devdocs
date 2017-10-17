@@ -191,7 +191,7 @@
 
 
 
-<h4>Magento Commerce (Cloud) Guide</h4>
+<h4></h4>
 <div class="left-navigation">
     <ul>
     
@@ -414,14 +414,14 @@
     
     
 
-<li class="nav-level1  " id="first-time-local-development-setup">
+<li class="nav-level1  " id="first-time-local-environment-setup">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time local development setup</a>
+    <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time local environment setup</a>
     
 
     
@@ -429,12 +429,12 @@
         
         
         
-        <li class="nav-level2  " id="set-up-a-project-and-dev-workspace">
+        <li class="nav-level2  " id="prepare-for-local-environment-setup">
             
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-workspace.html">Set up a project and dev workspace</a>
+            <a href="/guides/v2.0/cloud/before/before-workspace.html">Prepare for local environment setup</a>
             
 
             
@@ -897,6 +897,20 @@
         
         
         
+        <li class="nav-level2  " id="configure-your-project">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/project/project-webint-basic.html">Configure your project</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2 active " id="project-structure">
             
             
@@ -925,12 +939,12 @@
         
         
         
-        <li class="nav-level2  " id="basic-project-information">
+        <li class="nav-level2  " id="manage-branches-with-the-interface">
             
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a>
+            <a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
             
 
             
@@ -939,12 +953,12 @@
         
         
         
-        <li class="nav-level2  " id="manage-branches">
+        <li class="nav-level2  " id="manage-branches-with-the-cli">
             
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches</a>
+            <a href="/guides/v2.0/cloud/env/environments-start.html">Manage branches with the CLI</a>
             
 
             
@@ -985,20 +999,6 @@
 
     
     <ul>
-        
-        
-        
-        <li class="nav-level2  " id="get-started-with-an-environment">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/env/environments-start.html">Get started with an environment</a>
-            
-
-            
-        </li>
-        
         
         
         
@@ -1862,25 +1862,50 @@
 
 <p>Magento logs are located in the <code class="highlighter-rouge">&lt;magento root dir&gt;/var/log</code> directory.</p>
 
-<h2 id="cloud-proj-start-summ">Cloud CLI summary</h2>
-<p>The following commands can be run from any directory. However, it’s simpler to run them from a project directory. If so, you can omit the <code class="highlighter-rouge">-p &lt;project ID&gt;</code> parameter.</p>
+<h2 id="build-log">Build logs</h2>
+<p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code class="highlighter-rouge">git push</code>, so you can observe them in the terminal or capture them (along with error messages) with <code class="highlighter-rouge">git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
-<p>All commands are shown with required options only. Get help for any <code class="highlighter-rouge">magento-cloud</code> command by appending <code class="highlighter-rouge">--help</code>. For more commands, see <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a>.</p>
+<h3 id="deploy-log">Deploy logs</h3>
+<p>You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.</p>
 
-<dl>
-  <dt><code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code></dt>
-  <dd>Push an empty commit to force a redeployment. Some actions, like adding a user for example, don’t result in deployment.</dd>
-  <dt><code class="highlighter-rouge">magento-cloud login</code></dt>
-  <dd>Log in to the project</dd>
-  <dt><code class="highlighter-rouge">magento-cloud project:list</code></dt>
-  <dd>List project IDs</dd>
-  <dt><code class="highlighter-rouge">magento-cloud environment:list -p &lt;project ID&gt;</code></dt>
-  <dd>List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).</dd>
-  <dt><code class="highlighter-rouge">magento-cloud project:get &lt;project ID&gt; &lt;directory&gt; -e &lt;environment ID&gt;</code></dt>
-  <dd>Clone a project to a directory. To clone the <code class="highlighter-rouge">master</code> environment, omit <code class="highlighter-rouge">-e &lt;environment ID&gt;</code>.</dd>
-  <dt><code class="highlighter-rouge">magento-cloud project:info -p &lt;project ID&gt;</code></dt>
-  <dd>List information about the project, including ID, name, region, URL, and Git <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>.</dd>
-</dl>
+<p>Logs from the deploy hook are located on the server in the following locations:</p>
+
+<ul>
+  <li>Integration: <code class="highlighter-rouge">/tmp/log/deploy.log</code></li>
+  <li>Staging: <code class="highlighter-rouge">/var/log/platform/&lt;prodject ID&gt;/post_deploy.log</code></li>
+  <li>Production: <code class="highlighter-rouge">/var/log/platform/{1|2|3}.&lt;prodject ID&gt;/post_deploy.log</code></li>
+</ul>
+
+<p>The value of <code class="highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="highlighter-rouge">yw1unoukjcawe</code>, the Staging environment user is <code class="highlighter-rouge">yw1unoukjcawe_stg</code> and the Production environment user is <code class="highlighter-rouge">yw1unoukjcawe</code>.</p>
+
+<p>For example, on the Staging environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at <code class="highlighter-rouge">/var/log/platform/yw1unoukjcawe_stg/post_deploy.log</code>.</p>
+
+<p>For Production, you have a three node structure. Logs are available with specific information for that node. For example, on the Production environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at node 1 <code class="highlighter-rouge">/var/log/platform/1.yw1unoukjcawe/post_deploy.log</code>, node 2 <code class="highlighter-rouge">/var/log/platform/2.yw1unoukjcawe/post_deploy.log</code>, and node 3 <code class="highlighter-rouge">/var/log/platform/3.yw1unoukjcawe/post_deploy.log</code>.</p>
+
+<p>Logs for all deployments that have occurred on this environment are appended to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment.</p>
+
+<p>The actual log output is highly verbose to allow troubleshooting. The following is a condensed example:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">[2016-10-11 22:15:38] Starting pre-deploy.
+...
+[2016-10-11 22:15:39] Pre-deploy complete.
+[2016-10-11 22:15:42] Start deploy.
+[2016-10-11 22:15:42] Preparing environment specific data.
+[2016-10-11 22:15:42] Initializing routes.
+
+... more ...
+
+[2016-10-11 22:15:46] Deployment complete.</code></pre></figure>
+
+<p>The deploy log contains start and stop messages for each of the two hooks:
+<code class="highlighter-rouge">Starting pre-deploy</code>, <code class="highlighter-rouge">Pre-deploy complete.</code>, <code class="highlighter-rouge">Start deploy.</code>, and <code class="highlighter-rouge">Deployment complete.</code>.</p>
+
+<h3 id="app-log">Application logs</h3>
+<p>To review other application logs in Staging or Production, you can access and review those logs in <code class="highlighter-rouge">/var/log/platform/ProjectID</code>.</p>
+
+<p>For Pro plan Staging, the project ID has <code class="highlighter-rouge">_stg</code> at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in <code class="highlighter-rouge">/var/log/platform/ProjectID_stg</code>.</p>
+
+<p>For Pro plan Production, you have three nodes to check for logs.</p>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

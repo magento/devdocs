@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>First-time local development setup | Magento 2 Developer Documentation</title>
+	<title>First-time local environment setup | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -193,7 +193,7 @@
 
 
 
-<h4>Magento Commerce (Cloud) Guide</h4>
+<h4></h4>
 <div class="left-navigation">
     <ul>
     
@@ -416,14 +416,14 @@
     
     
 
-<li class="nav-level1 active " id="first-time-local-development-setup">
+<li class="nav-level1 active " id="first-time-local-environment-setup">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time local development setup</a>
+    <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time local environment setup</a>
     
 
     
@@ -431,12 +431,12 @@
         
         
         
-        <li class="nav-level2  " id="set-up-a-project-and-dev-workspace">
+        <li class="nav-level2  " id="prepare-for-local-environment-setup">
             
             
         
             
-            <a href="/guides/v2.2/cloud/before/before-workspace.html">Set up a project and dev workspace</a>
+            <a href="/guides/v2.2/cloud/before/before-workspace.html">Prepare for local environment setup</a>
             
 
             
@@ -900,6 +900,20 @@
         
         
         
+        <li class="nav-level2  " id="configure-your-project">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Configure your project</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="project-structure">
             
             
@@ -928,12 +942,12 @@
         
         
         
-        <li class="nav-level2  " id="basic-project-information">
+        <li class="nav-level2  " id="manage-branches-with-the-interface">
             
             
         
             
-            <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a>
+            <a href="/guides/v2.2/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
             
 
             
@@ -942,12 +956,12 @@
         
         
         
-        <li class="nav-level2  " id="manage-branches">
+        <li class="nav-level2  " id="manage-branches-with-the-cli">
             
             
         
             
-            <a href="/guides/v2.2/cloud/project/project-webint-branch.html">Manage branches</a>
+            <a href="/guides/v2.2/cloud/env/environments-start.html">Manage branches with the CLI</a>
             
 
             
@@ -988,20 +1002,6 @@
 
     
     <ul>
-        
-        
-        
-        <li class="nav-level2  " id="get-started-with-an-environment">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/env/environments-start.html">Get started with an environment</a>
-            
-
-            
-        </li>
-        
         
         
         
@@ -1760,7 +1760,7 @@
 
           
 
-          <span property="name">First-time local development setup</span>
+          <span property="name">First-time local environment setup</span>
 
         
 
@@ -1783,7 +1783,7 @@
 
 	
 
-	<h1 class="page-heading">First-time local development setup</h1>
+	<h1 class="page-heading">First-time local environment setup</h1>
 
   
 
@@ -1809,7 +1809,7 @@
   <li><a href="http://galeracluster.com/" target="_blank">Galera Cluster</a> for databases, used in Staging and Production (with triple reduncy failover in Production)</li>
 </ul>
 
-<h2 id="gather-credentials">Gather credentials</h2>
+<h2 id="credentials">Gather credentials</h2>
 <p>Prior to setting up your workspace, you may want to gather the following credentials and accounts:</p>
 
 <ul>
@@ -1818,22 +1818,24 @@
   <li><strong>Magento Encryption Key</strong>: When importing an existing Magento system only, you will need to capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see <a href="/guides/v2.2/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
 </ul>
 
-<h2 id="create-a-local-workspace">Create a local workspace</h2>
-<p>For development, you need to install and configure a local workspace. To develop Magento code, you write code in Git branches from the Magento project Gmaster repository on a local system. You need to install a series of applications, configure user accounts and SSH credentials, prior to coding in branches.</p>
+<h2 id="local">Create a local evironment</h2>
+<p>For development, you need to install and configure a local environment. All environments for Magento Commerce (Cloud) are read-only, including all Starter environments and all Pro Integration, Staging, and Production environments. Working in a local environment, you can write and test code prior to pushing it to an Integration environment for further testing and deployment to Staging and Production.</p>
 
-<p>For complete steps, see <a href="/guides/v2.2/cloud/before/before-workspace.html">Set up a project and dev workspace</a>.</p>
+<p>We recommend adding a virtual machine (VM) or Docker container and installing Magento Commerce. The environment should closely match cloud environments. To develop Magento code, you will clone the project Git code and create branches to develop your sites and stores in this local environment.</p>
 
-<h4 id="related-topics">Related topics</h4>
+<p>The following steps walk-through preparing your local environment, installing Magento, and starting development:</p>
+
 <ul>
-  <li><a href="/guides/v2.2/cloud/before/before-workspace.html">Set up a project and dev workspace</a></li>
+  <li><a href="/guides/v2.2/cloud/before/before-workspace.html">Prepare for local environment setup</a></li>
   <li><a href="/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a></li>
   <li><a href="/guides/v2.2/cloud/before/before-workspace-ssh.html">Enable SSH keys</a></li>
-  <li><a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a></li>
+  <li><a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a> (optional)</li>
   <li><a href="/guides/v2.2/cloud/before/before-setup-env-2_clone.html">Clone and branch the project</a></li>
   <li><a href="/guides/v2.2/cloud/before/before-setup-env-install.html">Install Magento</a></li>
   <li><a href="/guides/v2.2/cloud/access-acct/first-time-deploy.html">First time deployment</a></li>
-  <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento Commerce</a></li>
 </ul>
+
+<p>If you have existing Magento custom code, we provide instructions to import. For more information, see <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento Commerce</a>.</p>
 
 		</div>
 		<!-- /.content-wrap -->

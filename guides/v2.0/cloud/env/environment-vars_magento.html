@@ -191,7 +191,7 @@
 
 
 
-<h4>Magento Commerce (Cloud) Guide</h4>
+<h4></h4>
 <div class="left-navigation">
     <ul>
     
@@ -414,14 +414,14 @@
     
     
 
-<li class="nav-level1  " id="first-time-local-development-setup">
+<li class="nav-level1  " id="first-time-local-environment-setup">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time local development setup</a>
+    <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time local environment setup</a>
     
 
     
@@ -429,12 +429,12 @@
         
         
         
-        <li class="nav-level2  " id="set-up-a-project-and-dev-workspace">
+        <li class="nav-level2  " id="prepare-for-local-environment-setup">
             
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-workspace.html">Set up a project and dev workspace</a>
+            <a href="/guides/v2.0/cloud/before/before-workspace.html">Prepare for local environment setup</a>
             
 
             
@@ -897,6 +897,20 @@
         
         
         
+        <li class="nav-level2  " id="configure-your-project">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/project/project-webint-basic.html">Configure your project</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="project-structure">
             
             
@@ -925,12 +939,12 @@
         
         
         
-        <li class="nav-level2  " id="basic-project-information">
+        <li class="nav-level2  " id="manage-branches-with-the-interface">
             
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a>
+            <a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
             
 
             
@@ -939,12 +953,12 @@
         
         
         
-        <li class="nav-level2  " id="manage-branches">
+        <li class="nav-level2  " id="manage-branches-with-the-cli">
             
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches</a>
+            <a href="/guides/v2.0/cloud/env/environments-start.html">Manage branches with the CLI</a>
             
 
             
@@ -985,20 +999,6 @@
 
     
     <ul>
-        
-        
-        
-        <li class="nav-level2  " id="get-started-with-an-environment">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/env/environments-start.html">Get started with an environment</a>
-            
-
-            
-        </li>
-        
         
         
         
@@ -1905,7 +1905,7 @@
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
 <p>To further reduce deployment time, we recommend using <a href="/guides/v2.0/config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>Available in versions 2.1.4 and later, 2.2.X.</p></td>
-<td>scd_threads = 1 for all Starter and Pro Integration environments<br />
+<td>scd_threads = 1 for all Starter environments and Pro Integration environments<br />
 scd_threads = 3 for Pro Staging and Production environments</td>
 </tr>
 <tr>

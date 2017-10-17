@@ -592,6 +592,9 @@
     <p>Update and include <code class="highlighter-rouge">config.php</code> and add a list of all modules. If you use Configuration Management with a <code class="highlighter-rouge">config.local.php</code> file, you must create a <code class="highlighter-rouge">config.php</code> and add it to your code. For instructions, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html#config">Configuration Management and upgrading</a>.</p>
   </li>
   <li>
+    <p>The command for generating <code class="highlighter-rouge">config.php</code> changed in 2.2 from <code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code> to <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code>.</p>
+  </li>
+  <li>
     <p><code class="highlighter-rouge">.magento.app.yaml</code> has new build and deploy hooks. As part of your upgrade, you should update the <code class="highlighter-rouge">.magento.app.yaml</code> file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html#magento-app-yaml">Update .magento.app.yaml</a>. For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.</p>
   </li>
   <li>
@@ -624,7 +627,7 @@
 <p>The Magento Commerce technology stack is built on PHP and MySQL. For details, see <a href="/guides/v2.2/install-gde/system-requirements-tech.html">Technology stack requirements</a> and <a href="/magento-system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <h2 id="install-upgrade">Installation and upgrade instructions</h2>
-<p>If installing and working with Magento Commerce (Cloud) for the first time, we recommend <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time development setup</a>.</p>
+<p>If installing and working with Magento Commerce (Cloud) for the first time, we recommend <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time local environment setup</a>.</p>
 
 <p>To test and implement your Magento Commerce (Cloud) upgrade, see <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>. We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.</p>
 
