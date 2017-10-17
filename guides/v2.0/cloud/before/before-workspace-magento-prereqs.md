@@ -18,7 +18,7 @@ redirect_from:
 ---
 
 #### Previous step:
-[Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
+[Prepare for local environment setup]({{ page.baseurl }}cloud/before/before-workspace.html)
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
 

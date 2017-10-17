@@ -120,5 +120,5 @@ For **Pro Staging and Production environments**, you need to enter a [Support ti
 
 #### Related topics
 *	[Project structure]({{page.baseurl}}cloud/project/project-start.html)
-*	[Set up a project and dev workspace]({{page.baseurl}}cloud/before/before-workspace.html)
+*	[Prepare for local environment setup]({{page.baseurl}}cloud/before/before-workspace.html)
 *	[Prepare to deploy to Staging and Production]({{page.baseurl}}cloud/live/stage-prod-migrate-prereq.html)

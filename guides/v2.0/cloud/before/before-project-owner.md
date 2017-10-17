@@ -176,4 +176,4 @@ Your New Relic APM credentials are displayed on the same page as Blackfire. You 
 	* [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
 	*	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-* [First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+* [First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)

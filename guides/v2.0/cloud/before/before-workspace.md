@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: Set up a project and dev workspace
-menu_title: Set up a project and dev workspace
+title: Prepare for local environment setup
+menu_title: Prepare for local environment setup
 menu_order: 5
 menu_node:
 version: 2.0
@@ -17,9 +17,9 @@ redirect from:
   - /guides/v2.2/cloud/access-acct/first-time-setup_template.html
 ---
 
-To develop, deploy, and test Magento Commerce (Cloud), you need to setup your local workspace and clone your project's master Git branch. This local workspace provides a development system for your custom code, extensions, and configurations to push for active testing in one of of the Integration environments.
+To develop, deploy, and test {{site.data.var.ece}}, you need to setup your local environment and clone your project's master Git branch. This local environment provides a development system for your custom code, extensions, and configurations to push for active testing in one of of the Integration environments.
 
-This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Magento merchants moving to the cloud. If you have already completed some of these steps or have an existing Magento developer environment, make sure to review the expected results to continue to the next. Some configurations and workflows differ for Magento Commerce than a typical Enterprise Edition installation.
+This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Magento merchants moving to the cloud. If you have already completed some of these steps or have an existing Magento developer environment, make sure to review the expected results to continue to the next. Some configurations and workflows differ for {{site.data.var.ee}} than a typical Enterprise Edition installation.
 
 ## Set up an account {#newaccount}
 To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Magento Commerce (Cloud) account](https://accounts.magento.cloud){:target="_blank"}. The account provides access to your project for Magento development and deployment across all supported environments.
@@ -44,13 +44,13 @@ This guide assumes you're working on a UNIX system or in a UNIX shell environmen
 
 For development on your local, use any development environment or tools you prefer. For recommendations, many Magento developers use tools including [WebStorm](https://www.jetbrains.com/webstorm/){:target="_blank"}, [PHPStorm](https://www.jetbrains.com/phpstorm/){:target="_blank"}, and [Atom](https://atom.io/){:target="_blank"}.
 
-Developing code for Magento Commerce requires working in Git branches. Not everyone remembers [Git](https://git-scm.com/docs){:target="_blank"} commands with ease. If you want a Git client, use any client of your choice. Some developers use clients including [GitKraken](https://www.gitkraken.com/){:target="_blank"} and [SmartGit](https://www.syntevo.com/smartgit/){:target="_blank"}.
+Developing code for {{site.data.var.ee}} requires working in Git branches. Not everyone remembers [Git](https://git-scm.com/docs){:target="_blank"} commands with ease. If you want a Git client, use any client of your choice. Some developers use clients including [GitKraken](https://www.gitkraken.com/){:target="_blank"} and [SmartGit](https://www.syntevo.com/smartgit/){:target="_blank"}.
 
 ## Prerequisites
 Have the following prepared to complete your initial workspace and project setup:
 
- * Magento Commerce account with an added user account
- * [Magento authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html) from Magento Marketplace
+ * {{site.data.var.ece}} account with an added user account
+ * Magento authentication keys from Magento Marketplace. If the Project Owner or Technical Lead created the project according to these instructions, the [Magento authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html) should already be installed and available in the auth.json file in the code repository.
 
 ## Get started
 You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:

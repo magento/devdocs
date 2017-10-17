@@ -109,7 +109,7 @@ For {{site.data.var.ece}} requirements, see [Technologies and Requirements](http
 The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 ## Installation and upgrade instructions {#install-upgrade}
-If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time development setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html).
+If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html).
 
 To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.
 

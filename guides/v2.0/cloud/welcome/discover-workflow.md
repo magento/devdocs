@@ -234,6 +234,6 @@ Following your branching and development methodologies, you can easily develop n
 For more information, see [Continuous integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html).
 
 #### Related topics
-*	[First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+*	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 *	[Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
