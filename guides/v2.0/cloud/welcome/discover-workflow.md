@@ -124,7 +124,7 @@ If you are familiar with Magento, you may be concerned about how to get your con
 
 The generated file is located in `app/etc/`:
 
-* For 2.1.4 and later: `config.app.php`
+* For 2.1.4 and later: `config.local.php`
 * For 2.2 and later: `config.php`
 
 You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
@@ -145,7 +145,7 @@ An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any 
 For more information, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).
 
 ### Push code and test {#push-code}
-At this point, you should have a developed code branch with a configuration file (`config.app.php` or `config.php`) ready to test.
+At this point, you should have a developed code branch with a configuration file (`config.local.php` or `config.php`) ready to test.
 
 Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
 

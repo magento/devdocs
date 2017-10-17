@@ -49,7 +49,7 @@ The following results provides an example of variables:
 	+----------------+---------------+-----------+------+
 
 ### Get Magento authentication keys {#keys}
-You need Magento authentication keys to install Magento locally for your local environment. These are separate to the authentication keys included in the cloud code repository.
+You need Magento authentication keys to install Magento locally for your local environment. These are separate to the authentication keys included in the cloud code repository in `auth.json`.
 
 To create authentication keys through the Magento Marketplace:
 

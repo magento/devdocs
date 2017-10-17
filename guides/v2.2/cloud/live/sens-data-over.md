@@ -43,7 +43,7 @@ Magento's store configurations are stored in the database. When updating configu
 
 After configuring your environment, generate the file using one of the following commands:
 
-* `php bin/magento magento-cloud:scd-dump`: **Recommended**. Exports only modified configuration settings
+* `php vendor/bin/m2-ece-scd-dump`: **Recommended**. Exports only modified configuration settings
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default settings
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -157,7 +157,7 @@ Complete all configurations for your stores in the Admin console:
 
   For example for Pro, to run the `scd-dump` on Integration `master`:
 
-    ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+    ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
 
 ### Step 2: Transfer and add the file to Git
 Push `config.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.
