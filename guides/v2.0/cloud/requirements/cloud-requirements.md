@@ -140,6 +140,6 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 
 #### Related topics
 *	[Cloud Architexture]({{ page.baseurl }}cloud/reference/discover-arch.html)
-*	[First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+*	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 *	[Develop and Deploy Workflow]({{ page.baseurl }}cloud/welcome/discover-workflow.html)
 *	[Go live and launch]({{ page.baseurl }}cloud/live/live.html)

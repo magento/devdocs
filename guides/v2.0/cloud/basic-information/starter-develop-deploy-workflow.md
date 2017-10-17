@@ -129,14 +129,14 @@ Now you need to get these settings into your code. We have a helpful command to 
 ### Generate configuration management files {#config-management}
 If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or a file all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
 
-{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later**.
+{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later** (not 2.2).
 
 * `php bin/magento magento-cloud:scd-dump`: Recommended. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
 
 The generated file is located in `app/etc/`:
 
-* For 2.1.4 and later: `config.app.php`
+* For 2.1.4 and later: `config.local.php`
 * For 2.2 and later: `config.php`
 
 You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
@@ -157,7 +157,7 @@ An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any 
 For more information, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).
 
 ### Push code and test {#push-code}
-At this point, you should have a developed code branch with a configuration file (`config.app.php` or `config.php`) ready to test.
+At this point, you should have a developed code branch with a configuration file (`config.local.php` or `config.php`) ready to test.
 
 Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
 
@@ -246,6 +246,6 @@ Following your branching and development methodologies, you can easily develop n
 For more information, see [Continuous integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html).
 
 #### Related topics
-*	[First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+*	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 *	[Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)

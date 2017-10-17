@@ -1,4 +1,4 @@
-label: Magento Commerce (Cloud) Guide
+project-webint-basiclabel: Magento Commerce (Cloud) Guide
 pages:
     - label: Welcome to Magento Commerce (Cloud)
       url: cloud/bk-cloud.html
@@ -42,10 +42,10 @@ pages:
         - label: Blackfire Profiler
           url: cloud/project/project-integrate-blackfire.html
 
-    - label: First-time local development setup
+    - label: First-time local environment setup
       url: cloud/access-acct/first-time-setup.html
       children:
-        - label: Set up a project and dev workspace
+        - label: Prepare for local environment setup
           url: cloud/before/before-workspace.html
 
         - label: Install Magento prerequisites
@@ -140,17 +140,21 @@ pages:
     - label: Manage your project
       url: cloud/project/projects.html
       children:
+
+        - label: Configure your project
+          url: cloud/project/project-webint-basic.html
+
         - label: Project structure
           url: cloud/project/project-start.html
 
         - label: Create and manage users
           url: cloud/project/user-admin.html
 
-        - label: Basic project information
-          url: cloud/project/project-webint-basic.html
-
-        - label: Manage branches
+        - label: Manage branches with the Interface
           url: cloud/project/project-webint-branch.html
+
+        - label: Manage branches with the CLI
+          url: cloud/env/environments-start.html
 
         - label: Snapshots and backup management
           url: cloud/project/project-webint-snap.html
@@ -158,8 +162,6 @@ pages:
     - label: Manage your environments
       url: cloud/env/environments.html
       children:
-        - label: Get started with an environment
-          url: cloud/env/environments-start.html
 
         - label: Magento Cloud CLI
           url: cloud/reference/cli-ref-topic.html

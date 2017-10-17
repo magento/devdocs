@@ -12,11 +12,14 @@ github_link: cloud/trouble/environments-logs.md
 
 This topic discusses how you can use logs to troubleshoot problems related to Magento Commerce [build hooks]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build) and [deploy hooks]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook).
 
-You may need to SSH into the environments to locate and view logs.
+You may need to SSH into the environments to locate and view logs. To locate the SSH command to access your environments, see the following:
 
-* [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int): Copy the link for the SSH command per environment through the Project Web Interface
-*	[Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage): `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-*	[Production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod): `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+* Starter: For all environments, click Access Site for the environment in the Project Web Interface
+* Pro:
+
+  * Integration: Copy the link for the SSH command per environment through the Project Web Interface
+  *	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+  *	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 
 ## Build logs
 After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of `git push`, so you can observe them in the terminal or capture them (along with error messages) with `git push > build.log 2>&1`.
