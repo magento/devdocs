@@ -54,7 +54,7 @@ For details about adding a custom preprocessor, see the [Add custom CSS preproce
 
 1. Create a theme as described in [Create a new storefront theme]({{page.baseurl}}frontend-dev-guide/themes/theme-create.html). 
 
-4. Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). You can use the following code sample (no changes needed, create an empty `app/code/frontend/<Vendor>/<theme>/gulp.js` and copy-paste this code): 
+4. Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). You can use the following code sample (no changes needed, create an empty `app/code/frontend/<Vendor>/<theme>/gulpfile.js` and copy-paste this code): 
  `package.json`:
 
    ```js
