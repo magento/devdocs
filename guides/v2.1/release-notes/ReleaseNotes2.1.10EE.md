@@ -178,7 +178,7 @@ did not change after you selected **Disable product**.
 <!--- 70287 -->* We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 ### Web API framework
-<!--- 70498 -->* Magento now displays only one product in the shopping cart when you add one configurable product using REST. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart. 
+<!--- 70498 -->* If a configurable product is part of a shipment being created via REST, only the parent's quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart. 
 
 ### Wishlist
 <!--- 70991 -->* Unconfigured bundle products that are included on a wishlist can now be edited or added to a cart. Previously, Magento displayed a 503  error when you either tried to edit or add to the cart any bundle products that were on a wishlist. 
