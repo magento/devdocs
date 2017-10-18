@@ -23,7 +23,7 @@ Our upgrades are Composer driven. For more information on Composer, see [Compose
 When upgrading from 2.0.X or 2.1.X to 2.2.X, please see [Upgrade from 2.0.X or 2.1.X](#old-version). For additional information on the release, see the [{{site.data.var.ece}} 2.2 Release Notes].
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
+Always apply and test a patch your local system in an active branch. You can push and test in an Development (Integration) environment prior to deploying across all environments.
 </div>
 
 ## Supported upgrade paths to 2.2 {#upgradepaths}
@@ -119,7 +119,7 @@ The environment variable `ADMIN_EMAIL` is required for upgrading and patching. T
 ## Back up the database {#backup-db}
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
-Back up your Integration environment database and code:
+Back up your Development (Integration) environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
 
@@ -187,7 +187,7 @@ To verify the upgrade in your integration, staging, or production system:
         php bin/magento --version
 
 ## Create a new config.php file {#configphp}
-After fully upgrading, you need to create an updated `config.php` file. You will only complete these instructions once. Complete any additional configuration changes through the Magento Admin in your Integration environment.
+After fully upgrading, you need to create an updated `config.php` file. You will only complete these instructions once. Complete any additional configuration changes through the Magento Admin in your Development (Integration) environment.
 
 1. Open a terminal on your local and use an SSH command to generate `/app/etc/config.php` on the environment:
 
@@ -214,14 +214,14 @@ Important: For an upgrade, you will delete `config.php`. Once this file is added
 ## Verify and upgrade your extensions {#extensions}
 You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
 
-We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
+We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Development (Integration) environments.
 
 1. Create a new branch on your local.
 2. Disable your extensions as needed.
 3. As available, download extension upgrades.
 4. Install the upgrade on your local in the Git branch as documented by the third-party documentation.
 5. Enable and test the extension locally.
-6. Push the code to test in your Integration environment.
+6. Push the code to test in your Development (Integration) environment.
 7. Push to Staging to test in a pre-production environment.
 
 Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.

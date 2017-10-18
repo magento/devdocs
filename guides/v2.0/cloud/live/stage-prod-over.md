@@ -57,12 +57,12 @@ The following diagram illustrates how the three systems work on a high level:
 
 ![How test, staging, and production works]({{ site.baseurl }}common/images/cloud_stage-prod-concept1.png){:width="600px"}
 
-In your Integration environment, you can create up to eight active environments for each active Git branch of your code. For example, you could have a feature branch and iterate development over several sprints. At the end of a sprint, you could merge (that is, push) code to the parent branch (labeled Feature1 in the preceding diagram). To start another sprint you could sync (that is, pull) code from Feature1 to your next sprint.
+In your Development (Integration) environment, you can create up to eight active environments for each active Git branch of your code. For example, you could have a feature branch and iterate development over several sprints. At the end of a sprint, you could merge (that is, push) code to the parent branch (labeled Feature1 in the preceding diagram). To start another sprint you could sync (that is, pull) code from Feature1 to your next sprint.
 
 After you fix bugs, you merge Feature1 with `master`, making that code potentially ready for deployment to Staging and then to Production.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Although the Integration environment can have many branches, Staging and Production have only one branch: the deployed Git <code>master</code>.</p>
+  <p>Although the Development (Integration) environment can have many branches, Staging and Production have only one branch: the deployed Git <code>master</code>.</p>
 </div>
 
 ## Assisted deployment
@@ -82,7 +82,7 @@ After you know these URLs, you can access those environments without further int
 * Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
 
 ## Read-only environments
-You should always deploy code and data from the `master` branch of your Integration environment to Staging, then to Production. If you need to fix issues, fix them in local development, push to Git, and complete the full deployment.
+You should always deploy code and data from the `master` branch of your Development (Integration) environment to Staging, then to Production. If you need to fix issues, fix them in local development, push to Git, and complete the full deployment.
 
 #### Related topics
 *	[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)

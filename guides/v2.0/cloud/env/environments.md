@@ -1,11 +1,11 @@
 ---
 layout: default
-group:
-subgroup:
+group: cloud
+subgroup: 120_env
 title: Configure your environments
 menu_title: Configure your environments
-menu_order:
-menu_node:
+menu_order: 1
+menu_node: parent
 version: 2.0
 github_link: cloud/env/environments.md
 ---
@@ -16,6 +16,8 @@ We provide options to:
 
 * Export configuration settings to a file for cross-environment deployment
 * Set environment variables per environment
+
+{% include cloud/wings-management.md %}
 
 ## Environments and branches {#env-branches}
 Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. Each environment has an associated active Git branch of code.
@@ -48,7 +50,7 @@ When you activate an inactive branch, or create a new active branch, the command
 ## Branch hierarchy {#hierarchy}
 For Starter and Pro plans, the `master` environment is ultimately the source or parent for all code in {{site.data.var.ece}}.
 
-* For Starter, `master` is your Production environment and branch. You create branches from `master` as your Integration environment.
+* For Starter, `master` is your Production environment and branch. You create branches from `master` as your Development (Integration) environment.
 * For Pro, you have a `master` branch in Development (Integration) for creating your code branches. You deploy this branch to a matching `master` branch in Staging and Production environments.
 
 In your Development (Integration), you have a number of branches and environments available to you per plan. When you branch from `master`, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.

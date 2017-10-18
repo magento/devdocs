@@ -47,7 +47,7 @@ We use only this one cron for cloud due to the read-only nature of the environme
 
 Magento uses a five value specification for a cron job. The numbers per each `* * * * *` is as follows:
 
-* Minute (0-59)  For all Start environments and Pro Integration environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your [Magento Admin](#admin).
+* Minute (0-59)  For all Start environments and Pro Development (Integration) environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your [Magento Admin](#admin).
 * Hour (0-23)
 * Day of month (1 - 31)
 * Month (1 - 12)
@@ -79,13 +79,13 @@ With the settings:
 * `bin/magento indexer:reindex catalog_category_product` is the script actions
 
 ## Configure cron settings in the Magento Admin {#admin}
-Due to the minimum allowed frequency of **five minutes for Starter environments and Pro Integration environments**, you need to change the cron settings defaulted at two minutes in the Magento Admin. If you don't change the settings, crons will never run.
+Due to the minimum allowed frequency of **five minutes for Starter environments and Pro Development (Integration) environments**, you need to change the cron settings defaulted at two minutes in the Magento Admin. If you don't change the settings, crons will never run.
 
 You do not need to set this for Pro Staging and Production environments.
 
 To configure:
 
-1. Log into the Magento Admin in your deployed environment: all Starter environments and Pro Integration environments.
+1. Log into the Magento Admin in your deployed environment: all Starter environments and Pro Development (Integration) environments.
 2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Expand the **Cron (Scheduled Tasks)** section.
 3. Expand the **Cron configuration options for group: index** section.
 4. For the **Missed if Not Run Within** setting, deselect the checkbox for Use system value. Change the value from 2 to 10 minutes.
@@ -123,7 +123,7 @@ You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}clo
 When you push the code, the cron jobs will be added to and run in the following environments:
 
 * Starter: All environments you push to including `Master`
-* Pro: Only Integration environments you push to including `Master`
+* Pro: Only Development (Integration) environments you push to including `Master`
 
 To add the cron jobs to Pro plan Staging and Production, you must [enter a ticket to Support]({{ page.baseurl }}cloud/bk-cloud.html#gethelp). Request to have the cron jobs in `.magento.app.yaml` added to those environments. We recommend pushing the updates through to the Integration `master` branch.
 

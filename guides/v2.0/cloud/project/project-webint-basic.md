@@ -19,7 +19,9 @@ The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud
 * [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
 * [Manage Git branches]({{page.baseurl}}cloud/project/project-webint-branch.html)
 
-As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter environments and Pro Integration environments (PaaS). To make changes for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter and Pro environments.
+
+{% include cloud/wings-management.md %}
 
 ## Access your project and environments {#project-access}
 The Project Web Interface provides several ways to access your project and environments:
@@ -44,7 +46,7 @@ The following figure shows an example.
 Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
 ## Configure environment settings {#project-conf-env-set}
-You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Development (Integration) environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
 <table>
 	<tbody>
 		<tr>

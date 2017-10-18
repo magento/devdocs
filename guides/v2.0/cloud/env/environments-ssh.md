@@ -39,7 +39,7 @@ You can connect using SSH in any of the following ways:
 Magento Cloud CLI commands can only be used in environments with the software installed. These environments include:
 
 * Starter environments
-* Pro Integration environments
+* Pro Development (Integration) environments
 
 To SSH to an environment using the Magento Cloud command line:
 
@@ -57,7 +57,7 @@ To SSH to an environment using the Magento Cloud command line:
 		magento-cloud ssh -p <project ID> -e <environment ID>
 
 ### Locate the SSH command in the Project Web Interface {#web-interface}
-You can locate the SSH command for all Starter environments and Pro Integration environments through the Project Web Interface.
+You can locate the SSH command for all Starter environments and Pro Development (Integration) environments through the Project Web Interface.
 
 To copy the SSH command:
 
@@ -93,7 +93,7 @@ Typically, you want to use SSH for secure access to your environments and [migra
 You need the following requirements to sFTP into cloud environments:
 
 * You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.
-* Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) with your public key attached. **Never provide your private SSH key.**
+* Your public SSH key must be added to the target environment. For Starter environments and Pro Development (Integration) environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) with your public key attached. **Never provide your private SSH key.**
 
 
 When configuring sFTP, use your SSH public key and the following information for access:
@@ -114,7 +114,7 @@ To add your SSH public key information to your client:
 
 Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.
 
-For **Starter environments and Pro Integration environments**, you may also want to consider [adding a `mount`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{page.baseurl}}cloud/project/project-start.html). This mount point will only work in those environments.
+For **Starter environments and Pro Development (Integration) environments**, you may also want to consider [adding a `mount`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{page.baseurl}}cloud/project/project-start.html). This mount point will only work in those environments.
 
 For **Pro Staging and Production environments**, you need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) to request sFTP access in those environments. We can then create a mount point and provide access to the specific `pub/media` folder.
 

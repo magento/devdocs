@@ -40,7 +40,7 @@ These commands enable all extensions and run the compile part of the build. Veri
 ## Broken build trying to force build using the Magento Cloud CLI {#cli-build}
 When we initially provision your project, you receive a cloned `master` branch. You should clone the `master` to your local workspace and create a branch from it to complete all of your development.
 
-When you want to build and deploy the code to the Integration environment, you should not force the build using the Magento Cloud CLI commands to initiate a build command. This can cause the build to break. The command may check for specific variables and settings not in your local but in the remote environment. The automated build process also runs a specific series of scripts and commands when you push your code to your remote Git branch and environment.
+When you want to build and deploy the code to the Development (Integration) environment, you should not force the build using the Magento Cloud CLI commands to initiate a build command. This can cause the build to break. The command may check for specific variables and settings not in your local but in the remote environment. The automated build process also runs a specific series of scripts and commands when you push your code to your remote Git branch and environment.
 
 For example, when using the Magento Cloud CLI commands, you may have received the error during a build: `E: Error building project: The build hook failed with status code 255. Build aborted`.
 

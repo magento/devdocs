@@ -18,7 +18,7 @@ To migrate your database and static files to Staging and Production:
 *	[Deploy code and migrate static files](#cloud-live-migrate-static)
 *	[Migrate the database](#cloud-live-migrate-db)
 
-If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}cloud/live/stage-prod-migrate.html).
+If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Development (Integration) environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}cloud/live/stage-prod-migrate.html).
 
 ## Deploy code and migrate static files {#cloud-live-migrate-static}
 You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
@@ -64,7 +64,7 @@ To migrate static files:
 
 **Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="_blank"}.
 
-**Important:** The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
+**Important:** The Development (Integration) environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
 
 For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file]({{ page.baseurl }}cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
 
@@ -76,7 +76,7 @@ To migrate a database:
 
 	*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
 	*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-	* To SSH into the `master` branch of your Integration environment:
+	* To SSH into the `master` branch of your Development (Integration) environment:
 
 			magento-cloud environment:ssh
 2.	Find the database login information:
@@ -84,7 +84,7 @@ To migrate a database:
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
 3.	Create a database dump:
 
-	For Starter environments and Pro Integration environments:
+	For Starter environments and Pro Development (Integration) environments:
 
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
 
@@ -101,7 +101,7 @@ To migrate a database:
 
 	*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
 	*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-	* To SSH into the `master` branch of your Integration environment:
+	* To SSH into the `master` branch of your Development (Integration) environment:
 
 			magento-cloud environment:ssh
 10.	Import the database dump:
@@ -128,7 +128,7 @@ You can do this using a text editor or by using the following command:
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.</p>
+  <p>After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Development (Integration) environment.</p>
 </div>
 
 #### Next step

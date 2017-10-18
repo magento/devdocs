@@ -14,10 +14,10 @@ All of your code is contained in the {{site.data.var.ece}} Starter project. The 
 
 All environments are in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.
 
-You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.
+You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Development (Integration) environments.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The following architecture information uses an architecture including Production, Staging, and Integration environments.
+The following architecture information uses an architecture including Production, Staging, and Development (Integration) environments.
 </div>
 
 ![High-level view of Starter project]({{ site.baseurl }}common/images/cloud_arch-starter.png)
@@ -40,8 +40,8 @@ We walk you through [deploying to Staging]({{page.baseurl}}cloud/live/stage-prod
 
 We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.
 
-## Integration environment {#cloud-arch-int}
-Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. If you created a Staging environment, you have up to two active environments on a grid for two active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
+## Development (Integration) environment {#cloud-arch-int}
+Developers use the Development (Integration) environment to develop, deploy, and test the Magento application, custom code, extensions, and services. If you created a Staging environment, you have up to two active environments on a grid for two active Git branches. Each Development (Integration) environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
 
 You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them. This environment does not support all services. For example, Fastly is not accessible in Integration.
 
@@ -49,7 +49,7 @@ The process for developing in Integration requires the following process:
 
 * Branch and develop off of `staging`
 * Develop all work on your local workspace in these branches
-* Push code to Git to build and deploy on an Integration environment for testing
+* Push code to Git to build and deploy on an Development (Integration) environment for testing
 * As work is completed, merge to `staging`
 
 Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html), working with Git branches, and [deploying code]({{page.baseurl}}cloud/live/stage-prod-live.html).

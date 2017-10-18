@@ -18,15 +18,17 @@ All new projects already include these features.
 The new Project Web Interface provides the following features for Pro plan Staging and Production environments:
 
 * Add and manage user access to the environments
-* Sync code between Staging and Pro to Integration environments
+* Sync code between Staging and Pro to Development (Integration) environments
 * Add and manage environment variables
 * Configure environment settings
 * Access the environments by SSH and URL. These links and commands are provided through the Access Links.
+* View builds logs and deployment history
 
 As an important note, while you can manage Staging and Production environments, you **cannot**:
 
 * Branch from these environments. Staging and Production only have a single `master` branch for syncing and receiving code from Integration.
 * Create snapshots through the interface. You can use SSH access with CLI commands as needed.
+* View deploy logs
 
 You will need to enter support tickets to update and modify the following in Staging and Production:
 
@@ -44,7 +46,7 @@ When we add Staging and Production access to the Project Web Interface, we will 
 To prepare, ensure you have all settings and environment variables set correctly.
 
 ### Verify user account access {#prep-user}
-We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.
+We recommend verifying your user account access and permissions set in the Master Development (Integration) environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the **Projects** tab and the name of your project.
