@@ -13,16 +13,16 @@ github_link: install-gde/basics/basics_docroot.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_docroot.html
 ---
 
-The web server document root (often referred to as the _docroot_) is where you put all the files your website needs to function. You can use your web server's default docroot or [modify it to enhance security]({{page.baseurl}}install-gde/tutorials/change-docroot-to-pub.html) (e.g., restrict access to Magento-specific files after installation).
+The web server document root (often referred to as the _docroot_) is where you put all the files your website needs to function. You can use your web server's default docroot or [modify it to enhance security]({{page.baseurl}}install-gde/tutorials/change-docroot-to-pub.html). For example, you should restrict browser access to Magento-specific files after installation.
 
 The path to your web server's default docroot varies depending on the following:
 
--   Operating system (e.g., Ubuntu, CentOS)
--   Web server software (e.g., Apache, nginx)
+-   Operating system
+-   Web server software
 -   Hosting provider (if you use one)
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-You must create a subdirectory for the Magento 2 installation in your web server's docroot (e.g., `/var/www/html/magento2`), so knowing where to locate the default docroot is critical to installing Magento.
+As part of the Magento 2 installation process, you specify a subdirectory (usually `magento2`) under the docroot. The Magento-specific files are installed in this subdirectory, so knowing where to locate the default docroot is critical.
 </div>
 
 ## Contact your hosting provider

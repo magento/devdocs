@@ -6,7 +6,7 @@ version: 2.0
 github_link: install-gde/tutorials/change-docroot-to-pub.md
 ---
 
-This topic describes how to change the Apache [docroot]({{page.baseurl}}install-gde/basics/basics_docroot.html) on a previously installed instance of Magento to serve files from the Magento `pub/` directory (e.g., `magento/pub`).
+If you installed Magento in Apache's default docroot `/var/www/html`, the Magento file system is vulnerable because it's accessible from a browser. This topic describes how to change the Apache [docroot]({{page.baseurl}}install-gde/basics/basics_docroot.html) on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
 
 Serving files from the `pub/` directory prevents site visitors from accessing the Web Setup Wizard and other sensitive areas of the Magento file system from a browser.
 
@@ -15,9 +15,9 @@ If you're accustomed to using the Web Setup Wizard during development, be aware 
 </div>
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-If you're using [nginx]({{page.baseurl}}install-gde/prereq/nginx.html) and the [nginx.conf.sample]({{site.mage2200url}}nginx.conf.sample){:target="\_blank"} file included in the Magento installation directory, you're probably already serving files from the `pub/` directory.
+If you're using [nginx]({{page.baseurl}}install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{site.mage2200url}}nginx.conf.sample){:target="\_blank"} file included in the Magento installation directory, you're probably already serving files from the `pub/` directory.
 
-The sample configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory; assuming you've referenced the "nginx.conf.sample" in the server block that defines your site:
+The sample configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory; assuming you've referenced the `nginx.conf.sample` in the server block that defines your site. For example, see the last line in the following configuration:
 
     # /etc/nginx/sites-available/magento
 
@@ -30,7 +30,7 @@ The sample configuration overrides your server's docroot settings to serve files
               listen 80;
               server_name 192.168.33.10;
               set $MAGE_ROOT /var/www/html/magento2ce;
-    this -->  include /var/www/html/magento2ce/nginx.conf.sample;
+              include /var/www/html/magento2ce/nginx.conf.sample;
     }
 
 </div>
@@ -77,7 +77,7 @@ The name and location of your virtual host file depends on which version of Apac
         systemctl restart apache2  
 
 ## 2. Update your base URL
-If you appended a directory name to your server's hostname to create the base URL when you installed Magento (e.g., `http://192.168.33.10/magento2`), you'll need to remove it.
+If you appended a directory name to your server's hostname or IP address to create the base URL when you installed Magento (for example `http://192.168.33.10/magento2`), you'll need to remove it.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Replace `192.168.33.10` with your server's hostname.
@@ -87,7 +87,7 @@ Replace `192.168.33.10` with your server's hostname.
 
         mysql -u <user> -p
 
-2.  Specify which database to use:
+2.  Specify the Magento database you created when you installed Magento:
 
         use <database-name>
 
@@ -96,7 +96,7 @@ Replace `192.168.33.10` with your server's hostname.
         UPDATE core_config_data SET value='http://192.168.33.10' WHERE path='web/unsecure/base_url';
 
 ## 3. Switch modes
-[Magento modes]({{page.baseurl}}config-guide/bootstrap/magento-modes.html) (e.g., `production` and `developer`) are designed to improve security and make development easier. As the names suggest, you should switch to `developer` mode when extending or customizing Magento and switch to `production` mode when running Magento in a live environment.
+[Magento modes]({{page.baseurl}}config-guide/bootstrap/magento-modes.html), which include `production` and `developer`, are designed to improve security and make development easier. As the names suggest, you should switch to `developer` mode when extending or customizing Magento and switch to `production` mode when running Magento in a live environment.
 
 Switching between modes is an important step in verifying that your server configuration is working properly. You can switch between modes using the Magento CLI tool:
 
@@ -117,7 +117,7 @@ Switching between modes is an important step in verifying that your server confi
 ## 4. Verify the storefront
 Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a web browser to verify that everything is working.
 
-1.  Open a web browser and enter your server's hostname in the address bar (e.g., http://192.168.33.10).
+1.  Open a web browser and enter your server's hostname or IP address in the address bar. For example, http://192.168.33.10.
 
     The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
@@ -125,7 +125,7 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
     Refer to the [troubleshooting section]({{page.baseurl}}install-gde/trouble/tshoot_no-styles.html) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
 
-2.  Try accessing the Magento directory for the Web Setup Wizard from a browser. Append "_setup/_" to your server's hostname in the address bar:
+2.  Try accessing the Magento directory for the Web Setup Wizard from a browser. Append "_setup/_" to your server's hostname or IP address in the address bar:
 
     If you see a 404 or the "Access denied" message, you've successfully restricted access to the Magento file system.
 
