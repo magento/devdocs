@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/configure/configuration-overview.md
 ---
 
-The following information walks you through the options for configuring your store on your local and in all environments. You may need to configure files and settings in your local, pushing settings with your code. For specific services, you configure settings directly in Staging and Production environments. 
+The following information walks you through the options for configuring your store on your local and in all environments. You may need to configure files and settings in your local, pushing settings with your code. For specific services, you configure settings directly in Staging and Production environments.
 
 You can set up [multiple websites and stores]({{ page.baseurl }}cloud/project/project-multi-sites.html) in your Magento instance, creating and configuring them in your local branch and deploying the settings across your environments.
 
@@ -40,6 +40,8 @@ You should also configure services directly in Staging and Production:
 We also provide integrations with:
 
 * [Blackfire Profiler]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html) configuration for tracking and investigating issues for bottleneck issues in processes, method calls, queries, loads, and so on
+* [New Relic APM]({{ page.baseurl }}cloud/project/new-relic.html) configuration for application and performance analysis
+* [Fastly]({{ page.baseurl }}cloud/basic-information/cloud-fastly.html) configuration for CDN and caching
 * [GitHub]({{ page.baseurl }}cloud/project/project-integrate-github.html) for managing your Git branches and code
 
 ## Configuration management {#config-mgmt}

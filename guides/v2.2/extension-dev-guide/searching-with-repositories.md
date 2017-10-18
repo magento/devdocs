@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 99_Module Development
 title: Searching with Repositories
 menu_title: Searching with Repositories
-menu_order: 25
+menu_order: 35
 version: 2.2
 github_link: extension-dev-guide/repositories.md
 ---
@@ -13,7 +13,7 @@ github_link: extension-dev-guide/repositories.md
 
 Repositories give service requestors the ability to perform create, read, update, and delete (CRUD) operations on entities or a list of entities.
 A repository is an example of a [service contract]({{page.baseurl}}extension-dev-guide/service-contracts/design-patterns.html), and its implementation is part of the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} layer.
- 
+
 #### Repository state
 
 A repository should be stateless after instantiation.
@@ -22,7 +22,7 @@ Any field contained in the repository class must also be stateless.
 
 If your repository needs to provide functionality that requires state, such as for caching,  use the registry pattern.
 A good example that uses this pattern is the [`CustomerRepository`]({{site.mage2100url}}/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php){:target="_blank"} class.
- 
+
 ### Search Criteria {#m2devgde-search-criteria}
 
 A Search Criteria is an implementation of the [`SearchCriteriaInterface`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteriaInterface.php){:target="_blank"} class that allows you to build custom requests with different conditions.
@@ -106,7 +106,7 @@ $searchCriteria->setPageSize(20); //retrieve 20 or less entities
 
 {% endhighlight %}
 
-The `setCurrentPage` function sets the current page: 
+The `setCurrentPage` function sets the current page:
 
 {% highlight php startinline=true %}
 $searchCriteria
@@ -382,7 +382,7 @@ Below is an example of how the [`CustomerRepositoryInterface`](https://github.co
     }
 {% endhighlight %}
 
-The `di.xml` configuration file excerpt below shows how you can create a virtual type for the Collection Processor by passing in a custom Filter Processor and a custom Sorting Processor. 
+The `di.xml` configuration file excerpt below shows how you can create a virtual type for the Collection Processor by passing in a custom Filter Processor and a custom Sorting Processor.
 
 {% highlight XML %}
     <virtualType name="Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\CustomerFilterProcessor" type="Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor">

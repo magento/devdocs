@@ -14,7 +14,7 @@ github_link: b2b/shared-cat-manage.md
 
 ## Manage custom shared catalogs
 
-{{site.data.var.b2b}} provides two types of shared catalog: public and custom. A public catalog is the default shared catalog. It is automatically displayed to all guest customers and to logged-in customers that are not company users. The merchant assigns a custom shared catalog to specific companies as configured by admin. There can only be one public catalog, and it cannot be deleted.
+{{site.data.var.b2b}} provides two types of shared catalog: public and custom. A public catalog is the default shared catalog. It is automatically displayed to all guest customers and to logged-in customers that are not company users. The seller assigns a custom shared catalog to specific companies as configured by admin. There can only be one public catalog, and it cannot be deleted.
 
 **Service name**
 
@@ -143,7 +143,7 @@ Not applicable
 
 The following search returns all the custom shared catalogs (`type = 0`) in the system.
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+See [Search using REST APIs]({{page.baseurl}}rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 

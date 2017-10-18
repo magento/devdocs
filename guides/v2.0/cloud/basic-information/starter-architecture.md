@@ -20,6 +20,8 @@ You can use any development and branching methodology you like. We strongly reco
 The following architecture information uses an architecture including Production, Staging, and Integration environments.
 </div>
 
+![High-level view of Starter project]({{ site.baseurl }}common/images/cloud_arch-starter.png)
+
 ## Production with a master branch {#cloud-arch-prod}
 The Production environment is your live store(s) and site(s). The environment includes your `master` Git branch, a web server, database, and configured services to fully test your site.
 
@@ -89,6 +91,12 @@ This software is *not* upgradable but versions for the following software is con
 * [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
 
 For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
+
+For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
+
+*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
 
 ### Backup and disaster recovery {#backup}
 We automatically back up your Production environment every six hours. This snapshot and backup includes your deployed code, installed software and services, and data. You can also perform [snapshots]({{page.baseurl}}cloud/project/project-webint-snap.html) and database dumps with CLI commands.

@@ -17,11 +17,11 @@ This section describes an implementation details of Data Migration Tool and how 
 
 ### Repositories {#repositories}
 
-Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a>
+Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="&#95;blank">migration-tool</a>
 
 ### System requirements {#system-requirements}
 
-Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="_blank">Magento 2</a>
+Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a>
 
 ## Internal structure {#migrate-is}
 
@@ -32,7 +32,7 @@ The following diagram represents directory structure of Data Migration Tool:
 <pre>
 
 ├── etc                                    --- all configuration files
-│   ├── ce-to-ce                           --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
+│   ├── opensource-to-opensourc            --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
 │   │   ├── 1.9.1.1
 │   │   │   ├── config.xml.dist
 │   │   │   └── map.xml.dist
@@ -44,8 +44,8 @@ The following diagram represents directory structure of Data Migration Tool:
 │   │   ├── deltalog.xml.dist
 │   │   └── settings.xml.dist
 │   │   ├── ........
-│   ├── ce-to-ee                            --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ee}} 2
-│   ├── ee-to-ee                            --- configuration files for migration from {{site.data.var.ee}} 1 to {{site.data.var.ee}} 2
+│   ├── opensource-to-commerce              --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ee}} 2
+│   ├── commerce-to-commerce                --- configuration files for migration from {{site.data.var.ee}} 1 to {{site.data.var.ee}} 2
 │   ├── class-map.xsd
 │   ├── config.xsd
 │   ├── map.xsd

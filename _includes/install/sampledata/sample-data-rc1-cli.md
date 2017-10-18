@@ -19,7 +19,7 @@ To upgrade to Magento 2.1 sample data using the command line:
 		composer require <product> <version> --no-update
 		composer require <sample data module-1>:<version> ... <sample data module-n>:<version> --no-update
 
-	*	Magento CE:
+	*	{{site.data.var.ce}}:
 
 			composer require magento/product-community-edition 2.1.0 --no-update
 

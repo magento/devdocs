@@ -1,23 +1,23 @@
 ---
 layout: default
 group: cloud
-subgroup: 100_project
+subgroup: 120_env
 title: Manage branches with the CLI
 menu_title: Manage branches with the CLI
-menu_order: 25
+menu_order: 2
 menu_node:
 version: 2.0
 github_link: cloud/env/environments-start.md
 redirect from:
-  -  /guides/v2.0/cloud/before/integration-ip-addr.html
-  -  /guides/v2.1/cloud/before/integration-ip-addr.html
-  -  /guides/v2.1/cloud/before/integration-ip-addr.html
-  -  /guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html
-  -  /guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html
-  -  /guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html
+  - /guides/v2.0/cloud/before/integration-ip-addr.html
+  - /guides/v2.1/cloud/before/integration-ip-addr.html
+  - /guides/v2.2/cloud/before/integration-ip-addr.html
+  - /guides/v2.0/cloud/env/environment-tutorial-env-merge.html
+  - /guides/v2.1/cloud/env/environment-tutorial-env-merge.html
+  - /guides/v2.2/cloud/env/environment-tutorial-env-merge.html
 ---
 
-When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
+When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic_information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html).
 
@@ -89,14 +89,14 @@ After completing development, you can merge this branch to the parent. The follo
 
 		magento-cloud environment:merge master
 
-## Optionally delete the environment {#tut-env-delete}
+## Optionally delete the environment {#env-delete}
 Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You cannot delete the <code>master</code> environment of any project.</p>
 </div>
 
-You must be a [project administrator]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-env), or [account owner]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
+You must be a [project administrator]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
 
 This section discusses how to optionally delete an environment in the following ways:
 

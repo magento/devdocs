@@ -60,7 +60,7 @@ You can manage the sensitive configuration in any of the following ways:
 ### Configuration settings locked in the Magento Admin
 
 Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin.
-Use the [`magento config:set` or `magento config:set --lock`]({{ page.baseurl config-guide/cli/config-cli-subcommands-config-mgmt-set.html}}) command to change the settings in the `config.php` or `env.php` files.
+Use the [`magento config:set` or `magento config:set --lock`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set) command to change the settings in the `config.php` or `env.php` files.
 
 ## Changes in the Magento Admin {#config-deploy-admin}
 
@@ -79,9 +79,9 @@ We changed the following behavior in the Magento Admin in production mode:
     The following figure shows an example of the **Account Setting**> **Interface Locale** list in the Admin showing only two deployed locales:
 
     ![You can change the Admin locale only to deployed locales]({{ site.baseurl }}common/images/config_split-deploy_admin-locale.png){:width="450px"}
-* You cannot change locale configurations for any scope using the Admin Panel. 
+* You cannot change locale configurations for any scope using the Admin Panel.
   We recommend making these changes before switching to Production mode.
-  
+
   You can still configure the locale using [environment variables](#config-deploy-configman) or the [config:set][config-cli-config-set] CLI command with the path `general/locale/code`.
 
 ## cron installation and removal {#config-deploy-cron}

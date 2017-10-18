@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/project/user-admin.md
 ---
 
-{{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. You can add and manage user accounts for the entire project and permissions per available environment. 
+{{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. You can add and manage user accounts for the entire project and permissions per available environment.
 
 ## Account owner role {#cloud-role-acct-owner}
 The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the trial or create new account process.
@@ -27,7 +27,7 @@ You can assign users to the following roles per project:
 A project reader can have one of the following roles per environment:
 
 * Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.
-*  Environment contributor can push code to this environment. This role can also branch the environment.
+* Environment contributor can push code to this environment and branch the environment.
 * Environment reader can view this environment only.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -101,7 +101,7 @@ To create user accounts using the Web Interface:
 	![Start creating users]({{ site.baseurl }}common/images/cloud_project-config.png){:width="500px"}
 6.	Click **Add User**.
 
-	![Super user]({{ site.baseurl }}common/images/cloud_project-add-superuser.png){:width="500px"}
+	![Add users]({{ site.baseurl }}common/images/cloud_project-add-superuser.png){:width="500px"}
 7.	Enter the user's e-mail address.
 8.	Select the access for the account:
 

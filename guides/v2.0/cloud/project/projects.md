@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/project/projects.md
 ---
 
-The {{site.data.var.ece}} *project* includes all code in Git branches, associated  environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
+The {{site.data.var.ece}} *project* includes all code in Git branches, associated environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
 
 We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. You have full access to all environments for Starter and Pro environments. You may need to continue to use SSH and CLI commands for some aspects of Pro plan Staging and Production environments.
 

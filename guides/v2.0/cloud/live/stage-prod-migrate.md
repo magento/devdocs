@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 160_deploy
-title: Migrate and deploy
-menu_title: Migrate and deploy
+title: Migrate and deploy static files and data
+menu_title: Migrate and deploy static files and data
 menu_order: 50
 menu_node:
 version: 2.0
@@ -84,7 +84,13 @@ To migrate a database:
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
 3.	Create a database dump:
 
+	For Starter environments and Pro Integration environments:
+
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
+
+	For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and user name):
+
+		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
 
 4.	Transfer the database dump to Staging or Production with an `rsync` command:
 

@@ -21,7 +21,6 @@ You can fully push, merge, and deploy through the [Project Web Interface]({{page
 This section provides indepth instructions and information on the build and deploy process, migrating data and content, and testing.
 
 ## Starter plan deployment {#starter}
-
 We recommend creating a Staging branch from the `master` to best support your Starter plan development and deployment. With this in place, you have two of your four active environments ready: `master` for Production and `staging` for Staging.
 
 Now you are ready to develop and deploy:
@@ -36,7 +35,6 @@ Now you are ready to develop and deploy:
 For detailed information of the process, see [Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html).
 
 ## Pro plan deployment {#pro}
-
 Pro comes with a large Integration environment with eight active branches and environments including `master`, Staging, and Production. When you create your project, code is ready to branch, develop, and push for building and deploying your site. Although the Integration environment can have many branches, Staging and Production have only one branch: the deployed Git `master`.
 
 1. Create development branches from the Integration `master` branch.
@@ -49,19 +47,18 @@ Pro comes with a large Integration environment with eight active branches and en
 
 For detailed information of the process, see [Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html).
 
-## Project Web Interface
-The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans. You can also use SSH and CLI commands to complete these process. Previously for Pro plans, you could only use SSH and CLI commands for Staging and Production.
+### Assisted deployment for Pro {#assist}
+For Pro, the Staging and Production environments only supports deployments for code using SSH to the environments and Git CLI commands. These environments are not currently accessible through the Project Web Interface.
 
-For Starter, you will see a hierarchy of branches starting from Master. Any branches you create display as children from Integration Master. We recommend creating a Staging branch, then branching from that for Integration development.
+If you do not want to deploy using CLI commands, you can enter a [Support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) for assistance.
 
-![Starter branch hierarchy]({{ site.baseurl }}common/images/cloud_project-starter.png)
+If you do plan on using SSH access to those environments, you need to enter a ticket providing your SSH public keys. We will add these keys to your environment.
 
-For Pro, you will see a hierarchy of branches starting from Production to Staging to Integration Master. Any branches you create display as children from Integration Master.
+### Enter a ticket for deploying hooks {#hooks}
+{% include cloud/hooks.md %}
 
-![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
-
-## Git and SSH URLs
-If interested in using CLI commands through an SSH connection, you can locate the SSH command through the Project Web Interface. For Pro plans, Git commands are supported on the Staging and Production environments.
+### Git and SSH URLs {#git-ssh}
+For Pro, locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Commerce.
 
 After you know these URLs, you can access those environments without further intervention.
 
@@ -69,14 +66,16 @@ After you know these URLs, you can access those environments without further int
 * Use the URL /admin to access the Admin panel.
 * (Pro) Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
 
-## Read-only environments
+For more information, see [SSH and sFTP]({{ page.baseurl }}cloud/env/environments-ss.html).
+
+## Read-only environments {#read-only}
 You should always deploy code by pushing your local Git branch to your environments. You should only directly modify configurations for a few key extensions directly in your Staging and Production environments. If you need to fix issues, fix them in local development, push to Git, and complete the full deployment.
 
 ## Next steps
 To learn more, check the following:
 
 * [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html)
-* [Continuous integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html)
+* [Continuous integration]({{ page.baseurl }}cloud/deploy/continuous-deployment.html)
 * [Protective block]({{ page.baseurl }}cloud/live/live-prot.html)
 *	[Build and deploy to your local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
 *	[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)

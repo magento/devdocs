@@ -117,14 +117,14 @@ Now you need to get these settings into your code. We have a helpful command to 
 ### Generate configuration management files {#config-management}
 If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or Excel all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
 
-{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later**.
+{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later** (not 2.2).
 
 * `php bin/magento magento-cloud:scd-dump`: **Recommended**. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
 
 The generated file is located in `app/etc/`:
 
-* For 2.1.4 and later: `config.app.php`
+* For 2.1.4 and later: `config.local.php`
 * For 2.2 and later: `config.php`
 
 You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
@@ -145,7 +145,7 @@ An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any 
 For more information, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).
 
 ### Push code and test {#push-code}
-At this point, you should have a developed code branch with a configuration file (`config.app.php` or `config.php`) ready to test.
+At this point, you should have a developed code branch with a configuration file (`config.local.php` or `config.php`) ready to test.
 
 Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
 
@@ -163,20 +163,20 @@ For instructions, see [Install optional sample data]({{page.baseurl}}cloud/howto
 ![Install optional sample data]({{ site.baseurl }}common/images/cloud_workflow-sample-data.png)
 
 ### Optional: Pull production data {#prod-data}
-We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. Why in Production? By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.
+We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.
 
-As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and other development environments as you like.
+As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, possibly Integration environments as you like.
 
-To learn more about database dumps, see [Snapshots and Backup management]({{page.baseurl}}cloud/project/project-webint-snap.html#db-dump).
+{% include cloud/data-collection.md %}
 
 ![Pull and sanitize production data]({{ site.baseurl }}common/images/cloud_workflow-pro-data-code-process.png)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including how you dump your database or developing a script to scrub out customer data.
+Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.
 </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Important: We don't recommend pushing a database from a development or Staging environment. This data will overwrite your Production, live data including sales, orders, new and updated customers, and much more.
+Important: We don't recommend pushing a database from the Integration or Staging environment to Production. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.
 </div>
 
 ## Deployment workflow {#deploy}
@@ -234,6 +234,6 @@ Following your branching and development methodologies, you can easily develop n
 For more information, see [Continuous integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html).
 
 #### Related topics
-*	[First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+*	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 *	[Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)

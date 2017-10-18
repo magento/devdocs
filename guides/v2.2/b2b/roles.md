@@ -501,6 +501,8 @@ This example call adds access to all Negotiable Quote resources except "View quo
 
 ### Return all information about a role
 
+This call returns the `id`, role name, and set of permissions defined within the specified `role_id`.
+
 **Sample Usage**
 
 `GET /V1/company/role/6`
@@ -694,7 +696,7 @@ None
 
 The following call returns all roles that have been created for a company  (`company_id` = `2`).
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+See [Search using REST APIs]({{page.baseurl}}rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 

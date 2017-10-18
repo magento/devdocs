@@ -8,6 +8,7 @@ menu_node: parent
 menu_order: 1
 version: 2.2
 github_link: config-guide/deployment/index.md
+redirect_from: /guides/v2.2/config-guide/prod/prod_deploy.html
 ---
 
 These topics discuss the process of deploying Magento to a production site for Magento version 2.2 and later. We recommend this deployment method for anyone with a large site who does not want downtime during deployment.
