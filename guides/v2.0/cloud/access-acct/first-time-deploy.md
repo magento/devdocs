@@ -40,7 +40,7 @@ If you need environments provisioned and SSH access, enter a [Support ticket]({{
 To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you do not have these environments provisioned, create any code in a branch but do not merge it to `master`. Only merge after you have fully deployed across the provisioned environments.
+If you are on a Pro trial and do not have Staging and Production environments provisioned, you cannot complete an initial deployment. To continue developing, create a branch from Integration `master`. Do not merge this code to your `master` branch until you have deployed it to your provisioned Staging and Production environments.
 </div>
 
 To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.
@@ -93,7 +93,7 @@ For example,
 	git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
 ### Set up your SSH agent {#cloud-live-migrate-agent}
-You can use any SSH client you prefer or see our [Recommendeds tools]({{ page.baseurl }}cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
+You can use any SSH client you prefer or see our [Recommended tools]({{ page.baseurl }}cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
 
 The SSH agent forwards authentication requests from Staging or Production to your working Magento system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.
 

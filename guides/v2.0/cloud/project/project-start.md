@@ -72,28 +72,50 @@ For Pro, the deployment log for Staging and Production is located in `/var/log/p
 
 Magento logs are located in the `<magento root dir>/var/log` directory.
 
-## Cloud CLI summary {#cloud-proj-start-summ}
-The following commands can be run from any directory. However, it's simpler to run them from a project directory. If so, you can omit the `-p <project ID>` parameter.
+## Build logs {#build-log}
+After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of `git push`, so you can observe them in the terminal or capture them (along with error messages) with `git push > build.log 2>&1`.
 
-All commands are shown with required options only. Get help for any `magento-cloud` command by appending `--help`. For more commands, see [Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html).
+### Deploy logs {#deploy-log}
+You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.
 
-`git commit --allow-empty -m "redeploy" && git push <branch name>`
-:  Push an empty commit to force a redeployment. Some actions, like adding a user for example, don't result in deployment.
+Logs from the deploy hook are located on the server in the following locations:
 
-`magento-cloud login`
-:	Log in to the project
+*	Integration: `/tmp/log/deploy.log`
+*	Staging: `/var/log/platform/<prodject ID>/post_deploy.log`
+*	Production: `/var/log/platform/{1|2|3}.<prodject ID>/post_deploy.log`
 
-`magento-cloud project:list`
-:	List project IDs
+The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`.
 
-`magento-cloud environment:list -p <project ID>`
-:	List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).
+For example, on the Staging environment for project `yw1unoukjcawe`, the deploy log is located at `/var/log/platform/yw1unoukjcawe_stg/post_deploy.log`.
 
-`magento-cloud project:get <project ID> <directory> -e <environment ID>`
-:	Clone a project to a directory. To clone the `master` environment, omit `-e <environment ID>`.
+For Production, you have a three node structure. Logs are available with specific information for that node. For example, on the Production environment for project `yw1unoukjcawe`, the deploy log is located at node 1 `/var/log/platform/1.yw1unoukjcawe/post_deploy.log`, node 2 `/var/log/platform/2.yw1unoukjcawe/post_deploy.log`, and node 3 `/var/log/platform/3.yw1unoukjcawe/post_deploy.log`.
 
-`magento-cloud project:info -p <project ID>`
-:	List information about the project, including ID, name, region, URL, and Git {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
+Logs for all deployments that have occurred on this environment are appended to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment.
+
+The actual log output is highly verbose to allow troubleshooting. The following is a condensed example:
+
+{% highlight xml %}
+[2016-10-11 22:15:38] Starting pre-deploy.
+...
+[2016-10-11 22:15:39] Pre-deploy complete.
+[2016-10-11 22:15:42] Start deploy.
+[2016-10-11 22:15:42] Preparing environment specific data.
+[2016-10-11 22:15:42] Initializing routes.
+
+... more ...
+
+[2016-10-11 22:15:46] Deployment complete.
+{% endhighlight %}
+
+The deploy log contains start and stop messages for each of the two hooks:
+`Starting pre-deploy`, `Pre-deploy complete.`, `Start deploy.`, and `Deployment complete.`.
+
+### Application logs {#app-log}
+To review other application logs in Staging or Production, you can access and review those logs in `/var/log/platform/ProjectID`.
+
+For Pro plan Staging, the project ID has `_stg` at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in `/var/log/platform/ProjectID_stg`.
+
+For Pro plan Production, you have three nodes to check for logs.
 
 #### Related topics
 *	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)

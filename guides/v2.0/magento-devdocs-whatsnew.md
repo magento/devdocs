@@ -1,31 +1,56 @@
 ---
 layout: full-width
 group: whatsnew
-subgroup: none
 title: What's new on DevDocs
-menu_title: What's new on DevDocs
-landing-page: What's new on DevDocs
-menu_order: 1
-menu_node: parent
-version: 2.0
 github_link: magento-devdocs-whatsnew.md
 ---
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
 
-## September 2017
+## October 2017
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
-Updated backward incompatible changes after 2.2.0 RC2.3 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Sep 04
+Add [cron](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html) and [sFTP](http://devdocs.magento.com/guides/v2.2/cloud/env/environments-ssh.html#sftp) content for Magento Commerce (Cloud)|2.0.x, 2.1.x, 2.2.x, 2.x|New|Oct 12
+[Added overview of DocBlock annotations usage in integration tests](http://devdocs.magento.com/guides/v2.2/test/integration/annotations.html)|2.0.x, 2.1.x, 2.2.x|New|Oct 11
+Update Magento Commerce (Cloud) content for [Prepare project environments](http://devdocs.magento.com/guides/v2.2/cloud/before/before-project-owner.html), [First-time local development setup](http://devdocs.magento.com/guides/v2.2/cloud/access-acct/first-time-setup.html), [Clone and branch the project](http://devdocs.magento.com/guides/v2.2/cloud/before/before-setup-env-2_clone.html), [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html), and [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Oct 11
+Published backward incompatible changes between 2.0.15 and 2.0.16 versions in [Open Source](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html)|2.0.x|Updated|Oct 10
+[Update Magento Commerce (Cloud) 2.2 Release Notes with changes in deployment](http://devdocs.magento.com/guides/v2.2/cloud/release-notes/CloudReleaseNotes2.2.html#deploy)|2.2.x|Updated|Oct 06
+Updated Magento Commerce (Cloud) content for [services.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services.html), [Elasticsearch](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html), [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html), [Redis](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-redis.html), [MySQL](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-mysql.html), and [RabbitMQ](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Oct 06
+Added a new option to the [`bin/magento migrate:data`](http://devdocs.magento.com/guides/v2.2/migration/migration-migrate-data.html) command in the _Migration Guide_.<br/>Added an example of [configuring the Data Migration Tool to use TLS](http://devdocs.magento.com/guides/v2.2/migration/migration-tool-configure.html) (e.g., private/public keys) to connect to MySQL in the _Migration Guide_.|2.2.x|Updated|Oct 03
 
+{% collapsibleh2 September 2017 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+[Update Admin account password change on project provision and creation for Magento Commerce (Cloud)](http://devdocs.magento.com/guides/v2.0/cloud/onboarding/onboarding-tasks.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Sep 27
+Published backward incompatible changes between 2.2.0 and 2.1.9 versions in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Sep 27
+Add third party license information for Magento Commerce (Cloud) [2.0.X](http://devdocs.magento.com/guides/v2.0/release-notes/thirdparty-mccloud.html), [2.1.X](http://devdocs.magento.com/guides/v2.1/release-notes/thirdparty-mccloud.html), and [2.2](http://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html)|2.0.x, 2.1.x, 2.2.x, 2.x|New|Sep 27
+Added new topics for [installing any extension from the command line](http://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions.html) and [installing the B2B extension specifically](http://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html)|2.2.x|New|Sep 26
+Updated Magento Commerce (Cloud) 2.2 content for [upgrade instructions](http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html), [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html), [Magento application variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html), [.magento.app.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html), and [requirements](http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html)|2.2.x|Updated|Sep 26
+[Updated Fastly snippet examples and process for adding new VCL snippets](http://devdocs.magento.com/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Sep 20
+HHVM compatibility removed in [tech-stack](http://devdocs.magento.com/guides/v2.2/architecture/tech-stack.html).|2.2.x|Updated|Sep 14
+Updated backward incompatible changes after 2.2.0 RC3.0 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Sep 14
+[Added a rule set for the PHP_CodeSniffer](http://devdocs.magento.com/guides/v2.2/coding-standards/code-standard-sniffers.html)|2.2.x|Updated|Sep 13
+[Added troubleshooting information for Redis.](http://devdocs.magento.com/guides/v2.1/cloud/trouble/redis-troubleshooting.html)|2.0.x, 2.1.x, 2.2.x, 2.x|New|Sep 11
+Updated database dump commands for [patching](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html) and [upgrading](http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html) Magento Commerce Cloud, and for [Migrate and deploy](http://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html) content.|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Sep 08
+[Updated custom Fastly VCL snippet information](http://devdocs.magento.com/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Sep 08
+[Added troubleshooting information for generating and adding sitemap.xml and robots.txt.](http://devdocs.magento.com/guides/v2.2/cloud/trouble/robots-sitemap.html)|2.0.x, 2.1.x, 2.2.x, 2.x|New|Sep 08
+Updated content for [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) and [corresponding examples](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-initial.html) for in Magento Commerce (Cloud).|2.2.x|Updated|Sep 08
+[Versioning](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/versioning/)<br/>[Codebase Changes](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/versioning/codebase-changes.html)<br/>[Module version dependency](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/versioning/dependencies.html)|2.x|New and Updated|Sep 05
+Updated backward incompatible changes after 2.2.0 RC2.3 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Sep 04
+Added information for Magento Commerce (Cloud) Starter [architecture](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-architecture.html) and [development and deploy workflow](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html), and Pro [architecture](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-arch.html) and [development and deploy workflow](http://devdocs.magento.com/guides/v2.2/cloud/welcome/discover-workflow.html)|2.0.x, 2.1.x, 2.2.x|Updated|Sep 01
+[Updated information on Magento encryption keys](http://devdocs.magento.com/guides/v2.2/cloud/trouble/trouble-crypt-key-variable.html)|2.0.x, 2.1.x, 2.2.x|Updated|Sep 01
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 August 2017 %}
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
 [Added explanation of AggregatedFieldDataConverter](http://devdocs.magento.com/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)|2.2.x|Updated|Aug 30
+Added information for Fastly [set up](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html), [custom VCL snippets](http://devdocs.magento.com/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html), and [troubleshooting](http://devdocs.magento.com/guides/v2.2/cloud/trouble/trouble_fastly.html)|2.0.x, 2.1.x, 2.2.x, 2.x|New|Aug 28
 Added backward incompatible changes for 2.2.0 RC2.2 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 28
 Added backward incompatible changes for 2.2.0 RC2.1 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 22
 [Frontend Product Repository](http://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html)<br/>[Render prices on frontend with Ui component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/howto/price_rendering.html)<br/>[Added backward incompatible changes](http://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes.html#recently-viewed-and-recently-compared-widgets)<br/>[Updated the list of REST endpoints](http://devdocs.magento.com/guides/v2.2/rest/list.html#catalog)|2.2.x|New and Updated|Aug 21

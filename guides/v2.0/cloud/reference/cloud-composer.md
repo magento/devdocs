@@ -50,9 +50,9 @@ The following sections discuss the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0c
 ### magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
 `magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"} and does not contain any code.
 
-The metapackage depends on the appropriate versions of [`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig) and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. Therefore, to use Magento EE version 2.1.4, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.1.4.
+The metapackage depends on the appropriate versions of [`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig) and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. Therefore, to use {{site.data.var.ee}} version 2.1.4, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.1.4.
 
-This package depends on a floating version of `magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified Magento EE version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
+This package depends on a floating version of `magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
 ### magento/magento-cloud-configuration (MCC) {#cloud-composer-cloudconfig}
 This package contains the following scripts and `magento` commands that automatically perform building and deployment of the codebase on the cloud environment:
@@ -65,11 +65,13 @@ This package contains the following scripts and `magento` commands that automati
 
 There is a many-to-one relationship between the MCC version and Magento versions.
 
-For Magento EE, versions are specified as `2.<x>.<y>`.
+For {{site.data.var.ee}}, versions are specified as `2.<x>.<y>`.
 
-MCC versions are specified as: `<100 + x>.<y>.*`. For example, Magento EE 2.1.4 is associated with MCC 101.4.0. Subsequently, a new version of MCC could be released that corresponds to the same Magento EE version, and it would be 101.4.1.
+MCC versions are specified as: `<100 + x>.<y>.*`. For example, {{site.data.var.ee}} 2.1.4 is associated with MCC 101.4.0. Subsequently, a new version of MCC could be released that corresponds to the same {{site.data.var.ee}} version, and it would be 101.4.1.
 
 We release updated MCC code to add a new patch or to improve the build and deploy hooks.
+
+To check for patches, you can check the `vendor/magento/magento-cloud-configuration/patches` folder.
 
 ### magento/product-enterprise-edition {#cloud-composer-prodee}
 This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on.

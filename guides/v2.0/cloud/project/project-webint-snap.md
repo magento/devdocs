@@ -98,7 +98,13 @@ To create a copy of your database, you dump the data from the database to a file
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
 3.	Create a database dump:
 
+  For Starter environments and Pro Integration environments:
+
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
+
+  For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and user name):
+
+    mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
 
 If you want to push this data into an environment, see [Migrate data and static files]({{page.baseurl}}cloud/live/stage-prod-migrate.html).
 

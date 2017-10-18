@@ -205,7 +205,7 @@ This Release Candidate is for test purposes only. Do not install it in a product
 {% include install/releasenotes/ce_install_21.md %}
 
 ### Upgrade an existing installation from the GitHub repository
-Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the {{site.data.var.ce}} GitHub repository.
 
 1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 

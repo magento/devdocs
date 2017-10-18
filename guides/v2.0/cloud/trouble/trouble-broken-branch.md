@@ -42,7 +42,9 @@ When we initially provision your project, you receive a cloned `master` branch. 
 
 When you want to build and deploy the code to the Integration environment, you should not force the build using the Magento Cloud CLI commands to initiate a build command. This can cause the build to break. The command may check for specific variables and settings not in your local but in the remote environment. The automated build process also runs a specific series of scripts and commands when you push your code to your remote Git branch and environment.
 
-If your build broke in this situation, we recommend force resetting the code from the remote and following build and deploy processes. The branch could have inaccurate files, incomplete steps, that require fully resetting the code and building normally.
+For example, when using the Magento Cloud CLI commands, you may have received the error during a build: `E: Error building project: The build hook failed with status code 255. Build aborted`.
+
+If your build broke in this situation, we recommend force resetting the code from the remote and following normal [build and deploy]({{ page.baseurl }}cloud/live/live-sanity-check.html#push) processes. The branch could have inaccurate files, incomplete steps, that require fully resetting the code and building normally.
 
 1. If you have code commits for your branch, you should move those commits to a new branch. When [resetting your code](https://git-scm.com/docs/git-reset){:target="_blank"} branch, you will lose any and all code commits.
 
@@ -70,6 +72,6 @@ If your build broke in this situation, we recommend force resetting the code fro
 You should have a successful build. At this point, If you have code commits, commit those to the reset branch. Fully test to ensure the changes are correctly working.
 
 #### Related topics
-* [First-time development setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html)
+* [First-time local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html)
 * [Build and deploy on local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
 * [Deployment Process]({{ page.baseurl }}cloud/reference/discover-deploy.html)

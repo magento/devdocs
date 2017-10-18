@@ -1,7 +1,8 @@
 <div markdown="1">
 
-{% collapsibleh2 Magento Open Source 2.0 Release Notes %} 
+{% collapsibleh2 Magento Open Source 2.0 Release Notes %}
 
+*	[Version 2.0.16]({{page.baseurl}}release-notes/ReleaseNotes2.0.16CE.html){:target="_blank"}
 *	[Version 2.0.15]({{page.baseurl}}release-notes/ReleaseNotes2.0.15CE.html){:target="_blank"}
 *	[Version 2.0.14]({{page.baseurl}}release-notes/ReleaseNotes2.0.14CE.html){:target="_blank"}
 *	[Version 2.0.13]({{page.baseurl}}release-notes/ReleaseNotes2.0.13CE.html){:target="_blank"}
@@ -21,8 +22,9 @@
 
 {% endcollapsibleh2 %}
 
-{% collapsibleh2 Magento Commerce 2.0 Release Notes %} 
+{% collapsibleh2 Magento Commerce 2.0 Release Notes %}
 
+*	[Version 2.0.16]({{page.baseurl}}release-notes/ReleaseNotes2.0.16EE.html){:target="_blank"}
 *	[Version 2.0.15]({{page.baseurl}}release-notes/ReleaseNotes2.0.15EE.html){:target="_blank"}
 *	[Version 2.0.14]({{page.baseurl}}release-notes/ReleaseNotes2.0.14EE.html){:target="_blank"}
 *	[Version 2.0.13]({{page.baseurl}}release-notes/ReleaseNotes2.0.13EE.html){:target="_blank"}
@@ -39,5 +41,15 @@
 *	[Version 2.0.2](http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.2.html){:target="_blank"}
 *	[Version 2.0.1](http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.1.html){:target="_blank"}
 *	[Version 2.0.0](http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.html){:target="_blank"}
+
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 Magento Commerce (Cloud) 2.0 Release Notes %}
+
+*	[Magento Commerce (Cloud) version 2.1.5 and 2.0.13 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.5.html){:target="_blank"}
+*	[magento-cloud-configuration release 101.4.x Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes101.4.html){:target="_blank"}
+*	[Magento Commerce (Cloud) version 2.1.4 and 2.0.12]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.4.html){:target="_blank"}
+*	[Magento Commerce (Cloud) version 2.1.3 and 2.0.11]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.3.html){:target="_blank"}
+*	[Magento Commerce (Cloud) version 2.1.2 and 2.0.10]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.2.html){:target="_blank"}
 
 {% endcollapsibleh2 %}

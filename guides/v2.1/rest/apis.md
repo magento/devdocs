@@ -2,8 +2,8 @@
 layout: default
 group: rest
 subgroup: A_rest
-title: REST APIs
-menu_title: REST APIs
+title: REST APIs (Swagger)
+menu_title: REST APIs (Swagger)
 version: 2.1
 menu_order: 2
 

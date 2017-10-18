@@ -10,15 +10,13 @@ version: 2.0
 github_link: cloud/project/projects.md
 ---
 
-The {{site.data.var.ece}} *project* includes all code in Git branches, associated  environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
+The {{site.data.var.ece}} *project* includes all code in Git branches, associated environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
 
 We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. For Starter, you have access to all environments and branches. For Pro, you have access to Integration environments, but use CLI to manage Staging and Production environments.
 
 {% include cloud/wings-management.md %}
 
-To manage your project, environment, and branches, see:
-
-* [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html)
+* [Configure your project]({{page.baseurl}}cloud/project/project-webint-basic.html)
 * [Project structure]({{page.baseurl}}cloud/project/project-start.html)
 * [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
 *	Manage branches with the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html) or [CLI commands]({{page.baseurl}}cloud/env/environments-start.html)

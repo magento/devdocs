@@ -29,6 +29,8 @@ Fastly provides the following powerful tools for Magento:
 
 We highly recommend enabling and using Fastly for your caching and CDN. The only situation you may not want to enable is for a headless deployment.
 
+We strongly recommend installing Fastly module 1.2.28 or later. 
+
 ## Fastly and 503 timeouts {#timeouts}
 When you receive a 503 error from Fastly, it may be due to a lengthy operation or performing bulk actions. Fastly has a default 60 second time out. Any request that takes longer than 60 seconds will return a 503 error.
 

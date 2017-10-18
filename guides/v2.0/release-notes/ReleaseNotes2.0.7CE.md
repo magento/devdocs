@@ -81,7 +81,7 @@ To upgrade to 2.0.7 using the command line:
 		composer require <product> 2.0.7 --no-update
 		composer update
 
-	To upgrade to Magento CE 2.0.7, enter:
+	To upgrade to {{site.data.var.ce}} 2.0.7, enter:
 
 		composer require magento/product-community-edition 2.0.7 --no-update
 		composer update

@@ -17,7 +17,7 @@ To access your project for the first time:
 	![Import a sample Magento project]({{ site.baseurl }}common/images/cloud_project_template.png){:width="650px"}
 
 4.  Click **Continue**.
-5.  When prompted, enter your Magento EE [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields and click **Finish**.
+5.  When prompted, enter your {{site.data.var.ee}} [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields and click **Finish**.
 6.  Wait a few minutes while the project deploys.
 
 	During this time, the Web Interface displays messages similar to the following:

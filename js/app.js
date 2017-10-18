@@ -2,6 +2,7 @@
 //= include _vendor/affix.js
 //= include _vendor/scrollspy.js
 //= include _vendor/clipboard.min.js
+//= include _vendor/autocomplete.jquery.js
 
 // This is what happens on document.ready
 $(function() {
@@ -17,6 +18,7 @@ $(function() {
   //= include _includes/search.js
   //= include _includes/tutorial.js
   //= include _includes/videos.js
+  //= include _includes/left-navigation.js
 
 });
 // END document ready

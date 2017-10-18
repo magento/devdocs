@@ -7,10 +7,9 @@ menu_title: Run the support utilities (Magento Commerce only)
 menu_node:
 menu_order: 900
 version: 2.0
+ee_only: true
 github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 ## Overview of the support utilities {#config-cli-spt-utils-over}
 The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.

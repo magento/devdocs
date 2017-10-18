@@ -41,7 +41,7 @@ To add a design exception:
 2. In Admin, go to **CONTENT** > **Design** > **Configuration**
 2. In the configuration record corresponding to your store view, click **Edit**. 
 4. On the **Design Rule** tab, click **Add New User Agent Rule**.
-5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
+5. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
 6. Click **Save Configuration** or **Save and Continue**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.

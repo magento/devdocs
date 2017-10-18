@@ -24,7 +24,7 @@ You can upgrade Magento from the command line if you installed the software usin
 
 <div class="bs-callout bs-callout-warning">
     <ul><li>If you're upgrading to version 2.1, see <a href="{{ page.baseurl }}release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</li>
-    	<li>If you're upgrading from Magento CE or EE 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
+    	<li>If you're upgrading from {{site.data.var.ce}} or {{site.data.var.ee}} 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
 </div>
 
 ## Prerequisite: `pub` directory root {#upgrade-cli-pub}
@@ -70,7 +70,7 @@ To prevent access to your store while it's being upgraded, put your store in mai
 		composer require <product> <version> --no-update
 		composer update
 
-	For example, to upgrade to Magento CE version 2.0.13, enter:
+	For example, to upgrade to {{site.data.var.ce}} version 2.0.13, enter:
 
 		composer require magento/product-community-edition 2.0.13 --no-update
 		composer update

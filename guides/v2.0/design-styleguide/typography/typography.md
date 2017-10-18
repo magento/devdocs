@@ -1,7 +1,7 @@
 ---
 layout: default
 group: styleguide
-subgroup: Admin Style Guide
+subgroup: Design
 title: Admin Typography
 menu_title: Typography
 menu_order: 4
@@ -12,33 +12,31 @@ github_link: design-styleguide/typography/typography.md
 
 Typography is used to establish page hierarchy.
 
-<h2 id="headings">Heading types</h2>
+## Heading Types
+<br>
 
-<h1>H1 - Page title</h1>
+# H1 - Page title
 
-Page titles use Open Sans font, regular, 28px, line height 34px.
+Page titles use Open Sans font, regular weight, 28px font size, and 34px line height.
 
-<h2>H2 - Section heading</h2>
+## H2 - Section heading
 
-Section headings use Open Sans font, Regular, 20px, line height 25px.
+Section headings use Open Sans font, regular weight, 20px font size, and 25px line height.
 
-<h3>H3 - Subsection heading</h3>
+### H3 - Subsection heading
 
-Subsection headings use Open Sans font, Semibold, 17px, line height 22px
+Subsection headings use Open Sans font, semibold weight, 17px font size, and 22px line height.
 
 ---
 
-<h2 id="bodytext">Body text</h2>
+## Body Text
 
-<ul>
-	<li>Body text uses Open Sans, Regular, 14px, line height 20px.</li>
-	<li>Spacing (margin) between paragraphs is 15px.</li>
-</ul>
+* Body text uses Open Sans font, regular weight, 14px font size, and 20px line height.
 
+* Spacing between paragraphs uses a 15px margin.
 
-<h2 id="legaltext">Legal and link text</h2>
+## Legal and Link Text
 
-<ul>
-	<li>Legal text (or small text) uses Open Sans, Regular, 12px, line height 15px. Spacing (margin) between paragraphs is 12px.</li>
-	<li>Link text is the same as body text, adding a #0066cc color and an underline hover state.</li>
-</ul>
+* Legal text, or small text, uses Open Sans, regular weight, 12px font size, and 15px line height. Spacing between paragraphs uses a 12px margin.
+
+* Link text uses the same attributes as body text, adding a #0066cc color and an underline hover state.
