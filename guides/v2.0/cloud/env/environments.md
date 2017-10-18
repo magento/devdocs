@@ -49,9 +49,9 @@ When you activate an inactive branch, or create a new active branch, the command
 For Starter and Pro plans, the `master` environment is ultimately the source or parent for all code in {{site.data.var.ece}}.
 
 * For Starter, `master` is your Production environment and branch. You create branches from `master` as your Integration environment.
-* For Pro, you have a `master` branch in Integration for creating your code branches. You deploy this branch to a matching `master` branch in Staging and Production environments.
+* For Pro, you have a `master` branch in Development (Integration) for creating your code branches. You deploy this branch to a matching `master` branch in Staging and Production environments.
 
-In your Integration, you have a number of branches and environments available to you per plan. When you branch from `master`, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
+In your Development (Integration), you have a number of branches and environments available to you per plan. When you branch from `master`, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
 
 When you merge code from a child branch to its parent, the parent environment is redeployed with the code changes of the child environment. Child environments are typically used for development, staging, and testing.
 
@@ -112,7 +112,7 @@ The following table lists the commands used in the preceding example. For a full
 #### Related topics
 *	[Manage your project]({{page.baseurl}}cloud/project/projects.html)
 *	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[SSH into environment]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
+*	[SSH and sFTP]({{page.baseurl}}cloud/env/environments-ssh.html)
 *	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)

@@ -18,18 +18,27 @@ Every {{site.data.var.ece}} *environment* has an associated active Git *branch*.
 
 For more information about managing environments using the CLI, see [Manage branches with the CLI]({{page.baseurl}}cloud/env/environments-start.html).
 
-This topic discusses how to use the Web Interface to:
+This topic discusses how to use the Project Web Interface to:
 
-*	Add or delete an environment
+*	Add or delete an environment. You cannot add or delete the `master` branch for Pro plan Staging and Production. You can branch from Start plan Master.
 *	Sync (`git pull`) from the environment's parent
 *	Merge (`git push`) to the environment's parent
 
-## Add or delete an environment {#project-branch-add}
-Complete development of code and added extensions in a branch and, when complete, merge (`git push`) the branch with its parent or master. For Starter, you want to create your development branches from `staging` using our recommended architecture structure. For Pro, you want to branch from Integration `master`.
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You cannot create branches from Pro plan Staging and Production `master`. These environments include `master` branches that you deploy updated Git code to from Development (Integration) `master`.
+</div>
 
-For branching strategies, review [Start]({{page.baseurl}}cloud/basic-information/starter-architecture.html) and [Pro]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
+## Add or delete an environment {#project-branch-add}
+Complete development of code and added extensions in a branch and, when complete, merge (`git push`) the branch with its parent or master.
+
+* For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
+* For Pro, you want to branch from Development (Integration `master`).
+
+For branching strategies, review [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) and [Pro]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
 
 Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and available from the project branches list. You can either activate the branch later or you can [delete it entirely]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete) using the CLI.
+
+If you need additional environments for development, enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) for more information.
 
 ## Add a branch {#add}
 To add a branch:

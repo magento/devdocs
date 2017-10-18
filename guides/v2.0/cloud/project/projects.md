@@ -12,13 +12,13 @@ github_link: cloud/project/projects.md
 
 The {{site.data.var.ece}} *project* includes all code in Git branches, associated  environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
 
-We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. For Starter, you have access to all environments and branches. For Pro, you have access to Integration environments, but use CLI to manage Staging and Production environments.
+We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. You have full access to all environments for Starter and Pro environments. You may need to continue to use SSH and CLI commands for some aspects of Pro plan Staging and Production environments.
 
 {% include cloud/wings-management.md %}
 
 To manage your project, environment, and branches, see:
 
-* [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html)
+* [Configure your project]({{page.baseurl}}cloud/project/project-webint-basic.html)
 * [Project structure]({{page.baseurl}}cloud/project/project-start.html)
 * [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
 *	Manage branches with the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html) or [CLI commands]({{page.baseurl}}cloud/env/environments-start.html)
@@ -54,7 +54,7 @@ For **Starter**, you will see a hierarchy of branches starting from Master (Prod
 
 ![Starter branch hierarchy]({{ site.baseurl }}common/images/cloud_project-starter.png)
 
-For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration Master. Any branches you create display as children from Integration Master. For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
+For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Development (Integration Master). Any branches you create display as children from Development (Integration Master). For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
 

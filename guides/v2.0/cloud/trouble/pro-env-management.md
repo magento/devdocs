@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/trouble/pro-env-management.md
 ---
 
-For existing Pro plans, you previously had to access Staging and Production environments using SSH access to enter CLI commands. We have added additional features to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) to directly manage these environments without SSH. To add these environments to the Project Web Interface, you need to complete a few preparation steps and enter a ticket.
+For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options. To add these environments to the Project Web Interface, you need to complete a few preparation steps and enter a ticket.
 
 All new projects already include these features.
 
@@ -18,8 +18,9 @@ All new projects already include these features.
 The new Project Web Interface provides the following features for Pro plan Staging and Production environments:
 
 * Add and manage user access to the environments
-* Merge / deploy Integration `master` to Staging and Production
+* Sync code between Staging and Pro to Integration environments
 * Add and manage environment variables
+* Configure environment settings
 * Access the environments by SSH and URL. These links and commands are provided through the Access Links.
 
 As an important note, while you can manage Staging and Production environments, you **cannot**:
@@ -29,9 +30,13 @@ As an important note, while you can manage Staging and Production environments, 
 
 You will need to enter support tickets to update and modify the following in Staging and Production:
 
-* Specific deploy hook changes (.magento.app.yaml...? then mention .platform.app.yaml in doc)
-* Cron jobs via .magento.app.yaml/.platform.app.yaml in doc?
+* Configurations for .magento.app.yaml and services.yaml
+* Cron jobs
 * Redirects from routes.yaml
+
+You will continue to use SSH for:
+
+* Deploy code to Staging and Production
 
 ## Prepare for adding Staging and Production {#prepare}
 When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts and permissions and environment variables from your Integration Master environment.
@@ -39,7 +44,7 @@ When we add Staging and Production access to the Project Web Interface, we will 
 To prepare, ensure you have all settings and environment variables set correctly.
 
 ### Verify user account access {#prep-user}
-We recommend verifying your user account access and permissions set in the Master Integration environment.
+We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the **Projects** tab and the name of your project.
@@ -48,8 +53,6 @@ We recommend verifying your user account access and permissions set in the Maste
 5. Click the **Users** tab to review the user accounts and permission configurations.
 6. You can add users if needed. Click **Add User**, enter an email address, and select a permission. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only).
 7. To modify the environment permissions for a user, select Edit for the account and change the permissions. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). Select a permission and save.
-
-These user accounts and settings are included with Staging and Production. You can modify these account settings for these environments after they are created.
 
 ### Prepare variables {#prep-variables}
 When we convert your project to the new Project Web Interface, we add variables from Integration `master` to Staging and Production. You can review, modify, and add variables through the current Project Web Interface prior to conversion.
@@ -64,7 +67,9 @@ When we convert your project to the new Project Web Interface, we add variables 
 For environment specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.
 
 ## Enter a ticket for updating the Project Web Interface {#enable}
-Enter a Support ticket requesting to have your project enabled with Wings. We will review the infrastructure and settings, create user and environment variables for Staging and Production environments.
+Enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) requesting to have your project enabled with Wings. We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.
+
+When done, you can access review your project through the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html).
 
 ## Optional, move environment variables {#move-variables}
 Optionally, after conversion you can also migrate specific environment variables manually into the Project Web Interface for Staging and Production. This is not required, but supported.

@@ -32,7 +32,7 @@ To access projects and environments through the Project Web Interface:
 
 	![Access your project by URL or SSH]({{ site.baseurl }}common/images/cloud_project-access.png){:width="600px"}
 
-For more information about using SSH, see [SSH to an environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh). To clone the project using either the {{site.data.var.ece}} CLI or Git, use the links in the field under the branch name.
+For more information about using SSH, see [SSH to an environment]({{page.baseurl}}cloud/env/environments-ssh.html#magento-cli). To clone the project using either the {{site.data.var.ece}} CLI or Git, use the links in the field under the branch name.
 
 The following figure shows an example.
 
@@ -142,7 +142,7 @@ The following figure shows a sample history.
 The history shows, from oldest to newest:
 
 *	Environment branched from `FeatureX`
-*	Environment sync'd with the parent
+*	Environment synced with the parent
 *	Environment snapshot created
 
 We recommend [creating a snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) before you make any code changes.
