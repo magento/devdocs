@@ -6,7 +6,7 @@ github_link: magento-functional-testing-framework/update.md
 ---
 
 <div class="bs-callout bs-callout-info" markdown="1">
-The Magento Functional Testing Framework is under rapid development and delivers changes to the `develop` branch biweekly.
+The Magento Functional Testing Framework is under rapid development and delivers changes to the [`develop`] branch biweekly.
 </div>
 
 ## Overview
@@ -20,21 +20,21 @@ The Framework is installed separately as a dependency using Composer. When pulli
 
 ## Step-by-step update 
 
-When you updated Magento, check the Magento [WYSIWYG] and [Security] settings PREPARE MAGENTO.
+* When you updated Magento, check the Magento [WYSIWYG] and [Security] settings.
 
-Go to the `magento2ce/dev/tests/acceptance` directory:
+* Go to the `magento2ce/dev/tests/acceptance` directory:
 
 ```bash
 $ cd dev/tests/acceptance
 ```
 
-Run `composer update` to get the latest framework version:
+* Run `composer update` to get the latest framework version:
 
 ```bash
 $ composer update
 ```
 
-Generate newly pulled tests: 
+* Generate newly pulled tests: 
 
 ```bash
 $ vendor/bin/robo generate:tests
@@ -42,6 +42,7 @@ $ vendor/bin/robo generate:tests
 
 <!-- LINK DEFINITIONS -->
 
+[`develop`]: https://github.com/magento/magento2-functional-testing-framework
 [WYSIWYG]: ./getting-started.html#wysiwyg-settings
 [Security]: ./getting-started.html#security-settings
 
