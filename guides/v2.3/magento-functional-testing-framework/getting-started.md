@@ -211,3 +211,6 @@ $ vendor/bin/robo allure2:report
 [PHP 7]: http://php.net/downloads.php
 [allure reports]: https://docs.qameta.io/allure/latest/#_report_structure
 
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework

@@ -5,9 +5,11 @@ title: Robo commands available in the Magento Functional Testing Framework
 github_link: magento-functional-testing-framework/commands/robo.md
 ---
 
-The following list contains commands and options available in __Robo 1.1.3__.
+Robo is a task runner for PHP that allows you to alias long complex CLI commands to simple commands.
 
 ## Usage
+
+### Format
 
 Assuming that you're working in the `magento2ce/dev/tests/acceptance` directory in your terminal, run Robo commands using the following format:
 
@@ -21,7 +23,112 @@ Or, if you added path of the Robo executable file to the system *PATH*, then run
 $ robo command [options] [arguments]
 ```
 
-## Options
+### Example
+
+* Original: `allure generate tests/_output/allure-results/ -o tests/_output/allure-report/`
+* Robo: `./vendor/bin/robo allure1:generate`
+
+## Most useful сommands
+
+The following list contains most popular commands purposed to interact with the MFTF. 
+
+For more commands, see [Available commands] or run in your terminal: `$ vendor/bin/robo`.
+
+### Codeception Robo Commands
+
+#### List all available Robo commands:
+
+```bash
+$ vendor/bin/robo
+```
+
+#### Duplicate the Example configuration files used to customize the Project:
+
+```bash
+$ vendor/bin/robo clone:files
+```
+
+#### Build the Codeception project:
+
+```bash
+$ vendor/bin/robo build:project
+```
+
+#### Generate all Page Objects:
+
+```bash
+$ vendor/bin/robo generate:pages`
+```
+
+#### Generate all Tests in PHP:
+
+```bash
+$ vendor/bin/robo generate:tests
+```
+
+#### Run all Tests marked with the @group tag 'example', using the Chrome environment:
+
+```bash
+$ vendor/bin/robo example
+```
+
+#### Run all Functional tests using the Chrome environment:
+
+```bash
+$ vendor/bin/robo chrome
+```
+
+#### Run all Functional tests using the FireFox environment:
+
+```bash
+$ vendor/bin/robo firefox
+```
+
+#### Run all Functional tests using the PhantomJS environment:
+
+```bash
+$ vendor/bin/robo phantomjs
+```
+
+#### Run all Functional tests located under the Directory Path provided using the Chrome environment:
+
+```bash
+$ vendor/bin/robo folder ______
+```
+
+#### Run all Tests with the specified @group tag, excluding @group 'skip', using the Chrome environment:
+
+```bash
+$ vendor/bin/robo group ______
+```
+  
+### Allure Robo Commands
+
+To determine which version of the Allure command you need to use please run `allure --version`.
+
+#### Generate the HTML for the Allure report based on the Test XML output:
+
+Allure v1.x.x | Allure v2.x.x
+---|---
+`$ vendor/bin/robo allure1:generate` | `$ vendor/bin/robo allure2:generate`
+
+#### Open the HTML Allure report:
+
+Allure v1.x.x | Allure v2.x.x
+---|---
+`$ vendor/bin/robo allure1:open` | `$ vendor/bin/robo allure2:open`
+
+#### Generate and open the HTML Allure report:
+
+Allure v1.x.x | Allure v2.x.x
+---|---
+`$ vendor/bin/robo allure1:report` | `$ vendor/bin/robo allure2:report`
+
+## Available commands
+
+The following list contains commands and options available in __Robo 1.1.3__.
+
+#### Command options
 
 `-h` or `--help`                          | Display this help message
 `-q` or `--quiet`                         | Do not output any message
@@ -33,8 +140,6 @@ $ robo command [options] [arguments]
 `--progress-delay=PROGRESS-DELAY` | Number of seconds before progress bar is displayed in long-running task collections. Default: 2s. [default: 2]
 `-D` or `--define=DEFINE`                 | Define a configuration item value. (multiple values allowed)
 `-v|vv|vvv`, `--verbose`                | Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
-
-## Available commands
 
 #### general
 
@@ -1984,3 +2089,11 @@ Define a configuration item value.
 * Is value required: yes
 * Is multiple: yes
 * Default: `array ()`
+
+<!-- LINK DEFINITIONS -->
+
+[Available commands]: #available-commands
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework
