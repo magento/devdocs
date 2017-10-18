@@ -45,7 +45,7 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, mess
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 </div>
 
 If PHP is installed, continue with the next prerequisite, <a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>.
@@ -66,7 +66,7 @@ If PHP is *not* installed, see one of the following sections:
 		sudo apt-get -y update
 		sudo add-apt-repository ppa:ondrej/php
 		sudo apt-get -y update
-		sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv
+		sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv php7.0-soap
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
@@ -85,7 +85,7 @@ If PHP is *not* installed, see one of the following sections:
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-  	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+  	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
@@ -116,7 +116,7 @@ If PHP is *not* installed, see one of the following sections:
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-  		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+  		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
@@ -140,7 +140,7 @@ If PHP is *not* installed, see one of the following sections:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+  		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 
 3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
