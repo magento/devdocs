@@ -112,7 +112,7 @@ did not change after you selected **Disable product**.
 <!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites can not edit CNS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
 
 
-<!--- 71701 -->* In environments running Varnish, the menu item of the active category page is now handled as the active class as expected. Previously, activating cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609) EE ONLY
+<!--- 71701 -->* In environments running Varnish, the menu item of the active category page is now handled as the active class as expected. Previously, activating cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609) 
 
 
 
@@ -133,7 +133,7 @@ did not change after you selected **Disable product**.
 <!--- 71051 -->* Magento now completes order processing  if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error, `No such entity with customerId = 0`, and the order did not complete.
 
 ### Payment methods
-<!--- 69089 -->* In orders with separate billing and shipping addresses, when you change the billing address but neglect to click **Update** before clicking **Place order**, Magento will not play the order until you click **Update**. Previously, under these conditions, Magento replaced the  edited billing address with the shipping address. 
+<!--- 69089 -->* In orders with separate billing and shipping addresses, when you change the billing address but neglect to click **Update** before clicking **Place order**, Magento will not place the order until you click **Update**. Previously, under these conditions, Magento replaced the  edited billing address with the shipping address. 
 
 <!--- 72466 -->* We’ve fixed a `PayPal.js` error that occurred when you tried to check out an order that contained a downloadable product. 
 
@@ -148,7 +148,7 @@ did not change after you selected **Disable product**.
 
 
 ### Search
-<!--- 72106 -->* Searches that implement related search synonyms now yield more consistent results. 
+<!--- 72106 -->* Search synonyms in a group now can declare several words as synonyms. For example, "Elon Musk,tesla" is a valid synonym group, and a search on the phrase "Elon Musk" will also show results for the "tesla" keyword. Previously, you could declare synonyms for each word (for example, "Elon,Musk,Tesla"), but these words didn't work as a phrase. Synonyms are also now case-insensitive.. 
 
 #### Elasticsearch
 
