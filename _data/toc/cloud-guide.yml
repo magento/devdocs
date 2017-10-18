@@ -1,4 +1,4 @@
-label: Magento Commerce (Cloud) Guide
+project-webint-basiclabel: Magento Commerce (Cloud) Guide
 pages:
     - label: Welcome to Magento Commerce (Cloud)
       url: cloud/bk-cloud.html
@@ -33,16 +33,19 @@ pages:
         - label: Fastly
           url: cloud/basic-information/cloud-fastly.html
 
+        - label: SSH and sFTP
+          url: cloud/env/environments-ssh.html
+
         - label: New Relic APM
           url: cloud/project/new-relic.html
 
         - label: Blackfire Profiler
           url: cloud/project/project-integrate-blackfire.html
 
-    - label: First-time local development setup
+    - label: First-time local environment setup
       url: cloud/access-acct/first-time-setup.html
       children:
-        - label: Set up a project and dev workspace
+        - label: Prepare for local environment setup
           url: cloud/before/before-workspace.html
 
         - label: Install Magento prerequisites
@@ -54,14 +57,8 @@ pages:
         - label: Set up the Magento file system owner
           url: cloud/before/before-workspace-file-sys-owner.html
 
-        - label: Clone the project
+        - label: Clone and branch the project
           url: cloud/before/before-setup-env-2_clone.html
-
-        - label: Set up Magento authentication keys
-          url: cloud/before/before-setup-env-keys.html
-
-        - label: Branch an environment
-          url: cloud/before/before-setup-env-env.html
 
         - label: Install Magento
           url: cloud/before/before-setup-env-install.html
@@ -98,6 +95,9 @@ pages:
 
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html
+
+        - label: Set up cron jobs
+          url: cloud/configure/setup-cron-jobs.html
 
         - label: .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
@@ -140,29 +140,28 @@ pages:
     - label: Manage your project
       url: cloud/project/projects.html
       children:
-        - label: Get started with a project
-          url: cloud/project/project-start.html
 
-        - label: Manage users
-          url: cloud/project/user-admin.html
-
-        - label: Basic project information
+        - label: Configure your project
           url: cloud/project/project-webint-basic.html
 
-        - label: Manage branches
+        - label: Project structure
+          url: cloud/project/project-start.html
+
+        - label: Create and manage users
+          url: cloud/project/user-admin.html
+
+        - label: Manage branches with the Interface
           url: cloud/project/project-webint-branch.html
 
-        - label: Snapshots and Backup management
+        - label: Manage branches with the CLI
+          url: cloud/env/environments-start.html
+
+        - label: Snapshots and backup management
           url: cloud/project/project-webint-snap.html
 
     - label: Manage your environments
       url: cloud/env/environments.html
       children:
-        - label: Get started with an environment
-          url: cloud/env/environments-start.html
-
-        - label: SSH into your environment
-          url: cloud/env/environments-ssh.html
 
         - label: Magento Cloud CLI
           url: cloud/reference/cli-ref-topic.html
@@ -204,7 +203,7 @@ pages:
         - label: Patch Magento Commerce (Cloud)
           url: cloud/project/project-patch.html
 
-        - label: Patch Magento Commerce (Cloud)
+        - label: Upgrade from 2.0.4 (Cloud)
           url: cloud/upgrade/upgrade-from-2-0-4.html
           versions: ["2.0"]
 

@@ -17,12 +17,12 @@ After you install the data migration tool, the following directory contains mapp
 
 *	{{site.data.var.ce}}:
 
-	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/opensource-to-opensource`: Configuration and scripts for migrating from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
 
 *	{{site.data.var.ee}}:
 
-	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from {{site.data.var.ce}} 1 to {{site.data.var.ee}} 2
-	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from {{site.data.var.ee}} 1 to {{site.data.var.ee}} 2
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/opensource-to-commerce`: Configuration and scripts for migrating from {{site.data.var.ce}} 1 to {{site.data.var.ee}} 2
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/commerce-to-commerce`: Configuration and scripts for migrating from {{site.data.var.ee}} 1 to {{site.data.var.ee}} 2
 
 The preceding directories contain subdirectories for each supported version.
 

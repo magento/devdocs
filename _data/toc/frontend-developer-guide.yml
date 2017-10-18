@@ -180,5 +180,5 @@ pages:
       url: frontend-dev-guide/tools/tools_overview.html
       children:
 
-        - label: Using Grount for Magento tasks
+        - label: Using Grunt for Magento tasks
           url: frontend-dev-guide/tools/using_grunt.html

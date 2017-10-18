@@ -20,7 +20,7 @@ When you upgrade {{site.data.var.ece}}, you also upgrade with patches and availa
 
 Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
-When upgrading from 2.0.X or 2.1.X to 2.2.X, please see [Upgrade from 2.1.X](#old-version).
+When upgrading from 2.0.X or 2.1.X to 2.2.X, please see [Upgrade from 2.0.X or 2.1.X](#old-version). For additional information on the release, see the [{{site.data.var.ece}} 2.2 Release Notes].
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
@@ -32,7 +32,7 @@ You can directly upgrade to {{site.data.var.ece}} 2.2 from the following version
 * 2.0.X versions: 2.0.14, 2.0.15, 2.0.16
 * 2.1.X versions: 2.1.7, 2.1.8, 2.1.9
 
-We have heavily tested and verifed upgrades to 2.2 from the latest three versions of 2.0.X and 2.1.X.
+We have heavily tested and verified upgrades to 2.2 from the latest three versions of 2.0.X and 2.1.X.
 
 You can attempt to upgrade from any version directly to {{site.data.var.ece}} 2.2. We cannot guarantee the results. For example, you should be able to upgrade from 2.0.10 or 2.1.4 directly to 2.2.
 
@@ -195,7 +195,7 @@ After fully upgrading, you need to create an updated `config.php` file. You will
 
     For example for Pro, to run the `scd-dump` on Integration `master`:
 
-      `ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"`
+      `ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"`
 
 2. Transfer `config.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 

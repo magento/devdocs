@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 100_project
-title: Manage branches
-menu_title: Manage branches
+title: Manage branches with the Project Web Interface
+menu_title: Manage branches with the Interface
 menu_order: 20
 menu_node:
 version: 2.0
@@ -16,9 +16,9 @@ redirect_from:
 
 Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see [Git documentation](https://git-scm.com/doc).
 
-For more information about managing environments using the CLI, see [Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html).
+For more information about managing environments using the CLI, see [Manage branches with the CLI]({{page.baseurl}}cloud/env/environments-start.html).
 
-This topic discusses how to use the Web Interface to:
+This topic discusses how to use the Project Web Interface to:
 
 *	Add or delete an environment
 *	Sync (`git pull`) from the environment's parent
@@ -29,7 +29,7 @@ Complete development of code and added extensions in a branch and, when complete
 
 For branching strategies, review [Start]({{page.baseurl}}cloud/basic-information/starter-architecture.html) and [Pro]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
 
-Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and available from the project branches list. You can either activate the branch later or you can [delete it entirely]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete) using the CLI.
+Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can [delete it entirely]({{page.baseurl}}cloudenv/environments-start.html#env-delete) using the CLI.
 
 ## Add a branch {#add}
 To add a branch:

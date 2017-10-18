@@ -72,6 +72,6 @@ If your build broke in this situation, we recommend force resetting the code fro
 You should have a successful build. At this point, If you have code commits, commit those to the reset branch. Fully test to ensure the changes are correctly working.
 
 #### Related topics
-* [First-time development setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html)
+* [First-time local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html)
 * [Build and deploy on local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
 * [Deployment Process]({{ page.baseurl }}cloud/reference/discover-deploy.html)
