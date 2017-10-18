@@ -1,8 +1,10 @@
 label: Magento Functional Testing Framework Guide
 pages:
+
   - label: Getting Started
     url: magento-functional-testing-framework/getting-started.html
     versions: 2.3
+
   - label: Commands
     versions: 2.3
     children:
@@ -11,3 +13,7 @@ pages:
         url: magento-functional-testing-framework/commands/robo.html
       - label: codecept
         url: magento-functional-testing-framework/commands/codeception.html
+
+  - label: Update
+    url: magento-functional-testing-framework/update.html
+    version: 2.3
