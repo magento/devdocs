@@ -49,8 +49,7 @@ If PHP is installed, continue with the next prerequisite, <a href="{{page.baseur
 If PHP is *not* installed, see one of the following sections:
 
 *	[PHP 7.0 on Ubuntu 14](#instgde-prereq-php70-ubuntu)
-*	<a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a>
-*	<a href="#instgde-prereq-php5.66-install-ubuntu12">PHP 5.6 on Ubuntu 12</a>
+*	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a>
 
 ## PHP 7.0 on Ubuntu 14 or 16 {#instgde-prereq-php70-ubuntu}
 
@@ -86,7 +85,7 @@ If PHP is *not* installed, see one of the following sections:
 
 {% endcollapsible %}
 
-## PHP 5.6 on Ubuntu 14 {#instgde-prereq-php5.66-install-ubuntu}
+## PHP 5.6 on Ubuntu 14 {#instgde-prereq-php56-install-ubuntu}
 
 {% collapsible To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14: %}
 
