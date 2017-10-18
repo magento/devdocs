@@ -17,7 +17,7 @@ What happens technically: Build scripts parse configuration files committed to t
 The build and deploy process is slightly different for each plan:
 
 * **Starter plans**: For the Development (Integration) environment, every active branch build and deploys to a full environment for access and testing. Fully test your code by merging to the `staging` branch. Finally to go live, push `staging` to `master` to deploy to Production. You have full access to all branches through the Project Web Interface and CLI commands.
-* **Pro plans**: For the Development (Integration) environment, every active branch build and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the `master` branch in Integration then pushed to those environments using SSH or a ticket.
+* **Pro plans**: For the Development (Integration) environment, every active branch build and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the `master` branch in Integration then pushed to those environments using SSH.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Make sure all code for your site and stores is in the active {{site.data.var.ee}} Git branch. If you point to or include hooks to code in other branches, especially a private branch, the build and deploy process will have issues. For example, add any new themes into the Git branch of code. If you include it from a private repo, the theme won't build with the Magento code.

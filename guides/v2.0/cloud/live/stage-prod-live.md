@@ -47,13 +47,6 @@ Pro comes with a large Development (Integration) environment with eight active b
 
 For detailed information of the process, see [Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html).
 
-### Assisted deployment for Pro {#assist}
-For Pro, the Staging and Production environments only supports deployments for code using SSH to the environments and Git CLI commands. These environments are not currently accessible through the Project Web Interface.
-
-If you do not want to deploy using CLI commands, you can enter a [Support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) for assistance.
-
-If you do plan on using SSH access to those environments, you need to enter a ticket providing your SSH public keys. We will add these keys to your environment.
-
 ### Enter a ticket for deploying hooks {#hooks}
 {% include cloud/hooks.md %}
 
