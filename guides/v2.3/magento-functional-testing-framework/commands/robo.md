@@ -25,8 +25,8 @@ $ robo command [options] [arguments]
 
 ### Example
 
-* Original: `allure generate tests/_output/allure-results/ -o tests/_output/allure-report/`
-* Robo: `./vendor/bin/robo allure1:generate`
+* Original: `$ allure generate tests/_output/allure-results/ -o tests/_output/allure-report/`
+* Robo: `$ vendor/bin/robo allure1:generate`
 
 ## Most useful сommands
 
