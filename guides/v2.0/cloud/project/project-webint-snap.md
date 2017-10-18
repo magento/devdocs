@@ -4,7 +4,7 @@ group: cloud
 subgroup: 100_project
 title: Snapshots and backup management
 menu_title: Snapshots and backup management
-menu_order: 25
+menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-snap.md
@@ -13,7 +13,9 @@ redirect_from:
   - /guides/v2.1/cloud/admin/admin-snap.html
 ---
 
-You can back up and restore an environment at any time using a snapshot. Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.
+You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Start environments and Pro plan Development (Integration) environments. You cannot snapshot Pro plan Staging and Production environments.
+
+Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.
 
 A *snapshot* is a complete backup of an environment. It includes all
 persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.
@@ -90,7 +92,7 @@ To create a copy of your database, you dump the data from the database to a file
 
 	*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
 	*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-	* To SSH into the `master` branch of your Integration environment:
+	* To SSH into the `master` branch of your Development (Integration) environment:
 
 			magento-cloud environment:ssh
 2.	Find the database login information:
@@ -98,7 +100,7 @@ To create a copy of your database, you dump the data from the database to a file
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
 3.	Create a database dump:
 
-  For Starter environments and Pro Integration environments:
+  For Starter environments and Pro Development (Integration) environments:
 
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
 

@@ -23,7 +23,7 @@ To set up multiple stores, you must:
 ## Configure your local installation
 To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ page.baseurl }}config-guide/multi-site/ms_over.html).
 
-## Configure your Integration environment
+## Configure your Development (Integration) environment
 After successfully creating and testing multiple stores locally, you must:
 
 1.	[Configure routes](#cloud-multi-stores-routes), which specify how incoming URLs are handled by {{site.data.var.ee}}.

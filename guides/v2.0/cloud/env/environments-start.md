@@ -145,8 +145,8 @@ Wait for the environment to delete.
   <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
 </div>
 
-## Integration environment IP addresses {#ipaddress}
-The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
+## Development (Integration) environment IP addresses {#ipaddress}
+The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Development (Integration) environments]({{page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 
@@ -193,7 +193,5 @@ The following steps provide an example of accessing a database:
 {% include cloud/log-in-db.md %}
 
 #### Related topics
-*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)
+*	[Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html)
+*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)

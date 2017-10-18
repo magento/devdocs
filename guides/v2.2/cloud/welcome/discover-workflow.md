@@ -18,16 +18,22 @@ The general workflow for all development and deployment includes:
 * Build and deploy processes run
 * The environments updated with code, services, and configurations
 
-The Pro plan gives you a large Integration environment for your development across eight active branches, a Staging environment, and a Production environment. For full details, see [Pro architecture]({{ page.baseurl }}cloud/reference/discover-arch.html).
+The Pro plan gives you a large Development (Integration) environment for your development across eight active branches, a Staging environment, and a Production environment. For full details, see [Pro architecture]({{ page.baseurl }}cloud/reference/discover-arch.html).
 
 The following figure shows how it works at a high level:
 
 ![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
 
-You can manage all of Integration environments directly through the [Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). Access and manage all Integration, Staging, and Production environments  through the store and Admin panel using provided URLs and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+You can manage all of Development (Integration) environments directly through the [Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). Access and manage all Integration, Staging, and Production environments  through the store and Admin panel using provided URLs and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For existing Pro projects, you need to have your Project Web Interface updated to manage Staging and Production through the interface. For more information adding this management to existing Pro projects, see [Add Staging and Production to Pro projects]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+
+If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.
+</div>
 
 ### Pro environments and branches {#env-branches}
-For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These enviornments are not public facing. Finally, Production is your live, public environment.
+For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Development (Integration) environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These enviornments are not public facing. Finally, Production is your live, public environment.
 
 For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
 
@@ -36,7 +42,7 @@ From each sprint, you can have branches for every user story. All the stories be
 For detailed information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
 
 ## Development workflow {#development}
-Development and deployment on Pro plans begins with your initial project. You create your project with the "blank site", which is a {{site.data.var.ece}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Integration environment.
+Development and deployment on Pro plans begins with your initial project. You create your project with the "blank site", which is a {{site.data.var.ece}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Development (Integration) environment.
 
 The full process involves:
 
@@ -44,7 +50,7 @@ The full process involves:
 * [Develop code](#dev-code) and install extensions locally in a branch
 * [Configure](#configure-store) your store and extension settings
 * [Generate configuration](#config-management) management files
-* [Push code](#push-code) and configuration to build and deploy to an Integration environment
+* [Push code](#push-code) and configuration to build and deploy to an Development (Integration) environment
 
 ![Develop and deploy workflow]({{ site.baseurl }}common/images/cloud_workflow-pro.png)
 
@@ -101,7 +107,7 @@ And so on until you have your store fully built, configured, and ready to go liv
 ![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-pro-push-code.png)
 
 ### Configure store {#configure-store}
-When you are ready to configure your store, have all code pushed to your Integration environment and access the Magento Admin. You should fully configure all store settings in the Integration environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.
+When you are ready to configure your store, have all code pushed to your Development (Integration) environment and access the Magento Admin. You should fully configure all store settings in the Development (Integration) environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.
 
 For the best information on configurations, we recommend reviewing {{site.data.var.ee}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
 
@@ -124,7 +130,7 @@ If you are familiar with Magento, you may be concerned about how to get your con
 
 The generated file is `app/etc/config.php`.
 
-You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
+You will generate the file in the Development (Integration) environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
 
 **Important notes** on Configuration Management:
 
@@ -162,7 +168,7 @@ For instructions, see [Install optional sample data]({{page.baseurl}}cloud/howto
 ### Optional: Pull production data {#prod-data}
 We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.
 
-As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, possibly Integration environments as you like.
+As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, possibly Development (Integration) environments as you like.
 
 {% include cloud/data-collection.md %}
 

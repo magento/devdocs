@@ -4,10 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
-menu_order: 72
+menu_order: 25
 menu_node:
-level3_menu_node:
-level3_subgroup:
 version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
@@ -16,21 +14,21 @@ Configuration management exports your configurations to a file for pushing acros
 
 This example shows how to use the [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm) for managing the configuration:
 
-1.	Enter your configurations in your Integration environment Admin panel.
+1.	Enter your configurations in your Development (Integration) environment Admin panel.
 2.	Create `config.local.php` and transfer it to your local system.
-3.	Push `config.local.php` to the branch and Integration environment.
+3.	Push `config.local.php` to the branch and Development (Integration) environment.
 4.	Verify your settings are not editable in the Admin panel. Any configurations exported to `config.local.php` make those fields in the Admin panel read-only and disabled for edits.
 5.	Update and modify configurations again in Integration and recreate the file to update in Git:
-	1.	Delete `config.local.php` on the Integration environment.
-	2.	Change configuration settings on the Integration environment.
-	3.	Re-create and push the updated `config.local.php` to the Integration environment.
+	1.	Delete `config.local.php` on the Development (Integration) environment.
+	2.	Change configuration settings on the Development (Integration) environment.
+	3.	Re-create and push the updated `config.local.php` to the Development (Integration) environment.
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
 </div> -->
 For example, you may want to set the following settings:
 
-* Disable {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your Integration environment
+* Disable {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your Development (Integration) environment
 * Enable static file optimization in Staging and Production environments
 * Configure Fastly in Staging and Production with specific credentials for each
 
@@ -41,7 +39,7 @@ To complete these configuration management tasks, you need the following:
 
 * Minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges
 * Magento Admin panel URL and credentials for Integration, Staging, and Production environments
-* Push all updated code to your Integration environment:
+* Push all updated code to your Development (Integration) environment:
 
 	* For Starter: To an Integration branch and environment
 	* For Pro: To the Integration `master` branch and environment
@@ -52,7 +50,7 @@ Log into the Magento Admin panel in Integration to modify configurations. For a 
 
 To change locale and static file optimization settings:
 
-1.	Log in to the Integration environment Admin panel. You can access this URL through the Project Web Console.
+1.	Log in to the Development (Integration) environment Admin panel. You can access this URL through the Project Web Console.
 2.	Navigate to **Stores** > Settings > **Configuration** > General > **General**.
 2.	In the right pane, expand **Locale Options**.
 3.	From the **Locale** list, change the locale. You can change it back later.
@@ -73,7 +71,7 @@ To change locale and static file optimization settings:
 10.	Log out of the Magento Admin.
 
 ## Export values and transfer config.local.php to your local system {#export}
-This step creates and transfers the `config.local.php` configuration file on the Integration environment using a command you run on your local machine.
+This step creates and transfers the `config.local.php` configuration file on the Development (Integration) environment using a command you run on your local machine.
 
 This procedure corresponds to step 2 in the [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local system so you can add it to Git.
 
@@ -153,8 +151,8 @@ If you need to modify any of these settings and update `config.local.php`, you w
 
 For this example, we'll modify static file optimization settings.
 
-### Delete config.local.php on the Integration environment {#delete-file}
-Before you can change settings on the Integration environment, delete `app/etc/config.local.php` from that environment. With this file removed, all configuration settings are available to modify in the Admin.
+### Delete config.local.php on the Development (Integration) environment {#delete-file}
+Before you can change settings on the Development (Integration) environment, delete `app/etc/config.local.php` from that environment. With this file removed, all configuration settings are available to modify in the Admin.
 
 To delete `config.local.php`:
 
@@ -170,7 +168,7 @@ To delete `config.local.php`:
 		exit
 
 ### Change configuration values in Integration {#change-settings}
-To change values in the Integration environment Magento Admin:
+To change values in the Development (Integration) environment Magento Admin:
 
 1.	If you haven't done so already, log out of the Integration Admin.
 1.	Log in to the Integration Admin.
@@ -218,3 +216,9 @@ Repeat the deployment process for pushing the code to all environments.
 
 #### Related topics
 * [Overview of configuration management]({{ page.baseurl }}cloud/live/sens-data-over.html)
+* [Manage your environments]({{page.baseurl}}cloud/env/environments.html)
+*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
+*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)

@@ -10,10 +10,14 @@ version: 2.0
 github_link: cloud/project/user-admin.md
 ---
 
-{{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users.
+{{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. You can add and manage user accounts for the entire project and permissions per available environment.
+
+{% include cloud/wings-management.md %}
 
 ## Account owner role {#cloud-role-acct-owner}
-The account owner (that is, the person who registered the {{site.data.var.ece}} account) is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it.
+The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the trial or create new account process.
+
+The account has super user access and additional capabilities for managing all aspects of your project and environments.
 
 ## Project-level roles {#cloud-role-project}
 You can assign users to the following roles per project:
@@ -104,7 +108,7 @@ To create user accounts using the Web Interface:
 8.	Select the access for the account:
 
 	*	For a project administrator account, select the **Super User** check box. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
-	*	Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
+	*	Select permissions per specific environment (or branch) in the Development (Integration) environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
 8.	Click **Add User**.
 
 The users you add receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.

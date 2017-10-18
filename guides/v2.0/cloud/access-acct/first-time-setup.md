@@ -41,7 +41,7 @@ Prior to setting up your workspace, you may want to gather the following credent
 * **Magento Encryption Key**: When importing an existing Magento system only, you will need to capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]({{ page.baseurl }}cloud/trouble/trouble-crypt-key-variable.html)
 
 ## Create a local evironment {#local}
-For development, you need to install and configure a local environment. All environments for {{site.data.var.ece}} are read-only, including all Starter environments and all Pro Integration, Staging, and Production environments. Working in a local environment, you can write and test code prior to pushing it to an Integration environment for further testing and deployment to Staging and Production.
+For development, you need to install and configure a local environment. All environments for {{site.data.var.ece}} are read-only, including all Starter environments and all Pro Integration, Staging, and Production environments. Working in a local environment, you can write and test code prior to pushing it to a Development (Integration) environment for further testing and deployment to Staging and Production.
 
 We recommend adding a virtual machine (VM) or Docker container and installing {{site.data.var.ee}}. The environment should closely match cloud environments. To develop Magento code, you will clone the project Git code and create branches to develop your sites and stores in this local environment.
 

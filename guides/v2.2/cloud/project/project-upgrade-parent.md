@@ -16,7 +16,7 @@ As part of your normal pushes of code, {{site.data.var.ece}} checks for any pend
 
 What you need:
 
-* An active branch on your local to test in your Integration environment. We recommend using a dedicated branch for the upgrades and patches, without additional in-progress extension or code work.
+* An active branch on your local to test in your Development (Integration) environment. We recommend using a dedicated branch for the upgrades and patches, without additional in-progress extension or code work.
 * Access to the environment and variables if needed
 
 For detailed instructions:

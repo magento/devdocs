@@ -1,26 +1,30 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
+subgroup: 020_tech
 title: Magento Cloud CLI reference
 menu_title: Magento Cloud CLI
-menu_order: 10
+menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/reference/cli-ref-topic.md
 ---
 
-The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. This reference lists all available commands, and a list of commonly used commands, for Magento cloud.
+The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Development (Integration) environments. You cannot use these commands on Pro plan Staging and Production environments.
+
+This reference lists all available commands, and a list of commonly used commands, for {{site.data.var.ece}}. You can also use Magento CLI commands as needed, using `bin/magento` for entering commands.
+
+You will [install]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html) the Magento Cloud CLI on your local when setting up your local environment for development.
 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You must install the Magento Cloud CLI to your local workspace to issue commands. For details, see:
 
 * [Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
-* [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-php.html)
+* [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
 </div>
 
-The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage Integration environments.
+The following Magento Cloud CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage Development (Integration) environments.
 
 You may notice these commands are similar to Git commands. The `magento-cloud` Git commands directly connect with Magento Git, the Magento ECE project, with additional features. For example, when you push a Git branch, it is not activated until you access GitHub. The Magento CLI command includes activation.
 
@@ -30,7 +34,7 @@ All listed commands include only the required information and options. These com
 :  Push an empty commit to force a redeployment. Some actions, like adding a user for example, don't result in deployment.
 
 `magento-cloud login`
-:	Log in to the project
+:	Log in to the project.
 
 `magento-cloud project:get <project ID> <directory> -e <environment ID>`
 :	Clone a project to a directory. To clone the `master` environment, omit `-e <environment ID>`.
@@ -43,7 +47,7 @@ All listed commands include only the required information and options. These com
 </div>
 
 `magento-cloud environment:branch <name> <parent branch>`
-:	Create a new branch; the environment has both a name and an ID
+:	Create a new branch; the environment has both a name and an ID.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.
@@ -52,28 +56,28 @@ An environment name _cannot_ include characters reserved for your Linux shell or
 </div>
 
 `magento-cloud environment:checkout <environment ID>`
-:	Check out an existing environment
+:	Check out an existing environment.
 
 `magento-cloud environment:merge -p <project ID> -e <environment ID>`
 :	Merge changes in this environment with its parent.
 
 `magento-cloud environment:synchronize -p <project ID> -e <environment ID> {code|data}`
-:	Synchronize (that is, `git pull`) code and/or data from the parent to this environment
+:	Synchronize (that is, `git pull`) code and/or data from the parent to this environment.
 
 `magento-cloud variable:list`
-:	List variables in this environment
+:	List variables in this environment.
 
 `magento-cloud variable:set <name> <value>`
-:	Set a value for an environment variable in this environment
+:	Set a value for an environment variable in this environment.
 
 ## Display all commands {#all}
 
 The `magento-cloud list` displays all available commands.
 
 ## Help for a command {#help}
-You can preface or append any command with `help` to see more information on how to use that command.
+You can preface or append any command with `help` or `--help` to see more information on how to use that command.
 
-	$ magento-cloud help domain:add
+	$ magento-cloud domain:add --help
 	Command: domain:add
 	Description: Add a new domain to the project
 
@@ -97,12 +101,50 @@ You can preface or append any command with `help` to see more information on how
 	 --shell (-s)          Launch the shell
 
 ## List of Magento CLI commands {#cloud-cli-commands}
-The following table provides an extensive list of Magento CLI commands for ECE accessed with `magento-cloud` To see a full list of commands, enter `magento-cloud list`. The listed commands are for Magento Cloud CLI version 1.10.1 and later.
+The following table provides an extensive list of Magento CLI commands for ECE accessed with `magento-cloud` To see a full list of commands, enter `magento-cloud list`. The listed commands are for Magento Cloud CLI version 1.11.1 and later.
+
+The following table lists general commands.
 
 <table>
 	     <tbody>
 	         <tr>
-	             <th>Variable name</th>
+	             <th>Command</th>
+	             <th>Description</th>
+	         </tr>
+	 				<tr>
+	 				<td>clear-cache</td>
+	 				<td>Clears the cache for only the CLI.</td>
+	 				</tr>
+					<tr>
+	 				<td>docs</td>
+	 				<td>Provides a link for documentation. Currently, this displays http://devdocs.magento.com.</td>
+	 				</tr>
+					<tr>
+	 				<td>help</td>
+	 				<td>Displays <a href="#help">help</a> information for the command.</td>
+	 				</tr>
+					<tr>
+	 				<td>list</td>
+	 				<td>Displays a list of all available commands in the Magento Cloud CLI.</td>
+	 				</tr>
+					<tr>
+	 				<td>multi</td>
+	 				<td>Executes a command on multiple projects entered as a command separated list for the <code>-p</code> parameter.</td>
+	 				</tr>
+					<tr>
+	 				<td>web</td>
+	 				<td>Opens a web UI based on the parameters you enter.</td>
+	 				</tr>
+			</tbody>
+</table>
+
+
+The following table lists all commands for interacting with your environments and projects.
+
+<table>
+	     <tbody>
+	         <tr>
+	             <th>Command</th>
 	             <th>Description</th>
 	         </tr>
 	 				<tr>
@@ -150,6 +192,10 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 					<td>Lists project certificates</td>
 					</tr>
 					<tr>
+					<tr>
+	 				<td>clean</td>
+	 				<td>Removes old project builds. When using local:build in a separate location from your code, use this command to clear those builds. By default, your latest five builds are not deleted.</td>
+	 				</tr>
 					<td>db:dump</td>
 					<td>Creates a local dump of the remote database data. You can push the dump to another remote database. For example, you could pull data from the Production environment (products, catalogs, etc) and push it into Staging for testing.</td>
 					</tr>
@@ -217,6 +263,10 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				<td>environment:merge (merge)</td>
 	 				<td>Merges an environment</td>
 	 				</tr>
+					<tr>
+	 				<td>environment:push (push)</td>
+	 				<td>Pushes code to an environment</td>
+	 				</tr>
 	 				<tr>
 	 				<td>environment:relationships (relationships)</td>
 	 				<td>Displays an environment's relationships</td>
@@ -258,8 +308,8 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				<td>Builds the current project locally strictly to test the build without the full patch and commit process. This command allows you to build locally without patches just to check the build. We recommend you run this command separately in a different location. You should not commit the files from this build to Git.</td>
 	 				</tr>
 	 				<tr>
-	 				<td>local:clean (clean)</td>
-	 				<td>Removes old project builds. When using local:build in a separate location from your code, use this command to clear those builds. </td>
+	 				<td>local:dir (dir)</td>
+	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories: <code>magento-cloud dir [<subdir>]</code>.</td>
 	 				</tr>
 					<tr>
 	 				<td>prohect:get (get)</td>
@@ -374,4 +424,24 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 	 				<td>Sets an environment variable for a specific environment/Git branch</td>
 	 				</tr>
 	 		</tbody>
+</table>
+
+## Upgrade Magento Cloud CLI {#upgrade}
+When you login to the Magento Cloud CLI, it checks for available updates. You can enter `y` for yes to upgrade. After upgrading, you can login and use the `magento-cloud list` command to see a list of all commands.
+
+Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates.
+
+<table>
+	     <tbody>
+	         <tr>
+	             <th>Version</th>
+	             <th>Change</th>
+	         </tr>
+	 				<tr>
+	 				<td>1.11.X</td>
+	 				<td><ul><li>local:clean command has been changed to clean. Enter <code>magento-cloud clean --help</code> for more information. You may not find the command on the list.</li>
+					<li>Added local:dir to locate the root directory. You should enter a sub-directory arguement to locate specific information for local, web, or shared.</li>
+					</ul></td>
+	 				</tr>
+			</tbody>
 </table>

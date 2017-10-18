@@ -37,7 +37,7 @@ Check response headers with **curl command**:
 		< X-Cache: HIT, MISS
 
 ## Test your Staging and Production sites {#cloud-test-stage}
-This section discusses how to use `dig` and `curl` to get response headers from your Staging or Production site (the origin servers). You never need to test on the Integration environments. Basically, you are curling the edge for responses.
+This section discusses how to use `dig` and `curl` to get response headers from your Staging or Production site (the origin servers). You never need to test on the Development (Integration) environments. Basically, you are curling the edge for responses.
 
 **Note:** If you encounter issues when using `dig` and `curl` to the direct origin servers, not through the live server domain, the issue may not be Fastly.
 
@@ -157,7 +157,7 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 
 	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
 
-If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html) for instructions.
+If the module is not installed, you need to install in an Development (Integration) environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html) for instructions.
 
 ### Fastly-Magento-VCL-Uploaded is not present {#no-VCL}
 During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).

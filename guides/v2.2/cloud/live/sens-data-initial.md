@@ -4,10 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
-menu_order: 72
+menu_order: 25
 menu_node:
-level3_menu_node:
-level3_subgroup:
 version: 2.2
 github_link: cloud/live/sens-data-initial.md
 ---
@@ -16,13 +14,13 @@ Configuration management exports your configurations to a file for pushing acros
 
 This example shows how to use the [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm) for managing the configuration:
 
-1.	Enter your configurations in your Integration environment Admin panel.
+1.	Enter your configurations in your Development (Integration) environment Admin panel.
 2.	Create `config.php` and transfer it to your local system.
-3.	Push `config.php` to the branch and Integration environment.
+3.	Push `config.php` to the branch and Development (Integration) environment.
 4.	Verify your settings are not editable in the Admin panel. Any configurations exported to `config.php` make those fields in the Admin panel read-only and disabled for edits.
 5.	Update and modify configurations again in Integration, update the file, and check it into Git:
 
-	*	Change configuration settings on the Integration environment.
+	*	Change configuration settings on the Development (Integration) environment.
 	*	To add new configurations, run the command to create `config.php` again. New configurations are appended to the file.
 	* To remove or edit existing configurations, manually edit the file.
 	* Commit and push to Git.
@@ -32,7 +30,7 @@ This example shows how you can set and lock configuration values for everything 
 </div> -->
 For example, you may want to set the following settings:
 
-* Disable {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your Integration environment
+* Disable {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your Development (Integration) environment
 * Enable static file optimization in Staging and Production environments
 * Configure Fastly in Staging and Production with specific credentials for each
 
@@ -43,7 +41,7 @@ To complete these configuration management tasks, you need the following:
 
 * Minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges
 * Magento Admin panel URL and credentials for Integration, Staging, and Production environments
-* Push all updated code to your Integration environment:
+* Push all updated code to your Development (Integration) environment:
 
 	* For Starter: To an Integration branch and environment
 	* For Pro: To the Integration `master` branch and environment
@@ -54,7 +52,7 @@ Log into the Magento Admin panel in Integration to modify configurations. For a 
 
 To change locale and static file optimization settings:
 
-1.	Log in to the Integration environment Admin panel. You can access this URL through the Project Web Console.
+1.	Log in to the Development (Integration) environment Admin panel. You can access this URL through the Project Web Console.
 2.	Navigate to **Stores** > Settings > **Configuration** > General > **General**.
 2.	In the right pane, expand **Locale Options**.
 3.	From the **Locale** list, change the locale. You can change it back later.
@@ -75,7 +73,7 @@ To change locale and static file optimization settings:
 10.	Log out of the Magento Admin.
 
 ## Export values and transfer config.php to your local system {#export}
-This step creates and transfers the `config.php` configuration file on the Integration environment using a command you run on your local machine.
+This step creates and transfers the `config.php` configuration file on the Development (Integration) environment using a command you run on your local machine.
 
 This procedure corresponds to step 2 in the [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.php`, transfer it to your local system so you can add it to Git.
 
@@ -166,14 +164,14 @@ To verify your configuration changes:
 ## Change and update system-specific configuration settings {#modify}
 If you need to modify any of these settings and update `config.php`, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git following the previous steps.
 
-To add new configurations, modify your Integration environment and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git following the previous steps.
+To add new configurations, modify your Development (Integration) environment and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git following the previous steps.
 
 For an overvidew, see the [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 For this example, we'll modify static file optimization settings and add a new setting for JavaScript.
 
 ### Add new configurations in Integration {#change-settings}
-To add additional configuration values in the Integration environment Magento Admin. For this example, we are merging JavaScript files.
+To add additional configuration values in the Development (Integration) environment Magento Admin. For this example, we are merging JavaScript files.
 
 1.	If you haven't done so already, log out of the Integration Admin.
 2.	Log in to the Integration Admin.

@@ -23,7 +23,7 @@ There are two types of patches:
     Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always test a patch your local system. When complete, push the local Git branch to deploy your [Integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) environment. Resolve any issues before you deploy to [Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [Production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
+Always test a patch your local system. When complete, push the local Git branch to deploy your Development (Integration) environment. Resolve any issues before you deploy to Staging or Production.
 </div>
 
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
@@ -32,7 +32,7 @@ For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}clou
 When you perform a Magento Commerce upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 
 ### Back up the database
-Back up your Integration environment database and code:
+Back up your Development (Integration) environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
 

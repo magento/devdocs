@@ -40,7 +40,7 @@ You can also access your project by [logging in to your account](https://account
 
 ## Get started with the Project Web Interface {#project-setup}
 <!-- When you sign up for a trial Pro or Starter subscription plan, we provisioned your initial environment with a template {{site.data.var.ece}} repository. This repo is called `master` with a full environment in a Platform-as-a-Servie (PaaS) environment. Each active environment includes an active Git branch of code, web server, database, and services to fully test your Magento deployments. -->
-We provide a Project Web Interface for you to create your project, add user accounts, and get started developing your store(s). This web interface is helpful for the Technical Admin and developers to manage all environments and branches, environment variables, environment settings, and routes.
+We provide a Project Web Interface for you to create your project, add user accounts, and get started developing your store(s). This [web interface]({{page.baseurl}}cloud/env/environments.html) is helpful for the Technical Admin and developers to manage all environments and branches, environment variables, environment settings, and routes.
 
 For details on these environments, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) and [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
 
@@ -56,7 +56,7 @@ To access and manage your project environments, the Project Owner needs to:
 
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
-For detailed instructions for setting up environments, see [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html). For more information on the interface, see [Manage your project]({{page.baseurl}}cloud/project/projects.html).
+For detailed instructions for setting up environments, see [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html). For more information on the interface, see [Manage your project]({{page.baseurl}}cloud/project/projects.html). This interface provides full project and environment management including environment settings, environment variables, routes, and deploying to Staging and Production for Starter and Pro.
 
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}common/images/cloud_project-access.png)
 
