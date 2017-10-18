@@ -2256,6 +2256,41 @@
 
 
     
+    
+
+<li class="nav-level1  " id="how-tos">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>How Tos</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="modify-docroot-to-improve-security">
+            
+            
+        
+            
+            <a href="/guides/v2.0/install-gde/tutorials/change-docroot-to-pub.html">Modify docroot to improve security</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
     </ul>
 </div>
 
@@ -2353,123 +2388,78 @@
 </section>
 
 
-			<p>The web server document root (often referred to as the <em>docroot</em>) is the web server’s root directory; in other words, all pages it delivers are located in this directory and subdirectories of it. The path to your web server’s docroot depends on:</p>
+			<p>The web server document root (often referred to as the <em>docroot</em>) is where you put all the files your website needs to function. You can use your web server’s default docroot or <a href="/guides/v2.0/install-gde/tutorials/change-docroot-to-pub.html">modify it to enhance security</a>. For example, you should restrict browser access to Magento-specific files after installation.</p>
+
+<p>The path to your web server’s default docroot varies depending on the following:</p>
 
 <ul>
-  <li>What operating system you’re using</li>
-  <li>The web server brand and version</li>
-  <li>Your hosting provider (if you use one)</li>
+  <li>Operating system</li>
+  <li>Web server software</li>
+  <li>Hosting provider (if you use one)</li>
 </ul>
 
-<p>This guide can’t cover all the possibilities, but we’ll help you get started figuring out where your docroot is. It’s important; your Magento 2 installation directory is a subdirectory of your web server’s docroot so if you don’t know where the docroot is, you’ll have a lot of trouble doing anything with Magento.</p>
-
-<p>Look at the following sections in the order presented to locate your docroot.</p>
-
-<h2 id="contact-your-hosting-provider">Contact your hosting provider</h2>
-<p>If you use one, contact your hosting provider to locate the web server docroot. For example, <a href="http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder" target="_blank">cPanel</a> typically uses <code class="highlighter-rouge">public_html</code> as its docroot but don’t believe us! Contact your provider directly.</p>
-
-<h2 id="contact-your-network-administrator">Contact your network administrator</h2>
-<p>If you don’t use a hosting provider, you’re not technical, and you’re not that familiar with how things are set up, contact your network administrator.</p>
-
-<h2 id="find-the-docroot-yourself">Find the docroot yourself</h2>
-<p>This section is for technical people who don’t mind opening a <a href="/guides/v2.0/install-gde/basics/basics_login.html">command prompt</a> and finding the docroot themselves.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This section assumes you have a simple web server setup with virtual hosts. An Apache <em>virtual host</em> refers to running more than one web site (such as <code>company1.example.com</code> and <code>company2.example.com</code>) on a single machine. A virtual host configuration can override the default docroot. For more information about virtual hosts, see <a href="http://httpd.apache.org/docs/2.2/mod/core.html#virtualhost" target="_blank">Apache 2.2</a> or <a href="http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost" target="_blank">Apache 2.4</a> documentation.</p>
+<div class="bs-callout bs-callout-warning">
+  <p>As part of the Magento 2 installation process, you specify a subdirectory (usually <code class="highlighter-rouge">magento2</code>) under the docroot. The Magento-specific files are installed in this subdirectory, so knowing where to locate the default docroot is critical.</p>
 </div>
 
-<p>To find the docroot:</p>
+<h2 id="contact-your-hosting-provider">Contact your hosting provider</h2>
+<p>If you use one, contact your hosting provider to locate the web server docroot. For example, <a href="http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder" target="\_blank">cPanel</a> typically uses <code class="highlighter-rouge">public_html</code> as its docroot, but you should contact your provider to confirm.</p>
+
+<h2 id="find-the-docroot-yourself">Find the docroot yourself</h2>
+<p>This section assumes you’ve already set up a simple web server using <a href="https://httpd.apache.org/docs/2.4/vhosts/" target="\_blank">Apache virtual hosts</a> or <a href="https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/" target="\_blank">nginx server blocks</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You can use <em>virtual hosts</em> and <em>server blocks</em> to run more than one web site on a single machine (e.g., <code class="highlighter-rouge">company1.example.com</code> and <code class="highlighter-rouge">company2.example.com</code>) or override the web server’s default docroot without changing it.</p>
+</div>
+
+<p>To find the docroot on your server:</p>
 
 <ol>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_os-version.html">Find what operating system you’re using</a>.</li>
   <li>
-    <p>Find your web server version:</p>
-
-    <ul>
-      <li>Ubuntu: <code class="highlighter-rouge">apache2 -v</code></li>
-      <li>CentOS: <code class="highlighter-rouge">httpd -v</code></li>
-    </ul>
-  </li>
-  <li>
-    <p>See one of the following sections:</p>
-
-    <ul>
-      <li><a href="#basics-docroot-apache22">Find the docroot for Apache 2.2</a></li>
-      <li><a href="#basics-docroot-apache24">Find the docroot for Apache 2.4</a></li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="basics-docroot-apache22">Find the docroot for Apache 2.2</h2>
-<p>To find the docroot for Apache 2.2:</p>
-
-<ol>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_login.html">Log in to your Magento server</a>.</li>
-  <li>
-    <p>Open the following file in a text editor:</p>
+    <p>Open one of the following files in a text editor:</p>
 
     <ul>
       <li>
-        <p>Ubuntu:</p>
+        <p><strong>Ubuntu</strong></p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>/etc/apache2/sites-available/default
+        <div class="highlighter-rouge"><pre class="highlight"><code>/etc/apache2/sites-available/000-default.conf (Apache)
+/etc/nginx/sites-available/default (nginx)
 </code></pre>
         </div>
       </li>
       <li>
-        <p>CentOS:</p>
+        <p><strong>CentOS</strong></p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>/etc/httpd/httpd.conf
+        <div class="highlighter-rouge"><pre class="highlight"><code>/etc/httpd/conf/httpd.conf (Apache)
+/etc/nginx/nginx.conf (nginx)
 </code></pre>
         </div>
       </li>
     </ul>
   </li>
   <li>
-    <p>Search the file for <code class="highlighter-rouge">DocumentRoot</code>. A typical result follows:</p>
+    <p>Search the file for <code class="highlighter-rouge">DocumentRoot</code> or <code class="highlighter-rouge">root</code>.</p>
+
+    <p>Typically, the default Apache docroot on Ubuntu <em>and</em> CentOS is <code class="highlighter-rouge">/var/www/html</code> whereas the default nginx docroot on CentOS is <code class="highlighter-rouge">/usr/share/nginx/html</code>. For example:</p>
 
     <ul>
       <li>
-        <p>Ubuntu:</p>
+        <p><strong>Apache + Ubuntu/CentOS</strong></p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>DocumentRoot /var/www
+        <div class="highlighter-rouge"><pre class="highlight"><code>DocumentRoot "/var/www/html"
 </code></pre>
         </div>
       </li>
       <li>
-        <p>CentOS:</p>
+        <p><strong>nginx + CentOS</strong></p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>DocumentRoot /var/www/html
+        <div class="highlighter-rouge"><pre class="highlight"><code>root      /usr/share/nginx/html
 </code></pre>
         </div>
       </li>
     </ul>
   </li>
 </ol>
-
-<h2 id="basics-docroot-apache24">Find the docroot for Apache 2.4</h2>
-<p>This section applies to Apache 2.4 on Ubuntu only. If you installed Apache 2.4 on CentOS, consult the documentation provided with your version of Apache for more information.</p>
-
-<p>To find the docroot for Apache 2.4:</p>
-
-<ol>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_login.html">Log in to your Magento server</a>.</li>
-  <li>
-    <p>Open the following file in a text editor:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>/etc/apache2/sites-available/000-default.conf
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Search the file for <code class="highlighter-rouge">DocumentRoot</code>. A typical result follows:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>DocumentRoot /var/www/html
-</code></pre>
-    </div>
-  </li>
-</ol>
-
 
 		</div>
 		<!-- /.content-wrap -->
