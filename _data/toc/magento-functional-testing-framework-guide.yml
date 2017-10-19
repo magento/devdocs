@@ -9,6 +9,8 @@ pages:
     versions: 2.3
     children:
 
+      - label: Test elements (XML)
+        url: magento-functional-testing-framework/commands/cest.html
       - label: robo
         url: magento-functional-testing-framework/commands/robo.html
       - label: codecept

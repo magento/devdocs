@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Codeception commands in the Magento Functional Testing Framework
+title: Troubleshooting in the Magento Functional Testing Framework
 github_link: magento-functional-testing-framework/commands/troubleshooting.md
 ---
 
