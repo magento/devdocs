@@ -6,8 +6,8 @@ github_link: magento-functional-testing-framework/commands/codeception.md
 ---
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-We DO NOT recommend to use Codeception commands directly in the MFTF, they can break the Framework's basic workflow.
-All the Codeception commands you need are wrapped using Robo. The 
+We DO NOT recommend to use Codeception commands directly, they can break the MFTF basic workflow.
+All the Codeception commands you need are wrapped using Robo.
 
 [See the list of Robo commands][robo].
 </div>
@@ -374,3 +374,7 @@ Use custom path for config
 
 [--env]: #env
 [robo]: ./robo
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework
