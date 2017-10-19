@@ -47,12 +47,13 @@ When converted, your branches will be updated. The current branhces include a re
 After the conversion, the three repositories are merged into a single repository. You will have the following branches and environments:
 
 <table>
-<tbody>
+<thead>
 <tr>
 <th>Branch</th>
 <th>Environment</th>
 <th>Description</th>
-</tr>
+</tr></thead>
+<tbody>
 <tr>
 <td><code>master</code></td>
 <td>Integration master</td>
@@ -71,7 +72,7 @@ After the conversion, the three repositories are merged into a single repository
 <td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
 <p>When you convert, the Integration <code>master</code> is branched into a <code>staging</code> branch with the users access and environment variables.</p></td>
 </tr>
-</body>
+</tbody>
 </table>
 
 ## Prepare for adding Staging and Production {#prepare}
