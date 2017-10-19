@@ -77,7 +77,7 @@ The Project Owner creates the project, selecting the option for a blank site, wh
 * Generate a `master` branch of Git code from the Magento template at [`magento-cloud-configuration` repository](https://github.com/magento/magento-cloud-configuration){:target="_blank"}
 * Add the authentication key information to `auth.json` in your `master` Git branch. When you clone and branch from `master`, the Magento authentication keys are carried over in `auth.json`.
 * For Starter, add it to a Production environment for `master`
-* For Pro, add it to an Development (Integration) environment for `master`
+* For Pro, add it to an Integration environment for `master`
 
 If you are concerned with creating the Project, you can create a [Technical Admin](#cloud-owner-admins) and have them create the project. These instructions are for an account with one project. If you are a Magento Solution Partner,
 

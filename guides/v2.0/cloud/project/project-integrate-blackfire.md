@@ -18,7 +18,7 @@ For full details on integrations, also review [Blackfire’s complete Magento Co
 
 Blackfire includes the following [environments](https://blackfire.io/docs/reference-guide/environments){:target="_blank"} through their site:
 
-* `Magento Cloud (<Project ID>)` - Dev: This is your Development (Integration) environments
+* `Magento Cloud (<Project ID>)` - Dev: This is your Integration environments
 * `Magento Cloud (<Project ID>)` - Test: This is your Staging environment
 * `Magento Cloud (<Project ID>)` - Prod: This is your Production environment
 
@@ -50,13 +50,13 @@ You need to install and configure Blackfire on your local workspace with your wo
 We recommend using their installation guide to walk you through the process:
 
 1. Log in to [Blackfire](https://blackfire.io/login){:target="_blank"}.
-2. Select the Development (Integration) environment in the **Current Environment** list.
+2. Select the Integration environment in the **Current Environment** list.
 3. Select the Settings tab.
 4. Scroll to the bottom and locate the Server ID and Server Token for the environment. You will need these values for the instructions.
 5. Open [this guide](https://blackfire.io/docs/up-and-running/installation){:target="_blank"}, select the Operating System, and follow the instructions.
 
 ## Integrate Blackfire in Integration {#dev}
-We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see [their guide.](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud){:target="_blank"}. You can integrate with Pro's Development (Integration) environment and Starter's development branches.
+We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see [their guide.](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud){:target="_blank"}. You can integrate with Pro's Integration environment and Starter's development branches.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For Starter plans, pushing your code and `.magento.app.yaml` file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.
@@ -227,7 +227,7 @@ To verify Blackfire works, you have a couple options: a browser extension or usi
 To profile using the browser:
 
 1. Install the Blackfire browser extension in [Chrome](https://blackfire.io/docs/integrations/chrome#installing-the-companion){:target="_blank"} or [Firefox](https://blackfire.io/docs/integrations/firefox#installing-the-companion){:target="_blank"}. A new Blackfire icon displays in your browser next to the address location. If you don't see it, you may need to display the bar.
-2. Visit the store or site URL for your specific environment. For example, access the URL for your Development (Integration) environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.
+2. Visit the store or site URL for your specific environment. For example, access the URL for your Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.
 3. Click the Blackfire icon to profile. For Compare with, select No Reference.
 
 	![Start profiling]({{ site.baseurl }}common/images/cloud_blackfire.png)
@@ -235,7 +235,7 @@ To profile using the browser:
 
 To profile using the CLI:
 
-1.	SSH into the development or Development (Integration) environment. If you need the SSH command, ou can find it through the Project Web Site. Select the environment branch and copy the SSH command from the Access section. Enter the SSH command in a terminal.
+1.	SSH into the development or Integration environment. If you need the SSH command, ou can find it through the Project Web Site. Select the environment branch and copy the SSH command from the Access section. Enter the SSH command in a terminal.
 6.	Enter the following command:
 
 		php --ri blackfire

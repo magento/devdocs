@@ -40,7 +40,7 @@ The following sections discuss information you need to know about directories in
 ### Magento application root directory
 The Magento application root directory is located in different locations depending on the environment:
 
-* [Development (Integration) environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int): the Magento application is located in the `/app` directory.
+* [Integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int): the Magento application is located in the `/app` directory.
 * [Staging environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage): the Magento application is located in the `/<project code>_stg` directory.
 * [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod): the Magento application is located in the ` /<project code>` directory.
 

@@ -108,7 +108,7 @@ To create user accounts using the Web Interface:
 8.	Select the access for the account:
 
 	*	For a project administrator account, select the **Super User** check box. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
-	*	Select permissions per specific environment (or branch) in the Development (Integration) environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
+	*	Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
 8.	Click **Add User**.
 
 The users you add receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.

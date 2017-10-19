@@ -14,7 +14,7 @@ redirect from:
   -  /guides/v2.1/cloud/howtos/patch-magent.html
 ---
 
-You can apply patches as they are available to update {{site.data.var.ece}}. We recommend using a new active branch and Development (Integration) environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
+You can apply patches as they are available to update {{site.data.var.ece}}. We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
 When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html).
 
@@ -39,7 +39,7 @@ There are two types of patches:
     Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always apply and test a patch your local system in an active branch. You can push and test in an Development (Integration) environment prior to deploying across all environments.
+Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
 </div>
 
 Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
@@ -48,7 +48,7 @@ Our patches are Composer driven. For more information on Composer, see [Composer
 The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
 
 ## Back up the database {#backup-db}
-Back up your Development (Integration) environment database and code:
+Back up your Integration environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
 
@@ -189,7 +189,7 @@ To test a custom patch on your local system:
 
 ### Push a custom patch to Staging or Production environments {#custom-pushpatch}
 
-After you've successfully tested a custom patch locally and on your Development (Integration) environment, you can push the patch to Staging or Production for Starter and Pro.
+After you've successfully tested a custom patch locally and on your Integration environment, you can push the patch to Staging or Production for Starter and Pro.
 
 1.  Open an SSH connection to your Staging or Production environment. For Starter, see the Project Web Interface for the SSH links. Your Production environment is the Master. For Pro, the SSH access is one of the following:
 

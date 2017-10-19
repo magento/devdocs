@@ -24,10 +24,10 @@ If you do not request this update, you must use CLI commands or tickets to modif
 
 ![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
 
-## Development (Integration) environment {#cloud-arch-int}
-Developers use the Development (Integration) environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a Platform-as-a-Servie (PaaS) providing up to eight active environments on a grid for eight active Git branches. Each Development (Integration) environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
+## Integration environment {#cloud-arch-int}
+Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a Platform-as-a-Servie (PaaS) providing up to eight active environments on a grid for eight active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
 
-The Development (Integration) environments run in a Linux container (LXC) on a grid of servers as a PAAS (Platform as a Service). You can have up to eight active Git branches with an associated environments to development and test code. You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them.
+The Integration environments run in a Linux container (LXC) on a grid of servers as a PAAS (Platform as a Service). You can have up to eight active Git branches with an associated environments to development and test code. You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them.
 
 This environment does not support all services. For example, Fastly is not accessible in Integration.
 
@@ -35,7 +35,7 @@ The process for developing in Integration requires the following process:
 
 * Clone the `master` branch from the Project to your local
 * Branch and develop in a new Git branch on your local workspace
-* Push code to Git that builds and deploys to an Development (Integration) environment for testing
+* Push code to Git that builds and deploys to an Integration environment for testing
 
 Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html), working with Git branches, and [deploying code]({{page.baseurl}}cloud/live/stage-prod-live.html).
 

@@ -25,7 +25,7 @@ This topic discusses how to use the Project Web Interface to:
 *	Merge (`git push`) to the environment's parent
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You cannot create branches from Pro plan Staging and Production `master`. These environments include `master` branches that you deploy updated Git code to from Development (Integration) `master`.
+You cannot create branches from Pro plan Staging and Production `master`. These environments include `master` branches that you deploy updated Git code to from Integration `master`.
 </div>
 
 {% include cloud/wings-management.md %}
@@ -91,7 +91,7 @@ To delete an environment and make it inactive:
 ## Sync from the environment's parent {#project-branch-sync}
 Syncing an environment (or branch) is the same as `git pull origin <parent>`. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.
 
-For Pro plan, you can also sync from Staging and Production to your Development (Integration) `master` branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment's database. For more information, see [Migrate and deploy static files and data]({{page.baseurl}}cloud/live/stage-prod-migrate.html).
+For Pro plan, you can also sync from Staging and Production to your Integration `master` branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment's database. For more information, see [Migrate and deploy static files and data]({{page.baseurl}}cloud/live/stage-prod-migrate.html).
 
 To sync an environment with its parent:
 
@@ -121,7 +121,7 @@ For **Starter** environments, you can review build and deploy logs and the deplo
 
 For **Pro** environments, you can review the following logs per environment:
 
-* Development (Integration): Build and deploy and deployment history
+* Integration: Build and deploy and deployment history
 * Staging: Build logs and deployment history. You need to SSH into the server to view deploy logs.
 * Production: Build logs and deployment history. You need to SSH into the server to view deploy logs.
 

@@ -104,7 +104,7 @@ You will use this information to [complete Elasticsearch configuration](#configu
 
 To verify this information used for configurations and settings:
 
-1. SSH into the Development (Integration) environment with Elasticsearch installed and configured.
+1. SSH into the Integration environment with Elasticsearch installed and configured.
 2. Enter the following command to pretty-print connection information for Elasticsearch. You will use this information when configuring Elasticsearch through the Magento Admin.
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'

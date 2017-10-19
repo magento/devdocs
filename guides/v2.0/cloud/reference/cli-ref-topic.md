@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/reference/cli-ref-topic.md
 ---
 
-The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Development (Integration) environments. You cannot use these commands on Pro plan Staging and Production environments.
+The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Integration environments. You cannot use these commands on Pro plan Staging and Production environments.
 
 This reference lists all available commands, and a list of commonly used commands, for {{site.data.var.ece}}. You can also use Magento CLI commands as needed, using `bin/magento` for entering commands.
 
@@ -24,7 +24,7 @@ You must install the Magento Cloud CLI to your local workspace to issue commands
 * [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
 </div>
 
-The following Magento Cloud CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage Development (Integration) environments.
+The following Magento Cloud CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage Integration environments.
 
 You may notice these commands are similar to Git commands. The `magento-cloud` Git commands directly connect with Magento Git, the Magento ECE project, with additional features. For example, when you push a Git branch, it is not activated until you access GitHub. The Magento CLI command includes activation.
 

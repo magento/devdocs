@@ -109,16 +109,11 @@ To add an SSH key using the CLI:
 
 		magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
 
-<<<<<<< HEAD
 #### Add a key using the Project Web Interface {#add-key-web}
 You will select and add your SSH public key to each environment in your account.
-=======
-### Add a key using the Web Interface {#add-key-web}
-To add an SSH key using the Web Interface:
->>>>>>> 3320469fcf1a0a48855c3d05d43bd0e3853f61ee
 
 * Starter: Add to Master (Production) and any environments you create by branching from Master
-* Pro: Add to Master Development (Integration) environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.
+* Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.
 
 To add an SSH key using the Project Web Interface:
 
