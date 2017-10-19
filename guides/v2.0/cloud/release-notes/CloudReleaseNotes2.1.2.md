@@ -47,7 +47,7 @@ This is a known issue with Magento core software; we're actively working to addr
 3.  Follow the prompts to open an issue with Support.
 
 <div class="bs-callout bs-callout-warning">
-    <p>This issue affects Staging and Production environments only. There are no issues in an Development (Integration) environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/reference/discover-arch.html">Architecture</a>.</p>
+    <p>This issue affects Staging and Production environments only. There are no issues in an Integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/reference/discover-arch.html">Architecture</a>.</p>
 </div>
 
 ### {{site.data.var.ee}} Release Notes

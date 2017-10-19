@@ -41,7 +41,7 @@ We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONS
 
 To verify this information used for configurations and settings:
 
-1. SSH into the Development (Integration) environment with RabbitMQ installed and configured.
+1. SSH into the Integration environment with RabbitMQ installed and configured.
 2. Enter the following command to pretty-print connection information for RabbitMQ:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
@@ -90,7 +90,7 @@ For debugging purposes, it's sometimes useful to directly connect to a service i
 ### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
 You can do this using [SSH tunneling]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn):
 
-1. SSH into the Development (Integration) environment with RabbitMQ installed and configured.
+1. SSH into the Integration environment with RabbitMQ installed and configured.
 2. Login to the Magento Cloud CLI and project:
 
         magento-cloud login

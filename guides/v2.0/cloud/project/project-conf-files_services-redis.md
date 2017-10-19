@@ -53,7 +53,7 @@ We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONS
 
 To verify this information used for configurations and settings:
 
-1. SSH into the Development (Integration) environment with Redis installed and configured.
+1. SSH into the Integration environment with Redis installed and configured.
 2. Enter the following command to pretty-print connection information for Redis:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
@@ -90,7 +90,7 @@ if (getenv('MAGENTO_CLOUD_RELATIONSHIPS')) {
 
 Assuming your Redis relationship is named `redis`, you can access it by opening an SSH tunnel to a host named `redis.internal` using the redis-cli tool.
 
-1. SSH into the Development (Integration) environment with RabbitMQ installed and configured.
+1. SSH into the Integration environment with RabbitMQ installed and configured.
 2. Enter the following command:
 
         redis-cli -h redis.internal

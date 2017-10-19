@@ -46,7 +46,7 @@ The following figure shows an example.
 Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
 ## Configure environment settings {#project-conf-env-set}
-You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Development (Integration) environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
 <table>
 	<tbody>
 		<tr>

@@ -243,7 +243,7 @@ pages:
     - label: Troubleshooting
       url: cloud/trouble/trouble.html
       children:
-        - label: Add Staging and Production to Pro projects
+        - label: Add Staging and Production to Pro projects UI
           url: cloud/trouble/pro-env-management.html
 
         - label: Troubleshoot deployment

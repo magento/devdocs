@@ -39,7 +39,7 @@ For your environments, we recommend deploying and testing following a Developmen
 
 * Production environment (live site) is your `master` Git branch with an associated full environment with all services
 * Staging environment is a Git branch we recommend you create called `staging`, to receive full services matching Production
-* Development (Integration) environments include two active branches we recommend created from `staging`
+* Integration environments include two active branches we recommend created from `staging`
 
 For your branches, you can follow any methodology. One example follows Agile such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
 
@@ -77,7 +77,7 @@ The format of the Git clone command is:
 
 The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production `master` branch and environment.
 
-Next, create branches from `staging` to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from `staging`. You will have four active Development (Integration) environments available. When you push your an active branch of Git code, one of these Development (Integration) environments automatically deploys your code to test.
+Next, create branches from `staging` to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from `staging`. You will have four active Integration environments available. When you push your an active branch of Git code, one of these Integration environments automatically deploys your code to test.
 
 We walk you through the process when you [set up your local]({{page.baseurl}}cloud/access-acct/first-time-setup.html).
 
@@ -113,7 +113,7 @@ Do not complete any configurations on your local yet.
 ![Develop code and push to deploy]({{ site.baseurl }}common/images/cloud_workflow-push-code.png)
 
 ### Configure store {#configure-store}
-When you are ready to configure your store, have all code pushed to your Development (Integration) environment and access the Magento Admin. You should fully configure all store settings in the Development (Integration) environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.
+When you are ready to configure your store, have all code pushed to your Integration environment and access the Magento Admin. You should fully configure all store settings in the Integration environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.
 
 For the best information on configurations, we recommend reviewing {{site.data.var.ee}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
 
@@ -139,7 +139,7 @@ The generated file is located in `app/etc/`:
 * For 2.1.4 and later: `config.local.php`
 * For 2.2 and later: `config.php`
 
-You will generate the file in the Development (Integration) environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
+You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
 
 **Important notes** on Configuration Management:
 
@@ -168,7 +168,7 @@ For more information, see [Deployment workflow](#deploy).
 ### Optional: Install sample data {#sample-data}
 If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.ece}} template installation when creating your project.
 
-We recommend installing sample data in your local installation and Development (Integration) environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.
+We recommend installing sample data in your local installation and Integration environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.
 
 For instructions, see [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html).
 
@@ -177,7 +177,7 @@ For instructions, see [Install optional sample data]({{page.baseurl}}cloud/howto
 ### Optional: Pull production data {#prod-data}
 We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.
 
-As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and possibly Development (Integration) environments as you like.
+As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and possibly Integration environments as you like.
 
 {% include cloud/data-collection.md %}
 

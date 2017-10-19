@@ -98,7 +98,7 @@ Therefore, when upgrading to a new Cloud version or adding, removing, or changin
 	File marshaling works on your local system but _not_ on the Cloud server.
 
 2.	Add and commit these updated files to your Cloud Git repository.
-3.	Push the changes to your Cloud Development (Integration) environment.
+3.	Push the changes to your Cloud Integration environment.
 
 For more information, see [Patch Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-patch.html).
 

@@ -23,7 +23,7 @@ redirect_from:
 
 {{site.data.var.ece}}, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines {{site.data.var.ee}}, Cloud infrastructure hosting, with a few differences and added features including Git integration and key environments for development, staging, and live production.
 
-Code, test, and deploy across Development (Integration), Staging, and finally Production environment for continuous integration of your store.
+Code, test, and deploy across Integration, Staging, and finally Production environment for continuous integration of your store.
 
 For full release notes, see [Release Information]({{page.baseurl}}release-notes/bk-release-notes.html) and [Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}release-notes/thirdparty-mccloud.html).
 
@@ -91,14 +91,14 @@ We deploy databases, web server, and caching servers across three environments f
 ### Starter environments {#starter}
 For Starter plan subscriptions, you receive four [environments]({{page.baseurl}}cloud/basic-information/starter-architecture.html) including the following:
 
-* **Development (Integration)**: The ultimate developer environments, Integration provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.
-* **Staging**: We highly recommend you create an active `staging` branch as one of the three Development (Integration) environments. Create this branch directly from `master`. As code and extensions pass your tests, you can merge your Integration branches to `staging`. This Staging environment becomes your pre-Production testing environment. It includes the `staging` active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.
+* **Integration**: The ultimate developer environments, Integration provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.
+* **Staging**: We highly recommend you create an active `staging` branch as one of the three Integration environments. Create this branch directly from `master`. As code and extensions pass your tests, you can merge your Integration branches to `staging`. This Staging environment becomes your pre-Production testing environment. It includes the `staging` active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.
 * **Production**: When code is ready and tested, all code merges to `master` for deployment to the Production live site. This environment includes your active `master` Git branch, database, web server, caching, services, environment variables, and configurations. This environment includes additional services like Fastly.
 
 ### Pro environments {#pro}
 For Pro subscriptions, you receive the following [environments]({{page.baseurl}}cloud/reference/discover-arch.html):
 
-* **Development (Integration)**: The ultimate developer environment, Integration provides eight testable environments including a `master`. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test your code before merging to `master` to push to Staging.
+* **Integration**: The ultimate developer environment, Integration provides eight testable environments including a `master`. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test your code before merging to `master` to push to Staging.
 * **Staging**: As code and extensions pass your tests, deploy the Integration `master` Git branch to Staging for pre-Production testing. This environment includes a database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.
 * **Production**: When code is ready and testing complete, deploy the Integration `master` Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
 
@@ -168,7 +168,7 @@ If you would like to learn more about Magento 2, see the following resources:
 * **Project Web Interface**: The Web Interface is a [console for accessing your project](https://accounts.magento.cloud){:target="_blank"}, user accounts, and your project enviornments. You can modify environment settings, environment variables, routes, and manage environments. Access links (store URL, SSH, Git) are provided for active environments through the active Git branches. You use this interface for [managing your project]({{ page.baseurl }}cloud/project/projects.html). The following environments are available through this interface:
 
   * Starter: Master and all environments branched from it
-  * Pro: Development (Integration) and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your [interface updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html) to manage all environments.
+  * Pro: Integration and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your [interface updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html) to manage all environments.
 
 ## Technical support {#gethelp}
 You can enter a support ticket through the Project Web Interface:

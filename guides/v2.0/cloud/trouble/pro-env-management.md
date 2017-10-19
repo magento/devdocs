@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 170_trouble
-title: Add Staging and Production to Pro projects
-menu_title: Add Staging and Production to Pro projects
+title: Add Staging and Production to Pro projects UI
+menu_title: Add Staging and Production to Pro projects UI
 menu_order: 45
 menu_node:
 version: 2.0
@@ -18,7 +18,7 @@ All new projects already include these features.
 The new Project Web Interface provides the following features for Pro plan Staging and Production environments:
 
 * Add and manage user access to the environments
-* Sync code between Staging and Pro to Development (Integration) environments
+* Sync code between Staging and Pro to Integration environments
 * Add and manage environment variables
 * Configure environment settings
 * Access the environments by SSH and URL. These links and commands are provided through the Access Links.
@@ -46,7 +46,7 @@ When we add Staging and Production access to the Project Web Interface, we will 
 To prepare, ensure you have all settings and environment variables set correctly.
 
 ### Verify user account access {#prep-user}
-We recommend verifying your user account access and permissions set in the Master Development (Integration) environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.
+We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the **Projects** tab and the name of your project.

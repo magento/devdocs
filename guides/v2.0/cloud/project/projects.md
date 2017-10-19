@@ -74,7 +74,7 @@ If you have inactive Git branches of code, you can toggle displaying the branche
 ![Show or hide inactive branches]({{ site.baseurl }}common/images/cloud_show-inactive.png)
 
 ## Configure environments
-You can manage variables and settings for Production, Staging, and Development (Integration) environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{page.baseurl}}cloud/env/environments.html), each of which corresponds to a Git branch.
+You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{page.baseurl}}cloud/env/environments.html), each of which corresponds to a Git branch.
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png)
 

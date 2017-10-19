@@ -21,7 +21,7 @@ When you upgrade {{site.data.var.ece}}, you also upgrade with patches and availa
 Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always apply and test a patch your local system in an active branch. You can push and test in an Development (Integration) environment prior to deploying across all environments.
+Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
 </div>
 
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your integration, staging, and production systems.
@@ -100,14 +100,14 @@ To verify the upgrade in your integration, staging, or production system:
 ## Verify and upgrade your extensions {#extensions}
 You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
 
-We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Development (Integration) environments.
+We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
 
 1. Create a new branch on your local.
 2. Disable your extensions as needed.
 3. As available, download extension upgrades.
 4. Install the upgrade on your local in the Git branch as documented by the third-party documentation.
 5. Enable and test the extension locally.
-6. Push the code to test in your Development (Integration) environment.
+6. Push the code to test in your Integration environment.
 7. Push to Staging to test in a pre-production environment.
 
 Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.

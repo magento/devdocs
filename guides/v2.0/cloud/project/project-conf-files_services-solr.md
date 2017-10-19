@@ -69,7 +69,7 @@ We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONS
 
 To verify this information used for configurations and settings:
 
-1. SSH into the Development (Integration) environment with Solr installed and configured.
+1. SSH into the Integration environment with Solr installed and configured.
 2. Enter the following command to pretty-print connection information for Solr:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'

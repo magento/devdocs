@@ -16,7 +16,7 @@ github_link: cloud/live/stage-prod-migrate-prereq.md
 When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Make sure to complete all development and merging of your code to the `master` branch in the Development (Integration) environment. Only the `master` branch is deployed to Staging then Production.
+Make sure to complete all development and merging of your code to the `master` branch in the Integration environment. Only the `master` branch is deployed to Staging then Production.
 </div>
 
 For **first time setup** to migrate your database and deploy code to Staging or Production, you will:
@@ -27,12 +27,12 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 4.	Just once, set up your [SSH agent](#cloud-live-migrate-agent) for Staging and Production.
 
 For **continuous integration** after first time setup, you will:
-* Code and test in your Development (Integration) environment
+* Code and test in your Integration environment
 * SSH into Staging and use Git commands for pushing code, files, etc
 * Test in Staging
 * SSH into Production and use Git commands for pushing code, files, etc
 
-If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip) in your Development (Integration) environment `master` Magento Admin panel. Fastly is available in Staging and Production.
+If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
 ## Migrate deployment hooks in your `.magento.app.yaml` file (optional) {#cloud-live-migrate-yaml}
 **Important:** If you have **not modified** the default deployment hooks, skip this step and continue with [Get your access URLs](#cloud-live-migrate-urls). Only migrate the hooks if you modified them. 
