@@ -24,9 +24,10 @@ The new Project Web Interface provides the following features for Pro plan Stagi
 * Access the environments by SSH and URL. These links and commands are provided through the Access Links.
 * View builds logs and deployment history
 
+### Restricted features {#restricted}
 As an important note, while you can manage Staging and Production environments, you **cannot**:
 
-* Branch from these environments. Staging and Production only have a single `master` branch for syncing and receiving code from Integration.
+* Branch from these environments. Staging and Production only have a single branch for syncing and receiving code from Integration.
 * Create snapshots through the interface. You can use SSH access with CLI commands as needed.
 * View deploy logs
 
@@ -40,10 +41,46 @@ You will continue to use SSH for:
 
 * Deploy code to Staging and Production
 
+### Branch changes {#branches}
+When converted, your branches will be updated. The current branhces include a repository for Integration, Staging, and Production. Each repository has a `master` branch with deployment targets configured for Staging and Production.
+
+After the conversion, the three repositories are merged into a single repository. You will have the following branches and environments:
+
+<table>
+<tbody>
+<tr>
+<th>Branch</th>
+<th>Environment</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>master</code></td>
+<td>Integration master</td>
+<td><p>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code.</p>
+<p>When you convert, all active and inactive branches continue as children to the <code>master</code> branch.</p></td>
+</tr>
+<tr>
+<td><code>production</code></td>
+<td>Production</td>
+<td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
+<p>When you convert, the Integration <code>master</code> is branched into a <code>production</code> branch with the users access and environment variables.</p></td>
+</tr>
+<tr>
+<td><code>staging</code></td>
+<td>Staging</td>
+<td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
+<p>When you convert, the Integration <code>master</code> is branched into a <code>staging</code> branch with the users access and environment variables.</p></td>
+</tr>
+</body>
+</table>
+
 ## Prepare for adding Staging and Production {#prepare}
-When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts and permissions and environment variables from your Integration Master environment.
+When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts, branch user permissions, and environment variables from your Integration `master` environment.
 
 To prepare, ensure you have all settings and environment variables set correctly.
+
+* [Verify user account access](#prep-user)
+* [Prepare variables](#prep-variables)
 
 ### Verify user account access {#prep-user}
 We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.
