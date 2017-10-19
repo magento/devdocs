@@ -17,3 +17,7 @@ pages:
   - label: Update
     url: magento-functional-testing-framework/update.html
     version: 2.3
+
+  - label: Troubleshooting
+    url: magento-functional-testing-framework/troubleshooting.html
+    version: 2.3
