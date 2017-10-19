@@ -1411,6 +1411,20 @@
         
         
         
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+            
+            
+        
+            
+            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1974,11 +1988,11 @@
 
 <ol>
   <li>
-    <p>Delete <code class="highlighter-rouge">config.local.php</code> in your Integration environment.</p>
+    <p>Delete <code class="highlighter-rouge">config.local.php</code> in your Development (Integration) environment.</p>
 
     <p>You must delete the file to change settings. All of your configurations still exist in the database, displaying as editable in your Magento Admin. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can’t edit it until this file is removed.</p>
   </li>
-  <li>Make configuration changes in the Admin on the Integration environment.</li>
+  <li>Make configuration changes in the Admin on the Development (Integration) environment.</li>
   <li>Repeat the process to re-create <code class="highlighter-rouge">config.local.php</code> and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those enviornment specific settings.</li>
 </ol>
 
@@ -1987,7 +2001,15 @@
 </div>
 
 <h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a></p>
+<ul>
+  <li><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environments.html">Manage your environments</a></li>
+  <li><a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environment-vars_over.html">Overview of environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/env/set-variables.html">Example setting variables</a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->

@@ -1411,6 +1411,20 @@
         
         
         
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1796,15 +1810,15 @@
 <p>This example shows how to use the <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a> for managing the configuration:</p>
 
 <ol>
-  <li>Enter your configurations in your Integration environment Admin panel.</li>
+  <li>Enter your configurations in your Development (Integration) environment Admin panel.</li>
   <li>Create <code class="highlighter-rouge">config.php</code> and transfer it to your local system.</li>
-  <li>Push <code class="highlighter-rouge">config.php</code> to the branch and Integration environment.</li>
+  <li>Push <code class="highlighter-rouge">config.php</code> to the branch and Development (Integration) environment.</li>
   <li>Verify your settings are not editable in the Admin panel. Any configurations exported to <code class="highlighter-rouge">config.php</code> make those fields in the Admin panel read-only and disabled for edits.</li>
   <li>
     <p>Update and modify configurations again in Integration, update the file, and check it into Git:</p>
 
     <ul>
-      <li>Change configuration settings on the Integration environment.</li>
+      <li>Change configuration settings on the Development (Integration) environment.</li>
       <li>To add new configurations, run the command to create <code class="highlighter-rouge">config.php</code> again. New configurations are appended to the file.</li>
       <li>To remove or edit existing configurations, manually edit the file.</li>
       <li>Commit and push to Git.</li>
@@ -1818,7 +1832,7 @@ This example shows how you can set and lock configuration values for everything 
 <p>For example, you may want to set the following settings:</p>
 
 <ul>
-  <li>Disable <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> and static file optimization settings in your Integration environment</li>
+  <li>Disable <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> and static file optimization settings in your Development (Integration) environment</li>
   <li>Enable static file optimization in Staging and Production environments</li>
   <li>Configure Fastly in Staging and Production with specific credentials for each</li>
 </ul>
@@ -1832,7 +1846,7 @@ This example shows how you can set and lock configuration values for everything 
   <li>Minimum a project reader role with <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-role-env">environment administrator</a> privileges</li>
   <li>Magento Admin panel URL and credentials for Integration, Staging, and Production environments</li>
   <li>
-    <p>Push all updated code to your Integration environment:</p>
+    <p>Push all updated code to your Development (Integration) environment:</p>
 
     <ul>
       <li>For Starter: To an Integration branch and environment</li>
@@ -1848,7 +1862,7 @@ This example shows how you can set and lock configuration values for everything 
 <p>To change locale and static file optimization settings:</p>
 
 <ol>
-  <li>Log in to the Integration environment Admin panel. You can access this URL through the Project Web Console.</li>
+  <li>Log in to the Development (Integration) environment Admin panel. You can access this URL through the Project Web Console.</li>
   <li>Navigate to <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong>.</li>
   <li>In the right pane, expand <strong>Locale Options</strong>.</li>
   <li>
@@ -1874,7 +1888,7 @@ This example shows how you can set and lock configuration values for everything 
 </ol>
 
 <h2 id="export">Export values and transfer config.php to your local system</h2>
-<p>This step creates and transfers the <code class="highlighter-rouge">config.php</code> configuration file on the Integration environment using a command you run on your local machine.</p>
+<p>This step creates and transfers the <code class="highlighter-rouge">config.php</code> configuration file on the Development (Integration) environment using a command you run on your local machine.</p>
 
 <p>This procedure corresponds to step 2 in the <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>. After you create <code class="highlighter-rouge">config.php</code>, transfer it to your local system so you can add it to Git.</p>
 
@@ -1989,14 +2003,14 @@ This example shows how you can set and lock configuration values for everything 
 <h2 id="modify">Change and update system-specific configuration settings</h2>
 <p>If you need to modify any of these settings and update <code class="highlighter-rouge">config.php</code>, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git following the previous steps.</p>
 
-<p>To add new configurations, modify your Integration environment and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git following the previous steps.</p>
+<p>To add new configurations, modify your Development (Integration) environment and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git following the previous steps.</p>
 
 <p>For an overvidew, see the <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>.</p>
 
 <p>For this example, we’ll modify static file optimization settings and add a new setting for JavaScript.</p>
 
 <h3 id="change-settings">Add new configurations in Integration</h3>
-<p>To add additional configuration values in the Integration environment Magento Admin. For this example, we are merging JavaScript files.</p>
+<p>To add additional configuration values in the Development (Integration) environment Magento Admin. For this example, we are merging JavaScript files.</p>
 
 <ol>
   <li>If you haven’t done so already, log out of the Integration Admin.</li>

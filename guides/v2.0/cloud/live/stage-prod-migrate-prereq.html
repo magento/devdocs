@@ -1420,6 +1420,20 @@
         
         
         
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1806,7 +1820,7 @@
 <p>When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Make sure to complete all development and merging of your code to the <code class="highlighter-rouge">master</code> branch in the Integration environment. Only the <code class="highlighter-rouge">master</code> branch is deployed to Staging then Production.</p>
+  <p>Make sure to complete all development and merging of your code to the <code class="highlighter-rouge">master</code> branch in the Development (Integration) environment. Only the <code class="highlighter-rouge">master</code> branch is deployed to Staging then Production.</p>
 </div>
 
 <p>For <strong>first time setup</strong> to migrate your database and deploy code to Staging or Production, you will:</p>
@@ -1819,12 +1833,12 @@
 </ol>
 
 <p>For <strong>continuous integration</strong> after first time setup, you will:
-* Code and test in your Integration environment
+* Code and test in your Development (Integration) environment
 * SSH into Staging and use Git commands for pushing code, files, etc
 * Test in Staging
 * SSH into Production and use Git commands for pushing code, files, etc</p>
 
-<p>If you haven’t done so already, upload any <a href="/guides/v2.0/cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip">Fastly VCL snippets</a> in your Integration environment <code class="highlighter-rouge">master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
+<p>If you haven’t done so already, upload any <a href="/guides/v2.0/cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip">Fastly VCL snippets</a> in your Development (Integration) environment <code class="highlighter-rouge">master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
 
 <h2 id="cloud-live-migrate-yaml">Migrate deployment hooks in your <code class="highlighter-rouge">.magento.app.yaml</code> file (optional)</h2>
 <p><strong>Important:</strong> If you have <strong>not modified</strong> the default deployment hooks, skip this step and continue with <a href="#cloud-live-migrate-urls">Get your access URLs</a>. Only migrate the hooks if you modified them.</p>

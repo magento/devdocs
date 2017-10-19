@@ -1420,6 +1420,20 @@
         
         
         
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1803,7 +1817,14 @@
 			<h4 id="previous-step">Previous step:</h4>
 <p><a href="/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a></p>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH protocol </a> is designed to maintain a secure connection between two systems—in this case, your local working environment and your Magento Commerce Git project.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH protocol </a> is designed to maintain a secure connection between two systems—in this case, your local working environment and your Magento Commerce (Cloud) Git project.</p>
+
+<p>When initially setting up your local environment, you need to add the SSH keys to the following specific environments:</p>
+
+<ul>
+  <li>Starter: Add to Master (Production) and any environments you create by branching from Master</li>
+  <li>Pro: Add to Master Development (Integration) environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.</li>
+</ul>
 
 <div>
 
@@ -1941,6 +1962,7 @@
   <p>To add an SSH key using the CLI:</p>
 
   <ol>
+    <li>Open a terminal application on your local.</li>
     <li>
       <p>If you haven’t done so already, log in (or switch to) the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a> to the server on which your SSH keys are located.</p>
     </li>
@@ -1960,8 +1982,20 @@
     </li>
   </ol>
 
-  <h3 id="add-key-web">Add a key using the Web Interface</h3>
-  <p>To add an SSH key using the Web Interface:</p>
+  <p>«««&lt; HEAD
+#### Add a key using the Project Web Interface {#add-key-web}
+You will select and add your SSH public key to each environment in your account.
+=======
+### Add a key using the Web Interface {#add-key-web}
+To add an SSH key using the Web Interface:
+»»»&gt; 3320469fcf1a0a48855c3d05d43bd0e3853f61ee</p>
+
+  <ul>
+    <li>Starter: Add to Master (Production) and any environments you create by branching from Master</li>
+    <li>Pro: Add to Master Development (Integration) environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.</li>
+  </ul>
+
+  <p>To add an SSH key using the Project Web Interface:</p>
 
   <ol>
     <li>
@@ -1969,30 +2003,18 @@
 
       <p>If you don’t already have SSH keys on that machine, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a> to create them.</p>
     </li>
+    <li>Login and access your project through the <a href="https://accounts.magento.cloud" target="_blank">Project Web Interface</a>.</li>
     <li>
-      <p>Using the link in your welcome e-mail, access your Magento Commerce (Cloud) account.</p>
-    </li>
-    <li>
-      <p>Log in to your project using Bitbucket, GitHub, Google, or a user name and password.</p>
+      <p>In your selected branch, an icon displays if you do not have an SSH key added.</p>
 
-      <p><img src="/common/images/cloud_project-login.png" alt="Log in to a project" width="350px" /></p>
+      <p><img src="/common/images/cloud_ssh-key-install.png" alt="No SSH key" /></p>
     </li>
     <li>
-      <p>In the upper right corner of the page, click the <strong>Account Settings</strong> tab as the following figure shows.</p>
+      <p>Copy and paste the content of your public SSH key in the screen.</p>
 
-      <p><img src="/common/images/cloud_acct-settings.png" alt="Account settings" width="550px" /></p>
+      <p><img src="/common/images/cloud_ssh-key-add.png" alt="Add SSH key" /></p>
     </li>
-    <li>
-      <p>Expand <strong>SSH Keys</strong>.</p>
-    </li>
-    <li>
-      <p>On the next page, click <strong>Add a public key</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_add-public-key.png" alt="Add an SSH public key to your account" width="550px" /></p>
-    </li>
-    <li>
-      <p>Follow the prompts on your screen to complete the task.</p>
-    </li>
+    <li>Follow the prompts on your screen to complete the task.</li>
   </ol>
 
   <h2 id="set-global-git-variables">Set global Git variables</h2>

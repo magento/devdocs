@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage your environments | Magento 2 Developer Documentation</title>
+	<title>Configure your environments | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -1411,6 +1411,20 @@
         
         
         
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+            
+            
+        
+            
+            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1760,7 +1774,7 @@
 
           
 
-          <span property="name">Manage your environments</span>
+          <span property="name">Configure your environments</span>
 
         
 
@@ -1783,7 +1797,7 @@
 
 	
 
-	<h1 class="page-heading">Manage your environments</h1>
+	<h1 class="page-heading">Configure your environments</h1>
 
   
 
@@ -1791,87 +1805,103 @@
 </section>
 
 
-			<h2 id="cloud-env-over">Overview of environments</h2>
-<p>A Magento Enterprise Cloud <em>environment</em> consists of a running Magento instance. It includes your Magento application (codebase and files) and the services required to run it (<em>Services</em> include the web server, database, search engine, caching server, and so on).</p>
+			<p>Environments in Magento Commerce (Cloud) include containers with applications, services, a database, and much more to provide a complete system for your Magento application (codebase and files). You can configure environment variables, settings, routes, and more to support your code branches per project environment.</p>
 
-<p>Each environment is a branch of the <code class="highlighter-rouge">master</code> environment (which is your live environment). Every Cloud project has at least one environment, the <code class="highlighter-rouge">master</code>, which cannot be removed or renamed. You can create up to 6 additional environments. Typically, these environments are used for development and testing.</p>
+<p>We provide options to:</p>
 
-<p>If you use GitHub, every pull request or branch can be deployed into its own environment on Magento Enterprise Cloud.</p>
+<ul>
+  <li>Export configuration settings to a file for cross-environment deployment</li>
+  <li>Set environment variables per environment</li>
+</ul>
 
-<h2 id="master-environment">Master environment</h2>
-<p>Every Magento Commerce (Cloud) project starts with a <code class="highlighter-rouge">master</code> environment that corresponds to the <code class="highlighter-rouge">master</code> branch in Git. The master environment is your live, production environment.</p>
+<div>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>These sections include instructions for Pro projects updated to manage Staging and Production through the Project Web Interface. For more information adding this management to existing Pro projects, see <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>.</p>
+
+    <p>If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
+  </div>
+
+  <h2 id="env-branches">Environments and branches</h2>
+  <p>Every Magento Commerce (Cloud) project starts with a <code class="highlighter-rouge">master</code> environment that corresponds to the <code class="highlighter-rouge">master</code> branch in Git. Each environment has an associated active Git branch of code.</p>
+
+  <ul>
+    <li>For <a href="/guides/v2.1/cloud/welcome/discover-workflow.html">Pro</a>, we recommend branching from Integration <code class="highlighter-rouge">master</code>.</li>
+    <li>For <a href="/guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html">Starter</a>, we recommend creating a <code class="highlighter-rouge">staging</code> branch, then creating additional code branches from <code class="highlighter-rouge">staging</code>.</li>
+  </ul>
+
+  <p>We recommend using GitHub for maintaining your code branches.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
   <p>Your project must have a <code>master</code> branch; it won't function properly without one.</p>
 </div>
 
-<h2 id="cloud-env-inactive">Inactive environments</h2>
-<p>An <em>inactive</em> environment is an environment which doesn’t run any service. You can have any number of inactive environments.</p>
+  <p>You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or <a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a> commands.</p>
 
-<p>By default, when you push a new branch via Git, Magento Enterprise Cloud automatically creates an inactive environment. It’s referred to as <em>inactive</em> because it isn’t a working environment.</p>
+  <h2 id="active-inactive">Active and inactive branches</h2>
+  <p>You have access to a limited number of <em>active</em> Git branches per plan. When you push this branch, an active environment is provisioned as a container, updating when you push per the configurations of .magento.app.yaml, services.yaml, and routes.yaml.</p>
 
-<p>You can use the following command to create an active environment from a parent environment:</p>
+  <p>You begin by creating active branches and pushing code. You can use the following command to create an active branch from a parent branch:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch
 </code></pre>
-</div>
+  </div>
 
-<p>You can use the following command to create an active environment from an inactive one:</p>
+  <p>You have unlimited inactive Git branches. These branches do not receive an environment until it is made active. You can use the following command to activate an inactive branch:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:activate
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:activate
 </code></pre>
-</div>
+  </div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This command will deploy the web server and the services from the parent environment.</p>
-</div>
+  <p>When you activate an inactive branch, or create a new active branch, the command deploys a new active environment with a web server and services.</p>
 
-<h2 id="cloud-env-hier">Environment hierarchy</h2>
-<p>The <code class="highlighter-rouge">master</code> environment is ultimately the parent of all other environments. Every time you branch it or any other environment, you create a parent-child relationship between them.</p>
+  <h2 id="hierarchy">Branch hierarchy</h2>
+  <p>For Starter and Pro plans, the <code class="highlighter-rouge">master</code> environment is ultimately the source or parent for all code in Magento Commerce (Cloud).</p>
 
-<p>Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.</p>
+  <ul>
+    <li>For Starter, <code class="highlighter-rouge">master</code> is your Production environment and branch. You create branches from <code class="highlighter-rouge">master</code> as your Development (Integration) environment.</li>
+    <li>For Pro, you have a <code class="highlighter-rouge">master</code> branch in Development (Integration) for creating your code branches. You deploy this branch to a matching <code class="highlighter-rouge">master</code> branch in Staging and Production environments.</li>
+  </ul>
 
-<p>Likewise, a child can merge code with its parent, which ends up redeploying the parent environment with the code changes of the child environment.</p>
+  <p>In your Development (Integration), you have a number of branches and environments available to you per plan. When you branch from <code class="highlighter-rouge">master</code>, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.</p>
 
-<p>Child environments are typically used for development, staging, and testing.</p>
+  <p>When you merge code from a child branch to its parent, the parent environment is redeployed with the code changes of the child environment. Child environments are typically used for development, staging, and testing.</p>
 
-<h2 id="cloud-env-work">Workflows</h2>
-<p>Magento Commerce (Cloud) imposes no rules on how you use branches and environments. You can use whatever workflow makes sense to you, consistent with the workflow you already use.</p>
+  <h2 id="workflow">Branches and development workflows</h2>
+  <p>Magento Commerce (Cloud) imposes no rules on how you use branches and environments. You can use any branching methodology or development workflow you like for Starter and Pro plans. We do recommend specific formats</p>
 
-<p>For example, suppose your Agile development team needs a branch (that is, environment) for every story in a sprint and at the end of the sprint, those branches merge to another branch for testing.</p>
+  <p>For <strong>Starter plan</strong>, the following diagram details the branch and environment relationships:</p>
 
-<p>Following is one way to set up the environments:</p>
+  <p><img src="/common/images/cloud_arch-starter.png" alt="High-level view of Starter project" /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Master
-	Sprint-X
-	   Story1
-	   Story2
-	   Story3
-	   QA
-</code></pre>
-</div>
+  <p>For <strong>Pro plan</strong>, the following diagram details the branch and environment relationships:</p>
 
-<p>In this example, the following can happen:</p>
+  <p><img src="/common/images/cloud_pro-branch-architecture.png" alt="High-level view of Pro architecture flow" /></p>
 
-<ol>
-  <li>
-    <p>To start, a project administrator either:</p>
+  <h3 id="example">Example development process</h3>
+  <p>For example, your Agile development team creates three branches to work on three stories in a sprint. At the end of the sprint, they merge into a single branch for testing.</p>
 
-    <ul>
-      <li>Creates the Sprint-X environments and grants contributor privileges to developers to create the story environments.</li>
-      <li>Creates all the environments and grants contributor privileges to developers.</li>
-    </ul>
-  </li>
-  <li>When the sprint is finished (or when the story is closed), the administrator can review the work by accessing the <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> of the feature environment. The new feature is then merged back to the Sprint-X environment.</li>
-  <li>The administrator synchronizes Sprint-X with QA so all features can be tested.</li>
-  <li>The administrator backs up the live site, then merges the Sprint-X environment into the <code class="highlighter-rouge">master</code> environment, making it live.</li>
-  <li>The administrator synchronizes the next sprint’s environment with data from the <code class="highlighter-rouge">master</code> environment to repeat and continue the development process.</li>
-</ol>
+  <ol>
+    <li>
+      <p>To start, a Project Admin helps create the branches or gives priviledges to developers:</p>
 
-<h3 id="commands-used-in-the-example">Commands used in the example</h3>
-<p>The following table lists the commands used in the preceding example.</p>
+      <ul>
+        <li>Create the Sprint-X environments and grants contributor privileges to developers to create the story environments.</li>
+        <li>Create all the environments and grants contributor privileges to developers.</li>
+      </ul>
+    </li>
+    <li>When the sprint is finished (or when the story is closed), the Project Admin and developers can review the code and test the work directly in an active environment. When accepted, all branches are merged for testing together.</li>
+    <li>Complete testing of all features and code merged into a single environment.</li>
+    <li>Depending on your plan and environment set up, deploy to Staging for pre-production testing.</li>
+    <li>Deploy to production when complete to go live.</li>
+  </ol>
 
-<table>
+  <p>When the code is live, make the branches used to work on the sprint in Integration as inactive. This frees up active environments and branch slots for the next sprint of work.</p>
+
+  <h2 id="commands">Helpful CLI commands</h2>
+  <p>The following table lists the commands used in the preceding example. For a full list of all CLI commands, see <a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a>.</p>
+
+  <table>
 	<tbody>
 		<tr>
 			<th>Task</th>
@@ -1897,11 +1927,19 @@
 </tbody>
 </table>
 
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.1/cloud/env/environments-start.html">Get started with an environment</a></li>
-  <li><a href="/guides/v2.1/cloud/env/environment-vars_over.html">Overview of environment variables</a></li>
-</ul>
+  <h4 id="related-topics">Related topics</h4>
+  <ul>
+    <li><a href="/guides/v2.1/cloud/project/projects.html">Manage your project</a></li>
+    <li><a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></li>
+    <li><a href="/guides/v2.1/cloud/env/environments-ssh.html">SSH and sFTP</a></li>
+    <li><a href="/guides/v2.1/cloud/env/environment-vars_over.html">Overview of environment variables</a></li>
+    <li><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a></li>
+    <li><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
+    <li><a href="/guides/v2.1/cloud/env/set-variables.html">Example setting variables</a></li>
+    <li><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a></li>
+    <li><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of configuration management</a></li>
+  </ul>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->

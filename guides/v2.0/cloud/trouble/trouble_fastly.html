@@ -1420,6 +1420,20 @@
         
         
         
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1839,7 +1853,7 @@
 </ol>
 
 <h2 id="cloud-test-stage">Test your Staging and Production sites</h2>
-<p>This section discusses how to use <code class="highlighter-rouge">dig</code> and <code class="highlighter-rouge">curl</code> to get response headers from your Staging or Production site (the origin servers). You never need to test on the Integration environments. Basically, you are curling the edge for responses.</p>
+<p>This section discusses how to use <code class="highlighter-rouge">dig</code> and <code class="highlighter-rouge">curl</code> to get response headers from your Staging or Production site (the origin servers). You never need to test on the Development (Integration) environments. Basically, you are curling the edge for responses.</p>
 
 <p><strong>Note:</strong> If you encounter issues when using <code class="highlighter-rouge">dig</code> and <code class="highlighter-rouge">curl</code> to the direct origin servers, not through the live server domain, the issue may not be Fastly.</p>
 
@@ -1991,7 +2005,7 @@
   </li>
 </ol>
 
-<p>If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See <a href="/guides/v2.0/cloud/access-acct/fastly.html">Set up Fastly</a> for instructions.</p>
+<p>If the module is not installed, you need to install in an Development (Integration) environment branch and deployed to Staging and Production. See <a href="/guides/v2.0/cloud/access-acct/fastly.html">Set up Fastly</a> for instructions.</p>
 
 <h3 id="no-VCL">Fastly-Magento-VCL-Uploaded is not present</h3>
 <p>During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see <a href="/guides/v2.0/cloud/access-acct/fastly.html#upload-vcl-snippets">Upload Fastly VCL snippets</a>.</p>

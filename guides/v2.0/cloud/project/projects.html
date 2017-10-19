@@ -1420,6 +1420,20 @@
         
         
         
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1802,72 +1816,106 @@
 
 			<p>The Magento Commerce (Cloud) <em>project</em> includes all code in Git branches, associated environments, and <em>applications</em>. Applications have <em>environments</em> and <em>services</em> that run on them including a database, web server, and caching server.</p>
 
-<p>We provide a Project Web Interface to fully manage all aspects of your project. For Starter, you have access to all environments and branches. For Pro, you have access to Integration environments, but use CLI to manage Staging and Production environments.</p>
+<p>We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. You have full access to all environments for Starter and Pro environments. You may need to continue to use SSH and CLI commands for some aspects of Pro plan Staging and Production environments.</p>
 
-<p>For more detailed information about actions and the Project Web Interface, see:</p>
+<div>
 
-<ul>
-  <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Configure your project</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a></li>
-  <li><a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-</ul>
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>These sections include instructions for Pro projects updated to manage Staging and Production through the Project Web Interface. For more information adding this management to existing Pro projects, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>.</p>
 
-<h2 id="login">Access the Project Web Interface</h2>
-<p>With your Magento Commerce (Cloud) account created, you can log into the Project Web Interface at <a href="https://accounts.magento.cloud" target="_blank">https://accounts.magento.cloud</a>.</p>
+    <p>If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
+  </div>
 
-<p><img src="/common/images/cloud_project-login.png" alt="Log in to a project" width="450px" /></p>
+  <p>To manage your project, environment, and branches, see:</p>
 
-<h2 id="project">Access the project and environments</h2>
-<p>When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company’s project. A Magento Solution Partner may see multiple projects for all of the clients they support.</p>
+  <ul>
+    <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Configure your project</a></li>
+    <li><a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a></li>
+    <li><a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a></li>
+    <li>Manage branches with the <a href="/guides/v2.0/cloud/project/project-webint-branch.html">Project Web Interface</a> or <a href="/guides/v2.0/cloud/env/environments-start.html">CLI commands</a></li>
+    <li><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+  </ul>
 
-<p>Click on a project to access branches and more. On the page, you will see a series of branches of Git code and associated branches.</p>
+  <h3 id="variables">Project and environment variables</h3>
+  <p>The following sections detail more about project and environment variables:</p>
 
-<p>To access an environment store and admin, select a branch and click <strong>Access Site</strong>. A list of store URL and SSH command display. Select the URL to view the store in that environment.</p>
+  <ul>
+    <li><a href="/guides/v2.0/cloud/env/environment-vars_over.html">Overview of environment variables</a></li>
+    <li><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a></li>
+    <li><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
+    <li><a href="/guides/v2.0/cloud/env/set-variables.html">Example setting variables</a></li>
+    <li><a href="/guides/v2.0/cloud/live/sens-data-over.html">Configuration management</a></li>
+    <li><a href="/guides/v2.0/cloud/live/sens-data-initial.html">Example of configuration management</a></li>
+  </ul>
 
-<p><img src="/common/images/cloud_project-access.png" alt="Access your project" width="450px" /></p>
+  <h3 id="upgrade">Upgrade and patch</h3>
+  <p>To upgrade and patch Magento, see:</p>
 
-<p>For Pro, to view Staging and Production, you need to use a URL or SSH commands:</p>
+  <ul>
+    <li><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+    <li><a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
+  </ul>
 
-<ul>
-  <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;domain&gt;.&lt;project ID&gt;.ent.magento.cloud</code></li>
-  <li>
-    <p>Production:</p>
+  <h2 id="login">Access the Project Web Interface</h2>
+  <p>With your Magento Commerce (Cloud) account created, you can log into the Project Web Interface at <a href="https://accounts.magento.cloud" target="_blank">https://accounts.magento.cloud</a>.</p>
 
-    <ul>
-      <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
-    </ul>
+  <p><img src="/common/images/cloud_project-login.png" alt="Log in to a project" width="450px" /></p>
 
-    <p>The production URL is used by the content delivery network (CDN).</p>
-  </li>
-</ul>
+  <h2 id="project">Access the project and environments</h2>
+  <p>When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company’s project. A Magento Solution Partner may see multiple projects for all of the clients they support.</p>
 
-<h2 id="configure-environments">Configure environments</h2>
-<p>Click <strong>Configure environment</strong> to create and manage <a href="/guides/v2.0/cloud/env/environments.html"><em>environments</em></a>, each of which corresponds to a Git branch.</p>
+  <p>Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.</p>
 
-<p><img src="/common/images/cloud_project-env.png" alt="Access your project" width="450px" /></p>
+  <p>For <strong>Starter</strong>, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a>.</p>
 
-<p>This displays the following page, which enables you to configure settings, <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel">variables</a>, <a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes</a>, and <a href="/guides/v2.0/cloud/project/user-admin.html">users</a>.</p>
+  <p><img src="/common/images/cloud_project-starter.png" alt="Starter branch hierarchy" /></p>
 
-<p><img src="/common/images/cloud_project-conf-env.png" alt="configure environments" width="450px" /></p>
+  <p>For <strong>Pro</strong>, you will see a hierarchy of branches starting from Production to Staging to Development (Integration Master). Any branches you create display as children from Development (Integration Master). For more information, see <a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architecture</a>.</p>
 
-<h2 id="configure-the-project">Configure the project</h2>
-<p>Click <img src="/common/images/cloud_edit-project.png" alt="edit project" /> (edit) to display <a href="/guides/v2.0/cloud/project/user-admin.html">users</a>, and <a href="/guides/v2.0/cloud/project/project-priv-repos.html">deploy keys</a> associated with the project.</p>
+  <p><img src="/common/images/cloud_project-pro.png" alt="Pro branch hierarchy" /></p>
 
-<p><img src="/common/images/cloud_project-config.png" alt="configure project" width="450px" /></p>
+  <p>To access an environment store and admin, select a branch and click <strong>Access Site</strong>. A list of store URLs and SSH command display. Select the URL to view the store in that environment.</p>
 
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.0/cloud/configure/configuration-overview.html">Configure Magento Commerce</a></li>
-  <li><a href="/guides/v2.0/cloud/env/environments.html">Manage your environments</a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
-</ul>
+  <p><img src="/common/images/cloud_project-access.png" alt="Access your project" /></p>
+
+  <p>The Pro plan Production environment includes three nodes that you can access using the following links:</p>
+
+  <ul>
+    <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+    <li>
+      <p>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></p>
+
+      <p>The production URL is used by the content delivery network (CDN).</p>
+    </li>
+  </ul>
+
+  <p>If you have inactive Git branches of code, you can toggle displaying the branches in the hierarchy.</p>
+
+  <p><img src="/common/images/cloud_show-inactive.png" alt="Show or hide inactive branches" /></p>
+
+  <h2 id="configure-environments">Configure environments</h2>
+  <p>You can manage variables and settings for Production, Staging, and Development (Integration) environments through this interface, or with CLI commands. Click <strong>Configure environment</strong> to create and manage <a href="/guides/v2.0/cloud/env/environments.html"><em>environments</em></a>, each of which corresponds to a Git branch.</p>
+
+  <p><img src="/common/images/cloud_project-env.png" alt="Access your project" /></p>
+
+  <p>This displays the following page, which enables you to configure settings, <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel">variables</a>, <a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes</a>, and <a href="/guides/v2.0/cloud/project/user-admin.html">users</a>.</p>
+
+  <p><img src="/common/images/cloud_project-conf-env.png" alt="configure environments" /></p>
+
+  <h2 id="configure-the-project">Configure the project</h2>
+  <p>Click <img src="/common/images/cloud_edit-project.png" alt="edit project" /> (edit) to display <a href="/guides/v2.0/cloud/project/user-admin.html">users</a>, and <a href="/guides/v2.0/cloud/project/project-priv-repos.html">deploy keys</a> associated with the project. You can modify access and permissions across the entire project and per environment (or branch).</p>
+
+  <p><img src="/common/images/cloud_project-config.png" alt="configure project" /></p>
+
+  <h4 id="related-topics">Related topics</h4>
+  <ul>
+    <li><a href="/guides/v2.0/cloud/configure/configuration-overview.html">Configure Magento Commerce</a></li>
+    <li><a href="/guides/v2.0/cloud/env/environments.html">Manage your environments</a></li>
+    <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
+    <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
+    <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+  </ul>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->

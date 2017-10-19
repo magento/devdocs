@@ -1411,6 +1411,20 @@
         
         
         
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1801,16 +1815,22 @@
   <li>The environments updated with code, services, and configurations</li>
 </ul>
 
-<p>The Pro plan gives you a large Integration environment for your development across eight active branches, a Staging environment, and a Production environment. For full details, see <a href="/guides/v2.2/cloud/reference/discover-arch.html">Pro architecture</a>.</p>
+<p>The Pro plan gives you a large Development (Integration) environment for your development across eight active branches, a Staging environment, and a Production environment. For full details, see <a href="/guides/v2.2/cloud/reference/discover-arch.html">Pro architecture</a>.</p>
 
 <p>The following figure shows how it works at a high level:</p>
 
 <p><img src="/common/images/cloud_pro-branch-architecture.png" alt="High-level view of Pro architecture flow" /></p>
 
-<p>You can manage all of Integration environments directly through the <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Project Web Interface</a>. Access and manage all Integration, Staging, and Production environments  through the store and Admin panel using provided URLs and using SSH and the <a href="/guides/v2.2/cloud/reference/cli-ref-topic.html">Magento Cloud command-line</a>.</p>
+<p>You can manage all of Development (Integration) environments directly through the <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Project Web Interface</a>. Access and manage all Integration, Staging, and Production environments  through the store and Admin panel using provided URLs and using SSH and the <a href="/guides/v2.2/cloud/reference/cli-ref-topic.html">Magento Cloud command-line</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>For existing Pro projects, you need to have your Project Web Interface updated to manage Staging and Production through the interface. For more information adding this management to existing Pro projects, see <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>.</p>
+
+  <p>If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
+</div>
 
 <h3 id="env-branches">Pro environments and branches</h3>
-<p>For your environments, we recommend deploying and testing following a Development &gt; Staging &gt; Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These enviornments are not public facing. Finally, Production is your live, public environment.</p>
+<p>For your environments, we recommend deploying and testing following a Development &gt; Staging &gt; Production workflow. The Development (Integration) environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These enviornments are not public facing. Finally, Production is your live, public environment.</p>
 
 <p>For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create <a href="/guides/v2.2/cloud/env/environments.html#cloud-env-work">branches for every sprint</a>.</p>
 
@@ -1819,7 +1839,7 @@
 <p>For detailed information, see <a href="/guides/v2.2/cloud/reference/discover-arch.html">Pro architecture</a>.</p>
 
 <h2 id="development">Development workflow</h2>
-<p>Development and deployment on Pro plans begins with your initial project. You create your project with the “blank site”, which is a Magento Commerce (Cloud) template code repo with a fully prepared store. This creates a <code class="highlighter-rouge">master</code> branch of Git code in your Integration environment.</p>
+<p>Development and deployment on Pro plans begins with your initial project. You create your project with the “blank site”, which is a Magento Commerce (Cloud) template code repo with a fully prepared store. This creates a <code class="highlighter-rouge">master</code> branch of Git code in your Development (Integration) environment.</p>
 
 <p>The full process involves:</p>
 
@@ -1828,7 +1848,7 @@
   <li><a href="#dev-code">Develop code</a> and install extensions locally in a branch</li>
   <li><a href="#configure-store">Configure</a> your store and extension settings</li>
   <li><a href="#config-management">Generate configuration</a> management files</li>
-  <li><a href="#push-code">Push code</a> and configuration to build and deploy to an Integration environment</li>
+  <li><a href="#push-code">Push code</a> and configuration to build and deploy to an Development (Integration) environment</li>
 </ul>
 
 <p><img src="/common/images/cloud_workflow-pro.png" alt="Develop and deploy workflow" /></p>
@@ -1895,7 +1915,7 @@ git pull origin &lt;environment ID&gt;
 <p><img src="/common/images/cloud_workflow-pro-push-code.png" alt="Develop code and push to deploy" /></p>
 
 <h3 id="configure-store">Configure store</h3>
-<p>When you are ready to configure your store, have all code pushed to your Integration environment and access the Magento Admin. You should fully configure all store settings in the Integration environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.</p>
+<p>When you are ready to configure your store, have all code pushed to your Development (Integration) environment and access the Magento Admin. You should fully configure all store settings in the Development (Integration) environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.</p>
 
 <p>For the best information on configurations, we recommend reviewing Magento Commerce and your extension documentation. Here are some links and ideas to help you get kickstarted:</p>
 
@@ -1922,7 +1942,7 @@ git pull origin &lt;environment ID&gt;
 
 <p>The generated file is <code class="highlighter-rouge">app/etc/config.php</code>.</p>
 
-<p>You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.</p>
+<p>You will generate the file in the Development (Integration) environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.</p>
 
 <p><strong>Important notes</strong> on Configuration Management:</p>
 
@@ -1966,11 +1986,11 @@ git pull origin &lt;environment ID&gt;
 <h3 id="prod-data">Optional: Pull production data</h3>
 <p>We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.</p>
 
-<p>As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, possibly Integration environments as you like.</p>
+<p>As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, possibly Development (Integration) environments as you like.</p>
 
 <div>
 
-  <p>To help export Production data as test data to use in Staging and Integration environments, <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities</a>:</p>
+  <p>To help export Production data as test data to use in Staging and Development (Integration) environments, <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities</a>:</p>
 
   <ul>
     <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html#config-cli-spt-utils-db">CLI commands</a> (Recommended) to export a protected backup of customer and store data using your Magento encryption key</li>

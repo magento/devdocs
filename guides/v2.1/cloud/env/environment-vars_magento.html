@@ -1411,6 +1411,20 @@
         
         
         
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+            
+            
+        
+            
+            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1893,10 +1907,10 @@
 <tr>
 <td><code>BUILD_OPT_SCD_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. These threads are used The higher amount of threads increasing the amount of files processed during the deployment of static content during the build phase. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
-<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
+<p>For Starter plan environments and Pro Development (Integration) environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
 <p>To further reduce deployment time, we recommend using <a href="/guides/v2.1/config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>Available in versions 2.1.4 and later, 2.2.X.</p></td>
-<td>scd_threads = 1 for all Starter environments and Pro Integration environments<br />
+<td>scd_threads = 1 for all Starter environments and Pro Development (Integration) environments<br />
 scd_threads = 3 for Pro Staging and Production environments</td>
 </tr>
 <tr>
@@ -1967,10 +1981,10 @@ This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>v
 <tr>
 <td><code>STATIC_CONTENT_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. The higher amount of threads increasing the amount of files processed during the deployment. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
-<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
+<p>For Starter plan environments and Pro Development (Integration) environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
 <p>To further reduce deployment time, we recommend using <a href="/guides/v2.1/config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>This is available in all versions.</p></td>
-<td>1 for Starter environments and Pro Integration environments<br />
+<td>1 for Starter environments and Pro Development (Integration) environments<br />
 3 for Pro Staging and Production environments</td>
 </tr>
 <tr>
@@ -2060,7 +2074,7 @@ This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>v
 </ol>
 
 <h2 id="cloud-env-vars-tshoot">Troubleshooting</h2>
-<p>In the <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> something goes wrong and you can’t access your environment after it deploys, try the following:</p>
+<p>In the event something goes wrong and you can’t access your environment after it deploys, try the following:</p>
 
 <ul>
   <li><a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">SSH to the environment</a> and make sure <a href="/guides/v2.1/cloud/env/environments-start.html#cloud-ssh-tunnel-service">services</a> are running.</li>
@@ -2074,10 +2088,15 @@ magento-cloud snapshot:restore &lt;snapshot&gt;
   </li>
 </ul>
 
+<p>For more information on snapshots, see <a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a>.</p>
+
 <h4 id="related-topics">Related topics</h4>
 <ul>
-  <li><a href="/guides/v2.1/cloud/howtos/environment-tutorial-set-mage-vars.html">Tutorial—Set Magento environment variables</a></li>
-  <li><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Cloud environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environment-vars_over.html">Overview of environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/env/set-variables.html">Example setting variables</a></li>
+  <li><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a></li>
+  <li><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of configuration management</a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
