@@ -1411,12 +1411,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1809,10 +1809,10 @@
 
 <p>All environments are in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.</p>
 
-<p>You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Development (Integration) environments.</p>
+<p>You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The following architecture information uses an architecture including Production, Staging, and Development (Integration) environments.</p>
+  <p>The following architecture information uses an architecture including Production, Staging, and Integration environments.</p>
 </div>
 
 <p><img src="/common/images/cloud_arch-starter.png" alt="High-level view of Starter project" /></p>
@@ -1835,8 +1835,8 @@
 
 <p>We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.</p>
 
-<h2 id="cloud-arch-int">Development (Integration) environment</h2>
-<p>Developers use the Development (Integration) environment to develop, deploy, and test the Magento application, custom code, extensions, and services. If you created a Staging environment, you have up to two active environments on a grid for two active Git branches. Each Development (Integration) environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.</p>
+<h2 id="cloud-arch-int">Integration environment</h2>
+<p>Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. If you created a Staging environment, you have up to two active environments on a grid for two active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.</p>
 
 <p>You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them. This environment does not support all services. For example, Fastly is not accessible in Integration.</p>
 
@@ -1845,7 +1845,7 @@
 <ul>
   <li>Branch and develop off of <code class="highlighter-rouge">staging</code></li>
   <li>Develop all work on your local workspace in these branches</li>
-  <li>Push code to Git to build and deploy on an Development (Integration) environment for testing</li>
+  <li>Push code to Git to build and deploy on an Integration environment for testing</li>
   <li>As work is completed, merge to <code class="highlighter-rouge">staging</code></li>
 </ul>
 

@@ -1411,12 +1411,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1814,7 +1814,7 @@
 <p>Blackfire includes the following <a href="https://blackfire.io/docs/reference-guide/environments" target="_blank">environments</a> through their site:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Dev: This is your Development (Integration) environments</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Dev: This is your Integration environments</li>
   <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Test: This is your Staging environment</li>
   <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Prod: This is your Production environment</li>
 </ul>
@@ -1852,14 +1852,14 @@
 
 <ol>
   <li>Log in to <a href="https://blackfire.io/login" target="_blank">Blackfire</a>.</li>
-  <li>Select the Development (Integration) environment in the <strong>Current Environment</strong> list.</li>
+  <li>Select the Integration environment in the <strong>Current Environment</strong> list.</li>
   <li>Select the Settings tab.</li>
   <li>Scroll to the bottom and locate the Server ID and Server Token for the environment. You will need these values for the instructions.</li>
   <li>Open <a href="https://blackfire.io/docs/up-and-running/installation" target="_blank">this guide</a>, select the Operating System, and follow the instructions.</li>
 </ol>
 
 <h2 id="dev">Integrate Blackfire in Integration</h2>
-<p>We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">their guide.</a>. You can integrate with Pro’s Development (Integration) environment and Starter’s development branches.</p>
+<p>We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">their guide.</a>. You can integrate with Pro’s Integration environment and Starter’s development branches.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>For Starter plans, pushing your code and <code class="highlighter-rouge">.magento.app.yaml</code> file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.</p>
@@ -2130,7 +2130,7 @@ git push origin
 
 <ol>
   <li>Install the Blackfire browser extension in <a href="https://blackfire.io/docs/integrations/chrome#installing-the-companion" target="_blank">Chrome</a> or <a href="https://blackfire.io/docs/integrations/firefox#installing-the-companion" target="_blank">Firefox</a>. A new Blackfire icon displays in your browser next to the address location. If you don’t see it, you may need to display the bar.</li>
-  <li>Visit the store or site URL for your specific environment. For example, access the URL for your Development (Integration) environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.</li>
+  <li>Visit the store or site URL for your specific environment. For example, access the URL for your Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.</li>
   <li>
     <p>Click the Blackfire icon to profile. For Compare with, select No Reference.</p>
 
@@ -2142,7 +2142,7 @@ git push origin
 <p>To profile using the CLI:</p>
 
 <ol>
-  <li>SSH into the development or Development (Integration) environment. If you need the SSH command, ou can find it through the Project Web Site. Select the environment branch and copy the SSH command from the Access section. Enter the SSH command in a terminal.</li>
+  <li>SSH into the development or Integration environment. If you need the SSH command, ou can find it through the Project Web Site. Select the environment branch and copy the SSH command from the Access section. Enter the SSH command in a terminal.</li>
   <li>
     <p>Enter the following command:</p>
 

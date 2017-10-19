@@ -1411,12 +1411,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1849,7 +1849,7 @@ crons:
 <p>Magento uses a five value specification for a cron job. The numbers per each <code class="highlighter-rouge">* * * * *</code> is as follows:</p>
 
 <ul>
-  <li>Minute (0-59)  For all Start environments and Pro Development (Integration) environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your <a href="#admin">Magento Admin</a>.</li>
+  <li>Minute (0-59)  For all Start environments and Pro Integration environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your <a href="#admin">Magento Admin</a>.</li>
   <li>Hour (0-23)</li>
   <li>Day of month (1 - 31)</li>
   <li>Month (1 - 12)</li>
@@ -1888,14 +1888,14 @@ crons:
 </ul>
 
 <h2 id="admin">Configure cron settings in the Magento Admin</h2>
-<p>Due to the minimum allowed frequency of <strong>five minutes for Starter environments and Pro Development (Integration) environments</strong>, you need to change the cron settings defaulted at two minutes in the Magento Admin. If you don’t change the settings, crons will never run.</p>
+<p>Due to the minimum allowed frequency of <strong>five minutes for Starter environments and Pro Integration environments</strong>, you need to change the cron settings defaulted at two minutes in the Magento Admin. If you don’t change the settings, crons will never run.</p>
 
 <p>You do not need to set this for Pro Staging and Production environments.</p>
 
 <p>To configure:</p>
 
 <ol>
-  <li>Log into the Magento Admin in your deployed environment: all Starter environments and Pro Development (Integration) environments.</li>
+  <li>Log into the Magento Admin in your deployed environment: all Starter environments and Pro Integration environments.</li>
   <li>Navigate to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>. Expand the <strong>Cron (Scheduled Tasks)</strong> section.</li>
   <li>Expand the <strong>Cron configuration options for group: index</strong> section.</li>
   <li>For the <strong>Missed if Not Run Within</strong> setting, deselect the checkbox for Use system value. Change the value from 2 to 10 minutes.</li>
@@ -1942,7 +1942,7 @@ crons:
 
 <ul>
   <li>Starter: All environments you push to including <code class="highlighter-rouge">Master</code></li>
-  <li>Pro: Only Development (Integration) environments you push to including <code class="highlighter-rouge">Master</code></li>
+  <li>Pro: Only Integration environments you push to including <code class="highlighter-rouge">Master</code></li>
 </ul>
 
 <p>To add the cron jobs to Pro plan Staging and Production, you must <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">enter a ticket to Support</a>. Request to have the cron jobs in <code class="highlighter-rouge">.magento.app.yaml</code> added to those environments. We recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch.</p>

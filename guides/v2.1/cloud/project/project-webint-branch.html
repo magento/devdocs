@@ -1411,12 +1411,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1818,7 +1818,7 @@
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot create branches from Pro plan Staging and Production <code class="highlighter-rouge">master</code>. These environments include <code class="highlighter-rouge">master</code> branches that you deploy updated Git code to from Development (Integration) <code class="highlighter-rouge">master</code>.</p>
+  <p>You cannot create branches from Pro plan Staging and Production <code class="highlighter-rouge">master</code>. These environments include <code class="highlighter-rouge">master</code> branches that you deploy updated Git code to from Integration <code class="highlighter-rouge">master</code>.</p>
 </div>
 
 <div>
@@ -1910,7 +1910,7 @@
   <h2 id="project-branch-sync">Sync from the environment’s parent</h2>
   <p>Syncing an environment (or branch) is the same as <code class="highlighter-rouge">git pull origin &lt;parent&gt;</code>. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.</p>
 
-  <p>For Pro plan, you can also sync from Staging and Production to your Development (Integration) <code class="highlighter-rouge">master</code> branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment’s database. For more information, see <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
+  <p>For Pro plan, you can also sync from Staging and Production to your Integration <code class="highlighter-rouge">master</code> branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment’s database. For more information, see <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
 
   <p>To sync an environment with its parent:</p>
 
@@ -1947,7 +1947,7 @@
   <p>For <strong>Pro</strong> environments, you can review the following logs per environment:</p>
 
   <ul>
-    <li>Development (Integration): Build and deploy and deployment history</li>
+    <li>Integration: Build and deploy and deployment history</li>
     <li>Staging: Build logs and deployment history. You need to SSH into the server to view deploy logs.</li>
     <li>Production: Build logs and deployment history. You need to SSH into the server to view deploy logs.</li>
   </ul>

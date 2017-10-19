@@ -1411,12 +1411,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1859,11 +1859,11 @@
   <p>For Starter and Pro plans, the <code class="highlighter-rouge">master</code> environment is ultimately the source or parent for all code in Magento Commerce (Cloud).</p>
 
   <ul>
-    <li>For Starter, <code class="highlighter-rouge">master</code> is your Production environment and branch. You create branches from <code class="highlighter-rouge">master</code> as your Development (Integration) environment.</li>
-    <li>For Pro, you have a <code class="highlighter-rouge">master</code> branch in Development (Integration) for creating your code branches. You deploy this branch to a matching <code class="highlighter-rouge">master</code> branch in Staging and Production environments.</li>
+    <li>For Starter, <code class="highlighter-rouge">master</code> is your Production environment and branch. You create branches from <code class="highlighter-rouge">master</code> as your Integration environment.</li>
+    <li>For Pro, you have a <code class="highlighter-rouge">master</code> branch in Integration for creating your code branches. You deploy this branch to a matching <code class="highlighter-rouge">master</code> branch in Staging and Production environments.</li>
   </ul>
 
-  <p>In your Development (Integration), you have a number of branches and environments available to you per plan. When you branch from <code class="highlighter-rouge">master</code>, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.</p>
+  <p>In your Integration, you have a number of branches and environments available to you per plan. When you branch from <code class="highlighter-rouge">master</code>, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.</p>
 
   <p>When you merge code from a child branch to its parent, the parent environment is redeployed with the code changes of the child environment. Child environments are typically used for development, staging, and testing.</p>
 

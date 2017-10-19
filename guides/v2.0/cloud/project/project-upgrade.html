@@ -1420,12 +1420,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1821,7 +1821,7 @@
 <p>Our upgrades are Composer driven. For more information on Composer, see <a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer in Cloud</a>.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Always apply and test a patch your local system in an active branch. You can push and test in an Development (Integration) environment prior to deploying across all environments.</p>
+  <p>Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.</p>
 </div>
 
 <p>We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.</p>
@@ -1944,7 +1944,7 @@ git push origin &lt;branch name&gt;
 <h2 id="extensions">Verify and upgrade your extensions</h2>
 <p>You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce (Cloud) v2.2.</p>
 
-<p>We recommend <a href="/guides/v2.0/cloud/project/project-webint-snap.html#db-dump">backing up your database</a> prior to installing a number of extensions on your local and Development (Integration) environments.</p>
+<p>We recommend <a href="/guides/v2.0/cloud/project/project-webint-snap.html#db-dump">backing up your database</a> prior to installing a number of extensions on your local and Integration environments.</p>
 
 <ol>
   <li>Create a new branch on your local.</li>
@@ -1952,7 +1952,7 @@ git push origin &lt;branch name&gt;
   <li>As available, download extension upgrades.</li>
   <li>Install the upgrade on your local in the Git branch as documented by the third-party documentation.</li>
   <li>Enable and test the extension locally.</li>
-  <li>Push the code to test in your Development (Integration) environment.</li>
+  <li>Push the code to test in your Integration environment.</li>
   <li>Push to Staging to test in a pre-production environment.</li>
 </ol>
 

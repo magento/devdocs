@@ -1411,12 +1411,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1805,7 +1805,7 @@
 </section>
 
 
-			<p>You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Start environments and Pro plan Development (Integration) environments. You cannot snapshot Pro plan Staging and Production environments.</p>
+			<p>You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Start environments and Pro plan Integration environments. You cannot snapshot Pro plan Staging and Production environments.</p>
 
 <p>Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.</p>
 
@@ -1916,7 +1916,7 @@ persistent data from all running services (for example, your MySQL database, Red
       <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
       <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
       <li>
-        <p>To SSH into the <code class="highlighter-rouge">master</code> branch of your Development (Integration) environment:</p>
+        <p>To SSH into the <code class="highlighter-rouge">master</code> branch of your Integration environment:</p>
 
         <div class="highlighter-rouge"><pre class="highlight"><code>  magento-cloud environment:ssh
 </code></pre>
@@ -1936,7 +1936,7 @@ persistent data from all running services (for example, your MySQL database, Red
   </li>
 </ol>
 
-<p>For Starter environments and Pro Development (Integration) environments:</p>
+<p>For Starter environments and Pro Integration environments:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>	mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
 </code></pre>

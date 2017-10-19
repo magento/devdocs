@@ -1411,12 +1411,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1807,7 +1807,7 @@
 
 			<p>Magento Commerce (Cloud), formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines Magento Commerce, Cloud infrastructure hosting, with a few differences and added features including Git integration and key environments for development, staging, and live production.</p>
 
-<p>Code, test, and deploy across Development (Integration), Staging, and finally Production environment for continuous integration of your store.</p>
+<p>Code, test, and deploy across Integration, Staging, and finally Production environment for continuous integration of your store.</p>
 
 <p>For full release notes, see <a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Information</a> and <a href="/guides/v2.2/release-notes/thirdparty-mccloud.html">Magento Commerce (Cloud) third-party licenses</a>.</p>
 
@@ -1876,8 +1876,8 @@
 <p>For Starter plan subscriptions, you receive four <a href="/guides/v2.2/cloud/basic-information/starter-architecture.html">environments</a> including the following:</p>
 
 <ul>
-  <li><strong>Development (Integration)</strong>: The ultimate developer environments, Integration provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.</li>
-  <li><strong>Staging</strong>: We highly recommend you create an active <code class="highlighter-rouge">staging</code> branch as one of the three Development (Integration) environments. Create this branch directly from <code class="highlighter-rouge">master</code>. As code and extensions pass your tests, you can merge your Integration branches to <code class="highlighter-rouge">staging</code>. This Staging environment becomes your pre-Production testing environment. It includes the <code class="highlighter-rouge">staging</code> active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.</li>
+  <li><strong>Integration</strong>: The ultimate developer environments, Integration provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.</li>
+  <li><strong>Staging</strong>: We highly recommend you create an active <code class="highlighter-rouge">staging</code> branch as one of the three Integration environments. Create this branch directly from <code class="highlighter-rouge">master</code>. As code and extensions pass your tests, you can merge your Integration branches to <code class="highlighter-rouge">staging</code>. This Staging environment becomes your pre-Production testing environment. It includes the <code class="highlighter-rouge">staging</code> active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.</li>
   <li><strong>Production</strong>: When code is ready and tested, all code merges to <code class="highlighter-rouge">master</code> for deployment to the Production live site. This environment includes your active <code class="highlighter-rouge">master</code> Git branch, database, web server, caching, services, environment variables, and configurations. This environment includes additional services like Fastly.</li>
 </ul>
 
@@ -1885,7 +1885,7 @@
 <p>For Pro subscriptions, you receive the following <a href="/guides/v2.2/cloud/reference/discover-arch.html">environments</a>:</p>
 
 <ul>
-  <li><strong>Development (Integration)</strong>: The ultimate developer environment, Integration provides eight testable environments including a <code class="highlighter-rouge">master</code>. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test your code before merging to <code class="highlighter-rouge">master</code> to push to Staging.</li>
+  <li><strong>Integration</strong>: The ultimate developer environment, Integration provides eight testable environments including a <code class="highlighter-rouge">master</code>. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test your code before merging to <code class="highlighter-rouge">master</code> to push to Staging.</li>
   <li><strong>Staging</strong>: As code and extensions pass your tests, deploy the Integration <code class="highlighter-rouge">master</code> Git branch to Staging for pre-Production testing. This environment includes a database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.</li>
   <li><strong>Production</strong>: When code is ready and testing complete, deploy the Integration <code class="highlighter-rouge">master</code> Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.</li>
 </ul>
@@ -1986,7 +1986,7 @@
 
     <ul>
       <li>Starter: Master and all environments branched from it</li>
-      <li>Pro: Development (Integration) and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">interface updated</a> to manage all environments.</li>
+      <li>Pro: Integration and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">interface updated</a> to manage all environments.</li>
     </ul>
   </li>
 </ul>

@@ -1411,12 +1411,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1907,10 +1907,10 @@
 <tr>
 <td><code>BUILD_OPT_SCD_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. These threads are used The higher amount of threads increasing the amount of files processed during the deployment of static content during the build phase. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
-<p>For Starter plan environments and Pro Development (Integration) environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
+<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
 <p>To further reduce deployment time, we recommend using <a href="/guides/v2.1/config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>Available in versions 2.1.4 and later, 2.2.X.</p></td>
-<td>scd_threads = 1 for all Starter environments and Pro Development (Integration) environments<br />
+<td>scd_threads = 1 for all Starter environments and Pro Integration environments<br />
 scd_threads = 3 for Pro Staging and Production environments</td>
 </tr>
 <tr>
@@ -1981,10 +1981,10 @@ This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>v
 <tr>
 <td><code>STATIC_CONTENT_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. The higher amount of threads increasing the amount of files processed during the deployment. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
-<p>For Starter plan environments and Pro Development (Integration) environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
+<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
 <p>To further reduce deployment time, we recommend using <a href="/guides/v2.1/config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>This is available in all versions.</p></td>
-<td>1 for Starter environments and Pro Development (Integration) environments<br />
+<td>1 for Starter environments and Pro Integration environments<br />
 3 for Pro Staging and Production environments</td>
 </tr>
 <tr>

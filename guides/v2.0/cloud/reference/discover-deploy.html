@@ -1420,12 +1420,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1821,8 +1821,8 @@
 <p>The build and deploy process is slightly different for each plan:</p>
 
 <ul>
-  <li><strong>Starter plans</strong>: For the Development (Integration) environment, every active branch build and deploys to a full environment for access and testing. Fully test your code by merging to the <code class="highlighter-rouge">staging</code> branch. Finally to go live, push <code class="highlighter-rouge">staging</code> to <code class="highlighter-rouge">master</code> to deploy to Production. You have full access to all branches through the Project Web Interface and CLI commands.</li>
-  <li><strong>Pro plans</strong>: For the Development (Integration) environment, every active branch build and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the <code class="highlighter-rouge">master</code> branch in Integration then pushed to those environments using SSH.</li>
+  <li><strong>Starter plans</strong>: For the Integration environment, every active branch build and deploys to a full environment for access and testing. Fully test your code by merging to the <code class="highlighter-rouge">staging</code> branch. Finally to go live, push <code class="highlighter-rouge">staging</code> to <code class="highlighter-rouge">master</code> to deploy to Production. You have full access to all branches through the Project Web Interface and CLI commands.</li>
+  <li><strong>Pro plans</strong>: For the Integration environment, every active branch build and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the <code class="highlighter-rouge">master</code> branch in Integration then pushed to those environments using SSH.</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1883,7 +1883,7 @@
 
 <ul>
   <li><strong>For Starter</strong>: <code class="highlighter-rouge">master</code> branch is used in your Production environment.</li>
-  <li><strong>For Pro</strong>: <code class="highlighter-rouge">master</code> begins as origin branch for the Development (Integration) environment. You deploy this branch to Staging and Production.</li>
+  <li><strong>For Pro</strong>: <code class="highlighter-rouge">master</code> begins as origin branch for the Integration environment. You deploy this branch to Staging and Production.</li>
 </ul>
 
 <p>The remote server gets your code using Git. When you push your code from local to the remote Git, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.</p>

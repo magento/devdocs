@@ -1411,12 +1411,12 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects">
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
             
             
         
             
-            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>
+            <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1981,17 +1981,12 @@
     </li>
   </ol>
 
-  <p>«««&lt; HEAD
-#### Add a key using the Project Web Interface {#add-key-web}
-You will select and add your SSH public key to each environment in your account.
-=======
-### Add a key using the Web Interface {#add-key-web}
-To add an SSH key using the Web Interface:
-»»»&gt; 3320469fcf1a0a48855c3d05d43bd0e3853f61ee</p>
+  <h4 id="add-key-web">Add a key using the Project Web Interface</h4>
+  <p>You will select and add your SSH public key to each environment in your account.</p>
 
   <ul>
     <li>Starter: Add to Master (Production) and any environments you create by branching from Master</li>
-    <li>Pro: Add to Master Development (Integration) environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.</li>
+    <li>Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.</li>
   </ul>
 
   <p>To add an SSH key using the Project Web Interface:</p>
@@ -2042,7 +2037,7 @@ git config --global user.email &lt;your e-mail address&gt;
 
   <ul>
     <li>Starter environments</li>
-    <li>Pro Development (Integration) environments</li>
+    <li>Pro Integration environments</li>
   </ul>
 
   <p>To SSH to an environment using the Magento Cloud command line:</p>
@@ -2079,7 +2074,7 @@ git config --global user.email &lt;your e-mail address&gt;
   </ol>
 
   <h3 id="web-interface">Locate the SSH command in the Project Web Interface</h3>
-  <p>You can locate the SSH command for all Starter environments and Pro Development (Integration) environments through the Project Web Interface.</p>
+  <p>You can locate the SSH command for all Starter environments and Pro Integration environments through the Project Web Interface.</p>
 
   <p>To copy the SSH command:</p>
 
@@ -2127,7 +2122,7 @@ git config --global user.email &lt;your e-mail address&gt;
 
   <ul>
     <li>You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.</li>
-    <li>Your public SSH key must be added to the target environment. For Starter environments and Pro Development (Integration) environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a> with your public key attached. <strong>Never provide your private SSH key.</strong></li>
+    <li>Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a> with your public key attached. <strong>Never provide your private SSH key.</strong></li>
   </ul>
 
   <p>When configuring sFTP, use your SSH public key and the following information for access:</p>
@@ -2151,7 +2146,7 @@ git config --global user.email &lt;your e-mail address&gt;
 
   <p>Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.</p>
 
-  <p>For <strong>Starter environments and Pro Development (Integration) environments</strong>, you may also want to consider <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts">adding a <code class="highlighter-rouge">mount</code></a> for access to a specific directory. You would add the mount to your <code class="highlighter-rouge">.magento.app.yaml</code> file. For a list of writable directories, see <a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a>. This mount point will only work in those environments.</p>
+  <p>For <strong>Starter environments and Pro Integration environments</strong>, you may also want to consider <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts">adding a <code class="highlighter-rouge">mount</code></a> for access to a specific directory. You would add the mount to your <code class="highlighter-rouge">.magento.app.yaml</code> file. For a list of writable directories, see <a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a>. This mount point will only work in those environments.</p>
 
   <p>For <strong>Pro Staging and Production environments</strong>, you need to enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a> to request sFTP access in those environments. We can then create a mount point and provide access to the specific <code class="highlighter-rouge">pub/media</code> folder.</p>
 
