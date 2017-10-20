@@ -182,5 +182,5 @@ You can enter a support ticket through the Project Web Interface:
 
 	The following figure shows an example.
 
-	![Enter a support ticket]({{ site.baseurl }}common/images/cloud_support-ticket.png){:width="600px"}
+	![Enter a support ticket]({{ site.baseurl }}common/images/cloud_support-ticket.png)
 3.	Follow the prompts to open an issue with Support. Support will respond to your ticket in a timely manner.
