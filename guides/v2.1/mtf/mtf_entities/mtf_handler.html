@@ -944,12 +944,12 @@
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 --&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"\Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>In this example, the <code class="highlighter-rouge">di.xml</code> file causes the <code class="highlighter-rouge">Curl</code> class to replace the <code class="highlighter-rouge">WidgetInterface</code>.</p>
@@ -1083,12 +1083,12 @@
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 --&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"\Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h3 id="mtf_handler_decor">cURL authentication classes</h3>
