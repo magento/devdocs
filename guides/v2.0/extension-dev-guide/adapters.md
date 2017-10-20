@@ -37,7 +37,7 @@ The [minifier](https://github.com/magento/magento2/tree/2.0/lib/internal/Magento
 
 The [`AdapterInterface`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/AdapterInterface.php){:target="_blank"} for this class contains a `minify($content)` function that the [`CSSmin`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Css/CSSmin.php){:target="_blank"} and [`JShrink`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Js/JShrink.php){:target="_blank"} implementation class define.
 
-The [jshrink](https://github.com/tedious/JShrink){:target="_blank"}(tedivm/jshrink) and [cssmin](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port){:target="_blank"}(tubalmartin/cssmin) libraries registered in the [`composer.json`](https://github.com/magento/magento2/blob/develop/composer.json){:target="_blank"} file provide the functionalities for the implementation classes.
+The [jshrink](https://github.com/tedious/JShrink){:target="_blank"}(tedivm/jshrink) and [cssmin](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port){:target="_blank"}(tubalmartin/cssmin) libraries registered in the [`composer.json`](https://github.com/magento/magento2/blob/2.3-develop/composer.json){:target="_blank"} file provide the functionalities for the implementation classes.
 
 ### `Magento/Framework/Image`
 
