@@ -137,26 +137,6 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
    </thead>
    <tbody>
-      
-      
-     
-      <tr>
-        <th colspan="2">Domains Impacted</th>
-      </tr>
-      
-      
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_DOC.png" alt="the Doc button"/></td>
-         <td>Affects Documentation domain.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_PROD.png" alt="the PROD button"/></td>
-         <td>Affects the Product team (mostly feature requests or business logic change).</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_TECH.png" alt="the Tech button"/></td>
-         <td>Affects Architect Group (mostly to make decisions around technology changes).</td>
-      </tr>
       <tr>
         <th colspan="2">Pull Request Resolution Status</th>
       </tr>
@@ -166,26 +146,70 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_reject.png" alt="the Reject button"/></td>
-         <td>The pull request has been rejected and will not be merged into mainline code.  Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
+         <td>The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
+         <td>The Magento 2 Commnunity Maintainers Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
       </tr>
       <tr>
         <th colspan="2">Issue Resolution Status</th>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_bug.png" height="18" width="77" alt="the bug report button"/></td>
-         <td>The Magento Team has confirmed that this issue contains the minimum required information to reproduce.</td>
+         <td><img src="{{ site.baseurl }}common/images/github_G1_Passed.png" alt="G1 Passed"/></td>
+         <td>Automatic verification of the issue desciprion successfully passed. Minimum required infomation is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
+      </tr>  
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_G1_Failed.png" alt="G1 Failed"/></td>
+         <td>Automatic verification of the issue desciprion failed. Minimum required infomation is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
+      </tr> 
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_G2_Passed.png" alt="G2 Passed"/></td>
+         <td>The Magento 2 Commnunity Maintainers Team has confirmed that this issue contains the minimum required information to reproduce.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/gitHub_G3_Passed.png" alt="G3 Passed"/></td>
+         <td>The Magento 2 Commnunity Maintainers Team has validated and confirmed the issue.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/gitHub_acknowledged.png" alt="the acknowledged button"/></td>
-         <td>The Magento Team has validated the issue and an internal ticket has been created.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_inProgress.png" alt="the in progress button"/></td>
-         <td>The internal ticket is currently in progress, fix is scheduled to be delivered.</td>
+         <td>The Magento 2 Commnunity Maintainers Team has created internal ticket.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
-         <td>The Magento Team needs additional information from the reporter to properly prioritize and process the issue or pull request.</td>
+         <td>The Magento 2 Commnunity Maintainers Team needs additional information from the reporter to properly prioritize and process the issue.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_20x.png" alt="Reproduced on 2.0.x"/></td>
+         <td>The Magento 2 Commnunity Maintainers Team reproduced the issue on latest 2.0.x release.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_21x.png" alt="Reproduced on 2.1.x"/></td>
+         <td>The Magento 2 Commnunity Maintainers Team reproduced the issue on latest 2.1.x release.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Can_Not_Reproduce.png" alt="Can Not Reproduce"/></td>
+         <td>The Magento 2 Commnunity Maintainers Team can not reproduced the issue following steps to reproduce.</td>
+      </tr>  
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_non-issue.png" alt="Non Issue"/></td>
+         <td>A described behavior in the issue description is valid and shouldn't be changed in Magento code base.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_20x.png" alt="Fixed in 2.0.x"/></td>
+         <td>The issues has been fixed in one of the 2.0.x releases or in 2.0-develop branch and will be availible with upcoming patch release.</td>
+      </tr>      
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_21x.png" alt="Fixed in 2.1.x"/></td>
+         <td>The issues has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be availible with upcoming patch release.</td>
+      </tr>      
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_22x.png" alt="Fixed in 2.2.x"/></td>
+         <td>The issues has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be availible with upcoming patch release.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_22x.png" alt="Fixed in 2.2.x"/></td>
+         <td>The issues has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be availible with upcoming patch release.</td>
       </tr>
    </tbody>
 </table>
