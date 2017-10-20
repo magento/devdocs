@@ -15,7 +15,7 @@ For existing Pro plans, you previously had to access Staging and Production envi
 All new projects already include these features.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-**New projects provisioned starting October 23, 2017** will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted.
+**New projects provisioned October 23, 2017 and later** will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted.
 </div>
 
 ## New features {#features}
