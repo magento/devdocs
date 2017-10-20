@@ -38,7 +38,6 @@ Install (or refresh) the <code>node.js</code> project dependency, including Grun
 <pre>
 cd &lt;your_Magento_instance_directory&gt;
 npm install
-npm update
 </pre>
 </li>
 
