@@ -27,64 +27,15 @@ Code, test, and deploy across Integration, Staging, and finally Production envir
 
 For full release notes, see [Release Information]({{page.baseurl}}release-notes/bk-release-notes.html) and [Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}release-notes/thirdparty-mccloud.html).
 
-## {{site.data.var.ece}} plans {#plans}
-{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}.
+## {{site.data.var.ece}} plans and subscriptions {#plans}
+{{site.data.var.ece}} provides plan options based on the size of your business. Each plan includes {{site.data.var.ece}}, support, and Cloud-based hosting and infrastructure on a subscription basis. Want to sign up? We encourage starting with a free 30-day trial to begin working with Magento.
 
-<table>
-    <tbody>
+For a list of our plans and breakdown of features, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
 
-    <tr>
-        <td class="blank"></td>
-        <th>Starter</th>
-        <th>Pro</th>
-    </tr>
-    <tr><td>Core features</td>
-    <td><li>All Magento 2 core features</li>
-    <li>PayPal Onboarding Tool</li></td>
-    <td><li>All Magento 2 core features</li>
-    <li>PayPal Onboarding Tool</li>
-    <li>B2B module</li></td>
-    </tr>
-    <tr><td>Infrastructure and deployment</td>
-    <td>
-    <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for Magento</li>
-    <li>Continuous cloud integration tools with unlimited users</li>
-    <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
-    <li>Unrestricted versions of New Relic APM Pro (Performance Monitoring) and Blackfire.io Enterprise (Performance Testing)</li>
-</td>
-    <td>
-    <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for Magento</li>
-    <li>Infrastructure-as-a-Service (IaaS) dedicated for Production and Staging</li>
-    <li>Continuous cloud integration tools with unlimited users</li>
-    <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
-    <li>Unrestricted versions of New Relic APM Pro (Performance Monitoring) and Blackfire.io Enterprise (Performance Testing)</li>
-    </td>
-    </tr>
-    <tr><td>24x7 email support</td>
-    <td>24x7 monitoring and email support for the core application and the cloud infrastructure</td>
-    <td>24x7 monitoring and email support for the core application and the cloud infrastructure</td>
-    </tr>
-    <tr><td>Business Intelligence</td>
-    <td class="blank"></td>
-    <td>Magento Business Intelligence Essentials giving you full visibility into your data with 75 reports and 5 dashboards available out of the box</td>
-    </tr>
-    <tr><td>High availability infrastructure</td>
-    <td class="blank"></td>
-    <td>High availability architecture with a three-server setup in the underlying Infrastructure-as-a-Service (IaaS) to provide enterprise grade reliability and availability</td>
-    </tr>
-    <tr><td>Dedicated hardware</td>
-    <td class="blank"></td>
-    <td>Isolated and dedicated hardware setup in the underlying Infrastructure-as-a-Service (IaaS) to provide even higher levels of reliability and availability</td>
-    </tr>
-    <tr><td>Dedicated Launch Manager</td>
-    <td class="blank"></td>
-    <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
-    </tr>
-</tbody>
-</table>
+To start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}. You can select a plan that fits your business and start a trial with a newly provisioned project and code-base with the latest version of {{site.data.var.ece}}.
 
 ## Direct access to your environments {#environments}
-Fully access your Magento development and deployment through a UI console or CLI. Your servers are within reach from development to production in the Amazon Web Services (AWS) cloud.
+Fully access your Magento development and deployment through the Project Web Interface (a UI console) and CLI commands via SSH access. Your servers are within reach from development to production in the Amazon Web Services (AWS) cloud.
 
 We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration.
 
@@ -110,7 +61,7 @@ For Pro subscriptions, you receive the following [environments]({{page.baseurl}}
 * We use a robust {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} build process.
 * You can increase the amount of memory and CPU as needed.
 
-### Technologies
+### Technologies and requirements {#requirements}
 You should become familiar with the following technologies:
 
 * [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
@@ -122,9 +73,9 @@ You should become familiar with the following technologies:
 See [Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html) for details and additional technologies.
 
 ## Where do I get started? {#getstarted}
-If you have experience with {{site.data.var.ee}} 2, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, settng up your local, continuous deployment across environments, and going live.
+If you have experience with {{site.data.var.ee}} 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, settng up your local, continuous deployment across environments, and going live.
 
-If you are the **Product Owner**, you should complete these [onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) and [prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) to give your technical staff and solution experts access, create your project, and get started.
+If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as s base template. If you didn't start with a trial, we have information to help set up your project. To start, see [onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) and [prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) to give your technical staff and solution experts access, create your project, and get started.
 
 We recommend the following starting points:
 
