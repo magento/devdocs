@@ -5,12 +5,14 @@ pages:
     url: magento-functional-testing-framework/getting-started.html
     versions: 2.3
 
+  - label: Test elements (XML)
+    url: magento-functional-testing-framework/cest.html
+    versions: 2.3
+
   - label: Commands
     versions: 2.3
     children:
 
-      - label: Test elements (XML)
-        url: magento-functional-testing-framework/commands/cest.html
       - label: robo
         url: magento-functional-testing-framework/commands/robo.html
       - label: codecept
