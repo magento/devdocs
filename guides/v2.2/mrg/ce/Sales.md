@@ -142,7 +142,7 @@ The service returns an identifier of the created Invoice.
 
 #### REST declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/invoice" method="POST">
@@ -452,7 +452,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/invoice/:invoiceId/refund" method="POST">
@@ -731,7 +731,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/refund" method="POST">
@@ -951,7 +951,7 @@ The service returns the identifier of a created shipment.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/ship" method="POST">

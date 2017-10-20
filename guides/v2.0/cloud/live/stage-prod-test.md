@@ -201,7 +201,7 @@ Before launching, we highly recommend performing extensive traffic and performan
 
 Before you begin testing, please enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.
 
-We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/develop/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/2.0/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
 
 For best results, we recommend the following tools:
 
