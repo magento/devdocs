@@ -14,6 +14,10 @@ For existing Pro plans, you previously had to access Staging and Production envi
 
 All new projects already include these features.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+**New projects provisioned starting October 23, 2017** will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted.
+</div>
+
 ## New features {#features}
 The new Project Web Interface provides the following features for Pro plan Staging and Production environments:
 
@@ -107,7 +111,9 @@ When we convert your project to the new Project Web Interface, we add variables 
 For environment specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.
 
 ## Enter a ticket for updating the Project Web Interface {#enable}
-Enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) requesting to have your project enabled with Wings. We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.
+Enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.
+
+We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.
 
 When done, you can access review your project through the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html).
 
