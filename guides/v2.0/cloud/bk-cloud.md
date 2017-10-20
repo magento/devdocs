@@ -165,10 +165,14 @@ If you would like to learn more about Magento 2, see the following resources:
 * **Inactive Environment**: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for {{site.data.var.ee}}. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
 * **Branch**: {{site.data.var.ee}} is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.
 * **Local**: Your local is a workspace for developing Magento code including added extensions and 3rd party integrations. The local is typically a Virtual Machine (VM) with an entire environment of software, packages, database, web server, and more prerequisites to support an installed Magento and cloned Git branches. We provide full details on how to [set up your local for Magento development]({{ page.baseurl }}cloud/before/before-workspace.html).
-* **Project Web Interface**: The Web Interface is a [console for accessing your project](https://accounts.magento.cloud){:target="_blank"}, user accounts, and your project enviornments. You can modify environment settings, environment variables, routes, and manage environments. Access links (store URL, SSH, Git) are provided for active environments through the active Git branches. You use this interface for [managing your project]({{ page.baseurl }}cloud/project/projects.html). The following environments are available through this interface:
+* **Project Web Interface**: The Web Interface is a [console for accessing your project](https://accounts.magento.cloud){:target="_blank"}, user accounts, and your project environments. You can modify environment settings, environment variables, routes, and manage environments. Access links (store URL, SSH, Git) are provided for active environments through the active Git branches. You use this interface for [managing your project]({{ page.baseurl }}cloud/project/projects.html). The following environments are available through this interface:
 
   * Starter: Master and all environments branched from it
   * Pro: Integration and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your [interface updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html) to manage all environments.
+
+    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    **New projects provisioned starting October 23, 2017** will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted.
+    </div>
 
 ## Technical support {#gethelp}
 You can enter a support ticket through the Project Web Interface:
@@ -178,5 +182,5 @@ You can enter a support ticket through the Project Web Interface:
 
 	The following figure shows an example.
 
-	![Enter a support ticket]({{ site.baseurl }}common/images/cloud_support-ticket.png){:width="600px"}
+	![Enter a support ticket]({{ site.baseurl }}common/images/cloud_support-ticket.png)
 3.	Follow the prompts to open an issue with Support. Support will respond to your ticket in a timely manner.

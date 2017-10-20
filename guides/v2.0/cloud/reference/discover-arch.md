@@ -17,7 +17,7 @@ All of your code is contained in the {{site.data.var.ece}} project. Each project
 Pro also provides a dedicated Infrastructure-as-a-Service (IaaS) for Production and Staging. You deploy the Integration `master` Git branch to these dedicated environments. Production includes a three-node high availability infrastructure to ensure your site is always available. When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-For existing Pro projects, you need to have your Project Web Interface updated to manage Staging and Production through the interface. For more information adding this management to existing Pro projects, see [Add Staging and Production to Pro projects]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+For existing Pro projects, you need to have your Project Web Interface updated to manage Staging and Production through the interface. For more information adding this management to existing Pro projects, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
 
 If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.
 </div>

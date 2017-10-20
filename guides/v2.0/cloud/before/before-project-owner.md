@@ -151,7 +151,7 @@ To get your Blackfire Profiler credentials:
 1. As the {{site.data.var.ece}} account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
 2. In the upper right corner, click **&lt;your name>** > **Account Settings** as the following figure shows.
 
-	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png){:width="650px"}
+	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png)
 3. On your account page, click **View Details** for your project as the following figure shows.
 
 	![View your project details]({{ site.baseurl }}common/images/cloud_blackfire-edit-details.png){:width="200px"}

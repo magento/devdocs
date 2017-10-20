@@ -65,7 +65,7 @@ To copy the SSH command:
 2.	Select an environment or branch to access.
 3.	Click **Access Site**.
 
-	![Find the SSH URL using the Web Interface]({{ site.baseurl }}common/images/cloud_ssh-access.png){:width="400px"}
+	![Find the SSH URL using the Web Interface]({{ site.baseurl }}common/images/cloud_project-access-starter.png)
 
 4.	Click the clipboard button to copy the full SSH command to the clipboard.
 5.	Enter the command in a terminal window to SSH.
