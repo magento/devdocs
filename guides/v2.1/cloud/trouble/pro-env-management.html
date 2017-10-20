@@ -1809,6 +1809,10 @@
 
 <p>All new projects already include these features.</p>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p><strong>New projects provisioned October 23, 2017 and later</strong> will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted.</p>
+</div>
+
 <h2 id="features">New features</h2>
 <p>The new Project Web Interface provides the following features for Pro plan Staging and Production environments:</p>
 
@@ -1821,10 +1825,11 @@
   <li>View builds logs and deployment history</li>
 </ul>
 
+<h3 id="restricted">Restricted features</h3>
 <p>As an important note, while you can manage Staging and Production environments, you <strong>cannot</strong>:</p>
 
 <ul>
-  <li>Branch from these environments. Staging and Production only have a single <code class="highlighter-rouge">master</code> branch for syncing and receiving code from Integration.</li>
+  <li>Branch from these environments. Staging and Production only have a single branch for syncing and receiving code from Integration.</li>
   <li>Create snapshots through the interface. You can use SSH access with CLI commands as needed.</li>
   <li>View deploy logs</li>
 </ul>
@@ -1843,10 +1848,49 @@
   <li>Deploy code to Staging and Production</li>
 </ul>
 
+<h3 id="branches">Branch changes</h3>
+<p>When converted, your branches will be updated. The current branhces include a repository for Integration, Staging, and Production. Each repository has a <code class="highlighter-rouge">master</code> branch with deployment targets configured for Staging and Production.</p>
+
+<p>After the conversion, the three repositories are merged into a single repository. You will have the following branches and environments:</p>
+
+<table>
+<thead>
+<tr>
+<th>Branch</th>
+<th>Environment</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>master</code></td>
+<td>Integration master</td>
+<td><p>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code.</p>
+<p>When you convert, all active and inactive branches continue as children to the <code>master</code> branch.</p></td>
+</tr>
+<tr>
+<td><code>production</code></td>
+<td>Production</td>
+<td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
+<p>When you convert, the Integration <code>master</code> is branched into a <code>production</code> branch with the users access and environment variables.</p></td>
+</tr>
+<tr>
+<td><code>staging</code></td>
+<td>Staging</td>
+<td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
+<p>When you convert, the Integration <code>master</code> is branched into a <code>staging</code> branch with the users access and environment variables.</p></td>
+</tr>
+</tbody>
+</table>
+
 <h2 id="prepare">Prepare for adding Staging and Production</h2>
-<p>When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts and permissions and environment variables from your Integration Master environment.</p>
+<p>When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts, branch user permissions, and environment variables from your Integration <code class="highlighter-rouge">master</code> environment.</p>
 
 <p>To prepare, ensure you have all settings and environment variables set correctly.</p>
+
+<ul>
+  <li><a href="#prep-user">Verify user account access</a></li>
+  <li><a href="#prep-variables">Prepare variables</a></li>
+</ul>
 
 <h3 id="prep-user">Verify user account access</h3>
 <p>We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.</p>
@@ -1876,7 +1920,9 @@
 <p>For environment specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an <code class="highlighter-rouge">env.php</code> file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.</p>
 
 <h2 id="enable">Enter a ticket for updating the Project Web Interface</h2>
-<p>Enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a> requesting to have your project enabled with Wings. We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.</p>
+<p>Enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a> with the suggested title “Connect Stg / Prod to Project’s UI”. In the ticket, request to have your project enabled with Staging and Production in the UI.</p>
+
+<p>We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.</p>
 
 <p>When done, you can access review your project through the <a href="/guides/v2.1/cloud/project/projects.html">Project Web Interface</a>.</p>
 

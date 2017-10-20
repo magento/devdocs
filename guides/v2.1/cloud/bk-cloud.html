@@ -1982,11 +1982,17 @@
   <li><strong>Branch</strong>: Magento Commerce is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.</li>
   <li><strong>Local</strong>: Your local is a workspace for developing Magento code including added extensions and 3rd party integrations. The local is typically a Virtual Machine (VM) with an entire environment of software, packages, database, web server, and more prerequisites to support an installed Magento and cloned Git branches. We provide full details on how to <a href="/guides/v2.1/cloud/before/before-workspace.html">set up your local for Magento development</a>.</li>
   <li>
-    <p><strong>Project Web Interface</strong>: The Web Interface is a <a href="https://accounts.magento.cloud" target="_blank">console for accessing your project</a>, user accounts, and your project enviornments. You can modify environment settings, environment variables, routes, and manage environments. Access links (store URL, SSH, Git) are provided for active environments through the active Git branches. You use this interface for <a href="/guides/v2.1/cloud/project/projects.html">managing your project</a>. The following environments are available through this interface:</p>
+    <p><strong>Project Web Interface</strong>: The Web Interface is a <a href="https://accounts.magento.cloud" target="_blank">console for accessing your project</a>, user accounts, and your project environments. You can modify environment settings, environment variables, routes, and manage environments. Access links (store URL, SSH, Git) are provided for active environments through the active Git branches. You use this interface for <a href="/guides/v2.1/cloud/project/projects.html">managing your project</a>. The following environments are available through this interface:</p>
 
     <ul>
       <li>Starter: Master and all environments branched from it</li>
-      <li>Pro: Integration and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">interface updated</a> to manage all environments.</li>
+      <li>
+        <p>Pro: Integration and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">interface updated</a> to manage all environments.</p>
+
+        <div class="bs-callout bs-callout-info" id="info">
+          <p><strong>New projects provisioned starting October 23, 2017</strong> will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted.</p>
+        </div>
+      </li>
     </ul>
   </li>
 </ul>
@@ -2001,7 +2007,7 @@
 
     <p>The following figure shows an example.</p>
 
-    <p><img src="/common/images/cloud_support-ticket.png" alt="Enter a support ticket" width="600px" /></p>
+    <p><img src="/common/images/cloud_support-ticket.png" alt="Enter a support ticket" /></p>
   </li>
   <li>Follow the prompts to open an issue with Support. Support will respond to your ticket in a timely manner.</li>
 </ol>

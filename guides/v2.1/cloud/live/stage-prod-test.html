@@ -1808,23 +1808,9 @@
 			<h4 id="previous-step">Previous step:</h4>
 <p><a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate data and static files</a></p>
 
-<p>When your code, database, and data is successfully migrated to Staging or Production, use the URLs in your onboarding document to test your application. The onboarding document is available in your Magento Commerce (Cloud) OneDrive account.</p>
+<p>When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html#starter-urls">Starter</a> and <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html#pro-urls">Pro</a> access information.</p>
 
-<p>The URLs have the following format:</p>
-
-<ul>
-  <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;domain&gt;.&lt;project ID&gt;.ent.magento.cloud</code></li>
-  <li>
-    <p>Production:</p>
-
-    <ul>
-      <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
-    </ul>
-
-    <p>The production URL is used by the content delivery network (CDN).</p>
-  </li>
-</ul>
+<p>The following information provides information on verifying logs, testing Fastly configurations, user acceptence testing (UAT), and more.</p>
 
 <h2 id="logs">Log files</h2>
 <p>If you encounter errors on deployment or other issues when testing, check the log files. Log files are located under the <code class="highlighter-rouge">var/log</code> directory.</p>
@@ -1846,14 +1832,22 @@
 
 <p>First, check for headers with a dig command to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="_blank">Testing before changing DNS</a>.</p>
 
-<p>For example:</p>
+<p>The following examples use Pro URLs. You can use any URL with the <code class="highlighter-rouge">dig</code> command.</p>
 
 <ul>
   <li>Staging: <code class="highlighter-rouge">dig http[s]://staging.&lt;your domain&gt;.c.&lt;instanceid&gt;.ent.magento.cloud</code></li>
   <li>Production: <code class="highlighter-rouge">dig http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
 </ul>
 
-<p>Next, use a curl command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production:</p>
+<p>Next, use a <code class="highlighter-rouge">curl</code> command to verify X-Magento-Tags exist and additional header information. The format for the command is:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl http[s]://&lt;full site URL&gt; -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
+</code></pre>
+</div>
+
+<p>For Starter, enter the full site URL from your environment <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html#starter-urls">Access info</a> in the command to view the headers.</p>
+
+<p>For Pro Staging and Production, the command differs per server:</p>
 
 <ul>
   <li>Staging: <code class="highlighter-rouge">curl http[s]://staging.&lt;your domain&gt;.c.&lt;instanceid&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1</code></li>
@@ -1867,7 +1861,7 @@
   </li>
 </ul>
 
-<p>After you are live, you can also check your live site: <code class="highlighter-rouge">curl https://&lt;your domain&gt; -k -vo /dev/null -HFastly-Debug:1</code>  You can also add <code class="highlighter-rouge">--resolve</code> if your live URL isn’t set up with DNS.</p>
+<p>After you are live, you can also check your live site: <code class="highlighter-rouge">curl https://&lt;your domain&gt; -k -vo /dev/null -HFastly-Debug:1</code>. You can also add <code class="highlighter-rouge">--resolve</code> if your live URL isn’t set up with DNS.</p>
 
 <p>Check the returned response headers and values:</p>
 

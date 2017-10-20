@@ -1821,7 +1821,8 @@
 <div>
 
   <div class="bs-callout bs-callout-info" id="info">
-    <p>These sections include instructions for Pro projects updated to manage Staging and Production through the Project Web Interface. For more information adding this management to existing Pro projects, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects</a>.</p>
+    <p><strong>Updating your Pro project</strong>
+These sections include instructions for Pro projects updated to manage Staging and Production through the Project Web Interface. For more information adding this management to existing Pro projects (created before 10-23-2017), see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
 
     <p>If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
   </div>
@@ -1870,9 +1871,13 @@
 
   <p><img src="/common/images/cloud_project-starter.png" alt="Starter branch hierarchy" /></p>
 
-  <p>For <strong>Pro</strong>, you will see a hierarchy of branches starting from Production to Staging to Development (Integration Master). Any branches you create display as children from Development (Integration Master). For more information, see <a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architecture</a>.</p>
+  <p>For <strong>Pro</strong>, you will see a hierarchy of branches starting from Production to Staging to Integration. The <img src="/common/images/cloud_icon-enterprise.png" alt="Enterprise icon" /> icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see <a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architecture</a>.</p>
 
   <p><img src="/common/images/cloud_project-pro.png" alt="Pro branch hierarchy" /></p>
+
+  <p>If you are an existing Pro merchant, and have not ticketed to <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">add Staging and Production</a> to your UI, you will see only Integration <code class="highlighter-rouge">master</code> and any created branches.</p>
+
+  <p><img src="/common/images/cloud_project-pro-old.png" alt="Pro branch hierarchy (original)" /></p>
 
   <p>To access an environment store and admin, select a branch and click <strong>Access Site</strong>. A list of store URLs and SSH command display. Select the URL to view the store in that environment.</p>
 
@@ -1893,7 +1898,7 @@
 
   <p><img src="/common/images/cloud_show-inactive.png" alt="Show or hide inactive branches" /></p>
 
-  <h2 id="configure-environments">Configure environments</h2>
+  <h2 id="configure">Configure environments</h2>
   <p>You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click <strong>Configure environment</strong> to create and manage <a href="/guides/v2.0/cloud/env/environments.html"><em>environments</em></a>, each of which corresponds to a Git branch.</p>
 
   <p><img src="/common/images/cloud_project-env.png" alt="Access your project" /></p>
