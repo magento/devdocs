@@ -1450,13 +1450,13 @@ A good example that uses this pattern is the <a href="https://github.com/magento
 
 <h3 id="m2devgde-search-criteria">Search Criteria</h3>
 
-<p>A Search Criteria is an implementation of the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteriaInterface.php" target="_blank"><code class="highlighter-rouge">SearchCriteriaInterface</code></a> class that allows you to build custom requests with different conditions.</p>
+<p>A Search Criteria is an implementation of the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchCriteriaInterface.php" target="_blank"><code class="highlighter-rouge">SearchCriteriaInterface</code></a> class that allows you to build custom requests with different conditions.</p>
 
 <p>Repositories use this class to retrieve entities based on a matching criteria.</p>
 
 <h4 id="filter">Filter</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/Filter.php" target="_blank"><code class="highlighter-rouge">Filter</code></a> class is the smallest part of a Search Criteria.
+<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/Filter.php" target="_blank"><code class="highlighter-rouge">Filter</code></a> class is the smallest part of a Search Criteria.
 It allows you to add a custom field, value, and condition type to the criteria.</p>
 
 <p>Example of how to define a Filter:</p>
@@ -1470,7 +1470,7 @@ It allows you to add a custom field, value, and condition type to the criteria.<
 
 <h4 id="filter-group">Filter Group</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/Search/FilterGroup.php" target="_blank"><code class="highlighter-rouge">FilterGroup</code></a> class acts like a collection of Filters that apply one or more criteria to a search.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/Search/FilterGroup.php" target="_blank"><code class="highlighter-rouge">FilterGroup</code></a> class acts like a collection of Filters that apply one or more criteria to a search.</p>
 
 <p>The boolean <code class="highlighter-rouge">OR</code> statement joins Filters inside a single <strong>Filter Group</strong>.</p>
 
@@ -1504,7 +1504,7 @@ $searchCriteria-&gt;setFilterGroups([$filterGroup1, $filterGroup2]);</code></pre
 
 <h4 id="sorting">Sorting</h4>
 
-<p>To apply sorting to the Search Criteria, use the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SortOrder.php" target="_blank"><code class="highlighter-rouge">SortOrder</code></a> class.</p>
+<p>To apply sorting to the Search Criteria, use the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SortOrder.php" target="_blank"><code class="highlighter-rouge">SortOrder</code></a> class.</p>
 
 <p>Field and direction make up the two parameters that define a Sort Order object.
 The field is the name of the field to sort.
@@ -1533,20 +1533,20 @@ $searchCriteria-&gt;setSortOrders([$sortOrder]);</code></pre></figure>
 <h3 id="search-result">Search Result</h3>
 
 <p>The <code class="highlighter-rouge">getList(SearchCriteria $searchCriteria)</code> method defined in your repository should return a Search Result object.
-This object is an instance of a class that implements the interface <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchResultsInterface.php" target="_blank"><code class="highlighter-rouge">SearchResultInterface</code></a>.</p>
+This object is an instance of a class that implements the interface <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchResultsInterface.php" target="_blank"><code class="highlighter-rouge">SearchResultInterface</code></a>.</p>
 
 <p>Search Result objects hold the Search Criteria object and the retrieved entities along with information about the total count of found entities regardless of any limitations set in the criteria.</p>
 
 <h3 id="m2devgde-searchcriteria-unify-processing">Search Criteria Unify Processing</h3>
 
-<p>A Collection Processor is an implementation of the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessorInterface.php" target="_blank"><code class="highlighter-rouge">CollectionProcessorInterface</code></a> interface that unifies the application of custom filters, sorting, and paginating.
+<p>A Collection Processor is an implementation of the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessorInterface.php" target="_blank"><code class="highlighter-rouge">CollectionProcessorInterface</code></a> interface that unifies the application of custom filters, sorting, and paginating.
 It contains a one method process that applies a Search Criteria object to an abstract database collection.</p>
 
 <p>You can use <a href="/guides/v2.2/extension-detv-guide/depend-inj.html#configuring-a-type">virtual typing</a> in your <code class="highlighter-rouge">di.xml</code> file to specify the processors used in the Collection Processor.</p>
 
 <h4 id="filter-processor">Filter Processor</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor.php" target="_blank"><code class="highlighter-rouge">FilterProcessor</code></a> class applies Filter Groups and their filters to a collection.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor.php" target="_blank"><code class="highlighter-rouge">FilterProcessor</code></a> class applies Filter Groups and their filters to a collection.</p>
 
 <p>Below is the code that applies filters to a collection.
 The method applies custom filters for some fields, otherwise it applies <code class="highlighter-rouge">$collection-&gt;addFieldToFilter($fields, $conditions)</code>.</p>
@@ -1584,7 +1584,7 @@ The method applies custom filters for some fields, otherwise it applies <code cl
 </div></div>
 
 <p>You can configure this class to use a specific custom field mapping and custom filter in the <code class="highlighter-rouge">di.xml</code> file.
-The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> to create a <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> from a Filter Processor that applies the module-specific <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php" target="_blank"><code class="highlighter-rouge">ProductCategoryFilter</code></a> on a particular field mapping.</p>
+The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> to create a <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> from a Filter Processor that applies the module-specific <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php" target="_blank"><code class="highlighter-rouge">ProductCategoryFilter</code></a> on a particular field mapping.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupFilterProcessor"</span> <span class="na">type=</span><span class="s">"Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
@@ -1638,7 +1638,7 @@ class ProductCategoryFilter implements CustomFilterInterface
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">customFilters</code></td>
-      <td>An array of filters implementing the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor/CustomFilterInterface.php" target="_blank"><code class="highlighter-rouge">CustomFilterInterface</code></a>. These filters allow you to apply custom logic to a particular abstract database collection.</td>
+      <td>An array of filters implementing the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/FilterProcessor/CustomFilterInterface.php" target="_blank"><code class="highlighter-rouge">CustomFilterInterface</code></a>. These filters allow you to apply custom logic to a particular abstract database collection.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">fieldMapping</code></td>
@@ -1649,7 +1649,7 @@ class ProductCategoryFilter implements CustomFilterInterface
 
 <h4 id="sorting-processor">Sorting Processor</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/SortingProcessor.php" target="_blank"><code class="highlighter-rouge">SortingProcessor</code></a> class applies the sorting order of a search criteria to an abstract database collection.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/SortingProcessor.php" target="_blank"><code class="highlighter-rouge">SortingProcessor</code></a> class applies the sorting order of a search criteria to an abstract database collection.</p>
 
 <p>Below is an example of how you can configure a Sorting Processor virtual type in the <code class="highlighter-rouge">di.xml</code> file to use a custom field mapping and default sorting orders.</p>
 
@@ -1687,11 +1687,11 @@ class ProductCategoryFilter implements CustomFilterInterface
 
 <h4 id="pagination-processor">Pagination Processor</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/PaginationProcessor.php" target="_blank"><code class="highlighter-rouge">PaginationProcessor</code></a> class applies the current page and page size of the search criteria to an abstract database collection.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/PaginationProcessor.php" target="_blank"><code class="highlighter-rouge">PaginationProcessor</code></a> class applies the current page and page size of the search criteria to an abstract database collection.</p>
 
 <h4 id="join-processor">Join Processor</h4>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor.php" target="_blank"><code class="highlighter-rouge">JoinProcessor</code></a> class allows you to join fields from other tables into an abstract database collection.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor.php" target="_blank"><code class="highlighter-rouge">JoinProcessor</code></a> class allows you to join fields from other tables into an abstract database collection.</p>
 
 <p>Below is an example of creating a Join Processor virtual type in the <code class="highlighter-rouge">di.xml</code> file named <code class="highlighter-rouge">Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor</code>:</p>
 
@@ -1714,7 +1714,7 @@ class ProductCategoryFilter implements CustomFilterInterface
   <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>The Join Processor aggregates Custom Joins objects implementing the interface <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor/CustomJoinInterface.php" target="_blank"><code class="highlighter-rouge">CustomJoinInterface</code></a>.</p>
+<p>The Join Processor aggregates Custom Joins objects implementing the interface <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor/CustomJoinInterface.php" target="_blank"><code class="highlighter-rouge">CustomJoinInterface</code></a>.</p>
 
 <div class="collapsible"><b class="collapsible-title">Show Custom Join implementation example </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    namespace Magento\Tax\Model\Api\SearchCriteria\JoinProcessor;
 
@@ -1741,7 +1741,7 @@ class ProductCategoryFilter implements CustomFilterInterface
 
 <h3 id="using-collection-processors-in-repositories">Using Collection Processors in Repositories</h3>
 
-<p>Below is an example of how the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code class="highlighter-rouge">CustomerRepositoryInterface</code></a> repository class uses a Collection Processor.</p>
+<p>Below is an example of how the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php" target="_blank"><code class="highlighter-rouge">CustomerRepositoryInterface</code></a> repository class uses a Collection Processor.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">    namespace Magento\Customer\Model\ResourceModel;
 

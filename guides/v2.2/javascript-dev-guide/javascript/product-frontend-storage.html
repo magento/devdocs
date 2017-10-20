@@ -702,7 +702,7 @@ This section is responsible for holding all product data that come from the serv
 
 <h2 id="instantiate-the-repository">Instantiate the repository</h2>
 
-<p>The following code snippet uses the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js" target="_blank"><code class="highlighter-rouge">Magento_Catalog/js/product/storage/storage-service</code></a> to initialize the repository when the data storage cache itself initializes:</p>
+<p>The following code snippet uses the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js" target="_blank"><code class="highlighter-rouge">Magento_Catalog/js/product/storage/storage-service</code></a> to initialize the repository when the data storage cache itself initializes:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
     <span class="s1">'Magento_Catalog/js/product/storage/storage-service'</span>
@@ -757,7 +757,7 @@ This section is responsible for holding all product data that come from the serv
 
 <h2 id="get-data-from-the-server">Get data from the server</h2>
 
-<p>Use the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213" target="_blank"><code class="highlighter-rouge">loadDataFromServer</code></a> method from the <code class="highlighter-rouge">data-storage</code> class to get product data from a list of IDs.</p>
+<p>Use the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213" target="_blank"><code class="highlighter-rouge">loadDataFromServer</code></a> method from the <code class="highlighter-rouge">data-storage</code> class to get product data from a list of IDs.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">...</span>
 
@@ -802,7 +802,7 @@ This section is responsible for holding all product data that come from the serv
 
 <p>For UI Components, add this information in the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_data_source.html"><code class="highlighter-rouge">dataProvider</code></a> entry inside your <code class="highlighter-rouge">etc/view/frontend/ui_component/&lt;ui-component-name&gt;.xml</code> file.</p>
 
-<p>The following example is from the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml" target="_blank">recently-viewed widget</a>:</p>
+<p>The following example is from the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml" target="_blank">recently-viewed widget</a>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"dataProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -823,7 +823,7 @@ This section is responsible for holding all product data that come from the serv
 
 <p>This sets the appropriate information inside the <code class="highlighter-rouge">updateRequestConfig</code> object in the product storage configuration(<code class="highlighter-rouge">productStorageConfig</code> in the example code).</p>
 
-<p>The object structure for this REST response is represented by <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Catalog\Api\Data\ProductRenderInterface</code></a>:</p>
+<p>The object structure for this REST response is represented by <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Catalog\Api\Data\ProductRenderInterface</code></a>:</p>
 
 <div class="collapsible"><b class="collapsible-title">Show Object Structure </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">[</span>
    <span class="nx">item_id</span><span class="err">:</span> <span class="p">{</span>
