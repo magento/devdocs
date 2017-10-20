@@ -15,7 +15,7 @@ For existing Pro plans, you previously had to access Staging and Production envi
 All new projects already include these features.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-**New projects provisioned October 23, 2017 and later** will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted.
+**New projects provisioned October 23, 2017 and later** will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted. This information will help you understand the changes and enter a ticket.
 </div>
 
 ## New features {#features}
@@ -53,16 +53,16 @@ After the conversion, the three repositories are merged into a single repository
 <table>
 <thead>
 <tr>
-<th>Branch</th>
-<th>Environment</th>
+<th style="width: 100px;">Branch</th>
+<th style="width: 100px;">Environment</th>
 <th>Description</th>
 </tr></thead>
 <tbody>
 <tr>
-<td><code>master</code></td>
-<td>Integration master</td>
-<td><p>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code.</p>
-<p>When you convert, all active and inactive branches continue as children to the <code>master</code> branch.</p></td>
+<td>(no branch)</td>
+<td>Global Master</td>
+<td>This "branch" captures global project changes including adding user accounts and variables.
+</td>
 </tr>
 <tr>
 <td><code>production</code></td>
@@ -76,8 +76,25 @@ After the conversion, the three repositories are merged into a single repository
 <td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
 <p>When you convert, the Integration <code>master</code> is branched into a <code>staging</code> branch with the users access and environment variables.</p></td>
 </tr>
+<tr>
+<td><code>master</code></td>
+<td>Integration master</td>
+<td><p>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code.</p>
+<p>When you convert, all active and inactive branches continue as children to the <code>master</code> branch.</p></td>
+</tr>
 </tbody>
 </table>
+
+In the Project Web Interface, you will see the following environments and branches:
+
+![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
+
+Be aware, the following actions will trigger a redeploy of the environment. This redeploy is much shorter, not pushing code or data changes.
+
+* Add a user to a specific environment
+* Add an environment variable to a specific environment
+
+{% include cloud/wings-variables.md %}
 
 ## Prepare for adding Staging and Production {#prepare}
 When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts, branch user permissions, and environment variables from your Integration `master` environment.
