@@ -102,7 +102,7 @@ To create a pull request do the following:
 4. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 
-After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR along with the others. Your PR undergoes automated testing, and if it passes, the Magento 2 Community Maintainers Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
+After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR along with others. Your PR undergoes automated testing, and if it passes, the Magento 2 Community Maintainers Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
 
 <h2 id="report">Report an issue</h2>
 If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
