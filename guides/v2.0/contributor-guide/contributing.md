@@ -26,7 +26,7 @@ The following topics are included in the Guide:
 
 * <a href="#report">Report an issue</a>
 
-* <a href="#labels">Labels applied by the Magento team</a>
+* <a href="#labels">Labels applied by the Community Engineering Team</a>
 
 
 <h2 id="contribute">Contribute to Magento 2 code</h2>
@@ -37,9 +37,9 @@ This contribution model has contributors maintaining their own copy of the forke
 Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions.
 
 
-The Magento 2 Community Maintainers Team reviews all issues and contributions submitted by the community developers. During the review we might require clarifications from the contributor. If there is no response from the contributor for two weeks (14 days), the issue is closed.
+The Community Engineering Team reviews all issues and contributions submitted by the community developers. During the review we might require clarifications from the contributor. If there is no response from the contributor for two weeks (14 days), the issue is closed.
 
-Often when the Magento 2 Community Maintainers Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
+Often when the Community Engineering Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
@@ -102,7 +102,7 @@ To create a pull request do the following:
 4. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 
-After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR along with others. Your PR undergoes automated testing, and if it passes, the Magento 2 Community Maintainers Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
+After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR along with others. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
 
 <h2 id="report">Report an issue</h2>
 If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
@@ -150,7 +150,7 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
-         <td>The Magento 2 Community Maintainers Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
+         <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
       </tr>
       <tr>
         <th colspan="2">Issue Resolution Status</th>
@@ -165,27 +165,27 @@ Refer to the following table for a description of each label. These labels are a
       </tr> 
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_G2_Passed.png" alt="G2 Passed"/></td>
-         <td>The Magento 2 Community Maintainers Team has confirmed that this issue contains the minimum required information to reproduce.</td>
+         <td>The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/gitHub_G3_Passed.png" alt="G3 Passed"/></td>
-         <td>The Magento 2 Community Maintainers Team has validated and confirmed the issue.</td>
+         <td>The Community Engineering Team has validated and confirmed the issue.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_20x.png" alt="Reproduced on 2.0.x"/></td>
-         <td>The Magento 2 Community Maintainers Team reproduced the issue on latest 2.0.x release.</td>
+         <td>The Community Engineering Team reproduced the issue on latest 2.0.x release.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_21x.png" alt="Reproduced on 2.1.x"/></td>
-         <td>The Magento 2 Community Maintainers Team reproduced the issue on latest 2.1.x release.</td>
+         <td>The Community Engineering Team reproduced the issue on latest 2.1.x release.</td>
       </tr>      
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_22x.png" alt="Reproduced on 2.2.x"/></td>
-         <td>The Magento 2 Community Maintainers Team reproduced the issue on latest 2.2.x release.</td>
+         <td>The Community Engineering Team reproduced the issue on latest 2.2.x release.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_23x.png" alt="Reproduced on 2.3.x"/></td>
-         <td>The Magento 2 Community Maintainers Team reproduced the issue on latest 2.3.x release.</td>
+         <td>The Community Engineering Team reproduced the issue on latest 2.3.x release.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Fixed_20x.png" alt="Fixed in 2.0.x"/></td>
@@ -205,15 +205,15 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/gitHub_acknowledged.png" alt="the acknowledged button"/></td>
-         <td>The Magento 2 Community Maintainers Team has created internal ticket.</td>
+         <td>The Community Engineering Team has created internal ticket.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
-         <td>The Magento 2 Community Maintainers Team needs additional information from the reporter to properly prioritize and process the issue.</td>
+         <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Cannot_Reproduce.png" alt="Can Not Reproduce"/></td>
-         <td>The Magento 2 Community Maintainers Team can not reproduced the issue following steps to reproduce.</td>
+         <td>The Community Engineering Team can not reproduced the issue following steps to reproduce.</td>
       </tr>  
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_non-issue.png" alt="Non Issue"/></td>
