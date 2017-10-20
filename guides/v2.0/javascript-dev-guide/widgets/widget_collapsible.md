@@ -540,4 +540,8 @@ $( "#element" ).collapsible("forceDeactivate");
 Called before the content is opened. 
 
 <h3 id="c_dimensionsChanged"><code>dimensionsChanged</code></h3>
-Called after content is opened or closed.
+Called after content is opened or closed. Passes object as first parameter when triggered.  
+
+Parameter on open: <code>{opened: true}</code>
+
+Parameter on close: <code>{opened: false}</code>
