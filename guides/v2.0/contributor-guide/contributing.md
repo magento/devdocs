@@ -150,7 +150,7 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
-         <td>The Magento 2 Commnunity Maintainers Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
+         <td>The Magento 2 Community Maintainers Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
       </tr>
       <tr>
         <th colspan="2">Issue Resolution Status</th>
@@ -165,31 +165,31 @@ Refer to the following table for a description of each label. These labels are a
       </tr> 
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_G2_Passed.png" alt="G2 Passed"/></td>
-         <td>The Magento 2 Commnunity Maintainers Team has confirmed that this issue contains the minimum required information to reproduce.</td>
+         <td>The Magento 2 Community Maintainers Team has confirmed that this issue contains the minimum required information to reproduce.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/gitHub_G3_Passed.png" alt="G3 Passed"/></td>
-         <td>The Magento 2 Commnunity Maintainers Team has validated and confirmed the issue.</td>
+         <td>The Magento 2 Community Maintainers Team has validated and confirmed the issue.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/gitHub_acknowledged.png" alt="the acknowledged button"/></td>
-         <td>The Magento 2 Commnunity Maintainers Team has created internal ticket.</td>
+         <td>The Magento 2 Community Maintainers Team has created internal ticket.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
-         <td>The Magento 2 Commnunity Maintainers Team needs additional information from the reporter to properly prioritize and process the issue.</td>
+         <td>The Magento 2 Community Maintainers Team needs additional information from the reporter to properly prioritize and process the issue.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_20x.png" alt="Reproduced on 2.0.x"/></td>
-         <td>The Magento 2 Commnunity Maintainers Team reproduced the issue on latest 2.0.x release.</td>
+         <td>The Magento 2 Community Maintainers Team reproduced the issue on latest 2.0.x release.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_21x.png" alt="Reproduced on 2.1.x"/></td>
-         <td>The Magento 2 Commnunity Maintainers Team reproduced the issue on latest 2.1.x release.</td>
+         <td>The Magento 2 Community Maintainers Team reproduced the issue on latest 2.1.x release.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Can_Not_Reproduce.png" alt="Can Not Reproduce"/></td>
-         <td>The Magento 2 Commnunity Maintainers Team can not reproduced the issue following steps to reproduce.</td>
+         <td>The Magento 2 Community Maintainers Team can not reproduced the issue following steps to reproduce.</td>
       </tr>  
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_non-issue.png" alt="Non Issue"/></td>
