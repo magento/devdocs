@@ -13,17 +13,9 @@ github_link: cloud/live/stage-prod-test.md
 #### Previous step:
 [Migrate data and static files]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
 
-When your code, database, and data is successfully migrated to Staging or Production, use the URLs in your onboarding document to test your application. The onboarding document is available in your Magento Commerce (Cloud) OneDrive account.
+When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{ page.baseurl }}cloud/live/stage-prod-migrate.html#starter-urls) and [Pro]({{ page.baseurl }}cloud/live/stage-prod-migrate.html#pro-urls) access information.
 
-The URLs have the following format:
-
-*	Staging: `http[s]://staging.<domain>.<project ID>.ent.magento.cloud`
-*	Production:
-
-	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
-	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
-
-	The production URL is used by the content delivery network (CDN).
+The following information provides information on verifying logs, testing Fastly configurations, user acceptence testing (UAT), and more.
 
 ## Log files {#logs}
 If you encounter errors on deployment or other issues when testing, check the log files. Log files are located under the `var/log` directory.
@@ -45,12 +37,18 @@ Verify Fastly is caching properly on Staging and Production. [Configuring Fastly
 
 First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
 
-For example:
+The following examples use Pro URLs. You can use any URL with the `dig` command.
 
 * Staging: `dig http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud`
 * Production: `dig http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
-Next, use a curl command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production:
+Next, use a `curl` command to verify X-Magento-Tags exist and additional header information. The format for the command is:
+
+	curl http[s]://<full site URL> -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1
+
+For Starter, enter the full site URL from your environment [Access info]({{ page.baseurl }}cloud/live/stage-prod-migrate.html#starter-urls) in the command to view the headers.
+
+For Pro Staging and Production, the command differs per server:
 
 * Staging: `curl http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 * Production:
@@ -58,7 +56,7 @@ Next, use a curl command to verify X-Magento-Tags exist and additional header in
 	* The load balancer: `curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 	* A direct Origin node: `curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 
-After you are live, you can also check your live site: `curl https://<your domain> -k -vo /dev/null -HFastly-Debug:1`  You can also add `--resolve` if your live URL isn't set up with DNS.
+After you are live, you can also check your live site: `curl https://<your domain> -k -vo /dev/null -HFastly-Debug:1`. You can also add `--resolve` if your live URL isn't set up with DNS.
 
 Check the returned response headers and values:
 

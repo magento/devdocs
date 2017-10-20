@@ -33,7 +33,7 @@ If you do not request this update, you must use CLI commands or tickets to modif
 </div>
 
 ### Pro environments and branches {#env-branches}
-For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These enviornments are not public facing. Finally, Production is your live, public environment.
+For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These environments are not public facing. Finally, Production is your live, public environment.
 
 For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
 

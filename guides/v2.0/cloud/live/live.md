@@ -24,7 +24,7 @@ You need the following information to go live:
 As part of Magento Commerce (Cloud) subscription, you have access to a shared Domain-Validated SSL (HTTPS) certificate that is issued by GlobalSign. This certificate is shared with other merchants and included for all Cloud accounts. If you want to deploy an Extended Validation SSL (not-shared) certificate for your company, this option can be purchased when you first sign-up with Magento Commerce. If you need to purchase this option, contact your account representative.
 
 ## Why test fully in Integration and Staging? {#whytest}
-We strongly recommend testing in these enviornments due to the complexity of your custom code, themes, Magento extensions, 3rd party integrations all working together to provide a single or multiple stores. Every deployment can differ between merchants. The following are common issues you can find early and solve before touching Production:
+We strongly recommend testing in these environments due to the complexity of your custom code, themes, Magento extensions, 3rd party integrations all working together to provide a single or multiple stores. Every deployment can differ between merchants. The following are common issues you can find early and solve before touching Production:
 
 * Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a **warning before it occurs in Production**.
 * Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and front end, sometimes clashing and causing errors.
