@@ -207,9 +207,5 @@ Refer to the following table for a description of each label. These labels are a
          <td><img src="{{ site.baseurl }}common/images/github_Fixed_22x.png" alt="Fixed in 2.2.x"/></td>
          <td>The issues has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be availible with upcoming patch release.</td>
       </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_Fixed_22x.png" alt="Fixed in 2.2.x"/></td>
-         <td>The issues has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be availible with upcoming patch release.</td>
-      </tr>
    </tbody>
 </table>
