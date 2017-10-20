@@ -57,7 +57,7 @@ fatal: The remote end hung up unexpectedly</pre>
 7.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
         
-        php -f build-sample-data.php -- --ce-source="<your {{site.data.var.ce}} install dir>"
+        php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php --ce-source="<path_to_your_magento_instance>"
 9.  Wait for the command to complete.
 
 10. See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.
@@ -84,11 +84,11 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 5.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
 
-        php -f build-sample-data.php -- --ce-source="<your {{site.data.var.ce}} install dir>"
+        php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php --ce-source="<path_to_your_magento_instance>"
 
     For example,
 
-        php build-sample-data.php -- --ce-source="/var/www/magento2"
+        php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php --ce-source="/var/www/magento2"
 
 7.  Wait for the command to complete.
 8.  See the next section.
