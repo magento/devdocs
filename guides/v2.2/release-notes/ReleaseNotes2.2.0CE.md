@@ -419,6 +419,9 @@ This release contains hundreds of fixes and enhancements.
 <!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member <a href="https://github.com/barbazul" target="_blank">Barbazul</a> in pull request <a href="https://github.com/magento/magento2/pull/9902" target="_blank">9902</a>.*
 
 
+<!---69633 -->* Configuration paths `persistent_identifier` & `compression_threshold` for Redis Sessions have been corrected. *Fix submitted by community member <a href="https://github.com/LukeHandle" target="_blank">Luke Hanley</a> in pull request <a href="https://github.com/magento/magento2/pull/9368" target="_blank">9368</a>.* 
+
+
 #### Admin framework
 
 <!--- 57805 -->* You can no longer delete a currently logged-in user.
