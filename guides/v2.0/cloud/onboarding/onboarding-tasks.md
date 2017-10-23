@@ -83,7 +83,7 @@ Depending on your subscription plan, you can:
 * Kick off going live
 * Enter support tickets
 
-![Use the onboarding portal to get started]({{ site.baseurl }}common/images/cloud_onboard-portal.png)
+![Use the onboarding portal to get started]({{ site.baseurl }}common/images/cloud_portal-getstarted1.png)
 
 #### Related topics
 * [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html)
