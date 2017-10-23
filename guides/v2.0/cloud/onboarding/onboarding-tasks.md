@@ -14,6 +14,7 @@ After your company purchases a subscription plan for {{site.data.var.ece}}, the 
 
 To quickly onboard your project to start developing your site and going live, you need to complete specific set up steps and onboarding tasks. Typically, you need the Project Owner to start. Technical Admin(s) with super user access can continue.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the following first steps:
 
 * Created your Cloud account and project
@@ -23,6 +24,7 @@ If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took
 * Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{page.baseurl}}cloud/before/before-project-owner.html#variables) for the default admin account to access the Magento Admin panel.
 
 See [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for further information and steps.
+</div>
 
 ## Project access and users {#users}
 The _Project Owner_ is typically a "business user" in your business or finance organization that purchased the subscription and is your point of contact with Magento regarding the account overall. The owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
