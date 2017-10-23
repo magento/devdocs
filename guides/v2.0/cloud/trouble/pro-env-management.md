@@ -53,7 +53,7 @@ After the conversion, the three repositories are merged into a single repository
 <table>
 <thead>
 <tr>
-<th style="width: 100px;">Branch</th>
+<th style="width: 125px;">Branch</th>
 <th style="width: 100px;">Environment</th>
 <th>Description</th>
 </tr></thead>
