@@ -30,9 +30,9 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 ## Fixed issues
 
 ### Cart
-<!--- 61066 -->*  Magento now permits you to share a shopping cart between the store views of the same website, but not between store views of different websites. Previously, Magento did not clear the contents of your shopping cart  when you changed between store views on different websites.
+<!--- 61066 -->*  Magento now permits you to share a shopping cart between the store views of the same website, but not between store views of different websites. Previously, Magento did not clear the contents of your shopping cart  when you switched between store views on different websites.
  
-<!--- 57341 -->*  Magento no longer logs you out if you click **Got to Shopping Cart** after clicking **Checkout**.  
+<!--- 57341 -->*  Magento no longer logs you out if you click **Go to Shopping Cart** after clicking **Checkout**.  
 
 
 ### Catalog
@@ -43,11 +43,11 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 <!--- 59406 -->*  The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error: "Error 1114: Table is full".
 
 
-<!--- 58792 -->* The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`, and during save operations, Magento resized images for images the default store only. 
+<!--- 58792 -->* The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`, and during save operations, Magento resized images for  the default store only. 
 
 
 
-<!--- 61798 -->* When you delete an image in Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for`).
+<!--- 61798 -->* When you delete an image in the Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for`).
 
 <!--- 61143 -->* You can now use the WYSIWYG editor to update product descriptions. Previously, when you used the editor to update descriptions, Magento did not apply your changes. 
 
@@ -55,7 +55,7 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 <!--- 63657 -->* The product attribute `category_ids` can have only **Global** scope. Previously, you could change the scope value of `category_ids` to **Store**.
 
 
-<!--- 66345 -->* The `\Magento\CatalogInventory\Model\Stock\Status::getStockId()` call now returns stock ID as expected. Previously, it returned the website ID. 
+<!--- 66345 -->* The `\Magento\CatalogInventory\Model\Stock\Status::getStockId()` call now returns the stock ID as expected. Previously, it returned the website ID. 
  
 
 ### Configurable products 
@@ -67,7 +67,7 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 
 
 
-<!--- 57165 -->* The "Add Products Manually" option now lets you add existing products as well as generate new variations. 
+<!--- 57165 -->* The **Add Products Manually** option now lets you add existing products as well as generate new variations. 
 
 
 
@@ -84,10 +84,10 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 
 <!--- 61564 -->* When you edit a product list widget on a CMS page, Magento now shows previously set conditions. Previously, when you tried to edit a product list widget, the condition parameter was empty. [GitHub-6616](https://github.com/magento/magento2/issues/6616)
 
-<!--- 60543 -->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the "Shipping and Tracking" block did not work properly. 
+<!--- 60543 -->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the Shipping and Tracking block did not work properly. 
 
 
-<!--- 60822 -->* Enabling  Admin > Stores > Configuration > Advanced > Developer > Merge CSS files no longer degrades product performance. Previously, enabling this setting slowed down both frontend and Admin processes. [GitHub-4321](https://github.com/magento/magento2/issues/4321)
+<!--- 60822 -->* Enabling  **Admin > Stores > Configuration > Advanced > Developer > Merge CSS files** no longer degrades product performance. Previously, enabling this setting slowed down both frontend and Admin processes. [GitHub-4321](https://github.com/magento/magento2/issues/4321)
 
 
 <!--- 61060 -->*  Magento no longer generates incorrect URLs in the site map when the **Use Secure URLs in Admin** setting is set to **Yes**. [GitHub-8644](https://github.com/magento/magento2/issues/8644)  
@@ -119,7 +119,7 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 
 <!--- 63590 -->* Magento now maintains super attribute ordering of configurable products with multiple super attributes after export or import. Previously, after import or export, the ordering of super attributes was not maintained. [GitHub-6079](https://github.com/magento/magento2/issues/6079)
 
-<!--- 63033 -->* We've fixed an issue where product URL keys (for SKUs) were no auto-generated as expected during import.
+<!--- 63033 -->* We've fixed an issue where product URL keys (for SKUs) were not auto-generated as expected during import.
 
 <!--- 58392 -->* Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: `Invalid data for insert`. [GitHub-4921](https://github.com/magento/magento2/issues/4921), [GitHub-9469](https://github.com/magento/magento2/issues/9469)
 
@@ -155,11 +155,11 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 
 
 
-<!---  -->*
+<!---  -->
 
-<!--- INTERNAL ONLY 72053 72010 71171 71153  71116 68825 67201 67018 66634 66604 63297 62467 62152 61236 61228 61227 61226 61225 61222 61221 61215 61210 61206 -->*
+<!--- INTERNAL ONLY 72053 72010 71171 71153  71116 68825 67201 67018 66634 66604 63297 62467 62152 61236 61228 61227 61226 61225 61222 61221 61215 61210 61206 -->
 
-<!--- NOT NEEDED 58771  -->*
+<!--- NOT NEEDED 58771  -->
 
 
 
