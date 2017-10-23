@@ -85,6 +85,10 @@ For an example of variables, we walk you through creating Magento Admin variable
 
 To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
 
+For new Pro projects **created after 10-23-2017**, you can add variables for all environments through the Project Web Interface.
+
+{% include cloud/wings-variables.md %}
+
 ### Environment variable {#env}
 To set environment specific variables in the Project Web Interface:
 

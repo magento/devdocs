@@ -122,6 +122,10 @@ If you would like to learn more about Magento 2, see the following resources:
   * Starter: Master and all environments branched from it
   * Pro: Integration and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your [interface updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html) to manage all environments.
 
+    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    **New projects provisioned starting October 23, 2017** will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted.
+    </div>
+
 ## Technical support {#gethelp}
 You can enter a support ticket through the Project Web Interface:
 
@@ -130,5 +134,5 @@ You can enter a support ticket through the Project Web Interface:
 
 	The following figure shows an example.
 
-	![Enter a support ticket]({{ site.baseurl }}common/images/cloud_support-ticket.png){:width="600px"}
+	![Enter a support ticket]({{ site.baseurl }}common/images/cloud_support-ticket.png)
 3.	Follow the prompts to open an issue with Support. Support will respond to your ticket in a timely manner.

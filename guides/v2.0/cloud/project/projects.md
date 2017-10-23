@@ -54,9 +54,13 @@ For **Starter**, you will see a hierarchy of branches starting from Master (Prod
 
 ![Starter branch hierarchy]({{ site.baseurl }}common/images/cloud_project-starter.png)
 
-For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Development (Integration Master). Any branches you create display as children from Development (Integration Master). For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
+For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration. The ![Enterprise icon]({{ site.baseurl }}common/images/cloud_icon-enterprise.png) icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
+
+If you are an existing Pro merchant, and have not ticketed to [add Staging and Production]({{page.baseurl}}cloud/trouble/pro-env-management.html) to your UI, you will see only Integration `master` and any created branches.
+
+![Pro branch hierarchy (original)]({{ site.baseurl }}common/images/cloud_project-pro-old.png)
 
 To access an environment store and admin, select a branch and click **Access Site**. A list of store URLs and SSH command display. Select the URL to view the store in that environment.
 
@@ -73,7 +77,7 @@ If you have inactive Git branches of code, you can toggle displaying the branche
 
 ![Show or hide inactive branches]({{ site.baseurl }}common/images/cloud_show-inactive.png)
 
-## Configure environments
+## Configure environments {#configure}
 You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{page.baseurl}}cloud/env/environments.html), each of which corresponds to a Git branch.
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png)
