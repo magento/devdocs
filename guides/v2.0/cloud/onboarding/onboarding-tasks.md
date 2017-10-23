@@ -14,19 +14,20 @@ After your company purchases a subscription plan for {{site.data.var.ece}}, the 
 
 To quickly onboard your project to start developing your site and going live, you need to complete specific set up steps and onboarding tasks. Typically, you need the Project Owner to start. Technical Admin(s) with super user access can continue.
 
+If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the following first steps:
+
+* Created your Cloud account and project
+* Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
+* Created an environment for the `master` branch with a web server, database, and services
+* Added Magento authentication keys for the Project Owner
+* Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{page.baseurl}}cloud/before/before-project-owner.html#variables) for the default admin account to access the Magento Admin panel.
+
+See [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for further information and steps.
+
 ## Project access and users {#users}
 The _Project Owner_ is typically a "business user" in your business or finance organization that purchased the subscription and is your point of contact with Magento regarding the account overall. The owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
 
 Typically, the only user the Project Owner must create is the _Technical Admin_. This user should have a user account with the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments. Typically, the Technical Admin is a developer, consultant, a [Magento Solution Partner](https://magento.com/find-a-partner){:target="_blank"}, or yourself.
-
-<!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the first steps:
-
-* Created your account
-* Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
-* Created an environment for the `master` branch
-* Added Magento authentication keys for the Project Owner
-</div> -->
 
 ## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
 Don't have a {{site.data.var.ece}} account yet? Sign up for a [free 30-day trial](https://magento.com/trial){:target="_blank"} for a Starter or Pro plan, or contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. We will create your account and send you a welcome e-mail that provides instructions to access the project.
@@ -39,12 +40,11 @@ After you register for an account, Magento sends you a welcome e-mail at the add
 You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
 
 ## Get started with the Project Web Interface {#project-setup}
-<!-- When you sign up for a trial Pro or Starter subscription plan, we provisioned your initial environment with a template {{site.data.var.ece}} repository. This repo is called `master` with a full environment in a Platform-as-a-Servie (PaaS) environment. Each active environment includes an active Git branch of code, web server, database, and services to fully test your Magento deployments. -->
-We provide a Project Web Interface for you to create your project, add user accounts, and get started developing your store(s). This [web interface]({{page.baseurl}}cloud/env/environments.html) is helpful for the Technical Admin and developers to manage all environments and branches, environment variables, environment settings, and routes.
+When you sign up for a Trial Pro or Starter subscription plan, we provisioned your initial environment with a template {{site.data.var.ece}} repository. For Trial accounts, please continue to [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html).
 
-For details on these environments, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) and [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
+We provide a [Project Web Interface]({{page.baseurl}}cloud/project/projects.html) for you to manage your project, add user accounts, and get started developing your store(s). This interface provides a UI for the Project Owner, Technical Admin, and developers to manage all environments and branches, environment variables, environment settings, and routes.
 
-To access and manage your project environments, the Project Owner needs to:
+For non-Trial projects, the Project Owner needs to [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html):
 
 * Create the project
 * Add user accounts to invite developers to the project
@@ -52,11 +52,7 @@ To access and manage your project environments, the Project Owner needs to:
 * Add admin variables to the Project
 * Review credentials for integrated services
 
-<!--  Remove the admin variable bullet from this section when auto provisioning is added!  -->
-
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
-
-For detailed instructions for setting up environments, see [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html). For more information on the interface, see [Manage your project]({{page.baseurl}}cloud/project/projects.html). This interface provides full project and environment management including environment settings, environment variables, routes, and deploying to Staging and Production for Starter and Pro.
 
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}common/images/cloud_project-access.png)
 
@@ -71,31 +67,28 @@ When you initially create your project, you can access the Magento Admin panel t
 2. Click the forgot Password link and complete the process to change the password.
 3. Login to the Admin panel using the username Admin and newly changed password.
 
-If you receive an error, you may need to add admin variables for ADMIN_EMAIL, ADMIN_USERNAME, and ADMIN_PASSWORD. For details, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables) or [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
+If you receive an error, you may need to add admin variables for `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD`. Trial accounts should already have the `ADMIN_EMAIL` variable configured for them. For details, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables) or [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
 
-## Coming soon: Onboarding Portal {#portal}
-<!-- (http://cloud.magento.com){:target="_blank"} -->
-We will provide a new Onboarding Portal to initially set up your project and get you started. The portal will be a web interface allowing the Project Owner to initially start settings up the project and understand the onboarding process for {{site.data.var.ece}}.
+## Onboarding Portal {#portal}
+The [Onboarding Portal]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) is available for new Trial projects for Starter and Pro. Existing projects or non-trial new accounts cannot access the portal at this time. For more information, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
 
-This portal is helpful for business and technical users to review and manage a new project from creation to initial launch.
+The portal is a web interface allowing the Project Owner to initially start setting up the project and understand the onboarding process for {{site.data.var.ece}}. This portal is helpful for business and technical users to review and manage a new project from creation to initial launch.
 
 Depending on your subscription plan, you can:
 
 * Add a technical admin with super user access
 * (Pro) Complete a provisioning form for Staging and Production
 * Review checklists for workflows including development, UAT testing, and launching live
-* Create a high-level project schedule
 * Access the [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} for your environments
 * Kick off going live
 * Enter support tickets
 
-<!-- For detailed information on the portal, see [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html).
--->
-![Use the onboarding portal to get started]({{ site.baseurl }}common/images/cloud_onboard-portal.png)
+![Use the onboarding portal to get started]({{ site.baseurl }}common/images/cloud_portal-getstarted1.png)
 
 #### Related topics
-<!-- * [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) -->
+* [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html)
 * [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html)
+* [Manage your project]({{page.baseurl}}cloud/project/projects.html)
 * [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
 * [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 * [Welcome to Magento Commerce (Cloud)]({{page.baseurl}}cloud/bk-cloud.html)

@@ -3,6 +3,9 @@ pages:
     - label: Welcome to Magento Commerce (Cloud)
       url: cloud/bk-cloud.html
       children:
+        - label: Subscriptions and plans
+          url: cloud/basic-information/cloud-plans.html
+
         - label: Starter architecture
           url: cloud/basic-information/starter-architecture.html
 
@@ -18,6 +21,9 @@ pages:
     - label: Onboarding tasks
       url: cloud/onboarding/onboarding-tasks.html
       children:
+        - label: Onboarding Portal management
+          url: cloud/onboarding/onboarding-portal.html
+
         - label: Prepare project environments
           url: cloud/before/before-project-owner.html
 
