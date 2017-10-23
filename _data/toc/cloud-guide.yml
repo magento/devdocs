@@ -18,6 +18,9 @@ pages:
     - label: Onboarding tasks
       url: cloud/onboarding/onboarding-tasks.html
       children:
+        - label: Onboarding Portal management
+          url: cloud/onboarding/onboarding-portal.html
+
         - label: Prepare project environments
           url: cloud/before/before-project-owner.html
 

@@ -11,7 +11,7 @@ github_link: cloud/basic-information/cloud-plans.md
 ---
 
 
-{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}.
+{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your [free 30-day trial](https://magento.com/trial){:target="_blank"}, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}.
 
 <table>
     <tbody>
@@ -67,10 +67,20 @@ github_link: cloud/basic-information/cloud-plans.md
 </table>
 
 ## Trial accounts {#trials}
-We provide a free 30-day trial for both Start and Pro to give you a full preview of {{site.data.var.ece}} running on Cloud infrastructures. When signing up for a trial, we automatically provision your project with the latest version of {{site.data.var.ece}}.
+We provide a [free 30-day trial](https://magento.com/trial){:target="_blank"} for both Start and Pro to give you a full preview of {{site.data.var.ece}} running on Cloud infrastructures. When signing up for a trial, we automatically provision your project with the latest version of {{site.data.var.ece}}. We also provide an [Onboarding Portal]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for reviewing your project and getting started.
+
+![Onboarding Portal getting started]({{ site.baseurl }}common/images/cloud_portal-trial.png)
+
+See the [Trial signup](https://magento.com/trial){:target="_blank"} for full details and subscription prices.
 
 ## Get started! {#getstarted}
 If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as s base template. If you didn't start with a trial, we have information to help set up your project.
 
+For new or existing projects without a Trial, we include instructions to help you prepare your project and start developing.
+
+See the following topics to learn more about onboarding and next steps:
+
 * [Onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) walks through the initial steps you should consider and complete when new to your project.
-* [Prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) lists all of the steps to complete from creating a project and providing access to your technical staff and solution experts access, create your project. If you started with a trial, we have set up most of this for you.
+* [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) provides a central portal for getting started with new Trial Starter and Pro accounts.
+* [Prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) lists all of the steps to complete from creating a project and providing access to your technical staff and solution experts access, create your project. If you started with a Trial, we have set up most of this for you.
+* [Additional documentation]({{page.baseurl}}cloud/bk-cloud.html#magento2) to learn more about Magento 2
