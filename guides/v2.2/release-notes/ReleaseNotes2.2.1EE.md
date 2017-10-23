@@ -35,7 +35,7 @@ Magento 2.2.1 includes multiple security enhancements. Although this release inc
 
 ## Known issues
 
-Magento 2.2.1 GA includes the following known issues. Fixes for these issues are scheduled for patch releases in the near future. 
+Magento 2.2.1  includes the following known issues. Fixes for these issues are scheduled for patch releases in the near future. 
 
 
 
@@ -48,6 +48,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 80225 -->* We’ve improved the message that Magento displays during upgrade if any schema or data version in the `setup_modules` database is higher than the current module version in the code. *Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler </a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.*
 
+<!--- 71893 -->* If you do not specify `—base_url` during installation, all URLS now use the host and port of the current request to create URLs. 
 
 ### AMQP
 
@@ -61,7 +62,13 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 71520 -->* Magento now displays products that are filtered to a particular store view even when the corresponding store view has been deleted. Previously, Magento displayed a continuously spinning  spinner widget and this error message: **A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later.**
 
+<!--- 72382 -->*  You can now save custom shared catalogs.
 
+<!--- 78522 -->*  EE ONLY
+
+### Cart and checkout
+
+<!--- 71984 -->* Magento now provides a Login button so that you can resume your checkout process if you return to the check out page after leaving it mid-order.
 
 
 ### Configurable products
@@ -71,7 +78,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 72747 -->* If a configurable product is part of a shipment that is being created by REST, only the parent's quantity will count towards the total quantity of shipped items. Previously, Magento counted both child and parent products when calculating quantity.
 
-
+<!--- 72582 -->* Configurable product pricing now reflects only in-stock configurations as expected.
 
 
 ### Frameworks
@@ -89,6 +96,13 @@ This release contains hundreds of fixes and enhancements.
 <!--- 80096 -->* We fixed JavaScript date validation on the store front. Previously, validation of the date of birth field during customer registration when the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
 
 <!--- 80112 -->* We’ve added a CSS selector to remove an additional top-margin that was rendered when you added  a link widget to the footer in the Luma theme. Previously, when you added a new footer links, the block of footer links did not line up with the default footer links. *Fix submitted by community member <a href="https://github.com/fragdochkarl" target="_blank">Sandro Wagner</a> in pull request <a href="https://github.com/magento/magento2/pull/11063" target="_blank">11063</a>.*
+
+<!--- 71980 -->* You can now remove system customer address and customer attributes from specific forms to prevent them from displaying on the frontend. 
+
+<!---  -->* 
+
+<!--- 72587 -->* Deleting a customer in Admin Panel no longer causes fatal errors upon storefront login or registration.
+
 
 
 
@@ -130,7 +144,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 71552 -->* You can now search for attribute values on the store-view level. 
 
-
+<!--- 72267 -->* Magento now displays grouped products in the Shared Catalog page when Elasticsearch is enabled. 
 
 
 ### Staging
@@ -141,6 +155,13 @@ This release contains hundreds of fixes and enhancements.
 Fix submitted by community member <a href="https://github.com/ericrisler" target="_blank">Eric Risler
 </a> in pull request <a href="https://github.com/magento/magento2/pull/8474" target="_blank">8474</a>.*
 
+
+### Visual Merchandiser
+<!--- 71554 -->*  We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
+
+<!--- 71986 -->*  Visual Merchandiser now retains page view options and position after you remove a product. Previously, when you removed a product from a category, and you weren't on the first page, Magento returned you to the first page.
+
+
 ## Community contributions
 
  We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
@@ -149,6 +170,7 @@ Fix submitted by community member <a href="https://github.com/ericrisler" target
 * If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*". 
 
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of  top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub. 
+
 
 
 
