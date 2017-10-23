@@ -53,7 +53,7 @@ After the conversion, the three repositories are merged into a single repository
 <table>
 <thead>
 <tr>
-<th style="width: 100px;">Branch</th>
+<th style="width: 125px;">Branch</th>
 <th style="width: 100px;">Environment</th>
 <th>Description</th>
 </tr></thead>
@@ -67,13 +67,13 @@ After the conversion, the three repositories are merged into a single repository
 <tr>
 <td><code>production</code></td>
 <td>Production</td>
-<td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
+<td><p>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
 <p>When you convert, the Integration <code>master</code> is branched into a <code>production</code> branch with the users access and environment variables.</p></td>
 </tr>
 <tr>
 <td><code>staging</code></td>
 <td>Staging</td>
-<td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
+<td><p>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to test in a pre-production environment.</p>
 <p>When you convert, the Integration <code>master</code> is branched into a <code>staging</code> branch with the users access and environment variables.</p></td>
 </tr>
 <tr>

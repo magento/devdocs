@@ -134,11 +134,11 @@ To fully understand the process, please see [our extensive example]({{ page.base
 
 The **Starter plan** environment high-level overview of this process:
 
-![Overview of Starter configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-starter-2-1.png)
+![Overview of Starter configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-starter-2-2.png)
 
 The **Pro plan** environment high-level overview of this process:
 
-![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png)
+![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-2.png)
 
 ### Step 1: Configure your store
 Complete all configurations for your stores in the Admin console:
@@ -175,7 +175,7 @@ Log into the Magento Admin in those environments to verify the settings. If you 
 
 For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.
 
-For Pro, when you push to the Git branch, the Integration `master` environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
+For Pro, when you push to the Git branch, the Integration `master` environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
 ## Update configuations {#update}
 If you need to modify or remove any existing configuration settings in `config.php`, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git to update.

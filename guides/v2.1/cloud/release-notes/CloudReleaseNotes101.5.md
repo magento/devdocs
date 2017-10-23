@@ -16,6 +16,10 @@ redirect_from:
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}} version 2.1.5, `magento-cloud-configuration` release 101.5.2, 101.5.3, and 101.5.4.
 
+## General changes
+
+Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+
 ## 101.5.4 changes
 In `magento-cloud-configuration` release 101.5.4 on {{site.data.var.ece}} 2.1.5, we provide the following improvements:
 

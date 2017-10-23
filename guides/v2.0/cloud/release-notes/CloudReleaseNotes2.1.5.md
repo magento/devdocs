@@ -16,8 +16,10 @@ redirect_from:
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.5 and 2.0.13.
 
-## Change in this release
-This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.
+## Changes in this release
+
+* This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.
+* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
 
 
 ### {{site.data.var.ee}} Release Notes
