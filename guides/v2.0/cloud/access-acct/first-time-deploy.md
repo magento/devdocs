@@ -45,8 +45,23 @@ If you are on a Pro trial and do not have Staging and Production environments pr
 
 To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.
 
-## Deploy to Staging and Production
-You can SSH into the Staging and Production environments to push the `master` branch. You'll need the SSH and Git with your project ID. The formats are as follows:
+## Deploy to Staging and Production {#deploy}
+The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans. You can also use SSH and CLI commands to complete these process. Previously for Pro plans, you could only use SSH and CLI commands for Staging and Production.
+
+For the Pro plan, deploy the branch you created to Staging and Production.
+
+1. [Log in](https://accounts.magento.cloud) to your project.
+2. Select the branch you created.
+3. Select the **Merge** option to deploy to Staging.
+4. Select the Staging branch.
+5. Select the **Merge** option to deploy to Production.
+
+![Use the merge option to deploy]({{ site.baseurl }}common/images/cloud_project-merge.png)
+
+## Deploy using SSH {#ssh}
+If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the `master` branch.
+
+You'll need the SSH and Git with your project ID. The formats are as follows:
 
 *	Git URL format:
 

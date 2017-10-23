@@ -10,10 +10,14 @@ version: 2.0
 github_link: cloud/project/user-admin.md
 ---
 
-{{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users.
+{{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. You can add and manage user accounts for the entire project and permissions per available environment.
+
+{% include cloud/wings-management.md %}
 
 ## Account owner role {#cloud-role-acct-owner}
-The account owner (that is, the person who registered the {{site.data.var.ece}} account) is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it.
+The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the trial or create new account process.
+
+The account has super user access and additional capabilities for managing all aspects of your project and environments.
 
 ## Project-level roles {#cloud-role-project}
 You can assign users to the following roles per project:

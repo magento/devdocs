@@ -193,7 +193,5 @@ The following steps provide an example of accessing a database:
 {% include cloud/log-in-db.md %}
 
 #### Related topics
-*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)
+*	[Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html)
+*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
