@@ -3,6 +3,9 @@ pages:
     - label: Welcome to Magento Commerce (Cloud)
       url: cloud/bk-cloud.html
       children:
+        - label: Subscriptions and plans
+          url: cloud/basic-information/cloud-plans.html
+
         - label: Starter architecture
           url: cloud/basic-information/starter-architecture.html
 
