@@ -44,7 +44,7 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 
 
 <!--- 58792 -->* The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`, and during save operations, Magento resized images for images the default store only. 
-<div class="bs-callout bs-callout-info" id="info" markdown="1"> 
+
 
 
 <!--- 61798 -->* When you delete an image in Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for`).
