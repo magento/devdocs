@@ -1876,6 +1876,11 @@
 <h2 id="cloud-arch-stage">Staging environment</h2>
 <p>The Staging environment provides a near-Production environment to test your site. This environment includes all services used in Production including Fastly, New Relic, Blackfire, and search. All code in Staging is read-only, requiring deploys of Git repositories. This environment shares the same dedicated server with Production.</p>
 
+<ul>
+  <li>For projects created <strong>before 10-23-2017</strong>, this environment has a <code class="highlighter-rouge">master</code> branch in a Staging repository. You push code from the Integration <code class="highlighter-rouge">master</code> to this branch.</li>
+  <li>For projects created <strong>after 10-23-2017</strong>, this environment has a <code class="highlighter-rouge">staging</code> branch. This is a child of the <code class="highlighter-rouge">master</code> branch with a deployment target. You merge code from <code class="highlighter-rouge">master</code> this this branch.</li>
+</ul>
+
 <p>Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.</p>
 
 <p>We walk you through <a href="/guides/v2.0/cloud/live/stage-prod-live.html">deploying to Staging</a> and <a href="/guides/v2.0/cloud/live/stage-prod-test.html">testing your store(s)</a> requirements and processes.</p>
@@ -1884,6 +1889,11 @@
 
 <h2 id="cloud-arch-prod">Production environment</h2>
 <p>The Production environment runs your public-facing Magento single and multisite storefronts. This environment include triple-redundant High Availability nodes for continuous access and failover protection for your customers. This system is read-only, requiring deployment across the architecture from Integration to Staging and finally Production.</p>
+
+<ul>
+  <li>For projects created <strong>before 10-23-2017</strong>, this environment has a <code class="highlighter-rouge">master</code> branch in a Staging repository. You push code from the Integration <code class="highlighter-rouge">master</code> to this branch.</li>
+  <li>For projects created <strong>after 10-23-2017</strong>, this environment has a <code class="highlighter-rouge">production</code> branch. This is a child of the <code class="highlighter-rouge">master</code> branch with a deployment target. You merge code from <code class="highlighter-rouge">master</code> this this branch.</li>
+</ul>
 
 <p>We walk you through <a href="/guides/v2.0/cloud/live/stage-prod-live.html">deploying to Production</a> and <a href="/guides/v2.0/cloud/live/live.html">Go Live</a> requirements and processes.</p>
 

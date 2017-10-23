@@ -1050,14 +1050,13 @@
 </section>
 
 
-			<h3 id="changes">Changes</h3>
+			<h3 id="changes-in-this-release">Changes in this release</h3>
 <p>We made the following change in this release:</p>
 
-<p>Added a new environment variable, <code class="highlighter-rouge">UPDATE_URLS</code>, which if set to <code class="highlighter-rouge">enabled</code> causes Magento base URLs in the database with to be replaced with Cloud project URLs.</p>
-
-<p>By default, <code class="highlighter-rouge">UPDATE_URLS</code> is set to <code class="highlighter-rouge">enabled</code>. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
-
-<p>You should set this variable to <code class="highlighter-rouge">disabled</code> <em>only</em> in staging or production, where the base URLs can’t change.</p>
+<ul>
+  <li>Added a new environment variable, <code class="highlighter-rouge">UPDATE_URLS</code>, which if set to <code class="highlighter-rouge">enabled</code> causes Magento base URLs in the database with to be replaced with Cloud project URLs. By default, <code class="highlighter-rouge">UPDATE_URLS</code> is set to <code class="highlighter-rouge">enabled</code>. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs. You should set this variable to <code class="highlighter-rouge">disabled</code> <em>only</em> in staging or production, where the base URLs can’t change.</li>
+  <li>Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</li>
+</ul>
 
 <h3 id="functional-fixes-and-enhancements">Functional fixes and enhancements</h3>
 <p>We made the following fixes in this release:</p>
@@ -1068,6 +1067,7 @@
   <li>You no longer need a <code class="highlighter-rouge">pub/front-static.php</code> in your template.</li>
   <li>We now back up <code class="highlighter-rouge">env.php</code> before disabling the Redis cache during deployment.</li>
   <li>Patches are now applied in alphabetical order.</li>
+  <li>Staging and Production environments in the UI for Pro projects. Starting 10-23-2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before 10-23-2017 can enter a ticket to be updated. For more information, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</li>
 </ul>
 
 <h3 id="known-issues">Known issues</h3>

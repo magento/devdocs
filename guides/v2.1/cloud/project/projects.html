@@ -1894,6 +1894,40 @@ These sections include instructions for Pro projects updated to manage Staging a
 
   <p><img src="/common/images/cloud_project-pro.png" alt="Pro branch hierarchy" /></p>
 
+  <p>The following table details the branches for Pro:</p>
+
+  <table>
+<thead>
+<tr>
+<th style="width: 125px;">Branch</th>
+<th style="width: 100px;">Environment</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>(no branch)</td>
+<td>Global Master</td>
+<td>This "branch" captures global project changes including adding user accounts and variables.
+</td>
+</tr>
+<tr>
+<td><code>production</code></td>
+<td>Production</td>
+<td>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</td>
+</tr>
+<tr>
+<td><code>staging</code></td>
+<td>Staging</td>
+<td>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to test in a pre-production environment.</td>
+</tr>
+<tr>
+<td><code>master</code></td>
+<td>Integration master</td>
+<td>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code. When this code is complete, you merge to <code>staging</code> and <code>production</code>.</td>
+</tr>
+</tbody>
+</table>
+
   <p>If you are an existing Pro merchant, and have not ticketed to <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">add Staging and Production</a> to your UI, you will see only Integration <code class="highlighter-rouge">master</code> and any created branches.</p>
 
   <p><img src="/common/images/cloud_project-pro-old.png" alt="Pro branch hierarchy (original)" /></p>
