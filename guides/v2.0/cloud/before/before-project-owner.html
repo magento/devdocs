@@ -212,6 +212,20 @@
         
         
         
+        <li class="nav-level2  " id="subscriptions-and-plans">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/basic-information/cloud-plans.html">Subscriptions and plans</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="starter-architecture">
             
             
@@ -286,6 +300,20 @@
 
     
     <ul>
+        
+        
+        
+        <li class="nav-level2  " id="onboarding-portal-management">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/onboarding/onboarding-portal.html">Onboarding Portal management</a>
+            
+
+            
+        </li>
+        
         
         
         
@@ -1814,24 +1842,30 @@
 </section>
 
 
-			<!--
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-This information details the manually steps for setting up your project, account, and environment access for development. If you joined with a free trial, some of the provisioning steps were completed for you. In this case, you can review these steps or use the new onboarding portal.
-</div>
--->
-
-<p>To initially set up your Magento Commerce (Cloud) project, you need the Project Owner to create the project, add a super user, and generate Magento Commerce authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.</p>
+			<p>To initially set up your Magento Commerce (Cloud) project, you need the Project Owner to create the project, add a super user, and generate Magento Commerce authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.</p>
 
 <p><strong>Important:</strong> The Project Owner is required to complete the following steps:</p>
 
 <ul>
-  <li>Step 1: Generate Magento authentication keys</li>
-  <li>Step 2: Add admin variables</li>
-  <li>Step 3: Create the project</li>
-  <li>Step 4: Add a project admin account</li>
+  <li>Step 1: <a href="#cloud-owner-keys">Generate Magento authentication keys</a></li>
+  <li>Step 2: <a href="#variables">Add admin variables</a></li>
+  <li>Step 3: <a href="#create-project">Create the project</a></li>
+  <li>Step 4: <a href="#cloud-owner-admins">Add a Technical Admin account</a></li>
 </ul>
 
 <p>After you have completed those tasks, the Technical Admin can manage development and deployments for you.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you joined us with a 30 day free trial Magento Commerce (Cloud) account, we took care of the following first steps. See <a href="/guides/v2.0/cloud/onboarding/onboarding-portal.html">Onboarding Portal management</a> for further information and steps.</p>
+
+  <ul>
+    <li>Created your Cloud account and project</li>
+    <li>Provisioned the initial environment with a cloned Magento Commerce (Cloud) code base in a <code class="highlighter-rouge">master</code> branch</li>
+    <li>Created an environment for the <code class="highlighter-rouge">master</code> branch with a web server, database, and services</li>
+    <li>Added Magento authentication keys for the Project Owner</li>
+    <li>Add the <code class="highlighter-rouge">ADMIN_EMAIL</code> variable. You can <a href="/guides/v2.0/cloud/before/before-project-owner.html#variables">add additional variables</a> for the default admin account to access the Magento Admin panel.</li>
+  </ul>
+</div>
 
 <h2 id="cloud-owner-keys">Step 1: Generate Magento authentication keys</h2>
 <p>Any developers or users that want to access the project require Magento authentication keys. The Project Owner needs to generate Magento authentication keys (includes 1 public and 1 private) through a Magento Marketplace account for the project. When you first create your project, you will be prompted to add them.</p>
