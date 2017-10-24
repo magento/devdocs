@@ -5,9 +5,15 @@ title: Annotations in the Magento Functional Testing Framework cests
 github_link: magento-functional-testing-framework/actions.md
 ---
 
-This topic contains a reference list of available annotations and action tags list of action type tags available in the MFTF cests.
+This topic contains a reference list of available action type tags available in the MFTF cests.
 
-## Action type tags
+## Overview
+
+## Principles
+
+## Example
+
+## Available actions
 
 ### acceptPopup
 
