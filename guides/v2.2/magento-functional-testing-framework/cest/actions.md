@@ -1,11 +1,13 @@
 ---
 layout: default
 group: mftf
-title: Cest actions
-github_link: magento-functional-testing-framework/cest.md
+title: Annotations in the Magento Functional Testing Framework cests
+github_link: magento-functional-testing-framework/actions.md
 ---
 
-## Actions
+This topic contains a reference list of available annotations and action tags list of action type tags available in the MFTF cests.
+
+## Action type tags
 
 ### acceptPopup
 
@@ -155,8 +157,6 @@ after|xs:string|optional|
 
 ### closeAdminNotification
 
-[See closeAdminNotification docs on codeception.com](http://codeception.com/docs/modules/WebDriver#closeAdminNotification){:target='_blank'}
-
 Attribute|Type|Use|Default
 ---|---|---|---
 mergeKey|xs:string|required|
@@ -177,8 +177,6 @@ after|xs:string|optional|
 
 ### conditionalClick
 
-[See conditionalClick docs on codeception.com](http://codeception.com/docs/modules/WebDriver#conditionalClick){:target='_blank'}
-
 Attribute|Type|Use|Default
 ---|---|---|---
 selector|xs:string|optional|
@@ -191,14 +189,27 @@ after|xs:string|optional|
 
 ### createData
 
-[See createData docs on codeception.com](http://codeception.com/docs/modules/WebDriver#createData){:target='_blank'}
+Attribute|Type|Use|Default
+---|---|---|---
+entity|string|required|	
+mergeKey|string|required	
+remove| boolean|optional|false
+before|string|optional|	
+after|string|optional|	
+storeCode|string|optional|
+
+It can contain one or more child elements `required-entity` optionally.
+
+#### required-entity
 
 Attribute|Type|Use|Default
 ---|---|---|---
+createDataKey|string|required|	
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### deleteData
-
-[See deleteData docs on codeception.com](http://codeception.com/docs/modules/WebDriver#deleteData){:target='_blank'}
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -384,8 +395,6 @@ after|xs:string|optional|
 
 ### dontSeeJsError
 
-[See dontSeeJsError docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeJsError){:target='_blank'}
-
 Attribute|Type|Use|Default
 ---|---|---|---
 mergeKey|xs:string|required|
@@ -486,8 +495,6 @@ before|xs:string|optional|
 after|xs:string|optional|
 
 ### formatMoney
-
-[See formatMoney docs on codeception.com](http://codeception.com/docs/modules/WebDriver#formatMoney){:target='_blank'}
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -613,8 +620,6 @@ after|xs:string|optional|
 
 ### loginAsAdmin
 
-[See loginAsAdmin docs on codeception.com](http://codeception.com/docs/modules/WebDriver#loginAsAdmin){:target='_blank'}
-
 Attribute|Type|Use|Default
 ---|---|---|---
 username|xs:string|optional|
@@ -687,8 +692,6 @@ after|xs:string|optional|
 
 ### mSetLocale
 
-[See mSetLocale docs on codeception.com](http://codeception.com/docs/modules/WebDriver#mSetLocale){:target='_blank'}
-
 Attribute|Type|Use|Default
 ---|---|---|---
 userInput|xs:string|optional|
@@ -700,8 +703,6 @@ before|xs:string|optional|
 after|xs:string|optional|
 
 ### mResetLocale
-
-[See mResetLocale docs on codeception.com](http://codeception.com/docs/modules/WebDriver#mResetLocale){:target='_blank'}
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -722,8 +723,6 @@ before|xs:string|optional|
 after|xs:string|optional|
 
 ### parseFloat
-
-[See parseFloat docs on codeception.com](http://codeception.com/docs/modules/WebDriver#parseFloat){:target='_blank'}
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -841,8 +840,6 @@ after|xs:string|optional|
 
 ### scrollToTopOfPage
 
-[See scrollToTopOfPage docs on codeception.com](http://codeception.com/docs/modules/WebDriver#scrollToTopOfPage){:target='_blank'}
-
 Attribute|Type|Use|Default
 ---|---|---|---
 mergeKey|xs:string|required|
@@ -851,8 +848,6 @@ before|xs:string|optional|
 after|xs:string|optional|
 
 ### searchAndMultiSelectOption
-
-[See searchAndMultiSelectOption docs on codeception.com](http://codeception.com/docs/modules/WebDriver#searchAndMultiSelectOption){:target='_blank'}
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -1243,8 +1238,6 @@ after|xs:string|optional|
 
 ### waitForAjaxLoad
 
-[See waitForAjaxLoad docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForAjaxLoad){:target='_blank'}
-
 Attribute|Type|Use|Default
 ---|---|---|---
 time|xs:string|optional|
@@ -1321,8 +1314,6 @@ after|xs:string|optional|
 
 ### waitForLoadingMaskToDisappear
 
-[See waitForLoadingMaskToDisappear docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForLoadingMaskToDisappear){:target='_blank'}
-
 Attribute|Type|Use|Default
 ---|---|---|---
 mergeKey|xs:string|required|
@@ -1331,8 +1322,6 @@ before|xs:string|optional|
 after|xs:string|optional|
 
 ### waitForPageLoad
-
-[See waitForPageLoad docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForPageLoad){:target='_blank'}
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -1356,3 +1345,8 @@ mergeKey|xs:string|required|
 remove|xs:boolean|optional|false
 before|xs:string|optional|
 after|xs:string|optional|
+
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework

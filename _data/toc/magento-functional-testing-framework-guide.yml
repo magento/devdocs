@@ -3,14 +3,21 @@ pages:
 
   - label: Getting Started
     url: magento-functional-testing-framework/getting-started.html
-    versions: 2.3
+    versions: 2.2
 
-  - label: Test elements (XML)
-    url: magento-functional-testing-framework/cest.html
-    versions: 2.3
+  - label: Test (XML)
+    versions: 2.2
+    children:
 
-  - label: Commands
-    versions: 2.3
+      -label: Structure
+
+      -label: Annotations
+
+      -label: Actions
+        Annotations
+
+  - label: CLI Commands
+    versions: 2.2
     children:
 
       - label: robo
@@ -20,8 +27,8 @@ pages:
 
   - label: Update
     url: magento-functional-testing-framework/update.html
-    version: 2.3
+    version: 2.2
 
   - label: Troubleshooting
     url: magento-functional-testing-framework/troubleshooting.html
-    version: 2.3
+    version: 2.2
