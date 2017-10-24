@@ -1858,7 +1858,7 @@
 <h2 id="code">Deploy to Staging and Production</h2>
 <p>The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans. You can also use SSH and CLI commands to complete these process. Previously for Pro plans, you could only use SSH and CLI commands for Staging and Production.</p>
 
-<p>For Pro projects created <strong>after 10-23-2017</strong>, deploy the Integration <code class="highlighter-rouge">master</code> branch you created to Staging and Production.</p>
+<p>For Pro projects created <strong>after October 23, 2017</strong>, deploy the Integration <code class="highlighter-rouge">master</code> branch you created to Staging and Production.</p>
 
 <ol>
   <li><a href="https://accounts.magento.cloud">Log in</a> to your project.</li>
@@ -1872,7 +1872,7 @@
 
   <div class="bs-callout bs-callout-info" id="info">
     <p><strong>Updating your Pro project</strong>
-These sections include instructions for Pro projects updated to manage Staging and Production through the Project Web Interface. For more information adding this management to existing Pro projects (created before 10-23-2017), see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+These sections include instructions for Pro projects updated to manage Staging and Production through the Project Web Interface. For more information adding this management to existing Pro projects (created before October 23, 2017), see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
 
     <p>If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
   </div>
@@ -1896,9 +1896,9 @@ These sections include instructions for Pro projects updated to manage Staging a
 
   <p>For Starter projects, locate the SSH and Git information through the Project Web Interface.</p>
 
-  <p>For Pro projects created <strong>after 10-23-2017</strong>, locate the SSH and Git information through the Project Web Interface.</p>
+  <p>For Pro projects created <strong>after October 23, 2017</strong>, locate the SSH and Git information through the Project Web Interface.</p>
 
-  <p>For Pro projects created <strong>before 10-23-2017</strong>, the formats are as follows:</p>
+  <p>For Pro projects created <strong>before October 23, 2017</strong>, the formats are as follows:</p>
 
   <ul>
     <li>
@@ -1922,7 +1922,7 @@ These sections include instructions for Pro projects updated to manage Staging a
   <p>After that is set up, you can SSH into the environment and use Git commands to push the branches.</p>
 
   <h3 id="git">SSH and pull the Git branch</h3>
-  <p>This information is for Pro projects created <strong>before 10-23-2017</strong>.</p>
+  <p>This information is for Pro projects created <strong>before October 23, 2017</strong>.</p>
 
   <ol>
     <li>
@@ -1943,7 +1943,7 @@ These sections include instructions for Pro projects updated to manage Staging a
   </ol>
 
   <h3 id="ssh-and-merge-the-git-branch">SSH and merge the Git branch</h3>
-  <p>This information is for Pro projects created <strong>after 10-23-2017</strong>. The Integration branch is the <code class="highlighter-rouge">master</code> branch for your code base. To deploy to Staging and Production, you can merge or sync your <code class="highlighter-rouge">master</code> code to the <code class="highlighter-rouge">staging</code> and <code class="highlighter-rouge">production</code> branches.</p>
+  <p>This information is for Pro projects created <strong>after October 23, 2017</strong>. The Integration branch is the <code class="highlighter-rouge">master</code> branch for your code base. To deploy to Staging and Production, you can merge or sync your <code class="highlighter-rouge">master</code> code to the <code class="highlighter-rouge">staging</code> and <code class="highlighter-rouge">production</code> branches.</p>
 
   <h2 id="cloud-live-migrate-static">Deploy migrate static files</h2>
   <p>You will migrate <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> from your <code class="highlighter-rouge">pub/media</code> directory to Staging or Production.</p>
@@ -2100,19 +2100,17 @@ These sections include instructions for Pro projects updated to manage Staging a
   </ol>
 
   <h3 id="troubleshooting-the-database-migration">Troubleshooting the database migration</h3>
-  <p>If you set up stored procedures or views in your database, the following error might display during the import:</p>
+  <p>If you encounter the following error, you can try to create a database dump with the DEFINER replaced:</p>
 
   <div class="highlighter-rouge"><pre class="highlight"><code>ERROR 1277 (42000) at line &lt;number&gt;: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
 </code></pre>
   </div>
 
-  <p>The reason is that stored procedures and views both use <code class="highlighter-rouge">"DEFINER='root'@'localhost'"</code>, and you don’t have <code class="highlighter-rouge">root</code> user access to the staging or production databases.</p>
+  <p>This error occurs because the DEFINER for the triggers in the SQL dump is the production user. This user requires administrative permissions.</p>
 
-  <p>To solve the issue, create another database dump, replacing the <code class="highlighter-rouge">DEFINER</code> string with an empty string.</p>
+  <p>To solve the issue, you can generate a new database dump changing or removing the <code class="highlighter-rouge">DEFINER</code> clause. The following is one example of completing this change:</p>
 
-  <p>You can do this using a text editor or by using the following command:</p>
-
-  <div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip &gt; /tmp/database_no-definer.sql.gz
+  <div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main  | sed -i 's/DEFINER=[^*]**/*/g' | gzip &gt; /tmp/database_no-definer.sql.gz
 </code></pre>
   </div>
 

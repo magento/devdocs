@@ -1872,7 +1872,7 @@
 
   <div class="bs-callout bs-callout-info" id="info">
     <p><strong>Updating your Pro project</strong>
-These sections include instructions for Pro projects updated to manage Staging and Production through the Project Web Interface. For more information adding this management to existing Pro projects (created before 10-23-2017), see <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+These sections include instructions for Pro projects updated to manage Staging and Production through the Project Web Interface. For more information adding this management to existing Pro projects (created before October 23, 2017), see <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
 
     <p>If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
   </div>
@@ -1885,7 +1885,7 @@ These sections include instructions for Pro projects updated to manage Staging a
     <li>Set up your <a href="#ssh-agent">SSH agent</a> for Staging and Production.</li>
   </ol>
 
-  <p>If your project was created before 10-23-2017, you also need to set up <a href="#cloud-live-migrate-git">remote Git repositories</a> on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after 10-23-2017.</p>
+  <p>If your project was created before October 23, 2017, you also need to set up <a href="#cloud-live-migrate-git">remote Git repositories</a> on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.</p>
 
   <p>If you haven’t done so already, upload any <a href="/guides/v2.2/cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip">Fastly VCL snippets</a> in your Integration environment <code class="highlighter-rouge">master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
 
@@ -1894,7 +1894,7 @@ These sections include instructions for Pro projects updated to manage Staging a
 
   <div>
 
-    <p>For technical reasons, you need to enter a ticket to have your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code> file</a> file added to Staging and Production systems. This affects all Pro projects created before and after 10-23-2017.</p>
+    <p>For technical reasons, you need to enter a ticket to have your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code> file</a> file added to Staging and Production systems. This affects all Pro projects created before and after October 23, 2017.</p>
 
     <p>Create a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">support ticket</a> to let us help you migrate the file and implement any deployment hooks you set up.</p>
 
@@ -1907,11 +1907,11 @@ These sections include instructions for Pro projects updated to manage Staging a
 </div>
 
     <h3 id="pro-urls">Get your Pro access URLs</h3>
-    <p>For Pro projects created <strong>after 10-23-2017</strong>, you can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link.</p>
+    <p>For Pro projects created <strong>after October 23, 2017</strong>, you can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link.</p>
 
     <p><img src="/common/images/cloud_project-access.png" alt="Access your project" /></p>
 
-    <p>For Pro projects created <strong>before 10-23-2017</strong>, you would need to access the information we provided when creating your account. This information is typically provided in a OneDrive onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You’ll use this information for accessing the environments.</p>
+    <p>For Pro projects created <strong>before October 23, 2017</strong>, you would need to access the information we provided when creating your account. This information is typically provided in a OneDrive onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You’ll use this information for accessing the environments.</p>
 
     <ul>
       <li>
@@ -1948,9 +1948,9 @@ These sections include instructions for Pro projects updated to manage Staging a
     </ul>
 
     <h3 id="pro-remote">Set up Pro remote Git repositories</h3>
-    <p>For Pro projects created <strong>after 10-23-2017</strong>, you do not need to complete this step. Your Staging and Production environments are branches of <code class="highlighter-rouge">master</code> with configured deployment targets. You can simply merge code to these environments from Integration <code class="highlighter-rouge">master</code>.</p>
+    <p>For Pro projects created <strong>after October 23, 2017</strong>, you do not need to complete this step. Your Staging and Production environments are branches of <code class="highlighter-rouge">master</code> with configured deployment targets. You can simply merge code to these environments from Integration <code class="highlighter-rouge">master</code>.</p>
 
-    <p>For Pro projects created <strong>before 10-23-2017</strong>, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.</p>
+    <p>For Pro projects created <strong>before October 23, 2017</strong>, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.</p>
 
     <p>When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them. Basically, you configure these remote repositories using these instructions to SSH into the environements and push code and migrate data and files using Git commands.</p>
 
@@ -2028,7 +2028,7 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
     <p>For more information on setting up SSH, see <a href="/guides/v2.2/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> as part of your local setup. For Starter and Pro projects, you can add your SSH public key to all Integration, Staging and Production environments.</p>
 
-    <p>If you have a Pro project created <strong>before 10-23-2017</strong>, you need to enter a ticket with your public key to have it added to Staging and Production.</p>
+    <p>If you have a Pro project created <strong>before October 23, 2017</strong>, you need to enter a ticket with your public key to have it added to Staging and Production.</p>
 
     <h4 id="next-step">Next step</h4>
     <p><a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy</a></p>

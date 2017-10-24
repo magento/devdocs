@@ -2002,19 +2002,17 @@
 </ol>
 
 <h3 id="troubleshooting-the-database-migration">Troubleshooting the database migration</h3>
-<p>If you set up stored procedures or views in your database, the following error might display during the import:</p>
+<p>If you encounter the following error, you can try to create a database dump with the DEFINER replaced:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ERROR 1277 (42000) at line &lt;number&gt;: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
 </code></pre>
 </div>
 
-<p>The reason is that stored procedures and views both use <code class="highlighter-rouge">"DEFINER='root'@'localhost'"</code>, and you don’t have <code class="highlighter-rouge">root</code> user access to the staging or production databases.</p>
+<p>This error occurs because the DEFINER for the triggers in the SQL dump is the production user. This user requires administrative permissions.</p>
 
-<p>To solve the issue, create another database dump, replacing the <code class="highlighter-rouge">DEFINER</code> string with an empty string.</p>
+<p>To solve the issue, you can generate a new database dump changing or removing the <code class="highlighter-rouge">DEFINER</code> clause. The following is one example of completing this change:</p>
 
-<p>You can do this using a text editor or by using the following command:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip &gt; /tmp/database_no-definer.sql.gz
+<div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main  | sed -i 's/DEFINER=[^*]**/*/g' | gzip &gt; /tmp/database_no-definer.sql.gz
 </code></pre>
 </div>
 
