@@ -5,16 +5,18 @@ pages:
     url: magento-functional-testing-framework/getting-started.html
     versions: 2.2
 
-  - label: Test (XML)
+  - label: Cest
     versions: 2.2
     children:
 
-      -label: Structure
+      - label: Structure
+        url: magento-functional-testing-framework/cest/structure.html
 
-      -label: Annotations
+      - label: Annotations
+        url: magento-functional-testing-framework/cest/annotations.html
 
-      -label: Actions
-        Annotations
+      - label: Actions
+        url: magento-functional-testing-framework/cest/actions.html
 
   - label: CLI Commands
     versions: 2.2
