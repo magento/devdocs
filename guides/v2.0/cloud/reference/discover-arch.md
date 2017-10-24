@@ -42,8 +42,8 @@ Additional sections in this guide provide instructions and walk-throughs for set
 ## Staging environment {#cloud-arch-stage}
 The Staging environment provides a near-Production environment to test your site. This environment includes all services used in Production including Fastly, New Relic, Blackfire, and search. All code in Staging is read-only, requiring deploys of Git repositories. This environment shares the same dedicated server with Production.
 
-* For projects created **before 10-23-2017**, this environment has a `master` branch in a Staging repository. You push code from the Integration `master` to this branch.
-* For projects created **after 10-23-2017**, this environment has a `staging` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
+* For projects created **before October 23, 2017**, this environment has a `master` branch in a Staging repository. You push code from the Integration `master` to this branch.
+* For projects created **after October 23, 2017**, this environment has a `staging` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.
 
@@ -54,8 +54,8 @@ We highly recommend fully testing every merchant and customer interaction in Sta
 ## Production environment {#cloud-arch-prod}
 The Production environment runs your public-facing Magento single and multisite storefronts. This environment include triple-redundant High Availability nodes for continuous access and failover protection for your customers. This system is read-only, requiring deployment across the architecture from Integration to Staging and finally Production.
 
-* For projects created **before 10-23-2017**, this environment has a `master` branch in a Staging repository. You push code from the Integration `master` to this branch.
-* For projects created **after 10-23-2017**, this environment has a `production` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
+* For projects created **before October 23, 2017**, this environment has a `master` branch in a Staging repository. You push code from the Integration `master` to this branch.
+* For projects created **after October 23, 2017**, this environment has a `production` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
 
 We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-prod-live.html) and [Go Live]({{page.baseurl}}cloud/live/live.html) requirements and processes.
 
