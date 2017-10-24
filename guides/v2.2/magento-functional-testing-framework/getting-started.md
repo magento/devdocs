@@ -12,9 +12,12 @@ This solution is temporary.
 
 ## PREPARE ENVIRONMENT
 
-### PHP
-
-[PHP 7]
+* [git]
+* [PHP v7.1.x+][php]
+* [Composer v1.3.x+][composer]
+* [Allure CLI v2.3.x+](#allure)
+* [Java v1.8.x+][java]
+* [Selenium Server Standalone v3.6.0+](#selenium-server)
 
 ### Selenium Server
 
@@ -200,6 +203,11 @@ $ vendor/bin/robo allure2:report
 
 <!-- LINKS -->
 
+[git]: https://git-scm.com/downloads
+[php]: http://php.net/manual/en/install.php
+[composer]: https://getcomposer.org/download/
+[java]: https://www.java.com/en/download/
+
 [HTTP basic authentication]: https://getcomposer.org/doc/articles/http-basic-authentication.md#http-basic-authentication
 [magento-pangolin]: https://github.com/magento-pangolin/
 [personal access token]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token
@@ -208,7 +216,6 @@ $ vendor/bin/robo allure2:report
 [selenium server]: http://www.seleniumhq.org/download/
 [selenium web driver]: http://docs.seleniumhq.org/about/platforms.jsp
 [Install Allure]: https://docs.qameta.io/allure/latest/
-[PHP 7]: http://php.net/downloads.php
 [allure reports]: https://docs.qameta.io/allure/latest/#_report_structure
 
 <!-- Abbreviations -->
