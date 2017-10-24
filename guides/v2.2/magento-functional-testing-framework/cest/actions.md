@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Annotations in the Magento Functional Testing Framework cests
+title: Actions in the Magento Functional Testing Framework cests
 github_link: magento-functional-testing-framework/actions.md
 ---
 
