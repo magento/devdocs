@@ -7,6 +7,7 @@ menu_title: Magento Commerce 2.1.9 Release Notes
 menu_order: 256
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
+version: 2.1
 github_link: release-notes/ReleaseNotes2.1.9EE.md
 ---
 

@@ -18,7 +18,7 @@ redirect_from:
 ---
 
 #### Previous step:
-[Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
+[Prepare for local environment setup]({{ page.baseurl }}cloud/before/before-workspace.html)
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
 
@@ -195,6 +195,12 @@ All features available in the [Project Web Interface]({{ page.baseurl }}cloud/pr
 		curl -sS https://platform.sh/cli/installer | php
 
 For full installation and usage information, see Platform.sh [CLI (Command Line Interface)](https://docs.platform.sh/gettingstarted/cli.html){:target="_blank"} and their [GitHub content](https://github.com/platformsh/platformsh-cli/blob/master/README.md#installation){:target="_blank"}.
+
+## Additional requirements for Magento Commerce {#commerce}
+The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
+
+* [{{site.data.var.ee}} requirements]({{ page.baseurl }}install-gde/system-requirements2.html)
+* [(Integrator) Integrator installation]({{ page.baseurl }}install-gde/prereq/integrator_install.html)
 
 ## Additional options
 You can also install additional [optional software]({{ page.baseurl }}install-gde/prereq/optional.html). These packages should be installed on the local VM.

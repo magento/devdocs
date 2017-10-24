@@ -4,10 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
-menu_order: 72
+menu_order: 25
 menu_node:
-level3_menu_node:
-level3_subgroup:
 version: 2.2
 github_link: cloud/live/sens-data-initial.md
 ---
@@ -86,11 +84,11 @@ To create and transfer `config.php`:
 		magento-cloud environment:ssh --pipe
 2.	Create `config.php` on the integration server.
 
-		ssh -k <SSH URL> "php bin/magento magento-cloud:scd-dump"
+		ssh -k <SSH URL> "php vendor/bin/m2-ece-scd-dump"
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
 5.	If you haven't done so already, change to the project root directory.
 6.	Transfer `config.php` to your local system.
 
@@ -194,11 +192,11 @@ By running the command again for `magento-cloud:scd-dump`, the new configuration
 		magento-cloud environment:ssh --pipe
 2.	Run the `config.php` creation command again on the Integration server.
 
-		ssh -k <SSH URL> "php bin/magento magento-cloud:scd-dump"
+		ssh -k <SSH URL> "php vendor/bin/m2-ece-scd-dump"
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
 3.	If you haven't done so already, change to the project root directory.
 4.	Transfer `config.php` to your local system.
 

@@ -24,10 +24,16 @@ The following figure shows how it works at a high level:
 
 ![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
 
-You can manage all of Integration environments directly through the [Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). Access and manage all Integration, Staging, and Production environments  through the store and Admin panel using provided URLs and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+You can manage all of Integration environments directly through the [Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). Access and manage all Integration, Staging, and Production environments through the store and Admin panel using provided URLs and SSH and CLI commands. For Integration environments, you can also use [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For existing Pro projects, you need to have your Project Web Interface updated to manage Staging and Production through the interface. For more information adding this management to existing Pro projects, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+
+If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.
+</div>
 
 ### Pro environments and branches {#env-branches}
-For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These enviornments are not public facing. Finally, Production is your live, public environment.
+For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These environments are not public facing. Finally, Production is your live, public environment.
 
 For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
 
@@ -79,7 +85,6 @@ The format of the Magento Cloud CLI branch command is:
 
     magento-cloud environment:branch <environment name> <parent environment ID>
 
-
 ![Branch from Master]({{ site.baseurl }}common/images/cloud_workflow-pro-branching.png)
 
 ### Develop code {#dev-code}
@@ -117,14 +122,14 @@ Now you need to get these settings into your code. We have a helpful command to 
 ### Generate configuration management files {#config-management}
 If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or Excel all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
 
-{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later**.
+{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later** (not 2.2).
 
 * `php bin/magento magento-cloud:scd-dump`: **Recommended**. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
 
 The generated file is located in `app/etc/`:
 
-* For 2.1.4 and later: `config.app.php`
+* For 2.1.4 and later: `config.local.php`
 * For 2.2 and later: `config.php`
 
 You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
@@ -145,7 +150,7 @@ An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any 
 For more information, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).
 
 ### Push code and test {#push-code}
-At this point, you should have a developed code branch with a configuration file (`config.app.php` or `config.php`) ready to test.
+At this point, you should have a developed code branch with a configuration file (`config.local.php` or `config.php`) ready to test.
 
 Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
 
@@ -234,6 +239,6 @@ Following your branching and development methodologies, you can easily develop n
 For more information, see [Continuous integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html).
 
 #### Related topics
-*	[First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+*	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 *	[Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)

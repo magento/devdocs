@@ -12,13 +12,15 @@ github_link: cloud/reference/discover-arch.md
 
 {{site.data.var.ece}} Pro _projects_ provide three complete environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace. You can use any development and branching methodology you like.
 
-All of your code is contained in the {{site.data.var.ece}} Starter project. The project is your Magento store code, extensions, and integrations in a `master` Git branch. Each project supports up to eight active Integration *environments* including `master` with an associated active Git branch in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers.
+All of your code is contained in the {{site.data.var.ece}} project. Each project supports up to eight active Integration *environments* with an associated active Git branch in PAAS (Platform as a Service) containers, including `master`. These containers are deployed inside highly restricted containers on a grid of servers.
 
 Pro also provides a dedicated Infrastructure-as-a-Service (IaaS) for Production and Staging. You deploy the Integration `master` Git branch to these dedicated environments. Production includes a three-node high availability infrastructure to ensure your site is always available. When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
 
-All environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For existing Pro projects, you need to have your Project Web Interface updated to manage Staging and Production through the interface. For more information adding this management to existing Pro projects, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
 
-You can use any development and branching methodology you like.
+If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.
+</div>
 
 ![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
 
@@ -40,6 +42,9 @@ Additional sections in this guide provide instructions and walk-throughs for set
 ## Staging environment {#cloud-arch-stage}
 The Staging environment provides a near-Production environment to test your site. This environment includes all services used in Production including Fastly, New Relic, Blackfire, and search. All code in Staging is read-only, requiring deploys of Git repositories. This environment shares the same dedicated server with Production.
 
+* For projects created **before 10-23-2017**, this environment has a `master` branch in a Staging repository. You push code from the Integration `master` to this branch.
+* For projects created **after 10-23-2017**, this environment has a `staging` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
+
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.
 
 We walk you through [deploying to Staging]({{page.baseurl}}cloud/live/stage-prod-live.html) and [testing your store(s)]({{page.baseurl}}cloud/live/stage-prod-test.html) requirements and processes.
@@ -48,6 +53,9 @@ We highly recommend fully testing every merchant and customer interaction in Sta
 
 ## Production environment {#cloud-arch-prod}
 The Production environment runs your public-facing Magento single and multisite storefronts. This environment include triple-redundant High Availability nodes for continuous access and failover protection for your customers. This system is read-only, requiring deployment across the architecture from Integration to Staging and finally Production.
+
+* For projects created **before 10-23-2017**, this environment has a `master` branch in a Staging repository. You push code from the Integration `master` to this branch.
+* For projects created **after 10-23-2017**, this environment has a `production` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
 
 We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-prod-live.html) and [Go Live]({{page.baseurl}}cloud/live/live.html) requirements and processes.
 

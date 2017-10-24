@@ -89,7 +89,7 @@ atlassian*
 
 {% endcollapsible %}
 
-For reference, here is a [link to the latest Magento `.gitignore`](https://raw.githubusercontent.com/magento/magento2/develop/.gitignore){:target="_blank"}
+For reference, here is a [link to the latest Magento `.gitignore`](https://raw.githubusercontent.com/magento/magento2/2.2/.gitignore){:target="_blank"}
 
 ## .gitignore for build and production
 You should use the same `.gitignore` in both your build and production systems so they have the same files in source control.

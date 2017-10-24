@@ -4,10 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
-menu_order: 72
+menu_order: 25
 menu_node:
-level3_menu_node:
-level3_subgroup:
 version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
@@ -218,3 +216,9 @@ Repeat the deployment process for pushing the code to all environments.
 
 #### Related topics
 * [Overview of configuration management]({{ page.baseurl }}cloud/live/sens-data-over.html)
+* [Manage your environments]({{page.baseurl}}cloud/env/environments.html)
+*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
+*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)

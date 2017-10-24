@@ -17,11 +17,13 @@ What happens technically: Build scripts parse configuration files committed to t
 The build and deploy process is slightly different for each plan:
 
 * **Starter plans**: For the Integration environment, every active branch build and deploys to a full environment for access and testing. Fully test your code by merging to the `staging` branch. Finally to go live, push `staging` to `master` to deploy to Production. You have full access to all branches through the Project Web Interface and CLI commands.
-* **Pro plans**: For the Integration environment, every active branch build and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the `master` branch in Integration then pushed to those environments using SSH or a ticket.
+* **Pro plans**: For the Integration environment, every active branch build and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the `master` branch in Integration then deployed using CLI commands via SSH or through the Project Web Interface. If you don't see Staging or Production in your UI, you may need to [update the Project Web Interface]({{ page.baseurl }}cloud/trouble/pro-env-management.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Make sure all code for your site and stores is in the active {{site.data.var.ee}} Git branch. If you point to or include hooks to code in other branches, especially a private branch, the build and deploy process will have issues. For example, add any new themes into the Git branch of code. If you include it from a private repo, the theme won't build with the Magento code.
 </div>
+
+{% include cloud/wings-management.md %}
 
 ## Track the process {#track}
 You can track the ongoing build and deploy actions in your terminal and the Project Web Interface in real-time. the status displays in-progress, pending, success, or failed. Logs are available to review through the interface.
@@ -39,8 +41,20 @@ If you intend to make changes, modify the YAML files in your Git branch of code.
 
 We also recommend configuring your [system-specific settings]({{page.baseurl}}cloud/live/sens-data-over.html) into a `config.local.php` file. This file captures your configuration settings. You add and push this file into your Git branch, deploying it across all environments. If the file is found in the deployed code, all static file deployment occurs during the Build phase, not Deploy. Static file deployment takes a long time to complete, reducing deployment and site downtime if done in the Build phase.
 
-## Five phases of deployment {#cloud-deploy-over-phases}
-Deployment consists of the following phases:
+## Required files for your Git branch {#requiredfiles}
+Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
+
+* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}cloud/access-acct/trouble.html).
+* `config.local.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) for 2.1.X
+* `config.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) for 2.2.X
+* [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
+* [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
+* [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
+
+## Five phases of Integration build and deployment {#cloud-deploy-over-phases}
+The following phases occur on your local development environment and the Integration environment. The code is not deployed to Staging or Production for Pro plan in these initial phases.
+
+Integration build and deployment consists of the following phases:
 
 1.	[Phase 1: Configuration validation and code retrieval](#cloud-deploy-over-phases-conf)
 2.	[Phase 2: Build](#cloud-deploy-over-phases-build)
@@ -48,11 +62,6 @@ Deployment consists of the following phases:
 4.	[Phase 4: Deploy slugs and cluster](#cloud-deploy-over-phases-slugclus)
 5.	[Phase 5: Deployment hooks](#cloud-deploy-over-phases-hook)
 6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
-
-For full details on build and deploy hooks and variables, see:
-
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) for build and deploy hooks
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
 
 ### Phase 1: Code and configuration validation {#cloud-deploy-over-phases-conf}
 When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud){:target="_blank"}. This code repo is cloned to your project as the `master` branch.
@@ -127,6 +136,10 @@ There are two default deploy hooks. `pre-deploy.php` completes necessary cleanup
   <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
 </div>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The deployment phase may seem to get stuck or take a long time. If cron jobs are running, the hooks wait until the cron jobs complete before completion of the deployment.</p>
+</div>
+
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
 While the deployment is running, we freeze the incoming traffic at the entry point for 60 seconds. We are now ready to configure routing so your web traffic will arrive at your newly created cluster.
 
@@ -134,7 +147,9 @@ If deployment completes without issues or errors, the maintenance mode is remove
 
 To review build and deploy logs, see [Use logs for troubleshooting]({{page.baseurl}}cloud/trouble/environments-logs.html).
 
-#### Deployment steps
+#### Build and deploy full steps {#steps}
+With an understanding of the process, we provide the following instructions for build and deploy for your local, Integration, Staging, and finally Production:
+
 *	[Build and deploy to your local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
 *	[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
 *	[Deploy code and data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)

@@ -84,7 +84,7 @@ How to use the icon grid:
 
 <h3 id="icon-fonts">Icon Fonts</h3>
 
-We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found here <a href="https://github.com/magento/magento2/tree/develop/app/design/adminhtml/Magento/backend/web/fonts/admin-icons" target="_blank"> https://github.com/magento/magento2/tree/develop/app/design/adminhtml/Magento/backend/web/fonts/admin-icons </a> 
+We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found here <a href="https://github.com/magento/magento2/tree/2.1/app/design/adminhtml/Magento/backend/web/fonts/admin-icons" target="_blank"> https://github.com/magento/magento2/tree/2.1/app/design/adminhtml/Magento/backend/web/fonts/admin-icons </a> 
 
 If you want to add your own icons, each icon will need to be in its own SVG files. There are multiple ways to create icon fonts, here is one to get started:
 

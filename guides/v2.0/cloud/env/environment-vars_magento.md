@@ -4,10 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Magento application environment variables
 menu_title: Magento application environment variables
-menu_order: 92
+menu_order: 5
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: vars
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md
 ---
@@ -43,7 +41,7 @@ The following table lists variables that you can override using environment vari
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
-<td>Administrative user's password. Initially, we have hardcoded this value to admin12. You should immediately change this password. </td>
+<td>Administrative user's password. Initially, we generate a random password and provide an email directing the Project Owner to reset the password. You should immediately change this password.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_URL</code></td>
@@ -88,12 +86,15 @@ The following variables are options available during the build process of build 
 You can use these options as part of a `build_options.ini` file for customizing the build process. This file is located in the Magento root directory.
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Variable name</th>
 <th>Description</th>
 <th>Default value</th>
-</tr></thead>
-<tbody><tr>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td><code>BUILD_OPT_SKIP_DI_COMPILATION</code></td>
 <td>If you are needing to quickly debug a set of code in developer mode, you can enable this option to skip compilation and before a build immediately. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing in developer mode. You should always run di_compilation. Available in versions 2.1.2 and later, 2.2.X. For 2.2.X, we have removed `skip_di_compilation` from `build-options.ini` as it cannot be skipped during the build phase.</td>
 <td>skip_di_compilation = disabled</td>
@@ -114,7 +115,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
 <p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>Available in versions 2.1.4 and later, 2.2.X.</p></td>
-<td>scd_threads = 1 for all Starter and Pro Integration environments<br />
+<td>scd_threads = 1 for all Starter environments and Pro Integration environments<br />
 scd_threads = 3 for Pro Staging and Production environments</td>
 </tr>
 <tr>
@@ -122,10 +123,11 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 <td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in versions 2.1.4 and later, 2.2.X.</td>
 <td>skip_scd = disabled</td>
 </tr>
-<td><code>GENERATED_CODE_SYMLINKS</code></td>
-<td>This variable enables the <code>var/generation</code> and <code>var/di</code> generated folders to be writable. Available in versions 2.1.X.<br />
-This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>var/di</code> content is moved to <code>generated/</code>. This folder is removed after guild and deploy completes.</td>
-<td>GENERATED_CODE_SYMLINKS = disabled</td>
+<tr>
+<td><code>GENERATED_CODE_SYMLINK</code></td>
+<td><p>This variable enables the <code>var/generation</code> and <code>var/di</code> generated folders to be writable. Available in versions 2.1.X.</p>
+This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>var/di</code> content is moved to <code>generated/</code>. This folder is removed after build and deploy completes.</p></td>
+<td>GENERATED_CODE_SYMLINK = disabled</td>
 </tr>
 </tbody>
 </table>
@@ -156,7 +158,8 @@ The following variables are available during the deploy process of build and dep
 <th>Description</th>
 <th>Default value</th>
 </tr></thead>
-<tbody><tr><td><code>UPDATE_URLS</code></td>
+<tbody>
+<tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 <p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p>
 <p>This is available in versions 2.0.10 and later, 2.1.2 and later, and 2.2 and later.</p></td>
@@ -218,18 +221,18 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr><td><code>ADMIN_FIRSTNAME</code></td>
 <td>Administrative user's first name. This is available in all versions.</td>
-<td>John</td>
+<td>Not set, example: John</td>
 </tr>
 <tr><td><code>ADMIN_LASTNAME</code></td>
 <td>Administrative user's last name. This is available in all versions.</td>
-<td>Doe</td>
+<td>Not set, example: Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This is available in all versions.</td>
-<td>john@example.com</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
-<td>Administrative user's password. Initially, we have hardcoded this value to admin12. You should immediately change this password. This is available in all versions.</td>
+<td>Administrative user's password. Initially, we generate a random password and provide an email directing the Project Owner to reset the password. You should immediately change this password.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_URL</code></td>
@@ -274,7 +277,7 @@ To create a variable using the command line:
 5. After creating these variables, you can list all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
-In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} something goes wrong and you can't access your environment after it deploys, try the following:
+In the event something goes wrong and you can't access your environment after it deploys, try the following:
 
 *   [SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
 *   Restore your snapshot:
@@ -282,9 +285,14 @@ In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglos
         magento-cloud snapshot:list
         magento-cloud snapshot:restore <snapshot>
 
+For more information on snapshots, see [Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html).
+
 #### Related topics
-*   [Tutorial&mdash;Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)
-*   [Magento Cloud environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*   [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*   [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-*   [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+* [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
+*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
+* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

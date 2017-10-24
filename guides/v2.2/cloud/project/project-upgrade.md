@@ -195,7 +195,7 @@ After fully upgrading, you need to create an updated `config.php` file. You will
 
     For example for Pro, to run the `scd-dump` on Integration `master`:
 
-      `ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"`
+      `ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"`
 
 2. Transfer `config.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 
