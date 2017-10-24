@@ -159,7 +159,17 @@ did not change after you selected **Disable product**.
 
 <!--- 70611 -->* A product assigned a special price now displays this price in the wishlist. Previously, products with special prices displayed regular prices in the wishlist. 
 
+<!--- INTERNAL ONLY 66707 66706 64245 64115 75625 75621 75619 75612 67019 71527 -->
 
+<!--- NOT NEEDED 65466 65066 63984 63704 63698 63576 63162 62309 61905 61315 61139 59720 59125 58914 75222 72181 72078 72054 72011 67019 69560 57616 64296 7158771576 71398 71378 71170 71151 71117 
+ -->
+
+<!--- DUPLICATE 66197-->
+
+<!--- CANCELED 63598-->
+
+
+<!--- CANNOT REPRODUCE 63824 58536 57024 69478 63098 -->
 
 
 
