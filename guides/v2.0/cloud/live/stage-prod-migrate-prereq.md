@@ -47,7 +47,7 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 2.	Get your [access URLs and SSH](#pro-urls) for Staging and Production.
 4.	Set up your [SSH agent](#ssh-agent) for Staging and Production.
 
-If your project was created before 10-23-2017, you also need to set up [remote Git repositories](#cloud-live-migrate-git) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after 10-23-2017.
+If your project was created before October 23, 2017, you also need to set up [remote Git repositories](#cloud-live-migrate-git) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.
 
 If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
@@ -57,11 +57,11 @@ If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl
 {% include cloud/hooks.md %}
 
 ### Get your Pro access URLs  {#pro-urls}
-For Pro projects created **after 10-23-2017**, you can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link.
+For Pro projects created **after October 23, 2017**, you can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link.
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png)
 
-For Pro projects created **before 10-23-2017**, you would need to access the information we provided when creating your account. This information is typically provided in a OneDrive onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You'll use this information for accessing the environments.
+For Pro projects created **before October 23, 2017**, you would need to access the information we provided when creating your account. This information is typically provided in a OneDrive onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You'll use this information for accessing the environments.
 
 *	Git URL format:
 
@@ -82,9 +82,9 @@ For Pro projects created **before 10-23-2017**, you would need to access the inf
 		*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
 ### Set up Pro remote Git repositories {#pro-remote}
-For Pro projects created **after 10-23-2017**, you do not need to complete this step. Your Staging and Production environments are branches of `master` with configured deployment targets. You can simply merge code to these environments from Integration `master`.
+For Pro projects created **after October 23, 2017**, you do not need to complete this step. Your Staging and Production environments are branches of `master` with configured deployment targets. You can simply merge code to these environments from Integration `master`.
 
-For Pro projects created **before 10-23-2017**, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.
+For Pro projects created **before October 23, 2017**, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.
 
 When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them. Basically, you configure these remote repositories using these instructions to SSH into the environements and push code and migrate data and files using Git commands.
 
@@ -137,7 +137,7 @@ To set up an SSH agent:
 
 For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html) as part of your local setup. For Starter and Pro projects, you can add your SSH public key to all Integration, Staging and Production environments.
 
-If you have a Pro project created **before 10-23-2017**, you need to enter a ticket with your public key to have it added to Staging and Production.
+If you have a Pro project created **before October 23, 2017**, you need to enter a ticket with your public key to have it added to Staging and Production.
 
 #### Next step
 [Migrate and deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)

@@ -28,7 +28,7 @@ We made the following fixes in this release:
 *   You no longer need a `pub/front-static.php` in your template.
 *   We now back up `env.php` before disabling the Redis cache during deployment.
 *   Patches are now applied in alphabetical order.
-* Staging and Production environments in the UI for Pro projects. Starting 10-23-2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before 10-23-2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+* Staging and Production environments in the UI for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
 
 ### Known issues
 Note the following issue in this release:
