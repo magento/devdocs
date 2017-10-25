@@ -22,11 +22,12 @@ All new projects already include these features.
 The new Project Web Interface provides the following features for Pro plan Staging and Production environments:
 
 * Add and manage user access to the environments
-* Sync code between Staging and Pro to Integration environments
+* Sync code between Staging and Production to Integration environments
+* Merge code from Integration master to Staging and Production environments
 * Add and manage environment variables
 * Configure environment settings
 * Access the environments by SSH and URL. These links and commands are provided through the Access Links.
-* View builds logs and deployment history
+* View build logs and deployment history
 
 ### Restricted features {#restricted}
 As an important note, while you can manage Staging and Production environments, you **cannot**:
@@ -78,7 +79,7 @@ After the conversion, the three repositories are merged into a single repository
 </tr>
 <tr>
 <td><code>master</code></td>
-<td>Integration master</td>
+<td>Integration</td>
 <td><p>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code.</p>
 <p>When you convert, all active and inactive branches continue as children to the <code>master</code> branch.</p></td>
 </tr>
