@@ -4,10 +4,10 @@
     "start": "gulp"
   },
   "devDependencies": {
-    "bootstrap": "^4.0.0-alpha.5",
+    "bootstrap-sass": "3.3.7",
     "browser-sync": "latest",
     "del": "latest",
-    "gulp": "latest",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "latest",
     "gulp-compass": "latest",
     "gulp-concat": "latest",
