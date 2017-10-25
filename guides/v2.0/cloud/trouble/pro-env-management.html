@@ -1855,11 +1855,12 @@
 
 <ul>
   <li>Add and manage user access to the environments</li>
-  <li>Sync code between Staging and Pro to Integration environments</li>
+  <li>Sync code between Staging and Production to Integration environments</li>
+  <li>Merge code from Integration master to Staging and Production environments</li>
   <li>Add and manage environment variables</li>
   <li>Configure environment settings</li>
   <li>Access the environments by SSH and URL. These links and commands are provided through the Access Links.</li>
-  <li>View builds logs and deployment history</li>
+  <li>View build logs and deployment history</li>
 </ul>
 
 <h3 id="restricted">Restricted features</h3>
@@ -1918,7 +1919,7 @@
 </tr>
 <tr>
 <td><code>master</code></td>
-<td>Integration master</td>
+<td>Integration</td>
 <td><p>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code.</p>
 <p>When you convert, all active and inactive branches continue as children to the <code>master</code> branch.</p></td>
 </tr>

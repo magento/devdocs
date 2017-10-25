@@ -2165,11 +2165,82 @@ Array
       </li>
     </ol>
 
-    <h4 id="related-topics">Related topics</h4>
-    <ul>
-      <li><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches with the Project Web Interface</a></li>
-      <li><a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></li>
-    </ul>
+    <h2 id="env-start-tunn">SSH tunneling</h2>
+
+    <div>
+
+      <p>You can also use SSH tunneling to connect to a service from your local development environment as if the service were local. Before tunneling, you need to have <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH configured</a>.</p>
+
+      <p>Use a terminal application to log in and issue commands.</p>
+
+      <p>magento-cloud login</p>
+
+      <p>First, you may want to check if any tunnels are already open using the following command:</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud tunnel:list
+</code></pre>
+      </div>
+
+      <p>To build a tunnel, you must know the name of the app to which to tunnel. Use the following commands to list those applications:</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;project directory&gt;
+magento-cloud project:list
+magento-cloud apps
+</code></pre>
+      </div>
+
+      <p>For information on the command, you can enter <code class="highlighter-rouge">magento-cloud apps --help</code>.</p>
+
+      <h3 id="tunnel-setup">Set up the SSH tunnel</h3>
+      <p>Use the following command:</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
+</code></pre>
+      </div>
+
+      <p>For example, to open a tunnel to the <code class="highlighter-rouge">sprint5</code> branch in a project with an app named <code class="highlighter-rouge">mymagento</code>, enter</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud tunnel:open -e sprint5 --app mymagento
+</code></pre>
+      </div>
+
+      <p>Messages similar to the following display:</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>SSH tunnel opened on port 30003 to relationship: solr
+SSH tunnel opened on port 30004 to relationship: redis
+SSH tunnel opened on port 30005 to relationship: database
+Logs are written to: /home/magento_user/.magento/tunnels.log
+
+List tunnels with: platform tunnels
+View tunnel details with: platform tunnel:info
+Close tunnels with: platform tunnel:close
+</code></pre>
+      </div>
+
+      <h3 id="tunnel-info">Get tunnel information</h3>
+      <p>To display information about your tunnel, enter:</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
+</code></pre>
+      </div>
+
+      <h3 id="tunnel-services">Connect to services</h3>
+      <p>Now you can connect to services as if they were running locally.</p>
+
+      <p>For example, to connect to the database, use the following command:</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>mysql --host=127.0.0.1 --user='&lt;database user name&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
+</code></pre>
+      </div>
+
+      <p>Details about the service display if you use the <code class="highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
+
+      <h4 id="related-topics">Related topics</h4>
+      <ul>
+        <li><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches with the Project Web Interface</a></li>
+        <li><a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 
