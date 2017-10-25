@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/onboarding/onboarding-portal.md
 ---
 
-The Onboarding Portal gives business and technical users a central location to get started with a {{site.data.var.<ece>}} project and environments. If you are not sure who the Project Owner is, you can check the Project Owner page in the portal. If you need to change this user, enter a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp).
+The Onboarding Portal gives business and technical users a central location to get started with a {{site.data.var.ece}} project and environments. If you are not sure who the Project Owner is, you can check the Project Owner page in the portal. If you need to change this user, enter a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The Onboarding Portal is available for new trial accounts and projects for Starter and Pro. Existing projects or non-trial new accounts cannot access the portal at this time. For more information, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html)
@@ -27,7 +27,7 @@ Through the portal, you can:
 * Complete a quick user acceptance test (UAT) checklist with links to further tests
 * Complete a checklist and submit a ticket to go live
 
-Browse through the portal to find helpful information and options to get started with your project code and release. For additional technical information, the portal includes links to {{site.data.var.<ece>}} DevDocs documentation.
+Browse through the portal to find helpful information and options to get started with your project code and release. For additional technical information, the portal includes links to {{site.data.var.ece}} DevDocs documentation.
 
 ## Access the portal {#access}
 Currently, access to the Onboarding Portal is available through your Magento account.
