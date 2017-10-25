@@ -87,6 +87,10 @@ For the URLs, see the following:
 	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
+## SSH tunneling {#env-start-tunn}
+
+{% include cloud/ssh-tunnel.md %}
+
 ## sFTP to environments {#sftp}
 Typically, you want to use SSH for secure access to your environments and [migrate files]({{page.baseurl}}cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
 
@@ -102,7 +106,6 @@ When configuring sFTP, use your SSH public key and the following information for
 * Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
 * Host: All content after the `@` in your public SSH key.
 * Port: 22, which is the default SSH port.
-
 
 To add your SSH public key information to your client:
 
