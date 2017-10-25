@@ -8,6 +8,10 @@ menu_node:
 menu_order: 3
 version: 2.2
 github_link: config-guide/cache/static-content-signing.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ### Static content cache

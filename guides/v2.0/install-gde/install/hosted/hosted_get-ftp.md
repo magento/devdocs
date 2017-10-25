@@ -5,9 +5,13 @@ subgroup: 02_config-hosted
 title: Transfer the Magento software to your hosted system
 menu_title: Transfer the Magento software to your hosted system
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: install-gde/install/hosted/hosted_get-ftp.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="newbie-ftp-overview">Magento installation overview</h2>

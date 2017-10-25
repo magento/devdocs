@@ -8,6 +8,9 @@ menu_order: 3
 menu_node:
 version: 2.0
 github_link: cloud/access-acct/trouble.md
+tags:
+  - Cloud
+  - Deploy
 ---
 
 This topic discusses how to recover if you deployed the Magento application with the incorrect [Magento authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html). For example, you might have used the keys for another account or you might have used Magento Community Edition (CE) keys instead of Magento Enterprise Edition (EE) keys.

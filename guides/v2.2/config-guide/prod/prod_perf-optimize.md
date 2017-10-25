@@ -7,6 +7,10 @@ menu_title: Magento Optimization Guide
 menu_order: 100
 version: 2.2
 github_link: config-guide/prod/prod_perf-optimize.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This topic provides instructions for optimizing the performance of your production deployment.

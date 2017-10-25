@@ -10,6 +10,10 @@ version: 2.0
 contributor_name: Atish Goswami
 contributor_link: http://atishgoswami.com
 github_link: config-guide/db-profiler/db-profiler.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## About the database profiler

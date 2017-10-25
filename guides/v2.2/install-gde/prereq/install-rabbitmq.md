@@ -6,8 +6,12 @@ title: RabbitMQ
 menu_title: RabbitMQ (Magento Commerce only)
 menu_order: 50
 version: 2.2
-ee_only: true
+ee_only: True
 github_link: install-gde/prereq/install-rabbitmq.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-warning" markdown="1">

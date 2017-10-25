@@ -7,7 +7,8 @@ menu_title: List of service names per module
 menu_order: 4
 version: 2.0
 github_link: rest/rest_endpoints.md
-
+tags:
+  - Integration
 ---
 
 ## REST Schema Endpoint Format

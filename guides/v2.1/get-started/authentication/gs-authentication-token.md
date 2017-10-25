@@ -8,6 +8,8 @@ menu_order: 1
 version: 2.1
 github_link: get-started/authentication/gs-authentication-token.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.html
+tags:
+  - Integration
 ---
 
 To make a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call from a client such as a mobile application, you must supply an *access token* on the call. The token acts like an electronic key that lets you access the API.

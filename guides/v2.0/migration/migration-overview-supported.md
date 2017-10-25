@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: A_Overview
 title: Versions supported
 menu_title: Versions supported
@@ -9,6 +9,8 @@ menu_order: 2
 version: 2.0
 github_link: migration/migration-overview-supported.md
 redirect_from: /guides/v1.0/migration/migration-overview-supported.html
+tags:
+  - Tools
 ---
 
 ## Migration from versions

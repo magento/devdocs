@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: install-gde/prereq/integrator_install.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-tip">

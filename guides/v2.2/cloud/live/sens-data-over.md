@@ -4,10 +4,13 @@ group: cloud
 subgroup: 120_env
 title: Configuration management
 menu_title: Configuration management
-menu_order:  20
+menu_order: 20
 menu_node:
 version: 2.2
 github_link: cloud/live/sens-data-over.md
+tags:
+  - Cloud
+  - Deploy
 ---
 
 Configuration management, or [Pipeline Deployment]({{ page.baseurl }}config-guide/deployment/pipeline/), provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments. to keep consistent settings and reduce downtime.

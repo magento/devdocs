@@ -8,6 +8,10 @@ menu_order: 5
 menu_node:
 version: 2.2
 github_link: config-guide/varnish/config-varnish-install.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-varnish-install">Install Varnish</h2>

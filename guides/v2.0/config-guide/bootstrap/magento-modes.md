@@ -5,10 +5,14 @@ subgroup: 03_Bootstrap
 title: About Magento modes
 menu_title: About Magento modes
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/bootstrap/magento-modes.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 

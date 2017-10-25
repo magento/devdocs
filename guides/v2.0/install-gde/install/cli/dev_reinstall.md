@@ -1,13 +1,17 @@
 ---
 layout: default
-group: install_cli 
+group: install_cli
 subgroup: 99_contrib
 title: Reinstall the Magento software
 menu_title: Reinstall the Magento software
 menu_order: 200
-menu_node: 
+menu_node:
 version: 2.0
 github_link: install-gde/install/cli/dev_reinstall.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 A contributing developer reinstalls Magento by updating `composer.json` to specify the Magento product version and component versions desired and runs `composer update`. 

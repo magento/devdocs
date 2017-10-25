@@ -7,6 +7,8 @@ menu_order: 4
 menu_title: Compile LESS with Grunt
 version: 2.1
 github_link: frontend-dev-guide/css-topics/css_debug.md
+tags:
+  - Frontend
 ---
 
 <h2>What's in this topic</h2>

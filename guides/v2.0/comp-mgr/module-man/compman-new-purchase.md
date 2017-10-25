@@ -1,16 +1,18 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Step 3. Component Install
 menu_title: Component Install
-menu_node: 
+menu_node:
 menu_order: 9
 level3_menu_node: level3child
 level3_subgroup: step3
 version: 2.0
 github_link: comp-mgr/module-man/compman-new-purchase.md
 redirect_from: /guides/v2.0/comp-mgr/compman-new-purchase.html
+tags:
+  - Upgrade
 ---
 
 When you're installing new purchases from Magento Marketplace, the page displays similar to the following:

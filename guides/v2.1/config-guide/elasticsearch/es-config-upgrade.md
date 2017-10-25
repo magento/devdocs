@@ -7,8 +7,13 @@ menu_title: Upgrade Elasticsearch major version
 menu_order: 100
 menu_node:
 version: 2.1
-ee_only: true
+ee_only: True
 github_link: config-guide/elasticsearch/es-config-upgrade.md
+tags:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
 
 #### Contents

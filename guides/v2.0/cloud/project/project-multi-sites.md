@@ -8,6 +8,11 @@ menu_order: 15
 menu_node:
 version: 2.0
 github_link: cloud/project/project-multi-sites.md
+tags:
+  - Cloud
+  - Configuration
+  - Setup
+  - Stores
 ---
 
 ## Set up multiple stores

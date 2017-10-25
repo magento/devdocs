@@ -1,12 +1,15 @@
 ---
-layout: default  
-group: fedg 
+layout: default
+group: fedg
 subgroup: A_Themes
 title: Adding custom favicons
-menu_title:  Adding custom favicons
+menu_title: Adding custom favicons
 menu_order: 80
 version: 2.1
 github_link: frontend-dev-guide/themes/favicon.md
+tags:
+  - Frontend
+  - Theme
 ---
 <h2 id="favicon-intro">What's in this topic</h2>
 

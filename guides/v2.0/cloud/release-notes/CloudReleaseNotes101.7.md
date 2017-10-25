@@ -4,12 +4,14 @@ group:
 subgroup:
 title: magento-cloud-configuration release 101.7.x Release Notes
 menu_title: magento-cloud-configuration release 101.7.x Release Notes
-menu_order: 
+menu_order:
 menu_node:
 level3_menu_node:
 level3_subgroup:
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes101.7.md
+tags:
+  - Cloud
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}} version 2.1.7, `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6.

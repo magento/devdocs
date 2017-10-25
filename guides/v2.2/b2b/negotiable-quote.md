@@ -6,10 +6,13 @@ title: Integrate with the NegotiableQuote module
 menu_title: Integrate with the NegotiableQuote module
 menu_order: 31
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
 github_link: b2b/negotiable-quote.md
+tags:
+  - B2B
+  - Integration
 ---
 
 Negotiable quotes are a mechanism that allows a company user (buyer) and a seller (admin user) to negotiate product and/or shipping prices before the company user places an order. Its functionality is available for companies only.

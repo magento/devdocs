@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Run the Module Manager
@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 1
 version: 2.2
 github_link: comp-mgr/module-man/compman-checklist.md
+tags:
+  - Upgrade
 ---
 
 <h2 id="compman-overview">Overview of the Module Manager</h2>

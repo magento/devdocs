@@ -8,6 +8,11 @@ menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/project/new-relic.md
+tags:
+  - Cloud
+  - Integration
+  - Setup
+  - Services
 ---
 
 [New Relic](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} Application Performance Monitoring (APM) provides application and performance information for end-user operations completed through your stores. This data helps you analyze and improve application interactions.

@@ -7,6 +7,8 @@ menu_title: Add custom fields that influence other Checkout fields
 menu_order: 90
 version: 2.0
 github_link: howdoi/checkout/checkout_custom_checkbox.md
+tags:
+  - Checkout
 ---
 
 This topic describes how to add a custom field that influences other fields on the checkout page. 

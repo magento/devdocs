@@ -9,6 +9,10 @@ level3_menu_node: level3child
 level3_subgroup: php
 version: 2.0
 github_link: install-gde/prereq/php-settings.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} options.

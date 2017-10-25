@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 40_update-updater
 title: Update the updater application
@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: comp-mgr/updater/update-updater.md
+tags:
+  - Upgrade
 ---
 
 In some cases, you might need to update the updater application, which is responsible for updating components and the Magento application. You should do this only if instructed to do so.

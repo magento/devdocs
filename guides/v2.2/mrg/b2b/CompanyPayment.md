@@ -7,6 +7,8 @@ menu_title: CompanyPayment
 menu_order: 70
 version: 2.2
 github_link: mrg/b2b/CompanyPayment.md
+tags:
+  - B2B
 ---
 
 ## Overview

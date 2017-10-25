@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: C_DMTool
 title: Preconditions
 menu_title: Preconditions
@@ -9,6 +9,8 @@ menu_order: 1
 version: 2.0
 github_link: migration/migration-tool-preconditions.md
 redirect_from: /guides/v1.0/migration/migration-tool-preconditions.html
+tags:
+  - Tools
 ---
 
 Before starting migration, make sure the following requirements are met.

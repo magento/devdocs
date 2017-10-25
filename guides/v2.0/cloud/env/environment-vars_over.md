@@ -9,9 +9,12 @@ menu_node: parent
 version: 2.0
 github_link: cloud/env/environment-vars_over.md
 redirect_from:
-  -  /guides/v2.0/cloud/env/environments.html
-  -  /guides/v2.1/cloud/env/environments.html
-  -  /guides/v2.1/cloud/env/environments.html
+  - /guides/v2.0/cloud/env/environments.html
+  - /guides/v2.1/cloud/env/environments.html
+  - /guides/v2.1/cloud/env/environments.html
+tags:
+  - Cloud
+  - Configuration
 ---
 (add overview information here)
 

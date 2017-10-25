@@ -7,6 +7,8 @@ menu_title: Customize the view of a checkout step
 menu_order: 2
 version: 2.0
 github_link: howdoi/checkout/checkout_customize.md
+tags:
+  - Checkout
 ---
 
 <h2> What's in this topic</h2>

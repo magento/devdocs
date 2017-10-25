@@ -10,6 +10,10 @@ level3_subgroup: php
 version: 2.0
 github_link: install-gde/prereq/php-centos.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-info" id="info">

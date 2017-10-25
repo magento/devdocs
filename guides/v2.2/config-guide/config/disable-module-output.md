@@ -7,6 +7,10 @@ menu_title: Disable module output
 menu_order: 15
 version: 2.2
 github_link: config-guide/config/disable-module-output.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 By default, all modules are configured so that a module's output can be written to a view. Turning off output offers a way to essentially disable a module that can't be disabled due to hard dependencies. For example, the `Customer` module depends on the `Review` module, so the `Review` module can't be disabled. However, if you don't want customers to be able to provide reviews, you could turn off output from the `Review` module.

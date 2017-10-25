@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Command line configuration
 menu_title: Command line configuration
@@ -9,6 +9,10 @@ menu_order: 1
 version: 2.0
 github_link: config-guide/cli/config-cli.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-new-cli-intro">Introducing the Magento command-line interface (CLI)</h2>

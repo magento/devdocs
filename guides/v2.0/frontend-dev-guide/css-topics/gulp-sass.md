@@ -4,11 +4,14 @@ group: fedg
 subgroup: D_CSS
 title: Use Sass and Gulp preprocessor
 menu_order: 8
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: custom-preprocess
 version: 2.0
 github_link: frontend-dev-guide/css-topics/gulp_sass.md
+tags:
+  - Frontend
+  - Tools
 ---
 
 By default, Magento uses [Less](http://lesscss.org/) for themes styling. But you can use other stylesheet languages that can be compiled (processed) to CSS. For example, Sass is a popular alternative.

@@ -7,7 +7,8 @@ menu_title: Working with the Architecture
 menu_order: 2
 version: 2.0
 github_link: ext-best-practices/extension-coding/working-with-arch-bp.md
-
+tags:
+  - Standards
 ---
 
 In addition to understanding fundamental programming designs/concepts, you are encouraged to learn how the MVC architecture works in our code and how to work with Magento's generated code and factories.

@@ -4,11 +4,15 @@ group: config-guide
 subgroup: 04_CLI
 title: Create symlinks to LESS files
 menu_title: Create symlinks to LESS files
-menu_node: 
+menu_node:
 menu_order: 350
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-less-sass.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-cli-before">First steps</h2>

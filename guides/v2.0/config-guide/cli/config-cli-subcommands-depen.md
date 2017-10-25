@@ -1,14 +1,18 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Dependency reports
 menu_title: Dependency reports
-menu_node: 
+menu_node:
 menu_order: 225
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-depen.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-cli-depend-rpt-overview">Overview of dependency reports</h2>

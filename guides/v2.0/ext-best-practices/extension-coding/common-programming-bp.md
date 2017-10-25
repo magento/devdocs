@@ -7,7 +7,8 @@ menu_title: Programming best practices
 menu_order: 1
 version: 2.0
 github_link: ext-best-practices/extension-coding/common-programming-bp.md
-
+tags:
+  - Standards
 ---
 
 You should do your best to adhere to common programming best practices to reduce the amount of bugs and improve the quality and maintainability of your extensions.

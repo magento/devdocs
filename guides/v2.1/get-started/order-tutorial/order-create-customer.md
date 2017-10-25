@@ -10,7 +10,11 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-customer.md
-ee_only: false
+ee_only: False
+tags:
+  - Integration
+  - Orders
+  - Customers
 ---
 
 Customers can make purchases in three ways:

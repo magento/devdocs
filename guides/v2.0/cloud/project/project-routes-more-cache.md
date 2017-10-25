@@ -10,6 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: routes
 version: 2.0
 github_link: cloud/project/project-routes-more-cache.md
+tags:
+  - Cloud
+  - Setup
 ---
 
 {{site.data.var.ee}} enables you to use caching in your environment. If you disable caching, {{site.data.var.ee}} directly serves the files.

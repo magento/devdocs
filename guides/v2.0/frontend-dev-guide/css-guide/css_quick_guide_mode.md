@@ -7,6 +7,8 @@ menu_title: Simple style changes with client-side LESS compilation vs. server-si
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
+tags:
+  - Frontend
 ---
 <h2> What's in this topic </h2>
 

@@ -9,7 +9,8 @@ level3_menu_node: level3child
 level3_subgroup: catalog
 version: 2.2
 github_link: rest/catalog-notes.md
-
+tags:
+  - Integration
 ---
 
 ## POST V1/categories

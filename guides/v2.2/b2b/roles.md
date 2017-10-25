@@ -6,10 +6,12 @@ title: Manage company roles
 menu_title: Manage company roles
 menu_order: 14
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
 github_link: b2b/roles.md
+tags:
+  - B2B
 ---
 
 

@@ -15,6 +15,10 @@ redirect_from:
   - /guides/v2.0/cloud/before/before-workspace-cli.html
   - /guides/v2.1/cloud/before/before-workspace-cli.html
   - /guides/v2.2/cloud/before/before-workspace-cli.html
+tags:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 #### Previous step:

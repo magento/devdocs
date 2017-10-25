@@ -7,6 +7,8 @@ menu_title: ConfigurableNegotiableQuote
 menu_order: 80
 version: 2.2
 github_link: mrg/b2b/ConfigurableNegotiableQuote.md
+tags:
+  - B2B
 ---
 ## Overview
 

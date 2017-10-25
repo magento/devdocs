@@ -1,15 +1,17 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 06_UseExtMan
 title: Readiness check with multiple extension updates
 menu_title: Readiness check with multiple extension updates
-menu_node: 
+menu_node:
 menu_order: 8
 level3_menu_node: level3child
 level3_subgroup: readiness
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-readiness-multi.md
+tags:
+  - Upgrade
 ---
 
 ## Readiness check with multiple extension updates {#extensman-readiness-multi}

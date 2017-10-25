@@ -8,6 +8,10 @@ menu_order: 60
 menu_node:
 version: 2.0
 github_link: cloud/live/stage-prod-test.md
+tags:
+  - Cloud
+  - Testing
+  - Deploy
 ---
 
 #### Previous step:

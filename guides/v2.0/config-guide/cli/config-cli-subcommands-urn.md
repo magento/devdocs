@@ -1,13 +1,17 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: URN highlighter
 menu_title: URN highlighter
-menu_node: 
+menu_node:
 menu_order: 215
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-urn.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 

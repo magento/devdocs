@@ -8,6 +8,9 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-basic.md
+tags:
+  - Cloud
+  - Configuration
 ---
 
 The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} enables you to do the following for all Starter and Pro environments:

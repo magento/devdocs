@@ -8,6 +8,8 @@ menu_order: 4
 version: 2.0
 github_link: frontend-dev-guide/responsive-web-design/rwd_mobile.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html
+tags:
+  - Frontend
 ---
 <h2>What's in this topic</h2>
 The topic describes how to create a responsive mobile-specific {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} using the default Magento approaches. 

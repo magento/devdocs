@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/onboarding/onboarding-tasks.md
+tags:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 After your company purchases a subscription plan for {{site.data.var.ece}}, the only person who initially has access to the project and code is the Project Owner.

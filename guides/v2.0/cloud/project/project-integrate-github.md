@@ -8,6 +8,9 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/project/project-integrate-github.md
+tags:
+  - Cloud
+  - Setup
 ---
 
 ## About the GitHub integration {#cloud-int-gh-about}

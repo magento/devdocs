@@ -4,10 +4,14 @@ group: install_trouble
 subgroup: 02_access
 title: Cannot write to the generated/code directory
 menu_title: Cannot write to the generated/code directory
-menu_node: 
+menu_node:
 menu_order: 9
 version: 2.2
 github_link: install-gde/trouble/tshoot_var-gen-perms.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 

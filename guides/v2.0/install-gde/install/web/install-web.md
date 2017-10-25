@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: install_wiz
 subgroup: Wizard
 title: Setup Wizard installation
@@ -11,6 +11,10 @@ github_link: install-gde/install/web/install-web.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-web.html
   - /guides/v2.0/install-gde/install/install-web.html
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-tip">

@@ -7,6 +7,9 @@ menu_title: JavaScript Bundling
 menu_order: 9000
 version: 2.0
 github_link: frontend-dev-guide/themes/js-bundling.md
+tags:
+  - Frontend
+  - Theme
 ---
 
 JavaScript bundling is an optimization technique you can use to reduce the number of server requests for JavaScript files.

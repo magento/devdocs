@@ -6,10 +6,13 @@ title: Manage comapany users
 menu_title: Manage company users
 menu_order: 13
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
 github_link: b2b/company-users.md
+tags:
+  - B2B
+  - Integration
 ---
 
 A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with Magento {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.

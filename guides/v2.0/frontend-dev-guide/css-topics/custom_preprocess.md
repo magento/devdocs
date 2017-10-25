@@ -4,11 +4,13 @@ group: fedg
 subgroup: D_CSS
 title: Add custom CSS preprocessor
 menu_order: 8
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: custom-preprocess
 version: 2.0
 github_link: frontend-dev-guide/css-topics/custom_preprocess.md
+tags:
+  - Frontend
 ---
 
 <h2>What's in this topic</h2>

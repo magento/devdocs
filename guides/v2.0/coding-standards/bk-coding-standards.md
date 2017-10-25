@@ -10,6 +10,8 @@ menu_node: parent
 version: 2.0
 github_link: coding-standards/bk-coding-standards.md
 redirect_from: /guides/v1.0/coding-standards/bk-coding-standards.html
+tags:
+  - Standards
 ---
 <!-- This topic is referred to from Magento 2 code! Don't change the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} without informing engineering! -->
 <!-- Referring file: contributing.md owned by core -->

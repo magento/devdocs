@@ -7,6 +7,8 @@ menu_title: Add a custom payment method to checkout
 menu_order: 3
 version: 2.0
 github_link: howdoi/checkout/checkout_payment.md
+tags:
+  - Checkout
 ---
 
 <h2> What's in this topic </h2>

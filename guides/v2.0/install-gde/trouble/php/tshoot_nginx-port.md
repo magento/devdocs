@@ -4,10 +4,14 @@ group: install_trouble
 subgroup: 03_install
 title: Cannot install using nginx
 menu_title: Cannot install using nginx
-menu_node: 
+menu_node:
 menu_order: 20
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_nginx-port.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 If you use the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} web server and you attempt to install the Magento software, the installation sometimes fails.

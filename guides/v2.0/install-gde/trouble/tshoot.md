@@ -9,6 +9,10 @@ menu_order: 1
 version: 2.0
 github_link: install-gde/trouble/tshoot.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot.html
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-tip">

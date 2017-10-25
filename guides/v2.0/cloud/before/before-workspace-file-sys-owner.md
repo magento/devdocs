@@ -8,6 +8,9 @@ menu_order: 25
 menu_node:
 version: 2.0
 github_link: cloud/before/before-workspace-file-sys-owner.md
+tags:
+  - Cloud
+  - Setup
 ---
 #### Previous step: {#mage-owner-about-group}
 [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

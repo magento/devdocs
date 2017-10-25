@@ -8,6 +8,10 @@ menu_order: 17
 menu_node:
 version: 2.0
 github_link: cloud/configure/setup-cron-jobs.md
+tags:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 Magento uses cron jobs for numerous features to schedule activities. You can add cron jobs to `.magento.app.yaml` and push it to your branches for deployment. For specific information for configuring and setting up cron in Magento, see [Magento Commerce cron information](#croninfo). The following information is specific to creating and deploying cron jobs in {{site.data.var.ece}}.

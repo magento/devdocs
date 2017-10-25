@@ -8,6 +8,8 @@ menu_title: PHP code sniffers
 menu_order: 3
 version: 2.0
 github_link: coding-standards/code-standard-sniffers.md
+tags:
+  - Standards
 ---
 
 ## PHP code sniffers

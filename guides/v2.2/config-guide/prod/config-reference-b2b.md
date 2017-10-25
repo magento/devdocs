@@ -10,6 +10,10 @@ level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.2
 github_link: config-guide/prod/config-reference-b2b.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This topic lists configuration paths for Magento Enterprise B2B Extension. The [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.

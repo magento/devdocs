@@ -10,6 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: routes
 version: 2.0
 github_link: cloud/project/project-conf-files_routes.md
+tags:
+  - Cloud
+  - Setup
 ---
 
 ## `routes.yaml` overview {#cloud-yaml-routes-over}

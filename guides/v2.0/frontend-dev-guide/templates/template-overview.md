@@ -1,5 +1,5 @@
 ---
-layout: default  
+layout: default
 group: fedg
 subgroup: C_Templates
 title: Templates overview
@@ -9,6 +9,8 @@ menu_node: parent
 version: 2.0
 github_link: frontend-dev-guide/templates/template-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
+tags:
+  - Frontend
 ---
 
 <h2>Introduction to customizing a theme using templates</h2>

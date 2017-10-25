@@ -9,6 +9,9 @@ contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
 github_link: test/unit/unit_test_execution_cli.md
+tags:
+  - Testing
+  - test
 ---
 
 ### Running all unit tests

@@ -7,6 +7,8 @@ menu_title: GroupedRequisitionList
 menu_order: 140
 version: 2.2
 github_link: mrg/b2b/GroupedRequisitionList.md
+tags:
+  - B2B
 ---
 
 ## Overview

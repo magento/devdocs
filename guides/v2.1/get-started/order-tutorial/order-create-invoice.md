@@ -10,7 +10,11 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-invoice.md
-ee_only: false
+ee_only: False
+tags:
+  - Integration
+  - Orders
+  - Sales
 ---
 
 You create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} after you receive payment for an order. In this example, the order was paid offline via a bank transfer. Therefore, you must tell Magento that payment for the order has been captured.

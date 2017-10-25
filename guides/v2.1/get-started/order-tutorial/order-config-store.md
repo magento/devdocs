@@ -10,7 +10,10 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-config-store.md
-ee_only: false
+ee_only: False
+tags:
+  - Integration
+  - Orders
 ---
 
 The default Luma store needs additional configuration to run the REST calls mentioned in this tutorial.

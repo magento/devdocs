@@ -10,7 +10,11 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-quote.md
-ee_only: false
+ee_only: False
+tags:
+  - Integration
+  - Orders
+  - Cart
 ---
 
 When a customer adds an item to their {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} for the first time, Magento creates a {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %}. Magento uses a quote to perform tasks such as

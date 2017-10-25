@@ -1,13 +1,17 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Set the Magento mode
 menu_title: Set the Magento mode
-menu_node: 
+menu_node:
 menu_order: 200
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-mode.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>

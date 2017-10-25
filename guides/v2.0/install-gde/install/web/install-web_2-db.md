@@ -1,13 +1,17 @@
 ---
-layout: default 
-group: install_wiz 
+layout: default
+group: install_wiz
 subgroup: Wizard
 title: Step 2. Add a Database
 menu_title: Step 2. Add a Database
-menu_node: 
+menu_node:
 menu_order: 3
 version: 2.0
 github_link: install-gde/install/web/install-web_2-db.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 ## Before you begin

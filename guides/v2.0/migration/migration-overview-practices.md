@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: A_Overview
 title: Best practices and benchmarking
 menu_title: Best practices and benchmarking
@@ -9,6 +9,8 @@ menu_order: 1
 version: 2.0
 github_link: migration/migration-overview-practices.md
 redirect_from: /guides/v1.0/migration/migration-overview-practices.html
+tags:
+  - Tools
 ---
 
 ## Overview

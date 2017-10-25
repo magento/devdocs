@@ -8,6 +8,10 @@ menu_title: Prerequisites
 menu_order: 1
 version: 2.1
 github_link: install-gde/prereq/prereq-overview.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="instgde-prereq-overview">Before you begin</h2>

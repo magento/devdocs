@@ -6,10 +6,13 @@ title: Negotiable quote checkout
 menu_title: Negotiable quote checkout
 menu_order: 34
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
 github_link: b2b/negotiable-checkout.md
+tags:
+  - B2B
+  - Integration
 ---
 
 When the seller and buyer user agree on the quoted products and their prices, the negotiated quote is ready to be converted to an order.

@@ -6,12 +6,15 @@ title: Configure message queues
 menu_title: Configure message queues
 menu_order: 18
 version: 2.1
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
 github_link: extension-dev-guide/message-queues/config-mq.md
 redirect_from: /guides/v2.1/config-guide/mq/config-mq.html
-
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 Any module can be configured to send and receive messages to the message queue. To do this, you must create the following files in the `<module>/etc` directory:
 

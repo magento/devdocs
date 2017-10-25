@@ -5,9 +5,13 @@ subgroup: 02_config-hosted
 title: Configure a database and a database user
 menu_title: Configure a database and a database user
 menu_order: 2
-menu_node: 
+menu_node:
 version: 2.0
 github_link: install-gde/install/hosted/hosted_start_db.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 To configure a MySQL database and database user:

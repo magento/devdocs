@@ -4,10 +4,14 @@ group: install-dock
 subgroup: 05_PhpStorm
 title: Run PHPUnit
 menu_title: Run PHPUnit
-menu_node: 
+menu_node:
 menu_order: 10
 version: 2.0
 github_link: install-gde/docker/docker-phpstorm-test.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 {% include install/docker/deprecated-note.html %}

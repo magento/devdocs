@@ -10,6 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: services
 version: 2.0
 github_link: cloud/project/project-conf-files_services-redis.md
+tags:
+  - Cloud
+  - Setup
 ---
 
 [Redis](http://redis.io){:target="_blank"} is an optional backend cache solution to replace [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html){:target="_blank"}, which is used in Magento 2 by default.

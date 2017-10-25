@@ -7,6 +7,8 @@ menu_title: Sensitive and environment settings
 menu_order: 1000
 version: 2.2
 github_link: extension-dev-guide/configuration/sensitive-and-environment-settings.md
+tags:
+  - Configuration
 ---
 
 This topic discusses how third-party developers can create Magento components that designate configuration settings as being sensitive, system-specific, or both.

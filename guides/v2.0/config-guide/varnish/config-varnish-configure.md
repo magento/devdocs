@@ -8,6 +8,10 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-configure.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 <h2 id="config-varnish-config-web">Configure your web server</h2>
 Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server.

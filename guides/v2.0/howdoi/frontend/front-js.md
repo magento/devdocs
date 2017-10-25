@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: howdoi/frontend/front-js.md
+tags:
+  - Frontend
 ---
 
 ## JavaScript development

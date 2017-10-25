@@ -4,10 +4,14 @@ group: install_pre
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache
-menu_order: 01
+menu_order: 1
 version: 2.0
 github_link: install-gde/prereq/apache.md
 redirect_from: /guides/v1.0/install-gde/prereq/apache.html
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="apache-support">Apache versions supported</h2>

@@ -5,10 +5,14 @@ subgroup: 20_cqrs
 title: Manually configure master databases
 menu_title: Manually configure master databases
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
-ee_only: true
+ee_only: True
 github_link: config-guide/multi-master/multi-master_manual.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}

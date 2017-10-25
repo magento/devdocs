@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.2
 github_link: install-gde/prereq/zip_install.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="integrator-aud">Intended audience</h2>

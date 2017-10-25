@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Run the Component Manager
@@ -9,6 +9,8 @@ menu_order: 1
 version: 2.0
 github_link: comp-mgr/module-man/compman-checklist.md
 redirect_from: /guides/v2.0/comp-mgr/compman-checklist.html
+tags:
+  - Upgrade
 ---
 
 <h2 id="compman-overview">Overview of the Component Manager</h2>

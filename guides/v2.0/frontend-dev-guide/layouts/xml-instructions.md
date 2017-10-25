@@ -7,6 +7,8 @@ menu_title: Layout instructions
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/layouts/xml-instructions.md
+tags:
+  - Frontend
 ---
 
 <h2 id="fedg_layout_xml-instruc_overview">What's in this topic</h2>

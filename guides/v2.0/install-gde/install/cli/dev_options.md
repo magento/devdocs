@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install_cli 
+group: install_cli
 subgroup: 99_contrib
 title: Contributing developers&mdash;update, reinstall Magento
 menu_title: Contributing developers&mdash;update, reinstall Magento
@@ -8,9 +8,13 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: install-gde/install/cli/dev_options.md
-redirect_from: 
+redirect_from:
   - guides/v2.0/install-gde/install/dev_updater.html
   - guides/v2.1/install-gde/install/dev_updater.html
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 The following topics apply to you *only* if you used `git clone` to install the {{site.data.var.ce}} GitHub repository. This usually means you contribute code to the {{site.data.var.ce}} codebase.

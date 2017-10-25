@@ -7,6 +7,10 @@ menu_title: Manage message queues
 menu_order: 3
 version: 2.1
 github_link: config-guide/mq/manage-mysql.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 If you don't want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager) and the command line to ensure that consumers are retrieving messages.

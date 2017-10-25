@@ -2,12 +2,14 @@
 layout: default
 group: compman
 subgroup: 50_trouble
-title: "Sorry, we can't take that action right now"
-menu_title: "Sorry, we can't take that action right now"
-menu_node: 
+title: Sorry, we can't take that action right now
+menu_title: Sorry, we can't take that action right now
+menu_node:
 menu_order: 2
 version: 2.0
 github_link: comp-mgr/trouble/cman/were-sorry.md
+tags:
+  - Upgrade
 ---
 
 The following error might display at the start of your upgrade:

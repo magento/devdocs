@@ -8,6 +8,10 @@ menu_order: 500
 menu_node:
 version: 2.0
 github_link: config-guide/varnish/tshoot-varnish-503.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} tags used by Magento exceed Varnish's default of 8192 bytes, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:

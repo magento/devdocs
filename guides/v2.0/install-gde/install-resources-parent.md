@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: install-gde/install-resources-parent.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 You can use the following resources at any time to help you with your Magento installation:

@@ -10,4 +10,6 @@ level3_menu_node: level3parent
 level3_subgroup: configreference
 version: 2.1
 github_link: cloud/live/config-reference-parent.md
+tags:
+  - Cloud
 ---

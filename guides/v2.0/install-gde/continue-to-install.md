@@ -2,12 +2,16 @@
 layout: default
 group: install_pre
 subgroup: Z_continue
-title: 
+title:
 menu_title: Next&mdash;Installation part 2, installing
 menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/continue-to-install.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-tip">

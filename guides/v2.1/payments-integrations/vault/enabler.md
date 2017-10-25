@@ -2,11 +2,13 @@
 layout: default
 group: payments-integrations
 subgroup: C_vault
-title: Enable vault 
-menu_title: Enable vault 
+title: Enable vault
+menu_title: Enable vault
 menu_order: 5
 version: 2.1
 github_link: payments-integrations/vault/enabler.md
+tags:
+  - Integration
 ---
 
 Store customers must have the ability to enable and disable credit cards details storing.

@@ -8,6 +8,10 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/access-acct/fastly.md
+tags:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 [Fastly]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.

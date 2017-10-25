@@ -10,6 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: import
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import-prereq.md
+tags:
+  - Cloud
+  - Setup
 ---
 
 This topic discusses how to find the information necessary to import Magento EE into {{site.data.var.ece}}.

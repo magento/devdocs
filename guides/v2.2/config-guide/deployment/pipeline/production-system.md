@@ -8,6 +8,11 @@ menu_node:
 menu_order: 1500
 version: 2.2
 github_link: config-guide/deployment/pipeline/production-system.md
+tags:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 {::options syntax_highlighter="rouge" /}

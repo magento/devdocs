@@ -7,6 +7,8 @@ menu_title: QuickOrder
 menu_order: 180
 version: 2.2
 github_link: mrg/b2b/QuickOrder.md
+tags:
+  - B2B
 ---
 
 ## Overview

@@ -11,6 +11,10 @@ level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_docroot.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_docroot.html
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 The web server document root (often referred to as the _docroot_) is where you put all the files your website needs to function. You can use your web server's default docroot or [modify it to enhance security]({{page.baseurl}}install-gde/tutorials/change-docroot-to-pub.html). For example, you should restrict browser access to Magento-specific files after installation.

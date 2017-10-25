@@ -1,5 +1,5 @@
 ---
-layout: default  
+layout: default
 group: fedg
 subgroup: G_Translate
 title: Translations overview
@@ -8,9 +8,11 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: frontend-dev-guide/translations/xlate.md
-redirect_from: 
+redirect_from:
   - /guides/v1.0/architecture/behavior/xlate.html
   - /guides/v2.0/architecture/behavior/xlate.html
+tags:
+  - Frontend
 ---
 
 <h2 id="m2devgde-xlate-intro">Overview of translations</h2>

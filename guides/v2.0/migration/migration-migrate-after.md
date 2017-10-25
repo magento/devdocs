@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: _after
 title: After Migration
 menu_title: After Migration
@@ -9,6 +9,8 @@ menu_order: 7
 version: 2.0
 github_link: migration/migration-migrate-after.md
 redirect_from: /guides/v1.0/migration/migration-migrate-after.html
+tags:
+  - Tools
 ---
 
 After you have completed your migration and thoroughly tested your new Magento 2 site, perform the following tasks:

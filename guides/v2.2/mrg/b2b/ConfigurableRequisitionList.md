@@ -7,6 +7,8 @@ menu_title: ConfigurableRequisitionList
 menu_order: 90
 version: 2.2
 github_link: mrg/b2b/ConfigurableRequisitionList.md
+tags:
+  - B2B
 ---
 
 ## Overview

@@ -1,14 +1,18 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Manage the cache
 menu_title: Manage the cache
-menu_node: 
+menu_node:
 menu_order: 50
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-cache.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-cli-subcommands-cache-clean-over">Overview of cache types</h2>

@@ -4,14 +4,18 @@ group: config-guide
 subgroup: 04_CLI
 title: Code compiler
 menu_title: Code compiler
-menu_node: 
+menu_node:
 menu_order: 175
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-compiler.md
-redirect_from: 
+redirect_from:
   - /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html
   - /guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html
   - /guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>

@@ -5,9 +5,13 @@ subgroup: 02_config-hosted
 title: Configure PHP
 menu_title: Configure PHP
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
 github_link: install-gde/install/hosted/hosted_start_php.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <a href="http://php.net/manual/en/faq.general.php" target="_blank">PHP Hypertext Preprocessor (PHP)</a> is a scripting language that Magento is authored in. Magento requires {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 5.5 or 5.6 to run.

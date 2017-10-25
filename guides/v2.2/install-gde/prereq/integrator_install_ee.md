@@ -8,6 +8,10 @@ menu_order: 4
 menu_node:
 version: 2.2
 github_link: install-gde/prereq/integrator_install_ee.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 To get the {{site.data.var.ee}} metapackage:

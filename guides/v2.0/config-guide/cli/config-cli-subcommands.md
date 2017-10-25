@@ -1,14 +1,18 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-install-cli-prereq">Before you configure the Magento application</h2>

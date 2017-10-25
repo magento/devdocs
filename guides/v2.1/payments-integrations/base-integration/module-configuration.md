@@ -7,6 +7,8 @@ menu_title: Payment method module configuration
 menu_order: 1
 version: 2.1
 github_link: payments-integrations/base-integration/module-configuration.md
+tags:
+  - Integration
 ---
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.

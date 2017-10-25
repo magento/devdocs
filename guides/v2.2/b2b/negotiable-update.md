@@ -6,10 +6,13 @@ title: Update a negotiable quote
 menu_title: Update a negotiable quote
 menu_order: 33
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
 github_link: b2b/negotiable-update.md
+tags:
+  - B2B
+  - Integration
 ---
 
 Sellers and buyers can edit a negotiable quote at various times during the quote's lifecycle. Both use the `PUT /V1/negotiableQuote/:quoteId` call to update the quote. This call is defined in the

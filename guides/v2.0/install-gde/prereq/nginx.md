@@ -4,9 +4,13 @@ group: install_pre
 subgroup: Prerequisites
 title: nginx
 menu_title: nginx
-menu_order: 02
+menu_order: 2
 version: 2.0
 github_link: install-gde/prereq/nginx.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="&#95;blank}). You must also install the latest version of `php-fpm`.

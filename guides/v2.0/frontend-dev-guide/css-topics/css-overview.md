@@ -9,6 +9,8 @@ menu_node: parent
 version: 2.0
 github_link: frontend-dev-guide/css-topics/css-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-overview.html
+tags:
+  - Frontend
 ---
 
 ## Overview

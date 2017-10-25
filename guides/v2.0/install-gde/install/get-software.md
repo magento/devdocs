@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: install-gde/install/get-software.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 {% include install/get-software_zip.md %}

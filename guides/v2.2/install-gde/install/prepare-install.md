@@ -3,11 +3,15 @@ layout: default
 group: install_pre
 subgroup: T_Developer
 title: Update installation dependencies
-menu_title: Update installation dependencies 
+menu_title: Update installation dependencies
 menu_node:
 menu_order: 10
 version: 2.2
 github_link: install-gde/install/prepare-install.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>

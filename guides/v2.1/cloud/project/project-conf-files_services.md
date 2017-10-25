@@ -10,6 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: services
 version: 2.1
 github_link: cloud/project/project-conf-files_services.md
+tags:
+  - Cloud
+  - Setup
 ---
 
 We provide a `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, PHP, Redis, ElasticSearch (for 2.1.X and later), and so on. You don't need to subscribe to external service providers.

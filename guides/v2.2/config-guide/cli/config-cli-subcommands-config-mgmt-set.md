@@ -10,6 +10,10 @@ level3_subgroup: cli-config-mgmt
 menu_order: 252
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-config-mgmt-set.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This topic discusses advanced configuration commands you can use to:

@@ -7,6 +7,8 @@ menu_title: Payment method configuration
 menu_order: 2
 version: 2.1
 github_link: payments-integrations/base-integration/payment-option-config.md
+tags:
+  - Integration
 ---
 
 In the `config.xml` file in your `%Vendor_Module%/etc` directory, configure the options of your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}. The following table contains the default options available for any payment method.

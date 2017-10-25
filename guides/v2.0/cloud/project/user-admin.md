@@ -8,6 +8,9 @@ menu_order: 15
 menu_node:
 version: 2.0
 github_link: cloud/project/user-admin.md
+tags:
+  - Cloud
+  - Configuration
 ---
 
 {{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. You can add and manage user accounts for the entire project and permissions per available environment.

@@ -9,6 +9,8 @@ menu_order: 5
 version: 2.0
 github_link: coding-standards/code-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-javascript.html
+tags:
+  - Standards
 ---
 
 Use Magento's [ESLint Rules][eslint-rules] to make sure your code adheres to Magento's coding standards.

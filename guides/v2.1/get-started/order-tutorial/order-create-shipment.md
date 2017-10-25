@@ -10,7 +10,12 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-shipment.md
-ee_only: false
+ee_only: False
+tags:
+  - Integration
+  - Orders
+  - Sales
+  - Shipping
 ---
 
 To create a shipment, you need the `order_item_id` of each item to be shipped. Since the Sprite Yoga Companion Kit is a bundle item, you only need to include the top-level `order_item_id` (`5`). The `order_item_id` for the Radiant Tee-M-Orange is `3`.

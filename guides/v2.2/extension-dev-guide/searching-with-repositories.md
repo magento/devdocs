@@ -7,6 +7,8 @@ menu_title: Searching with Repositories
 menu_order: 35
 version: 2.2
 github_link: extension-dev-guide/repositories.md
+tags:
+  - Search
 ---
 
 ### What is a repository? {#m2devgde-repository-intro}

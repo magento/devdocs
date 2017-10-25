@@ -10,6 +10,10 @@ level3_menu_node: level3child
 level3_subgroup: umask
 version: 2.2
 github_link: install-gde/prereq/file-sys-perms-over.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 {% include install/file-system-umask-over.md %}

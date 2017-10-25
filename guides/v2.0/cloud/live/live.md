@@ -8,6 +8,8 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/live/live.md
+tags:
+  - Cloud
 ---
 
 When you have completed deployment and testing in Integration and Staging environments, you can start going live. First, you should complete all development and testing prior to touching Production. Feel ready to launch? Review our checklists, best practices, and final steps to go live.

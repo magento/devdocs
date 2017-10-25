@@ -15,6 +15,9 @@ redirect_from:
   - /guides/v2.1/cloud/env/environment-tutorial-set-mage-vars.html
   - /guides/v2.0/cloud/access-acct/admin-env-vars.html
   - /guides/v2.1/cloud/access-acct/admin-env-vars.html
+tags:
+  - Cloud
+  - Setup
 ---
 
 To create an account and start developing Magento, you need a configured local developer workspace, base {{site.data.var.ece}} code, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local.

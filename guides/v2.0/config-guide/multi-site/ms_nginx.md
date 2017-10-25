@@ -8,6 +8,10 @@ menu_order: 3
 menu_node:
 version: 2.0
 github_link: config-guide/multi-site/ms_nginx.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Set up multiple websites with nginx {#ms-nginx-over}

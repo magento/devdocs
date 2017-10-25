@@ -7,6 +7,8 @@ menu_title: GiftCardNegotiableQuote
 menu_order: 110
 version: 2.2
 github_link: mrg/b2b/GiftCardNegotiableQuote.md
+tags:
+  - B2B
 ---
 
 ## Overview

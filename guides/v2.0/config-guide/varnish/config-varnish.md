@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: config-guide/varnish/config-varnish.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>

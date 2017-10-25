@@ -8,6 +8,8 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: comp-mgr/prereq/prereq_compman.md
+tags:
+  - Upgrade
 ---
 
 Before running the Component Manager or System Upgrade, complete the following tasks:

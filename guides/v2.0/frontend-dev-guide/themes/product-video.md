@@ -7,6 +7,9 @@ menu_title: Configure product video
 menu_order: 100
 version: 2.0
 github_link: frontend-dev-guide/themes/product-video.md
+tags:
+  - Frontend
+  - Theme
 ---
 
 

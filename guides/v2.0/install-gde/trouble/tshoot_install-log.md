@@ -1,14 +1,18 @@
 ---
-layout: default 
+layout: default
 group: install_trouble
 subgroup: 03_install
 title: Installation fails; cannot create install.log
 menu_title: Installation fails; cannot create install.log
-menu_node: 
+menu_node:
 menu_order: 400
 version: 2.0
 github_link: install-gde/trouble/tshoot_install-log.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_install-log.html
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Symptom

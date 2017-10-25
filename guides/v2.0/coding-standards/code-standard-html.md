@@ -8,6 +8,8 @@ menu_title: HTML style guide
 menu_order: 9
 version: 2.0
 github_link: coding-standards/code-standard-html.md
+tags:
+  - Standards
 ---
 
 This style guide defines Magento internal requirements for {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} code style for teams that develop LESS and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code. We recommend that developers who create Magento extensions and customizations also use these standards.

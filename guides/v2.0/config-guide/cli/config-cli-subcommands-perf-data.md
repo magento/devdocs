@@ -9,6 +9,10 @@ menu_order: 800
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-perf-data.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Overview of performance testing data {#config-cli-perf-overview}

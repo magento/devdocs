@@ -9,6 +9,9 @@ contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
 github_link: test/unit/writing_testable_code.md
+tags:
+  - Testing
+  - test
 ---
 
 This topic does not aim to be a replacement for existing documentation about testing, but rather tries to highlight some thoughts on the subject. Although the truth of anything depends somewhat on the context, this topic attempts to provide information that is applicable in *most* situations.

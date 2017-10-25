@@ -8,6 +8,8 @@ menu_order: 2
 menu_node:
 version: 2.0
 github_link: comp-mgr/prereq/prereq_auth-token.md
+tags:
+  - Upgrade
 ---
 
 <div class="bs-callout bs-callout-info" id="info">

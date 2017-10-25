@@ -6,10 +6,13 @@ title: Manage negotiable quotes
 menu_title: Manage negotiable quotes
 menu_order: 32
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
 github_link: b2b/negotiable-manage.md
+tags:
+  - B2B
+  - Integration
 ---
 
 This topic describes the calls required to initiate a negotiable quote and to prepare it to be converted to an order.

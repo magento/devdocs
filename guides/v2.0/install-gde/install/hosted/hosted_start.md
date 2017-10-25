@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: install-gde/install/hosted/hosted_start.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 ## Hosted installation

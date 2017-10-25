@@ -8,6 +8,11 @@ menu_node:
 menu_order: 1400
 version: 2.2
 github_link: config-guide/deployment/pipeline/build-system.md
+tags:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 You can have one build system that meets the following requirements:

@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 32_UseUpgrade
 title: Run System Upgrade
@@ -7,7 +7,9 @@ menu_title: Run System Upgrade
 menu_node: parent
 menu_order: 1
 version: 2.2
-github_link: comp-mgr/upgrader/upgrade-checklist.md 
+github_link: comp-mgr/upgrader/upgrade-checklist.md
+tags:
+  - Upgrade
 ---
 
 <h2 id="compman-overview">Overview of System Upgrade</h2>

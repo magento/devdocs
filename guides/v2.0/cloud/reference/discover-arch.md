@@ -8,6 +8,8 @@ menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/reference/discover-arch.md
+tags:
+  - Cloud
 ---
 
 {{site.data.var.ece}} Pro _projects_ provide three complete environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace. You can use any development and branching methodology you like.

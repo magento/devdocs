@@ -4,10 +4,14 @@ group: install_trouble
 subgroup: 03_install
 title: During installation, exception SessionHandler::read()
 menu_title: During installation, exception SessionHandler::read()
-menu_node: 
+menu_node:
 menu_order: 26
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_session.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 **Symptom**: At the last step of installing Magento 2, the following {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} displays:

@@ -1,5 +1,5 @@
 ---
-layout: default  
+layout: default
 group: fedg
 subgroup: G_Translate
 title: Translate theme strings
@@ -7,6 +7,8 @@ menu_title: Translate theme strings
 menu_order: 1
 version: 2.1
 github_link: frontend-dev-guide/translations/translate_theory.md
+tags:
+  - Frontend
 ---
 
 ## What's in this topic ##

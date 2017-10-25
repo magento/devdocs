@@ -8,6 +8,10 @@ menu_order: 35
 menu_node:
 version: 2.0
 github_link: cloud/env/environments-ssh.md
+tags:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 SSH, or Secure Shell, is a common protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter [CLI commands]({{page.baseurl}}cloud/reference/cli-ref-topic.html) for managing your branching, creating variables, and much more. We also support [sFTP](#sftp) (Secure FTP) using your SSH public key.

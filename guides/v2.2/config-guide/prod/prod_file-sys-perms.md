@@ -8,6 +8,10 @@ menu_node:
 menu_order: 3000
 version: 2.2
 github_link: config-guide/prod/prod_file-sys-perms.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).

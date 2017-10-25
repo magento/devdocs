@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: config-guide/config/config-magento.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 Magento provides configuration files that enable you to easily customize a component. We also enable you to create new configuration types to extend default functionality.

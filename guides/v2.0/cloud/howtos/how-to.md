@@ -8,6 +8,8 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/howtos/how-to.md
+tags:
+  - Cloud
 ---
 
 These topics are intended to get you up to speed quickly using {{site.data.var.ece}}. These are step-by-step instructions that provide instructions about specific tasks or that explain how to achieve a goal.

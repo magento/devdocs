@@ -1,15 +1,17 @@
 ---
 layout: default
-group: 
+group:
 subgroup: Live
 title: How to name configuration variables
 menu_title: How to name configuration variables
 menu_order: 86
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.1
 github_link: cloud/live/config-reference-var-name.md
+tags:
+  - Cloud
 ---
 
 {% include config/config-reference_conf-var-name1.md %}

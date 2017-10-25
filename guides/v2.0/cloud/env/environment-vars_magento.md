@@ -8,6 +8,9 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md
+tags:
+  - Cloud
+  - Configuration
 ---
 
 These sections list the environment variables for [general Magento](#application), [build](#build), and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.

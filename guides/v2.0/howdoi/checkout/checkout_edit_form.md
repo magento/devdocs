@@ -7,6 +7,8 @@ menu_title: Add a custom template for a form field on Checkout page
 menu_order: 7
 version: 2.0
 github_link: howdoi/checkout/checkout_edit_form.md
+tags:
+  - Checkout
 ---
 
 <h2> What's in this topic</h2>

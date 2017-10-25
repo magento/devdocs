@@ -7,6 +7,8 @@ menu_title: List of REST endpoints by module
 menu_order: 3
 version: 2.1
 github_link: rest/list.md
+tags:
+  - Integration
 ---
 
 ## List of REST endpoints for {{site.data.var.ee}} {#listee}

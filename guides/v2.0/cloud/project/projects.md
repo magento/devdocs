@@ -8,6 +8,8 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/project/projects.md
+tags:
+  - Cloud
 ---
 
 The {{site.data.var.ece}} *project* includes all code in Git branches, associated environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.

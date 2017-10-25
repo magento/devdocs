@@ -7,6 +7,8 @@ menu_title: Common layout customization tasks
 menu_order: 6
 version: 2.2
 github_link: frontend-dev-guide/layouts/xml-manage.md
+tags:
+  - Frontend
 ---
 
 <h2>What's in this topic</h2>

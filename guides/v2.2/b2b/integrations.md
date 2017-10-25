@@ -7,8 +7,11 @@ menu_title: Integrate with B2B using REST
 menu_order: 1
 menu_node: parent
 version: 2.2
-ee_only: true
+ee_only: True
 github_link: b2b/integrations.md
+tags:
+  - B2B
+  - Integration
 ---
 
 This topic lists the REST endpoints and services that are provided with {{site.data.var.b2b}}. See [List of REST endpoints by module]({{page.baseurl}}rest/list.html) and [List of service names by module]({{page.baseurl}}rest/rest_endpoints.html) for the endpoints and services that Magento {{site.data.var.ee}} and {{site.data.var.ce}}.

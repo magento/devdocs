@@ -8,6 +8,10 @@ menu_order: 5
 version: 2.0
 github_link: config-guide/config/config-files.md
 redirect_from: /guides/v1.0/config-guide/config/config-files.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-files-overview">Overview of module configuration files</h2>

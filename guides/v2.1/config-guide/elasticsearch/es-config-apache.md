@@ -7,8 +7,13 @@ menu_title: Configure Apache and Elasticsearch
 menu_order: 7
 menu_node:
 version: 2.1
-ee_only: true
+ee_only: True
 github_link: config-guide/elasticsearch/es-config-apache.md
+tags:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
 
 #### Contents

@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.2
 github_link: config-guide/redis/config-redis.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-redis-over">Overview of the Redis solution</h2>

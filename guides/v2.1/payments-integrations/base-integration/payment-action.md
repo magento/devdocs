@@ -7,6 +7,8 @@ menu_title: Add a payment action
 menu_order: 5
 version: 2.1
 github_link: payments-integrations/base-integration/payment-action.md
+tags:
+  - Integration
 ---
 
 For each payment action available for the payment method, you must implement the following:

@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: config-guide/secy/secy.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Security settings

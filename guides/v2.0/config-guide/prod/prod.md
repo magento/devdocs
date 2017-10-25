@@ -8,6 +8,10 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: config-guide/prod/prod.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 We're constantly learning from our community about how to deploy Magento into production. Our current topics on the subject are basic but we'd love to hear from you to make them better.

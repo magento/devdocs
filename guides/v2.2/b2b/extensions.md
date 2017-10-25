@@ -7,8 +7,10 @@ menu_title: Develop B2B extensions
 menu_order: 1
 menu_node: parent
 version: 2.2
-ee_only: true
+ee_only: True
 github_link: b2b/extensions.md
+tags:
+  - B2B
 ---
 
 See [Module Reference Guide]({{page.baseurl}}mrg/intro.html) for information about each {{site.data.var.b2b}} module.

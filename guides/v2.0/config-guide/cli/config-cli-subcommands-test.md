@@ -4,11 +4,15 @@ group: config-guide
 subgroup: 04_CLI
 title: Run unit tests
 menu_title: Run unit tests
-menu_node: 
+menu_node:
 menu_order: 400
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-test.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-test.html
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 

@@ -10,7 +10,12 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-prepare-checkout.md
-ee_only: false
+ee_only: False
+tags:
+  - Integration
+  - Orders
+  - Sales
+  - Checkout
 ---
 
 Now that all the items have been added to the cart, we can prepare the order for {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. This process includes the following steps:

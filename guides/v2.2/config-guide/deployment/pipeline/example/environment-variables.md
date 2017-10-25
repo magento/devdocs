@@ -4,12 +4,17 @@ group: config-guide
 subgroup: 045_pipeline
 title: Using environment variables
 menu_title: Using environment variables
-menu_node: 
+menu_node:
 menu_order: 6300
 level3_menu_node: level3child
 level3_subgroup: deployment-examples
 version: 2.2
 github_link: config-guide/deployment/pipeline/example/environment-variables.md
+tags:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, `config.php`, and PHP environment variables.

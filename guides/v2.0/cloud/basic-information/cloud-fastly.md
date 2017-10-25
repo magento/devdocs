@@ -8,6 +8,9 @@ menu_node:
 menu_order: 15
 version: 2.0
 github_link: cloud/welcome/cloud-fastly.md
+tags:
+  - Cloud
+  - Setup
 ---
 
 Fastly is a CDN based on Varnish caching, basically a cloud varnish service. When working with Fastly, you are also working directly with a heavily customized version of Varnish (2.1). [Fastly](https://docs.fastly.com/){:target="_blank"} with [Varnish](https://varnish-cache.org/docs/){:target="_blank"} caches your site pages, assets, CSS, and more in backend datacenters you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster.

@@ -8,6 +8,9 @@ menu_order: 7
 menu_node:
 version: 2.0
 github_link: cloud/configure/cloud-vcl-custom-snippets.md
+tags:
+  - Cloud
+  - Setup
 ---
 
 [Fastly]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html) and {{site.data.var.ece}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating Edge Dictionaries and Edge ACLs for your VCL snippets. You're free to customize your Fastly VCL snippets any way you like to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.

@@ -7,6 +7,8 @@ menu_title: Company
 menu_order: 50
 version: 2.2
 github_link: mrg/b2b/Company.md
+tags:
+  - B2B
 ---
 
 ## Overview

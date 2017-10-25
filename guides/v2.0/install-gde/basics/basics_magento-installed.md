@@ -11,6 +11,10 @@ level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_magento-installed.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_magento-installed.html
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 To determine if the Magento software is installed already, you can access the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} (administration console) or {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using a web browser.

@@ -8,6 +8,10 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_access-main.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 *	[Cannot access Magento software in a web browser]({{ page.baseurl }}install-gde/trouble/tshoot_access-browser.html)

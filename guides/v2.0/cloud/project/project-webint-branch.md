@@ -12,6 +12,9 @@ redirect_from:
   - /guides/v2.0/cloud/project/project-priv-repos.html
   - /guides/v2.1/cloud/project/project-priv-repos.html
   - /guides/v2.2/cloud/project/project-priv-repos.html
+tags:
+  - Cloud
+  - Configuration
 ---
 
 Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see [Git documentation](https://git-scm.com/doc).

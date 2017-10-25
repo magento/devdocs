@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 06_UseExtMan
 title: Run the Extension Manager
@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 1
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-start.md
+tags:
+  - Upgrade
 ---
 
 ## Run the Extension Manager from the Magento Admin

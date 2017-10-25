@@ -5,9 +5,13 @@ subgroup: 09_Varnish
 title: Final verification
 menu_title: Final verification
 menu_order: 100
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-final.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 Now that you're using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.

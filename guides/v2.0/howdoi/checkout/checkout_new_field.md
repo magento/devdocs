@@ -7,6 +7,8 @@ menu_title: Add a new field in address form
 menu_order: 9
 version: 2.0
 github_link: howdoi/checkout/checkout_new_field.md
+tags:
+  - Checkout
 ---
 
 This topic describes how to add new fields to default {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} forms: shipping address or billing address form. For illustration we use a case of adding a field to the shipping address form.

@@ -11,6 +11,8 @@ tabgroup: best-practices
 tablabel: Admin
 tabweight: 20
 github_link: ext-best-practices/admin/admin-best-practices.md
+tags:
+  - Standards
 ---
 
 This section of the Best Practices Guide discusses the Admin, the UI panel used by Magento administrators. It is where Magento system and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} parameters can be modified and configured. Third-party extensions installed by the system {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} or merchant are also found in this area, along with any of their configuration settings.

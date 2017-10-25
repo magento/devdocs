@@ -9,6 +9,10 @@ level3_menu_node: level3child
 level3_subgroup: php
 version: 2.1
 github_link: install-gde/prereq/php-centos.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-info" id="info">

@@ -8,6 +8,9 @@ menu_order: 15
 menu_node:
 version: 2.0
 github_link: cloud/deploy/continuous-deployment.md
+tags:
+  - Cloud
+  - Deploy
 ---
 
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.

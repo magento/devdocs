@@ -9,6 +9,10 @@ menu_order: 1
 menu_node: parent
 version: 2.2
 github_link: config-guide/bk-config-guide.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="configuration">Configure the Magento application</h2>

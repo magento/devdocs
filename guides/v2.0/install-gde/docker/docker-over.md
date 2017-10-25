@@ -9,6 +9,10 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/docker/docker-over.md
+tags:
+  - Install
+  - System
+  - Setup
 ---
 
 {% include install/docker/deprecated-note.html %}

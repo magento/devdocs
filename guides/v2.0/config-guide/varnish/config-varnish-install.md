@@ -8,6 +8,10 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-install.md
+tags:
+  - Configuration
+  - System
+  - Setup
 ---
 
 Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:

@@ -6,12 +6,13 @@ title: Bulk Operations
 menu_title: Bulk Operations
 menu_order: 28
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
 github_link: extension-dev-guide/message-queues/bulk-operations.md
 redirect_from: /guides/v2.2/extension-dev-guide/bulk-operations.html
-
+tags:
+  - Services
 ---
 
 Bulk operations are actions that are performed on a large scale. Example bulk operations tasks include importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.

@@ -7,6 +7,8 @@ menu_title: Admin FAQ
 menu_order: 1000
 version: 2.0
 github_link: ext-best-practices/admin/ext-best-practices_admin_FAQ.md
+tags:
+  - Standards
 ---
 
 This page is a compilation of frequently asked questions by the Magento Community about extensions integrating with the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.

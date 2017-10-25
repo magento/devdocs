@@ -2,11 +2,13 @@
 layout: default
 group: payments-integrations
 subgroup: B_integration
-title: Get payment information from frontend to backend 
+title: Get payment information from frontend to backend
 menu_title: Get payment information from frontend to backend
 menu_order: 6
 version: 2.1
 github_link: payments-integrations/base-integration/get-payment-info.md
+tags:
+  - Integration
 ---
 
 To implement transaction {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} our payment should receive some payment details from payment form, like credit card details,

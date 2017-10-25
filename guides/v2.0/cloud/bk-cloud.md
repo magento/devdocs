@@ -19,6 +19,8 @@ redirect_from:
   - /guides/v2.0/cloud/welcome/10000-ft-overview.html
   - /guides/v2.1/cloud/welcome/10000-ft-overview.html
   - /guides/v2.2/cloud/welcome/10000-ft-overview.html
+tags:
+  - Cloud
 ---
 
 {{site.data.var.ece}}, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines {{site.data.var.ee}}, Cloud infrastructure hosting, with a few differences and added features including Git integration and key environments for development, staging, and live production.

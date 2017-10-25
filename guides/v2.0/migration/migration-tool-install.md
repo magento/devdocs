@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: C_DMTool
 title: Install Data Migration Tool
 menu_title: Install Data Migration Tool
@@ -9,6 +9,8 @@ menu_order: 2
 version: 2.0
 github_link: migration/migration-tool-install.md
 redirect_from: /guides/v1.0/migration/migration-tool-install.html
+tags:
+  - Tools
 ---
 
 ## Prerequisite: Versions of Magento and Data Migration Tool must match {#data-migrate-prereq}

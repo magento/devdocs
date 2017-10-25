@@ -1,13 +1,15 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 32_UseUpgrade
 title: Step 2. Readiness check
 menu_title: Step 2. Readiness check
-menu_node: 
+menu_node:
 menu_order: 10
 version: 2.0
 github_link: comp-mgr/upgrader/upgrade-readiness.md
+tags:
+  - Upgrade
 ---
 
 The readiness check makes sure your server and environment are set up correctly for upgrading components. In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of errors, you can consult troubleshooting suggestions in this guide.
