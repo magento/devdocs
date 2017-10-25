@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
-menu_title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
+title: Magento Commerce 2.1 Release Candidate 3 (RC3) Release Notes 
+menu_title: Magento Commerce 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_order: 406
 version: 2.0
 level3_menu_node: level3child
@@ -21,12 +21,12 @@ We are pleased to present Magento 2.1 Release Candidate 3 (RC3). This release ca
 
 We welcome your participation in this process! Enterprise Edition customers can provide feedback in these two ways: 
 
-* Enterprise Edition GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+* Commerce GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
 
 * Email to DL-Magento-2.1-Feedback@magento.com.
 
 
-This Release Candidate is available from `repo.magento.com` if you have an Enterprise Edition license or GitHub  if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.
+This Release Candidate is available from `repo.magento.com` if you have a Commerce license or GitHub  if you have previously signed an agreement to access Magento Commerce 2.0 beta software on GitHub.
 
 
 Backward-incompatible changes are documented in <a href="{{page.baseurl}}release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
@@ -37,7 +37,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 * **Content Staging and Preview** improves productivity by enabling business teams to easily create, preview, and schedule a wide range of content updates without involving IT. Merchants can make updates to products, categories, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content, promotions, and pricing and can preview these changes based on specific dates and times or store views. User-friendly dashboards provide greater visibility into all planned site changes and updates can be automatically deployed at scheduled times.
  
-* **Elasticsearch is a next-generation search technology** that is replacing Solr in Magento Enterprise Edition 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box and merchants can configure stop words and synonyms to ensure high quality search results. 
+* **Elasticsearch is a next-generation search technology** that is replacing Solr in Magento Commerce 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box and merchants can configure stop words and synonyms to ensure high quality search results. 
 
 * **PayPal enhancements** include PayPal in-context {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and saved credit cards. In-context checkout helps to increase {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface.
  
@@ -176,7 +176,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 
 <h3>Known issues</h3>
-Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known issues: 
+Magento Commerce 2.1, Release Candidate 3 includes the following known issues: 
 
 <!--- 54445-->* The process of uninstalling modules using command-line tools unexpectedly stalls. 
 **Workaround:** Ensure that your `<magento root>/var/composer_home/auth.json` file contains your authentication keys. You can create an `auth.json` file in one of two ways:
@@ -218,7 +218,7 @@ We do not support PHP 5.5.x or 7.0.5.
 
 ## Installation and upgrade instructions
 
-You can install Magento Enterprise Edition 2.1 Release Candidate 3 (RC3) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
+You can install Magento Commerce 2.1 Release Candidate 3 (RC3) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 

@@ -4,7 +4,7 @@
     "start": "gulp"
   },
   "devDependencies": {
-    "bootstrap-sass": "3.3.7",
+    "bootstrap": "4.0.0-beta",
     "browser-sync": "latest",
     "del": "latest",
     "gulp": "^3.9.1",

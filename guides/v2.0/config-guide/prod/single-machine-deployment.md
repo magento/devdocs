@@ -4,9 +4,9 @@ group: config-guide
 subgroup: 999_prod
 title: Single machine deployment
 menu_title: Single machine deployment
-menu_node: 
+menu_node:
 menu_order: 500
-version: 2.1
+version: 2.0
 github_link: config-guide/prod/single-machine-deployment.md
 ---
 
@@ -31,7 +31,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 1. Log in to your production server as, or switch to, the [Magento file system owner][10].
 
 2. Change directory to the Magento base directory:
-        
+
         cd <Magento base directory>
 
 3. Enable maintenance mode using the command:
@@ -43,7 +43,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
         composer require <package> <version> --no-update
 
    **package**: The name of the package you want to update.
-   
+
    For example:
 
    * `magento/product-community-edition`
@@ -52,7 +52,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
    **version**: The target version of the package you want to update.
 
 5. Update Magento's components with Composer:
-   
+
         composer update
 
 6. Update the {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data:
@@ -75,7 +75,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 For deployment strategies developed by the Magento community, see the blog posts listed under the [Install/deploy][11] section in our Community Resources page.
 
-In Magento 2.2, a near-zero downtime deployment model will be available for a variety of complex environments, including Cloud.
+In Magento 2.2, a near-zero downtime deployment model will be available for a variety of complex environments, including {{site.data.var.ece}}.
 
 ## Related topics
 

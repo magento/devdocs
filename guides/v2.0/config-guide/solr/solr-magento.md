@@ -7,12 +7,18 @@ menu_title: Configure Solr and Magento
 menu_order: 2
 menu_node:
 version: 2.0
+ee_only: true
 github_link: config-guide/solr/solr-magento.md
 ---
 
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
+<div class="bs-callout bs-callout-warning" markdown="1">
+Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
+In a future release, Solr compatibility will be removed.
 
-The following topics discuss how to configure Solr to work with Magento EE:
+If possible, use [Elastic Search]({{page.baseurl}}config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
+</div>
+
+The following topics discuss how to configure Solr to work with {{site.data.var.ee}}:
 
 * <a href="#config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</a>
 * <a href="#config-solr-magento">Configure Magento to work with Solr</a>
@@ -24,14 +30,14 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 	<p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</p>
 </div>
 
-1.  As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:
+1.  As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with {{site.data.var.ee}}:
 
 		cd <your Solr install dir>/example/solr
 		cp -R collection1 magento2
 		cd magento2
-		cp -R <your Magento EE install dir>/vendor/magento/module-solr/conf/* ./conf/
+		cp -R <your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* ./conf/
 
-	For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
+	For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and {{site.data.var.ee}} is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
 
 		cd /opt/solr/solr/solr-4.10.4/example/solr
 		cp -R collection1 magento2
@@ -39,7 +45,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
 
 	<div class="bs-callout bs-callout-info" id="info">
-	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/vendor/magento/module-solr/conf/* .</code></p>
+	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* .</code></p>
 	</div>
 
 2.  After copying files, open the `<your Solr install dir>/example/solr/magento2/core.properties` file in a text editor and change:
@@ -77,7 +83,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 	</div>
 
 <h3 id="config-solr-magento">Configure Magento to work with Solr</h3>
-This section discusses how to configure Magento EE to use the Solr search engine.
+This section discusses how to configure {{site.data.var.ee}} to use the Solr search engine.
 
 To configure Magento to work with Solr:
 

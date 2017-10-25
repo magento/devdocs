@@ -2,34 +2,48 @@
 layout: default
 group: cloud
 subgroup: 100_project
-title: Manage environments (branches)
-menu_title: Manage environments (branches)
-menu_order: 23
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: project
+title: Manage branches with the Project Web Interface
+menu_title: Manage branches with the Interface
+menu_order: 20
+menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-branch.md
+redirect_from:
+  - /guides/v2.0/cloud/project/project-priv-repos.html
+  - /guides/v2.1/cloud/project/project-priv-repos.html
+  - /guides/v2.2/cloud/project/project-priv-repos.html
 ---
 
-A Magento Enterprise Cloud Edition *environment* is a Git *branch* and you can manage your environments using either the Web Interface, the Magento Enterprise Cloud Edition CLI, or Git commands.
+Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see [Git documentation](https://git-scm.com/doc).
 
-For more information about managing environments using the CLI, see [Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html).
+For more information about managing environments using the CLI, see [Manage branches with the CLI]({{page.baseurl}}cloud/env/environments-start.html).
 
-This topic discusses how to use the Web Interface to:
+This topic discusses how to use the Project Web Interface to:
 
-*	Add or delete an environment
+*	Add or delete an environment. You cannot add or delete the `master` branch for Pro plan Staging and Production. You can branch from Start plan Master.
 *	Sync (`git pull`) from the environment's parent
 *	Merge (`git push`) to the environment's parent
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You cannot create branches from Pro plan Staging and Production `master`. These environments include `master` branches that you deploy updated Git code to from Integration `master`.
+</div>
+
+{% include cloud/wings-management.md %}
+
 ## Add or delete an environment {#project-branch-add}
-This section discusses adding or deleting an environment (that is, a Git branch). You'll do your development in a branch and, when complete, merge (`git push`) the branch with its parent. Choose a parent branch that is related to the work you're going to do; for example, at the start of a sprint for developing Feature X, you'll probably choose the FeatureX branch as the parent.
+Complete development of code and added extensions in a branch and, when complete, merge (`git push`) the branch with its parent or master.
 
-Deleting a branch by default makes the branch *inactive*. An inactive branch doesn't count against your total of eight possible project branches. You can either activate the branch later or you can [delete it entirely]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete) using the CLI.
+* For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
+* For Pro, you want to branch from Development (Integration `master`).
 
-{% collapsible Click to add an environment %}
+For branching strategies, review [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) and [Pro]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
 
-To add an environment:
+Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can [delete it entirely]({{page.baseurl}}cloudenv/environments-start.html#env-delete) using the CLI.
+
+If you need additional environments for development, enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) for more information.
+
+## Add a branch {#add}
+To add a branch:
 
 1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
 2.	In the left navigation bar, click the name of the parent environment.
@@ -57,10 +71,7 @@ To add an environment:
 	*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
 	*	[How tos and tutorials]({{ page.baseurl }}cloud/howtos/how-to.html)
 
-{% endcollapsible %}
-
-{% collapsible Click to delete an environment %}
-
+## Delete to make a branch inactive {#inactive}
 To delete an environment and make it inactive:
 
 1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
@@ -77,12 +88,10 @@ To delete an environment and make it inactive:
 
 	![Delete an environment]({{ site.baseurl }}common/images/cloud_environment-deleted.png)
 
-{% endcollapsible %}
-	
 ## Sync from the environment's parent {#project-branch-sync}
-Syncing an environment is the same as `git pull origin <parent>`. You sync to get updated code from a parent environment (that is, a Git branch).
+Syncing an environment (or branch) is the same as `git pull origin <parent>`. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.
 
-{% collapsible Click to show/hide content %}
+For Pro plan, you can also sync from Staging and Production to your Integration `master` branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment's database. For more information, see [Migrate and deploy static files and data]({{page.baseurl}}cloud/live/stage-prod-migrate.html).
 
 To sync an environment with its parent:
 
@@ -95,12 +104,8 @@ To sync an environment with its parent:
 	![Choose what to sync]({{ site.baseurl }}common/images/cloud_environment-sync2.png)
 4.	Select the check box next to each item to sync and click **Sync**.
 
-{% endcollapsible %}
-
 ## Merge with the environment's parent {#project-branch-merge}
-Merging an environment is the same as `git push origin`. You merge to push updated code from an environment to its parent environment (that is, a Git branch).
-
-{% collapsible Click to show/hide content %}
+Merging an environment is the same as `git push origin`. You merge to push updated code from an environment to its parent environment (that is, a Git branch). You can merge this code up through the parent-child relationships to `master`. You can also deploy to Staging and Production using the merge command.
 
 To merge an environment with its parent:
 
@@ -109,7 +114,75 @@ To merge an environment with its parent:
 3.	Click ![Merge an environment]({{ site.baseurl }}common/images/cloud_environment-merge.png){:width="30px"} (merge).
 4.	Click **Merge** to confirm the action.
 
-{% endcollapsible %}
+## View logs {#logs}
+Through the Project Web Interface, you can review various logs for environments including build, deploy, and deployment history.
+
+For **Starter** environments, you can review build and deploy logs and the deployment history. These environments include Master (Production) and all branches created from it.
+
+For **Pro** environments, you can review the following logs per environment:
+
+* Integration: Build and deploy and deployment history
+* Staging: Build logs and deployment history. You need to SSH into the server to view deploy logs.
+* Production: Build logs and deployment history. You need to SSH into the server to view deploy logs.
+
+If you do not see your Pro plan Staging and Production environments in the Project Web Interface, you need to [enter a ticket for updating]({{page.baseurl}}cloud/trouble/pro-env-management.html) your project interface.
+
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+2.	In the left pane, click an environment to review logs for.
+3.	The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.
+4.	To view the build log, select the Success or Failure link per deployment record on the account.
+
+## Pull code from a private Git repository {#private}
+Your {{site.data.var.ece}} project can include code located in a private Git repository. For example, a you may have code for a custom module or theme in a private repo. To do so, you must add your project's public SSH key to your private Git repository and update your project's `composer.json`.
+
+To add a deployment key to your private GitHub repository, you must be the administrator of that repository. GitHub allows you to use a deploy key for one repository only.
+
+If your project needs to access multiple repositories, you can choose to
+attach an SSH key to an automated user account. Because this account won't
+be used by a human, it's referred to as a [*machine user*](https://developer.github.com/guides/managing-deploy-keys/){:target="_blank"}. You can then add the
+machine account as collaborator or add the machine user to a team with
+access to the repositories it needs to manipulate.
+
+<div class="bs-callout bs-callout-info" id="info">
+We highly recommend adding and merging this code to your project Git repositories. If you do not configure the connection, you will have build issues.
+</div>
+
+### Find your deploy key {#ssh}
+To find your project SSH public key (also referred to as a *deploy key*):
+
+1.	Log in to your project using the Web Interface.
+2.	Click **Configure Project**.
+3.	Click **Deploy Key**.
+
+	The following figure shows an example.
+
+	![Deploy Key]({{ site.baseurl}}common/images/cloud_deploy-key.png){:width="500px"}
+
+4.	Copy the deploy key to the clipboard.
+5.	See [Enter your GitHub deploy key](#cloud-deploykey-github).
+
+### Enter your GitHub deploy key {#cloud-deploykey-github}
+On GitHub, deploy keys are read-only by default. Your Magento project won't push code to the private repository.
+
+To enter your project's public key as a GitHub deploy key:
+
+1.	Log in to your GitHub repository as its administrator.
+2.	Click **Settings** as the following figure shows.
+
+	![GitHub settings]({{ site.baseurl}}common/images/cloud_gh-settings.png){:width="650px"}
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>If you don't see this option, you're not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.</p>
+	</div>
+
+3.	On the Settings page, in the left navigation bar, click **Deploy Keys** as the following figure shows.
+
+	![GitHub deploy key]({{ site.baseurl}}common/images/cloud_gh-deploy-key.png){:width="200px"}
+
+4.	Click **Add deploy key**.
+5.	Follow the prompts on your screen to complete the task.
+
+In `composer.json`, use the `<user>@<host>:<.git</code>` format, or `ssh://<user>@<host>:<port>/<path>.git` if using a non-standard port.
 
 #### Related topics
 *	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)

@@ -24,7 +24,7 @@ There are more details about these steps in the following sections.
 
 Following is an example of a component provider for Admin:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 {
     /**
@@ -49,7 +49,7 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
         return $component;
     }
 }
-{% endhighlight %}
+```
 
 ## Vault JS component
 

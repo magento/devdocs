@@ -1,11 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 05_BC
 title: Magento 2.1 backward incompatible changes
-menu_title: Magento 2.1 backward incompatible changes
-version: 2.1
-menu_node: parent
 github_link: release-notes/backward-incompatible-changes.md
 redirect_from: release-notes/backward-incompatible-changes-2.1.html
 ---
@@ -48,7 +44,7 @@ The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossaryt
 **Action:** Added the setter method `setMetaTitle`<br/>
 **Description:** Set meta title field of CMS pages<br/>
 
-### GiftcardAccount Module (EE Only)
+### GiftcardAccount Module ({{site.data.var.ee}} Only)
 
 A data interfaces has been changed in the GiftcardAccount module.
 
@@ -78,7 +74,7 @@ The following entities have new forms and design:
 
 ## Database Schema changes
 
-#### Staging (EE Only)
+#### Staging ({{site.data.var.ee}} Only)
 The Staging modules introduce {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} changes for the following entities:
 
 *	Products

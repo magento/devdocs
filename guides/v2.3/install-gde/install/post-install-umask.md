@@ -1,0 +1,1 @@
+../../../v2.2/install-gde/install/post-install-umask.md

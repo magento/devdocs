@@ -2,23 +2,23 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: Import Magento EE into Magento Enterprise Cloud Edition
-menu_title: Import Magento EE into Magento Enterprise Cloud Edition
+title: Import Magento EE into Magento Commerce (Cloud)
+menu_title: Import Magento EE into Magento Commerce (Cloud)
 menu_order: 154
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import-import.md
 ---
- 
 
-This topic discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
+
+This topic discusses how to import code from your existing Magento EE project to your {{site.data.var.ece}}'s Git repository `master` branch.
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-The procedure discussed in this topic replaces your new Magento Enterprise Cloud Edition project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
+The procedure discussed in this topic replaces your new {{site.data.var.ece}} project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
 
-Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.
+Before you continue, make sure there is nothing in your {{site.data.var.ece}} project you want to keep.
 </div>
 
 ## Required information
@@ -31,7 +31,7 @@ Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c
 
 To create a remote Git reference:
 
-1.  Log in to your local Magento Enterprise Cloud Edition development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+1.  Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  Make a copy of `composer.json` _in a non-tracked directory_ so it doesn't get overwritten.
 
         cp composer.json ../composer.json.cloud
@@ -72,7 +72,7 @@ To import your Magento EE code to Cloud:
 3.  Reset your Cloud `master` branch to contain the code and the commit history of your Magento EE branch:
 
         git reset --hard prev-project/<branch name>
-4.  Push code from your Magento EE project to your Magento Enterprise Cloud Edition project, overwriting the previous contents and commit history with that of your project:
+4.  Push code from your Magento EE project to your {{site.data.var.ece}} project, overwriting the previous contents and commit history with that of your project:
 
         git push -f cloud-project master
 
@@ -90,11 +90,11 @@ As the project builds and deploys, many messages are displayed on the screen. A 
        https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
 
 ## Import the Magento database {#cloud-import-db}
-Before you can use your existing Magento EE code in Magento Enterprise Cloud Edition, you must import the database.
+Before you can use your existing Magento EE code in {{site.data.var.ece}}, you must import the database.
 
-To import the Magento database in Magento Enterprise Cloud Edition, you must know:
+To import the Magento database in {{site.data.var.ece}}, you must know:
 
-*   The Magento Enterprise Cloud Edition environment's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-sshurl)
+*   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-sshurl)
 *   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-cloudb)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -102,7 +102,7 @@ This topic discusses how to import the [integration system]({{ page.baseurl }}cl
 </div>
 
 ### Drop and re-create the Cloud database
-SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first. 
+SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first.
 
 To drop and re-create the Cloud database:
 
@@ -122,7 +122,7 @@ To drop and re-create the Cloud database:
 5.  At the `MariaDB [main]>` prompt, enter `exit`.
 6.  At the shell command prompt, enter the following command to re-create the database.
 
-        zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name> 
+        zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
 
     For example,
 
@@ -152,7 +152,7 @@ To update the unsecure base URL:
 
     <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
     The base URL _must_ end with a `/` character.
-    </div> 
+    </div>
 6.  Confirm the change by entering the following command:
 
         SELECT * from core_config_data;
@@ -165,6 +165,8 @@ For your system to be fully functional, you must also set unsecure and secure UR
 </div>
 
 ## Copy the encryption key {#cloud-import-key}
+The Magento EE encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to `env.php`. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.
+
 To copy your Magento EE encryption key:
 
 1.  If you haven't done so already, SSH to the Cloud environment.
@@ -172,18 +174,21 @@ To copy your Magento EE encryption key:
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
 3.  Replace the existing value of `key` with your [Magento EE key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey).
+
+        {% highlight php startinline=true %}
+        return array (
+          'crypt' =>
+          array (
+            'key' => '<your encryption key>',
+          ),
+        );
+        {% endhighlight %}
 4.  Save your changes to `env.php` and exit the text editor.
 
-If `env.php` does not exist, create it with the following contents:
 
-{% highlight php startinline=true %}
-return array (
-  'crypt' =>
-  array (
-    'key' => '<your encryption key>',
-  ),
-);
-{% endhighlight %}
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Don't forget to add this encryption key variable to `env.php` for all environments: Integration, Staging, and Production.
+</div>
 
 ## Import media {#cloud-import-media}
 To import media files into your Cloud environment:
@@ -203,7 +208,7 @@ On the Cloud environment, enter the following commands in the order shown:
 
     bin/magento setup:upgrade
     bin/magento magento setup:static-content:deploy
-    bin/magento cache:flush
+    bin/magento cache:clean
 
 After the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} flushes, enter `exit` to close the SSH tunnel.
 

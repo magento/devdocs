@@ -1,23 +1,30 @@
 ---
 layout: default
-group: cloud
-subgroup: 080_setup
-title: Step 5, Clone or branch an environment
-menu_title: Step 5, Clone or branch an environment
-menu_order: 165
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: setupenv
+group:
+subgroup:
+title: Branch an environment
+menu_title: Branch an environment
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/before/before-setup-env-env.md
 ---
 
-{::options syntax_highlighter="rouge" /}
+#### Previous step:
+[Set up authentication keys]({{ page.baseurl }}cloud/before/before-setup-env-keys.html)
 
+With your workspace configured, the project cloned, and cron set up, you can create a branch for development work.
 
-Now that you've changed the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} variables, you should create a new environment for your development work; this new environment inherits the variable values from master.
+You can branch according to your own branching strategies. For example, you could create a branch to:
 
-After you create the branch, update project dependencies so you can install the Magento software locally.
+* Install and add Magento extensions and modules
+* Create custom code and front end themes
+* Modify and export configurations
+
+After you [create the branch](#branch), update project dependencies so you can install the Magento software locally. You should also [Add your local authentication keys to the project](#add-keys-project).
+
+## Branch an environment {#branch}
+To branch from master:
 
 1.	Do any of the following:
 
@@ -28,17 +35,49 @@ After you create the branch, update project dependencies so you can install the 
 
 			magento-cloud environment:checkout
 
-	For example, to create a new branch named `sprint1` from master, enter
+	For example, to create a new branch named `sprint1` from master, enter:
 
 			magento-cloud environment:branch sprint1 master
 
-3.	After the command completes, update dependencies:
+2.	After the command completes, update dependencies:
 
 		composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-4.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
+3.  Create a [snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) of the environment.
 
 		magento-cloud snapshot:create -e <environment ID>
 
-#### Next step
-[Step 5, set up authentication keys]({{ page.baseurl }}cloud/before/before-setup-env-keys.html)
+## Add authentication keys to auth.json {#add-keys-project}
+Contact the Project Owner or Tech Admin for the Magento authentication keys. You will add the keys to `auth.json` locally and update the branch. You need `auth.json` updated before you can upgrade Magento software or install extensions.
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+Ensure your Project Owner or Tech Admin has [added authentication keys to the project]({{ page.baseurl }}cloud/before/before-setup-env-keys.html).
+</div>
+
+These instructions require having a cloned branch for development locally.
+
+To add your local authentication keys:
+
+1.	Use the Git branch you created.
+
+2.	Locate or create a file named `auth.json` in the Magento project root directory and add your authentication keys to it.
+
+	If you have an `auth.json` file already, contact your project administrator to make sure a project variable has been defined.
+
+	A sample `auth.json` follows. Replace the same values with your keys.
+
+			{% highlight json %}
+			{
+			   "http-basic": {
+			      "repo.magento.com": {
+			         "username": "<your public key>",
+			         "password": "<your private key>"
+			      }
+			   }
+			}
+			{% endhighlight %}
+3.	Save your changes to `auth.json` and exit the text editor.
+
+Commit and push your changes to the Git branch.
+
+#### Next step
+[Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)

@@ -70,7 +70,7 @@ like this:
     </tr>
     <tr>
         <td>
-{%highlight php startinline=1%}
+{% highlight php %}
 class Config
 {
     private $data;
@@ -85,10 +85,10 @@ class Config
         return $this->data[$key];
     }
 }
-{%endhighlight%}
+{% endhighlight %}
         </td>
         <td>
-{%highlight php startinline=1%}
+{% highlight php %}
 class Config
 {
     private $data;
@@ -100,7 +100,7 @@ class Config
         }
     }
 }
-{%endhighlight%}
+{% endhighlight %}
         </td>
     </tr>
 </table>
@@ -113,7 +113,7 @@ class Config
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
-{%highlight php startinline=1%}
+``` php?start_inline=1
 class Composite
 {
     /**
@@ -137,7 +137,7 @@ class Composite
         $this->renderers = $renderers;
     }
 }
-{%endhighlight%}
+```
 {% endcollapsible %}
 ---
 
@@ -152,7 +152,7 @@ class Composite
     </tr>
     <tr>
         <td>
-{%highlight php startinline=1%}
+{% highlight php %}
 
 class Config
 {
@@ -164,10 +164,10 @@ class Config
         $eventManager->dispatch('config_read_after');
     }
 }
-{%endhighlight%}
+{% endhighlight %}
         </td>
         <td>
-{%highlight php startinline=1%}
+{% highlight php %}
 class Config
 {
     private $fileReader;
@@ -189,7 +189,7 @@ class Config
         return $this->data[$key];
     }
 }
-{%endhighlight%}
+{% endhighlight %}
         </td>
     </tr>
 </table>
@@ -423,23 +423,21 @@ We are reviewing this section and will publish it soon.
 
 10.4. The [W3C Content Security Policy] MUST be followed.
 
-10.5. The [Airbnb JS Style Guide] SHOULD BE followed.
+10.5. ESLint [rules][rules] SHOULD BE followed.
 
-10.5.1. ES2015 SHOULD be used as a JS standard.
+10.5.1. ES5 SHOULD be used as a JS standard.
 
 10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
 
-10.5.3. All asynchronous operations MUST be represented with ES2015 Promises.
+10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.
 
 10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
 
 10.5.5. Modules MUST NOT have external side effects.
 
-10.5.6. Every ES2015 module MUST declare a default value.
+10.5.6. Function declarations MUST be used for private functions instead of function expressions.
 
-10.5.7. Function declarations MUST be used for private functions instead of function expressions.
-
-10.5.8. Re-declaration of function names MUST NOT be used.
+10.5.7. Re-declaration of function names MUST NOT be used.
 
 ## 11. Testing
 
@@ -476,7 +474,7 @@ We are reviewing this section and will publish it soon.
 14.1. All values (including objects) passed to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
 {% collapsible Example: %}
-{%highlight php startinline=1%}
+``` php?start_inline=1
 class SampleEventObserverThatModifiesInputs
 {
     /**
@@ -497,7 +495,7 @@ class SampleEventObserverThatModifiesInputs
         }
     }
 }
-{%endhighlight%}
+```
 {% endcollapsible %}
 ---
 
@@ -514,5 +512,5 @@ class SampleEventObserverThatModifiesInputs
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[Airbnb JS Style Guide]: https://github.com/airbnb/javascript
+[rules]: https://github.com/magento/magento2/blob/2.1/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{page.baseurl}}extension-dev-guide/cli-cmds/cli-naming-guidelines.html

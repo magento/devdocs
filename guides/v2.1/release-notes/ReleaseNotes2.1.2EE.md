@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1.2 Release Notes
-menu_title: Magento EE 2.1.2 Release Notes
+title: Magento Commerce 2.1.2 Release Notes
+menu_title: Magento Commerce 2.1.2 Release Notes
 menu_order: 270
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
@@ -11,7 +11,7 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.2EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.1.2. This release includes security enhancements and several functional fixes.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.2. This release includes security enhancements and several functional fixes.
 
 
 

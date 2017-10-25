@@ -44,6 +44,7 @@ This command has no effect on cron jobs outside the `#~ MAGENTO START` and `#~ M
 </div>
 
 ## Run cron from the command line {#config-cli-cron-group-run}
+
 Command options:
 
 	magento cron:run [--group="<cron group name>"]
@@ -53,9 +54,32 @@ where `--group` specifies the cron group to run (omit this option to run cron fo
 To set up custom cron jobs and groups, see [Configure custom cron jobs and cron groups]({{ page.baseurl }}config-guide/cron/custom-cron.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.
+You must run cron twice: the first time to discover tasks to run and the second time — to run the tasks themselves. The second cron run must occur on or after the `scheduled_at` time for every task.
 </div>
 
+## Logging
+System logs provide detailed information for debugging. The following attributes apply to Magento cron logs:
+
+-   All exceptions from cron jobs are logged in `\Magento\Cron\Observer\ProcessCronQueueObserver::execute`.
+
+-   Failed jobs with `ERROR` and `MISSED` statuses are logged to the `<your Magento install dir>/var/log` directory.
+
+-   Jobs with an `ERROR` status are always logged as `CRITICAL` in the `<your Magento install dir>/var/log/exception.log` directory.
+
+-   Jobs with a `MISSED` status are logged as `INFO` in the `<your Magento install dir>/var/log` directory (developer mode only).
+
+<div class="bs-callout bs-callout-tip" markdown="1">
+All cron data is also written to the `cron_schedule` table in the Magento database. The table provides a history of cron jobs, including:
+
+-   Job ID and code
+-   Status
+-   Created date
+-   Scheduled date
+-   Executed date
+-   Finished date
+
+To see records in the table, log in to the Magento database on the command line and enter `SELECT * from cron_schedule;`.
+</div>
 
 #### Related topics
 

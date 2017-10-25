@@ -53,7 +53,7 @@ For more information, see one of the following:
 
 #### Set up iptables rules to enable various Magento services to communicate.
 
-Whether you have one server or many, you must open ports in the firewall to enable Magento services to communicate. For example, if you use the Solr search engine with Magento Enterprise Edition (EE), you must enable it to communicate with the web server. If you have multiple web nodes, you must enable them to communicate with each other.
+Whether you have one server or many, you must open ports in the firewall to enable Magento services to communicate. For example, if you use the Solr search engine with {{site.data.var.ee}}, you must enable it to communicate with the web server. If you have multiple web nodes, you must enable them to communicate with each other.
 
 More information:
 
@@ -73,15 +73,13 @@ More information:
 
 Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
 
-*	Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6" target="_blank">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html" target="_blank">CentOS documentation</a>)	
+*	Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6" target="_blank">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html" target="_blank">CentOS documentation</a>)
 *	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
 
-<h2 id="post-install-ee">Settings for Magento Enterprise Edition (EE) only</h2>
-<img src="{{ site.baseurl }}common/images/ee-only_large.png">
+<h2 id="post-install-ee">Settings for {{site.data.var.ee}} only</h2>
 
-You can configure the following only if you use Magento EE:
+You can configure the following only if you use {{site.data.var.ee}}:
 
 *	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Apache Solr search</a>
 *	<a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>
 *	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message queues</a>
-

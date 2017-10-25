@@ -1,1 +1,0 @@
-../../../v2.0/architecture/view/page-assets.md

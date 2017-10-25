@@ -57,7 +57,7 @@ The first command (`magento cron:run`) reindexes indexers, sends automated e-mai
 
 **Example 1:** Everyone except contributing developers
 
-For example, if the PHP binary is located in `/usr/bin`, you installed Magento in `/var/www/html/magento2`, enter
+For example, if the PHP binary is located in `/usr/bin`, you installed Magento in `/var/www/magento2`, enter
 
 Example:
 

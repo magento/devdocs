@@ -1,19 +1,39 @@
 ---
 layout: default
-group: cloud
-subgroup: 030_ReleaseNotes
-title: magento-cloud-configuration release 101.4.1 Release Notes
-menu_title: magento-cloud-configuration release 101.4.1 Release Notes
-menu_order: 47
-menu_node: 
+group: release-notes
+subgroup: 02_rel-notes
+title: magento-cloud-configuration release 101.4.x Release Notes
+menu_title: magento-cloud-configuration release 101.4.x Release Notes
+menu_order: 380
+menu_node:
+level3_menu_node: level3child
+level3_subgroup: mccloud-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes101.4.md
+redirect_from:
+  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.4.html
 ---
- 
-These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.4, `magento-cloud-configuration` release 101.4.1.
 
-## Changes in this release
-In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4, we provide the following improvements:
+These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}} version 2.1.4, `magento-cloud-configuration` release 101.4.1, 101.4.4, and 101.4.5.
+
+## 101.4.5 changes
+In `magento-cloud-configuration` release 101.4.5 on {{site.data.var.ece}} 2.1.4, we provide the following improvements:
+
+<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting](http://devdocs.magento.com/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
+
+## 101.4.4 changes
+
+In `magento-cloud-configuration` release 101.4.4 on {{site.data.var.ece}} 2.1.4, we provide the following improvements:
+
+<!--- MAGECLOUD-870 -->* Magento no longer automatically disables Google Analytics when deployed in the master branch.
+
+<!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud.
+
+
+## 101.4.1 changes
+
+In `magento-cloud-configuration` release 101.4.1 on {{site.data.var.ece}} 2.1.4, we provide the following improvements:
+
 
 *	Better way to [manage the configuration]({{ site.gdeurl21 }}cloud/live/sens-data-over.html#cloud-confman-over) so your integration, staging, and production systems stay in synchronization with each other more easily.
 
@@ -22,11 +42,10 @@ In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Edi
 
 For details, see [Overview of configuration management]({{ site.gdeurl21 }}cloud/live/sens-data-over.html).
 
-## How to get `magento-cloud-configuration` release 101.4.1
-Magento Enterprise Cloud Edition periodically provides patch releases in components like `magento-cloud-configuration`.
+## How to get `magento-cloud-configuration` release 101.4.x
+{{site.data.var.ece}} periodically provides patch releases in components like `magento-cloud-configuration`.
 
-To test and apply the patch, see [Test general patches]({{ site.gdeurl21 }}cloud/project/project-patch.html#cloud-patch-gen).
+To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}cloud/project/project-upgrade.html).
 
-### Magento EE Release Notes
-This Magento Enterprise Cloud Edition release has no corresponding Magento EE release.
-
+### Magento Commerce Release Notes
+This {{site.data.var.ece}} release has no corresponding Magento Commerce release.

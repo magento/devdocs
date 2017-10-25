@@ -10,62 +10,124 @@ version: 2.0
 github_link: cloud/project/projects.md
 ---
 
-A Magento Enterprise Cloud Edition *project* is a container for your *applications*. Applications have *environments* and *services* that run on them. (Examples of services include database, web server, and caching server.)
+The {{site.data.var.ece}} *project* includes all code in Git branches, associated environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
 
-The project's `master` branch corresponds to your live Magento store; that is, you work in Git branches (each branch corresponds on an environment) and, when you're done, you merge with the `master` branch, which is deployed to the live cloud.
+We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. You have full access to all environments for Starter and Pro environments. You may need to continue to use SSH and CLI commands for some aspects of Pro plan Staging and Production environments.
 
-## Quick tour
-This section provides a quick tour of your project using the Web Interface. For more detailed information about the Web Interface, see:
+{% include cloud/wings-management.md %}
 
-*	[Manage environments (branches)]({{page.baseurl}}cloud/project/project-webint-branch.html)
-*	[Project backup and restore (snapshot)]({{page.baseurl}}cloud/project/project-webint-snap.html)
-*	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
+To manage your project, environment, and branches, see:
 
-### Login
-Log in to your project using Bitbucket, GitHub, Google, or a e-mail address and password.
+* [Configure your project]({{page.baseurl}}cloud/project/project-webint-basic.html)
+* [Project structure]({{page.baseurl}}cloud/project/project-start.html)
+* [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
+*	Manage branches with the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html) or [CLI commands]({{page.baseurl}}cloud/env/environments-start.html)
+*	[Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html)
+
+### Project and environment variables {#variables}
+The following sections detail more about project and environment variables:
+
+*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
+
+### Upgrade and patch {#upgrade}
+To upgrade and patch Magento, see:
+
+*	[Upgrade and test Magento Commerce]({{page.baseurl}}cloud/project/project-upgrade.html)
+*	[Patch and test Magento Commerce]({{page.baseurl}}cloud/project/project-patch.html)
+
+## Access the Project Web Interface {#login}
+With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
 
 ![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="450px"}
 
-### Access the project
-Hovering the mouse pointer over **Access Site** shows how to access your site using a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} or SSH.
+## Access the project and environments {#project}
+When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
 
-![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png){:width="450px"}
+Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 
-### Configure environments
-Click **Configure environment** to create and manage [*environments*]({{page.baseurl}}cloud/env/environments.html), each of which corresponds to a Git branch.
+For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html).
 
-![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png){:width="450px"}
+![Starter branch hierarchy]({{ site.baseurl }}common/images/cloud_project-starter.png)
+
+For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration. The ![Enterprise icon]({{ site.baseurl }}common/images/cloud_icon-enterprise.png) icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
+
+![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
+
+The following table details the branches for Pro:
+
+<table>
+<thead>
+<tr>
+<th style="width: 125px;">Branch</th>
+<th style="width: 100px;">Environment</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>(no branch)</td>
+<td>Global Master</td>
+<td>This "branch" captures global project changes including adding user accounts and variables.
+</td>
+</tr>
+<tr>
+<td><code>production</code></td>
+<td>Production</td>
+<td>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</td>
+</tr>
+<tr>
+<td><code>staging</code></td>
+<td>Staging</td>
+<td>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to test in a pre-production environment.</td>
+</tr>
+<tr>
+<td><code>master</code></td>
+<td>Integration master</td>
+<td>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code. When this code is complete, you merge to <code>staging</code> and <code>production</code>.</td>
+</tr>
+</tbody>
+</table>
+
+If you are an existing Pro merchant, and have not ticketed to [add Staging and Production]({{page.baseurl}}cloud/trouble/pro-env-management.html) to your UI, you will see only Integration `master` and any created branches.
+
+![Pro branch hierarchy (original)]({{ site.baseurl }}common/images/cloud_project-pro-old.png)
+
+To access an environment store and admin, select a branch and click **Access Site**. A list of store URLs and SSH command display. Select the URL to view the store in that environment.
+
+![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png)
+
+The Pro plan Production environment includes three nodes that you can access using the following links:
+
+* Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+* Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+
+  The production URL is used by the content delivery network (CDN).
+
+If you have inactive Git branches of code, you can toggle displaying the branches in the hierarchy.
+
+![Show or hide inactive branches]({{ site.baseurl }}common/images/cloud_show-inactive.png)
+
+## Configure environments {#configure}
+You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{page.baseurl}}cloud/env/environments.html), each of which corresponds to a Git branch.
+
+![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png)
 
 This displays the following page, which enables you to configure settings, [variables]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel), [routes]({{page.baseurl}}cloud/project/project-conf-files_routes.html), and [users]({{page.baseurl}}cloud/project/user-admin.html).
 
-![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png){:width="450px"}
+![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png)
 
-### Configure the project
-Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/project/user-admin.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project.
+## Configure the project
+Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/project/user-admin.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
 
-![configure project]({{ site.baseurl }}common/images/cloud_project-config.png){:width="450px"}
-
-### Manage users
-The **Users** tab page enables you to add users to the project and to give them [privileges to access the project and environments]({{page.baseurl}}cloud/project/user-admin.html).
-
-![Manage users]({{ site.baseurl }}common/images/cloud_project-config.png){:width="450px"}
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Currently, permissions changes that grant or revoke SSH access to an environment take effect only after the next time that environment is deployed.</p>
-</div>
-
-Click **Add User**. The following page displays.
-
-![Add users]({{ site.baseurl }}common/images/cloud_project-user-add.png){:width="450px"}
-
-Selecting the **Super user** check box grants project administrator privileges to the user.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Account owner is locked; you can't change its permissions.</p>
-</div>
+![configure project]({{ site.baseurl }}common/images/cloud_project-config.png)
 
 #### Related topics
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
+*	[Configure Magento Commerce]({{page.baseurl}}cloud/configure/configuration-overview.html)
+*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
 *	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
 *	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
 *	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)

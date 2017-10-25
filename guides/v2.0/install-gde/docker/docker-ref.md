@@ -10,7 +10,9 @@ menu_order: 1
 version: 2.0
 github_link: install-gde/docker/docker-ref.md
 ---
- 
+
+{% include install/docker/deprecated-note.html %}
+
 ## System requirements {#devbox-sys-req}
 To use the Magento DevBox, you must have a system with the following:
 
@@ -32,12 +34,12 @@ This section discusses prerequisites you must complete before you install the Ma
 Before you continue, make sure you install and configure the following:
 
 *	Mac OS and Windows: Install the [Docker software](https://www.docker.com/products/docker-toolbox){:target="_blank"}
-*	Windows 10 only: 
+*	Windows 10 only:
 
     *   You must enable Hyper-V
-	
-        After Docker starts, it requests you to enable Hyper-V. A reboot is required. 
-	
+
+        After Docker starts, it requests you to enable Hyper-V. A reboot is required.
+
     *   Set up Docker file sharing as discussed in the next section
 
     <div class="bs-callout bs-callout-warning" markdown="1">
@@ -54,7 +56,7 @@ To set up Docker file sharing on Windows:
 1.  Right-click the Docker icon in the system tray.
 2.  From the pop-up menu, click **Settings**.
 3.  Click the **Shared Drives** tab.
-    
+
     This tab page displays all drives that Docker currently knows about. Make sure you install Magento in a drive listed on this tab page.
 
 4.  Select the check box next to the drive in which to install Magento.
@@ -64,9 +66,9 @@ To set up Docker file sharing on Windows:
 
 To set up Docker file sharing on the Mac OS:
 
-1.  Right-click the Docker logo. 
-2.  From the pop-up menu, click **Preferences**. 
-3.  In the Preferences dialog box, click the **File Sharing** tab. 
+1.  Right-click the Docker logo.
+2.  From the pop-up menu, click **Preferences**.
+3.  In the Preferences dialog box, click the **File Sharing** tab.
 
     This tab page displays all shared directories that Docker currently knows about. Make sure you install Magento in a folder listed on this tab page.
 5.  To add additional directories, follow the prompts on your screen or consult Docker documentation.
@@ -83,7 +85,7 @@ To get Magento DevBox now, go to the [Magento download page](https://magento.com
 
 <p id="devbox-fileshare"></p>{% collapsibleh2 How DevBox uses file sharing %}
 
-DevBox runs in a Docker container, which is also referred to as the _guest operating system_. The Magento files and folders are located on your _host operating system_ (Windows or Mac OS). To facilitate development, Magento files and directories are shared by the guest and host operating systems. 
+DevBox runs in a Docker container, which is also referred to as the _guest operating system_. The Magento files and folders are located on your _host operating system_ (Windows or Mac OS). To facilitate development, Magento files and directories are shared by the guest and host operating systems.
 
 When you make a change to files, the changes are automatically synchronized, regardless of which files you change. (In other words, if you change files on the host operating system, those files are synchronized with the guest operating system and vice versa.)
 
@@ -128,7 +130,7 @@ cp -r /Users/&lt;name>/Downloads/&lt;Magento folder name> &lt;path></pre>
 Don't use arguments like `/*` in the `cp` command because hidden files like `.htaccess` won't copy.
 </div>
 
-For example, to copy Magento CE 2.1.3 code to a new folder named `/Users/me/Applications/Magento`, use the following commands:
+For example, to copy {{site.data.var.ce}} 2.1.3 code to a new folder named `/Users/me/Applications/Magento`, use the following commands:
 
     mkdir -p /Users/me/Applications/Magento
     cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/Applications/Magento
@@ -155,7 +157,7 @@ All the files in the preceding list are hidden; if these files exist in the fold
 {% collapsibleh2 Installation options %}
 This section discusses options common to creating a new Magento installation or using an existing Magento installation.
 
-#### New or existing installation 
+#### New or existing installation
 The first question the wizard asks is whether you want to:
 
 *	Create New Magento Installation
@@ -175,7 +177,7 @@ Enter the path to install the Magento application. The simplest option is to spe
 See <a href="#devbox-download">How to download Magento code</a>.
 
 #### Select Magento Edition
-For new installations, you have the option to install Magento Community Edition (CE) or Enterprise Edition (EE). Both editions require authentication; to get Magento EE authentication credentials, you must be a licensed customer.
+For new installations, you have the option to install {{site.data.var.ce}} or {{site.data.var.ee}}. Both editions require authentication; to get {{site.data.var.ee}} authentication credentials, you must be a licensed customer.
 
 **Optional sample data** Optional sample data provides a storefront based on the Luma theme outfitted with products, categories, customer registration, and so on. It functions just like a Magento storefront and you can manipulate prices, inventory, and promotional pricing rules using the Magento Admin.
 
@@ -218,7 +220,7 @@ To provide you more control over your Magento installation, we enable you to cho
 
     <tr>
         <td>Environment configuration</td>
-        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for Magento CE)</li><li><a href="{{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
+        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for {{site.data.var.ce}})</li><li><a href="{{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
     </tr>
 </tbody>
 </table>
@@ -248,7 +250,7 @@ To provide you more control over your Magento installation, we enable you to cho
 
     <tr>
         <td>Environment configuration</td>
-        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for Magento CE)</li><li><a href="{{ page.baseurl }}http://devdocs.magento.com/guides/v2.1/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
+        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for {{site.data.var.ce}})</li><li><a href="{{ page.baseurl }}http://devdocs.magento.com/guides/v2.1/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
     </tr>
 </tbody>
 </table>
@@ -258,7 +260,7 @@ To provide you more control over your Magento installation, we enable you to cho
 ## Run scripts {#devbox-root-dir}
 After you finish the DevBox wizard, you're prompted to download a `.zip` file to any folder on your system. When you extract the `.zip` file, your operating system might create another folder.
 
-In the following example, the user downloaded `build-18c4e4d3c5a541f37e9cffd35f1bf74e.zip` to a `C:\magento` folder on Windows. Extracting the `.zip` created a subfolder. 
+In the following example, the user downloaded `build-18c4e4d3c5a541f37e9cffd35f1bf74e.zip` to a `C:\magento` folder on Windows. Extracting the `.zip` created a subfolder.
 
     C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e
 
@@ -306,7 +308,7 @@ To set static listen ports:
     An example follows.
 
         ports:
-           - "12345:80" 
+           - "12345:80"
            - "54321:22"
 
     The preceding example causes the web container to listen on port 12345 and SSH to listen on port 54321.

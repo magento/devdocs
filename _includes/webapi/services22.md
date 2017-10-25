@@ -1,8 +1,8 @@
 <div markdown="1">
 
-## Magento Enterprise Edition (EE) Web APIs Services per Module {#eelist}
+## {{site.data.var.ee}} Web APIs Services per Module {#eelist}
 
-The Web APIs for Magento EE are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
+The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are available on {{site.data.var.ee}} installations only. {{site.data.var.ee}} installations automatically have access to all {{site.data.var.ce}} (formerly Magento Community Edition) web APIs.
 
 ### Customer balance
     customerBalanceBalanceManagementV1
@@ -30,12 +30,9 @@ The Web APIs for Magento EE are available on EE installations only. EE installat
     worldpayGuestPaymentInformationManagementProxyV1
 
 
-## Magento Community Edition (CE) Web APIs Services per Module {#celist}
+## {{site.data.var.ce}} Web APIs Services per Module {#celist}
 
-  The Magento CE Web APIs are available on all EE and CE installations.
-
-### Analytics
-    analyticsLinkProviderV1 *
+  The {{site.data.var.ce}} Web APIs are available on all installations.
 
 ### Backend
     backendModuleServiceV1
@@ -70,12 +67,13 @@ The Web APIs for Magento EE are available on EE installations only. EE installat
     catalogProductLinkRepositoryV1
     catalogProductLinkTypeListV1
     catalogProductMediaAttributeManagementV1
+    catalogProductRenderListV1 *
     catalogProductRepositoryV1
     catalogProductTierPriceManagementV1
     catalogProductTypeListV1
     catalogProductWebsiteLinkRepositoryV1
     catalogSpecialPriceStorageV1 *
-    catalogTierPriceStorageV1 * 
+    catalogTierPriceStorageV1 *
 
 ### Catalog inventory
     catalogInventoryStockRegistryV1
@@ -192,3 +190,7 @@ The Web APIs for Magento EE are available on EE installations only. EE installat
     taxTaxClassRepositoryV1
     taxTaxRateRepositoryV1
     taxTaxRuleRepositoryV1
+
+## Magento B2B
+
+See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a list of services provided with B2B.

@@ -12,7 +12,7 @@ baseurl: "/"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Version Switcher. Version numbers should be STRING
-version: "2.1"
+version: "2.2"
 versions:
    -
       name: "2.0"
@@ -20,6 +20,9 @@ versions:
    -
       name: "2.1"
       url: guides/v2.1/
+   -
+      name: "2.2"
+      url: guides/v2.2/
 
 # GitHub variables
 github: "https://github.com/magento/devdocs/tree/develop/guides/"
@@ -41,13 +44,13 @@ mage2100url: "https://github.com/magento/magento2/blob/2.1/"
 # 2.2.0 variables
 gdeurl22: "/guides/v2.2/"
 githuburl22: "https://github.com/magento/devdocs/tree/develop/guides/v2.2/"
-mage2200url: "https://github.com/magento/magento2/blob/develop/"
+mage2200url: "https://github.com/magento/magento2/blob/2.2/"
 
 # 2.3.0 variables
 
 gdeurl23: "/guides/v2.3/"
 githuburl23: "https://github.com/magento/devdocs/tree/develop/guides/v2.3/"
-mage2300url: "https://github.com/magento/magento2/blob/2.3/"
+mage2300url: "https://github.com/magento/magento2/blob/develop/"
 
 # Other variables
 namem2fedg: "Magento 2 Frontend Developer's Guide"
@@ -69,24 +72,25 @@ defaults:
       type: videos
     values:
       layout: video
-      guide_version: "2.1"
+      guide_version: "2.2"
 
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 kramdown:
   toc_levels: 2..3
 
 incremental: false
 
-gems:
-  - jekyll-redirect-from
+algolia:
+  application_id: 'E642SEDTHL'
+  index_name: 'devdocs'
+  api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
+  lazy_update: false
+  excluded_files:
+    - guides/m1x
+    - swagger
 
-
-
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'guides/v2.2']
-
-
-
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea' ]

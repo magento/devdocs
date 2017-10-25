@@ -12,7 +12,7 @@ github_link: howdoi/webapi/filter-response.md
 ## Retrieving filtered responses
 {:.no_toc}
 
-Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magneto provides a query parameter-based syntax for REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} requests that return partial responses.
+Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} requests that return partial responses.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>This feature is not available for SOAP, because SOAP does not allow partial responses. </p>
@@ -33,7 +33,7 @@ On POST and PUT requests, Magento ignores the `fields` parameter as input, but t
 {:.no_toc}
 
 
-All examples use Magento CE sample data.
+All examples use {{site.data.var.ce}} sample data.
 
 ### Simple fields
 
@@ -157,7 +157,7 @@ The following POST operation and payload creates a {% glossarytooltip 8d40d668-4
 
 ### Using with searchCriteria
 
-The [`searchCriteria` query parameter]({{page.baseurl}}howdoi/webapi/search-criteria.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
+The [`searchCriteria` query parameter]({{page.baseurl}}rest/performing-searches.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
 
 The following query returns only the `sku` and `name` parameters for product items whose `category_gear` attribute includes the value `86`.
 
@@ -209,4 +209,4 @@ The following query returns only the `sku` and `name` parameters for product ite
 
 ## Related topics
 {:.no_toc}
-* [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html)
+* [Search using REST APIs]({{page.baseurl}}rest/performing-searches.html)

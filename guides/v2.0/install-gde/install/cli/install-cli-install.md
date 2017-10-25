@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install_cli 
+group: install_cli
 subgroup: 05_Command-line installation
 title: Install the Magento software
 menu_title: Install the Magento software
@@ -15,7 +15,7 @@ redirect_from:
 <div class="bs-callout bs-callout-tip">
   <p>Totally lost? Need a helping hand? Try our <a href="{{page.baseurl}}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{page.baseurl}}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
-  
+
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
 Before you begin, make sure that:
@@ -78,7 +78,7 @@ You can run the following commands to find values for some required arguments:
   <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{page.baseurl}}install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
 </div>
 
-	
+
 <h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
 The format of the install command follows:
 
@@ -181,7 +181,7 @@ The following table discusses the meanings of installation option names and valu
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	
+
 	<tr>
 		<td><p>--language</p></td>
 		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
@@ -230,11 +230,11 @@ The following table discusses the meanings of installation option names and valu
 		<p><code>0</code> disables the use of the key.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	<!-- <tr> 
+	<!-- <tr>
 		<td>enable_modules=&lt;list>}</td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>To enable and disable modules after installing Magento, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-		<p>For important information about module dependencies, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>  
+		<p>For important information about module dependencies, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
@@ -248,7 +248,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>db</code> to store session data in the <a href="{{page.baseurl}}config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
-			
+
 			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 	</ul></td>
 		<td><p>No</p></td>
@@ -276,23 +276,23 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 <tr>
 <td><p>--amqp-host</p></td>
-<td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<td><p>{{site.data.var.ee}} only. Do not use the `--amqp` options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about installing and configuring RabbitMQ.</p>
 <p>The host name where RabbitMQ is installed.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-port</p></td>
-<td><p>Enterprise Edition only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
+<td><p>{{site.data.var.ee}} only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-user</p></td>
-<td><p>Enterprise Edition only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>{{site.data.var.ee}} only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-password</p></td>
-<td><p>Enterprise Edition only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
+<td><p>{{site.data.var.ee}} only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 	</tbody>
@@ -341,7 +341,7 @@ The following example installs Magento with the following options:
 Messages similar to the following display to indicate a successful installation:
 
 	Post installation file permissions check...
-	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 	[Progress: 274 / 274]
 	[SUCCESS]: Magento installation complete.
 	[SUCCESS]: Admin Panel URI: /admin_puu71q
@@ -384,7 +384,7 @@ The following example installs Magento with the following options:
 Messages similar to the following display to indicate a successful installation:
 
 	Post installation file permissions check...
-	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 	[Progress: 274 / 274]
 	[SUCCESS]: Magento installation complete.
 	[SUCCESS]: Admin Panel URI: /admin_puu71q

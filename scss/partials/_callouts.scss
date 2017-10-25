@@ -2,23 +2,26 @@
 .bs-callout {
   position: relative;
   margin: 20px 0 20px 0;
-  padding: 15px;
-  background: #e4f0f5
+  padding: 30px;
+  background: #F2F3F3;
 }
 
 .bs-callout:before {
   display: block;
   position: absolute;
   content: '';
-  width: 30px;
-  height: 30px;
-  top: 12px;
-  left: 15px;
+  width: 25px;
+  height: 25px;
+  top: 28px;
+  left: 30px;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .bs-callout-info {
-  padding-left: 60px
+  padding-left: 80px;
+  background: #E4F0F8;
+  border: 1px solid #346E92;
 }
 
 .bs-callout-info:before {
@@ -26,8 +29,9 @@
 }
 
 .bs-callout-warning {
-  padding-left: 60px;
-  background: #fcebce
+  padding-left: 80px;
+  background: #FBEDD9;
+  border: 1px solid #C27500;
 }
 
 .bs-callout-warning:before {
@@ -35,10 +39,20 @@
 }
 
 .bs-callout-tip {
-  padding-left: 60px;
-  background: #e7eecd
+  padding-left: 80px;
+  //background: #e7eecd;
+  background: #DCF3E1;
+  border: 1px solid #0F7D26;
 }
 
 .bs-callout-tip:before {
   background-image: url(../i/icons/tip.svg);
+}
+
+.bs-callout-tutorial {
+  padding-left: 80px;
+}
+.bs-callout-tutorial:before {
+
+  background-image: url(../i/icons/tutorial.svg);
 }

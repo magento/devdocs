@@ -34,7 +34,7 @@ Filters-specific configuration:
     <td><code>chipsConfig</code></td>
     <td>Configuration passed to the <code>FiltersChips</code> component.</td>
     <td>Object</td>
-    <td>Configuration that is passed to the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-filtersсhips.html">FiltersChips component</a>.</td>
+    <td>Configuration that is passed to the <a href="{{page.baseurl}}ui_comp_guide/components/ui-filterschips.html">FiltersChips component</a>.</td>
   </tr>
   <tr>
     <td><code>statefull</code></td>
@@ -63,6 +63,7 @@ Filters-specific configuration:
 </table>
 
 ## Examples
+
 ### Example 1: Add a new customer attribute and make it filterable
 
 To add a new customer attribute to the customer grid and make it filterable, you need to follow these steps:

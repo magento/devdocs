@@ -17,11 +17,11 @@ This section describes an implementation details of Data Migration Tool and how 
 
 ### Repositories {#repositories}
 
-Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a>
+Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="&#95;blank">migration-tool</a>
 
 ### System requirements {#system-requirements}
 
-Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="_blank">Magento 2</a>
+Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a>
 
 ## Internal structure {#migrate-is}
 
@@ -32,7 +32,7 @@ The following diagram represents directory structure of Data Migration Tool:
 <pre>
 
 ├── etc                                    --- all configuration files
-│   ├── ce-to-ce                           --- configuration files for migration from Magento CE 1 to Magento 2 CE
+│   ├── opensource-to-opensourc            --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
 │   │   ├── 1.9.1.1
 │   │   │   ├── config.xml.dist
 │   │   │   └── map.xml.dist
@@ -44,8 +44,8 @@ The following diagram represents directory structure of Data Migration Tool:
 │   │   ├── deltalog.xml.dist
 │   │   └── settings.xml.dist
 │   │   ├── ........
-│   ├── ce-to-ee                            --- configuration files for migration from Magento CE 1 to Magento 2 EE
-│   ├── ee-to-ee                            --- configuration files for migration from Magento EE 1 to Magento 2 EE
+│   ├── opensource-to-commerce              --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ee}} 2
+│   ├── commerce-to-commerce                --- configuration files for migration from {{site.data.var.ee}} 1 to {{site.data.var.ee}} 2
 │   ├── class-map.xsd
 │   ├── config.xsd
 │   ├── map.xsd
@@ -360,7 +360,7 @@ Options:
 
 * *move* - sets rule to move specified field from source document to destination document. NOTE: destination document name should be the same with the source document name. If source and destination document names are different - you need to use rename option for document that contains moved field
 
-* *transform* - is a option that allows user to migrate fields according to behavior described in handlers
+* *transform* - is an option that allows user to migrate fields according to behavior described in handlers
 
 * *handler* - describes transformation behavior for fields. To call the handler you need to specify a handler class name in a <handler> tag. Use <param> tag with the parameter name and value data to pass it to handler
 

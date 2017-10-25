@@ -29,15 +29,16 @@ You can configure the Magento application in any of the following ways:
 
 *	Magento in production
 
-	*	[Deployment steps]({{page.baseurl}}config-guide/prod/prod_deploy.html)
+	*	[pipeline deployment]({{page.baseurl}}config-guide/deployment/pipeline/)
 	*	[Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html)
+	*	[Single machine deployment]({{ page.baseurl }}config-guide/deployment/single-machine.html)
 
 *	Session storage
 	*	[memcache]({{page.baseurl}}config-guide/memcache/memcache.html)
 	*	[Redis]({{page.baseurl}}config-guide/redis/redis-session.html)
 	*	[How to locate session files]({{page.baseurl}}config-guide/sessions.html)
 
-*	<img src="{{ site.baseurl }}common/images/ee-only_small.png">
+*	{{site.data.var.ee}} only
 
 	*	[Install and configure Elasticsearch]({{ page.baseurl }}config-guide/elasticsearch/es-overview.html)
 	*	<a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">Split databases</a>

@@ -14,7 +14,7 @@ The `uiLayout` service {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %
 
 The source file of the `uiLayout` module is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`.
 
-`uiLayout` source code is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`, in the Magento CE github repository: [app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js).
+`uiLayout` source code is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`, in the {{site.data.var.ce}} github repository: [app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js).
 
 In a [typical UI component's configuration flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html), the `uiLayout` module is called by `app.js` (`<Ui_module_dir>/view/base/web/js/core/app.js`) and receives the component's configuration as a parameter.
 

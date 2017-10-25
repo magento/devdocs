@@ -1,11 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 03_BC
 title: Magento 2.0 Backward Incompatible Changes
-menu_title: Magento 2.0 Backward incompatible changes
-menu_node: parent
-version: 2.0
 github_link: release-notes/backward-incompatible-changes.md
 redirect_from: release-notes/changes_2.0.html
 ---
@@ -16,8 +12,8 @@ Be aware that no @api code has been modified.
 
 To see all backward incompatible changes follow:
 
- - [Magento CE backward incompatible changes][]
- - [Magento EE backward incompatible changes][]
+ - [{{site.data.var.ce}} backward incompatible changes][]
+ - [{{site.data.var.ee}} backward incompatible changes][]
 
 For more information about backward compatibility, see [Magento’s backward compatibility policy][].
 
@@ -63,7 +59,7 @@ For more information about backward compatibility, see [Magento’s backward com
   </tr>
   <tr>
     <td>
-    {%highlight php startinline=1%}
+    {% highlight php %}
     [
         'general' => [
             'name' => 'Category',
@@ -73,10 +69,10 @@ For more information about backward compatibility, see [Magento’s backward com
         ],
         ...
     ]
-    {%endhighlight%}
+    {% endhighlight %}
     </td>
     <td>
-    {%highlight php startinline=1%}
+    {% highlight php %}
     [
         'general' => [
             'name' => 'Category',
@@ -89,7 +85,7 @@ For more information about backward compatibility, see [Magento’s backward com
         ],
         ...
     ]
-    {%endhighlight%}
+    {% endhighlight %}
     </td>
   </tr>
 </table>
@@ -123,15 +119,15 @@ You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/m
   * Initialized using the `magento-init` {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %}
 * To join EAV attributes use `linkField`.
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -> getLinkField()
-{% endhighlight %}
+```
 
 * To set a relation with another entities such as `category_product_entity` use `identifierField`.
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -> getIdentifierField()
-{% endhighlight %}
+```
 
 ### Form initialization changes
 
@@ -151,8 +147,8 @@ When **Products -> Categories** menu item in the {% glossarytooltip 18b930cf-09c
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
 
-[Magento CE backward incompatible changes]: {{page.baseurl}}release-notes/changes/ce_changes.html
-[Magento EE backward incompatible changes]: {{page.baseurl}}release-notes/changes/ee_changes.html
+[{{site.data.var.ce}} backward incompatible changes]: {{page.baseurl}}release-notes/changes/ce_changes.html
+[{{site.data.var.ee}} backward incompatible changes]: {{page.baseurl}}release-notes/changes/ee_changes.html
 [Overview of UI components]: {{page.baseurl}}ui-components/ui-definition.html
 [more info about a form component]: {{page.baseurl}}ui-components/ui-form.html
 

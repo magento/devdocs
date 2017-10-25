@@ -3,10 +3,9 @@
 
 
 // Bootstrap components (run 'npm install' first)
-@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
-@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
-@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed';
-//@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tags';
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/utilities/embed';
 
 
 
@@ -38,8 +37,9 @@
 @import 'partials/videos';
 @import 'partials/progress-bar';
 @import 'partials/tooltip';
-
-
+@import 'partials/mrg';
+@import 'partials/workflow';
+@import 'partials/left-navigation';
 
 
 .hide {

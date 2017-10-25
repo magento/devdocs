@@ -415,6 +415,6 @@ To replace one instance of a UI Form Component redefine link to a constructor in
         <item name="js_config" xsi:type="array">
             <item name="component" xsi:type="string">Magento_Customer/js/form/customFormConstructor</item>
         </item>
-        </argument>
+    </argument>
 </form>
 {% endhighlight %}

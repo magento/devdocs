@@ -1,17 +1,15 @@
 ---
 layout: default
-group: 
+group:
 subgroup: 14_Elastic
 title: Upgrade Elasticsearch major version
 menu_title: Upgrade Elasticsearch major version
 menu_order: 100
-menu_node: 
+menu_node:
 version: 2.1
+ee_only: true
 github_link: config-guide/elasticsearch/es-config-upgrade.md
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
-
 
 #### Contents
 
@@ -24,4 +22,3 @@ You switch to the version upgraded server/cluster and then do a full reindex.  A
 This would apply if the merchant is changing from Solr to Elasticsearch , or if the merchant is upgrading from ES 1.7 to ES 2.0 or ES 2.1 or some combination there off.
 
 For the Elastic Config / Elastic Cluster configuration our ECG guy shave some experience there, might want to ping them to get their thoughts.
-

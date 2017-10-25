@@ -1,22 +1,21 @@
 ---
 layout: default
 group: config-guide
-subgroup: 15_RabbitMQ
-title: Manage message queues with MySQL
-menu_title: MySQL message queues
+subgroup: 24_RabbitMQ
+title: Manage message queues
+menu_title: Manage message queues
 menu_order: 3
 version: 2.0
 github_link: config-guide/mq/manage-mysql.md
 ---
 
 
-If you do not want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager)and the CLI to ensure that consumers are retrieving messages.
+If you don't want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager) and the command line to ensure that consumers are retrieving messages.
 
-<h2>Process management</h2>
+## Process management
+Cron jobs are the default mechanism to restart consumers. Processes started by `cron` consume the specified number of messages and then terminate. Re-running `cron` restarts the consumer.
 
-Cron jobs are the default mechanism to restart consumers. Processes started by `cron` consume the specified number of messages, then die after that. Re-running `cron` restarts the consumer.
-
-A magic method, whose name is the same as the consumer name, is used as a callback when declaring new `consumer run` job in `crontab.xml`. Using magic methods allows you to pass the name of the consumer implicitly via method name. Alternatively, virtual types based on abstract consumer runner should be declared with concrete consumer name specified as an argument (this approach is more complex and required extra configuration).
+A magic method, whose name is the same as the consumer name, is used as a callback when declaring new `consumer run` job in `crontab.xml`. Using magic methods allows you to pass the name of the consumer implicitly via method name. Alternatively, virtual types based on abstract consumer runner should be declared with concrete consumer name specified as an argument (this approach is more complex and requires extra configuration).
 
 The following shows a `crontab` group entry:
 
@@ -28,39 +27,38 @@ The following shows a `crontab` group entry:
 </group>
 {% endhighlight %}
 
-See <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using cron with Magento.
+<div class="bs-callout bs-callout-tip" id="info" markdown="1">
+How often you check message queues depends on your business logic and available system resources. In general, you'll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define `cron` schedules according to your business needs.
 
-You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the CLI to restart the processes as needed.
+See [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html) for more information about using `cron` with Magento.
+</div>
 
-<h2>Command line interface</h2>
+You can also use a process manager such as [Supervisor](http://supervisord.org/index.html) to monitor the status of processes. The manager can use the command line to restart the processes as needed.
 
-<h3>Start consumers</h3>
+## Command line interface
 
-The CLI can be used to start consumers of the messages from the queue. Multiple consumers can be started at a same time.
+### Start consumers
+Use the `magento` command to start message queue consumers. You can start multiple consumers simultaneously.
 
-`./bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] <consumer_name>`
+    ./bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] <consumer_name>
 
-where:
+Where:
 
-`<consumer_name>` is the consumer to start.
+*   `<consumer_name>` is the consumer to start.
 
-`--max-messages=<value>` defines the maximum number of messages to consume per invocation. If number of messages are less then defined maximum number of messages, then the consumer will receive all the available messages in a queue.
+*   `--max-messages=<value>` specifies the maximum number of messages to consume per invocation. If the number of queued messages is less than the specified max, the consumer polls for new messages until it has processed the max. If you don't specify `--max-messages`, the process runs continuously.
 
-If `--max-messages` is not defined, the consumer continues to receive endless number of new messages
+*   `--batch-size=<value>` specifies the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only. If `--batch-size` is not defined, the batch consumer receives all available messages in a queue.
 
-After getting all available messages, the CLI command terminates. The command can be launched again with cron within a configured period of time, or manually.
+After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the `magento queue:consumers:start` command to process large message queues. For example, you can append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start <consumer_name> &`).
 
-“`--batch-size=<value>` defines the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only.
-
-If `--batch-size` is not defined, the batch consumer receives all available messages in a queue.”
-
-<h3>List consumers</h3>
+### List consumers
 Use the following command to return a list of message queue consumers:
 
-` ./bin/magento queue:consumers:list`
+    ./bin/magento queue:consumers:list
 
 #### Related Topics
-*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
-*	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html">Command-line configuration</a>
+*   [Message Queues Overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
+*   [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html)
+*   [Command-line configuration]({{page.baseurl}}config-guide/cli/config-cli-subcommands.html)
+*   [Message Queues]({{page.baseurl}}extension-dev-guide/message-queues/message-queues.html)

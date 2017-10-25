@@ -1,14 +1,11 @@
 ---
 layout: default
-group: cloud
-subgroup: 120_env
+group:
+subgroup: 
 title: Environment variables
 menu_title: Environment variables
-menu_order: 70
-menu_node: 
-level3_menu_node: level3parent
-level3_subgroup: vars
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/env/environment-vars-parent.md
 ---
-

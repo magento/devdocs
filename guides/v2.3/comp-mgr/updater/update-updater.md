@@ -1,0 +1,1 @@
+../../../v2.2/comp-mgr/updater/update-updater.md

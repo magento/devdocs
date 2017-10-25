@@ -25,6 +25,10 @@ This tutorial creates an order by a logged-in user. Magento provides additional 
 
 Creating a customer account requires {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} permissions.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the `password` parameter. By default if the call is successful, Magento sends a "Welcome" email to the customer that includes a request to set the password. You could also initiate a password reset email by calling `PUT /V1/customers/password`.
+</div>
+
 **Endpoint**
 
 `POST http://<host>/rest/default/V1/customers`

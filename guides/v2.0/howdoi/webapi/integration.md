@@ -252,7 +252,7 @@ The  file defines which API resources the integration has access to.
 </tr>
 <tr>
 <td>email</td>
-<td>Optional. An email to associate with this integration.</td>
+<td>An email to associate with this integration.</td>
 </tr>
 <tr>
 <td>endpoint_url</td>
