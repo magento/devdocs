@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Add a custom shipping address renderer
 menu_title: Add a custom shipping address renderer
 menu_order: 10

@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Add a new checkout step
 menu_title: Add a new checkout step
 menu_order: 1

@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Add a custom template for a form field on Checkout page
 menu_title: Add a custom template for a form field on Checkout page
 menu_order: 7

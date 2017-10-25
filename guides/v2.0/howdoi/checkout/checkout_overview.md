@@ -1,6 +1,6 @@
 ---
 layout: default
-group: checkout
+group: howdoi
 subgroup:
 title: Customize checkout
 menu_title: Customize checkout

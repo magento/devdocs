@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Add a new field in address form
 menu_title: Add a new field in address form
 menu_order: 9

@@ -1,6 +1,6 @@
 ---
 layout: default
-group: checkout
+group: howdoi
 subgroup:
 title: Add custom input mask for ZIP code
 menu_title: Add custom input mask for ZIP code

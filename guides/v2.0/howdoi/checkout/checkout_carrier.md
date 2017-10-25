@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Add custom shipping carrier validations
 menu_title: Add custom shipping carrier validations
 menu_order: 5

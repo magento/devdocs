@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Customize the view of a checkout step
 menu_title: Customize the view of a checkout step
 menu_order: 2

@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Add a new input form to checkout
 menu_title: Add a new input form to checkout
 menu_order: 8

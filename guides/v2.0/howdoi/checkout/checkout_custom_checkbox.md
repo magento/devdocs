@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Add custom fields that influence other Checkout fields
 menu_title: Add custom fields that influence other Checkout fields
 menu_order: 90

@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Add a custom payment method to checkout
 menu_title: Add a custom payment method to checkout
 menu_order: 3

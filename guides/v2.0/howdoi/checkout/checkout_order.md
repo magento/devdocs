@@ -1,7 +1,7 @@
 ---
 layout: default
-group: checkout
-subgroup: 
+group: howdoi
+subgroup:
 title: Add custom validations before order placement
 menu_title: Add custom validations before order placement
 menu_order: 4
