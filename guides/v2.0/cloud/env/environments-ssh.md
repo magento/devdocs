@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 020_tech
-title: SSH and SFTP
-menu_title: SSH and SFTP
+title: SSH and sFTP
+menu_title: SSH and sFTP
 menu_order: 35
 menu_node:
 version: 2.0
