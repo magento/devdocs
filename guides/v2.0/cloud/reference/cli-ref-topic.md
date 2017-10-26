@@ -117,11 +117,11 @@ The following table lists general commands.
 	 				</tr>
 					<tr>
 	 				<td>docs</td>
-	 				<td>Provides a link for documentation. Currently, this displays <a href="http://devdocs.magento.com">http://devdocs.magento.com</a>.</td>
+	 				<td>Provides a link for documentation. </td>
 	 				</tr>
 					<tr>
 	 				<td>help</td>
-	 				<td>Displays <a href="#help">help</a> information for the command.</td>
+	 				<td>Displays help information for the command.</td>
 	 				</tr>
 					<tr>
 	 				<td>list</td>
