@@ -1931,22 +1931,24 @@ Options:
 <p>The following table lists general commands.</p>
 
 <table>
-	     <tbody>
-	         <tr>
-	             <th>Command</th>
+	<thead>
+				   <tr>
+	             <th style="width: 250px;">Command</th>
 	             <th>Description</th>
 	         </tr>
+	</thead>
+			<tbody>
 	 				<tr>
 	 				<td>clear-cache</td>
 	 				<td>Clears the cache for only the CLI.</td>
 	 				</tr>
 					<tr>
 	 				<td>docs</td>
-	 				<td>Provides a link for documentation. Currently, this displays http://devdocs.magento.com.</td>
+	 				<td>Provides a link for documentation. </td>
 	 				</tr>
 					<tr>
 	 				<td>help</td>
-	 				<td>Displays <a href="#help">help</a> information for the command.</td>
+	 				<td>Displays help information for the command.</td>
 	 				</tr>
 					<tr>
 	 				<td>list</td>
@@ -1966,11 +1968,13 @@ Options:
 <p>The following table lists all commands for interacting with your environments and projects.</p>
 
 <table>
-	     <tbody>
+			<thead>
 	         <tr>
 	             <th>Command</th>
 	             <th>Description</th>
 	         </tr>
+			</thead>
+	     <tbody>
 	 				<tr>
 	 				<td>activity:list (activities)</td>
 	 				<td>Gets a list of activities for an environment</td>
@@ -2133,8 +2137,8 @@ Options:
 	 				</tr>
 	 				<tr>
 	 				<td>local:dir (dir)</td>
-	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories: <code>magento-cloud dir [<subdir>]&lt;/code&gt;.&lt;/td&gt;
-	 				&lt;/tr&gt;
+	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories.</td>
+	 				</tr>
 					<tr>
 	 				<td>prohect:get (get)</td>
 	 				<td>Clones a project locally</td>
@@ -2247,29 +2251,35 @@ Options:
 	 				<td>variable:set (vset)</td>
 	 				<td>Sets an environment variable for a specific environment/Git branch</td>
 	 				</tr>
-	 		&lt;/tbody&gt;
-&lt;/table&gt;
+	 		</tbody>
+</table>
 
-## Upgrade Magento Cloud CLI {#upgrade}
-When you login to the Magento Cloud CLI, it checks for available updates. You can enter `y` for yes to upgrade. After upgrading, you can login and use the `magento-cloud list` command to see a list of all commands.
+<p>For a changelog, see the next section.</p>
 
-Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates.
+<h2 id="upgrade">Upgrade Magento Cloud CLI</h2>
+<p>When you login to the Magento Cloud CLI, it checks for available updates. You can enter <code class="highlighter-rouge">y</code> for yes to upgrade. After upgrading, you can login and use the <code class="highlighter-rouge">magento-cloud list</code> command to see a list of all commands.</p>
+
+<h3 id="changelog">Changelog for Magento Cloud CLI</h3>
+<p>Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates. For a general changelog, you can review the <a href="https://github.com/platformsh/platformsh-cli/releases" target="_blank">Platform.sh CLI changelog</a>.</p>
 
 <table>
-	     <tbody>
+	     <thead>
 	         <tr>
-	             <th>Version</th>
+	             <th style="width: 200px;">Version</th>
 	             <th>Change</th>
 	         </tr>
+		</thead>
+			<tbody>
 	 				<tr>
 	 				<td>1.11.X</td>
-	 				<td><ul><li>local:clean command has been changed to clean. Enter <code>magento-cloud clean --help</code> for more information. You may not find the command on the list.</li>
+	 				<td>
+					<ul>
+					<li>local:clean command has been changed to clean. Enter <code>magento-cloud clean --help</code> for more information. You may not find the command on the list.</li>
 					<li>Added local:dir to locate the root directory. You should enter a sub-directory arguement to locate specific information for local, web, or shared.</li>
 					</ul></td>
 	 				</tr>
 			</tbody>
 </table>
-</subdir></code></td></tr></tbody></table>
 
 		</div>
 		<!-- /.content-wrap -->
