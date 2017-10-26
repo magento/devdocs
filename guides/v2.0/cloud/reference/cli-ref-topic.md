@@ -106,11 +106,13 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 The following table lists general commands.
 
 <table>
-	     <tbody>
-	         <tr>
+	<thead>
+				   <tr>
 	             <th>Command</th>
 	             <th>Description</th>
 	         </tr>
+	</thead>
+			<tbody>
 	 				<tr>
 	 				<td>clear-cache</td>
 	 				<td>Clears the cache for only the CLI.</td>
@@ -142,11 +144,13 @@ The following table lists general commands.
 The following table lists all commands for interacting with your environments and projects.
 
 <table>
-	     <tbody>
+			<thead>
 	         <tr>
 	             <th>Command</th>
 	             <th>Description</th>
 	         </tr>
+			</thead>
+	     <tbody>
 	 				<tr>
 	 				<td>activity:list (activities)</td>
 	 				<td>Gets a list of activities for an environment</td>
@@ -434,11 +438,13 @@ When you login to the Magento Cloud CLI, it checks for available updates. You ca
 Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates.
 
 <table>
-	     <tbody>
+	     <thead>
 	         <tr>
 	             <th>Version</th>
 	             <th>Change</th>
 	         </tr>
+		</thead>
+			<tbody>
 	 				<tr>
 	 				<td>1.11.X</td>
 	 				<td>
