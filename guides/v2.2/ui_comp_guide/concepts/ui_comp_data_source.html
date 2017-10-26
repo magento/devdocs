@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>The DataSource Component | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/ui_comp_guide/concepts/ui_comp_data_source.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.2">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_data_source.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_data_source.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_data_source.html">Magento 2.2</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>UI Components Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="overview-of-ui-components">
+
+    
+    
+    
+    <a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">Overview of UI components</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="a-list-of-magento-ui-components">
+
+    
+    
+    
+    <a href="/guides/v2.2/ui_comp_guide/ui_comp_list_concept.html">A list of Magento UI components</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="ui-components-guide-outline-(proposed)">
+
+    
+    
+    
+    <a href="/guides/v2.2/ui_comp_guide/ui_comp_outline_proposed.html">UI Components Guide outline (proposed)</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="components">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Components</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="actionscolumn-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-actionscolumn.html">ActionsColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="bookmarks-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-bookmarks.html">Bookmarks component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="button-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-button.html">Button component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="checkbox-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-checkbox.html">Checkbox component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="checkboxset-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-checkboxset.html">Checkboxset component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="column-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-column.html">Column component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="columns-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-columns.html">Columns component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="columnscontrols-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-columnscontrols.html">ColumnsControls component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="date-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-date.html">Date component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="datecolumn-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-datecolumn.html">DateColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="draganddrop-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-draganddrop.html">DragAndDrop component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="dynamicrows-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-dynamicrows.html">DynamicRows component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="email-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-email.html">Email component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="exportbutton-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-exportbutton.html">ExportButton component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="fieldset-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-fieldset.html">Fieldset component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="file-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-file.html">File component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="fileuploader-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-fileuploader.html">FileUploader component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="filters-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-filters.html">Filters component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="filterschips-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-filterschips.html">FiltersChips component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="form-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-form.html">Form component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="hidden-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-hidden.html">Hidden component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="htmlcontent-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-htmlcontent.html">HtmlContent component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="input-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-input.html">Input component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="insertform-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-insertform.html">InsertForm component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="insertlisting-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="listing-(grid)-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html">Listing (grid) component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="massactions-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-massactions.html">MassActions component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="modal-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-modal.html">Modal component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="multiline-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-multiline.html">Multiline component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="multiselect-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-multiselect.html">Multiselect component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="multiselectcolumn-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-multiselectcolumn.html">MultiselectColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="nav-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-nav.html">Nav component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="onoffcolumn-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-onoffcolumn.html">OnOffColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="paging-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-paging.html">Paging component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="radioset-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-radioset.html">Radioset component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="range-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-range.html">Range component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="search-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-search.html">Search component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="select-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-select.html">Select component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="selectcolumn-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-selectcolumn.html">SelectColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="sizes-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-sizes.html">Sizes component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="tab-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-tab.html">Tab component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="text-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-text.html">Text component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="textarea-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-textarea.html">Textarea component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="thumbnailcolumn-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-thumbnailcolumn.html">ThumbnailColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="toolbar-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-toolbar.html">Toolbar component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="treemassactions-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-treemassactions.html">TreeMassActions component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="wysiwyg-component">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-wysiwyg.html">Wysiwyg component</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="concepts">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Concepts</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="configuration-flow-of-ui-components">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">Configuration flow of UI components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-xml-сonfiguration-of-ui-сomponents">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="providing-data-to-ui-components">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_data_source.html">Providing Data to UI Components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-php-modifiers-in-ui-components">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html">About PHP modifiers in UI components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="template-literals">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_template_literals.html">Template Literals</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-custom-knockout.js-bindings">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/knockout-bindings.html">Magento custom Knockout.js bindings</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-the-uiclass-library">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">About the uiClass library</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-the-uielement-class">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-the-uicollection-class">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">About the uiCollection class</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-the-uilayout-service-module">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">About the uiLayout service module</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="linking-properties-of-ui-components">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="uiregistry">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uiregistry.html">uiRegistry</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="how-tos">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>How Tos</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="creating-and-displaying-a-category-attribute-with-ui-components">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/howto/add_category_attribute.html">Creating and displaying a category attribute with UI Components</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="troubleshoot">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Troubleshoot</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="debug-ui-components-javascript">
+            
+            
+        
+            
+            <a href="/guides/v2.2/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html">Debug UI components JavaScript</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">
+            <span property="name">Overview of UI components</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">The DataSource Component</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">The DataSource Component</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="overview">Overview</h2>
+<p>Magento provides the DataSource object, which is designed to interact with data in your <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>. Many of the core UI components use this DataSource component. Many UI components require that this object is included. However, there are specific requirements it has in order for it to work correctly.</p>
+
+<p>In this topic, we will explain how to take advantage of the powerful functionality of the data provider in a UI Component.</p>
+
+<h3 id="declaring-the-xml">Declaring the XML</h3>
+
+<p>The DataSource UI component can be included with the <code class="highlighter-rouge">&lt;dataSource /&gt;</code> node in the component’s top-level configuration file. The <code class="highlighter-rouge">name</code> attribute is recommended and should follow the <code class="highlighter-rouge">%instance_name%_data_source</code> pattern where <code class="highlighter-rouge">%instance_name%</code> is the name of the component.</p>
+
+<p>The component’s data provider class is declared inside <code class="highlighter-rouge">&lt;dataSource /&gt;</code>. The following provides an example and demonstrates what nodes are required.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"dataProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]DataProvider<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>[YourComponentName]_data_source<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"primaryFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>id<span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
+
+<p>In the block of code above, [YourNameSpace][YourModule] would the directory that contains all of the module’s files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.</p>
+
+<p>The main node of interest is <code class="highlighter-rouge">&lt;argument name="class" /&gt;.</code> This references a PHP class that must implement <code class="highlighter-rouge">\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code>. To meet that requirement, it can extend <code class="highlighter-rouge">\Magento\Ui\DataProvider\AbstractDataProvider</code>. The <code class="highlighter-rouge">AbstractDataProvider</code> class implements all of the required methods in the <code class="highlighter-rouge">DataProviderInterface</code>. The DataProvider class is the primary source of any data or <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> that the component needs or will use.</p>
+
+<p>While the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> tells Magento about the component’s data provider, Magento doesn’t do anything in particular with that unless you hook it up to the component’s main PHP class. To make the data available in javascript, add a <code class="highlighter-rouge">getDataSourceData()</code> method to the UI component’s PHP class and return <code class="highlighter-rouge">$this-&gt;getContext()-&gt;getDataProvider()-&gt;getData()</code>. This will output the result of the data provider’s <code class="highlighter-rouge">getData()</code> method into the JSON that is sent to the browser along with the rest of the UI component’s configuration.</p>
+
+<p>Declare a <code class="highlighter-rouge">getData()</code> method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">javascript</span> class that is associated with the UI component and handles its behavior. Magento’s Form Provider javascript class is often a good place to start.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+    <p>A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.</p>
+</div>
+
+<p>Include the Form Provider Javascript component by adding this inside the <code class="highlighter-rouge">&lt;dataSource /&gt;</code> node:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/provider<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
+
+<p>This will include <code class="highlighter-rouge">Magento/Ui/view/base/web/js/form/provider.js</code> on the page as part of this DataSource component. The Form Provider javascript can also be extended if the functionality doesn’t do what is necessary in your case.</p>
+
+<p>Remember that this data provider is still, technically speaking, a completely separate UI Component. To fully link it to the “base” component, there are a few things that need to happen so that the “base” UI component’s javascript can use the data provided by the data provider.</p>
+
+<p>A good way to keep configuration data out of the javascript is to declare a “provider” in the base component’s XML so it will be able to find that data provider component. Under the <code class="highlighter-rouge">&lt;argument name="data" /&gt;</code> node, add a node like this (where <code class="highlighter-rouge">[ComponentName]</code> is the name of the component):</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>[ComponentName].[ComponentName]_data_source<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/item&gt;</span></code></pre></figure>
+
+<p>This example declares the name of the data provider class and will be output in the JSON that contains the UI component’s configuration. It can then be used to locate the data source component. This is essentially declaring a variable that will be available to a javascript class.</p>
+
+<h1 id="javascript-template-literals">Javascript Template Literals</h1>
+
+<p>Throughout Magento’s core Javascript components there are strings like this: <code class="highlighter-rouge">'${ $.provider }:data.totalRecords'</code>. These are ES2015 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template literals</a>. The <code class="highlighter-rouge">${ }</code> surrounds an expression that will be parsed as Javascript. <code class="highlighter-rouge">$.provider</code> is the expression, in this example.</p>
+
+<p>The template literal is in a single-quote string, however, not the back-ticks which are standard for ES2015. As a result, they would normally be treated as a string. Since Magento needs to support browsers that don’t recognize template literals a special interpreter was built for them. If the browser does support standard back-tick template literals, Magento will use that, and if not, it evaluates the value manually.</p>
+
+<p>When the component is initialized, it will automatically evaluate all string literals in properties. In the example above, <code class="highlighter-rouge">$.provider</code> will become  <code class="highlighter-rouge">[ComponentName].[ComponentName]_data_source</code>. The value of this <code class="highlighter-rouge">provider</code> was declared in the <code class="highlighter-rouge">js_config</code> block in the XML above. It is possible to pass nearly any configuration value this way and access it using template literals.</p>
+
+<p>But, XML is static and while that gets us the name of the data provider component, it still doesn’t actually provide data. There is one more important step in providing data to Javascript components.</p>
+
+<h1 id="javascript-component-linking">Javascript Component Linking</h1>
+
+<p>Every Javascript component should extend the core Element class in some way (mapped to <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code class="highlighter-rouge">uiElement</code></a> with RequireJS and located in <code class="highlighter-rouge">Magento/Ui/view/base/web/js/lib/core/element/element.js</code>.  When this class initializes it runs an <code class="highlighter-rouge">initLinks()</code> method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (<code class="highlighter-rouge">lib/core/element/link.js</code>) binds the values of those parameters to actual components.</p>
+
+<p>The properties Magento will parse are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">imports</code></li>
+  <li><code class="highlighter-rouge">exports</code></li>
+  <li><code class="highlighter-rouge">links</code></li>
+</ul>
+
+<p>The <code class="highlighter-rouge">links</code> property is the same as duplicating a value in both <code class="highlighter-rouge">imports</code> and <code class="highlighter-rouge">exports</code>. Each of those properties expect an object that contains key/value pairs to bind the expression to. In the example above, it would appear in the <code class="highlighter-rouge">defaults</code> property like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>imports: {
+    totalRecords: '${ $.provider }:data.totalRecords'
+}
+</code></pre>
+</div>
+
+<p>When the Element class initializes, it will process the link that was declared in <code class="highlighter-rouge">imports</code>. Remember that one of the first things Magento does is process string literals, though, so it is actually working with something that looks more like the following (where <code class="highlighter-rouge">example</code> is the UI Component Name for clarity):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>imports: {
+    totalRecords: 'example.example_data_source:data.totalRecords'
+}
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">:</code> is a special separator that is used to divide the component name that it is to link to and the values it should access in the returned value. No <code class="highlighter-rouge">:</code> is necessary, though, and the expression, <code class="highlighter-rouge">$.provider</code> could be any key that was passed into the javascript configuration.</p>
+
+<p>In the example above, it will return the <code class="highlighter-rouge">totalRecords</code> property of the <code class="highlighter-rouge">data</code> object in the <code class="highlighter-rouge">example.example_data_source</code> component. As a result of these connections, <code class="highlighter-rouge">totalRecords</code> will display the output of <code class="highlighter-rouge">DataProvider::getData()</code>.</p>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+    <div class="page-contributor">
+      <a href="https://swiftotter.com/" target="_blank">
+        Thanks to SwiftOtter Studios for contributing this topic
+      </a>
+    </div>
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_data_source.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/ui_comp_guide/concepts/ui_comp_data_source.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

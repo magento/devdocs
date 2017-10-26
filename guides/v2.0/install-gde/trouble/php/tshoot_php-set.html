@@ -2419,7 +2419,7 @@
   </li>
   <li>As a user with <code class="highlighter-rouge">root</code> privileges, use a text editor to open the <code class="highlighter-rouge">php.ini</code> specified by <code class="highlighter-rouge">Loaded Configuration File</code>.</li>
   <li>Locate <code class="highlighter-rouge">memory_limit</code>.</li>
-  <li>Change it to a value of <code class="highlighter-rouge">1GB</code> for normal use or at least <code class="highlighter-rouge">2GB</code> for debugging.</li>
+  <li>Change it to a value of <code class="highlighter-rouge">2GB</code> for normal use and debugging.</li>
   <li>Save your changes to <code class="highlighter-rouge">php.ini</code> and exit the text editor.</li>
   <li>
     <p>Restart your web server.</p>
@@ -2449,8 +2449,7 @@
 <h4 id="solution-set-codeasptags--offcode-in-codephpinicode">Solution: Set <code>asp_tags = off</code> in <code>php.ini</code></h4>
 <p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code class="highlighter-rouge">&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> 
-<span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="o">&lt;</span><span class="nx">img</span>
     <span class="k">class</span><span class="err">="</span><span class="nc">product</span><span class="o">-</span><span class="nx">image</span><span class="s2">"
     src="</span><span class="o">&lt;%-</span> <span class="nx">data</span><span class="o">.</span><span class="nx">url</span> <span class="o">%&gt;</span><span class="s2">"
