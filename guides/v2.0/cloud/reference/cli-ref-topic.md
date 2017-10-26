@@ -117,7 +117,7 @@ The following table lists general commands.
 	 				</tr>
 					<tr>
 	 				<td>docs</td>
-	 				<td>Provides a link for documentation. Currently, this displays http://devdocs.magento.com.</td>
+	 				<td>Provides a link for documentation. Currently, this displays <a href="http://devdocs.magento.com">http://devdocs.magento.com</a>.</td>
 	 				</tr>
 					<tr>
 	 				<td>help</td>
