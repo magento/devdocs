@@ -74,16 +74,16 @@ pages:
 
         - label: Import an existing Magento project
           children:
-            - label: First steps for importing Magento EE
+            - label: First steps for importing Magento Commerce
               url: cloud/access-acct/first-time-setup_import-first-steps.html
 
             - label: Find the information you need for your import
               url: cloud/access-acct/first-time-setup_import-prereq.html
 
-            - label: Prepare your existing Magento EE system
+            - label: Prepare your existing Magento Commerce system
               url: cloud/access-acct/first-time-setup_import-prepare.html
 
-            - label: Import Magento EE into Magento Enterprise Cloud Edition
+            - label: Import Magento Commerce into Magento Commerce (Cloud)
               url: cloud/access-acct/first-time-setup_import-import.html
 
     - label: Configure Magento Commerce (Cloud)
