@@ -426,6 +426,8 @@ The following table lists all commands for interacting with your environments an
 	 		</tbody>
 </table>
 
+For a changelog, see the next section.
+
 ## Upgrade Magento Cloud CLI {#upgrade}
 When you login to the Magento Cloud CLI, it checks for available updates. You can enter `y` for yes to upgrade. After upgrading, you can login and use the `magento-cloud list` command to see a list of all commands.
 
@@ -439,7 +441,9 @@ Currently, we do not have a changelist of changes for this feature. We will add 
 	         </tr>
 	 				<tr>
 	 				<td>1.11.X</td>
-	 				<td><ul><li>local:clean command has been changed to clean. Enter <code>magento-cloud clean --help</code> for more information. You may not find the command on the list.</li>
+	 				<td>
+					<ul>
+					<li>local:clean command has been changed to clean. Enter <code>magento-cloud clean --help</code> for more information. You may not find the command on the list.</li>
 					<li>Added local:dir to locate the root directory. You should enter a sub-directory arguement to locate specific information for local, web, or shared.</li>
 					</ul></td>
 	 				</tr>
