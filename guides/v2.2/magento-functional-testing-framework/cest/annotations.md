@@ -43,7 +43,34 @@ If multiple annotation values are supported and required (see `<env>` above) eac
 
 ## Available annotations
 
+### description
+
+_Implementation of an Allure tag [`@Description`]_
+
+Metadata for report.
+
+Attribute|Type|Use
+---|---|--
+value|string|required
+
+#### Example 
+
+```xml
+<description value="Add Catalog via Admin"/>
+```
+
+Generated PHP code:
+
+``` php?start_inline=1
+@Description("Add Catalog via Admin")
+```
+
+***
+***
+
 ### env
+
+_Implementation of a Codeception tag [`@env`]_
 
 Specifies the web driver under which the test can run.
 There can be multiple `env` annotations to show that the test is compatible with multiple web drivers (e.g Chrome, Firefox, phanotmJS).
@@ -52,7 +79,24 @@ Attribute|Type|Use
 ---|---|--
 value|string|required
 
+#### Example 
+
+```xml
+<env value="chrome"/>
+```
+
+Generated PHP code:
+
+```php?start_inline=1
+@env chrome
+```
+
+***
+***
+
 ### features
+
+_Implementation of an Allure tag [`@Features`]_
 
 Sets a string that will be displayed as a **Feature** within the Allure report.
 Tests under the same feature are grouped together in the report.
@@ -61,7 +105,25 @@ Attribute|Type|Use
 ---|---|--
 value|string|required
 
+#### Example 
+
+```xml
+<features value="Catalog"/>
+<features value="Add/Edit"/>
+```
+
+Generated PHP code:
+
+``` php?start_inline=1
+@Features({"Catalog", "Add/Edit"})
+```
+
+***
+***
+
 ### group
+
+_Implementation of a Codeception tag [`@group`]_
 
 Specifies a string to identify and collect tests together.
 Any test can be a part of multiple groups.
@@ -71,7 +133,75 @@ Attribute|Type|Use
 ---|---|--
 value|string|required
 
+#### Example 
+
+```xml
+<group value="catalog"/>
+```
+
+Generated PHP code:
+
+``` php?start_inline=1
+@group catalog
+```
+
+***
+***
+
+### return
+
+_Implementation of a Codeception tag [`@return`]_
+
+Specifies what is returned from a test execution.
+
+Attribute|Type|Use
+---|---|--
+value|string|required
+
+
+#### Example 
+
+```xml
+<return value="void"/>
+```
+
+Generated PHP code:
+
+``` php?start_inline=1
+@return void
+```
+
+***
+***
+
+### severity
+
+_Implementation of an Allure tag [`@Severity`]_
+
+Metadata for report.
+
+Attribute|Type|Use|Acceptable values
+---|---|---|---
+value|string|required|`"BLOCKER"`, `"CRITICAL"`, `"NORMAL"`, `"MINOR"`, `"TRIVIAL"`
+
+#### Example 
+
+```xml
+<severity value="CRITICAL"/>
+```
+
+Generated PHP code:
+
+``` php?start_inline=1
+@Severity(level = SeverityLevel::CRITICAL)
+```
+
+***
+***
+
 ### stories
+
+_Implementation of an Allure tag [`@Stories`]_
 
 Same functionality as [`features`](#features), within the **Story** report group.
 
@@ -79,31 +209,25 @@ Attribute|Type|Use
 ---|---|--
 value|string|required
 
-### title
+#### Example 
 
-Metadata for report.
+```xml
+<stories value="Add Catalog"/>
+<stories value="Edit Catalog"/>
+```
 
-Attribute|Type|Use
----|---|--
-value|string|required
+Generated PHP code:
 
-### description
+``` php?start_inline=1
+@Stories({"Add Catalog", "Edit Catalog"})
+```
 
-Metadata for report.
-
-Attribute|Type|Use
----|---|--
-value|string|required
-
-### severity
-
-Metadata for report.
-
-Attribute|Type|Use
----|---|--
-value|string|required
+***
+***
 
 ### testCaseId
+
+_Implementation of an Allure tag [`@TestCaseId`]_
 
 Specifies a ZephyrId for a test.
 If the linkage is set up correctly in Allure config, the test will have a hyperlink to the Zephyr test case in the report.
@@ -114,13 +238,54 @@ Attribute|Type|Use
 ---|---|--
 value|string|required
 
-### return
+#### Example 
 
-Specifies what is returned from a test execution.
+```xml
+<testCaseId value="#"/>
+```
+
+Generated PHP code:
+
+``` php?start_inline=1
+@TestCaseId("#")
+```
+
+***
+***
+
+### title
+
+_Implementation of an Allure tag [`@Title`]_
+
+Metadata for report.
 
 Attribute|Type|Use
 ---|---|--
 value|string|required
+
+#### Example 
+
+```xml
+<title value="Add Catalog"/>
+```
+
+Generated PHP code:
+
+``` php?start_inline=1
+@Title("Add Catalog")
+```
+
+<!-- LINKS DEFINITIONS-->
+
+[`@Description`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description
+[`@env`]: http://codeception.com/docs/07-AdvancedUsage#Environments
+[`@Features`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories
+[`@group`]: http://codeception.com/docs/07-AdvancedUsage#Groups
+[`@return`]: http://codeception.com/docs/07-AdvancedUsage#Examples
+[`@Severity`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity
+[`@Stories`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories
+[`@TestCaseId`]: https://github.com/allure-framework/allure1/wiki/Test-Case-ID
+[`@Title`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title
 
 <!-- Abbreviations -->
 
