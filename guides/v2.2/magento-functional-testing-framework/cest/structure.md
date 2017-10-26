@@ -125,7 +125,7 @@ It MAY contain the following child elements:
  
 ### after
 
-Specifies actions to perform after all tests in cest.
+Specifies actions to perform after all [tests][test] in a [cest].
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -161,7 +161,7 @@ It MAY contain:
 
 ### actionGroup
 
-Calls a corresponding action group
+Calls a corresponding action group.
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -179,7 +179,7 @@ It MAY contain [`<argument>`][argument]
 
 ### argument
 
-Sets an argument that is used in parent [action group]
+Sets an argument that is used in parent [action group].
 
 Attribute|Type|Use
 ---|---|---
