@@ -34,9 +34,9 @@ Messages similar to the following display:
 	SSH tunnel opened on port 30005 to relationship: database
 	Logs are written to: /home/magento_user/.magento/tunnels.log
 
-	List tunnels with: platform tunnels
-	View tunnel details with: platform tunnel:info
-	Close tunnels with: platform tunnel:close
+	List tunnels with: magento-cloud tunnels
+	View tunnel details with: magento-cloud tunnel:info
+	Close tunnels with: magento-cloud tunnel:close
 
 ### Get tunnel information {#tunnel-info}
 To display information about your tunnel, enter:
