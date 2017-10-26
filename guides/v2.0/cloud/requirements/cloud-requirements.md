@@ -8,7 +8,7 @@ menu_order: 40
 menu_node: parent
 version: 2.0
 github_link: cloud/cloud-requirements.md
-redirect from:
+redirect_from:
   -  /guides/v2.0/cloud/cloud-requirements.html
   -  /guides/v2.1/cloud/cloud-requirements.html
   -  /guides/v2.2/cloud/cloud-requirements.html

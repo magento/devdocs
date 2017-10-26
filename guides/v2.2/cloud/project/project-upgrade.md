@@ -8,7 +8,7 @@ menu_order: 10
 menu_node:
 version: 2.2
 github_link: cloud/project/project-upgrade.md
-redirect from:
+redirect_from:
   -  /guides/v2.0/cloud/howtos/upgrade-magento.html
   -  /guides/v2.1/cloud/howtos/upgrade-magento.html
   -  /guides/v2.1/cloud/howtos/upgrade-magento.html
