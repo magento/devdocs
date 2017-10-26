@@ -313,7 +313,7 @@ The following table lists all commands for interacting with your environments an
 	 				</tr>
 	 				<tr>
 	 				<td>local:dir (dir)</td>
-	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories: <code>magento-cloud dir [<subdir>]</code>.</td>
+	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories.</td>
 	 				</tr>
 					<tr>
 	 				<td>prohect:get (get)</td>
@@ -430,7 +430,7 @@ The following table lists all commands for interacting with your environments an
 	 		</tbody>
 </table>
 
-<!-- For a changelog, see the next section.
+For a changelog, see the next section.
 
 ## Upgrade Magento Cloud CLI {#upgrade}
 When you login to the Magento Cloud CLI, it checks for available updates. You can enter `y` for yes to upgrade. After upgrading, you can login and use the `magento-cloud list` command to see a list of all commands.
@@ -455,4 +455,4 @@ Currently, we do not have a changelist of changes for this feature. We will add 
 					</ul></td>
 	 				</tr>
 			</tbody>
-</table> -->
+</table>
