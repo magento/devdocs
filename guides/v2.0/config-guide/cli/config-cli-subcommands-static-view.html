@@ -1530,9 +1530,9 @@
 <p>Static view files deployment is affected by Magento modes as follows:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a>: Magento generates them on demand, but the rest are cached in a file for speed of access.</li>
+  <li><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-default">The default</a> and <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>: Magento generates them on demand, but the rest are cached in a file for speed of access.</li>
   <li>
-    <p><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-default">Default</a> and <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production</a> modes: Static files are <em>not</em> generated or cached.</p>
+    <p><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">The production</a> mode: Static files are <em>not</em> generated or cached.</p>
 
     <p>You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.</p>
   </li>
@@ -1605,7 +1605,7 @@
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run] 
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run]
 </code></pre>
   </div>
 
