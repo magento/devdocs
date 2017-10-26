@@ -3,6 +3,9 @@ pages:
     - label: Welcome to Magento Commerce (Cloud)
       url: cloud/bk-cloud.html
       children:
+        - label: Subscriptions and plans
+          url: cloud/basic-information/cloud-plans.html
+
         - label: Starter architecture
           url: cloud/basic-information/starter-architecture.html
 
@@ -18,6 +21,9 @@ pages:
     - label: Onboarding tasks
       url: cloud/onboarding/onboarding-tasks.html
       children:
+        - label: Onboarding Portal management
+          url: cloud/onboarding/onboarding-portal.html
+
         - label: Prepare project environments
           url: cloud/before/before-project-owner.html
 
@@ -225,7 +231,7 @@ pages:
         - label: Prepare to deploy to Staging and Production
           url: cloud/live/stage-prod-migrate-prereq.html
 
-        - label: Migrate and deploy static files and data
+        - label: Migrate and deploy code, static files, and data
           url: cloud/live/stage-prod-migrate.html
 
         - label: Test deployment
@@ -243,6 +249,9 @@ pages:
     - label: Troubleshooting
       url: cloud/trouble/trouble.html
       children:
+        - label: Add Staging and Production to Pro projects UI
+          url: cloud/trouble/pro-env-management.html
+
         - label: Troubleshoot deployment
           url: cloud/access-acct/trouble.html
 

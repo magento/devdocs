@@ -10,22 +10,26 @@ version: 2.0
 github_link: cloud/before/before-project-owner.md
 ---
 
-<!--
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-This information details the manually steps for setting up your project, account, and environment access for development. If you joined with a free trial, some of the provisioning steps were completed for you. In this case, you can review these steps or use the new onboarding portal.
-</div>
--->
-
 To initially set up your {{site.data.var.ece}} project, you need the Project Owner to create the project, add a super user, and generate {{site.data.var.ee}} authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.
 
 **Important:** The Project Owner is required to complete the following steps:
 
-* Step 1: Generate Magento authentication keys
-* Step 2: Add admin variables
-* Step 3: Create the project
-* Step 4: Add a project admin account
+* Step 1: [Generate Magento authentication keys](#cloud-owner-keys)
+* Step 2: [Add admin variables](#variables)
+* Step 3: [Create the project](#create-project)
+* Step 4: [Add a Technical Admin account](#cloud-owner-admins)
 
 After you have completed those tasks, the Technical Admin can manage development and deployments for you.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the following first steps. See [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for further information and steps.
+
+* Created your Cloud account and project
+* Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
+* Created an environment for the `master` branch with a web server, database, and services
+* Added Magento authentication keys for the Project Owner
+* Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{page.baseurl}}cloud/before/before-project-owner.html#variables) for the default admin account to access the Magento Admin panel.
+</div>
 
 ## Step 1: Generate Magento authentication keys {#cloud-owner-keys}
 Any developers or users that want to access the project require Magento authentication keys. The Project Owner needs to generate Magento authentication keys (includes 1 public and 1 private) through a Magento Marketplace account for the project. When you first create your project, you will be prompted to add them.
@@ -151,7 +155,7 @@ To get your Blackfire Profiler credentials:
 1. As the {{site.data.var.ece}} account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
 2. In the upper right corner, click **&lt;your name>** > **Account Settings** as the following figure shows.
 
-	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png){:width="650px"}
+	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png)
 3. On your account page, click **View Details** for your project as the following figure shows.
 
 	![View your project details]({{ site.baseurl }}common/images/cloud_blackfire-edit-details.png){:width="200px"}

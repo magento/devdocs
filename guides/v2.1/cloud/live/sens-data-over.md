@@ -4,10 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Configuration management
 menu_title: Configuration management
-menu_order:  70
+menu_order:  20
 menu_node:
-level3_menu_node:
-level3_subgroup:
 version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
@@ -164,7 +162,7 @@ Log into the Magento Admin in those environments to verify the settings. If you 
 
 For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.
 
-For Pro, when you push to the Git branch, the Integration `master` environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
+For Pro, when you push to the Git branch, the Integration `master` environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
 ## Update configuations {#update}
 If you need to change any configuration settings `config.local.php`, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration `master` environment.
@@ -184,4 +182,10 @@ While you can manually edit `config.local.php` in Staging and Production, we don
 </div>
 
 #### Next step
-[Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
+* [Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
+* [Manage your environments]({{page.baseurl}}cloud/env/environments.html)
+*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
+*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)

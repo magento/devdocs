@@ -4,10 +4,8 @@ group: cloud
 subgroup: 120_env
 title: Magento application environment variables
 menu_title: Magento application environment variables
-menu_order: 92
+menu_order: 5
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: vars
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md
 ---
@@ -279,7 +277,7 @@ To create a variable using the command line:
 5. After creating these variables, you can list all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
-In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} something goes wrong and you can't access your environment after it deploys, try the following:
+In the event something goes wrong and you can't access your environment after it deploys, try the following:
 
 *   [SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
 *   Restore your snapshot:
@@ -287,9 +285,14 @@ In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglos
         magento-cloud snapshot:list
         magento-cloud snapshot:restore <snapshot>
 
+For more information on snapshots, see [Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html).
+
 #### Related topics
-*   [Tutorial&mdash;Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)
-*   [Magento Cloud environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*   [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*   [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-*   [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+* [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
+*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
+* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

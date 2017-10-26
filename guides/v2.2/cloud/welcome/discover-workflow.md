@@ -26,8 +26,14 @@ The following figure shows how it works at a high level:
 
 You can manage all of Integration environments directly through the [Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). Access and manage all Integration, Staging, and Production environments  through the store and Admin panel using provided URLs and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For existing Pro projects, you need to have your Project Web Interface updated to manage Staging and Production through the interface. For more information adding this management to existing Pro projects, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+
+If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.
+</div>
+
 ### Pro environments and branches {#env-branches}
-For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These enviornments are not public facing. Finally, Production is your live, public environment.
+For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These environments are not public facing. Finally, Production is your live, public environment.
 
 For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
 
