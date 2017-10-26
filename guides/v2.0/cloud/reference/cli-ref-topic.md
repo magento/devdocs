@@ -108,7 +108,7 @@ The following table lists general commands.
 <table>
 	<thead>
 				   <tr>
-	             <th>Command</th>
+	             <th style="width: 250px;">Command</th>
 	             <th>Description</th>
 	         </tr>
 	</thead>
@@ -430,17 +430,18 @@ The following table lists all commands for interacting with your environments an
 	 		</tbody>
 </table>
 
-For a changelog, see the next section.
+<!-- For a changelog, see the next section.
 
 ## Upgrade Magento Cloud CLI {#upgrade}
 When you login to the Magento Cloud CLI, it checks for available updates. You can enter `y` for yes to upgrade. After upgrading, you can login and use the `magento-cloud list` command to see a list of all commands.
 
-Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates.
+### Changelog for Magento Cloud CLI {#changelog}
+Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates. For a general changelog, you can review the [Platform.sh CLI changelog](https://github.com/platformsh/platformsh-cli/releases){:target="_blank"}.
 
 <table>
 	     <thead>
 	         <tr>
-	             <th>Version</th>
+	             <th style="width: 200px;">Version</th>
 	             <th>Change</th>
 	         </tr>
 		</thead>
@@ -454,4 +455,4 @@ Currently, we do not have a changelist of changes for this feature. We will add 
 					</ul></td>
 	 				</tr>
 			</tbody>
-</table>
+</table> -->
