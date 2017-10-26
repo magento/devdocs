@@ -10,7 +10,13 @@ version: 2.0
 github_link: cloud/trouble/pro-env-management.md
 ---
 
-For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options. To add these environments to the Project Web Interface, you need to complete a few preparation steps and enter a ticket.
+For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options.
+
+To add these environments to the Project Web Interface, review this entire document to complete a few preparation steps and enter a ticket.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Please be aware, you ticket will be added to a queue for updating existing Pro projects. The process may take some time to complete. We will update your tickets with details, timing, and updates.
+</div>
 
 All new projects already include these features.
 

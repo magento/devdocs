@@ -106,22 +106,24 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 The following table lists general commands.
 
 <table>
-	     <tbody>
-	         <tr>
-	             <th>Command</th>
+	<thead>
+				   <tr>
+	             <th style="width: 250px;">Command</th>
 	             <th>Description</th>
 	         </tr>
+	</thead>
+			<tbody>
 	 				<tr>
 	 				<td>clear-cache</td>
 	 				<td>Clears the cache for only the CLI.</td>
 	 				</tr>
 					<tr>
 	 				<td>docs</td>
-	 				<td>Provides a link for documentation. Currently, this displays http://devdocs.magento.com.</td>
+	 				<td>Provides a link for documentation. </td>
 	 				</tr>
 					<tr>
 	 				<td>help</td>
-	 				<td>Displays <a href="#help">help</a> information for the command.</td>
+	 				<td>Displays help information for the command.</td>
 	 				</tr>
 					<tr>
 	 				<td>list</td>
@@ -142,11 +144,13 @@ The following table lists general commands.
 The following table lists all commands for interacting with your environments and projects.
 
 <table>
-	     <tbody>
+			<thead>
 	         <tr>
 	             <th>Command</th>
 	             <th>Description</th>
 	         </tr>
+			</thead>
+	     <tbody>
 	 				<tr>
 	 				<td>activity:list (activities)</td>
 	 				<td>Gets a list of activities for an environment</td>
@@ -309,7 +313,7 @@ The following table lists all commands for interacting with your environments an
 	 				</tr>
 	 				<tr>
 	 				<td>local:dir (dir)</td>
-	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories: <code>magento-cloud dir [<subdir>]</code>.</td>
+	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories.</td>
 	 				</tr>
 					<tr>
 	 				<td>prohect:get (get)</td>
@@ -426,20 +430,27 @@ The following table lists all commands for interacting with your environments an
 	 		</tbody>
 </table>
 
+For a changelog, see the next section.
+
 ## Upgrade Magento Cloud CLI {#upgrade}
 When you login to the Magento Cloud CLI, it checks for available updates. You can enter `y` for yes to upgrade. After upgrading, you can login and use the `magento-cloud list` command to see a list of all commands.
 
-Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates.
+### Changelog for Magento Cloud CLI {#changelog}
+Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates. For a general changelog, you can review the [Platform.sh CLI changelog](https://github.com/platformsh/platformsh-cli/releases){:target="_blank"}.
 
 <table>
-	     <tbody>
+	     <thead>
 	         <tr>
-	             <th>Version</th>
+	             <th style="width: 200px;">Version</th>
 	             <th>Change</th>
 	         </tr>
+		</thead>
+			<tbody>
 	 				<tr>
 	 				<td>1.11.X</td>
-	 				<td><ul><li>local:clean command has been changed to clean. Enter <code>magento-cloud clean --help</code> for more information. You may not find the command on the list.</li>
+	 				<td>
+					<ul>
+					<li>local:clean command has been changed to clean. Enter <code>magento-cloud clean --help</code> for more information. You may not find the command on the list.</li>
 					<li>Added local:dir to locate the root directory. You should enter a sub-directory arguement to locate specific information for local, web, or shared.</li>
 					</ul></td>
 	 				</tr>
