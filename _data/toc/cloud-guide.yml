@@ -74,6 +74,7 @@ pages:
 
         - label: Import an existing Magento project
           children:
+
             - label: First steps for importing Magento Commerce
               url: cloud/access-acct/first-time-setup_import-first-steps.html
 
@@ -99,11 +100,15 @@ pages:
           url: cloud/live/paypal-onboarding.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Set up multiple Cloud websites or stores
-          url: cloud/project/project-multi-sites.html
+        - label: Set up Magento B2B
+          url: cloud/configure/setup-b2b.html
+          versions: ["2.2","2.3"]
 
         - label: Set up cron jobs
           url: cloud/configure/setup-cron-jobs.html
+
+        - label: Set up multiple Cloud websites or stores
+          url: cloud/project/project-multi-sites.html
 
         - label: .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
