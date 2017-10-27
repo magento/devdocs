@@ -68,7 +68,7 @@ Additions since 2.0 are marked with asterisks (*).
     GET    /V1/returns/:id/tracking-numbers
     GET    /V1/returns/:id/labels
 
-## List of REST APIs for {{site.data.var.ce}}n {#list}
+## List of REST APIs for {{site.data.var.ce}} {#list}
 
     The {{site.data.var.ee}} REST APIs are available on all installations.
 
