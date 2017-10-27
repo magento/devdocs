@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>First time deployment | Magento 2 Developer Documentation</title>
+	<title>Set up Magento B2B | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/access-acct/first-time-deploy.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/configure/setup-b2b.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/access-acct/first-time-deploy.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/configure/setup-b2b.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/first-time-deploy.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/configure/setup-b2b.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/access-acct/first-time-deploy.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/configure/setup-b2b.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -543,7 +543,7 @@
         
         
         
-        <li class="nav-level2 active " id="first-time-deployment">
+        <li class="nav-level2  " id="first-time-deployment">
             
             
         
@@ -696,7 +696,7 @@
         
         
         
-        <li class="nav-level2  " id="set-up-magento-b2b">
+        <li class="nav-level2 active " id="set-up-magento-b2b">
             
             
         
@@ -1816,7 +1816,7 @@
 
           
 
-          <span property="name">First time deployment</span>
+          <span property="name">Set up Magento B2B</span>
 
         
 
@@ -1839,7 +1839,7 @@
 
 	
 
-	<h1 class="page-heading">First time deployment</h1>
+	<h1 class="page-heading">Set up Magento B2B</h1>
 
   
 
@@ -1847,199 +1847,152 @@
 </section>
 
 
-			<h4 id="previous-step">Previous step:</h4>
-<p><a href="/guides/v2.2/cloud/before/before-setup-env-install.html">Install Magento</a></p>
+			<p>With the Magento Commerce (Cloud) Pro subscription for v2.2 and later, you can install and setup Magento Business to Business (B2B) Commerce features. B2B supports merchants whose customers are other companies. This section provides specific information for installing and setting up B2B in Magento Commerce (Cloud).</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You only need to complete this step one time for a new <strong>Pro project</strong>. This code is already on <code class="highlighter-rouge">master</code> for the Starter project. As a best practice, you need to have the template Magento Commerce project (or <code class="highlighter-rouge">master</code> branch) fully deployed across all environments to ensure all future code pushes correctly deploy.</p>
+<p>For additional information on using and extending B2B, see the following guides:</p>
+
+<ul>
+  <li><a href="http://devdocs.magento.com/guides/v2.2/b2b/bk-b2b.html">Magento B2B Developer Guide</a></li>
+  <li><a href="http://docs.magento.com/m2/b2b/user_guide/getting-started.html" target="_blank">Magento B2B User Guide</a></li>
+</ul>
+
+<p>We provide these features as a module you can install and setup in Magento Commerce (Cloud). Installation of B2B in a Pro project require additional steps to add the module and update your Git branch.</p>
+
+<h2 id="prereqs">Prerequisites for adding B2B</h2>
+<p>Prior to adding the B2B module, you should have the following:</p>
+
+<ul>
+  <li>Upgraded to a Magento Commerce (Cloud) 2.2.X on your environments</li>
+  <li>A Git branch to add the new B2B module</li>
+</ul>
+
+<p>We provide B2B as a module for Magento. For new Pro projects, we highly recommend having Magento Commerce (Cloud) fully deployed to Intergration, Staging, and Production environments. For more information, see <a href="/guides/v2.2/cloud/access-acct/first-time-deploy.html">First time deployment</a>. Adding a module as part of your initial deployment could cause issues.</p>
+
+<h2 id="branch">Create a branch to work in</h2>
+<p>We recommend working in a branch to add the B2B module and features to your implementation. If you have a branch, continue to <a href="#add">Add B2B in the cloud</a>.</p>
+
+<div>
+
+  <ol>
+    <li>Log in to your local development system, or switch to, the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+    <li>Change to a directory to which the Magento file system owner has write access.</li>
+    <li>
+      <p>Enter the following command in a terminal to log in to your project:</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
+</code></pre>
+      </div>
+    </li>
+    <li>
+      <p>List your projects. With the project ID, you can complete additional commands.</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
+</code></pre>
+      </div>
+    </li>
+    <li>
+      <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre>
+      </div>
+    </li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
+    <li>
+      <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
+
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
+</code></pre>
+      </div>
+
+      <div class="bs-callout bs-callout-info" id="info">
+  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
 </div>
+    </li>
+    <li>
+      <p>Fetch origin branches to get the latest code:</p>
 
-<p>After fully setting up your local workspace, for <strong>Pro</strong> you should have the cloned Integration <code class="highlighter-rouge">master</code> branch on your local. To finish your initial setup, we <strong>strongly recommend fully deploying</strong> <code class="highlighter-rouge">master</code> branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.</p>
+      <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
+</code></pre>
+      </div>
+    </li>
+    <li>
+      <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-<p>This initial push provides the following benefits:</p>
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre>
+      </div>
 
-<ul>
-  <li>Fully installs Magento in each environment</li>
-  <li>Allows the build/deploy scripts to use the <code class="highlighter-rouge">setup:upgrade</code> command instead of <code class="highlighter-rouge">setup:install</code> (important for adding extensions)</li>
-  <li>Pushes the Magento encryption key across all environments</li>
-  <li>
-    <p>Protects against errors and failures when installing with added modules and extensions</p>
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    </li>
+    <li>
+      <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-    <p>Not all extensions are correctly tested with the setup:install command and application modes. If you initially install Magento code with added 3rd party extensions or custom code, you may receive errors and build/deploy failures. By deploying the unmodified Magento template, all future deployments to Staging and Production typically do not encounter installation issues from 3rd party and custom code.</p>
-  </li>
-</ul>
+      <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
+</code></pre>
+      </div>
+    </li>
+    <li>
+      <p>Create a <a href="/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-<h2 id="prereqs">Prerequisites</h2>
-<p>To deploy, you need the following:</p>
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+      </div>
+    </li>
+  </ol>
 
-<ul>
-  <li>A project with an unmodified Magento Commerce template <code class="highlighter-rouge">master</code> branch (projects created using the import option may encounter issues)</li>
-  <li>Staging and Production environments provisioned</li>
-  <li>SSH access to Staging and Production environments</li>
-</ul>
+  <h2 id="add">Add B2B in the cloud</h2>
+  <p>You need to add the module to <code class="highlighter-rouge">composer.json</code>. All extensions and modules must be added to this file.</p>
 
-<h2 id="ticket">Enter a ticket</h2>
-<p>If you need environments provisioned and SSH access, enter a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">Support ticket</a>.</p>
+  <ol>
+    <li>Open a terminal application.</li>
+    <li>Change to your local development environment root directory.</li>
+    <li>Use a text editor to edit <code class="highlighter-rouge">composer.json</code>.</li>
+    <li>
+      <p>In the <code class="highlighter-rouge">require</code> section, add the following:</p>
 
-<p>To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.</p>
+      <p>“magento/extension-b2b”: “*”</p>
+    </li>
+    <li>Save the file.</li>
+    <li>
+      <p>Run the composer update command to pull all B2B files into your branch.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you are on a Pro trial and do not have Staging and Production environments provisioned, you cannot complete an initial deployment. To continue developing, create a branch from Integration <code class="highlighter-rouge">master</code>. Do not merge this code to your <code class="highlighter-rouge">master</code> branch until you have deployed it to your provisioned Staging and Production environments.</p>
+      <p>composer update</p>
+    </li>
+    <li>
+      <p>Add the new B2B files to Git:</p>
+
+      <p>git add setup dev pub lib &amp;&amp; git commit -a -m “b2b”</p>
+    </li>
+    <li>
+      <p>Enable all modules using the following command. You need to use this command to ensure all modules, including B2B, are enabled for updating.</p>
+
+      <p>php bin/magento module:enable –all</p>
+    </li>
+    <li>
+      <p>Complete the upgrade with B2B using the following command:</p>
+
+      <p>php bin/magento setup:upgrade</p>
+    </li>
+  </ol>
+
+  <p>If you have a config.php file as part of your deployment, you should also add the B2B module in the modules section of the file.</p>
+
+  <ol>
+    <li>Change to the app/etc directory.</li>
+    <li>Edit the config.php with a text editor.</li>
+    <li>In the modules list, add the B2B module.</li>
+    <li>
+      <p>Save the file and update Git.</p>
+
+      <p>git add -f app/etc/config.php
+ git commit -a -m “Add config.php.”</p>
+    </li>
+  </ol>
+
+  <h2 id="use">Configure and use B2B</h2>
+  <p>For additional information on using and configuring B2B, review the <a href="http://docs.magento.com/m2/b2b/user_guide/getting-started.html" target="_blank">Magento B2B User Guide</a>. To extend functionality, see the <a href="http://devdocs.magento.com/guides/v2.2/b2b/bk-b2b.html">Magento B2B Developer Guide</a>.</p>
 </div>
-
-<p>To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.</p>
-
-<h2 id="deploy">Deploy to Staging and Production</h2>
-<p>The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans. You can also use SSH and CLI commands to complete these process. Previously for Pro plans, you could only use SSH and CLI commands for Staging and Production.</p>
-
-<p>For the Pro plan, deploy the branch you created to Staging and Production.</p>
-
-<ol>
-  <li><a href="https://accounts.magento.cloud">Log in</a> to your project.</li>
-  <li>Select the branch you created.</li>
-  <li>Select the <strong>Merge</strong> option to deploy to Staging.</li>
-  <li>Select the Staging branch.</li>
-  <li>Select the <strong>Merge</strong> option to deploy to Production.</li>
-</ol>
-
-<p><img src="/common/images/cloud_project-merge.png" alt="Use the merge option to deploy" /></p>
-
-<h2 id="ssh">Deploy using SSH</h2>
-<p>If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the <code class="highlighter-rouge">master</code> branch.</p>
-
-<p>You’ll need the SSH and Git with your project ID. The formats are as follows:</p>
-
-<ul>
-  <li>
-    <p>Git URL format:</p>
-
-    <ul>
-      <li>Staging: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
-      <li>Production: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
-    </ul>
-  </li>
-  <li>
-    <p>SSH URL format:</p>
-
-    <ul>
-      <li>Staging: <code class="highlighter-rouge">&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code class="highlighter-rouge">&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-    </ul>
-  </li>
-</ul>
-
-<p>As part of pushing the code, you may need to:</p>
-
-<ul>
-  <li><a href="#cloud-live-migrate-git">Set up remote Git repos</a></li>
-  <li><a href="#cloud-live-migrate-agent">Set up the SSH agent</a> on environments</li>
-</ul>
-
-<p>After that is set up, you can SSH into the environment and use Git commands to push the branches.</p>
-
-<h3 id="cloud-live-migrate-git">Set up remote Git repositories</h3>
-<p>When you know your Git URLs, you must set them up as remote upstream repositories so you can push code to them.</p>
-
-<p>Command syntax:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
-</code></pre>
-</div>
-
-<p>For example,</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
-git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
-</code></pre>
-</div>
-
-<h3 id="cloud-live-migrate-agent">Set up your SSH agent</h3>
-<p>You can use any SSH client you prefer or see our <a href="/guides/v2.2/cloud/before/before-workspace.html#recommended-tools">Recommended tools</a>. For these examples, we use the OpenSSH client.</p>
-
-<p>The SSH agent forwards authentication requests from Staging or Production to your working Magento system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.</p>
-
-<p>To set up an SSH agent:</p>
-
-<ol>
-  <li>Log in to local development machine.</li>
-  <li>
-    <p>Enter the following command:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>ssh-add -l
-</code></pre>
-    </div>
-
-    <p>One of the following messages displays:</p>
-
-    <ul>
-      <li>
-        <p>Working SSH agent: <code class="highlighter-rouge">2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
-
-        <p>Skip the next step and continue with step 4.</p>
-      </li>
-      <li>
-        <p>SSH agent not started: <code class="highlighter-rouge">Could not open a connection to your authentication agent.</code></p>
-
-        <p>Continue with step 3.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>To start the SSH agent, enter the following command:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>  eval $(ssh-agent -s)
-</code></pre>
-    </div>
-
-    <p>The agent’s process ID (PID) displays.</p>
-  </li>
-  <li>
-    <p>Add your SSH key to the agent:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>  ssh-add ~/.ssh/id_rsa
-</code></pre>
-    </div>
-
-    <p>A message similar to the following displays:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
-</code></pre>
-    </div>
-  </li>
-</ol>
-
-<p>For more information on setting up SSH, see <a href="/guides/v2.2/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> as part of your local setup.</p>
-
-<h3 id="git">SSH and pull the Git branch</h3>
-
-<ol>
-  <li>
-    <p>Open an SSH connection to your Staging or Production environment:</p>
-
-    <ul>
-      <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-    </ul>
-  </li>
-  <li>
-    <p>Pull the <code class="highlighter-rouge">master</code> branch to the server.</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> git pull origin master
-</code></pre>
-    </div>
-  </li>
-</ol>
-
-<h2 id="code">You’re ready to code!</h2>
-<p>When this code is fully deployed to those environments, you can begin development, add extensions, and more!</p>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v2.2/cloud/reference/discover-arch.html">Cloud Architecture</a></li>
-  <li><a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a></li>
-  <li><a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment workflow</a></li>
-</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -2050,14 +2003,14 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/first-time-deploy.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/configure/setup-b2b.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/access-acct/first-time-deploy.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/configure/setup-b2b.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

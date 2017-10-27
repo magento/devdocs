@@ -696,18 +696,6 @@
         
         
         
-        <li class="nav-level2  " id="set-up-multiple-cloud-websites-or-stores">
-            
-            
-        
-            
-            <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>
-            
-
-            
-        </li>
-        
-        
         
         
         <li class="nav-level2  " id="set-up-cron-jobs">
@@ -716,6 +704,20 @@
         
             
             <a href="/guides/v2.1/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-multiple-cloud-websites-or-stores">
+            
+            
+        
+            
+            <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>
             
 
             
@@ -1842,12 +1844,12 @@
   <li>Remove the component from your environment’s <code class="highlighter-rouge">composer.json</code> and redeploy the environment</li>
 </ul>
 
-<h3 id="remove-the-component-from-composerjson-and-redeploy">Remove the component from <code class="highlighter-rouge">composer.json</code> and redeploy</h3>
+<h2 id="remove-the-component-from-composerjson-and-redeploy">Remove the component from <code class="highlighter-rouge">composer.json</code> and redeploy</h2>
 <p>This section discusses how to remove the component from the root <code class="highlighter-rouge">composer.json</code> in your environment and redeploy the environment:</p>
 
-<h4 id="get-started">Get started</h4>
+<h2 id="get-started">Get started</h2>
 
-<div class="collapsible"><b class="collapsible-title">Click to expand/collapse content </b><div class="collapsible-content"><div>
+<div>
 
   <ol>
     <li>Log in to your local development system, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
@@ -1916,110 +1918,106 @@
       </div>
     </li>
   </ol>
-</div>
-</div></div>
 
-<h4 id="find-a-components-composer-name">Find a component’s Composer name</h4>
+  <h2 id="find-a-components-composer-name">Find a component’s Composer name</h2>
 
-<div class="collapsible"><b class="collapsible-title">Click to expand/collapse content </b><div class="collapsible-content"><div>
+  <div>
 
-  <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
+    <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
 
-  <p>To get the extension’s Composer name from Magento Marketplace:</p>
+    <p>To get the extension’s Composer name from Magento Marketplace:</p>
 
-  <ol>
-    <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the user name and password you used to purchase the component.</li>
-    <li>
-      <p>In the upper right corner, click <strong>&lt;your user name&gt;</strong> &gt; <strong>My Account</strong> as the following figure shows.</p>
+    <ol>
+      <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the user name and password you used to purchase the component.</li>
+      <li>
+        <p>In the upper right corner, click <strong>&lt;your user name&gt;</strong> &gt; <strong>My Account</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-account.png" alt="Access your Marketplace account" width="650px" /></p>
-    </li>
-    <li>
-      <p>On the My Account page, click <strong>My Purchases</strong> as the following figure shows.</p>
+        <p><img src="/common/images/cloud_marketplace-account.png" alt="Access your Marketplace account" width="650px" /></p>
+      </li>
+      <li>
+        <p>On the My Account page, click <strong>My Purchases</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
-    </li>
-    <li>
-      <p>On the My Purchases page, click <strong>Technical Details</strong> for the extension you purchased as the following figure shows.</p>
+        <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
+      </li>
+      <li>
+        <p>On the My Purchases page, click <strong>Technical Details</strong> for the extension you purchased as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
-    </li>
-    <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
-    <li>Open a text editor.</li>
-    <li>Paste the extension name in the text editor.</li>
-    <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
-    <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
-    <li>
-      <p>Append the version number to the component name after the colon.</p>
+        <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
+      </li>
+      <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
+      <li>Open a text editor.</li>
+      <li>Paste the extension name in the text editor.</li>
+      <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
+      <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
+      <li>
+        <p>Append the version number to the component name after the colon.</p>
 
-      <p>A sample follows:</p>
+        <p>A sample follows:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>pixlee/magento2:1.0.1
+        <div class="highlighter-rouge"><pre class="highlight"><code>pixlee/magento2:1.0.1
 </code></pre>
-      </div>
-    </li>
-  </ol>
-</div>
-</div></div>
+        </div>
+      </li>
+    </ol>
 
-<h4 id="clear-var-directories">Clear <code class="highlighter-rouge">var</code> directories</h4>
-<p>To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento <code class="highlighter-rouge">var</code> directory.</p>
+    <h2 id="clear-var-directories">Clear <code class="highlighter-rouge">var</code> directories</h2>
+    <p>To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento <code class="highlighter-rouge">var</code> directory.</p>
 
-<ol>
-  <li>
-    <p>Enter the following command to SSH to the current environment:</p>
+    <ol>
+      <li>
+        <p>Enter the following command to SSH to the current environment:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh
+        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh
 </code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Clear the <code class="highlighter-rouge">var</code> directory:</p>
+        </div>
+      </li>
+      <li>
+        <p>Clear the <code class="highlighter-rouge">var</code> directory:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf var/*
+        <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf var/*
 </code></pre>
-    </div>
-  </li>
-</ol>
+        </div>
+      </li>
+    </ol>
 
-<h4 id="remove-the-component">Remove the component</h4>
+    <h2 id="remove-the-component">Remove the component</h2>
+    <p>To remove the component:</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to expand/collapse content </b><div class="collapsible-content"><p>To remove the component:</p>
+    <ol>
+      <li>Change to your environment’s root directory if you haven’t already done so.</li>
+      <li>
+        <p>Enter the following command:</p>
 
-<ol>
-  <li>Change to your environment’s root directory if you haven’t already done so.</li>
-  <li>
-    <p>Enter the following command:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer remove &lt;component-name&gt;:&lt;version&gt;
+        <div class="highlighter-rouge"><pre class="highlight"><code>composer remove &lt;component-name&gt;:&lt;version&gt;
 </code></pre>
-    </div>
+        </div>
 
-    <p>If the following message displays, you don’t need to do anything further:</p>
+        <p>If the following message displays, you don’t need to do anything further:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Package "&lt;name&gt;:&lt;version&gt;" listed for update is not installed. Ignoring.
+        <div class="highlighter-rouge"><pre class="highlight"><code>Package "&lt;name&gt;:&lt;version&gt;" listed for update is not installed. Ignoring.
 </code></pre>
-    </div>
-  </li>
-  <li>Wait while dependencies are updated.</li>
-  <li>
-    <p>Enter the following commands in the order shown to commit the changes and deploy the project:</p>
+        </div>
+      </li>
+      <li>Wait while dependencies are updated.</li>
+      <li>
+        <p>Enter the following commands in the order shown to commit the changes and deploy the project:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
+        <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
 git commit -m "&lt;message&gt;"
 git push origin &lt;environment ID&gt;
 </code></pre>
-    </div>
-  </li>
-</ol>
-</div></div>
+        </div>
+      </li>
+    </ol>
 
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.1/cloud/project/projects.html">Manage your projects</a></li>
-  <li><a href="/guides/v2.1/cloud/env/environments.html">Manage your environments</a></li>
-  <li><a href="/guides/v2.1/cloud/howtos/how-to.html">Tutorials</a></li>
-</ul>
+    <h4 id="related-topics">Related topics</h4>
+    <ul>
+      <li><a href="/guides/v2.1/cloud/project/projects.html">Manage your projects</a></li>
+      <li><a href="/guides/v2.1/cloud/env/environments.html">Manage your environments</a></li>
+      <li><a href="/guides/v2.1/cloud/howtos/how-to.html">Tutorials</a></li>
+    </ul>
+  </div>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->

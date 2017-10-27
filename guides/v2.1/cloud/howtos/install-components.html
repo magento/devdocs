@@ -696,18 +696,6 @@
         
         
         
-        <li class="nav-level2  " id="set-up-multiple-cloud-websites-or-stores">
-            
-            
-        
-            
-            <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>
-            
-
-            
-        </li>
-        
-        
         
         
         <li class="nav-level2  " id="set-up-cron-jobs">
@@ -716,6 +704,20 @@
         
             
             <a href="/guides/v2.1/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-multiple-cloud-websites-or-stores">
+            
+            
+        
+            
+            <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>
             
 
             
@@ -1859,9 +1861,9 @@
   <li><a href="#cloud-howto-comp-verify">Verify</a> the extension installed properly.</li>
 </ol>
 
-<h3 id="get-started">Get started</h3>
+<h2 id="getstarted">Create a branch to work in</h2>
 
-<div class="collapsible"><b class="collapsible-title">To get started: </b><div class="collapsible-content"><div>
+<div>
 
   <ol>
     <li>Log in to your local development system, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
@@ -1930,122 +1932,105 @@
       </div>
     </li>
   </ol>
-</div>
-</div></div>
 
-<h3 id="cloud-howto-comp-composer">Step 1: Get the extension’s Composer name and version</h3>
-<p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#cloud-howto-comp-json">Update Magento’s <code class="highlighter-rouge">composer.json</code></a>.</p>
+  <h2 id="cloud-howto-comp-composer">Step 1: Get the extension’s Composer name and version</h2>
+  <p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#cloud-howto-comp-json">Update Magento’s <code class="highlighter-rouge">composer.json</code></a>.</p>
 
-<div class="collapsible"><b class="collapsible-title">To get the Composer name: </b><div class="collapsible-content"><div>
+  <div>
 
-  <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
+    <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
 
-  <p>To get the extension’s Composer name from Magento Marketplace:</p>
+    <p>To get the extension’s Composer name from Magento Marketplace:</p>
 
-  <ol>
-    <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the user name and password you used to purchase the component.</li>
-    <li>
-      <p>In the upper right corner, click <strong>&lt;your user name&gt;</strong> &gt; <strong>My Account</strong> as the following figure shows.</p>
+    <ol>
+      <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the user name and password you used to purchase the component.</li>
+      <li>
+        <p>In the upper right corner, click <strong>&lt;your user name&gt;</strong> &gt; <strong>My Account</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-account.png" alt="Access your Marketplace account" width="650px" /></p>
-    </li>
-    <li>
-      <p>On the My Account page, click <strong>My Purchases</strong> as the following figure shows.</p>
+        <p><img src="/common/images/cloud_marketplace-account.png" alt="Access your Marketplace account" width="650px" /></p>
+      </li>
+      <li>
+        <p>On the My Account page, click <strong>My Purchases</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
-    </li>
-    <li>
-      <p>On the My Purchases page, click <strong>Technical Details</strong> for the extension you purchased as the following figure shows.</p>
+        <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
+      </li>
+      <li>
+        <p>On the My Purchases page, click <strong>Technical Details</strong> for the extension you purchased as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
-    </li>
-    <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
-    <li>Open a text editor.</li>
-    <li>Paste the extension name in the text editor.</li>
-    <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
-    <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
-    <li>
-      <p>Append the version number to the component name after the colon.</p>
+        <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
+      </li>
+      <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
+      <li>Open a text editor.</li>
+      <li>Paste the extension name in the text editor.</li>
+      <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
+      <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
+      <li>
+        <p>Append the version number to the component name after the colon.</p>
 
-      <p>A sample follows:</p>
+        <p>A sample follows:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>pixlee/magento2:1.0.1
+        <div class="highlighter-rouge"><pre class="highlight"><code>pixlee/magento2:1.0.1
 </code></pre>
-      </div>
-    </li>
-  </ol>
+        </div>
+      </li>
+    </ol>
 
-  <p>Continue with the next section.</p>
-</div>
-</div></div>
+    <h2 id="cloud-howto-comp-json">Step 2: Update Magento’s <code class="highlighter-rouge">composer.json</code></h2>
 
-<h3 id="cloud-howto-comp-json">Step 2: Update Magento’s <code class="highlighter-rouge">composer.json</code></h3>
+    <p>To update <code class="highlighter-rouge">composer.json</code>:</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to expand/collapse content </b><div class="collapsible-content"><p>To update <code class="highlighter-rouge">composer.json</code>:</p>
+    <ol>
+      <li>If you haven’t done so already, change to your environment root directory.</li>
+      <li>
+        <p>Enter the following commands to update it:</p>
 
-<ol>
-  <li>If you haven’t done so already, change to your environment root directory.</li>
-  <li>
-    <p>Enter the following commands to update it:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require &lt;component-name&gt;:&lt;version&gt; --no-update
+        <div class="highlighter-rouge"><pre class="highlight"><code>composer require &lt;component-name&gt;:&lt;version&gt; --no-update
 composer update
 </code></pre>
-    </div>
+        </div>
 
-    <p>For example,</p>
+        <p>For example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require pixlee/magento2:1.0.1 --no-update
+        <div class="highlighter-rouge"><pre class="highlight"><code>composer require pixlee/magento2:1.0.1 --no-update
 composer update
 </code></pre>
-    </div>
-  </li>
-  <li>Enter the following</li>
-  <li>Wait for project dependencies to update.</li>
-  <li>Continue with the next section.</li>
-</ol>
-</div></div>
+        </div>
+      </li>
+      <li>Wait for project dependencies to update.</li>
+      <li>Enter the following commands in the order shown to commit your changes, including <code class="highlighter-rouge">composer.lock</code>:</li>
+    </ol>
 
-<h3 id="cloud-howto-comp-push">Step 3: Push the extension to your environment</h3>
+  	git add -A
+  	git commit -m “<message>"
+  	git push origin <environment ID="">
+</environment></message>
+    <p>If there are errors, see <a href="/guides/v2.1/cloud/trouble/trouble_comp-deploy-fail.html">extension deployment failure</a>.</p>
 
-<div class="collapsible"><b class="collapsible-title">To push the extension: </b><div class="collapsible-content"><p>Enter the following commands in the order shown to commit your changes, including <code class="highlighter-rouge">composer.lock</code>:</p>
+    <h2 id="cloud-howto-comp-verify">Step 4: Verify the extension</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git add -A
-git commit -m "&lt;message&gt;"
-git push origin &lt;environment ID&gt;
-</code></pre>
+    <p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
+
+    <ol>
+      <li><a href="/guides/v2.1/cloud/env/environments-start.html#env-start-ssh">SSH to the environment</a> on which the extension is installed.</li>
+      <li>Enter the following command to display a list of enabled modules:</li>
+    </ol>
+
+  	php bin/magento module:status
+
+    <ol>
+      <li>Verify the extension is listed.</li>
+    </ol>
+
+    <p>The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>. It will not be in the same format as the Composer name.</p>
+
+    <h4 id="related-topics">Related topics</h4>
+    <ul>
+      <li><a href="/guides/v2.1/cloud/howtos/update-components.html">Update components</a></li>
+      <li><a href="/guides/v2.1/cloud/howtos/sample-data.html">Install optional sample data</a></li>
+      <li><a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
+    </ul>
+  </div>
 </div>
-
-<p>If there are errors, see <a href="/guides/v2.1/cloud/trouble/trouble_comp-deploy-fail.html">extension deployment failure</a>.</p>
-</div></div>
-
-<h3 id="cloud-howto-comp-verify">Step 4: Verify the extension</h3>
-
-<div class="collapsible"><b class="collapsible-title">To verify the extension: </b><div class="collapsible-content"><p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
-
-<ol>
-  <li><a href="/guides/v2.1/cloud/env/environments-start.html#env-start-ssh">SSH to the environment</a> on which the extension is installed.</li>
-  <li>
-    <p>Enter the following command to display a list of enabled modules:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>`php bin/magento module:status`
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Verify the extension is listed.</p>
-
-    <p>The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>; it is not the same format as the Composer name.</p>
-  </li>
-</ol>
-</div></div>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.1/cloud/howtos/update-components.html">Update components</a></li>
-  <li><a href="/guides/v2.1/cloud/howtos/sample-data.html">Install optional sample data</a></li>
-  <li><a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
-</ul>
 
 		</div>
 		<!-- /.content-wrap -->
