@@ -48,7 +48,8 @@ Add a project level variable with your license:
 
     magento-cloud project:variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
 
-Add New Relic to `.magento.app.yaml`:
+We will complete adding New Relic to your Staging and Production environments for you.
+<!-- Add New Relic to `.magento.app.yaml`:
 
 1. In your development code branch, edit `.magento.app.yaml` with a text editor.
 2. Add the following information:
@@ -56,7 +57,7 @@ Add New Relic to `.magento.app.yaml`:
     runtime:
       extensions:
         - newrelic
-3. Save and push the changes to deploy across Staging and Production.
+3. Save and push the changes to deploy across Staging and Production. -->
 
 You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access both environments via SSH and install the agent.
 
