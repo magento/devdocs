@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Search Results | Magento 2 Developer Documentation</title>
+	<title>Step 3. Use cURL to run the request | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/search.html">
+	<link rel="canonical" href="//guides/v2.0/get-started/gs-atapi.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/search.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/get-started/gs-curl.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/search.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/get-started/gs-curl.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/search.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/get-started/gs-curl.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -182,139 +182,359 @@
 		<a id="main-content"></a>
 
 
-<div class="search-results-header">
-  <div id="search-input"></div>
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Getting Started with Web APIs</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.0/get-started/bk-get-started-api.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="use-rest-apis">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.0/get-started/rest_front.html">Use REST APIs</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="construct-a-request">
+            
+            
+        
+            
+            <a href="/guides/v2.0/get-started/gs-web-api-request.html">Construct a request</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="use-curl-to-run-the-request">
+            
+            
+        
+            
+            <a href="/guides/v2.0/get-started/gs-curl.html">Use cURL to run the request</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="status-codes-and-responses">
+            
+            
+        
+            
+            <a href="/guides/v2.0/get-started/gs-web-api-response.html">Status codes and responses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  tutorial" id="order-processing-with-rest-apis-tutorial">
+            
+            
+        
+            
+            <a href="/guides/v2.0/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs Tutorial</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="use-soap-services">
+
+    
+    
+    
+    <a href="/guides/v2.0/get-started/soap/soap-web-api-calls.html">Use SOAP Services</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="authentication">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Authentication</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="token-based-authentication">
+            
+            
+        
+            
+            <a href="/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="oauth-based-authentication">
+            
+            
+        
+            
+            <a href="/guides/v2.0/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="oauth-error-codes">
+            
+            
+        
+            
+            <a href="/guides/v2.0/get-started/authentication/oauth-errors.html">OAuth error codes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="session-based-authentication">
+            
+            
+        
+            
+            <a href="/guides/v2.0/get-started/authentication/gs-authentication-session.html">Session-based authentication</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="create-an-integration">
+
+    
+    
+    
+    <a href="/guides/v2.0/get-started/create-integration.html">Create an integration</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="web-api-functional-testing">
+
+    
+    
+    
+    <a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API functional testing</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
 </div>
 
-<div class="search-results container">
+	</div>
 
-  <article>
-    <div id="stats"></div>
-    <div id="hits"></div>
-  </article>
+</aside>
 
-  <aside>
-    <div id="tags"></div>
-  </aside>
 
-</div><!-- container -->
+<!-- /sidebar -->
 
-<div class="search-results-footer">
-  <div id="pagination"></div>
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.0/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.0/get-started/bk-get-started-api.html">
+            <span property="name">Getting Started with Magento Web APIs</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Step 3. Use cURL to run the request</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Step 3. Use cURL to run the request</h1>
+
+  
+
+
+</section>
+
+
+			<p>–&gt;</p>
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/get-started/gs-curl.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/get-started/gs-atapi.html" target="_blank">Give us feedback</a>
+  </div>
+
 </div>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
-<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
 
-<script>
+	</section>
+	<!-- /.content -->
 
-  app({
-    appId: "E642SEDTHL",
-    apiKey: "d2d0f33ab73e291ef8d88d8b565e754c",
-    indexName: "devdocs",
-    urlSync: true
-  });
-
-
-  function app(opts) {
-    var switcher = document.getElementsByClassName('version-switcher')[0];
-    var searchParameters = {
-
-    };
-
-    if ( switcher ) {
-      var ver = String( switcher.dataset.version );
-      searchParameters.facets = ['guide_version'];
-      searchParameters.facetsRefinements = {
-        guide_version: [ ver ]
-      };
-    }
-
-
-    const search = instantsearch({
-      appId: opts.appId,
-      apiKey: opts.apiKey,
-      indexName: opts.indexName,
-      urlSync: true,
-      searchParameters: searchParameters
-    });
-
-    search.addWidget(
-      instantsearch.widgets.searchBox({
-        container: '#search-input',
-        placeholder: 'Search',
-      })
-    );
-
-    search.addWidget(
-      instantsearch.widgets.hits({
-        container: '#hits',
-        hitsPerPage: 10,
-        templates: {
-          item: function ( item ) {
-            var title_highlighted = item._highlightResult.title;
-            var title_plain = item.title;
-            var url = item.url;
-            // Check if we can show title, if not - at least show URL
-            if (typeof title_highlighted !== 'undefined') {
-              title = title_highlighted.value;
-            } else if (typeof title_plain !== 'undefined') {
-              title = title_plain;
-            } else {
-              title = url;
-            }
-
-            //TODO: fix the baseurl on the entire site then remove this:
-            if ( baseUrl == '/' ) {
-              var link = '<a href="' + url + '">' + title +'</a>';
-            } else {
-              var link = '<a href="' + baseUrl + url + '">' + title +'</a>';
-            }
-
-            return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-url">'+ document.location.origin + url +'</div><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
-          },
-          empty: function ( query ) {
-            return '<div id="no-results-message"><p>No results for the search <em>"' + query.query +'"</em>.</p></div>';
-          },
-        },
-      })
-    );
-
-    search.addWidget(
-      instantsearch.widgets.stats({
-        container: '#stats',
-      })
-    );
-
-
-    search.addWidget(
-      instantsearch.widgets.refinementList({
-        container: '#tags',
-        attributeName: 'functional_areas',
-        operator: 'or',
-        limit: 20,
-        sortBy: ["name:asc"],
-        templates: {
-          header: 'Functional Areas'
-        }
-      })
-    );
-
-
-
-
-    search.addWidget(
-      instantsearch.widgets.pagination({
-        container: '#pagination',
-        scrollTo: '#search-input',
-      })
-    );
-
-    search.start();
-  }
-</script>
-
-
+</div> <!-- /.container -->
 
 
 	</div>
