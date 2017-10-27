@@ -61,7 +61,7 @@ To enter your project's public key as a GitHub deploy key:
 4.	Click **Add deploy key**.
 5.	Follow the prompts on your screen to complete the task.
 
-<!-- ### Enter your Bitbucket deployment key {#cloud-deploykey-bb}
+### Enter your Bitbucket deployment key {#cloud-deploykey-bb}
 To enter your project's public key as a Bitbucket deploy key:
 
 1.	Log in to your Bitbucket repository as its administrator.
@@ -72,7 +72,7 @@ To enter your project's public key as a Bitbucket deploy key:
 
 	![Bitbucket deploy key]({{ site.baseurl}}common/images/cloud_bb-deploy-key.png)
 4.	Click **Add Key**.
-5.	Follow the prompts on your screen to complete the task. -->
+5.	Follow the prompts on your screen to complete the task.
 
 <!-- ## Update `composer.json`
 TBD -->
