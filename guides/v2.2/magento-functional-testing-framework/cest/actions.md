@@ -88,6 +88,7 @@ The customer's e-mail is stored in the `email` parameter of the `customer` entit
 A required selector is stored in the `emailField` element of the `StorefrontCustomerSignInFormSection` section.
 
 This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSection.xml_:
+{: #section-code}
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -106,6 +107,8 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 <fillField  mergeKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
 ```
 
+The action here is very similar to the action in a previous step.
+The only difference is usage of data required for the field that sets password.
 
 
 #### 4. Click the Sign In button {#example-step4}
@@ -114,6 +117,8 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 <click mergeKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
 ```
 
+Here, [click](#click) performs a click on a button that can be found by selector that is stored in the `signInAccountButton` of the `StorefrontCustomerSignInFormSection`.
+See the section code in [step 2](#section-code)
 
 ## Available actions
 
