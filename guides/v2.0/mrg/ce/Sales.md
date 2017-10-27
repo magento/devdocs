@@ -1,11 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Open Source
 title: Magento_Sales module
-menu_title: Sales
-menu_order: 1
-version: 2.0
 github_link: mrg/ce/Sales.md
 redirect_from:
     - guides/v2.0/mrg/ce/Sales/description.html
