@@ -184,6 +184,19 @@ To enter your project's public key as a GitHub deploy key:
 
 In `composer.json`, use the `<user>@<host>:<.git</code>` format, or `ssh://<user>@<host>:<port>/<path>.git` if using a non-standard port.
 
+### Enter your Bitbucket deployment key {#cloud-deploykey-bb}
+To enter your project's public key as a Bitbucket deploy key:
+
+1.	Log in to your Bitbucket repository as its administrator.
+2.	In the left navigation bar, click **Settings** as the following figure shows.
+
+	![Bitbucket settings]({{ site.baseurl}}common/images/cloud_bb-settings.png)
+3.	Click General > **Deployment Keys** as the following figure shows.
+
+	![Bitbucket deploy key]({{ site.baseurl}}common/images/cloud_bb-deploy-key.png)
+4.	Click **Add Key**.
+5.	Follow the prompts on your screen to complete the task.
+
 #### Related topics
 *	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
 *	[Project backup and restore (snapshot)]({{page.baseurl}}cloud/project/project-webint-snap.html)
