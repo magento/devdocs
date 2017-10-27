@@ -19,24 +19,53 @@ For additional information on using and extending B2B, see the following guides:
 
 We provide these features as a module you can install and setup in {{site.data.var.ece}}. Installation of B2B in a Pro project require additional steps to add the module and update your Git branch.
 
-## Install B2B in the cloud {#install}
-Prior to adding the B2B module, you should have a cloned Git branch initially deployed to your Integration, Staging, and Production environments. Adding a module as part of your initial deployment could cause issues.
+## Prerequisites for adding B2B {#prereqs}
+Prior to adding the B2B module, you should have the following:
 
-1. Enable the module.
-2. Add the module to composer.json "require" section: `"magento/extension-b2b": "*"`
-3. Run the composer update command to pull all B2B files into your branch.
+* Upgraded to a {{site.data.var.ece}} 2.2.X on your environments
+* A Git branch to add the new B2B module
+
+We provide B2B as a module for Magento. For new Pro projects, we highly recommend having {{site.data.var.ece}} fully deployed to Intergration, Staging, and Production environments. For more information, see [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html). Adding a module as part of your initial deployment could cause issues.
+
+## Create a branch to work in {#branch}
+We recommend working in a branch to add the B2B module and features to your implementation. If you have a branch, continue to [Add B2B in the cloud](#add).
+
+{% include cloud/cli-get-started.md %}
+
+## Add B2B in the cloud {#add}
+You need to add the module to `composer.json`. All extensions and modules must be added to this file.
+
+1. Open a terminal application.
+2. Change to your local development environment root directory.
+3. Use a text editor to edit `composer.json`.
+4. In the `require` section, add the following:
+
+    "magento/extension-b2b": "*"
+5. Save the file.
+6. Run the composer update command to pull all B2B files into your branch.
 
     composer update
 4. Add the new B2B files to Git:
 
     git add setup dev pub lib && git commit -a -m "b2b"
-5. Enable all modules using the following command:
+5. Enable all modules using the following command. You need to use this command to ensure all modules, including B2B, are enabled for updating.
 
     php bin/magento module:enable --all
 
-6. Up the local installation with B2B:
+6. Complete the upgrade with B2B using the following command:
 
     php bin/magento setup:upgrade
 
-git add -f app/etc/config.php
-git commit -a -m “Add config.php.”
+
+If you have a config.php file as part of your deployment, you should also add the B2B module in the modules section of the file.
+
+1. Change to the app/etc directory.
+2. Edit the config.php with a text editor.
+3. In the modules list, add the B2B module.
+4. Save the file and update Git.
+
+    git add -f app/etc/config.php
+    git commit -a -m “Add config.php.”
+
+## Configure and use B2B {#use}
+For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html){:target="_blank"}. To extend functionality, see the [Magento B2B Developer Guide](http://devdocs.magento.com/guides/v2.2/b2b/bk-b2b.html).

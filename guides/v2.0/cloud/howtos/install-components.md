@@ -34,28 +34,17 @@ To install a extension, you must:
 3.	[Push](#cloud-howto-comp-push) the changes to your environment.
 4.	[Verify](#cloud-howto-comp-verify) the extension installed properly.
 
-### Get started
-
-{% collapsible To get started: %}
+## Create a branch to work in {#getstarted}
 
 {% include cloud/cli-get-started.md %}
 
-{% endcollapsible %}
-
-### Step 1: Get the extension's Composer name and version {#cloud-howto-comp-composer}
+## Step 1: Get the extension's Composer name and version {#cloud-howto-comp-composer}
 If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#cloud-howto-comp-json).
-
-{% collapsible To get the Composer name: %}
 
 {% include cloud/composer-name.md %}
 
-Continue with the next section.
+## Step 2: Update Magento's `composer.json` {#cloud-howto-comp-json}
 
-{% endcollapsible %}
-
-### Step 2: Update Magento's `composer.json` {#cloud-howto-comp-json}
-
-{% collapsible Click to expand/collapse content %}
 To update `composer.json`:
 
 1.	If you haven't done so already, change to your environment root directory.
@@ -64,46 +53,31 @@ To update `composer.json`:
 		composer require <component-name>:<version> --no-update
 		composer update
 
-	For example,
+	For example:
 
 		composer require pixlee/magento2:1.0.1 --no-update
 		composer update
-3.	Enter the following
-4.	Wait for project dependencies to update.
-3.	Continue with the next section.
+3.	Wait for project dependencies to update.
+4. Enter the following commands in the order shown to commit your changes, including `composer.lock`:
 
-{% endcollapsible %}
-
-### Step 3: Push the extension to your environment {#cloud-howto-comp-push}
-
-{% collapsible To push the extension: %}
-
-Enter the following commands in the order shown to commit your changes, including `composer.lock`:
-
-	git add -A
-	git commit -m "<message>"
-	git push origin <environment ID>
+  	git add -A
+  	git commit -m "<message>"
+  	git push origin <environment ID>
 
 If there are errors, see [extension deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html).
 
-{% endcollapsible %}
-
-### Step 4: Verify the extension {#cloud-howto-comp-verify}
-
-{% collapsible To verify the extension: %}
+## Step 4: Verify the extension {#cloud-howto-comp-verify}
 
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
 1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the extension is installed.
 2.	Enter the following command to display a list of enabled modules:
 
-		`php bin/magento module:status`
+  	php bin/magento module:status
 
 3.	Verify the extension is listed.
 
-	The extension name is in the format `<VendorName>_<ComponentName>`; it is not the same format as the Composer name.
-
-{% endcollapsible %}
+The extension name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
 
 #### Related topics
 *	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)

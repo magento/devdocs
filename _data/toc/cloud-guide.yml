@@ -74,16 +74,16 @@ pages:
 
         - label: Import an existing Magento project
           children:
-            - label: First steps for importing Magento EE
+            - label: First steps for importing Magento
               url: cloud/access-acct/first-time-setup_import-first-steps.html
 
             - label: Find the information you need for your import
               url: cloud/access-acct/first-time-setup_import-prereq.html
 
-            - label: Prepare your existing Magento EE system
+            - label: Prepare your existing Magento Commerce system
               url: cloud/access-acct/first-time-setup_import-prepare.html
 
-            - label: Import Magento EE into Magento Enterprise Cloud Edition
+            - label: Import Magento Commerce into Magento Commerce (Cloud)
               url: cloud/access-acct/first-time-setup_import-import.html
 
     - label: Configure Magento Commerce (Cloud)
@@ -99,11 +99,15 @@ pages:
           url: cloud/live/paypal-onboarding.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Set up multiple Cloud websites or stores
-          url: cloud/project/project-multi-sites.html
+        - label: Set up Magento B2B
+          url: cloud/configure/setup-b2b.html
+          versions: ["2.2","2.3"]
 
         - label: Set up cron jobs
           url: cloud/configure/setup-cron-jobs.html
+
+        - label: Set up multiple Cloud websites or stores
+          url: cloud/project/project-multi-sites.html
 
         - label: .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
