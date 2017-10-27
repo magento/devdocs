@@ -122,7 +122,7 @@ pages:
         - label: Install the B2B extension
           url: comp-mgr/install-extensions/b2b-installation.html
 
-    - label: Upgrade from CE to EE
+    - label: Upgrade from Magento Open Source to Magento Commerce
       url: comp-mgr/upgrader/ce-ee-upgrade-start.html
 
     - label: Command-line upgrade
@@ -200,7 +200,7 @@ pages:
         - label: Troubleshoot backups
           url: comp-mgr/trouble/cman/tshoot_backup.html
 
-        - label: Error upgrading from CE to EE
+        - label: Error upgrading from Magento Open Source to Magento Commerce
           url: comp-mgr/trouble/cman/ce-ee-upgrade.html
 
         - label: magento/theme-doc-blank failure
