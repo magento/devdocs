@@ -7,6 +7,6 @@ menu_title: REST APIs (Swagger)
 version: 2.1
 menu_order: 2
 externalURL: http://devdocs.magento.com/swagger/index_21.html
-tags:
+functional_areas:
   - Integration
 ---

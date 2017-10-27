@@ -15,7 +15,7 @@ redirect_from:
   - /guides/v2.0/cloud/access-acct/first-time-setup_template.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_template.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_template.html
-tags:
+functional_areas:
   - Cloud
   - Setup
 ---

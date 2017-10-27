@@ -8,7 +8,7 @@ menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-create.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
-tags:
+functional_areas:
   - Frontend
   - Theme
 ---

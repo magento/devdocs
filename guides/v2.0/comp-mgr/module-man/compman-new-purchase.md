@@ -11,7 +11,7 @@ level3_subgroup: step3
 version: 2.0
 github_link: comp-mgr/module-man/compman-new-purchase.md
 redirect_from: /guides/v2.0/comp-mgr/compman-new-purchase.html
-tags:
+functional_areas:
   - Upgrade
 ---
 

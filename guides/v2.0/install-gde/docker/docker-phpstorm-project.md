@@ -8,7 +8,7 @@ menu_node:
 menu_order: 5
 version: 2.0
 github_link: install-gde/docker/docker-phpstorm-project.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

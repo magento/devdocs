@@ -11,7 +11,7 @@ tabgroup: best-practices
 tablabel: Storefront
 tabweight: 40
 github_link: ext-best-practices/storefront/storefront-best-practices.md
-tags:
+functional_areas:
   - Frontend
   - Theme
   - Standards

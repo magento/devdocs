@@ -8,7 +8,7 @@ menu_order: 1000
 menu_node:
 version: 2.0
 github_link: install-gde/prereq/prereq_updater.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

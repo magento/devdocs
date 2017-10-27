@@ -10,7 +10,7 @@ level3_menu_node: level3parent
 level3_subgroup: mccloud-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes.md
-tags:
+functional_areas:
   - Cloud
 ---
 

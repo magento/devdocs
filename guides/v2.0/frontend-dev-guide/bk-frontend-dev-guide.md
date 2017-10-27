@@ -8,7 +8,7 @@ menu_order: 1
 version: 2.0
 github_link: frontend-dev-guide/bk-frontend-dev-guide.md
 redirect_from: /guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html
-tags:
+functional_areas:
   - Frontend
 ---
 

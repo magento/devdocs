@@ -9,7 +9,7 @@ menu_order: 1
 menu_node: parent
 version: 2.2
 github_link: config-guide/bk-config-guide.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

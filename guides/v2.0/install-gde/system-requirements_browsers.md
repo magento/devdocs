@@ -8,7 +8,7 @@ menu_node:
 menu_order: 3
 version: 2.0
 github_link: install-gde/system-requirements_browsers.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

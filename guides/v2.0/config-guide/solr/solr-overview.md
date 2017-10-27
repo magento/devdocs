@@ -9,7 +9,7 @@ menu_node: parent
 version: 2.0
 ee_only: True
 github_link: config-guide/solr/solr-overview.md
-tags:
+functional_areas:
   - Configuration
   - Search
   - System

@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: config-guide/prod/prod.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

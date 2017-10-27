@@ -11,7 +11,7 @@ github_link: install-gde/install/web/install-web.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-web.html
   - /guides/v2.0/install-gde/install/install-web.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

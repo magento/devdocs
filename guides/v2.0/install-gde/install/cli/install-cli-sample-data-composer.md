@@ -9,7 +9,7 @@ menu_order: 3
 version: 2.0
 github_link: install-gde/install/cli/install-cli-sample-data-composer.md
 redirect_from: /guides/v2.0/install-gde/install/cli/install-cli-sample-data-cli.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

@@ -9,7 +9,7 @@ version: 2.0
 menu_order: 1
 github_link: migration/bk-migration-guide.md
 redirect_from: /guides/v1.0/migration/bk-migration-guide.html
-tags:
+functional_areas:
   - Tools
 ---
 

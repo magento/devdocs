@@ -8,7 +8,7 @@ menu_node:
 menu_order: 7
 version: 2.2
 github_link: comp-mgr/module-man/compman-backup.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

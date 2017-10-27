@@ -10,7 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: umask
 version: 2.2
 github_link: install-gde/prereq/file-system-perms.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

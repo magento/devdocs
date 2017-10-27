@@ -11,7 +11,7 @@ github_link: config-guide/multi-site/ms_over.md
 redirect_from:
   - guides/v2.0/config-guide/bootstrap/mage-run.html
   - guides/v2.1/config-guide/bootstrap/mage-run.html
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

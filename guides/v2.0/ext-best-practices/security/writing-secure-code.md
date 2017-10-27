@@ -10,7 +10,7 @@ github_link: ext-best-practices/security/writing-secure-code.md
 redirect_from:
   - /guides/v2.0/extension-dev-guide/security/writing-secure-code.html
   - /guides/v2.1/extension-dev-guide/security/writing-secure-code.html
-tags:
+functional_areas:
   - Standards
 ---
 

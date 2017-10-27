@@ -8,7 +8,7 @@ menu_order: 7
 menu_node:
 version: 2.0
 github_link: design-styleguide/content-formats/content-formats.md
-tags:
+functional_areas:
   - Content
 ---
 For more specifics, use the [Magento Glossary](https://magento.github.io/glossary/index.html) and [Magento Word Usage Bank](https://magento.github.io/glossary/word-usage.html). If an item is not found, refer to the Associated Press (AP) Stylebook on first reference, and the Microsoft Manual of Style on second reference.

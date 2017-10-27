@@ -11,7 +11,7 @@ menu_order: 11
 version: 2.0
 github_link: comp-mgr/module-man/compman-enable-disable.md
 redirect_from: /guides/v2.0/comp-mgr/compman-enable-disable.html
-tags:
+functional_areas:
   - Upgrade
 ---
 

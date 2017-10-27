@@ -7,7 +7,7 @@ menu_title: Add custom shipping carrier validations
 menu_order: 5
 version: 2.0
 github_link: howdoi/checkout/checkout_carrier.md
-tags:
+functional_areas:
   - Checkout
 ---
 <h2>What's in this topic</h2>

@@ -10,7 +10,7 @@ ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
 github_link: b2b/negotiable-update.md
-tags:
+functional_areas:
   - B2B
   - Integration
 ---

@@ -15,7 +15,7 @@ redirect_from:
   - /guides/v2.0/cloud/env/environment-tutorial-env-merge.html
   - /guides/v2.1/cloud/env/environment-tutorial-env-merge.html
   - /guides/v2.2/cloud/env/environment-tutorial-env-merge.html
-tags:
+functional_areas:
   - Cloud
 ---
 

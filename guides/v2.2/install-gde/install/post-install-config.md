@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 2
 version: 2.2
 github_link: install-gde/install/post-install-config.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

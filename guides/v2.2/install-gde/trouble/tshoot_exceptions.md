@@ -9,7 +9,7 @@ menu_order: 8
 version: 2.2
 github_link: install-gde/trouble/tshoot_access-browser.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

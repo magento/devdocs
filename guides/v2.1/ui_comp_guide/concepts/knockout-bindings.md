@@ -7,7 +7,7 @@ menu_title: Magento custom Knockout.js bindings
 menu_order: 60
 version: 2.1
 github_link: ui_comp_guide/concepts/knockout-bindings.md
-tags:
+functional_areas:
   - Tools
 ---
 

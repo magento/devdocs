@@ -9,7 +9,7 @@ menu_order: 260
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-i18n.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

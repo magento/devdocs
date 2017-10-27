@@ -8,7 +8,7 @@ menu_order: 3
 menu_node:
 version: 2.2
 github_link: comp-mgr/prereq/prereq_cron.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

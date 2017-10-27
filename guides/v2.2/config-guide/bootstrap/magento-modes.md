@@ -8,7 +8,7 @@ menu_order: 3
 menu_node:
 version: 2.2
 github_link: config-guide/bootstrap/magento-modes.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

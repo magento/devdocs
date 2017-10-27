@@ -8,7 +8,7 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: config-guide/varnish/config-varnish.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

@@ -8,7 +8,7 @@ menu_node:
 menu_order: 1000
 version: 2.0
 github_link: install-gde/install/sample-data-other-cmds.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

@@ -8,7 +8,7 @@ menu_node:
 menu_order: 15
 version: 2.0
 github_link: comp-mgr/upgrader/upgrade-backup.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

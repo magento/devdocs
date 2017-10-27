@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 6
 version: 2.0
 github_link: migration/migration-troubleshooting.md
-tags:
+functional_areas:
   - Tools
 ---
 

@@ -9,7 +9,7 @@ menu_order: 5
 version: 2.0
 github_link: comp-mgr/module-man/compman-readiness.md
 redirect_from: /guides/v2.0/comp-mgr/compman-readiness.html
-tags:
+functional_areas:
   - Upgrade
 ---
 

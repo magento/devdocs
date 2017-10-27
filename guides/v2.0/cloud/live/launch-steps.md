@@ -8,7 +8,7 @@ menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/live/launch-steps.md
-tags:
+functional_areas:
   - Cloud
   - Testing
 ---

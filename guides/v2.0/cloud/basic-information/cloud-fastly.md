@@ -8,7 +8,7 @@ menu_node:
 menu_order: 15
 version: 2.0
 github_link: cloud/welcome/cloud-fastly.md
-tags:
+functional_areas:
   - Cloud
   - Setup
 ---

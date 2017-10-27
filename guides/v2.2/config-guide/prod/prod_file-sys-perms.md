@@ -8,7 +8,7 @@ menu_node:
 menu_order: 3000
 version: 2.2
 github_link: config-guide/prod/prod_file-sys-perms.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

@@ -8,7 +8,7 @@ menu_order: 3
 menu_node: parent
 version: 2.0
 github_link: config-guide/cache.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

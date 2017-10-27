@@ -10,7 +10,7 @@ level3_menu_node:
 level3_subgroup:
 version: 2.1
 github_link: cloud/live/sens-data-parent.md
-tags:
+functional_areas:
   - Cloud
   - Deploy
 ---

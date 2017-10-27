@@ -8,7 +8,7 @@ menu_order: 25
 menu_node:
 version: 2.0
 github_link: cloud/project/project-integrate-blackfire.md
-tags:
+functional_areas:
   - Cloud
   - Integration
   - Setup

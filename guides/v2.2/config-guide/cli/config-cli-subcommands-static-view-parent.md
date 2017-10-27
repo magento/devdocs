@@ -10,7 +10,7 @@ level3_menu_node: level3parent
 level3_subgroup: static_deploy
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-static-view-parent.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

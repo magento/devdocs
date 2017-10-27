@@ -8,7 +8,7 @@ menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/live/live-sanity-check.md
-tags:
+functional_areas:
   - Cloud
   - Testing
 ---

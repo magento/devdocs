@@ -9,7 +9,7 @@ menu_node: parent
 version: 2.0
 github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html
-tags:
+functional_areas:
   - Frontend
 ---
 

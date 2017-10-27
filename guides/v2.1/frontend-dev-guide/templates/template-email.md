@@ -7,7 +7,7 @@ menu_title: Customize email templates
 menu_order: 4
 version: 2.1
 github_link: frontend-dev-guide/templates/template-email.md
-tags:
+functional_areas:
   - Frontend
 ---
 

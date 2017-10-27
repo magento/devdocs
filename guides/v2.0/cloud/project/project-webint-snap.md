@@ -11,7 +11,7 @@ github_link: cloud/project/project-webint-snap.md
 redirect_from:
   - /guides/v2.0/cloud/admin/admin-snap.html
   - /guides/v2.1/cloud/admin/admin-snap.html
-tags:
+functional_areas:
   - Cloud
 ---
 

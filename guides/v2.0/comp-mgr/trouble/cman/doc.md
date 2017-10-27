@@ -8,7 +8,7 @@ menu_node:
 menu_order: 500
 version: 2.0
 github_link: comp-mgr/trouble/cman/doc.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

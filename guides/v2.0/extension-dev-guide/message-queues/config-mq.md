@@ -11,7 +11,7 @@ level3_subgroup: mq
 version: 2.0
 github_link: extension-dev-guide/message-queues/config-mq.md
 redirect_from: /guides/v2.0/config-guide/mq/config-mq.html
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

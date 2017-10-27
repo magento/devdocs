@@ -7,7 +7,7 @@ menu_title: Magento's deployment configuration
 menu_order: 1
 version: 2.2
 github_link: config-guide/config/config-php.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

@@ -11,7 +11,7 @@ github_link: install-gde/install/cli/dev_options.md
 redirect_from:
   - guides/v2.0/install-gde/install/dev_updater.html
   - guides/v2.1/install-gde/install/dev_updater.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

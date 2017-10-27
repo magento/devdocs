@@ -8,7 +8,7 @@ menu_order: 16
 menu_node:
 version: 2.2
 github_link: config-guide/varnish/config-varnish-advanced.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

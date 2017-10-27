@@ -8,7 +8,7 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: config-guide/secy/secy-xframe.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/continue-to-install.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

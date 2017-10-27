@@ -10,7 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: configreference
 version: 2.1
 github_link: cloud/live/config-reference-sens.md
-tags:
+functional_areas:
   - Cloud
 ---
 

@@ -7,7 +7,7 @@ menu_title: Add a new field in address form
 menu_order: 9
 version: 2.0
 github_link: howdoi/checkout/checkout_new_field.md
-tags:
+functional_areas:
   - Checkout
 ---
 

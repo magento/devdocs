@@ -8,7 +8,7 @@ menu_node:
 menu_order: 20
 version: 2.0
 github_link: comp-mgr/upgrader/upgrade.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

@@ -7,7 +7,7 @@ menu_title: Catalog module
 menu_order: 2
 version: 2.0
 github_link: rest/catalog-notes.md
-tags:
+functional_areas:
   - Integration
   - Catalog
 ---

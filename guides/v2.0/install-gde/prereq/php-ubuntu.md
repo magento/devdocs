@@ -10,7 +10,7 @@ level3_subgroup: php
 version: 2.0
 github_link: install-gde/prereq/php-ubuntu.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

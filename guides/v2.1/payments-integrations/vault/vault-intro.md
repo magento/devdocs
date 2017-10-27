@@ -8,7 +8,7 @@ menu_order: 10
 menu_node: parent
 version: 2.1
 github_link: payments-integrations/vault/vault-intro.md
-tags:
+functional_areas:
   - Integration
 ---
 

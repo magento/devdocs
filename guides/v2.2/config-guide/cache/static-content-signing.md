@@ -8,7 +8,7 @@ menu_node:
 menu_order: 3
 version: 2.2
 github_link: config-guide/cache/static-content-signing.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

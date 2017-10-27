@@ -10,7 +10,7 @@ level3_subgroup: update-extensions
 menu_node:
 version: 2.0
 github_link: cloud/howtos/install-components.md
-tags:
+functional_areas:
   - Cloud
   - Configuration
 ---

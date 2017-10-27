@@ -7,7 +7,7 @@ menu_title: Translate theme strings
 menu_order: 1
 version: 2.0
 github_link: frontend-dev-guide/translations/translate_theory.md
-tags:
+functional_areas:
   - Frontend
 ---
 

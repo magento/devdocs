@@ -8,7 +8,7 @@ menu_node:
 version: 2.0
 github_link: bk-get-started-magento.md
 redirect_from: /guides/v1.0/bk-get-started-magento.html
-tags:
+functional_areas:
   - Integration
 ---
 

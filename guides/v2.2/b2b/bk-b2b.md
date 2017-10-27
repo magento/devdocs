@@ -10,7 +10,7 @@ menu_node: parent
 version: 2.2
 ee_only: True
 github_link: b2b/bk-b2b.md
-tags:
+functional_areas:
   - B2B
   - Integration
 ---

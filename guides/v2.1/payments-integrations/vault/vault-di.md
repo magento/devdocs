@@ -7,7 +7,7 @@ menu_title: Vault DI configuration
 menu_order: 3
 version: 2.1
 github_link: payments-integrations/vault/vault-di.md
-tags:
+functional_areas:
   - Integration
 ---
 

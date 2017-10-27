@@ -13,7 +13,7 @@ github_link: cloud/project/project-conf-files_services-solr.md
 redirect_from:
   - /guides/v2.1/project/project-conf-files_services-solr.html
   - /guides/v2.2/project/project-conf-files_services-solr.html
-tags:
+functional_areas:
   - Cloud
   - Setup
   - Search

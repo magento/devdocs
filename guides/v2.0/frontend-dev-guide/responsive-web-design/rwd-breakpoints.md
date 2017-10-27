@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/responsive-web-design/rwd-breakpoints.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
   - guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
-tags:
+functional_areas:
   - Frontend
 ---
 

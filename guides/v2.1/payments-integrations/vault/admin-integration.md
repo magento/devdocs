@@ -7,7 +7,7 @@ menu_title: Vault implementation for Admin
 menu_order: 25
 version: 2.1
 github_link: payments-integrations/vault/admin-integration.md
-tags:
+functional_areas:
   - Integration
 ---
 

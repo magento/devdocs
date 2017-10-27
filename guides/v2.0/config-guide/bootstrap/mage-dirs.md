@@ -9,7 +9,7 @@ menu_node:
 version: 2.0
 github_link: config-guide/bootstrap/mage-dirs.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-dirs.html
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

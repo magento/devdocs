@@ -8,7 +8,7 @@ menu_node:
 menu_order: 50
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-cache.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

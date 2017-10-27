@@ -10,7 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: deployment-examples
 version: 2.2
 github_link: config-guide/deployment/pipeline/example/environment-variables.md
-tags:
+functional_areas:
   - Configuration
   - Deploy
   - System

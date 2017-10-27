@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
-tags:
+functional_areas:
   - Cloud
   - Configuration
 ---

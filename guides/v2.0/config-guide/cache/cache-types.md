@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/config-guide/config/caching_frontend-cache-types.html
   - /guides/v2.1/config-guide/config/caching_frontend-cache-types.html
   - /guides/v2.2/config-guide/config/caching_frontend-cache-types.html
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

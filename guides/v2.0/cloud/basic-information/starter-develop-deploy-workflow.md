@@ -8,7 +8,7 @@ menu_order: 25
 menu_node:
 version: 2.0
 github_link: cloud/basic-information/starter-develop-deploy-workflow.md
-tags:
+functional_areas:
   - Cloud
 ---
 

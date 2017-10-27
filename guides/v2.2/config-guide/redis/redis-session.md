@@ -8,7 +8,7 @@ menu_order: 10
 menu_node:
 version: 2.2
 github_link: config-guide/redis/redis-session.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

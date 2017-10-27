@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/cloud/howtos/upgrade-magento.html
   - /guides/v2.1/cloud/howtos/upgrade-magento.html
   - /guides/v2.1/cloud/howtos/upgrade-magento.html
-tags:
+functional_areas:
   - Cloud
   - Upgrade
 ---

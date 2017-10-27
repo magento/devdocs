@@ -8,7 +8,7 @@ menu_order: 50
 version: 2.0
 ee_only: True
 github_link: install-gde/prereq/install-rabbitmq.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

@@ -7,7 +7,7 @@ menu_title: Vault payment configuration
 menu_order: 2
 version: 2.1
 github_link: payments-integrations/vault/vault-payment-configuration.md
-tags:
+functional_areas:
   - Integration
 ---
 

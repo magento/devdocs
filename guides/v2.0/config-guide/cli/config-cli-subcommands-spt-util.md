@@ -9,7 +9,7 @@ menu_order: 900
 version: 2.0
 ee_only: True
 github_link: config-guide/cli/config-cli-subcommands-spt-util.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

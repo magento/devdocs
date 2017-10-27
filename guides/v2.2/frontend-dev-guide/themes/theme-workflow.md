@@ -7,7 +7,7 @@ menu_title: Theme development workflow
 menu_order: 10
 version: 2.2
 github_link: frontend-dev-guide/themes/theme-workflow.md
-tags:
+functional_areas:
   - Frontend
   - Theme
 ---

@@ -7,7 +7,7 @@ menu_title: SharedCatalog
 menu_order: 200
 version: 2.2
 github_link: mrg/b2b/SharedCatalog.md
-tags:
+functional_areas:
   - B2B
 ---
 

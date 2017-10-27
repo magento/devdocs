@@ -7,7 +7,7 @@ menu_title: Uninstall a storefront theme
 menu_order: 2
 version: 2.1
 github_link: frontend-dev-guide/themes/theme-uninstall.md
-tags:
+functional_areas:
   - Frontend
   - Theme
 ---

@@ -8,7 +8,7 @@ menu_title: CSS preprocessing
 version: 2.0
 github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
-tags:
+functional_areas:
   - Frontend
 ---
 

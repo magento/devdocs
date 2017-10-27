@@ -8,7 +8,7 @@ menu_node:
 menu_order: 11
 version: 2.2
 github_link: comp-mgr/module-man/modman-enable-disable.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

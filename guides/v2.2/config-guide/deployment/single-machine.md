@@ -10,7 +10,7 @@ version: 2.2
 github_link: config-guide/deployment/single-machine.md
 redirect_from:
   - /guides/v2.2/config-guide/prod/single-machine-deployment.html
-tags:
+functional_areas:
   - Configuration
   - Deploy
   - System

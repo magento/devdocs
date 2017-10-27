@@ -9,7 +9,7 @@ menu_order: 2
 version: 2.0
 ee_only: True
 github_link: comp-mgr/upgrader/upgrade-rc1.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

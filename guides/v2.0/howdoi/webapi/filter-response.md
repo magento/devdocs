@@ -7,7 +7,7 @@ menu_title: Retrieve filtered responses
 menu_order: 3
 version: 2.0
 github_link: howdoi/webapi/filter-response.md
-tags:
+functional_areas:
   - Integration
 ---
 

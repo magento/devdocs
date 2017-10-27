@@ -10,7 +10,7 @@ level3_menu_node: level3parent
 level3_subgroup: readiness
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-readiness.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

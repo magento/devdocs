@@ -10,7 +10,7 @@ version: 2.2
 github_link: install-gde/system-requirements2.md
 redirect_from:
   - /guides/v2.2/install-gde/system-requirements.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

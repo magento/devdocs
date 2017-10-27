@@ -8,7 +8,7 @@ menu_node:
 menu_order: 9
 version: 2.0
 github_link: install-gde/trouble/tshoot_var-gen-perms.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

@@ -8,7 +8,7 @@ menu_node:
 menu_order: 400
 version: 2.0
 github_link: comp-mgr/trouble/cman/tshoot_backup.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

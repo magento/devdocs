@@ -11,7 +11,7 @@ redirect_from:
   - /guides/v1.0/extension-dev-guide/template_create_req_config_files.html
   - /guides/v2.0/extension-dev-guide/template_create_req_config_files.html
   - /guides/v2.0/extension-dev-guide/required-configuration-files.html
-tags:
+functional_areas:
   - Configuration
 ---
 

@@ -8,7 +8,7 @@ menu_node:
 menu_order: 20
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_nginx-port.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

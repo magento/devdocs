@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/cloud/live/stage-prod-over.html
   - /guides/v2.1/cloud/live/stage-prod-over.html
   - /guides/v2.2/cloud/live/stage-prod-over.html
-tags:
+functional_areas:
   - Cloud
   - Deploy
 ---

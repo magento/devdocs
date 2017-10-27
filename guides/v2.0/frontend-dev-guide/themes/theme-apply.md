@@ -8,7 +8,7 @@ menu_order: 4
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-apply.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-apply.html
-tags:
+functional_areas:
   - Frontend
   - Theme
 ---

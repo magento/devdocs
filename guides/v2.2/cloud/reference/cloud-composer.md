@@ -8,7 +8,7 @@ menu_node:
 menu_order: 5
 version: 2.2
 github_link: cloud/reference/cloud-composer.md
-tags:
+functional_areas:
   - Cloud
   - Upgrade
 ---

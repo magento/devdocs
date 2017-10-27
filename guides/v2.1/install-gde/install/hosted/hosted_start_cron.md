@@ -8,7 +8,7 @@ menu_order: 10
 menu_node:
 version: 2.1
 github_link: install-gde/install/hosted/hosted_start_cron.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

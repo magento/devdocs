@@ -9,7 +9,7 @@ menu_order: 1
 version: 2.0
 github_link: install-gde/prereq/prereq-overview.md
 redirect_from: /guides/v1.0/install-gde/prereq/prereq-overview.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

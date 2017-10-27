@@ -10,7 +10,7 @@ level3_menu_node:
 level3_subgroup:
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes101.7.md
-tags:
+functional_areas:
   - Cloud
 ---
 

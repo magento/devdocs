@@ -8,7 +8,7 @@ menu_order: 2
 menu_node:
 version: 2.0
 github_link: config-guide/multi-site/ms_websites.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

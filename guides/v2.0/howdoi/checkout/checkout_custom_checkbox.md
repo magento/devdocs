@@ -7,7 +7,7 @@ menu_title: Add custom fields that influence other Checkout fields
 menu_order: 90
 version: 2.0
 github_link: howdoi/checkout/checkout_custom_checkbox.md
-tags:
+functional_areas:
   - Checkout
 ---
 

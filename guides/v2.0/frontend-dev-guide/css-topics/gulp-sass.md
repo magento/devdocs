@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: custom-preprocess
 version: 2.0
 github_link: frontend-dev-guide/css-topics/gulp_sass.md
-tags:
+functional_areas:
   - Frontend
   - Tools
 ---

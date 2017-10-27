@@ -11,7 +11,7 @@ github_link: install-gde/trouble/php/tshoot_mcrypt.md
 redirect_from:
   - /guides/v1.0/install-gde/trouble/tshoot_mcrypt.html
   - /guides/v2.0/install-gde/trouble/tshoot_mcrypt.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

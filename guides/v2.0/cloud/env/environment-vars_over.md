@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/cloud/env/environments.html
   - /guides/v2.1/cloud/env/environments.html
   - /guides/v2.1/cloud/env/environments.html
-tags:
+functional_areas:
   - Cloud
   - Configuration
 ---

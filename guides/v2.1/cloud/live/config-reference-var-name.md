@@ -10,7 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.1
 github_link: cloud/live/config-reference-var-name.md
-tags:
+functional_areas:
   - Cloud
 ---
 

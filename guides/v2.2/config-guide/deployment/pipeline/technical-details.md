@@ -8,7 +8,7 @@ menu_node:
 menu_order: 1200
 version: 2.2
 github_link: config-guide/deployment/pipeline/technical-details.html
-tags:
+functional_areas:
   - Configuration
   - Deploy
   - System

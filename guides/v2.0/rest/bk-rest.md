@@ -10,7 +10,7 @@ menu_node: parent
 version: 2.1
 github_link: rest/bk-rest.md
 redirect_from: /guides/v1.0/rest/bk-rest.html
-tags:
+functional_areas:
   - Integration
 ---
 

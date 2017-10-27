@@ -8,7 +8,7 @@ menu_node:
 menu_order: 2
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_70pct.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

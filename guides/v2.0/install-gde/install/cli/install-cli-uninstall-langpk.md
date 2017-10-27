@@ -11,7 +11,7 @@ github_link: install-gde/install/cli/install-cli-uninstall-langpk.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-langpk.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

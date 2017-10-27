@@ -7,7 +7,7 @@ menu_title: Create an Admin theme
 version: 2.0
 menu_order: 9
 github_link: frontend-dev-guide/themes/admin_theme_create.md
-tags:
+functional_areas:
   - Frontend
   - Theme
 ---

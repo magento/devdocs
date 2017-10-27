@@ -8,7 +8,7 @@ menu_order: 20
 menu_node:
 version: 2.2
 github_link: cloud/live/sens-data-over.md
-tags:
+functional_areas:
   - Cloud
   - Deploy
 ---

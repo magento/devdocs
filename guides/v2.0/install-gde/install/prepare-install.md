@@ -9,7 +9,7 @@ menu_order: 10
 version: 2.0
 github_link: install-gde/install/prepare-install.md
 redirect_from: /guides/v1.0/install-gde/install/prepare-install.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

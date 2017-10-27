@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/cloud/howtos/patch-magent.html
   - /guides/v2.1/cloud/howtos/patch-magent.html
   - /guides/v2.1/cloud/howtos/patch-magent.html
-tags:
+functional_areas:
   - Cloud
   - Upgrade
 ---

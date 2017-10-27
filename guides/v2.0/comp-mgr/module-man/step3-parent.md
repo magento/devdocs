@@ -10,6 +10,6 @@ level3_menu_node: level3parent
 level3_subgroup: step3
 version: 2.0
 github_link: comp-mgr/module-man/step3-parent.md
-tags:
+functional_areas:
   - Upgrade
 ---

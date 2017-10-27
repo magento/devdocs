@@ -8,7 +8,7 @@ menu_order: 2
 menu_node:
 version: 2.0
 github_link: comp-mgr/prereq/prereq_compman-ulimit.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

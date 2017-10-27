@@ -8,7 +8,7 @@ menu_order: 35
 menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble-google-analytics-deploy.md
-tags:
+functional_areas:
   - Cloud
   - Configuration
   - Services

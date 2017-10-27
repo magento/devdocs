@@ -6,7 +6,7 @@ menu_title: Theme development best practices
 menu_order: 20
 version: 2.0
 github_link: frontend-dev-guide/theme-best-practice.md
-tags:
+functional_areas:
   - Frontend
   - Theme
   - Standards
