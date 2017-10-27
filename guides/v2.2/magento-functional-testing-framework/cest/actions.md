@@ -9,9 +9,111 @@ This topic contains a reference list of available action type tags available in 
 
 ## Overview
 
-## Principles
+Actions in the MFTF allow to automate different scenarios of Magento user's actions.
+They are mostly XML implementations of [Codeception actions](http://codeception.com/docs/modules/WebDriver#Actions).
+Some actions drive browser elements, when the others use REST API.
+
+All actions contain the following attributes that are useful for merging needs:
+
+* `mergeKey` is a required attribute that stores a unique identifier of the action
+* `remove` is an optional attribute that removes the action when merging same test in different modules
+* `before` is an optional attribute that stores `mergeKey` of an action that will be executed one step before the current one
+* `after` is an optional attribute that stores `mergeKey` of an action that will be executed next
+
+`mergeKey` format recommendations:
+
+* Naming should be as descriptive as possible
+  * Should describe the action performed
+  * Should briefly describe the purpose
+  * May describe which data is in use
+* Should be in camelCase with lowercase first letter
+* Should be the last attribute of an element
 
 ## Example
+
+The following example contains four actions:
+
+1. [Open the Sign In page for a Customer](#example-step1)
+2. [Enter customer's e-mail](#example-step2)
+3. [Enter customer's password](#example-step3)
+4. [Click the Sign In button](#example-step4)
+
+```xml
+{%raw%}
+<amOnPage mergeKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage}}"/>
+<fillField  mergeKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
+<fillField  mergeKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
+<click mergeKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
+{%endraw%}
+```
+
+#### 1. Open the Sign In page for a Customer {#example-step2}
+
+```xml
+{%raw%}
+<amOnPage mergeKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage.url}}"/>
+{%endraw%}
+```
+
+The Customer Sign In page is declared in the _.../Customer/Page/StorefrontCustomerSignInPage.xml_.
+The given relative URI is declared in `StorefrontCustomerSignInPage.url`
+
+The StorefrontCustomerSignInPage.xml source code:
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
+    <page name="StorefrontCustomerSignInPage" url="/customer/account/login/" module="Magento_Customer">
+        <section name="StorefrontCustomerSignInFormSection" />
+    </page>
+</config>
+```
+
+[amOnPage](#amonpage) is an action that opens a page for a given URI. It has a key `"amOnSignInPage"` that will be used as a reference for merging needs in other modules.
+This action uses value of the `url` attribute for the given relative URI to open in browser.
+Here, `url` contains a pointer to a `url` attribute of the `StorefrontCustomerSignInPage`.
+
+#### 2. Enter customer's e-mail  {#example-step2}
+
+```xml
+<fillField  mergeKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
+```
+
+[fillField](#fillfield) fills a text field with the given string.
+
+The customer's e-mail is stored in the `email` parameter of the `customer` entity created somewhere earlier it the test using a tag [createData](#createData).
+`userInput` points to that data.
+
+`selector` points to the field where to enter the data.
+A required selector is stored in the `emailField` element of the `StorefrontCustomerSignInFormSection` section.
+
+This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSection.xml_:
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd">
+    <section name="StorefrontCustomerSignInFormSection">
+        <element name="emailField" type="input" selector="#email"/>
+        <element name="passwordField" type="input" selector="#pass"/>
+        <element name="signInAccountButton" type="button" selector="#send2" timeout="30"/>
+    </section>
+</config>
+```
+
+#### 3. Enter customer's password  {#example-step3}
+
+```xml
+<fillField  mergeKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
+```
+
+
+
+#### 4. Click the Sign In button {#example-step4}
+
+```xml
+<click mergeKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
+```
+
 
 ## Available actions
 
@@ -21,10 +123,10 @@ This topic contains a reference list of available action type tags available in 
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|optional|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### amOnPage
 
@@ -32,12 +134,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### amOnSubdomain
 
@@ -45,12 +147,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### amOnUrl
 
@@ -58,12 +160,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### appendField
 
@@ -71,13 +173,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### attachFile
 
@@ -85,13 +187,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### cancelPopup
 
@@ -99,10 +201,10 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### checkOption
 
@@ -110,11 +212,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### click
 
@@ -122,14 +224,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### clickWithLeftButton
 
@@ -137,14 +239,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-x|xs:string|optional|
-y|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+x|string|optional|
+y|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### clickWithRightButton
 
@@ -152,23 +254,23 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-x|xs:string|optional|
-y|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+x|string|optional|
+y|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### closeAdminNotification
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### closeTab
 
@@ -176,22 +278,22 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### conditionalClick
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-dependentSelector|xs:string|optional|
-visible|xs:boolean|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+dependentSelector|string|optional|
+visible|boolean|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### createData
 
@@ -219,12 +321,12 @@ after|string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-createDataKey|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
-storeCode|xs:string|optional|
+createDataKey|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
+storeCode|string|optional|
 
 ### dontSee
 
@@ -232,14 +334,14 @@ storeCode|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeCheckboxIsChecked
 
@@ -247,11 +349,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeCookie
 
@@ -259,13 +361,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeCurrentUrlEquals
 
@@ -273,12 +375,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeCurrentUrlMatches
 
@@ -286,12 +388,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeElement
 
@@ -299,12 +401,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-parameterArray|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+parameterArray|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeElementInDOM
 
@@ -312,13 +414,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-parameterArray|xs:string|optional|
-attributeArray|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+parameterArray|string|optional|
+attributeArray|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeInCurrentUrl
 
@@ -326,12 +428,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeInField
 
@@ -339,14 +441,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeInFormFields
 
@@ -354,12 +456,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-parameterArray|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+parameterArray|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeInPageSource
 
@@ -367,12 +469,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeInSource
 
@@ -380,11 +482,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-html|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+html|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeInTitle
 
@@ -392,21 +494,21 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeJsError
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeLink
 
@@ -414,13 +516,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dontSeeOptionIsSelected
 
@@ -428,13 +530,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### doubleClick
 
@@ -442,11 +544,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### dragAndDrop
 
@@ -454,12 +556,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector1|xs:string|optional|
-selector2|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector1|string|optional|
+selector2|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### executeInSelenium
 
@@ -467,11 +569,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-function|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+function|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### executeJS
 
@@ -479,11 +581,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-function|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+function|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### fillField
 
@@ -491,26 +593,26 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### formatMoney
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-locale|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+locale|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### grabAttributeFrom
 
@@ -518,14 +620,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-returnVariable|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+returnVariable|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### grabCookie
 
@@ -533,14 +635,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-returnVariable|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+returnVariable|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### grabFromCurrentUrl
 
@@ -548,13 +650,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-returnVariable|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+returnVariable|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### grabMultiple
 
@@ -562,14 +664,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-returnVariable|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+returnVariable|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### grabPageSource
 
@@ -577,11 +679,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-returnVariable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+returnVariable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### grabTextFrom
 
@@ -589,12 +691,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-returnVariable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+returnVariable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### grabValueFrom
 
@@ -602,13 +704,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-returnVariable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+returnVariable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### loadSessionSnapshot
 
@@ -616,24 +718,24 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-returnVariable|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+returnVariable|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### loginAsAdmin
 
 Attribute|Type|Use|Default
 ---|---|---|---
-username|xs:string|optional|
-password|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+username|string|optional|
+password|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### makeScreenshot
 
@@ -641,12 +743,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### maximizeWindow
 
@@ -654,10 +756,10 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### moveBack
 
@@ -665,10 +767,10 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### moveForward
 
@@ -676,10 +778,10 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### moveMouseOver
 
@@ -687,35 +789,35 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-x|xs:string|optional|
-y|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+x|string|optional|
+y|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### mSetLocale
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-locale|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+locale|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### mResetLocale
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### openNewTab
 
@@ -723,21 +825,21 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### parseFloat
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### pauseExecution
 
@@ -745,10 +847,10 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### performOn
 
@@ -756,12 +858,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-function|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+function|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### pressKey
 
@@ -769,14 +871,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### reloadPage
 
@@ -784,10 +886,10 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### resetCookie
 
@@ -795,13 +897,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### resizeWindow
 
@@ -809,12 +911,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-width|xs:string|optional|
-height|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+width|string|optional|
+height|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### saveSessionSnapshot
 
@@ -822,12 +924,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### scrollTo
 
@@ -835,36 +937,36 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-x|xs:string|optional|
-y|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+x|string|optional|
+y|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### scrollToTopOfPage
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### searchAndMultiSelectOption
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-requiredAction|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+requiredAction|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### see
 
@@ -872,14 +974,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeCheckboxIsChecked
 
@@ -887,11 +989,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeCookie
 
@@ -899,13 +1001,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeCurrentUrlEquals
 
@@ -913,12 +1015,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeCurrentUrlMatches
 
@@ -926,12 +1028,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeElement
 
@@ -939,13 +1041,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-parameterArray|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+parameterArray|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeElementInDOM
 
@@ -953,12 +1055,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-parameterArray|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+parameterArray|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeInCurrentUrl
 
@@ -966,12 +1068,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeInField
 
@@ -979,14 +1081,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-selectorArray|xs:string|optional|
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+selectorArray|string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeInFormFields
 
@@ -994,12 +1096,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-parameterArray|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+parameterArray|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeInPageSource
 
@@ -1007,11 +1109,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-html|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+html|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeInPopup
 
@@ -1019,12 +1121,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeInSource
 
@@ -1032,11 +1134,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-html|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+html|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeInTitle
 
@@ -1044,12 +1146,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeLink
 
@@ -1057,13 +1159,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-url|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+url|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeNumberOfElements
 
@@ -1071,14 +1173,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### seeOptionIsSelected
 
@@ -1086,13 +1188,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### selectOption
 
@@ -1100,14 +1202,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### setCookie
 
@@ -1115,13 +1217,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-value|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+value|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### submitForm
 
@@ -1129,13 +1231,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-parameterArray|xs:string|optional|
-button|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+parameterArray|string|optional|
+button|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### switchToIFrame
 
@@ -1143,13 +1245,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### switchToNextTab
 
@@ -1157,12 +1259,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### switchToPreviousTab
 
@@ -1170,12 +1272,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### switchToWindow
 
@@ -1183,12 +1285,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### typeInPopup
 
@@ -1196,12 +1298,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### uncheckOption
 
@@ -1209,11 +1311,11 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### unselectOption
 
@@ -1221,14 +1323,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-userInput|xs:string|optional|
-parameterArray|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+userInput|string|optional|
+parameterArray|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### wait
 
@@ -1236,21 +1338,21 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-time|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+time|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### waitForAjaxLoad
 
 Attribute|Type|Use|Default
 ---|---|---|---
-time|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+time|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### waitForElementChange
 
@@ -1258,13 +1360,13 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-function|xs:string|optional|
-time|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+function|string|optional|
+time|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### waitForElement
 
@@ -1272,12 +1374,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-time|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+time|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### waitForElementNotVisible
 
@@ -1285,12 +1387,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-time|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+time|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### waitForElementVisible
 
@@ -1298,12 +1400,12 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-selector|xs:string|optional|
-time|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|optional|
+time|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### waitForJS
 
@@ -1311,31 +1413,31 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-function|xs:string|optional|
-time|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+function|string|optional|
+time|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### waitForLoadingMaskToDisappear
 
 Attribute|Type|Use|Default
 ---|---|---|---
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### waitForPageLoad
 
 Attribute|Type|Use|Default
 ---|---|---|---
-time|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+time|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 ### waitForText
 
@@ -1343,14 +1445,14 @@ after|xs:string|optional|
 
 Attribute|Type|Use|Default
 ---|---|---|---
-userInput|xs:string|optional|
-time|xs:string|optional|
-selector|xs:string|optional|
-variable|xs:string|optional|
-mergeKey|xs:string|required|
-remove|xs:boolean|optional|false
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+time|string|optional|
+selector|string|optional|
+variable|string|optional|
+mergeKey|string|required|
+remove|boolean|optional|false
+before|string|optional|
+after|string|optional|
 
 
 <!-- Abbreviations -->
