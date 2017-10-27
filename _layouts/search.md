@@ -111,7 +111,7 @@
         attributeName: 'functional_areas',
         operator: 'or',
         limit: 20,
-        sortBy: ["isRefined", "name:asc"],
+        sortBy: ["name:asc"],
         templates: {
           header: 'Functional Areas'
         }
