@@ -40,21 +40,21 @@ You need to add the module to `composer.json`. All extensions and modules must b
 3. Use a text editor to edit `composer.json`.
 4. In the `require` section, add the following:
 
-        "magento/extension-b2b": "*"
+      "magento/extension-b2b": "*"
 5. Save the file.
 6. Run the composer update command to pull all B2B files into your branch.
 
-        composer update
+      composer update
 4. Add the new B2B files to Git:
 
-        git add setup dev pub lib && git commit -a -m "b2b"
+      git add setup dev pub lib && git commit -a -m "b2b"
 5. Enable all modules using the following command. You need to use this command to ensure all modules, including B2B, are enabled for updating.
 
-        php bin/magento module:enable --all
+      php bin/magento module:enable --all
 
 6. Complete the upgrade with B2B using the following command:
 
-        php bin/magento setup:upgrade
+      php bin/magento setup:upgrade
 
 
 If you have a config.php file as part of your deployment, you should also add the B2B module in the modules section of the file.
@@ -64,8 +64,8 @@ If you have a config.php file as part of your deployment, you should also add th
 3. In the modules list, add the B2B module.
 4. Save the file and update Git.
 
-        git add -f app/etc/config.php
-        git commit -a -m “Add config.php.”
+      git add -f app/etc/config.php
+      git commit -a -m “Add config.php.”
 
 ## Configure and use B2B {#use}
 For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html){:target="_blank"}. To extend functionality, see the [Magento B2B Developer Guide](http://devdocs.magento.com/guides/v2.2/b2b/bk-b2b.html).
