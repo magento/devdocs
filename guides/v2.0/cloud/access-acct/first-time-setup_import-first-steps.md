@@ -10,6 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: import
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import-first-steps.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 This topic discusses the workflow and initial tasks to perform before importing your existing Magento Enterprise Edition (EE) system into {{site.data.var.ece}} project.

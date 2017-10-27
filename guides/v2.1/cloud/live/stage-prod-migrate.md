@@ -8,6 +8,9 @@ menu_order: 50
 menu_node:
 version: 2.1
 github_link: cloud/live/stage-prod-migrate.md
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 #### Previous step:

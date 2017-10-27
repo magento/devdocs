@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: B_Creating a migration plan
 title: Creating a migration plan
 menu_title: Creating a migration plan
@@ -9,6 +9,8 @@ menu_order: 2
 version: 2.0
 github_link: migration/migration-plan.md
 redirect_from: /guides/v1.0/migration/migration-plan.html
+functional_areas:
+  - Tools
 ---
 
 To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will prove helpful.

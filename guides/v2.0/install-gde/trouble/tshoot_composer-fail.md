@@ -1,13 +1,17 @@
 ---
-layout: default 
+layout: default
 group: install_trouble
 subgroup: 03_install
 title: Download fails because of changes in Composer
 menu_title: Download fails because of changes in Composer
-menu_node: 
+menu_node:
 menu_order: 300
 version: 2.0
 github_link: install-gde/trouble/tshoot_composer-fail.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 

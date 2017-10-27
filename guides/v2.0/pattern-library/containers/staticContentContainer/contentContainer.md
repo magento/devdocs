@@ -5,10 +5,12 @@ subgroup: Container
 title: Admin Design Pattern Library
 menu_title: Static Content Container
 menu_order: 1
-menu_node: 
+menu_node:
 version: 2.0
 github_link: pattern-library/containers/staticContentContainer/contentContainer.md
 redirect_from: /guides/v1.0/pattern-library/containers/staticContentContainer/contentContainer.html
+functional_areas:
+  - Content
 ---
 
 ## Static Content Container 

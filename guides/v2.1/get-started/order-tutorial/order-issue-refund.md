@@ -10,7 +10,11 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-issue-refund.md
-ee_only: false
+ee_only: False
+functional_areas:
+  - Integration
+  - Orders
+  - Sales
 ---
 
 Magento 2.1.3 introduced two endpoints that streamline the process of issuing a refund by creating a creditmemo and updating the order or {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} in one call.

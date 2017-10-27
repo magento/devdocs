@@ -10,6 +10,8 @@ level3_menu_node: level3parent
 level3_subgroup: mccloud-relnotes
 version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes.md
+functional_areas:
+  - Cloud
 ---
 
 Release Notes provide important information about changes, fixes, and known issues in {{site.data.var.ece}} releases.

@@ -7,6 +7,8 @@ menu_title: Vault payment configuration
 menu_order: 2
 version: 2.1
 github_link: payments-integrations/vault/vault-payment-configuration.md
+functional_areas:
+  - Integration
 ---
 
 You need to configure the main parameters of the vault implementation in the `config.xml` file of your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} module:

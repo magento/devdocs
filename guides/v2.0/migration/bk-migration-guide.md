@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: A_Overview
 title: Migration overview
 menu_title: Overview
@@ -9,6 +9,8 @@ version: 2.0
 menu_order: 1
 github_link: migration/bk-migration-guide.md
 redirect_from: /guides/v1.0/migration/bk-migration-guide.html
+functional_areas:
+  - Tools
 ---
 
 ## Welcome! {#migrate-overview}

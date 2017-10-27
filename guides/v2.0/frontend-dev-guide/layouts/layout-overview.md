@@ -9,6 +9,8 @@ menu_node: parent
 version: 2.0
 github_link: frontend-dev-guide/layouts/layout-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-overview.html
+functional_areas:
+  - Frontend
 ---
 
 <h2>Introduction</h2>

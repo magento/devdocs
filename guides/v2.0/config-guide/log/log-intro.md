@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 500_log
 title: Custom logging
 menu_title: Custom logging
@@ -8,6 +8,10 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: config-guide/log/log-intro.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Logging overview {#config-log-over}

@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: D_Migrate using the data migration tool
 title: Migrate using Data Migration Tool
 menu_title: Migrate using Data Migration Tool
@@ -9,6 +9,8 @@ menu_order: 4
 version: 2.0
 github_link: migration/migration-migrate.md
 redirect_from: /guides/v1.0/migration/migration-migrate.html
+functional_areas:
+  - Tools
 ---
 
 ## General rules for successful migration {#migration-command-gen}

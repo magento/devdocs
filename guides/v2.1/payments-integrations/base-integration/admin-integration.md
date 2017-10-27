@@ -3,10 +3,12 @@ layout: default
 group: payments-integrations
 subgroup: B_integration
 title: Configure payment method by area
-menu_title: Configure payment method by area 
+menu_title: Configure payment method by area
 menu_order: 10
 version: 2.1
 github_link: payments-integrations/base-integration/admin-integration.md
+functional_areas:
+  - Integration
 ---
 
 You can define whether the payment method is available for the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} in the [payment method configuration in `config.xml`]({{page.baseurl}}payments-integrations/base-integration/payment-option-config.html):

@@ -8,6 +8,10 @@ menu_order: 500
 menu_node:
 version: 2.2
 github_link: config-guide/varnish/tshoot-varnish-503.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Backend Fetch Failed errors

@@ -8,6 +8,9 @@ menu_order: 70
 menu_node:
 version: 2.0
 github_link: cloud/howtos/sample-data.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.ece}} template installation when creating your project.

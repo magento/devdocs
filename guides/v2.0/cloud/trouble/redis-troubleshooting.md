@@ -8,6 +8,10 @@ menu_order: 23
 menu_node:
 version: 2.0
 github_link: cloud/trouble/redis-troubleshooting.md
+functional_areas:
+  - Cloud
+  - Configuration
+  - Services
 ---
 
 Redis is an optional backend cache solution for {{site.data.var.ece}}. This information helps you troubleshoot errors and issues you encounter with Redis. These issues and resolutions affect Starter and Pro plans.

@@ -7,6 +7,8 @@ menu_title: NegotiableQuote
 menu_order: 160
 version: 2.2
 github_link: mrg/b2b/NegotiableQuote.md
+functional_areas:
+  - B2B
 ---
 
 ## Overview

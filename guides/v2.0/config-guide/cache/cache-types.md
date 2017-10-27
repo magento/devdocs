@@ -12,6 +12,10 @@ redirect_from:
   - /guides/v2.0/config-guide/config/caching_frontend-cache-types.html
   - /guides/v2.1/config-guide/config/caching_frontend-cache-types.html
   - /guides/v2.2/config-guide/config/caching_frontend-cache-types.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>

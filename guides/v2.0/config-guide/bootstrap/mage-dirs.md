@@ -5,10 +5,14 @@ subgroup: 03_Bootstrap
 title: Customize base directory paths (MAGE_DIRS)
 menu_title: Customize base directory paths (MAGE_DIRS)
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/bootstrap/mage-dirs.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-dirs.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="dirs-introduction">Introduction to Magento base directory paths</h2>

@@ -8,6 +8,9 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/env/environment-vars_cloud.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 Environment variables that are specific to {{site.data.var.ece}} are prefixed with `MAGENTO_CLOUD_*`.

@@ -8,6 +8,9 @@ menu_order: 40
 menu_node:
 version: 2.0
 github_link: cloud/trouble/robots-sitemap.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 When creating and adding your sitemap and robots.txt to your store, you may run into issues due to the read-only environment. You may receive errors such as the following:

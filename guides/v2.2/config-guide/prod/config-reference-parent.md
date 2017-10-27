@@ -10,4 +10,8 @@ level3_menu_node: level3parent
 level3_subgroup: config-ref
 version: 2.0
 github_link: config-guide/prod/config-reference.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---

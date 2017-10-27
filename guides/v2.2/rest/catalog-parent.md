@@ -9,4 +9,6 @@ version: 2.2
 level3_menu_node: level3parent
 level3_subgroup: catalog
 github_link: rest/catalog-parent.md
+functional_areas:
+  - Integration
 ---

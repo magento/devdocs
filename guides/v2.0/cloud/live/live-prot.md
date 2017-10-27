@@ -8,6 +8,9 @@ menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/live/live-prot.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 Magento Commerce (Cloud) has a protective blocking feature that, under certain circumstances, restricts access to web sites with security vulnerabilities. We use this partial blocking method to prevent exploitation of known security vulnerabilities.

@@ -1,16 +1,20 @@
 ---
 layout: default
-group: install_cli 
+group: install_cli
 subgroup: 05_Command-line installation
 title: Get started with the command-line installation
 menu_title: Get started with the command-line installation
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.0
 github_link: install-gde/install/cli/install-cli-subcommands.md
 redirect_from:
-  -  /guides/v1.0/install-gde/install/install-cli-subcommands.html
-  -  /guides/v2.0/install-gde/install/install-cli-subcommands.html
+  - /guides/v1.0/install-gde/install/install-cli-subcommands.html
+  - /guides/v2.0/install-gde/install/install-cli-subcommands.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>

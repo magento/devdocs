@@ -8,6 +8,9 @@ menu_order: 20
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-create.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 <h2 id="layout_theme_how-to_overview">What's in this topic</h2>

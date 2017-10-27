@@ -9,6 +9,9 @@ contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
 github_link: test/unit/unit_test_execution_phpstorm.md
+functional_areas:
+  - Testing
+  - test
 ---
 
 Running tests in PHPStorm requires a couple steps to setup the system.

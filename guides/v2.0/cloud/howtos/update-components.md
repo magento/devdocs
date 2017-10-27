@@ -10,6 +10,9 @@ level3_subgroup: update-extensions
 menu_node:
 version: 2.0
 github_link: cloud/howtos/update-components.md
+functional_areas:
+  - Cloud
+  - Upgrade
 ---
 
 This topic discusses how to update extensions you previously installed from Magento Marketplace or from another source.

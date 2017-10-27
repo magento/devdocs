@@ -2,11 +2,14 @@
 layout: default
 group: fedg
 subgroup: D_CSS
-title: Include CSS 
+title: Include CSS
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/css-topics/css-themes.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 <h2 id="fedg_css-in-themes_overview">What's in this topic</h2>

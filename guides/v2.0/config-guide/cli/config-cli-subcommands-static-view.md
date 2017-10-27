@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  config-guide
+group: config-guide
 subgroup: 04_CLI
 title: Deploy static view files
 menu_title: Deploy static view files
@@ -9,6 +9,10 @@ menu_order: 300
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>

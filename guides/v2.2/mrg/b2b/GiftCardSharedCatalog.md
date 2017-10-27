@@ -7,6 +7,8 @@ menu_title: GiftCardSharedCatalog
 menu_order: 130
 version: 2.2
 github_link: mrg/b2b/GiftCardSharedCatalog.md
+functional_areas:
+  - B2B
 ---
 
 ## Overview

@@ -11,6 +11,8 @@ redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 tabgroup: best-practices
 tablabel: Home
 tabweight: 0
+functional_areas:
+  - Standards
 ---
 
 <div class="bs-callout bs-callout-info" id="info">

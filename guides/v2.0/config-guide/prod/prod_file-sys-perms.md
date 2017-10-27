@@ -8,6 +8,10 @@ menu_node:
 menu_order: 2
 version: 2.0
 github_link: config-guide/prod/prod_file-sys-perms.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Overview of development and production file system ownership and permissions {#mage-owner}

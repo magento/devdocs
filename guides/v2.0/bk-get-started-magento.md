@@ -8,6 +8,8 @@ menu_node:
 version: 2.0
 github_link: bk-get-started-magento.md
 redirect_from: /guides/v1.0/bk-get-started-magento.html
+functional_areas:
+  - Integration
 ---
 
 <h2 id="highlights">Getting started with Magento</h2>

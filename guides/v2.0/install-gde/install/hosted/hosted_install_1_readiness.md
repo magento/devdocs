@@ -5,9 +5,13 @@ subgroup: 03_install
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
 github_link: install-gde/install/hosted/hosted_install_1_readiness.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 {% include install/web/install-web_1-readiness.md %}

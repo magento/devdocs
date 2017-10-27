@@ -8,6 +8,10 @@ menu_order: 3
 menu_node:
 version: 2.2
 github_link: install-gde/prereq/integrator_install_ce.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 To get the {{site.data.var.ce}} metapackage:

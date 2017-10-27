@@ -8,6 +8,9 @@ menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/live/live-sanity-check.md
+functional_areas:
+  - Cloud
+  - Testing
 ---
 
 Before pushing your code to your [Starter]({{ page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl}}cloud/reference/discover-arch.html) Staging and Production environments, you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.

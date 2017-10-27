@@ -7,6 +7,8 @@ menu_order: 4
 menu_title: Compile LESS using Grunt
 version: 2.2
 github_link: frontend-dev-guide/css-topics/css_debug.md
+functional_areas:
+  - Frontend
 ---
 
 The topic describes how to install, configure and use [Grunt JavaScript task runner](http://gruntjs.com/) for compiling `.less` files in Magento 2.

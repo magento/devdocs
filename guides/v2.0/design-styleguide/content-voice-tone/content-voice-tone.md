@@ -8,6 +8,8 @@ menu_order: 1
 menu_node:
 version: 2.0
 github_link: design-styleguide/content-voice-tone/content-voice-tone.md
+functional_areas:
+  - Content
 ---
 Our priority is to help users perform administrative tasks with ease and manage their stores effectively.
 

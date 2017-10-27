@@ -5,9 +5,12 @@ subgroup: How To
 title: Run a PHP debugger
 menu_title: Run a PHP debugger
 menu_order: 100
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/howtos/debug.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 This topic discusses how to run a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} debugger using Xdebug as an example.

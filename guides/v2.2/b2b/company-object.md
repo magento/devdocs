@@ -6,10 +6,13 @@ title: Manage company objects
 menu_title: Manage company objects
 menu_order: 12
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
 github_link: b2b/company-object.md
+functional_areas:
+  - B2B
+  - Integration
 ---
 
 

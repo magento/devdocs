@@ -9,18 +9,21 @@ menu_node: parent
 version: 2.0
 github_link: cloud/cloud-requirements.md
 redirect_from:
-  -  /guides/v2.0/cloud/cloud-requirements.html
-  -  /guides/v2.1/cloud/cloud-requirements.html
-  -  /guides/v2.2/cloud/cloud-requirements.html
-  -  /guides/v2.0/cloud/cloud-requirements-license.html
-  -  /guides/v2.1/cloud/cloud-requirements-license.html
-  -  /guides/v2.2/cloud/cloud-requirements-license.html
-  -  /guides/v2.0/cloud/requirements/cloud-requirements-git.html
-  -  /guides/v2.1/cloud/requirements/cloud-requirements-git.html
-  -  /guides/v2.2/cloud/requirements/cloud-requirements-git.html
-  -  /guides/v2.0/cloud/reference/git-integration.html
-  -  /guides/v2.1/cloud/reference/git-integration.html
-  -  /guides/v2.2/cloud/reference/git-integration.html
+  - /guides/v2.0/cloud/cloud-requirements.html
+  - /guides/v2.1/cloud/cloud-requirements.html
+  - /guides/v2.2/cloud/cloud-requirements.html
+  - /guides/v2.0/cloud/cloud-requirements-license.html
+  - /guides/v2.1/cloud/cloud-requirements-license.html
+  - /guides/v2.2/cloud/cloud-requirements-license.html
+  - /guides/v2.0/cloud/requirements/cloud-requirements-git.html
+  - /guides/v2.1/cloud/requirements/cloud-requirements-git.html
+  - /guides/v2.2/cloud/requirements/cloud-requirements-git.html
+  - /guides/v2.0/cloud/reference/git-integration.html
+  - /guides/v2.1/cloud/reference/git-integration.html
+  - /guides/v2.2/cloud/reference/git-integration.html
+functional_areas:
+  - Cloud
+  - Install
 ---
 
 The following information detail technologiess, knowledges, accounts, and steps to complete when working with your {{site.data.var.ece}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.

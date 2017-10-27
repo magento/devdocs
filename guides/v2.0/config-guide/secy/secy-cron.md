@@ -8,6 +8,10 @@ menu_order: 2
 menu_node:
 version: 2.0
 github_link: config-guide/secy/secy-cron.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This topic discusses securing `pub/cron.php` to prevent it from being used in a malicious exploit. If you don't secure cron, any user could potentially run cron to attack your Magento application.

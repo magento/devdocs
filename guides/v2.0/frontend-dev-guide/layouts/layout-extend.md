@@ -8,6 +8,8 @@ menu_order: 4
 version: 2.0
 github_link: frontend-dev-guide/layouts/layout-extend.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-extend.html
+functional_areas:
+  - Frontend
 ---
 
 <h2 id="fedg_layout_extend_merge">Create a theme extending file</h2>

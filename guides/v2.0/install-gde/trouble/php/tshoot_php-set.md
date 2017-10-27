@@ -8,6 +8,10 @@ menu_node:
 menu_order: 350
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_php-set.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h3 id="trouble-php-always">always_populate_raw_post_data error</h3>

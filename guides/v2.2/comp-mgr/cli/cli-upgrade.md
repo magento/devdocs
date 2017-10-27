@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 28_cli-upgr
 title: Command-line upgrade
@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 1
 version: 2.2
 github_link: comp-mgr/cli/cli-upgrade.md
+functional_areas:
+  - Upgrade
 ---
 
 ## Command-line upgrade

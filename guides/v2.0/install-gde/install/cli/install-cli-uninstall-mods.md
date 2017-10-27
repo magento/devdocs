@@ -1,16 +1,20 @@
 ---
 layout: default
-group: install_cli 
+group: install_cli
 subgroup: 05_Command-line installation
 title: Uninstall modules
 menu_title: Uninstall modules
-menu_node: 
+menu_node:
 menu_order: 8
 version: 2.0
 github_link: install-gde/install/cli/install-cli-uninstall-mods.md
-redirect_from: 
-  -  /guides/v1.0/install-gde/install/install-cli-uninstall-mods.html
-  -  /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html
+redirect_from:
+  - /guides/v1.0/install-gde/install/install-cli-uninstall-mods.html
+  - /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="instgde-cli-uninst-prereq">Prerequisites</h2>

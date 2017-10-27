@@ -12,6 +12,8 @@ version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.9.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.9.html
+functional_areas:
+  - Cloud
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}} version 2.1.9, `magento-cloud-configuration` release 101.9.0.

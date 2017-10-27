@@ -4,10 +4,12 @@ group: compman
 subgroup: 50_trouble
 title: Error upgrading from CE to EE
 menu_title: Error upgrading from CE to EE
-menu_node: 
+menu_node:
 menu_order: 500
 version: 2.0
 github_link: comp-mgr/trouble/cman/ce-ee-upgrade.md
+functional_areas:
+  - Upgrade
 ---
 
 ### Problem: Error upgrading from CE to EE {#ce-ee}

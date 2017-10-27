@@ -8,6 +8,9 @@ menu_order: 25
 menu_node:
 version: 2.1
 github_link: cloud/live/sens-data-initial.md
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 Configuration management exports your configurations to a file for pushing across your environments. This file, `config.local.php`, keeps your configurations consistent across all environments, decreases downtime by moving static deploy to build, and much more. This information details an example for configuring your settings, exporting the file, and deploying it.

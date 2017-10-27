@@ -1,13 +1,17 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.1
 github_link: config-guide/cli/config-cli-subcommands.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
   

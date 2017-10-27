@@ -8,6 +8,10 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_php-main.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 *	[PHP settings errors]({{ page.baseurl }}install-gde/trouble/php/tshoot_php-set.html)

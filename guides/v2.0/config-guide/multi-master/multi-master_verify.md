@@ -5,10 +5,14 @@ subgroup: 20_cqrs
 title: Verify split databases
 menu_title: Verify split databases
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
-ee_only: true
+ee_only: True
 github_link: config-guide/multi-master/multi-master_verify.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 After configuration, the master databases are configured as follows:
