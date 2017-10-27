@@ -6,11 +6,20 @@
 
 <div class="search-results container">
 
-  <div id="stats"></div>
-  <div id="hits"></div>
-  <div id="pagination"></div>
+  <article>
+    <div id="stats"></div>
+    <div id="hits"></div>
+  </article>
+
+  <aside>
+    <div id="tags"></div>
+  </aside>
 
 </div><!-- container -->
+
+<div class="search-results-footer">
+  <div id="pagination"></div>
+</div>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
 <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
@@ -25,22 +34,27 @@
   });
 
 
-
   function app(opts) {
     var switcher = document.getElementsByClassName('version-switcher')[0];
-    var ver = String( switcher.dataset.version );
+    var searchParameters = {
+
+    };
+
+    if ( switcher ) {
+      var ver = String( switcher.dataset.version );
+      searchParameters.facets = ['guide_version'];
+      searchParameters.facetsRefinements = {
+        guide_version: [ ver ]
+      };
+    }
+
+
     const search = instantsearch({
       appId: opts.appId,
       apiKey: opts.apiKey,
       indexName: opts.indexName,
       urlSync: true,
-      searchParameters: {
-
-        facetsRefinements: {
-          guide_version: [ ver ],
-        },
-        facets: ['guide_version'],
-      }
+      searchParameters: searchParameters
     });
 
     search.addWidget(
@@ -67,9 +81,15 @@
             } else {
               title = url;
             }
-            var link = '<a href="' + url + '">' + title +'</a>';
 
-            return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
+            //TODO: fix the baseurl on the entire site then remove this:
+            if ( baseUrl == '/' ) {
+              var link = '<a href="' + url + '">' + title +'</a>';
+            } else {
+              var link = '<a href="' + baseUrl + url + '">' + title +'</a>';
+            }
+
+            return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-url">'+ document.location.origin + url +'</div><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
           },
           empty: function ( query ) {
             return '<div id="no-results-message"><p>No results for the search <em>"' + query.query +'"</em>.</p></div>';
@@ -85,6 +105,20 @@
     );
 
 
+    search.addWidget(
+      instantsearch.widgets.refinementList({
+        container: '#tags',
+        attributeName: 'functional_areas',
+        operator: 'or',
+        limit: 20,
+        sortBy: ["isRefined", "name:asc"],
+        templates: {
+          header: 'Functional Areas'
+        }
+      })
+    );
+
+
 
 
     search.addWidget(
@@ -96,7 +130,6 @@
 
     search.start();
   }
-
 </script>
 
 
