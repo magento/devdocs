@@ -10,7 +10,11 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-order.md
-ee_only: false
+ee_only: False
+functional_areas:
+  - Integration
+  - Orders
+  - Sales
 ---
 
 The {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} contains three items totaling $108. The shipping charges are $10, making the grand total $118. We're now ready to convert the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} to an order.

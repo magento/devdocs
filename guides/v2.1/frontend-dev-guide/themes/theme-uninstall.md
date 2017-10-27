@@ -1,5 +1,5 @@
 ---
-layout: default  
+layout: default
 group: fedg
 subgroup: A_Themes
 title: Uninstall a storefront theme
@@ -7,6 +7,9 @@ menu_title: Uninstall a storefront theme
 menu_order: 2
 version: 2.1
 github_link: frontend-dev-guide/themes/theme-uninstall.md
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 ## What's in this topic

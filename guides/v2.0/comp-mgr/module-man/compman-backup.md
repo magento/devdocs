@@ -1,14 +1,16 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Step 2. Back up the file system and database
 menu_title: Step 2. Back up the file system and database
-menu_node: 
+menu_node:
 menu_order: 7
 version: 2.0
 github_link: comp-mgr/module-man/compman-backup.md
 redirect_from: /guides/v2.0/comp-mgr/compman-backup.html
+functional_areas:
+  - Upgrade
 ---
 
 {% include comp-man/backup.md %}

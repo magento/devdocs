@@ -6,10 +6,14 @@ title: Assign companies to a shared catalog
 menu_title: Assign companies
 menu_order: 24
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared
 github_link: b2b/shared-cat-company.md
+functional_areas:
+  - B2B
+  - Catalog
+  - Integration
 ---
 
 A shared catalog must be assigned to one or more companies before it can be accessed by the company users.

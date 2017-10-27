@@ -12,6 +12,8 @@ version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.4.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.4.html
+functional_areas:
+  - Cloud
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.4 and 2.0.12.

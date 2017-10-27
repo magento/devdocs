@@ -8,6 +8,8 @@ menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/basic-information/starter-architecture.md
+functional_areas:
+  - Cloud
 ---
 
 All of your code is contained in the {{site.data.var.ece}} Starter project. The _project_ is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to 4 total environments including three active Integration *environments* and a Production environment using the `master` Git branch.

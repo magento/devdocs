@@ -9,7 +9,8 @@ level3_menu_node: level3child
 level3_subgroup: catalog
 version: 2.2
 github_link: rest/catalog-pricing.md
-
+functional_areas:
+  - Integration
 ---
 
 Magento provides REST endpoints that allow you to update multiple special prices, tier prices, base prices, or cost values with a single call.

@@ -8,6 +8,8 @@ menu_order: 35
 menu_node:
 version: 2.0
 github_link: cloud/welcome/discover-workflow.md
+functional_areas:
+  - Cloud
 ---
 
 Everything in {{site.data.var.ece}} is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.ece}} plan subscription, your deployment workflow may differ.

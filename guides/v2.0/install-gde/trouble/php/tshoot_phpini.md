@@ -1,13 +1,17 @@
 ---
-layout: default 
+layout: default
 group: install_trouble
 subgroup: 20_other
-title: SQLSTATE[HY000] [2002] No such file or directory 
-menu_title: SQLSTATE[HY000] [2002] No such file or directory 
-menu_node: 
+title: SQLSTATE[HY000] [2002] No such file or directory
+menu_title: SQLSTATE[HY000] [2002] No such file or directory
+menu_node:
 menu_order: 520
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_phpini.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Details

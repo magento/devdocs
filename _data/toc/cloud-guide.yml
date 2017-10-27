@@ -74,7 +74,8 @@ pages:
 
         - label: Import an existing Magento project
           children:
-            - label: First steps for importing Magento
+
+            - label: First steps for importing Magento Commerce
               url: cloud/access-acct/first-time-setup_import-first-steps.html
 
             - label: Find the information you need for your import

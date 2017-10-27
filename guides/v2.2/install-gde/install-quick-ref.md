@@ -8,6 +8,10 @@ menu_node:
 menu_order: 2
 version: 2.2
 github_link: install-gde/install-quick-ref.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 We know it's challenging to install the Magento software. We'd like to help you by simplifying the process as much as possible.

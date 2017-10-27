@@ -9,6 +9,8 @@ menu_node: parent
 version: 2.0
 github_link: get-started/authentication/gs-authentication.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication.html
+functional_areas:
+  - Integration
 ---
 
 <h2 id="overview-authenticate">Web API authentication overview</h2>

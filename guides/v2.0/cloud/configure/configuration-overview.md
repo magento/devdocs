@@ -8,6 +8,9 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/configure/configuration-overview.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 The following information walks you through the options for configuring your store on your local and in all environments. You may need to configure files and settings in your local, pushing settings with your code. For specific services, you configure settings directly in Staging and Production environments.

@@ -6,10 +6,14 @@ title: Integrate with the SharedCatalog module
 menu_title: Integrate with the SharedCatalog module
 menu_order: 21
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared
 github_link: b2b/shared-catalog.md
+functional_areas:
+  - B2B
+  - Catalog
+  - Integration
 ---
 
 A shared catalog is an entity that allows a seller to set special rules for the products that company users (buyers) can purchase. By using shared catalogs, a seller can apply different pricing levels for different companies. Also, shared catalogs allow a seller to configure the visibility of categories and products specifically for different companies.

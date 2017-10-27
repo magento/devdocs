@@ -7,6 +7,9 @@ menu_order: 4
 version: 2.0
 github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 <h2 id="fedg_using-ui-lib_overview">What's in this topic</h2>

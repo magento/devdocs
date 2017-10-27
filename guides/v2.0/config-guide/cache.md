@@ -8,6 +8,10 @@ menu_order: 3
 menu_node: parent
 version: 2.0
 github_link: config-guide/cache.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 Magento enables you to configure alternatives to the default file system caching. This guide discusses some of those alternatives; namely,

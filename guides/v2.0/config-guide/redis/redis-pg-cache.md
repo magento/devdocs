@@ -5,9 +5,13 @@ subgroup: 09_Redis
 title: Use Redis for the Magento page and default cache
 menu_title: Use Redis for the Magento page and default cache
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/redis/redis-pg-cache.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="reds-sess-prereq">Prerequisite</h2>

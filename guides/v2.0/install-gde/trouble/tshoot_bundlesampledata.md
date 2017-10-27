@@ -1,13 +1,17 @@
 ---
-layout: default 
+layout: default
 group: install_trouble
 subgroup: 03_install
 title: Unknown module Magento_BundleSampleData
 menu_title: Unknown module Magento_BundleSampleData
-menu_node: 
+menu_node:
 menu_order: 400
 version: 2.0
 github_link: install-gde/trouble/tshoot_bundlesampledata.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Details

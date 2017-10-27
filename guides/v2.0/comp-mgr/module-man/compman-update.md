@@ -1,16 +1,18 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Step 3. Component Update
 menu_title: Component Update
-menu_node: 
+menu_node:
 menu_order: 10
 level3_menu_node: level3child
 level3_subgroup: step3
 version: 2.0
 github_link: comp-mgr/module-man/compman-update.md
 redirect_from: /guides/v2.0/comp-mgr/compman-update.html
+functional_areas:
+  - Upgrade
 ---
 
 This step displays if you're updating components. The following figure shows an example.

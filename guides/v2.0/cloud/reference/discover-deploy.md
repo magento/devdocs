@@ -8,6 +8,8 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/reference/discover-deploy.md
+functional_areas:
+  - Cloud
 ---
 
 When you deploy {{site.data.var.ee}}, complete all of your development in your local Git branch and push the code to the Git repository. Every push starts the Magento build process followed by deployment.

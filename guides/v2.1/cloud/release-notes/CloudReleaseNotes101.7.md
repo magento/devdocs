@@ -13,6 +13,8 @@ github_link: cloud/release-notes/CloudReleaseNotes101.7.md
 redirect_from:
   - /guides/v2.0/cloud/release-notes/CloudReleaseNotes101.7.html
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.7.html
+functional_areas:
+  - Cloud
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}}  version 2.1.7, `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6.

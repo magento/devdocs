@@ -12,6 +12,9 @@ redirect_from:
   - /guides/v2.0/cloud/live/stage-prod-over.html
   - /guides/v2.1/cloud/live/stage-prod-over.html
   - /guides/v2.2/cloud/live/stage-prod-over.html
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 The process for deploying and going live begins with development, continues to Staging, and ends with going live in Production. To provide the best experience for developing, testing, and deploying your store with consistent configurations we provide an end-to-end environment solution. Every environment supports direct URL access to the store and Admin console and SSH access for CLI commands.

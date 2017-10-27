@@ -7,6 +7,8 @@ menu_title: Add a custom shipping address renderer
 menu_order: 10
 version: 2.0
 github_link: howdoi/checkout/checkout_address.md
+functional_areas:
+  - Checkout
 ---
 ## What's in this topic
 

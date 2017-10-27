@@ -1,13 +1,17 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.1
 github_link: config-guide/cli/config-cli-subcommands.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
   
@@ -79,7 +83,7 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plug-in definitions for one store and website.</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">magento info:dependencies:{show-modules|show-modules-circular|show-framework}e</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">magento info:dependencies:{show-modules|show-modules-circular|show-framework}</a></td>
 		<td><p>Module dependencies, circular dependencies, and Magento framework dependencies.</p></td>
 	</tr>
 	<tr>

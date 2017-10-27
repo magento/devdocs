@@ -8,6 +8,10 @@ menu_node: parent
 menu_order: 500
 version: 2.0
 github_link: install-gde/docker/docker-commands.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 {% include install/docker/deprecated-note.html %}

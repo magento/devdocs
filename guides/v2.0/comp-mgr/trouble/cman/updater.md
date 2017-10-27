@@ -4,10 +4,12 @@ group: compman
 subgroup: 50_trouble
 title: Troubleshoot the updater application
 menu_title: Troubleshoot the updater application
-menu_node: 
+menu_node:
 menu_order: 10
 version: 2.0
 github_link: comp-mgr/trouble/cman/updater.md
+functional_areas:
+  - Upgrade
 ---
 
 If the updater application is not available, the following message displays in the readiness check:

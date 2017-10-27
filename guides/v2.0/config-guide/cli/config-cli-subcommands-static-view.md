@@ -1,14 +1,18 @@
 ---
 layout: default
-group:  config-guide
+group: config-guide
 subgroup: 04_CLI
 title: Deploy static view files
 menu_title: Deploy static view files
-menu_node: 
+menu_node:
 menu_order: 300
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
@@ -23,8 +27,8 @@ Static view files are located in the `<your Magento install dir>/pub/static` dir
 
 Static view files deployment is affected by Magento modes as follows:
 
-*	<a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a>: Magento generates them on demand, but the rest are cached in a file for speed of access.
-*	<a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">Default</a> and <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production</a> modes: Static files are *not* generated or cached. 
+*	<a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">The default</a> and <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>: Magento generates them on demand, but the rest are cached in a file for speed of access.
+*	<a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">The production</a> mode: Static files are *not* generated or cached.
 
 	You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
@@ -45,7 +49,7 @@ To deploy static view files:
 2.	Delete the contents of `<your Magento install dir>/pub/static`.
 3.	Run the static view files deployment tool `<your Magento install dir>/bin/magento setup:static-content:deploy`.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
-	
+
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
@@ -53,9 +57,9 @@ To deploy static view files:
 
 Command options:
 
-	magento setup:static-content:deploy <lang> ... <lang> [--dry-run] 
+	magento setup:static-content:deploy <lang> ... <lang> [--dry-run]
 
-The following table discusses the meanings of this command's parameters and values. 
+The following table discusses the meanings of this command's parameters and values.
 
 <table>
 	<tbody>
@@ -123,14 +127,14 @@ Use the following steps:
 2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
 3.	<a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
-	
+
 	<!-- <div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 	</div> -->
 
 ## Tips for developers customizing the static content deployment tool
-When creating a custom implementation of the {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment tool, do not use non atomic writing to files that should be available on the client side. Otherwise, those files might be loaded on the client side with partial content. 
+When creating a custom implementation of the {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment tool, do not use non atomic writing to files that should be available on the client side. Otherwise, those files might be loaded on the client side with partial content.
 
 One of the options for making it atomic, is writing to files stored in a temporary directory and copying or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php).
 

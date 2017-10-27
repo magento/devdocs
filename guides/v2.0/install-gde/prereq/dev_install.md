@@ -12,6 +12,10 @@ redirect_from:
   - /guides/v1.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/prereq/composer.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-tip">

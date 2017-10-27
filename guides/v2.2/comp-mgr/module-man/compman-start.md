@@ -1,13 +1,15 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Start the Module Manager
 menu_title: Start the Module Manager
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.2
 github_link: comp-mgr/module-man/compman-start.md
+functional_areas:
+  - Upgrade
 ---
 
 <h2 id="compman-access">Start the Module Manager from the Magento Admin</h2>

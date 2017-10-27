@@ -10,6 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: services
 version: 2.0
 github_link: cloud/project/project-conf-files_services-rabbit.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 The [Message Queue Framework (MQF)]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.

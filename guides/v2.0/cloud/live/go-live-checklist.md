@@ -8,6 +8,9 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/live/go-live-checklist.md
+functional_areas:
+  - Cloud
+  - Testing
 ---
 
 Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment.

@@ -9,6 +9,10 @@ menu_node: parent
 version: 2.0
 github_link: config-guide/bootstrap/magento-bootstrap.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-bootstrap.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-boot-overview">Overview of bootstrapping</h2>

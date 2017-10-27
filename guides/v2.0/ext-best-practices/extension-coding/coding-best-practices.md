@@ -11,6 +11,8 @@ tabgroup: best-practices
 tablabel: Coding
 tabweight: 10
 github_link: ext-best-practices/extension-coding/coding-best-practices.md
+functional_areas:
+  - Standards
 ---
 
 The coding best practices presented in this section should be known and understood by you, the developer, when creating or maintaining your extensions. This ensures that the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} you develop behaves and functions correctly within the Magento application architecture. This guide is not only meant to educate you about coding best practices, but to also highlight some pitfalls we have seen other extension developers fall into so that you may avoid them.

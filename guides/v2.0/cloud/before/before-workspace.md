@@ -9,12 +9,15 @@ menu_node:
 version: 2.0
 github_link: cloud/before/before-workspace.md
 redirect_from:
-  -  /guides/v2.0/cloud/access-acct/set-up-env.html
-  -  /guides/v2.1/cloud/access-acct/set-up-env.html
-  -  /guides/v2.1/cloud/access-acct/set-up-env.html
+  - /guides/v2.0/cloud/access-acct/set-up-env.html
+  - /guides/v2.1/cloud/access-acct/set-up-env.html
+  - /guides/v2.1/cloud/access-acct/set-up-env.html
   - /guides/v2.0/cloud/access-acct/first-time-setup_template.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_template.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_template.html
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 To develop, deploy, and test {{site.data.var.ece}}, you need to setup your local environment and clone your project's master Git branch. This local environment provides a development system for your custom code, extensions, and configurations to push for active testing in one of of the Integration environments.

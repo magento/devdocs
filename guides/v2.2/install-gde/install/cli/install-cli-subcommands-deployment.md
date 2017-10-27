@@ -9,8 +9,13 @@ menu_order: 9
 version: 2.0
 github_link: install-gde/install/cli/install-cli-subcommands-deployment.md
 redirect_from:
-  -  /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
-  -  /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
+  - /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
+  - /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
+functional_areas:
+  - Install
+  - System
+  - Setup
+  - Deploy
 ---
 
 <h2 id="instgde-cli-before">First steps</h2>

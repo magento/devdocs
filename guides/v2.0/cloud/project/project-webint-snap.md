@@ -11,6 +11,8 @@ github_link: cloud/project/project-webint-snap.md
 redirect_from:
   - /guides/v2.0/cloud/admin/admin-snap.html
   - /guides/v2.1/cloud/admin/admin-snap.html
+functional_areas:
+  - Cloud
 ---
 
 You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Start environments and Pro plan Integration environments. You cannot snapshot Pro plan Staging and Production environments.

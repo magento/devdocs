@@ -10,6 +10,8 @@ level3_menu_node: level3child
 level3_subgroup: configreference
 version: 2.1
 github_link: cloud/live/config-reference-most.md
+functional_areas:
+  - Cloud
 ---
 
 This topic lists all configuration paths _except_ payment variables and sensitive values.

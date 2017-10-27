@@ -9,9 +9,12 @@ menu_node:
 version: 2.0
 github_link: cloud/project/project-upgrade.md
 redirect_from:
-  -  /guides/v2.0/cloud/howtos/upgrade-magento.html
-  -  /guides/v2.1/cloud/howtos/upgrade-magento.html
-  -  /guides/v2.1/cloud/howtos/upgrade-magento.html
+  - /guides/v2.0/cloud/howtos/upgrade-magento.html
+  - /guides/v2.1/cloud/howtos/upgrade-magento.html
+  - /guides/v2.1/cloud/howtos/upgrade-magento.html
+functional_areas:
+  - Cloud
+  - Upgrade
 ---
 
 This information details how to upgrade {{site.data.var.ece}} from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4]({{ page.baseurl }}cloud/upgrade/upgrade-from-2-0-4.html).
