@@ -1,5 +1,6 @@
 ---
 layout: default
+group: mrg
 title: Introduction to Module Reference Guide
 landing-page: Module Reference Guide
 github_link: mrg/intro.md
