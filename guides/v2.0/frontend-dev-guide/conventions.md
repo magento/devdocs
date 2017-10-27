@@ -6,7 +6,7 @@ menu_title: Conventional notations used in this Guide
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/conventions.md
-tags:
+functional_areas:
   - Frontend
 ---
 

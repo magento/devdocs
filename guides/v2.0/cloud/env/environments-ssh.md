@@ -8,7 +8,7 @@ menu_order: 35
 menu_node:
 version: 2.0
 github_link: cloud/env/environments-ssh.md
-tags:
+functional_areas:
   - Cloud
   - Setup
   - Configuration

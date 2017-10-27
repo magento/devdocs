@@ -8,7 +8,7 @@ menu_node:
 menu_order: 2
 version: 2.2
 github_link: install-gde/system-requirements-tech.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

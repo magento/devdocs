@@ -8,7 +8,7 @@ menu_order: 3
 version: 2.0
 github_link: frontend-dev-guide/templates/template-override.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-override.html
-tags:
+functional_areas:
   - Frontend
 ---
 

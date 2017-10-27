@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.1/install-gde/system-requirements.html
   - /guides/v2.1/install-gde/system-requirements-2.1.html
   - /magento-system-requirements.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

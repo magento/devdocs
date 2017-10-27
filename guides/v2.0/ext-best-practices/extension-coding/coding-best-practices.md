@@ -11,7 +11,7 @@ tabgroup: best-practices
 tablabel: Coding
 tabweight: 10
 github_link: ext-best-practices/extension-coding/coding-best-practices.md
-tags:
+functional_areas:
   - Standards
 ---
 

@@ -10,7 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: tls
 version: 2.0
 github_link: install-gde/system-requirements_repo-tls1-2.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

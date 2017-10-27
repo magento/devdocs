@@ -8,7 +8,7 @@ menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/upgrade/upgrade-from-2-0-4.md
-tags:
+functional_areas:
   - Cloud
   - Upgrade
 ---

@@ -8,7 +8,7 @@ menu_title: How CSS and LESS files are preprocessed and how to debug them
 version: 2.0
 github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
-tags:
+functional_areas:
   - Frontend
 ---
 

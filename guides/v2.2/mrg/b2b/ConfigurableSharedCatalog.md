@@ -7,7 +7,7 @@ menu_title: ConfigurableSharedCatalog
 menu_order: 100
 version: 2.2
 github_link: mrg/b2b/ConfigurableSharedCatalog.md
-tags:
+functional_areas:
   - B2B
 ---
 

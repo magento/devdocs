@@ -8,7 +8,7 @@ menu_order: 23
 menu_node:
 version: 2.0
 github_link: cloud/trouble/redis-troubleshooting.md
-tags:
+functional_areas:
   - Cloud
   - Configuration
   - Services

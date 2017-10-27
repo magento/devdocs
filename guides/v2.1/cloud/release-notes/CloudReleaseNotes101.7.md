@@ -13,7 +13,7 @@ github_link: cloud/release-notes/CloudReleaseNotes101.7.md
 redirect_from:
   - /guides/v2.0/cloud/release-notes/CloudReleaseNotes101.7.html
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.7.html
-tags:
+functional_areas:
   - Cloud
 ---
 

@@ -8,7 +8,7 @@ menu_node:
 menu_order: 5
 version: 2.2
 github_link: comp-mgr/module-man/compman-readiness.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

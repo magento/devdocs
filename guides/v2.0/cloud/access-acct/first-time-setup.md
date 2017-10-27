@@ -15,7 +15,7 @@ redirect_from:
   - /guides/v2.1/cloud/env/environment-tutorial-set-mage-vars.html
   - /guides/v2.0/cloud/access-acct/admin-env-vars.html
   - /guides/v2.1/cloud/access-acct/admin-env-vars.html
-tags:
+functional_areas:
   - Cloud
   - Setup
 ---

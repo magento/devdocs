@@ -10,7 +10,7 @@ github_link: install-gde/install/cli/install-cli-install.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-install.html
   - /guides/v2.0/install-gde/install/install-cli-install.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

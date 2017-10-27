@@ -8,7 +8,7 @@ menu_node:
 menu_order: 4
 version: 2.0
 github_link: migration/migration-migrate-follow-up.md
-tags:
+functional_areas:
   - Tools
 ---
 

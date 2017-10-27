@@ -8,7 +8,7 @@ menu_order: 2
 menu_node:
 version: 2.0
 github_link: config-guide/secy/secy-cron.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

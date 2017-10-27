@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
   - /guides/v2.1/cloud/before/before-setup-env-cron.html
   - /guides/v2.2/cloud/before/before-setup-env-cron.html
-tags:
+functional_areas:
   - Cloud
   - Setup
 ---

@@ -7,7 +7,7 @@ menu_title: Programming best practices
 menu_order: 1
 version: 2.0
 github_link: ext-best-practices/extension-coding/common-programming-bp.md
-tags:
+functional_areas:
   - Standards
 ---
 

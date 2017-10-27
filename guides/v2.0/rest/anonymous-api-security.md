@@ -8,7 +8,7 @@ menu_node:
 menu_order: 6
 version: 2.0
 github_link: rest/anonymous-api-security.md
-tags:
+functional_areas:
   - Integration
 ---
 

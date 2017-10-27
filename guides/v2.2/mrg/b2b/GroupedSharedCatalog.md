@@ -7,7 +7,7 @@ menu_title: GroupedSharedCatalog
 menu_order: 150
 version: 2.2
 github_link: mrg/b2b/GroupedSharedCatalog.md
-tags:
+functional_areas:
   - B2B
 ---
 

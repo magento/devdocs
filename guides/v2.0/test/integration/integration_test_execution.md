@@ -16,7 +16,7 @@ redirect_from:
   - guides/v2.0/test/integration/integration_test_execution_phpstorm.html
   - guides/v2.1/test/integration/integration_test_execution_phpstorm.html
   - guides/v2.2/test/integration/integration_test_execution_phpstorm.html
-tags:
+functional_areas:
   - Testing
   - test
 ---

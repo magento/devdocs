@@ -9,7 +9,7 @@ contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
 github_link: test/unit/writing_testable_code.md
-tags:
+functional_areas:
   - Testing
   - test
 ---

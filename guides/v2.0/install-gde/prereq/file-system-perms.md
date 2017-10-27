@@ -13,7 +13,7 @@ github_link: install-gde/prereq/file-system-perms.md
 redirect_from:
   - /guides/v2.0/install-gde/install/prereq/file-system-perms-over.html
   - /guides/2.0/install-gde/install/file-system-perms.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

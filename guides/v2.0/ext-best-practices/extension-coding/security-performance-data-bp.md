@@ -7,7 +7,7 @@ menu_title: Security, performance, and data handling
 menu_order: 3
 version: 2.0
 github_link: ext-best-practices/extension-coding/security-performance-data-bp.md
-tags:
+functional_areas:
   - Standards
 ---
 

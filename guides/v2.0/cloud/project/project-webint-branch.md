@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/cloud/project/project-priv-repos.html
   - /guides/v2.1/cloud/project/project-priv-repos.html
   - /guides/v2.2/cloud/project/project-priv-repos.html
-tags:
+functional_areas:
   - Cloud
   - Configuration
 ---

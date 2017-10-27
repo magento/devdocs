@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: howdoi/checkout/checkout_overview.md
-tags:
+functional_areas:
   - Checkout
 ---
 

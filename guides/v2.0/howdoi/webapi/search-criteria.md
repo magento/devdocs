@@ -8,7 +8,7 @@ menu_order: 2
 version: 2.0
 github_link: howdoi/webapi/search-criteria.md
 redirect_from: /guides/v2.0/get-started/usage.html
-tags:
+functional_areas:
   - Integration
   - Search
 ---

@@ -8,7 +8,7 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: install-gde/install-resources-parent.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

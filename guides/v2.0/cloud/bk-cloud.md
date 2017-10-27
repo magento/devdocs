@@ -19,7 +19,7 @@ redirect_from:
   - /guides/v2.0/cloud/welcome/10000-ft-overview.html
   - /guides/v2.1/cloud/welcome/10000-ft-overview.html
   - /guides/v2.2/cloud/welcome/10000-ft-overview.html
-tags:
+functional_areas:
   - Cloud
 ---
 

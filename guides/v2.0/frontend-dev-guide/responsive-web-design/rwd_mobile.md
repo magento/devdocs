@@ -8,7 +8,7 @@ menu_order: 4
 version: 2.0
 github_link: frontend-dev-guide/responsive-web-design/rwd_mobile.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html
-tags:
+functional_areas:
   - Frontend
 ---
 <h2>What's in this topic</h2>

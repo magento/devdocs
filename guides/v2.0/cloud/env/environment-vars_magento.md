@@ -8,7 +8,7 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md
-tags:
+functional_areas:
   - Cloud
   - Configuration
 ---

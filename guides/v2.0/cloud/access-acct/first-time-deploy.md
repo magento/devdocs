@@ -7,7 +7,7 @@ menu_title: First time deployment
 menu_order: 60
 version: 2.0
 github_link: cloud/access-acct/first-time-deploy.md
-tags:
+functional_areas:
   - Cloud
   - Setup
   - Deploy

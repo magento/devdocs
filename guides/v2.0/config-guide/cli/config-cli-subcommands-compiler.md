@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html
   - /guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html
   - /guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

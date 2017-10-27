@@ -8,7 +8,7 @@ menu_node:
 menu_order: 300
 version: 2.0
 github_link: install-gde/trouble/tshoot_composer-fail.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

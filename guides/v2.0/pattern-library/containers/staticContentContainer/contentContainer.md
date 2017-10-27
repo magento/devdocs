@@ -9,7 +9,7 @@ menu_node:
 version: 2.0
 github_link: pattern-library/containers/staticContentContainer/contentContainer.md
 redirect_from: /guides/v1.0/pattern-library/containers/staticContentContainer/contentContainer.html
-tags:
+functional_areas:
   - Content
 ---
 

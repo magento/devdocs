@@ -10,7 +10,7 @@ github_link: javascript-dev-guide/widgets/widget_quickSearch.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
   - guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html
-tags:
+functional_areas:
   - Search
 ---
 

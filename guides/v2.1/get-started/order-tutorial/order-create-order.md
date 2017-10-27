@@ -11,7 +11,7 @@ level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-order.md
 ee_only: False
-tags:
+functional_areas:
   - Integration
   - Orders
   - Sales

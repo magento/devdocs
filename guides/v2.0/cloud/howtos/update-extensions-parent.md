@@ -10,7 +10,7 @@ level3_menu_node: level3parent
 level3_subgroup: update-extensions
 version: 2.0
 github_link: cloud/howtos/update-extensions-parent.md
-tags:
+functional_areas:
   - Cloud
   - Upgrade
 ---

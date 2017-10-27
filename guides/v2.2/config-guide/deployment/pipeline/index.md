@@ -8,7 +8,7 @@ menu_node:
 menu_order: 1100
 version: 2.2
 github_link: config-guide/deployment/pipeline/index.md
-tags:
+functional_areas:
   - Configuration
   - Deploy
   - System

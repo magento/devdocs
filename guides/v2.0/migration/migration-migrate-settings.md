@@ -9,7 +9,7 @@ menu_order: 1
 version: 2.0
 github_link: migration/migration-migrate-settings.md
 redirect_from: /guides/v1.0/migration/migration-migrate-settings.html
-tags:
+functional_areas:
   - Tools
 ---
 

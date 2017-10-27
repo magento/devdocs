@@ -8,7 +8,7 @@ menu_order: 2
 menu_node:
 version: 2.0
 github_link: install-gde/prereq/integrator_install.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

@@ -8,7 +8,7 @@ menu_title: Prerequisites
 menu_order: 1
 version: 2.2
 github_link: install-gde/prereq/prereq-overview.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

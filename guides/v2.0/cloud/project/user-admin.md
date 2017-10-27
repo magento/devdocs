@@ -8,7 +8,7 @@ menu_order: 15
 menu_node:
 version: 2.0
 github_link: cloud/project/user-admin.md
-tags:
+functional_areas:
   - Cloud
   - Configuration
 ---

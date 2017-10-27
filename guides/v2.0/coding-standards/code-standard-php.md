@@ -9,7 +9,7 @@ menu_order: 2
 version: 2.0
 github_link: coding-standards/code-standard-php.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-php.html
-tags:
+functional_areas:
   - Standards
 ---
 

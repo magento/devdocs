@@ -8,7 +8,7 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: install-gde/install/cli/dev_add-update.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

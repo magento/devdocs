@@ -11,7 +11,7 @@ level3_subgroup: mq
 version: 2.1
 github_link: extension-dev-guide/message-queues/queue-migration.md
 redirect_from: /guides/v2.1/config-guide/mq/queue-migration.html
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

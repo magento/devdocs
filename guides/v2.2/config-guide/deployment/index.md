@@ -9,7 +9,7 @@ menu_order: 1
 version: 2.2
 github_link: config-guide/deployment/index.md
 redirect_from: /guides/v2.2/config-guide/prod/prod_deploy.html
-tags:
+functional_areas:
   - Configuration
   - Deploy
   - System

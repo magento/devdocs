@@ -13,7 +13,7 @@ github_link: install-gde/prereq/file-sys-perms-over.md
 redirect_from:
   - guides/v2.0/install-gde/prereq/apache-user.html
   - guides/v2.1/install-gde/prereq/apache-user.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

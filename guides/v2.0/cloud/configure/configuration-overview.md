@@ -8,7 +8,7 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/configure/configuration-overview.md
-tags:
+functional_areas:
   - Cloud
   - Configuration
 ---

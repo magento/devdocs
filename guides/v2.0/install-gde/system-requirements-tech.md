@@ -11,7 +11,7 @@ github_link: install-gde/system-requirements-tech.md
 redirect_from:
   - /guides/v1.0/install-gde/system-requirements.html
   - /guides/v2.0/install-gde/system-requirements-2.0-tech.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

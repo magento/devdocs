@@ -8,7 +8,7 @@ menu_order: 70
 menu_node:
 version: 2.0
 github_link: cloud/howtos/sample-data.md
-tags:
+functional_areas:
   - Cloud
   - Setup
 ---

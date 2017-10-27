@@ -8,7 +8,7 @@ menu_node:
 menu_order: 100
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-uninst-final.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

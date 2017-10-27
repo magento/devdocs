@@ -11,7 +11,7 @@ tabgroup: best-practices
 tablabel: Admin
 tabweight: 20
 github_link: ext-best-practices/admin/admin-best-practices.md
-tags:
+functional_areas:
   - Standards
 ---
 

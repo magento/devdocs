@@ -8,7 +8,7 @@ menu_order: 2
 menu_node: parent
 version: 2.1
 github_link: payments-integrations/bk-payments-integrations.md
-tags:
+functional_areas:
   - Integration
 ---
 

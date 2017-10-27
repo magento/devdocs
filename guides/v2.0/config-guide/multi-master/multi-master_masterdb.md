@@ -9,7 +9,7 @@ menu_node:
 version: 2.0
 ee_only: True
 github_link: config-guide/multi-master/multi-master_masterdb.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

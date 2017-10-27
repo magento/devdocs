@@ -8,7 +8,7 @@ menu_order: 3
 menu_node:
 version: 2.0
 github_link: config-guide/cron/custom-cron-tut.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

@@ -8,7 +8,7 @@ menu_order: 1
 menu_node: parent
 version: 2.1
 github_link: cloud/project/project-upgrade-parent.md
-tags:
+functional_areas:
   - Cloud
   - Upgrade
 ---

@@ -7,7 +7,7 @@ menu_title: Get payment information from frontend to backend
 menu_order: 6
 version: 2.1
 github_link: payments-integrations/base-integration/get-payment-info.md
-tags:
+functional_areas:
   - Integration
 ---
 

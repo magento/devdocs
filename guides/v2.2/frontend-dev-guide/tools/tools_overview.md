@@ -8,7 +8,7 @@ menu_order: 1
 menu_node: parent
 version: 2.2
 github_link: frontend-dev-guide/tools/tools_overview.md
-tags:
+functional_areas:
   - Frontend
   - Tools
 ---

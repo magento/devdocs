@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 100
 version: 2.0
 github_link: install-gde/install/legacy-file-system-perms.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

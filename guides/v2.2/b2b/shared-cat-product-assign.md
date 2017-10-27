@@ -10,7 +10,7 @@ ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared
 github_link: b2b/shared-cat-product-assign.md
-tags:
+functional_areas:
   - B2B
   - Catalog
   - Integration

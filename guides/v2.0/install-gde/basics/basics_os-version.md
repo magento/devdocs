@@ -11,7 +11,7 @@ level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_os-version.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_os-version.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

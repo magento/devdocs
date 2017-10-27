@@ -9,7 +9,7 @@ menu_node:
 version: 2.0
 github_link: comp-mgr/prereq/prereq_cron.md
 redirect_from: /guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html
-tags:
+functional_areas:
   - Upgrade
 ---
 

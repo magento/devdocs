@@ -8,7 +8,7 @@ menu_order: 200
 menu_node:
 version: 2.0
 github_link: comp-mgr/prereq/prereq_compman-checklist.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

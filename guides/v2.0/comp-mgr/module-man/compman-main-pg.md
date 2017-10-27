@@ -9,7 +9,7 @@ menu_order: 3
 version: 2.0
 github_link: comp-mgr/module-man/compman-main-pg.md
 redirect_from: /guides/v2.0/comp-mgr/compman-main-pg.html
-tags:
+functional_areas:
   - Upgrade
 ---
 

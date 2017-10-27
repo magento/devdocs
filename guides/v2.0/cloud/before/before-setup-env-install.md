@@ -11,7 +11,7 @@ redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-perms.html
   - /guides/v2.1/cloud/before/before-setup-env-perms.html
   - /guides/v2.2/cloud/before/before-setup-env-perms.html
-tags:
+functional_areas:
   - Cloud
   - Install
   - Setup

@@ -9,7 +9,7 @@ menu_node:
 version: 2.0
 github_link: config-guide/bootstrap/magento-how-to-set.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-how-to-set.html
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

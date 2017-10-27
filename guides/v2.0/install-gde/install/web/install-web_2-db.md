@@ -8,7 +8,7 @@ menu_node:
 menu_order: 3
 version: 2.0
 github_link: install-gde/install/web/install-web_2-db.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

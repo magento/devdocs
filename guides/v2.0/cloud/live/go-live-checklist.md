@@ -8,7 +8,7 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/live/go-live-checklist.md
-tags:
+functional_areas:
   - Cloud
   - Testing
 ---

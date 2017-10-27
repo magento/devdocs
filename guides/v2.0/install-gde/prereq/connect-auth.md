@@ -8,7 +8,7 @@ menu_order: 26
 menu_node:
 version: 2.0
 github_link: install-gde/prereq/connect-auth.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

@@ -11,7 +11,7 @@ level3_subgroup: step3
 version: 2.0
 github_link: comp-mgr/module-man/compman-uninst-data.md
 redirect_from: /guides/v2.0/comp-mgr/compman-uninst-data.html
-tags:
+functional_areas:
   - Upgrade
 ---
 

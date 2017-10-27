@@ -7,7 +7,7 @@ menu_title: Set up a remote MySQL database connection
 menu_order: 175
 version: 2.0
 github_link: install-gde/prereq/mysql_remote.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

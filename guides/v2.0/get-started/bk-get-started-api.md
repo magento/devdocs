@@ -10,7 +10,7 @@ menu_node: parent
 version: 2.0
 github_link: get-started/bk-get-started-api.md
 redirect_from: /guides/v1.0/get-started/bk-get-started-api.html
-tags:
+functional_areas:
   - Integration
 ---
 <h2 id="whatare">What are the Magento web APIs?</h2>

@@ -11,7 +11,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 tabgroup: best-practices
 tablabel: Home
 tabweight: 0
-tags:
+functional_areas:
   - Standards
 ---
 

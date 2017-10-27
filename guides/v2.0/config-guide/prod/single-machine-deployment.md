@@ -8,7 +8,7 @@ menu_node:
 menu_order: 500
 version: 2.0
 github_link: config-guide/prod/single-machine-deployment.md
-tags:
+functional_areas:
   - Configuration
   - Deploy
   - System

@@ -9,7 +9,7 @@ menu_order: 1
 version: 2.0
 github_link: install-gde/system-requirements2.md
 redirect_from: /guides/v2.0/install-gde/system-requirements-2.0.html
-tags:
+functional_areas:
   - Install
   - System
   - Setup

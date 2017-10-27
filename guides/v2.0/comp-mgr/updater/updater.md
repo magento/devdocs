@@ -8,7 +8,7 @@ menu_node:
 menu_order: 2
 version: 2.0
 github_link: comp-mgr/updater/updater.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

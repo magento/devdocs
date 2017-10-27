@@ -8,7 +8,7 @@ menu_order: 2
 version: 2.0
 github_link: extension-dev-guide/service-contracts/service-contracts.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html
-tags:
+functional_areas:
   - Services
 ---
 

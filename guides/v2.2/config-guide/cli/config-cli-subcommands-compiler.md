@@ -8,7 +8,7 @@ menu_node:
 menu_order: 175
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-compiler.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

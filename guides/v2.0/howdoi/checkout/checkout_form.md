@@ -7,7 +7,7 @@ menu_title: Add a new input form to checkout
 menu_order: 8
 version: 2.0
 github_link: howdoi/checkout/checkout_form.md
-tags:
+functional_areas:
   - Checkout
 ---
 ## What's in this topic

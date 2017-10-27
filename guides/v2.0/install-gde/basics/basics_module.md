@@ -10,7 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_module.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

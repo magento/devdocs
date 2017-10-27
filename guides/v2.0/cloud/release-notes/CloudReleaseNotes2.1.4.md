@@ -12,7 +12,7 @@ version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.4.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.4.html
-tags:
+functional_areas:
   - Cloud
 ---
 

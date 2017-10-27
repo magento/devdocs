@@ -8,7 +8,7 @@ menu_node:
 menu_order: 215
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-urn.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

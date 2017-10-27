@@ -7,7 +7,7 @@ menu_title: Coding FAQ
 menu_order: 1000
 version: 2.0
 github_link: ext-best-practices/extension-coding/coding-faq.md
-tags:
+functional_areas:
   - Standards
 ---
 

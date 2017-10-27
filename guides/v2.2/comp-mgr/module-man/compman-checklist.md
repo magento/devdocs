@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 1
 version: 2.2
 github_link: comp-mgr/module-man/compman-checklist.md
-tags:
+functional_areas:
   - Upgrade
 ---
 

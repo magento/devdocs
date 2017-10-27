@@ -7,7 +7,7 @@ menu_title: Simple ways to customize a theme's styles
 menu_order: 1
 version: 2.0
 github_link: frontend-dev-guide/css-guide/css_quick_guide_approach.md
-tags:
+functional_areas:
   - Frontend
 ---
 <h2>What's in this topic</h2>

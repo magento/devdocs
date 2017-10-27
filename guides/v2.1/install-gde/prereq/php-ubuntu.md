@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: php
 version: 2.1
 github_link: install-gde/prereq/php-ubuntu.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

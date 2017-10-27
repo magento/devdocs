@@ -11,7 +11,7 @@ github_link: test/js/jasmine.md
 redirect_from:
   - /guides/v2.0/extension-dev-guide/test/test_js-unit.html
   - /guides/v2.1/extension-dev-guide/test/test_js-unit.html
-tags:
+functional_areas:
   - Testing
   - test
 ---

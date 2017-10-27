@@ -8,7 +8,7 @@ menu_order: 900
 menu_node:
 version: 2.1
 github_link: config-guide/elasticsearch/configure-magento.md
-tags:
+functional_areas:
   - Configuration
   - Search
   - System

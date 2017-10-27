@@ -8,7 +8,7 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: frontend-dev-guide/css-guide/css_quick_guide_overview.md
-tags:
+functional_areas:
   - Frontend
 ---
 

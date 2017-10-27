@@ -8,7 +8,7 @@ menu_order: 6
 menu_node:
 version: 2.0
 github_link: install-gde/install/hosted/hosted_install_4_customize-store.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

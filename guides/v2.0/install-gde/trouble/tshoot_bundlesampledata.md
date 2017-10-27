@@ -8,7 +8,7 @@ menu_node:
 menu_order: 400
 version: 2.0
 github_link: install-gde/trouble/tshoot_bundlesampledata.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

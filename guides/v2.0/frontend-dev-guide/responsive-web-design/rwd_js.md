@@ -8,7 +8,7 @@ menu_order: 3
 version: 2.0
 github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html
-tags:
+functional_areas:
   - Frontend
 ---
 

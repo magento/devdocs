@@ -9,7 +9,7 @@ menu_node: parent
 version: 2.1
 ee_only: True
 github_link: config-guide/elasticsearch/es-overview.md
-tags:
+functional_areas:
   - Configuration
   - Search
   - System

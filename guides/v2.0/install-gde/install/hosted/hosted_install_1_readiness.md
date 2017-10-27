@@ -8,7 +8,7 @@ menu_order: 3
 menu_node:
 version: 2.0
 github_link: install-gde/install/hosted/hosted_install_1_readiness.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

@@ -10,7 +10,7 @@ level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-add-items.md
 ee_only: False
-tags:
+functional_areas:
   - Integration
   - Orders
   - Catalog

@@ -8,7 +8,7 @@ menu_order:
 menu_node:
 version: 2.0
 github_link: cloud/howtos/environment-tutorial-env-merge.md
-tags:
+functional_areas:
   - Cloud
   - Configuration
 ---

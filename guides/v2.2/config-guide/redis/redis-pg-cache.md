@@ -8,7 +8,7 @@ menu_order: 5
 menu_node:
 version: 2.2
 github_link: config-guide/redis/redis-pg-cache.md
-tags:
+functional_areas:
   - Configuration
   - System
   - Setup

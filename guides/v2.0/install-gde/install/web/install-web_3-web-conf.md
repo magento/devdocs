@@ -8,7 +8,7 @@ menu_node:
 menu_order: 4
 version: 2.0
 github_link: install-gde/install/web/install-web_3-web-conf.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

@@ -8,7 +8,7 @@ menu_node:
 menu_order: 6
 version: 2.0
 github_link: install-gde/install/cli/install-cli-sample-data-other.md
-tags:
+functional_areas:
   - Install
   - System
   - Setup

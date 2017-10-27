@@ -7,7 +7,7 @@ menu_order: 4
 menu_title: Compile LESS using Grunt
 version: 2.2
 github_link: frontend-dev-guide/css-topics/css_debug.md
-tags:
+functional_areas:
   - Frontend
 ---
 

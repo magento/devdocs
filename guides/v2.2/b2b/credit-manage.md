@@ -10,7 +10,7 @@ level3_subgroup: credit
 version: 2.2
 ee_only: True
 github_link: b2b/credit-manage.md
-tags:
+functional_areas:
   - B2B
   - Integration
 ---

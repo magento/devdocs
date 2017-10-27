@@ -7,7 +7,7 @@ menu_title: Reset the theme to default
 menu_order: 1
 version: 2.0
 github_link: howdoi/troubleshoot/reset_theme.md
-tags:
+functional_areas:
   - Theme
 ---
 
