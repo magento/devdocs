@@ -10,6 +10,10 @@ level3_subgroup: cli-config-mgmt
 menu_order: 251
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-config-mgmt-export.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 In the Magento 2.2 and later [pipeline deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can maintain a consistent configuration across systems.

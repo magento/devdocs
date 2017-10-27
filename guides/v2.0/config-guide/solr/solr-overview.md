@@ -7,8 +7,13 @@ menu_title: Install and configure Solr (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.0
-ee_only: true
+ee_only: True
 github_link: config-guide/solr/solr-overview.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-warning" markdown="1">

@@ -12,6 +12,10 @@ redirect_from:
   - /guides/v2.1/install-gde/system-requirements.html
   - /guides/v2.1/install-gde/system-requirements-2.1.html
   - /magento-system-requirements.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 Our system requirements include required software to run the Magento application, supported web browsers, and also recent requirements to securely connect with our software repository and with PayPal.

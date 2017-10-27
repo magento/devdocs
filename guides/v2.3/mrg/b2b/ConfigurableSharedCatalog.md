@@ -1,1 +1,0 @@
-../../../v2.2/mrg/b2b/ConfigurableSharedCatalog.md

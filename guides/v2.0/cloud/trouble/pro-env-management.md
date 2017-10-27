@@ -10,7 +10,13 @@ version: 2.0
 github_link: cloud/trouble/pro-env-management.md
 ---
 
-For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options. To add these environments to the Project Web Interface, you need to complete a few preparation steps and enter a ticket.
+For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options.
+
+To add these environments to the Project Web Interface, review this entire document to complete a few preparation steps and enter a ticket.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Please be aware, your ticket will be added to a queue for updating existing Pro projects. The process may take some time to complete. We will update your tickets with details, timing, and updates.
+</div>
 
 All new projects already include these features.
 
@@ -22,11 +28,12 @@ All new projects already include these features.
 The new Project Web Interface provides the following features for Pro plan Staging and Production environments:
 
 * Add and manage user access to the environments
-* Sync code between Staging and Pro to Integration environments
+* Sync code between Staging and Production to Integration environments
+* Merge code from Integration master to Staging and Production environments
 * Add and manage environment variables
 * Configure environment settings
 * Access the environments by SSH and URL. These links and commands are provided through the Access Links.
-* View builds logs and deployment history
+* View build logs and deployment history
 
 ### Restricted features {#restricted}
 As an important note, while you can manage Staging and Production environments, you **cannot**:
@@ -53,7 +60,7 @@ After the conversion, the three repositories are merged into a single repository
 <table>
 <thead>
 <tr>
-<th style="width: 100px;">Branch</th>
+<th style="width: 125px;">Branch</th>
 <th style="width: 100px;">Environment</th>
 <th>Description</th>
 </tr></thead>
@@ -67,18 +74,18 @@ After the conversion, the three repositories are merged into a single repository
 <tr>
 <td><code>production</code></td>
 <td>Production</td>
-<td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
+<td><p>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
 <p>When you convert, the Integration <code>master</code> is branched into a <code>production</code> branch with the users access and environment variables.</p></td>
 </tr>
 <tr>
 <td><code>staging</code></td>
 <td>Staging</td>
-<td><p>This is a branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
+<td><p>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to test in a pre-production environment.</p>
 <p>When you convert, the Integration <code>master</code> is branched into a <code>staging</code> branch with the users access and environment variables.</p></td>
 </tr>
 <tr>
 <td><code>master</code></td>
-<td>Integration master</td>
+<td>Integration</td>
 <td><p>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code.</p>
 <p>When you convert, all active and inactive branches continue as children to the <code>master</code> branch.</p></td>
 </tr>

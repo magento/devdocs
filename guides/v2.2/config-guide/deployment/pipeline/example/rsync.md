@@ -4,12 +4,17 @@ group: config-guide
 subgroup: 045_pipeline
 title: Using rsync
 menu_title: Using rsync
-menu_node: 
+menu_node:
 menu_order: 6400
 level3_menu_node: level3child
 level3_subgroup: deployment-examples
 version: 2.2
 github_link: config-guide/deployment/pipeline/rsync.md
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 NOT STARTED TBD

@@ -69,9 +69,22 @@ github_link: cloud/basic-information/cloud-plans.md
 ## Trial accounts {#trials}
 We provide a [free 30-day trial](https://magento.com/trial){:target="_blank"} for both Start and Pro to give you a full preview of {{site.data.var.ece}} running on Cloud infrastructures. When signing up for a trial, we automatically provision your project with the latest version of {{site.data.var.ece}}. We also provide an [Onboarding Portal]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for reviewing your project and getting started.
 
+See the [Trial signup](https://magento.com/trial){:target="_blank"} for full details and subscription prices.
+
 ![Onboarding Portal getting started]({{ site.baseurl }}common/images/cloud_portal-trial.png)
 
-See the [Trial signup](https://magento.com/trial){:target="_blank"} for full details and subscription prices.
+### What is autoprovisioning? {#autoprovisioning}
+When you create an account with a Trial, your {{site.data.var.ece}} project is created automatically. As part of the process, we generate a code branch and environment with the latest Magento code for you.
+
+We complete the following steps for you to make the entire process easier to get started:
+
+* For Starter: We create a project with the latest version of {{site.data.var.ece}} in a `master` Git branch. We build, deploy, and install the code, generating your store and admin link access. This environment and branch of code is your Production environment.
+* For Pro: We create a project with the latest version of {{site.data.var.ece}} in a `master` Git branch of your Integration environment. We build, deploy, and install the code, generating your store and admin link access. Staging and Production are provisioned after your first payment.
+* We add the `ADMIN_EMAIL` variable using the email address of the Project Owner.
+* We send an email inviting the Project Owner to the Onboarding Portal.
+* We send an email to the Project Owner to change the Magento admin password for the deployed store.
+
+When done, you can access the links from those emails, add a Technical Admin, and get started developing your stores and sites.
 
 ## Get started! {#getstarted}
 If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as s base template. If you didn't start with a trial, we have information to help set up your project.

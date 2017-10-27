@@ -7,6 +7,8 @@ menu_title: Token UI component provider
 menu_order: 15
 version: 2.1
 github_link: payments-integrations/vault/token-ui-component-provider.md
+functional_areas:
+  - Integration
 ---
 
 This topic describes how to create custom vault payments UI components, that are used to  display stored tokens on {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page and order placing using vault. 

@@ -7,8 +7,13 @@ menu_title: Prepare Solr for production
 menu_order: 3
 menu_node:
 version: 2.0
-ee_only: true
+ee_only: True
 github_link: config-guide/solr/solr-script.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-warning" markdown="1">

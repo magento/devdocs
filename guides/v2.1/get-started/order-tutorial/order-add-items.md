@@ -9,7 +9,11 @@ menu_order: 5
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-add-items.md
-ee_only: false
+ee_only: False
+functional_areas:
+  - Integration
+  - Orders
+  - Catalog
 ---
 
 This article shows how to add a simple product, a downloadable product, and a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} to the cart.
