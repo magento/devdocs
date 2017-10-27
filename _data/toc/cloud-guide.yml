@@ -87,15 +87,6 @@ pages:
             - label: Import Magento Commerce into Magento Commerce (Cloud)
               url: cloud/access-acct/first-time-setup_import-import.html
 
-    - label: Fastly
-      url: cloud/basic-information/cloud-fastly.html
-      children:
-        - label: Set up Fastly
-          url: cloud/access-acct/fastly.html
-
-        - label: Custom Fastly VCL snippets
-          url: cloud/configure/cloud-vcl-custom-snippets.html
-          
     - label: Configure Magento Commerce (Cloud)
       url: cloud/configure/configuration-overview.html
       children:
@@ -156,6 +147,15 @@ pages:
 
             - label: Set up RabbitMQ service
               url: cloud/project/project-conf-files_services-rabbit.html
+
+    - label: Fastly
+      url: cloud/basic-information/cloud-fastly.html
+      children:
+        - label: Set up Fastly
+          url: cloud/access-acct/fastly.html
+
+        - label: Custom Fastly VCL snippets
+          url: cloud/configure/cloud-vcl-custom-snippets.html
 
     - label: Manage your project
       url: cloud/project/projects.html
