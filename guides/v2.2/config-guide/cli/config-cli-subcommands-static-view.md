@@ -58,7 +58,7 @@ To deploy static view files:
 
 Command options:
 
-	magento setup:static-content:deploy [<list of locales>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
+	magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
 
 The following table discusses the meanings of this command's parameters and values.
 
@@ -80,13 +80,13 @@ The following table discusses the meanings of this command's parameters and valu
     </tr>
     <tr>
       <td>
-        &lt;lang&gt;
+        &lt;languages&gt;
       </td>
       <td>
         <p>
-          List of <a href=
+          Space-separated list of <a href=
           "http://www.loc.gov/standards/iso639-2/php/code_list.php"
-          target="_blank">ISO-636</a> language codes for which to
+          target="_blank">ISO-639</a> language codes for which to
           output static view files. (Default is
           <code>en_US</code>.)
         </p>
@@ -428,7 +428,7 @@ The following table discusses the meanings of this command's parameters and valu
 </table>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you specify values for both <code>&lt;lang></code> and <code>--language</code>, <code>&lt;lang></code> takes precedence.</p>
+  <p>If you specify values for both <code>&lt;languages&gt;</code> and <code>--language</code>, <code>&lt;languages&gt;</code> takes precedence.</p>
 </div>
 
 ### Examples
