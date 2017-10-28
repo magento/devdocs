@@ -875,10 +875,10 @@ Conversion Value | `google/adwords/conversion_value` | <!-- ![Not EE-only]({{ si
 ### Signifyd paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Fraud Protection**.
 
-| Name  | Config path | EE only? |  |
+| Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-| Enable this Solution  | `fraud_protection/signifyd/active`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
-| Debug  | `fraud_protection/signifyd/debug`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
+| Enable this Solution | `fraud_protection/signifyd/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |
+| Debug | `fraud_protection/signifyd/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |
 
 ### Gift cards paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Gift Cards**.
