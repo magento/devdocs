@@ -28,7 +28,7 @@ Use the following steps to disable module output in pipeline or any other deploy
 
 ### Edit the `Backend` module's `config.xml` file
 
-Archive the original `config.xml` file. Then add lines similar to the following to the `<Magento_install_dir>/vendor/Magento/Backend/etc/config.xml` file directly under the `<default>` element:
+Archive the original `config.xml` file. Then add lines similar to the following to the `<Magento_install_dir>/vendor/Magento/module-backend/etc/config.xml` file directly under the `<default>` element:
 
 {% highlight xml %}
 <advanced>
