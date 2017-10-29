@@ -47,7 +47,7 @@ pages:
         - label: Catalog
           children:
 
-            - label: Catalog
+            - label: General notes
               url: rest/modules/catalog.html
 
             - label: Manage prices for multiple products
