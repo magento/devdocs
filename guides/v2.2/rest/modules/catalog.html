@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Generate a local REST API reference | Magento 2 Developer Documentation</title>
+	<title>Catalog module | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/rest/generate-local.html">
+	<link rel="canonical" href="//guides/v2.2/rest/modules/catalog.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/rest/generate-local.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/rest/modules/catalog.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/rest/generate-local.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/rest/modules/catalog.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/rest/generate-local.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/rest/modules/catalog.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -262,7 +262,7 @@
         
         
         
-        <li class="nav-level2 active " id="generate-a-local-api-reference">
+        <li class="nav-level2  " id="generate-a-local-api-reference">
             
             
         
@@ -369,7 +369,7 @@
 
                 
                 
-                <li class="nav-level3  " id="general-notes">
+                <li class="nav-level3 active " id="general-notes">
                     
 
                     
@@ -471,7 +471,7 @@
 
           
 
-          <span property="name">Generate a local REST API reference</span>
+          <span property="name">Catalog module</span>
 
         
 
@@ -494,7 +494,7 @@
 
 	
 
-	<h1 class="page-heading">Generate a local REST API reference</h1>
+	<h1 class="page-heading">Catalog module</h1>
 
   
 
@@ -502,60 +502,75 @@
 </section>
 
 
-			<h2 id="get-more-rest-api-documentation">Get more REST API documentation</h2>
+			<p>The <code class="highlighter-rouge">Catalog</code> module provides functionality for creating and maintaining products and categories.</p>
 
-<p>The REST documentation on the Magento devdocs <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> is generated with <a href="http://swagger.io">Swagger UI</a> using a schema derived from the latest build of Magento Commerce. However, the REST <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.</p>
+<h2 id="categories">Categories</h2>
 
-<p>Magento provides two ways to get detailed information about the structure of the REST APIs, as described below.</p>
+<p>When you create a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> from Admin, you have the option to configure display and <span term-uuid="ae8f7f2b-ddfb-41ed-bec3-bed191406fdd" class="glossary-term" data-toggle="popover">search engine optimization</span> settings. To configure these settings using <code class="highlighter-rouge">POST V1/categories</code>, you can specify the following parameters as <code class="highlighter-rouge">attribute_code</code> values:</p>
 
-<h2 id="generate-a-full-rest-api-reference-locally">Generate a full REST API reference locally</h2>
-
-<p>The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include Magento Commerce modules, third-party modules, and <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> attributes that have been installed on your system. To view this documentation, go to:</p>
-
-<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/swagger</code></p>
-
-<p>By default, Magento returns documentation for resources available to anonymous users. If you specify a valid value in the api_key text box in the upper right corner, Swagger returns documentation for all the APIs the user has access to. To generate an API key, call the <code class="highlighter-rouge">POST /V1/integration/customer/token</code> or <code class="highlighter-rouge">POST /V1/integration/admin/token</code> as directed in <a href="/guides/v2.2/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</p>
-
-<p>The generated Swagger documentation provides the capability to test REST API requests. A user can enter a sample request, then press the <strong>Try it out!</strong> button, and Swagger returns information such as a <code class="highlighter-rouge">curl</code> command, a request URL, a response body, a response code, and the response header. The <strong>Try it out!</strong> button will not work unless a bearer <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> token has been specified.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The <b>Try it out!</b> feature is not available on Swagger documentation published on the Magento devdocs website.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>all_children
+children
+children_count
+custom_apply_to_products
+custom_design
+custom_design_from
+custom_design_to
+custom_layout_update
+custom_use_parent_settings
+default_sort_by
+description
+display_mode
+filter_price_range
+image
+is_anchor
+landing_page
+meta_description
+meta_keywords
+meta_title
+page_layout
+path
+path_in_store
+url_key
+url_path
+</code></pre>
 </div>
 
-<h2 id="return-the-json-schema-for-one-or-more-services">Return the JSON schema for one or more services</h2>
+<p>Third-party modules may define other custom attributes.</p>
 
-<p>You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to <code class="highlighter-rouge">GET</code> and the <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> to</p>
+<p>The following example uses the <code class="highlighter-rouge">POST V1/categories</code> call to assign four custom attributes to the “My New Category” category.</p>
 
-<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema?services=&lt;serviceName1,serviceName2,..&gt;</code></p>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+</span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My New Category"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"custom_attributes"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"description"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Women category description"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"meta_title"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Women meta title"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"meta_keywords"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Women meta keywords"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"meta_description"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Women meta description"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"attribute_code"</span><span class="p">:</span><span class="s2">"url_key"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"women-test-key"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<p>The value of <code class="highlighter-rouge">store_code</code> must be one of the following:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">default</code></li>
-  <li>The assigned store code</li>
-  <li><code class="highlighter-rouge">all</code>. This value only applies to the <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span> and Product modules. If this value is specified, the API call affects all the merchant’s stores.</li>
-</ul>
-
-<p>For example:</p>
-
-<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/default/schema?services=catalogProductRepositoryV1</code></p>
-
-<p>To return information about all services:</p>
-
-<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema</code></p>
-
-<div class="bs-callout bs-callout-info" id="info">
-
-<p>You must specify an authorization token for an <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> user to return information for most endpoints. See <a href="/guides/v2.2/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information. </p>
-</div>
-
-<h2>Related topics</h2>
-
-<p><a href="/guides/v2.2/get-started/authentication/gs-authentication-token.html">Token-based authentication</a></p>
-
-<p><a href="/guides/v2.2/rest/list.html">List of REST APIs by module</a></p>
-
-<p><a href="/guides/v2.2/rest/rest_endpoints.html">List of service names permodule</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -566,14 +581,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/rest/generate-local.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/rest/modules/catalog.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/rest/generate-local.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/rest/modules/catalog.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
