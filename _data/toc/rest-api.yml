@@ -42,14 +42,14 @@ pages:
           url: rest/notes.html
 
     - label: Modules
-      versions: ["2.2", "2.3"]
       children:
 
         - label: Catalog
           children:
 
-            - label: Manage prices for multiple products
-              url: rest/catalog-pricing.html
+            - label: Catalog
+              url: rest/modules/catalog.html
 
-            - label: Usage notes
-              url: rest/catalog-notes.html
+            - label: Manage prices for multiple products
+              url: rest/modules/catalog-pricing.html
+              versions: ["2.2", "2.3"]
