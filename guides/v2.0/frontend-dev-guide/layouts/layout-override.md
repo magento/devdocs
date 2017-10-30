@@ -8,6 +8,8 @@ menu_order: 5
 version: 2.0
 github_link: frontend-dev-guide/layouts/layout-override.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-override.html
+functional_areas:
+  - Frontend
 ---
 
 <h2 id="fedg_layout_override_overview">What's in this topic</h2>

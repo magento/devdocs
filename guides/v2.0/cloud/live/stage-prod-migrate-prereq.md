@@ -8,6 +8,10 @@ menu_order: 40
 menu_node:
 version: 2.0
 github_link: cloud/live/stage-prod-migrate-prereq.md
+functional_areas:
+  - Cloud
+  - Configuration
+  - Deploy
 ---
 
 #### Previous step:

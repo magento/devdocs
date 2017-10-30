@@ -2,13 +2,15 @@
 layout: default
 group: fedg
 subgroup: E_rwd
-title: Overview of responsive web design in Magento 
+title: Overview of responsive web design in Magento
 menu_title: How to Make Your Theme Responsive and Mobile
 menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html
+functional_areas:
+  - Frontend
 ---
 
 Responsive web design (RWD, also referred as <i>responsive design</i>) crafts web sites to provide an optimal viewing experience across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).

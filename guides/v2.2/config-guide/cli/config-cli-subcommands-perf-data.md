@@ -8,6 +8,10 @@ menu_node:
 menu_order: 800
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-perf-data.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Overview of performance testing data {#config-cli-perf-overview}

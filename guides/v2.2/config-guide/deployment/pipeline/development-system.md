@@ -8,6 +8,11 @@ menu_node:
 menu_order: 1300
 version: 2.2
 github_link: config-guide/deployment/pipeline/development-system.md
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 You can have any number of development systems, provided the following is true of all of them:

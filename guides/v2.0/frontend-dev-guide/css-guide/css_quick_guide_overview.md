@@ -2,12 +2,14 @@
 layout: default
 group: fedg
 subgroup: D_CSS_G
-title: Quick start guide to working with styles for a new theme 
+title: Quick start guide to working with styles for a new theme
 menu_title: Quick start guide to styles
 menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: frontend-dev-guide/css-guide/css_quick_guide_overview.md
+functional_areas:
+  - Frontend
 ---
 
 This chapter combines the topics aiming to help you to quickly start working with styles of your custom theme:

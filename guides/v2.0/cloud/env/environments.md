@@ -8,6 +8,8 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/env/environments.md
+functional_areas:
+  - Cloud
 ---
 
 Environments in {{site.data.var.ece}} include containers with applications, services, a database, and much more to provide a complete system for your Magento application (codebase and files). You can configure environment variables, settings, routes, and more to support your code branches per project environment.

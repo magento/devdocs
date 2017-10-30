@@ -10,6 +10,11 @@ version: 2.2
 github_link: config-guide/deployment/single-machine.md
 redirect_from:
   - /guides/v2.2/config-guide/prod/single-machine-deployment.html
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 This topic provides instructions for deploying updates to Magento on a production server using the command line.

@@ -10,6 +10,10 @@ level3_subgroup: cli-config-mgmt
 menu_order: 253
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-config-mgmt-import.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 {::options syntax_highlighter="rouge" /}

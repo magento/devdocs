@@ -8,6 +8,9 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/trouble/environments-logs.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 This topic discusses how you can use logs to troubleshoot problems related to Magento Commerce [build hooks]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build) and [deploy hooks]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook).
