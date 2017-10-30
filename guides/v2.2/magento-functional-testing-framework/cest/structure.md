@@ -9,11 +9,11 @@ github_link: magento-functional-testing-framework/structure.md
 ## Overview
 
 Test cases in the MFTF are defined in XML as [cests][cest].
-A cest is [Codeception test container][codeception cest] that contains multiple individual tests with cest-level metadata and before/after actions with dependency management.
+A Cest is [Codeception test container][codeception cest] that contains multiple individual tests with cest-level metadata and before/after actions with dependency management.
 Tests in the MFTF are considered as a sequence of actions with associated parameters.
 Any failed assertion within a test fails that test and the MFTF reports about it using [Allure].
 
-The following diagram demonstrates the structure of a test in the MFTF.
+The following diagram demonstrates the structure of a Cest in the MFTF.
 
 ![Full test diagram](../img/cest-diagram.svg)
 
@@ -72,12 +72,14 @@ The following diagram demonstrates the structure of a test in the MFTF.
 
 ## Principles
 
+* One `*.xml`, one `<cest>`, one `<test>`
+* File name and `<cest>` name are equal
 * All names within the framework are in the CamelCase format
-* A test may have any number of assertions, at any point within the test
+* A test may have any number of assertions, at any point within the `<test>`
 
 ## Cest elements
 
-The following is a list of elements that may be used in cests.
+The following list is reference documentation of elements that may be used in Cests.
 
 ### cest
 
