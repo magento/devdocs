@@ -73,7 +73,7 @@ Generated PHP code:
 _Implementation of a Codeception tag [`@env`]_
 
 Specifies the web driver under which the test can run.
-There can be multiple `env` annotations to show that the test is compatible with multiple web drivers (e.g Chrome, Firefox, phanotmJS).
+There can be multiple `env` annotations to show that the test is compatible with multiple web drivers (e.g Chrome, Firefox, PhantomJS).
 
 Attribute|Type|Use
 ---|---|--
