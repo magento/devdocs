@@ -15,15 +15,22 @@ github_link: release-notes/ReleaseNotes2.0.17CE.md
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.0.17. This release includes over 40 security fixes and enhancements to your Magento software.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div>
-
-
 
 ## Highlights
 
 Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the following highlights in this release:
+
+* ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
+
+* improvements to how payment methods process virtual products. 
+
+* multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
+
+
+## Security enhancements
+Magento 2.0.17 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
+
+See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
 
 ## Fixed issues
@@ -136,11 +143,6 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 
 <!--- 62587 -->*  You can now use REST to add a video to a product description. [GitHub-7153](https://github.com/magento/magento2/issues/7153)
 
-
-
-
-
-<!---  -->
 
 <!--- INTERNAL ONLY 72053 72010 71171 71153  71116 68825 67201 67018 66634 66604 63297 62467 62152 61236 61228 61227 61226 61225 61222 61221 61215 61210 61206 -->
 

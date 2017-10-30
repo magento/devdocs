@@ -11,20 +11,25 @@ level3_subgroup: ee20-relnotes
 github_link: release-notes/ReleaseNotes2.0.17EE.md
 ---
 
-*Patch code and release notes were published on September 14, 2017.* 
+*Patch code and release notes were published on November, 2017.* 
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.17. This release includes almost 40 security fixes and enhancements to your Magento software.
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div>
-
 
 
 ## Highlights
 
 Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the following highlights in this release:
 
+* ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
+
+* improvements to how payment methods process virtual products. 
+
+* multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
+
+## Security enhancements
+Magento 2.0.17 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
+
+See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
 
 ## Fixed issues
@@ -72,7 +77,7 @@ Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the f
 
 
 ### Framework
-<!--- 57816 -->*  Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9333" target="_blank">9333</a>.*
+<!--- 57816 -->*  Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) 
 
 <!--- 60778 -->*  Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.
 
