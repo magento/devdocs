@@ -8,6 +8,8 @@ menu_order: 10
 menu_node: parent
 version: 2.1
 github_link: payments-integrations/vault/vault-intro.md
+functional_areas:
+  - Integration
 ---
 
 Vault as a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} provides store customers with ability to use the previously saved credit card information for {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. This information is stored safely on the side of trusted payments gateways (Braintree, PayPal). Not storing the sensitive credit card information is one of the [PCI compliance](https://www.pcisecuritystandards.org/)  requirements. 

@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: D_Migrate using the data migration tool
 title: Follow-up (info and steps)
 menu_title: Follow-up (info and steps)
@@ -8,7 +8,8 @@ menu_node:
 menu_order: 4
 version: 2.0
 github_link: migration/migration-migrate-follow-up.md
-
+functional_areas:
+  - Tools
 ---
 
 ## Overview

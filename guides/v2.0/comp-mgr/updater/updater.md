@@ -1,13 +1,15 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 40_update-updater
 title: Updater application
 menu_title: Updater application
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.0
 github_link: comp-mgr/updater/updater.md
+functional_areas:
+  - Upgrade
 ---
 
 This topic is obsolete. Magento no longer has a separate updater application.

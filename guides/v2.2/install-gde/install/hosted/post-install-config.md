@@ -8,6 +8,10 @@ menu_node: parent
 menu_order: 2
 version: 2.2
 github_link: install-gde/install/post-install-config.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 Now that you've finished installing the Magento application, you need to configure it. This topic provides some recommended configuration settings for Magento; the list is not complete so watch this space.
