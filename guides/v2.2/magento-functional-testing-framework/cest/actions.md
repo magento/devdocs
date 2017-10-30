@@ -15,13 +15,17 @@ Some actions drive browser elements, when the others use REST API.
 
 All actions contain the following attributes that are useful for merging needs:
 
-* `mergeKey` is a required attribute that stores a unique identifier of the action
+* `mergeKey` is a required attribute that stores a unique identifier of the action. Example: `"conditionalClickStep1"`.
 * `remove` is an optional attribute that removes the action when merging same test in different modules
 * `before` is an optional attribute that stores `mergeKey` of an action that will be executed one step before the current one
 * `after` is an optional attribute that stores `mergeKey` of an action that will be executed next
 
-`mergeKey` format recommendations:
+## Principles
 
+
+`mergeKey` value format principles:
+
+* Must be unique within [`<test>`](./structure.html)
 * Naming should be as descriptive as possible
   * Should describe the action performed
   * Should briefly describe the purpose
@@ -58,7 +62,7 @@ The following example contains four actions:
 The Customer Sign In page is declared in the _.../Customer/Page/StorefrontCustomerSignInPage.xml_.
 The given relative URI is declared in `StorefrontCustomerSignInPage.url`
 
-The StorefrontCustomerSignInPage.xml source code:
+The _StorefrontCustomerSignInPage.xml_ source code:
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -108,7 +112,7 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 ```
 
 The action here is very similar to the action in a previous step.
-The only difference is usage of data required for the field that sets password.
+The only difference is that different data assigned to the attributes which set a field with password.
 
 
 #### 4. Click the Sign In button {#example-step4}
@@ -118,9 +122,12 @@ The only difference is usage of data required for the field that sets password.
 ```
 
 Here, [click](#click) performs a click on a button that can be found by selector that is stored in the `signInAccountButton` of the `StorefrontCustomerSignInFormSection`.
-See the section code in [step 2](#section-code)
+See the _StorefrontCustomerSignInPage.xml_ code in [step 2](#section-code)
 
 ## Available actions
+
+The following list contains reference documentation about all action elements available in the MFTF.
+If description of an element does not includes a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.
 
 ### acceptPopup
 
