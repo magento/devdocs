@@ -15,7 +15,8 @@ redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 This page summarizes the technologies we use. For more detailed information, see the System Requirements:
 
 *	[Version 2.0.x]({{ site.gdeurl }}install-gde/system-requirements.html)
-*	[Version 2.1.x]({{site.gdeurl21}}install-gde/system-requirements-tech.html)
+*	[Version 2.1.x]({{ site.gdeurl21 }}install-gde/system-requirements.html)
+*	[Version 2.2.x]({{ site.gdeurl22 }}install-gde/system-requirements.html)
 
 Magento's highly modular structure includes the following open-source technologies.
 
