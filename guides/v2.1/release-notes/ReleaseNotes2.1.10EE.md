@@ -28,6 +28,15 @@ While there are no confirmed attacks related to these vulnerabilities to date, c
 
 Magento 2.1.10 contains over 50 security fixes and enhancements. Look for the following highlights in this release:
 
+* Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translations issues. 
+
+* Improvements to how payment methods process virtual products. 
+
+* Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
+
+* Forty-four community-submitted bug fixes and multiple pull requests. These pull requests feature improvements in cacheing for configurable products (pull request [9809](https://github.com/magento/magento2/pull/11469)) and enhancements to the URL rewrite mechanism (pull request [10164](https://github.com/magento/magento2/pull/10164)).  
+
+* Support for management of multiple instances in the same crontab. These two new CLI commands (`cron:install` and `cron:remove`) were submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4). 
 
 
 
