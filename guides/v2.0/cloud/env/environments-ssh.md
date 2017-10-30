@@ -2,12 +2,16 @@
 layout: default
 group: cloud
 subgroup: 020_tech
-title: SSH and SFTP
-menu_title: SSH and SFTP
+title: SSH and sFTP
+menu_title: SSH and sFTP
 menu_order: 35
 menu_node:
 version: 2.0
 github_link: cloud/env/environments-ssh.md
+functional_areas:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 SSH, or Secure Shell, is a common protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter [CLI commands]({{page.baseurl}}cloud/reference/cli-ref-topic.html) for managing your branching, creating variables, and much more. We also support [sFTP](#sftp) (Secure FTP) using your SSH public key.
@@ -87,6 +91,10 @@ For the URLs, see the following:
 	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
+## SSH tunneling {#env-start-tunn}
+
+{% include cloud/ssh-tunnel.md %}
+
 ## sFTP to environments {#sftp}
 Typically, you want to use SSH for secure access to your environments and [migrate files]({{page.baseurl}}cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
 
@@ -102,7 +110,6 @@ When configuring sFTP, use your SSH public key and the following information for
 * Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
 * Host: All content after the `@` in your public SSH key.
 * Port: 22, which is the default SSH port.
-
 
 To add your SSH public key information to your client:
 

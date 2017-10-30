@@ -8,6 +8,9 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/configure/configuration-overview.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 The following information walks you through the options for configuring your store on your local and in all environments. You may need to configure files and settings in your local, pushing settings with your code. For specific services, you configure settings directly in Staging and Production environments.
@@ -35,6 +38,8 @@ You should also configure services directly in Staging and Production:
 
 * [Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) for caching and CDN in Staging and Production environments
 * [PayPal On-Boarding tool]({{ page.baseurl }}cloud/live/paypal-onboarding.html) provides PayPal payment gateway checkout by connecting to your PayPal merchant account
+
+For Pro subscriptions, you can also add [Magento B2B module]({{ page.baseurl }}cloud/configure/setup-b2b.html).
 
 ## Integrations {#integrations}
 We also provide integrations with:

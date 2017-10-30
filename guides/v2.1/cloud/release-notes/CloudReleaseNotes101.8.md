@@ -12,12 +12,16 @@ version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.8.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.8.html
+functional_areas:
+  - Cloud
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}}  version 2.1.8, `magento-cloud-configuration` release 101.8.0.
 
 ## Changes and enhancements in this release
 In `magento-cloud-configuration` releases 101.8.0 and 101.8.1, we provide the following improvements:
+
+* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
 
 ## 101.8.1 changes
 

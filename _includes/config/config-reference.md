@@ -6,36 +6,36 @@ This section lists variable names and configuration paths available for options 
 ### General paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > General > **General**.
 
-Name  | Config path | EE only? | 
-|--------------|--------------|--------------|
-Default Country | `general/country/default` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) | 
-Allow Countries | `general/country/allow` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) | 
-Zip/Postal Code is optional for | `general/country/optional_zip_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) 
-European Union Countries | `general/country/eu_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) | 
-Top destinations | `general/country/destinations` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-State is Required for | `general/region/state_required` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Allow to Choose State if It is Optional for Country | `general/region/display_all` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Timezone | `general/locale/timezone` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Locale | `general/locale/code` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Weight Unit | `general/locale/weight_unit` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-First Day of Week | `general/locale/firstday` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Weekend Days | `general/locale/weekend` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Access Restriction | `general/restriction/is_active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Restriction Mode | `general/restriction/mode` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Startup Page | `general/restriction/http_redirect` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Landing Page | `general/restriction/cms_page` | ![Not EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
-HTTP Response | `general/restriction/http_status` | ![Not EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
-Store Name | `general/store_information/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Store Phone Number | `general/store_information/phone` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Store Hours of Operation | `general/store_information/hours` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Country | `general/store_information/country_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Region/State | `general/store_information/region_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-ZIP/Postal Code | `general/store_information/postcode` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-City | `general/store_information/city` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Street Address | `general/store_information/street_line1` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Street Address Line 2 | `general/store_information/street_line2` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-VAT Number | `general/store_information/merchant_vat_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Enable Single-Store Mode | `general/single_store_mode/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Name  | Config path | EE only? | Sensitive? |
+|--------------|--------------|--------------|--------------|
+Default Country | `general/country/default` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Allow Countries | `general/country/allow` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Zip/Postal Code is optional for | `general/country/optional_zip_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+European Union Countries | `general/country/eu_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Top destinations | `general/country/destinations` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |
+State is Required for | `general/region/state_required` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |
+Allow to Choose State if It is Optional for Country | `general/region/display_all` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Timezone | `general/locale/timezone` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Locale | `general/locale/code` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Weight Unit | `general/locale/weight_unit` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+First Day of Week | `general/locale/firstday` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Weekend Days | `general/locale/weekend` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Access Restriction | `general/restriction/is_active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | |
+Restriction Mode | `general/restriction/mode` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | |
+Startup Page | `general/restriction/http_redirect` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | |
+Landing Page | `general/restriction/cms_page` | ![Not EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | |
+HTTP Response | `general/restriction/http_status` | ![Not EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | |
+Store Name | `general/store_information/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Store Phone Number | `general/store_information/phone` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Store Hours of Operation | `general/store_information/hours` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Country | `general/store_information/country_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Region/State | `general/store_information/region_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+ZIP/Postal Code | `general/store_information/postcode` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+City | `general/store_information/city` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Street Address | `general/store_information/street_line1` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Street Address Line 2 | `general/store_information/street_line2` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+VAT Number | `general/store_information/merchant_vat_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
+Enable Single-Store Mode | `general/single_store_mode/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | |
 
 ### Web paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Web**.
@@ -55,7 +55,6 @@ CMS No Route Page | `web/default/cms_no_route` | <!-- ![Not EE-only]({{ site.bas
 CMS No Cookies Page | `web/default/cms_no_cookies` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Show Breadcrumbs for CMS Pages | `web/default/show_cms_breadcrumbs` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Cookie Lifetime | `web/cookie/cookie_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-
 Use HTTP Only | `web/cookie/cookie_httponly` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Cookie Restriction Mode | `web/cookie/cookie_restriction` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Validate REMOTE_ADDR | `web/session/use_remote_addr` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -875,10 +874,10 @@ Conversion Value | `google/adwords/conversion_value` | <!-- ![Not EE-only]({{ si
 ### Signifyd paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Fraud Protection**.
 
-| Name  | Config path | EE only? |  |
+| Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-| Enable this Solution  | `fraud_protection/signifyd/active`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
-| Debug  | `fraud_protection/signifyd/debug`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
+| Enable this Solution | `fraud_protection/signifyd/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |
+| Debug | `fraud_protection/signifyd/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |
 
 ### Gift cards paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Gift Cards**.

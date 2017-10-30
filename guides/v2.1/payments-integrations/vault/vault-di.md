@@ -7,6 +7,8 @@ menu_title: Vault DI configuration
 menu_order: 3
 version: 2.1
 github_link: payments-integrations/vault/vault-di.md
+functional_areas:
+  - Integration
 ---
 
 This section describes how to configure vault {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} and create payment actions, like authorize, sale (authorize & capture), capture and so on.

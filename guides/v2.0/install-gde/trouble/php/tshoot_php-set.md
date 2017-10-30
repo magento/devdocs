@@ -8,6 +8,10 @@ menu_node:
 menu_order: 350
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_php-set.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h3 id="trouble-php-always">always_populate_raw_post_data error</h3>
@@ -28,7 +32,7 @@ To resolve the error:
 4.	Save your changes to `php.ini` and exit the text editor.
 5.	Wait for all steps in the readiness check to finish.
 6.	Resolve any other issues displayed by the readiness check.
-7.	As a user with `root` privileges, restart your web server. 
+7.	As a user with `root` privileges, restart your web server.
 
 	Examples follow:
 
@@ -48,7 +52,7 @@ To increase your PHP memory limit:
 		php --ini
 3.	As a user with `root` privileges, use a text editor to open the `php.ini` specified by `Loaded Configuration File`.
 4.	Locate `memory_limit`.
-5.	Change it to a value of `1GB` for normal use or at least `2GB` for debugging.
+5.	Change it to a value of `2GB` for normal use and debugging.
 6.	Save your changes to `php.ini` and exit the text editor.
 7.	Restart your web server.
 
@@ -71,7 +75,7 @@ Error text is typically:
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
 Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:
 
-{% highlight PHP %} 
+{% highlight PHP %}
 <?php
 <img
     class="product-image"
@@ -81,6 +85,6 @@ Multiple templates have syntax for support abstract level on templates (use diff
 ?>
 {% endhighlight %}
 
-More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. 
+More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>.
 
 Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).

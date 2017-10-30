@@ -68,16 +68,82 @@ input[type=search] {
   padding: 20px;
 }
 
+
 .search-results.container {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+
+  article {
+    flex-grow: 1;
+    padding-right: 30px;
+  }
+
+  aside {
+    min-width: 200px;
+    flex-grow: 1;
+    padding: 20px;
+  }
+
 }
 
 .algolia__result-highlight {
   //background: yellow;
   font-weight: 700;
 }
+
+
+#tags {
+  position: sticky;
+  top: 80px;
+}
+
+
+.ais-refinement-list {
+
+}
+
+.ais-refinement-list--header {
+  font-weight: bold;
+  margin: 30px 0 20px 0;
+}
+
+.ais-refinement-list--item {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+}
+
+.ais-refinement-list--count {
+  color: #999;
+  float: right;
+  font-size: 12px;
+}
+
+// TODO: make this into a compoenent or move to _form.scss
+
+.ais-refinement-list--checkbox {
+  margin: 0 15px 0 0;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  -webkit-appearance: none;
+  position: relative;
+
+  &:checked {
+    background: #4B9ED2;
+    &:after {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      text-align: center;
+      content: '✓';
+      color: #fff;
+    }
+  }
+}
+
 
 
 /* INPUT */
@@ -125,6 +191,11 @@ input[type=search] {
 .hit-name {
   margin: 0;
   font-size: 18px;
+}
+.hit-url {
+  font-size: 12px;
+  color: #0a9537;
+  margin: 5px 0;
 }
 .hit-content {
   padding: 5px 0 0 0;

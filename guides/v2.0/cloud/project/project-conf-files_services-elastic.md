@@ -10,6 +10,10 @@ level3_menu_node: level3child
 level3_subgroup: services
 version: 2.1
 github_link: cloud/project/project-conf-files_services-elastic.md
+functional_areas:
+  - Cloud
+  - Setup
+  - Search
 ---
 
 [Elasticsearch](https://www.elastic.co){:target="_blank"} is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
