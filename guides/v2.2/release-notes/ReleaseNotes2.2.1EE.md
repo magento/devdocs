@@ -38,15 +38,13 @@ Looking for more information on these new features as well as many others? Check
 ## Security enhancements
 Magento 2.2.1 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
+See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
 
-[Contact us](https://magento.com/company/contact-us) for more information.
 
 
 
 
 ## Fixed issues
-This release contains hundreds of fixes and enhancements. 
-
 
 ### Installation, upgrade, deployment
 
@@ -68,11 +66,11 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 72382 -->*  You can now save custom shared catalogs.
 
-<!--- 78522 -->*  EE ONLY
+<!--- 78522 -->*  Magento no longer displays a 404 error when you change category permissions from Product Detail pages when multistore view is enabled. 
 
 ### Cart and checkout
 
-<!--- 71984 -->* Magento now provides a Login button so that you can resume your checkout process if you return to the check out page after leaving it mid-order.
+<!--- 71984 -->* Magento now provides a **Login** button so that you can resume your checkout process if you return to the check out page after leaving it mid-order.
 
 
 ### Configurable products
@@ -90,20 +88,16 @@ This release contains hundreds of fixes and enhancements.
 <!--- 67097 -->* You can now run Magento in an environment where Redis cache is installed and the PHPRedis extension is enabled. 
 
 
-
-#### Configuration framework
-
 <!--- 72860 -->* Magento now properly loads default values for `ArraySerialized` fields. 
 
 
 ### General
-<!--- 80096 -->* We fixed JavaScript date validation on the store front. Previously, validation of the date of birth field during customer registration when the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
+<!--- 80096 -->* We've fixed JavaScript date validation on the store front. Previously, validation of the date of birth field during customer registration when the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
 
 <!--- 80112 -->* We’ve added a CSS selector to remove an additional top-margin that was rendered when you added  a link widget to the footer in the Luma theme. Previously, when you added a new footer links, the block of footer links did not line up with the default footer links. *Fix submitted by community member <a href="https://github.com/fragdochkarl" target="_blank">Sandro Wagner</a> in pull request <a href="https://github.com/magento/magento2/pull/11063" target="_blank">11063</a>.*
 
 <!--- 71980 -->* You can now remove system customer address and customer attributes from specific forms to prevent them from displaying on the frontend. 
 
-<!---  -->* 
 
 <!--- 72587 -->* Deleting a customer in Admin Panel no longer causes fatal errors upon storefront login or registration.
 
@@ -121,7 +115,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 72393 -->* If a credit card error occurs on an order, the user can now correct the error and successfully create a new order. Previously, Magento displayed the following error on any subsequent order, even when you entered accurate credit card information: "A customer with the same email already exists in an associated website”. 
 
-<!--- 80102 -->* We’ve added a `name` attribute to the layout default renderer, and you can now add a new column to the Admin Sales > Order table . Previously,  the layout default renderer lacked a `name` attribute. *Fix submitted by community member <a href="https://github.com/gsomoza" target="_blank">Gabriel Somoza</a> in pull request <a href="https://github.com/magento/magento2/pull/11076" target="_blank">11076</a>.*
+<!--- 80102 -->* We’ve added a `name` attribute to the layout default renderer, and you can now add a new column to the **Admin Sales > Order table**. Previously,  the layout default renderer lacked a `name` attribute. *Fix submitted by community member <a href="https://github.com/gsomoza" target="_blank">Gabriel Somoza</a> in pull request <a href="https://github.com/magento/magento2/pull/11076" target="_blank">11076</a>.*
 
 
 
@@ -129,7 +123,7 @@ This release contains hundreds of fixes and enhancements.
 
 ### Payment methods
 
-<!--- 72351 -->* Double-clicking the **Place Order** button when using the  Braintree payment method to place an order no longer creates duplicate order requests. #10767 [GitHub-5688](https://github.com/magento/magento2/issues/5688)
+<!--- 72351 -->* Double-clicking the **Place Order** button when using the  Braintree payment method to place an order no longer creates duplicate order requests. [GitHub-10767](https://github.com/magento/magento2/issues/10767)
 
 <!--- 71050 -->* Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error `No such entity with customerId = 0`. 
 
@@ -154,10 +148,6 @@ This release contains hundreds of fixes and enhancements.
 ### Staging
 
 <!--- 60953 -->* Bundle simple products now reflect expected changes after a scheduled update. 
-
-
-Fix submitted by community member <a href="https://github.com/ericrisler" target="_blank">Eric Risler
-</a> in pull request <a href="https://github.com/magento/magento2/pull/8474" target="_blank">8474</a>.*
 
 
 ### Visual Merchandiser
