@@ -20,6 +20,16 @@ We are pleased to present Magento Commerce 2.2.1. This release includes numerous
 
 Look for the following highlights in this release:
 
+* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection](ttp://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information. 
+
+* Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
+
+* Improvements to how payment methods process virtual products. 
+
+* Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
+
+* Twenty-two community-submitted bug fixes and multiple pull requests.
+
 
 
 Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/).
@@ -30,12 +40,6 @@ Magento 2.2.1 includes multiple security enhancements. Although this release inc
 
 
 [Contact us](https://magento.com/company/contact-us) for more information.
-
-
-
-## Known issues
-
-Magento 2.2.1  includes the following known issues. Fixes for these issues are scheduled for patch releases in the near future. 
 
 
 
