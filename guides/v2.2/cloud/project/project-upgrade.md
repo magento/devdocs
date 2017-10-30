@@ -8,7 +8,7 @@ menu_order: 10
 menu_node:
 version: 2.2
 github_link: cloud/project/project-upgrade.md
-redirect from:
+redirect_from:
   -  /guides/v2.0/cloud/howtos/upgrade-magento.html
   -  /guides/v2.1/cloud/howtos/upgrade-magento.html
   -  /guides/v2.1/cloud/howtos/upgrade-magento.html
@@ -157,9 +157,9 @@ Verify other changes you're going to submit to source control before you start t
         composer require magento/magento-cloud-metapackage <requiredversion> --no-update
         composer update
 
-    For example, to upgrade to version 2.1.4:
+    For example, to upgrade to version 2.2:
 
-        composer require magento/magento-cloud-metapackage 2.1.4 --no-update
+        composer require magento/magento-cloud-metapackage 2.2.0 --no-update
         composer update
 
 4.  Add, commit, and push your changes to initiate a deployment:

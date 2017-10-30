@@ -9,6 +9,10 @@ level3_menu_node: level3child
 level3_subgroup: php
 version: 2.2
 github_link: install-gde/prereq/php-ubuntu.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

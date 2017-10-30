@@ -5,13 +5,16 @@ subgroup: 99_Module Development
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
 menu_order: 19
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
 version: 2.1
 github_link: extension-dev-guide/message-queues/queue-migration.md
 redirect_from: /guides/v2.1/config-guide/mq/queue-migration.html
-
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ### Migrate from Magento 2.0 to 2.1 ###

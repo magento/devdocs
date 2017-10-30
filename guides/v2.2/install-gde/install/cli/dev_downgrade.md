@@ -8,6 +8,10 @@ menu_order: 200
 menu_node:
 version: 2.2
 github_link: install-gde/install/cli/dev_downgrade.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 This topic discusses how a contributing developer can change versions of the Magento software after cloning the `develop` branch. This might be necessary to perform some tasks that require a specific Magento version other than `develop`.

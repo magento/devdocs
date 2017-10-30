@@ -1,14 +1,18 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Translation dictionaries and language packages
 menu_title: Translation dictionaries and language packages
-menu_node: 
+menu_node:
 menu_order: 260
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-i18n.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-cli-xlate-overview">Overview of translations</h2>

@@ -8,7 +8,7 @@ menu_order: 20
 menu_node:
 version: 2.2
 github_link: cloud/project/project-patch.md
-redirect from:
+redirect_from:
   -  /guides/v2.0/cloud/howtos/patch-magent.html
   -  /guides/v2.1/cloud/howtos/patch-magent.html
   -  /guides/v2.1/cloud/howtos/patch-magent.html

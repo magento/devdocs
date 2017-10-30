@@ -1,13 +1,17 @@
 ---
 layout: default
-group: install_cli 
+group: install_cli
 subgroup: 05_Command-line installation
 title: Update the Magento database schema and data
 menu_title: Update the Magento database schema and data
-menu_node: 
+menu_node:
 menu_order: 16
 version: 2.0
 github_link: install-gde/install/cli/install-cli-subcommands-db-upgr.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="instgde-cli-before">First steps</h2>

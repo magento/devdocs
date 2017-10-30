@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 01_Introduction
 title: Upgrade the Magento application and modules
@@ -9,6 +9,8 @@ menu_node: parent
 menu_order: 1
 version: 2.2
 github_link: comp-mgr/bk-compman-upgrade-guide.md
+functional_areas:
+  - Upgrade
 ---
 
 ## Upgrade the Magento application and modules

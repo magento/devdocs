@@ -6,6 +6,9 @@ landing-page: Testing Guide
 version: 2.0
 github_link: test/testing.md
 redirect_from: /guides/v2.0/howdoi/mtf/mtf.html
+functional_areas:
+  - Testing
+  - test
 ---
 
 When talking about testing in Magento 2, we have to distinguish between different test types.

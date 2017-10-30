@@ -7,8 +7,13 @@ menu_title: Configure nginx and Elasticsearch
 menu_order: 5
 menu_node:
 version: 2.1
-ee_only: true
+ee_only: True
 github_link: config-guide/elasticsearch/es-config-nginx.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
 
 #### Contents

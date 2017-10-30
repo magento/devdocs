@@ -1,14 +1,18 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Manage the indexers
 menu_title: Manage the indexers
-menu_node: 
+menu_node:
 menu_order: 90
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-index.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-cli-before">First steps</h2>
