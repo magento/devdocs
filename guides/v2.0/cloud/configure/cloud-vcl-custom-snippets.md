@@ -22,6 +22,10 @@ You need the following information to create VCL snippets:
 * Fastly Service ID for Staging and Production to assign the snippets to a specific service or environment
 * Fastly API key used for the `FASTLY_API_TOKEN` in the commands
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, do not use the `magentomodule_` name. Also consider the priority of your custom snippets if they should override the default snippets.
+</div>
+
 For Fastly resources on creating VCL snippets, see:
 
 * [All Fastly VCL content](https://docs.fastly.com/guides/vcl/){:target="_blank"}
@@ -68,7 +72,7 @@ To view an entire list of all VCL snippets by version, use the following command
 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key:FASTLY_API_TOKEN"
 
-From the returned list, determine the currently active version. This is the version you will clone in the next section. 
+From the returned list, determine the currently active version. This is the version you will clone in the next section.
 
 For more information on this Fastly API, see this [get version command](https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987){:target="_blank"}.
 
