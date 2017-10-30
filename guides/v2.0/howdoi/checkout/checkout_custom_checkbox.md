@@ -126,7 +126,6 @@ class SomeProcessor
         return $addressFieldset;
     }
 }
-?>
 {%endhighlight%}
 
 ## Declare plugin in di.xml

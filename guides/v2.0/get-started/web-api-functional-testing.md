@@ -62,7 +62,7 @@ class CoreRoutingTest extends \Magento\TestFramework\TestCase\WebapiAbstract
         $item = $this->_webApiCall($serviceInfo, $requestData);
         $this->assertEquals('testProduct1', $item['name'], "Item was retrieved unsuccessfully");
     }
-} ?>
+}
 {% endhighlight %}
 
 The test above should is able to test SOAP and REST depending on what adapter is currently used by testing framework. $serviceInfo format is defined by Web API client adapter interface:
@@ -99,7 +99,6 @@ interface AdapterInterface
      */
     public function call($serviceInfo, $arguments = [], $storeCode = null, $integration = null);
 }
- ?>
 {% endhighlight %}
 
 <h2 id="howto">How to Run the Tests</h2>

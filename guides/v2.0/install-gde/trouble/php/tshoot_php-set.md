@@ -82,7 +82,6 @@ Multiple templates have syntax for support abstract level on templates (use diff
     src="<%- data.url %>"
     data-position="<%- data.position %>"
     alt="<%- data.label %>" />
-?>
 {% endhighlight %}
 
 More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>.

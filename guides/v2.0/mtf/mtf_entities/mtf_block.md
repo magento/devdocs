@@ -219,7 +219,6 @@ protected function addLayoutUpdates()
 {
    $this->_rootElement->find($this->addLayoutUpdates)->click();
 }
-?>
 {%endhighlight%}
 
 This code uses `_rootElement` to search the button element by the `$this->addLayoutUpdates` selector. The advantage of the `_rootElement` is that it enables search in the context of the block to which the element belongs.
@@ -452,7 +451,6 @@ protected function _toHtml()
     }
     return $this->fetchView($this->getTemplateFile());
 }
-?>
 {% endhighlight php %}
 
 * Change the code to the following
@@ -471,7 +469,6 @@ protected function _toHtml()
         . $this->fetchView($template)
         . "<!-- END $name using $template -->";
 }
-?>
 {% endhighlight php %}
 
 * Save the file
@@ -519,7 +516,6 @@ protected function getTemplateBlock()
         ['element' => $this->_rootElement->find($this->templateBlock, Locator::SELECTOR_XPATH)]
     );
 }
-?>
 {%endhighlight%}
 
 In this code we are creating the `Magento\Backend\Test\Block\Template` block with the selector `$this->templateBlock`.
@@ -614,7 +610,6 @@ public function getOptions(FixtureInterface $product)
         ? $this->callRender($typeId, 'getOptions', ['product' => $product])
         : $this->getCustomOptionsBlock()->getOptions($product);
 }
-?>
 {%endhighlight%}
 
 It contains the `getOptions()` method that:
