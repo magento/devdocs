@@ -55,7 +55,6 @@ CMS No Route Page | `web/default/cms_no_route` | <!-- ![Not EE-only]({{ site.bas
 CMS No Cookies Page | `web/default/cms_no_cookies` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Show Breadcrumbs for CMS Pages | `web/default/show_cms_breadcrumbs` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Cookie Lifetime | `web/cookie/cookie_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-
 Use HTTP Only | `web/cookie/cookie_httponly` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Cookie Restriction Mode | `web/cookie/cookie_restriction` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Validate REMOTE_ADDR | `web/session/use_remote_addr` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
