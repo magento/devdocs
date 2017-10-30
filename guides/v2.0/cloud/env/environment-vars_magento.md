@@ -132,6 +132,7 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>var/di</code> content is moved to <code>generated/</code>. This folder is removed after build and deploy completes.</p></td>
 <td>GENERATED_CODE_SYMLINK = disabled</td>
 </tr>
+<tr>
 <td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the -s flag for [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html). This is available for 2.2.X.</p>
 <p>Use these options only if you have more than one locale.</p>
