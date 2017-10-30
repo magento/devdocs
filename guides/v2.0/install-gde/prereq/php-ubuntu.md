@@ -104,7 +104,7 @@ If PHP is *not* installed, see one of the following sections:
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php
 		apt-get -y update
-		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip
+		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip php5.6-soap
 
 
 2.	Enter the following command to verify PHP 5.6 installed properly:
@@ -133,7 +133,7 @@ If PHP is *not* installed, see one of the following sections:
 1.	Enter the following commands in the order shown:
 
 		apt-get -y update
-		apt-get -y install php5 php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
+		apt-get -y install php5 php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-soap
 
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
 
