@@ -13,12 +13,12 @@ github_link: release-notes/ReleaseNotes2.0.17CE.md
 
 *Patch code and release notes were published on November, 2017.* 
 
-We are pleased to present Magento Open Source (formerly Community Edition) 2.0.17. This release includes over 40 security fixes and enhancements to your Magento software.
+We are pleased to present Magento Open Source 2.0.17. This release includes almost 40 security fixes and enhancements to your Magento software.
 
 
 ## Highlights
 
-Magento 2.0.17 contains over 40 security fixes and enhancements.  Look for the following highlights in this release:
+Magento 2.0.17 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:
 
 * ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
 
