@@ -92,6 +92,8 @@ If you do not have DNS set up for a public host name, enter a command similar to
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
 ### Check response headers {#response-headers}
+For detailed information on hits and misses, see Fastly's [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services){:target="_blank"}.
+
 Check the returned response headers and values:
 
 *	Fastly-Magento-VCL-Uploaded should be present
