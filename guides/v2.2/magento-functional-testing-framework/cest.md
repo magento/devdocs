@@ -15,7 +15,7 @@ Any failed assertion within a test fails that test and the MFTF reports about it
 
 The following diagram demonstrates the structure of a Cest in the MFTF.
 
-![Full test diagram](../img/cest-diagram.svg)
+![Full test diagram](./img/cest-diagram.svg)
 
 ## Format
 
@@ -31,9 +31,6 @@ The following diagram demonstrates the structure of a Cest in the MFTF.
             <env value=""/>
         </annotations>
         <before>
-            <annotations>
-                <!-- LIST OF ANNOTATIONS -->
-            </annotations>
             <!-- LIST OF ACTIONS -->
             <click selector="" mergeKey=""/>
             <!-- ACTION GROUPS -->
@@ -42,9 +39,6 @@ The following diagram demonstrates the structure of a Cest in the MFTF.
             </actionGroup>       
         </before>
         <after>
-            <annotations>
-                <!-- LIST OF ANNOTATIONS -->
-            </annotations>
             <!-- LIST OF ACTIONS -->
             <click selector="" mergeKey=""/>
             <!-- ACTION GROUPS -->
@@ -72,7 +66,7 @@ The following diagram demonstrates the structure of a Cest in the MFTF.
 
 ## Principles
 
-* One `*.xml`, one `<cest>`, one `<test>`
+* One `*.xml`, one `<cest>`
 * File name and `<cest>` name are equal
 * All names within the framework are in the CamelCase format
 * A test may have any number of assertions, at any point within the `<test>`
@@ -119,7 +113,6 @@ remove|boolean|optional|false
 It MAY contain the following child elements:
  
  * any [action]
- * [`<annotations>`][annotations]
  * [`<actionGroup>`][action group]
 
 ***
@@ -137,7 +130,6 @@ remove|boolean|optional|false
 It MAY contain:
  
  * any [action]
- * [`<annotations>`][annotations]
  * [`<actionGroup>`][action group]
  
 ***
