@@ -69,8 +69,8 @@ The following table discusses the meanings of this command's parameters and valu
 			<th>Required?</th>
 		</tr>
 	<tr>
-		<td>&lt;lang></td>
-		<td><p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
+		<td>&lt;languages&gt;</td>
+		<td><p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-639</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
 		<p>You can find the list by running <code>magento info:language:list</code>.</p></td>
 	<td><p>No</p></td>
 	</tr>
