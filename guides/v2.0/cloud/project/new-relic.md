@@ -8,6 +8,11 @@ menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/project/new-relic.md
+functional_areas:
+  - Cloud
+  - Integration
+  - Setup
+  - Services
 ---
 
 [New Relic](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} Application Performance Monitoring (APM) provides application and performance information for end-user operations completed through your stores. This data helps you analyze and improve application interactions.
@@ -48,7 +53,8 @@ Add a project level variable with your license:
 
     magento-cloud project:variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
 
-Add New Relic to `.magento.app.yaml`:
+We will complete adding New Relic to your Staging and Production environments for you.
+<!-- Add New Relic to `.magento.app.yaml`:
 
 1. In your development code branch, edit `.magento.app.yaml` with a text editor.
 2. Add the following information:
@@ -56,7 +62,7 @@ Add New Relic to `.magento.app.yaml`:
     runtime:
       extensions:
         - newrelic
-3. Save and push the changes to deploy across Staging and Production.
+3. Save and push the changes to deploy across Staging and Production. -->
 
 You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access both environments via SSH and install the agent.
 

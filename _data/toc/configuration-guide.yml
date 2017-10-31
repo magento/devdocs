@@ -172,7 +172,7 @@ pages:
             - label: Other configuration paths reference
               url: config-guide/prod/config-reference-most.html
 
-            - label: Magento Enterprise B2B Extension configuration paths reference
+            - label: Magento Commerce for B2B Extension configuration paths reference
               url: config-guide/prod/config-reference-b2b.html
 
             - label: .gitignore reference

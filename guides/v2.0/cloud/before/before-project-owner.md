@@ -8,6 +8,10 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/before/before-project-owner.md
+functional_areas:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 To initially set up your {{site.data.var.ece}} project, you need the Project Owner to create the project, add a super user, and generate {{site.data.var.ee}} authentication keys. The account owner has sole authority over the project and account to manage your store, project and Git access, and more.

@@ -1,20 +1,20 @@
 ---
 layout: default
 group: rest
-subgroup: Modules
-title: Usage notes
-menu_title: Usage notes
-menu_order: 52
-level3_menu_node: level3child
-level3_subgroup: catalog
+title: Catalog module
 version: 2.2
-github_link: rest/catalog-notes.md
-
+github_link: rest/modules/catalog.md
+redirect_from: /guides/v2.2/rest/catalog-notes.html
+functional_areas:
+  - Integration
+  - Catalog
 ---
 
-## POST V1/categories
+The `Catalog` module provides functionality for creating and maintaining products and categories.
 
-When you create a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} from Admin, you have the option to configure display and {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}search engine optimization{% endglossarytooltip %} settings. To configure these settings using REST, you can specify the following parameters as `attribute_code` values:
+## Categories
+
+When you create a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} from Admin, you have the option to configure display and {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}search engine optimization{% endglossarytooltip %} settings. To configure these settings using `POST V1/categories`, you can specify the following parameters as `attribute_code` values:
 
 ```
 all_children

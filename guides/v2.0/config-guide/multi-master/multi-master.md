@@ -7,8 +7,12 @@ menu_title: Split database performance solution (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.0
-ee_only: true
+ee_only: True
 github_link: config-guide/multi-master/multi-master.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-ee-multidb-over">Overview of the split database solution</h2>
@@ -89,4 +93,4 @@ In this guide, the three master databases are named:
 #### Next step
 
 *	If you have not installed components or put Magento into production: <a href="{{page.baseurl}}config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
-*	If Magento is already in production or if you've already installed components: []()
+*	If Magento is already in production or if you've already installed components: <a href="{{page.baseurl}}config-guide/multi-master/multi-master_manual.html">Manually configure master databases</a>

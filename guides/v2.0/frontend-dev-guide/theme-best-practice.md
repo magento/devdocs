@@ -6,6 +6,10 @@ menu_title: Theme development best practices
 menu_order: 20
 version: 2.0
 github_link: frontend-dev-guide/theme-best-practice.md
+functional_areas:
+  - Frontend
+  - Theme
+  - Standards
 ---
 
 This topic describes the recommended approaches and things to consider when working on a custom theme.

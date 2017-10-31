@@ -7,6 +7,8 @@ menu_title: Add custom validations before order placement
 menu_order: 4
 version: 2.0
 github_link: howdoi/checkout/checkout_order.md
+functional_areas:
+  - Checkout
 ---
 <h2>What's in this topic</h2>
 

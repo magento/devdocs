@@ -8,6 +8,9 @@ menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/upgrade/upgrade-from-2-0-4.md
+functional_areas:
+  - Cloud
+  - Upgrade
 ---
 
 This section discusses steps to upgrade *only* if your current {{site.data.var.ece}} version is 2.0.4. When upgrading only from this version, follow these instructions.

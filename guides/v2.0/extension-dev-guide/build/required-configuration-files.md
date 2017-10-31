@@ -11,6 +11,8 @@ redirect_from:
   - /guides/v1.0/extension-dev-guide/template_create_req_config_files.html
   - /guides/v2.0/extension-dev-guide/template_create_req_config_files.html
   - /guides/v2.0/extension-dev-guide/required-configuration-files.html
+functional_areas:
+  - Configuration
 ---
 
 Each Magento 2 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has its own set of configuration files, gathered into the module's `etc` directory.

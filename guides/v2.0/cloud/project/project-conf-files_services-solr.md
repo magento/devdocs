@@ -13,6 +13,10 @@ github_link: cloud/project/project-conf-files_services-solr.md
 redirect_from:
   - /guides/v2.1/project/project-conf-files_services-solr.html
   - /guides/v2.2/project/project-conf-files_services-solr.html
+functional_areas:
+  - Cloud
+  - Setup
+  - Search
 ---
 
 Solr is highly reliable, scalable and fault tolerant, providing distributed

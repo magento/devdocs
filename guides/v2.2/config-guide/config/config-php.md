@@ -7,6 +7,10 @@ menu_title: Magento's deployment configuration
 menu_order: 1
 version: 2.2
 github_link: config-guide/config/config-php.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Purpose of the deployment configuration {#config-php-overview}

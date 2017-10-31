@@ -8,6 +8,11 @@ menu_order: 25
 menu_node:
 version: 2.0
 github_link: cloud/project/project-integrate-blackfire.md
+functional_areas:
+  - Cloud
+  - Integration
+  - Setup
+  - Services
 ---
 
 [Blackfire Profiler](https://blackfire.io/profiler){:target="_blank"} helps you locate and investigate performance issues in your environment at the code-level. it creates a performance profile by tracking every PHP call and method and SQL queries performed by your code. Blackfire digs deeper providing granular performance analytics. You can activate and use Blackfire Profiler in all of your environments, especially helpful in Staging and Production.

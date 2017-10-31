@@ -8,6 +8,10 @@ menu_node:
 menu_order: 175
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-compiler.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>

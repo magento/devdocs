@@ -8,10 +8,13 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/project/project-start.md
-redirect from:
-  -  /guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html
-  -  /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
-  -  /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
+redirect_from:
+  - /guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html
+  - /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
+  - /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 When you create your project, you receive a cloned repository of {{site.data.var.ece}} code.

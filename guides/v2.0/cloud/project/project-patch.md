@@ -8,10 +8,13 @@ menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/project/project-patch.md
-redirect from:
-  -  /guides/v2.0/cloud/howtos/patch-magent.html
-  -  /guides/v2.1/cloud/howtos/patch-magent.html
-  -  /guides/v2.1/cloud/howtos/patch-magent.html
+redirect_from:
+  - /guides/v2.0/cloud/howtos/patch-magent.html
+  - /guides/v2.1/cloud/howtos/patch-magent.html
+  - /guides/v2.1/cloud/howtos/patch-magent.html
+functional_areas:
+  - Cloud
+  - Upgrade
 ---
 
 You can apply patches as they are available to update {{site.data.var.ece}}. We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.

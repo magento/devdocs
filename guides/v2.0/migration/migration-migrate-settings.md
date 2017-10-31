@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: D_Migrate using the data migration tool
 title: Migrate settings
 menu_title: Migrate settings
@@ -9,6 +9,8 @@ menu_order: 1
 version: 2.0
 github_link: migration/migration-migrate-settings.md
 redirect_from: /guides/v1.0/migration/migration-migrate-settings.html
+functional_areas:
+  - Tools
 ---
 
 ## Overview
