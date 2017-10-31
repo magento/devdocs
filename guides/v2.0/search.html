@@ -204,7 +204,7 @@
 </div>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
-<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@1/dist/instantsearch.min.js"></script>
 
 <script>
 
@@ -215,6 +215,11 @@
     urlSync: true
   });
 
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   function app(opts) {
     var switcher = document.getElementsByClassName('version-switcher')[0];
@@ -273,9 +278,8 @@
 
             return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-url">'+ document.location.origin + url +'</div><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
           },
-          empty: function ( query ) {
-            return '<div id="no-results-message"><p>No results for the search <em>"' + query.query +'"</em>.</p></div>';
-          },
+          empty: '<div id="no-results-message"><p>No results found.</p></div>',
+
         },
       })
     );
@@ -285,6 +289,7 @@
         container: '#stats',
       })
     );
+
 
 
     search.addWidget(
