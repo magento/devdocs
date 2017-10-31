@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 160_deploy
-title: Migrate and deploy static files and data
-menu_title: Migrate and deploy static files and data
+title: Deploy Code and migrate static files and data
+menu_title: Deploy Code and migrate static files and data
 menu_order: 50
 menu_node:
 version: 2.1
@@ -17,12 +17,31 @@ functional_areas:
 [Prepare to deploy to Staging and Production]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
 
 To migrate your database and static files to Staging and Production:
-
+*	[Deploy code](#deploy-code)
 *	[Migrate static files and deploy code](#cloud-live-migrate-static)
 *	[Migrate the database](#cloud-live-migrate-db)
 
 If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}cloud/live/stage-prod-migrate.html).
 
+## Deploy Code {#deploy-code}
+1.	Log in to your local system in a terminal.
+2.	Log in to your Magento Commerce (Cloud) account:
+
+		magento-cloud login
+3.	If necessary, change to the project directory.
+4.	If necessary, check out the `master` branch:
+
+		magento-cloud environment:checkout master
+5.	Pull any changes from the remote Git `master` branch:
+
+		git pull origin master
+6. 	Merge changes to staging or production
+
+		git push staging master:master
+		
+		git push production master:master
+			
+		
 ## Migrate static files {#cloud-live-migrate-static}
 You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
 
@@ -43,17 +62,7 @@ For additional options, see the [rsync man page](http://linux.die.net/man/1/rsyn
 
 To migrate static files:
 
-1.	Log in to your local system in a terminal.
-2.	Log in to your Magento Commerce (Cloud) account:
 
-		magento-cloud login
-3.	If necessary, change to the project directory.
-4.	If necessary, check out the `master` branch:
-
-		magento-cloud environment:checkout master
-5.	Pull any changes from the remote Git `master` branch:
-
-		git pull origin master
 6.	Open an SSH connection to your Staging or Production environment:
 
 	*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
