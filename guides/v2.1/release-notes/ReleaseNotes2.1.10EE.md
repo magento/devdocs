@@ -14,13 +14,9 @@ github_link: release-notes/ReleaseNotes2.1.10EE.md
 *	TOC
 {:toc}
 
-*Code and Notes released:   2017*
+*Code and release notes released: November 7,  2017*
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.10. This release includes important enhancements to your Magento software.
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div>
 
 
 
@@ -38,7 +34,11 @@ Magento 2.1.10 contains over 50 security fixes and enhancements. Look for the fo
 
 * Support for management of multiple instances in the same crontab. These two new CLI commands (`cron:install` and `cron:remove`) were submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4). 
 
+## Security enhancements
 
+Magento 2.1.10 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
+
+See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
 ## Fixed issues
 
@@ -52,8 +52,6 @@ Magento 2.1.10 contains over 50 security fixes and enhancements. Look for the fo
 <!---  70137-->* Component Manager can now handle custom composer modules. Previously, when you opened  **System > Tools > Web Setup > Component Manager** after using Composer to install a custom extension, a PHP error occurred, and Magento did not display the list of installed extensions. *Fix submitted by [JTimNolan](https://github.com/JTimNolan) in pull request 9692.* [GitHub-6718](https://github.com/magento/magento2/issues/6718)
 
 <!--- 72253 -->*  Custom theme static content now deploys without overriding  static content files.  *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10753.* [GitHub-7569](https://github.com/magento/magento2/issues/7569), [GitHub-3754](https://github.com/magento/magento2/issues/3754), [GitHub-4725](https://github.com/magento/magento2/issues/4725)
-
-<!---  -->  
 
 ### Cart and checkout
 
@@ -172,7 +170,7 @@ did not change after you selected **Disable product**.
 ### Order management
 <!--- 71051 -->* Magento now completes order processing  if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error, `No such entity with customerId = 0`, and the order did not complete.
 
-<!--- 70771 -->* 
+<!--- 70771 -->
 
 ### Payment methods
 <!--- 69089 -->* In orders with separate billing and shipping addresses, when you change the billing address but neglect to click **Update** before clicking **Place order**, Magento will not place the order until you click **Update**. Previously, under these conditions, Magento replaced the  edited billing address with the shipping address. 

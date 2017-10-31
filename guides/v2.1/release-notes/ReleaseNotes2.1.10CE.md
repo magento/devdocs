@@ -15,17 +15,11 @@ github_link: release-notes/ReleaseNotes2.1.10CE.md
 {:toc}
 
 
-*Code released:  September 2017*
+**Code and release notes released: November 7,  2017**
 
-*Page updated:  September 2017*
 
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.10. This release includes important enhancements to your Magento software.
-
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div>
 
 
 ## Highlights
@@ -42,6 +36,11 @@ Magento 2.1.10 contains almost 40 security fixes and enhancements.  Look for the
 
 * Support for management of multiple instances in the same crontab. These two new CLI commands (`cron:install` and `cron:remove`) were submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4). 
 
+## Security enhancements
+
+Magento 2.1.10 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
+
+See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
 
 
@@ -51,13 +50,7 @@ Magento 2.1.10 contains almost 40 security fixes and enhancements.  Look for the
 ### Installation, setup, and deployment
 
 <!--- 58072 -->*  Magento no longer creates an `/ i18n`  at system root (/) in addition to the expected language file when you run `php bin/magento i18n:pack` to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
-
-
-<!---  -->*   
-
-<!---  -->*   
-
-<!---  -->*   
+  
 
 ### Cart and checkout
 
