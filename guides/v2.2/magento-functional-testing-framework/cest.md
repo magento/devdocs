@@ -15,7 +15,7 @@ Any failed assertion within a test fails that test and the MFTF reports about it
 
 The following diagram demonstrates the structure of a Cest in the MFTF.
 
-![Full test diagram](./img/cest-diagram.svg)
+![Full test diagram](./img/cest-dia.svg)
 
 ## Format
 

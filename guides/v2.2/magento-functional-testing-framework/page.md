@@ -7,7 +7,7 @@ github_link: magento-functional-testing-framework/page/structure.md
 
 ## Overview
 
-![](./img/page-diagram.svg)
+![](./img/page-dia.svg)
 
 ## Format
 
