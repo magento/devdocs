@@ -190,7 +190,7 @@ $ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.ja
 ### Run all tests
 
 ```bash
-$ vendor/bin/codecept run
+$ vendor/bin/codecept run 
 ```
 
 ## GENERATE REPORTS

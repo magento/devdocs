@@ -3,15 +3,13 @@ pages:
 
   - label: Getting Started
     url: magento-functional-testing-framework/getting-started.html
-    versions: 2.2
+    versions: ["2.2"]
 
   - label: Cest
-    versions: 2.2
+    url: magento-functional-testing-framework/cest.html
+    versions: ["2.2"]
     children:
-
-      - label: Structure
-        url: magento-functional-testing-framework/cest/structure.html
-
+ 
       - label: Annotations
         url: magento-functional-testing-framework/cest/annotations.html
 
@@ -19,35 +17,23 @@ pages:
         url: magento-functional-testing-framework/cest/actions.html
 
   - label: Data
-    versions: 2.2
-    children:
-
-      - label: Structure
-        url: magento-functional-testing-framework/data/structure.html
-
+    url: magento-functional-testing-framework/data.html
+    versions: ["2.2"]
+        
   - label: Metadata
-    versions: 2.2
-    children:
-
-      - label: Structure
-        url: magento-functional-testing-framework/metadata/structure.html
+    url: magento-functional-testing-framework/metadata.html
+    versions: ["2.2"]        
 
   - label: Page
-    versions: 2.2
-    children:
-
-      - label: Structure
-        url: magento-functional-testing-framework/page/structure.html
+    url: magento-functional-testing-framework/page.html
+    versions: ["2.2"]
 
   - label: Section
-    versions: 2.2
-    children:
-
-      - label: Structure
-        url: magento-functional-testing-framework/section/structure.html
+    url: magento-functional-testing-framework/section.html
+    versions: ["2.2"]
 
   - label: CLI Commands
-    versions: 2.2
+    versions: ["2.2"]
     children:
 
       - label: robo
@@ -57,8 +43,8 @@ pages:
 
   - label: Update
     url: magento-functional-testing-framework/update.html
-    version: 2.2
+    versions: ["2.2"]
 
   - label: Troubleshooting
     url: magento-functional-testing-framework/troubleshooting.html
-    version: 2.2
+    versions: ["2.2"]
