@@ -387,7 +387,7 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento Open Source install dir&gt;"
+      <div class="highlighter-rouge"><pre class="highlight"><code>php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="&lt;path_to_your_magento_instance&gt;"
 </code></pre>
       </div>
     </li>
@@ -429,13 +429,13 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento Open Source install dir&gt;"
+      <div class="highlighter-rouge"><pre class="highlight"><code>php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="&lt;path_to_your_magento_instance&gt;"
 </code></pre>
       </div>
 
       <p>For example,</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>php build-sample-data.php -- --ce-source="/var/www/magento2"
+      <div class="highlighter-rouge"><pre class="highlight"><code>php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="/var/www/magento2"
 </code></pre>
       </div>
     </li>

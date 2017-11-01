@@ -820,29 +820,29 @@
 
 <ul>
   <li>
-    <p>In the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>. Go to <strong>System</strong> &gt; Tools &gt; <strong>Cache Management</strong> and click <strong>Flush <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">Static Files</span> Cache</strong>.</p>
+    <p>In the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>. Go to <strong>System</strong> &gt; <strong>Tools</strong> &gt; <strong>Cache Management</strong> and click <strong>Flush <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">Static Files</span> Cache</strong>.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>This option is only availble in <code class="highlighter-rouge">developer</code> mode. Refer to the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">static view files overview</a> for more information.</p>
+
+    </div>
   </li>
   <li>
     <p>Manually by clearing the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var/view_preprocessed</code> directories and subdirectories <em>except</em> for <code class="highlighter-rouge">pub/static/.htaccess</code>.</p>
+
+    <p>To clear the <code class="highlighter-rouge">pub/static</code> directory of all files except <code class="highlighter-rouge">.htaccess</code> (which is a hidden file), enter the following command:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>rm -R pub/static/*
+</code></pre>
+    </div>
   </li>
   <li>
-    <p>Using the Magento command line.</p>
-    <ul>
-      <li>To clear the <code class="highlighter-rouge">pub/static</code> directory of all files except <code class="highlighter-rouge">.htaccess</code> (which is a hidden file), enter the following command:</li>
-    </ul>
-
-    <p><code class="highlighter-rouge"> rm -R pub/static/*</code></p>
+    <p>Several commands support an optional parameter <code class="highlighter-rouge">--clear-static-content</code>, which cleans generated static view files:</p>
 
     <ul>
-      <li>
-        <p>Several commands support an optional parameter <code class="highlighter-rouge">--clear-static-content</code>, which cleans generated static view files:</p>
-
-        <ul>
-          <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html"><code class="highlighter-rouge">magento module:enable</code> and <code class="highlighter-rouge">magento module:disable</code></a></li>
-          <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-theme-uninstall.html"><code class="highlighter-rouge">magento theme:uninstall</code></a></li>
-          <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall-mods.html"><code class="highlighter-rouge">magento module:uninstall</code></a></li>
-        </ul>
-      </li>
+      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html"><code class="highlighter-rouge">magento module:enable</code> and <code class="highlighter-rouge">magento module:disable</code></a></li>
+      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-theme-uninstall.html"><code class="highlighter-rouge">magento theme:uninstall</code></a></li>
+      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall-mods.html"><code class="highlighter-rouge">magento module:uninstall</code></a></li>
     </ul>
   </li>
 </ul>

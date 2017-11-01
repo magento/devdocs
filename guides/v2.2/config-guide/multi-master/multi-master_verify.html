@@ -1965,34 +1965,34 @@
 			<p>After configuration, the master databases are configured as follows:</p>
 
 <ul>
-  <li>Main magento database: 250 tables</li>
-  <li>Magento <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span> database: 10 tables</li>
-  <li>Magento sales database: 54 tables</li>
+  <li>Main magento database: 369 tables</li>
+  <li>Magento <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span> database: 11 tables</li>
+  <li>Magento sales database: 55 tables</li>
 </ul>
 
-<p>To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like <a href="/guides/v2.2/install-gde/prereq/optional.html#install-optional-phpmyadmin" target="_blank">phpmyadmin</a>:</p>
+<p>To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like <a href="/guides/v2.2/install-gde/prereq/optional.html#install-optional-phpmyadmin" target="\_blank">phpmyadmin</a>:</p>
 
 <table>
-<tbody>
-	<col width="25%" />
-	<col width="75%" />
-	<tr>
-		<th>What to verify</th>
-		<th>How to verify</th>
-	</tr>
-<tr>
-	<td>quote database is working</td>
-	<td>Add items to a cart. Verify that rows have been added to your quote database's <code>quote</code>, <code>quote_address</code>, and <code>quote_item</code> tables.</td>
-</tr>
-<tr>
-	<td>sales database is working</td>
-	<td>Complete an order (any payment method, including check/money order). Verify that rows have been added to your sales database's <code>sales_order_address</code>, <code>sales_order_item</code>, and <code>sales_order_payment</code> tables.</td>
-</tr>
-</tbody>
+  <tbody>
+  	<col width="25%" />
+  	<col width="75%" />
+  	<tr>
+  		<th>What to verify</th>
+  		<th>How to verify</th>
+  	</tr>
+  <tr>
+  	<td>quote database is working</td>
+  	<td>Add items to a cart. Verify that rows have been added to your quote database's <code>quote</code>, <code>quote_address</code>, and <code>quote_item</code> tables.</td>
+  </tr>
+  <tr>
+  	<td>sales database is working</td>
+  	<td>Complete an order (any payment method, including check/money order). Verify that rows have been added to your sales database's <code>sales_order_address</code>, <code>sales_order_item</code>, and <code>sales_order_payment</code> tables.</td>
+  </tr>
+  </tbody>
 </table>
 
 <div class="bs-callout bs-callout-warning">
-    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="/guides/v2.2/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
+  <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="/guides/v2.2/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
 </div>
 
 <h4 id="next-step-optional">Next step (optional)</h4>
@@ -2007,7 +2007,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/multi-master/multi-master_verify.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/config-guide/multi-master/multi-master_verify.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
