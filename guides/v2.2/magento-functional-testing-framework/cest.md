@@ -13,7 +13,7 @@ A Cest is [Codeception test container][codeception cest] that contains multiple 
 Tests in the MFTF are considered as a sequence of actions with associated parameters.
 Any failed assertion within a test fails that test and the MFTF reports about it using [Allure].
 
-The following diagram demonstrates the structure of a Cest in the MFTF.
+The following diagram demonstrates XML structure of a Cest in the MFTF:
 
 ![Full test diagram](./img/cest-dia.svg)
 
