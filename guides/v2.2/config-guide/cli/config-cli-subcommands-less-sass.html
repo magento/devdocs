@@ -1924,58 +1924,24 @@
 </section>
 
 
-			<h2 id="config-cli-before">First steps</h2>
-<div>
+			<div>
 
-  <ol>
-    <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-      </div>
-
-      <p>If the Magento file system owner does not allow logins you can do the following:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
-    </li>
-    <li>
-      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
-
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
-
-      <p>bash shell example for CentOS:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
-    </li>
-  </ol>
-
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.2/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+  <div class="bs-callout bs-callout-warning">
+    <p>You should be running all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
+  </div>
 
   <h2 id="config-cli-subcommands-less-sass">Create LESS files</h2>
-  <p>This command enables you to create symlinks to LESS files.</p>
+  <p>Use this command to create symlinks to LESS files.</p>
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN] 
+  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN]
 </code></pre>
   </div>
 
-  <p>The following table discusses the meanings of this command’s parameters and values.</p>
+  <p>The following table explains this command’s parameters and values.</p>
 
   <table>
 	<col width="25%" />

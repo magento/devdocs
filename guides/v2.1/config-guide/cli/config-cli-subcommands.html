@@ -1591,20 +1591,7 @@
 </section>
 
 
-			<h4 id="contents">Contents</h4>
-
-<p>See one of the following sections:</p>
-
-<ul>
-  <li><a href="#config-install-cli-prereq">Before you configure the Magento application</a></li>
-  <li><a href="#config-install-cli-first">First steps</a></li>
-  <li><a href="#config-cli-summary">Command summary</a></li>
-  <li><a href="#config-cli-help">Help commands</a></li>
-  <li><a href="#config-cli-subcommands-common">Common arguments</a></li>
-  <li><a href="#config-cli-subcommands">Commands</a></li>
-</ul>
-
-<h2 id="config-install-cli-prereq">Before you configure the Magento application</h2>
+			<h2 id="config-install-cli-prereq">Before you configure the Magento application</h2>
 <p>Before you begin, make sure that:</p>
 <ol><li>Your system meets the requirements discussed in <a href="/guides/v2.1/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
 <li>You completed all prerequisite tasks discussed in <a href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
@@ -1617,29 +1604,39 @@
 </div> -->
 
 <h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
+<ol>
+  <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Change to the following directory:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/bin
+</code></pre>
+    </div>
+
+    <p>Examples:</p>
+
+    <ul>
+      <li>Ubuntu: <code class="highlighter-rouge">cd /var/www/magento2/bin</code></li>
+      <li>CentOS: <code class="highlighter-rouge">cd /var/www/html/magento2/bin</code></li>
+    </ul>
+  </li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
+<div class="bs-callout bs-callout-tip">
   <p>You can run the commands in any of the following ways:</p>
-<ul><li><code>php magento &lt;command&gt;</code></li>
-<li><code>magento &lt;command&gt;</code></li></ul></span>
+
+  <ul>
+    <li><code class="highlighter-rouge">php magento &lt;command&gt;</code></li>
+    <li><code class="highlighter-rouge">./magento &lt;command&gt;</code></li>
+    <li><code class="highlighter-rouge">magento &lt;command&gt;</code> (after <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="\_blank">adding</a> <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>)</li>
+  </ul>
 </div>
 
 <h2 id="config-cli-summary">Command summary</h2>
 <p>The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Before you run any of these commands, you must either <a href="/guides/v2.1/install-gde/install/cli/install-cli.html">install the Magento application</a> or <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">enable some modules</a>.</p></span>
+  <p>Before you run any of these commands, you must either <a href="/guides/v2.1/install-gde/install/install-cli.html">install the Magento application</a> or <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">enable some modules</a>.</p>
 </div>
 
 <table>
@@ -1651,7 +1648,7 @@ Examples:
 			<th>Command</th>
 			<th>Description</th>
 		</tr>
-		
+
 	<tr>
 		<td><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html">magento setup:cache:{enable|disable|clean|flush|status}</a></td>
 		<td><p>Manages the cache</p></td>
@@ -1660,7 +1657,7 @@ Examples:
 		<td><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html">magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
 		<td><p>Manages the indexers</p></td>
 	</tr>
-	
+
 	<tr>
 		<td><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">magento cron:run</a></td>
 		<td><p>Runs Magento cron jobs</p></td>
@@ -1702,7 +1699,7 @@ Examples:
 		<td><p>Installs optional Magento sample data after you install the Magento application.</p>
 			<p>For more details about Magento sample data, see <a href="/guides/v2.1/install-gde/install/sample-data.html">Optional Magento sample data</a>.</p></td>
 	</tr>
-	
+
 	</tbody>
 </table>
 
@@ -1786,7 +1783,6 @@ magento --help cache:enable</pre>
   <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
   <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 </ul>
-
 
 		</div>
 		<!-- /.content-wrap -->

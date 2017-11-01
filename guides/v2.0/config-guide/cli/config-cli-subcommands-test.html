@@ -1515,83 +1515,45 @@
 </section>
 
 
-			<h2 id="config-cli-subcommands-tests-overview">Overview of tests</h2>
-<p>This command runs a set of tests defined in the Magento 2 code base. You can either run all tests or tests you select.</p>
+			<div>
 
-<p>Whenever a not supported type is specified, the program terminates and lists all available types.</p>
+  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<p>Following execution, a detailed report displays showing the test run and results.</p>
+  <div class="bs-callout bs-callout-warning">
+    <p>You should be running all Magento CLI commands as the <a href="/guides/v2.0/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
+  </div>
 
-<h3 id="config-cli-subcommands-tests-prereq">Prerequisites</h3>
-<p>Before you run this command, all of the following must be true:</p>
+  <h2 id="overview-of-tests">Overview of tests</h2>
+  <p>This command runs a set of tests defined in the Magento 2 code base. You can either run all tests or tests you select. Whenever an unsupported type is specified, the program terminates and lists all available types. Following execution, a detailed report displays showing the test run and results.</p>
 
-<ul>
-  <li>
-    <p>The <code class="highlighter-rouge">Magento_Developer</code> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must be enabled. You can enable it as follows:</p>
+  <h3 id="prerequisites">Prerequisites</h3>
+  <p>Before you run this command, all of the following must be true:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento module:enable [--force] Magento_Developer
-</code></pre>
-    </div>
-
-    <p>Use the <code class="highlighter-rouge">--force</code> option only if it’s necessary.</p>
-  </li>
-  <li>
-    <p>Your system must be set up to run the desired tests.</p>
-
-    <p>For example, to run integration tests, you should copy <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php.dist</code> to <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php</code> and modify it to suit your environment.</p>
-  </li>
-</ul>
-
-<h2 id="config-cli-before">First steps</h2>
-<div>
-
-  <ol>
+  <ul>
     <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+      <p>The <code class="highlighter-rouge">Magento_Developer</code> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must be enabled. You can enable it as follows:</p>
 
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <div class="highlighter-rouge"><pre class="highlight"><code>magento module:enable [--force] Magento_Developer
 </code></pre>
       </div>
 
-      <p>If the Magento file system owner does not allow logins you can do the following:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
+      <p>Use the <code class="highlighter-rouge">--force</code> option only if it’s necessary.</p>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
-
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
-
-      <p>bash shell example for CentOS:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
+      <p>Your system must be set up to run the desired tests.</p>
     </li>
-  </ol>
+  </ul>
 
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
+  <p>For example, to run integration tests, you should copy <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php.dist</code> to <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php</code> and modify it to suit your environment.</p>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
-
-  <h2 id="config-cli-subcommands-tests-run">Running tests</h2>
+  <h2 id="running-tests">Running tests</h2>
   <p>Command usage:</p>
 
   <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:tests:run &lt;test&gt;
 </code></pre>
   </div>
 
-  <p>To list the available test types, enter</p>
+  <p>To list the available test types:</p>
 
   <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:tests:run --help
 </code></pre>
@@ -1603,7 +1565,7 @@
 </code></pre>
   </div>
 
-  <p>For example, to run integration tests, enter</p>
+  <p>For example, to run integration tests:</p>
 
   <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:tests:run integration
 </code></pre>

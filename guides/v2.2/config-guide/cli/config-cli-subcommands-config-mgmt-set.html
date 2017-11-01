@@ -1924,85 +1924,51 @@
 </section>
 
 
-			<p>This topic discusses advanced configuration commands you can use to:</p>
+			<div>
 
-<ul>
-  <li>Set any configuration option from the command line</li>
-  <li>Optionally lock any configuration option so its value cannot be changed in the Magento Admin</li>
-  <li>Change a configuration option that is locked in the Magento Admin</li>
-</ul>
+  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<p>You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a <em>configuration path</em>, which is a <code class="highlighter-rouge">/</code>-delimited string that uniquely identifies that configuration option. You can find configuration paths in the following references:</p>
+  <div class="bs-callout bs-callout-warning">
+    <p>You should be running all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
+  </div>
 
-<ul>
-  <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
-  <li><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a></li>
-  <li><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a></li>
-  <li><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
-</ul>
+  <p>This topic discusses advanced configuration commands you can use to:</p>
 
-<p>You can set values at the following times:</p>
+  <ul>
+    <li>Set any configuration option from the command line</li>
+    <li>Optionally lock any configuration option so its value cannot be changed in the Magento Admin</li>
+    <li>Change a configuration option that is locked in the Magento Admin</li>
+  </ul>
 
-<ul>
-  <li>
-    <p>Before you install Magento, you can set configuration values for the default scope only.</p>
+  <p>You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a <em>configuration path</em>, which is a <code class="highlighter-rouge">/</code>-delimited string that uniquely identifies that configuration option. You can find configuration paths in the following references:</p>
 
-    <p>That’s because before you install Magento, the default scope is the only valid scope.</p>
-  </li>
-  <li>
-    <p>After you install Magento, you can set configuration values for any <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> or <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> scope.</p>
-  </li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a></li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a></li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
+  </ul>
 
-<p>Use the following commands:</p>
+  <p>You can set values at the following times:</p>
 
-<ul>
-  <li><code class="highlighter-rouge">config:set</code> sets any non-sensitive configuration value by its configuration path</li>
-  <li><code class="highlighter-rouge">config:sensitive:set</code> sets any sensitive configuration value by its configuration path</li>
-  <li><code class="highlighter-rouge">config:show</code> shows saved configuration values; values of encrypted settings are displayed as asterisks</li>
-</ul>
-
-<h2 id="first">First steps</h2>
-<div>
-
-  <ol>
+  <ul>
     <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+      <p>Before you install Magento, you can set configuration values for the default scope only.</p>
 
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-      </div>
-
-      <p>If the Magento file system owner does not allow logins you can do the following:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
+      <p>That’s because before you install Magento, the default scope is the only valid scope.</p>
     </li>
     <li>
-      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
-
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
-
-      <p>bash shell example for CentOS:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
+      <p>After you install Magento, you can set configuration values for any <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> or <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> scope.</p>
     </li>
-  </ol>
+  </ul>
 
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.2/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
+  <p>Use the following commands:</p>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+  <ul>
+    <li><code class="highlighter-rouge">config:set</code> sets any non-sensitive configuration value by its configuration path</li>
+    <li><code class="highlighter-rouge">config:sensitive:set</code> sets any sensitive configuration value by its configuration path</li>
+    <li><code class="highlighter-rouge">config:show</code> shows saved configuration values; values of encrypted settings are displayed as asterisks</li>
+  </ul>
 
   <h2 id="prerequisites">Prerequisites</h2>
   <p>To set a configuration value, you must know at least one of the following:</p>

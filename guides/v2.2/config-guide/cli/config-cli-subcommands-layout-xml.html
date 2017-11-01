@@ -1924,71 +1924,37 @@
 </section>
 
 
-			<h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
-<p>This command enables you to update your <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet.</p>
+			<div>
 
-<p>For more information about layout XML files, see:</p>
+  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<ul>
-  <li><a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
-  <li><a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
-</ul>
+  <div class="bs-callout bs-callout-warning">
+    <p>You should be running all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
+  </div>
 
-<h2 id="config-cli-before">First steps</h2>
-<div>
+  <h2 id="overview-of-layout-xml-conversion">Overview of layout XML conversion</h2>
+  <p>Use this command to update your <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet.</p>
 
-  <ol>
-    <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+  <p>For more information about layout XML files, see:</p>
 
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+  <ul>
+    <li><a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+    <li><a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
+  </ul>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-      </div>
-
-      <p>If the Magento file system owner does not allow logins you can do the following:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
-    </li>
-    <li>
-      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
-
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
-
-      <p>bash shell example for CentOS:</p>
-
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
-    </li>
-  </ol>
-
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.2/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
-
-  <h2 id="config-cli-xml-run">Convert layout XML files</h2>
+  <h2 id="convert-layout-xml-files">Convert layout XML files</h2>
   <p>Command options:</p>
 
   <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
 </code></pre>
   </div>
 
-  <p>where</p>
+  <p>here:</p>
 
   <ul>
-    <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">xml</span><span class="w"> </span><span class="err">file</span><span class="p">}</span></code> is the full path and file name of a layout XML file to convert (required)</li>
-    <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">xslt</span><span class="w"> </span><span class="err">stylesheet</span><span class="p">}</span></code> is the full path and file name of an XSLT stylesheet file to use for <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span> (required)</li>
-    <li><code class="highlighter-rouge">-o|--overwrite</code> include this option to overwrite the existing XML file</li>
+    <li><strong><code class="highlighter-rouge"><span class="p">{</span><span class="err">xml</span><span class="w"> </span><span class="err">file</span><span class="p">}</span></code></strong> is the full path and file name of a layout XML file to convert (required)</li>
+    <li><strong><code class="highlighter-rouge"><span class="p">{</span><span class="err">xslt</span><span class="w"> </span><span class="err">stylesheet</span><span class="p">}</span></code></strong> is the full path and file name of an XSLT stylesheet file to use for <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span> (required)</li>
+    <li><strong><code class="highlighter-rouge">-o|--overwrite</code></strong> include this option to overwrite the existing XML file</li>
   </ul>
 
   <h4 id="related-topics">Related topics</h4>
