@@ -13,7 +13,7 @@ functional_areas:
   - Configuration
 ---
 
-These sections list the environment variables for [general Magento](#application), [build](#build), and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
+These sections list the environment variables for [general Magento](#application) and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
 
 ## Magento application variables {#application}
 
@@ -64,7 +64,7 @@ The following table lists variables that you can override using environment vari
 </tbody>
 </table>
 
-For additional build and deploy variables, continue to the following sections.
+For additional variables, continue to the following sections.
 
 <!-- <tr><td>RECOMPILE_DI</td>
     <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
