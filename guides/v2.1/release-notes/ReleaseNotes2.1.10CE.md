@@ -15,7 +15,7 @@ github_link: release-notes/ReleaseNotes2.1.10CE.md
 {:toc}
 
 
-**Code and release notes released: November 7,  2017**
+*Code and release notes released: November 7,  2017*
 
 
 
@@ -28,7 +28,7 @@ Magento 2.1.10 contains almost 40 security fixes and enhancements.  Look for the
 
 * Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translations issues. 
 
-* Improvements to how payment methods process virtual products. 
+* Improvements to how the PayPal Express Checkout payment method processes virtual products. 
 
 * Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
 
@@ -41,8 +41,6 @@ Magento 2.1.10 contains almost 40 security fixes and enhancements.  Look for the
 Magento 2.1.10 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
-
-
 
 
 
@@ -96,7 +94,7 @@ did not change after you selected **Disable product**.
 
 <!--- 57007 -->* Magento now displays tier prices of simple or virtual products on the configurable products page. [GitHub-3759](https://github.com/magento/magento2/issues/3759)
 
-<!--- 71637 -->*  
+<!--- 71637 -->  
 
 <!--- 71136 -->* You can now save a value for an attribute that is shared between related, upsell, or cross-sell products that have different attribute sets. Previously, when a configurable product had another configurable product with a different attribute set as a related product, cross sell, or upsell and both attribute sets share a multiselect attribute, the value for that multiselect attribute could not be updated for the product.
 
@@ -133,7 +131,7 @@ did not change after you selected **Disable product**.
 
 <!--- 72466 -->* We’ve fixed a `PayPal.js` error that occurred when you tried to check out an order that contained a downloadable product. 
 
-<!--- 71821 -->* PayPal Express checkout now handles virtual products as expected. Previously, the payment process failed when your order included virtual products. [GitHub-10615](https://github.com/magento/magento2/issues/10615)
+<!--- 71821 -->* PayPal Express checkout now handles virtual products as expected. Previously,  the checkout page redirected you to the review order page, and Magento displayed the  **Can't place order** message.  Note: This is not associated with PayPal's strategic decision to stop supporting sales of digital goods through PayPal Express Checkout as of January 2017. [GitHub-10615](https://github.com/magento/magento2/issues/10615)
 
 <!--- 69724 -->* Payment methods now retrieve new order status from config as expected. [GitHub-5860](https://github.com/magento/magento2/issues/5860)
 
