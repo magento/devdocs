@@ -712,18 +712,21 @@
 <p>Here is the Magento Framework folder structure:</p>
 
 <pre>
-Lib/
-    ../Internal
-        ../Magento
-            ../Framework
+vendor/
+    ../magento
+        ../framework
+lib/
+    ../internal
+        ../LinLibertineFont
+    ../web
  </pre>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">/lib/internal</code> contains some non-PHP as well as PHP components. Non-PHP framework libraries includes <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and LESS/CSS.</p>
+    <p><code class="highlighter-rouge">/vendor/magento/framework</code>  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the Framework libraries). For example,  libraries in the Framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> rendering.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">/lib/internal/Magento/Framework</code>  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the Framework libraries). For example,  libraries in the Framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> rendering.</p>
+    <p><code class="highlighter-rouge">/lib/internal</code> contains some non-PHP as well as PHP components. Non-PHP framework libraries includes <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and LESS/CSS.</p>
   </li>
   <li>
     <p><code class="highlighter-rouge">/lib/web</code> contains JavaScript and CSS/LESS files. These files reside  under <code class="highlighter-rouge">web</code> and not <code class="highlighter-rouge">internal</code> because they are accessible from a web browser, while the PHP code under <code class="highlighter-rouge">internal</code> is not. (Any code that a web browser must access should be under <code class="highlighter-rouge">web</code>, while everything else under <code class="highlighter-rouge">internal</code>.)</p>
@@ -731,7 +734,7 @@ Lib/
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>.</p>
+  <p>The <code>vendor/magento/framework</code> directory maps to the <code>Magento\Framework</code> <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>.</p>
 </div>
 
 <h2 id="highlights-of-magento-framework">Highlights of Magento Framework</h2>
