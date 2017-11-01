@@ -150,11 +150,11 @@ return [
             'locale' => '...'
         ]
         ];
-{%endhighlight%}
+```
 
 Example of `requirejs-map.js`:
 
-{%highlight js%}
+```js
 require.config({
     "config": {
        "baseUrlInterceptor": {
@@ -165,6 +165,6 @@ require.config({
 ```
 
 ## Tips for extension developers
-To build URLs to static view files, use [`\Magento\Framework\View\Asset\Repository::createAsset()`]({{ site.mage2200url }}lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213){:target="\_blank"}. 
+To build URLs to static view files, use [`\Magento\Framework\View\Asset\Repository::createAsset()`]({{ site.mage2200url }}lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213){:target="\_blank"}.
 
 Do not use {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} concatenations to avoid problems with {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being not found and not displayed during page rendering.
