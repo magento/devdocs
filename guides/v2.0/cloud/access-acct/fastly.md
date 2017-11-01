@@ -118,9 +118,11 @@ Configure the following features and enable additional [configuration options](h
 </div>
 
 ## Upload Fastly VCL snippets {#upload-vcl-snippets}
-The installed Fastly module includes the following [VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"} that drive the integration with Fastly. When you click Upload, you push these VCL snippets to Fastly for your extension. These uploaded snippets are prepended with "magentomodule_" with a priority of 50.
+You don't have to create or code VCL snippets. We provide a default set of snippets for Fastly. You only need to click **Upload VCL to Fastly** to finish this step.
 
-You can also create and add [custom VCL snippets](#custom-vcl).
+The installed Fastly module includes the following default [VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"} that drive the integration with Fastly. These VCL snippets are not available until you upload them. When you click Upload, you push a set of these default VCL snippets to Fastly for your specificl Service ID and extension.
+
+For VCL snippet developers, these default snippets are prepended with `magentomodule_` with a priority of 50. You should not use this prepended name for your own snippets. For full details, see our guide to create and add [custom VCL snippets](#custom-vcl).
 
 To use snippets, you must upload the Fastly VCL using the Magento Admin as follows:
 

@@ -17,6 +17,15 @@ For information setting up and configuring Fastly, see [Set up Fastly]({{ page.b
 
 To verify the Fastly extension is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.
 
+## Locate Service ID {#service-id}
+You can contact us for your Service ID for Staging and Production. For developers and advanced VCL users, you can also make a call using the Fastly variable `req.service_id`. This variable will return the Fastly `service_id`.
+
+For example, you can add this to custom logging to capture the value. If you are using a custom logging format in your VCL, you can set the call to your format:
+
+    log {"syslog "}req.service_id{" my_logging_endpoint_name :: "}
+
+You can then use the same vcl within different services.
+
 ## Test your live site {#curl-live}
 First, check your live site to verify the response headers with `curl`. The command goes through the Fastly extension to receive responses. If you don't receive the correct headers, then you should test the [origin servers directly](#cloud-test-stage). This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers.
 
@@ -83,6 +92,8 @@ If you do not have DNS set up for a public host name, enter a command similar to
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
 ### Check response headers {#response-headers}
+For detailed information on hits and misses, see Fastly's [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services){:target="_blank"}.
+
 Check the returned response headers and values:
 
 *	Fastly-Magento-VCL-Uploaded should be present
@@ -129,7 +140,7 @@ The output for cURL commands can be lengthy. The following is a summary only:
 	* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
 
 ## Determine if VCL is not uploaded {#vcl-uploaded}
-To determine if the VCL snippets are not uploaded, check the following:
+To determine if the default VCL snippets are not uploaded, check the following:
 
 * **Top level navigation does not work**: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
 * **Pages are not caching**: By default Fastly doesn’t cache pages with Set-Cookies. Magento sets Cookies even on cacheable pages (TTL > 0). Magento Fastly VCL strips those cookies on cacheable pages. This may also happen if page block in a template is marked uncacheable. If this occurs, it's due to a 3rd party module or Magento extension blocking or removing the Magento headers. See [X-Cache missed section](#xcache-miss) for details.
@@ -205,6 +216,31 @@ If the credentials are correct, you may have issues with your VCLs. To list and 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
 
 Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+
+## Activating a deactivated version {#activate}
+Using `curl` commands and APIs, you can activate, deactivate, and delete a version and service. If you have deactivated a service, you have deactivated the version without leaving any version active.
+
+1. List and find a version you want to activate. For a fully deactivated service, all of the versions will have a flag of `active: false`.
+
+    curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key:FASTLY_API_TOKEN"
+
+2. Use the following command to validate all snippets for the version you want to activate:
+
+  	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
+
+  Fastly should return: `"status": "ok"`.
+
+3. To activate a deactivated Version, enter the Service ID and Version in the following command:
+
+	   curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
+
+If you want to activate an older version, you need to deactivate the currently active version:
+
+  curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/deactivate
+
+Then activate the version you want active:
+
+  curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
 
 #### Related topics
 * [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)
