@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Migrate and deploy static files and data | Magento 2 Developer Documentation</title>
+	<title>Deploy Code and migrate static files and data | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -1822,7 +1822,7 @@
 
           
 
-          <span property="name">Migrate and deploy static files and data</span>
+          <span property="name">Deploy Code and migrate static files and data</span>
 
         
 
@@ -1845,7 +1845,7 @@
 
 	
 
-	<h1 class="page-heading">Migrate and deploy static files and data</h1>
+	<h1 class="page-heading">Deploy Code and migrate static files and data</h1>
 
   
 
@@ -1856,14 +1856,48 @@
 			<h4 id="previous-step">Previous step:</h4>
 <p><a href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a></p>
 
-<p>To migrate your database and static files to Staging and Production:</p>
-
-<ul>
-  <li><a href="#cloud-live-migrate-static">Migrate static files and deploy code</a></li>
-  <li><a href="#cloud-live-migrate-db">Migrate the database</a></li>
-</ul>
+<p>To migrate your database and static files to Staging and Production:
+*	<a href="#deploy-code">Deploy code</a>
+*	<a href="#cloud-live-migrate-static">Migrate static files and deploy code</a>
+*	<a href="#cloud-live-migrate-db">Migrate the database</a></p>
 
 <p>If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated <code class="highlighter-rouge">master</code> branch again. See instructions in the <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">previous step</a>.</p>
+
+<h2 id="deploy-code">Deploy Code</h2>
+<ol>
+  <li>Log in to your local system in a terminal.</li>
+  <li>
+    <p>Log in to your Magento Commerce (Cloud) account:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
+</code></pre>
+    </div>
+  </li>
+  <li>If necessary, change to the project directory.</li>
+  <li>
+    <p>If necessary, check out the <code class="highlighter-rouge">master</code> branch:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout master
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Pull any changes from the remote Git <code class="highlighter-rouge">master</code> branch:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin master
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Merge changes to staging or production</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>git push staging master:master
+	
+git push production master:master
+</code></pre>
+    </div>
+  </li>
+</ol>
 
 <h2 id="cloud-live-migrate-static">Migrate static files</h2>
 <p>You will migrate <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> from your <code class="highlighter-rouge">pub/media</code> directory to Staging or Production.</p>
@@ -1890,29 +1924,6 @@
 <p>To migrate static files:</p>
 
 <ol>
-  <li>Log in to your local system in a terminal.</li>
-  <li>
-    <p>Log in to your Magento Commerce (Cloud) account:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
-</code></pre>
-    </div>
-  </li>
-  <li>If necessary, change to the project directory.</li>
-  <li>
-    <p>If necessary, check out the <code class="highlighter-rouge">master</code> branch:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout master
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Pull any changes from the remote Git <code class="highlighter-rouge">master</code> branch:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin master
-</code></pre>
-    </div>
-  </li>
   <li>
     <p>Open an SSH connection to your Staging or Production environment:</p>
 
