@@ -16,15 +16,14 @@ functional_areas:
   - Setup
 ---
 
-In the Magento 2.2 and later [pipeline deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can maintain a consistent configuration across systems.
-After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:
+In Magento 2.2 and later [pipeline deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can maintain a consistent configuration across systems. After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:
 
     magento app:config:dump
 
 As a result of the command execution, the following configuration files are updated:
 
-*	[`app/etc/config.php`](#app-etc-config-php)
-*	[`app/etc/env.php`](#app-etc-env-php)
+-   [`app/etc/config.php`](#app-etc-config-php)
+-   [`app/etc/env.php`](#app-etc-env-php)
 
 ## `app/etc/config.php` {#app-etc-config-php}
 
@@ -46,4 +45,4 @@ See: [env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-en
 
 To set the sensitive settings written to `env.php`, use the [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command.
 
-Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="_blank"} in the module's [`di.xml`]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific) file.
+Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="\_blank"} in the module's [`di.xml`]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific) file.
