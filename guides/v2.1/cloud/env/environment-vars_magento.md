@@ -21,7 +21,7 @@ The following table lists variables that you can override using environment vari
 
 <table>
 <thead><tr>
-<th style="width: 150px;">Variable name</th>
+<th style="width: 160px;">Variable name</th>
 <th>Description</th>
 <th style="width: 150px;">Default value</th>
 </tr></thead>

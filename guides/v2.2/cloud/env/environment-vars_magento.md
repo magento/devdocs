@@ -21,7 +21,7 @@ The following table lists variables that you can override using environment vari
 
 <table>
 <thead><tr>
-<th style="width: 150px;">Variable name</th>
+<th style="width: 160px;">Variable name</th>
 <th>Description</th>
 <th style="width: 150px;">Default value</th>
 </tr></thead>
@@ -100,7 +100,7 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 </tr>
 <tr>
 <td><code>BUILD_OPT_SKIP_SCD</code></td>
-<td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in versions 2.1.4 and later, 2.2.X.</td>
+<td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in 2.2.X.</td>
 <td>skip_scd = disabled</td>
 </tr>
 </tbody>
@@ -108,8 +108,8 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 
 The following variables were removed in v2.2:
 
-* BUILD_OPT_SKIP_DI_COMPILATION
-* BUILD_OPT_SKIP_DI_CLEARING
+* `BUILD_OPT_SKIP_DI_COMPILATION`
+* `BUILD_OPT_SKIP_DI_CLEARING`
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
