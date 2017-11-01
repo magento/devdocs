@@ -54,7 +54,7 @@ To deploy static view files:
 
 Command options:
 
-	magento setup:static-content:deploy [<list of languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run]
+	magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run]
 
 The following table explains this command's parameters and values.
 
@@ -69,8 +69,8 @@ The following table explains this command's parameters and values.
 			<th>Required?</th>
 		</tr>
 	<tr>
-        <td>&lt;lang></td>
-        <td><p>List of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="\_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
+        <td>&lt;languages&gt;</td>
+        <td><p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-639</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
         <p>You can find the list by running <code>magento info:language:list</code>.</p></td>
     <td><p>No</p></td>
     </tr>
@@ -164,7 +164,7 @@ The following table explains this command's parameters and values.
 </table>
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
--   If you specify values for both `lang` and `--language`, `<lang>` takes precedence.
+-   If you specify values for both `<languages>` and `--language`, `<languages>` takes precedence.
 -   The following parameters were added in version 2.1.1: `--exclude-language`, `--theme <theme>`, `--exclude-theme <theme>`, `--area (-a)`, `--exclude-area`, `--jobs (-j)`, `--no-javascript`, `--no-css`, `--no-less`, `--no-images`, `--no-fonts`, `--no-html`, `--no-misc`, `--no-html-minify`.
 </div>
 
