@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="no-js">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1" />
@@ -81,83 +81,119 @@
 
 
 
-			<!-- Main Navigation -->
-<div class="nav-main">
-  <ul>
-    <li class="first">
-      <a href="#">Setup and Deployment</a>
-        <ul class="menu nav">
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
           <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
           
-          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
           
-          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
-          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
         </ul>
-    </li>
+      </div>
 
-    <li>
-        <a href="#">Development</a>
-        <ul class="menu nav">
-          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
           
-          <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B Developer Guide</a></li>
-          
-          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
-          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-          
-          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
         </ul>
-    </li>
+      </div>
 
-    <li>
-        <a href="#">Frontend</a>
-        <ul class="menu nav">
-          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-          
-          <li class="leaf"><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
-          
-          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
         </ul>
-    </li>
+      </div>
+    </div>
 
-    <li>
-        <a href="#">API</a>
-        <ul class="menu nav">
-          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
-          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
-        </ul>
-    </li>
+  </div>
 
-    <li>
-        <a href="#">Testing</a>
-        <ul class="menu nav">
-          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
-          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
-          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
-          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
-        </ul>
-    </li>
 
-    <li>
-      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
-    </li>
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Testing</a>
 
-    <li>
-      <a href="/videos/">Videos</a>
-    </li>
-  </ul>
-</div><!-- /.nav-main -->
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        
+        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+        <li><a href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
 
 
 			<div class="search-btn">
@@ -790,11 +826,9 @@
 </section>
 
 
-			<h2 id="customize-checkout">Customize checkout</h2>
+			<h3 id="default-checkout-overview">Default checkout overview</h3>
 
-<h3 id="default-checkout-overview">Default checkout overview</h3>
-
-<p>Magento <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> is implemented using the <a href="http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI components</a>. 
+<p>Magento <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> is implemented using the <a href="http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI components</a>.
 Out of the box, the checkout consists of two steps:</p>
 
 <ul>
@@ -823,7 +857,6 @@ Out of the box, the checkout consists of two steps:</p>
 </ul>
 
 <p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
-
 
 		</div>
 		<!-- /.content-wrap -->
