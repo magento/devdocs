@@ -232,7 +232,7 @@ pages:
         - label: Prepare to deploy to Staging and Production
           url: cloud/live/stage-prod-migrate-prereq.html
 
-        - label: Migrate and deploy code, static files, and data
+        - label: Deploy code and migrate static files and data
           url: cloud/live/stage-prod-migrate.html
 
         - label: Test deployment
