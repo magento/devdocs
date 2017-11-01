@@ -80,10 +80,7 @@ For Pro projects created **before October 23, 2017**, you would need to access t
 *	Web URL format:
 
 	*	Staging: `http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud`
-	*	Production:
-
-		*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
-		*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+	*	Production: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 
 ### Set up Pro remote Git repositories {#pro-remote}
 For Pro projects created **after October 23, 2017**, you do not need to complete this step. Your Staging and Production environments are branches of `master` with configured deployment targets. You can simply merge code to these environments from Integration `master`.

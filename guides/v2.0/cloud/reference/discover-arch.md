@@ -8,6 +8,10 @@ menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/reference/discover-arch.md
+redirect_from:
+  - /guides/v2.0/cloud/discover-arch.html
+  - /guides/v2.1/cloud/discover-arch.html
+  - /guides/v2.2/cloud/discover-arch.html
 functional_areas:
   - Cloud
 ---
