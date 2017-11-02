@@ -98,7 +98,7 @@ To create a pull request do the following:
 
 1. Create a feature branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
 2. In your repository, click **Pull requests** on the right, and then click **New pull request**: <br><img src="{{ site.baseurl }}common/images/pr.png" target="_blank">
-3. Ensure that you are creating a PR to the `magento:develop` branch. We accept PRs to this branch only.
+3. Ensure that you are creating a PR to the `magento:2.X-develop` branch. We accept PRs to those branches only.
 4. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 
