@@ -21,9 +21,9 @@ The following table lists variables that you can override using environment vari
 
 <table>
 <thead><tr>
-<th>Variable name</th>
+<th style="width: 150px;">Variable name</th>
 <th>Description</th>
-<th>Default value</th>
+<th style="width: 150px;">Default value</th>
 </tr></thead>
 <tbody>
 <tr>
@@ -93,7 +93,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <tr>
 <th>Variable name</th>
 <th>Description</th>
-<th>Default value</th>
+<th style="width: 200px;">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -159,7 +159,7 @@ The following variables are available during the deploy process of build and dep
 <tr>
 <th>Variable name</th>
 <th>Description</th>
-<th>Default value</th>
+<th style="width: 200px;">Default value</th>
 </tr></thead>
 <tbody>
 <tr><td><code>UPDATE_URLS</code></td>
