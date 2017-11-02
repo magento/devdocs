@@ -65,6 +65,7 @@ The given relative URI is declared in `StorefrontCustomerSignInPage.url`
 The _StorefrontCustomerSignInPage.xml_ source code:
 
 ```xml
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
     <page name="StorefrontCustomerSignInPage" url="/customer/account/login/" module="Magento_Customer">
@@ -80,7 +81,9 @@ Here, `url` contains a pointer to a `url` attribute of the `StorefrontCustomerSi
 #### 2. Enter customer's e-mail  {#example-step2}
 
 ```xml
+{%raw%}
 <fillField  mergeKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
+{%endraw%}
 ```
 
 [fillField](#fillfield) fills a text field with the given string.
@@ -108,7 +111,9 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 #### 3. Enter customer's password  {#example-step3}
 
 ```xml
+{%raw%}
 <fillField  mergeKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
+{%endraw%}
 ```
 
 The action here is very similar to the action in a previous step.
@@ -118,7 +123,9 @@ The only difference is that different data assigned to the attributes which set 
 #### 4. Click the Sign In button {#example-step4}
 
 ```xml
+{%raw%}
 <click mergeKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
+{%endraw%}
 ```
 
 Here, [click](#click) performs a click on a button that can be found by selector that is stored in the `signInAccountButton` of the `StorefrontCustomerSignInFormSection`.
