@@ -34,7 +34,7 @@ See <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/
 
 ## Where do modules live?
 
-Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/module-<module-mame>`. For example, the Customer module of Magento can be found at `vendor/magento/module-customer`.
+Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/<type>-<module-mame>`. For example, the Customer Import/Export module of Magento can be found at `vendor/magento/module-customer-import-export`.
 
 But if you are creating a new module for distribution, you can just create the `app/code/<Vendor>/<ModuleName>` directory and the required directories within it.
 
