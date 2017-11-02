@@ -16,7 +16,7 @@ Avoiding hardcoded location selectors from tests, increases the maintainability 
 
 The following diagram demonstrates XML structure of a page in the MFTF:
 
-![Page structure diagramm](./img/page-dia.svg)
+{% include_relative img/page-dia.svg %}
 
 ## Format
 
@@ -71,7 +71,7 @@ The `AdminCategoryPage` declares four [sections][section]:
 
 ## Available elements
 
-### page
+### page {#page-element}
 
 Contains sequence of UI sections in a page.
 
@@ -85,7 +85,7 @@ remove	|boolean  |	optional|Default value: `"false"`. Set to `"true"` to remove 
 
 It may contain several [<section>][section] elements.
 
-### section
+### section {#section-element}
 
 Contains sequence of UI elements.
 
