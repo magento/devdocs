@@ -1,9 +1,11 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="370" height="62" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+<svg width="370" height="62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect x="304" y="28" width="59" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+    <a xlink:href="#section-element">
 <rect x="301" y="25" width="59" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
 <text x="330.5" y="36" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">section</text>
+    </a>
 <text x="350" y="57" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central">0..∞</text>
 <line x1="302" y1="46" x2="305" y2="43" style="stroke:rgb(0,0,0);stroke-width:2"/>
 <path d="M305 43 L307 45 L308 40 L303 41 L305 43 Z" style="fill:rgb(0,0,0)"/>
@@ -19,8 +21,10 @@
 
 <line x1="221" y1="36" x2="241" y2="36" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
 <rect x="167" y="28" width="52" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+    <a xlink:href="#page-element">
 <rect x="164" y="25" width="52" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
 <text x="190" y="36" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">page</text>
+    </a>
 <text x="211" y="57" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central">1..∞</text>
 <line x1="165" y1="46" x2="168" y2="43" style="stroke:rgb(0,0,0);stroke-width:2"/>
 <path d="M168 43 L170 45 L171 40 L166 41 L168 43 Z" style="fill:rgb(0,0,0)"/>

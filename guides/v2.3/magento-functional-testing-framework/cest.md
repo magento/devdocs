@@ -15,7 +15,7 @@ Any failed assertion within a test fails that test and the MFTF reports about it
 
 The following diagram demonstrates XML structure of a Cest in the MFTF:
 
-![Full test diagram](./img/cest-dia.svg)
+{% include_relative img/cest-dia.svg %}
 
 ## Format
 
@@ -75,7 +75,7 @@ The following diagram demonstrates XML structure of a Cest in the MFTF:
 
 The following list is reference documentation of elements that may be used in Cests.
 
-### cest
+### cest {#cest-element}
 
 A cest is a Codeception container for multiple tests. Logically, it is a group of tests that define test flows within a test case.
 
@@ -90,7 +90,7 @@ It MAY contain [`<annotations>`][annotations], [`<before>`][before], [`<after>`]
 ***
 ***
 
-### annotations
+### annotations {#annotations-element}
 
 Annotations are supported by both Codeception and Allure.
 Codeception annotations typically provide metadata and, also, they are able to influence test selection.
