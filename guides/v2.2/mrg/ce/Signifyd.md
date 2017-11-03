@@ -1,14 +1,13 @@
 ---
 layout: default
 group: mrg
-subgroup: 20_Enterprise Edition
-ee_only: true
+subgroup: 10_Community Edition
 title: Magento_Signifyd module
 menu_title: Signifyd
 menu_order: 2
 version: 2.2
-ee_only: true
-github_link: mrg/ee/Signifyd.md
+github_link: mrg/ce/Signifyd.md
+redirect_from: guides/v2.2/mrg/ee/Signifyd.html
 ---
 
 
