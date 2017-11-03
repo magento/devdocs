@@ -16,22 +16,6 @@ pages:
       - label: Actions
         url: magento-functional-testing-framework/cest/actions.html
 
-  - label: Data
-    url: magento-functional-testing-framework/data.html
-    versions: ["2.3"]
-        
-  - label: Metadata
-    url: magento-functional-testing-framework/metadata.html
-    versions: ["2.3"]        
-
-  - label: Page
-    url: magento-functional-testing-framework/page.html
-    versions: ["2.3"]
-
-  - label: Section
-    url: magento-functional-testing-framework/section.html
-    versions: ["2.3"]
-
   - label: CLI Commands
     versions: ["2.3"]
     children:
