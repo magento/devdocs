@@ -15,7 +15,7 @@ functional_areas:
 
 ## Data types
 
-There are three four of data that need to be migrated manually:
+There are four kinds of data that need to be migrated manually:
 
 *	Media
 
