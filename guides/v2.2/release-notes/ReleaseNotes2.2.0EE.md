@@ -10,9 +10,9 @@ level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0EE.md
 redirect_from:
-  - http://devdocs.magento.com/guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html
-  - http://devdocs.magento.com/guides/v2.2/release-notes/release-notes-2-2-RC2-EE.html
-  - http://devdocs.magento.com/guides/v2.2/release-notes/release-notes-2-2-RC3-EE.html
+  - /guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html
+  - /guides/v2.2/release-notes/release-notes-2-2-RC2-EE.html
+  - /guides/v2.2/release-notes/release-notes-2-2-RC3-EE.html
 ---
 *Release notes updated October 2.*
 
