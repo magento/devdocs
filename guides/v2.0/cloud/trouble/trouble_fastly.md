@@ -139,6 +139,13 @@ The output for cURL commands can be lengthy. The following is a summary only:
 	  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
 	* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
 
+## 503 timeouts {#timeouts}
+When you receive a 503 error from Fastly, it may be due to a lengthy operation or performing bulk actions. Fastly has a default 60 second time out. Any request that takes longer than 60 seconds will return a 503 error.
+
+If you receive a 503 error, make the request directly to the origin or review logs for php and exceptions.
+
+CHECKING FOR SPECIFICS
+
 ## Determine if VCL is not uploaded {#vcl-uploaded}
 To determine if the default VCL snippets are not uploaded, check the following:
 
