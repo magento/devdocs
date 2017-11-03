@@ -263,7 +263,7 @@ name: myphpapp
 type: php:5.6
 {% endhighlight %}
 
-We support PHP versions 5.5, 5.6, and 7.0. The default is 7.0.
+For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X we support 7.1. 
 
 See one of the following sections for more information:
 
