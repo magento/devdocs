@@ -1857,6 +1857,43 @@
 
 <p>To verify the Fastly extension is working or to debug the Fastly extension, you can use the <code class="highlighter-rouge">curl</code> command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.</p>
 
+<h2 id="errors">Errors from Fastly</h2>
+<p>If you receive the following errors with Fastly, check the following:</p>
+
+<ul>
+  <li><strong>503 error</strong>: When you receive this error, check through logs and the Fastly 503 error page. See <a href="#timeouts">503 timeouts</a> for details.</li>
+  <li><strong>Store menu doesn’t display or work</strong>: You may be using a link or temp link directly to the origin server instead of through the live site URL or you used <code class="highlighter-rouge">-H "host:URL"</code> in a <a href="#curl">cURL command</a>. If you bypass Fastly to the origin server, the main menu doesn’t work and incorrect headers display that allow caching on a browser side.</li>
+</ul>
+
+<h3 id="timeouts">503 timeouts</h3>
+<p>If you receive a 503 error, check the following logs and information to better troubleshoot the issue.</p>
+
+<p>First, check your <a href="/guides/v2.1/cloud/trouble/environments-logs.html">error log</a> on your Production or Staging environment: <code class="highlighter-rouge">/var/log/platform/&lt;project_ID&gt;/error.log</code>.  The log will include possible errors from the application or PHP engine. For example: <code class="highlighter-rouge">memory_limit</code> or <code class="highlighter-rouge">max_execution_time exceeded</code></p>
+
+<p>If the logs do not include errors related to Fastly, check the PHP access log: <code class="highlighter-rouge">/var/log/platform/&lt;project_ID&gt;/php.access.log</code>. Check the log for an HTTP code 200 for the URL that threw a 503 error. If a 200 is returned for the URL, Magento returned the page without errors. The issue could have occurred after the interval that exceeds <code class="highlighter-rouge">first_byte_timeout</code> timeout configured by Fastly.</p>
+
+<p>When a 503 error occurs, Fastly returns the reason on the error and maintenance page. If you added code for a custom Error/Maintenance page, you can remove the custom code through the Magento Admin.</p>
+
+<ol>
+  <li>Log into the Magento Admin for the Production or Staging Admin.</li>
+  <li>Click <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>.</li>
+  <li>In the right pane, expand <strong>Full Page Cache</strong>.</li>
+  <li>
+    <p>In the <strong>Fastly Configuration</strong> section, expand <strong>Error/Maintenance Page</strong> as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud_fastly-503-page.png" alt="Custom Fastly error page" /></p>
+  </li>
+  <li>Click <strong>Set HTML</strong>.</li>
+  <li>Remove the custom code. You can save it in a text program to add back later.</li>
+  <li>When you’re done, click <strong>Upload</strong> to send your updates to Fastly.</li>
+  <li>Click <strong>Save Config</strong> at the top of the page.</li>
+  <li>
+    <p>Reopen the URL that caused the 503 error. Fastly returns an error page with the reason. The following image is an example.</p>
+
+    <p><img src="/common/images/cloud_fastly-503-example.png" alt="Fastly error" /></p>
+  </li>
+</ol>
+
 <h2 id="service-id">Locate Service ID</h2>
 <p>You can contact us for your Service ID for Staging and Production. For developers and advanced VCL users, you can also make a call using the Fastly variable <code class="highlighter-rouge">req.service_id</code>. This variable will return the Fastly <code class="highlighter-rouge">service_id</code>.</p>
 
@@ -2020,7 +2057,7 @@
   <li><strong>Geo-location/GeoIP does not work</strong>: The uploaded Magento Fastly VCL snippets append the country code to the URL. See <a href="/guides/v2.1/cloud/access-acct/fastly.html#upload-vcl-snippets">Upload Fastly VCL snippets</a>.</li>
 </ul>
 
-<h2 id="resolve-errors-found-by-curl">Resolve errors found by cURL</h2>
+<h2 id="curl">Resolve errors found by cURL</h2>
 <p>This section provides suggestions for resolving errors you might find using the <code class="highlighter-rouge">curl</code> command.</p>
 
 <h3 id="no-module">Fastly-Module-Enabled is not present</h3>
@@ -2092,7 +2129,7 @@
 <h2 id="purge">Purges do not process</h2>
 <p>If you attempt to use a Fastly purge option, and it does not process, you may have incorrect Fastly credentials in your environment or may have encountered an issue. You may receive the error: “The purge request was not processed successfully.”</p>
 
-<h3 id="check-fasty-credentials">Check Fasty credentials</h3>
+<h3 id="creds">Check Fasty credentials</h3>
 <p>Verify if you have the correct Fastly Service ID and API token in your environment. If you have Staging credentials in Production, the purges may not process or process incorrectly.</p>
 
 <ol>
@@ -2102,7 +2139,7 @@
   <li>If you modify the values, click <strong>Test Credentials</strong>.</li>
 </ol>
 
-<h3 id="check-vcl-snippets">Check VCL snippets</h3>
+<h3 id="snippets">Check VCL snippets</h3>
 <p>If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
