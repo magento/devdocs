@@ -30,7 +30,7 @@ sudo apt-get autoremove -y
 # Note: To avoid entering your user name and password every time you push, you can either use the SSH protocol
 
 # Install gems and dependencies from Gemfile.
-cd /vagrant/devdocs
+cd /vagrant
 bundle install
 
 # Run Jekyll to generate the devdocs site on localhost:40000
