@@ -45,13 +45,13 @@ The `type`  and `build` properties are used to build and run the project. The on
 
 Supported versions:
 
-    type: php:7.0
+    type: php:7.1
 
 The `build` determines what happens by default when building the project. The only value currently supported is `composer`.
 
 Example:
 
-    type: php:7.0
+    type: php:7.1
     build:
         flavor: composer
 
@@ -267,10 +267,10 @@ You can choose which version of PHP you want to run in your `.magento.app.yaml` 
 
 {% highlight yaml %}
 name: myphpapp
-type: php:7.0
+type: php:7.1
 {% endhighlight %}
 
-We support PHP versions 7.0. The default is 7.0.
+We support PHP versions 7.1.
 
 See one of the following sections for more information:
 
