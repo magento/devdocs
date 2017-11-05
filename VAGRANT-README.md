@@ -57,7 +57,7 @@ For additional command options, see [Basic Usage](https://jekyllrb.com/docs/usag
 
 ## Regenerate the site
 
-If you run Jekyll with `--incremental` option (and `--force_polling` on Windows) and made any changes in devdocs project, changed files would be regenerated automatically.
+If you run Jekyll with `--incremental` option (and `--force_polling` on Windows) and made any changes in devdocs project, changed files would be regenerated automatically. On Windows it can occur after 5-10 seconds.
 In some cases you shoud stop Jekyll and run it again to regenerate the `_site` and preview them in HTML.
 
 ## Useful CLI scripts and commands
