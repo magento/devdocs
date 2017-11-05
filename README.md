@@ -8,7 +8,7 @@ To contribute, please fork the `develop` branch.
 
 You can build this site locally using Jekyll
 
-*	Windows users _must_ build the site in a Vagrant container running on Virtual Box as discussed in more detail in the [Vagrant README](vagrant/README.md).
+*	Windows users _must_ build the site in a Vagrant container running on Virtual Box as discussed in more detail in the [Vagrant README](VAGRANT-README.md).
 
 	We use symbolic links (symlinks) in the `guides/v2.1` directory to link to topics that haven't changed since the 2.0.x release. Because symlinks aren't supported by Windows, you _cannot_ use the Windows environment; you must use a Linux environment.
 
@@ -18,8 +18,8 @@ You can build this site locally using Jekyll
 
 ## Build using Vagrant
 
-To build the site locally using Vagrant you need only the files in the `vagrant/` directory.
-For more information, see the [Vagrant README](vagrant/README.md).
+To build the site locally using Vagrant you need only type `vagrant up` in the project directory.
+For more information, see the [Vagrant README](VAGRANT-README.md).
 
 ## Requirements
 
