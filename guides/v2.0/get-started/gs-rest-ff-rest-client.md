@@ -45,9 +45,9 @@ You don't need to do any coding in this example.
 <h2>Step 3: Find the service data object</h2>
 <div>
 <p>The service data object tells you what data to pass in to the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}. The service data object is specified by the service interface method named by <code>service class</code> in <code>webapi.xml</code>.</p>
-<p>Continuing the preceding example, the <code>createCustomer()</code> method on the <code>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</code> specifies the data service object as follows:</p>
-<script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
-<p>In this case, the service object is <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/customer.php" target="_blank">\Magento\Customer\Service\V1\Data\customer</a>.</p>
+<p>Continuing the preceding example, the <code>createAccount()</code> method on the <code>\Magento\Customer\Api\AccountManagementInterface</code> specifies the data service object as follows:</p>
+<script src="https://gist.github.com/likemusic/aee6e3d45ead23f5113b0e83b70f3e3a.js"></script>
+<p>In this case, the service object is <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php" target="_blank">\Magento\Customer\Api\Data\CustomerInterface</a>.</p>
 <div class="bs-callout bs-callout-info" id="info">
   <p>To use <code>customer</code> as a JSON or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. The parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p>
   </div>
@@ -56,20 +56,15 @@ You don't need to do any coding in this example.
 <h2>Step 4: Find getters on customer</h2>
 <div>
 <p>Getters on service data objects enable you to find what data is required to execute the action (in this case, create a customer).</p>
-<p>There are two getters on <code>customer</code>:</p>
-<ul><li><p><code>getAddresses()</code>, which returns data defined by the service data object <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a></p>
-<p>Note that the <code>@return</code> specifies <code>\Magento\Customer\Service\V1\Data\Address[]|null</code>, which means that null values are accepted (in other words, you don't have to pass any data in).</p></li>
-<li><code>getCustomer()</code>, which returns data defined by <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a>.</li></ul>
+<p>There are some getters on <code>customer</code> one of which <code>getAddresses()</code>, which returns data defined by the service data object <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/Data/AddressInterface.php" target="_blank">\Magento\Customer\Api\Data\AddressInterface</a></p>
+<p>Note that the <code>@return</code> specifies <code>\Magento\Customer\Api\Data\AddressInterface[]|null</code>, which means that null values are accepted (in other words, you don't have to pass any data in).</p></li>
 <div class="bs-callout bs-callout-info" id="info">
-<p>To use <code>getAddresses</code> and <code>getCustomer</code> as JSON or XML values, remove <code>get</code> and convert the remainder of the string to lowercase separated by underscores. In this case,</p>
-  <ul class="note"><li><code>getCustomer</code> becomes <code>customer</code></li>
-<li><code>getAddresses</code> becomes <code>addresses</code></li></ul>
-  </div>
+<p>To use <code>getAddresses</code> as JSON or XML values, remove <code>get</code> and convert the remainder of the string to lowercase separated by underscores. In this case, <code>getCustomer</code> becomes <code>customer</code></p>
 </div>
 
 <h2>Step 5: Find getters on Address and Customer</h2>
 <div>
-<p><a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a> and <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a> have several getters, all of which are optional. Each getter has <code>@return</code> that tells you the data type.</p>
+<p><a href="{{ site.mage2000url }}app/code//Magento/Customer/Api/Data/AddressInterface.php" target="_blank">\Magento\Customer\Api\Data\AddressInterface</a> and <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php" target="_blank">\Magento\Customer\Api\Data\CustomerInterface</a> have several getters, all of which are optional. Each getter has <code>@return</code> that tells you the data type.</p>
 <p>Pick a few values to create your customer record; remember to use the same rules in step 3 (that is, remove <code>get</code>, convert everything to lowercase, and separate camel case letters with underscores).</p>
 </div>
 
