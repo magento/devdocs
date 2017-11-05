@@ -44,7 +44,12 @@ Enter `vagrant ssh` to connect to the VM using SSH.
 Use the following commands to run Jekyll:
     
     cd /vagrant
-    bin/jekyll serve --host=0.0.0.0
+    bin/jekyll serve --host=0.0.0.0 --incremental
+
+If you run Vagrant on Windows, add option `--force_polling`:
+
+    bin/jekyll serve --host=0.0.0.0 --incremental --force_polling
+
 
 After Jekyll has started, go to `http://127.0.0.1:4000` in a web browser on your host.
 
@@ -52,7 +57,8 @@ For additional command options, see [Basic Usage](https://jekyllrb.com/docs/usag
 
 ## Regenerate the site
 
-If you made any changes in devdocs project, you can stop Jekyll and run it again to regenerate the `_site` and preview them in HTML. Automatic regeneration doesn't work in the VM. 
+If you run Jekyll with `--incremental` option (and `--force_polling` on Windows) and made any changes in devdocs project, chanched files would be regenerated automatically.
+In some cases you shoud stop Jekyll and run it again to regenerate the `_site` and preview them in HTML.
 
 ## Useful CLI scripts and commands
 
