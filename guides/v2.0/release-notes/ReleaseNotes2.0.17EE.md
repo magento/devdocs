@@ -11,7 +11,7 @@ level3_subgroup: ee20-relnotes
 github_link: release-notes/ReleaseNotes2.0.17EE.md
 ---
 
-*Patch code and release notes were published on November, 2017.* 
+*Patch code and release notes were published on November 7, 2017.* 
 
 We are pleased to present Magento Commerce 2.0.17. This release includes almost 40 security fixes and enhancements to your Magento software.
 
@@ -32,12 +32,15 @@ Magento 2.0.17 includes multiple security enhancements. Although this release in
 See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
 
+## Known issue
+
+<!--- 82986 -->*  Magento continues to display the **Close** button after you open an image in the Product page in fullscreen mode, then close it. 
+
 ## Fixed issues
 
 ### Cart
 <!--- 61066 -->*  Magento now permits you to share a shopping cart between the store views of the same website, but not between store views of different websites. Previously, Magento did not clear the contents of your shopping cart  when you switched between store views on different websites.
  
-<!--- 57341 -->*  Magento no longer logs you out if you click **Go to Shopping Cart** after clicking **Checkout**.  
 
 
 ### Catalog
@@ -105,6 +108,18 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 57009 -->*  Magento now correctly calculates a bundle product's price even when it contains only one product in a required product option. Previously, if a bundle product contains only one product in an option, Magento did not update the price. [GitHub-4446](https://github.com/magento/magento2/issues/4446)
 
+<!--- 61270 -->* Cron errors no longer occur when reward points are avaiable and the Subscribe for Points Expiration Notifications setting is set.  
+
+<!--- 66634 -->* We’ve fixed an issue with the PayPal ExpressCheckout functional test.  
+
+<!--- 63456 -->* Magento no longer uses the wrong address template for shipping, invoice and credit memo emails when second website has a different template.
+
+<!--- 58771 -->* Inline translation is now available for button elements. 
+
+<!--- 64962 -->* Log entries no longer show the `current_password` field, which should be hidden. 
+
+<!--- 56380 -->* Backtrace information no longer appears on the frontend.
+
 
 ### Gift card
 <!--- 64676 -->* Customers can no longer exceed a gift card balance by using the gift card twice.
@@ -144,9 +159,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 63666 -->*  You can now base a Related Product rule on a product attribute, such as color. 
 
 
-### Visual Merchandiser
-<!--- 59391 -->*  Users  who have access to **Products > Inventory > Category** now automatically get access to all functionality available on the category page. Previously, users were not able to sequence products on category page when logged in any user other than Admin, no matter which permissions were assigned. 
-
 
 ### Web API Framework
 
@@ -155,8 +167,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 61908 -->*  You can now use REST to successfully update customer information without unintentionally deleting default billing and shipping address information.
 
 <!--- 62587 -->*  You can now use REST to add a video to a product description. [GitHub-7153](https://github.com/magento/magento2/issues/7153)
-
-
 
 
 
