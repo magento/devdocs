@@ -8,7 +8,8 @@ menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble-error-html-minification.md
-redirect_from: /guides/v2.0/cloud/trouble/trouble-error-html-minification.html
+redirect_from:
+  - /guides/v2.0/cloud/trouble/trouble-error-html-minification.html
 functional_areas:
   - Cloud
   - Configuration
