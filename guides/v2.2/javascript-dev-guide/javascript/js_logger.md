@@ -252,7 +252,7 @@ By default, Magento uses `consoleLogger` to display logs in browser console.
 
 Example:
 
-![node declaration autocomplete]({{site.baseurl}}common/images/js/logger_error.png)
+![node declaration autocomplete]({{ site.baseurl }}/common/images/js/logger_error.png)
 
 The default level of logs that Magento displays in the console starts from the `WARN` level.
 

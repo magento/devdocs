@@ -263,7 +263,7 @@ $   npm install
 [`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
 [`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
 
-[Deploy static view files]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+[Deploy static view files]: {{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
 [Grunt]: http://gruntjs.com/
 [Install grunt-cli]: http://gruntjs.com/getting-started
 [Install Node.js]: https://nodejs.org/en/

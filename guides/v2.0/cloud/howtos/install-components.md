@@ -67,13 +67,13 @@ To update `composer.json`:
   	git commit -m "<message>"
   	git push origin <environment ID>
 
-If there are errors, see [extension deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html).
+If there are errors, see [extension deployment failure]({{ page.baseurl }}cloud/trouble/trouble_comp-deploy-fail.html).
 
 ## Step 4: Verify the extension {#cloud-howto-comp-verify}
 
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
-1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the extension is installed.
+1.	[SSH to the environment]({{ page.baseurl }}cloud/env/environments-start.html#env-start-ssh) on which the extension is installed.
 2.	Enter the following command to display a list of enabled modules:
 
   	php bin/magento module:status
@@ -83,6 +83,6 @@ To verify the extension installed properly, you can check its functionality in t
 The extension name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
 
 #### Related topics
-*	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
-*	[Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
-*	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+*	[Update components]({{ page.baseurl }}cloud/howtos/update-components.html)
+*	[Install optional sample data]({{ page.baseurl }}cloud/howtos/sample-data.html)
+*	[Merge and delete an environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html)

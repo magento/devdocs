@@ -140,7 +140,7 @@ The following message displays to confirm success:
 
 ***Code compiling without a database***
 
-Refer to [Deploy static view files without installing Magento]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db) for more information.
+Refer to [Deploy static view files without installing Magento]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db) for more information.
 
 #### Related topics
 

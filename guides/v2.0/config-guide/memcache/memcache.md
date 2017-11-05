@@ -19,7 +19,7 @@ memcached is a general-purpose distributed memory caching system. It is often us
 
 memcache provides a very large hash table that can be distributed across multiple machines. When the table is full, subsequent inserts cause older data to be purged in least recently used (LRU) order. The size of this hash table is often very large. (Source: <a href="http://memcached.org/" target="_blank">memcached.org</a>)
 
-Magento uses memcached for session storage but not for page caching. For page caching, we recommend <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a> or <a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a>.
+Magento uses memcached for session storage but not for page caching. For page caching, we recommend <a href="{{ page.baseurl }}config-guide/redis/config-redis.html">Redis</a> or <a href="{{ page.baseurl }}config-guide/varnish/config-varnish.html">Varnish</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
@@ -27,5 +27,5 @@ Magento uses memcached for session storage but not for page caching. For page ca
 </div>
 
 #### Next step
-*   <a href="{{page.baseurl}}config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a>
-*   <a href="{{page.baseurl}}config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a>
+*   <a href="{{ page.baseurl }}config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a>
+*   <a href="{{ page.baseurl }}config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a>

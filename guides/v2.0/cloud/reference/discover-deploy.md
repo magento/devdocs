@@ -40,11 +40,11 @@ A set of YAML configuration files located in the project root directory define y
 
 If you intend to make changes, modify the YAML files in your Git branch of code. The build and deploy scripts access those files for specifics.
 
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) defines how Magento is built and deployed. Enter specific build and deploy options to the `hooks` section.
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) defines how an incoming URL is processed by {{site.data.var.ee}}.
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html) defines the services Magento uses by name and version. For example, this file may include versions of MySQL, some PHP extensions, and Elasticsearch. These are referred to as *services*.
+*	[`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) defines how Magento is built and deployed. Enter specific build and deploy options to the `hooks` section.
+*	[`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) defines how an incoming URL is processed by {{site.data.var.ee}}.
+*	[`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) defines the services Magento uses by name and version. For example, this file may include versions of MySQL, some PHP extensions, and Elasticsearch. These are referred to as *services*.
 
-We also recommend configuring your [system-specific settings]({{page.baseurl}}cloud/live/sens-data-over.html) into a `config.local.php` file. This file captures your configuration settings. You add and push this file into your Git branch, deploying it across all environments. If the file is found in the deployed code, all static file deployment occurs during the Build phase, not Deploy. Static file deployment takes a long time to complete, reducing deployment and site downtime if done in the Build phase.
+We also recommend configuring your [system-specific settings]({{ page.baseurl }}cloud/live/sens-data-over.html) into a `config.local.php` file. This file captures your configuration settings. You add and push this file into your Git branch, deploying it across all environments. If the file is found in the deployed code, all static file deployment occurs during the Build phase, not Deploy. Static file deployment takes a long time to complete, reducing deployment and site downtime if done in the Build phase.
 
 ## Required files for your Git branch {#requiredfiles}
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
@@ -76,7 +76,7 @@ When you initially set up a project from a template, we retrieve the code from t
 
 The remote server gets your code using Git. When you push your code from local to the remote Git, a series of checks and code validation completes prior to build and deploy scripts. The built-in Git server checks what you are pushing and makes changes. For example, you may want to add an Elasticsearch instance. The built-in Git server detects this and verifies that the topology of your cluster is modified to your new needs.
 
-If you have a syntax error in a configuration file, our Git server refuses the push. For details, see [Protective Block]({{page.baseurl}}cloud/live/live-prot.html).
+If you have a syntax error in a configuration file, our Git server refuses the push. For details, see [Protective Block]({{ page.baseurl }}cloud/live/live-prot.html).
 
 This phase also runs `composer install` to retrieve dependencies.
 
@@ -97,7 +97,7 @@ Once the application has been built it is mounted on a **read-only file system**
 
 This means you cannot FTP to the server and add modules. Instead, you must add code to your Git repo and run `git push`, which builds and deploys the environment.
 
-The build checks if the [`config.local.php` file]({{page.baseurl}}cloud/live/sens-data-over.html) exists in the codebase. If so, static files are deployed during this phase, reducing the downtime in the deployment phase.
+The build checks if the [`config.local.php` file]({{ page.baseurl }}cloud/live/sens-data-over.html) exists in the codebase. If so, static files are deployed during this phase, reducing the downtime in the deployment phase.
 
 ### Phase 3: Prepare the slug {#cloud-deploy-over-phases-slug}
 The result of the build phase is a read-only file system we refer to as a *slug*. In this phase, we create an archive and put the slug in permanent storage. The next time you push code, if a service didn't change, we reuse the slug from the archive.
@@ -133,7 +133,7 @@ There are two default deploy hooks. `pre-deploy.php` completes necessary cleanup
 
 *	If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
 
-*	Sets the mode to either [`developer`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer}}) or [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) based on the environment variable [`APPLICATION_MODE`]({{ page.baseurl }}cloud/env/environment-vars_magento.html).
+*	Sets the mode to either [`developer`]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-developer}}) or [`production`]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production) based on the environment variable [`APPLICATION_MODE`]({{ page.baseurl }}cloud/env/environment-vars_magento.html).
 
 	In `production` mode, the script optionally generates static web content using the command [`magento setup:static-content:deploy`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html).
 
@@ -150,7 +150,7 @@ While the deployment is running, we freeze the incoming traffic at the entry poi
 
 If deployment completes without issues or errors, the maintenance mode is removed to allow for normal access.
 
-To review build and deploy logs, see [Use logs for troubleshooting]({{page.baseurl}}cloud/trouble/environments-logs.html).
+To review build and deploy logs, see [Use logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html).
 
 #### Build and deploy full steps {#steps}
 With an understanding of the process, we provide the following instructions for build and deploy for your local, Integration, Staging, and finally Production:
@@ -162,9 +162,9 @@ With an understanding of the process, we provide the following instructions for 
 * [Go live and launch]({{ page.baseurl }}cloud/live/live.html)
 
 #### Related topics
-* [Deployment troubleshooting]({{page.baseurl}}cloud/access-acct/trouble.html)
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+* [Deployment troubleshooting]({{ page.baseurl }}cloud/access-acct/trouble.html)
+*	[Get started with a project]({{ page.baseurl }}cloud/project/project-start.html)
+*	[Get started with an environment]({{ page.baseurl }}cloud/env/environments-start.html)
+*	[`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+*	[`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)

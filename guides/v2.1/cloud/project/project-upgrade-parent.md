@@ -13,7 +13,7 @@ functional_areas:
   - Upgrade
 ---
 
-The following information helps you upgrade and patch {{site.data.var.ece}}. All of our upgrades and patches are [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html) driven. We recommend using `composer update` for running updates.
+The following information helps you upgrade and patch {{site.data.var.ece}}. All of our upgrades and patches are [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html) driven. We recommend using `composer update` for running updates.
 
 As part of your normal pushes of code, {{site.data.var.ece}} checks for any pending patches and updates. These instructions walk through the specific steps needed, including preparing, updating, and verifying the upgrade.
 

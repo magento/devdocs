@@ -40,7 +40,7 @@ The following table lists variables that you can override using environment vari
 <td>Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{ page.baseurl }}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
@@ -56,15 +56,15 @@ The following table lists variables that you can override using environment vari
 <td>en_US</td>
 </tr>
 <tr><td><code>APPLICATION_MODE</code></td>
-<td><p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
+<td><p>Determines whether or not Magento operates in <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
 <p>The variable supports the following values: <code>production</code> and <code>developer</code>. You cannot set this value to <code>default</code> mode. After you have changed the mode with an environment variable, it can only be set to <code>production</code> or <code>developer</code>.</p>
 <p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p></td>
 <td>production</td>
 </tr>
 <tr><td><code>CLEAN_STATIC_FILES</code></td>
-<td><p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
+<td><p>The default value, <code>enable</code>, cleans <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
 <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
-<p>Because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
+<p>Because of <a href="{{ page.baseurl }}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
 <td>enable</td>
 </tr>
 <tr>
@@ -116,7 +116,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <td><code>BUILD_OPT_SCD_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. These threads are used The higher amount of threads increasing the amount of files processed during the deployment of static content during the build phase. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
-<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+<p>To further reduce deployment time, we recommend using <a href="{{ page.baseurl }}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>Available in versions 2.1.4 and later, 2.2.X.</p></td>
 <td>scd_threads = 1 for all Starter environments and Pro Integration environments<br />
 scd_threads = 3 for Pro Staging and Production environments</td>
@@ -135,7 +135,7 @@ This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>v
 </tbody>
 </table>
 
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+For information on the build and deploy process, see [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html).
 
 <!-- <tr>
 <td><code>SCD_STRATEGY</code></td>
@@ -170,9 +170,9 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr>
 <td><code>CLEAN_STATIC_FILES</code></td>
-<td><p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
+<td><p>The default value, <code>enable</code>, cleans <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
 <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
-<p>Because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+<p>Because of <a href="{{ page.baseurl }}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
 <p>This is available in all versions.</p></td>
 <td>enabled</td>
 </tr>
@@ -190,7 +190,7 @@ The following variables are available during the deploy process of build and dep
 <td><code>STATIC_CONTENT_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. The higher amount of threads increasing the amount of files processed during the deployment. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
-<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+<p>To further reduce deployment time, we recommend using <a href="{{ page.baseurl }}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>This is available in all versions.</p></td>
 <td>1 for Starter environments and Pro Integration environments<br />
 3 for Pro Staging and Production environments</td>
@@ -206,7 +206,7 @@ The following variables are available during the deploy process of build and dep
 <td>enterprise</td>
 </tr>
 <tr><td><code>APPLICATION_MODE</code></td>
-<td><p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
+<td><p>Determines whether or not Magento operates in <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
 <p>The variable supports the following values: <code>production</code> and <code>developer</code>. You cannot set this value to <code>default</code> mode. After you have changed the mode with an environment variable, it can only be set to <code>production</code> or <code>developer</code>.</p>
 <p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p>
 <p>This is available in all versions.</p></td>
@@ -231,7 +231,7 @@ The following variables are available during the deploy process of build and dep
 <td>Not set, example: Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{ page.baseurl }}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
@@ -249,7 +249,7 @@ The following variables are available during the deploy process of build and dep
 </tr></tbody>
 </table>
 
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+For information on the build and deploy process, see [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html).
 
 <!-- <tr><td><code>SCD_STRATEGY</code></td>
 <td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
@@ -265,7 +265,7 @@ For information on the build and deploy process, see [Deployment process]({{page
 </tr> -->
 
 ## Add environment variables {#addvariables}
-You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
+You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
@@ -282,20 +282,20 @@ To create a variable using the command line:
 ## Troubleshooting {#cloud-env-vars-tshoot}
 In the event something goes wrong and you can't access your environment after it deploys, try the following:
 
-*   [SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
+*   [SSH to the environment]({{ page.baseurl }}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{ page.baseurl }}cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
 *   Restore your snapshot:
 
         magento-cloud snapshot:list
         magento-cloud snapshot:restore <snapshot>
 
-For more information on snapshots, see [Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html).
+For more information on snapshots, see [Snapshots and backup management]({{ page.baseurl }}cloud/project/project-webint-snap.html).
 
 #### Related topics
-* [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+* [Overview of environment variables]({{ page.baseurl }}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{ page.baseurl }}cloud/env/environment-vars_cloud.html)
+*	[Example setting variables]({{ page.baseurl }}cloud/env/set-variables.html)
+*	[Configuration management]({{ page.baseurl }}cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{ page.baseurl }}cloud/live/sens-data-initial.html)
+* [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+* [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
+* [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)

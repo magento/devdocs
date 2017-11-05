@@ -19,7 +19,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of static view files deployment {#config-cli-static-overview}
-The static view files deployment command enables you to write {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
+The static view files deployment command enables you to write {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to the Magento file system when the Magento software is set for <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 
 The term *static view file* refers to the following:
 
@@ -30,21 +30,21 @@ Static view files are located in the `<your Magento install dir>/pub/static` dir
 
 Static view files deployment is affected by Magento modes as follows:
 
--   **[Default]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default)** and **[developer]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer)** modes: Magento generates them on demand, but the rest are cached in a file for speed of access.
--   **[Production]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)** mode: Static files are *not* generated or cached.
+-   **[Default]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-default)** and **[developer]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-developer)** modes: Magento generates them on demand, but the rest are cached in a file for speed of access.
+-   **[Production]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)** mode: Static files are *not* generated or cached.
 
 You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 _Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-You can clean generated static view files in several ways. Refer to [Clean static files cache topic for details]({{page.baseurl}}howdoi/clean_static_cache.html) for more information.
+You can clean generated static view files in several ways. Refer to [Clean static files cache topic for details]({{ page.baseurl }}howdoi/clean_static_cache.html) for more information.
 </div>
 
 ## Deploy static view files {#config-cli-subcommands-staticview}
 To deploy static view files:
 
-1.  Log in to the Magento server as, or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+1.  Log in to the Magento server as, or <a href="{{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.  Delete the contents of `<your Magento install dir>/pub/static`, except for the `.htaccess` file. Do not delete this file.
 3.  Run the static view files deployment tool `<your Magento install dir>/bin/magento setup:static-content:deploy`.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
@@ -482,7 +482,7 @@ To do this, take the following steps:
 3.  Run [`magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
 
 <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
-<a href="{{page.baseurl}}install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.
+<a href="{{ page.baseurl }}install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.
 
 **Symptom**: The following error is displayed when you run the static view files deployment tool:
 
@@ -494,10 +494,10 @@ Use the following steps:
 
 1.  Install the Magento software in any of the following ways:
 
-    -   [Command line]({{page.baseurl}}install-gde/install/cli/install-cli.html)
-    -   [Setup wizard]({{page.baseurl}}install-gde/install/web/install-web.html)
+    -   [Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
+    -   [Setup wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 
-2.  Log in to the Magento server as, or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.
+2.  Log in to the Magento server as, or <a href="{{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.
 3.  Delete the contents of `<your Magento install dir>/pub/static` directory, except for the `.htaccess` file. Do not delete this file.
 4.  <a href="#config-cli-subcommands-staticview">Run the static view files deployment tool</a>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
@@ -517,15 +517,15 @@ One of the options for making it atomic is to write to files stored in a tempora
 
 ## Related topics
 
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

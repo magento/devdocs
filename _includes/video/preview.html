@@ -2,11 +2,11 @@
   {% if site.baseurl == "/" %}
   <a href="{{ video.url }}">
   {% else %}
-  <a href="{{site.baseurl}}{{ video.url }}">
+  <a href="{{ site.baseurl }}{{ video.url }}">
   {% endif %}
     <span class="thumbnail-wrap">
       {% if video.thumbnail %}
-      <img class="thumbnail" src="{{ site.baseurl }}videos/{{ video.thumbnail }}" />
+      <img class="thumbnail" src="{{ site.baseurl }}/videos/{{ video.thumbnail }}" />
       {% else %}
       <img class="thumbnail" src="https://img.youtube.com/vi/{{ video.youtube_id }}/mqdefault.jpg" />
       {% endif %} 

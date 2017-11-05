@@ -17,7 +17,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of setting Magento modes {#config-mode-over}
-To improve security and ease-of-use, we added a command that switches <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa.
+To improve security and ease-of-use, we added a command that switches <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa.
 
 Production mode also has better performance because static view files are populated in the `pub/static` directory and because of code compilation.
 
@@ -26,7 +26,7 @@ Production mode also has better performance because static view files are popula
 -   Unlike other Magento modes, developer and production modes are set in `env.php`.
 </div>
 
-Refer to [Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html) for more information.
+Refer to [Magento ownership and permissions in development and production]({{ page.baseurl }}config-guide/prod/prod_file-sys-perms.html) for more information.
 
 When you change to developer or production mode, we clear the contents of following directories:
 
@@ -46,7 +46,7 @@ By default, Magento uses the `var` directories to store the cache, logs, and com
 </div>
 
 ## Display the current mode {#config-mode-show}
-The easiest way to do that is to run this command as the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>. If you have shared hosting, this is the user your provider gives you to log in to the server. If you have a private server, it's typically a local user account on the Magento server.
+The easiest way to do that is to run this command as the <a href="{{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>. If you have shared hosting, this is the user your provider gives you to log in to the server. If you have a private server, it's typically a local user account on the Magento server.
 
 Command usage:
 
@@ -65,7 +65,7 @@ Where:
 
 -   **`{mode}`** is required; it can be either `developer` or `production`
 
--   **`--skip-compilation`** is an optional parameter you can use to skip <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.
+-   **`--skip-compilation`** is an optional parameter you can use to skip <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.
 
 <div class="bs-callout bs-callout-info" id="info" makrdown="1">
 You cannot currently change from either developer or production mode to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.
@@ -133,15 +133,15 @@ When you change from production to developer mode, you should clear generated cl
 
 #### Related topics
 
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+-   <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

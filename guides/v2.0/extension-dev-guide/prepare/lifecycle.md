@@ -24,7 +24,7 @@ Magento will detect the classes you are using to hook into the different lifecyc
 * The class should be in the `Setup` directory in your module's root directory with the appropriate file name. For the correct file name, please see the specific examples below.
 * The class must use the specific name for the phase in which it will be executed in. To determine the correct class name to use, please see the specific examples below.
 * The class must implement the specific class interface for the phase in which it will be executed in. To determine the correct interface to use, please see the specific examples below.
-* The version you use in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} should follow our [versioning policy]({{page.baseurl}}architecture/versioning.html).
+* The version you use in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} should follow our [versioning policy]({{ page.baseurl }}architecture/versioning.html).
 
 ### Schema initialization
 
@@ -221,7 +221,7 @@ class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\Upgrade
 
 ### Uninstall event
 
-The uninstall {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} begins when you uninstall your module using the [Component Manager]({{page.baseurl}}comp-mgr/module-man/compman-uninst-final.html) or by running the command `bin/magento module:uninstall --remove-data <module_name>`.
+The uninstall {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} begins when you uninstall your module using the [Component Manager]({{ page.baseurl }}comp-mgr/module-man/compman-uninst-final.html) or by running the command `bin/magento module:uninstall --remove-data <module_name>`.
 
 In this stage, your module should remove all traces of its existence in the database; e.g. dropping tables, deleting data, or restoring data.
 
@@ -248,4 +248,4 @@ class \<Vendor>\<Module>\Setup\Uninstall implements \Magento\Framework\Setup\Uni
 
 **Related Topics**
 
-* [Versioning policy]({{page.baseurl}}architecture/versioning.html)
+* [Versioning policy]({{ page.baseurl }}architecture/versioning.html)

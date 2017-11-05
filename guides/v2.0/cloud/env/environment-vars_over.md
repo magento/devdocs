@@ -72,11 +72,11 @@ To list environment variables using Magento Cloud CLI:
 3. List all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 #### Related topics
-* [Magento Cloud environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-* [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-* [Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-* [Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+* [Magento Cloud environment variables]({{ page.baseurl }}cloud/env/environment-vars_cloud.html)
+* [Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html)
+* [Example setting variables]({{ page.baseurl }}cloud/env/set-variables.html)
+* [Configuration management]({{ page.baseurl }}cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{ page.baseurl }}cloud/live/sens-data-initial.html)
+* [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+* [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
+*	[`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)

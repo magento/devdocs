@@ -6,10 +6,11 @@ title: Community Resources
 menu_title: Community Resources
 menu_order: 100
 menu_node: parent
-github_link: /community/resources/index.md
+github_link: community/resources/index.md
 redirect_from: 
-  - /guides/v2.1/community/resources/index.html
   - /guides/v2.0/community/resources/index.html
+  - /guides/v2.1/community/resources/index.html
+  - /guides/v2.2/community/resources/index.html
 ---
 
 Below are links to blog posts, podcasts, presentations, and books created by members of the {% glossarytooltip cadefd6b-0e85-4a8c-909a-5f967c56d35f %}Magento{% endglossarytooltip %} community and core developers separated into popular topics.
@@ -61,7 +62,7 @@ They are listed here because the content has been well received within the Magen
 *  *Presentation:* [Premium performance with PHP 7 and Varnish][15]{:target="_blank"} by Miguel Balparda 
 
 [0]: https://github.com/DavidLambauer/awesome-magento2 
-[1]: {{page.baseurl}}contributor-guide/contributing_docs.html
+[1]: {{ page.baseurl }}contributor-guide/contributing_docs.html
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
 [3]: http://www.slideshare.net/vrann/mage-titans-usa-2016-magentofacebookrabbitmq
 [4]: http://www.slideshare.net/OlgaKopylova2/m2-deployment

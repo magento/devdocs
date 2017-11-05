@@ -22,10 +22,10 @@ We have the following resources available:
 	*	[Magento 2.1.x](http://docs.magento.com/m2/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112){:target="_blank"}
 *	Developer documentation
 
-	*	[Front end development]({{ page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html)
-	*	[Customizing the Magento software]({{ page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html)
-	*	[Installation]({{ page.baseurl}}install-gde/bk-install-guide.html)
-	*	[Configuration]({{ page.baseurl}}config-guide/bk-config-guide.html)
+	*	[Front end development]({{ page.baseurl }}frontend-dev-guide/bk-frontend-dev-guide.html)
+	*	[Customizing the Magento software]({{ page.baseurl }}extension-dev-guide/bk-extension-dev-guide.html)
+	*	[Installation]({{ page.baseurl }}install-gde/bk-install-guide.html)
+	*	[Configuration]({{ page.baseurl }}config-guide/bk-config-guide.html)
 
 ### Technical support
 See [Get help with your deployment]({{ page.baseurl }}cloud/bk-cloud.html#gethelp)

@@ -54,7 +54,7 @@ To set the default locale and weight units in your development system:
 2.	Click **Stores** > Settings > **Configuration** > General > **General**.
 3.	If you have more than one website available, use the **Store View** list in the upper left corner to switch to a different website as the following figure shows.
 
-	![Switch websites]({{ site.baseurl }}common/images/config_split-deploy_switch-website.png){:width="250px"}
+	![Switch websites]({{ site.baseurl }}/common/images/config_split-deploy_switch-website.png){:width="250px"}
 3.	In the right pane, expand **Store Information**.
 4.	If necessary, clear the **Use Default** check box next to the **VAT Number** field.
 5.	Enter a number in the field (for example, `12345`).
@@ -62,7 +62,7 @@ To set the default locale and weight units in your development system:
 7.	Click **Save Config**.
 8.	Use the **Store View** list to select the **Default Config** as the following figure shows.
 
-	![Switch to the default config]({{ site.baseurl }}common/images/config_split-deploy_default-config.png){:width="200px"}
+	![Switch to the default config]({{ site.baseurl }}/common/images/config_split-deploy_default-config.png){:width="200px"}
 9.	In the left navigation, under General, click **Contacts**.
 8.	Clear the **Use Default** check box next to the **Send Emails To** field.
 9.	Enter an e-mail address in the field.
@@ -163,7 +163,7 @@ To verify the configuration settings:
 
 	The shared configuration options you set in the development system are displayed similar to the following.
 
-	![Check settings in the production system]({{ site.baseurl }}common/images/config_split-deploy_verify_storeinfo.png){:width="650px"}
+	![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_storeinfo.png){:width="650px"}
 
 	<div class="bs-callout bs-callout-info" id="info" markdown="1">
 	The **Store Name** field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system.
@@ -175,7 +175,7 @@ To verify the configuration settings:
 
 	The **Send Emails To** field is not editable, as the following figure shows. This is a sensitive setting.
 	
-	![Check settings in the production system]({{ site.baseurl }}common/images/config_split-deploy_verify_contacts.png){:width="400px"}
+	![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_contacts.png){:width="400px"}
 
 
 7.	In the left pane, click Customers > **Customer Configuration**.
@@ -183,4 +183,4 @@ To verify the configuration settings:
 
 	The value of the **Default Email Domain** field is displayed as follows. This is a system-specific setting.
 
-	![Check settings in the production system]({{ site.baseurl }}common/images/config_split-defaultdomain.png){:width="400px"}
+	![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-defaultdomain.png){:width="400px"}

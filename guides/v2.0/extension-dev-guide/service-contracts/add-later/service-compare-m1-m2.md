@@ -20,11 +20,11 @@ This example gets an address from an address book {% glossarytooltip c1e4242b-1f
 
 Magento 1 implementation:
 
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png"/></p>
+<p><img src="{{ site.baseurl }}/common/images/services_service-interaction_addr-book_mage1.png"/></p>
 
 Magento 2 implementation:
 
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage2.png"/></p>
+<p><img src="{{ site.baseurl }}/common/images/services_service-interaction_addr-book_mage2.png"/></p>
 
 ### Discussion of Address Book Example
 
@@ -64,11 +64,11 @@ This example sends a welcome e-mail to a customer after the customer registers d
 
 Magento 1 implementation:
 
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_checkout-reg_mage1.png"/></p>
+<p><img src="{{ site.baseurl }}/common/images/services_service-interaction_checkout-reg_mage1.png"/></p>
 
 Magento 2 implementation:
 
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_checkout-reg_mage2.png"/></p>
+<p><img src="{{ site.baseurl }}/common/images/services_service-interaction_checkout-reg_mage2.png"/></p>
 
 ### Discussion of Register During Checkout Example
 

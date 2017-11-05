@@ -16,7 +16,7 @@ functional_areas:
 
 <h2 id="reds-cache-prereq">Prerequisite</h2>
 
-If Redis will be used for default or page caching, you must [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install) before continuing. .
+If Redis will be used for default or page caching, you must [install Redis]({{ page.baseurl }}config-guide/redis/config-redis.html#config-redis-install) before continuing. .
 
 <h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
 
@@ -236,5 +236,5 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
 
 #### Related topics
 
- *  <a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{ page.baseurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{ page.baseurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>

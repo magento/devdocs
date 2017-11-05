@@ -9,4 +9,4 @@ version: 2.0
 github_link: frontend-dev-guide/javascript/back_to_guide.md
 ---
 
-Go back to <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_overview.html">JavaScript section of the Frontend Developer Guide</a>.
+Go back to <a href="{{ page.baseurl }}frontend-dev-guide/javascript/js_overview.html">JavaScript section of the Frontend Developer Guide</a>.

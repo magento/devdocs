@@ -409,6 +409,6 @@ For example, when 2.2 is released, a new `backward-incompatible-changes.md` for 
 
 In order to update the page, create a PR to the DevDocs repository with your changes.
 
-[versioning]: {{page.baseurl}}extension-dev-guide/versioning/index.html
+[versioning]: {{ page.baseurl }}extension-dev-guide/versioning/index.html
 [devdocs-repo]: https://github.com/magento/devdocs
 [2.2-bic-page]: https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes.md

@@ -60,5 +60,5 @@ Following is a summary of the tasks you must perform. More details are provided 
 
 #### Related topics
 *	[Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html)
-*	[Set up multiple websites with nginx]({{page.baseurl}}config-guide/multi-site/ms_nginx.html)
-*	[Set up multiple websites with Apache]({{page.baseurl}}config-guide/multi-site/ms_apache.html)
+*	[Set up multiple websites with nginx]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
+*	[Set up multiple websites with Apache]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)

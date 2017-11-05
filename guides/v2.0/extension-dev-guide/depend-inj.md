@@ -22,24 +22,24 @@ In simple terms, when object A requires object or value B to fulfill a function,
 When using dependency injection, we encourage you to follow the  [dependency inversion principle](http://www.oodesign.com/dependency-inversion-principle.html){:target="_blank"}, a coding principle that stipulates you use abstractions to reduce code dependencies.
 This means that high level classes should use the interface of a low level class instead of working with it directly.
 
-The [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html) file maps an interface dependency to a preferred implementation class.
+The [`di.xml`]({{ page.baseurl }}extension-dev-guide/build/di-xml-file.html) file maps an interface dependency to a preferred implementation class.
 
 ## Object manager
 
-The [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html) is a Magento service class that helps instantiate objects at the beginning of the bootstrapping process.
+The [object manager]({{ page.baseurl }}extension-dev-guide/object-manager.html) is a Magento service class that helps instantiate objects at the beginning of the bootstrapping process.
 
-During class construction, the object manager injects the appropriate dependency as defined in the [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html) file.
+During class construction, the object manager injects the appropriate dependency as defined in the [`di.xml`]({{ page.baseurl }}extension-dev-guide/build/di-xml-file.html) file.
 
 ## Constructor signature dependencies
 
-Magento uses class constructor signatures, not [DocBlock]({{page.baseurl}}coding-standards/docblock-standard-general.html) annotations, to retrieve information about what dependencies to pass to an object's constructor.
+Magento uses class constructor signatures, not [DocBlock]({{ page.baseurl }}coding-standards/docblock-standard-general.html) annotations, to retrieve information about what dependencies to pass to an object's constructor.
 If your code follows the dependency inversion principle and uses interfaces instead of specific implementations, you do not have to worry about class definitions.
 
 ## Compiling dependencies
-A [code compiler tool]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) collects all the dependency information in a class and stores that information in files.
+A [code compiler tool]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) collects all the dependency information in a class and stores that information in files.
 During class creation, the `ObjectManager` uses this information to create concrete objects in the application.
 
-In other words, the compiler helps generate all non-existing {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} service classes ([proxies]({{page.baseurl}}extension-dev-guide/proxies.html), [factories]({{page.baseurl}}extension-dev-guide/factories) and [interceptors]({{page.baseurl}}extension-dev-guide/plugins.html)) declared in code or configuration.
+In other words, the compiler helps generate all non-existing {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} service classes ([proxies]({{ page.baseurl }}extension-dev-guide/proxies.html), [factories]({{ page.baseurl }}extension-dev-guide/factories) and [interceptors]({{ page.baseurl }}extension-dev-guide/plugins.html)) declared in code or configuration.
 
 
 ## Injection types used in Magento
@@ -79,7 +79,7 @@ You must use constructor dependency injection for all optional and required depe
 <div class="bs-callout bs-callout-info" id="proxy-info" markdown="1">
   **Optional dependencies**\\
   Optional dependencies are the objects that your class uses for specific methods and scenarios.
-  If your class does not always use these classes and instantiating them is expensive, consider using a [proxy]({{page.baseurl}}extension-dev-guide/proxies.html).
+  If your class does not always use these classes and instantiating them is expensive, consider using a [proxy]({{ page.baseurl }}extension-dev-guide/proxies.html).
 </div>
 
 ### Method injection
@@ -104,19 +104,19 @@ You need to provide a product id or explicitly request a new, empty instance of 
 ## Rules for using dependency injection
 
 * Injectable objects may request other dependencies in their constructors if those objects are also injectable, but make sure you are not introducing circular dependencies.
-* If an injectable object needs to produce newable objects, it must ask for a [factory]({{page.baseurl}}extension-dev-guide/factories.html) in its constructor since factories are injectable.
+* If an injectable object needs to produce newable objects, it must ask for a [factory]({{ page.baseurl }}extension-dev-guide/factories.html) in its constructor since factories are injectable.
 * If an injectable object needs to perform some actions on newable object, it must receive that object as a function method argument.
-* You can create newable objects in services with object [factories]({{page.baseurl}}extension-dev-guide/factories.html) or you can pass them in as method parameters.
+* You can create newable objects in services with object [factories]({{ page.baseurl }}extension-dev-guide/factories.html) or you can pass them in as method parameters.
 * Newable objects should not hold a field reference to an injectable object nor should they request one in their constructor. 
 * Classes must not ask for the ObjectManager itself to be passed as a constructor dependency. The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} to this rule are custom factories with more elaborate needs than the autogenerated factories can provide.
 * The ObjectManager may be used in integration tests to arrange the test environment.
 
 **Related topics**
 
-*	[The `di.xml` file]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html)
-*	[ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
-*	[Plugins]({{page.baseurl}}extension-dev-guide/plugins.html)
-*	[Routing]({{page.baseurl}}extension-dev-guide/routing.html)
-*	[Magento application initialization and bootstrap]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html)
-* [Module Dependencies]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_depend.html)
-*	[Programming concepts]({{page.baseurl}}extension-dev-guide/api-concepts.html)
+*	[The `di.xml` file]({{ page.baseurl }}extension-dev-guide/build/di-xml-file.html)
+*	[ObjectManager]({{ page.baseurl }}extension-dev-guide/object-manager.html)
+*	[Plugins]({{ page.baseurl }}extension-dev-guide/plugins.html)
+*	[Routing]({{ page.baseurl }}extension-dev-guide/routing.html)
+*	[Magento application initialization and bootstrap]({{ page.baseurl }}config-guide/bootstrap/magento-bootstrap.html)
+* [Module Dependencies]({{ page.baseurl }}architecture/archi_perspectives/components/modules/mod_depend.html)
+*	[Programming concepts]({{ page.baseurl }}extension-dev-guide/api-concepts.html)

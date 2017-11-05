@@ -14,10 +14,10 @@ functional_areas:
 
 Before running the Component Manager or System Upgrade, complete the following tasks:
 
-*	<a href="{{page.baseurl}}comp-mgr/prereq/prereq_cron.html">Set up cron</a>
-*	<a href="{{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a>
-*	<a href="{{page.baseurl}}comp-mgr/prereq/prereq_compman-ulimit.html">Set `ulimit` for the web server user</a>
-*	[Checklist]({{page.baseurl}}comp-mgr/prereq/prereq_compman-checklist.html)
+*	<a href="{{ page.baseurl }}comp-mgr/prereq/prereq_cron.html">Set up cron</a>
+*	<a href="{{ page.baseurl }}comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a>
+*	<a href="{{ page.baseurl }}comp-mgr/prereq/prereq_compman-ulimit.html">Set `ulimit` for the web server user</a>
+*	[Checklist]({{ page.baseurl }}comp-mgr/prereq/prereq_compman-checklist.html)
 
 After you've completed all prerequisites, continue with:
 

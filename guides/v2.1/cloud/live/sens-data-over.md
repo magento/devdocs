@@ -60,14 +60,14 @@ You can set _any_ value using environment variables, but we recommend using envi
 For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}cloud/live/config-reference-var-name.html).
 
 ### Static content deployment performance {#cloud-confman-scd-over}
-Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
+Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
 
 If you generate `config.local.php`, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
 ## How we set configurations {#cloud-config-specific-over}
 All system settings are set according to the following override scheme.
 
-![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png)
+![How configuration variable values are determined]({{ site.baseurl }}/common/images/cloud_vars_flow-diagram.png)
 
 As the diagram shows, we get configuration values in the following order:
 
@@ -126,11 +126,11 @@ To fully understand the process, please see [our extensive example]({{ page.base
 
 The **Starter plan** environment high-level overview of this process:
 
-![Overview of Starter configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-starter-2-1.png)
+![Overview of Starter configuration management]({{ site.baseurl }}/common/images/cloud_configmgmt-starter-2-1.png)
 
 The **Pro plan** environment high-level overview of this process:
 
-![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png)
+![Overview of Pro configuration management]({{ site.baseurl }}/common/images/cloud_configmgmt-pro-2-1.png)
 
 ### Step 1: Configure your store
 Complete all configurations for your stores in the Admin console:
@@ -186,9 +186,9 @@ While you can manually edit `config.local.php` in Staging and Production, we don
 
 #### Next step
 * [Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
-* [Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+* [Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
+*	[Magento Cloud CLI reference]({{ page.baseurl }}cloud/reference/cli-ref-topic.html)
+*	[Overview of environment variables]({{ page.baseurl }}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{ page.baseurl }}cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{ page.baseurl }}cloud/env/set-variables.html)

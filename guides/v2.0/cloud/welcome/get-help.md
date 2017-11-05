@@ -17,5 +17,5 @@ To contact Support:
 
 	The following figure shows an example.
 
-	![]({{ site.baseurl }}common/images/cloud_support-ticket.png){:width="600px"}
+	![]({{ site.baseurl }}/common/images/cloud_support-ticket.png){:width="600px"}
 3.	Follow the prompts to open an issue with Support.

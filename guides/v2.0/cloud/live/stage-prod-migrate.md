@@ -45,7 +45,7 @@ For Starter, deploy your development branch you created to Staging and Productio
 4. Select the Staging branch.
 5. Select the **Merge** option to deploy to Production.
 
-![Use the merge option to deploy]({{ site.baseurl }}common/images/cloud_project-merge.png)
+![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud_project-merge.png)
 
 ## Deploy using SSH {#ssh}
 If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the `master` branch.

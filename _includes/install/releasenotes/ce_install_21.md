@@ -13,7 +13,7 @@ See one of the following sections for more information:
 ### Get the Magento Open Source software using Composer {#install-rc-composer}
 {:.no_toc}
 
-The Open Source software is available from `repo.magento.com`. Before getting the Open Source software, familiarize yourself with the Composer metapackage  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+The Open Source software is available from `repo.magento.com`. Before getting the Open Source software, familiarize yourself with the Composer metapackage  <a href="{{ page.baseurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
 
@@ -45,9 +45,9 @@ See the following sections for more information.
 ### Upgrade an existing installation from the GitHub repository {#upgrade-github}
 {:.no_toc}
 
-Developers who contribute to the Open Source codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
+Developers who contribute to the Open Source codebase can <a href="{{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
 
-1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
+1.	Go to the <a href="{{ page.baseurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 

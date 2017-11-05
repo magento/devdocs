@@ -32,6 +32,6 @@
 8.	Pull any updated code to your local for the environment ID (which is the Git branch):
 
 		git pull origin <environment ID>
-7.  Create a [snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) of the environment as a backup:
+7.  Create a [snapshot]({{ page.baseurl }}cloud/project/project-webint-snap.html) of the environment as a backup:
 
         magento-cloud snapshot:create -e <environment ID>

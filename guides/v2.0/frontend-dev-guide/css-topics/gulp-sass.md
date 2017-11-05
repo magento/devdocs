@@ -16,9 +16,9 @@ functional_areas:
 
 By default, Magento uses [Less](http://lesscss.org/) for themes styling. But you can use other stylesheet languages that can be compiled (processed) to CSS. For example, Sass is a popular alternative.
 
-If you decide not to use Less and default [Magento UI library]({{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html), you need to create your own theme from scratch and use an alternative preprocessor. You can write a custom pre-processor or use an existing one. This topic describes how to configure and use [Gulp](http://gulpjs.com/) preprocessor for Sass.
+If you decide not to use Less and default [Magento UI library]({{ page.baseurl }}frontend-dev-guide/css-topics/theme-ui-lib.html), you need to create your own theme from scratch and use an alternative preprocessor. You can write a custom pre-processor or use an existing one. This topic describes how to configure and use [Gulp](http://gulpjs.com/) preprocessor for Sass.
 
-For details about adding a custom preprocessor, see the [Add custom CSS preprocessor]({{page.baseurl}}frontend-dev-guide/css-topics/custom_preprocess.html) topic.
+For details about adding a custom preprocessor, see the [Add custom CSS preprocessor]({{ page.baseurl }}frontend-dev-guide/css-topics/custom_preprocess.html) topic.
 
 ## Install Gulp and its Sass preprocessor
 
@@ -55,7 +55,7 @@ For details about adding a custom preprocessor, see the [Add custom CSS preproce
 
 ## Create a theme and add Sass styles
 
-1. Create a theme as described in [Create a new storefront theme]({{page.baseurl}}frontend-dev-guide/themes/theme-create.html). 
+1. Create a theme as described in [Create a new storefront theme]({{ page.baseurl }}frontend-dev-guide/themes/theme-create.html). 
 
 4. Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). You can use the following code sample (no changes needed, create an empty `app/code/frontend/<Vendor>/<theme>/gulp.js` and copy-paste this code): 
  `package.json`:

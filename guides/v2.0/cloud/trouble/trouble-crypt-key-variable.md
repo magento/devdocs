@@ -44,5 +44,5 @@ To verify and update the encryption key environment variable:
 5.  Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.
 
 #### Related topics
-*	[List the current environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html#cloud-import-key)
-*	[Copy the encryption key]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[List the current environment variables]({{ page.baseurl }}cloud/env/environment-vars_over.html#cloud-import-key)
+*	[Copy the encryption key]({{ page.baseurl }}cloud/env/environment-vars_over.html)

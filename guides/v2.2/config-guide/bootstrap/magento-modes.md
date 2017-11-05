@@ -38,7 +38,7 @@ You can run Magento in any of the following *modes*:
 		<td><p>Intended for development only, this mode:</p>
 			<ul><li>Disables static view file caching</li>
 				<li>Provides verbose logging</li>
-				<li>Enables <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html#config-cli-subcommands-compile-overview">automatic code compilation</a></li>
+				<li>Enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html#config-cli-subcommands-compile-overview">automatic code compilation</a></li>
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul></td>
@@ -63,7 +63,7 @@ In default mode:
 *	Static view files are cached
 *	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view){:target="_blank"}. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
-For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
+For more information, see <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 <h2 id="mode-developer">Developer mode</h2>
 You should run the Magento software in developer mode when you're extending or customizing it.
@@ -76,10 +76,10 @@ In developer mode:
 *	An {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is thrown in the error handler, rather than being logged
 *	An exception is thrown when an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} subscriber cannot be invoked
 
-For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
+For more information, see <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 <h2 id="mode-production">Production mode</h2>
-You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento `pub/static` directory.
+You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento `pub/static` directory.
 
 This improves performance because static files don't go through the fallback mechanism; instead, URLs for static files are created as needed.
 
@@ -92,7 +92,7 @@ In production mode:
 	You _cannot_ enable or disable cache types using the Magento Admin
 
 #### Next step
-To set a mode, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
+To set a mode, see <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 #### Related topic
-To generate static view files for production mode, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+To generate static view files for production mode, see <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>

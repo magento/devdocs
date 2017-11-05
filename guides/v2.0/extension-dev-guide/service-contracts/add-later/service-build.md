@@ -109,14 +109,14 @@ Note the following:
 
 #### Related topics:
 
-*	<a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+*	<a href="{{ page.baseurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
 
 <!--
-*	<a href="{{page.baseurl}}extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ page.baseurl }}extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a>
 
-*	<a href="{{page.baseurl}}extension-dev-guide/service-contracts/add-later/svcs-props.html">Service design</a>
+*	<a href="{{ page.baseurl }}extension-dev-guide/service-contracts/add-later/svcs-props.html">Service design</a>
 
-*	<a href="{{page.baseurl}}extension-dev-guide/service-contracts/add-later/what-is-webapi.html">What Is the Web API Framework?</a>
+*	<a href="{{ page.baseurl }}extension-dev-guide/service-contracts/add-later/what-is-webapi.html">What Is the Web API Framework?</a>
 
-*	<a href="{{page.baseurl}}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
+*	<a href="{{ page.baseurl }}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
  -->

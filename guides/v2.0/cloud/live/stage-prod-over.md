@@ -55,7 +55,7 @@ This table lists the differences between the environments.
 
 The following diagram illustrates how the three systems work on a high level:
 
-![How test, staging, and production works]({{ site.baseurl }}common/images/cloud_stage-prod-concept1.png){:width="600px"}
+![How test, staging, and production works]({{ site.baseurl }}/common/images/cloud_stage-prod-concept1.png){:width="600px"}
 
 In your Integration environment, you can create up to eight active environments for each active Git branch of your code. For example, you could have a feature branch and iterate development over several sprints. At the end of a sprint, you could merge (that is, push) code to the parent branch (labeled Feature1 in the preceding diagram). To start another sprint you could sync (that is, pull) code from Feature1 to your next sprint.
 

@@ -5,7 +5,7 @@ Magento uses cron for two sets of tasks, and for each, cron can run with a diffe
 
 *	PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.
 
-*	Web server PHP plug-in configuration: Two other cron jobs are used by the [Component Manager and System Upgrade utilities]({{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html).
+*	Web server PHP plug-in configuration: Two other cron jobs are used by the [Component Manager and System Upgrade utilities]({{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 *	To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. 

@@ -58,7 +58,7 @@ To change locale and static file optimization settings:
 2.	In the right pane, expand **Locale Options**.
 3.	From the **Locale** list, change the locale. You can change it back later.
 
-	![Change the locale]({{ site.baseurl }}common/images/cloud_var_locale.png){:width="400px"}
+	![Change the locale]({{ site.baseurl }}/common/images/cloud_var_locale.png){:width="400px"}
 4.	Click **Save Config**.
 5.	In the left navigation pane, click **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
@@ -68,7 +68,7 @@ To change locale and static file optimization settings:
 6.	From the **Merge CSS Files** list, click **No**.
 7.	From the **Minify CSS Files** list, click **No**.
 
-	![Set static file optimization settings]({{ site.baseurl }}common/images/cloud_vars_set-minify.png){:width="550px"}
+	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
 8.	Click **Save Config**.
 9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 10.	Log out of the Magento Admin.
@@ -140,13 +140,13 @@ To verify your configuration changes:
 
 	Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
 
-	![Can't edit certain values in the Admin]({{ site.baseurl }}common/images/cloud_var_not-editable.png){:width="550px"}
+	![Can't edit certain values in the Admin]({{ site.baseurl }}/common/images/cloud_var_not-editable.png){:width="550px"}
 5.	In the left navigation pane, click Advanced > **Developer**.
 6.	In the right pane, expand **Template Settings**, **JavaScript Settings**, and **CSS Settings**.
 
 	Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
 
-	![Can't edit certain values in the Admin ]({{ site.baseurl }}common/images/cloud_var_not-editable2.png){:width="550px"}
+	![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud_var_not-editable2.png){:width="550px"}
 7.	Log out of the Magento Admin.
 
 ## Change and update system-specific configuration settings {#modify}
@@ -185,7 +185,7 @@ To change values in the Integration environment Magento Admin:
 6.	From the **Merge CSS Files** list, click **Yes**.
 7.	From the **Minify CSS Files** list, click **Yes**.
 
-	![Set static file optimization settings]({{ site.baseurl }}common/images/cloud_vars_reset-minify.png){:width="550px"}
+	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_reset-minify.png){:width="550px"}
 8.	Click **Save Config**.
 9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 10.	Log out of the Magento Admin.
@@ -219,9 +219,9 @@ Repeat the deployment process for pushing the code to all environments.
 
 #### Related topics
 * [Overview of configuration management]({{ page.baseurl }}cloud/live/sens-data-over.html)
-* [Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+* [Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
+*	[Magento Cloud CLI reference]({{ page.baseurl }}cloud/reference/cli-ref-topic.html)
+*	[Overview of environment variables]({{ page.baseurl }}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{ page.baseurl }}cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{ page.baseurl }}cloud/env/set-variables.html)

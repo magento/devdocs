@@ -21,7 +21,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 ## Changes in this release
 
 * Removed the MDVA-913 patch because the issue is now fixed in Magento Enterprise Edition 2.1.4.
-* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}cloud/trouble/pro-env-management.html).
 
 ## Fixes in this release
 *	When you disable a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and deploy it to the remote Cloud server, the module stays disabled.

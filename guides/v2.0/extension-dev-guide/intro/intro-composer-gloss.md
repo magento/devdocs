@@ -48,8 +48,8 @@ Merchants do not need to understand that, under the covers, some packages are sh
 </div>
 
 #### For more information
-*	<a href="{{page.baseurl}}extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a>
-*	<a href="{{page.baseurl}}extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
+*	<a href="{{ page.baseurl }}extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a>
+*	<a href="{{ page.baseurl }}extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
 
 ### Component Manager {#gloss-compman}
 Merchants use the [Component Manager]({{ page.baseurl }}comp-mgr/module-man/compman-start.html) (part of the Magento Admin) to do any of the following:

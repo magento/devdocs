@@ -24,8 +24,8 @@ We provide options to:
 ## Environments and branches {#env-branches}
 Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. Each environment has an associated active Git branch of code.
 
-* For [Pro]({{page.baseurl}}cloud/welcome/discover-workflow.html), we recommend branching from Integration `master`.
-* For [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html), we recommend creating a `staging` branch, then creating additional code branches from `staging`.
+* For [Pro]({{ page.baseurl }}cloud/welcome/discover-workflow.html), we recommend branching from Integration `master`.
+* For [Starter]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html), we recommend creating a `staging` branch, then creating additional code branches from `staging`.
 
 We recommend using GitHub for maintaining your code branches.
 
@@ -33,7 +33,7 @@ We recommend using GitHub for maintaining your code branches.
   <p>Your project must have a <code>master</code> branch; it won't function properly without one.</p>
 </div>
 
-You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or [Magento Cloud CLI]({{page.baseurl}}cloud/reference/cli-ref-topic.html) commands.
+You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or [Magento Cloud CLI]({{ page.baseurl }}cloud/reference/cli-ref-topic.html) commands.
 
 
 ## Active and inactive branches {#active-inactive}
@@ -64,11 +64,11 @@ When you merge code from a child branch to its parent, the parent environment is
 
 For **Starter plan**, the following diagram details the branch and environment relationships:
 
-![High-level view of Starter project]({{ site.baseurl }}common/images/cloud_arch-starter.png)
+![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
 
 For **Pro plan**, the following diagram details the branch and environment relationships:
 
-![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
+![High-level view of Pro architecture flow]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture.png)
 
 ### Example development process {#example}
 For example, your Agile development team creates three branches to work on three stories in a sprint. At the end of the sprint, they merge into a single branch for testing.
@@ -85,7 +85,7 @@ For example, your Agile development team creates three branches to work on three
 When the code is live, make the branches used to work on the sprint in Integration as inactive. This frees up active environments and branch slots for the next sprint of work.
 
 ## Helpful CLI commands {#commands}
-The following table lists the commands used in the preceding example. For a full list of all CLI commands, see [Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html).
+The following table lists the commands used in the preceding example. For a full list of all CLI commands, see [Magento Cloud CLI reference]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
 <table>
 	<tbody>
@@ -114,12 +114,12 @@ The following table lists the commands used in the preceding example. For a full
 </table>
 
 #### Related topics
-*	[Manage your project]({{page.baseurl}}cloud/project/projects.html)
-*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[SSH and sFTP]({{page.baseurl}}cloud/env/environments-ssh.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
+*	[Manage your project]({{ page.baseurl }}cloud/project/projects.html)
+*	[Magento Cloud CLI reference]({{ page.baseurl }}cloud/reference/cli-ref-topic.html)
+*	[SSH and sFTP]({{ page.baseurl }}cloud/env/environments-ssh.html)
+*	[Overview of environment variables]({{ page.baseurl }}cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{ page.baseurl }}cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{ page.baseurl }}cloud/env/set-variables.html)
+*	[Configuration management]({{ page.baseurl }}cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{ page.baseurl }}cloud/live/sens-data-initial.html)

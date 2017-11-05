@@ -1,6 +1,6 @@
 <div markdown="1">
 
-![How Magento installation works]({{ site.baseurl }}common/images/install_diagram.png){:width="1100px"}
+![How Magento installation works]({{ site.baseurl }}/common/images/install_diagram.png){:width="1100px"}
 
 The diagram shows the following:
 
@@ -21,7 +21,7 @@ The diagram shows the following:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<p>To be able to use the Web Setup Wizard to install or upgrade the Magento software, or to manage extensions you get from Magento Marketplace, you must either get a compressed archive or a Composer metapackage.</p>
-		<p>If you clone the GitHub repository, you <em>cannot</em> use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using <a href="{{page.baseurl}}/install-gde/install/cli/dev_options.html">Composer and git commands</a>.</p>
+		<p>If you clone the GitHub repository, you <em>cannot</em> use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using <a href="{{ page.baseurl }}install-gde/install/cli/dev_options.html">Composer and git commands</a>.</p>
 	</div>
 
 3.	Install the Magento software using either the Web Setup Wizard or command line.

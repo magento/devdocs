@@ -13,7 +13,7 @@ functional_areas:
   - Configuration
 ---
 
-For information setting up and configuring Fastly, see [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html).
+For information setting up and configuring Fastly, see [Set up Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html).
 
 To verify the Fastly extension is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.
 
@@ -37,14 +37,14 @@ When a 503 error occurs, Fastly returns the reason on the error and maintenance 
 3.	In the right pane, expand **Full Page Cache**.
 4.	In the **Fastly Configuration** section, expand **Error/Maintenance Page** as the following figure shows.
 
-	![Custom Fastly error page]({{ site.baseurl }}common/images/cloud_fastly-503-page.png)
+	![Custom Fastly error page]({{ site.baseurl }}/common/images/cloud_fastly-503-page.png)
 5.	Click **Set HTML**.
 3.	Remove the custom code. You can save it in a text program to add back later.
 4.	When you're done, click **Upload** to send your updates to Fastly.
 5.	Click **Save Config** at the top of the page.
 6.	Reopen the URL that caused the 503 error. Fastly returns an error page with the reason. The following image is an example.
 
-	![Fastly error]({{ site.baseurl }}common/images/cloud_fastly-503-example.png)
+	![Fastly error]({{ site.baseurl }}/common/images/cloud_fastly-503-example.png)
 
 ## Locate Service ID {#service-id}
 You can contact us for your Service ID for Staging and Production. For developers and advanced VCL users, you can also make a call using the Fastly variable `req.service_id`. This variable will return the Fastly `service_id`.
@@ -200,7 +200,7 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 
 	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
 
-If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html) for instructions.
+If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) for instructions.
 
 ### Fastly-Magento-VCL-Uploaded is not present {#no-VCL}
 During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
@@ -244,7 +244,7 @@ If the credentials are correct, you may have issues with your VCLs. To list and 
 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
 
-Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}cloud/configure/cloud-vcl-custom-snippets.html).
 
 ## Activating a deactivated version {#activate}
 Using `curl` commands and APIs, you can activate, deactivate, and delete a version and service. If you have deactivated a service, you have deactivated the version without leaving any version active.
@@ -272,6 +272,6 @@ Then activate the version you want active:
   curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
 
 #### Related topics
-* [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)
-* [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html)
-* [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
+* [Fastly in Cloud]({{ page.baseurl }}cloud/basic-information/cloud-fastly.html)
+* [Set up Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html)
+* [Custom Fastly VCL snippets]({{ page.baseurl }}cloud/configure/cloud-vcl-custom-snippets.html)

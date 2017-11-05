@@ -34,7 +34,7 @@ The following sections discuss properties in `.magento.app.yaml`.
 ## `name` property {#name}
 `name` identifies the application in the project. {{site.data.var.ee}} supports multiple applications in a project, so each application must have a *unique name* in a project.
 
-`name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name` is used in the [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) to define the HTTP upstream (by default, `php:php`).
+`name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name` is used in the [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) to define the HTTP upstream (by default, `php:php`).
 
 For example, if the value of `name` is `app`, you must use `app:php` in the upstream field. You can also use this name in multi-application relationships.
 
@@ -81,7 +81,7 @@ Example of valid options are:
 	cache: "arediscache:redis"
 	search: "searchengine:solr"
 
-See also [`services.yaml` documentation]({{page.baseurl}}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See also [`services.yaml` documentation]({{ page.baseurl }}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 
 ## `web` {#cloud-yaml-platform-web}
@@ -360,11 +360,11 @@ For example, if you need to increase the PHP memory limit:
 
 For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
-After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
+After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ page.baseurl }}cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
 
 #### Related topics
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[routes.yaml]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[services.yaml]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[Get started with a project]({{ page.baseurl }}cloud/project/project-start.html)
+*	[routes.yaml]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
+*	[services.yaml]({{ page.baseurl }}cloud/project/project-conf-files_services.html)

@@ -20,13 +20,13 @@ Current topics:
 
 *	Install components, upgrade, update
 
-	*	[Install components]({{page.baseurl}}cloud/howtos/install-components.html)
-	*	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
+	*	[Install components]({{ page.baseurl }}cloud/howtos/install-components.html)
+	*	[Update components]({{ page.baseurl }}cloud/howtos/update-components.html)
 	*	[Test a Magento patch before deploying it]({{ page.baseurl }}cloud/howtos/upgrade-magento.html)
 
 *	Environments
 
-	*	[Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)
-	*	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+	*	[Set Magento environment variables]({{ page.baseurl }}cloud/howtos/environment-tutorial-set-mage-vars.html)
+	*	[Merge and delete an environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html)
 
-*	[Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
+*	[Install optional sample data]({{ page.baseurl }}cloud/howtos/sample-data.html)

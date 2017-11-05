@@ -6,7 +6,7 @@ Magento uses cron for two sets of tasks, and for each, cron can run with a diffe
 *	PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.
 
 	You can find the command-line configuration using the command `php --ini`. 
-*	Web server PHP plug-in configuration: Two other cron jobs are used by the <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. 
+*	Web server PHP plug-in configuration: Two other cron jobs are used by the <a href="{{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. 
 
 	You can find the web server plug-in configuration using <a href="{{ page.baseurl }}install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code>.
 

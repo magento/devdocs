@@ -17,7 +17,7 @@ functional_areas:
 
 [New Relic](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} Application Performance Monitoring (APM) provides application and performance information for end-user operations completed through your stores. This data helps you analyze and improve application interactions.
 
-You can mix the higher level data captured by New Relic APM with the deeper method and call dive data from [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). Using these two tools together in Staging and Production environments, you gain a better view into your store performance.
+You can mix the higher level data captured by New Relic APM with the deeper method and call dive data from [Blackfire Profiler]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html). Using these two tools together in Staging and Production environments, you gain a better view into your store performance.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You receive New Relic APM with your {{site.data.var.ece}} subscription. You do not need to purchase or install install the New Relic extension (different than the APM service).
@@ -35,11 +35,11 @@ New Relic APM provides the following [key features](https://newrelic.com/php/mag
 ## New Relic APM credentials {#credentials}
 When you sign up for a {{site.data.var.ece}} account, you will receive an email of credentials to your account. The agent software for New Relic is already installed to capture data for review through the service.
 
-You will need these credentials and the license associated to them. You receive this information by email and in your [project details]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-creds).
+You will need these credentials and the license associated to them. You receive this information by email and in your [project details]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-creds).
 
 
 ## Configure New Relic APM {#configure}
-You can locate your New Relic APM credentials and key in the [Project Web Interface]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). The Project Owner can [log in](https://accounts.magento.cloud){:target="_blank"} to the interface and review [project and environment credentials]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-creds).
+You can locate your New Relic APM credentials and key in the [Project Web Interface]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html). The Project Owner can [log in](https://accounts.magento.cloud){:target="_blank"} to the interface and review [project and environment credentials]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-creds).
 
 For **Pro plan projects**, New Relic is already set up for you in Staging and Production environments. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.
 

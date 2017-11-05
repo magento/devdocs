@@ -99,7 +99,7 @@ You can leave all other fields on this page blank.</li>
 The integration displays on the Integrations page.<br></li>
 <li>Click <strong>Activate</strong> next to the name of the integration you just created.<br>
 The following figure shows an example.<br>
-<img src="{{ site.baseurl }}common/images/rest_create-integration1.png" alt="Click an integration's activate text to allow it to access defined resources"></li>
+<img src="{{ site.baseurl }}/common/images/rest_create-integration1.png" alt="Click an integration's activate text to allow it to access defined resources"></li>
 <li>At the confirmation dialog box, click <strong>Allow</strong>.<br>
 The Integration Tokens for Extensions dialog box displays the authorization credentials you'll need for the REST call. You can view these credentials at any time by logging in to the Magento Admin and editing the integration.</li></ol>
 </div>
@@ -111,7 +111,7 @@ The Integration Tokens for Extensions dialog box displays the authorization cred
 <li>In the <strong>URL</strong> field, enter the following:<br>
 <code>https://<your Magento host or IP>/<your Magento install dir>/rest/default/V1/customerAccounts</code><br>
 The following figure shows an example.<br>
-<img src="{{ site.baseurl }}common/images/rest_ff-rest-initial-url.png"></li></ol>
+<img src="{{ site.baseurl }}/common/images/rest_ff-rest-initial-url.png"></li></ol>
 <div class="bs-callout bs-callout-info" id="info">
   <p>Remember that <code>/V1/customerAccounts</code> is the REST route from step 2.</p>
   </div>
@@ -128,7 +128,7 @@ The following figure shows an example.<br>
 <ol><li>Click <strong>Authentication</strong> > <strong>OAuth</strong>.</li>
 <li>Enter your OAuth credentials.<br>
 The following figure shows an example.<br>
-<img src="{{ site.baseurl }}common/images/rest_oauth-creds.png"></li>
+<img src="{{ site.baseurl }}/common/images/rest_oauth-creds.png"></li>
 <li>Optionally select the <strong>Remember the setting</strong> check box to avoid having to enter the credentials in future REST calls.</li>
 <li>Click <strong>Insert</strong> > <strong>Insert as header</strong>.</li>
 <li>Click <strong>Yes, please</strong> at the confirmation dialog box.</li></ol>
@@ -143,7 +143,7 @@ The following figure shows an example.<br>
 <li>In the <strong>Value</strong> field, enter <code>application/json</code>.</li>
 <li>Click <strong>Okay</strong>.<br>
 The Firefox REST Client should now look like the following:<br>
-<img src="{{ site.baseurl }}common/images/rest_client-with-headers.png"></li>
+<img src="{{ site.baseurl }}/common/images/rest_client-with-headers.png"></li>
 <li>In the <strong>Body</strong> field, enter your JSON data to create the customer.<br>
 An example follows:<br>
 <script src="https://gist.github.com/xcomSteveJohnson/3901c6cf9d41964bd319.js"></script></li>
@@ -156,7 +156,7 @@ An example follows:<br>
 <h4 id="svcs_rest_reltop">Related topics</h4>
 
 
-<ul><li><a href="{{page.baseurl}}get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
-<li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+<ul><li><a href="{{ page.baseurl }}get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
+<li><a href="{{ page.baseurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
 </ul>
 

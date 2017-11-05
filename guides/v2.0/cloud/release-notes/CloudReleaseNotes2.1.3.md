@@ -20,7 +20,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 
 ## Changes in this release
 
-* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}cloud/trouble/pro-env-management.html).
 
 ## Required update to `.magento.app.yaml`
 Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11, you must add a rule to the `web` section of your `.magento.app.yaml` file. You must make the change in your local system, push it to your [integration server]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int), then, after upgrading, push the changes to [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
@@ -192,7 +192,7 @@ This section discusses how to get connection information for Elasticsearch so yo
 
 ### Step 5: Configure the Magento application to use Elasticsearch
 
-Configure Magento using the instructions in the [Magento configuration for Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/configure-magento.html) guide.
+Configure Magento using the instructions in the [Magento configuration for Elasticsearch]({{ page.baseurl }}config-guide/elasticsearch/configure-magento.html) guide.
 
 ## Fixed issue
 

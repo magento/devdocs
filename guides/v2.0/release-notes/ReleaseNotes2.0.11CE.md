@@ -150,7 +150,7 @@ We address the following functional issues in this release.
 
 <!--- 57498-->* Lengthy {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}Order Status{% endglossarytooltip %} tables are now paginated as expected.
 
-<!---57030 -->* We've fixed a problem with [custom zip code masks]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html) in previous versions of Magento. <a href="https://github.com/magento/magento2/issues/4131" target="_blank">(GITHUB-4131)</a>
+<!---57030 -->* We've fixed a problem with [custom zip code masks]({{ page.baseurl }}howdoi/checkout/checkout_zip.html) in previous versions of Magento. <a href="https://github.com/magento/magento2/issues/4131" target="_blank">(GITHUB-4131)</a>
 
 
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 

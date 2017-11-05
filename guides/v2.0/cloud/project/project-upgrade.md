@@ -30,7 +30,7 @@ Always apply and test a patch your local system in an active branch. You can pus
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
-The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{ page.baseurl }}cloud/before/before-project-owner.html#variables).
 
 ## Back up the database {#backup-db}
 Back up your integration system database and code:
@@ -145,7 +145,7 @@ To resolve the error:
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
 #### Related topic
-* [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
-* [Install components]({{page.baseurl}}cloud/howtos/install-components.html)
-* [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
-* [Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+* [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)
+* [Install components]({{ page.baseurl }}cloud/howtos/install-components.html)
+* [Install optional sample data]({{ page.baseurl }}cloud/howtos/sample-data.html)
+* [Merge and delete an environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html)

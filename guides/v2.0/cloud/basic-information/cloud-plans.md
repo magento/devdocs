@@ -69,11 +69,11 @@ github_link: cloud/basic-information/cloud-plans.md
 </table>
 
 ## Trial accounts {#trials}
-We provide a [free 30-day trial](https://magento.com/trial){:target="_blank"} for both Start and Pro to give you a full preview of {{site.data.var.ece}} running on Cloud infrastructures. When signing up for a trial, we automatically provision your project with the latest version of {{site.data.var.ece}}. We also provide an [Onboarding Portal]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for reviewing your project and getting started.
+We provide a [free 30-day trial](https://magento.com/trial){:target="_blank"} for both Start and Pro to give you a full preview of {{site.data.var.ece}} running on Cloud infrastructures. When signing up for a trial, we automatically provision your project with the latest version of {{site.data.var.ece}}. We also provide an [Onboarding Portal]({{ page.baseurl }}cloud/onboarding/onboarding-portal.html) for reviewing your project and getting started.
 
 See the [Trial signup](https://magento.com/trial){:target="_blank"} for full details and subscription prices.
 
-![Onboarding Portal getting started]({{ site.baseurl }}common/images/cloud_portal-trial.png)
+![Onboarding Portal getting started]({{ site.baseurl }}/common/images/cloud_portal-trial.png)
 
 ### What is autoprovisioning? {#autoprovisioning}
 When you create an account with a Trial, your {{site.data.var.ece}} project is created automatically. As part of the process, we generate a code branch and environment with the latest Magento code for you.
@@ -95,7 +95,7 @@ For new or existing projects without a Trial, we include instructions to help yo
 
 See the following topics to learn more about onboarding and next steps:
 
-* [Onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) walks through the initial steps you should consider and complete when new to your project.
-* [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) provides a central portal for getting started with new Trial Starter and Pro accounts.
-* [Prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) lists all of the steps to complete from creating a project and providing access to your technical staff and solution experts access, create your project. If you started with a Trial, we have set up most of this for you.
-* [Additional documentation]({{page.baseurl}}cloud/bk-cloud.html#magento2) to learn more about Magento 2
+* [Onboarding tasks]({{ page.baseurl }}cloud/onboarding/onboarding-tasks.html) walks through the initial steps you should consider and complete when new to your project.
+* [Onboarding Portal management]({{ page.baseurl }}cloud/onboarding/onboarding-portal.html) provides a central portal for getting started with new Trial Starter and Pro accounts.
+* [Prepare your project environments]({{ page.baseurl }}cloud/before/before-project-owner.html) lists all of the steps to complete from creating a project and providing access to your technical staff and solution experts access, create your project. If you started with a Trial, we have set up most of this for you.
+* [Additional documentation]({{ page.baseurl }}cloud/bk-cloud.html#magento2) to learn more about Magento 2

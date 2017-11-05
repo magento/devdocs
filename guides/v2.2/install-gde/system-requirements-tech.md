@@ -26,7 +26,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 ### Web servers
 *	<a href="http://httpd.apache.org/download.cgi" target="&#95;blank">Apache 2.2 or 2.4</a>
 
-	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{page.baseurl}}install-gde/prereq/apache.html">our Apache documentation</a>.
+	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{ page.baseurl }}install-gde/prereq/apache.html">our Apache documentation</a>.
 
 *	<a href="https://nginx.org/en/download.html" target="&#95;blank">nginx 1.x</a>
 
@@ -41,7 +41,7 @@ Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1,
 #### Required PHP extensions
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The [CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html) and [Ubuntu]({{page.baseurl}}install-gde/prereq/php-ubuntu.html) PHP installation instructions include a step for installing these extensions.
+The [CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html) PHP installation instructions include a step for installing these extensions.
 </div>
 
 *	<a href="http://php.net/manual/en/book.bc.php" target="&#95;blank">bc-math</a> ({{site.data.var.ee}} only)
@@ -65,7 +65,7 @@ The [CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html) and [Ubuntu]({{
 *	[iconv](http://php.net/manual/en/book.iconv.php){:target="&#95;blank"}
 
 #### PHP OPcache
-We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" target="&#95;blank">CentOS</a> or <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html" target="&#95;blank">Ubuntu</a>.
+We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{ page.baseurl }}install-gde/prereq/php-centos.html" target="&#95;blank">CentOS</a> or <a href="{{ page.baseurl }}install-gde/prereq/php-ubuntu.html" target="&#95;blank">Ubuntu</a>.
 
 If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.
 
@@ -81,7 +81,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/
 
 	PayPal and `repo.magento.com` both require TLS 1.1 or later
 
-	*	[More information about PayPal]({{page.baseurl}}install-gde/system-requirements_tls1-2.html)
+	*	[More information about PayPal]({{ page.baseurl }}install-gde/system-requirements_tls1-2.html)
 
 	*	[More information about `repo.magento.com`]({{ page.baseurl }}release-notes/tech_bull_tls-repo.html)
 
@@ -89,9 +89,9 @@ For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/
 Mail Transfer Agent (MTA) or an SMTP server
 
 ### Magento can use the following technologies:
-*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a> version 3.2 (compatible with 2.4+ ) for page caching and session storage
-*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0
-*	<a href="{{page.baseurl}}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
+*	<a href="{{ page.baseurl }}config-guide/redis/config-redis.html">Redis</a> version 3.2 (compatible with 2.4+ ) for page caching and session storage
+*	<a href="{{ page.baseurl }}config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0
+*	<a href="{{ page.baseurl }}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 
 *	{{site.data.var.ee}} only
 
@@ -102,11 +102,11 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 	*	RabbitMQ 3.5.x (compatible with 2.0 and later)
 
-		<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for {{site.data.var.ee}} only.
+		<a href="{{ page.baseurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for {{site.data.var.ee}} only.
 
 	*	Three master databases
 
-		These <a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).
+		These <a href="{{ page.baseurl }}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).
 
 		Available for {{site.data.var.ee}} only.
 
@@ -115,10 +115,10 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
-	<p>For details, see <a href="{{page.baseurl}}install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
+	<p>For details, see <a href="{{ page.baseurl }}install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
 </div>
 
 *	PHPUnit (as a command-line tool) 4.1.0
 
 ### Documentation
-<a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Install Magento prerequisites</a>
+<a href="{{ page.baseurl }}install-gde/prereq/prereq-overview.html">Install Magento prerequisites</a>

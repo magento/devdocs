@@ -99,8 +99,8 @@ Installing a theme using Composer is the same as installing any other extension 
     The theme displays in the right pane.
 
 #### Related topics
-*	[Install extensionss]({{page.baseurl}}cloud/howtos/install-components.html)
-*	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
-*	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+*	[Install extensionss]({{ page.baseurl }}cloud/howtos/install-components.html)
+*	[Update components]({{ page.baseurl }}cloud/howtos/update-components.html)
+*	[Merge and delete an environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html)
 
 {% endcollapsible %}

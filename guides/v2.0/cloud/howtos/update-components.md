@@ -62,11 +62,11 @@ Before you continue, you must:
 		git push origin <environment ID>
 9.	Wait for the project to deploy.
 
-	If there are errors, see [Component deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html).
+	If there are errors, see [Component deployment failure]({{ page.baseurl }}cloud/trouble/trouble_comp-deploy-fail.html).
 
 {% endcollapsible %}
 
 #### Related topic
-*	[Install extensions]({{page.baseurl}}cloud/howtos/install-components.html)
-*	[Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
-*	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+*	[Install extensions]({{ page.baseurl }}cloud/howtos/install-components.html)
+*	[Install optional sample data]({{ page.baseurl }}cloud/howtos/sample-data.html)
+*	[Merge and delete an environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html)

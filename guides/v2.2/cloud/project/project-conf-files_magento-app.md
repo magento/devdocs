@@ -31,7 +31,7 @@ The following sections discuss properties in `.magento.app.yaml`.
 ## `name` property {#name}
 `name` identifies the application in the project. {{site.data.var.ee}} supports multiple applications in a project, so each application must have a *unique name* in a project.
 
-`name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name` is used in the [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) to define the HTTP upstream (by default, `php:php`).
+`name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name` is used in the [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) to define the HTTP upstream (by default, `php:php`).
 
 For example, if the value of `name` is `app`, you must use `app:php` in the upstream field. You can also use this name in multi-application relationships.
 
@@ -76,7 +76,7 @@ Example of valid options are:
 	cache: "arediscache:redis"
 	search: "searchengine:solr"
 
-See also [`services.yaml` documentation]({{page.baseurl}}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See also [`services.yaml` documentation]({{ page.baseurl }}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 
 ## `web` {#cloud-yaml-platform-web}
@@ -250,7 +250,7 @@ More information about crons:
 
 `crons` supports the following:
 
-*	`spec`: The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per 5 minutes. You will need to complete [additional configurations]({{page.baseurl}}cloud/configure/setup-cron-jobs.html#admin) for crons in those environments.
+*	`spec`: The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per 5 minutes. You will need to complete [additional configurations]({{ page.baseurl }}cloud/configure/setup-cron-jobs.html#admin) for crons in those environments.
 *	`cmd`: The command to execute.
 
 A sample Magento cron job follows:
@@ -260,7 +260,7 @@ A sample Magento cron job follows:
         spec: "*/5 * * * *"
         cmd: "php bin/magento cron:run"
 
-For more information, see [Set up cron jobs]({{page.baseurl}}cloud/configure/setup-cron-jobs.html).
+For more information, see [Set up cron jobs]({{ page.baseurl }}cloud/configure/setup-cron-jobs.html).
 
 ## Configure PHP options {#cloud-yaml-platform-php}
 You can choose which version of PHP you want to run in your `.magento.app.yaml` file.:
@@ -367,11 +367,11 @@ For example, if you need to increase the PHP memory limit:
 
 For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
-After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
+After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ page.baseurl }}cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
 
 #### Related topics
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[routes.yaml]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[services.yaml]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[Get started with a project]({{ page.baseurl }}cloud/project/project-start.html)
+*	[routes.yaml]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
+*	[services.yaml]({{ page.baseurl }}cloud/project/project-conf-files_services.html)

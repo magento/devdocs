@@ -48,4 +48,4 @@ The following error displays if you access a Git {% glossarytooltip a05c59d3-77b
 To resolve the issue, edit `.gitmodules` and replace `git@github.com:...` URLs with HTTPS URLs in the format: `https://github.com/...`.
 
 #### Related topic
-[Set up multiple applications]({{page.baseurl}}cloud/project/project-conf-multi.html#cloud-multi-app-submod)
+[Set up multiple applications]({{ page.baseurl }}cloud/project/project-conf-multi.html#cloud-multi-app-submod)

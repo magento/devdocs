@@ -53,7 +53,7 @@ For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcs
   <p>The <code>na</code> region is shown as an example; it's not currently available. Magento plans support for <code>na</code> first, then <code>au</code> and <code>eu</code> at a later date.</p>
 </div>
 
-<!-- {{site.data.var.ece}} also supports [multiple applications]({{page.baseurl}}cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
+<!-- {{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
 
 ## Route options {#cloud-yaml-routes-opts}
 Each route can be configured separately with the following properties:
@@ -66,9 +66,9 @@ Each route can be configured separately with the following properties:
   * `redirect` redirects to another route
     * It is followed by `to` property, which is an HTTP redirection to
     another route that will be identified by its template (see the following examples.
-* `cache` controls [caching for the route]({{page.baseurl}}cloud/project/project-routes-more-cache.html).
+* `cache` controls [caching for the route]({{ page.baseurl }}cloud/project/project-routes-more-cache.html).
 * `ssi` controls whether [Server Side Includes](http://httpd.apache.org/docs/current/howto/ssi.html){:target="_blank"} are enabled.
-* `redirects` controls [redirect rules]({{page.baseurl}}cloud/project/project-routes-more-redir.html) associated with the route.
+* `redirects` controls [redirect rules]({{ page.baseurl }}cloud/project/project-routes-more-redir.html) associated with the route.
 
 ## Simple routes {#cloud-yaml-routes-sample-simple}
 Following is a sample `routes.yaml` file:
@@ -113,10 +113,10 @@ You can put anything before the triple dashes and the route resolves. In this ex
 
 If you examine the routes of your application (for example by running `echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp` in an SSH session on your environment), you will see a route such as `https://*---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/`
 
-[More information about caching]({{page.baseurl}}cloud/project/project-routes-more-cache.html).
+[More information about caching]({{ page.baseurl }}cloud/project/project-routes-more-cache.html).
 
 ## Redirects {#cloud-yaml-routes-sample-redirects}
-As discussed in more detail in [redirects]({{page.baseurl}}cloud/project/project-routes-more-redir.html), you can set up complex redirection rules including *partial redirects* like the following:
+As discussed in more detail in [redirects]({{ page.baseurl }}cloud/project/project-routes-more-redir.html), you can set up complex redirection rules including *partial redirects* like the following:
 
 	http://www.{default}/:
 	  to: https://{default}/
@@ -144,9 +144,9 @@ You can get a list of the configured routes for an environment by using the foll
 	magento-cloud environment:routes
 
 #### Related topics
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[Caching]({{page.baseurl}}cloud/project/project-routes-more-cache.html)
-*	[Redirects]({{page.baseurl}}cloud/project/project-routes-more-redir.html)
-*	[Server side includes]({{page.baseurl}}cloud/project/project-routes-more-ssi.html)
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[Get started with a project]({{ page.baseurl }}cloud/project/project-start.html)
+*	[`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+*	[Caching]({{ page.baseurl }}cloud/project/project-routes-more-cache.html)
+*	[Redirects]({{ page.baseurl }}cloud/project/project-routes-more-redir.html)
+*	[Server side includes]({{ page.baseurl }}cloud/project/project-routes-more-ssi.html)
+*	[`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)

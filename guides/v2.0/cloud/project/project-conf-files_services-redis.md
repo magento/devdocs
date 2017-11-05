@@ -17,7 +17,7 @@ functional_areas:
 
 [Redis](http://redis.io){:target="_blank"} is an optional backend cache solution to replace [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html){:target="_blank"}, which is used in Magento 2 by default.
 
-[More information about Redis]({{page.baseurl}}config-guide/redis/config-redis.html)
+[More information about Redis]({{ page.baseurl }}config-guide/redis/config-redis.html)
 
 We support Redis versions 2.8 and 3.0.
 
@@ -49,10 +49,10 @@ relationships:
     redis: "myredis:redis"
 {% endhighlight %}
 
-Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html).
+Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html).
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
+We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 To verify this information used for configurations and settings:
 
@@ -99,6 +99,6 @@ Assuming your Redis relationship is named `redis`, you can access it by opening 
         redis-cli -h redis.internal
 
 #### Related topics
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
+* [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+* [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)

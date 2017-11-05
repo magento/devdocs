@@ -17,7 +17,7 @@ Use this procedure whether you're starting a new project from scratch or if you'
 When you initially set up a project from a template, we retrieve the code from the [`magento-cloud-configuration` repository](https://github.com/magento/magento-cloud-configuration){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Before you continue, make sure you completed the tasks discussed in <a href="{{page.baseurl}}cloud/before/before-workspace.html">Set up a Magento workspace</a>.</p>
+  <p>Before you continue, make sure you completed the tasks discussed in <a href="{{ page.baseurl }}cloud/before/before-workspace.html">Set up a Magento workspace</a>.</p>
 </div>
 
 {% include cloud/new-project-from-template.md %}

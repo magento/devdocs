@@ -20,7 +20,7 @@ functional_areas:
 After installing the Magento software, you might need to:
 
 *	<a href="{{ page.baseurl }}comp-mgr/bk-compman-guide.html">Component Manager Guide</a>
-*	<a href="{{page.baseurl}}upgrade/bk-upgrade-guide.html">Upgrade Guide</a>
+*	<a href="{{ page.baseurl }}upgrade/bk-upgrade-guide.html">Upgrade Guide</a>
 
 
 

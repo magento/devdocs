@@ -11,14 +11,14 @@ github_link: javascript-dev-guide/javascript/js_mixins.md
 
 {::options syntax_highlighter="rouge" /}
 
-This topic describes how to use JavaScript mixins to overwrite [JavaScript components']({{page.baseurl}}javascript-dev-guide/javascript/js_overview.html#js_terms) methods in Magento.
+This topic describes how to use JavaScript mixins to overwrite [JavaScript components']({{ page.baseurl }}javascript-dev-guide/javascript/js_overview.html#js_terms) methods in Magento.
 
 
 ## Overview of JS mixins
 
 One of the ways to implement {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} mixins is declaring them on the RequireJS loading level. This approach allows to modify (extend/overwrite) result that a JavaScript component returns before it is used anywhere.
 
-The scope of your {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} usage depends on the [application area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html) it is defined for:
+The scope of your {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} usage depends on the [application area]({{ page.baseurl }}architecture/archi_perspectives/components/modules/mod_and_areas.html) it is defined for:
 
  - `frontend`: the mixin is applied for all usages of the modified JS component on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}
  - `adminhtml`: the mixin is applied for all usages of the modified JS component in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel
@@ -110,4 +110,4 @@ For example of using JavaScript mixins, see the Magento_CheckoutAgreement module
 ## Related reading
 
 - [About AMD modules and RequireJS](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/concepts/ui_comp_requirejs_concept.html)
-- [Configure JS resources]({{page.baseurl}}javascript-dev-guide/javascript/js-resources.html)
+- [Configure JS resources]({{ page.baseurl }}javascript-dev-guide/javascript/js-resources.html)

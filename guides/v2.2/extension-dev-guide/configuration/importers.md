@@ -70,7 +70,7 @@ An array cannot be imported by more than one importer.
 
 ## More information
 
-* [Sensitive and system-specific settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+* [Sensitive and system-specific settings]({{ page.baseurl }}extension-dev-guide/configuration/sensitive-and-environment-settings.html)
 * [config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html)
 * [env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html)
 

@@ -66,8 +66,8 @@ Magento logs are located in the `<magento root dir>/var/log` directory.
 
 #### For more information
 
-*	[auth.json]({{page.baseurl}}cloud/access-acct/first-time-setup_template.html)
+*	[auth.json]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
 *	[composer.json]()
-*	[.magento.app.yaml]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[routes.yaml]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[services.yaml]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[.magento.app.yaml]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+*	[routes.yaml]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
+*	[services.yaml]({{ page.baseurl }}cloud/project/project-conf-files_services.html)

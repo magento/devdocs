@@ -44,7 +44,7 @@ To add required files to your Magento EE code:
 
     The following figure shows an example of selecting the `2.1.4` branch.
 
-    ![Switch to your current EE branch]({{ site.baseurl }}common/images/cloud_cloud-git-214.png){:width="600px"}
+    ![Switch to your current EE branch]({{ site.baseurl }}/common/images/cloud_cloud-git-214.png){:width="600px"}
 
     In the procedure that follows, you'll copy the contents of some of these files to your Magento EE system.
 3.  Log in to your Magento EE system as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
@@ -64,7 +64,7 @@ To add required files to your Magento EE code:
     1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="_blank"}.
     2.  In the upper right, click **Raw**, as the following figure shows.
 
-        ![View the raw version of the file]({{ site.baseurl }}common/images/cloud_cloud-git_raw.png){:width="600px"}
+        ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
     3.  In your Magento EE project, open a text editor in the Magento EE installation directory (for example, `/var/www/html/magento2`).
     4.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
     5.  Make sure the file is named `.magento.app.yaml` when you save the file.
@@ -152,7 +152,7 @@ To edit `composer.json`:
 ### Back up and transfer media files
 This section discusses how to use the [`magento setup:backup --media`]({{ page.basesurl }}install/cli/install-cli-backup.html) to back up media files.
 
-1.  Get the  integration system's [SSH URL]({{ page.baseurl}}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl).
+1.  Get the  integration system's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl).
 2.  To back up media files, enter the following command:
 
         php <Magento EE install dir>/bin/magento setup:backup --media

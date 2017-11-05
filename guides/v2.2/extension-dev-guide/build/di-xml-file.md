@@ -11,7 +11,7 @@ github_link: extension-dev-guide/build/di-xml-file.md
 
 ## Overview
 
-The `di.xml` file configures which [dependencies]({{page.baseurl}}extension-dev-guide/depend-inj.html) to inject by the [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html). You can also specify [sensitive configuration sensitive](#ext-di-sens) using `di.xml`.
+The `di.xml` file configures which [dependencies]({{ page.baseurl }}extension-dev-guide/depend-inj.html) to inject by the [object manager]({{ page.baseurl }}extension-dev-guide/object-manager.html). You can also specify [sensitive configuration sensitive](#ext-di-sens) using `di.xml`.
 
 ## Areas and application entry points
 
@@ -26,7 +26,7 @@ Magento loads The configuration in the following stages:
 2. Global (`<moduleDir>/etc/di.xml`)
 3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
-During [bootstrapping]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html).
+During [bootstrapping]({{ page.baseurl }}config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{ page.baseurl }}architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
 **Examples:**
 
@@ -346,7 +346,7 @@ The following code sample is a template for specifying values as sensitive or sy
 
 Do not share sensitive or system-specific settings stored in `app/etc/env.php` between development and production systems.
 
-See [sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples.
+See [sensitive and environment settings]({{ page.baseurl }}extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples.
 
 ### Information related to pipeline deployment
 
@@ -356,6 +356,6 @@ See [sensitive and environment settings]({{page.baseurl}}extension-dev-guide/con
 
 ## Related topics
 
-* [ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
-* [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
-* [Sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+* [ObjectManager]({{ page.baseurl }}extension-dev-guide/object-manager.html)
+* [Dependency injection]({{ page.baseurl }}extension-dev-guide/depend-inj.html)
+* [Sensitive and environment settings]({{ page.baseurl }}extension-dev-guide/configuration/sensitive-and-environment-settings.html)

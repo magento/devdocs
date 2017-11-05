@@ -30,12 +30,12 @@ This variable works for all Starter environments including Production `master`. 
 1.	Log in to your Magento Commerce account at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
 2.	If necessary, click the **Projects** tab.
 3.	Click the name of your project.
-4.	In the upper left corner of the page, next to the project name, click ![Configure Project button]({{ site.baseurl }}common/images/cloud_configure-project-butt.png) (Configure Project) as the following figure shows.
+4.	In the upper left corner of the page, next to the project name, click ![Configure Project button]({{ site.baseurl }}/common/images/cloud_configure-project-butt.png) (Configure Project) as the following figure shows.
 
-	![Configure your project]({{ site.baseurl }}common/images/cloud_project-configure2.png)
+	![Configure your project]({{ site.baseurl }}/common/images/cloud_project-configure2.png)
 5.	In the middle pane, click the **Variables** tab as the following figure shows.
 
-	![Add a project variable]({{ site.baseurl }}common/images/cloud_project-vars1.png){:width="400px"}
+	![Add a project variable]({{ site.baseurl }}/common/images/cloud_project-vars1.png){:width="400px"}
 6.	Click **Add Variable**.
 7.	In the **Name** field, enter `env:COMPOSER_AUTH`.
 8.	In the **Value** field, enter the following, replacing the sample values with your authentication keys.
@@ -50,13 +50,13 @@ This variable works for all Starter environments including Production `master`. 
 		}
 9.	For the checkbox options, you should not select JSON value. Depending on your user role or permissions, you may only see one option.
 
-	![Set up authentication keys as project variables]({{ site.baseurl }}common/images/cloud_project-var3.png)
+	![Set up authentication keys as project variables]({{ site.baseurl }}/common/images/cloud_project-var3.png)
 
 	If you have edit access to the branch, you will see three options. Select only the **Visible during build** check box.
 
 	The following figure shows an example with all options.
 
-	![Set up authentication keys as project variables]({{ site.baseurl }}common/images/cloud_project-vars2.png)
+	![Set up authentication keys as project variables]({{ site.baseurl }}/common/images/cloud_project-vars2.png)
 10.	Click **Add Variable**.
 
 After you [branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html), you will also update `auth.json` with these authentication keys.

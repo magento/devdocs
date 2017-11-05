@@ -48,7 +48,7 @@ Always apply and test a patch your local system in an active branch. You can pus
 Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
-The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{ page.baseurl }}cloud/before/before-project-owner.html#variables).
 
 ## Back up the database {#backup-db}
 Back up your Integration environment database and code:
@@ -114,7 +114,7 @@ We recommend testing patches in an active branch, prior to deploying to Staging 
 
 To test a general patch on your local system, you create a branch from the Pro Integration `master` branch or Starter plan `staging` branch. The commands used in the instructions are for Pro plan using the `master` branch.
 
-1.	On your local system, enter the following commands as the [Magento file system owner]({{ page.baseurl}}cloud/before/before-workspace-file-sys-owner.html):
+1.	On your local system, enter the following commands as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html):
 
 		cd <project root dir>
 		magento-cloud environment:checkout master
@@ -170,7 +170,7 @@ We recommend you test a patch locally in an active branch. After completing test
 
 To test a custom patch on your local system:
 
-1.	On your local system, enter the following command as the [Magento file system owner]({{ page.baseurl}}cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
+1.	On your local system, enter the following command as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
 
 		mkdir <Magento project root dir>/m2-hotfixes
 3.	Copy the patch file to that directory.
@@ -232,4 +232,4 @@ After you've successfully tested a custom patch locally and on your Integration 
 		git push origin <branch name>
 
 #### Related topic
-* [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
+* [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)

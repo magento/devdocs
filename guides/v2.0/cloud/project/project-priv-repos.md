@@ -33,7 +33,7 @@ To find your project SSH public key (also referred to as a *deploy key*):
 
 	The following figure shows an example.
 
-	![Deploy Key]({{ site.baseurl}}common/images/cloud_deploy-key.png){:width="500px"}
+	![Deploy Key]({{ site.baseurl }}/common/images/cloud_deploy-key.png){:width="500px"}
 
 4.	Copy the deploy key to the clipboard.
 5.	See [Enter your GitHub deploy key](#cloud-deploykey-github).
@@ -48,7 +48,7 @@ To enter your project's public key as a GitHub deploy key:
 1.	Log in to your GitHub repository as its administrator.
 2.	Click **Settings** as the following figure shows.
 
-	![GitHub settings]({{ site.baseurl}}common/images/cloud_gh-settings.png){:width="650px"}
+	![GitHub settings]({{ site.baseurl }}/common/images/cloud_gh-settings.png){:width="650px"}
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you don't see this option, you're not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.</p>
@@ -56,7 +56,7 @@ To enter your project's public key as a GitHub deploy key:
 
 3.	On the Settings page, in the left navigation bar, click **Deploy Keys** as the following figure shows.
 
-	![GitHub deploy key]({{ site.baseurl}}common/images/cloud_gh-deploy-key.png){:width="200px"}
+	![GitHub deploy key]({{ site.baseurl }}/common/images/cloud_gh-deploy-key.png){:width="200px"}
 
 4.	Click **Add deploy key**.
 5.	Follow the prompts on your screen to complete the task.
@@ -67,10 +67,10 @@ To enter your project's public key as a Bitbucket deploy key:
 1.	Log in to your Bitbucket repository as its administrator.
 2.	In the left navigation bar, click **Settings** as the following figure shows.
 
-	![Bitbucket settings]({{ site.baseurl}}common/images/cloud_bb-settings.png)
+	![Bitbucket settings]({{ site.baseurl }}/common/images/cloud_bb-settings.png)
 3.	Click General > **Deployment Keys** as the following figure shows.
 
-	![Bitbucket deploy key]({{ site.baseurl}}common/images/cloud_bb-deploy-key.png)
+	![Bitbucket deploy key]({{ site.baseurl }}/common/images/cloud_bb-deploy-key.png)
 4.	Click **Add Key**.
 5.	Follow the prompts on your screen to complete the task.
 

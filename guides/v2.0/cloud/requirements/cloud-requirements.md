@@ -79,20 +79,20 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 
 This software is *not* upgradable but versions for the following software is configurable:
 
-* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X we support 7.1.
-* [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
-* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
-* [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
-* [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
-* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
+* [PHP]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X we support 7.1.
+* [MySQL]({{ page.baseurl }}cloud/project/project-conf-files_services-mysql.html)
+* [Solr]({{ page.baseurl }}cloud/project/project-conf-files_services-solr.html)
+* [Redis]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html)
+* [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html)
+* [Elasticsearch]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html)
 
-For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.28 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.28 or later. For details, see [Fastly in Cloud]({{ page.baseurl }}cloud/basic-information/cloud-fastly.html).
 
 For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
 
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+*	[`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
 
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
@@ -132,13 +132,13 @@ For development and testing, we recommend the following:
 *	Profile key flows and customizations using Blackfire.io
 
 ## License and authentication requirements
-The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) creates the initial {{site.data.var.ece}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
+The [Account Owner]({{ page.baseurl }}cloud/before/before-project-owner.html) creates the initial {{site.data.var.ece}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
 
 To work with and deploy stores, you need the following:
 
 *	[Magento Commerce (Cloud) account]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct) already created or created via an invitation
 *	[Project invitiation]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct##cloud-owner-admins) for contributing developers from the Account Owner or a super user
-*	Magento [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
+*	Magento [authentication key]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
 
 Your {{site.data.var.ee}} account must *authenticate* using any of the following:
 
@@ -149,6 +149,6 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 
 #### Related topics
 *	[Cloud Architexture]({{ page.baseurl }}cloud/reference/discover-arch.html)
-*	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+*	[First-time local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html)
 *	[Develop and Deploy Workflow]({{ page.baseurl }}cloud/welcome/discover-workflow.html)
 *	[Go live and launch]({{ page.baseurl }}cloud/live/live.html)

@@ -26,13 +26,13 @@ To initially set up your {{site.data.var.ece}} project, you need the Project Own
 After you have completed those tasks, the Technical Admin can manage development and deployments for you.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the following first steps. See [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for further information and steps.
+If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the following first steps. See [Onboarding Portal management]({{ page.baseurl }}cloud/onboarding/onboarding-portal.html) for further information and steps.
 
 * Created your Cloud account and project
 * Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
 * Created an environment for the `master` branch with a web server, database, and services
 * Added Magento authentication keys for the Project Owner
-* Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{page.baseurl}}cloud/before/before-project-owner.html#variables) for the default admin account to access the Magento Admin panel.
+* Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{ page.baseurl }}cloud/before/before-project-owner.html#variables) for the default admin account to access the Magento Admin panel.
 </div>
 
 ## Step 1: Generate Magento authentication keys {#cloud-owner-keys}
@@ -44,7 +44,7 @@ To create authentication keys through the Magento Marketplace:
 2. Click your account name in the top-right of the page and select **My Profile**.
 3. Click **Access Keys** in the Marketplace tab.
 
-	![Click Access Keys]({{ site.baseurl }}common/images/cloud_access-key.png)
+	![Click Access Keys]({{ site.baseurl }}/common/images/cloud_access-key.png)
 4. Click **Create A New Access Key**. Enter a specific name for the keys, for example CloudProductOwner or the name of the developer receiving the keys.
 5. The keys generate a Public and Private key you can click to copy. Save this information or keep the page open when creating your project.
 
@@ -60,15 +60,15 @@ You can set up the following variables:
 To add project variables for the administrator account:
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click Continue Later.
+2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click Continue Later.
 
-	![Project without code]({{ site.baseurl }}common/images/cloud_project_empty.png)
+	![Project without code]({{ site.baseurl }}/common/images/cloud_project_empty.png)
 
 4. Select the **Variables** tab.
 5. Click **Add Variable**.
 6. For the **Name**, enter `ADMIN_EMAIL`. For the **Value**, enter your Project Owner email address or another accessible email for resetting the password for the default admin account.
 
-	![Project variable]({{ site.baseurl }}common/images/cloud_project_variable.png)
+	![Project variable]({{ site.baseurl }}/common/images/cloud_project_variable.png)
 
 7. Click **Add variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
@@ -92,25 +92,25 @@ If you are concerned with creating the Project, you can create a [Technical Admi
 1. Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the _This project has no code yet_ link next to the Project name.
 
-	![Project without code]({{ site.baseurl }}common/images/cloud_project_empty.png)
+	![Project without code]({{ site.baseurl }}/common/images/cloud_project_empty.png)
 
 3. Enter a name for the project.
 
-	![Project name]({{ site.baseurl }}common/images/cloud_project_name.png)
+	![Project name]({{ site.baseurl }}/common/images/cloud_project_name.png)
 
 4. Click **Create a blank site from a template** and click **Continue**. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.
 
-	![Create a site using the sample Magento project]({{ site.baseurl }}common/images/cloud_project_template.png){:width="650px"}
+	![Create a site using the sample Magento project]({{ site.baseurl }}/common/images/cloud_project_template.png){:width="650px"}
 
-4. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
+4. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
 
-	![Enter your authentication keys]({{ site.baseurl }}common/images/cloud-project-magento-auth-creds.png){:width="650px"}
+	![Enter your authentication keys]({{ site.baseurl }}/common/images/cloud-project-magento-auth-creds.png){:width="650px"}
 
 	The keys are added to the `auth.json` file in the repository `master` branch, required for all created branches and deployments.
 
 5. Wait a few minutes while the project deploys. A status of _Pending_ displays until completed, similar to the following:
 
-	![Your sample Magento project]({{ site.baseurl }}common/images/cloud_project_template2.png){:width="650px"}
+	![Your sample Magento project]({{ site.baseurl }}/common/images/cloud_project_template2.png){:width="650px"}
 
 6. After the project deploys, **Success** displays next to the name of your project.
 
@@ -126,13 +126,13 @@ To create user accounts:
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the configure project button next to project name in the top navigation bar.
 
-	![Configure the project]({{ site.baseurl }}common/images/cloud_project_gear.png){:width="184px"}
+	![Configure the project]({{ site.baseurl }}/common/images/cloud_project_gear.png){:width="184px"}
 3. In the right pane, click **Add Users**.
 
-	![Start creating users]({{ site.baseurl }}common/images/cloud_project-config.png){:width="500px"}
+	![Start creating users]({{ site.baseurl }}/common/images/cloud_project-config.png){:width="500px"}
 4. Click **Add User**.
 
-	![Create the account]({{ site.baseurl }}common/images/cloud_project-add-superuser.png){:width="500px"}
+	![Create the account]({{ site.baseurl }}/common/images/cloud_project-add-superuser.png){:width="500px"}
 5. Enter the user's e-mail address.
 6. Select the access for the account:
 
@@ -147,7 +147,7 @@ To create user accounts:
 As you add environments and branches, you can modify user permissions as needed. Added users receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
 
 ## Blackfire and New Relic {#cloud-owner-creds}
-Your project includes [Blackfire]({{ site.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ site.baseurl }}cloud/project/project-integrate-github.html) services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
+Your project includes [Blackfire]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ page.baseurl }}cloud/project/project-integrate-github.html) services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
@@ -159,29 +159,29 @@ To get your Blackfire Profiler credentials:
 1. As the {{site.data.var.ece}} account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
 2. In the upper right corner, click **&lt;your name>** > **Account Settings** as the following figure shows.
 
-	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png)
+	![Go to account settings]({{ site.baseurl }}/common/images/cloud_acct-settings-option.png)
 3. On your account page, click **View Details** for your project as the following figure shows.
 
-	![View your project details]({{ site.baseurl }}common/images/cloud_blackfire-edit-details.png){:width="200px"}
+	![View your project details]({{ site.baseurl }}/common/images/cloud_blackfire-edit-details.png){:width="200px"}
 4. On your project details page, expand **Blackfire**.
 
 	Your Blackfire credentials display similar to the following.
 
-	![Your Blackfire credentials]({{ site.baseurl }}common/images/cloud_blackfire-account-info.png){:width="450px"}
+	![Your Blackfire credentials]({{ site.baseurl }}/common/images/cloud_blackfire-account-info.png){:width="450px"}
 
 ### New Relic credentials
 Your New Relic APM credentials are displayed on the same page as Blackfire. You may receive the initial New Relic invitiation through an e-mail. You can create New Relic users and provide that information to your technical resources responsible for administering New Relic.
 
 #### Related topics
 
-*	[{{site.data.var.ece}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[{{site.data.var.ece}} requirements]({{ page.baseurl }}cloud/requirements/cloud-requirements.html)
 *	Pro information:
 
-	* [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-	*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+	* [Pro Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html)
+	*	[Pro Develop and Deploy Workflow]({{ page.baseurl }}cloud/welcome/discover-workflow.html)
 *	Starter information:
 
-	* [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
-	*	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
-*	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-* [First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+	* [Starter Architecture]({{ page.baseurl }}cloud/basic-information/starter-architecture.html)
+	*	[Starter Develop and Deploy Workflow]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html)
+*	[Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html)
+* [First-time local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html)

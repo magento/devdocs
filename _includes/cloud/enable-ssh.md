@@ -123,10 +123,10 @@ To add an SSH key using the Project Web Interface:
 2.	Login and access your project through the [Project Web Interface](https://accounts.magento.cloud){:target="_blank"}.
 3.	In your selected branch, an icon displays if you do not have an SSH key added.
 
-	![No SSH key]({{ site.baseurl }}common/images/cloud_ssh-key-install.png)
+	![No SSH key]({{ site.baseurl }}/common/images/cloud_ssh-key-install.png)
 4.	Copy and paste the content of your public SSH key in the screen.
 
-	![Add SSH key]({{ site.baseurl }}common/images/cloud_ssh-key-add.png)
+	![Add SSH key]({{ site.baseurl }}/common/images/cloud_ssh-key-add.png)
 5.	Follow the prompts on your screen to complete the task.
 
 ## Set global Git variables
