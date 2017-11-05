@@ -35,12 +35,7 @@ To enable symlinks to work, Windows users must run both the UNIX shell (for exam
 
 ## Create the VM and environment 
 
-1. Using a terminal, change to `vagrant` on your host (that is, the directory in which this README is located).
- Example: `cd ~/vagrant/`
-2. Enter `vagrant up`
-3. Wait for the project to initialize, clone the repository, and install all gems.
-
-    This command takes some time to complete the first time you run it.
+Enter `vagrant up` and wait for the project to initialize, clone the repository, and install all gems. This command takes some time to complete the first time you run it.
 
 ## Connect to the VM and run Jekyll
 
@@ -48,7 +43,7 @@ Enter `vagrant ssh` to connect to the VM using SSH.
 
 Use the following commands to run Jekyll:
     
-    cd /vagrant/devdocs
+    cd /vagrant
     bin/jekyll serve --host=0.0.0.0
 
 After Jekyll has started, go to `http://127.0.0.1:4000` in a web browser on your host.
