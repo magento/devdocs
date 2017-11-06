@@ -7,11 +7,18 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-
-## October 2017
+## November 2017
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Updated Fastly troubleshooting and supported features for Magento Commerce (Cloud) in [Fastly](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html) and [Fastly troubleshooting](http://devdocs.magento.com/guides/v2.2/cloud/trouble/trouble_fastly.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Nov 03
+
+{% collapsibleh2 October 2017 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+[Added guideline on mocking auto-generated factories in Unit tests](http://devdocs.magento.com/guides/v2.1/test/testing.html#unit)|2.0.x, 2.1.x|Updated|Oct 31
+Updated Magento Commerce (Cloud) content for Fastly including [Fastly](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html), [Set up Fastly](http://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html), [Custom Fastly VCL snippets](http://devdocs.magento.com/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html), and [Troubleshoot Fastly](http://devdocs.magento.com/guides/v2.2/cloud/trouble/trouble_fastly.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Oct 30
 Add [B2B module set up](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-b2b.html) information for Magento Commerce (Cloud)|2.2.x|New|Oct 27
 Update SSH tunneling info to Magento Commerce (Cloud) in [SSH and sFTP](http://devdocs.magento.com/guides/v2.2/cloud/env/environments-ssh.html) and [Manage branches with the CLI](http://devdocs.magento.com/guides/v2.2/cloud/env/environments-start.html).|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Oct 25
 Update database troubleshooting for Magento Commerce (Cloud) in Migrate and deploy static files and data for [2.1](http://devdocs.magento.com/guides/v2.1/cloud/live/stage-prod-migrate.html) and [2.2](http://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html)|2.1.x, 2.2.x|Updated|Oct 24
@@ -27,6 +34,8 @@ Published backward incompatible changes between 2.0.15 and 2.0.16 versions in [O
 [Update Magento Commerce (Cloud) 2.2 Release Notes with changes in deployment](http://devdocs.magento.com/guides/v2.2/cloud/release-notes/CloudReleaseNotes2.2.html#deploy)|2.2.x|Updated|Oct 06
 Updated Magento Commerce (Cloud) content for [services.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services.html), [Elasticsearch](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html), [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html), [Redis](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-redis.html), [MySQL](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-mysql.html), and [RabbitMQ](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Oct 06
 Added a new option to the [`bin/magento migrate:data`](http://devdocs.magento.com/guides/v2.2/migration/migration-migrate-data.html) command in the _Migration Guide_.<br/>Added an example of [configuring the Data Migration Tool to use TLS](http://devdocs.magento.com/guides/v2.2/migration/migration-tool-configure.html) (e.g., private/public keys) to connect to MySQL in the _Migration Guide_.|2.2.x|Updated|Oct 03
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 September 2017 %}
 
