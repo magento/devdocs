@@ -24,7 +24,7 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.10.
 
 Magento 2.1.10 contains over 50 security fixes and enhancements. Look for the following highlights in this release:
 
-* Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translations issues. 
+* Significant reduction in JavaScript-related translation issues. 
 
 * Improvements to how the PayPal Express Checkout payment method processes virtual products. 
 
@@ -40,6 +40,12 @@ Magento 2.1.10 includes multiple security enhancements. Although this release in
 
 See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
+## Known issues
+
+<!--- 82877 -->* 
+
+
+<!--- 82731 -->* 
 
 ## Fixed issues
 
@@ -66,6 +72,12 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 69797 -->* Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, after an user entered credit card information and a discount code, and then clicked **Place Order**, Magento emptied the credit card information fields.
 
+<!--- 58914 -->* The `collectRates()` method now obtains full address details for registered customers when the customer opens the Checkout page with an existing shipping address.
+
+<!--- 68812 -->* You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking **Not me**. Previously, in environments where **Enable Persistence** was set to **Yes**, you could log in as a guest and potentially complete an order that another customer had initiated.
+
+<!--- 61139 -->* Magento now continues to display additional addresses while you edit the first address for an order being shipped to multiple addresses.  as expected. Previously, the address form remained blank when you edited a multiple-address order during checkout.
+
 
 
 ### Catalog
@@ -79,11 +91,9 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 70521 -->* You can now save content that you’ve entered using the WYSIWYG editor when the **Enable WYSIWYG Editor** setting is set to **Disabled by Default**. Previously, a JavaScript error occurred. 
 
-<!--- 66481 -->* You can now successfully create a product and assign it to a store without encountering this error, `Unique constraint violation found`. [GitHub-6671](https://github.com/magento/magento2/issues/6671) 
-
 <!--- 57153 -->* Magento now correctly displays custom options at the store-view level. [GitHub-2908](https://github.com/magento/magento2/issues/2908), [GitHub-5885](https://github.com/magento/magento2/issues/5885), [GitHub-5612](https://github.com/magento/magento2/issues/5612) 
 
-<!--- 72280 -->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833)
+<!--- 69560 -->* Magento no longer displays a price for out-of-stock configurable products. Previously, Magento displayed a price of zero (0) when a configurable product was out-of-stock.
 
 <!--- 72252 -->* Magento no longer pre-fills the **Set Product as New from Date** or **Design Active Form** dates when you assign a special price in Advanced Pricing. Previously, these fields were pre-filled with the creation date, and any product that was saved with a special price was also incorrectly set as new. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10751*. [GitHub-4387](https://github.com/magento/magento2/issues/4387), [GitHub-7448](https://github.com/magento/magento2/issues/7448)
 
@@ -91,11 +101,10 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 81968 -->*  Magento now displays product alerts on the Product edit page of the Admin. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11448*. [GitHub-10007](https://github.com/magento/magento2/issues/10007)
 
+<!--- 61315 -->* Magento no longer pre-fills the **Set Product as New From Date** field with the date inherited from the **Special Price From** date. [GitHub-4387](https://github.com/magento/magento2/issues/4387)
+
 
 ### Configurable products
-
-<!--- 60140 -->*  You can now disable a child product from a configurable product’s edit page. Previously, the child product’s status
-did not change after you selected **Disable product**. 
 
 <!--- 58515, 70606 -->* Simple product videos now display the embedded video player instead of the thumbnail image. [GitHub-6360](https://github.com/magento/magento2/issues/6360), [GitHub-8882](https://github.com/magento/magento2/issues/8882) 
 
@@ -111,6 +120,8 @@ did not change after you selected **Disable product**.
   
 <!--- 69587 -->* We've fixed the behaviour of the configurable attributes cache. Previously, when Magento loaded configurable attributes, it then stored results in the cache. If Magento subsequently tried to load results from the cache, the `hasCacheData` method always returned false. *Fix submitted by [Teun Lassche](https://github.com/thlassche) in pull request 9809*. [GitHub-6999](https://github.com/magento/magento2/issues/6999)
 
+<!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website shows lowest price after product was assigned to another website. 
+
 
 ### General
 <!--- 63816 -->* We’ve fixed an issue with session behavior that resulted in different customer sessions being shared between different customers on two websites. 
@@ -118,8 +129,6 @@ did not change after you selected **Disable product**.
 
 <!--- 58526 -->* You can now successfully reset a customer password when the **Website Restrictions** setting is enabled. Previously, Magento redirected you to `customer/account/login/`, from which you could not change a password. 
 
-
-<!--- 72206 -->* After confirming a customer’s account, the Magento welcome message now displays the customer's first and last name. 
 
 <!--- 69574 -->* Vimeo videos now work when HTTPS is enabled. [GitHub-7311](https://github.com/magento/magento2/issues/7311) 
 
@@ -145,11 +154,13 @@ did not change after you selected **Disable product**.
 
 <!--- 81305 -->* The WYSIWYG editor no longer displays broken image icons. Previously, this issue occurred on CMS pages and blocks as well as products and categories.  *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 11309*. [GitHub-10417](https://github.com/magento/magento2/issues/10417)
 
+<!--- 60003 -->* You can now use the Admin to create a return after you’ve added a new return attribute. Previously, the new attribute was not visible, and the return could not be submitted. Magento also displayed this error: `Uncaught Error: cannot call methods on modal prior to initialization; attempted to call method openModal`.
 
+<!--- 72181 -->* You can now remove custom customer and customer address attributes from the Use in Forms list.  
 
+<!--- 75222 -->
 
 ### Framework
-<!--- 72798 -->* We’ve resolved an issue where store websites do not work when Redis cache is installed and the PhpRedis extension is enabled.
 
 <!--- 70394 -->* Magento no longer produces a DOM schema validation error in developer mode. *Fix submitted by [Andre Flitsch](https://github.com/pixelhed) in pull request 9718*. [GitHub-4731](https://github.com/magento/magento2/issues/4731), [GitHub-7827](https://github.com/magento/magento2/issues/7827)
 
@@ -167,11 +178,16 @@ did not change after you selected **Disable product**.
 
 <!--- 71983 -->* Magento no longer fails if the CSV file being imported does not contain the `bundle_values` column during an import process that includes bundle products. 
 
+<!--- 59720 -->* Magento now allows you to import multiple alternative images with multiple labels that include commas in the description.
+
+<!--- 65066 -->* Customer imports can still complete when  the error count is below the set value in **Allowed Errors Count**, and import behavior is set to **Skip Error Entries**.
+
 
 ### Order management
 <!--- 71051 -->* Magento now completes order processing  if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error, `No such entity with customerId = 0`, and the order did not complete.
 
-<!--- 70771 -->
+<!--- 59125 --> You can now receive shipping quotes from either the Admin panel or the storefront. 
+
 
 ### Payment methods
 <!--- 69089 -->* In orders with separate billing and shipping addresses, when you change the billing address but neglect to click **Update** before clicking **Place order**, Magento will not place the order until you click **Update**. Previously, under these conditions, Magento replaced the  edited billing address with the shipping address. 
@@ -209,9 +225,12 @@ did not change after you selected **Disable product**.
 
 <!--- 67402 -->* Scheduled updates now display the correct price for a product. Previously, Magento displayed the “as low as” price for a product in the scheduled update, but the preview option displayed the regular price. 
 
+<!--- 63704 -->* When you set up  Scheduled Update to **new** for a configurable product, Magneto removes all simple variations  from the configurable product as expected once the update takes effect. Previously, scheduled updates removed all simple variations from a configurable product.
+
+<!--- 64924 -->* The **Set Product as New** checkbox now works as expected. Previously, Magento did not display the product as new on the  frontend,  and the checked box reverted to unchecked when you saved your changes. 
+
 
 ### Translations
-<!--- 71591 -->* You can now implement translations from themes (in contrast to translations from modules). 
 
 <!--- 69935 -->* You can now save scheduled changes when running a store with a Japanese locale. Previously, Magento displayed this error, `error: : Future Update Start Time cannot be earlier than current time`. 
 
@@ -227,18 +246,17 @@ did not change after you selected **Disable product**.
 
 <!--- 70287 -->* We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
-### Web API framework
-<!--- 70498 -->* If a configurable product is part of a shipment being created via REST, only the parent's quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart. 
 
 ### Wishlist
 <!--- 70991 -->* Unconfigured bundle products that are included on a wishlist can now be edited or added to a cart. Previously, Magento displayed a 503  error when you either tried to edit or add to the cart any bundle products that were on a wishlist. 
 
-<!--- 70611 -->* A product assigned a special price now displays this price in the wishlist. Previously, products with special prices displayed regular prices in the wishlist. 
+<!--- 63698 -->* The wishlist now displays the correct price for bundle products. 
+
 
 
 <!--- INTERNAL ONLY 66707 66706 64245 64115 75625 75621 75619 75612 67019 71527 -->
 
-<!--- NOT NEEDED 65466 65066 63984 63704 63698 63576 63162 62309 61905 61315 61139 59720 59125 58914 75222 72181 72078 72054 72011 67019 69560 57616 64296 7158771576 71398 71378 71170 71151 71117 
+<!--- NOT NEEDED  65066 63984 63704 63698 63576 63162 62309 61905 61315 61139 59720 59125 58914 75222 72181 72078 72054 72011 67019 69560 57616 64296 7158771576 71398 71378 71170 71151 71117 
  -->
 
 <!--- DUPLICATE 66197-->
