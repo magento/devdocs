@@ -34,12 +34,12 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 ## Known issue
 
-<!--- 82986 -->*  Magento continues to display the **Close** button after you open an image in the Product page
+<!--- 82986 -->*  Magento continues to display the **Close** button after you open an image in the Product page in fullscreen mode, then close it. 
 
 ## Fixed issues
 
 ### Cart
-<!--- 61066 -->*  Magento now permits you to share a shopping cart between the store views of the same website, but not between store views of different websites. Previously, Magento did not clear the contents of your shopping cart  when you switched between store views on different websites.
+<!--- 61066 -->*  Magento now permits a customer to share a shopping cart between the store views of the same website, but not between store views of different websites. Previously, Magento did not clear the contents of a shopping cart  when the customer switched between store views on different websites.
  
 
 
@@ -104,7 +104,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 58089 -->*  We’ve resolved multiple issues with inline translations in the checkout page. 
 
-<!--- 57009 -->*  Magento now correctly calculates a bundle product's price even when it contains only one product in a required product option. Previously, if a bundle product contains only one product in an option, Magento did not update the price. [GitHub-4446](https://github.com/magento/magento2/issues/4446)
+<!--- 57009 -->*  Magento now correctly calculates a bundle product's price even when it contains only one product in a required product option. Previously, if a bundle product contained only one product in an option, Magento did not update the price. [GitHub-4446](https://github.com/magento/magento2/issues/4446)
 
 <!--- 66634 -->* We’ve fixed an issue with the PayPal ExpressCheckout functional test.  
 
@@ -136,7 +136,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 59249 -->*  The Free Shipping rule now works correctly with the table shipping method. Previously, Magento displayed an error at checkout (**This shipping method is not available. To use this shipping method, please contact us.**) instead of assigning a $0 shipping rate. [GitHub-6346](https://github.com/magento/magento2/issues/6346)
 
 
-### Targetrule
+### TargetRule
 <!--- 63831 -->*  Magento now saves a new product rule when its SKU attribute is enabled for **Use for Promo Rule Conditions**. Previously, you could not save a new rule under these conditions. 
 
 <!--- 63666 -->*  You can now base a Related Product rule on a product attribute, such as color. 
