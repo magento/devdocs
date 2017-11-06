@@ -15,8 +15,6 @@ github_link: release-notes/ReleaseNotes2.2.1EE.md
 
 We are pleased to present Magento Commerce 2.2.1. This release includes numerous functional fixes and enhancements.
 
-Interested in the Magento 2.0.x and 2.1.x releases? Check out the [2.0.x](http://devdocs.magento.com/guides/v2.0/release-notes/bk-release-notes.html) and [2.1.x](http://devdocs.magento.com/guides/v2.1/release-notes/bk-release-notes.html) Release Information pages.  
-
 
 ## Highlights
 

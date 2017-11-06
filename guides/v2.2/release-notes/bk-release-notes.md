@@ -24,6 +24,9 @@ github_link: release-notes/bk-release-notes.md
 
 * [{{site.data.var.ece}} 2.2.0 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.2.html)
 
+Interested in the Magento 2.0.x and 2.1.x releases? Check out the [2.0.x](http://devdocs.magento.com/guides/v2.0/release-notes/bk-release-notes.html) and [2.1.x](http://devdocs.magento.com/guides/v2.1/release-notes/bk-release-notes.html) Release Information pages.  
+
+
 
 ## Backward-incompatible changes
 
