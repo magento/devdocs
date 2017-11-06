@@ -64,6 +64,9 @@ collections:
     output: true
     permalink: "/videos/:path/"
 
+plugins:
+  - jekyll-redirect-from
+
 
 defaults:
   -
