@@ -14,6 +14,9 @@ github_link: release-notes/bk-release-notes.md
 
 ## Magento 2.2.0 Release Notes
 
+* [{{site.data.var.ce}} 2.2.1 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.1CE.html)
+* [{{site.data.var.ee}} 2.2.1 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.1EE.html)
+
 
 * [{{site.data.var.ce}} 2.2.0 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.0CE.html)
 
