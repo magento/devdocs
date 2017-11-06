@@ -83,7 +83,9 @@ To deploy to Pro projects **created after October 23, 2017** or [updated]({{ pag
 
         git merge origin master
 
-To deploy to Pro projects **created after October 23, 2017**:
+  You must merge this code as `staging` and `production` are branches of `master`.
+
+To deploy to Pro projects **created before October 23, 2017**:
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
 2. Pull the `master` branch to the server.
@@ -94,6 +96,8 @@ To deploy to Pro projects **created after October 23, 2017**:
 
   * Staging: `git push staging master:master`
   * Production: `git push production master:master`
+
+  You must force push for these branches as they are separate repositories with a master branch.
 
 ## Migrate static files {#cloud-live-migrate-static}
 You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
