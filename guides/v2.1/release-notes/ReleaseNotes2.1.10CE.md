@@ -54,7 +54,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 ## Fixed issues
 ### Installation, setup, and deployment
 
-<!--- 58072 -->*  Magento no longer creates an `/ i18n`  at system root (/) in addition to the expected language file when you run `php bin/magento i18n:pack` to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
+<!--- 58072 -->*  Magento no longer creates an `i18n` directory under the system root directory (`/`) when you run the `php bin/magento i18n:pack` command to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
   
 
 ### Cart and checkout
@@ -62,11 +62,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 57683 -->* Magento now displays the checkout agreement validation for Terms and Condition acknowledgment after you’ve changed your payment method. [GitHub-6224](https://github.com/magento/magento2/issues/6224)
 
-<!--- 71985 -->* Magento now provides a Login button so that you can resume your checkout process if you return to the check out page after leaving it mid-order.  
+<!--- 71985 -->* Magento now provides a Login button so that a customer can resume your checkout process if he or she returns to the check out page after leaving it mid-order.  
 
 <!--- 69856 -->* Magento now displays the correct error message when you enter an invalid discount code during checkout. [GitHub-7230](https://github.com/magento/magento2/issues/7230)
 
-<!--- 69797 -->* Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, after an user entered credit card information and a discount code, and then clicked **Place Order**, Magento emptied the credit card information fields.
+<!--- 69797 -->* Credit card information now persists as expected after a customer enters a promotion code during checkout. Previously, after a entered credit card information and a discount code, and then clicked **Place Order**, Magento emptied the credit card information fields.
 
 <!--- 58914 -->* The `collectRates()` method now obtains full address details for registered customers when the customer opens the Checkout page with an existing shipping address.
 
@@ -122,7 +122,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 60003 -->* You can now use the Admin to create a return after you’ve added a new return attribute. Previously, the new attribute was not visible, and the return could not be submitted. Magento also displayed this error: `Uncaught Error: cannot call methods on modal prior to initialization; attempted to call method openModal`.
 
-<!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website shows lowest price after product was assigned to another website. 
+<!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website. 
 
 <!--- 75222 -->
 

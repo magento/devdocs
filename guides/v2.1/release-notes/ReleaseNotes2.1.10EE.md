@@ -53,7 +53,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 ### Installation, setup, and deployment
 
-<!--- 58072 -->*  Magento no longer creates an `/ i18n`  at system root (/) in addition to the expected language file when you run `php bin/magento i18n:pack` to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
+<!--- 58072 -->*  Magento no longer creates an `i18n` directory under the system root directory (`/`) when you run the `php bin/magento i18n:pack` command to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
 
 
 <!---  70137-->* Component Manager can now handle custom composer modules. Previously, when you opened  **System > Tools > Web Setup > Component Manager** after using Composer to install a custom extension, a PHP error occurred, and Magento did not display the list of installed extensions. *Fix submitted by [JTimNolan](https://github.com/JTimNolan) in pull request 9692.* [GitHub-6718](https://github.com/magento/magento2/issues/6718)
@@ -64,19 +64,15 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 68812 -->* You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking **Not me**. Previously, in environments where **Enable Persistence** was set to **Yes**, you could log in as a guest and potentially complete an order that another customer had initiated. 
 
-<!--- 57683 -->* Magento now displays the checkout agreement validation for Terms and Condition acknowledgment after you’ve changed your payment method. [GitHub-6224](https://github.com/magento/magento2/issues/6224)
+<!--- 57683 -->* Magento now displays the checkout agreement validation for Terms and Condition acknowledgment after a customer has changed his or her payment method. [GitHub-6224](https://github.com/magento/magento2/issues/6224)
 
 <!--- 71985 -->* Magento now provides a **Login** button so that you can resume your checkout process if you return to the check out page after leaving it mid-order.  
 
-<!--- 69856 -->* Magento now displays the correct error message when you enter an invalid discount code during checkout. [GitHub-7230](https://github.com/magento/magento2/issues/7230)
+<!--- 69856 -->* Magento now displays the correct error message when a customer enters an invalid discount code during checkout. [GitHub-7230](https://github.com/magento/magento2/issues/7230)
 
-<!--- 69797 -->* Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, after an user entered credit card information and a discount code, and then clicked **Place Order**, Magento emptied the credit card information fields.
+<!--- 69797 -->* Credit card information now persists as expected after a customer enters a promotion code during checkout. Previously, after a customer entered credit card information and a discount code, and then clicked **Place Order**, Magento emptied the credit card information fields.
 
 <!--- 58914 -->* The `collectRates()` method now obtains full address details for registered customers when the customer opens the Checkout page with an existing shipping address.
-
-<!--- 68812 -->* You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking **Not me**. Previously, in environments where **Enable Persistence** was set to **Yes**, you could log in as a guest and potentially complete an order that another customer had initiated.
-
-<!--- 61139 -->* Magento now continues to display additional addresses while you edit the first address for an order being shipped to multiple addresses.  as expected. Previously, the address form remained blank when you edited a multiple-address order during checkout.
 
 
 
@@ -95,13 +91,12 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 69560 -->* Magento no longer displays a price for out-of-stock configurable products. Previously, Magento displayed a price of zero (0) when a configurable product was out-of-stock.
 
-<!--- 72252 -->* Magento no longer pre-fills the **Set Product as New from Date** or **Design Active Form** dates when you assign a special price in Advanced Pricing. Previously, these fields were pre-filled with the creation date, and any product that was saved with a special price was also incorrectly set as new. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10751*. [GitHub-4387](https://github.com/magento/magento2/issues/4387), [GitHub-7448](https://github.com/magento/magento2/issues/7448)
+<!--- 72252, 61315 -->* Magento no longer pre-fills the **Set Product as New from Date** or **Design Active Form** dates when you assign a special price in Advanced Pricing. Previously, these fields were pre-filled with the creation date, and any product that was saved with a special price was also incorrectly set as new. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10751*. [GitHub-4387](https://github.com/magento/magento2/issues/4387), [GitHub-7448](https://github.com/magento/magento2/issues/7448)
 
 <!--- 75315 -->* Product page attribute labels are now translated as expected when languages other than English are used. Previously, these fields were empty. *Fix submitted by [Janusz Janczy](https://github.com/Januszpl) in pull request 10932*. [GitHub-10738](https://github.com/magento/magento2/issues/10738)
 
 <!--- 81968 -->*  Magento now displays product alerts on the Product edit page of the Admin. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11448*. [GitHub-10007](https://github.com/magento/magento2/issues/10007)
 
-<!--- 61315 -->* Magento no longer pre-fills the **Set Product as New From Date** field with the date inherited from the **Special Price From** date. [GitHub-4387](https://github.com/magento/magento2/issues/4387)
 
 
 ### Configurable products
@@ -118,9 +113,9 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 71136 -->* You can now save a value for an attribute that is shared between related, upsell, or cross-sell products that have different attribute sets. Previously, when a configurable product had another configurable product with a different attribute set as a related product, cross sell, or upsell, and both attribute sets share a multiselect attribute, the value for that multiselect attribute could not be updated for the product.
 
   
-<!--- 69587 -->* We've fixed the behaviour of the configurable attributes cache. Previously, when Magento loaded configurable attributes, it then stored results in the cache. If Magento subsequently tried to load results from the cache, the `hasCacheData` method always returned false. *Fix submitted by [Teun Lassche](https://github.com/thlassche) in pull request 9809*. [GitHub-6999](https://github.com/magento/magento2/issues/6999)
+<!--- 69587 -->* We've fixed the behavior of the configurable attributes cache. Previously, when Magento loaded configurable attributes, it then stored results in the cache. If Magento subsequently tried to load results from the cache, the `hasCacheData` method always returned false. *Fix submitted by [Teun Lassche](https://github.com/thlassche) in pull request 9809*. [GitHub-6999](https://github.com/magento/magento2/issues/6999)
 
-<!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website shows lowest price after product was assigned to another website. 
+<!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website. 
 
 
 ### General
@@ -130,9 +125,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 58526 -->* You can now successfully reset a customer password when the **Website Restrictions** setting is enabled. Previously, Magento redirected you to `customer/account/login/`, from which you could not change a password. 
 
 
-<!--- 69574 -->* Vimeo videos now work when HTTPS is enabled. [GitHub-7311](https://github.com/magento/magento2/issues/7311) 
-
-
 <!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites cannot edit CNS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
 
 
@@ -140,13 +132,13 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 70218 -->* Magento no longer displays an empty minicart when you disable full page cache after login. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 10050*. [GitHub-5377](https://github.com/magento/magento2/issues/5377), [GitHub-4170](https://github.com/magento/magento2/issues/4170), [GitHub-6882](https://github.com/magento/magento2/issues/6882)
 
-<!--- 70838-->*  You can now create a product attribute text swatch with a value of "0" (zero). Previously, Magento displayed this error when you entered ): `Admin is a required field in the each row`. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 10282*. [GitHub-9619](https://github.com/magento/magento2/issues/9619), [GitHub-10266](https://github.com/magento/magento2/issues/10266)
+<!--- 70838-->*  You can now create a product attribute text swatch with a value of "0" (zero). Previously, Magento displayed the error, `Admin is a required field in the each row`. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 10282*. [GitHub-9619](https://github.com/magento/magento2/issues/9619), [GitHub-10266](https://github.com/magento/magento2/issues/10266)
 
 <!--- 72249 -->* The `validate-email` error string can now be translated.  *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10745*.  [GitHub-6622](https://github.com/magento/magento2/issues/6622)
 
 <!--- 72250 -->* We've fixed a range of JavaScript translation issues, in particular issues related to interactions between general locale translations and theme CSV files. [GitHub-4883](https://github.com/magento/magento2/issues/4883), [GitHub-5883](https://github.com/magento/magento2/issues/5883), [GitHub-5861](https://github.com/magento/magento2/issues/5861), [GitHub-5820](https://github.com/magento/magento2/issues/5820), [GitHub-5509](https://github.com/magento/magento2/issues/5509), [GitHub-6022](https://github.com/magento/magento2/issues/6022), [GitHub-5995](https://github.com/magento/magento2/issues/5995), [GitHub-7525](https://github.com/magento/magento2/issues/7525), [GitHub-9967](https://github.com/magento/magento2/issues/9967) 
 
-<!--- 72278 -->* Vimeo videos in product gallery now work over HTTPS. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10748*. [GitHub-7311](https://github.com/magento/magento2/issues/7311), [GitHub-8574](https://github.com/magento/magento2/issues/8574)
+<!--- 72278, 69574 -->* Vimeo videos in product gallery now work over HTTPS. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10748*. [GitHub-7311](https://github.com/magento/magento2/issues/7311), [GitHub-8574](https://github.com/magento/magento2/issues/8574)
 
 <!--- 75319 -->* We've fixed the problem with the missing HTML `span` tag in the base template file (`app/code/Magento/Review/view/frontend/templates/form.phtml`). *Fix submitted by [Bartek Igielski](https://github.com/Igloczek) in pull request 10934*. [GitHub-6081](https://github.com/magento/magento2/issues/6081)
 
@@ -256,7 +248,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- INTERNAL ONLY 66707 66706 64245 64115 75625 75621 75619 75612 67019 71527 -->
 
-<!--- NOT NEEDED  65066 63984 63704 63698 63576 63162 62309 61905 61315 61139 59720 59125 58914 75222 72181 72078 72054 72011 67019 69560 57616 64296 7158771576 71398 71378 71170 71151 71117 
+<!--- NOT NEEDED  65066 63704 63698 63576 63162 62309 61905 61315 61139 59720 59125 58914 75222 72181 72078 72054 72011 67019 69560 57616 64296 7158771576 71398 71378 71170 71151 71117 
  -->
 
 <!--- DUPLICATE 66197-->
