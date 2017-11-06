@@ -15,7 +15,6 @@ functional_areas:
   - Setup
 ---
 
-## Introduction to Magento profiling {#dirs-introduction}
 Magento profiling enables you to:
 
 -   Enable a built-in profiler.
@@ -28,7 +27,7 @@ Magento profiling enables you to:
 
 Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php" target="\_blank">Magento\Framework\Profiler</a>.
 
-## Set MAGE_PROFILER {#dirs-set}
+## Set MAGE_PROFILER
 `MAGE_PROFILER` supports the following values:
 
 -   `1` to enable a specific profiler's output.
